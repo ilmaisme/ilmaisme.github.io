@@ -1,0 +1,303 @@
+<script type="text/javascript" src="./asset/js/jquery-3.5.0.min.js"></script>
+<script type="text/javascript" src="./asset/js/picturefill.min.js" async></script>
+<script type="text/javascript" src="./asset/js/picturefill-background.js"></script>
+<script type="text/javascript" src="./asset/js/scrolloverflow.min.js"></script>
+<script type="text/javascript" src="./asset/js/bodymovin.js"></script>
+<script type="text/javascript" src="./asset/js/fullpage.js"></script>
+<script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
+<script type="text/javascript" src="./asset/js/velocity.min.js"></script>
+<script>
+    $(document).ready(function () {
+        new fullpage('#fullpage', {
+            //options here
+            autoScrolling: true,
+            scrollHorizontally: true,
+            responsiveHeight: 500,
+            //navigation: true,
+            anchors: ['cover', 'start'],
+            scrollOverflow: true,
+            //sectionsColor: ['#1B335F','#1A9BFF', '#6D4AB6', '#3DBBF1', '#89D0F8', '#ccddff','#F1C270','#78D4FF','#EF6868','#ACDBEF','#FFE7A1','#C2E7AF','#D9CAE8','#35C99E','#1EAAC9'],
+
+            onLeave: function (origin, destination, direction) {
+                var leavingSection = this;
+
+                if (origin.index == 0 && direction == 'down') {
+                    $(".text1").velocity({ opacity: "1" }, { delay: 800, duration: 700 });
+                    $(".imgWuhan").addClass("pushUp");
+                }
+                if (origin.index == 1 && direction == 'down') {
+                    $(".bgOverlay").velocity({ opacity: "1" }, { delay: 800, duration: 700 });
+                    $(".text2").velocity({ opacity: 1 }, {
+                        duration: 700,
+                        delay: 1600,
+                        begin: function () {
+                            //console.log('test');
+                        },
+                        complete: function () {
+                            //console.log('test');
+                        }
+                    });
+                }
+                if (origin.index == 2 && direction == 'up') {
+                    $(".bgOverlay").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                }
+                if (origin.index == 2 && direction == 'down') {
+                    $(".text3").velocity({ opacity: "1" }, { delay: 800, duration: 700 });
+                }
+                if (origin.index == 3 && direction == 'up') {
+                    $(".text3").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".text4").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".text5").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                }
+                if (origin.index == 3 && direction == 'down') {
+                    $(".text4").velocity({ opacity: "1", bottom: "0" }, { delay: 200, duration: 700 });
+                }
+                if (origin.index == 4 && direction == 'down') {
+                    $(".text5").velocity({ opacity: "1", bottom: "0" }, { delay: 200, duration: 700 });
+                }
+                if (origin.index == 4 && direction == 'up') {
+                    $(".text3").velocity({ opacity: "1" }, { delay: 800, duration: 700 });
+                }
+                if (origin.index == 5 && direction == 'up') {
+                    $(".text4").velocity({ opacity: "1", bottom: "0" }, { delay: 200, duration: 700 });
+                    $(".text4").removeClass("moveUp");
+                }
+                if (origin.index == 5 && direction == 'down') {
+                    $(".text3").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".text4").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".text5").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".bgOverlay").fadeOut(300);
+                    $(".bgOpening").fadeOut(300);
+                    $(".bgColor--blue").fadeOut(300);
+                    $(".imgWuhan").fadeOut(100);
+                    $(".bgColor--purple").fadeIn(0);
+                    $(".imgInfected").velocity({ opacity: "1", left: "0" }, { delay: 200, duration: 700 });
+                    console.log('5down')
+                }
+                if (origin.index == 6 && direction == 'up') {
+                    $(".text5").velocity({ opacity: "1", bottom: "0" }, { delay: 200, duration: 700 });
+                    $(".text5").removeClass("moveUp");
+                    $(".bgOverlay").fadeIn(300);
+                    $(".bgOpening").fadeIn(300);
+                    $(".imgWuhan").fadeIn(300);
+                    $(".bgColor--purple").fadeOut(300);
+                    $(".imgInfected").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".imgInfected").removeClass("moveLeft");
+                    console.log('6up')
+                }
+                if (origin.index == 6 && direction == 'down') {
+                    $(".imgInfected__hand").addClass("animationCough");
+                    $(".imgParticle").velocity({ left: "30%", bottom: "20%", opacity: "1" }, { delay: 2100, duration: 1000 });
+                    $(".imgInfected").velocity({ opacity: "1", left: "0" }, { delay: 0, duration: 700 });
+                    $(".imgInfected").removeClass("moveLeft");
+                }
+                if (origin.index == 7 && direction == 'up') {
+                    $(".imgParticle").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".imgParticle--2").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    console.log('7up')
+                }
+                if (origin.index == 7 && direction == 'down') {
+                    $(".imgInfected").velocity({ opacity: 1 }, {
+                        duration: 700,
+                        begin: function () {
+                            $(".imgInfected__hand").removeClass("animationCough");
+                        },
+                        complete: function () {
+                            $(".imgInfected__hand").addClass("animationCough");
+                        }
+                    });
+                    $(".imgParticle--2").velocity({ left: "50%", bottom: "10%", opacity: "1" }, { delay: 2100, duration: 1000 });
+                }
+                if (origin.index == 8 && direction == 'up') {
+                    $(".text6").addClass("textOpac");
+                    console.log('8up')
+                }
+                if (origin.index == 8 && direction == 'down') {
+                    $(".imgInfected").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".bgColor--blue").fadeIn(300);
+                    $(".bgColor--blue").velocity({ left: "0" }, { delay: 0, duration: 700 });
+                    $(".text6").removeClass("textOpac");
+                    $(".imgParticle").velocity({ opacity: "0", left: "0", bottom: "30%" }, { delay: 0, duration: 0 });
+                    $(".imgParticle--2").velocity({ opacity: "0", left: "0", bottom: "10%" }, { delay: 0, duration: 0 });
+                    $(".imgHuman").velocity({ opacity: 1 }, {
+                        delay: 0,
+                        duration: 200,
+                        begin: function () {
+
+                        },
+                        complete: function () {
+                            $(".imgParticle").velocity({ left: "1%", opacity: "1" }, { delay: 800, duration: 700 });
+                            $(".imgParticle--2").velocity({ left: "10%", opacity: "1" }, { delay: 1000, duration: 700 });
+                        }
+                    });
+                }
+                if (origin.index == 9 && direction == 'up') {
+                    $(".bgColor--purple").fadeIn(300);
+                    $(".bgColor--blue").velocity({ left: "100%" }, { delay: 0, duration: 700 });
+                    $(".imgParticle").velocity({ left: "30%" }, { delay: 0, duration: 700 });
+                    $(".imgParticle--2").velocity({ left: "50%" }, { delay: 0, duration: 700 });
+                    $(".imgHuman").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".text6").addClass("textOpac");
+
+                    $(".imgInfected").velocity({ opacity: "1", left: "0" }, { delay: 0, duration: 700 });
+
+                    console.log('9up');
+                }
+                if (origin.index == 9 && direction == 'down') {
+                    $(".imgHuman").addClass("zoom");
+                    $(".imgParticle").velocity({ opacity: 0, left: "0" }, {
+                        duration: 200,
+                        delay: 0,
+                        begin: function () {
+                            $(".imgParticle--2").velocity({ left: "30%", opacity: "1" }, { delay: 0, duration: 100 });
+                        },
+                        complete: function () {
+                            $(".imgParticle").velocity({ left: "30%", bottom: "28%", opacity: "1" }, { delay: 700, duration: 700 });
+                            $(".imgParticle--2").velocity({ opacity: "0" }, { delay: 700, duration: 100 });
+                            $(".imgHuman").velocity({ opacity: "0" }, { delay: 700, duration: 200 });
+                            $(".imgXray").velocity({ opacity: "1" }, { delay: 800, duration: 200 });
+                            $(".bgText--2").css('z-index', '4')
+                            console.log('zoom');
+                        }
+                    });
+
+                }
+                if (origin.index == 10 && direction == 'up') {
+                    $(".imgHuman").removeClass("zoom");
+                    $(".text6").removeClass("textOpac");
+
+                    $(".imgHuman").velocity({ opacity: "1" }, { delay: 0, duration: 200 });
+                    $(".imgXray").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".imgParticle").velocity({ left: "0", bottom: "30%", opacity: "1" }, { delay: 800, duration: 700 });
+                    $(".imgParticle--2").velocity({ left: "10%", bottom: "8%", opacity: "1" }, { delay: 1000, duration: 700 });
+
+                    console.log('10up');
+
+                }
+                if (origin.index == 10 && direction == 'down') {
+                    $(".text6").addClass("textOpac");
+                    $(".imgXray").addClass('moveUp');
+                    $(".imgParticle").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    console.log('10down');
+                }
+                if (origin.index == 11 && direction == 'up') {
+                    $(".text6").removeClass("textOpac");
+                    $(".imgXray").removeClass('moveUp');
+                    $(".imgParticle").velocity({ left: "30%", bottom: "28%", opacity: "1" }, { delay: 0, duration: 200 });
+                    $(".imgXray").velocity({ opacity: "1" }, { delay: 0, duration: 200 });
+                    console.log('11up');
+
+                }
+                if (origin.index == 11 && direction == 'down') {
+                    $(".imgParticle").velocity({ left: "30%", bottom: "8%", opacity: "1" }, { delay: 200, duration: 200 });
+                    $(".imgParticle--2").velocity({ left: "30%", bottom: "30%", opacity: "1" }, { delay: 200, duration: 200 });
+                    console.log('11down');
+                }
+                if (origin.index == 12 && direction == 'up') {
+                    $(".imgParticle").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".imgParticle--2").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    console.log('12up');
+                }
+                if (origin.index == 12 && direction == 'down') {
+                    $(".imgParticle").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".imgParticle--2").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".imgXray").velocity({ scale: 0.65, left: "40%" }, {
+                        duration: 200,
+                        delay: 0,
+                        begin: function () {
+                            $(".imgXray").velocity({ opacity: 0 }, { delay: 0, duration: 200 });
+                        },
+                        complete: function () {
+                            $(".imgXraylines").velocity({ opacity: "1" }, { delay: 0, duration: 200 });
+                            $(".line-diare").addClass("active");
+                            $(".line-mampet").addClass("active");
+                            $(".line-radang").addClass("active");
+                            $(".line-meriang").addClass("active");
+                            $(".line-nyeri").addClass("active");
+                            $(".line-lelah").addClass("active");
+                            $(".line-kepala").addClass("active");
+                            $(".line-batuk").addClass("active");
+                            $(".line-napas").addClass("active");
+                            $(".line-hilang").addClass("active");
+                            $(".line-rasa").addClass("active");
+                            $(".line-pusing").addClass("active");
+                            $(".line-demam").addClass("active");
+                            console.log('lines');
+                        }
+                    });
+                    $(".imgXray").removeClass("moveUp");
+                    $(".imgXray").addClass("moveDown");
+
+                    $(".bgColor--yblue").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    console.log('12down');
+                }
+                if (origin.index == 13 && direction == 'up') {
+                    $(".imgParticle--2").velocity({ left: "30%", bottom: "30%", opacity: "1" }, { delay: 800, duration: 200 });
+                    $(".imgParticle").velocity({ left: "30%", bottom: "8%", opacity: "1" }, { delay: 800, duration: 200 });
+                    $(".imgXray").velocity({ opacity: "1", scale: 1, left: "50%" }, { delay: 200, duration: 200 });
+                    $(".imgXraylines").velocity({ opacity: 0 }, { delay: 0, duration: 200 });
+                    $(".imgXray").addClass("moveUp");
+                    $(".imgXray").removeClass("moveDown");
+
+                    console.log('13up');
+                }
+                if (origin.index == 13 && direction == 'down') {
+                    $(".imgXraylines").velocity({ opacity: 0 }, { delay: 0, duration: 200 });
+                    $(".imgXray").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".bgColor--yblue").velocity({ top: "0", opacity: "1" }, { delay: 0, duration: 200 });
+                    $(".textChina").velocity({ opacity: "0" }, {
+                        duration: 200,
+                        delay: 1800,
+                        begin: function () {
+
+                        },
+                        complete: function () {
+                            $(".imgHubei").velocity({ opacity: "1" }, { delay: 700, duration: 200 });
+                        }
+                    });
+                    console.log('13down');
+                }
+                if (origin.index == 14 && direction == 'up') {
+                    $(".bgColor--blue").fadeIn(300);
+                    $(".imgXraylines").velocity({ opacity: "1" }, { delay: 0, duration: 200 });
+                    console.log('14up');
+                }
+                if (origin.index == 14 && direction == 'down') {
+                    $(".text7").removeClass("textOpac");
+                    $(".spot").velocity({ opacity: "1" }, { delay: 800, duration: 200 });
+                    $(".imgWorld").velocity({ opacity: "1" }, {
+                        duration: 200,
+                        delay: 700,
+                        begin: function () {
+                            $(".spot").velocity({ opacity: "0" }, { delay: 700, duration: 200 });
+                        },
+                        complete: function () {
+                            $(".spot").velocity({ opacity: "1" }, { delay: 2100, duration: 200 });
+                        }
+                    });
+                    console.log('14down');
+                }
+                if (origin.index == 15 && direction == 'up') {
+                    $(".spot").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".imgWorld").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".text7").addClass("textOpac");
+                }
+                if (origin.index == 15 && direction == 'down') {
+                    $(".text7").addClass("textOpac");
+                }
+                else if (origin.index == 1 && direction == 'up') {
+                    //alert("Going to section 1!");
+                }
+            },
+        });
+
+        $(document).on('click', '#moveTo', function () {
+            fullpage_api.moveTo('start', 1);
+            console.log('start');
+        });
+
+        // BODYMOVIN Animation
+
+        // 1
+    });
+</script>
