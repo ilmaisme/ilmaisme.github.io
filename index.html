@@ -98,17 +98,18 @@
             <div class="bgColor bgColor--purple"></div>
             <div class="bgColor bgColor--blue"></div>
             <div class="bgColor bgColor--yblue moveTop"></div>
+            <div class="bgColor bgColor--orange"></div>
         </div>
         <div class="bgOverlay"></div>
         <!-- Template Background Color -->
         <!-- Template Content Color -->
         <div class="bgStatic">
             <!-- opening -->
-            <div class="bgAnimation bgOpening">
-                <div class="picturefill-background">
-                    <span data-src="./asset/images/opening-small.jpg"></span>
-                    <span data-src="./asset/images/opening.jpg" data-media="(min-width: 800px)"></span>
-                </div>
+            <div class="bgAnimation">
+                <picture class="bgOpening">
+                    <source srcset="./asset/images/opening.jpg" media="(min-width: 800px)" alt="">
+                    <img srcset="./asset/images/opening-small.jpg" alt="" loading="lazy" width="1438" height="680">
+                </picture>
             </div>
             <div class="bgAnimation">
                 <picture class="imgWuhan">
@@ -132,8 +133,7 @@
                         <img srcset="./asset/images/xray.png" alt="" class="" loading="lazy">
                     </picture>
                     <picture class="imgXraylines">
-                        <svg width="1159" height="727" viewBox="0 0 1159 727" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                        <svg width="1159" height="727" viewBox="0 0 1159 727" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0)">
                                 <path
                                     d="M480.902 310.393C477.33 314.303 386.888 339.101 369.273 347.885C355.887 352.67 341.938 358.264 330.286 366.605C318.217 375.243 309.719 387.894 305.029 404.21C301.085 417.915 300.272 432.062 299.826 444.243C299.605 450.241 299.821 456.202 300.028 461.97C300.291 469.3 300.54 476.221 299.943 482.944C298.904 494.593 293.246 506.623 290.675 518.257L290.332 519.801C287.507 532.607 286.294 555.232 285.011 579.188C283.695 603.785 285.199 631.665 281.811 644.26C274.944 669.773 264.153 719.526 260.529 745.435C256.713 772.736 264.139 900.823 264.139 900.823C263.955 903.438 263.81 906.054 263.739 908.675C263.354 922.878 265.718 937.058 265.53 951.281C265.37 963.344 267.109 976.225 265.422 988.161C263.692 1000.36 271.113 1012.15 274.977 1023.67C278.652 1034.62 289.302 1040.09 300.455 1045.76C308.483 1049.84 328.129 1063.69 337.661 1055.64C344.217 1050.1 324.754 1031.31 320.679 1026.27C313.15 1016.97 306.852 1003.9 311.308 992.49C311.872 991.045 313.197 990.147 314.978 989.784C319.34 988.9 319.641 989.126 320.181 992.861C321.131 999.467 322.08 1006.07 323.025 1012.67C326.315 1026.2 339.132 1023.83 342.577 1016.19C344.711 1011.47 344.151 1003.62 343.465 999.316C342.13 990.88 340.824 982.426 340.015 973.939C339.188 965.254 338.196 956.724 334.201 948.552C330.761 941.514 325.163 935.285 320.318 928.863C314.889 921.669 317.413 912.646 318.16 904.506C318.273 903.278 359.84 791.687 361.132 782.555C362.068 775.959 363.355 769.349 364.718 762.344C367.017 750.553 369.39 738.359 369.964 726.159C370.161 721.888 370.076 716.604 369.978 710.479C369.719 694.53 373.146 669.787 376.045 659.268C379.147 648.028 384.237 605.634 387.885 594.94C388.322 597.782 388.745 600.289 389.14 602.326C395.809 636.596 397.026 724.325 396.044 756.082C395.64 761.172 387.288 792.468 383.265 807.523C381.737 813.244 380.421 818.184 379.486 821.788C368.831 862.935 371.378 913.888 372.774 941.415L372.779 941.561C374.071 995.242 374.776 1063.81 379.288 1129.24H531.822C531.869 1128.6 531.916 1127.96 531.958 1127.31C535.243 1081.74 547.125 993.736 551.896 993.736C557.014 993.736 570.705 1079.53 574.004 1124.64C574.117 1126.18 574.225 1127.71 574.329 1129.23H724.803C729.804 1063.42 731.802 994.263 733.029 940.206L733.033 940.06C734.283 914.702 736.812 862.432 726.284 821.778C725.349 818.17 724.023 813.211 722.491 807.471C718.473 792.435 710.125 761.172 709.726 756.077C708.748 724.306 709.966 636.567 716.63 602.322C717.034 600.247 717.467 597.683 717.913 594.775C721.128 604.321 726.782 649.557 729.729 659.263C732.902 669.703 736.055 694.52 735.797 710.469C735.698 716.595 735.613 721.883 735.816 726.155C736.384 738.349 738.762 750.544 741.056 762.334C742.419 769.335 743.707 775.95 744.642 782.546C745.935 791.678 748.191 800.367 751.344 808.375C755.56 819.078 787.501 903.269 787.614 904.497C788.366 912.636 790.885 921.664 785.457 928.853C780.611 935.275 775.013 941.504 771.573 948.543C767.578 956.715 766.591 965.244 765.759 973.929C764.951 982.412 763.644 990.866 762.309 999.307C761.628 1003.62 761.069 1011.46 763.202 1016.18C766.647 1023.82 779.46 1026.19 782.75 1012.66C783.699 1006.06 784.648 999.457 785.598 992.852C786.134 989.116 786.439 988.895 790.801 989.775C792.582 990.132 793.907 991.036 794.471 992.48C798.927 1003.89 792.629 1016.96 785.1 1026.26C781.025 1031.3 761.557 1050.08 768.119 1055.63C777.655 1063.68 797.296 1049.83 805.324 1045.75C816.472 1040.08 827.127 1034.61 830.802 1023.66C834.666 1012.14 842.087 1000.35 840.357 988.152C838.665 976.221 840.404 963.339 840.249 951.271C840.061 937.049 842.425 922.869 842.04 908.665C841.97 906.045 841.819 903.429 841.641 900.813C841.641 900.813 849.067 772.722 845.25 745.425C841.622 719.502 830.831 669.75 823.969 644.25C820.58 631.656 822.084 603.775 820.763 579.174C819.48 555.218 818.268 532.593 815.443 519.791L815.095 518.215C812.524 506.59 806.87 494.574 805.836 482.934C805.234 476.207 805.488 469.286 805.751 461.961C805.958 456.197 806.174 450.232 805.954 444.233C805.502 432.053 804.694 417.915 800.746 404.201C796.051 387.885 787.553 375.234 775.483 366.596C763.832 358.254 749.883 352.66 736.497 347.876C718.867 339.082 625.018 311.804 614.96 308.187L480.902 310.393Z"
@@ -159,12 +159,9 @@
                                 <path
                                     d="M620.98 320.005C622.489 297.69 610.626 272.877 612.177 249.758C614.104 221.031 616.731 191.58 629.228 165.642C633.04 157.734 637.876 149.406 636.283 140.773C634.145 129.199 621.182 122.721 609.437 122.166C597.691 121.611 586.078 125.102 574.318 124.984C540.695 124.645 514.967 96.257 484.849 81.2865C469.311 73.5661 491.044 70.8938 476.38 61.6208C474.646 60.5245 456.353 13.2467 439.795 105.394C435.814 127.534 437.215 150.531 440.571 173.504C440.439 173.824 424.544 212.087 425.893 215.456C427.246 218.839 442.897 223.365 442.897 223.365L440.087 233.216L450.732 238.547C450.732 238.547 443.128 245.397 443.635 245.905C444.143 246.413 450.732 250.727 450.732 250.727C450.732 250.727 452.509 273.056 462.477 277.963C470.491 281.906 486.476 282.555 492.44 282.658C491.641 302.719 488.863 299.294 488.064 319.355H498.461L502.211 273.414L492.595 273.249C481.014 273.051 470.82 271.588 466.618 269.518C465.955 269.193 463.84 266.898 461.993 260.269C460.522 254.976 460.099 250.012 460.095 249.965L459.714 245.383L458.252 244.423L467.257 236.307L451.259 228.3L454.502 216.933L445.496 214.327C442.333 213.409 438.855 212.177 436.299 211.114C438.639 203.708 444.185 189.269 449.238 177.122L450.239 174.718L449.863 172.14C446.032 145.925 445.769 125.243 449.036 107.054C455.145 73.0485 460.945 62.1947 463.408 58.9249C464.245 59.9176 465.41 61.6066 467.032 64.4389C468.127 66.3537 469.081 68.0192 471.027 69.3553C469.903 71.6795 468.865 75.0386 470.04 79.033C471.708 84.7022 476.902 87.8402 480.657 89.708C490.01 94.3563 498.912 100.374 508.335 106.749C528.244 120.209 548.83 134.13 574.21 134.384C574.436 134.384 574.662 134.389 574.892 134.389C580.87 134.389 586.6 133.613 592.131 132.864C597.268 132.168 602.119 131.51 606.819 131.51C607.557 131.51 608.281 131.528 608.976 131.561C616.924 131.938 625.849 136.125 627.024 142.481C627.875 147.082 625.06 152.784 622.084 158.825C621.633 159.743 621.182 160.651 620.75 161.559C607.787 188.47 604.854 218.34 602.791 249.128C601.926 261.972 604.267 274.514 606.532 286.648C606.532 286.648 610.142 303.067 610.377 317.417L620.98 320.005Z"
                                     fill="#EF65AD" />
-                                <path
-                                    d="M456.119 157.489C456.119 157.489 452.006 167.425 458.586 174.351L473.039 165.685L456.119 157.489Z"
+                                <path d="M456.119 157.489C456.119 157.489 452.006 167.425 458.586 174.351L473.039 165.685L456.119 157.489Z"
                                     fill="white" />
-                                <path
-                                    d="M452.246 155.81L471.869 165.793L458.591 174.351L475.159 165.751L452.246 155.81Z"
-                                    fill="black" />
+                                <path d="M452.246 155.81L471.869 165.793L458.591 174.351L475.159 165.751L452.246 155.81Z" fill="black" />
                                 <path
                                     d="M445.718 145.134C445.718 145.134 450.549 136.379 486.039 141.601C486.039 141.606 450.305 121.258 445.718 145.134Z"
                                     fill="black" />
@@ -511,50 +508,62 @@
                             <path
                                 d="M87.3477 660V642.938H92.1641C93.6484 642.938 94.9609 643.266 96.1016 643.922C97.2422 644.578 98.1211 645.512 98.7383 646.723C99.3633 647.934 99.6797 649.324 99.6875 650.895V651.984C99.6875 653.594 99.375 655.004 98.75 656.215C98.1328 657.426 97.2461 658.355 96.0898 659.004C94.9414 659.652 93.6016 659.984 92.0703 660H87.3477ZM89.5977 644.789V658.16H91.9648C93.6992 658.16 95.0469 657.621 96.0078 656.543C96.9766 655.465 97.4609 653.93 97.4609 651.938V650.941C97.4609 649.004 97.0039 647.5 96.0898 646.43C95.1836 645.352 93.8945 644.805 92.2227 644.789H89.5977ZM105.113 660H102.945V647.32H105.113V660ZM102.77 643.957C102.77 643.605 102.875 643.309 103.086 643.066C103.305 642.824 103.625 642.703 104.047 642.703C104.469 642.703 104.789 642.824 105.008 643.066C105.227 643.309 105.336 643.605 105.336 643.957C105.336 644.309 105.227 644.602 105.008 644.836C104.789 645.07 104.469 645.188 104.047 645.188C103.625 645.188 103.305 645.07 103.086 644.836C102.875 644.602 102.77 644.309 102.77 643.957ZM116.422 660C116.297 659.75 116.195 659.305 116.117 658.664C115.109 659.711 113.906 660.234 112.508 660.234C111.258 660.234 110.23 659.883 109.426 659.18C108.629 658.469 108.23 657.57 108.23 656.484C108.23 655.164 108.73 654.141 109.73 653.414C110.738 652.68 112.152 652.312 113.973 652.312H116.082V651.316C116.082 650.559 115.855 649.957 115.402 649.512C114.949 649.059 114.281 648.832 113.398 648.832C112.625 648.832 111.977 649.027 111.453 649.418C110.93 649.809 110.668 650.281 110.668 650.836H108.488C108.488 650.203 108.711 649.594 109.156 649.008C109.609 648.414 110.219 647.945 110.984 647.602C111.758 647.258 112.605 647.086 113.527 647.086C114.988 647.086 116.133 647.453 116.961 648.188C117.789 648.914 118.219 649.918 118.25 651.199V657.035C118.25 658.199 118.398 659.125 118.695 659.812V660H116.422ZM112.824 658.348C113.504 658.348 114.148 658.172 114.758 657.82C115.367 657.469 115.809 657.012 116.082 656.449V653.848H114.383C111.727 653.848 110.398 654.625 110.398 656.18C110.398 656.859 110.625 657.391 111.078 657.773C111.531 658.156 112.113 658.348 112.824 658.348ZM127.777 649.266C127.449 649.211 127.094 649.184 126.711 649.184C125.289 649.184 124.324 649.789 123.816 651V660H121.648V647.32H123.758L123.793 648.785C124.504 647.652 125.512 647.086 126.816 647.086C127.238 647.086 127.559 647.141 127.777 647.25V649.266ZM134.809 660.234C133.09 660.234 131.691 659.672 130.613 658.547C129.535 657.414 128.996 655.902 128.996 654.012V653.613C128.996 652.355 129.234 651.234 129.711 650.25C130.195 649.258 130.867 648.484 131.727 647.93C132.594 647.367 133.531 647.086 134.539 647.086C136.188 647.086 137.469 647.629 138.383 648.715C139.297 649.801 139.754 651.355 139.754 653.379V654.281H131.164C131.195 655.531 131.559 656.543 132.254 657.316C132.957 658.082 133.848 658.465 134.926 658.465C135.691 658.465 136.34 658.309 136.871 657.996C137.402 657.684 137.867 657.27 138.266 656.754L139.59 657.785C138.527 659.418 136.934 660.234 134.809 660.234ZM134.539 648.867C133.664 648.867 132.93 649.188 132.336 649.828C131.742 650.461 131.375 651.352 131.234 652.5H137.586V652.336C137.523 651.234 137.227 650.383 136.695 649.781C136.164 649.172 135.445 648.867 134.539 648.867Z"
                                 fill="white" />
-                            <path class="line-diare animationWidth" d="M442 723.5L372 653.5H161.5" stroke="white"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path class="line-mampet animationWidth" d="M472 219L422.339 149H273" stroke="white"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path class="line-radang animationWidth" d="M559 349L477.645 323H233" stroke="white"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path class="line-meriang animationWidth" d="M765 580H931.5" stroke="white" stroke-width="2"
+                            <path class="line-diare animationWidth" d="M442 723.5L372 653.5H161.5" stroke="white" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
-                            <path class="line-nyeri animationWidth" d="M781 484H947.5" stroke="white" stroke-width="2"
+                            <path class="line-mampet animationWidth" d="M472 219L422.339 149H273" stroke="white" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
-                            <path class="line-lelah animationWidth" d="M723 406H889.5" stroke="white" stroke-width="2"
+                            <path class="line-radang animationWidth" d="M559 349L477.645 323H233" stroke="white" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
-                            <path class="line-kepala animationWidth" d="M614 33H780.5" stroke="white" stroke-width="2"
+                            <path class="line-meriang animationWidth" d="M765 580H931.5" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path class="line-nyeri animationWidth" d="M781 484H947.5" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path class="line-lelah animationWidth" d="M723 406H889.5" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path class="line-kepala animationWidth" d="M614 33H780.5" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path class="line-batuk animationWidth" d="M576 304H860" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path class="line-napas animationWidth" d="M225 518H488" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path class="line-hilang animationWidth" d="M273 232L466 232" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path class="line-rasa animationWidth" d="M507 250H778L819 210.5" stroke="white" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
-                            <path class="line-batuk animationWidth" d="M576 304H860" stroke="white" stroke-width="2"
+                            <path class="line-pusing animationWidth" d="M484.5 118L444.5 32.5H329.5" stroke="white" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
-                            <path class="line-napas animationWidth" d="M225 518H488" stroke="white" stroke-width="2"
+                            <path class="line-demam animationWidth" d="M565.5 227.5L681.5 111.5H788.5" stroke="white" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
-                            <path class="line-hilang animationWidth" d="M273 232L466 232" stroke="white"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path class="line-rasa animationWidth" d="M507 250H778L819 210.5" stroke="white"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path class="line-pusing animationWidth" d="M484.5 118L444.5 32.5H329.5" stroke="white"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path class="line-demam animationWidth" d="M565.5 227.5L681.5 111.5H788.5" stroke="white"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             <defs>
                                 <clipPath id="clip0">
-                                    <rect width="615.501" height="1117.24" fill="white"
-                                        transform="translate(243.749 12)" />
+                                    <rect width="615.501" height="1117.24" fill="white" transform="translate(243.749 12)" />
                                 </clipPath>
                             </defs>
-                        </svg>
-
-                    </picture>
+                        </svg>                    </picture>
                 </div>
             </div>
             <div class="bgAnimation">
                 <div class="pos-relative imgWorld__wrap">
-                    <div class="imgWorld textOpac" id="animationWorld"></div>
+                    <picture class="imgWorld textOpac">
+                        <img srcset="./asset/images/world.png" alt="" class="" loading="lazy">
+                    </picture>
                     <picture class="imgSpot textOpac">
                         <img srcset="./asset/images/spot.png" alt="" class="" loading="lazy">
                     </picture>
                 </div>
+            </div>
+            <div class="bgAnimation">
+                <picture class="imgPlane moveLeft textOpac">
+                    <source srcset="./asset/images/plane-small.png" media="(max-width: 768px)" alt="">
+                    <img srcset="./asset/images/plane.png" alt="" class="" loading="lazy">
+                </picture>
+            </div>
+            <div class="bgAnimation">
+                <picture class="imgVaclab">
+                    <source srcset="./asset/images/vaccine-lab-small.png" media="(max-width: 768px)" alt="">
+                    <img srcset="./asset/images/vaccine-lab.png" alt="" class="" loading="lazy">
+                </picture>
+                <div class="bgVacdesk"></div>
             </div>
         </div>
         <!-- Template Content Color -->
@@ -702,28 +711,29 @@
             </div>
             <div class="section" data-anchor="" data-tooltip="province">
                 <div class="articleContent text-center">
-                    
+
                 </div>
             </div>
-            <div class="section" data-anchor="">
+            <div class="section" data-anchor="plane">
                 <div class="articleContent text-center">
-                    <p>
-                        Pesawat dari China terbang ke Indonesia membawa vaksin CoronaVac dari Sinovac <br>pada 6 Desember
+                    <p class="text8 textBottom">
+                        Pesawat dari China terbang ke Indonesia membawa vaksin CoronaVac dari Sinovac <br>pada 6
+                        Desember
                         2020.
                     </p>
                 </div>
             </div>
             <div class="section" data-anchor="">
                 <div class="articleContent text-center">
-                    <p>
+                    <p class="textTop">
                         Vaksin tersebut langsung dibawa ke Bio Farma di Bandung untuk disimpan lebih <br>dulu, kemudian
                         dikirim ke seluruh Indonesia.
                     </p>
                 </div>
             </div>
-            <div class="section" data-anchor="">
+            <div class="section" data-anchor="" data-anchor="distribution">
                 <div class="articleContent text-center">
-                    <p>
+                    <p class="textTop textBrown">
                         Pengembangan vaksin pun dikebut dan per akhir 2020, vaksin dari <br>beberapa perusahaan farmasi
                         global sudah didistribusikan.
                     </p>
@@ -731,26 +741,167 @@
             </div>
             <div class="section" data-anchor="">
                 <div class="articleContent text-center">
-                    <p>
+                    <p class="textTop textBrown">
                         Inggris menjadi negara pertama yang menggelar vaksinasi bagi <br>warganya
                     </p>
                 </div>
             </div>
             <div class="section" data-anchor="">
                 <div class="articleContent text-center">
-                    <p>
+                    <p class="textTop textBrown">
                         Sedangkan Indonesia memulai vaksinasi pada<br>
                         pekan kedua Januari 2021.
                     </p>
                 </div>
             </div>
-            <div class="section" data-anchor="vaksin">
+            <div class="section bgVaccine" data-anchor="vaccine">
                 <div class="articleContent text-center">
-                    <p class="articleTitle--small textTop">
-                        Berbagai Jenis <br>Vaksin yang ada <br>di Dunia
-                    </p>
+                    <div class="articleTitle--small">
+                        <p class="vaccineBox">
+                            Berbagai Jenis <br>Vaksin yang ada <br>di Dunia
+                        </p>
+                    </div>
+                </div>
+                <div class="vaccineNav">
+                    <div class="vaccineList display-flex slider-nav">
+                        <div class="vaccineItem">
+                            <img data-src="./asset/images/cursor.png" alt="" class="vaccineCursor">
+                            <img data-src="./asset/images/v-pfizer.png" alt="" class="vaccineBottle">
+                        </div>
+                        <div class="vaccineItem">
+                            <img data-src="./asset/images/v-moderna.png" alt="" class="vaccineBottle">
+                        </div>
+                        <div class="vaccineItem">
+                            <img data-src="./asset/images/v-sinopharm.png" alt="" class="vaccineBottle">
+                        </div>
+                        <div class="vaccineItem">
+                            <img data-src="./asset/images/v-astrazeneca.png" alt="" class="vaccineBottle">
+                        </div>
+                        <div class="vaccineItem">
+                            <img data-src="./asset/images/v-sinovac.png" alt="" class="vaccineBottle">
+                        </div>
+                    </div>
+                </div>
+                <div class="vaccineFor">
+                    <div class="vaccineText slider-for">
+                        <div class="vaccineText__item">
+                            <div class="vaccineText__wrap">
+                                <div class="vaccineClose">x</div>
+                                <img data-src="./asset/images/logo-pfizer.png" alt="" class="vaccineLogo">
+                                <div class="vaccineContent">
+                                    <p>
+                                        Vaksin ini menggunakan Messenger RNA (mRNA) yaitu sebuah metode yang memakai
+                                        kode
+                                        genetik
+                                        yang
+                                        dimodifikasi. Dikembangkan oleh pasangan suami istri Ugur Sahin-Ozlem Tureci
+                                        yang
+                                        awalnya
+                                        digunakan untuk terapi penyembuhan kanker, tetapi kemudian dikembangkan untuk
+                                        mengatasi
+                                        penyakit
+                                        akibat virus.
+                                    </p>
+                                    <p>
+                                        Pada Maret 2020, BioNTech yang didirikan oleh pasangan suami istri ini menjalin
+                                        kemitraan
+                                        dengan
+                                        Pfizer dan perusahaan farmasi China, Fosun. Tingkat efikasinya diklaim mencapai
+                                        95%
+                                        dan
+                                        harus
+                                        disimpan di suhu -70 derajat Celcius.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vaccineText__item">
+                            <div class="vaccineText__wrap">
+                                <div class="vaccineClose">x</div>
+                                <img data-src="./asset/images/logo-moderna.png" alt="" class="vaccineLogo">
+                                <div class="vaccineContent">
+                                    <p>
+                                        Diberi nama Moderna COVID-19 Vaccine dan juga menggunakan mRNA. Digunakan di AS
+                                        dan
+                                        Kanada
+                                        dengan tingkat efikasinya mencapai 94,1%. Vaksin buatan Moderna harus disimpan
+                                        di
+                                        suhu
+                                        -20
+                                        derajat Celcius. Perusahaan yang berbasis di AS ini juga mengembangkan vaksin
+                                        untuk
+                                        Zika,
+                                        tumor,
+                                        chikungunya, dan beberapa penyakit lainnya.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vaccineText__item">
+                            <div class="vaccineText__wrap">
+                                <div class="vaccineClose">x</div>
+                                <img data-src="./asset/images/logo-sinopharm.png" alt=""
+                                    class="vaccineLogo vaccineLogo--small">
+                                <div class="vaccineContent">
+                                    <p>Hasil uji klinis di Uni Arab Emirat (UAE) menunjukkan tingkat efikasi vaksin
+                                        buatan
+                                        perusahan
+                                        BUMN China ini sebesar 86%. Vaksin ini dikembangkan dengan menggunakan virus
+                                        corona
+                                        yang
+                                        telah
+                                        dilemahkan dan dapat disimpan pada suhu antara 2-8 derajat Celcius. Beberapa
+                                        negara
+                                        lain
+                                        yang
+                                        menggunakan vaksin ini adalah Argentina, Maroko, Bahrain, dan Mesir.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vaccineText__item">
+                            <div class="vaccineText__wrap">
+                                <div class="vaccineClose">x</div>
+                                <img data-src="./asset/images/logo-astrazeneca.png" alt="" class="vaccineLogo">
+                                <div class="vaccineContent">
+                                    <p>Vaksin ini dikembangkan bersama oleh Oxford University dan AstraZeneca, sebuah
+                                        perusahaan
+                                        farmasi asal Inggris. Tingkat efikasinya sebesar 62% dan menggunakan mRNA.
+                                        Vaksin
+                                        yang
+                                        dapat
+                                        disimpan pada suhu 2-8 derajat Celcius ini antara lain digunakan di Inggris,
+                                        India,
+                                        Argentina,
+                                        Meksiko, dan Maroko.</p>
+
+                                    <p>Vaksin ini bisa dikembangkan dengan cepat karena para peneliti Oxford sudah
+                                        mengerjakan
+                                        pengembangan vaksin yang bisa diadaptasi untuk beragam penyakit sejak beberapa
+                                        tahun
+                                        sebelumnya.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vaccineText__item">
+                            <div class="vaccineText__wrap">
+                                <div class="vaccineClose">x</div>
+                                <img data-src="./asset/images/logo-sinovac.png" alt="" class="vaccineLogo">
+                                <div class="vaccineContent">
+                                    Vaksin buatan perusahaan China ini dinamakan CoronaVac dan menggunakan virus corona
+                                    yang
+                                    telah
+                                    dilemahkan. Vaksin ini menjadi sorotan setelah tingkat efikasinya menunjukkan angka
+                                    yang
+                                    berbeda-beda di tiga negara yang menggelar uji klinis. Brasil menyebutkan angkanya
+                                    50,4%,
+                                    Turki
+                                    91,25%, sedangkan Indonesia 65,3%. Vaksin ini dapat disimpan pada suhu 2-8 derajat
+                                    Celcius.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="imgLab__wrap">
+                    <div class="bgGear"></div>
                     <img data-src="./asset/images/lab-gear.png" alt="" class="imgLabgear">
                 </div>
             </div>
@@ -948,13 +1099,12 @@
         <!-- Fullpage Content -->
     </main>
     <script type="text/javascript" src="./asset/js/jquery-3.5.0.min.js"></script>
-    <script type="text/javascript" src="./asset/js/picturefill.min.js" async></script>
-    <script type="text/javascript" src="./asset/js/picturefill-background.js"></script>
     <script type="text/javascript" src="./asset/js/scrolloverflow.min.js"></script>
     <script type="text/javascript" src="./asset/js/bodymovin.js"></script>
-    <script type="text/javascript" src="./asset/js/fullpage.js"></script>
+    <script type="text/javascript" src="./asset/js/fullpage.min.js"></script>
     <script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
     <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
+    <script type="text/javascript" src="./asset/js/slick.min.js"></script>
     <script>
         $(document).ready(function () {
             new fullpage('#fullpage', {
@@ -965,7 +1115,6 @@
                 //navigation: true,
                 anchors: ['cover', 'start'],
                 scrollOverflow: true,
-                //sectionsColor: ['#1B335F','#1A9BFF', '#6D4AB6', '#3DBBF1', '#89D0F8', '#ccddff','#F1C270','#78D4FF','#EF6868','#ACDBEF','#FFE7A1','#C2E7AF','#D9CAE8','#35C99E','#1EAAC9'],
     
                 onLeave: function (origin, destination, direction) {
                     var leavingSection = this;
@@ -1148,13 +1297,14 @@
                         console.log('12up');
                     }
                     if (origin.index == 12 && direction == 'down') {
+                        //$(".imgXray").velocity({ left: "40%" }, { delay: 0, duration: 0 });
                         $(".imgParticle").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
                         $(".imgParticle--2").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
-                        $(".imgXray").velocity({ scale: 0.65, left: "40%" }, {
-                            duration: 200,
+                        $(".imgXray").velocity({ opacity: 0, scale: 0.65, left: "40%" }, {
+                            duration: 400,
                             delay: 0,
                             begin: function () {
-                                $(".imgXray").velocity({ opacity: 0 }, { delay: 0, duration: 200 });
+                                $(".imgXray").removeClass("moveUp");
                             },
                             complete: function () {
                                 $(".imgXraylines").velocity({ opacity: "1" }, { delay: 0, duration: 200 });
@@ -1171,11 +1321,12 @@
                                 $(".line-rasa").addClass("active");
                                 $(".line-pusing").addClass("active");
                                 $(".line-demam").addClass("active");
+    
                                 console.log('lines');
                             }
                         });
-                        $(".imgXray").removeClass("moveUp");
-                        $(".imgXray").addClass("moveDown");
+                        //$(".imgXray").removeClass("moveUp");
+                        //$(".imgXray").addClass("moveDown");
     
                         $(".bgColor--yblue").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
                         console.log('12down');
@@ -1212,16 +1363,16 @@
                         console.log('14up');
                     }
                     if (origin.index == 14 && direction == 'down') {
-                        $(".text7").removeClass("textOpac");
-                        $(".spot").velocity({ opacity: "1" }, { delay: 800, duration: 200 });
+                        $(".text7").velocity({ opacity: "1", bottom: "0" }, { delay: 200, duration: 700 });
+                        $(".imgSpot").velocity({ opacity: "1" }, { delay: 800, duration: 200 });
                         $(".imgWorld").velocity({ opacity: "1" }, {
-                            duration: 200,
-                            delay: 700,
+                            duration: 700,
+                            delay: 200,
                             begin: function () {
-                                $(".spot").velocity({ opacity: "0" }, { delay: 700, duration: 200 });
+                                $(".imgSpot").velocity({ opacity: "0" }, { delay: 700, duration: 200 });
                             },
                             complete: function () {
-                                $(".spot").velocity({ opacity: "1" }, { delay: 2100, duration: 200 });
+                                $(".imgSpot").velocity({ opacity: "1" }, { delay: 2100, duration: 200 });
                             }
                         });
                         console.log('14down');
@@ -1231,13 +1382,78 @@
                         $(".imgWorld").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
                         $(".text7").addClass("textOpac");
                     }
-                    if (origin.index == 15 && direction == 'down') {
-                        $(".text7").addClass("textOpac");
+                    if (origin.index == 16 && direction == 'down') {
+                        $(".text7").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                        $(".imgSpot").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                        $(".imgWorld").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                        console.log('16down');
+                    }
+                    if (origin.index == 19 && direction == 'up') {
+                        $(".imgPlane").velocity({ opacity: "0" });
+                        console.log('19up');
+                    }
+                    if (origin.index == 19 && direction == 'down') {
+                        $(".imgPlane").velocity({ opacity: "1" }, {
+                            duration: 0,
+                            delay: 200,
+                            begin: function () {
+    
+                            },
+                            complete: function () {
+                                $(".imgPlane").addClass("moveCenter");
+                            }
+                        });
+                        console.log('19down');
+                    }
+                    if (origin.index == 20 && direction == 'up') {
+                        $(".imgPlane").removeClass("moveCenter moveBottom");
+                        console.log('20up');
+                    }
+                    if (origin.index == 20 && direction == 'down') {
+                        $(".imgPlane").removeClass("moveCenter");
+                        $(".imgPlane").addClass("moveBottom");
+                    }
+                    if (origin.index == 21 && direction == 'up') {
+                        $(".imgPlane").velocity({ opacity: "0" });
+                        $(".bgColor--orange").fadeOut(300);
+                        console.log('21up');
+                    }
+                    if (origin.index == 21 && direction == 'down') {
+                        $(".imgPlane").velocity({ opacity: "0" }, { delay: 0, duration: 0 });
+                        $(".bgColor--orange").velocity({ left: "0" }, {
+                            duration: 700,
+                            delay: 200,
+                            begin: function () {
+                                $(".imgVaclab").addClass("moveLeft");
+                            },
+                            complete: function () {
+    
+                            }
+                        });
+                        $(".bgVacdesk").velocity({ left: "0" }, { delay: 200, duration: 700 });
+                        console.log('21down');
+                    }
+                    if (origin.index == 22 && direction == 'up') {
+                        $(".bgColor--orange").velocity({ left: "100%" }, {
+                            duration: 700,
+                            delay: 200,
+                            begin: function () {
+                                $(".imgVaclab").removeClass("moveLeft");
+                            },
+                            complete: function () {
+    
+                            }
+                        });
+                        $(".bgVacdesk").velocity({ left: "100%" }, { delay: 200, duration: 700 });
+                    }
+                    if (origin.index == 24 && direction == 'down') {
+                        console.log('24down');
                     }
                     else if (origin.index == 1 && direction == 'up') {
                         //alert("Going to section 1!");
                     }
                 },
+    
             });
     
             $(document).on('click', '#moveTo', function () {
@@ -1245,10 +1461,93 @@
                 console.log('start');
             });
     
+            $(".vaccineBottle").on('click', function () {
+                $(".vaccineText__item").addClass("active");
+                $(".vaccineText").addClass("active");
+                $(".vaccineCursor").fadeOut(700);
+                //fullpage_api.setAllowScrolling(false);
+                //console.log('pop');
+            });
+            $(".vaccineClose").on('click', function () {
+                $(".vaccineText__item").removeClass("active");
+                $(".vaccineText").removeClass("active");
+                //fullpage_api.setAllowScrolling(true);
+            });
+    
             // BODYMOVIN Animation
     
             // 1
+            /*
+                    var animation = bodymovin.loadAnimation({
+                        container: document.getElementById('animationWorld'),
+                        renderer: 'svg',
+                        loop: true,
+                        autoplay: true,
+                        path: 'asset/json/Peta-Dunia-dan-animasi-Penyebaran-Covid.json',
+                        name: 'myAnimation',
+                    });
+                    */
         });
+        // Mobile Version
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.slider-nav'
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                dots: false,
+                centerMode: false,
+                focusOnSelect: true,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+            $('.slick-arrow').html('');
+        } else {
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                dots: false,
+                focusOnSelect: false,
+                swipeToSlide: false,
+                swipe: false,
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 5,
+                dots: false,
+                centerMode: false,
+                focusOnSelect: true,
+                swipeToSlide: false,
+                infinite: false,
+                accessibility: false
+            });
+    
+            let popVac = $('.slider-for');
+            $('.slider-nav .slick-slide').on('click', function (event) {
+                popVac.slick('slickGoTo', $(this).data('slickIndex'));
+            });
+        }
     </script>
 </body>
 

@@ -1,11 +1,10 @@
 <script type="text/javascript" src="./asset/js/jquery-3.5.0.min.js"></script>
-<script type="text/javascript" src="./asset/js/picturefill.min.js" async></script>
-<script type="text/javascript" src="./asset/js/picturefill-background.js"></script>
 <script type="text/javascript" src="./asset/js/scrolloverflow.min.js"></script>
 <script type="text/javascript" src="./asset/js/bodymovin.js"></script>
-<script type="text/javascript" src="./asset/js/fullpage.js"></script>
+<script type="text/javascript" src="./asset/js/fullpage.min.js"></script>
 <script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
 <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
+<script type="text/javascript" src="./asset/js/slick.min.js"></script>
 <script>
     $(document).ready(function () {
         new fullpage('#fullpage', {
@@ -16,7 +15,6 @@
             //navigation: true,
             anchors: ['cover', 'start'],
             scrollOverflow: true,
-            //sectionsColor: ['#1B335F','#1A9BFF', '#6D4AB6', '#3DBBF1', '#89D0F8', '#ccddff','#F1C270','#78D4FF','#EF6868','#ACDBEF','#FFE7A1','#C2E7AF','#D9CAE8','#35C99E','#1EAAC9'],
 
             onLeave: function (origin, destination, direction) {
                 var leavingSection = this;
@@ -199,13 +197,14 @@
                     console.log('12up');
                 }
                 if (origin.index == 12 && direction == 'down') {
+                    //$(".imgXray").velocity({ left: "40%" }, { delay: 0, duration: 0 });
                     $(".imgParticle").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
                     $(".imgParticle--2").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
-                    $(".imgXray").velocity({ scale: 0.65, left: "40%" }, {
-                        duration: 200,
+                    $(".imgXray").velocity({ opacity: 0, scale: 0.65, left: "40%" }, {
+                        duration: 400,
                         delay: 0,
                         begin: function () {
-                            $(".imgXray").velocity({ opacity: 0 }, { delay: 0, duration: 200 });
+                            $(".imgXray").removeClass("moveUp");
                         },
                         complete: function () {
                             $(".imgXraylines").velocity({ opacity: "1" }, { delay: 0, duration: 200 });
@@ -222,11 +221,12 @@
                             $(".line-rasa").addClass("active");
                             $(".line-pusing").addClass("active");
                             $(".line-demam").addClass("active");
+
                             console.log('lines');
                         }
                     });
-                    $(".imgXray").removeClass("moveUp");
-                    $(".imgXray").addClass("moveDown");
+                    //$(".imgXray").removeClass("moveUp");
+                    //$(".imgXray").addClass("moveDown");
 
                     $(".bgColor--yblue").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
                     console.log('12down');
@@ -263,16 +263,16 @@
                     console.log('14up');
                 }
                 if (origin.index == 14 && direction == 'down') {
-                    $(".text7").removeClass("textOpac");
-                    $(".spot").velocity({ opacity: "1" }, { delay: 800, duration: 200 });
+                    $(".text7").velocity({ opacity: "1", bottom: "0" }, { delay: 200, duration: 700 });
+                    $(".imgSpot").velocity({ opacity: "1" }, { delay: 800, duration: 200 });
                     $(".imgWorld").velocity({ opacity: "1" }, {
-                        duration: 200,
-                        delay: 700,
+                        duration: 700,
+                        delay: 200,
                         begin: function () {
-                            $(".spot").velocity({ opacity: "0" }, { delay: 700, duration: 200 });
+                            $(".imgSpot").velocity({ opacity: "0" }, { delay: 700, duration: 200 });
                         },
                         complete: function () {
-                            $(".spot").velocity({ opacity: "1" }, { delay: 2100, duration: 200 });
+                            $(".imgSpot").velocity({ opacity: "1" }, { delay: 2100, duration: 200 });
                         }
                     });
                     console.log('14down');
@@ -282,13 +282,78 @@
                     $(".imgWorld").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
                     $(".text7").addClass("textOpac");
                 }
-                if (origin.index == 15 && direction == 'down') {
-                    $(".text7").addClass("textOpac");
+                if (origin.index == 16 && direction == 'down') {
+                    $(".text7").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".imgSpot").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    $(".imgWorld").velocity({ opacity: "0" }, { delay: 0, duration: 200 });
+                    console.log('16down');
+                }
+                if (origin.index == 19 && direction == 'up') {
+                    $(".imgPlane").velocity({ opacity: "0" });
+                    console.log('19up');
+                }
+                if (origin.index == 19 && direction == 'down') {
+                    $(".imgPlane").velocity({ opacity: "1" }, {
+                        duration: 0,
+                        delay: 200,
+                        begin: function () {
+
+                        },
+                        complete: function () {
+                            $(".imgPlane").addClass("moveCenter");
+                        }
+                    });
+                    console.log('19down');
+                }
+                if (origin.index == 20 && direction == 'up') {
+                    $(".imgPlane").removeClass("moveCenter moveBottom");
+                    console.log('20up');
+                }
+                if (origin.index == 20 && direction == 'down') {
+                    $(".imgPlane").removeClass("moveCenter");
+                    $(".imgPlane").addClass("moveBottom");
+                }
+                if (origin.index == 21 && direction == 'up') {
+                    $(".imgPlane").velocity({ opacity: "0" });
+                    $(".bgColor--orange").fadeOut(300);
+                    console.log('21up');
+                }
+                if (origin.index == 21 && direction == 'down') {
+                    $(".imgPlane").velocity({ opacity: "0" }, { delay: 0, duration: 0 });
+                    $(".bgColor--orange").velocity({ left: "0" }, {
+                        duration: 700,
+                        delay: 200,
+                        begin: function () {
+                            $(".imgVaclab").addClass("moveLeft");
+                        },
+                        complete: function () {
+
+                        }
+                    });
+                    $(".bgVacdesk").velocity({ left: "0" }, { delay: 200, duration: 700 });
+                    console.log('21down');
+                }
+                if (origin.index == 22 && direction == 'up') {
+                    $(".bgColor--orange").velocity({ left: "100%" }, {
+                        duration: 700,
+                        delay: 200,
+                        begin: function () {
+                            $(".imgVaclab").removeClass("moveLeft");
+                        },
+                        complete: function () {
+
+                        }
+                    });
+                    $(".bgVacdesk").velocity({ left: "100%" }, { delay: 200, duration: 700 });
+                }
+                if (origin.index == 24 && direction == 'down') {
+                    console.log('24down');
                 }
                 else if (origin.index == 1 && direction == 'up') {
                     //alert("Going to section 1!");
                 }
             },
+
         });
 
         $(document).on('click', '#moveTo', function () {
@@ -296,8 +361,91 @@
             console.log('start');
         });
 
+        $(".vaccineBottle").on('click', function () {
+            $(".vaccineText__item").addClass("active");
+            $(".vaccineText").addClass("active");
+            $(".vaccineCursor").fadeOut(700);
+            //fullpage_api.setAllowScrolling(false);
+            //console.log('pop');
+        });
+        $(".vaccineClose").on('click', function () {
+            $(".vaccineText__item").removeClass("active");
+            $(".vaccineText").removeClass("active");
+            //fullpage_api.setAllowScrolling(true);
+        });
+
         // BODYMOVIN Animation
 
         // 1
+        /*
+                var animation = bodymovin.loadAnimation({
+                    container: document.getElementById('animationWorld'),
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: 'asset/json/Peta-Dunia-dan-animasi-Penyebaran-Covid.json',
+                    name: 'myAnimation',
+                });
+                */
     });
+    // Mobile Version
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: '.slider-nav'
+        });
+        $('.slider-nav').slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for',
+            dots: false,
+            centerMode: false,
+            focusOnSelect: true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+        $('.slick-arrow').html('');
+    } else {
+        $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            dots: false,
+            focusOnSelect: false,
+            swipeToSlide: false,
+            swipe: false,
+        });
+        $('.slider-nav').slick({
+            slidesToShow: 5,
+            dots: false,
+            centerMode: false,
+            focusOnSelect: true,
+            swipeToSlide: false,
+            infinite: false,
+            accessibility: false
+        });
+
+        let popVac = $('.slider-for');
+        $('.slider-nav .slick-slide').on('click', function (event) {
+            popVac.slick('slickGoTo', $(this).data('slickIndex'));
+        });
+    }
 </script>
