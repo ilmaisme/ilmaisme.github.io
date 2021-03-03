@@ -135,13 +135,12 @@
             <div class="bgColor bgStep--4"></div>
             <div class="bgColor bgColor--green"></div>
         </div>
-        <div class="bgOverlay"></div>
+        <div class="bgOverlay bgOverlay__top"></div>
         <!-- Template Background Color -->
         <!-- Template Content Color -->
+        <!-- preloader -->
+        <div class="preloader" id="animationPreload"></div>
         <div class="bgStatic">
-            <!-- preloader -->
-            <div class="bgAnimation">
-            </div>
             <!-- opening -->
             <div class="bgAnimation">
                 <picture class="bgOpening">
@@ -461,12 +460,35 @@
                 </picture>
             </div>
             <div class="bgAnimation">
-                <div class="imgAirport textOpac">
-                    <img data-src="./asset/images/airport.png" alt="" class="">
+                <div class="imgFlag imgFlag--3">
+                    <div class="imgFlagSock">
+                        <img src="./asset/images/airportSock.png" alt="" class="">
+                    </div>
                 </div>
-                <div class="imgAirport2 textOpac">
-                    <img data-src="./asset/images/airport2.png" alt="" class="">
+                <div class="imgFlag imgFlag--4">
+                    <div class="imgFlagSock">
+                        <img src="./asset/images/airportSock.png" alt="" class="">
+                    </div>
                 </div>
+                <div class="imgFlag imgFlag--2">
+                    <div class="imgFlagSock">
+                        <img src="./asset/images/airportSock.png" alt="" class="">
+                    </div>
+                </div>
+                <picture class="imgAirport imgAirportBuilding imgAirportBuilding--1 textOpac">
+                    <img src="./asset/images/airport01.png" alt="" class="">
+                </picture>
+                <picture class="imgAirport2 imgAirportBuilding imgAirportBuilding--2 textOpac">
+                    <img src="./asset/images/airport02.png" alt="" class="">
+                </picture>
+                
+                <div class="imgFlag imgFlag--1">
+                    <div class="imgFlagSock">
+                        <img src="./asset/images/airportSock.png" alt="" class="">
+                    </div>
+                </div>
+                <div class="imgAirport imgAirportGround textOpac"></div>
+                <div class="imgAirport2 imgAirportGround textOpac"></div>
             </div>
         </div>
 
@@ -1229,8 +1251,10 @@
                             Berbagai Jenis <br>Vaksin yang ada <br>di Dunia
                         </p>
                     </div>
-                    <div class="imgRobotMachine imgRobotMachine--1"><img data-src="./asset/images/imgRobotMachine.png" alt=""></div>
-                    <div class="imgRobotMachine imgRobotMachine--2"><img data-src="./asset/images/imgRobotMachine2.png" alt=""></div>
+                    <div class="imgRobotMachine imgRobotMachine--1"><img data-src="./asset/images/imgRobotMachine.png"
+                            alt=""></div>
+                    <div class="imgRobotMachine imgRobotMachine--2"><img data-src="./asset/images/imgRobotMachine2.png"
+                            alt=""></div>
                     <div class="imgRobot imgRobot--1" id="animationRobot"></div>
                     <div class="imgRobot imgRobot--2" id="animationRobot2"></div>
                 </div>
@@ -1716,9 +1740,9 @@
     <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
     <script type="text/javascript" src="./asset/js/slick.min.js"></script>
     <script>
-        $(document).ready(function () {
-            // BODYMOVIN Animation
+        $(document).ready(function () {     
     
+            // BODYMOVIN Animation
             // 1
             var animation = bodymovin.loadAnimation({
                 container: document.getElementById('animationWorld'),
@@ -1838,7 +1862,7 @@
                         $(".imgWuhan").addClass("pushUp");
                     }
                     if (origin.index == 1 && direction == 'down') {
-                        $(".bgOverlay").velocity({ opacity: "1", display: "block" }, { delay: 800, duration: 700 });
+                        $(".bgOverlay__top").velocity({ opacity: "1", display: "block" }, { delay: 800, duration: 700 });
                         $(".text2").velocity({ opacity: 1, display: "block" }, {
                             duration: 700,
                             delay: 1600,
@@ -1851,7 +1875,7 @@
                         });
                     }
                     if (origin.index == 2 && direction == 'up') {
-                        $(".bgOverlay").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                        $(".bgOverlay__top").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     }
                     if (origin.index == 2 && direction == 'down') {
                         $(".text3").velocity({ opacity: "1", display: "block" }, { delay: 800, duration: 700 });
@@ -1878,7 +1902,7 @@
                         $(".text3").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                         $(".text4").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                         $(".text5").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
-                        $(".bgOverlay").fadeOut(300);
+                        $(".bgOverlay__top").fadeOut(300);
                         $(".bgOpening").fadeOut(300);
                         $(".bgColor--blue").fadeOut(300);
                         $(".imgWuhan").fadeOut(100);
@@ -1890,7 +1914,7 @@
                     if (origin.index == 6 && direction == 'up') {
                         $(".text5").velocity({ opacity: "1", display: "flex", bottom: "0" }, { delay: 200, duration: 700 });
                         $(".text5").removeClass("moveUp");
-                        $(".bgOverlay").fadeIn(300);
+                        $(".bgOverlay__top").fadeIn(300);
                         $(".bgOpening").fadeIn(300);
                         $(".imgWuhan").fadeIn(300);
                         $(".bgColor--purple").fadeOut(300);
@@ -2198,28 +2222,28 @@
                         });
                         $(".text10").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                         $(".imgAirport").velocity({ left: "0", opacity: 1, display: "block" }, { delay: 0, duration: 700 });
+                        $(".imgFlag--1").velocity({ opacity: 1, display: "block" }, { delay: 400, duration: 700 });
+                        $(".imgFlag--2").velocity({ opacity: 1, display: "block" }, { delay: 400, duration: 700 });
                         console.log('18down');
                     }
-                    /*
-                    if (origin.index == 19 && direction == 'up') {
-                        $(".imgPlane").velocity({ opacity: "0", display: "none" });
-                        
-                        console.log('19up');
-                    }
-                    if (origin.index == 19 && direction == 'down') {
-                        console.log('19down');
-                    }*/
                     if (origin.index == 19 && direction == 'up') {
                         $(".text10").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
                         $(".imgPlane").removeClass("moveCenter moveBottom");
                         $(".bgStatic--plane").removeClass("active");
+                        $(".imgAirport").velocity({ left: "100%", opacity: 0, display: "none" }, { delay: 0, duration: 700 });
+                        $(".imgFlag--1").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
+                        $(".imgFlag--2").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
                         console.log('19up');
                     }
                     if (origin.index == 19 && direction == 'down') {
                         $(".imgPlane").removeClass("moveCenter");
                         $(".imgPlane").addClass("moveBottom");
                         $(".imgAirport2").velocity({ left: "0", opacity: 1, display: "block" }, { delay: 0, duration: 700 });
-                        $(".imgAirport1").velocity({ left: "-100%", opacity: 0, display: "none" }, { delay: 0, duration: 700 });
+                        $(".imgAirport").velocity({ left: "-100%", opacity: 0, display: "none" }, { delay: 0, duration: 700 });
+                        $(".imgFlag--1").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
+                        $(".imgFlag--2").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
+                        $(".imgFlag--3").velocity({ opacity: 1, display: "block" }, { delay: 400, duration: 700 });
+                        $(".imgFlag--4").velocity({ opacity: 1, display: "block" }, { delay: 400, duration: 700 });
                         console.log('19down');
                     }
                     if (origin.index == 20 && direction == 'up') {
@@ -2228,9 +2252,15 @@
                         $(".bgColor--orange").velocity({ left: "100%", display: "none" })
                         $(".imgAirport2").velocity({ left: "100%", opacity: 0, display: "none" }, { delay: 0, duration: 700 });
                         $(".imgAirport").velocity({ left: "0", opacity: 1, display: "block" }, { delay: 0, duration: 700 });
+                        $(".imgFlag--1").velocity({ opacity: 1, display: "block" }, { delay: 400, duration: 700 });
+                        $(".imgFlag--2").velocity({ opacity: 1, display: "block" }, { delay: 400, duration: 700 });
+                        $(".imgFlag--3").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
+                        $(".imgFlag--4").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
                         console.log('20up');
                     }
                     if (origin.index == 20 && direction == 'down') {
+                        $(".imgFlag--3").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
+                        $(".imgFlag--4").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
                         $(".imgAirport2").velocity({ left: "-100%", opacity: 0, display: "none" }, { delay: 0, duration: 700 });
                         $(".imgPlane").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 0 });
                         $(".bgStatic--plane").removeClass("active");
@@ -2249,6 +2279,8 @@
                         console.log('20down');
                     }
                     if (origin.index == 21 && direction == 'up') {
+                        $(".imgFlag--3").velocity({ opacity: 1, display: "block" }, { delay: 400, duration: 700 });
+                        $(".imgFlag--4").velocity({ opacity: 1, display: "block" }, { delay: 400, duration: 700 });
                         $(".bgColor--orange").velocity({ left: "100%", display: "none" }, {
                             duration: 700,
                             delay: 200,
@@ -2630,6 +2662,17 @@
             $(document).on('click', '#moveTo', function () {
                 fullpage_api.moveTo('start', 1);
                 console.log('start');
+            });
+    
+            fullpage_api.setAllowScrolling(false);
+            $(window).on('load', function(){
+                setTimeout(function () {
+                    $("#animationPreload").fadeOut(1000, function () {
+                        $(this).remove();
+                        fullpage_api.setAllowScrolling(true);
+                        console.log('remove');
+                        })
+                }, 1000);
             });
     
             $(".vaccineBottle").on('click', function () {
