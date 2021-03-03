@@ -8,7 +8,7 @@
 <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
 <script type="text/javascript" src="./asset/js/slick.min.js"></script>
 <script>
-    $(document).ready(function () {     
+    $(document).ready(function () {
 
         // BODYMOVIN Animation
         // 1
@@ -30,7 +30,7 @@
             name: 'myAnimation',
         });
         // 3
-        var state = 'play';
+        /*var state = 'play';
         var animationCounter = bodymovin.loadAnimation({
             container: document.getElementById('animationCounter'),
             renderer: 'svg',
@@ -39,7 +39,7 @@
             path: 'asset/json/Infection-Counter/data.json',
             name: 'myAnimation',
         })
-        animationCounter.goToAndStop(0, true);
+        animationCounter.goToAndStop(0, true);*/
         // 4
         var animation = bodymovin.loadAnimation({
             container: document.getElementById('animationIndonesia'),
@@ -426,16 +426,15 @@
                 }
                 if (origin.index == 15 && direction == 'down') {
                     $(".imgWorld2").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
-                    animationCounter.playSegments([0, 14], true);
-                    state = 'play';
+                    counterInfected()
                 }
                 if (origin.index == 16 && direction == 'up') {
                     $(".text7").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
                     console.log('16up');
                 }
                 if (origin.index == 16 && direction == 'down') {
-                    animationCounter.playSegments([14, 27], true);
-                    state = 'pause';
+                    //animationCounter.playSegments([14, 27], true);
+                    //state = 'pause';
 
                     $(".text7").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     $(".imgWorld").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
@@ -459,8 +458,7 @@
                         }
                     });
                     $(".imgWorld2").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
-                    animationCounter.playSegments([0, 14], true);
-                    state = 'play';
+                    counterInfected()
                     console.log('17up');
                 }
                 if (origin.index == 17 && direction == 'down') {
@@ -933,15 +931,27 @@
         });
 
         fullpage_api.setAllowScrolling(false);
-        $(window).on('load', function(){
-            setTimeout(function () {
-                $("#animationPreload").fadeOut(1000, function () {
-                    $(this).remove();
-                    fullpage_api.setAllowScrolling(true);
-                    console.log('remove');
-                    })
-            }, 1000);
-        });
+        setTimeout(function () {
+            $("#animationPreload").fadeOut(1000, function () {
+                $('.preloader').remove();
+                fullpage_api.setAllowScrolling(true);
+                console.log('remove');
+            })
+        }, 1000);
+
+        function counterInfected() {
+            $('.count').each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 4000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        }
 
         $(".vaccineBottle").on('click', function () {
             $(".vaccineText__item").addClass("active");

@@ -24,11 +24,11 @@
     <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:ital,wght@0,500;1,900&family=Rubik:wght@900&display=swap">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:ital,wght@0,500;1,900&family=Rubik:wght@900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Rationale&family=Roboto+Mono&family=Roboto:ital,wght@0,500;1,900&family=Rubik:wght@900&display=swap"
         media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:ital,wght@0,500;1,900&family=Rubik:wght@900&display=swap">
+            href="https://fonts.googleapis.com/css2?family=Rationale&family=Roboto+Mono&family=Roboto:ital,wght@0,500;1,900&family=Rubik:wght@900&display=swap">
     </noscript>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -139,7 +139,9 @@
         <!-- Template Background Color -->
         <!-- Template Content Color -->
         <!-- preloader -->
-        <div class="preloader" id="animationPreload"></div>
+        <div class="preloader">
+            <div class="preloaderWrap" id="animationPreload"></div>
+        </div>
         <div class="bgStatic">
             <!-- opening -->
             <div class="bgAnimation">
@@ -166,7 +168,13 @@
             <div class="bgAnimation">
                 <div class="pos-relative imgWorld__wrap">
                     <div class="imgWorld textOpac" id="animationWorld"></div>
-                    <div class="imgWorld2 textOpac" id="animationCounter"></div>
+                    <div class="imgWorld2 counter textOpac text-center">
+                        <div class="counterNum">
+                            <span class="count">145</span>.<span class="count">253</span>.<span
+                                class="count">107</span>.<span class="count">156</span>
+                        </div>
+                        <div class="counterText">TERINFEKSI</div>
+                    </div>
 
                 </div>
             </div>
@@ -481,7 +489,7 @@
                 <picture class="imgAirport2 imgAirportBuilding imgAirportBuilding--2 textOpac">
                     <img src="./asset/images/airport02.png" alt="" class="">
                 </picture>
-                
+
                 <div class="imgFlag imgFlag--1">
                     <div class="imgFlagSock">
                         <img src="./asset/images/airportSock.png" alt="" class="">
@@ -1740,7 +1748,7 @@
     <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
     <script type="text/javascript" src="./asset/js/slick.min.js"></script>
     <script>
-        $(document).ready(function () {     
+        $(document).ready(function () {
     
             // BODYMOVIN Animation
             // 1
@@ -1762,7 +1770,7 @@
                 name: 'myAnimation',
             });
             // 3
-            var state = 'play';
+            /*var state = 'play';
             var animationCounter = bodymovin.loadAnimation({
                 container: document.getElementById('animationCounter'),
                 renderer: 'svg',
@@ -1771,7 +1779,7 @@
                 path: 'asset/json/Infection-Counter/data.json',
                 name: 'myAnimation',
             })
-            animationCounter.goToAndStop(0, true);
+            animationCounter.goToAndStop(0, true);*/
             // 4
             var animation = bodymovin.loadAnimation({
                 container: document.getElementById('animationIndonesia'),
@@ -2158,16 +2166,15 @@
                     }
                     if (origin.index == 15 && direction == 'down') {
                         $(".imgWorld2").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
-                        animationCounter.playSegments([0, 14], true);
-                        state = 'play';
+                        counterInfected()
                     }
                     if (origin.index == 16 && direction == 'up') {
                         $(".text7").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
                         console.log('16up');
                     }
                     if (origin.index == 16 && direction == 'down') {
-                        animationCounter.playSegments([14, 27], true);
-                        state = 'pause';
+                        //animationCounter.playSegments([14, 27], true);
+                        //state = 'pause';
     
                         $(".text7").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                         $(".imgWorld").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
@@ -2191,8 +2198,7 @@
                             }
                         });
                         $(".imgWorld2").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
-                        animationCounter.playSegments([0, 14], true);
-                        state = 'play';
+                        counterInfected()
                         console.log('17up');
                     }
                     if (origin.index == 17 && direction == 'down') {
@@ -2665,15 +2671,27 @@
             });
     
             fullpage_api.setAllowScrolling(false);
-            $(window).on('load', function(){
-                setTimeout(function () {
-                    $("#animationPreload").fadeOut(1000, function () {
-                        $(this).remove();
-                        fullpage_api.setAllowScrolling(true);
-                        console.log('remove');
-                        })
-                }, 1000);
-            });
+            setTimeout(function () {
+                $("#animationPreload").fadeOut(1000, function () {
+                    $('.preloader').remove();
+                    fullpage_api.setAllowScrolling(true);
+                    console.log('remove');
+                })
+            }, 1000);
+    
+            function counterInfected() {
+                $('.count').each(function () {
+                    $(this).prop('Counter', 0).animate({
+                        Counter: $(this).text()
+                    }, {
+                        duration: 4000,
+                        easing: 'swing',
+                        step: function (now) {
+                            $(this).text(Math.ceil(now));
+                        }
+                    });
+                });
+            }
     
             $(".vaccineBottle").on('click', function () {
                 $(".vaccineText__item").addClass("active");
