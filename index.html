@@ -139,6 +139,9 @@
         <!-- Template Background Color -->
         <!-- Template Content Color -->
         <div class="bgStatic">
+            <!-- preloader -->
+            <div class="bgAnimation">
+            </div>
             <!-- opening -->
             <div class="bgAnimation">
                 <picture class="bgOpening">
@@ -164,6 +167,7 @@
             <div class="bgAnimation">
                 <div class="pos-relative imgWorld__wrap">
                     <div class="imgWorld textOpac" id="animationWorld"></div>
+                    <div class="imgWorld2 textOpac" id="animationCounter"></div>
 
                 </div>
             </div>
@@ -171,9 +175,10 @@
                 <div class="imgIndonesia textOpac" id="animationIndonesia"></div>
             </div>
             <div class="bgAnimation">
+                <div class="imgVaclab imgVaclabMachine" id="animationLabVaccine"></div>
+                <div class="imgVaclab" id="animationLabDesk"></div>
                 <picture class="imgVaclab">
-                    <source srcset="./asset/images/vaccine-lab-small.png" media="(max-width: 768px)" alt="">
-                    <img srcset="./asset/images/vaccine-lab.png" alt="" class="" loading="lazy">
+                    <img srcset="./asset/images/vaccine-lab.png" alt="" class="imgVaclabor" loading="lazy">
                 </picture>
                 <div class="bgVacdesk"></div>
             </div>
@@ -455,7 +460,7 @@
                     <img srcset="./asset/images/bgEnd.png" alt="" class="" loading="lazy">
                 </picture>
             </div>
-            <div class="bgAnimation">                
+            <div class="bgAnimation">
                 <div class="imgAirport textOpac">
                     <img data-src="./asset/images/airport.png" alt="" class="">
                 </div>
@@ -1022,7 +1027,7 @@
                 </div>
             </div>
         </div>
-        <div class="bgStatic bgStatic--plane">            
+        <div class="bgStatic bgStatic--plane">
             <div class="bgAnimation">
                 <picture class="imgPlane moveLeft textOpac">
                     <source srcset="./asset/images/plane-small.png" media="(max-width: 768px)" alt="">
@@ -1037,6 +1042,12 @@
                 <div class="text-center">
                     <h1 class="articleTitle">CERITA COVID-19</h1>
                     <button class="button buttonStart" id="moveTo">MULAI PERJALANAN</button>
+                </div>
+                <div class="cover mobile-hide">
+                    <div id="animationCoverDesktop" class="coverDesktop"></div>
+                </div>
+                <div class="cover desktop-hide">
+                    <div id="animationCoverMobile" class="coverMobile"></div>
                 </div>
             </div>
             <div class="section" data-anchor="" data-tooltip="opening">
@@ -1150,9 +1161,6 @@
             </div>
             <div class="section" data-anchor="">
                 <div class="text-center">
-                    <p>
-                        100.000.000.000 TERINFEKSI
-                    </p>
                 </div>
             </div>
             <div class="section" data-anchor="">
@@ -1189,7 +1197,7 @@
                         dikirim ke seluruh Indonesia.
                     </p>
                 </div>
-                
+
             </div>
             <div class="section" data-anchor="distribution">
                 <div class="articleContent text-center">
@@ -1221,6 +1229,10 @@
                             Berbagai Jenis <br>Vaksin yang ada <br>di Dunia
                         </p>
                     </div>
+                    <div class="imgRobotMachine imgRobotMachine--1"><img data-src="./asset/images/imgRobotMachine.png" alt=""></div>
+                    <div class="imgRobotMachine imgRobotMachine--2"><img data-src="./asset/images/imgRobotMachine2.png" alt=""></div>
+                    <div class="imgRobot imgRobot--1" id="animationRobot"></div>
+                    <div class="imgRobot imgRobot--2" id="animationRobot2"></div>
                 </div>
                 <div class="vaccineNav">
                     <div class="vaccineList display-flex slider-nav">
@@ -1696,13 +1708,119 @@
     </main>
     <script type="text/javascript" src="./asset/js/jquery-3.5.0.min.js"></script>
     <script type="text/javascript" src="./asset/js/scrolloverflow.min.js"></script>
-    <script type="text/javascript" src="./asset/js/bodymovin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"
+        integrity="sha512-BB7rb8ZBAxtdJdB7nwDijJH9NC+648xSzviK9Itm+5APTtdpgKz1+82bDl4znz/FBhd0R7pJ/gQtomnMpZYzRw=="
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="./asset/js/fullpage.min.js"></script>
     <script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
     <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
     <script type="text/javascript" src="./asset/js/slick.min.js"></script>
     <script>
         $(document).ready(function () {
+            // BODYMOVIN Animation
+    
+            // 1
+            var animation = bodymovin.loadAnimation({
+                container: document.getElementById('animationWorld'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'asset/json/Peta-Dunia-Covid/petadunia.json',
+                name: 'myAnimation',
+            });
+            // 2
+            var animation = bodymovin.loadAnimation({
+                container: document.getElementById('animationVirusEntered'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'asset/json/human-with-virus/virus-entered.json',
+                name: 'myAnimation',
+            });
+            // 3
+            var state = 'play';
+            var animationCounter = bodymovin.loadAnimation({
+                container: document.getElementById('animationCounter'),
+                renderer: 'svg',
+                loop: 1,
+                autoplay: false,
+                path: 'asset/json/Infection-Counter/data.json',
+                name: 'myAnimation',
+            })
+            animationCounter.goToAndStop(0, true);
+            // 4
+            var animation = bodymovin.loadAnimation({
+                container: document.getElementById('animationIndonesia'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'asset/json/Indonesia-Covid/Peta-Indonesia-covid.json',
+                name: 'myAnimation',
+            });
+            // 5
+            var animation = bodymovin.loadAnimation({
+                container: document.getElementById('animationLabDesk'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'asset/json/Mejakimia/Meja-Kimia.json',
+                name: 'myAnimation',
+            });
+            // 6
+            var animation = bodymovin.loadAnimation({
+                container: document.getElementById('animationLabVaccine'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'asset/json/Robot-1/Robot.json',
+                name: 'myAnimation',
+            });
+            // 7
+            var animation = bodymovin.loadAnimation({
+                container: document.getElementById('animationRobot2'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'asset/json/Robot-2/Robot.json',
+                name: 'myAnimation',
+            });
+            // 8
+            var animation = bodymovin.loadAnimation({
+                container: document.getElementById('animationRobot'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'asset/json/Robot-Pipet/Robot-Pipet.json',
+                name: 'myAnimation',
+            });
+            // 9
+            var animation = bodymovin.loadAnimation({
+                container: document.getElementById('animationCoverDesktop'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'asset/json/Cover-Desktop/Cover-Desktop.json',
+                name: 'myAnimation',
+            });
+            // 10
+            var animation = bodymovin.loadAnimation({
+                container: document.getElementById('animationCoverMobile'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'asset/json/Cover-Mobile/Cover-Mobile.json',
+                name: 'myAnimation',
+            });
+            // 11
+            var animation = bodymovin.loadAnimation({
+                container: document.getElementById('animationPreload'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'asset/json/preloader/data.json',
+                name: 'myAnimation',
+            });
+    
             new fullpage('#fullpage', {
                 //options here
                 autoScrolling: true,
@@ -1996,33 +2114,40 @@
                     }
                     if (origin.index == 14 && direction == 'down') {
                         $(".text7").velocity({ opacity: "1", display: "block", bottom: "0" }, { delay: 200, duration: 700 });
-                        $(".imgSpot").velocity({ opacity: "1", display: "block" }, { delay: 800, duration: 200 });
                         $(".imgWorld").velocity({ opacity: "1", display: "block" }, {
                             duration: 700,
                             delay: 200,
                             begin: function () {
-                                $(".imgSpot").velocity({ opacity: "0", display: "none" }, { delay: 700, duration: 200 });
+    
                             },
                             complete: function () {
-                                $(".imgSpot").velocity({ opacity: "1", display: "block" }, { delay: 2100, duration: 200 });
+    
                             }
                         });
                         console.log('14down');
                     }
                     if (origin.index == 15 && direction == 'up') {
-                        $(".spot").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                         $(".imgWorld").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                        $(".imgWorld2").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                         $(".text7").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                         console.log('15up');
+                    }
+                    if (origin.index == 15 && direction == 'down') {
+                        $(".imgWorld2").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
+                        animationCounter.playSegments([0, 14], true);
+                        state = 'play';
                     }
                     if (origin.index == 16 && direction == 'up') {
                         $(".text7").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
                         console.log('16up');
                     }
                     if (origin.index == 16 && direction == 'down') {
+                        animationCounter.playSegments([14, 27], true);
+                        state = 'pause';
+    
                         $(".text7").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
-                        $(".imgSpot").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                         $(".imgWorld").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                        $(".imgWorld2").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                         $(".imgIndonesia").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
                         $(".imgIndonesia").addClass("active");
                         console.log('16down');
@@ -2030,6 +2155,20 @@
                     if (origin.index == 17 && direction == 'up') {
                         $(".imgIndonesia").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                         $(".imgIndonesia").removeClass("active");
+                        $(".text7").velocity({ opacity: "1", display: "block", bottom: "0" }, { delay: 200, duration: 700 });
+                        $(".imgWorld").velocity({ opacity: "1", display: "block" }, {
+                            duration: 700,
+                            delay: 200,
+                            begin: function () {
+    
+                            },
+                            complete: function () {
+    
+                            }
+                        });
+                        $(".imgWorld2").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
+                        animationCounter.playSegments([0, 14], true);
+                        state = 'play';
                         console.log('17up');
                     }
                     if (origin.index == 17 && direction == 'down') {
@@ -2511,7 +2650,7 @@
             //});
             $(".quoteClose").on('click', function () {
                 $(".quoteContent").removeClass("active");
-                $(".bgOverlay__quote").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                $(".bgOverlay__quote").removeClass("active");
             });
             function addPositionQuoteTop() {
                 $(".quoteContent").addClass("quoteContent__top");
@@ -2571,7 +2710,7 @@
             $('.slider-quote-nav .slick-slide').on('click', function (event) {
                 popQuote.slick('slickGoTo', $(this).data('slickIndex'));
                 $(".quoteContent").addClass("active");
-                $(".bgOverlay__quote").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
+                $(".bgOverlay__quote").addClass("active");
     
             });
     
@@ -2593,81 +2732,6 @@
                 $(".xrayPop__wrap1").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                 $(".xrayPop__wrap2").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
             }
-    
-            // BODYMOVIN Animation
-    
-            // 1
-            /*var animation = bodymovin.loadAnimation({
-                container: document.getElementById('animationWorld'),
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: 'asset/json/Peta-Dunia-Covid/petadunia.json',
-                name: 'myAnimation',
-            });*/
-            // 2
-            var animation = bodymovin.loadAnimation({
-                container: document.getElementById('animationVirusEntered'),
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: 'asset/json/human-with-virus/virus-entered.json',
-                name: 'myAnimation',
-            });
-            // 3
-            /*var animation = bodymovin.loadAnimation({
-                container: document.getElementById('animationCough'),
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: 'asset/json/Batuk/Batuk.json',
-                name: 'myAnimation',
-            });*/
-            // 4
-            var animation = bodymovin.loadAnimation({
-                container: document.getElementById('animationIndonesia'),
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: 'asset/json/Indonesia-Covid/Peta-Indonesia-covid.json',
-                name: 'myAnimation',
-            });
-            // 5
-            /*var animation = bodymovin.loadAnimation({
-                container: document.getElementById('animationLabDesk'),
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: 'asset/json/Mejakimia/Meja-Kimia.json',
-                name: 'myAnimation',
-            });*/
-            // 6
-            /*var animation = bodymovin.loadAnimation({
-                container: document.getElementById('animationLabVaccine'),
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: 'asset/json/Robot-1/Robot.json',
-                name: 'myAnimation',
-            });*/
-            // 7
-            /*var animation = bodymovin.loadAnimation({
-                container: document.getElementById('animationLabVaccine2'),
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: 'asset/json/Robot-2/Robot.json',
-                name: 'myAnimation',
-            });*/
-            // 8
-            /*var animation = bodymovin.loadAnimation({
-                container: document.getElementById('animationRobot'),
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: 'asset/json/Robot-Pipet/Robot-Pipet.json',
-                name: 'myAnimation',
-            });*/
     
         });
     
