@@ -141,17 +141,20 @@
                             //console.log('test');
                         }
                     });
+                    console.log('1down')
                 }
                 if (origin.index == 2 && direction == 'up') {
                     $(".bgOverlay__top").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text2").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text3").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text4").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text5").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                 }
                 if (origin.index == 2 && direction == 'down') {
                     $(".text3").velocity({ opacity: "1", display: "block" }, { delay: 800, duration: 700 });
                 }
                 if (origin.index == 3 && direction == 'up') {
-                    $(".text3").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
-                    $(".text4").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
-                    $(".text5").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text2").velocity({ opacity: "1", display: "block" }, { delay: 800, duration: 700 });
                 }
                 if (origin.index == 3 && direction == 'down') {
                     $(".text4").velocity({ opacity: "1", display: "flex", bottom: "0" }, { delay: 200, duration: 700 });
@@ -167,6 +170,7 @@
                     $(".text4").removeClass("moveUp");
                 }
                 if (origin.index == 5 && direction == 'down') {
+                    $(".text2").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     $(".text3").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     $(".text4").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     $(".text5").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
@@ -350,6 +354,7 @@
                         complete: function () {
                             $(".imgXraylines").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
                             $(".animationWidth").addClass("active");
+                            $(".textlines").addClass("active");
 
                             //$(".xrayMob .st9").addClass("active");
                             $(".xrayMob .st10").addClass("active");
@@ -487,7 +492,7 @@
                         }
                     });
                     $(".text10").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
-                    $(".imgAirport").velocity({ left: "0", opacity: 1, display: "block" }, { delay: 0, duration: 700 });
+                    $(".imgAirport").velocity({ left: "0", display: "block" }, { delay: 0, duration: 700 });
                     $(".imgFlag--1").velocity({ opacity: 1, display: "block" }, { delay: 400, duration: 700 });
                     $(".imgFlag--2").velocity({ opacity: 1, display: "block" }, { delay: 400, duration: 700 });
                     console.log('18down');
@@ -496,7 +501,7 @@
                     $(".text10").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
                     $(".imgPlane").removeClass("moveCenter moveBottom");
                     $(".bgStatic--plane").removeClass("active");
-                    $(".imgAirport").velocity({ left: "100%", opacity: 0, display: "none" }, { delay: 0, duration: 700 });
+                    $(".imgAirport").velocity({ left: "100%", display: "none" }, { delay: 0, duration: 700 });
                     $(".imgFlag--1").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
                     $(".imgFlag--2").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
                     console.log('19up');
@@ -504,8 +509,8 @@
                 if (origin.index == 19 && direction == 'down') {
                     $(".imgPlane").removeClass("moveCenter");
                     $(".imgPlane").addClass("moveBottom");
-                    $(".imgAirport2").velocity({ left: "0", opacity: 1, display: "block" }, { delay: 0, duration: 700 });
-                    $(".imgAirport").velocity({ left: "-100%", opacity: 0, display: "none" }, { delay: 0, duration: 700 });
+                    $(".imgAirport2").velocity({ left: "0", display: "block" }, { delay: 0, duration: 700 });
+                    $(".imgAirport").velocity({ left: "-100%", display: "none" }, { delay: 0, duration: 700 });
                     $(".imgFlag--1").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
                     $(".imgFlag--2").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
                     $(".imgFlag--3").velocity({ opacity: 1, display: "block" }, { delay: 400, duration: 700 });
@@ -516,8 +521,8 @@
                     $(".imgPlane").velocity({ opacity: "0", display: "none" });
                     $(".bgStatic--plane").addClass("active");
                     $(".bgColor--orange").velocity({ left: "100%", display: "none" })
-                    $(".imgAirport2").velocity({ left: "100%", opacity: 0, display: "none" }, { delay: 0, duration: 700 });
-                    $(".imgAirport").velocity({ left: "0", opacity: 1, display: "block" }, { delay: 0, duration: 700 });
+                    $(".imgAirport2").velocity({ left: "100%", display: "none" }, { delay: 0, duration: 700 });
+                    $(".imgAirport").velocity({ left: "0", display: "block" }, { delay: 0, duration: 700 });
                     $(".imgFlag--1").velocity({ opacity: 1, display: "block" }, { delay: 400, duration: 700 });
                     $(".imgFlag--2").velocity({ opacity: 1, display: "block" }, { delay: 400, duration: 700 });
                     $(".imgFlag--3").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
@@ -527,7 +532,7 @@
                 if (origin.index == 20 && direction == 'down') {
                     $(".imgFlag--3").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
                     $(".imgFlag--4").velocity({ opacity: 0, display: "none" }, { delay: 0, duration: 700 });
-                    $(".imgAirport2").velocity({ left: "-100%", opacity: 0, display: "none" }, { delay: 0, duration: 700 });
+                    $(".imgAirport2").velocity({ left: "-100%", display: "none" }, { delay: 0, duration: 700 });
                     $(".imgPlane").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 0 });
                     $(".bgStatic--plane").removeClass("active");
                     $(".bgColor--orange").velocity({ left: "0", display: "block" }, {
@@ -542,6 +547,7 @@
                     });
                     $(".imgVaclab").velocity({ left: "0" }, { delay: 200, duration: 700 });
                     $(".bgVacdesk").velocity({ left: "0" }, { delay: 200, duration: 700 });
+                    $(".text15").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
                     console.log('20down');
                 }
                 if (origin.index == 21 && direction == 'up') {
@@ -559,15 +565,31 @@
                     $(".bgStatic--plane").addClass("active");
                     $(".bgVacdesk").velocity({ left: "100%" }, { delay: 200, duration: 700 });
                     $(".imgVaclab").velocity({ left: "100%" }, { delay: 200, duration: 700 });
-                    $(".imgAirport2").velocity({ left: "0", opacity: 1, display: "block" }, { delay: 0, duration: 700 });
+                    $(".imgAirport2").velocity({ left: "0", display: "block" }, { delay: 0, duration: 700 });
+                    $(".text15").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text16").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text17").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     console.log('21up');
                 }
+                if (origin.index == 21 && direction == 'down') {
+                    $(".text16").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
+                }
+                if (origin.index == 22 && direction == 'up') {
+                    $(".text15").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
+                }
+                if (origin.index == 22 && direction == 'down') {
+                    $(".text17").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
+                }
                 if (origin.index == 23 && direction == 'up') {
+                    $(".text16").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
                 }
                 if (origin.index == 23 && direction == 'down') {
                     $(".bgVacdesk").velocity({ left: "100%" }, { delay: 200, duration: 700 });
                     $(".imgVaclab").velocity({ left: "100%" }, { delay: 200, duration: 700 });
                     $(".bgColor--orange").velocity({ left: "100%", display: "none" }, { delay: 200, duration: 700 })
+                    $(".text15").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text16").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text17").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     console.log('23down');
                 }
                 if (origin.index == 24 && direction == 'up') {
@@ -583,6 +605,7 @@
 
                         }
                     });
+                    $(".text17").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
                     console.log('24up');
                 }
                 if (origin.index == 24 && direction == 'down') {
@@ -597,41 +620,78 @@
                 }
                 if (origin.index == 26 && direction == 'down') {
                     $(".bgColor--pink").velocity({ opacity: "0", display: "none" }, { delay: 200, duration: 700 });
-                    $(".imgJokowi").velocity({ bottom: "-100%" }, { delay: 200, duration: 700 });
-                    $(".imgStep--1").velocity({ opacity: "1" }, { delay: 200, duration: 700 });
+                    $(".imgJokowi").velocity({ bottom: "-100%" }, { delay: 0, duration: 700 });
+                    $(".imgStep--1").velocity({ opacity: "1" }, { delay: 700, duration: 700 });
+                    $(".bgStep--1").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 700 });
                     console.log('26down');
                 }
                 if (origin.index == 27 && direction == 'up') {
                     $(".bgColor--pink").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
                     $(".imgJokowi").velocity({ bottom: "0" }, { delay: 200, duration: 700 });
+                    $(".bgStep--1").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     console.log('27up');
                 }
                 if (origin.index == 27 && direction == 'down') {
-                    $(".imgStep--2").velocity({ opacity: "1" }, { delay: 200, duration: 700 });
+                    $(".imgStep--2").velocity({ opacity: "1" }, { delay: 700, duration: 700 });
+                    $(".bgStep--2").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 700 });
+                    $(".bgStep--1").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     console.log('27down');
                 }
 
+                if (origin.index == 28 && direction == 'up') {
+                    $(".bgStep--1").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 700 });
+                    $(".bgStep--2").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                }
+
                 if (origin.index == 28 && direction == 'down') {
-                    $(".imgStep--3").velocity({ opacity: "1" }, { delay: 200, duration: 700 });
+                    $(".imgStep--3").velocity({ opacity: "1" }, { delay: 700, duration: 700 });
+                    $(".bgStep--3").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 700 });
+                    $(".bgStep--2").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                 }
 
                 if (origin.index == 29 && direction == 'up') {
-                    $(".bgStep--4").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
-                    $(".imgStep4").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".bgStep--2").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 700 });
+                    $(".bgStep--3").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                 }
                 if (origin.index == 29 && direction == 'down') {
+                    $(".bgStep--3").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     $(".bgStep--4").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 700 });
-                    $(".imgStep4").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
+                    $(".imgStep4").velocity({ opacity: "1", display: "block" }, { delay: 700, duration: 700 });
+                    $(".text11").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
+                    $(".text14").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
                     console.log('29down');
                 }
+                if (origin.index == 30 && direction == 'down') {
+                    $(".text12").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
+                }
 
+                if (origin.index == 30 && direction == 'up') {
+                    $(".text11").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text12").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text13").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text14").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".bgStep--4").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".imgStep4").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".bgStep--3").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 700 });
+                }
+                if (origin.index == 31 && direction == 'up') {
+                    $(".text11").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
+                }
+                if (origin.index == 31 && direction == 'down') {
+                    $(".text13").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
+                }
                 if (origin.index == 32 && direction == 'up') {
+                    $(".text12").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
                     $(".bgStep--4").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 700 });
-                    $(".imgStep4").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
+                    $(".imgStep4").velocity({ opacity: "1", display: "block" }, { delay: 700, duration: 700 });
                     console.log('32up');
                 }
 
                 if (origin.index == 32 && direction == 'down') {
+                    $(".text11").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text12").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text13").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".text14").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     $(".bgStep--4").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     $(".imgStep4").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     $(".bgColor--green").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 700 });
@@ -653,6 +713,8 @@
                     console.log('32down');
                 }
                 if (origin.index == 33 && direction == 'up') {
+                    $(".text14").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
+                    $(".text13").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
                     $(".imgHerd").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     $(".textBlack").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     $(".imgStep4").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
@@ -675,12 +737,14 @@
                     $(".herdHuman.women-red-2").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
                     $(".herdHuman.women-red-1").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
 
-                    $(".imgAttack").velocity({ opacity: "1", display: "block" }, { delay: 2400, duration: 700 });
-                    $(".imgAttack--2").velocity({ opacity: "1", display: "block" }, { delay: 2400, duration: 700 });
                     $(".virusLine").velocity({ opacity: "1", display: "block" }, { delay: 1400, duration: 700 });
                     $(".virusLine").addClass("active");
                     $(".virusLine--2").velocity({ opacity: "1", display: "block" }, { delay: 1400, duration: 700 });
                     $(".virusLine--2").addClass("active");
+                    $(".virusAttack").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 700 });
+                    $(".virusAttack--2").velocity({ opacity: "1" }, { delay: 0, duration: 700 });
+                    $(".imgAttack").velocity({ opacity: "1", display: "block" }, { delay: 1400, duration: 700 });
+                    $(".imgAttack--2").velocity({ opacity: "1", display: "block" }, { delay: 1400, duration: 700 });
                     $(".imgAttack").addClass("active");
                     $(".imgAttack--2").addClass("active");
                     console.log('33down');
@@ -698,6 +762,8 @@
                     $(".herdHuman.men-red-1").velocity({ opacity: "0", display: "none" }, { delay: 200, duration: 700 });
                     $(".herdHuman.women-red-2").velocity({ opacity: "0", display: "none" }, { delay: 200, duration: 700 });
                     $(".herdHuman.women-red-1").velocity({ opacity: "0", display: "none" }, { delay: 200, duration: 700 });
+                    $(".virusAttack").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
+                    $(".virusAttack--2").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 200 });
                     console.log('34up');
                 }
                 if (origin.index == 34 && direction == 'down') {
@@ -712,6 +778,8 @@
                     $(".herdLine-4").addClass("active");
                     $(".herdLine-5").addClass("active");
                     $(".herdLine-6").addClass("active");
+                    $(".virusAttack").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 0 });
+                    $(".virusAttack--2").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 0 });
                     console.log('34down');
                 }
                 if (origin.index == 35 && direction == 'up') {
@@ -725,6 +793,12 @@
                     $(".herdLine-4").removeClass("active");
                     $(".herdLine-5").removeClass("active");
                     $(".herdLine-6").removeClass("active");
+                    $(".virusAttack").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 700 });
+                    $(".virusAttack--2").velocity({ opacity: "1" }, { delay: 0, duration: 700 });
+                    $(".imgAttack").velocity({ opacity: "1", display: "block" }, { delay: 1400, duration: 700 });
+                    $(".imgAttack--2").velocity({ opacity: "1", display: "block" }, { delay: 1400, duration: 700 });
+                    $(".imgAttack").addClass("active");
+                    $(".imgAttack--2").addClass("active");
                     console.log('35up');
                 }
                 if (origin.index == 35 && direction == 'down') {
@@ -742,7 +816,7 @@
                     //$(".bgEnd").velocity({ top: "0" }, { delay: 0, duration: 700 });
                     $(".bgEnd").velocity({ display: "block" }, {
                         duration: 200,
-                        delay: 200,
+                        delay: 0,
                         begin: function () {
                         },
                         complete: function () {
@@ -765,7 +839,7 @@
                     $(".text9").velocity({ opacity: "0", display: "none" }, { delay: 0, duration: 700 });
                     //$(".bgEnd").velocity({ top: "100%" }, { delay: 0, duration: 700 });
                     $(".bgEnd").velocity({ display: "block" }, {
-                        duration: 200,
+                        duration: 0,
                         delay: 200,
                         begin: function () {
                         },
@@ -779,7 +853,7 @@
                     // $(".bgEnd").velocity({ top: "-44%" }, { delay: 200, duration: 700 });
                     $(".bgEnd").velocity({ display: "block" }, {
                         duration: 200,
-                        delay: 200,
+                        delay: 0,
                         begin: function () {
                         },
                         complete: function () {
@@ -793,7 +867,7 @@
                     //$(".bgEnd").velocity({ top: 0 }, { delay: 200, duration: 700 });
                     $(".bgEnd").velocity({ display: "block" }, {
                         duration: 200,
-                        delay: 200,
+                        delay: 0,
                         begin: function () {
                         },
                         complete: function () {
@@ -807,7 +881,7 @@
                     //$(".bgEnd").velocity({ top: "-90%" }, { delay: 200, duration: 700 });
                     $(".bgEnd").velocity({ display: "block" }, {
                         duration: 200,
-                        delay: 200,
+                        delay: 0,
                         begin: function () {
                         },
                         complete: function () {
@@ -821,7 +895,7 @@
                     //$(".bgEnd").velocity({ top: "-44%" }, { delay: 200, duration: 700 });
                     $(".bgEnd").velocity({ display: "block" }, {
                         duration: 200,
-                        delay: 200,
+                        delay: 0,
                         begin: function () {
                         },
                         complete: function () {
@@ -835,7 +909,7 @@
                     //$(".bgEnd").velocity({ top: "-140%" }, { delay: 200, duration: 700 });
                     $(".bgEnd").velocity({ display: "block" }, {
                         duration: 200,
-                        delay: 200,
+                        delay: 0,
                         begin: function () {
                         },
                         complete: function () {
@@ -849,7 +923,7 @@
                     //$(".bgEnd").velocity({ top: "-90%" }, { delay: 200, duration: 700 });
                     $(".bgEnd").velocity({ display: "block" }, {
                         duration: 200,
-                        delay: 200,
+                        delay: 0,
                         begin: function () {
                         },
                         complete: function () {
@@ -862,7 +936,7 @@
                 if (origin.index == 39 && direction == 'down') {
                     $(".bgEnd").velocity({ display: "block" }, {
                         duration: 200,
-                        delay: 200,
+                        delay: 0,
                         begin: function () {
                         },
                         complete: function () {
@@ -877,7 +951,7 @@
                     //$(".bgEnd").removeClass("cap");
                     $(".bgEnd").velocity({ display: "block" }, {
                         duration: 200,
-                        delay: 200,
+                        delay: 0,
                         begin: function () {
                         },
                         complete: function () {
@@ -905,7 +979,7 @@
                     $(".text9").velocity({ opacity: "1", display: "block" }, { delay: 200, duration: 700 });
                     $(".bgEnd").velocity({ display: "block" }, {
                         duration: 200,
-                        delay: 200,
+                        delay: 0,
                         begin: function () {
                         },
                         complete: function () {
@@ -944,10 +1018,13 @@
                 $(this).prop('Counter', 0).animate({
                     Counter: $(this).text()
                 }, {
-                    duration: 4000,
+                    duration: 1000,
                     easing: 'swing',
                     step: function (now) {
                         $(this).text(Math.ceil(now));
+                    },
+                    complete: function (now) {
+                        counterInfected();
                     }
                 });
             });
