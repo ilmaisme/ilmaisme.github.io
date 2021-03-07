@@ -2456,7 +2456,7 @@ $(document).ready(function () {
 
     fullpage_api.setAllowScrolling(false);
     setTimeout(function () {
-        $("#animationPreload").fadeOut(1000, function () {
+        $("#animationPreload").fadeOut(3000, function () {
             $('.preloader').remove();
             fullpage_api.setAllowScrolling(true);
             //console.log('remove');
