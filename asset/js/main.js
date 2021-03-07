@@ -2491,7 +2491,6 @@ $(document).ready(function () {
         $(".vaccineText").removeClass("active");
         //fullpage_api.setAllowScrolling(true);
     });
-    $('.slick-arrow').html('');
     //$(".quoteItem").on('click', function () {
     //$(".quoteContent").addClass("active");
     //$(".bgOverlay__quote").velocity({ opacity: "1", display: "block" }, { delay: 0, duration: 200 });
@@ -2656,7 +2655,8 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
                 }
             }
         ]
-    });
+    });    
+    $('.slick-arrow').html('');
 
 } else {
     $('.slider-for').slick({
