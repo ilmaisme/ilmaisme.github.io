@@ -45,7 +45,7 @@ $(document).ready(function () {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: 'asset/json/Mejakimia/Meja-Kimia.json',
+        path: 'asset/json/Lab/data.json',
         name: 'myAnimation',
     });
     // 6
