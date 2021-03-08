@@ -24,8 +24,8 @@ $(document).ready(function () {
     var animationCounter = bodymovin.loadAnimation({
         container: document.getElementById('animationAirport'),
         renderer: 'svg',
-        loop: 1,
-        autoplay: false,
+        loop: true,
+        autoplay: true,
         path: 'asset/json/Bandara/data.json',
         name: 'myAnimation',
     })
