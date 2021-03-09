@@ -110,6 +110,7 @@ $(document).ready(function () {
         //responsiveHeight: 500,
         //navigation: true,
         anchors: ['cover', 'start'],
+        lockAnchors: true,
         scrollOverflow: true,
 
         onLeave: function (origin, destination, direction) {
