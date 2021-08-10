@@ -1058,6 +1058,18 @@
     <script src="asset/js/aos.min.js"></script>
     <script src="asset/js/main.min.js"></script>
     <script src="asset/js/audio.min.js"></script>
+    <script>
+        function logLoaded() {
+            preload.style.opacity = '0'
+            preload.addEventListener('transitionend', () => preload.remove());
+        }
+        const preload = document.querySelector('.preloader')
+        if (!!preload) {
+            window.addEventListener("load", function () { window.loaded = !0 }), function o() {
+                window.loaded ? logLoaded() : window.setTimeout(o, 1000)
+            }()
+        }
+    </script>
 </body>
 
 </html>
