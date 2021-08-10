@@ -14,22 +14,47 @@
  * reference: http://www.patrick-wied.at/blog/how-to-create-audio-visualizations-with-javascript-html
  */
 
-window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
 
-// function touchStarted() {
-//     if (getAudioContext().state !== 'running') {
-//         getAudioContext().resume();
-//     }
+
+var trigbutton = document.getElementById('playpause'),
+    myAudio = document.getElementById('audio'),
+    myCanvas = document.getElementById('canvas');
+
+trigbutton.onclick = function () {
+    // Update the Button
+    var pause = trigbutton.value === 'pause!';
+    trigbutton.value = pause ? 'play!' : 'pause!';
+    //console.log('play!');
+
+    //display canvas
+    myCanvas.classList.add('active');
+
+    // Update the Audio
+    var method = pause ? 'pause' : 'play';
+    myAudio[method]();
+
+    // Prevent Default Action
+    //return false;
+    start()
+    //createAudioContext.count = 0;
+};
+
+// function createAudioContext() {
+//     if ( createAudioContext.count++ >= 0 ) throw new Error('Relax! You can ignore this error')
+//     return new AudioContext();
 // }
-var audio = document.getElementById('audio');
-var ctx = new AudioContext();
-var analyser = ctx.createAnalyser();
-var audioSrc = ctx.createMediaElementSource(audio);
-// we have to connect the MediaElementSource with the analyser 
-audioSrc.connect(analyser);
-analyser.connect(ctx.destination);
 
-var start = function () {
+function start() {
+    window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
+    var audio = document.getElementById('audio');
+    var ctx = new AudioContext();
+    //var ctx = createAudioContext();
+    var analyser = ctx.createAnalyser();
+    var audioSrc = ctx.createMediaElementSource(audio);
+    // we have to connect the MediaElementSource with the analyser 
+    audioSrc.connect(analyser);
+    analyser.connect(ctx.destination);
+
     // we could configure the analyser: e.g. analyser.fftSize (for further infos read the spec)
     // analyser.fftSize = 64;
     // frequencyBinCount tells you how many values you'll receive from the analyser
@@ -47,9 +72,12 @@ var start = function () {
         capYPositionArray = []; ////store the vertical position of hte caps for the preivous frame
     ctx = canvas.getContext('2d'),
         gradient = ctx.createLinearGradient(0, 0, 0, 300);
-    gradient.addColorStop(1, '#0f0');
-    gradient.addColorStop(0.5, '#ff0');
-    gradient.addColorStop(0, '#f00');
+    // gradient.addColorStop(1, '#0f0');
+    // gradient.addColorStop(0.5, '#ff0');
+    // gradient.addColorStop(0, '#f00');
+    gradient.addColorStop(1, '#fff');
+    gradient.addColorStop(0.5, '#fff');
+    gradient.addColorStop(0, '#fff');
     // loop
     function renderFrame() {
         var array = new Uint8Array(analyser.frequencyBinCount);
@@ -76,31 +104,10 @@ var start = function () {
     }
     renderFrame();
     // audio.play();
-};
-
-var trigbutton = document.getElementById('playpause'),
-    myAudio = document.getElementById('audio');
-
-trigbutton.onclick = function () {
-
-    // Update the Button
-    var pause = trigbutton.value === 'pause!';
-    trigbutton.value = pause ? 'play!' : 'pause!';
-    //console.log('play!');
-
-    //var pause = trigbutton.innerHTML === 'pause!';
-    //trigbutton.innerHTML = pause ? 'play!' : 'pause!';
-
-    // Update the Audio
-    var method = pause ? 'pause' : 'play';
-    myAudio[method]();
-
-    // Prevent Default Action
-    //return false;
-};
+}
 
 audio.onplay = function () {
-    start();
+    //start();
 }
 audio.onpause = function () {
     trigbutton.value = 'play!';
