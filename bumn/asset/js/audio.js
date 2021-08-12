@@ -113,4 +113,7 @@ audio.onpause = function () {
     trigbutton.value = 'play!';
     trigbutton.checked = false;
     //console.log('stop!');
+
+    //display canvas
+    myCanvas.classList.remove('active');
 }
