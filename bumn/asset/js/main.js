@@ -38,6 +38,7 @@
     //popup
     const modalTriggers = document.querySelectorAll('.-js-popupTrigger')
     const bodyBlackout = document.querySelector('.popupOverlay')
+    const body = document.body
 
     modalTriggers.forEach(trigger => {
         trigger.addEventListener('click', () => {
@@ -48,6 +49,7 @@
 
             popupModal.classList.add('is-visible')
             bodyBlackout.classList.add('is-blacked-out')
+            body.classList.add('is-overflow-hidden')  
 
             popupModal.querySelector('.popupClose').addEventListener('click', () => {
                 closeModal()
@@ -60,6 +62,7 @@
             function closeModal() {
                 popupModal.classList.remove('is-visible')
                 bodyBlackout.classList.remove('is-blacked-out')
+                body.classList.remove('is-overflow-hidden')                
             }
         })
     })
