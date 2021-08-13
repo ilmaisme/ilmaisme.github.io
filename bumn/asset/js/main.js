@@ -8,7 +8,7 @@
 
             var top = this.pageYOffset;
 
-            var layers = document.getElementsByClassName("parallaxLayer");
+            var layers = document.getElementsByClassName("parallaxLayerDesk");
             var layer, speed, yPos;
             for (var i = 0; i < layers.length; i++) {
                 layer = layers[i];
@@ -79,4 +79,16 @@
                 //console.log('holding click');
             })
         })
+    }
+
+    //preloader
+    function logLoaded() {
+        preload.style.opacity = '0'
+        preload.addEventListener('transitionend', () => preload.remove());
+    }
+    const preload = document.querySelector('.preloader')
+    if (!!preload) {
+        window.addEventListener("load", function () { window.loaded = !0 }), function o() {
+            window.loaded ? logLoaded() : window.setTimeout(o, 1000)
+        }()
     }

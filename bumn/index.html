@@ -43,10 +43,8 @@
                         src="./asset/images/content-interaktif-bisnis-logo.svg"
                         class="headerLogo" alt="" width="34" height="34"></a></div>
         </header>        <!-- preloader -->
-        <div class="preloader" id="preloader">
-            <div class="display-table">
-                <div class="display-center">
-                </div>
+        <div class="preloader display-flex align-center justify-flex" id="preloader">
+            <div class="preloader__wrap"><img src="asset/images/preloader76th.gif" alt="" width="500" height="500"></object>
             </div>
         </div>
         <!-- preloader -->        <section class="section sectionFull section1 bg bg1">
@@ -85,14 +83,15 @@
             </div>
             <div class="parallax">
                 <div class="parallaxWrapper">
-                    <div class="parallaxLayer parallaxLayer2" data-speed="-60">
-                        </div>
-                        <div class="parallaxLayer parallaxLayer1" data-speed="-18">
-                            </div>
-                            <div class="parallaxLayer parallaxLayer0" data-speed="60">
-                                </div>
-                            </div>
-                        </div>
+                    <div class="parallaxLayer parallaxLayerDesk parallaxLayer2" data-speed="-60">
+                    </div>
+                    <div class="parallaxLayer parallaxLayerDesk parallaxLayer1" data-speed="-18">
+                    </div>
+                    <div class="parallaxLayer parallaxLayerDesk parallaxLayer0" data-speed="50">
+                    </div>
+
+                </div>
+            </div>
         </section>
         <section class="section sectionFull section2 bg bg2" id="section2">
             <div class="container">
@@ -198,7 +197,8 @@
             <div class="container">
                 <article class="article articleContent">
                     <p data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="200">
-                        Pemerintah juga terus berusaha untuk menciptakan <i>holding-holding</i> baru dan bahkan <i>superholding</i>.
+                        Pemerintah juga terus berusaha untuk menciptakan <i>holding-holding</i> baru dan bahkan
+                        <i>superholding</i>.
                     </p>
                     <p class="mt4" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="200">
                         Pembentukan <i>superholding</i> BUMN merupakan terobosan Pemerintah Indonesia yang terinspirasi
@@ -1122,21 +1122,9 @@
         </div>
     </div>
     <script src="asset/js/aos.min.js"></script>
-    <script src="asset/js/main.min.js"></script>
+    <script src="asset/js/main.js"></script>
     <script defer src="asset/js/audio.min.js"></script>
     <script src="asset/js/picturefill.min.js" async></script>
-    <script>
-        function logLoaded() {
-            preload.style.opacity = '0'
-            preload.addEventListener('transitionend', () => preload.remove());
-        }
-        const preload = document.querySelector('.preloader')
-        if (!!preload) {
-            window.addEventListener("load", function () { window.loaded = !0 }), function o() {
-                window.loaded ? logLoaded() : window.setTimeout(o, 1000)
-            }()
-        }
-    </script>
 </body>
 
 </html>
