@@ -33,34 +33,44 @@ $(document).ready(function () {
                         if (percent < 0.1509) {
                             $('#item1').addClass('active');
                             $('#item2').removeClass('active');
+                            $('.underline1').addClass('active');
+                            $('.underline2').removeClass('active');
                         }
                         if (percent > 0.1509) {
                             $('#item2').addClass('active');
-                            $('#item1').removeClass('active');
+                            $('.underline2').addClass('active');
+                            $('.underline1').removeClass('active');
                         }
                         if (percent < 0.3396) {
                             $('#item3').removeClass('active');
+                            $('.underline3').removeClass('active');
                         }
                         if (percent > 0.3396) {
                             $('#item3').addClass('active');
-                            $('#item1').removeClass('active');
+                            $('.underline3').addClass('active');
+                            $('.underline2').removeClass('active');
                         }
                         if (percent < 0.5283) {
                             $('#item4').removeClass('active');
+                            $('.underline4').removeClass('active');
                         }
                         if (percent > 0.5283) {
                             $('#item4').addClass('active');
-                            $('#item1').removeClass('active');
+                            $('.underline4').addClass('active');
+                            $('.underline3').removeClass('active');
                         }
                         if (percent < 0.7170) {
                             $('#item5').removeClass('active');
+                            $('.underline5').removeClass('active');
                         }
                         if (percent > 0.7170) {
                             $('#item5').addClass('active');
-                            $('#item1').removeClass('active');
+                            $('.underline5').addClass('active');
+                            $('.underline4').removeClass('active');
                         }
                         if (percent < 0.9057) {
                             $('#item6').removeClass('active');
+                            $('.underline6').removeClass('active');
                         }
                         if (percent > 0.9057) {
                             $('#item6').addClass('active');
@@ -69,6 +79,12 @@ $(document).ready(function () {
                             $('#item3').removeClass('active');
                             $('#item4').removeClass('active');
                             $('#item5').removeClass('active');
+                            $('.underline6').addClass('active');
+                            $('.underline1').removeClass('active');
+                            $('.underline2').removeClass('active');
+                            $('.underline3').removeClass('active');
+                            $('.underline4').removeClass('active');
+                            $('.underline5').removeClass('active');
                         }
                     }
                 });
