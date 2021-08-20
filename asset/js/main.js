@@ -1,10 +1,9 @@
 $(document).ready(function () {
     if ($(window).load(function () {
-            // $("#preloader").fadeOut(500, function () {
-            //     $(this).remove();
-            // })
+            $("#preloader").fadeOut(500, function () {
+                $(this).remove();
+            })
         }))
-
 
         if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             $.jInvertScroll(['.scroll'], // an array containing the selector(s) for the elements you want to animate
@@ -12,7 +11,7 @@ $(document).ready(function () {
                     //height: 40000, // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
                     // height: 'auto',
                     onScroll: function (percent) { //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
-                        console.log(percent);
+                        //console.log(percent);
 
                     }
                 });
@@ -23,7 +22,7 @@ $(document).ready(function () {
                     //height: 40000, // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
                     // height: 'auto',
                     onScroll: function (percent) { //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
-                        console.log(percent);
+                        //console.log(percent);
 
                         var theta = $(window).scrollTop() % Math.PI;
                         theta = theta - 0.009;
