@@ -86,7 +86,7 @@ $(document).ready(function () {
         
         // autoplay and set slide position 
         setTimeout(function () {
-            // story.slick('slickPlay');
+            story.slick('slickPlay');
             story.slick('setPosition');
             initializeDotsWidth()
         }, 300);
