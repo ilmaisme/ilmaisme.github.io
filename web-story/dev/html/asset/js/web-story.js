@@ -98,6 +98,12 @@ $(document).ready(function () {
     story.on('init', function (event, slick, currentSlide, nextSlide) {
         hidePrevStory()
     });
+    // story.on('afterChange', function (event, slick, currentSlide) {      
+    //     $('.slick-arrow').click(function () {
+    //         // animation dura 0
+    //         // $('.slick-dots .slick-active').addClass('next');
+    //     })
+    // });
     // On after slide change
     story.on('afterChange', function (event, slick, currentSlide) {
         //loader dots

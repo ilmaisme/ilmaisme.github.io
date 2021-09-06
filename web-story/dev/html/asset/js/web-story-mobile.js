@@ -4,7 +4,7 @@ $(document).ready(function () {
     function getStoryLength() {
         //count story item to pass on slideToShow
         let storyLength = story.find('.storyItem').length;
-        console.log(storyLength);
+        // console.log(storyLength);
         return storyLength;
     }
     $('.-js-slick-story').click(function () { 
@@ -48,9 +48,9 @@ $(document).ready(function () {
             //console.log("Last slide");
             //close when last slide was hit
             setTimeout(function () {
-                // story.slick('unslick');
-                // $('#pop_story').css("display", "none");
-                // $('#pop_story').modal('hide');
+                story.slick('unslick');
+                $('#pop_story').css("display", "none");
+                $('#pop_story').modal('hide');
             }, 3100);
         }
     });
