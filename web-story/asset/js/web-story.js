@@ -14,36 +14,112 @@ $(document).ready(function () {
     function getStoryLength() {
         //count story item to pass on slideToShow
         let storyLength = story.find('.storyItem').length;
-        //console.log(storyLength);
-        item = (storyLength - 1);
+        // console.log(storyLength);
+        if (storyLength > 3) {
+            item = (storyLength - 1)
+        } else if (storyLength = 3) {
+            item = 3
+        } else if (storyLength <= 2) {
+            item = 1
+        }
         return item;
     }
+
+    function hidePrevStory() {
+        //hide prev story
+        let storySlide = story.find('.slick-slide');
+        storySlide.filter(function () {
+            return $(this).attr('data-slick-index') < '0';
+        }).addClass('is-hidden');
+    }
+
+    function appendSingleDot() {
+        $("#dots_story").append('<ul class = "slick-dots" role = "tablist"\
+        style = "display: block;"> <li class = "slick-active"\
+        role = "presentation"\
+        > <button type = "button"\
+        role = "tab"\
+        id = "slick-slide-control00"\
+        aria-controls = "slick-slide00"\
+        aria-label = "1"\
+        tabindex = "0"\
+        aria-selected = "true" ></button></li ></ul>')
+    }
+
     $('.-js-slick-story').click(function () {
         let items = getStoryLength();
+        let fullitems = items + 1;
+
+        function hideNextStory() {
+            //hide next story
+            let storySlide = story.find('.slick-slide');
+            storySlide.filter(function () {
+                return $(this).attr('data-slick-index') > items;
+            }).addClass('is-hidden');
+        }
+
+        function initializeDotsWidth() {
+            let dots = $('#dots_story .slick-dots');
+            let dotsItem = $('#dots_story .slick-dots li');
+            let widthImage = $('.storyImg').width();
+            dots.css({width: widthImage});
+            dotsItem.css({
+                width: 'calc(('+widthImage+'px - (10 * ' + fullitems + 'px)) /' + fullitems + ')'
+            });
+            console.log('width image : ', widthImage);
+            console.log('full items : ', fullitems);
+            console.log('items : ', items);
+        }
+
         story.slick({
             dots: true,
             arrows: true,
             infinite: true,
-            // slidesToShow: 4,
             slidesToShow: items,
             centerMode: true,
             slidesToScroll: 1,
             autoplaySpeed: 3000,
-            pauseOnHover: false,
-            pauseOnFocus: false,
+            pauseOnHover: true,
+            pauseOnFocus: true,
             appendDots: $('#dots_story')
         });
+
+        //disabled slick-arrow
+        $('.slick-prev').addClass('disabled');
         // autoplay and set slide position 
         setTimeout(function () {
             story.slick('slickPlay');
             story.slick('setPosition');
+            initializeDotsWidth()
         }, 300);
+
+        hideNextStory()
+
     })
-    // On before slide change
+
+    story.on('init', function (event, slick, currentSlide, nextSlide) {
+        hidePrevStory()
+    });
+    // story.on('afterChange', function (event, slick, currentSlide) {      
+    //     $('.slick-arrow').click(function () {
+    //         // animation dura 0
+    //         // $('.slick-dots .slick-active').addClass('next');
+    //     })
+    // });
+    // On after slide change
     story.on('afterChange', function (event, slick, currentSlide) {
+        //disabled or enabled slick-arrow
+        if (currentSlide !== 0) {
+            $('.slick-prev').removeClass('disabled');
+        } else if (currentSlide == 0) {
+            $('.slick-prev').addClass('disabled');
+        }
+
         //loader dots
         $('.slick-dots .slick-active').addClass('loaded');
+
         if (slick.$slides.length == currentSlide + slick.options.slidesToScroll) {
+            $('.slick-next').addClass('disabled');
             //console.log("Last slide");
             //close when last slide was hit
             setTimeout(function () {
@@ -51,6 +127,9 @@ $(document).ready(function () {
                 $('#pop_story').css("display", "none");
                 $('#pop_story').modal('hide');
             }, 3100);
+        } else {
+            //enabled slick-arrow
+            $('.slick-next').removeClass('disabled');
         }
     });
     $('.storyClose').click(function () {
