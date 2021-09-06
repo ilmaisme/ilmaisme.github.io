@@ -69,38 +69,45 @@ header {
                 right: 20px;
             }
 
-            &-dots li {
-                width: 30px;
-                height: 3px;
-                margin: 5px;
-                background: #6F6F6F;
-                z-index: 1;
-                overflow: hidden;
+            &-dots {
+                left: 50%;
+                transform: translateX(-50%);
 
-                @media (max-height: 700px) {
-                    width: 18px;
-                }
+                li {
+                    width: 30px;
+                    height: 3px;
+                    margin: 5px;
+                    background: #6F6F6F;
+                    z-index: 1;
+                    overflow: hidden;
+                    border-radius: 20px;
 
-                &:after {
-                    content: "";
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    border-bottom: 4px solid #61c3f1;
-                    visibility: hidden;
-                }
-
-                &.loaded, &:first-child {
+                    @media (max-height: 700px) {
+                        width: 18px;
+                    }
 
                     &:after {
-                        animation: bottomborder 6s linear forwards;
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-bottom: 4px solid #61c3f1;
+                        visibility: hidden;
                     }
-                }
 
-                button:before {
-                    content: none;
+                    &.loaded,
+                    &:first-child {
+
+                        &:after {
+                            animation: bottomborder 6s linear forwards;
+                        }
+                    }
+
+                    button:before {
+                        content: none;
+                    }
                 }
             }
         }
@@ -121,7 +128,8 @@ header {
         position: absolute;
         width: 100vw;
         height: 3px;
-        top: 15px;
+        top: 10px;
+        z-index: 1;
     }
 
     &Close {

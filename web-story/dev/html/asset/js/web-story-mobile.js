@@ -1,7 +1,27 @@
 $(document).ready(function () {
     /* web story slider */
     let story = $('#slide_story');
-    $('.-js-slick-story').click(function () {
+    function getStoryLength() {
+        //count story item to pass on slideToShow
+        let storyLength = story.find('.storyItem').length;
+        console.log(storyLength);
+        return storyLength;
+    }
+    $('.-js-slick-story').click(function () { 
+        let items = getStoryLength();
+
+        function initializeDotsWidth() {
+            let dots = $('#dots_story .slick-dots');
+            let dotsItem = $('#dots_story .slick-dots li');
+            let widthImage = $('.storyImg').width();
+            dots.css({width: widthImage});
+            dotsItem.css({
+                width: 'calc(('+widthImage+'px - (10 * ' + items + 'px)) /' + items + ')'
+            });
+            console.log('width image : ', widthImage);
+            console.log('items : ', items);
+        }
+
         story.slick({
             dots: true,
             arrows: true,
@@ -17,6 +37,7 @@ $(document).ready(function () {
         setTimeout(function () {
             story.slick('slickPlay');
             story.slick('setPosition');
+            initializeDotsWidth();
         }, 300);
     })
     // On before slide change
@@ -27,9 +48,9 @@ $(document).ready(function () {
             //console.log("Last slide");
             //close when last slide was hit
             setTimeout(function () {
-                story.slick('unslick');
-                $('#pop_story').css("display", "none");
-                $('#pop_story').modal('hide');
+                // story.slick('unslick');
+                // $('#pop_story').css("display", "none");
+                // $('#pop_story').modal('hide');
             }, 3100);
         }
     });

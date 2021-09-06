@@ -58,7 +58,7 @@ $(document).ready(function () {
             }).addClass('is-hidden');
         }
 
-        function initalizeDotsWidth() {
+        function initializeDotsWidth() {
             let dots = $('#dots_story .slick-dots');
             let dotsItem = $('#dots_story .slick-dots li');
             let widthImage = $('.storyImg').width();
@@ -88,7 +88,7 @@ $(document).ready(function () {
         setTimeout(function () {
             // story.slick('slickPlay');
             story.slick('setPosition');
-            initalizeDotsWidth()
+            initializeDotsWidth()
         }, 300);
 
         hideNextStory()
