@@ -68,9 +68,6 @@ $(document).ready(function () {
             //enabled slick-arrow
             $('.slick-next').removeClass('disabled');
         }
-        var next = story.find('[data-slick-index="' + (currentSlide + 1) + '"]');
-        var prev = story.find('[data-slick-index="' + (currentSlide - 1) + '"]');
-        console.log(next, prev);
     });
     $('.storyClose').click(function () {
         // destroy slide

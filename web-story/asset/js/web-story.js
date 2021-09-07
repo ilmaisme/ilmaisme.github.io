@@ -62,9 +62,11 @@ $(document).ready(function () {
             let dots = $('#dots_story .slick-dots');
             let dotsItem = $('#dots_story .slick-dots li');
             let widthImage = $('.storyImg').width();
-            dots.css({width: widthImage});
+            dots.css({
+                width: widthImage
+            });
             dotsItem.css({
-                width: 'calc(('+widthImage+'px - (10 * ' + fullitems + 'px)) /' + fullitems + ')'
+                width: 'calc((' + widthImage + 'px - (10 * ' + fullitems + 'px)) /' + fullitems + ')'
             });
             console.log('width image : ', widthImage);
             console.log('full items : ', fullitems);
@@ -88,7 +90,7 @@ $(document).ready(function () {
         $('.slick-prev').addClass('disabled');
         // autoplay and set slide position 
         setTimeout(function () {
-            story.slick('slickPlay');
+            // story.slick('slickPlay');
             story.slick('setPosition');
             initializeDotsWidth()
         }, 300);
@@ -100,12 +102,6 @@ $(document).ready(function () {
     story.on('init', function (event, slick, currentSlide, nextSlide) {
         hidePrevStory()
     });
-    // story.on('afterChange', function (event, slick, currentSlide) {      
-    //     $('.slick-arrow').click(function () {
-    //         // animation dura 0
-    //         // $('.slick-dots .slick-active').addClass('next');
-    //     })
-    // });
     // On after slide change
     story.on('afterChange', function (event, slick, currentSlide) {
         //disabled or enabled slick-arrow
@@ -117,6 +113,17 @@ $(document).ready(function () {
 
         //loader dots
         $('.slick-dots .slick-active').addClass('loaded');
+        //loader dots animation duration 0
+        let next = story.find('[aria-controls=0' + (currentSlide + 1) + ']');
+        let prev = story.find('[aria-controls=0' + (currentSlide - 1) + ']');
+        $('.slick-next').click(function () {
+            console.log(prev);
+            prev.parent().addClass('next');
+        })
+        $('.slick-prev').click(function () {
+            console.log(next);
+            next.parent().addClass('next');
+        })
 
         if (slick.$slides.length == currentSlide + slick.options.slidesToScroll) {
             $('.slick-next').addClass('disabled');
@@ -136,4 +143,20 @@ $(document).ready(function () {
         // destroy slide
         story.slick('unslick');
     })
+
+    //keyframe loader dots
+    $.keyframe.define([{
+        name: 'bottomborder',
+        '0%': {
+            'transform': 'translateX(-30px)',
+            'visibility': 'visible'
+        },
+        '50%': {
+            'transform': 'translateX(0)',
+            'visibility': 'visible'
+        },
+        '100%': {
+            'visibility': 'visible'
+        }
+    }]);
 })
