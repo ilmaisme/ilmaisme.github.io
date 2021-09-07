@@ -40,7 +40,7 @@ $(document).ready(function () {
         $('.slick-prev').addClass('disabled');
         // autoplay and set slide position 
         setTimeout(function () {
-            // story.slick('slickPlay');
+            story.slick('slickPlay');
             story.slick('setPosition');
             initializeDotsWidth();
         }, 300);
