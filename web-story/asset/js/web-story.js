@@ -10,18 +10,12 @@ $(document).ready(function () {
 
     /* web story slider */
     let story = $('#slide_story');
+    let storyLength = story.find('.storyItem').length;
 
     function getStoryLength() {
         //count story item to pass on slideToShow
-        let storyLength = story.find('.storyItem').length;
-        // console.log(storyLength);
-        if (storyLength > 3) {
-            item = (storyLength - 1)
-        } else if (storyLength = 3) {
-            item = 3
-        } else if (storyLength <= 2) {
-            item = 1
-        }
+        console.log(storyLength);
+        item = (storyLength - 1)
         return item;
     }
 
@@ -33,20 +27,37 @@ $(document).ready(function () {
         }).addClass('is-hidden');
     }
 
-    function appendSingleDot() {
-        $("#dots_story").append('<ul class = "slick-dots" role = "tablist"\
-        style = "display: block;"> <li class = "slick-active"\
-        role = "presentation"\
-        > <button type = "button"\
-        role = "tab"\
-        id = "slick-slide-control00"\
-        aria-controls = "slick-slide00"\
-        aria-label = "1"\
-        tabindex = "0"\
-        aria-selected = "true" ></button></li ></ul>')
-    }
+    //initial progress bar
+    let time = 4;
+    let $bar,
+        isPause,
+        tick,
+        percentTime;
+
+    $bar = $('.storyProgress .progress');
+
+    function resetProgressbar() {
+        $bar.css({
+            width: 0 + '%'
+        });
+        clearTimeout(tick);
+    }   
+
+    story.slick({
+        dots: true,
+        arrows: true,
+        infinite: true,
+        slidesToShow: 1,
+        centerMode: true,
+        slidesToScroll: 1,
+        autoplaySpeed: 3000,
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        appendDots: $('#dots_story')
+    });
 
     $('.-js-slick-story').click(function () {
+        resetProgressbar();
         let items = getStoryLength();
         let fullitems = items + 1;
 
@@ -73,29 +84,65 @@ $(document).ready(function () {
             console.log('items : ', items);
         }
 
-        story.slick({
-            dots: true,
-            arrows: true,
-            infinite: true,
-            slidesToShow: items,
-            centerMode: true,
-            slidesToScroll: 1,
-            autoplaySpeed: 3000,
-            pauseOnHover: true,
-            pauseOnFocus: true,
-            appendDots: $('#dots_story')
-        });
-
         //disabled slick-arrow
         $('.slick-prev').addClass('disabled');
         // autoplay and set slide position 
         setTimeout(function () {
-            story.slick('slickPlay');
+            // story.slick('slickPlay');
             story.slick('setPosition');
             initializeDotsWidth()
         }, 300);
 
         hideNextStory()
+
+        //progress bar
+        $('.storyImg').on({
+            mouseenter: function () {
+                isPause = true;
+            },
+            mouseleave: function () {
+                isPause = false;
+            }
+        })
+
+        function startProgressbar() {
+            resetProgressbar();
+            percentTime = 0;
+            isPause = false;
+            tick = setInterval(interval, 10);
+        }
+
+        function interval() {
+            if (isPause === false) {
+                percentTime += 1 / (time + 0.1);
+                $bar.css({
+                    width: percentTime + "%"
+                });
+                if (percentTime >= 100) {
+                    story.slick('slickNext');
+                    startProgressbar();
+                    //close when last slide was hit
+                    story.on('afterChange', function (event, slick, currentSlide) {
+                        if (slick.$slides.length == currentSlide + slick.options.slidesToScroll) {
+                            // console.log("Last slide hit");
+                            //close when last slide was hit
+                            setTimeout(function () {
+                                // story.slick('unslick');
+                                $('#pop_story').modal('hide');
+                                resetProgressbar();
+                            }, 3800);
+                        }
+                    })
+                    
+                    if (storyLength == 1) {
+                        // story.slick('unslick');
+                        $('#pop_story').modal('hide');
+                        resetProgressbar();
+                    }
+                }
+            }
+        }
+        startProgressbar();
 
     })
 
@@ -111,29 +158,8 @@ $(document).ready(function () {
             $('.slick-prev').addClass('disabled');
         }
 
-        //loader dots
-        $('.slick-dots .slick-active').addClass('loaded');
-        //loader dots animation duration 0
-        let next = story.find('[aria-controls=0' + (currentSlide + 1) + ']');
-        let prev = story.find('[aria-controls=0' + (currentSlide - 1) + ']');
-        $('.slick-next').click(function () {
-            console.log(prev);
-            prev.parent().addClass('next');
-        })
-        $('.slick-prev').click(function () {
-            console.log(next);
-            next.parent().addClass('next');
-        })
-
         if (slick.$slides.length == currentSlide + slick.options.slidesToScroll) {
             $('.slick-next').addClass('disabled');
-            //console.log("Last slide");
-            //close when last slide was hit
-            setTimeout(function () {
-                story.slick('unslick');
-                $('#pop_story').css("display", "none");
-                $('#pop_story').modal('hide');
-            }, 3100);
         } else {
             //enabled slick-arrow
             $('.slick-next').removeClass('disabled');
@@ -141,22 +167,7 @@ $(document).ready(function () {
     });
     $('.storyClose').click(function () {
         // destroy slide
-        story.slick('unslick');
+        // story.slick('unslick');
+        resetProgressbar();
     })
-
-    //keyframe loader dots
-    $.keyframe.define([{
-        name: 'bottomborder',
-        '0%': {
-            'transform': 'translateX(-30px)',
-            'visibility': 'visible'
-        },
-        '50%': {
-            'transform': 'translateX(0)',
-            'visibility': 'visible'
-        },
-        '100%': {
-            'visibility': 'visible'
-        }
-    }]);
 })
