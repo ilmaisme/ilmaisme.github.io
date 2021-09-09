@@ -140,7 +140,7 @@ $(document).ready(function () {
                         resetProgressbar();
                     }
                 } else if (percentTime < 100) {
-                    $('.slick-arrow').click(function () {
+                    story.on('beforeChange', function (event, slick, currentSlide) {
                         percentTime += 1 / (time + 0.1);
                         $bar.css({
                             width: percentTime + "%"
