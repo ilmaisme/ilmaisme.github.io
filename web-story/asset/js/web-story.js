@@ -139,6 +139,13 @@ $(document).ready(function () {
                         $('#pop_story').modal('hide');
                         resetProgressbar();
                     }
+                } else if (percentTime < 100) {
+                    $('.slick-arrow').click(function () {
+                        percentTime += 1 / (time + 0.1);
+                        $bar.css({
+                            width: percentTime + "%"
+                        });
+                    })
                 }
             }
         }

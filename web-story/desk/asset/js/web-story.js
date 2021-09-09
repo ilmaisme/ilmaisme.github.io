@@ -62,9 +62,9 @@ $(document).ready(function () {
         });
         clearTimeout(tick);
     }
-    
+
     hidePrevStory()
-    
+
     $('.-js-slick-story').click(function () {
         let items = (storyLength - 1);
         let fullitems = (storyLength);
@@ -148,6 +148,13 @@ $(document).ready(function () {
                         $('#pop_story').modal('hide');
                         resetProgressbar();
                     }
+                } else if (percentTime < 100) {
+                    $('.slick-arrow').click(function () {
+                        percentTime += 1 / (time + 0.1);
+                        $bar.css({
+                            width: percentTime + "%"
+                        });
+                    })
                 }
             }
         }
