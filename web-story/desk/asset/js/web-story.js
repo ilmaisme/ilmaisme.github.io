@@ -128,7 +128,7 @@ $(document).ready(function () {
                     width: percentTime + "%"
                 });
                 if (percentTime >= 100) {
-                    // story.slick('slickNext');
+                    story.slick('slickNext');
                     startProgressbar();
                     //close when last slide was hit
                     story.on('afterChange', function (event, slick, currentSlide) {
