@@ -1,0 +1,109 @@
+.share {
+	&__title {
+		position: relative;
+		color: $cl_white;
+		cursor: pointer;
+		padding: 8px 10px;
+
+	}
+
+	&__wrap {
+		padding: 0 2px;
+		margin: 0;
+		display: inline-block;
+		height: 40px;
+
+		&--float {
+			position: absolute;
+			top: 40px;
+			right: 0;
+			padding: 10px;
+			background: rgba(0, 0, 0, .8);
+			min-width: 130px;
+			height: auto;
+
+			& .share__link {
+				color: #fff;
+				background: transparent;
+			}
+
+			& .share__link:hover {
+				background: transparent;
+			}
+
+			& .share__link--fb:hover span {
+				color: $cl_fb;
+			}
+
+			& .share__link--tw:hover span {
+				color: $cl_tw;
+			}
+
+			& .share__link--wa:hover span {
+				color: $cl_wa;
+			}
+		}
+	}
+
+	&__item {
+		padding: 0;
+		margin: 4px 0;
+		display: block;
+		float: left;
+	}
+
+	&__link {
+		width: 36px;
+		height: 36px;
+		padding: 3px;
+		margin: 0;
+		line-height: 1;
+		font-size: 16px;
+		border-radius: 20px;
+		text-align: center;
+		display: block;
+		color: #000;
+
+		&:hover {
+			color: #fff;
+		}
+
+		span {
+			width: 30px;
+			height: 30px;
+			padding: 3px 0px;
+			display: block;
+			border-radius: 20px;
+			background: #fff;
+			border: 2px solid transparent;
+			line-height: 1.5;
+		}
+
+		&--fb:hover {
+			color: #fff;
+
+			span {
+				background: $cl_fb;
+				border: 2px solid $cl_fb;
+			}
+		}
+
+		&--tw:hover {
+			color: #fff;
+
+			span {
+				background: $cl_tw;
+				border: 2px solid $cl_tw;
+			}
+		}
+
+		&--wa:hover {
+			color: #fff;
+
+			span {
+				background: $cl_wa;
+				border: 2px solid $cl_wa;
+			}
+		}
+	}
+}

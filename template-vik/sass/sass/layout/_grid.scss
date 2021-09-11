@@ -1,0 +1,134 @@
+.clearfix {
+	*zoom: 1;
+
+	&:after,
+	&:before {
+		display: table;
+		content: "";
+		line-height: 0;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.container {
+	max-width: $grid_mobile;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 10px;
+	padding-left: 10px;
+	*zoom: 1;
+	position: relative;
+
+	@include min-responsive($mdtablet) {
+		max-width: $grid_mobile;
+	}
+}
+
+.col-20,
+.col-30,
+.col-50,
+.col-70,
+.col-100 {
+	float: left;
+	position: relative;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin: 0;
+}
+
+.col-20 {
+	width: 25%;
+}
+
+.col-30 {
+	width: 50%;
+	max-width: 223px;
+	margin: 0 auto;
+	float: none;
+
+	@include min-responsive($mntablet) {
+		width: 33.33333%;
+		max-width: none;
+		float: left;
+	}
+}
+
+.col-50 {
+	width: 100%;
+	padding: 0;
+
+	@include min-responsive($mntablet) {
+		width: 50%;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
+
+.col-70 {
+	width: 100%;
+
+	@include min-responsive($mntablet) {
+		width: 66.33333%;
+	}
+}
+
+.col-100 {
+	width: $grid_mobile;
+}
+
+.col-offset-fluid {
+	margin-right: -10px;
+	margin-left: -10px;
+}
+
+.col-offset-fluid-sm {
+	margin-right: 0;
+	margin-left: 0;
+
+	@include min-responsive($mntablet) {
+		margin-right: -10px;
+		margin-left: -10px;
+	}
+}
+
+.col-offset-25 {
+	margin: 0 25%;
+
+	@include min-responsive($mntablet) {
+		margin: 0;
+	}
+}
+
+.col-offset-0 {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.display-table {
+	display: table;
+	@include display_full();
+	position: relative;
+	z-index: 1;
+}
+
+.display-center {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	@include display_full();
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
