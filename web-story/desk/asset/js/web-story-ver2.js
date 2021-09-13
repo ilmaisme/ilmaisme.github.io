@@ -11,12 +11,32 @@ $(document).ready(function () {
     /* web story slider */
     let story = $('#slide_story');
     let storyLength = story.find('.storyItem').length;
-
-    function getStoryLength() {
-        //count story item to pass on slideToShow
-        // console.log(storyLength);
-        item = (storyLength - 1)
-        return item;
+    if (storyLength > 3) {
+        story.slick({
+            dots: true,
+            arrows: true,
+            infinite: true,
+            slidesToShow: 3,
+            centerMode: true,
+            slidesToScroll: 1,
+            autoplaySpeed: 3000,
+            pauseOnHover: true,
+            pauseOnFocus: true,
+            appendDots: $('#dots_story')
+        });
+    } else if (storyLength <= 3) {
+        story.slick({
+            dots: true,
+            arrows: true,
+            infinite: true,
+            slidesToShow: 1,
+            centerMode: true,
+            slidesToScroll: 1,
+            autoplaySpeed: 3000,
+            pauseOnHover: true,
+            pauseOnFocus: true,
+            appendDots: $('#dots_story')
+        });
     }
 
     function hidePrevStory() {
@@ -41,25 +61,14 @@ $(document).ready(function () {
             width: 0 + '%'
         });
         clearTimeout(tick);
-    }   
+    }
 
-    story.slick({
-        dots: true,
-        arrows: true,
-        infinite: true,
-        slidesToShow: 1,
-        centerMode: true,
-        slidesToScroll: 1,
-        autoplaySpeed: 3000,
-        pauseOnHover: true,
-        pauseOnFocus: true,
-        appendDots: $('#dots_story')
-    });
+    hidePrevStory()
 
     $('.-js-slick-story').click(function () {
+        let items = (storyLength - 1);
+        let fullitems = (storyLength);
         resetProgressbar();
-        let items = getStoryLength();
-        let fullitems = items + 1;
 
         function hideNextStory() {
             //hide next story
@@ -133,7 +142,7 @@ $(document).ready(function () {
                             }, 3800);
                         }
                     })
-                    
+
                     if (storyLength == 1) {
                         // story.slick('unslick');
                         $('#pop_story').modal('hide');
@@ -153,9 +162,6 @@ $(document).ready(function () {
 
     })
 
-    story.on('init', function (event, slick, currentSlide, nextSlide) {
-        hidePrevStory()
-    });
     // On after slide change
     story.on('afterChange', function (event, slick, currentSlide) {
         //disabled or enabled slick-arrow

@@ -58,8 +58,8 @@ $(document).ready(function () {
             dotsItem.css({
                 width: 'calc((' + widthImage + 'px - (10 * ' + items + 'px)) /' + items + ')'
             });
-            console.log('width image : ', widthImage);
-            console.log('items : ', items);
+            // console.log('width image : ', widthImage);
+            // console.log('items : ', items);
         }
 
         //disabled slick-arrow
