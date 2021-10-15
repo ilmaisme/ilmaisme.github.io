@@ -1,0 +1,25 @@
+<div class="highlight highlight--box mt40">
+    <div class="display-flex aitems-center jcontent-between">
+        <div class="highlightCaption">Hits Movie : Squid Game</div>
+        <a href="#" class="highlightMore display-flex aitems-center">Lihat Lainnya <span class="icon icon-next ml10"></span></a>
+    </div>
+    <ul class="highlightList row">
+        {{#eachIndex headline}}
+        {{#gt index compare = '1'}}
+        <li class="highlightItem col-gd12-4">
+            <a href="{{item.link}}" class="highlightImg__wrap">
+                <img src="{{item.img}}{{index}}.jpg" class="highlightImg" alt="" width="300" height="250"
+                    loading="lazy">
+            </a>
+            <div class="highlightBox">
+                <div class="highlightDetail display-flex aitems-center mt10">
+                    <div class="highlightSubtitle">{{item.subtitle}}</div>
+                    <div class="highlightTime">9 menit yang lalu</div>
+                </div>
+                <h1 class="highlightTitle mt10"><a href="{{item.link}}" class="highlightLink">{{item.title}}</a></h1>
+            </div>
+        </li>
+        {{/gt}}
+        {{/eachIndex}}
+    </ul>
+</div>

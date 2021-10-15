@@ -1,0 +1,159 @@
+// default transisi
+@mixin base_transition($t) {
+  -webkit-transition: $t .2s ease;
+  -moz-transition: $t .2s ease;
+  -ms-transition: $t .2s ease;
+  -o-transition: $t .2s ease;
+  transition: $t .2s ease;
+}
+
+// border radius
+@mixin border_radius($x) {
+  -webkit-border-radius: $x;
+  -moz-border-radius: $x;
+  -ms-border-radius: $x;
+  -o-border-radius: $x;
+  border-radius: $x;
+}
+
+// scale
+@mixin base_scale($x) {
+  -ms-transform: scale($x);
+  /* IE 9 */
+  -webkit-transform: scale($x);
+  /* Safari */
+  transform: scale($x);
+}
+
+// rotate
+@mixin base_rotate($x) {
+  -ms-transform: rotate($x);
+  /* IE 9 */
+  -webkit-transform: rotate($x);
+  /* Safari */
+  transform: rotate($x);
+}
+
+// reset style ul
+@mixin reset_ul {
+  margin: 0;
+  padding: 0;
+}
+
+// 100%
+@mixin display_full {
+  width: 100%;
+  height: 100%;
+}
+
+//box-shadow
+@mixin box_shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  }
+
+  @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+//flex
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+//auto center
+@mixin auto-center() {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@mixin flex-center() {
+	@include flexbox();
+	justify-content: center;
+	align-items: center;
+}
+
+// untuk overflow judul pada list berita
+@mixin title_overflow($height, $max-height) {
+  height: $height;
+  max-height: $max-height;
+  overflow: hidden;
+}
+
+// media
+@mixin max-responsive ($media) {
+  @media (max-width: $media) {
+    @content;
+  }
+}
+
+@mixin min-responsive ($media) {
+  @media (min-width: $media) {
+    @content;
+  }
+}
+
+@mixin range-responsive ($media, $media2) {
+  @media (min-width: $media) and (max-width: $media2) {
+    @content;
+  }
+}
+
+// font template
+@mixin font-pack($family: false, $size: false, $weight: false, $lh: false, $colour: false) {
+  @if $family {
+    font-family: $family;
+  }
+
+  @if $size {
+    font-size: $size;
+  }
+
+  @if $weight {
+    font-weight: $weight;
+  }
+
+  @if $lh {
+    line-height: $lh;
+  }
+
+  @if $colour {
+    color: $colour;
+  }
+}
+
+//scroll
+@mixin scroll($width: false, $active:false, $bg:false) {
+
+  /* Firefox */
+  & {
+    scrollbar-width: thin;
+    scrollbar-color: $active $bg;
+  }
+
+  /* Chrome, Edge, and Safari */
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $bg;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $active;
+    border-radius: 0px;
+    border: transparent;
+  }
+}

@@ -1,0 +1,35 @@
+.nav {
+    &List {
+        border-top: 1px solid $cl_pink;
+        border-bottom: 1px solid $cl_pink;
+    }
+
+    &Item {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    &Link {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: block;
+        @include font-pack(false, 14px, 600, false, $cl_grey);
+
+        &:hover {
+            color: $cl_grey;
+        }
+
+        &.active {
+            color: $cl_pink;
+            border-bottom: 5px solid $cl_pink;
+        }
+
+        .icon-arrow {
+            width: 10px;
+            height: 10px;
+            position: relative;
+            bottom: 2px;
+            @include base_rotate(224deg);
+        }
+    }
+}
