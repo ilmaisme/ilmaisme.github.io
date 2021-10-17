@@ -40,4 +40,67 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    &Parallax {
+        width: 470px;
+        min-height: 428px;
+        position: relative;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &Halfpage {
+        width: 300px;
+        min-height: 600px;
+        position: relative;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &Skin {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        -webkit-transform: translateY(120px);
+        transform: translateY(120px);
+        z-index: 1;
+        @include base_transition(all);
+
+        &__fluid {
+            position: absolute;
+            width: calc((100% - 1168px)/2);
+            display: block;
+            top: 0;
+        }
+
+        &__fluid img {
+            max-width: none;
+        }
+
+        &__fluid--left {
+            left: 0;
+        }
+
+        &__fluid--right {
+            right: 0;
+        }
+
+        &--left {
+            right: 0;
+            position: absolute;
+        }
+
+        &--right {
+            left: 0;
+            position: absolute;
+        }
+
+        &--left,
+        &--right {
+            min-width: 120px;
+            min-height: 600px;
+        }
+    }
 }

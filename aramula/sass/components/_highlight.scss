@@ -23,13 +23,68 @@
         }
     }
 
+    &--stories {
+        height: 409px;
+        overflow: hidden;
+
+        .slick-list {
+            padding-right: 110px;
+        }
+
+        .slick-prev {
+            left: 25px;
+        }
+
+        .slick-next {
+            right: 10px;
+        }
+
+        .highlightImg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &--promo {
+        height: 341px;
+        overflow: hidden;
+        padding: 30px 20px;
+
+        .highlightList {
+            flex: 1;
+            padding: 0 0 0 20px;
+        }
+
+        .highlightItem {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    &--col3 {
+        height: 356px;
+        overflow: hidden
+    }
+
     &Caption {
-        display: inline-block;
-        padding: 14px 18px;
-        background: $cl_pink;
-        border-top-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-        @include font-pack(false, 18px, 600, false, $cl_white);
+        @include font-pack(false, 24px, 700, false, false);
+
+        &:before {
+            content: '';
+            display: block;
+            width: 70px;
+            border-top: 6px solid $cl_pink;
+            margin-bottom: 6px;
+        }
+
+        &__box {
+            display: inline-block;
+            padding: 14px 18px;
+            background: $cl_pink;
+            border-top-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            @include font-pack(false, 18px, 600, false, $cl_white);
+        }
     }
 
     &List {
@@ -47,6 +102,19 @@
         object-fit: cover;
         object-position: center;
         border-radius: 15px;
+
+        &__wrap {
+            position: relative;
+            display: block;
+
+            &:hover {
+                &~.highlightBox {
+                    .highlightLink {
+                        color: $cl_pink;
+                    }
+                }
+            }
+        }
     }
 
     &Subtitle {
@@ -68,15 +136,34 @@
     }
 
     &Link {
-        @include title_overflow(80px, 80px);
+        @include title_overflow(auto, 80px);
         @include font-pack(false, 20px, 600, false, false);
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
+
+        &:hover {
+            color: $cl_pink;
+        }
     }
 
     &More {
-        margin-right: 17px;
         @include font-pack(false, 12px, 600, 24px, $cl_pink);
+
+        &:hover {
+            color: $cl_pink;
+        }
+
+        &__box {
+            margin-right: 17px;
+        }
+    }
+
+    &Slide {
+        max-width: 506px;
+    }
+
+    &Dots {
+        @extend .headlineDots;
     }
 }

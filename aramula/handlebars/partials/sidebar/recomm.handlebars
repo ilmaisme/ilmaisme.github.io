@@ -1,0 +1,27 @@
+<div class="recomm mt40">
+    <div class="sidebarCaption">Rekomendasi</div>
+    <ul class="recommList mt10">
+        {{#eachIndex headline}}
+        <li class="recommItem">
+            {{#eq index compare= 0}}
+            <a href="#" class="recommLink display-flex dir-column">
+                <img src="{{item.img}}{{index}}.jpg" alt="" class="recommImg" width="300" height="205" loading="lazy">
+                <div class="sidebarDetail display-flex aitems-center mt10">
+                    <div class="sidebarSubtitle">{{item.subtitle}}</div>
+                    <div class="sidebarTime">9 menit yang lalu</div>
+                </div>
+                <h3 class="recommTitle mt10">{{item.title}}</h3>
+            </a>
+            {{else}}
+            <a href="#" class="recommLink display-flex aitems-center">
+                <img src="{{item.img}}{{index}}.jpg" alt="" class="recommImg mr10" width="99" height="99" loading="lazy">
+                <div class="recommBox">
+                    <h3 class="recommTitle">{{item.title}}</h3>
+                    <div class="sidebarSubtitle mt10">{{item.subtitle}}</div>
+                </div>
+            </a>
+            {{/eq}}
+        </li>
+        {{/eachIndex}}
+    </ul>
+</div>

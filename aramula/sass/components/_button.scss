@@ -3,6 +3,8 @@
     display: inline-block;
 
     &Login {
+        width: 63px;
+        height: 36px;
         padding: 9px 10px;
         margin-right: 10px;
         margin-left: 10px;
@@ -14,6 +16,8 @@
     }
 
     &Register {
+        width: 170px;
+        height: 36px;
         padding: 10px;
         margin-right: 10px;
         margin-left: 10px;
@@ -44,6 +48,72 @@
             width: 25px;
             height: 25px;
             display: block;
+        }
+    }
+
+    &Other {
+        padding: 7px 22px;
+        border: 1px solid $cl_pink;
+        border-radius: 15px;
+
+        &--bottom {
+            display: block;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            background: $cl_pink;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-bottom: -1px;
+            margin-left: -1px;
+            margin-right: -1px;
+            @include font-pack(false, 12px, 600, 24px, $cl_white);
+
+            &:hover {
+                color: $cl_white;
+            }
+        }
+    }
+
+    &Career {
+        background: $cl_pink;
+        padding: 15px 37px;
+        border-radius: 15px;
+        border: 0;
+        text-transform: uppercase;
+        @include font-pack(false, 16px, 500, false, $cl_white);
+    }
+
+    &More {
+        min-height: 60px;
+        width: 100%;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        background: $cl_white;
+        border: 1px solid $cl_pink;
+        border-radius: 15px;
+        text-transform: uppercase;
+        @include font-pack(false, 16px, 400, 22px, $cl_pink);
+    }
+
+    &Totop {
+        position: absolute;
+        top: -60px;
+        right: 140px;
+        border: 1px solid $cl_pink;
+        border-radius: 10px;
+        background: $cl_white;
+        width: 40px;
+        height: 40px;
+        @include base_transition(all);
+
+        &:hover {
+            -webkit-animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate both;
+            animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate both;
+        }
+
+        .icon-next {
+            vertical-align: middle;
+            @include base_rotate(270deg);
         }
     }
 }

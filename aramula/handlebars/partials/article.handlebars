@@ -1,0 +1,29 @@
+<!-- article -->
+<div class="article mt40">
+    <ul class="articleList">
+        {{#eachIndex headline}}
+        {{#gt index compare = '0'}}
+        <li class="articleItem mt20 display-flex">
+            <a href="{{item.link}}" class="articleImg__wrap" aria-label="{{item.title}}">
+                <img src="{{item.img}}{{index}}.jpg" class="articleImg" alt="" width="178" height="155" loading="lazy">
+            </a>
+            <div class="articleBox">
+                <div class="articleSubtitle">{{item.subtitle}}</div>
+                <h3 class="articleTitle mt10"><a href="{{item.link}}" class="articleLink">{{item.title}}</a></h3>
+                <div class="articleDetail user display-flex aitems-center mt10">
+                    <a href="#" class="display-flex aitems-center">
+                        <img loading="lazy" src="{{item.user}}" width="24" height="24" alt=""
+                            class="userAvatar mr10">
+                        <div class="userName">
+                            Salma Farida
+                        </div>
+                    </a>
+                    <div class="articleTime">9 menit yang lalu</div>
+                </div>
+            </div>
+        </li>
+        {{/gt}}
+        {{/eachIndex}}
+    </ul>
+</div>
+<!-- article -->
