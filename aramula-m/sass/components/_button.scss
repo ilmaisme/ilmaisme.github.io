@@ -1,0 +1,76 @@
+.button {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+
+    &Search {
+        background: none;
+        border: 0;
+
+        .icon-search {
+            width: 25px;
+            height: 25px;
+            display: block;
+        }
+    }
+
+    &Burger {
+        background: transparent;
+        border: 0;
+    }
+
+    &Other {
+        display: block;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        background: $cl_pink;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-bottom: -1px;
+        margin-left: -1px;
+        margin-right: -1px;
+        @include font-pack(false, 12px, 600, 24px, $cl_white);
+
+        &:hover {
+            color: $cl_white;
+        }
+    }
+
+    &Career {
+        background: $cl_pink;
+        padding: 11px 34px;
+        border-radius: 15px;
+        border: 0;
+        text-transform: uppercase;
+        @include font-pack(false, 12px, 500, false, $cl_white);
+    }
+
+    &More {
+        min-height: 45px;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: $cl_white;
+        border: 1px solid $cl_pink;
+        border-radius: 15px;
+        text-transform: uppercase;
+        @include font-pack(false, 12px, 400, 22px, $cl_pink);
+    }
+
+    &Totop {
+        position: absolute;
+        top: -20px;
+        right: 20px;
+        border: 0;
+        border-radius: 10px;
+        background: $cl_pink;
+        width: 40px;
+        height: 40px;
+
+        .icon-next {
+            filter: brightness(0) invert(1);
+            vertical-align: middle;
+            @include base_rotate(270deg);
+        }
+    }
+}
