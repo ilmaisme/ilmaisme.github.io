@@ -1,6 +1,11 @@
 <header class="header headerFixed">
     <div class="headerContent display-flex aitems-center">
-        <button class="button buttonBurger" aria-label="Menu"><span class="icon icon-burger"></span></button>
+        <div class="menu">
+            <label class="sr-only" for="menuToggle">Open navigation</label>
+            <input type="checkbox" class="menuToggle" name="check" id="menuToggle" aria-haspopup="true">
+            {{> header/burger}}
+            {{> header/menu}}
+        </div>
         <div class="headerLogo text-center">
             <a href="index.html">
                 <img src="asset/images/logo-aramula.png" alt="Aramula" width="134" height="22">
@@ -10,17 +15,11 @@
     </div>
     <nav class="nav">
         <ul class="navList display-flex jcontent-center">
-            <li class="navItem"><a href="#" class="navLink active">Home</a></li>
-            <li class="navItem"><a href="#" class="navLink">Hangout</a></li>
-            <li class="navItem"><a href="#" class="navLink">Hallyu</a></li>
-            <li class="navItem"><a href="#" class="navLink">Zodiac</a></li>
-            <li class="navItem"><a href="#" class="navLink">Women</a></li>
-            <li class="navItem"><a href="#" class="navLink">Entertainment</a></li>
-            <li class="navItem"><a href="#" class="navLink">Numpang Promo</a></li>
-            <li class="navItem"><a href="#" class="navLink">Stories</a></li>
-            <li class="navItem"><a href="#" class="navLink">Photo</a></li>
-            <li class="navItem"><a href="#" class="navLink">Video</a></li>
-            <li class="navItem"><a href="#" class="navLink">Indeks</a></li>
+            {{#each menu}}
+            <li class="navItem">
+                <a href="{{link}}" class="navLink{{#eq title compare=../page}} active{{/eq}}">{{title}}</a>
+            </li>
+            {{/each}}
         </ul>
     </nav>
 </header>
