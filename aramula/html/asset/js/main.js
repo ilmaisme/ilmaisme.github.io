@@ -82,6 +82,12 @@ $(document).ready(function () {
     }
     createVideo();
 
+    //close sticky ads
+    $('.-closeads').click(function (e) {
+        e.preventDefault();
+        $(this).parent().remove();
+    });
+
 });
 
 function backToTop() {

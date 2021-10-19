@@ -2,7 +2,7 @@
     cursor: pointer;
     display: inline-block;
 
-    &Login {
+    &Secondary {
         width: 63px;
         height: 36px;
         padding: 9px 10px;
@@ -15,7 +15,7 @@
         @include font-pack(false, 12px, 500, false, $cl_purple);
     }
 
-    &Register {
+    &Primary {
         width: 170px;
         height: 36px;
         padding: 10px;
@@ -93,6 +93,12 @@
         border-radius: 15px;
         text-transform: uppercase;
         @include font-pack(false, 16px, 400, 22px, $cl_pink);
+        @include base_transition(all);
+
+        &:hover {
+            color: $cl_white;
+            background: $cl_pink;
+        }
     }
 
     &Totop {

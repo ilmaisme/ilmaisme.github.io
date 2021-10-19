@@ -1,4 +1,6 @@
 .nav {
+    height: 65px;
+
     &List {
         max-width: $grid_nopad;
         border-top: 1px solid $cl_pink;
@@ -26,13 +28,128 @@
             color: $cl_pink;
             border-bottom: 5px solid $cl_pink;
         }
+    }
 
-        .icon-arrow {
-            width: 10px;
-            height: 10px;
-            position: relative;
-            bottom: 2px;
-            @include base_rotate(224deg);
+    &Check {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        opacity: 0;
+        cursor: pointer;
+        transform: translate(-85%, -20%);
+        z-index: 1;
+
+        &:checked~.navMore__list {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &More {
+        position: relative;
+
+        &__list {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            width: 263px;
+            top: 50px;
+            right: 20px;
+            z-index: 1;
+            border: 1px solid #CECECE;
+            background: $cl_white;
+        }
+
+        &__item {
+            height: 55px;
+            margin: 0;
+
+            &:last-child {
+                .navMore__link {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        &__link {
+            padding: 20px;
+            border-bottom: 1px solid #CECECE;
+            @include font-pack(false, false, 500, false, $cl_primary);
+
+            &:hover {
+                color: $cl_primary;
+            }
+        }
+    }
+
+    &User {
+        position: relative;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        &__icon {
+            bottom: -6px;
+        }
+
+        &__check {
+            position: absolute;
+            width: 63px;
+            height: 36px;
+            opacity: 0;
+            cursor: pointer;
+            transform: translate(-100%, -10%);
+            z-index: 1;
+
+            &:checked~.navUser__list {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        &__list {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            width: 167px;
+            top: 50px;
+            right: -10px;
+            z-index: 1;
+            border: 1px solid #DEDEDE;
+            background: $cl_white;
+        }
+
+        &__item {
+            margin: 0;
+            height: 47px;
+
+            &:last-child {
+                .navUser__link {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        &__name {
+            display: block;
+            @include title_overflow(18px, 18px);
+        }
+
+        &__link {
+            padding: 14px 20px;
+            border-bottom: 1px solid #CECECE;
+            @include font-pack(false, 14px, 600, false, #717171);
+
+            &:hover {
+                color: #717171;
+            }
+
+            &.red {
+                color: $cl_red;
+
+                &:hover {
+                    color: $cl_red;
+                }
+            }
         }
     }
 }

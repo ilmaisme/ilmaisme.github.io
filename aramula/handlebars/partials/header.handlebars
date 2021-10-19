@@ -11,9 +11,28 @@
                     aria-label="Youtube"><span class="icon icon-yt"></span></a></li>
         </ul>
         <div class="display-flex">
-            <button class="button buttonLogin">Masuk</button>
-            <button class="button buttonRegister"><span class="icon icon-reg mr10"></span>Daftar Aramula.com</button>
+            {{#eq login compare=true}}
+            <button class="button buttonPrimary"><span class="icon icon-write mr10"></span>Tulis Artikel</button>
+            <div class="navUser">
+                <img loading="lazy" src="asset/images/sample/user-big.jpg" width="35" height="35" alt=""
+                    class="userAvatar userAvatar--nav mr10">
+                <span class="icon icon-arrow icon-arrow-bottom navUser__icon"></span>
+                <label class="sr-only" for="navUser">User navigation</label>
+                <input name="check" type="checkbox" id="navUser" class="navUser__check" aria-haspopup="true">
+                <ul class="navUser__list">
+                    <li class="navItem navUser__item"><a href="#" class="navLink navUser__link"><span class="navUser__name">Sophie
+                                Anggita</span></a></li>
+                    <li class="navItem navUser__item"><a href="#" class="navLink navUser__link">Edit Profil</a></li>
+                    <li class="navItem navUser__item"><a href="#" class="navLink navUser__link">Beranda</a></li>
+                    <li class="navItem navUser__item"><a href="#" class="navLink navUser__link red">Logout</a></li>
+                </ul>
+            </div>
             <button class="button buttonSearch" aria-label="Search"><span class="icon icon-search"></span></button>
+            {{else}}
+            <button class="button buttonSecondary">Masuk</button>
+            <button class="button buttonPrimary"><span class="icon icon-reg mr10"></span>Daftar Aramula.com</button>
+            <button class="button buttonSearch" aria-label="Search"><span class="icon icon-search"></span></button>
+            {{/eq}}
         </div>
     </div>
     <div class="headerContent container">
@@ -35,7 +54,28 @@
                 <li class="navItem"><a href="#" class="navLink">Photo</a></li>
                 <li class="navItem"><a href="#" class="navLink">Video</a></li>
                 <li class="navItem"><a href="#" class="navLink">Indeks</a></li>
-                <li class="navItem"><a href="#" class="navLink" aria-label="More navigation"><span class="icon icon-arrow"></span></a></li>
+                <li class="navItem navMore">
+                    <div class="navLink">
+                        <span class="icon icon-arrow icon-arrow-bottom"></span>
+                        <label class="sr-only" for="navToggle">More navigation</label>
+                        <input name="check" type="checkbox" id="navToggle" class="navCheck" aria-haspopup="true">
+                        <ul class="navMore__list">
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Hangout</a></li>
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Hallyu</a></li>
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Zodiac</a></li>
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Women</a></li>
+                            <li class="navItem navMore__item"><a href="#"
+                                    class="navLink navMore__link">Entertainment</a>
+                            </li>
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Numpang
+                                    Promo</a>
+                            </li>
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Stories</a></li>
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Photo</a></li>
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Video</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </nav>
     </div>
