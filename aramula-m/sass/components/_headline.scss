@@ -1,5 +1,6 @@
 .headline {
     --height: 239px;
+    height: 260px;
     max-width: 100%;
     overflow: hidden;
 
@@ -17,6 +18,12 @@
 
     .slick-slide {
         height: var(--height);
+    }
+
+    &List {
+        &>.headlineItem:not(:first-child) {
+            display: none;
+        }
     }
 
     &Item {
@@ -44,6 +51,7 @@
         position: absolute;
         bottom: 0;
         width: 100%;
+        max-height: 194px;
         padding: 22px 30px;
         z-index: 1;
     }
@@ -108,5 +116,10 @@
             cursor: pointer;
             // transition: width .4s;
         }
+    }
+
+    &Link{
+        display: block;
+        @include title_overflow(auto, 118px);
     }
 }

@@ -54,6 +54,10 @@
         height: 274px;
         overflow: hidden;
 
+        &>.highlightPromo__item:not(:first-child) {
+            display: none;
+        }
+
         &__item {
             padding-left: 14px;
             padding-right: 14px;
@@ -143,6 +147,16 @@
     &List {
         margin-right: -10px;
         margin-left: -10px;
+
+        &>.highlightItem:not(:first-child) {
+            display: none;
+        }
+
+        &--noscroll{
+            &>.highlightItem:not(:first-child) {
+                display: block;
+            }
+        }
     }
 
     &Item {
@@ -185,5 +199,9 @@
 
     &Dots {
         @extend .headlineDots;
+    }
+
+    &Bottom {
+        min-height: 20px;
     }
 }
