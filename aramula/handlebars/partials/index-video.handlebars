@@ -1,0 +1,47 @@
+<div class="highlight mt40">
+    <div class="display-flex aitems-center jcontent-between">
+        <div class="highlightCaption">Video Terbaru</div>
+    </div>
+    <!-- s: video article -->
+    <ul class="highlightList videoList row mt10">
+        {{#eachIndex headline}}
+        <li class="highlightItem col-gd12-4 mt40">
+            <a href="{{item.link}}" aria-label="{{item.title}}">
+                <div class="highlightImg__wrap">
+                    <img src="{{item.img}}{{index}}.jpg" class="highlightImg" alt="" width="336" height="255"
+                        loading="lazy">
+                    <span class="icon icon-play"></span>
+                </div>
+                <div class="highlightBox">
+                    <div class="highlightDetail display-flex aitems-center mt10">
+                        <div class="highlightSubtitle">Video</div>
+                        <div class="highlightTime">9 menit yang lalu</div>
+                    </div>
+                    <h2 class="highlightTitle highlightLink mt10">{{item.title}}</h2>
+                </div>
+            </a>
+        </li>
+        {{/eachIndex}}
+        {{#eachIndex headline}}
+        {{#lt index compare = '4'}}
+        <li class="highlightItem col-gd12-4 mt40">
+            <a href="{{item.link}}" aria-label="{{item.title}}">
+                <div class="highlightImg__wrap">
+                    <img src="{{item.img}}{{index}}.jpg" class="highlightImg" alt="" width="336" height="255"
+                        loading="lazy">
+                    <span class="icon icon-play"></span>
+                </div>
+                <div class="highlightBox">
+                    <div class="highlightDetail display-flex aitems-center mt10">
+                        <div class="highlightSubtitle">Video</div>
+                        <div class="highlightTime">9 menit yang lalu</div>
+                    </div>
+                    <h2 class="highlightTitle highlightLink mt10">{{item.title}}</h2>
+                </div>
+            </a>
+        </li>
+        {{/lt}}
+        {{/eachIndex}}
+    </ul>
+    <!-- e: video article -->
+</div>

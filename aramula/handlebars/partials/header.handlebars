@@ -20,7 +20,8 @@
                 <label class="sr-only" for="navUser">User navigation</label>
                 <input name="check" type="checkbox" id="navUser" class="navUser__check" aria-haspopup="true">
                 <ul class="navUser__list">
-                    <li class="navItem navUser__item"><a href="#" class="navLink navUser__link"><span class="navUser__name">Sophie
+                    <li class="navItem navUser__item"><a href="#" class="navLink navUser__link"><span
+                                class="navUser__name">Sophie
                                 Anggita</span></a></li>
                     <li class="navItem navUser__item"><a href="#" class="navLink navUser__link">Edit Profil</a></li>
                     <li class="navItem navUser__item"><a href="#" class="navLink navUser__link">Beranda</a></li>
@@ -43,17 +44,10 @@
         </div>
         <nav class="nav mt40">
             <ul class="navList display-flex jcontent-center">
-                <li class="navItem"><a href="#" class="navLink active">Home</a></li>
-                <li class="navItem"><a href="#" class="navLink">Hangout</a></li>
-                <li class="navItem"><a href="#" class="navLink">Hallyu</a></li>
-                <li class="navItem"><a href="#" class="navLink">Zodiac</a></li>
-                <li class="navItem"><a href="#" class="navLink">Women</a></li>
-                <li class="navItem"><a href="#" class="navLink">Entertainment</a></li>
-                <li class="navItem"><a href="#" class="navLink">Numpang Promo</a></li>
-                <li class="navItem"><a href="#" class="navLink">Stories</a></li>
-                <li class="navItem"><a href="#" class="navLink">Photo</a></li>
-                <li class="navItem"><a href="#" class="navLink">Video</a></li>
-                <li class="navItem"><a href="#" class="navLink">Indeks</a></li>
+                {{#each menu}}
+                <li class="navItem"><a href="{{link}}"
+                        class="navLink{{#eq title compare=../page}} active{{/eq}}">{{title}}</a></li>
+                {{/each}}
                 <li class="navItem navMore">
                     <div class="navLink">
                         <span class="icon icon-arrow icon-arrow-bottom"></span>
