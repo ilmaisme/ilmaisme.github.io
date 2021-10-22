@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page=""}}
+
+<body>
+
+    <!-- header -->
+    {{> header}}
+    <!-- header -->
+
+    <!-- main -->
+    <main role="main">
+        {{> ads/skin}}
+        <section class="container">
+            <div class="row display-flex mt40">
+                <div class="col-gd-740">
+                    <form class="search" action="">
+                        <div class="display-flex">
+                            <div class="searchWrap">
+                                <input class="formInput searchInput" id="search" type="text" value="Salma Farida"
+                                    placeholder="Search" aria-label="Search">
+                                <span class="icon icon-search searchIcon">
+                                </span>
+                            </div>
+                            <button class="button buttonPink" type="submit" name="submit">
+                                Cari Berita
+                            </button>
+                        </div>
+                    </form>
+                    <p class="searchText mt30">Pencarian <span class="pink">“Salma Farida”</span>, ditemukan 10 hasil :</p>
+                    {{> article-index mt=40}}
+                    {{> paging}}
+                </div>
+                <div class="col-gd-300">
+                    <aside>
+                        {{> ads/right}}
+                        {{> ads/right mt=20}}
+                        {{> sidebar/trending}}
+                        {{> ads/halfpage}}
+                        {{> sidebar/recomm}}
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+    {{> ads/sticky}}
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js page=""}}
+
+</body>
+
+</html>

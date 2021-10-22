@@ -78,12 +78,19 @@
         }
 
         &__box {
-            display: inline-block;
-            padding: 14px 18px;
+            margin-top: -1px;
+            margin-left: -1px;
+            margin-right: 10px;
+            max-width: 597px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
             background: $cl_pink;
+            padding: 14px 18px;
             border-top-left-radius: 15px;
             border-bottom-right-radius: 15px;
-            @include font-pack(false, 18px, 600, false, $cl_white);
+            @include title_overflow(auto, 50px);
+            @include font-pack(false, 18px, 600, 1.7, $cl_white);
         }
     }
 

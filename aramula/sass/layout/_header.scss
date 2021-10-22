@@ -4,10 +4,20 @@
         position: fixed;
         top: 0;
         width: 100%;
-        padding: 26px 80px;
+        padding: 16px 80px;
         border-bottom: 1px solid $cl_pink;
         background: $cl_white;
         z-index: 2;
+
+        &__logo{
+            max-width: 200px;
+            opacity: 0;
+            @include base_transition(all);
+
+            &.active{
+                opacity: 1;
+            }
+        }
     }
 
     &Content{

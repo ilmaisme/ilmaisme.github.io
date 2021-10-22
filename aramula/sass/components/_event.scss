@@ -33,6 +33,11 @@
 
     &Vid {
         position: relative;
+        cursor: pointer;
+
+        .icon-play {
+            pointer-events: none;
+        }
     }
 
     &Detail {
@@ -81,6 +86,13 @@
         &__detail {
             padding: 10px 30px;
             @include font-pack(false, 12px, 400, 22px, #A050A0);
+        }
+
+        video, iframe{            
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            margin-top: -1px;
+            object-fit: cover;
         }
     }
 }

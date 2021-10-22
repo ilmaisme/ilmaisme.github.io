@@ -16,7 +16,9 @@ $(document).ready(function () {
             appendDots: $('#dtheadline')
         });
     }
-    createSlick();
+    if (!!$('#sheadline')) {
+        createSlick();
+    }
 
     // stories slider
     function createStories() {
@@ -32,7 +34,9 @@ $(document).ready(function () {
             autoplay: false
         });
     }
-    createStories();
+    if (!!$('#sstories')) {
+        createStories();
+    }
 
     // promo slider
     function createPromo() {
@@ -48,7 +52,9 @@ $(document).ready(function () {
             appendDots: $('#dtpromo')
         });
     }
-    createPromo();
+    if (!!$('#spromo')) {
+        createPromo();
+    }
 
     // photo slider
     function createPhoto() {
@@ -64,7 +70,9 @@ $(document).ready(function () {
             appendDots: $('#dtphoto')
         });
     }
-    createPhoto();
+    if (!!$('#sphoto')) {
+        createPhoto();
+    }
 
     // video slider
     function createVideo() {
@@ -80,6 +88,24 @@ $(document).ready(function () {
             appendDots: $('#dtvideo')
         });
     }
-    createVideo();
-
+    if (!!$('#svideo')) {
+        createVideo();
+    }
+    if (!!$('.eventVid')) {
+        $('.eventVid').click(function () {
+            $(this).find($('.icon-play')).toggle();
+        });
+    }
+    if (!!$('.-right-sticky')) {
+        $(".-right-sticky").stick_in_parent({
+            parent: ".-parent-sticky",
+            inner_scrolling: true,
+            spacer: false,
+        }).on('sticky_kit:bottom', function (e) {
+            //console.log('stuck');
+            $(this).css('position', 'absolute');
+        }).on('sticky_kit:unbottom', function (e) {
+            // console.log('unstuck');
+        });
+    }
 });
