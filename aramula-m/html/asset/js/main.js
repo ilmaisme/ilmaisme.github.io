@@ -56,6 +56,13 @@ $(document).ready(function () {
         $(this).parent().remove();
     });
 
+    //icon event play
+    if (!!$('.eventVid')) {
+        $('.eventVid').click(function () {
+            $(this).find($('.icon-play')).toggle();
+        });
+    }
+
 });
 
 function backToTop() {

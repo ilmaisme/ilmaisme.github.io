@@ -74,7 +74,7 @@
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
     </style>
-    <link type="text/css" rel="stylesheet" href="asset/css/style-home.min.css">
+    <link type="text/css" rel="stylesheet" href="asset/css/style-home.css">
 
     <link rel="preload" href="asset/images/logo-aramula.png" as="image" />
     <link rel="preload" href="asset/images/ads/pushdown.jpg" as="image" />
@@ -116,9 +116,9 @@
 	                <div class="menuSearch mt10">
 	                    <form action="">
 	                        <div class="menuSearch__box">
-	                            <div class="icon icon-search menuSearch__icon"></div>
 	                            <input type="text" name="" class="menuSearch__input" aria-label="Search news" placeholder="Cari Berita"
 	                                value="" inputmode="search">
+	                            <button class="button buttonSearch__menu" type="submit" name="submit" aria-label="Search"><span class="icon icon-search menuSearch__icon"></span></button>
 	                        </div>
 	                    </form>
 	                </div>
@@ -161,7 +161,7 @@
 	                    <li class="menuItem"><a href="#"
 	                            class="menuLink">Stories</a></li>
 	                    <li class="menuItem"><a href="#"
-	                            class="menuLink">Foto</a></li>
+	                            class="menuLink">Photo</a></li>
 	                    <li class="menuItem"><a href="#"
 	                            class="menuLink">Video</a></li>
 	                    <li class="menuItem"><a href="#"
@@ -173,7 +173,7 @@
 	                <img src="asset/images/logo-aramula.png" alt="Aramula" width="134" height="22">
 	            </a>
 	        </div>
-	        <button class="button buttonSearch" aria-label="Search"><span class="icon icon-search"></span></button>
+	        <a href="search.html" class="buttonSearch" aria-label="Search"><span class="icon icon-search"></span></a>
 	    </div>
 	    <nav class="nav">
 	        <ul class="navList display-flex jcontent-center">
@@ -205,7 +205,7 @@
 	                <a href="#" class="navLink">Stories</a>
 	            </li>
 	            <li class="navItem">
-	                <a href="#" class="navLink">Foto</a>
+	                <a href="#" class="navLink">Photo</a>
 	            </li>
 	            <li class="navItem">
 	                <a href="#" class="navLink">Video</a>
@@ -222,12 +222,14 @@
 		<section class="container">
 			<div class="event eventBg mt30">
 			    <div class="eventVid">
-			        <a href="#" aria-label="Play Event">
-			            <div class="eventVid__cover">
-			                <img src="asset/images/sample/webp/event.webp" class="eventImg" alt="Aramula Event" width="324" height="185" loading="lazy">
-			            </div>
-			            <span class="icon icon-play"></span>
-			        </a>
+			        <!-- <iframe width="324" height="185" src="https://www.youtube.com/embed/JjAtkmSd46g?controls=0"
+			            title="YouTube video player" frameborder="0"
+			            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			            allowfullscreen></iframe> -->
+			        <video controls width="324" height="185" poster="asset/images/sample/event.jpg">
+			            <source src="asset/images/sample/video.mp4" type="video/mp4">
+			        </video>
+			        <!-- <span class="icon icon-play"></span>-->
 			    </div>
 			    <div class="eventContent text-center">
 			        <div class="eventLabel"><span class="icon icon-stream mr10"></span>Live Streaming</div>
@@ -236,14 +238,14 @@
 			            of the
 			            day
 			            for national news and world news today.</p>
-			            <div class="eventDetail mt10">
-			                <div class="eventDate display-flex aitems-center">
-			                    <span class="icon icon-cal mr10"></span> 29 September 2021
-			                </div>
-			                <div class="eventTime display-flex aitems-center mt10">
-			                    <span class="icon icon-time mr10"></span> 10:00 -  12:00 WIB
-			                </div>
+			        <div class="eventDetail mt10">
+			            <div class="eventDate display-flex aitems-center">
+			                <span class="icon icon-cal mr10"></span> 29 September 2021
 			            </div>
+			            <div class="eventTime display-flex aitems-center mt10">
+			                <span class="icon icon-time mr10"></span> 10:00 - 12:00 WIB
+			            </div>
+			        </div>
 			    </div>
 			</div>			<div class="ads adsWrap mt30">
 			    <div class="adsTop adsCenter adsPlaceholder">
@@ -729,7 +731,7 @@
 			    </div>
 			</div>			<div class="highlight highlightBox mt30">
 			    <div class="articleCaption__box text-center">
-			        <img src="asset/images/numpang-promo.png" class="" alt="" width="234" height="32" loading="lazy">
+			        <img src="asset/images/numpang-promo.png" class="" alt="Numpang Promo" width="234" height="32" loading="lazy">
 			    </div>
 			    <div class="highlightPromo" id="spromo">
 			        <div class="highlightPromo__item">
@@ -916,15 +918,23 @@
 			    </ul>
 			</div>
 			<!-- article -->			<div class="ads adsWrap mt30">
-			    <div class="adsParallax adsCenter adsPlaceholder">
-			        <img src="asset/images/ads/parallax.jpg" alt="" width="360" height="600" loading="lazy">
+			    <div class="adsParallax adsCenter">
+			        <div class="adsFlying">
+			            <div class="adsFlying__inner">
+			                <div class="adsFlying__fix">
+			                    <div class="adsFlying__banner">
+			                        <img src="asset/images/ads/parallax.jpg" alt="" width="360" height="600">
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
 			    </div>
 			</div>			<div class="writer mt30">
 			    <div class="articleCaption">Penulis Pilihan</div>
 			    <ul class="row">
 			        <li class="writerItem col-gd12-4 col-gd12-md3">
 			            <a href="#" class="writerLink text-center">
-			                <img loading="lazy" src="https://dummyimage.com/70x70/000000/fff" width="70" height="70" alt=""
+			                <img loading="lazy" src="https://api.lorem.space/image/face?w=70&amp;h=70&amp;hash=8B7BCDC2" width="70" height="70" alt=""
 			                    class="userAvatar writerAvatar">
 			                <div class="userName writerName mt10">
 			                    Pandu Hutapea
@@ -933,7 +943,7 @@
 			        </li>
 			        <li class="writerItem col-gd12-4 col-gd12-md3">
 			            <a href="#" class="writerLink text-center">
-			                <img loading="lazy" src="https://dummyimage.com/70x70/CD5DB9/fff" width="70" height="70" alt=""
+			                <img loading="lazy" src="https://api.lorem.space/image/face?w=70&amp;h=70&amp;hash=500B67FB" width="70" height="70" alt=""
 			                    class="userAvatar writerAvatar">
 			                <div class="userName writerName mt10">
 			                    Alisa Chandrika
@@ -942,7 +952,7 @@
 			        </li>
 			        <li class="writerItem col-gd12-4 col-gd12-md3">
 			            <a href="#" class="writerLink text-center">
-			                <img loading="lazy" src="https://dummyimage.com/70x70/CD5DB9/fff" width="70" height="70" alt=""
+			                <img loading="lazy" src="https://api.lorem.space/image/face?w=70&amp;h=70&amp;hash=A89D0DE6" width="70" height="70" alt=""
 			                    class="userAvatar writerAvatar">
 			                <div class="userName writerName mt10">
 			                    Larinda Dewi
@@ -951,7 +961,7 @@
 			        </li>
 			        <li class="writerItem col-gd12-4 col-gd12-md3">
 			            <a href="#" class="writerLink text-center">
-			                <img loading="lazy" src="https://dummyimage.com/70x70/000000/fff" width="70" height="70" alt=""
+			                <img loading="lazy" src="https://api.lorem.space/image/face?w=70&amp;h=70&amp;hash=225E6693" width="70" height="70" alt=""
 			                    class="userAvatar writerAvatar">
 			                <div class="userName writerName mt10">
 			                    Prasetya Adhi
@@ -960,7 +970,7 @@
 			        </li>
 			        <li class="writerItem col-gd12-4 col-gd12-md3">
 			            <a href="#" class="writerLink text-center">
-			                <img loading="lazy" src="https://dummyimage.com/70x70/CD5DB9/fff" width="70" height="70" alt=""
+			                <img loading="lazy" src="https://api.lorem.space/image/face?w=70&amp;h=70&amp;hash=7F5AE56A" width="70" height="70" alt=""
 			                    class="userAvatar writerAvatar">
 			                <div class="userName writerName mt10">
 			                    Salma Fadhillah
@@ -969,7 +979,7 @@
 			        </li>
 			        <li class="writerItem col-gd12-4 col-gd12-md3">
 			            <a href="#" class="writerLink text-center">
-			                <img loading="lazy" src="https://dummyimage.com/70x70/000000/fff" width="70" height="70" alt=""
+			                <img loading="lazy" src="https://api.lorem.space/image/face?w=70&amp;h=70&amp;hash=2D297A22" width="70" height="70" alt=""
 			                    class="userAvatar writerAvatar">
 			                <div class="userName writerName mt10">
 			                    Satria Kusumo
@@ -1182,7 +1192,7 @@
 	</footer>
 	<script defer src="asset/js/jquery-3.5.0.min.js"></script>
 	<script defer type="text/javascript" src="asset/js/main-above-fold.min.js"></script>
-	<script defer type="text/javascript" src="asset/js/main.min.js"></script>
+	<script defer type="text/javascript" src="asset/js/main.js"></script>
 	<script defer type="text/javascript" src="asset/js/slick/slick.min.js"></script>
 </body>
 
