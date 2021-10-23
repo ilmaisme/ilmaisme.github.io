@@ -91,11 +91,15 @@ $(document).ready(function () {
     if (!!$('#svideo')) {
         createVideo();
     }
+
+    //icon event play
     if (!!$('.eventVid')) {
         $('.eventVid').click(function () {
             $(this).find($('.icon-play')).toggle();
         });
     }
+
+    //sticky right ads
     if (!!$('.-right-sticky')) {
         $(".-right-sticky").stick_in_parent({
             parent: ".-parent-sticky",
