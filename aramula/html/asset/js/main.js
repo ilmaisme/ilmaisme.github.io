@@ -16,7 +16,7 @@ $(document).ready(function () {
             appendDots: $('#dtheadline')
         });
     }
-    if (!!$('#sheadline')) {
+    if ($('#sheadline').is(':visible')) {
         createSlick();
     }
 
@@ -34,7 +34,7 @@ $(document).ready(function () {
             autoplay: false
         });
     }
-    if (!!$('#sstories')) {
+    if ($('#sstories').is(':visible')) {
         createStories();
     }
 
@@ -52,7 +52,7 @@ $(document).ready(function () {
             appendDots: $('#dtpromo')
         });
     }
-    if (!!$('#spromo')) {
+    if ($('#spromo').is(':visible')) {
         createPromo();
     }
 
@@ -70,7 +70,7 @@ $(document).ready(function () {
             appendDots: $('#dtphoto')
         });
     }
-    if (!!$('#sphoto')) {
+    if ($('#sphoto').is(':visible')) {
         createPhoto();
     }
 
@@ -88,19 +88,19 @@ $(document).ready(function () {
             appendDots: $('#dtvideo')
         });
     }
-    if (!!$('#svideo')) {
+    if ($('#svideo').is(':visible')) {
         createVideo();
     }
 
     //icon event play
-    if (!!$('.eventVid')) {
+    if ($('.eventVid').is(':visible')) {
         $('.eventVid').click(function () {
             $(this).find($('.icon-play')).toggle();
         });
     }
 
     //sticky right ads
-    if (!!$('.-right-sticky')) {
+    if ($('.-right-sticky').is(':visible')) {
         $(".-right-sticky").stick_in_parent({
             parent: ".-parent-sticky",
             inner_scrolling: true,

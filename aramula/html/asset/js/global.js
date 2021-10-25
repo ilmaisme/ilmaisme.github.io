@@ -15,19 +15,20 @@ $(document).ready(function () {
         a > b + 69 ? (hfl.addClass("active")) :
             (hfl.removeClass("active"))
     })
+    
+    //back to top button
+    function backToTop() {
+        // $(window).scrollTop(0);
+        $('html,body').stop().animate({
+            scrollTop: 0
+        }, 1000);
+    }
 });
 
-//back to top button
-function backToTop() {
-    // $(window).scrollTop(0);
-    $('html,body').stop().animate({
-        scrollTop: 0
-    }, 1000);
-}
 
 //hide menu
 let navtog = $('#navToggle')
-if (!!navtog) {
+if (navtog.is(':visible')) {
     function checkToggleTrue() {
         navtog.prop('checked', false);
     }
@@ -36,7 +37,7 @@ if (!!navtog) {
     });
 };
 $('body').click(function () {
-    if (!!navtog) {
+    if (navtog.is(':visible')) {
         checkToggleTrue()
     }
 });

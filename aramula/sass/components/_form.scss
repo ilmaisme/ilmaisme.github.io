@@ -1,14 +1,235 @@
-.form{
-    &Input, &Select{
+.form {
+
+    &Input,
+    &Select {
         padding: 15px 30px;
+        max-height: 51px;
         border: 1px solid #CECECE;
         border-radius: 15px;
         @include font-pack(false, 14px, 500, 1.4, $cl_primary);
     }
 
-    &Select{
-        &__wrap{
+    &Select {
+        &__wrap {
+            position: relative;
             margin-right: 20px;
         }
+
+        .custom-select-trigger {
+            &:after {
+                transition: none;
+            }
+        }
+
+        &.opened {
+            border: 2px solid $cl_primary;
+
+            .custom-select-trigger {
+                padding: 14px 29px;
+
+                &:after {
+                    right: 26px;
+                }
+            }
+        }
+
+        &__phone {
+            position: absolute;
+            top: 2px;
+            left: 60px;
+
+            .custom-select {
+                font-size: 14px;
+                width: auto;
+            }
+
+            .custom-select-trigger {
+                width: auto;
+                padding: 15px 38px 15px 30px;
+
+                &:after {
+                    right: 12px;
+                }
+            }
+
+            .custom-options {
+                min-width: 104px;
+            }
+        }
+    }
+
+    &Input {
+        &__wicon {
+            padding-left: 90px;
+            padding-right: 70px;
+        }
+    }
+
+    &Caption {
+        padding: 20px 60px;
+        @include font-pack(false, 20px, 600, false, #717171);
+
+        &:hover {
+            span {
+                color: $cl_pink;
+            }
+        }
+
+        span {
+            padding-bottom: 16px;
+
+            &.active {
+                border-bottom: 4px solid $cl_pink;
+                color: $cl_pink;
+            }
+        }
+
+        &__wrap {
+            justify-content: space-evenly;
+        }
+    }
+
+    &Wrap {
+        position: relative;
+
+        .formInput {
+            width: 100%;
+        }
+    }
+
+    &Status {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        @include font-pack(false, 14px, 600, false, false);
+    }
+
+    &Error {
+        color: #EA5B70;
+        background: #FFE9EC;
+    }
+
+    &Success {
+        color: #4CAF50;
+        background: #CFFFD1;
+    }
+
+    &Text {
+        @include font-pack(false, 14px, 500, 22px, false);
+    }
+
+    &Line {
+        position: relative;
+        @include font-pack(false, 14px, 500, false, #ABABAB);
+
+        span {
+            position: relative;
+            background: $cl_white;
+            padding-left: 10px;
+            padding-right: 10px;
+            z-index: 1;
+        }
+
+        &:after {
+            content: '';
+            border-top: 1px solid #ABABAB;
+            position: absolute;
+            width: 100%;
+            top: 10px;
+            left: 0;
+        }
+    }
+
+    &Icon {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 10px;
+        left: 20px;
+
+        &:after {
+            content: '';
+            border-right: 1px solid #CECECE;
+            position: absolute;
+            top: 2px;
+            right: -20px;
+            height: 27px;
+        }
+    }
+
+    &Check {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+
+        &:checked:before {
+            background: $cl_white;
+            font-size: 18px;
+            content: '✓';
+            color: $cl_primary;
+            padding: 0 5px;
+            position: absolute;
+        }
+
+        &:after{
+            content: '';
+            border: 1px solid #CECECE;
+            border-radius: 5px;
+            position: absolute;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &Radio {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        transition: box-shadow .3s;
+        background: $cl_white;
+        cursor: pointer;
+        border: 1px solid #CACACA;
+        appearance: none;
+        -webkit-appearance: none;
+
+        &:checked {
+            box-shadow: inset 0 0 0 4px $cl_white;
+            background: $cl_pink;
+        }
+    }
+}
+
+.icon {
+    &-calendar {
+        width: 24px;
+        height: 24px;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 4H6C3.7909 4 2 5.7909 2 8v10c0 2.2091 1.7909 4 4 4h12c2.2091 0 4-1.7909 4-4V8c0-2.2091-1.7909-4-4-4ZM8 2v4M16 2v4M2 10h20' stroke='%23343434' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+
+    &-google {
+        width: 30px;
+        height: 30px;
+    }
+
+    &-user {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 2.5a6.25 6.25 0 1 0 0 12.5002A6.25 6.25 0 0 0 15 2.5Zm0 10a3.7497 3.7497 0 0 1-3.6779-4.4816 3.7495 3.7495 0 0 1 2.9463-2.9463A3.7502 3.7502 0 0 1 18.75 8.75a3.7504 3.7504 0 0 1-1.0983 2.6517A3.7503 3.7503 0 0 1 15 12.5Zm11.25 13.75V25a8.7504 8.7504 0 0 0-2.5628-6.1872A8.7504 8.7504 0 0 0 17.5 16.25h-5A8.7502 8.7502 0 0 0 3.75 25v1.25h2.5V25a6.25 6.25 0 0 1 6.25-6.25h5A6.25 6.25 0 0 1 23.75 25v1.25h2.5Z' fill='%239D9D9D'/%3E%3C/svg%3E");
+    }
+
+    &-key {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.6875 1.875a8.4352 8.4352 0 0 0-8.3135 6.9944 8.4368 8.4368 0 0 0 .2397 3.8919L1.875 22.5v5.625H7.5l9.7388-9.7388a8.4362 8.4362 0 0 0 6.9642-.9449 8.4379 8.4379 0 0 0 3.5899-9.4794 8.4376 8.4376 0 0 0-8.1054-6.0869Zm0 15a6.5787 6.5787 0 0 1-1.905-.2831l-1.0753-.3263-.7941.7941-2.9822 2.9822-1.2928-1.2919-1.3256 1.3256 1.2928 1.2928-1.4869 1.4869-1.2928-1.2928L7.5 22.8881l1.2928 1.2928-2.069 2.0691H3.75v-2.9738l9.1894-9.1893.795-.7941-.3263-1.0753a6.563 6.563 0 0 1 2.5013-7.2705 6.5626 6.5626 0 1 1 3.7781 11.928Z' fill='%239D9D9D'/%3E%3Cpath d='M20.625 11.25c1.0355 0 1.875-.8395 1.875-1.875 0-1.0355-.8395-1.875-1.875-1.875-1.0355 0-1.875.8395-1.875 1.875 0 1.0355.8395 1.875 1.875 1.875Z' fill='%239D9D9D'/%3E%3C/svg%3E");
+    }
+
+    &-eye {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.5716 13.7025c.5925.775.5925 1.8213 0 2.595-1.8662 2.4363-6.3437 7.4525-11.5712 7.4525-5.2275 0-9.705-5.0162-11.5713-7.4525a2.115 2.115 0 0 1 0-2.595C5.2954 11.2662 9.773 6.25 15.0004 6.25c5.2275 0 9.705 5.0162 11.5712 7.4525v0Z' stroke='%236F6F6F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15 18.75c2.0711 0 3.75-1.6789 3.75-3.75s-1.6789-3.75-3.75-3.75-3.75 1.6789-3.75 3.75 1.6789 3.75 3.75 3.75Z' stroke='%236F6F6F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+
+    &-mail {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.75 11.3212v9.3038a3.7497 3.7497 0 0 0 3.75 3.75h15a3.7496 3.7496 0 0 0 2.6516-1.0984A3.7496 3.7496 0 0 0 26.25 20.625V9.375a3.7499 3.7499 0 0 0-3.75-3.75h-15a3.75 3.75 0 0 0-3.75 3.75v1.9462ZM7.5 7.5h15a1.8748 1.8748 0 0 1 1.875 1.875v1.3875L15 15.81l-9.375-5.0475V9.375A1.875 1.875 0 0 1 7.5 7.5Zm-1.875 5.3925L14.5556 17.7a.938.938 0 0 0 .8888 0l8.9306-4.8075v7.7325c0 .4973-.1975.9742-.5492 1.3258A1.8746 1.8746 0 0 1 22.5 22.5h-15a1.8748 1.8748 0 0 1-1.875-1.875v-7.7325Z' fill='%239D9D9D'/%3E%3C/svg%3E");
+    }
+
+    &-phone {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)' fill='%239D9D9D'%3E%3Cpath d='M20.625 1.875A1.8749 1.8749 0 0 1 22.5 3.75v22.5c0 .4973-.1975.9742-.5492 1.3258a1.8746 1.8746 0 0 1-1.3258.5492H9.375A1.8747 1.8747 0 0 1 7.5 26.25V3.75a1.875 1.875 0 0 1 1.875-1.875h11.25ZM9.375 0a3.75 3.75 0 0 0-3.75 3.75v22.5A3.7497 3.7497 0 0 0 9.375 30h11.25a3.7496 3.7496 0 0 0 2.6516-1.0984A3.7496 3.7496 0 0 0 24.375 26.25V3.75A3.7499 3.7499 0 0 0 20.625 0H9.375Z'/%3E%3Cpath d='M15 26.25c.4973 0 .9742-.1975 1.3258-.5492a1.8746 1.8746 0 0 0 0-2.6516 1.8746 1.8746 0 0 0-2.6516 0 1.8746 1.8746 0 0 0 0 2.6516A1.8746 1.8746 0 0 0 15 26.25Z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h30v30H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
     }
 }

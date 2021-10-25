@@ -13,6 +13,11 @@
         max-height: 35px;
         background: $cl_white;
         @include font-pack(false, 12px, 500, false, $cl_purple);
+
+        &--small {
+            width: auto;
+            padding: 10px 30px;
+        }
     }
 
     &Primary {
@@ -29,6 +34,11 @@
         background: -webkit-linear-gradient(140deg, rgba(205, 126, 233, 1) 0%, rgba(118, 74, 176, 1) 100%);
         background: linear-gradient(140deg, rgba(205, 126, 233, 1) 0%, rgba(118, 74, 176, 1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cd7ee9", endColorstr="#764ab0", GradientType=1);
+
+        &--small {
+            width: auto;
+            padding: 10px 30px;
+        }
 
         .icon-reg {
             width: 15px;
@@ -67,13 +77,18 @@
         }
     }
 
-    &Pink{
+    &Pink {
         background: $cl_pink;
         padding: 15px 37px;
+        max-height: 51px;
         border-radius: 15px;
         border: 0;
         text-transform: uppercase;
         @include font-pack(false, 16px, 500, false, $cl_white);
+
+        &--full {
+            width: 100%;
+        }
     }
 
     &Career {
@@ -118,6 +133,43 @@
         .icon-next {
             vertical-align: middle;
             @include base_rotate(270deg);
+        }
+    }
+
+    &Google {
+        width: 100%;
+        height: 50px;
+        border-radius: 15px;
+        border: 1px solid #CECECE;
+    }
+
+    &Eye {
+        position: absolute;
+        right: 20px;
+        width: 40px;
+        height: 50px;
+        border: 0;
+        background: none;
+
+        .icon {
+            left: 5px;
+
+            &:after {
+                content: none;
+            }
+        }
+
+        &.close {
+            &:after {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 25px;
+                top: 13px;
+                left: 20px;
+                border-left: 2px solid #6F6F6F;
+                transform: rotate(45deg);
+            }
         }
     }
 }
