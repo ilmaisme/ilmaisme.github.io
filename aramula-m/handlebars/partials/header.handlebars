@@ -6,12 +6,18 @@
             {{> header/burger}}
             {{> header/menu}}
         </div>
+        {{#eq page compare="Stories"}}
+        <div class="headerLogo text-center flex-init">
+            <img src="asset/images/ara-stories.png" alt="Ara Stories" width="134" height="24">
+        </div>
+        {{else}}
         <div class="headerLogo text-center">
             <a href="index.html">
                 <img src="asset/images/logo-aramula.png" alt="Aramula" width="134" height="22">
             </a>
         </div>
         <a href="search.html" class="buttonSearch" aria-label="Search"><span class="icon icon-search"></span></a>
+        {{/eq}}
     </div>
     <nav class="nav">
         <ul class="navList display-flex jcontent-center">
