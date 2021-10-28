@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page=""}}
+
+<body>
+    <!-- header -->
+    {{> header page="Video" login=false}}
+    <!-- header -->
+    <!-- main -->
+    <main role="main" class="main">
+        <section class="container">
+            {{> ads/top mt=0}}
+            <div class="videoRow col-offset-fluid mt30">
+                <div class="videoBig">
+                    <div class="js-vid-slider-for">
+                        {{#eachIndex headline}}
+                        <div class="videoBig__item">
+                            <a href="{{item.link}}" aria-label="{{item.title}}">
+                                <img src="{{item.img}}{{index}}.webp" class="videoImg videoBig__img" alt="" width="360"
+                                    height="239" loading="lazy">
+                                <span class="icon icon-play"></span>
+                            </a>
+                        </div>
+                        {{/eachIndex}}
+                        {{#eachIndex headline}}
+                        <div class="videoBig__item">
+                            <a href="{{item.link}}" aria-label="{{item.title}}">
+                                <img src="{{item.img}}{{index}}.webp" class="videoImg videoBig__img" alt="" width="360"
+                                    height="239" loading="lazy">
+                                <span class="icon icon-play"></span>
+                            </a>
+                        </div>
+                        {{/eachIndex}}
+                    </div>
+                </div>
+                <div class="videoCaption__wrap display-flex jcontent-between aitems-center">
+                    <div class="videoCaption display-flex aitems-center">
+                        <div class="mr10">
+                            <img src="asset/images/icon-video.png" alt="" loading="lazy" width="30" height="30">
+                        </div>
+                        8 Video
+                    </div>
+                    <button class="button buttonWhite videoBtn -jsSmallVid">Tutup</button>
+                </div>
+                <div class="videoCol videoSmall active">
+                    <div class="js-vid-slider-nav">
+                        {{#eachIndex headline}}
+                        <div class="videoSmall__item">
+                            <a href="{{item.link}}" class="display-flex aitems-center">
+                                <div class="videoSmall__wrap">
+                                    <img src="{{item.img}}{{index}}.webp" class="videoImg videoSmall__img" alt=""
+                                        width="87" height="87" loading="lazy">
+                                    <span class="icon icon-play videoIcon"></span>
+                                </div>
+                                <div class="articleBox">
+                                    <div class="articleSubtitle">Video</div>
+                                    <h1 class="videoSmall__title mt5">{{item.title}}</h1>
+                                    <div class="articleDetail user display-flex aitems-center mt5">
+                                        <div class="userName">
+                                            Salma Farida
+                                        </div>
+                                        <div class="articleTime">9 menit yang lalu</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {{/eachIndex}}
+                        {{#eachIndex headline}}
+                        <div class="videoSmall__item">
+                            <a href="{{item.link}}" class="display-flex aitems-center">
+                                <div class="videoSmall__wrap">
+                                    <img src="{{item.img}}{{index}}.webp" class="videoImg videoSmall__img" alt=""
+                                        width="87" height="87" loading="lazy">
+                                    <span class="icon icon-play videoIcon"></span>
+                                </div>
+                                <div class="articleBox">
+                                    <div class="articleSubtitle">Video</div>
+                                    <h1 class="videoSmall__title mt5">{{item.title}}</h1>
+                                    <div class="articleDetail user display-flex aitems-center mt5">
+                                        <div class="userName">
+                                            Salma Farida
+                                        </div>
+                                        <div class="articleTime">9 menit yang lalu</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {{/eachIndex}}
+                    </div>
+                </div>
+            </div>
+            <div class="articleCaption mt30">Video Terbaru</div>
+            <div class="article">
+                <ul class="articleList">
+                    {{#eachIndex headline}}
+                    <li class="articleItem mt20 display-flex">
+                        <a href="{{item.link}}" class="videoImg__wrap articleImg__wrap" aria-label="{{item.title}}">
+                            <img src="{{item.img}}{{index}}.webp" class="articleImg" alt="" width="87" height="87"
+                                loading="lazy">
+                            <span class="icon icon-play videoIcon"></span>
+                        </a>
+                        <div class="articleBox">
+                            <div class="articleSubtitle">Video</div>
+                            <h2 class="articleTitle mt5"><a href="{{item.link}}">{{item.title}}</a></h2>
+                            <div class="articleDetail user display-flex aitems-center mt5">
+                                <a href="#" class="userName display-flex aitems-center">
+                                    Salma Farida
+                                </a>
+                                <div class="articleTime">9 menit yang lalu</div>
+                            </div>
+                        </div>
+                    </li>
+                    {{/eachIndex}}
+                </ul>
+            </div>
+            {{> ads/bottom}}
+            <div class="article">
+                <ul class="articleList">
+                    {{#eachIndex headline}}
+                    <li class="articleItem mt20 display-flex">
+                        <a href="{{item.link}}" class="videoImg__wrap articleImg__wrap" aria-label="{{item.title}}">
+                            <img src="{{item.img}}{{index}}.webp" class="articleImg" alt="" width="87" height="87"
+                                loading="lazy">
+                            <span class="icon icon-play videoIcon"></span>
+                        </a>
+                        <div class="articleBox">
+                            <div class="articleSubtitle">Video</div>
+                            <h2 class="articleTitle mt5"><a href="{{item.link}}">{{item.title}}</a></h2>
+                            <div class="articleDetail user display-flex aitems-center mt5">
+                                <a href="#" class="userName display-flex aitems-center">
+                                    Salma Farida
+                                </a>
+                                <div class="articleTime">9 menit yang lalu</div>
+                            </div>
+                        </div>
+                    </li>
+                    {{/eachIndex}}
+                </ul>
+            </div>
+            {{> ads/middle}}
+            <div class="article">
+                <ul class="articleList">
+                    {{#eachIndex headline}}
+                    <li class="articleItem mt20 display-flex">
+                        <a href="{{item.link}}" class="videoImg__wrap articleImg__wrap" aria-label="{{item.title}}">
+                            <img src="{{item.img}}{{index}}.webp" class="articleImg" alt="" width="87" height="87"
+                                loading="lazy">
+                            <span class="icon icon-play videoIcon"></span>
+                        </a>
+                        <div class="articleBox">
+                            <div class="articleSubtitle">Video</div>
+                            <h2 class="articleTitle mt5"><a href="{{item.link}}">{{item.title}}</a></h2>
+                            <div class="articleDetail user display-flex aitems-center mt5">
+                                <a href="#" class="userName display-flex aitems-center">
+                                    Salma Farida
+                                </a>
+                                <div class="articleTime">9 menit yang lalu</div>
+                            </div>
+                        </div>
+                    </li>
+                    {{/eachIndex}}
+                </ul>
+            </div>
+            <button class="button buttonMore mt30">Index</button>
+        </section>
+    </main>
+    {{> ads/sticky}}
+
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js slick=true}}
+    <script>
+        // video slider
+        $(document).ready(function () {
+            // slick carousel
+            $('.js-vid-slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: 0,
+                fade: !0,
+                asNavFor: '.js-vid-slider-nav'
+            });
+            $('.js-vid-slider-nav').slick({
+                dots: 0,
+                arrows: 0,
+                vertical: !0,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                verticalSwiping: !0,
+                infinite: !0,
+                speed: 1000,
+                autoplay: !0,
+                asNavFor: '.js-vid-slider-for',
+            });
+        });
+
+        //trigger video small
+        $('.-jsSmallVid').click(function () {
+            $('.videoCol').toggleClass("active");
+        });
+
+    </script>
+</body>
+
+</html>

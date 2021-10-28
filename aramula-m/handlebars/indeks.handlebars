@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page=""}}
+
+<body>
+    <!-- header -->
+    {{> header page="Indeks" login=false}}
+    <!-- header -->
+    <!-- main -->
+    <main role="main" class="main">
+        <section class="container">
+            <form class="search mt20" action="">
+                <div class="searchRow row">
+                    <div class="formSelect__wrap col-gd10-5">
+                        <select class="formSelect custom-select">
+                            <option value="Semua Kanal" selected="">Semua Kanal</option>
+                            {{#eachIndex menu}}
+                            {{#lt index compare = '11'}}
+                            {{lt}}
+                            <option value="{{item.title}}">{{item.title}}</option>
+                            {{/lt}}
+                            {{/eachIndex}}
+                        </select>
+                    </div>
+                    <div class="formSelect__wrap col-gd10-5">
+                        <input type="text" id="search-date" class="formInput search-box" autocomplete="off">
+                        <span class="icon icon-calendar searchIcon__cal"></span>
+                    </div>
+                </div>
+                <button class="button buttonPink buttonPink--big mt10" type="submit" name="submit">
+                    Cari Berita
+                </button>
+            </form>
+            {{> article}}
+            {{> article}}
+            {{> paging active=false mt=30}}
+        </section>
+    </main>
+
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js search=true}}
+
+</body>
+
+</html>

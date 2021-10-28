@@ -3,7 +3,6 @@
 {{> head page="Home"}}
 
 <body>
-	{{> ads/pushdown}}
 	<!-- header -->
 	{{> header page="Hallyu" login=false}}
 	<!-- header -->
@@ -13,6 +12,7 @@
 		<li class="breadcrumbItem"><a href="#" class="breadcrumbLink">Reality Show</a></li>
 		<li class="breadcrumbItem"><a href="#" class="breadcrumbLink">Gosip</a></li>
 	</ul>
+	{{> ads/pushdown}}
 
 	<!-- main -->
 	<main role="main" class="main">
@@ -31,7 +31,8 @@
 			{{> ads/middle}}
 			{{> article mt=30}}
 			{{> ads/parallax}}
-			{{> article-more}}
+			{{> article mt=30}}
+			<button class="button buttonMore mt30">Index</button>
 		</section>
 	</main>
 	{{> ads/sticky}}
@@ -39,7 +40,7 @@
 	<!-- footer -->
 	{{> footer}}
 
-	{{> js page="Home"}}
+	{{> js page="Home" slick=true}}
 
 </body>
 

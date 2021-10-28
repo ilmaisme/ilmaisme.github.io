@@ -50,12 +50,6 @@ $(document).ready(function () {
     }
     createVideo();
 
-    //close sticky ads
-    $('.-closeads').click(function (e) {
-        e.preventDefault();
-        $(this).parent().remove();
-    });
-
     //icon event play
     if (!!$('.eventVid')) {
         $('.eventVid').click(function () {
@@ -64,10 +58,3 @@ $(document).ready(function () {
     }
 
 });
-
-function backToTop() {
-    // $(window).scrollTop(0);
-    $('html,body').stop().animate({
-        scrollTop: 0
-    }, 1000);
-}

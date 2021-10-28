@@ -1,7 +1,22 @@
-<script defer src="asset/js/jquery-3.5.0.min.js"></script>
+<script src="asset/js/jquery-3.5.0.min.js"></script>
 {{#eq page compare="Home"}}
 <script defer type="text/javascript" src="asset/js/main-above-fold.min.js"></script>
-<script defer type="text/javascript" src="asset/js/main.min.js"></script>
-<script defer type="text/javascript" src="asset/js/fetch.min.js"></script>
+<script defer type="text/javascript" src="asset/js/main.js"></script>
 {{/eq}}
+{{#eq json compare=true}}
+<!-- load more data json -->
+<script async type="text/javascript" src="asset/js/fetch.min.js"></script>
+{{/eq}}
+{{#eq slick compare=true}}
 <script defer type="text/javascript" src="asset/js/slick/slick.min.js"></script>
+{{/eq}}
+{{#eq search compare=true}}
+<script defer type="text/javascript" src="asset/js/search.js"></script>
+<!-- calendar search -->
+<script rel="preconnect" type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script defer type="text/javascript" src="asset/js/calendar-search/daterangepicker.min.js"></script>
+{{/eq}}
+{{#eq page compare="faccess"}}
+<script defer type="text/javascript" src="asset/js/form-access.js"></script>
+{{/eq}}
+<script defer type="text/javascript" src="asset/js/global.js"></script>

@@ -1,12 +1,18 @@
 <footer>
-    <div class="footer text-center">
-        <button class="button buttonTotop" aria-label="Back to top" onclick="backToTop()"><span class="icon icon-next"></span></button>
+    <div class="footer text-center{{#eq page compare=" Stories"}} footer--white{{/eq}}">
+        {{#eq top compare=false}}
+        {{else}}
+        <button class="button buttonTotop" aria-label="Back to top" onclick="backToTop()"><span
+                class="icon icon-next"></span></button>
+        {{/eq}}
         <a href="index.html">
             <img src="asset/images/logo-aramula-big.png" alt="Aramula" width="197" height="33" loading="lazy">
         </a>
+        {{#eq page compare="Stories"}}
+        {{else}}
         <ul class="footerList display-flex jcontent-center mt20">
             <li class="footerItem">
-                <a href="#" class="footerLink">About us</a>
+                <a href="about-us.html" class="footerLink">About us</a>
             </li>
             <li class="footerItem">
                 <a href="#" class="footerLink">Career</a>
@@ -21,7 +27,7 @@
                 <a href="#" class="footerLink">Contact us</a>
             </li>
             <li class="footerItem">
-                <a href="#" class="footerLink">FAQ</a>
+                <a href="faq.html" class="footerLink">FAQ</a>
             </li>
         </ul>
         <ul class="footerList display-flex jcontent-center aitems-center mt20">
@@ -37,6 +43,7 @@
             <li class="footerSocial socialIcon"><a href="#" class="socialLink display-flex" target="_blank"
                     rel="noopener noreferrer" aria-label="Youtube"><span class="icon icon-yt"></span></a></li>
         </ul>
+        {{/eq}}
         <div class="footerBottom mt20">
             Copyright 2021 Aramula.com. All rights reserved.
         </div>

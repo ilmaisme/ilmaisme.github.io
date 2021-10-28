@@ -1,0 +1,37 @@
+.breadcrumb {
+    &Channel {
+        position: relative;
+        height: 38px;
+        margin-top: 83px;
+        margin-left: 12px;
+        margin-right: 12px;
+
+        .breadcrumbLink {
+            display: block;
+            padding: 10px 8px;
+            @include font-pack(false, 12px, 400, false, #717171);
+
+            &.active {
+                color: $cl_pink;
+                border-bottom: 2px solid $cl_pink;
+            }
+        }
+
+        &~.pushdown-banner {
+            top: 0;
+
+            .ol_big_inner {
+                top: 156px;
+            }
+
+            &~.main{
+                padding-top: 1px;
+            }
+        }
+
+        &~.main{
+            padding-top: 0;
+            margin-top: 0;
+        }
+    }
+}
