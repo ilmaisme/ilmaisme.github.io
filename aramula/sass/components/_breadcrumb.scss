@@ -1,21 +1,46 @@
 .breadcrumb {
     &Caption {
-        margin-right: 6px;
+        margin-right: 16px;
         @include font-pack(false, 24px, 600, 22px, $cl_pink);
 
-        &:after {
+        &:before {
             content: '';
             border-right: 1px solid #FAB2E1;
             height: 43px;
             padding-left: 16px;
+            top: -8px;
+            right: -15px;
+            position: absolute;
         }
     }
 
     &Link {
-        @include font-pack(false, 14px, 600, 22px, $cl_purple);
+        @include font-pack(false, 14px, 400, 22px, $cl_purple);
 
-        .active {
+        &:hover {
+            color: $cl_purple;
+        }
+
+        &.active {
             color: $cl_pink;
+        }
+    }
+
+    &Item {
+        position: relative;
+
+        &:after {
+            content: ">";
+            padding-left: 4px;
+            padding-right: 4px;
+            vertical-align: middle;
+            color: $cl_purple;
+        }
+
+        &:last-child {
+            &:after {
+                content: none;
+            }
         }
     }
 
@@ -31,6 +56,12 @@
             &.active {
                 border-bottom: 5px solid $cl_pink;
                 color: $cl_pink;
+            }
+        }
+
+        .breadcrumbItem {
+            &:after {
+                content: none;
             }
         }
     }

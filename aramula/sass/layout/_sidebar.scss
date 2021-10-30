@@ -1,6 +1,14 @@
 .sidebar {
     &Caption {
-        @extend .highlightCaption;
+        @include font-pack(false, 24px, 700, false, false);
+
+        &:before {
+            content: '';
+            display: block;
+            width: 70px;
+            border-top: 6px solid $cl_pink;
+            margin-bottom: 6px;
+        }
 
         &__box {
             padding-left: 10px;
@@ -17,7 +25,20 @@
     }
 
     &Time {
-        @extend .articleTime;
+        position: relative;
+        margin-left: 14px;
+        @include font-pack(false, 12px, 400, false, $cl_secondary_grey);
+
+        &::before {
+            content: '';
+            display: inline-block;
+            border-left: 1px solid $cl_secondary_grey;
+            width: 1px;
+            height: 14px;
+            position: absolute;
+            top: 1px;
+            left: -8px;
+        }
     }
 
     &Highlight {
