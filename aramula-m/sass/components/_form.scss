@@ -17,6 +17,18 @@
             padding-left: 52px;
             padding-right: 52px;
         }
+
+        &__icon {
+            padding-right: 52px;
+        }
+
+        &:disabled {
+            background: #E2E2E2;
+        }
+
+        &__error {
+            border: 1px solid #EA5B70;
+        }
     }
 
     &Select {
@@ -49,8 +61,43 @@
         }
     }
 
+    &Area {
+        &__wrap textarea {
+            width: 100%;
+            border-radius: 15px;
+            border: 1px solid #CECECE;
+            resize: vertical;
+            padding-top: 14px;
+            padding-bottom: 14px;
+            padding-left: 15px;
+            padding-right: 15px;
+            @include font-pack(false, 12px, 500, 1.4, $cl_primary);
+        }
+
+        &__wrap .formArea__error {
+            border: 1px solid #EA5B70;
+        }
+    }
+
     &Wrap {
         position: relative;
+
+        &__col {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        &__item {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .bootstrap-tagsinput{
+            input{
+                @extend .formInput;
+                margin-top: 10px;
+            }
+        }
     }
 
     &Caption {
@@ -150,6 +197,83 @@
             position: absolute;
             width: 24px;
             height: 24px;
+        }
+    }
+
+    &Radio {
+        margin: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        transition: box-shadow .3s;
+        background: $cl_white;
+        cursor: pointer;
+        border: 1px solid #CACACA;
+        appearance: none;
+        -webkit-appearance: none;
+
+        &:checked {
+            box-shadow: inset 0 0 0 4px $cl_white;
+            background: $cl_pink;
+        }
+    }
+
+    &Label {
+        @include font-pack(false, 14px, 500, false, false);
+    }
+
+    &Misc {
+        @include font-pack(false, 10px, 500, false, #8F8F8F);
+    }
+
+    &Warn {
+        color: #EA5B70;
+    }
+
+    &Upload {
+        @extend .formInput;
+        position: relative;
+        z-index: 0;
+
+        &__icon {
+            width: 15px;
+            height: 15px;
+            margin-right: 6px;
+        }
+
+        &__btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 16px 20px;
+            z-index: 1;
+        }
+
+        &__img {
+            margin-left: 80px;
+            margin-top: 15px;
+            width: 100%;
+            height: 30px;
+            @include font-pack(false, 12px, 500, false, #8F8F8F);
+        }
+
+        input[type="file"] {
+            width: 100%;
+            height: 50px;
+            opacity: 0;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .fileName {
+            display: block;
+            position: relative;
+            height: 20px;
+            top: 2px;
+            overflow: hidden;
         }
     }
 }

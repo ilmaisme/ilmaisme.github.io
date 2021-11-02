@@ -30,5 +30,16 @@
             {{/each}}
         </ul>
     </nav>
+    {{#eq page compare="Profile"}}
+    <nav class="nav profileNav">
+        <ul class="profileNav__list display-flex jcontent-center">
+            {{#each menuprofile}}
+            <li class="navItem">
+                <a href="{{link}}" class="profileNav__link{{#eq title compare=../active}} active{{/eq}}">{{title}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </nav>
+    {{/eq}}
     {{/eq}}
 </header>

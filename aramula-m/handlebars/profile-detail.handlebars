@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page="Profile"}}
+
+<body>
+    <!-- header -->
+    {{> header page="Profile" active="Lihat Profil" login=true}}
+    <!-- header -->
+    <!-- main -->
+    <main role="main" class="main">
+        <section class="profile container">
+            <div class="flex-center dir-column">
+                <img loading="lazy" src="https://api.lorem.space/image/face?w=86&amp;h=86&amp;hash=A89D0DE6" width="86"
+                    height="86" alt="" class="userAvatar userAvatar--big">
+                <h1 class="profileName mt10">Sophie Anggita</h1>
+            </div>
+            <div class="profileDesc mt20">
+                Mahasiswi IAIN Curup Jurusan Pendidikan Agama Islam, sayamemiliki cita-cita menjadi dosen muda sekaligus
+                seorang pengusaha dan penulis yang sukses dan bermanfaat untuk orang lain. Jejaknya bisa ditelusuri di
+                akun Instagram <a href="#">@anggita.sophie</a>
+            </div>
+            {{> profile/social}}
+            <div class="articleCaption mt30">Artikel Yang Pernah Ditulis</div>
+            {{> article}}
+            {{> article}}
+            {{> paging active=false mt=30}}
+        </section>
+    </main>
+
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js page="Profile"}}
+
+</body>
+
+</html>

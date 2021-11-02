@@ -1,15 +1,58 @@
 .breadcrumb {
+    position: relative;
+    height: 36px;
+    margin-top: 83px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #F9F9F9;
+
+    &~.main {
+        padding-top: 0;
+    }
+
+    &Link {
+        display: inline-block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        vertical-align: middle;
+        @include font-pack(false, 12px, 400, false, $cl_purple);
+
+        &.active {
+            color: $cl_pink;
+        }
+    }
+
+    &Item {
+        &:after {
+            content: ">";
+            padding-left: 4px;
+            padding-right: 4px;
+            vertical-align: middle;
+            color: $cl_purple;
+        }
+
+        &:last-child {
+            &:after {
+                content: none;
+            }
+        }
+    }
+
     &Channel {
-        position: relative;
         height: 38px;
-        margin-top: 83px;
-        margin-left: 12px;
-        margin-right: 12px;
+        padding-left: 12px;
+        padding-right: 12px;
+
+        .breadcrumbItem {
+            &:after {
+                content: none;
+            }
+        }
 
         .breadcrumbLink {
             display: block;
             padding: 10px 8px;
-            @include font-pack(false, 12px, 400, false, #717171);
+            color: #717171;
 
             &.active {
                 color: $cl_pink;
@@ -24,12 +67,12 @@
                 top: 156px;
             }
 
-            &~.main{
+            &~.main {
                 padding-top: 1px;
             }
         }
 
-        &~.main{
+        &~.main {
             padding-top: 0;
             margin-top: 0;
         }

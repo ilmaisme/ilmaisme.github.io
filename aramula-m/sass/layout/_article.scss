@@ -52,7 +52,20 @@
     }
 
     &Time {
-        @extend .headlineTime;
+        position: relative;
+        margin-left: 14px;
+        @include font-pack(false, 9px, 400, false, $cl_tertiery_grey);
+
+        &::before {
+            content: '';
+            display: inline-block;
+            border-left: 1px solid $cl_tertiery_grey;
+            width: 1px;
+            height: 10px;
+            position: absolute;
+            top: 1px;
+            left: -8px;
+        }
     }
 
     &Caption {

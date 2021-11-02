@@ -53,13 +53,40 @@
         &--big {
             width: 100%;
         }
+
+        &--small {
+            background: $cl_pink;
+            border-radius: 15px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            padding-left: 28px;
+            padding-right: 28px;
+            border: 0;
+            @include font-pack(false, 14px, 500, false, $cl_white);
+        }
     }
 
-    &White{
-        background: $cl_white;        
+    &White {
+        background: $cl_white;
         padding: 10px 38px 10px 15px;
         border: 1px solid #CECECE;
         border-radius: 15px;
+    }
+    
+    &Trans {
+        background: $cl_white;
+        border-radius: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 34px;
+        padding-right: 34px;
+        border: 1px solid $cl_pink;
+        text-transform: uppercase;
+        @include font-pack(false, 12px, 500, false, $cl_pink);
+
+        &--big {
+            width: 100%;
+        }
     }
 
     &Career {
@@ -129,6 +156,25 @@
                 border-left: 2px solid #6F6F6F;
                 transform: rotate(45deg);
             }
+        }
+    }
+
+    &Expand {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: $cl_primary;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        border: 0;
+        border-radius: 5px;
+        @include base_transition(all);
+
+        .icon-expand {
+            width: 20px;
+            height: 20px;
+            background-size: contain;
         }
     }
 }
