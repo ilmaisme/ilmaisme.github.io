@@ -15,7 +15,7 @@ $(document).ready(function () {
         a > b + 69 ? (hfl.addClass("active")) :
             (hfl.removeClass("active"))
     })
-    
+
     //back to top button
     function backToTop() {
         // $(window).scrollTop(0);
@@ -23,6 +23,11 @@ $(document).ready(function () {
             scrollTop: 0
         }, 1000);
     }
+    
+    //close popup
+    $('.-btnCl').on("click", function () {
+        $('.popup').removeClass('active');
+    });
 });
 
 

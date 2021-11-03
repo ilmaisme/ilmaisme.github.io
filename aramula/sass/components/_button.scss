@@ -81,10 +81,15 @@
         background: $cl_pink;
         padding: 15px 37px;
         max-height: 51px;
+        max-width: 520px;
         border-radius: 15px;
         border: 0;
         text-transform: uppercase;
         @include font-pack(false, 16px, 500, false, $cl_white);
+
+        &:hover {
+            color: $cl_white;
+        }
 
         &--full {
             width: 100%;
@@ -98,11 +103,20 @@
             border-radius: 15px;
             border: 0;
             @include font-pack(false, 14px, 500, false, $cl_white);
+
+            &:hover {
+                color: $cl_white;
+            }
         }
     }
 
     &Career {
         @extend .buttonPink;
+    }
+
+    &Trans {
+        background: transparent;
+        border: 0;
     }
 
     &More {
@@ -204,6 +218,17 @@
             height: 25px;
             vertical-align: middle;
             margin-right: 8px;
+        }
+    }
+
+    &Close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+
+        .icon-rejected {
+            width: 25px;
+            height: 25px;
         }
     }
 }

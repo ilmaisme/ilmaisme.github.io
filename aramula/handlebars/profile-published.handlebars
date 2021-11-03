@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page="Profile"}}
+
+<body>
+
+    <!-- header -->
+    {{> header login=true}}
+    <!-- header -->
+
+    <!-- main -->
+    <main role="main">
+        {{> ads/skin}}
+        <section class="profile container">
+            <div class="row display-flex mt40">
+                <div class="profileCol_left col-gd-300">
+                    <aside class="profileNav">
+                        {{> profile/profile-det}}
+                        {{> profile/profile-nav active="Sudah Terbit"}}
+                    </aside>
+                </div>
+                <div class="profileCol_right col-gd-740">
+                    <div class="highlightCaption">Sudah Terbit</div>
+                    <ul class="articleList mt20">
+                        {{#eachIndex headline}}
+                        <li class="articleItem profileItem">
+                            <a href="{{item.link}}" class="profileItem__link">
+                                <h2 class="profileTitle">{{item.title}}</h2>
+                                <div class="articleDetail profileDetail display-flex aitems-center mt10">
+                                    <div class="articleTime mr10">9 menit yang lalu</div>
+                                    <div class="articleSeen"><span class="icon icon-eye"></span>1234</div>
+                                </div>
+                            </a>
+                        </li>
+                        {{/eachIndex}}
+                        {{#eachIndex headline}}
+                        <li class="articleItem profileItem">
+                            <a href="{{item.link}}" class="profileItem__link">
+                                <h2 class="profileTitle">{{item.title}}</h2>
+                                <div class="articleDetail profileDetail display-flex aitems-center mt10">
+                                    <div class="articleTime mr10">9 menit yang lalu</div>
+                                    <div class="articleSeen"><span class="icon icon-eye"></span>1234</div>
+                                </div>
+                            </a>
+                        </li>
+                        {{/eachIndex}}
+                    </ul>
+                    {{> paging}}
+                </div>
+            </div>
+        </section>
+    </main>
+    {{> ads/sticky}}
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js}}
+
+</body>
+
+</html>

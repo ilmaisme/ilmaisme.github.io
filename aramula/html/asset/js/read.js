@@ -14,11 +14,6 @@ $(document).ready(function () {
         $(this).toggleClass('active');
     })
 
-    //close popup
-    $('.-btnCl').on("click", function () {
-        $('.popup').removeClass('active');
-    });
-
     //photo popup
     var initPhotoSwipeFromDOM = function (gallerySelector) {
 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page="Profile"}}
+
+<body>
+
+    <!-- header -->
+    {{> header login=true}}
+    <!-- header -->
+
+    <!-- main -->
+    <main role="main">
+        {{> ads/skin}}
+        <section class="profile container">
+            <div class="row display-flex mt40">
+                <div class="col-gd-740">
+                    <div class="display-flex">
+                        <!-- <img src="asset/images/user.png" alt="" class="profileAvatar" width="108" height="108">-->
+                        <img src="https://api.lorem.space/image/face?w=108&amp;h=108&amp;hash=A89D0DE6" alt=""
+                                class="profileAvatar" width="108" height="108">
+                        <div class="profileWrap">
+                            <h1 class="profileName">Sophie Anggita</h1>
+                            <div class="profileDesc mt20">
+                                Mahasiswi IAIN Curup Jurusan Pendidikan Agama Islam, sayamemiliki cita-cita menjadi
+                                dosen muda sekaligus
+                                seorang pengusaha dan penulis yang sukses dan bermanfaat untuk orang lain. Jejaknya bisa
+                                ditelusuri di
+                                akun Instagram <a href="#">@anggita.sophie</a>
+                            </div>
+                            {{> profile/social}}
+                        </div>
+                    </div>
+                    <div class="highlightCaption mt40">Artikel yang Pernah Ditulis</div>
+                    {{> article-index}}
+                    {{> paging}}
+                </div>
+                <div class="col-gd-300">
+                    <aside>
+                        {{> ads/halfpage mt=0}}
+                        {{> sidebar/trending}}
+                        {{> sidebar/recomm}}
+                        {{> ads/right mt=40}}
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+    {{> ads/sticky}}
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js}}
+
+</body>
+
+</html>
