@@ -156,13 +156,21 @@
             background: #FDFDFD;
         }
 
-        &__check{
+        &__check {
             padding: 13px 10px;
         }
     }
 
     &Caption {
         @include font-pack(false, 14px, 700, false, #5F5F5F);
+
+        &__select {
+            width: 120px;
+
+            .custom-select-trigger {
+                padding: 6px 15px;
+            }
+        }
     }
 
     &Text {
@@ -209,6 +217,28 @@
             &:after {
                 background: transparent;
             }
+        }
+    }
+
+    &Ava {
+        position: relative;
+
+        .profileUpload__img {
+            width: 102px;
+            height: 102px;
+            position: absolute;
+            top: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        &__input {
+            opacity: 0;
+            top: 0;
+            position: absolute;
+            width: 102px;
+            height: 102px;
+            z-index: 1;
         }
     }
 }

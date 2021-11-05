@@ -20,7 +20,16 @@
                 akun Instagram <a href="#">@anggita.sophie</a>
             </div>
             {{> profile/social}}
-            <div class="articleCaption mt30">Artikel Yang Pernah Ditulis</div>
+            <div class="display-flex aitems-center jcontent-between mt30">
+                <div class="articleCaption">Artikel yang Pernah Ditulis</div>
+                <div class="profileCaption__select formSelect__wrap">
+                    <select class="formSelect custom-select" id="sort" aria-label="sort article">
+                        <option value="Urutkan" selected>Urutkan</option>
+                        <option value="Terbaru">Terbaru</option>
+                        <option value="Terlawas">Terlawas</option>
+                    </select>
+                </div>
+            </div>
             {{> article}}
             {{> article}}
             {{> paging active=false mt=30}}

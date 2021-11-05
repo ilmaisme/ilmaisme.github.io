@@ -73,6 +73,11 @@
 
     &Caption {
         @include font-pack(false, 24px, 700, false, #5F5F5F);
+
+
+        &__select {
+            width: 150px;
+        }
     }
 
     &Text {
@@ -157,6 +162,10 @@
                 background: $cl_white;
             }
         }
+
+        .formUpload {
+            width: calc(100% - 141px);
+        }
     }
 
     &Wrap {
@@ -185,6 +194,110 @@
             background-position: center;
             background-size: contain;
         }
+
+        &__setting {
+            .icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    &Upload {
+        margin-right: 10px;
+        position: relative;
+
+        .profileUpload__img {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        &__btn {
+            width: 120px;
+            height: 120px;
+            border: 0;
+            border-radius: 50%;
+            background: #C4C4C4;
+        }
+
+        &__input {
+            opacity: 0;
+            top: 0;
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            z-index: 1;
+            cursor: pointer;
+        }
+    }
+
+    &Step {
+        list-style: disc;
+        padding-left: 20px;
+        @include font-pack(false, 14px, 500, false, #9D9D9D);
+    }
+
+    &Label {
+        display: block;
+    }
+
+    .formSelect__wrap {
+        margin-right: 0;
+    }
+
+    &Form {
+        max-width: 520px;
+    }
+
+    .custom-select,
+    .custom-select-wrapper,
+    .custom-select-trigger {
+        width: 100%;
+    }
+
+    &Icon {
+        &__cal {
+            position: absolute;
+            top: 12px;
+            right: 30px;
+            pointer-events: none;
+        }
+    }
+
+    &Btn {
+        &__add {
+            font-size: 2em;
+            line-height: 0;
+            vertical-align: sub;
+        }
+    }
+
+    &Heading {
+        width: 100%;
+        padding: 20px 15px;
+        @include font-pack(false, 18px, 500, false, $cl_primary);
+    }
+
+    &Section {
+        &__wrap {
+            border: 1px solid #CECECE;
+            border-radius: 15px;
+        }
+
+        &__del {
+            background: transparent;
+            border: 0;
+            @include font-pack(false, 14px, 500, false, $cl_red);
+        }
+    }
+
+    .bootstrap-tagsinput input {
+        display: block;
+        min-width: 520px;
     }
 }
 
@@ -225,7 +338,21 @@
         background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m8.75 21.2663 5.5162-.0188 12.04-11.925c.4725-.4725.7325-1.1.7325-1.7675s-.26-1.295-.7325-1.7675L24.3237 3.805c-.945-.945-2.5937-.94-3.5312-.0037L8.75 15.7288v5.5375ZM22.5562 5.5725l1.9863 1.9788-1.9963 1.9775-1.9825-1.9813 1.9925-1.975ZM11.25 16.7713l7.5375-7.4663 1.9825 1.9825-7.5363 7.4638-1.9837.0062v-1.9862Z' fill='%236F6F6F'/%3E%3Cpath d='M6.25 26.25h17.5c1.3787 0 2.5-1.1213 2.5-2.5V12.915l-2.5 2.5v8.335H10.1975c-.0325 0-.0662.0125-.0987.0125-.0413 0-.0825-.0113-.125-.0125H6.25V6.25h8.5588l2.5-2.5H6.25c-1.3788 0-2.5 1.1212-2.5 2.5v17.5c0 1.3787 1.1212 2.5 2.5 2.5Z' fill='%236F6F6F'/%3E%3C/svg%3E");
     }
 
-    &-ln{
+    &-ln {
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.9849 7.197c1.2084 0 2.188-.9796 2.188-2.188 0-1.2084-.9796-2.188-2.188-2.188-1.2084 0-2.188.9796-2.188 2.188 0 1.2084.9796 2.188 2.188 2.188ZM9.2357 8.855v12.1391h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904h3.7711v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.5681 1.96h-.051v-1.66h-3.618Zm-6.142 0h3.775v12.1391h-3.775V8.8551Z' fill='%237B7B7B'/%3E%3C/svg%3E");
+    }
+
+    &-cam {
+        width: 56px;
+        height: 56px;
+        background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28.0013 18.6667c-5.0587 0-9.3333 4.2746-9.3333 9.3333 0 5.0587 4.2746 9.3333 9.3333 9.3333 5.0587 0 9.3333-4.2746 9.3333-9.3333 0-5.0587-4.2746-9.3333-9.3333-9.3333Zm0 14c-2.485 0-4.6667-2.1817-4.6667-4.6667 0-2.485 2.1817-4.6667 4.6667-4.6667 2.485 0 4.6667 2.1817 4.6667 4.6667 0 2.485-2.1817 4.6667-4.6667 4.6667Z' fill='%23fff'/%3E%3Cpath d='M46.668 11.6667h-6.034l-6.3164-6.3164a2.3238 2.3238 0 0 0-1.6496-.6836h-9.3334a2.324 2.324 0 0 0-1.6496.6836l-6.3164 6.3164h-6.034c-2.5736 0-4.6666 2.093-4.6666 4.6666V42c0 2.5737 2.093 4.6667 4.6666 4.6667H46.668c2.5736 0 4.6666-2.093 4.6666-4.6667V16.3333c0-2.5736-2.093-4.6666-4.6666-4.6666ZM9.3346 42V16.3333h7c.6207 0 1.2134-.245 1.6497-.6836l6.3163-6.3164h7.4014l6.3163 6.3164a2.3243 2.3243 0 0 0 1.6497.6836h7L46.6726 42H9.3346Z' fill='%23fff'/%3E%3C/svg%3E");
+    }
+
+    &-warn {
+        vertical-align: bottom;
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 1.25a8.75 8.75 0 1 0 0 17.5 8.75 8.75 0 0 0 0-17.5Zm0 16.25a7.5 7.5 0 1 1 .0001-15.0002A7.5 7.5 0 0 1 10 17.5Z' fill='%23EA5B70'/%3E%3Cpath d='M9.375 5h1.25v6.875h-1.25V5ZM10 13.75a.9376.9376 0 0 0-.1829 1.857.937.937 0 0 0 .9624-.3987A.9373.9373 0 0 0 10 13.75Z' fill='%23EA5B70'/%3E%3C/svg%3E");
     }
 }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page="Profile"}}
+
+<body>
+
+    <!-- header -->
+    {{> header login=true}}
+    <!-- header -->
+
+    <!-- main -->
+    <main role="main">
+        {{> ads/skin}}
+        <section class="profile container">
+            <div class="row display-flex mt40">
+                <div class="profileCol_left col-gd-300">
+                    <aside class="profileNav">
+                        {{> profile/profile-det}}
+                        {{> profile/profile-nav active="Tulis Artikel"}}
+                    </aside>
+                </div>
+                <div class="profileCol_right col-gd-740">
+                    <div class="highlightCaption">Tulis Artikel</div>
+                    <form class="mt30">
+                        {{> profile/section}}
+                        <button class="button buttonWhite buttonWhite--big mt30" id="buttonSection" type="button"><span
+                                class="profileBtn__add mr10">+</span> Tambah Section</button>
+                        <div class="profileSection__wrap mt30">
+                            <div class="profileHeading display-flex jcontent-between">
+                                Subheading 1
+                                <button type="button" class="button profileSection__del">Hapus</button>
+                            </div>
+                        </div>
+                        {{> profile/tags}}
+                        <div class="display-flex aitems-center mt20">
+                            <button class="button buttonPink buttonPink--medium mr10" type="submit">Submit</button>
+                            <button class="button buttonWhite buttonWhite--small" type="button">Jadikan Draft</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    {{!> ads/sticky}}
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js page="Profile"}}
+    <script src="//cdn.gaic.com/cdn/ui-bootstrap/0.58.0/js/lib/ckeditor/ckeditor.js"></script>
+    <script defer src="./asset/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    {{!--
+    <script defer type="text/javascript" src="asset/js/more-section.js"></script> --}}
+    <script>
+        $(document).ready(function () {
+            //upload image
+            $('input[type=file]').change(function (e) {
+                $in = $(this);
+                $in.next().html($in.val());
+            });
+
+            //desc editor
+            CKEDITOR.replace('editor');
+            CKEDITOR.editorConfig = function (config) {
+                config.extraPlugins = 'confighelper';
+            };
+
+            //tags label
+            $('.-tagselect').tagsinput({
+                freeInput: true,
+                tagClass: 'tagsItem'
+            });
+        })
+    </script>
+
+</body>
+
+</html>

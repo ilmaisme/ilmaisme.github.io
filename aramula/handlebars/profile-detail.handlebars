@@ -17,7 +17,7 @@
                     <div class="display-flex">
                         <!-- <img src="asset/images/user.png" alt="" class="profileAvatar" width="108" height="108">-->
                         <img src="https://api.lorem.space/image/face?w=108&amp;h=108&amp;hash=A89D0DE6" alt=""
-                                class="profileAvatar" width="108" height="108">
+                            class="profileAvatar" width="108" height="108">
                         <div class="profileWrap">
                             <h1 class="profileName">Sophie Anggita</h1>
                             <div class="profileDesc mt20">
@@ -30,7 +30,16 @@
                             {{> profile/social}}
                         </div>
                     </div>
-                    <div class="highlightCaption mt40">Artikel yang Pernah Ditulis</div>
+                    <div class="display-flex jcontent-between mt40">
+                        <div class="highlightCaption">Artikel yang Pernah Ditulis</div>
+                        <div class="profileCaption__select formSelect__wrap">
+                            <select class="formSelect custom-select" id="sort" aria-label="sort article">
+                                <option value="Urutkan" selected>Urutkan</option>
+                                <option value="Terbaru">Terbaru</option>
+                                <option value="Terlawas">Terlawas</option>
+                            </select>
+                        </div>
+                    </div>
                     {{> article-index}}
                     {{> paging}}
                 </div>
@@ -49,7 +58,7 @@
     <!-- footer -->
     {{> footer}}
 
-    {{> js}}
+    {{> js page="Profile"}}
 
 </body>
 
