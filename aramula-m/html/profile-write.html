@@ -74,7 +74,7 @@
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
     </style>
-    <link type="text/css" rel="stylesheet" href="asset/css/style-profile.css">
+    <link type="text/css" rel="stylesheet" href="asset/css/style-profile.min.css">
     <link rel="preload" href="asset/images/logo-aramula.png" as="image" />
 </head>
 <body>
@@ -226,7 +226,7 @@
         <section class="profile container">
             <div class="articleCaption">Tulis Artikel</div>
             <form class="mt30">
-                <div class="formSection">
+                <div class="formSection mb30">
                     <div class="formWrap mt20">
                         <label for="title" class="formLabel">Judul</label>
                         <input class="formInput formInput__error mt10" id="title" type="text">
@@ -278,7 +278,7 @@
                         <div class="formUpload mt10">
                             <label for="upload" class="formUpload__btn button buttonPink"><span><img src="asset/images/icon-folder.png"
                                         class="formUpload__icon" alt="" width="15" height="15"></span> Browse</label>
-                            <input type="file" name="upload" accept="image/*" id="fileUpload" />
+                            <input type="file" name="upload" accept="image/*" id="upload" />
                             <span class="fileName">Pilih file..</span>
                         </div>
                         <div class="formMisc mt10">(Maksimal 5MB. Rekomendasi ukuran: 1900px x 998px. Format file yang
@@ -294,18 +294,57 @@
                     </div>
                     <div class="formWrap formArea__wrap mt20">
                         <div class="formLabel mb10">Deskripsi <span class="red">*</span></div>
-                        <div id="editor">
+                        <div id="editor0" class="editor">
                             <p>This is the editor content.</p>
                         </div>
                     </div>
-                </div>                <button class="button buttonTrans buttonTrans--big mt30" id="buttonSection" type="button"><span
-                        class="profileBtn__add mr10">+</span> Tambah Section</button>
-                <div class="profileSection__wrap row mt30">
+                </div>                <!-- s : more section -->
+                <div class="profileSection__wrap row">
                     <div class="profileHeading display-flex jcontent-between">
                         Subheading 1
                         <button type="button" class="button profileSection__del">Hapus</button>
                     </div>
+                    <div class="formSection">
+                        <div class="formWrap mt20">
+                            <label for="title" class="formLabel">Judul</label>
+                            <input class="formInput formInput__error mt10" id="title" type="text">
+                            <div class="formMisc display-flex aitems-center jcontent-between mt10">
+                                <div class="formWarn"><span class="icon icon-warn"></span>Judul harus diisi</div>
+                                <div class="formCount">50/50</div>
+                            </div>
+                        </div>
+                        <div class="formWrap mt20">
+                            <div class="formLabel">Gambar Artikel</div>
+                            <div class="formUpload mt10">
+                                <label for="upload" class="formUpload__btn button buttonPink"><span><img src="asset/images/icon-folder.png"
+                                            class="formUpload__icon" alt="" width="15" height="15"></span> Browse</label>
+                                <input type="file" name="upload" accept="image/*" id="upload" />
+                                <span class="fileName">Pilih file..</span>
+                            </div>
+                            <div class="formMisc mt10">(Maksimal 5MB. Rekomendasi ukuran: 1900px x 998px. Format file yang
+                                diperbolehkan: jpg, png & gif.)</div>
+                        </div>
+                        <div class="formWrap formArea__wrap mt20">
+                            <label for="captionimg" class="formLabel">Caption Gambar</label>
+                            <textarea class="formArea mt10" id="captionimg" cols="30" rows="4"></textarea>
+                            <div class="formMisc mt10">
+                                *Caption gambar wajib diisi dengan deskripsi gambar dan sumber gambar. Contoh: Berinvestasi
+                                sejak dini akan bermanfaat bagi masa depan (Sumber gambar: ABCD)
+                            </div>
+                        </div>
+                        <div class="formWrap formArea__wrap mt20">
+                            <div class="formLabel mb10">Deskripsi <span class="red">*</span></div>
+                            <div id="editor1" class="editor">
+                                <p>This is the editor content.</p>
+                            </div>
+                        </div>
+                    </div>                </div>
+                <div id="load">
+
                 </div>
+                <!-- e : more section -->
+                <button class="button buttonTrans buttonTrans--big mt30" id="buttonSection" type="button"><span
+                        class="profileBtn__add mr10">+</span> Tambah Section</button>
                 <div class="formWrap mt20">
                     <label for="tags" class="formLabel">Tag</label>
                     <input type="text" id="tags" class="formInput mt10 -tagselect" data-role="tagsinput" />
@@ -363,10 +402,10 @@
         </div>
     </footer>
     <script src="asset/js/jquery-3.5.0.min.js"></script>
-    <script defer type="text/javascript" src="asset/js/profile.js"></script>
-    <script defer type="text/javascript" src="asset/js/global.js"></script>    <script src="//cdn.gaic.com/cdn/ui-bootstrap/0.58.0/js/lib/ckeditor/ckeditor.js"></script>
+    <script defer type="text/javascript" src="asset/js/profile.min.js"></script>
+    <script defer type="text/javascript" src="asset/js/global.min.js"></script>    <script src="//cdn.gaic.com/cdn/ui-bootstrap/0.58.0/js/lib/ckeditor/ckeditor.js"></script>
     <script defer src="./asset/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-    <script defer type="text/javascript" src="asset/js/more-section.js"></script>
+    <script defer type="text/javascript" src="asset/js/more-section.min.js"></script>
     <script>
         $(document).ready(function () {
             //upload image
@@ -376,10 +415,19 @@
             });
 
             //desc editor
-            CKEDITOR.replace('editor');
+            $('.editor').each(function () {
+                CKEDITOR.replace($(this).prop('id'));
+            });
+            //CKEDITOR.replace('editor');
             CKEDITOR.editorConfig = function (config) {
                 config.extraPlugins = 'confighelper';
             };
+
+            //delete section
+            var btndel = $('.profileSection__del');
+            btndel.click(function (e) {
+                $(this).parent().parent().remove();
+            })
 
             //tags label
             $('.-tagselect').tagsinput({
