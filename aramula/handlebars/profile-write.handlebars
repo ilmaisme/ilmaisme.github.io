@@ -23,14 +23,21 @@
                     <div class="highlightCaption">Tulis Artikel</div>
                     <form class="mt30">
                         {{> profile/section}}
-                        <button class="button buttonWhite buttonWhite--big mt30" id="buttonSection" type="button"><span
-                                class="profileBtn__add mr10">+</span> Tambah Section</button>
+                        <!-- s : more section -->
                         <div class="profileSection__wrap mt30">
                             <div class="profileHeading display-flex jcontent-between">
                                 Subheading 1
                                 <button type="button" class="button profileSection__del">Hapus</button>
                             </div>
+                            {{> profile/section1}}
                         </div>
+                        <div id="load">
+
+                        </div>
+                        <!-- e : more section -->
+                        <button class="button buttonWhite buttonWhite--big mt30" id="buttonSection" type="button"><span
+                                class="profileBtn__add mr10">+</span> Tambah Section</button>
+
                         {{> profile/tags}}
                         <div class="display-flex aitems-center mt20">
                             <button class="button buttonPink buttonPink--medium mr10" type="submit">Submit</button>
@@ -48,8 +55,8 @@
     {{> js page="Profile"}}
     <script src="//cdn.gaic.com/cdn/ui-bootstrap/0.58.0/js/lib/ckeditor/ckeditor.js"></script>
     <script defer src="./asset/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-    {{!--
-    <script defer type="text/javascript" src="asset/js/more-section.js"></script> --}}
+
+    <script defer type="text/javascript" src="asset/js/more-section.min.js"></script>
     <script>
         $(document).ready(function () {
             //upload image
@@ -59,10 +66,19 @@
             });
 
             //desc editor
-            CKEDITOR.replace('editor');
+            $('.editor').each(function () {
+                CKEDITOR.replace($(this).prop('id'));
+            });
+            //CKEDITOR.replace('editor');
             CKEDITOR.editorConfig = function (config) {
                 config.extraPlugins = 'confighelper';
             };
+
+            //delete section
+            var btndel = $('.profileSection__del');
+            btndel.click(function (e) {
+                $(this).parent().parent().remove();
+            })
 
             //tags label
             $('.-tagselect').tagsinput({

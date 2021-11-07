@@ -19,7 +19,7 @@
         </div>
         <section class="container">
             <div class="row display-flex mt40">
-                <div class="read my-gallery col-gd-740" itemscope itemtype="http://schema.org/ImageGallery">
+                <div class="read col-gd-740 images-container">
                     <article>
                         <h1 class="readTitle text-center">Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo
                         </h1>
@@ -31,25 +31,39 @@
                         <div class="photoBig photoSlider mt20">
                             <div class="js-photo-slider-for">
                                 {{#eachIndex headline}}
-                                <div class="photoSlider__item">
+                                {{!-- <div class="photoSlider__item">
                                     <div class="readImg__expand">
-                                        <img src="{{item.img}}{{index}}.jpg" class="photoSlider__img photoBig__img" alt="" width="740"
-                                            height="436" loading="lazy">
+                                        <img src="{{item.img}}{{index}}.jpg" class="photoSlider__img photoBig__img"
+                                            alt="" width="740" height="436" loading="lazy">
                                         <button class="button buttonExpand"><span class="icon icon-expand"></span>
                                             Perbesar</button>
                                     </div>
-                                </div>
-                                {{/eachIndex}}                              
+                                </div> --}}
+                                <figure class="readFigure" itemprop="associatedMedia" itemscope
+                                    itemtype="http://schema.org/ImageObject">
+                                    <a href="{{item.img}}{{index}}.jpg" itemprop="contentUrl"
+                                        data-size="947x633">
+                                        <img src="{{item.img}}{{index}}.jpg" class="photoSlider__img photoBig__img"
+                                            itemprop="thumbnail" alt="" width="740" height="436" />
+                                    </a>
+                                    <figcaption itemprop="caption description"
+                                        class="readImg__thumb text-center mt10r mt10">
+                                        {{item.title}}</figcaption>
+                                    <button class="button buttonExpand"><span class="icon icon-expand"></span>
+                                        Perbesar</button>
+                                </figure>
+
+                                {{/eachIndex}}
                                 {{#eachIndex headline}}
                                 <div class="photoSlider__item">
                                     <div class="readImg__expand">
-                                        <img src="{{item.img}}{{index}}.jpg" class="photoSlider__img photoBig__img" alt="" width="740"
-                                            height="436" loading="lazy">
+                                        <img src="{{item.img}}{{index}}.jpg" class="photoSlider__img photoBig__img"
+                                            alt="" width="740" height="436" loading="lazy">
                                         <button class="button buttonExpand"><span class="icon icon-expand"></span>
                                             Perbesar</button>
                                     </div>
                                 </div>
-                                {{/eachIndex}}                              
+                                {{/eachIndex}}
                             </div>
                         </div>
                         <div class="photoSmall photoSlider">
@@ -57,19 +71,19 @@
                                 {{#eachIndex headline}}
                                 <div class="photoSlider__item">
                                     <div class="readImg__expand photoSmall__wrap">
-                                        <img src="{{item.img}}{{index}}.jpg" class="photoSlider__img photoSmall__img" alt="" width="148"
-                                            height="134" loading="lazy">
+                                        <img src="{{item.img}}{{index}}.jpg" class="photoSlider__img photoSmall__img"
+                                            alt="" width="148" height="134" loading="lazy">
                                     </div>
                                 </div>
-                                {{/eachIndex}}                               
+                                {{/eachIndex}}
                                 {{#eachIndex headline}}
                                 <div class="photoSlider__item">
                                     <div class="readImg__expand photoSmall__wrap">
-                                        <img src="{{item.img}}{{index}}.jpg" class="photoSlider__img photoSmall__img" alt="" width="148"
-                                            height="134" loading="lazy">
+                                        <img src="{{item.img}}{{index}}.jpg" class="photoSlider__img photoSmall__img"
+                                            alt="" width="148" height="134" loading="lazy">
                                     </div>
                                 </div>
-                                {{/eachIndex}}                               
+                                {{/eachIndex}}
                             </div>
                         </div>
                         <div class="readContent mt30">
@@ -166,7 +180,7 @@
                 slidesToScroll: 1,
                 infinite: !0,
                 speed: 1000,
-                autoplay: !0,
+                autoplay: 0,
                 asNavFor: '.js-photo-slider-for',
                 focusOnSelect: true
             });
