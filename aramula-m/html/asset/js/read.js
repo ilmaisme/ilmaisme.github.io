@@ -144,6 +144,7 @@ $(document).ready(function () {
                     }
                     captionEl.children[0].innerHTML = item.title;
                     captionEl.children[0].style.width = (item.w * item.fitRatio) + 'px';
+                    captionEl.style.bottom = (item.h - 74) + 'px';
                     return true;
                 }
             };
@@ -167,6 +168,7 @@ $(document).ready(function () {
             if (disableAnimation) {
                 options.showAnimationDuration = 0;
             }
+
             gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
             return gallery.init();
         };
