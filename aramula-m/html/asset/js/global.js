@@ -18,6 +18,25 @@ $(document).ready(function () {
     $('.-btnCl').on("click", function () {
         $('.popup').removeClass('active');
     });
+
+
+    //icon play trigger
+    if ($('.videoPlay').is(':visible')) {
+        $('.videoPlay .icon-play').click(function () {
+            if ($('.videoPlay video').paused == false) {
+                $('.videoPlay video').get(0).pause();
+            } else {
+                $('.videoPlay video').get(0).play();
+            }
+        });
+        $(".videoPlay video").on("play", function () {
+            $('.icon-play').hide();
+        });
+        $(".videoPlay video").on("pause", function () {
+            $('.icon-play').show();
+        });
+    }
+
 })
 
 function backToTop() {

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-{{> head page="Read" slick=true}}
+{{> head page="Read" slick=true photozoom=true}}
 
 <body>
     <!-- header -->
@@ -12,7 +12,7 @@
     </ul>
     <!-- main -->
     <main role="main" class="main">
-        <section class="container">
+        <section class="read container images-container">
             <article>
                 <h1 class="readTitle text-center mt20">Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo
                 </h1>
@@ -21,16 +21,19 @@
                     WIB</div>
                 {{> read/share}}
                 <div class="readImg__wrap flex-center mt20">
-                    <div class="readImg__expand">
-                        <img src="asset/images/sample/art-big-4.jpg" class="readImg" alt="" width="324" height="239"
-                            loading="lazy">
-                        <button class="button buttonExpand"><span class="icon icon-expand"></span>
-                        </button>
-                    </div>
-                    <div class="readImg__thumb text-center mt10">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Sit et
-                        amet, parturient sed sodales. Ut est sed quis et adipiscing tristique. Maecenas vitae
-                        nulla tellus nisl volutpat. </div>
+                    <figure class="readFigure" itemprop="associatedMedia" itemscope
+                        itemtype="http://schema.org/ImageObject">
+                        <a href="asset/images/sample/art-big-4.jpg" class="readFigure__link" itemprop="contentUrl"
+                            data-size="324x239">
+                            <img src="asset/images/sample/art-big-4.jpg" class="readImg" itemprop="thumbnail" alt=""
+                                width="324" height="239" />
+                            <button class="button buttonExpand" aria-label="Zoom Image"><span
+                                    class="icon icon-expand"></span></button>
+                        </a>
+                        <figcaption itemprop="caption description" class="readImg__thumb text-center mt10">
+                            Lorem
+                            ipsum dolor sit amet</figcaption>
+                    </figure>
                 </div>
                 <div class="readContent mt20">
                     <h2>1. Delish Burger Jangan Takut Gendut!</h2>
@@ -73,16 +76,19 @@
                         porttitor amet morbi.
                     </p>
                     <div class="readImg__wrap flex-center mt20">
-                        <div class="readImg__expand">
-                            <img src="asset/images/sample/art-big-5.jpg" class="readImg" alt="" width="324" height="239"
-                                loading="lazy">
-                            <button class="button buttonExpand"><span class="icon icon-expand"></span>
-                            </button>
-                        </div>
-                        <div class="readImg__thumb text-center mt10">Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Sit et
-                            amet, parturient sed sodales. Ut est sed quis et adipiscing tristique. Maecenas vitae
-                            nulla tellus nisl volutpat. </div>
+                        <figure class="readFigure" itemprop="associatedMedia" itemscope
+                            itemtype="http://schema.org/ImageObject">
+                            <a href="asset/images/sample/art-big-5.jpg" class="readFigure__link" itemprop="contentUrl"
+                                data-size="324x239">
+                                <img src="asset/images/sample/art-big-5.jpg" class="readImg" itemprop="thumbnail" alt=""
+                                    width="324" height="239" />
+                                <button class="button buttonExpand" aria-label="Zoom Image"><span
+                                        class="icon icon-expand"></span></button>
+                            </a>
+                            <figcaption itemprop="caption description" class="readImg__thumb text-center mt10">
+                                Lorem
+                                ipsum dolor sit amet</figcaption>
+                        </figure>
                     </div>
                     <p>
                         In ullamcorper quis justo, commodo tincidunt.
@@ -210,6 +216,9 @@
             <button class="button buttonMore mt30">Index</button>
         </section>
     </main>
+    <!-- s: popup photo element -->
+    {{> read/pswp}}
+    <!-- e: popup photo element -->
     <!-- s: popup report -->
     {{> read/popup-report}}
     <!-- e: popup report -->
@@ -217,7 +226,7 @@
     <!-- footer -->
     {{> footer}}
 
-    {{> js page="Read" slick=true}}
+    {{> js page="Read" slick=true photozoom=true}}
     <script>
         $(document).ready(function () {
             // headline slider
@@ -230,7 +239,7 @@
                     cssEase: 'linear',
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    autoplay: false, 
+                    autoplay: false,
                     variableWidth: true,
                     variableHeight: true
                     //autoplaySpeed: 2000,

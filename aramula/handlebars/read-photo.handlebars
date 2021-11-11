@@ -41,13 +41,12 @@
                                 </div> --}}
                                 <figure class="readFigure" itemprop="associatedMedia" itemscope
                                     itemtype="http://schema.org/ImageObject">
-                                    <a href="{{item.img}}{{index}}.jpg" itemprop="contentUrl"
-                                        data-size="947x633">
+                                    <a href="{{item.img}}{{index}}.jpg" itemprop="contentUrl" data-size="947x633">
                                         <img src="{{item.img}}{{index}}.jpg" class="photoSlider__img photoBig__img"
                                             itemprop="thumbnail" alt="" width="740" height="436" />
                                     </a>
                                     <figcaption itemprop="caption description"
-                                        class="readImg__thumb text-center mt10r mt10">
+                                        class="readImg__thumb text-center mt10">
                                         {{item.title}}</figcaption>
                                     <button class="button buttonExpand"><span class="icon icon-expand"></span>
                                         Perbesar</button>
@@ -55,14 +54,18 @@
 
                                 {{/eachIndex}}
                                 {{#eachIndex headline}}
-                                <div class="photoSlider__item">
-                                    <div class="readImg__expand">
+                                <figure class="readFigure" itemprop="associatedMedia" itemscope
+                                    itemtype="http://schema.org/ImageObject">
+                                    <a href="{{item.img}}{{index}}.jpg" itemprop="contentUrl" data-size="947x633">
                                         <img src="{{item.img}}{{index}}.jpg" class="photoSlider__img photoBig__img"
-                                            alt="" width="740" height="436" loading="lazy">
-                                        <button class="button buttonExpand"><span class="icon icon-expand"></span>
-                                            Perbesar</button>
-                                    </div>
-                                </div>
+                                            itemprop="thumbnail" alt="" width="740" height="436" />
+                                    </a>
+                                    <figcaption itemprop="caption description"
+                                        class="readImg__thumb text-center mt10">
+                                        {{item.title}}</figcaption>
+                                    <button class="button buttonExpand"><span class="icon icon-expand"></span>
+                                        Perbesar</button>
+                                </figure>
                                 {{/eachIndex}}
                             </div>
                         </div>
@@ -180,7 +183,7 @@
                 slidesToScroll: 1,
                 infinite: !0,
                 speed: 1000,
-                autoplay: 0,
+                autoplay: !0,
                 asNavFor: '.js-photo-slider-for',
                 focusOnSelect: true
             });

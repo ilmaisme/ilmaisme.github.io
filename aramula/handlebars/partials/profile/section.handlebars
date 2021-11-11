@@ -8,8 +8,10 @@
         </div>
     </div>
     <div class="formSelect__wrap mt20">
-        <label for="categ" class="formLabel">Kategori</label>
-        <select class="formSelect custom-select mt10" id="categ">
+        <label for="categ" class="formLabel mb10">Kategori</label>
+        {{!-- <select class="formSelect custom-select mt10" id="categ">
+        </select> --}}
+        <select class="formSelect js-select2" name="categ" id="categ">
             {{#eachIndex menu}}
             {{#gt index compare = '0'}}
             {{lt}}
@@ -32,8 +34,9 @@
     <div class="formWrap mt20">
         <div class="formLabel">Gambar Artikel</div>
         <div class="formUpload mt10">
-            <label for="upload" class="formUpload__btn button buttonPink buttonPink--small"><span><img src="asset/images/icon-folder.png"
-                        class="formUpload__icon" alt="" width="15" height="15"></span> Browse</label>
+            <label for="upload" class="formUpload__btn button buttonPink buttonPink--small"><span><img
+                        src="asset/images/icon-folder.png" class="formUpload__icon" alt="" width="15"
+                        height="15"></span> Browse</label>
             <input type="file" name="upload" accept="image/*" id="upload" />
             <span class="fileName">Pilih file..</span>
         </div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-{{> head page="Read" slick=true}}
+{{> head page="Read" slick=true photozoom=true}}
 
 <body>
     <!-- header -->
@@ -12,7 +12,7 @@
     </ul>
     <!-- main -->
     <main role="main" class="main">
-        <section class="container">
+        <section class="read container images-container">
             <article>
                 <h1 class="readTitle text-center mt20">Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo
                 </h1>
@@ -23,7 +23,7 @@
                 <div class="photoBig photoSlider mt20">
                     <div class="js-photo-slider-for">
                         {{#eachIndex headline}}
-                        <div class="photoSlider__item">
+                        {{!-- <div class="photoSlider__item">
                             <div class="readImg__expand">
                                 <img src="{{item.img}}{{index}}.webp" class="photoSlider__img photoBig__img" alt=""
                                     width="325" height="239" loading="lazy">
@@ -33,10 +33,22 @@
                                 adipiscing elit. Sit et
                                 amet, parturient sed sodales. Ut est sed quis et adipiscing tristique. Maecenas vitae
                                 nulla tellus nisl volutpat. </div>
-                        </div>
+                        </div> --}}
+
+                        <figure class="readFigure" itemprop="associatedMedia" itemscope
+                            itemtype="http://schema.org/ImageObject">
+                            <a href="{{item.img}}{{index}}.webp" itemprop="contentUrl" data-size="324x239">
+                                <img src="{{item.img}}{{index}}.webp" class="photoSlider__img photoBig__img"
+                                    itemprop="thumbnail" alt="" width="325" height="239" />
+                                <button class="button buttonExpand"><span class="icon icon-expand"></span></button>
+                            </a>
+                            <figcaption itemprop="caption description" class="readImg__thumb text-center mt10">
+                                {{item.title}}</figcaption>
+                        </figure>
+
                         {{/eachIndex}}
                         {{#eachIndex headline}}
-                        <div class="photoSlider__item">
+                        {{!-- <div class="photoSlider__item">
                             <div class="readImg__expand">
                                 <img src="{{item.img}}{{index}}.webp" class="photoSlider__img photoBig__img" alt=""
                                     width="325" height="239" loading="lazy">
@@ -46,7 +58,19 @@
                                 adipiscing elit. Sit et
                                 amet, parturient sed sodales. Ut est sed quis et adipiscing tristique. Maecenas vitae
                                 nulla tellus nisl volutpat. </div>
-                        </div>
+                        </div> --}}
+
+                        <figure class="readFigure" itemprop="associatedMedia" itemscope
+                            itemtype="http://schema.org/ImageObject">
+                            <a href="{{item.img}}{{index}}.webp" itemprop="contentUrl" data-size="324x239">
+                                <img src="{{item.img}}{{index}}.webp" class="photoSlider__img photoBig__img"
+                                    itemprop="thumbnail" alt="" width="325" height="239" />
+                                <button class="button buttonExpand"><span class="icon icon-expand"></span></button>
+                            </a>
+                            <figcaption itemprop="caption description" class="readImg__thumb text-center mt10">
+                                {{item.title}}</figcaption>
+                        </figure>
+
                         {{/eachIndex}}
                     </div>
                 </div>
@@ -145,6 +169,9 @@
             <button class="button buttonMore mt30">Index</button>
         </section>
     </main>
+    <!-- s: popup photo element -->
+    {{> read/pswp}}
+    <!-- e: popup photo element -->
     <!-- s: popup report -->
     {{> read/popup-report}}
     <!-- e: popup report -->
@@ -152,7 +179,7 @@
     <!-- footer -->
     {{> footer}}
 
-    {{> js page="Read" slick=true}}
+    {{> js page="Read" slick=true photozoom=true}}
     <script>
         // photo slider
         $(document).ready(function () {

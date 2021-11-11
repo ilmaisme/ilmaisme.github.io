@@ -193,12 +193,18 @@
         -webkit-appearance: none;
 
         &:checked:before {
-            background: $cl_white;
             font-size: 18px;
             content: '✓';
-            color: $cl_primary;
+            color: $cl_white;
             padding: 0 5px;
             position: absolute;
+            background: $cl_pink;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        &:checked:after {
+            border: 0;
         }
 
         &:after {
@@ -208,6 +214,7 @@
             position: absolute;
             width: 24px;
             height: 24px;
+            background: $cl_white;
         }
     }
 
@@ -282,6 +289,10 @@
             top: 2px;
             overflow: hidden;
         }
+    }
+
+    &Label{
+        display: block;
     }
 }
 

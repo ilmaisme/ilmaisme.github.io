@@ -50,11 +50,4 @@ $(document).ready(function () {
     }
     createVideo();
 
-    //icon event play
-    if ($('.eventVid').is(':visible')) {
-        $('.eventVid').click(function () {
-            $(this).find($('.icon-play')).toggle();
-        });
-    }
-
 });

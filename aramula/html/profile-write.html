@@ -74,6 +74,7 @@
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
     </style>
+    <link type="text/css" rel="stylesheet" href="asset/css/select2/select2.min.css">
     <link type="text/css" rel="stylesheet" href="asset/css/style-profile.min.css">
     <link rel="preload" href="asset/images/logo-aramula.png" as="image" />
 
@@ -254,8 +255,8 @@
                                 </div>
                             </div>
                             <div class="formSelect__wrap mt20">
-                                <label for="categ" class="formLabel">Kategori</label>
-                                <select class="formSelect custom-select mt10" id="categ">
+                                <label for="categ" class="formLabel mb10">Kategori</label>
+                                <select class="formSelect js-select2" name="categ" id="categ">
                                     false
                                     <option value="Hangout">Hangout</option>
                                     false
@@ -294,8 +295,9 @@
                             <div class="formWrap mt20">
                                 <div class="formLabel">Gambar Artikel</div>
                                 <div class="formUpload mt10">
-                                    <label for="upload" class="formUpload__btn button buttonPink buttonPink--small"><span><img src="asset/images/icon-folder.png"
-                                                class="formUpload__icon" alt="" width="15" height="15"></span> Browse</label>
+                                    <label for="upload" class="formUpload__btn button buttonPink buttonPink--small"><span><img
+                                                src="asset/images/icon-folder.png" class="formUpload__icon" alt="" width="15"
+                                                height="15"></span> Browse</label>
                                     <input type="file" name="upload" accept="image/*" id="upload" />
                                     <span class="fileName">Pilih file..</span>
                                 </div>
@@ -426,11 +428,11 @@
         </div>
     </footer>
     <script src="asset/js/jquery-3.5.0.min.js"></script>
-    <script defer type="text/javascript" src="asset/js/global.min.js"></script>
-    <script defer type="text/javascript" src="asset/js/profile.min.js"></script>
+    <script defer type="text/javascript" src="asset/js/global.js"></script>
+    <script defer type="text/javascript" src="asset/js/profile.js"></script>
     <script src="//cdn.gaic.com/cdn/ui-bootstrap/0.58.0/js/lib/ckeditor/ckeditor.js"></script>
     <script defer src="./asset/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-
+    <script defer src="./asset/js/select2/select2.min.js"></script>
     <script defer type="text/javascript" src="asset/js/more-section.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -459,6 +461,19 @@
             $('.-tagselect').tagsinput({
                 freeInput: true,
                 tagClass: 'tagsItem'
+            });
+
+            //select2 category
+            $('.js-select2').select2({
+                width: '100%',
+                "language": {
+                    "noResults": function () {
+                        return "Hasil tidak ditemukan";
+                    }
+                },
+                escapeMarkup: function (markup) {
+                    return markup;
+                }
             });
         })
     </script>

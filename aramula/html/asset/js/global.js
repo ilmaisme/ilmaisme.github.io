@@ -27,7 +27,14 @@ $(document).ready(function () {
     //close popup
     $('.-btnCl').on("click", function () {
         $('.popup').removeClass('active');
-    });
+    });    
+
+    //icon play toggle
+    if ($('.videoPlay').is(':visible')) {
+        $('.videoPlay').click(function () {
+            $(this).find($('.icon-play')).toggle();
+        });
+    }
 });
 
 

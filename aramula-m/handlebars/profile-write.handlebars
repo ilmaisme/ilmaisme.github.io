@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-{{> head page="Profile"}}
+{{> head page="Profile" select2=true}}
 
 <body>
     <!-- header -->
@@ -39,6 +39,7 @@
     {{> js page="Profile"}}
     <script src="//cdn.gaic.com/cdn/ui-bootstrap/0.58.0/js/lib/ckeditor/ckeditor.js"></script>
     <script defer src="./asset/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script defer src="./asset/js/select2/select2.min.js"></script>
     <script defer type="text/javascript" src="asset/js/more-section.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -67,6 +68,19 @@
             $('.-tagselect').tagsinput({
                 freeInput: true,
                 tagClass: 'tagsItem'
+            });
+
+            //select2 category
+            $('.js-select2').select2({
+                width: '100%',
+                "language": {
+                    "noResults": function () {
+                        return "Hasil tidak ditemukan";
+                    }
+                },
+                escapeMarkup: function (markup) {
+                    return markup;
+                }
             });
         })
     </script>

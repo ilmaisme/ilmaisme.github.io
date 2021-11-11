@@ -92,13 +92,6 @@ $(document).ready(function () {
         createVideo();
     }
 
-    //icon event play
-    if ($('.eventVid').is(':visible')) {
-        $('.eventVid').click(function () {
-            $(this).find($('.icon-play')).toggle();
-        });
-    }
-
     //sticky right ads
     if ($('.-right-sticky').is(':visible')) {
         $(".-right-sticky").stick_in_parent({

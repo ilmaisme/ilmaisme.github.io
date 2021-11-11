@@ -174,24 +174,25 @@
 
         &:checked:before {
             content: '✓';
-            background: #EBEBEB;
+            background: $cl_pink;
             border: 1px solid #CECECE;
             border-radius: 5px;
             position: absolute;
             font-size: 18px;
-            color: $cl_primary;
+            color: $cl_white;
             padding: 0 5px;
             width: 24px;
             height: 24px;
+            z-index: 1;
         }
 
         &:checked:after {
-            content: none;
+            border: 0;
         }
 
         &:after {
             content: '';
-            background: #EBEBEB;
+            background: $cl_white;
             border: 1px solid #CECECE;
             border-radius: 5px;
             position: absolute;
@@ -219,6 +220,7 @@
     }
 
     &Label {
+        display: block;
         @include font-pack(false, 14px, 500, false, false);
     }
 
