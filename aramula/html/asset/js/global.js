@@ -16,18 +16,10 @@ $(document).ready(function () {
             (hfl.removeClass("active"))
     })
 
-    //back to top button
-    function backToTop() {
-        // $(window).scrollTop(0);
-        $('html,body').stop().animate({
-            scrollTop: 0
-        }, 1000);
-    }
-    
     //close popup
     $('.-btnCl').on("click", function () {
         $('.popup').removeClass('active');
-    });    
+    });
 
     //icon play toggle
     if ($('.videoPlay').is(':visible')) {
@@ -53,3 +45,11 @@ $('body').click(function () {
         checkToggleTrue()
     }
 });
+
+//back to top button
+function backToTop() {
+    // $(window).scrollTop(0);
+    $('html,body').stop().animate({
+        scrollTop: 0
+    }, 1000);
+}
