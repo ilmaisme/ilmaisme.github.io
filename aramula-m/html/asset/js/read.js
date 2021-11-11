@@ -144,7 +144,7 @@ $(document).ready(function () {
                     }
                     captionEl.children[0].innerHTML = item.title;
                     captionEl.children[0].style.width = (item.w * item.fitRatio) + 'px';
-                    captionEl.style.bottom = (item.h - 74) + 'px';
+                    captionEl.style.bottom = (item.h - 100) + 'px';
                     return true;
                 }
             };
