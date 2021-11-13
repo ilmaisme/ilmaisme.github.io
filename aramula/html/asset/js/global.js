@@ -31,7 +31,8 @@ $(document).ready(function () {
 
 
 //hide menu
-let navtog = $('#navToggle')
+let navtog = $('#navToggle'),
+    usrtog = $('#navUser');
 if (navtog.is(':visible')) {
     function checkToggleTrue() {
         navtog.prop('checked', false);
@@ -40,9 +41,20 @@ if (navtog.is(':visible')) {
         e.stopPropagation();
     });
 };
+if (usrtog.is(':visible')) {
+    function checkUserTrue() {
+        usrtog.prop('checked', false);
+    }
+    usrtog.click(function (e) {
+        e.stopPropagation();
+    });
+};
 $('body').click(function () {
     if (navtog.is(':visible')) {
         checkToggleTrue()
+    }
+    if (usrtog.is(':visible')) {
+        checkUserTrue()
     }
 });
 

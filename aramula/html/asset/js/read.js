@@ -141,8 +141,10 @@ $(document).ready(function () {
                         captionEl.children[0].innerHTML = '';
                         return false;
                     }
+                    let _1vh = $(window).height();
                     captionEl.children[0].innerHTML = item.title;
-                    captionEl.children[0].style.width = (item.w * item.fitRatio) + 'px';
+                    captionEl.children[0].style.width = (item.w) + 'px';
+                    //captionEl.style.bottom = (item.h + 44) + 'px';
                     return true;
                 }
             };
