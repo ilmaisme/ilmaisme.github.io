@@ -348,7 +348,7 @@
                 <div class="articleContent20 container center-flex heightFull">
                     <div class="articleTitle--span articleTitle--green text-center">Penghijauan
                     </div>
-                    <div class="articleTitle--big articleText20">
+                    <div class="articleTitle--big articleText20 text-center">
                         Industri hulu migas berkomitmen merehabilitasi daerah aliran sungai (DAS) hingga tahun 2024.
                     </div>
                 </div>
@@ -523,14 +523,14 @@
                     <source srcset="./asset/images/land-mob.png" media="(max-width: 768px)" alt="">
                     <img srcset="./asset/images/land.png" alt="" class="">
                 </picture>
-                <div class="imgPump__wrap imgPump__wrap1">
+                <div class="imgPump__wrap imgPump__bg imgPump__wrap1">
                     <div class="imgPump3" id="animationPump3"></div>
                     <picture>
                         <source srcset="./asset/images/cursor-hand.png" media="(max-width: 768px)" alt="">
                         <img srcset="./asset/images/cursor-hand.png" alt="" class="imgCursorPump imgCursorPump1">
                     </picture>
                 </div>
-                <div class="imgPump__wrap imgPump__wrap2">
+                <div class="imgPump__wrap imgPump__bg imgPump__wrap2">
                     <div class="imgPump4" id="animationPump4"></div>
                     <picture>
                         <source srcset="./asset/images/cursor-hand.png" media="(max-width: 768px)" alt="">
@@ -963,24 +963,26 @@
                     <img srcset="./asset/images/pipa-gas-6.png" alt="" class="imgFull">
                 </picture>
             </div>
-            <div class="bgStatic article21 display-none">
-                <div class="articleContent21 container center-flex text-center heightFull">
-                    <div class="articleTitle--span articleTitle--green">Total Realisasi Penghijauan 2021
+            <div class="bgStatic article21">
+                <div class="articleContent21 display-none heightFull">
+                    <div class="articleContent21__wrap container text-center heightFull">
+                        <div class="articleTitle--span articleTitle--green">Total Realisasi Penghijauan 2021
+                        </div>
+                        <ul class="articleContent21__text display-flex">
+                            <li class="articleButton__wrap articleButton1 moveTop opac0">
+                                <button class="articleButton" id="btn1">Rehabilitasi Daerah Aliran
+                                    Sungai</button>
+                                <picture>
+                                    <source srcset="./asset/images/cursor-hand.png" media="(max-width: 768px)" alt="">
+                                    <img srcset="./asset/images/cursor-hand.png" alt="" class="imgCursor">
+                                </picture>
+                            </li>
+                            <li class="articleButton__wrap articleButton2 moveTop opac0">
+                                <button class="articleButton" id="btn2">Penanaman 13,4 Juta Batang
+                                    Pohon</button>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="articleContent21__text display-flex">
-                        <li class="articleButton__wrap articleButton1 moveTop opac0">
-                            <button class="articleButton" id="btn1">Rehabilitasi Daerah Aliran
-                                Sungai</button>
-                            <picture>
-                                <source srcset="./asset/images/cursor-hand.png" media="(max-width: 768px)" alt="">
-                                <img srcset="./asset/images/cursor-hand.png" alt="" class="imgCursor">
-                            </picture>
-                        </li>
-                        <li class="articleButton__wrap articleButton2 moveTop opac0">
-                            <button class="articleButton" id="btn2">Penanaman 13,4 Juta Batang
-                                Pohon</button>
-                        </li>
-                    </ul>
                 </div>
                 <div class="imgFishing" id="animationFishing"></div>
             </div>
@@ -1137,7 +1139,8 @@
                                 <img srcset="./asset/images/land-park.png" alt="" width="650" height="384" class="">
                             </div>
                         </div>
-                        <div class="articleText--help text-center mt2 opac0">[Hover mouse pada gambar di atas]</div>
+                        <div class="articleText--help text-center mt2 opac0">[Hover mouse pada gambar di atas]
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1148,14 +1151,20 @@
             <section class="section"></section>
             <section class="section"></section>
             <section class="section"></section>
+            <section class="section section4">
+
+            </section>
+            <section class="section section5">
+
+            </section>
             <section class="section"></section>
             <section class="section"></section>
             <section class="section"></section>
             <section class="section"></section>
             <section class="section"></section>
-            <section class="section"></section>
-            <section class="section"></section>
-            <section class="section"></section>
+            <section class="section section11">
+
+            </section>
             <section class="section"></section>
             <section class="section"></section>
             <section class="section"></section>
@@ -1461,6 +1470,8 @@
                         });
                     }
                     if (origin.index == 2 && direction == 'down') {
+                        $(".imgPump__bg").addClass('active');
+                        console.log('2down');
                         $(".bg3").velocity({
                             top: "-100%"
                         }, {
@@ -1502,6 +1513,7 @@
                     }
 
                     if (origin.index == 3 && direction == 'up') {
+                        $(".imgPump__bg").removeClass('active');
                         $(".bgStatic__wrap").removeClass("active");
                         $(".bg3").velocity({
                             top: "0"
@@ -1545,6 +1557,9 @@
                     if (origin.index == 3 && direction == 'down') {
                         $(".bgStatic__wrap").removeClass("active");
                         $(".articleText4").fadeOut(300);
+                        $(".imgCursorPump").velocity({
+                            opacity: "0"
+                        });
                         $(".articleText5--left").velocity({
                             opacity: "1",
                             display: "block"
@@ -1571,9 +1586,13 @@
                             delay: 0,
                             duration: 0
                         });
+                        $(".imgCursorPump").velocity({
+                            opacity: "1"
+                        });
                     }
 
                     if (origin.index == 4 && direction == 'down') {
+                        $(".imgPump__bg").removeClass('active');
                         $(".bg4").velocity({
                             bottom: "100%"
                         }, {
@@ -1605,6 +1624,9 @@
                             delay: 0,
                             duration: 300
                         });
+                        $(".imgCursorPump").velocity({
+                            opacity: "1"
+                        });
                         $(".article6").velocity({
                             opacity: "1"
                         }, {
@@ -1615,6 +1637,10 @@
                     }
 
                     if (origin.index == 5 && direction == 'up') {
+                        $(".imgCursorPump").velocity({
+                            opacity: "0"
+                        });
+                        $(".imgPump__bg").addClass('active');
                         $(".bg4").velocity({
                             bottom: "0"
                         }, {
@@ -1988,6 +2014,7 @@
                             }
                         });
                         $(".bgStatic__wrap").addClass("active");
+                        $(".articleContent14__wrap").addClass("active");
                         $(".barItem").velocity({
                             opacity: '1'
                         }, {
@@ -2012,9 +2039,11 @@
                             duration: 700
                         });
                         $(".bgStatic__wrap").removeClass("active");
+                        $(".articleContent14__wrap").removeClass("active");
                     }
                     if (origin.index == 13 && direction == 'down') {
                         $(".bgStatic__wrap").removeClass("active");
+                        $(".articleContent14__wrap").removeClass("active");
                         $(".imgIcon2").velocity({
                             opacity: "0"
                         })
@@ -2109,6 +2138,7 @@
 
                     }
                     if (origin.index == 14 && direction == 'up') {
+                        $(".articleContent14__wrap").addClass("active");
                         $(".bgStatic__wrap").addClass("active");
                         $(".imgIcon2").velocity({
                             opacity: "1"
@@ -2386,14 +2416,17 @@
                     }
                     if (origin.index == 19 && direction == 'down') {
                         $(".article20").fadeOut(300);
-                        $(".article21").fadeIn(300);
+                        $(".articleContent21").fadeIn(300);
                         $(".imgFishing").addClass("move");
                         $(".articleButton1").velocity({
                             top: "0",
                             opacity: "1"
                         }, {
                             delay: 300,
-                            duration: 300
+                            duration: 300,
+                            begin: function () {
+                                $(".articleButton").addClass("active");
+                            },
                         });
                         $(".articleButton2").velocity({
                             top: "0",
@@ -2413,7 +2446,7 @@
                     if (origin.index == 20 && direction == 'up') {
                         $(".imgFishing").removeClass("move");
                         $(".article20").fadeIn(300);
-                        $(".article21").fadeOut(300);
+                        $(".articleContent21").fadeOut(300);
                         $(".articleButton1").velocity({
                             top: "-100%",
                             opacity: "0"
@@ -2429,6 +2462,7 @@
                             duration: 300
                         });
                         $(".bgStatic__wrap").removeClass("active");
+                        $(".articleButton").removeClass("active");
                         $(".imgCursor").velocity({
                             opacity: "0"
                         }, {
@@ -2437,7 +2471,8 @@
                         });
                     }
                     if (origin.index == 20 && direction == 'down') {
-                        $(".article21").fadeOut(300);
+                        $(".imgFishing").removeClass("move");
+                        $(".articleContent21").fadeOut(300);
                         $(".bg19").fadeOut(300);
                         $(".bg18").velocity({
                             top: "-100%"
@@ -2510,8 +2545,9 @@
                         });
                     }
                     if (origin.index == 21 && direction == 'up') {
-                        $(".article21").fadeIn(300);
+                        $(".imgFishing").addClass("move");
                         $(".bg19").fadeIn(700);
+                        $(".articleContent21").fadeIn(300);
                         $(".article23").fadeOut(300);
                         $(".bg18").velocity({
                             top: "0"
@@ -2529,7 +2565,9 @@
                             top: "0"
                         }, {
                             delay: 0,
-                            duration: 700
+                            duration: 700,
+                            complete: function () {
+                            }
                         });
                         $(".bgColor--ocean2").velocity({
                             top: "unset",
@@ -2594,6 +2632,8 @@
                             }
                         });
                         $(".imgMap").addClass("move");
+                        $(".bgStatic__wrap").addClass("active");
+                        $(".imgMap").addClass("active");
                     }
                     if (origin.index == 22 && direction == 'up') {
                         $(".article22").velocity({
@@ -2635,6 +2675,7 @@
                             duration: 300
                         });
                         $(".bgStatic__wrap").removeClass("active");
+                        $(".imgMap").removeClass("active");
                         $(".article23").fadeOut(300);
                         $(".bgColor--ocean2").velocity({
                             top: "-100%"
@@ -2697,6 +2738,7 @@
                             delay: 0,
                             duration: 300
                         });
+                        $(".imgMap").addClass("active");
                         $(".bgStatic__wrap").addClass("active");
                         $(".article23").fadeIn(300);
                         $(".article24").fadeOut(300);
