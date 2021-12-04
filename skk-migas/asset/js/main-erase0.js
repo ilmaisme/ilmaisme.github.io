@@ -290,9 +290,6 @@
 })(jQuery);
 
 
-
-
-
 addEventListener("load", init, false);
 
 function init(event) {
