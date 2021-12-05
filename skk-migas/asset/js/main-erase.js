@@ -294,6 +294,27 @@ if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elain
             }
         };
     })(jQuery);
+    addEventListener("load", init, false);
+
+    function init(event) {
+        $("#reduxmob").eraser({
+            size: 20
+        });
+
+        // you can alse specify the brush size (in pixel) by using options :
+        // $("#redux").eraser({size: 20});
+    }
+
+    function remove(event) {
+        $("#reduxmob").eraser('clear');
+        event.preventDefault();
+    }
+
+    function reset(event) {
+        $("#reduxmob").eraser('reset');
+        event.preventDefault();
+    }
+
 } else {
     // desktop
     (function ($) {
@@ -537,25 +558,24 @@ if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elain
             }
         };
     })(jQuery);
-}
+    addEventListener("load", init, false);
 
-addEventListener("load", init, false);
+    function init(event) {
+        $("#redux").eraser({
+            size: 30
+        });
 
-function init(event) {
-    $("#redux").eraser({
-        size: 30
-    });
+        // you can alse specify the brush size (in pixel) by using options :
+        // $("#redux").eraser({size: 20});
+    }
 
-    // you can alse specify the brush size (in pixel) by using options :
-    // $("#redux").eraser({size: 20});
-}
+    function remove(event) {
+        $("#redux").eraser('clear');
+        event.preventDefault();
+    }
 
-function remove(event) {
-    $("#redux").eraser('clear');
-    event.preventDefault();
-}
-
-function reset(event) {
-    $("#redux").eraser('reset');
-    event.preventDefault();
+    function reset(event) {
+        $("#redux").eraser('reset');
+        event.preventDefault();
+    }
 }
