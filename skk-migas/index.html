@@ -1464,7 +1464,7 @@
     <script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
     <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
     <script type="text/javascript" src="./asset/js/jquery.eraser.min.js"></script>
-    <script type="text/javascript" src="./asset/js/main-erase.js"></script>
+    <script type="text/javascript" src="./asset/js/main-erase2.js"></script>
     <script type="text/javascript" src="./asset/js/dragdealer.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -2040,11 +2040,13 @@
                         $("body").removeClass("cursor");
                         $(".bgStatic__erase").removeClass("pointer");
                         $('#redux').eraser('reset');
+                        $('#reduxmob').eraser('reset');
                     }
 
                     if (origin.index == 10 && direction == 'down') {
                         $("body").removeClass("cursor");
                         $('#redux').eraser('clear');
+                        $('#reduxmob').eraser('clear');
                         $(".article11").fadeOut(300);
                         $(".article12").fadeIn(700);
                         $(".articleText--help").velocity({
@@ -2057,6 +2059,7 @@
 
                     if (origin.index == 11 && direction == 'up') {
                         $('#redux').eraser('reset');
+                        $('#reduxmob').eraser('reset');
                         $("body").addClass("cursor");
                         $(".article11").fadeIn(700);
                         $(".article12").fadeOut(300);
@@ -2138,6 +2141,7 @@
                             duration: 700,
                             complete: function () {
                                 $(".barCateg").addClass("active");
+                                $(".mobCateg").addClass("active");
                             }
                         });
                         $(".bgStatic__wrap").addClass("active");
@@ -2149,6 +2153,15 @@
                             duration: 700,
                             complete: function () {
                                 $(".barItem").addClass("active");
+                            }
+                        });
+                        $(".mobItem").velocity({
+                            opacity: '1'
+                        }, {
+                            delay: 1400,
+                            duration: 700,
+                            complete: function () {
+                                $(".mobItem").addClass("active");
                             }
                         });
                     }
