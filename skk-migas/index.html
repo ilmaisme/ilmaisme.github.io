@@ -492,10 +492,8 @@
                     <img srcset="./asset/images/pipa-gas-2.png" alt="" class="imgFull">
                 </picture>
                 <div class="container pos-relative heightFull">
-                    <picture class="imgMill">
-                        <source srcset="./asset/images/kilang-mob.png" media="(max-width: 768px)" alt="">
-                        <img srcset="./asset/images/kilang.png" alt="" class="">
-                    </picture>
+                    <img src="./asset/images/kilang-mob.png" alt="" class="imgMill desktop-hide">
+                    <img src="./asset/images/kilang.png" alt="" class="imgMill mobile-hide">
                     <div class="imgPump1" id="animationPump"></div>
                     <div class="imgPump2" id="animationPump2"></div>
                 </div>
@@ -1532,7 +1530,7 @@
                 //options here
                 autoScrolling: true,
                 scrollHorizontally: true,
-                navigation: true,
+                //navigation: true,
                 lockAnchors: true,
                 //scrollOverflow: true,
 
@@ -2944,7 +2942,7 @@
                         $('.mobTooltip').addClass('hide');
                         $('.stepmob0').removeClass('top');
                     },
-                    dragStartCallback: function (x, y) {                        
+                    dragStartCallback: function (x, y) {
                     },
                     animationCallback: function (x, y) {
                         var t = Math.round(y * 100);
