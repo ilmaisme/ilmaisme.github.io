@@ -292,6 +292,7 @@ $(document).ready(function () {
                     duration: 300
                 });
                 $(".imgTanker__wrap2").addClass("move");
+                $(".imgDolphins").addClass("animationDolphinsmove");
             }
 
             if (origin.index == 5 && direction == 'up') {
@@ -346,7 +347,13 @@ $(document).ready(function () {
             }
 
             if (origin.index == 5 && direction == 'down') {
-                $(".bg6").fadeOut(300);
+                //$(".bg6").fadeOut(300);
+                $(".bg6").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
                 $(".article6").fadeOut(300);
                 $(".bgColor--circle").velocity({
                     opacity: "1",
@@ -367,7 +374,13 @@ $(document).ready(function () {
             }
 
             if (origin.index == 6 && direction == 'up') {
-                $(".bg6").fadeIn(300);
+                //$(".bg6").fadeIn(300);
+                $(".bg6").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
                 $(".article6").fadeIn(300);
                 $(".bgColor--circle").velocity({
                     opacity: "0",
@@ -1089,7 +1102,12 @@ $(document).ready(function () {
             if (origin.index == 19 && direction == 'down') {
                 $(".article20").fadeOut(300);
                 $(".articleContent21").fadeIn(300);
-                $(".imgFishing").addClass("move");
+                $(".imgFishing").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
                 $(".articleButton1").velocity({
                     top: "0",
                     opacity: "1"
@@ -1116,7 +1134,12 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 20 && direction == 'up') {
-                $(".imgFishing").removeClass("move");
+                $(".imgFishing").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
                 $(".article20").fadeIn(300);
                 $(".articleContent21").fadeOut(300);
                 $(".articleButton1").velocity({
@@ -1143,7 +1166,12 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 20 && direction == 'down') {
-                $(".imgFishing").removeClass("move");
+                $(".imgFishing").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
                 $(".articleContent21").fadeOut(300);
                 $(".bg19").fadeOut(300);
                 $(".bg18").velocity({
@@ -1217,7 +1245,12 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 21 && direction == 'up') {
-                $(".imgFishing").addClass("move");
+                $(".imgFishing").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
                 $(".bg19").fadeIn(700);
                 $(".articleContent21").fadeIn(300);
                 $(".article23").fadeOut(300);
