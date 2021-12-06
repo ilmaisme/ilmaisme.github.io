@@ -1449,7 +1449,7 @@ $(document).ready(function () {
 
     fullpage_api.setAllowScrolling(false);
     setTimeout(function () {
-        $("#animationPreload").fadeOut(1000, function () {
+        $("#animationPreload").fadeOut(2000, function () {
             $('.preloader').remove();
             fullpage_api.setAllowScrolling(true);
             $(".imgHill").addClass("pushUp");
