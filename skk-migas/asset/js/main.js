@@ -622,6 +622,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 300
                 });
+                $(".bgStatic__erase").removeClass("pointer");
             }
 
             if (origin.index == 11 && direction == 'up') {
@@ -643,6 +644,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 300
                 });
+                $(".bgStatic__erase").addClass("pointer");
             }
 
             if (origin.index == 11 && direction == 'down') {
