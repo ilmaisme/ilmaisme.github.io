@@ -1,5 +1,5 @@
 var is_mobile = false;
-$(document).ready(function () {   
+$(document).ready(function () {
 
     function reset() {
         $("#reduxmob").eraser('reset');
@@ -1126,21 +1126,27 @@ $(document).ready(function () {
             if (origin.index == 18 && direction == 'down') {
                 $(".article19").fadeOut(300);
                 $(".article20").fadeIn(300);
+                $(".imgFishing").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
             }
             if (origin.index == 19 && direction == 'up') {
                 $(".article19").fadeIn(300);
                 $(".bg19").fadeIn(300);
                 $(".article20").fadeOut(300);
+                $(".imgFishing").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
             }
             if (origin.index == 19 && direction == 'down') {
                 $(".article20").fadeOut(300);
                 $(".articleContent21").fadeIn(300);
-                $(".imgFishing").velocity({
-                    opacity: "1"
-                }, {
-                    delay: 700,
-                    duration: 700
-                });
                 $(".articleButton1").velocity({
                     top: "0",
                     opacity: "1"
@@ -1167,12 +1173,6 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 20 && direction == 'up') {
-                $(".imgFishing").velocity({
-                    opacity: "0"
-                }, {
-                    delay: 0,
-                    duration: 300
-                });
                 $(".article20").fadeIn(300);
                 $(".articleContent21").fadeOut(300);
                 $(".articleButton1").velocity({
@@ -1281,17 +1281,19 @@ $(document).ready(function () {
                 $(".imgFishing").velocity({
                     opacity: "1"
                 }, {
-                    delay: 700,
+                    delay: 300,
                     duration: 700
                 });
-                $(".bg19").fadeIn(700);
-                $(".articleContent21").fadeIn(300);
+                $(".articleContent21").fadeIn(700);
                 $(".article23").fadeOut(300);
                 $(".bg18").velocity({
                     top: "0"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    complete: function () {
+                        $(".bg19").fadeIn(700);
+                    }
                 });
                 $(".bgColor--sky4").velocity({
                     top: "0"
@@ -1303,8 +1305,7 @@ $(document).ready(function () {
                     top: "0"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".bgColor--ocean2").velocity({
                     top: "unset",
