@@ -158,6 +158,7 @@ if (iss_mobile == true) {
                         data.touchY = ty;
                         event.preventDefault();
                     }
+                    $(".imgEraser").hide();
                 },
                 touchMove: function (event) {
                     var $this = $(this),
@@ -319,12 +320,7 @@ if (iss_mobile == true) {
             event.preventDefault();
         }
 
-        function reset(event) {
-            $("#reduxmob").eraser('reset');
-            event.preventDefault();
-        }
-
-    })
+    })    
 
 } else {
     // desktop

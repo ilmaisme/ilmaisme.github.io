@@ -1,5 +1,10 @@
 var is_mobile = false;
-$(document).ready(function () {
+$(document).ready(function () {   
+
+    function reset() {
+        $("#reduxmob").eraser('reset');
+        $(".imgEraser").show();
+    }
 
     // BODYMOVIN Animation
     // 1
@@ -567,6 +572,12 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
+                $(".imgEraser").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
                 $("body").addClass("cursor");
                 $(".bgStatic__erase").addClass("pointer");
             }
@@ -580,10 +591,17 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 300
                 });
+                $(".imgEraser").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
                 $("body").removeClass("cursor");
                 $(".bgStatic__erase").removeClass("pointer");
                 $('#redux').eraser('reset');
-                $('#reduxmob').eraser('reset');
+                //$('#reduxmob').eraser('reset');
+                reset();
             }
 
             if (origin.index == 10 && direction == 'down') {
@@ -598,11 +616,18 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 300
                 });
+                $(".imgEraser").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
             }
 
             if (origin.index == 11 && direction == 'up') {
                 $('#redux').eraser('reset');
-                $('#reduxmob').eraser('reset');
+                //$('#reduxmob').eraser('reset');
+                reset();
                 $("body").addClass("cursor");
                 $(".article11").fadeIn(700);
                 $(".article12").fadeOut(300);
@@ -611,6 +636,12 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 700
+                });
+                $(".imgEraser").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 300
                 });
             }
 
