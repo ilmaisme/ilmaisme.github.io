@@ -1,6 +1,6 @@
 # Bisnis.com
 
-Binis.com maintenance project.
+Bisnis.com maintenance project.
 
 ## Usage
 
