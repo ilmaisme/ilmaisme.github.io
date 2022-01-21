@@ -20,5 +20,9 @@ mobile/html
 
 ## Update
 
+21/01/2022
+* update styling component footer
+* update styling component back to top
+
 20/01/2022
 * add new component footer
