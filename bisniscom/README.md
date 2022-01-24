@@ -20,6 +20,9 @@ mobile/html
 
 ## Update
 
+24/01/2022
+* update icon instagram header
+
 21/01/2022
 * update styling component footer
 * update styling component back to top
