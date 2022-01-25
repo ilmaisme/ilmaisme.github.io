@@ -1,0 +1,61 @@
+.paging {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #CDCDCD;
+
+    &Wrap {
+        @include font-pack($font-arial, 12px, 500, 28px, $cl-primary-white);
+
+        &:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    }
+
+    &List {
+        padding: 0;
+        margin: 0 10px 0 0;
+        list-style-type: none;
+        display: flex;
+        float: left;
+    }
+
+    &Item {
+        margin-left: 3px;
+        margin-right: 3px;
+        margin-bottom: 3px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &Link,
+    &Show {
+        display: block;
+        padding: 1px 11px;
+        min-width: 30px;
+        height: 30px;
+        color: $cl-primary-white;
+        background: #0062A7;
+        border-radius: 5px;
+
+        &--active,
+        &:hover {
+            color: $cl-primary-white;
+            background: #21BCFF;
+        }
+    }
+
+    &Show {
+        padding: 1px 30px;
+        border: 0;
+        float: right;
+    }
+}

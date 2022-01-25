@@ -20,6 +20,9 @@ mobile/html
 
 ## Update
 
+25/01/2022
+* add new component read paging
+
 24/01/2022
 * update icon instagram header
 
