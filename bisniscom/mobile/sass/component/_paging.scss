@@ -5,13 +5,10 @@
     border-top: 1px solid #CDCDCD;
 
     &Wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         @include font-pack($font-arial, 12px, 500, 28px, $cl-primary-white);
-
-        &:after {
-            content: "";
-            clear: both;
-            display: table;
-        }
     }
 
     &List {
@@ -19,13 +16,12 @@
         margin: 0 10px 0 0;
         list-style-type: none;
         display: flex;
-        float: left;
     }
 
     &Item {
-        margin-left: 3px;
-        margin-right: 3px;
-        margin-bottom: 3px;
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-bottom: 8px;
 
         &:first-child {
             margin-left: 0;
@@ -39,9 +35,9 @@
     &Link,
     &Show {
         display: block;
-        padding: 1px 11px;
-        min-width: 30px;
-        height: 30px;
+        padding: 3px 13px;
+        min-width: 34px;
+        height: 34px;
         color: $cl-primary-white;
         background: #0062A7;
         border-radius: 5px;
@@ -50,12 +46,12 @@
         &:hover {
             color: $cl-primary-white;
             background: #21BCFF;
+            text-decoration: none;
         }
     }
 
     &Show {
         padding: 1px 30px;
         border: 0;
-        float: right;
     }
 }

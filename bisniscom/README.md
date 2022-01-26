@@ -20,6 +20,9 @@ mobile/html
 
 ## Update
 
+26/01/2022
+* update styling component read paging
+
 25/01/2022
 * add new component read paging
 
