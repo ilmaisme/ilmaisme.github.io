@@ -19,6 +19,8 @@ mobile/html
 [Mobile](https://ilmaisme.github.io/bisniscom/mobile/html)
 
 ## Update
+03/02/2022
+* update styling parallax image read plus
 
 26/01/2022
 * update styling component read paging
