@@ -1,18 +1,17 @@
 .paging {
     margin-top: 30px;
     margin-bottom: 60px;
-    padding-top: 30px;
+    padding-top: 20px;
     border-top: 1px solid #CDCDCD;
 
     &Wrap {
         display: flex;
-        justify-content: space-between;
-        @include font-pack($font-arial, 12px, 500, 28px, $cl-primary-white);
+        margin-top: 10px;
     }
 
     &List {
         padding: 0;
-        margin: 0;
+        margin: 0 10px;
         list-style-type: none;
         display: flex;
     }
@@ -36,9 +35,9 @@
         padding: 1px 11px;
         min-width: 30px;
         height: 30px;
-        color: $cl-primary-white;
         background: #0062A7;
         border-radius: 5px;
+        @include font-pack($font-body, 16px, 500, 28px, $cl-primary-white);
 
         &--active,
         &:hover {
@@ -47,8 +46,33 @@
         }
     }
 
+    &Intro {
+        @include font-pack($font-body, 16px, 600, 28px, #333333);
+    }
+
     &Show {
         padding: 1px 30px;
         border: 0;
+    }
+
+    &More {
+        display: none;
+        visibility: hidden;
+        @include font-pack($font-body, 19px, 400, false, #0062A7);
+
+        &__wrap {
+            position: relative;
+            min-height: 28px;
+            margin-bottom: 10px;
+        }
+
+        &--active {
+            display: inline-block;
+            visibility: visible;
+        }
+
+        &:hover {
+            color: #0062A7;
+        }
     }
 }

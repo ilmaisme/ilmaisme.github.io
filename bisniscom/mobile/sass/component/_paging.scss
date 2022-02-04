@@ -7,21 +7,19 @@
     &Wrap {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        @include font-pack($font-arial, 12px, 500, 28px, $cl-primary-white);
     }
 
     &List {
         padding: 0;
-        margin: 0 10px 0 0;
+        margin: 0 10px;
         list-style-type: none;
         display: flex;
     }
 
     &Item {
-        margin-left: 4px;
-        margin-right: 4px;
-        margin-bottom: 8px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 10px;
 
         &:first-child {
             margin-left: 0;
@@ -37,10 +35,10 @@
         display: block;
         padding: 3px 13px;
         min-width: 34px;
-        height: 34px;
-        color: $cl-primary-white;
+        height: 35px;
         background: #0062A7;
-        border-radius: 5px;
+        border-radius: 6px;
+        @include font-pack($font-body, 16px, 500, 28px, $cl-primary-white);
 
         &--active,
         &:hover {
@@ -50,8 +48,34 @@
         }
     }
 
+    &Intro {
+        @include font-pack($font-body, 16px, 600, 28px, #333333);
+    }
+
     &Show {
-        padding: 1px 30px;
+        padding: 3px 16px;
         border: 0;
+    }
+
+    &More {
+        display: none;
+        visibility: hidden;
+        @include font-pack($font-body, 19px, 400, false, #0062A7);
+
+        &__wrap {
+            position: relative;
+            min-height: 28px;
+            margin-bottom: 10px;
+        }
+
+        &--active {
+            display: inline-block;
+            visibility: visible;
+        }
+
+        &:hover {
+            color: #0062A7;
+            text-decoration: none;
+        }
     }
 }
