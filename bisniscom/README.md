@@ -21,6 +21,7 @@ mobile/html
 ## Update
 04/02/2022
 * update component read paging
+* add floating warning epaper
 
 03/02/2022
 * update styling parallax image read plus

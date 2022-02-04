@@ -1,0 +1,77 @@
+@import 'base/var';
+@import 'base/mixins';
+
+.warn {
+    position: fixed;
+    bottom: 0;
+    padding: 10px 15px 20px 15px;
+    background: #1E1E24;
+    @include font-pack($font-body, 14px, 700, false, false);
+    z-index: 99; //above .wrapper-map
+
+    @include min-responsive($mntablet) {
+        padding: 20px 70px 30px 70px;
+    }
+
+    &Wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+
+        @include min-responsive($mntablet) {
+            flex-direction: row;
+            margin-top: 20px;
+        }
+    }
+
+    &Title {
+        text-transform: uppercase;
+        color: #FF7373;
+        letter-spacing: .4px;
+    }
+
+    &Txt {
+        @include font-pack(false, 15px, 400, 24px, #CBF2DD);
+    }
+
+    &Btn {
+        min-width: 200px;
+        height: 40px;
+        padding: 10px;
+        margin: 10px 0 0;
+        background: #2DCF78;
+        border-radius: 5px;
+        text-transform: uppercase;
+        letter-spacing: .4px;
+        @include font-pack(false, false, 500, false, $cl-primary-white);
+
+        @include min-responsive($mntablet) {
+            margin: 0 0 0 40px;
+        }
+    }
+
+    &Icon {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        margin-right: 10px;
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m28.9518 22.774.0046.0085.0049.0083c.7068 1.1888.7229 2.6499.0194 3.8875-.7005 1.2303-2.0183 1.971-3.4483 1.971H4.4067c-1.4225 0-2.6855-.7343-3.3896-1.971-.7024-1.2357-.6886-2.6967.0374-3.9184l.005-.0083.0046-.0085L11.6353 3.2785c.0053-.0093.0096-.0172.0116-.0209l.0004-.0008a.0814.0814 0 0 0 .0012-.0021c.7111-1.1937 1.9606-1.904 3.3504-1.904 1.3883 0 2.6367.7089 3.3482 1.9004L28.9518 22.774ZM14.9989 7.5342c-1.248 0-2.2596 1.0116-2.2596 2.2596v7.0384c0 1.2477 1.0116 2.2595 2.2596 2.2595 1.2479 0 2.2595-1.0117 2.2595-2.2595V9.7938c0-1.2479-1.0116-2.2596-2.2595-2.2596Zm-3.1395 15.4565c0 1.7316 1.4079 3.1394 3.1395 3.1394s3.1394-1.4078 3.1393-3.1394c0-1.7315-1.4078-3.1393-3.1393-3.1393-1.7316 0-3.1395 1.4077-3.1395 3.1393Z' fill='%23FF7373' stroke='%23E05C5C'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include min-responsive($mntablet) {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &~#back-to-top {
+        bottom: 254px;
+
+        @include min-responsive($mltablet) {
+            bottom: 168px;
+        }
+    }
+}
