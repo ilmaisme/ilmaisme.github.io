@@ -19,6 +19,9 @@ mobile/html
 [Mobile](https://ilmaisme.github.io/bisniscom/mobile/html)
 
 ## Update
+05/02/2022
+* add close floating warning epaper
+
 04/02/2022
 * update component read paging
 * add floating warning epaper
