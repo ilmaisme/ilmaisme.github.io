@@ -19,9 +19,11 @@ mobile/html
 [Mobile](https://ilmaisme.github.io/bisniscom/mobile/html)
 
 ## Update
+08/02/2022
+* newsletter bca
+
 06/02/2022
 * update floating warning epaper
-
 
 05/02/2022
 * add close floating warning epaper
