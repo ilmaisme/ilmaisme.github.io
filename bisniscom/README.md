@@ -19,6 +19,9 @@ mobile/html
 [Mobile](https://ilmaisme.github.io/bisniscom/mobile/html)
 
 ## Update
+09/02/2022
+* update newsletter bca
+
 08/02/2022
 * newsletter bca
 
