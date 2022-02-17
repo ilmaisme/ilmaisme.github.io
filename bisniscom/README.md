@@ -19,6 +19,9 @@ mobile/html
 [Mobile](https://ilmaisme.github.io/bisniscom/mobile/html)
 
 ## Update
+17/02/2022
+* add payment premium info
+
 09/02/2022
 * update newsletter bca
 
