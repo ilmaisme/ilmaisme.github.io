@@ -1,0 +1,71 @@
+@import 'base/var';
+@import 'base/mixins';
+
+$font-raleway-semibold : 'Raleway-SemiBold',
+serif;
+$font-raleway-regular : 'Raleway-Regular',
+serif;
+
+/* override existing css */
+.tabs .right_tabs .widgNav .nav-tabs a {
+    background: #E5E5E5;
+
+    &:nth-child(even){
+        background: #D0D0D0;
+    }
+
+    &.nav-item {
+        width: calc(100%/3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 0.5rem;
+    }
+}
+
+/* override existing css */
+
+.widg {
+    &Title {
+        width: 100%;
+        margin: 20px auto 0;
+        @include font-pack($font-raleway-semibold, 14px, 600, 24px, #383838);
+
+        &--blue {
+            color: #183967;
+        }
+    }
+
+    &Text {
+        margin-top: 10px;
+    }
+
+    &Table {
+        margin-top: 10px;
+    }
+
+    &Link {
+        display: inline-block;
+        margin-bottom: 20px;
+        margin-left: 0 !important;
+        @include font-pack($font-raleway-regular, 13px, 400, 24px, false);
+
+        &:hover {
+            margin-left: 0 !important;
+
+            .arrowRight {
+                background: url(../images/icon/arrow-right.svg);
+            }
+        }
+    }
+
+    &Box {
+        margin-top: 30px;
+        padding-left: 7px;
+        padding-right: 7px;
+        border: 1px solid #C4C4C4;
+        border-top: 8px solid #183967;
+        border-radius: 8px;
+        @include font-pack($font-raleway-regular, 13px, 400, 24px, #383838);
+    }
+}
