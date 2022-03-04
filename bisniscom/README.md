@@ -19,6 +19,9 @@ mobile/html
 [Mobile](https://ilmaisme.github.io/bisniscom/mobile/html)
 
 ## Update
+04/03/2022
+* optimizing core web vitals
+
 23/02/2022
 * update widget sulselbar bank
 
