@@ -147,7 +147,8 @@ if (wv.includes('topbuzz') || wv.includes('babe') || wv.includes('bacaberita') |
                     // var mbcont = document.createElement('div');
                     // mbcont.id = "megabillboard";
                     var mbcont = window.parent.document.getElementById("megabillboard");
-                    mbcont.style.cssText = "width:100%!important;position:relative;top:50px;";
+                    //mbcont.style.cssText = "width:100%!important;position:relative;top:50px;";
+                    mbcont.style.cssText = "width:100%!important;position:relative;";
                     mbcont.innerHTML = "<a style='cursor:pointer; z-index:10001' onclick='hide()'><div style='background-color: #174193; position:absolute; right:5px; top:5px; color:white;text-align:center;padding:3px 5px; z-index:10001; font-size: 11px; font-weight: bold; letter-spacing: .5px;'>TUTUP</div></a>";
                     var mbdiv = document.createElement('div');
                     var mbscript = document.createElement('script');
@@ -186,14 +187,17 @@ if (wv.includes('topbuzz') || wv.includes('babe') || wv.includes('bacaberita') |
 
                     mbscript3.innerHTML = 'var up=0; var lastScrollTop = 0; window.addEventListener("scroll", function(){var st = jQuery(this).scrollTop();if(st > lastScrollTop) up=0; else up=1; if(st <= 0)lastScrollTop = 0;else lastScrollTop = st;},false);';
 
-                    mbscript.innerHTML = 'function hide(){ jQuery(".para_inside").hide();jQuery("#megabillboard").slideUp(300); close=1;if (window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0] != null) {$(window).scroll(function() {if ($(window).scrollTop() > 0) {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:fixed;";} else {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:relative;";}});}}';
+                    //mbscript.innerHTML = 'function hide(){ jQuery(".para_inside").hide();jQuery("#megabillboard").slideUp(300); close=1;if (window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0] != null) {$(window).scroll(function() {if ($(window).scrollTop() > 0) {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:fixed;";} else {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:relative;";}});}}';
+                    mbscript.innerHTML = 'function hide(){ jQuery(".para_inside").hide();jQuery("#megabillboard").slideUp(300); close=1;}'
                     mbscript2.innerHTML = 'var close=0;';
 
                     var elemScript = document.createElement("script");
-                    elemScript.innerHTML = '$(window).scroll(function() {if ($(window).scrollTop() > 500) {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "top:60px;position:fixed;";} else {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:relative;top:";}});';
+                    //elemScript.innerHTML = '$(window).scroll(function() {if ($(window).scrollTop() > 500) {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "top:60px;position:fixed;";} else {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:relative;top:";}});';
+                    elemScript.innerHTML = '';
 
                     var elemScript2 = document.createElement("script");
-                    elemScript2.innerHTML = '$(window).scroll(function() {if ($(window).scrollTop() > 0) {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:fixed;";} else {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:relative;";}});';
+                    //elemScript2.innerHTML = '$(window).scroll(function() {if ($(window).scrollTop() > 0) {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:fixed;";} else {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:relative;";}});';
+                    elemScript2.innerHTML = '';
 
                     window.parent.document.head.appendChild(mbstyle);
                     mbcont.appendChild(mbdivgpt);
@@ -267,7 +271,8 @@ if (wv.includes('topbuzz') || wv.includes('babe') || wv.includes('bacaberita') |
 
                     mbscript3.innerHTML = 'var up=0; var lastScrollTop = 0; window.addEventListener("scroll", function(){var st = jQuery(this).scrollTop();if(st > lastScrollTop) up=0; else up=1; if(st <= 0)lastScrollTop = 0;else lastScrollTop = st;},false);';
 
-                    mbscript.innerHTML = 'function hide(){ jQuery(".para_inside").hide();jQuery("#megabillboard").slideUp(300); close=1;if (window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0] != null) {$(window).scroll(function() {if ($(window).scrollTop() > 0) {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:fixed;";} else {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:relative;";}});}}';
+                    //mbscript.innerHTML = 'function hide(){ jQuery(".para_inside").hide();jQuery("#megabillboard").slideUp(300); close=1;if (window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0] != null) {$(window).scroll(function() {if ($(window).scrollTop() > 0) {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:fixed;";} else {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:relative;";}});}}';
+                    mbscript.innerHTML = 'function hide(){ jQuery(".para_inside").hide();jQuery("#megabillboard").slideUp(300); close=1;}';
                     mbscript2.innerHTML = 'var close=0;';
 
                     var elemScript = document.createElement("script");

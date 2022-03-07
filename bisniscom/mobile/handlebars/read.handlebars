@@ -351,8 +351,8 @@
     <header class="detail">
         <!-- START FLASH NEWS -->
         <!-- END FLASH NEWS -->
-        <!-- <div class="navbar-custom" id="sticky1"> -->
-        <div class="navbar-custom header_detail_inject" id="">
+        <div class="navbar-custom" id="sticky1">
+        <!-- <div class="navbar-custom header_detail_inject" id=""> -->
             <button class="search-navbar"><img src="https://static.bisnis-cdn.com/mobile/assets/images/2020/search.svg"
                     data="https://static.bisnis-cdn.com/mobile/assets/images/2020/cross.svg" class="search-icon style2"
                     width="18" height="18" alt="toggle search"></button>
@@ -1688,7 +1688,7 @@
     <script type="text/javascript" src="https://static.bisnis-cdn.com/mobile/assets/js/flashnews.js"></script>
 
     <!-- s: megabillboard update -->
-    {{>footer/script page="read"}}
+    {{>footer/script megabillboard="true"}}
     <!-- e: megabillboard update -->
 
     <script type="text/javascript">
@@ -1858,6 +1858,24 @@
             var lazyLoadInstance = new LazyLoad({
                 elements_selector: ".lazy"
             });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(".btn__closes").click(function () {
+            $(".wrapper__ads-download").remove();
+        });
+        $(document).scroll(function () {
+            var moveScroll = $(this).scrollTop();
+            if (moveScroll > 60) {
+                $(".wrapper__ads-download").css({
+                    display: "none"
+                });
+            } else {
+                $(".wrapper__ads-download").css({
+                    display: "block"
+                });
+            }
         });
     </script>
 </body>
