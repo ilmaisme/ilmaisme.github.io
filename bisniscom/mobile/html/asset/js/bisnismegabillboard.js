@@ -170,7 +170,7 @@ if (wv.includes('topbuzz') || wv.includes('babe') || wv.includes('bacaberita') |
                         " });";
                     var mbdivgpt = document.createElement('div');
                     mbdivgpt.id = 'gpt-megabillboard';
-                    mbdivgpt.style = 'z-index: 10000;width: 100%;border: none;position: absolute;text-align: center;top: 10px;';
+                    mbdivgpt.style = 'z-index: 1;width: 100%;border: none;text-align: center;display:block';
 
                     var st = window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0];
 
@@ -180,9 +180,9 @@ if (wv.includes('topbuzz') || wv.includes('babe') || wv.includes('bacaberita') |
                     var typeFile = "png";
                     var file = "";
                     var content = '';
-                    content = "<div class='para_inside' style='width: " + sW + "px;height: 100%;position: absolute;top: 0;left: 0;clip: rect(auto,auto,auto,auto);margin:0px;-webkit-clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)!important;clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)!important; background-color: black;'><div style='bottom:0;width:100%; z-index:999; position:absolute; color:white; background-color: #174193; text-align:center; font-size: 11px; padding: 2px; font-weight: bold; letter-spacing: .6px;'>SCROLL UNTUK MELANJUTKAN MEMBACA</div><div style='margin:0px;width:" + sW + "px !important;position:fixed!important;top:10px!important;z-index:0!important;pointer-events:none!important;height:" + sH + "px;-moz-transform: translateZ(0); -webkit-transform: translateZ(0);-ms-transform: translateZ(0);-o-transform: translateZ(0);transform: translateZ(0);'><div style='margin:0px;moz-transform:translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:100%;border:none;position:absolute;left:50%;top:50%; text-align: center; background-color: black;'>" + content + "</div></div></div>";
+                    content = "<div class='para_inside' style='width: " + sW + "px;height: 100%;position: absolute;top: 0;left: 0;clip: rect(auto,auto,auto,auto);margin:0px;-webkit-clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)!important;clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)!important; background-color: black;'><div style='bottom:0;width:100%; z-index:0; position:absolute; color:white; background-color: #174193; text-align:center; font-size: 11px; padding: 2px; font-weight: bold; letter-spacing: .6px;'>SCROLL UNTUK MELANJUTKAN MEMBACA</div><div style='margin:0px;width:" + sW + "px !important;position:fixed!important;top:10px!important;z-index:0!important;pointer-events:none!important;height:" + sH + "px;-moz-transform: translateZ(0); -webkit-transform: translateZ(0);-ms-transform: translateZ(0);-o-transform: translateZ(0);transform: translateZ(0);'><div style='margin:0px;moz-transform:translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:100%;border:none;position:absolute;left:50%;top:50%; text-align: center; background-color: black;'>" + content + "</div></div></div>";
 
-                    mbdiv.style.cssText = "display:block;width:auto!important;position:relative!important;left: 0px!important;top:0px!important;z-index:9999!important;transition:height 0s ease 0s!important;overflow:hidden!important;border:0px solid #ddd!important;padding: 0px !important;margin:0px 0px 0px!important;height:" + hU + "px!important;";
+                    mbdiv.style.cssText = "display:block;width:auto!important;position:relative!important;left: 0px!important;top:0px!important;z-index:0!important;transition:height 0s ease 0s!important;overflow:hidden!important;border:0px solid #ddd!important;padding: 0px !important;margin:0px 0px 0px!important;height:" + hU + "px!important;";
                     mbdiv.innerHTML = "<div style='display:block;width:" + sW + "px;height:" + hU + "px;'>" + content + "</div>";
 
                     mbscript3.innerHTML = 'var up=0; var lastScrollTop = 0; window.addEventListener("scroll", function(){var st = jQuery(this).scrollTop();if(st > lastScrollTop) up=0; else up=1; if(st <= 0)lastScrollTop = 0;else lastScrollTop = st;},false);';
@@ -254,7 +254,8 @@ if (wv.includes('topbuzz') || wv.includes('babe') || wv.includes('bacaberita') |
                         " });";
                     var mbdivgpt = document.createElement('div');
                     mbdivgpt.id = 'gpt-megabillboard';
-                    mbdivgpt.style = 'z-index: 10000;width: 100%;border: none;position: absolute;text-align: center;top: 10px;';
+                    var mbdivgptt = window.parent.document.getElementById("gpt-megabillboard");
+                    mbdivgpt.style = 'z-index: 0;width: 100%;border: none;text-align: center;display:block';
 
                     var st = window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0];
 
@@ -264,9 +265,9 @@ if (wv.includes('topbuzz') || wv.includes('babe') || wv.includes('bacaberita') |
                     var typeFile = "png";
                     var file = "";
                     var content = '';
-                    content = "<div class='para_inside' style='width: " + sW + "px;height: 100%;position: absolute;top: 0;left: 0;clip: rect(auto,auto,auto,auto);margin:0px;-webkit-clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)!important;clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)!important; background-color: black;'><div style='bottom:0;width:100%; z-index:999; position:absolute; color:white; background-color: #174193; text-align:center; font-size: 11px; padding: 2px; font-weight: bold; letter-spacing: .6px;'>SCROLL UNTUK MELANJUTKAN MEMBACA</div><div style='margin:0px;width:" + sW + "px !important;position:fixed!important;top:10px!important;z-index:0!important;pointer-events:none!important;height:" + sH + "px;-moz-transform: translateZ(0); -webkit-transform: translateZ(0);-ms-transform: translateZ(0);-o-transform: translateZ(0);transform: translateZ(0);'><div style='margin:0px;moz-transform:translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:100%;border:none;position:absolute;left:50%;top:50%; text-align: center; background-color: black;'>" + content + "</div></div></div>";
+                    content = "<div class='para_inside' style='width: " + sW + "px;height: 100%;position: absolute;top: 0;left: 0;clip: rect(auto,auto,auto,auto);margin:0px;-webkit-clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)!important;clip-path: polygon(0px 0px,100% 0px,100% 100%,0px 100%)!important; background-color: black;'><div style='bottom:0;width:100%; z-index:0; position:absolute; color:white; background-color: #174193; text-align:center; font-size: 11px; padding: 2px; font-weight: bold; letter-spacing: .6px;'>SCROLL UNTUK MELANJUTKAN MEMBACA</div><div style='margin:0px;width:" + sW + "px !important;position:fixed!important;top:10px!important;z-index:0!important;pointer-events:none!important;height:" + sH + "px;-moz-transform: translateZ(0); -webkit-transform: translateZ(0);-ms-transform: translateZ(0);-o-transform: translateZ(0);transform: translateZ(0);'><div style='margin:0px;moz-transform:translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:100%;border:none;position:absolute;left:50%;top:50%; text-align: center; background-color: black;'>" + content + "</div></div></div>";
 
-                    mbdiv.style.cssText = "display:block;width:auto!important;position:relative!important;left: 0px!important;top:0px!important;z-index:9999!important;transition:height 0s ease 0s!important;overflow:hidden!important;border:0px solid #ddd!important;padding: 0px !important;margin:0px 0px 0px!important;height:" + hU + "px!important;";
+                    mbdiv.style.cssText = "display:block;width:auto!important;position:relative!important;left: 0px!important;top:0px!important;z-index:0!important;transition:height 0s ease 0s!important;overflow:hidden!important;border:0px solid #ddd!important;padding: 0px !important;margin:0px 0px 0px!important;height:" + hU + "px!important;";
                     mbdiv.innerHTML = "<div style='display:block;width:" + sW + "px;height:" + hU + "px;'>" + content + "</div>";
 
                     mbscript3.innerHTML = 'var up=0; var lastScrollTop = 0; window.addEventListener("scroll", function(){var st = jQuery(this).scrollTop();if(st > lastScrollTop) up=0; else up=1; if(st <= 0)lastScrollTop = 0;else lastScrollTop = st;},false);';
@@ -276,7 +277,7 @@ if (wv.includes('topbuzz') || wv.includes('babe') || wv.includes('bacaberita') |
                     mbscript2.innerHTML = 'var close=0;';
 
                     var elemScript = document.createElement("script");
-                    elemScript.innerHTML = '$(window).scroll(function() {if ($(window).scrollTop() > 500) {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "top:60px;position:fixed;";} else {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:relative;top:";}});';
+                    elemScript.innerHTML = '$(window).scroll(function() {if ($(window).scrollTop() > 500) {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "top:60px;position:fixed;"; mbdivgptt.style = "position:relative;"} else {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:relative;top:"; mbdivgptt.style = "position:fixed;"}});';
 
                     var elemScript2 = document.createElement("script");
                     elemScript2.innerHTML = '$(window).scroll(function() {if ($(window).scrollTop() > 0) {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:fixed;";} else {window.parent.document.getElementsByClassName("swipe-tabs bg-yellow menu-swipe slick-initialized slick-slider")[0].style = "position:relative;";}});';
@@ -291,7 +292,7 @@ if (wv.includes('topbuzz') || wv.includes('babe') || wv.includes('bacaberita') |
                     mbcont.appendChild(mbscript);
 
                     if (st != null) {
-                        mbcont.appendChild(elemScript);
+                        //mbcont.appendChild(elemScript);
                     }
 
                     ct.parentNode.insertBefore(mbcont, ct);
@@ -302,7 +303,7 @@ if (wv.includes('topbuzz') || wv.includes('babe') || wv.includes('bacaberita') |
                             if (st != null) {
                                 mbcont.appendChild(elemScript2);
                             }
-                            document.getElementById('megabillboard').style.display = "none";
+                            //document.getElementById('megabillboard').style.display = "none";
                         }
                     }, 2500);
                 }

@@ -9,8 +9,33 @@
     }
 }
 
+#gpt-megabillboard {
+    height: 500px;
+    position: fixed;
+    display: block !important;
+
+    &:before {
+        // content: "Advertisement";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        font: 400 11px/1.4 Open sans, sans-serif;
+        color: #c8ccce;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .wrapper__ads-download {
     height: 50px;
+
+    ~ #megabillboard #gpt-megabillboard {
+        top: 50px;
+    }
 }
 
 .ads-download__flex {
