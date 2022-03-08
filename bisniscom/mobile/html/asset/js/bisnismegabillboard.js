@@ -292,7 +292,7 @@ if (wv.includes('topbuzz') || wv.includes('babe') || wv.includes('bacaberita') |
                     mbcont.appendChild(mbscript);
 
                     if (st != null) {
-                        //mbcont.appendChild(elemScript);
+                        mbcont.appendChild(elemScript);
                     }
 
                     ct.parentNode.insertBefore(mbcont, ct);
@@ -310,4 +310,5 @@ if (wv.includes('topbuzz') || wv.includes('babe') || wv.includes('bacaberita') |
             }
         }
     }, 1000);
+
 }

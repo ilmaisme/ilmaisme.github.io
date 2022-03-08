@@ -10,12 +10,13 @@
 }
 
 #gpt-megabillboard {
-    height: 500px;
+    top: 10px;
+    height: 480px;
     position: fixed;
     display: block !important;
 
     &:before {
-        // content: "Advertisement";
+        content: "Advertisement";
         position: absolute;
         z-index: -1;
         left: 0;
@@ -27,14 +28,21 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        opacity: 1;
+    }
+
+    &.rmv{
+        &:before{
+            opacity: 0;
+        }
     }
 }
 
 .wrapper__ads-download {
     height: 50px;
 
-    ~ #megabillboard #gpt-megabillboard {
-        top: 50px;
+    ~#megabillboard #gpt-megabillboard {
+        top: 60px;
     }
 }
 
