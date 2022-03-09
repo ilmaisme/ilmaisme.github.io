@@ -1,11 +1,26 @@
 #megabillboard {
     height: 520px;
+    z-index: 0;
 
     &~header {
         .header2_detail_inject {
             position: relative;
             margin-top: 0;
         }
+    }
+
+    &~.wrapper-description{
+        position: relative;
+        z-index: 1;
+        background: #fcfcfc;
+        margin-top: 0;
+        padding-top: 60px;
+    }
+    
+    &~#div-gpt-ad-mr2, &~.row .col-sm-12 .wrapper-list-news, &~#div-gpt-ad-oop1, &~.footer{
+        background: #fcfcfc;
+        position: relative;
+
     }
 }
 
@@ -34,15 +49,15 @@
         opacity: 1;
     }
 
-    &.rmv {
-        visibility: hidden;
-        opacity: 0;
+    // &.rmv {
+    //     visibility: hidden;
+    //     opacity: 0;
 
-        &:before {
-            visibility: hidden;
-            opacity: 0;
-        }
-    }
+    //     &:before {
+    //         visibility: hidden;
+    //         opacity: 0;
+    //     }
+    // }
 }
 
 .wrapper__ads-download {
