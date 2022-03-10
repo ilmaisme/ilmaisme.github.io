@@ -1,0 +1,201 @@
+.nav {
+    display: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @include animation(fadeInFromNone, 0.5s);
+
+    @include min-responsive($mntablet) {
+        display: flex;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    &Mob {
+        position: absolute;
+        width: calc(100% + 34px);
+        margin-left: -20px;
+        margin-right: -20px;
+        top: 55px;
+        left: 0;
+        right: 0;
+        padding-left: 20px;
+        background: var(--bg-white-lv2);
+        z-index: 3;
+
+        .navItem {
+            margin-right: 0;
+            margin-top: 16px;
+            margin-bottom: 16px;
+
+            @include min-responsive($mntablet) {
+                margin-left: 15px;
+                margin-right: 15px;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            &:after {
+                content: none;
+
+                @include min-responsive($mntablet) {
+                    content: '';
+                }
+            }
+
+            &:after {
+                margin-left: 6px;
+                display: inline-block;
+                top: 2px;
+                height: 14px;
+                position: relative;
+                border-right: 1px solid var(--cl-main);
+            }
+
+            &:last-child:after,
+            &:nth-child(2):after {
+                content: none;
+            }
+        }
+
+        @include min-responsive($mntablet) {
+            all: unset;
+        }
+    }
+
+    &Item {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        outline: 0;
+        letter-spacing: .4px;
+        border-bottom: 2px solid transparent;
+        @include font-pack($font_body, 18px, 700, false, $cl_white);
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+            border-bottom: 2px solid $cl_white;
+            color: $cl_white;
+        }
+    }
+
+    li {
+        &:last-child a {
+            margin-right: 0;
+            border-color: transparent;
+        }
+    }
+
+    &Wrap {
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: auto;
+        @include font-pack(false, false, 700, false, $cl-primary);
+
+        @include min-responsive($mntablet) {
+            flex-direction: row;
+        }
+
+        &>.navList__item {
+            @include min-responsive($mntablet) {
+                margin-right: 60px;
+            }
+        }
+
+        &--page {
+            width: 100%;
+            flex-wrap: nowrap;
+            height: unset;
+        }
+    }
+
+    &Child {
+        padding-bottom: 8px;
+        @include font-pack(false, 15px, false, false, $cl-primary);
+    }
+
+    &List {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        width: 520px;
+        left: 80px;
+        top: 64px;
+        padding: 30px 40px;
+        background: var(--bg-grey-lv-2);
+        border-radius: 5px 5px 0px 0px;
+        border-top: 5px solid $cl-primary;
+        z-index: 2; //above slick-arrow
+        @include animation(fadeInFromNone, 0.5s);
+
+        &__item {
+            display: inline-block;
+            margin-top: 4px;
+            margin-bottom: 4px;
+
+            @include min-responsive($mntablet) {
+                width: 160px;
+            }
+        }
+    }
+
+    &Label {
+        position: relative;
+        cursor: pointer;
+
+        @include min-responsive($mntablet) {
+            padding-bottom: 20px;
+        }
+
+        &:before {
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            height: 0;
+            width: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid $cl-primary;
+            @include animation(fadeInFromNone, 1s);
+        }
+
+        &:after {
+            @include min-responsive($mntablet) {
+                content: '';
+            }
+
+            margin-left: 10px;
+            display: inline-block;
+            top: 2px;
+            height: 14px;
+            position: relative;
+            border-right: 1px solid var(--cl-main);
+        }
+    }
+
+    &Open {
+
+        &:hover,
+        &:focus-within {
+
+            &>.navList,
+            &>.navLabel:before {
+                @include min-responsive($mntablet) {
+                    display: block;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            &>.navLabel {
+                @include font-pack(false, false, 700, false, $cl-primary);
+            }
+        }
+    }
+}

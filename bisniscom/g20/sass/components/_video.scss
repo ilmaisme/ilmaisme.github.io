@@ -1,0 +1,119 @@
+.video {
+    margin-bottom: 60px;
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px);
+    display: flex;
+    flex-direction: column;
+
+    @include min-responsive($mntablet) {
+        flex-direction: row;
+        margin-top: 30px;
+    }
+
+    &Item {
+        margin: 20px 25px;
+
+        @include min-responsive($mntablet) {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
+
+    &>.videoItem {
+        flex: 1;
+
+        .videoImg,
+        .videoImg__wrap {
+            height: 212px;
+
+            @include range-responsive($mntablet, $mxtablet) {
+                height: 439px;
+            }
+
+            @include min-responsive($mxtablet) {
+                height: 515px;
+            }
+        }
+    }
+
+    &Wrap {
+        @include range-responsive($mntablet, $mxtablet) {
+            width: 340px;
+        }
+
+        @include min-responsive($mxtablet) {
+            width: 500px;
+        }
+
+        .videoItem {
+            margin-bottom: 40px;
+
+            @include min-responsive($mntablet) {
+                margin-bottom: 15px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &Img {
+        width: 100%;
+        object-fit: cover;
+        transition: transform .25s, visibility .25s ease-in;
+        height: 212px;
+
+        @include range-responsive($mntablet, $mxtablet) {
+            height: 212px;
+        }
+
+        @include min-responsive($mxtablet) {
+            height: 250px;
+        }
+
+        &__wrap {
+            position: relative;
+            overflow: hidden;
+            height: 212px;
+
+            @include range-responsive($mntablet, $mxtablet) {
+                height: 212px;
+            }
+
+            @include min-responsive($mxtablet) {
+                height: 250px;
+            }
+        }
+    }
+
+    &Box {
+        position: absolute;
+        width: 75px;
+        height: 50px;
+        bottom: 0;
+        border-top-right-radius: 20px;
+        background: $cl_white;
+        z-index: 1;
+
+        @include min-responsive($mntablet) {
+            width: 120px;
+            height: 80px;
+        }
+    }
+
+    .titleLink {
+        &:hover {
+            .videoBox {
+                background: $cl_red;
+            }
+
+            .icon-bisnistv {
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+}

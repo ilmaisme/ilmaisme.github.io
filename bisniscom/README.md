@@ -19,6 +19,9 @@ mobile/html
 [Mobile](https://ilmaisme.github.io/bisniscom/mobile/html)
 
 ## Update
+10/03/2022
+* landing page G20
+
 04/03/2022
 * optimizing core web vitals
 

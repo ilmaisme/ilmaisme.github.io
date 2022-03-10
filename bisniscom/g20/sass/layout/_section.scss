@@ -1,0 +1,44 @@
+.section {
+    &Title {
+        position: relative;
+        margin-top: 54px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 14px;
+        text-transform: uppercase;
+        @include font-pack($font_body, 26px, 500, false, $cl_red);
+        border-top: 1px dashed $cl_blue;
+        
+        @include min-responsive($mntablet) {
+            padding-top: 24px;
+            font-size: 36px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        &__wrap {
+            position: absolute;
+            background: $cl_white;
+            top: -20px;
+            padding-right: 10px;
+
+            @include min-responsive($mntablet) {
+                top: -24px;
+                padding-right: 30px;
+            }
+        }
+    }
+
+    &Link {
+        position: absolute;
+        right: 0;
+        background: $cl_white;
+        top: -15px;
+        padding-left: 10px;
+
+        @include min-responsive($mntablet) {
+            top: -18px;
+            padding-left: 20px;
+        }
+    }
+}

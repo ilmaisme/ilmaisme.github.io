@@ -1,0 +1,245 @@
+.headline {
+    --hdesk: 700px;
+    height: var(--hdesk);
+    max-height: 100vh;
+
+    &List {
+        position: relative;
+    }
+
+    &Item {
+        &__wrap {
+            position: relative;
+            display: flex;
+            // min-height: var(--hdesk);
+            height: var(--hdesk);
+            max-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+
+            @include min-responsive($mntablet) {
+                flex-flow: row;
+            }
+        }
+
+        &--bg {
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                min-height: var(--hdesk);
+                max-height: 100vh;
+                backdrop-filter: blur(15px);
+            }
+
+            .headlineBox {
+                @include range-responsive($mntablet, $mxtablet) {
+                    width: 266px;
+                }
+
+                @include min-responsive($mxtablet) {
+                    width: 466px;
+                }
+            }
+        }
+
+        &--main {
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                min-height: var(--hdesk);
+                max-height: 100vh;
+                background: rgba(255, 255, 255, 0);
+                background: -webkit-gradient(left top, left bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.5)));
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.5));
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#000", GradientType=0);
+                z-index: 1;
+            }
+
+            .headlineBox {
+                margin-top: 0;
+                position: absolute;
+                left: 20px;
+                bottom: 30px;
+
+                @include range-responsive($mntablet, $mxtablet) {
+                    left: 20px;
+                    bottom: 180px;
+                }
+
+                @include min-responsive($mxtablet) {
+                    left: 80px;
+                    bottom: 180px;
+                }
+            }
+        }
+    }
+
+    &Box {
+        margin-top: 20px;
+        width: calc(100% - 40px);
+        z-index: 1;
+
+        @include min-responsive($mntablet) {
+            margin-top: 0;
+            position: absolute;
+            bottom: 180px;
+            width: 466px;
+        }
+
+        @include range-responsive($mntablet, $mxtablet) {
+            left: 20px;
+        }
+
+        @include min-responsive($mxtablet) {
+            left: 80px;
+        }
+
+        @include max-height($mntablet) {
+            bottom: 120px;
+        }
+
+    }
+
+    &Title {
+        @include font-pack($font_body, 26px, 500, 1.2, $cl_white);
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        @include min-responsive($mxtablet) {
+            font-size: 45px;
+        }
+
+        &--big {
+            text-transform: uppercase;
+            @include font-pack($font_body, 38px, 500, 1.2, $cl_white);
+
+            @include min-responsive($mntablet) {
+                font-size: 50px;
+            }
+        }
+    }
+
+    &Teaser,
+    &Link {
+        @include font-pack($font_child, 16px, 500, false, $cl_white);
+    }
+
+    &Link {
+        display: inline-flex;
+        padding: 10px;
+        border: 1px solid $cl_white;
+        margin-top: 20px;
+
+        @include min-responsive($mntablet) {
+            margin-top: 40px;
+        }
+
+        @include max-height($mntablet) {
+            margin-top: 20px;
+        }
+
+        &:hover {
+            color: $cl_black;
+            border-color: $cl_black;
+
+            .icon-arrow-line {
+                filter: brightness(0%);
+            }
+        }
+    }
+
+    &Teaser {
+        display: none;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        @include min-responsive($mntablet) {
+            display: -webkit-box;
+        }
+    }
+
+    &Bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        min-height: var(--hdesk);
+        max-height: 100vh;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &Img {
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: var(--hdesk);
+            max-height: 100vh;
+            object-fit: cover;
+            object-position: center;
+
+            @include min-height($mxtablet) {
+                @include min-responsive($mztablet) {
+                    object-position: center -170px;
+                }
+            }
+        }
+
+        &--art {
+            width: auto;
+            position: relative;
+            width: auto;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-top: 100px;
+
+            @include range-responsive($mntablet, $mxtablet) {
+                margin-left: calc(266px + 60px + 80px);
+            }
+
+            @include min-responsive($mxtablet) {
+                margin-left: calc(466px + 60px + 80px);
+                padding-top: 100px;
+                padding-bottom: 100px;
+                padding-right: 80px;
+            }
+
+            img {
+                border-radius: 7px;
+                height: auto;
+                object-position: center;
+            }
+        }
+    }
+
+    &Bottom {
+        position: relative;
+        left: 80px;
+        width: 115px;
+        display: none;
+
+        @include range-responsive($mntablet, $mxtablet) {
+            display: block;
+            left: 20px;
+        }
+        
+        @include min-responsive($mxtablet) {
+            display: block;
+            left: 80px;
+        }
+
+        @include max-height($mntablet) {
+            bottom: -50px;
+        }
+    }
+}

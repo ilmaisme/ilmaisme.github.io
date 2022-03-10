@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head}}
+
+<body>
+
+	<!-- s: header -->
+	{{> header}}
+	<!-- e: header -->
+
+	<main role="main">
+		<section class="section" id="home">
+			<!-- s: headline -->
+			{{>headline}}
+			<!-- e: headline -->
+		</section>
+		<section class="section" id="news">
+			<div class="container">
+				<!-- s: update news -->
+				<h3 class="sectionTitle">
+					<div class="sectionTitle__wrap">
+						Update
+						<span class="cl-blue">News</span>
+					</div>
+					<a href="#" aria-label="More Update News" class="sectionLink"><span
+							class="icon icon-arrow-small"></span></a>
+				</h3>
+				<div class="news">
+					{{>news}}
+				</div>
+				<!-- e: update news -->
+				<!-- s: special reports -->
+				<h3 class="sectionTitle">
+					<div class="sectionTitle__wrap">
+						Special
+						<span class="cl-blue">Reports</span>
+					</div>
+					<a href="#" aria-label="More Special Reports" class="sectionLink"><span
+							class="icon icon-arrow-small"></span></a>
+				</h3>
+				<div class="reports">
+					{{>reports}}
+				</div>
+				<!-- e: special reports -->
+				<!-- s: video -->
+				{{>video}}
+				<!-- s: video -->
+			</div>
+		</section>
+		<section class="section" id="events">
+			<div class="container">
+				<!-- s: upcoming events -->
+				<h3 class="sectionTitle">
+					<div class="sectionTitle__wrap">
+						Upcoming
+						<span class="cl-blue">Events</span>
+					</div>
+					<a href="#" aria-label="More Upcoming Events" class="sectionLink"><span
+							class="icon icon-arrow-small"></span></a>
+				</h3>
+				<div class="events">
+					{{>events}}
+				</div>
+				<!-- e: upcoming events -->
+			</div>
+		</section>
+	</main>
+
+	<!-- s: footer -->
+	{{>footer}}
+	<!-- e: footer -->
+
+	{{> js}}
+
+</body>
+
+</html>
