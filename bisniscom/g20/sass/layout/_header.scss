@@ -5,7 +5,7 @@
     padding-top: 8px;
     padding-bottom: 8px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 26px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -23,7 +23,7 @@
         padding-top: 8px;
         padding-bottom: 8px;
         padding-left: 20px;
-        padding-right: 20px;
+        padding-right: 26px;
         z-index: 10;
         width: 100%;
         background: rgba(9, 93, 209, .9);
@@ -39,6 +39,10 @@
 
         .headerLogo {
             max-height: 60px;
+        }
+
+        .navMob{
+            top: 75px;
         }
     }
 
@@ -86,7 +90,12 @@
     }
 
     &Mob {
+        display: block;
         position: relative;
+
+        @include min-responsive($mntablet) {
+            display: none;
+        }
     }
 
     &Icon {

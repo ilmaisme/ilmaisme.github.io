@@ -10,7 +10,7 @@ $(document).ready(function () {
             cssEase: 'linear',
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 4000,
             pauseOnHover: true,
             appendArrows: $('#Arheadline')
@@ -20,13 +20,14 @@ $(document).ready(function () {
         createSlick();
     }
 
+    // active menu
     (function () {
         var section = document.querySelectorAll(".section");
         var sections = {};
         var i = 0;
 
         Array.prototype.forEach.call(section, function (e) {
-            sections[e.id] = e.offsetTop - 180;
+            sections[e.id] = e.offsetTop - 220;
         });
 
         window.onscroll = function () {
@@ -42,7 +43,6 @@ $(document).ready(function () {
             }
         };
 
-        // Your code
         $("#btn-home").on('click', function () {
             $('html, body').animate({
                 scrollTop: $("#home").offset().top
@@ -72,3 +72,25 @@ $(document).ready(function () {
             (hd.removeClass("header--fixed"))
     })
 });
+
+let mT = $('#mobToggle'),
+    nav = $('.nav');
+
+function mClose() {
+    mT.prop('checked', false);
+}
+$(window).on('resize', function () {
+    nav.removeAttr("style")
+    mClose()
+});
+mT.click(function (e) {
+    e.stopPropagation();
+    if (nav.is(':visible')) {
+        mClose();
+        nav.removeAttr("style")
+    } else {
+        nav.css({
+            "display": "block"
+        })
+    }
+})
