@@ -31,13 +31,10 @@
                 height: 100%;
                 min-height: var(--hdesk);
                 max-height: 100vh;
-                backdrop-filter: blur(15px) opacity(1);
-                // transition: backdrop-filter .5s;
-            }
 
-            &.slick-active {
-                &:before {
-                    // backdrop-filter: blur(15px) opacity(1);
+                @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+                    backdrop-filter: blur(15px);
+                    -webkit-backdrop-filter: blur(15px);
                 }
             }
 
@@ -183,6 +180,10 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+
+        @supports not (backdrop-filter: blur(15px)) {
+            filter: blur(15px);
+        }
     }
 
     &Img {

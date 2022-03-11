@@ -52,8 +52,12 @@
         outline: 0;
         letter-spacing: .4px;
         border-bottom: 2px solid transparent;
-        @include font-pack($font_body, 18px, 700, false, $cl_white);
+        @include font-pack($font_body, 17px, 700, false, $cl_white);
         cursor: pointer;
+
+        @include min-responsive($mntablet) {
+            font-size: 18px;
+        }
 
         &.active,
         &:hover {

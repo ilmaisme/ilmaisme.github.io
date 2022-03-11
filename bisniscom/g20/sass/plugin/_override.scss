@@ -14,7 +14,7 @@
     margin-left: 10px;
 }
 
-.cl-blue{
+.cl-blue {
     color: $cl_blue;
 }
 
@@ -54,6 +54,22 @@
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0,0,0,0);
+    clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+.desktop-hide {
+    display: block;
+
+    @include min-responsive($mntablet) {
+        display: none;
+    }
+}
+
+.mobile-hide {
+    display: none;
+
+    @include min-responsive($mntablet) {
+        display: block;
+    }
 }
