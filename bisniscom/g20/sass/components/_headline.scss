@@ -231,18 +231,21 @@
     }
 
     &Bottom {
-        position: relative;
-        left: 80px;
+        position: absolute;
+        right: 0;
         width: 115px;
-        display: none;
 
         @include range-responsive($mntablet, $mxtablet) {
+            position: relative;
             display: block;
+            right: unset;
             left: 20px;
         }
 
         @include min-responsive($mxtablet) {
+            position: relative;
             display: block;
+            right: unset;
             left: 80px;
         }
 
