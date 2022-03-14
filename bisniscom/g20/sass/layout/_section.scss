@@ -8,7 +8,7 @@
         text-transform: uppercase;
         @include font-pack($font_body, 26px, 500, false, $cl_red);
         border-top: 1px dashed $cl_blue;
-        
+
         @include min-responsive($mntablet) {
             padding-top: 24px;
             font-size: 36px;
@@ -36,9 +36,20 @@
         top: -15px;
         padding-left: 10px;
 
+        .icon {
+            filter: none;
+            transition: all 1ms ease;
+        }
+
         @include min-responsive($mntablet) {
             top: -18px;
             padding-left: 20px;
+        }
+
+        &:hover {
+            .icon {
+                filter: invert(22%) sepia(88%) saturate(2136%) hue-rotate(204deg) brightness(100%) contrast(95%);
+            }
         }
     }
 }
