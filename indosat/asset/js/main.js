@@ -91,8 +91,29 @@ $(document).ready(function () {
         onLeave: function (origin, destination, direction) {
             var leavingSection = this;
 
-            if (origin.index == 0 && direction == 'down') {}
-            if (origin.index == 1 && direction == 'up') {}
+            if (origin.index == 0 && direction == 'down') {
+                $(".coverTop").addClass("active");
+                $(".coverBottom").addClass("active");
+                $(".coverTop").addClass("move");
+                $(".coverBottom").addClass("move");
+                $(".bgStatic__wrap").removeClass("active");
+                console.log("0down")
+            }
+            if (origin.index == 1 && direction == 'up') {
+                $(".bgStatic__wrap").addClass("active");
+                $(".coverTop").removeClass("move");
+                $(".coverBottom").removeClass("move");
+                $(".bgStatic__wrap").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 600,
+                    complete: function () {
+                        $(".coverTop").removeClass("active");
+                        $(".coverBottom").removeClass("active");
+                    }
+                });
+            }
             if (origin.index == 1 && direction == 'down') {
                 $(".introTxt").fadeIn(300);
                 $(".introTxt__wrap").addClass("active");
@@ -107,12 +128,26 @@ $(document).ready(function () {
                 $(".introBorder").addClass("moveTop");
                 $(".goalImg").removeClass("moveUp");
                 $(".goalTxt").removeClass("opac0");
+                $(".goalTxt").velocity({
+                    opacity: "1"
+                })
             }
             if (origin.index == 3 && direction == 'up') {
-                $(".introBorder").removeClass("moveTop");
                 $(".goalImg").addClass("moveUp");
-                $(".goalTxt").addClass("opac0");
-                console.log("3up")
+                $(".goalTxt").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".goalTxt").addClass("opac0");
+                        $(".goalImg").addClass("moveUp");
+                    },
+                    complete: function () {
+                        $(".introBorder").removeClass("moveTop");
+                    }
+                });
+                //console.log("3up")
             }
             if (origin.index == 3 && direction == 'down') {
                 $(".goalImg").addClass("opac0");
@@ -129,6 +164,9 @@ $(document).ready(function () {
                         $(".speech").removeClass("moveUp");
                     }
                 });
+                $(".goalTxt").velocity({
+                    opacity: "0"
+                })
             }
             if (origin.index == 4 && direction == 'up') {
                 $(".speech").velocity({
@@ -144,7 +182,7 @@ $(document).ready(function () {
                         $(".goalTxt").removeClass("opac0");
                     }
                 });
-                console.log("4up")
+                //console.log("4up")
             }
             if (origin.index == 4 && direction == 'down') {
                 $(".ooredoo").velocity({
@@ -180,7 +218,7 @@ $(document).ready(function () {
                 });
                 $(".ooredoo").addClass("moveUp");
                 $(".ooredooContent").addClass("opac0");
-                console.log("5up")
+                ///console.log("5up")
             }
             if (origin.index == 5 && direction == 'down') {
                 $(".ooredoo").velocity({
@@ -471,7 +509,7 @@ $(document).ready(function () {
                         $(".bgColor--tvc").removeClass("opac0");
                     }
                 });
-                console.log("12down")
+                //console.log("12down")
             }
             if (origin.index == 13 && direction == 'up') {
                 $(".board").velocity({
@@ -489,7 +527,7 @@ $(document).ready(function () {
                         $(".bgColor--tvc").addClass("opac0");
                     }
                 });
-                console.log("13up")
+                //console.log("13up")
             }
             if (origin.index == 13 && direction == 'down') {
                 $(".bgStatic__wrap").removeClass("active");
@@ -517,12 +555,38 @@ $(document).ready(function () {
             infinite: true,
             speed: 500,
             //fade: true,
-            slidesToShow: 4,
-            slidesToScroll: 4,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            vertical: true,
+            verticalSwiping: true,
             autoplay: false,
             autoplaySpeed: 4000,
             pauseOnHover: true,
-            //appendArrows: $('#Arheadline')
+            mobileFirst: true,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                        vertical: false,
+                        verticalSwiping: false,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                }
+            ]
         });
     }
     createSlick();
@@ -535,12 +599,38 @@ $(document).ready(function () {
             infinite: true,
             speed: 500,
             //fade: true,
-            slidesToShow: 4,
-            slidesToScroll: 4,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            vertical: true,
+            verticalSwiping: true,
             autoplay: false,
             autoplaySpeed: 4000,
             pauseOnHover: true,
-            //appendArrows: $('#Arheadline')
+            mobileFirst: true,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                        vertical: false,
+                        verticalSwiping: false,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                }
+            ]
         });
     }
     createSlickdir();

@@ -37,7 +37,7 @@
         type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="https://fonts.gstatic.com/s/prompt/v9/-W_8XJnvUD7dzB2Cy_gIaWMu.woff2" as="font"
         type="font/woff2" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="./asset/css/style.css">
+    <link type="text/css" rel="stylesheet" href="./asset/css/style.min.css">
     <style>
         @font-face {
             font-family: 'Aldrich';
@@ -122,7 +122,7 @@
             <div class="bgColor bgColor--corporate"></div>
             <div class="bgColor bgCircle center-flex">
                 <picture class="bgCircle__wrap">
-                    <source srcset="./asset/images/circle-mob.png" media="(max-width: 768px)" alt="">
+                    <source srcset="./asset/images/circle-mob.png" media="(max-width: 767px)" alt="">
                     <img srcset="./asset/images/circle.png" alt="" class="animationRotateleft">
                 </picture>
             </div>
@@ -147,13 +147,103 @@
                 For better experience, rotate your screen or switch to bigger screen.
             </div>
         </div>
-        <div class="bgStatic__wrap">
+        <div class="bgStatic__wrap active">
+            <div class="bgStatic">
+                <div class="cover heightFull">
+                    <div class="coverTop display-flex">
+                        <div class="coverGear__wrap coverGear__wrap--left">
+                            <div class="coverGear coverGear--left">
+                                <div class="animationNudge">
+                                    <picture class="coverGear__img">
+                                        <source srcset="./asset/images/cover-circle-left-mob.png"
+                                            media="(max-width: 767px)" alt="">
+                                        <img srcset="./asset/images/cover-circle-left.png" alt="">
+                                    </picture>
+                                </div>
+                                <picture class="coverGear__line coverGear__line--left">
+                                    <source srcset="./asset/images/cover-line-left.png" media="(max-width: 767px)"
+                                        alt="">
+                                    <img srcset="./asset/images/cover-line-left.png" alt="">
+                                </picture>
+                            </div>
+                            <picture class="coverLogo coverLogo--left">
+                                <source srcset="./asset/images/logo-indosat-ooredoo-mob.png" media="(max-width: 1024px)"
+                                    alt="">
+                                <img srcset="./asset/images/logo-indosat-ooredoo.png" alt="Indosat Ooredoo">
+                            </picture>
+                        </div>
+                        <div class="coverCenter">
+                            <div class="coverCenter__wrap">
+                                <form class="coverForm">
+                                    <div class="coverInput__wrap display-flex">
+                                        <input class="coverInput coverFont--fa" type="password" maxlength="1"
+                                            onkeydown="return false" id="password" autofocus>
+                                        <input class="coverInput coverFont--fa" type="password" maxlength="1"
+                                            onkeydown="return false">
+                                        <input class="coverInput coverFont--fa" type="password" maxlength="1"
+                                            onkeydown="return false">
+                                        <input class="coverInput coverFont--fa" type="password" maxlength="1"
+                                            onkeydown="return false">
+                                    </div>
+                                    <label for="password" class="coverLabel">Masukkan empat angka untuk
+                                        melanjutkan</label>
+                                </form>
+                                <picture class="coverGranted display-none">
+                                    <source srcset="./asset/images/granted-mob.png" media="(max-width: 1024px)" alt="">
+                                    <img srcset="./asset/images/granted.png" alt="Access Granted">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="coverGear__wrap coverGear__wrap--right">
+                            <div class="coverGear coverGear--right">
+                                <div class="animationNudgeleft">
+                                    <picture class="coverGear__img">
+                                        <source srcset="./asset/images/cover-circle-right-mob.png"
+                                            media="(max-width: 767px)" alt="">
+                                        <img srcset="./asset/images/cover-circle-right.png" alt="">
+                                    </picture>
+                                </div>
+                                <picture class="coverGear__line coverGear__line--right">
+                                    <source srcset="./asset/images/cover-line-right.png" media="(max-width: 767px)"
+                                        alt="">
+                                    <img srcset="./asset/images/cover-line-right.png" alt="">
+                                </picture>
+                            </div>
+                            <picture class="coverLogo coverLogo--right">
+                                <source srcset="./asset/images/logo-3-mob.png" media="(max-width: 1024px)" alt="">
+                                <img srcset="./asset/images/logo-3.png" alt="Tri" class="">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="coverBottom">
+                        <div class="coverContent container center-flex">
+                            <div class="coverNum__wrap center-flex">
+                                <button class="coverNum" data-number="1"><span>1</span></button>
+                                <button class="coverNum" data-number="2"><span>2</span></button>
+                                <button class="coverNum" data-number="3"><span>3</span></button>
+                                <button class="coverNum" data-number="4"><span>4</span></button>
+                                <button class="coverNum" data-number="5"><span>5</span></button>
+                                <button class="coverNum" data-number="6"><span>6</span></button>
+                                <button class="coverNum" data-number="7"><span>7</span></button>
+                                <button class="coverNum" data-number="8"><span>8</span></button>
+                                <button class="coverNum" data-number="9"><span>9</span></button>
+                                <button class="coverNum" data-number="*" aria-label="*"><span
+                                        class="icon icon-asterisk"></span></button>
+                                <button class="coverNum" data-number="0"><span>0</span></button>
+                                <button class="coverNum" data-number="#"><span>#</span></button>
+                            </div>
+                            <button class="coverSubmit" id="moveTo">Enter</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
             <div class="bgStatic">
                 <div class="container center-flex heightFull introBorder flex-column out300">
                     <h1 class="sr-only">Indosat Ooredoo Hutchison</h1>
                     <picture class="introImg">
                         <source srcset="./asset/images/logo-indosat-ooredoo-hutchison-mob.png"
-                            media="(max-width: 768px)" alt="">
+                            media="(max-width: 767px)" alt="">
                         <img srcset="./asset/images/logo-indosat-ooredoo-hutchison.png" alt="" class="">
                     </picture>
                     <h2 class="introTxt display-none">
@@ -161,21 +251,21 @@
                             Lebih Kuat untuk <br> Indonesia dan Dunia
                         </div>
                     </h2>
-                    <div class="introGear__wrap introGear--left animationNudge">
+                    <div class="introGear__wrap introGear--left animationNudge mobile-hide">
                         <picture class="introGear">
-                            <source srcset="./asset/images/intro-gear-left-mob.png" media="(max-width: 767px)" alt="">
+                            <source srcset="./asset/images/intro-gear-left.png" media="(min-width: 768px)" alt="">
                             <img srcset="./asset/images/intro-gear-left.png" alt="">
                         </picture>
                     </div>
-                    <div class="introGear__wrap introGear__small--left animationNudge">
+                    <div class="introGear__wrap introGear__small--left animationNudge mobile-hide">
                         <picture class="introGear">
-                            <source srcset="./asset/images/speech-gear-big-mob.png" media="(max-width: 767px)" alt="">
+                            <source srcset="./asset/images/speech-gear-big.png" media="(min-width: 768px)" alt="">
                             <img srcset="./asset/images/speech-gear-big.png" alt="">
                         </picture>
                     </div>
-                    <div class="introGear__wrap introGear--right animationNudgeleft">
+                    <div class="introGear__wrap introGear--right animationNudgeleft mobile-hide">
                         <picture class="introGear">
-                            <source srcset="./asset/images/intro-gear-right-mob.png" media="(max-width: 767px)" alt="">
+                            <source srcset="./asset/images/intro-gear-right.png" media="(min-width: 768px)" alt="">
                             <img srcset="./asset/images/intro-gear-right.png" alt="">
                         </picture>
                     </div>
@@ -184,7 +274,7 @@
             <div class="bgStatic">
                 <div class="goalWrap center-flex heightFull">
                     <picture class="goalImg goalImg--left moveUp">
-                        <source srcset="./asset/images/goal-bg-left-mob.png" media="(max-width: 768px)" alt="">
+                        <source srcset="./asset/images/goal-bg-left.png" media="(min-width: 767px)" alt="">
                         <img srcset="./asset/images/goal-bg-left.png" alt="" class="">
                     </picture>
                     <picture class="goalImg goalImg--center moveUp">
@@ -192,7 +282,7 @@
                         <img srcset="./asset/images/goal-bg-center.png" alt="" class="">
                     </picture>
                     <picture class="goalImg goalImg--right moveUp">
-                        <source srcset="./asset/images/goal-bg-right-mob.png" media="(max-width: 768px)" alt="">
+                        <source srcset="./asset/images/goal-bg-right.png" media="(min-width: 767px)" alt="">
                         <img srcset="./asset/images/goal-bg-right.png" alt="" class="">
                     </picture>
                     <div class="goalTxt__wrap container articleTxt">
@@ -234,30 +324,30 @@
                                 <div class="speechTitle">Vikram Sinha</div>
                                 <div class="speechDesc">Direktur Utama <br>
                                     Indosat Ooredoo Hutchison</div>
-                                <div class="speechGear__wrap speechGear--left animationNudge">
+                                <div class="speechGear__wrap speechGear--left animationNudge mobile-hide">
                                     <picture class="speechGear">
-                                        <source srcset="./asset/images/speech-gear-big-mob.png"
-                                            media="(max-width: 767px)" alt="">
+                                        <source srcset="./asset/images/speech-gear-big.png" media="(min-width: 768px)"
+                                            alt="">
                                         <img srcset="./asset/images/speech-gear-big.png" alt="">
                                     </picture>
                                 </div>
-                                <div class="speechGear__wrap speechGear__small--left animationNudge">
+                                <div class="speechGear__wrap speechGear__small--left animationNudge mobile-hide">
                                     <picture class="speechGear">
-                                        <source srcset="./asset/images/intro-gear-right-mob.png"
-                                            media="(max-width: 767px)" alt="">
+                                        <source srcset="./asset/images/intro-gear-right.png" media="(min-width: 768px)"
+                                            alt="">
                                         <img srcset="./asset/images/intro-gear-right.png" alt="">
                                     </picture>
                                 </div>
-                                <div class="speechGear__wrap speechGear--right animationNudgeleft">
+                                <div class="speechGear__wrap speechGear--right animationNudgeleft mobile-hide">
                                     <picture class="speechGear">
-                                        <source srcset="./asset/images/speech-gear-bottom-mob.png"
-                                            media="(max-width: 767px)" alt="">
+                                        <source srcset="./asset/images/speech-gear-bottom.png"
+                                            media="(min-width: 768px)" alt="">
                                         <img srcset="./asset/images/speech-gear-bottom.png" alt="">
                                     </picture>
                                 </div>
                             </div>
                             <picture class="speechImg">
-                                <source srcset="./asset/images/vikram-sinha-mob.png" media="(max-width: 767px)" alt="">
+                                <source srcset="./asset/images/vikram-sinha-mob.png" media="(max-width: 1024px)" alt="">
                                 <img srcset="./asset/images/vikram-sinha.png" alt="">
                             </picture>
                         </div>
@@ -269,13 +359,13 @@
                     <div class="ooredooWrap container heightFull">
                         <div class="ooredooAnim">
                             <picture class="">
-                                <source srcset="./asset/images/ooredoo-anim-mob.png" media="(max-width: 767px)" alt="">
+                                <source srcset="./asset/images/ooredoo-anim-mob.png" media="(max-width: 768px)" alt="">
                                 <img srcset="./asset/images/ooredoo-anim.png" alt="">
                             </picture>
                         </div>
                         <div class="ooredooContent articleTxt opac0">
                             <picture class="ooredooImg">
-                                <source srcset="./asset/images/logo-ooredoo-mob.png" media="(max-width: 767px)" alt="">
+                                <source srcset="./asset/images/logo-ooredoo-mob.png" media="(max-width: 860px)" alt="">
                                 <img srcset="./asset/images/logo-ooredoo.png" alt="Ooredoo">
                             </picture>
                             <div class="ooredooContent__wrap">
@@ -296,7 +386,7 @@
                 <div class="hutchison moveUp">
                     <div class="hutchisonWrap container display-flex heightFull">
                         <picture class="hutchisonImg">
-                            <source srcset="./asset/images/logo-ck-hutchison-mob.png" media="(max-width: 768px)" alt="">
+                            <source srcset="./asset/images/logo-ck-hutchison-mob.png" media="(max-width: 860px)" alt="">
                             <img srcset="./asset/images/logo-ck-hutchison.png" alt="CK Hutchison" class="">
                         </picture>
                         <div class="hutchisonContent articleTxt">
@@ -3082,6 +3172,11 @@
                     <div class="remarksWrap center-flex heightFull">
                         <div class="remarksContent center-flex">
                             <div class="remarksContent__wrap articleTxt">
+                                <picture class="remarksQuote">
+                                    <source srcset="./asset/images/remarks-quote-mob.png" media="(max-width: 767px)"
+                                        alt="">
+                                    <img srcset="./asset/images/remarks-quote.png" alt="">
+                                </picture>
                                 <p>
                                     Indosat Ooredoo Hutchison akan memiliki skala, kemampuan keuangan, dan keahlian
                                     untuk
@@ -3095,28 +3190,28 @@
                                 </p>
                             </div>
                             <picture class="remarksImg">
-                                <source srcset="./asset/images/remarks-vikram-sinha-mob.png" media="(max-width: 768px)"
+                                <source srcset="./asset/images/remarks-vikram-sinha-mob.png" media="(max-width: 1024px)"
                                     alt="">
                                 <img srcset="./asset/images/remarks-vikram-sinha.png" alt="" class="">
                             </picture>
-                            <div class="remarksGear__wrap remarksGear--left animationNudge">
+                            <div class="remarksGear__wrap remarksGear--left animationNudge mobile-hide">
                                 <picture class="remarksGear">
-                                    <source srcset="./asset/images/intro-gear-left-mob.png" media="(max-width: 767px)"
+                                    <source srcset="./asset/images/intro-gear-left.png" media="(min-width: 768px)"
                                         alt="">
                                     <img srcset="./asset/images/intro-gear-left.png" alt="">
                                 </picture>
                             </div>
-                            <div class="remarksGear__wrap remarksGear__small--left animationNudge">
+                            <div class="remarksGear__wrap remarksGear__small--left animationNudge mobile-hide">
                                 <picture class="remarksGear">
-                                    <source srcset="./asset/images/speech-gear-big-mob.png" media="(max-width: 767px)"
+                                    <source srcset="./asset/images/speech-gear-big.png" media="(min-width: 768px)"
                                         alt="">
                                     <img srcset="./asset/images/speech-gear-big.png" alt="">
                                 </picture>
                             </div>
-                            <div class="remarksGear__wrap remarksGear--right animationNudgeleft">
+                            <div class="remarksGear__wrap remarksGear--right animationNudgeleft mobile-hide">
                                 <picture class="remarksGear">
-                                    <source srcset="./asset/images/intro-gear-right-mob.png"
-                                        media="(max-width: 767px)" alt="">
+                                    <source srcset="./asset/images/intro-gear-right.png" media="(min-width: 768px)"
+                                        alt="">
                                     <img srcset="./asset/images/intro-gear-right.png" alt="">
                                 </picture>
                             </div>
@@ -3574,95 +3669,7 @@
         <!-- Fullpage Content -->
         <div id="fullpage" class="fullpage">
             <section class="section">
-                <div class="cover heightFull">
-                    <div class="coverTop display-flex">
-                        <div class="coverGear__wrap coverGear__wrap--left">
-                            <div class="coverGear coverGear--left">
-                                <div class="animationNudge">
-                                    <picture class="coverGear__img">
-                                        <source srcset="./asset/images/cover-circle-left-mob.png"
-                                            media="(max-width: 767px)" alt="">
-                                        <img srcset="./asset/images/cover-circle-left.png" alt="">
-                                    </picture>
-                                </div>
-                                <picture class="coverGear__line coverGear__line--left">
-                                    <source srcset="./asset/images/cover-line-left-mob.png" media="(max-width: 767px)"
-                                        alt="">
-                                    <img srcset="./asset/images/cover-line-left.png" alt="">
-                                </picture>
-                            </div>
-                            <picture class="coverLogo coverLogo--left">
-                                <source srcset="./asset/images/logo-indosat-ooredoo-mob.png" media="(max-width: 767px)"
-                                    alt="">
-                                <img srcset="./asset/images/logo-indosat-ooredoo.png" alt="Indosat Ooredoo">
-                            </picture>
-                        </div>
-                        <div class="coverCenter">
-                            <div class="coverCenter__wrap">
-                                <form class="coverForm">
-                                    <div class="coverInput__wrap display-flex">
-                                        <input class="coverInput coverFont--fa" type="password" maxlength="1"
-                                            onkeydown="return false" id="password" autofocus>
-                                        <input class="coverInput coverFont--fa" type="password" maxlength="1"
-                                            onkeydown="return false">
-                                        <input class="coverInput coverFont--fa" type="password" maxlength="1"
-                                            onkeydown="return false">
-                                        <input class="coverInput coverFont--fa" type="password" maxlength="1"
-                                            onkeydown="return false">
-                                    </div>
-                                    <label for="password" class="coverLabel">Masukkan empat angka untuk
-                                        melanjutkan</label>
-                                </form>
-                                <picture class="coverGranted display-none">
-                                    <source srcset="./asset/images/granted-mob.png" media="(max-width: 767px)" alt="">
-                                    <img srcset="./asset/images/granted.png" alt="Access Granted">
-                                </picture>
-                            </div>
-                        </div>
-                        <div class="coverGear__wrap coverGear__wrap--right">
-                            <div class="coverGear coverGear--right">
-                                <div class="animationNudgeleft">
-                                    <picture class="coverGear__img">
-                                        <source srcset="./asset/images/cover-circle-right-mob.png"
-                                            media="(max-width: 767px)" alt="">
-                                        <img srcset="./asset/images/cover-circle-right.png" alt="">
-                                    </picture>
-                                </div>
-                                <picture class="coverGear__line coverGear__line--right">
-                                    <source srcset="./asset/images/cover-line-right-mob.png" media="(max-width: 767px)"
-                                        alt="">
-                                    <img srcset="./asset/images/cover-line-right.png" alt="">
-                                </picture>
-                            </div>
-                            <picture class="coverLogo coverLogo--right">
-                                <source srcset="./asset/images/logo-3-mob.png" media="(max-width: 767px)" alt="">
-                                <img srcset="./asset/images/logo-3.png" alt="Tri" class="">
-                            </picture>
-                        </div>
-                    </div>
-                    <div class="coverBottom">
-                        <div class="coverBottomBg coverBottomBg--left"></div>
-                        <div class="coverContent container center-flex">
-                            <div class="coverNum__wrap center-flex">
-                                <button class="coverNum" data-number="1"><span>1</span></button>
-                                <button class="coverNum" data-number="2"><span>2</span></button>
-                                <button class="coverNum" data-number="3"><span>3</span></button>
-                                <button class="coverNum" data-number="4"><span>4</span></button>
-                                <button class="coverNum" data-number="5"><span>5</span></button>
-                                <button class="coverNum" data-number="6"><span>6</span></button>
-                                <button class="coverNum" data-number="7"><span>7</span></button>
-                                <button class="coverNum" data-number="8"><span>8</span></button>
-                                <button class="coverNum" data-number="9"><span>9</span></button>
-                                <button class="coverNum" data-number="*" aria-label="*"><span
-                                        class="icon icon-asterisk"></span></button>
-                                <button class="coverNum" data-number="0"><span>0</span></button>
-                                <button class="coverNum" data-number="#"><span>#</span></button>
-                            </div>
-                            <button class="coverSubmit" id="moveTo">Enter</button>
-                        </div>
-                    </div>
-                    
-                </div>
+
             </section>
             <section class="section"></section>
             <section class="section"></section>
@@ -3698,7 +3705,7 @@
                     </div>
 
                     <button class="button buttonFooter" onclick="refreshPage()" aria-label="Back to Top">
-                        <img data-src="./asset/images/back-to-top.png" alt="" width="32" height="32">
+                        <img data-src="./asset/images/back-to-top.png" alt="" width="113" height="113">
                     </button>
                 </div>
             </section>
@@ -3716,7 +3723,7 @@
     <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/lottie.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/slick.min.js"></script>
-    <script type="text/javascript" src="./asset/js/main.js"></script>
+    <script type="text/javascript" src="./asset/js/main.min.js"></script>
 </body>
 
 </html>
