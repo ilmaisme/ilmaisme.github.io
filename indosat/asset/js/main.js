@@ -138,7 +138,7 @@ $(document).ready(function () {
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 700,
+                    duration: 1400,
                     begin: function () {
                         $(".goalTxt").addClass("opac0");
                         $(".goalImg").addClass("moveUp");
@@ -176,6 +176,18 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $(".speech").addClass("moveUp");
+                    },
+                    complete: function () {
+                        $(".goalImg").removeClass("opac0");
+                        $(".goalTxt").removeClass("opac0");
+                    }
+                });
+                $(".goalTxt").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700,
+                    begin: function () {
                     },
                     complete: function () {
                         $(".goalImg").removeClass("opac0");
