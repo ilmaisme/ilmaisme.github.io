@@ -55,29 +55,27 @@ $(document).ready(function () {
     if ($('#some-element').css('display') == 'none') {
         is_mobile = true;
     }
-    // 1. Animation Medal
-    /*
-    var paramMedal = {
-        container: document.getElementById('animationMedal'),
+    // 1. Animation Graph
+    var paramGraph = {
+        container: document.getElementById('animationGraph'),
         renderer: 'svg',
         loop: true,
         autoplay: false,
-        path: 'asset/json/project-medal.json',
+        path: 'asset/json/grafik.json',
         name: 'myAnimation',
     };
-    var playMedal;
-    playMedal = bodymovin.loadAnimation(paramMedal);
+    var playGraph;
+    playGraph = bodymovin.loadAnimation(paramGraph);
 
     // 6
     var animation = bodymovin.loadAnimation({
-        container: document.getElementById('animationPumpbrown'),
+        container: document.getElementById('animationSmartphone'),
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: 'asset/json/pompa-brown.json',
+        path: 'asset/json/smartphone.json',
         name: 'myAnimation',
     });
-    */
 
     new fullpage('#fullpage', {
         //options here
@@ -97,7 +95,7 @@ $(document).ready(function () {
                 $(".coverTop").addClass("move");
                 $(".coverBottom").addClass("move");
                 $(".bgStatic__wrap").removeClass("active");
-                console.log("0down")
+                //console.log("0down")
             }
             if (origin.index == 1 && direction == 'up') {
                 $(".bgStatic__wrap").addClass("active");
@@ -299,6 +297,8 @@ $(document).ready(function () {
                         $(".bgCircle").removeClass("opac0");
                     }
                 });
+                
+                playGraph.play();
             }
             if (origin.index == 7 && direction == 'up') {
                 $(".hutchison").velocity({
