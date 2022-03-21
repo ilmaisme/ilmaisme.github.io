@@ -295,10 +295,9 @@ $(document).ready(function () {
                         $(".holdingsWrap").removeClass("opac0");
                         $(".bgColor--corporate").addClass("blue");
                         $(".bgCircle").removeClass("opac0");
+                        playGraph.play();
                     }
-                });
-                
-                playGraph.play();
+                });                
             }
             if (origin.index == 7 && direction == 'up') {
                 $(".hutchison").velocity({
