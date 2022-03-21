@@ -43,7 +43,7 @@ $('#moveTo').on('click', function () {
         $('.coverForm').addClass('display-none');
         $('.coverGranted').removeClass('display-none');
         setTimeout(function () {
-            //fullpage_api.setAllowScrolling(true);
+            fullpage_api.setAllowScrolling(true);
             fullpage_api.moveTo('start', 1);
             console.log('start');
         }, 700);
@@ -527,10 +527,12 @@ $(document).ready(function () {
                         $(".bgColor--tvc").addClass("opac0");
                     }
                 });
+                $('video').trigger('pause');
                 //console.log("13up")
             }
             if (origin.index == 13 && direction == 'down') {
                 $(".bgStatic__wrap").removeClass("active");
+                $('video').trigger('pause');
             }
             if (origin.index == 14 && direction == 'up') {
                 $(".bgStatic__wrap").addClass("active");
@@ -538,14 +540,14 @@ $(document).ready(function () {
         }
     })
 
-    //fullpage_api.setAllowScrolling(false);
+    fullpage_api.setAllowScrolling(false);
 
-    function stopVideo() {
-        $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-        $('.youtube-video')[1].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-        $('.youtube-video')[2].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-        //console.log('stopvid');
-    }
+    // function stopVideo() {
+    //     $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+    //     $('.youtube-video')[1].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+    //     $('.youtube-video')[2].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+    //     //console.log('stopvid');
+    // }
 
     //slider komisaris
     function createSlick() {
@@ -636,11 +638,11 @@ $(document).ready(function () {
     createSlickdir();
 
     //icon play toggle
-    if ($('.tvcVid__wrap').is(':visible')) {
-        $('.tvcVid__wrap').click(function () {
-            $(this).find($('.icon-play')).toggle();
-        });
-    }
+    // if ($('.tvcVid__wrap').is(':visible')) {
+    //     $('.tvcVid__wrap').click(function () {
+    //         $(this).find($('.icon-play')).toggle();
+    //     });
+    // }
 
     if (is_mobile == true) {
         // mobile
