@@ -19,6 +19,9 @@ mobile/html
 [Mobile](https://ilmaisme.github.io/bisniscom/mobile/html)
 
 ## Update
+23/03/2022
+* add ads skyscrapper
+
 10/03/2022
 * landing page G20
 
