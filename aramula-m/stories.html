@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Aramula</title>
+    <meta name="description" content="Aramula">
+    <meta name="keywords" content="">
+
+    <meta property="og:type" content="article" />
+    <!-- s: fb meta -->
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Aramula" />
+    <meta property="og:description" content="Aramula" />
+
+    <meta property="og:image" content="" />
+    <meta property="fb:admins" content="1386097730" />
+    <meta property="fb:app_id" content="161133340609176" />
+    <!-- s:twitter card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:title" content="Aramula" />
+    <meta name="twitter:description" content="Aramula" />
+    <meta name="twitter:image" content="" />
+    <!-- e:twitter card -->
+
+
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2" as="font"
+        type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_ZpC3gnD_g.woff2" as="font"
+        type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_bZF3gnD_g.woff2" as="font"
+        type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_dJE3gnD_g.woff2" as="font"
+        type="font/woff2" crossorigin="anonymous">
+
+    <style>
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Montserrat'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: local('Montserrat Medium'), local('Montserrat-Medium'), url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_ZpC3gnD_g.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: local('Montserrat Semi-bold'), local('Montserrat-Semi-bold'), url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_bZF3gnD_g.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_dJE3gnD_g.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="asset/css/style.min.css">
+    <link rel="preload" href="asset/images/logo-aramula.png" as="image" />
+</head>
+<body>
+    <!-- header -->
+    <header class="header headerFixed">
+        <div class="headerContent display-flex aitems-center">
+            <div class="menu">
+                <label class="sr-only" for="menuToggle">Open navigation</label>
+                <input type="checkbox" class="menuToggle" name="check" id="menuToggle" aria-haspopup="true">
+                <svg class="ham hamRotate" viewBox="0 0 100 100" width="80">
+                    <path class="line top hamLine" d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013" />
+                    <path class="line middle hamLine" d="m 70,50 h -40" />
+                    <path class="line bottom hamLine"
+                        d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40" />
+                </svg>            <div class="menuList">
+                    <div class="menuSearch mt10">
+                        <form action="">
+                            <div class="menuSearch__box">
+                                <input type="text" name="" class="menuSearch__input" aria-label="Search news" placeholder="Cari Berita"
+                                    value="" inputmode="search">
+                                <button class="button buttonSearch__menu" type="submit" name="submit" aria-label="Search"><span class="icon icon-search menuSearch__icon"></span></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="menuProfile">
+                        <a href="login.html" class="menuProfile__item menuProfile__user purple">
+                            <span class="icon icon-user menuProfile__icon mr10"></span>
+                            Masuk
+                        </a>
+                    </div>
+                    <ul>
+                        <li class="menuItem"><a href="index.html"
+                                class="menuLink">Home</a></li>
+                        <li class="menuItem"><a href="#"
+                                class="menuLink">Hangout</a></li>
+                        <li class="menuItem"><a href="channels.html"
+                                class="menuLink">Hallyu</a></li>
+                        <li class="menuItem"><a href="#"
+                                class="menuLink">Zodiac</a></li>
+                        <li class="menuItem"><a href="#"
+                                class="menuLink">Woman</a></li>
+                        <li class="menuItem"><a href="#"
+                                class="menuLink">Hangout</a></li>
+                        <li class="menuItem"><a href="#"
+                                class="menuLink">Entertainment</a></li>
+                        <li class="menuItem"><a href="promo.html"
+                                class="menuLink">Numpang Promo</a></li>
+                        <li class="menuItem"><a href="stories.html"
+                                class="menuLink active">Stories</a></li>
+                        <li class="menuItem"><a href="photo.html"
+                                class="menuLink">Photo</a></li>
+                        <li class="menuItem"><a href="video.html"
+                                class="menuLink">Video</a></li>
+                        <li class="menuItem"><a href="indeks.html"
+                                class="menuLink">Indeks</a></li>
+                    </ul>
+                </div>        </div>
+            <div class="headerLogo headerLogo--stories text-center flex-init">
+                <img src="asset/images/ara-stories.png" alt="Ara Stories" width="134" height="24">
+            </div>
+        </div>
+    </header>    <!-- header -->
+
+    <!-- main -->
+    <main role="main" class="main">
+        <section class="container">
+            <ul class="storiesRow row">
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink storiesVer1">
+                        <img src="asset/images/sample/stories-0.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big storiesVer1__box">
+                                                        <h4
+                                class="storiesTitle storiesTitle--big storiesVer1__title storiesVer1__title--big mt10">
+                                Famous Bread Around The World
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink">
+                        <img src="asset/images/sample/stories-1.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big">
+                            
+                            <div class="storiesSubtitle storiesSubtitle--big">Sponsored</div>
+                            <h4
+                                class="storiesTitle storiesTitle--big mt10">
+                                Stres? lakukan hal ini sebelum terlambat!
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink">
+                        <img src="asset/images/sample/stories-2.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big">
+                                                        <h4
+                                class="storiesTitle storiesTitle--big mt10">
+                                7 rekomendasi tempat wisata yang perlu kamu kunjungi
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink">
+                        <img src="asset/images/sample/stories-3.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big">
+                            
+                            <div class="storiesSubtitle storiesSubtitle--big">Sponsored</div>
+                            <h4
+                                class="storiesTitle storiesTitle--big mt10">
+                                Kreatif, ini cara mengolah sampah rumah tangga
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink storiesVer1">
+                        <img src="asset/images/sample/stories-0.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big storiesVer1__box">
+                                                        <h4
+                                class="storiesTitle storiesTitle--big storiesVer1__title storiesVer1__title--big mt10">
+                                Famous Bread Around The World
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink">
+                        <img src="asset/images/sample/stories-1.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big">
+                            
+                            <div class="storiesSubtitle storiesSubtitle--big">Sponsored</div>
+                            <h4
+                                class="storiesTitle storiesTitle--big mt10">
+                                Stres? lakukan hal ini sebelum terlambat!
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink">
+                        <img src="asset/images/sample/stories-2.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big">
+                                                        <h4
+                                class="storiesTitle storiesTitle--big mt10">
+                                7 rekomendasi tempat wisata yang perlu kamu kunjungi
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink">
+                        <img src="asset/images/sample/stories-3.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big">
+                            
+                            <div class="storiesSubtitle storiesSubtitle--big">Sponsored</div>
+                            <h4
+                                class="storiesTitle storiesTitle--big mt10">
+                                Kreatif, ini cara mengolah sampah rumah tangga
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink storiesVer1">
+                        <img src="asset/images/sample/stories-0.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big storiesVer1__box">
+                                                        <h4
+                                class="storiesTitle storiesTitle--big storiesVer1__title storiesVer1__title--big mt10">
+                                Famous Bread Around The World
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink">
+                        <img src="asset/images/sample/stories-1.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big">
+                            
+                            <div class="storiesSubtitle storiesSubtitle--big">Sponsored</div>
+                            <h4
+                                class="storiesTitle storiesTitle--big mt10">
+                                Stres? lakukan hal ini sebelum terlambat!
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink">
+                        <img src="asset/images/sample/stories-2.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big">
+                                                        <h4
+                                class="storiesTitle storiesTitle--big mt10">
+                                7 rekomendasi tempat wisata yang perlu kamu kunjungi
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink">
+                        <img src="asset/images/sample/stories-3.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big">
+                            
+                            <div class="storiesSubtitle storiesSubtitle--big">Sponsored</div>
+                            <h4
+                                class="storiesTitle storiesTitle--big mt10">
+                                Kreatif, ini cara mengolah sampah rumah tangga
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink storiesVer1">
+                        <img src="asset/images/sample/stories-0.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big storiesVer1__box">
+                                                        <h4
+                                class="storiesTitle storiesTitle--big storiesVer1__title storiesVer1__title--big mt10">
+                                Famous Bread Around The World
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink">
+                        <img src="asset/images/sample/stories-1.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big">
+                            
+                            <div class="storiesSubtitle storiesSubtitle--big">Sponsored</div>
+                            <h4
+                                class="storiesTitle storiesTitle--big mt10">
+                                Stres? lakukan hal ini sebelum terlambat!
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink">
+                        <img src="asset/images/sample/stories-2.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big">
+                                                        <h4
+                                class="storiesTitle storiesTitle--big mt10">
+                                7 rekomendasi tempat wisata yang perlu kamu kunjungi
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="storiesItem col-gd10-5">
+                    <a href="read-stories.html" class="storiesLink">
+                        <img src="asset/images/sample/stories-3.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big">
+                            
+                            <div class="storiesSubtitle storiesSubtitle--big">Sponsored</div>
+                            <h4
+                                class="storiesTitle storiesTitle--big mt10">
+                                Kreatif, ini cara mengolah sampah rumah tangga
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="paging display-flex jcontent-center mt10">
+                <div class="pagingItem">
+                    <a href="#" class="pagingLink pagingLink__prev inactive" aria-label="First Paging"><span
+                            class="icon icon-angle-double"></span></a>
+                </div>
+                <div class="pagingItem">
+                    <a href="#" class="pagingLink pagingLink__prev inactive" aria-label="Prev Paging"><span class="icon icon-angle"></span></a>
+                </div>
+                <div class="pagingItem">
+                    <a href="#" class="pagingLink active">1</a>
+                </div>
+                <div class="pagingItem">
+                    <a href="#" class="pagingLink">2</a>
+                </div>
+                <div class="pagingItem">
+                    <a href="#" class="pagingLink">3</a>
+                </div>
+                <div class="pagingItem">
+                    <a href="#" class="pagingLink" aria-label="Next Paging"><span class="icon icon-angle"></span></a>
+                </div>
+                <div class="pagingItem">
+                    <a href="#" class="pagingLink" aria-label="Last Paging"><span class="icon icon-angle-double"></span></a>
+                </div>
+            </div>        </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer text-center">
+            <button class="button buttonTotop" aria-label="Back to top" onclick="backToTop()"><span
+                    class="icon icon-next"></span></button>
+            <a href="index.html">
+                <img src="asset/images/logo-aramula-big.png" class="footerLogo" alt="Aramula" width="197" height="33" loading="lazy">
+            </a>
+            <div class="footerBottom mt20">
+                Copyright 2021 Aramula.com. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="asset/js/jquery-3.5.0.min.js"></script>
+    <script defer type="text/javascript" src="asset/js/global.min.js"></script>
+</body>
+
+</html>
