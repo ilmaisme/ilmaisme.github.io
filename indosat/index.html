@@ -97,7 +97,7 @@
         }
     </style>
 </head>
-<body class="cursor" onLoad="focusOnMyInputBox();">
+<body class="zoom" onLoad="focusOnMyInputBox();">
 
 
     <!-- main -->
@@ -112,7 +112,13 @@
         </header>        <!-- header -->
 
         <!-- preloader -->
-        <!-- preloader -->
+        <div class="preloader">
+        	<div class="preloaderWrap">
+        		<div class="center-flex heightFull">
+        			<div id="animationPreload"></div>
+        		</div>
+        	</div>
+        </div>        <!-- preloader -->
         <!-- Template Text Content -->
         <div class="bgText__wrap">
         </div>
@@ -239,6 +245,7 @@
                 </div>
             </div>
             <div class="bgStatic">
+                <div class="introScroll"><span></span>scroll down</div>
                 <div class="container center-flex heightFull introBorder flex-column out300">
                     <h1 class="sr-only">Indosat Ooredoo Hutchison</h1>
                     <picture class="introImg">
@@ -322,7 +329,7 @@
                         <div class="speechSpeaker center-flex">
                             <div class="speechSpeaker__wrap">
                                 <div class="speechTitle">Vikram Sinha</div>
-                                <div class="speechDesc">Direktur Utama <br>
+                                <div class="speechDesc">President Director & CEO<br>
                                     Indosat Ooredoo Hutchison</div>
                                 <div class="speechGear__wrap speechGear--left animationNudge mobile-hide">
                                     <picture class="speechGear">
@@ -379,7 +386,7 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="hutchison moveUp">
+                <div class="hutchison">
                     <div class="hutchisonWrap container display-flex heightFull">
                         <picture class="hutchisonImg">
                             <source srcset="./asset/images/logo-ck-hutchison-mob.png" media="(max-width: 860px)" alt="">
@@ -1426,7 +1433,7 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="service container heightFull opac0">
+                <div class="service heightFull opac0">
                     <div class="serviceWrap center-flex flex-column heightFull">
                         <div class="serviceContent">
                             <div class="articleTitle__wrap">
@@ -5715,6 +5722,30 @@
                     </div>
                 </div>
             </div>
+            <div class="bgStatic footerBg moveUp">
+                <div class="footer container center-flex flex-column text-center heightFull">
+                    <a href="https://bisnis.com" target="_blank" rel="noopener noreferrer" title="Bisnis.com">
+                        <img src="./asset/images/logo-bisniscom.png" alt="" class="imgLogo" width="293"
+                            height="66">
+                    </a>
+                    <div class="footerContent text-center">
+                        <div class="footerTitle">Naskah dan Editor </div>
+                        <div class="footerText">Nurhadi Pratomo</div>
+                        <div class="footerText">Gajah Kusumo</div>
+
+                        <div class="footerTitle">Ilustrator & Layout</div>
+                        <div class="footerText">Ilham Nesabana</div>
+                        <div class="footerText">Zoya Rasyidi Thoriq</div>
+
+                        <div class="footerTitle">Developer</div>
+                        <div class="footerText">Tim Teknologi Bisnis.com</div>
+                    </div>
+
+                    <button class="button buttonFooter" onclick="refreshPage()" aria-label="Back to Top">
+                        <img src="./asset/images/back-to-top.png" alt="" width="113" height="113">
+                    </button>
+                </div>
+            </div>
         </div>
         <!-- Template Image Content -->
         <!-- Fullpage Content -->
@@ -5736,29 +5767,7 @@
             <section class="section"></section>
             <section class="section"></section>
             <section class="section"></section>
-            <section class="section footerBg">
-                <div class="footer container center-flex flex-column text-center">
-                    <a href="https://bisnis.com" target="_blank" rel="noopener noreferrer" title="Bisnis.com">
-                        <img data-src="./asset/images/logo-bisniscom.png" alt="" class="imgLogo" width="293"
-                            height="66">
-                    </a>
-                    <div class="footerContent text-center">
-                        <div class="footerTitle">Naskah dan Editor </div>
-                        <div class="footerText">Nurhadi Pratomo</div>
-                        <div class="footerText">Gajah Kusumo</div>
-
-                        <div class="footerTitle">Ilustrator & Layout</div>
-                        <div class="footerText">Ilham Nesabana</div>
-                        <div class="footerText">Zoya Rasyidi Thoriq</div>
-
-                        <div class="footerTitle">Developer</div>
-                        <div class="footerText">Tim Teknologi Bisnis.com</div>
-                    </div>
-
-                    <button class="button buttonFooter" onclick="refreshPage()" aria-label="Back to Top">
-                        <img data-src="./asset/images/back-to-top.png" alt="" width="113" height="113">
-                    </button>
-                </div>
+            <section class="section">
             </section>
         </div>
         <div id="some-element"></div>
