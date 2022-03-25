@@ -45,6 +45,7 @@ $('#moveTo').on('click', function () {
         $('.coverGranted').addClass('active');
         setTimeout(function () {
             fullpage_api.setAllowScrolling(true);
+            fullpage_api.setKeyboardScrolling(true, 'down');
             fullpage_api.moveTo('start', 1);
             console.log('start');
         }, 2100);
@@ -564,18 +565,17 @@ $(document).ready(function () {
                 //console.log("13up")
             }
             if (origin.index == 13 && direction == 'down') {
-                $(".bgStatic__wrap").removeClass("active");
                 $('video').trigger('pause');
                 $(".footerBg").removeClass("moveUp");
             }
             if (origin.index == 14 && direction == 'up') {
-                $(".bgStatic__wrap").addClass("active");
                 $(".footerBg").addClass("moveUp");
             }
         }
     })
 
     fullpage_api.setAllowScrolling(false);
+    fullpage_api.setKeyboardScrolling(false, 'down');
 
     //slider komisaris
     function createSlick() {
@@ -683,7 +683,7 @@ $(document).ready(function () {
 
 $(window).on('load', function () {
     setTimeout(function () {
-        $('.preloader').remove();
+       $('.preloader').remove();
     }, 1000);
     console.log('loaded');
 })
