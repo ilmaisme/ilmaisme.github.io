@@ -19,6 +19,10 @@ mobile/html
 [Mobile](https://ilmaisme.github.io/bisniscom/mobile/html)
 
 ## Update
+01/04/2022
+* update ads megabillboard
+* update widget bisnisplus
+
 23/03/2022
 * add ads skyscrapper
 
