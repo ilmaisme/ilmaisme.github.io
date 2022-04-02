@@ -1,0 +1,51 @@
+.step {
+    margin-top: 60px;
+
+    &Item {
+        flex: 1;
+        flex-direction: column;
+
+        .stepIcon {
+            &:after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                border-top: 4px solid #EEEEEE;
+                width: 92px;
+                left: 53px;
+                z-index: -1;
+            }
+        }
+
+        &:last-child .stepIcon:after {
+            content: none;
+        }
+    }
+
+    &Icon {
+        position: relative;
+        top: 2px;
+        left: 2px;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background: #FEF8EA;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__wrap {
+            text-align: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(99.09deg, #8DC53F 0%, #A1E146 100%);
+        }
+    }
+
+    &Txt {
+        text-align: center;
+        margin-top: 6px;
+        @include font-pack($font_body, 13px, 700, false, $cl_pink);
+    }
+}
