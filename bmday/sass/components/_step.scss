@@ -1,5 +1,5 @@
 .step {
-    margin-top: 60px;
+    margin-top: 26px;
 
     &Wrap {
         max-width: 355px;
@@ -15,6 +15,23 @@
         flex-direction: column;
 
         .stepIcon {
+            &:before {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                border-top: 4px solid $cl_pink;
+                width: 0;
+                left: 36px;
+                z-index: -1;
+                transition: width 1s ease-in-out;
+                transition-delay: 300ms;
+
+                @include min-responsive($mxtablet) {
+                    width: 0;
+                    left: 53px;
+                }
+            }
+
             &:after {
                 content: '';
                 display: inline-block;
@@ -22,7 +39,7 @@
                 border-top: 4px solid #EEEEEE;
                 width: 22px;
                 left: 36px;
-                z-index: -1;
+                z-index: -2;
 
                 @include min-responsive($mxtablet) {
                     width: 92px;
@@ -31,7 +48,8 @@
             }
         }
 
-        &:last-child .stepIcon:after {
+        &:last-child .stepIcon:after,
+        &:last-child .stepIcon:before {
             content: none;
         }
     }
@@ -43,10 +61,11 @@
         width: 35px;
         height: 35px;
         border-radius: 50%;
-        background: #FEF8EA;
+        background: $cl_white;
         display: flex;
         justify-content: center;
         align-items: center;
+        @include base_transition(all);
 
         @include min-responsive($mxtablet) {
             width: 54px;
@@ -55,10 +74,8 @@
 
         svg {
             transform: scale(.8);
-
-            @include min-responsive($mxtablet) {
-                transform: none;
-            }
+            filter: invert(89%) sepia(15%) saturate(338%) hue-rotate(44deg) brightness(96%) contrast(89%);
+            @include base_transition(all);
         }
 
         &__wrap {
@@ -66,11 +83,43 @@
             width: 39px;
             height: 39px;
             border-radius: 50%;
-            background: linear-gradient(99.09deg, #8DC53F 0%, #A1E146 100%);
+            background: $cl_white;
+            @include base_transition(all);
 
             @include min-responsive($mxtablet) {
                 width: 58px;
                 height: 58px;
+            }
+
+            &.active {
+                background: linear-gradient(99.09deg, #8DC53F 0%, #A1E146 100%);
+
+                .stepIcon {
+                    background: #FEF8EA;
+
+                    svg {
+                        filter: invert(63%) sepia(73%) saturate(427%) hue-rotate(43deg) brightness(84%) contrast(94%);
+                    }
+                }
+            }
+
+            &.done {
+                .stepIcon {
+                    background: linear-gradient(99.09deg, #8DC53F 0%, #A1E146 100%);
+
+                    svg {
+                        filter: invert(100%) sepia(93%) saturate(2%) hue-rotate(349deg) brightness(109%) contrast(100%);
+                    }
+
+                    &:before {
+                        content: '';
+                        width: 22px;
+
+                        @include min-responsive($mxtablet) {
+                            width: 92px;
+                        }
+                    }
+                }
             }
         }
     }

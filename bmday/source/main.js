@@ -1,76 +1,136 @@
 $(document).ready(function () {
-
-    // active menu
-    (function () {
-        var section = document.querySelectorAll(".section");
-        var sections = {};
-        var i = 0;
-
-        Array.prototype.forEach.call(section, function (e) {
-            sections[e.id] = e.offsetTop - 220;
-        });
-
-        window.onscroll = function () {
-            var scrollPosition = document.documentElement.scrollTop ||
-                document.body.scrollTop;
-
-            for (i in sections) {
-                if (sections[i] <= scrollPosition) {
-                    document.querySelector('.active').setAttribute('class', 'navItem ');
-                    document.querySelector('a[id*=' + i +
-                        ']').setAttribute('class', 'navItem active');
-                }
-            }
-        };
-
-        $("#btn-home").on('click', function () {
-            $('html, body').animate({
-                scrollTop: $("#home").offset().top
-            }, 1000);
-        });
-
-        $("#btn-news").on('click', function () {
-            $('html, body').animate({
-                scrollTop: $("#news").offset().top - 125
-            }, 1000);
-        });
-
-        $("#btn-events").on('click', function () {
-            $('html, body').animate({
-                scrollTop: $("#events").offset().top - 125
-            }, 1000);
-        });
-    })();
-
-    /* sticky menu */
-    let hd = $("header");
-
-    $(window).scroll(function () {
-        var a = $(window).scrollTop(),
-            b = hd.outerHeight();
-        a > b + 40 ? (hd.addClass("header--fixed")) :
-            (hd.removeClass("header--fixed"))
+    //scrollreveal
+    AOS.init({
+        duration: 1200,
     })
-});
 
-let mT = $('#mobToggle'),
-    nav = $('.nav');
+    $('.section').removeClass('aos-animate');
+    $('#splogo').removeClass('aos-animate');
+    $('#intLogo').removeClass('aos-animate');
+    $('#intImg').removeClass('aos-animate');
+    $('#intbtn').removeClass('aos-animate');
+    $('#clImg').removeClass('aos-animate');
+    $('#clCtn').removeClass('aos-animate');
+    $('#covbtn').click(function () {
+        $('#intro').addClass('active');
+        $('#cover').removeClass('active');
+        setTimeout(function () {
+            $('#intLogo').addClass('aos-animate');
+            $('#intImg').addClass('aos-animate');
+            $('#intbtn').addClass('aos-animate');
+        }, 300);
+    });
+    $('#intbtn').click(function () {
+        $('#sparent').addClass('active');
+        $('#bio').addClass('active');
+        $('#intro').removeClass('active');
+        setTimeout(function () {
+            $('#splogo').addClass('aos-animate');
+        }, 300);
+        scrollTop()
+    });
+    $('#strbtn').click(function () {
+        $('#skin').addClass('active');
+        $('#step').addClass('active');
+        $('#bio').removeClass('active');
+        setTimeout(function () {
+            $('#step0').addClass('active');
+        }, 1000);
+        scrollTop()
+    });
+    $('#skinbtn').click(function () {
+        $('#hair').addClass('active');
+        $('#skin').removeClass('active');
+        $('#step0').addClass('done');
+        setTimeout(function () {
+            $('#step1').addClass('active');
+        }, 1300);
+        scrollTop()
+    });
+    $('#hairbtn').click(function () {
+        $('#body').addClass('active');
+        $('#hair').removeClass('active');
+        $('#step1').addClass('done');
+        setTimeout(function () {
+            $('#step2').addClass('active');
+        }, 1300);
+        scrollTop()
+    });
+    $('#hairbtnp').click(function () {
+        $('#skin').addClass('active');
+        $('#hair').removeClass('active');
+        $('#step0').removeClass('done');
+        $('#step1').removeClass('active');
+        scrollTop()
+    });
+    $('#bodybtn').click(function () {
+        $('#makeup').addClass('active');
+        $('#body').removeClass('active');
+        $('#step2').addClass('done');
+        setTimeout(function () {
+            $('#step3').addClass('active');
+        }, 1300);
+        scrollTop()
+    });
+    $('#bodybtnp').click(function () {
+        $('#hair').addClass('active');
+        $('#body').removeClass('active');
+        $('#step1').removeClass('done');
+        $('#step2').removeClass('active');
+        scrollTop()
+    });
+    $('#mkupbtn').click(function () {
+        $('#food').addClass('active');
+        $('#makeup').removeClass('active');
+        $('#step3').addClass('done');
+        setTimeout(function () {
+            $('#step4').addClass('active');
+        }, 1300);
+        scrollTop()
+    });
+    $('#mkupbtnp').click(function () {
+        $('#body').addClass('active');
+        $('#makeup').removeClass('active');
+        $('#step2').removeClass('done');
+        $('#step3').removeClass('active');
+        scrollTop()
+    });
+    $('#foodbtn').click(function () {
+        $('#fashion').addClass('active');
+        $('#food').removeClass('active');
+        $('#step4').addClass('done');
+        setTimeout(function () {
+            $('#step5').addClass('active');
+        }, 1300);
+        scrollTop()
+    });
+    $('#foodbtnp').click(function () {
+        $('#makeup').addClass('active');
+        $('#food').removeClass('active');
+        $('#step3').removeClass('done');
+        $('#step4').removeClass('active');
+        scrollTop()
+    });
+    $('#fashbtn').click(function () {
+        $('#closing').addClass('active');
+        $('#sparent').removeClass('active');
+        $('#step5').addClass('done');
+        setTimeout(function () {
+            $('#clImg').addClass('aos-animate');
+            $('#clCtn').addClass('aos-animate');
+        }, 1000);
+    });
+    $('#fashbtnp').click(function () {
+        $('#food').addClass('active');
+        $('#fashion').removeClass('active');
+        $('#step4').removeClass('done');
+        $('#step5').removeClass('active');
+        scrollTop()
+    });
 
-function mClose() {
-    mT.prop('checked', false);
-}
-$(window).on('resize', function () {
-    nav.removeAttr("style")
-    mClose()
-});
-mT.click(function (e) {
-    e.stopPropagation();
-    if (nav.is(':visible')) {
-        mClose();
-        nav.removeAttr("style")
-    } else {
-        nav.css({
-            "display": "block"
-        })
+    function scrollTop() {
+        $("html").animate({
+            scrollTop: 0
+        }, 600);
     }
-})
+});
