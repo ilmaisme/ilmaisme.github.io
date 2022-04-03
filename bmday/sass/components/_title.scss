@@ -1,5 +1,13 @@
 .title {
-    @include font-pack($font_body, 24px, 700, false, $cl_pink);
+    @include font-pack($font_body, 21px, 700, false, $cl_pink);
+
+    @include max-responsive($mstablet) {
+        font-size: 19px;
+    }
+
+    @include min-responsive($mxtablet) {
+        font-size: 24px;
+    }
 
     &Txt {
         @include font-pack($font_body, 15px, 400, false, $cl_primary);
@@ -9,7 +17,13 @@
         @include font-pack($font_body, 12px, 400, false, $cl_grey);
         font-style: italic;
         align-items: center;
+        justify-content: center;
         margin-top: 45px;
+        margin-bottom: 20px;
+
+        @include min-responsive($mxtablet) {
+            justify-content: flex-start;
+        }
 
         &__txt {
             margin-right: 10px;
