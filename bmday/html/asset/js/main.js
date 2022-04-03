@@ -119,6 +119,7 @@ $(document).ready(function () {
             $('#clImg').addClass('aos-animate');
             $('#clCtn').addClass('aos-animate');
         }, 1000);
+        scrollTop()
     });
     $('#fashbtnp').click(function () {
         $('#food').addClass('active');
