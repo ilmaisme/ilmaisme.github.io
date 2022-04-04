@@ -6,14 +6,35 @@
     cursor: pointer;
 
     &Primary {
+        position: relative;
         min-width: 150px;
         height: 43px;
         background: linear-gradient(99.09deg, #8DC53F 0%, #A1E146 100%);
         box-shadow: 0px 2px 12px rgba(164, 166, 157, 0.5);
         @include font-pack($font_body, 14px, 700, false, $cl_white);
 
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            background: linear-gradient(99.09deg, #9AD24A 0%, #77B123 100%);
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            @include base_transition(all);
+        }
+
         @include min-responsive($mxtablet) {
             font-size: 16px;
+        }
+
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
         }
 
         &--icon {
@@ -27,6 +48,7 @@
     }
 
     &Secondary {
+        position: relative;
         margin-right: 4px;
         min-width: calc(100%/2 - 6px);
         height: 52px;
@@ -34,10 +56,35 @@
         box-shadow: 0px 2px 12px rgba(164, 166, 157, 0.5);
         @include font-pack($font_body, 14px, 700, false, #AAAAAA);
 
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            background: linear-gradient(99.09deg, #F4F4F4 0%, #FFFFFF 100%);
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            @include base_transition(all);
+        }
+
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
+
         @include min-responsive($mxtablet) {
             margin-right: 50px;
             min-width: 150px;
             font-size: 16px;
         }
+    }
+
+    &Txt {
+        position: relative;
+        z-index: 1;
     }
 }

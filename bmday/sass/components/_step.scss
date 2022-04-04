@@ -101,6 +101,10 @@
                         filter: invert(63%) sepia(73%) saturate(427%) hue-rotate(43deg) brightness(84%) contrast(94%);
                     }
                 }
+
+                &~.stepTxt {
+                    color: $cl_pink;
+                }
             }
 
             &.done {
@@ -127,7 +131,9 @@
     &Txt {
         text-align: center;
         margin-top: 6px;
-        @include font-pack($font_body, 8px, 700, false, $cl_pink);
+        @include font-pack($font_body, 8px, 700, false,
+            #555555);
+        @include base_transition(all);
 
         @include min-responsive($mxtablet) {
             font-size: 13px;
