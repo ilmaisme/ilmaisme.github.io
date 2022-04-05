@@ -213,6 +213,19 @@
             @include min-responsive($mxtablet) {
                 width: calc(50% - 26px);
             }
+
+            .formInput__otr {
+                pointer-events: none;
+            }
+
+            .formOption {
+
+                &:checked {
+                    &~.formInput__otr {
+                        pointer-events: all;
+                    }
+                }
+            }
         }
     }
 
