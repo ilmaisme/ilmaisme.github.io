@@ -19,6 +19,9 @@ mobile/html
 [Mobile](https://ilmaisme.github.io/bisniscom/mobile/html)
 
 ## Update
+13/04/2022
+* revisi ads megabillboard
+
 06/04/2022
 * update widget imsakiyah
 
