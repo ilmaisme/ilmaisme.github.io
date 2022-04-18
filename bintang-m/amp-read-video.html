@@ -1,0 +1,530 @@
+<!doctype html>
+<html ⚡ lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="This is the AMP Boilerplate.">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- Import other AMP Extensions here -->
+    
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-video-iframe" src="https://cdn.ampproject.org/v0/amp-video-iframe-0.1.js"></script>
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <script async custom-element="amp-sticky-ad" src="https://cdn.ampproject.org/v0/amp-sticky-ad-1.0.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
+    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+    <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+    <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style amp-custom></style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    
+    <link rel="canonical" href=".">
+    
+    <title>Tabloid Bintang</title></head>
+
+<body>
+    <div class="target ampTop">
+        <a class="target-anchor" id="top"></a>
+        <amp-position-observer on="enter:hideAnim.start; exit:showAnim.start" layout="nodisplay">
+        </amp-position-observer>
+    </div>
+    <amp-animation id="showAnim" layout="nodisplay">
+        <script type="application/json">
+    {
+      "duration": "200ms",
+       "fill": "both",
+       "iterations": "1",
+       "direction": "alternate",
+       "animations": [
+         {
+           "selector": "#scrollToTopButton",
+           "keyframes": [
+             { "opacity": "1", "visibility": "visible" }
+           ]
+         }
+       ]
+    }
+  </script>
+    </amp-animation>
+    <amp-animation id="hideAnim" layout="nodisplay">
+        <script type="application/json">
+    {
+     "duration": "200ms",
+       "fill": "both",
+       "iterations": "1",
+       "direction": "alternate",
+       "animations": [
+         {
+           "selector": "#scrollToTopButton",
+           "keyframes": [
+              { "opacity": "1", "visibility": "visible" }
+           ]
+         }
+       ]
+   }
+  </script>
+    </amp-animation>
+    <!-- header -->
+    <header class="header headerFixed active">
+        <div class="headerContent display-flex aitems-center">
+            <div class="menu">
+                <label class="sr-only" for="menuToggle">Open navigation</label>
+                <input type="checkbox" class="menuToggle" name="check" id="menuToggle" aria-haspopup="true">
+                <svg class="ham hamRotate" viewBox="0 0 100 100" width="80">
+                    <path class="line top hamLine"
+                        d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013" />
+                    <path class="line middle hamLine" d="m 70,50 h -40" />
+                    <path class="line bottom hamLine"
+                        d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40" />
+                </svg>
+                <div class="menuList">
+                    <div class="menuSearch mt10">
+                        <form action="">
+                            <div class="menuSearch__box">
+                                <input type="text" name="" class="menuSearch__input" aria-label="Search news"
+                                    placeholder="Cari Berita" value="" inputmode="search">
+                                <button class="button buttonSearch__menu" type="submit" name="submit"
+                                    aria-label="Search"><span class="icon icon-search menuSearch__icon"></span></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="menuProfile">
+                        <a href="login.html" class="menuProfile__item menuProfile__user pink">
+                            <span class="icon icon-user icon-user-pink menuProfile__icon mr10"></span>
+                            Masuk
+                        </a>
+                    </div>
+                    <ul>
+                        <li class="menuItem"><a href="index.html" class="menuLink active">Home</a></li>
+                        <li class="menuItem"><a href="#" class="menuLink">Terpopuler</a></li>
+                        <li class="menuItem"><a href="#" class="menuLink">Peristiwa</a></li>
+                        <li class="menuItem"><a href="channels.html" class="menuLink">Film, TV, Musik</a></li>
+                        <li class="menuItem"><a href="#" class="menuLink">Gaya Hidup</a></li>
+                        <li class="menuItem"><a href="#" class="menuLink">Hollywood</a></li>
+                        <li class="menuItem"><a href="#" class="menuLink">Bollywood</a></li>
+                        <li class="menuItem"><a href="" class="menuLink">Korea</a></li>
+                        <li class="menuItem"><a href="" class="menuLink">Mandarin</a></li>
+                        <li class="menuItem"><a href="photo.html" class="menuLink">Foto</a></li>
+                        <li class="menuItem"><a href="video.html" class="menuLink">Video</a></li>
+                        <li class="menuItem"><a href="stories.html" class="menuLink">Stories</a></li>
+                        <li class="menuItem"><a href="" class="menuLink">Zodiak</a></li>
+                        <li class="menuItem"><a href="about-us.html" class="menuLink">Tentang Kami</a></li>
+                        <li class="menuItem"><a href="indeks.html" class="menuLink">Indeks</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="headerLogo text-center scale">
+                <a href="index.html">
+                    <amp-img src="asset/images/logo-tabloid-bintang.png" class="ampImg" alt="Tabloid Bintang"
+                        width="190" height="36"></amp-img>
+                </a>
+            </div>
+            <a href="search.html" class="buttonSearch" aria-label="Search"><span class="icon icon-search"></span></a>
+        </div>
+        <nav class="nav">
+            <ul class="navList display-flex jcontent-center">
+                <li class="navItem">
+                    <a href="index.html" class="navLink active">Home</a>
+                </li>
+                <li class="navItem">
+                    <a href="#" class="navLink">Terpopuler</a>
+                </li>
+                <li class="navItem">
+                    <a href="#" class="navLink">Peristiwa</a>
+                </li>
+                <li class="navItem">
+                    <a href="channels.html" class="navLink">Film, TV, Musik</a>
+                </li>
+                <li class="navItem">
+                    <a href="#" class="navLink">Gaya Hidup</a>
+                </li>
+                <li class="navItem">
+                    <a href="#" class="navLink">Hollywood</a>
+                </li>
+                <li class="navItem">
+                    <a href="#" class="navLink">Bollywood</a>
+                </li>
+                <li class="navItem">
+                    <a href="" class="navLink">Korea</a>
+                </li>
+                <li class="navItem">
+                    <a href="" class="navLink">Mandarin</a>
+                </li>
+                <li class="navItem">
+                    <a href="photo.html" class="navLink">Foto</a>
+                </li>
+                <li class="navItem">
+                    <a href="video.html" class="navLink">Video</a>
+                </li>
+                <li class="navItem">
+                    <a href="stories.html" class="navLink">Stories</a>
+                </li>
+                <li class="navItem">
+                    <a href="" class="navLink">Zodiak</a>
+                </li>
+                <li class="navItem">
+                    <a href="about-us.html" class="navLink">Tentang Kami</a>
+                </li>
+                <li class="navItem">
+                    <a href="indeks.html" class="navLink">Indeks</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <ul class="breadcrumb ampBreadcrumb display-flex">
+        <li class="breadcrumbItem"><a href="#" class="breadcrumbLink">Home</a></li>
+        <li class="breadcrumbItem"><a href="#" class="breadcrumbLink active">Video</a></li>
+    </ul>
+    <main role="main" class="main ampMain">
+        <section class="ampRead">
+            <h1 class="readTitle text-center mt20">Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo
+            </h1>
+            <div class="readWriter text-center mt20"><b><a href="#">Alphonse Elric</a></b> | 11 September 2021 |
+                12.23
+                WIB</div>
+            <ul class="share flex-center mt10">
+                <li class="shareIcon">
+                    <span class="shareLink ampShare flex-center">
+                        <amp-social-share class="rounded" width="22" height="22" type="whatsapp"></amp-social-share>
+                    </span>
+                </li>
+                <li class="shareIcon">
+                    <span class="shareLink ampShare flex-center">
+                        <amp-social-share class="rounded" width="22" height="22" type="facebook"></amp-social-share>
+                    </span>
+                </li>
+                <li class="shareIcon"><a href="#" class="shareLink flex-center" target="_blank"
+                        rel="noopener noreferrer" aria-label="Instagram"><span class="icon icon-ig"></span></a></li>
+                <li class="shareIcon">
+                    <span class="shareLink ampShare flex-center">
+                        <amp-social-share class="rounded" width="22" height="22" type="twitter"></amp-social-share>
+                    </span>
+                </li>
+                <li class="shareIcon">
+                    <span class="shareLink ampShare flex-center">
+                        <amp-social-share class="rounded" width="22" height="22" type="line"></amp-social-share>
+                    </span>
+                </li>
+            </ul>
+            <div class="readImg__wrap mt20">
+                <a href="#">
+                    <amp-iframe width="200" height="125" sandbox="allow-scripts allow-same-origin" layout="responsive"
+                        frameborder="0" src="https://www.youtube.com/embed/Ihh88tcuong">
+                        <!-- Placeholder needed else the iframe cannot be placed at top of page -->
+                        <amp-img placeholder layout="nodisplay" src="https://creatives.b-cdn.net/1x1.gif"></amp-img>
+                    </amp-iframe>
+                    <div class="readImg__thumb text-center mt10">Lorem
+                        ipsum dolor sit amet</div>
+                </a>
+            </div>
+            <div class="readContent mt20">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras id
+                    eu libero. Sit turpis massa, non suscipit in bibendum nec volutpat viverra. Facilisi
+                    faucibus facilisi pharetra pellentesque tristique. Lorem nullam placerat venenatis id
+                    pretium magna viverra cursus placerat. Nullam pulvinar nulla id nisl id at hendrerit
+                    massa.</p>
+                <p>
+                    In ullamcorper quis justo, commodo tincidunt.
+                    <a href="#">Nunc tellus sed neque lorem donec</a> sem. Gravida ac sit tempor diam. Morbi
+                    sapien
+                    hendrerit fringilla vulputate arcu. Fringilla arcu tincidunt morbi risus malesuada eu
+                    nibh dui. Adipiscing eget bibendum sociis mauris ipsum. Commodo leo nec, molestie amet
+                    dui massa ornare metus, bibendum. Ornare posuere elementum maecenas aliquam aliquet.
+                    Elementum ac platea condimentum laoreet massa habitasse sagittis. Elit elementum, enim
+                    porttitor amet morbi.
+                </p>
+
+                <!-- ads middle -->
+                <div class="adsWrap">
+                    <amp-ad width="300" height="250" type="doubleclick" data-slot="/35096353/amptesting/formats/sticky">
+                    </amp-ad>
+                </div>
+
+                <blockquote>Pellentesque habitant morbi tristique senectus et netus et malesuada
+                    fames
+                    ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit
+                    amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae
+                    est. Mauris placerat eleifend leo.</blockquote>
+                <p>
+                    In ullamcorper quis justo, commodo tincidunt.
+                    Nunc tellus sed neque lorem donec sem. Gravida ac sit tempor diam. Morbi sapien
+                    hendrerit fringilla vulputate arcu. Fringilla arcu tincidunt morbi risus malesuada eu
+                    nibh dui. Adipiscing eget bibendum sociis mauris ipsum. Commodo leo nec, molestie amet
+                    dui massa ornare metus, bibendum. Ornare posuere elementum maecenas aliquam aliquet.
+                    Elementum ac platea condimentum laoreet massa habitasse sagittis. Elit elementum, enim
+                    porttitor amet morbi.
+                </p>
+                <div class="readOther mt20">Baca Juga : <a href="read.html" class="readOther__link">Potret Dulu
+                        dan Kini Artis Berdarah Jepang, Bikin Melongo!</a></div>
+                <p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras
+                        id eu libero. Sit turpis massa, non suscipit in bibendum.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras
+                        id eu libero. Sit turpis massa, non suscipit in bibendum.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras
+                        id eu libero. Sit turpis massa, non suscipit in bibendum.</li>
+                </ul>
+                </p>
+                <!-- ads bottom -->
+                <div class="adsWrap">
+                    <amp-ad width="320" height="50" data-slot="/35096353/amptesting/formats/sticky"></amp-ad>
+                </div>
+            </div>
+            <div class="readWriter__wrap mt20">
+                <div class="readWriter--big">
+                    Penulis : Alphonse Elric
+                </div>
+                <div class="readWriter--big">
+                    Editor : Alphonse Elric
+                </div>
+            </div>
+            <!-- video -->
+            <div class="readCaption mt30">Simak Video Pilihan Di Bawah Ini :</div>
+            <div class="readContent__vid mt10">
+                <amp-iframe width="200" height="125" sandbox="allow-scripts allow-same-origin" layout="responsive"
+                    frameborder="0" src="https://www.youtube.com/embed/JjAtkmSd46g?controls=0">
+                    <!-- Placeholder needed else the iframe cannot be placed at top of page -->
+                    <amp-img placeholder layout="nodisplay" src="https://creatives.b-cdn.net/1x1.gif"></amp-img>
+                </amp-iframe>
+            </div>
+            <div class="readTag mt20">
+                Tags :
+                <ul class="readTag__list display-flex">
+                    <li><a href="#" class="readTag__link">#Relationship</a></li>
+                    <li><a href="#" class="readTag__link">#Zodiak</a></li>
+                    <li><a href="#" class="readTag__link">#Love</a></li>
+                    <li><a href="#" class="readTag__link">#Tips</a></li>
+                </ul>
+            </div>
+            <div class="readWrap mt30">
+                <ul class="share display-flex aitems-center">
+                    <li>Share :</li>
+                    <li class="shareIcon">
+                        <span class="shareLink ampShare flex-center">
+                            <amp-social-share class="rounded" width="22" height="22" type="whatsapp"></amp-social-share>
+                        </span>
+                    </li>
+                    <li class="shareIcon">
+                        <span class="shareLink ampShare flex-center">
+                            <amp-social-share class="rounded" width="22" height="22" type="facebook"></amp-social-share>
+                        </span>
+                    </li>
+                    <li class="shareIcon"><a href="#" class="shareLink flex-center" target="_blank"
+                        rel="noopener noreferrer" aria-label="Instagram"><span class="icon icon-ig"></span></a></li>
+                    <li class="shareIcon">
+                        <span class="shareLink ampShare flex-center">
+                            <amp-social-share class="rounded" width="22" height="22" type="twitter"></amp-social-share>
+                        </span>
+                    </li>
+                    <li class="shareIcon">
+                        <span class="shareLink ampShare flex-center">
+                            <amp-social-share class="rounded" width="22" height="22" type="line"></amp-social-share>
+                        </span>
+                    </li>
+                </ul>
+                <div class="commentCount mt30">
+                    30 Komentar
+                </div>
+            </div>
+            <div class="mt30">
+                <div class="readCaption--big">Apa Reaksimu?</div>
+                <div class="react flex-center mt40">
+                    <a href="#" class="button reactBtn text-center mt10" aria-label="Suka">
+                        <div class="reactIcon">
+                            <amp-img src="asset/images/icon-suka.png" alt="" width="84" height="84" loading="lazy">
+                        </div>
+                        <div class="reactText mt10">Suka</div>
+                        <div class="reactCount">78%</div>
+                    </a>
+                    <a href="#" class="button reactBtn text-center mt10" aria-label="Lucu">
+                        <div class="reactIcon">
+                            <amp-img src="asset/images/icon-lucu.png" alt="" width="84" height="84" loading="lazy">
+                        </div>
+                        <div class="reactText mt10">Lucu</div>
+                        <div class="reactCount">35%</div>
+                    </a>
+                    <a href="#" class="button reactBtn text-center mt10" aria-label="Keren">
+                        <div class="reactIcon">
+                            <amp-img src="asset/images/icon-keren.png" alt="" width="84" height="84" loading="lazy">
+                        </div>
+                        <div class="reactText mt10">Keren</div>
+                        <div class="reactCount">35%</div>
+                    </a>
+                    <a href="#" class="button reactBtn text-center mt10" aria-label="Sedih">
+                        <div class="reactIcon">
+                            <amp-img src="asset/images/icon-sedih.png" alt="" width="84" height="84" loading="lazy">
+                        </div>
+                        <div class="reactText mt10">Sedih</div>
+                        <div class="reactCount">35%</div>
+                    </a>
+                    <a href="#" class="button reactBtn text-center mt10" aria-label="Senang">
+                        <div class="reactIcon">
+                            <amp-img src="asset/images/icon-senang.png" alt="" width="84" height="84" loading="lazy">
+                        </div>
+                        <div class="reactText mt10">Senang</div>
+                        <div class="reactCount">35%</div>
+                    </a>
+                    <a href="#" class="button reactBtn text-center mt10" aria-label="Marah">
+                        <div class="reactIcon">
+                            <amp-img src="asset/images/icon-marah.png" alt="" width="84" height="84" loading="lazy">
+                        </div>
+                        <div class="reactText mt10">Marah</div>
+                        <div class="reactCount">35%</div>
+                    </a>
+                </div>
+            </div>
+            <div class="readWrap mt30">
+                <div class="readCaption--big">Tambahkan Komentar</div>
+                <!-- s: komentar -->
+                <a href="#" class="comment">
+                    <textarea class="formArea mt10" name="comment" id="comment" cols="30" rows="5"
+                        placeholder="Tuliskan Komentar" aria-label="Write your comment"></textarea>
+                </a>
+            </div>
+            <!-- article -->
+            <div class="article">
+                <ul class="articleList">
+                    <li class="articleItem mt20 display-flex">
+                        <a href="read.html" class="articleImg__wrap"
+                            aria-label="Simak, Bun! Ini 4 Ciri Bunda sedang Hamil Anak Kembar">
+                            <amp-img src="asset/images/sample/webp/art-big-1.webp" class="articleImg" alt="" width="87"
+                                height="87" loading="lazy">
+                        </a>
+                        <div class="articleBox">
+                            <div class="articleSubtitle">Gaya Hidup</div>
+                            <h3 class="articleTitle mt5"><a href="read.html">Simak, Bun! Ini 4 Ciri Bunda sedang Hamil
+                                    Anak Kembar</a></h3>
+                            <div class="articleDetail user display-flex aitems-center mt5">
+                                <a href="#" class="userName display-flex aitems-center">
+                                    Salma Farida
+                                </a>
+                                <div class="articleTime">9 menit yang lalu</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="articleItem mt20 display-flex">
+                        <a href="read.html" class="articleImg__wrap"
+                            aria-label="Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo">
+                            <amp-img src="asset/images/sample/webp/art-big-2.webp" class="articleImg" alt="" width="87"
+                                height="87" loading="lazy">
+                        </a>
+                        <div class="articleBox">
+                            <div class="articleSubtitle">Zodiak</div>
+                            <h3 class="articleTitle mt5"><a href="read.html">Pasangan Serasi, Cek 6 Kecocokan antara
+                                    Sagitarius dan Leo</a></h3>
+                            <div class="articleDetail user display-flex aitems-center mt5">
+                                <a href="#" class="userName display-flex aitems-center">
+                                    Salma Farida
+                                </a>
+                                <div class="articleTime">9 menit yang lalu</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="articleItem mt20 display-flex">
+                        <a href="read.html" class="articleImg__wrap"
+                            aria-label="Ayat Alquran Tentang Keharmonisan Rumah Tangga, Yuk Amalkan!">
+                            <amp-img src="asset/images/sample/webp/art-big-3.webp" class="articleImg" alt="" width="87"
+                                height="87" loading="lazy">
+                        </a>
+                        <div class="articleBox">
+                            <div class="articleSubtitle">Gaya Hidup</div>
+                            <h3 class="articleTitle mt5"><a href="read.html">Ayat Alquran Tentang Keharmonisan Rumah
+                                    Tangga, Yuk Amalkan!</a></h3>
+                            <div class="articleDetail user display-flex aitems-center mt5">
+                                <a href="#" class="userName display-flex aitems-center">
+                                    Salma Farida
+                                </a>
+                                <div class="articleTime">9 menit yang lalu</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="articleItem mt20 display-flex">
+                        <a href="read.html" class="articleImg__wrap"
+                            aria-label="Delishburger yang Benar-Benar Delicious">
+                            <amp-img src="asset/images/sample/webp/art-big-4.webp" class="articleImg" alt="" width="87"
+                                height="87" loading="lazy">
+                        </a>
+                        <div class="articleBox">
+                            <div class="articleSubtitle">Peristiwa</div>
+                            <h3 class="articleTitle mt5"><a href="read.html">Delishburger yang Benar-Benar Delicious</a>
+                            </h3>
+                            <div class="articleDetail user display-flex aitems-center mt5">
+                                <a href="#" class="userName display-flex aitems-center">
+                                    Salma Farida
+                                </a>
+                                <div class="articleTime">9 menit yang lalu</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- article -->
+            <button class="button buttonMore mt30">Indeks</button>
+        </section>
+        <footer>
+            <div class="footer ampFooter text-center">
+                <button class="button buttonTotop" id="scrollToTopButton" aria-label="Back to top"
+                    on="tap:top.scrollTo(duration=200)"><span class="icon icon-next"></span></button>
+                <a href="index.html">
+                    <amp-img src="asset/images/logo-tabloid-bintang-big.png" class="footerLogo" alt="Tabloid Bintang"
+                        width="197" height="37" loading="lazy">
+                </a>
+                <ul class="footerList display-flex jcontent-center mt20">
+                    <li class="footerItem">
+                        <a href="about-us.html" class="footerLink">Tentang Kami</a>
+                    </li>
+                    <li class="footerItem">
+                        <a href="cyber.html" class="footerLink">Pedoman Media Cyber</a>
+                    </li>
+                    <li class="footerItem">
+                        <a href="#" class="footerLink">Kontak Kami</a>
+                    </li>
+                    <li class="footerItem">
+                        <a href="disclaimer.html" class="footerLink">Disclaimer</a>
+                    </li>
+                </ul>
+                <ul class="footerList display-flex jcontent-center aitems-center mt20">
+                    <li class="footerItem footerItem--small footerSocial">
+                        follow us :
+                    </li>
+                    <li class="footerSocial socialIcon"><a href="https://www.facebook.com/tabloidbintang"
+                            class="socialLink display-flex" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook"><span class="icon icon-fb"></span></a></li>
+                    <li class="footerSocial socialIcon"><a href="https://instagram.com/TabloidBintang"
+                            class="socialLink display-flex" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram"><span class="icon icon-ig"></span></a></li>
+                    <li class="footerSocial socialIcon"><a href="https://twitter.com/TabloidBintang"
+                            class="socialLink display-flex" target="_blank" rel="noopener noreferrer"
+                            aria-label="Twitter"><span class="icon icon-tw"></span></a></li>
+                    <li class="footerSocial socialIcon"><a href="https://www.youtube.com/c/TabloidBintangOnline"
+                            class="socialLink display-flex" target="_blank" rel="noopener noreferrer"
+                            aria-label="Youtube"><span class="icon icon-yt"></span></a></li>
+                    <li class="footerSocial socialIcon"><a href="#" class="socialLink display-flex" target="_blank"
+                            rel="noopener noreferrer" aria-label="Tiktok"><span class="icon icon-tiktok"></span></a>
+                    </li>
+                    <li class="footerSocial socialIcon"><a href="#" class="socialLink display-flex" target="_blank"
+                            rel="noopener noreferrer" aria-label="Snack Video"><span class="icon icon-snack"></span></a>
+                    </li>
+                </ul>
+                <div class="footerBottom mt20">
+                    Copyright 2022 TabloidBintang.com. All rights reserved.
+                </div>
+            </div>
+        </footer>
+        <amp-sticky-ad layout="nodisplay">
+            <amp-ad width="320" height="50" type="doubleclick" data-slot="/35096353/amptesting/formats/sticky">
+            </amp-ad>
+        </amp-sticky-ad>
+    </main>
+</body>
+
+</html>
