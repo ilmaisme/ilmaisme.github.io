@@ -19,6 +19,9 @@ mobile/html
 [Mobile](https://ilmaisme.github.io/bisniscom/mobile/html)
 
 ## Update
+21/04/2022
+* revisi premium landing
+
 13/04/2022
 * revisi ads megabillboard
 
