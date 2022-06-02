@@ -5,7 +5,7 @@ $(document).ready(function () {
         slidesToScroll: 1,
         arrows: false,
         fade: true,
-        draggable: false,
+        infinite: true,
         asNavFor: '#pronav'
     });
     $('#pronav').slick({
@@ -14,7 +14,7 @@ $(document).ready(function () {
         asNavFor: '#prolist',
         dots: false,
         centerMode: false,
-        draggable: false,
+        infinite: true,
         focusOnSelect: true
     });
     //icon play toggle
