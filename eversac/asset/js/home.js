@@ -112,5 +112,14 @@ $(document).ready(function () {
         });
     }
     createSlickevershare();
+
+    /* onload document */
     $('.headline').removeClass('load');
+    //popup promo
+    setTimeout(() => {
+        $('#popPromo').addClass('slide');
+    }, 2000)
+    $('#popPromo').click(function () {
+        $(this).removeClass('slide');
+    })
 });
