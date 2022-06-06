@@ -43,7 +43,7 @@ $(document).ready(function () {
         $('#hBottom').appendTo('#navMob');
     } else {
         //desktop
-        console.log('desktop')
+        //console.log('desktop')
     }
 
 });

@@ -82,7 +82,7 @@ $(document).ready(function () {
         $(this).toggleClass('active');
     })
 
-    /* slider promo */
+    // slider promo
     function createSlickPromo() {
         $('#spromo').slick({
             dots: false,
@@ -117,6 +117,68 @@ $(document).ready(function () {
             ]
         });
     }
+
+    //check all color item on pagelist
+    if ($('#allcolor').is(':visible')) {
+        $("#allcolor").click(function () {
+            $('input.formColor:checkbox').not(this).prop('checked', this.checked);
+        });
+    }
+    //check all size item on pagelist
+    if ($('#allsize').is(':visible')) {
+        $("#allsize").click(function () {
+            $('input.formSize:checkbox').not(this).prop('checked', this.checked);
+        });
+    }
+    //check all feature item on pagelist
+    if ($('#allfeat').is(':visible')) {
+        $("#allfeat").click(function () {
+            $('input.formFeat:checkbox').not(this).prop('checked', this.checked);
+        });
+    }
+    //check all material item on pagelist
+    if ($('#allmat').is(':visible')) {
+        $("#allmat").click(function () {
+            $('input.formMat:checkbox').not(this).prop('checked', this.checked);
+        });
+    }
+
+    // device detection
+    let isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
+
+    if (isMobile) {
+        //mobile
+        /* left price position in mobile */
+        var numleft = 258;
+    } else {
+        //desktop
+        var numleft = 168;
+    }
+
+    //price range on pagelist
+    var rangeSlider = document.getElementById("prices"),
+        rangeBullet = document.getElementById("prices-bullet");
+
+    if ($('#prices').is(':visible')) {
+        rangeSlider.addEventListener("input", showSliderValue, false);
+    }
+
+    function showSliderValue() {
+        rangeBullet.innerHTML = rangeSlider.value;
+        var bulletPosition = (rangeSlider.value / rangeSlider.max);
+        rangeBullet.style.left = (bulletPosition * numleft) + "px";
+    }
+
+    //filter button on mobile
+    $("#filterbtn").click(function () {
+        $('body').css('overflow', 'hidden');
+        $('#listmob').addClass('active');
+    });
+    $(".-closeFilter").click(function () {
+        $("body").removeAttr("style");
+        $('#listmob').removeClass('active');     
+    });
+
     /* onload document */
     if ($('#spromo').is(':visible')) {
         createSlickPromo();

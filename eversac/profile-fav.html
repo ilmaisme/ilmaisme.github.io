@@ -11,8 +11,19 @@
 
     <title>Eversac</title>
     <link rel="shortcut icon" href="">
-    <link rel="stylesheet" href="./asset/css/style-home.min.css" type="text/css">
-    <link rel="preload" href="./asset/images/headline/image1.png" as="image" />
+    <link rel="stylesheet" href="./asset/css/style.min.css" type="text/css">
+    <style>
+        @font-face {
+            font-family: 'Author';
+            src: local('Author Bold'), local('Author-Bold'),
+                url('asset/fonts/Author-Bold.woff2') format('woff2'),
+                url('asset/fonts/Author-Bold.woff') format('woff'),
+                url('asset/fonts/Author-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-display: swap;
+            font-style: normal;
+        }
+    </style>
 
     <style>
         @font-face {
@@ -158,8 +169,13 @@
                         </form>
                     </div>                <a class="headerWishlist" href="profile-fav.html" aria-label="wishlist">
                         <img src="./asset/images/icon-love.svg" class="icon icon-love" alt="" width="32" height="32"></img>
+                        <div class="badge badge--wish align-center"><span>13</span></div>
                     </a>
-                    <a class="headerLink" href="register.html">Login/Register</a>
+                    <div class="headerUser">
+                        <a class="headerUser__icon" href="profile.html" aria-label="user">
+                            <img src="./asset/images/icon-user.svg" class="icon icon-user" width="32" height="33" alt=""></img>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -340,231 +356,207 @@
                 </li>
             </ul>
         </div>
-    </header>    <main role="main">
-        <div class="row no-gutters">
-            <div class="headline load">
-                <div class="headlineWrap" id="sheadline">
-                    <div class="headlineItem">
-                        <a href="#" aria-label="See headline" class="headlineLink">
-                            <picture class="headlineImg">
-                                <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                <source srcset="./asset/images/headline/image1.png" media="(min-width: 540px)" alt="">
-                                <img srcset="./asset/images/headline/image1.png" alt="" class="headlineImg" width="776"
-                                    height="300">
-                                <!--[if IE 9]></video><![endif]-->
-                            </picture>
-                        </a>
-                    </div>
-                    <div class="headlineItem">
-                        <a href="#" aria-label="See headline" class="headlineLink">
-                            <picture class="headlineImg">
-                                <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                <source srcset="./asset/images/headline/image2.png" media="(min-width: 540px)" alt="">
-                                <img srcset="./asset/images/headline/image2.png" alt="" class="headlineImg" width="776"
-                                    height="300">
-                                <!--[if IE 9]></video><![endif]-->
-                            </picture>
-                        </a>
-                    </div>
-                    <div class="headlineItem">
-                        <a href="#" aria-label="See headline" class="headlineLink">
-                            <picture class="headlineImg">
-                                <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                <source srcset="./asset/images/headline/image3.png" media="(min-width: 540px)" alt="">
-                                <img srcset="./asset/images/headline/image3.png" alt="" class="headlineImg" width="776"
-                                    height="300">
-                                <!--[if IE 9]></video><![endif]-->
-                            </picture>
-                        </a>
-                    </div>
-                    <div class="headlineItem">
-                        <a href="#" aria-label="See headline" class="headlineLink">
-                            <picture class="headlineImg">
-                                <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                <source srcset="https://dummyimage.com/776x300/222222/fff" media="(min-width: 540px)" alt="">
-                                <img srcset="https://dummyimage.com/776x300/222222/fff" alt="" class="headlineImg" width="776"
-                                    height="300">
-                                <!--[if IE 9]></video><![endif]-->
-                            </picture>
-                        </a>
-                    </div>
+    </header>    <main role="main" class="profile">
+        <div class="profileUser row no-gutters align-center">
+            <div class="profileUpload upload-box align-center">
+                <button class="button profileUpload__btn" aria-label="Upload Image">
+                    <img src="./asset/images/ava.png" alt="" width="100" height="100">
+                </button>
+                <img src="./asset/images/ava-upload.png" alt="" width="36" height="36" class="profileUpload__icon">
+                <input type="file" class="profileUpload__input image-upload" id="uploadImg" name="uploadImg"
+                    accept="image/*">
+                <div class="profileUpload__img image-preview">
                 </div>
-                <div class="headlineBottom">
-                    <div class="headlineDots" id="dtheadline">
-                    </div>
-                </div>
-            </div>        </div>
-        <div class="container">
-            <h1 class="titleCaption titleNew text-center">New Arrivals</h1>
-            <a href="new.html" class="titleCaption__sub align-center">Find your best comfortable items
-                <span class="icon icon-arrow-right ml10"><img src="./asset/images/icon-arrow-right.svg" alt=""
-                        width="16" height="15" loading="lazy"></span>
-            </a>
-            <div class="product">
-                <div class="productWrap display-flex ">
-                    <div class="productItem text-center">
+            </div>
+            <div class="profileUser__misc mt10">Welcome,</div>
+            <h1 class="profileUser__name titleCaption">Fulan bin fulan</h1>
+            <a href="#" class="profileLogout">Logout</a>
+        </div>
+        <ul class="profileMenu align-center">
+            <li class="profileMenu__item">
+                <a href="profile-fav.html" class="profileLink active">My Favorites</a>
+            </li>
+            <li class="profileMenu__item">
+                <a href="profile-review.html" class="profileLink">My Reviews</a>
+            </li>
+            <li class="profileMenu__item">
+                <a href="profile.html" class="profileLink">My Profile</a>
+            </li>
+        </ul>        <div class="container">
+            <div class="product mt20">
+                <div class="productWrap display-flex">
+                    <div class="listItem text-center">
                         <a href="#" class="productLink">
-                            <img src="./asset/images/product/image1.png" alt="" loading="lazy" class="productImg" width="220" height="220">
+                            <img src="./asset/images/product/image1.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
                             <div class="productTitle">Eversac Omni Waist Pack Army</div>
                             <div class="productPrice">IDR 179.000</div>
                         </a>
                     </div>
-                    <div class="productItem text-center">
+                    <div class="listItem text-center">
                         <a href="product-read.html" class="productLink">
-                            <img src="./asset/images/product/image2.png" alt="" loading="lazy" class="productImg" width="220" height="220">
+                            <img src="./asset/images/product/image2.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
                             <div class="productTitle">Eversac Omni Vold Backpack Black</div>
                             <div class="productPrice">IDR 279.000</div>
                             <div class="productSale">
-                                Sale 50%
+                                Sale <span>50%</span>
                             </div>
                         </a>
                     </div>
-                    <div class="productItem text-center">
+                    <div class="listItem text-center">
                         <a href="#" class="productLink">
-                            <img src="./asset/images/product/image3.png" alt="" loading="lazy" class="productImg" width="220" height="220">
+                            <img src="./asset/images/product/image3.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
                             <div class="productTitle">Eversac Omni Vold Backpack Grey</div>
                             <div class="productPrice">IDR 279.000</div>
                         </a>
                     </div>
-                    <div class="productItem text-center">
+                    <div class="listItem text-center">
                         <a href="#" class="productLink">
-                            <img src="./asset/images/product/image4.png" alt="" loading="lazy" class="productImg" width="220" height="220">
+                            <img src="./asset/images/product/image4.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
                             <div class="productTitle">Eversac Omni Waist Pack Black</div>
                             <div class="productPrice">IDR 179.000</div>
                         </a>
                     </div>
-                    <div class="productItem text-center">
+                    <div class="listItem text-center">
                         <a href="#" class="productLink">
-                            <img src="./asset/images/product/image5.png" alt="" loading="lazy" class="productImg" width="220" height="220">
-                            <div class="productTitle">Eversac Omni One Shoulder Grey</div>
-                            <div class="productPrice">IDR 199.000</div>
+                            <img src="./asset/images/product/image1.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
+                            <div class="productTitle">Eversac Omni Waist Pack Army</div>
+                            <div class="productPrice">IDR 179.000</div>
                         </a>
                     </div>
-                </div>
-            </div>        </div>
-        <div class="container overflow-hide">
-            <div class="titleBest__wrap">
-                <h2 class="titleCaption titleBest">Best Seller</h2>
-                <div class="titleCaption__sub">Get our Best Seller products Now!</div>
-            </div>
-        </div>
-        <div class="row no-gutters">
-            <div class="best">
-                <div class="bestWrap" id="sbest">
-                    <div class="bestItem">
-                        <a href="#" aria-label="See best seller" class="bestLink">
-                            <picture class="bestImg" loading="lazy">
-                                <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                <source srcset="./asset/images/bestseller/image1.png"
-                                    media="(min-width: 540px)" alt="">
-                                <img srcset="./asset/images/bestseller/image1.png" alt="" class="bestImg" width="1138"
-                                    height="500" >
-                                <!--[if IE 9]></video><![endif]-->
-                            </picture>
+                    <div class="listItem text-center">
+                        <a href="product-read.html" class="productLink">
+                            <img src="./asset/images/product/image2.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
+                            <div class="productTitle">Eversac Omni Vold Backpack Black</div>
+                            <div class="productPrice">IDR 279.000</div>
+                            <div class="productSale">
+                                Sale <span>50%</span>
+                            </div>
                         </a>
                     </div>
-                    <div class="bestItem">
-                        <a href="#" aria-label="See best seller" class="bestLink">
-                            <picture class="bestImg" loading="lazy">
-                                <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                <source srcset="./asset/images/bestseller/image2.png"
-                                    media="(min-width: 540px)" alt="">
-                                <img srcset="./asset/images/bestseller/image2.png" alt="" class="bestImg" width="1138"
-                                    height="500" >
-                                <!--[if IE 9]></video><![endif]-->
-                            </picture>
+                    <div class="listItem text-center">
+                        <a href="#" class="productLink">
+                            <img src="./asset/images/product/image3.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
+                            <div class="productTitle">Eversac Omni Vold Backpack Grey</div>
+                            <div class="productPrice">IDR 279.000</div>
                         </a>
                     </div>
-                    <div class="bestItem">
-                        <a href="#" aria-label="See best seller" class="bestLink">
-                            <picture class="bestImg" loading="lazy">
-                                <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                <source srcset="./asset/images/bestseller/image3.png"
-                                    media="(min-width: 540px)" alt="">
-                                <img srcset="./asset/images/bestseller/image3.png" alt="" class="bestImg" width="1138"
-                                    height="500" >
-                                <!--[if IE 9]></video><![endif]-->
-                            </picture>
+                    <div class="listItem text-center">
+                        <a href="#" class="productLink">
+                            <img src="./asset/images/product/image4.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
+                            <div class="productTitle">Eversac Omni Waist Pack Black</div>
+                            <div class="productPrice">IDR 179.000</div>
                         </a>
                     </div>
-                </div>
-            </div>        </div>
-        <div class="evershare row no-gutters">
-            <h2 class="titleCaption titleEvershare text-center">#evershare</h2>
-            <div class="evershareSlide">
-                <div class="evershareWrap" id="severshare">
-                    <div class="evershareItem">
-                        <a href="#" aria-label="See Instagram Post" class="evershareLink">
-                            <img src="./asset/images/evershare/image1.png" alt="" loading="lazy" class="evershareImg" width="291" height="291">
+                    <div class="listItem text-center">
+                        <a href="#" class="productLink">
+                            <img src="./asset/images/product/image1.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
+                            <div class="productTitle">Eversac Omni Waist Pack Army</div>
+                            <div class="productPrice">IDR 179.000</div>
                         </a>
                     </div>
-                    <div class="evershareItem">
-                        <a href="#" aria-label="See Instagram Post" class="evershareLink">
-                            <img src="./asset/images/evershare/image2.png" alt="" loading="lazy" class="evershareImg" width="291" height="291">
+                    <div class="listItem text-center">
+                        <a href="product-read.html" class="productLink">
+                            <img src="./asset/images/product/image2.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
+                            <div class="productTitle">Eversac Omni Vold Backpack Black</div>
+                            <div class="productPrice">IDR 279.000</div>
+                            <div class="productSale">
+                                Sale <span>50%</span>
+                            </div>
                         </a>
                     </div>
-                    <div class="evershareItem">
-                        <a href="#" aria-label="See Instagram Post" class="evershareLink">
-                            <img src="./asset/images/evershare/image3.png" alt="" loading="lazy" class="evershareImg" width="291" height="291">
+                    <div class="listItem text-center">
+                        <a href="#" class="productLink">
+                            <img src="./asset/images/product/image3.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
+                            <div class="productTitle">Eversac Omni Vold Backpack Grey</div>
+                            <div class="productPrice">IDR 279.000</div>
                         </a>
                     </div>
-                    <div class="evershareItem">
-                        <a href="#" aria-label="See Instagram Post" class="evershareLink">
-                            <img src="./asset/images/evershare/image4.png" alt="" loading="lazy" class="evershareImg" width="291" height="291">
+                    <div class="listItem text-center">
+                        <a href="#" class="productLink">
+                            <img src="./asset/images/product/image4.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
+                            <div class="productTitle">Eversac Omni Waist Pack Black</div>
+                            <div class="productPrice">IDR 179.000</div>
                         </a>
                     </div>
-                    <div class="evershareItem">
-                        <a href="#" aria-label="See Instagram Post" class="evershareLink">
-                            <img src="./asset/images/evershare/image5.png" alt="" loading="lazy" class="evershareImg" width="291" height="291">
+                    <div class="listItem text-center">
+                        <a href="#" class="productLink">
+                            <img src="./asset/images/product/image1.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
+                            <div class="productTitle">Eversac Omni Waist Pack Army</div>
+                            <div class="productPrice">IDR 179.000</div>
                         </a>
                     </div>
-                </div>
-            </div>            <div class="titleEvershare__sub text-center">Spot Us on Instagram Eversac</div>
-        </div>
-        <div class="container">
-            <h2 class="titleCaption titleBlog text-center">Blog Articles</h2>
-            <div class="blog">
-                <div class="blogWrap display-flex">
-                    <div class="blogItem">
-                        <a href="blog-read.html" class="blogLink">
-                            <img src="./asset/images/blog/image1.png" alt="" class="blogImg" width="280" height="193">
-                            <h3 class="blogTitle">Hanya Tiga Hari Ransel Eversac Neo di Gramedia BCS Mall Batam Dijual Rp149 Ribu</h3>
-                            <div class="blogMisc">Read more</div>
+                    <div class="listItem text-center">
+                        <a href="product-read.html" class="productLink">
+                            <img src="./asset/images/product/image2.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
+                            <div class="productTitle">Eversac Omni Vold Backpack Black</div>
+                            <div class="productPrice">IDR 279.000</div>
+                            <div class="productSale">
+                                Sale <span>50%</span>
+                            </div>
                         </a>
                     </div>
-                    <div class="blogItem">
-                        <a href="blog-read.html" class="blogLink">
-                            <img src="./asset/images/blog/image2.png" alt="" class="blogImg" width="280" height="193">
-                            <h3 class="blogTitle">The 80 Most Common ECommerce Website Mistakes</h3>
-                            <div class="blogMisc">Read more</div>
+                    <div class="listItem text-center">
+                        <a href="#" class="productLink">
+                            <img src="./asset/images/product/image3.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
+                            <div class="productTitle">Eversac Omni Vold Backpack Grey</div>
+                            <div class="productPrice">IDR 279.000</div>
                         </a>
                     </div>
-                    <div class="blogItem">
-                        <a href="blog-read.html" class="blogLink">
-                            <img src="./asset/images/blog/image3.png" alt="" class="blogImg" width="280" height="193">
-                            <h3 class="blogTitle">Hanya Tiga Hari Ransel Eversac Neo di Gramedia BCS Mall Batam Dijual Rp149 Ribu</h3>
-                            <div class="blogMisc">Read more</div>
-                        </a>
-                    </div>
-                    <div class="blogItem">
-                        <a href="blog-read.html" class="blogLink">
-                            <img src="./asset/images/blog/image1.png" alt="" class="blogImg" width="280" height="193">
-                            <h3 class="blogTitle">Hanya Tiga Hari Ransel Eversac Neo di Gramedia BCS Mall Batam Dijual Rp149 Ribu</h3>
-                            <div class="blogMisc">Read more</div>
+                    <div class="listItem text-center">
+                        <a href="#" class="productLink">
+                            <img src="./asset/images/product/image4.png" alt="" loading="lazy"  class="productImg" width="220"
+                                height="220">
+                            <div class="productTitle">Eversac Omni Waist Pack Black</div>
+                            <div class="productPrice">IDR 179.000</div>
                         </a>
                     </div>
                 </div>
             </div>
+            <ul class="paging align-center">
+                <li>
+                    <a href="#" class="pagingLink disable" aria-label="Go to Previous Page">
+                        <img src="./asset/images/icon-caret-left.svg" alt="" loading="lazy" width="24" height="24">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="pagingLink active">
+                        1
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="pagingLink">
+                        2
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="pagingLink">
+                        3
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="pagingLink" aria-label="Go to Next Page">
+                        <img src="./asset/images/icon-caret-right.svg" alt="" loading="lazy" width="24" height="24">
+                    </a>
+                </li>            </ul>
         </div>
     </main>
 
-    <div class="popup" id="popPromo">
-        <div class="popupBox">
-            <a href="promo.html">
-                <img src="./asset/images/popup/image.png" alt="" loading="lazy" width="394" height="420">
-            </a>
-        </div>
-    </div>    <div class="help display-flex">
+    <div class="help display-flex">
         <a href="#" class="helpWrap text-center">
             <div class="icon icon-wa">
                 <img src="./asset/images/icon-wa.svg" alt="contact whatsapp" width="87" height="77" loading="lazy">
@@ -637,7 +629,53 @@
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
     <script src="./asset/js/slick/slick.min.js"></script>
     <script defer src="./asset/js/main.min.js"></script>
-    <script defer src="./asset/js/home.min.js"></script>
+    <script src="./asset/js/read.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //image upload preview
+            function initImageUpload(box) {
+                let uploadField = box.querySelector('.image-upload');
+
+                uploadField.addEventListener('change', getFile);
+
+                function getFile(e) {
+                    let file = e.currentTarget.files[0];
+                    checkType(file);
+                }
+
+                function previewImage(file) {
+                    let thumb = box.querySelector('.image-preview'),
+                        reader = new FileReader();
+
+                    reader.onload = function () {
+                        thumb.style.backgroundImage = 'url(' + reader.result + ')';
+                    }
+                    reader.readAsDataURL(file);
+                    thumb.className += ' js--no-default';
+                }
+
+                function checkType(file) {
+                    let imageType = /image.*/;
+                    if (!file.type.match(imageType)) {
+                        throw 'File bukan gambar';
+                    } else if (!file) {
+                        throw 'Tidak ada gambar yang dipilih';
+                    } else {
+                        previewImage(file);
+                    }
+                }
+
+            }
+
+            // initialize box-scope
+            var boxes = document.querySelectorAll('.upload-box');
+
+            for (let i = 0; i < boxes.length; i++) {
+                let box = boxes[i];
+                initImageUpload(box);
+            }
+        })
+    </script>
 
 </body>
 
