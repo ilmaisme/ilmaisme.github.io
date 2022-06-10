@@ -61,6 +61,9 @@ $(document).ready(function () {
     $('#buy').on('click', function () {
         $(this).parent().find($('.readBuy__list')).toggle();
     });
+    $('#shareprod').on('click', function () {
+        $(this).parent().find($('.readShare__sosmed')).toggle();
+    });
 
     //toggle popup report comment
     $(".-bReport").on("click", function () {
@@ -176,7 +179,7 @@ $(document).ready(function () {
     });
     $(".-closeFilter").click(function () {
         $("body").removeAttr("style");
-        $('#listmob').removeClass('active');     
+        $('#listmob').removeClass('active');
     });
 
     /* onload document */

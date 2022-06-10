@@ -1,4 +1,20 @@
 $(document).ready(function () {
+    /* sticky menu */
+    let hd = $(".headerWrap");
+    let hdb = $(".headerBottom");
+    let jno = $(".js-nav-offset");
+
+    $(window).scroll(function () {
+        var a = $(window).scrollTop(),
+            b = hd.outerHeight();
+        a > b + 40 ? (hd.addClass("fixed"),
+                jno.addClass("active"),
+                hdb.addClass("fixed")) :
+            (hd.removeClass("fixed"),
+                jno.removeClass("active"),
+                hdb.removeClass("fixed"))
+    })
+
     $('#header').removeClass('load');
     /* hover submenu */
     $('#navOpen').hover(
