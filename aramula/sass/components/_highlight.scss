@@ -1,0 +1,222 @@
+.highlight {
+    &--box {
+        background: #F8F8F8;
+        border: 1px solid #DADADA;
+        border-radius: 15px;
+
+        .highlightItem {
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+
+        .highlightList {
+            padding: 30px 20px;
+        }
+
+        .highlightImg {
+            height: 145px;
+        }
+
+        .highlightLink {
+            @include font-pack(false, 15px, 600, 22px, false);
+            @include title_overflow(70px, 70px);
+        }
+    }
+
+    &--stories {
+        height: 409px;
+        overflow: hidden;
+
+        .slick-list {
+            padding-right: 110px;
+        }
+
+        .slick-prev {
+            left: 25px;
+        }
+
+        .slick-next {
+            right: 10px;
+        }
+
+        .highlightImg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &--promo {
+        height: 341px;
+        overflow: hidden;
+        padding: 30px 20px;
+
+        .highlightList {
+            flex: 1;
+            padding: 0 0 0 20px;
+        }
+
+        .highlightItem {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    &--col3 {
+        height: 357px;
+        overflow: hidden;
+    }
+
+    &Caption {
+        @include font-pack(false, 24px, 700, false, false);
+
+        &:before {
+            content: '';
+            display: block;
+            width: 70px;
+            border-top: 6px solid $cl_pink;
+            margin-bottom: 6px;
+        }
+
+        &__box {
+            margin-top: -1px;
+            margin-left: -1px;
+            margin-right: 10px;
+            max-width: 597px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            background: $cl_pink;
+            padding: 14px 18px;
+            border-top-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            @include title_overflow(auto, 50px);
+            @include font-pack(false, 18px, 600, 1.7, $cl_white);
+        }
+
+        &--big{
+            @include font-pack(false, 36px, false, false, false);
+        }
+
+        &--mg{
+            margin-bottom: -10px;
+        }
+    }
+
+    &List {
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+
+    &Item {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    &Img {
+        height: 164px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 15px;
+
+        &__wrap {
+            position: relative;
+            display: block;
+
+            &:hover {
+                &~.highlightBox {
+                    .highlightLink {
+                        color: $cl_pink;
+                    }
+                }
+            }
+        }
+    }
+
+    &Subtitle {
+        text-transform: uppercase;
+        @include font-pack(false, 11px, 400, false, $cl_pink);
+    }
+
+    &Time {
+        position: relative;
+        margin-left: 14px;        
+        @include font-pack(false, 11px, false, false, #A6A6A6);
+
+        &::before {
+            content: '';
+            display: inline-block;
+            border-left: 1px solid #A6A6A6;
+            width: 1px;
+            height: 14px;
+            position: absolute;
+            top: 1px;
+            left: -8px;
+        }
+    }
+
+    &Detail {
+        flex-wrap: wrap;
+    }
+
+    &Link {
+        @include title_overflow(auto, 80px);
+        @include font-pack(false, 20px, 600, false, false);
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+
+        &:hover {
+            color: $cl_pink;
+        }
+    }
+
+    &More {
+        @include font-pack(false, 12px, 600, 24px, $cl_pink);
+
+        &:hover {
+            color: $cl_pink;
+        }
+
+        &__box {
+            margin-right: 17px;
+        }
+    }
+
+    &Slide {
+        max-width: 506px;
+    }
+
+    &Dots {
+        margin-top: 5px;
+
+        .slick-dots {
+            @include flexbox();
+            justify-content: center;
+
+            li {
+                margin-left: 3px;
+                margin-right: 3px;
+
+                &.slick-active {
+                    button {
+                        width: 36px;
+                        border-radius: 3px;
+                        background: $cl_pink;
+                    }
+                }
+            }
+        }
+
+        button {
+            padding: 0;
+            width: 9px;
+            height: 9px;
+            background: $cl_secondary_grey;
+            border: 0;
+            border-radius: 100%;
+            font-size: 0;
+            cursor: pointer;
+            // transition: width .4s;
+        }
+    }
+}

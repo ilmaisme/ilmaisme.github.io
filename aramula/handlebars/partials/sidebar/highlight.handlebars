@@ -1,0 +1,25 @@
+<div class="highlight highlight--box mt40">
+    <div class="sidebarCaption__box text-center">Hits Movie : Squid Game</div>
+    <ul class="sidebarHighlight">
+        {{#eachIndex headline}}
+        {{#gt index compare = '1'}}
+        <li class="sidebarHighlight__item">
+            <a href="{{item.link}}" class="sidebarHighlight__wrap">
+                {{#eq index compare= 2}}
+                <img src="{{item.img}}{{index}}.jpg" class="sidebarHighlight__img" alt="" width="300" height="191"
+                    loading="lazy">
+                {{/eq}}
+                <div class="sidebarHighlight__box">
+                    <div class="highlightDetail display-flex aitems-center">
+                        <div class="highlightSubtitle">{{item.subtitle}}</div>
+                        <div class="highlightTime">9 menit yang lalu</div>
+                    </div>
+                    <h3 class="highlightTitle sidebarHighlight__title mt10">{{item.title}}</h3>
+                </div>
+            </a>
+        </li>
+        {{/gt}}
+        {{/eachIndex}}
+    </ul>
+    <a href="#" class="buttonOther--bottom text-center mt20">Lihat Lainnya</a>
+</div>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page=""}}
+
+<body>
+    <!-- header -->
+    {{> header page="" login=false}}
+    <!-- header -->
+    <!-- main -->
+    <main role="main" class="main">
+        <section class="container help">
+            <div class="articleCaption mt30">FAQ</div>
+            <div class="helpWrap close mt20">
+                <div class="helpTrig display-flex jcontent-between aitems-center">
+                    <div class="helpTitle mr10">1. Apa sih Aramula Community itu?</div>
+                    <button class="button helpShow -js-show" aria-label="Show hide Content"></button>
+                </div>
+                <div class="helpContent helpWrap__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi
+                    mattis id
+                    proin et cras id eu libero. Sit
+                    turpis massa, non suscipit in bibendum nec volutpat viverra.</div>
+            </div>
+            <div class="helpWrap close mt20">
+                <div class="helpTrig display-flex jcontent-between aitems-center">
+                    <div class="helpTitle mr10">2. Ketentuan konten di Aramula Community:</div>
+                    <button class="button helpShow -js-show" aria-label="Show hide Content"></button>
+                </div>
+                <div class="helpContent helpWrap__content">
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras id eu
+                            libero.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras id eu
+                            libero.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras id eu
+                            libero.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="helpWrap close mt20">
+                <div class="helpTrig display-flex jcontent-between aitems-center">
+                    <div class="helpTitle mr10">3. Peraturan menulis di Aramula Community:</div>
+                    <button class="button helpShow -js-show" aria-label="Show hide Content"></button>
+                </div>
+                <div class="helpContent helpWrap__content">
+                    <ol>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras id eu
+                            libero.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras id eu
+                            libero.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras id eu
+                            libero.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="helpWrap close mt20">
+                <div class="helpTrig display-flex jcontent-between aitems-center">
+                    <div class="helpTitle mr10">4. Lalu, apakah ada notifikasi bila karya tulismu sudah diterima atau
+                        belum?</div>
+                    <button class="button helpShow -js-show" aria-label="Show hide Content"></button>
+                </div>
+                <div class="helpContent helpWrap__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Mi
+                    mattis id
+                    proin et cras id eu libero. Sit
+                    turpis massa, non suscipit in bibendum nec volutpat viverra.</div>
+            </div>
+            <div class="helpWrap close mt20">
+                <div class="helpTrig display-flex jcontent-between aitems-center">
+                    <div class="helpTitle mr10">5. Apakah saya mendapatkan honor setelah saya menulis di Aramula
+                        Community?</div>
+                    <button class="button helpShow -js-show" aria-label="Show hide Content"></button>
+                </div>
+                <div class="helpContent helpWrap__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Mi
+                    mattis id
+                    proin et cras id eu libero. Sit
+                    turpis massa, non suscipit in bibendum nec volutpat viverra.</div>
+            </div>
+        </section>
+    </main>
+    {{> ads/sticky}}
+
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js}}
+    <script>
+        //show content faq
+        var accItem = document.getElementsByClassName('helpWrap');
+        var accHD = document.getElementsByClassName('-js-show');
+        for (i = 0; i < accHD.length; i++) {
+            accHD[i].addEventListener('click', toggleItem, false);
+        }
+
+        function toggleItem() {
+            var itemClass = this.parentNode.parentNode.className;
+
+            if (itemClass == 'helpWrap close mt20') {
+                // console.log('open');
+                for (i = 0; i < accItem.length; i++) {
+                    accItem[i].className = 'helpWrap close mt20';
+                    //accHD[i].innerHTML = "show";
+                    // console.log('close all');
+                }
+                this.parentNode.parentNode.className = 'helpWrap open active mt20';
+                //this.innerHTML = "hide";
+            } else {
+                this.parentNode.parentNode.className = 'helpWrap close mt20';
+                //this.innerHTML = "show";
+                // console.log('close this only');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

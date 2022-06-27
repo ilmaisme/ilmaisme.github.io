@@ -1,0 +1,45 @@
+<header class="header headerFixed">
+    <div class="headerContent display-flex aitems-center">
+        <div class="menu">
+            <label class="sr-only" for="menuToggle">Open navigation</label>
+            <input type="checkbox" class="menuToggle" name="check" id="menuToggle" aria-haspopup="true">
+            {{> header/burger}}
+            {{> header/menu}}
+        </div>
+        {{#eq page compare="Stories"}}
+        <div class="headerLogo headerLogo--stories text-center flex-init">
+            <img src="asset/images/ara-stories.png" alt="Ara Stories" width="134" height="24">
+        </div>
+        {{else}}
+        <div class="headerLogo text-center">
+            <a href="index.html">
+                <img src="asset/images/logo-aramula.png" alt="Aramula" width="134" height="22">
+            </a>
+        </div>
+        <a href="search.html" class="buttonSearch" aria-label="Search"><span class="icon icon-search"></span></a>
+        {{/eq}}
+    </div>
+    {{#eq page compare="Stories"}}
+    {{else}}
+    <nav class="nav">
+        <ul class="navList display-flex jcontent-center">
+            {{#each menu}}
+            <li class="navItem">
+                <a href="{{link}}" class="navLink{{#eq title compare=../page}} active{{/eq}}">{{title}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </nav>
+    {{#eq page compare="Profile"}}
+    <nav class="nav profileNav">
+        <ul class="profileNav__list display-flex jcontent-center">
+            {{#each menuprofile}}
+            <li class="navItem">
+                <a href="{{link}}" class="profileNav__link{{#eq title compare=../active}} active{{/eq}}">{{title}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </nav>
+    {{/eq}}
+    {{/eq}}
+</header>

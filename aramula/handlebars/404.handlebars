@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page=""}}
+
+<body>
+
+    <!-- header -->
+    {{> header}}
+    <!-- header -->
+
+    <!-- main -->
+    <main role="main">
+        <section class="container mt40">
+            <div class="flex-center dir-column">
+                <img src="asset/images/404.png" alt="" width="728" height="260">
+                <h1 class="helpCaption text-center mt20">Ups Halaman yang kamu cari tidak tersedia</h1>
+                <p class="helpText text-center mt10">Alamat yang anda masukan salah, tidak tersedia, atau sudah dihapus.
+                </p>
+                <a href="index.html" class="helpButton buttonPink buttonPink--big mt20">kembali ke halaman utama</a>
+            </div>
+            <div class="helpCol col-gd-740">
+                <div class="highlightCaption highlightCaption--mg mt30">Rekomendasi Artikel Untuk Kamu</div>
+                <div class="highlight">
+                    <ul class="highlightList row">
+                        {{#eachIndex headline}}
+                        {{#gt index compare = '1'}}
+                        <li class="highlightItem col-gd12-4 mt30">
+                            <a href="{{item.link}}" class="highlightImg__wrap" aria-label="{{item.title}}">
+                                <img src="{{item.img}}{{index}}.jpg" class="highlightImg" alt="" width="234"
+                                    height="164" loading="lazy">
+                            </a>
+                            <div class="highlightBox">
+                                <div class="highlightDetail display-flex aitems-center mt10">
+                                    <div class="highlightSubtitle">{{item.subtitle}}</div>
+                                    <div class="highlightTime">9 menit yang lalu</div>
+                                </div>
+                                <h2 class="highlightTitle mt10"><a href="{{item.link}}"
+                                        class="highlightLink">{{item.title}}</a></h2>
+                            </div>
+                        </li>
+                        {{/gt}}
+                        {{/eachIndex}}
+                        {{#eachIndex headline}}
+                        {{#gt index compare = '1'}}
+                        <li class="highlightItem col-gd12-4 mt30">
+                            <a href="{{item.link}}" class="highlightImg__wrap" aria-label="{{item.title}}">
+                                <img src="{{item.img}}{{index}}.jpg" class="highlightImg" alt="" width="234"
+                                    height="164" loading="lazy">
+                            </a>
+                            <div class="highlightBox">
+                                <div class="highlightDetail display-flex aitems-center mt10">
+                                    <div class="highlightSubtitle">{{item.subtitle}}</div>
+                                    <div class="highlightTime">9 menit yang lalu</div>
+                                </div>
+                                <h2 class="highlightTitle mt10"><a href="{{item.link}}"
+                                        class="highlightLink">{{item.title}}</a></h2>
+                            </div>
+                        </li>
+                        {{/gt}}
+                        {{/eachIndex}}
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- footer -->
+    {{> footer top=false}}
+
+    {{> js}}
+
+</body>
+
+</html>

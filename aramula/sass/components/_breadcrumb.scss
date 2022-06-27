@@ -1,0 +1,72 @@
+.breadcrumb {
+    &Caption {
+        margin-right: 16px;
+        @include font-pack(false, 24px, 600, 22px, $cl_pink);
+
+        &:before {
+            content: '';
+            border-right: 1px solid #FAB2E1;
+            height: 43px;
+            padding-left: 16px;
+            top: -8px;
+            right: -15px;
+            position: absolute;
+        }
+    }
+
+    &Link {
+        @include font-pack(false, 14px, 400, 22px, $cl_purple);
+
+        &:hover {
+            color: $cl_purple;
+        }
+
+        &.active {
+            color: $cl_pink;
+        }
+    }
+
+    &Item {
+        position: relative;
+
+        &:after {
+            content: ">";
+            padding-left: 4px;
+            padding-right: 4px;
+            vertical-align: middle;
+            color: $cl_purple;
+        }
+
+        &:last-child {
+            &:after {
+                content: none;
+            }
+        }
+    }
+
+    &Channel {
+
+        .breadcrumbLink {
+            margin-left: 10px;
+            margin-right: 10px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            @include font-pack(false, 16px, 500, 22px, #7D7D7D);
+
+            &.active {
+                border-bottom: 5px solid $cl_pink;
+                color: $cl_pink;
+            }
+            
+            &:hover{
+                color: $cl_pink;
+            }
+        }
+
+        .breadcrumbItem {
+            &:after {
+                content: none;
+            }
+        }
+    }
+}

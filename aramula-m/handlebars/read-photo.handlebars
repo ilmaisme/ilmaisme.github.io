@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page="Read" slick=true photozoom=true}}
+
+<body>
+    <!-- header -->
+    {{> header page="" login=false}}
+    <!-- header -->
+    <ul class="breadcrumb display-flex">
+        <li class="breadcrumbItem"><a href="#" class="breadcrumbLink">Home</a></li>
+        <li class="breadcrumbItem"><a href="#" class="breadcrumbLink active">Foto</a></li>
+    </ul>
+    <!-- main -->
+    <main role="main" class="main">
+        <section class="read container images-container">
+            <article>
+                <h1 class="readTitle text-center mt20">Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo
+                </h1>
+                <div class="readWriter text-center mt20"><b><a href="#">Alphonse Elric</a></b> | 11 September 2021 |
+                    12.23
+                    WIB</div>
+                {{> read/share}}
+                <div class="photoBig photoSlider mt20">
+                    <div class="js-photo-slider-for">
+                        {{#eachIndex headline}}
+                        {{!-- <div class="photoSlider__item">
+                            <div class="readImg__expand">
+                                <img src="{{item.img}}{{index}}.webp" class="photoSlider__img photoBig__img" alt=""
+                                    width="325" height="239" loading="lazy">
+                                <button class="button buttonExpand"><span class="icon icon-expand"></span></button>
+                            </div>
+                            <div class="readImg__thumb text-center mt10">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Sit et
+                                amet, parturient sed sodales. Ut est sed quis et adipiscing tristique. Maecenas vitae
+                                nulla tellus nisl volutpat. </div>
+                        </div> --}}
+
+                        <figure class="readFigure" itemprop="associatedMedia" itemscope
+                            itemtype="http://schema.org/ImageObject">
+                            <a href="{{item.img}}{{index}}.webp" itemprop="contentUrl" data-size="324x239">
+                                <img src="{{item.img}}{{index}}.webp" class="photoSlider__img photoBig__img"
+                                    itemprop="thumbnail" alt="" width="325" height="239" />
+                                <button class="button buttonExpand"><span class="icon icon-expand"></span></button>
+                            </a>
+                            <figcaption itemprop="caption description" class="readImg__thumb text-center mt10">
+                                {{item.title}}</figcaption>
+                        </figure>
+
+                        {{/eachIndex}}
+                        {{#eachIndex headline}}
+                        {{!-- <div class="photoSlider__item">
+                            <div class="readImg__expand">
+                                <img src="{{item.img}}{{index}}.webp" class="photoSlider__img photoBig__img" alt=""
+                                    width="325" height="239" loading="lazy">
+                                <button class="button buttonExpand"><span class="icon icon-expand"></span></button>
+                            </div>
+                            <div class="readImg__thumb text-center mt10">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Sit et
+                                amet, parturient sed sodales. Ut est sed quis et adipiscing tristique. Maecenas vitae
+                                nulla tellus nisl volutpat. </div>
+                        </div> --}}
+
+                        <figure class="readFigure" itemprop="associatedMedia" itemscope
+                            itemtype="http://schema.org/ImageObject">
+                            <a href="{{item.img}}{{index}}.webp" itemprop="contentUrl" data-size="324x239">
+                                <img src="{{item.img}}{{index}}.webp" class="photoSlider__img photoBig__img"
+                                    itemprop="thumbnail" alt="" width="325" height="239" />
+                                <button class="button buttonExpand"><span class="icon icon-expand"></span></button>
+                            </a>
+                            <figcaption itemprop="caption description" class="readImg__thumb text-center mt10">
+                                {{item.title}}</figcaption>
+                        </figure>
+
+                        {{/eachIndex}}
+                    </div>
+                </div>
+                <div class="photoSmall photoSlider mt10">
+                    <div class="js-photo-slider-nav">
+                        {{#eachIndex headline}}
+                        <div class="photoSlider__item">
+                            <div class="readImg__expand photoSmall__wrap">
+                                <img src="{{item.img}}{{index}}.webp" class="photoSlider__img photoSmall__img" alt=""
+                                    width="84" height="61" loading="lazy">
+                            </div>
+                        </div>
+                        {{/eachIndex}}
+                        {{#eachIndex headline}}
+                        <div class="photoSlider__item">
+                            <div class="readImg__expand photoSmall__wrap">
+                                <img src="{{item.img}}{{index}}.webp" class="photoSlider__img photoSmall__img" alt=""
+                                    width="84" height="61" loading="lazy">
+                            </div>
+                        </div>
+                        {{/eachIndex}}
+                    </div>
+                </div>
+                <div class="readContent mt20">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras id
+                        eu libero. Sit turpis massa, non suscipit in bibendum nec volutpat viverra. Facilisi
+                        faucibus facilisi pharetra pellentesque tristique. Lorem nullam placerat venenatis id
+                        pretium magna viverra cursus placerat. Nullam pulvinar nulla id nisl id at hendrerit
+                        massa.</p>
+                    <p>
+                        In ullamcorper quis justo, commodo tincidunt.
+                        <a href="#">Nunc tellus sed neque lorem donec</a> sem. Gravida ac sit tempor diam. Morbi
+                        sapien
+                        hendrerit fringilla vulputate arcu. Fringilla arcu tincidunt morbi risus malesuada eu
+                        nibh dui. Adipiscing eget bibendum sociis mauris ipsum. Commodo leo nec, molestie amet
+                        dui massa ornare metus, bibendum. Ornare posuere elementum maecenas aliquam aliquet.
+                        Elementum ac platea condimentum laoreet massa habitasse sagittis. Elit elementum, enim
+                        porttitor amet morbi.
+                    </p>
+                    <div class="readCaption mt30">Simak Video Pilihan Di Bawah Ini :</div>
+                    <div class="readContent__vid mt10">
+                        <iframe width="340" height="239" src="https://www.youtube.com/embed/JjAtkmSd46g?controls=0"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </article>
+            <div class="readTag mt20">
+                Tags :
+                <ul class="readTag__list display-flex">
+                    <li><a href="#" class="readTag__link">#Relationship</a></li>
+                    <li><a href="#" class="readTag__link">#Zodiak</a></li>
+                    <li><a href="#" class="readTag__link">#Love</a></li>
+                    <li><a href="#" class="readTag__link">#Tips</a></li>
+                </ul>
+            </div>
+            <div class="readWriter__box text-center mt20">
+                <img loading="lazy" src="https://api.lorem.space/image/face?w=80&amp;h=80&amp;hash=8B7BCDC2" alt=""
+                    class="readWriter__avatar" width="80" height="80">
+                <div class="readWriter__wrap">
+                    <div class="readWriter--big mt10">
+                        Alphonse Elric
+                    </div>
+                    <div class="readWriter__desc">
+                        Jurnalis di Aramula.com. Menulis konten di Aramula.com, Kompas.com, Bisnis.com, dll.
+                    </div>
+                    <a href="#" class="readWriter__more mt10">Lihat artikel saya lainnya</a>
+                    {{> read/social}}
+                </div>
+            </div>
+            <div class="col-offset-fluid">
+                <div class="readWrap">
+                    <div class="col-onset-fluid mt30">
+                        {{> read/share-footer}}
+                        <div class="commentCount mt30">
+                            0 Komentar
+                        </div>
+                    </div>
+                </div>
+                <div class="readWrap">
+                    <div class="col-onset-fluid mt20">
+                        <div class="readCaption--big">Apa Reaksimu?</div>
+                        {{> read/react}}
+                    </div>
+                </div>
+                <div class="col-onset-fluid mt20">
+                    <div class="readCaption--big">Tambahkan Komentar</div>
+                    <div class="commentCaption mt10">Silakan <a href="login.html" class="pink">Login</a> untuk
+                        menambahkan komentar.</div>
+                </div>
+            </div>
+            <div class="readCaption--big mt30">Berita Terkait</div>
+            {{> article}}
+            <button class="button buttonMore mt30">Index</button>
+        </section>
+    </main>
+    <!-- s: popup photo element -->
+    {{> read/pswp}}
+    <!-- e: popup photo element -->
+    <!-- s: popup report -->
+    {{> read/popup-report}}
+    <!-- e: popup report -->
+    {{> ads/sticky}}
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js page="Read" slick=true photozoom=true}}
+    <script>
+        // photo slider
+        $(document).ready(function () {
+            // slick carousel
+            $('.js-photo-slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: 0,
+                fade: !0,
+                asNavFor: '.js-photo-slider-nav'
+            });
+            $('.js-photo-slider-nav').slick({
+                dots: 0,
+                arrows: !0,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: !0,
+                speed: 1000,
+                autoplay: !0,
+                asNavFor: '.js-photo-slider-for',
+                focusOnSelect: true
+            });
+        });
+    </script>
+
+</body>
+
+</html>

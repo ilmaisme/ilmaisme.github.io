@@ -1,0 +1,257 @@
+.read {
+    &Title {
+        @include font-pack(false, 30px, 700, false, $cl_purple);
+    }
+
+    &Writer {
+        @include font-pack(false, 13px, 400, 22px, #5F5F5F);
+
+        &__box {
+            padding: 20px 30px;
+            border: 1px solid #FA7DCE;
+            border-radius: 15px;
+        }
+
+        &__desc {
+            @include font-pack(false, 14px, 500, 25px, #5F5F5F);
+        }
+
+        &--big {
+            @include font-pack(false, 18px, 600, 30px, #5F5F5F);
+        }
+
+        &__avatar {
+            aspect-ratio: 1/1;
+            width: 125px;
+            height: 125px;
+            border-radius: 100%;
+            margin-right: 20px;
+        }
+
+        &__more {
+            display: inline-block;
+            background: $cl_pink;
+            text-transform: uppercase;
+            border-radius: 15px;
+            padding: 6px 22px;
+            @include font-pack(false, 12px, 400, 22px, $cl_white);
+
+            &:hover {
+                color: $cl_white;
+            }
+        }
+
+        &__social {
+            @include font-pack(false, 12px, 500, 25px, #989898);
+
+            .icon {
+                width: 18px;
+                height: 18px;
+                filter: grayscale(100%);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+        }
+
+        &__link {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    &Img {
+        border-radius: 15px;
+
+        &__thumb {
+            @include font-pack(false, 13px, 400, 22px, #707070);
+        }
+
+        &__expand {
+            position: relative;
+        }
+
+        &__wrap {
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            &--left {
+                position: relative;
+                float: left;
+                max-width: 326px;
+                height: auto;
+                margin-top: 30px;
+                padding-right: 20px;
+                padding-bottom: 30px;
+            }
+
+            &--right {
+                position: relative;
+                float: right;
+                max-width: 326px;
+                height: auto;
+                margin-top: 30px;
+                padding-left: 20px;
+                padding-bottom: 30px;
+            }
+
+            video,
+            iframe {
+                max-width: 100%;
+                border-radius: 15px;
+                object-fit: cover;
+            }
+
+            .videoPlay {
+                position: relative;
+
+                .icon-play {
+                    pointer-events: none;
+                }
+            }
+        }
+
+    }
+
+    &Content {
+        @include font-pack(false, 15px, 500, 28px, #5F5F5F);
+
+        p {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: $cl_primary;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            margin-top: 0.83em;
+            margin-bottom: 0.83em;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 1.17em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            font-weight: bold;
+        }
+
+        h4,
+        pre {
+            font-size: 1em;
+            margin-top: 1.33em;
+            margin-bottom: 1.33em;
+        }
+
+        blockquote {
+            margin-top: 50px;
+            margin-bottom: 30px;
+            margin-left: 60px;
+            @include font-pack(false, 24px, 500, 40px, #5F5F5F);
+
+            &:before {
+                position: absolute;
+                content: open-quote;
+                margin-left: -60px;
+                margin-top: 20px;
+                @include font-pack(false, 120px, 400, 30px, $cl_pink);
+                color: $cl_pink;
+            }
+        }
+
+        ul,
+        ol {
+            padding-left: 30px;
+        }
+
+        ul {
+            list-style-type: disc;
+
+            li::marker {
+                color: #9B9B9B;
+            }
+        }
+
+        ol {
+            list-style-type: decimal;
+
+            li::marker {
+                color: #8E8E8E;
+            }
+        }
+
+        &__vid {
+
+            iframe,
+            video {
+                border-radius: 15px;
+            }
+        }
+
+        a {
+            color: $cl_pink;
+        }
+    }
+
+    &Other {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 10px;
+        margin-top: 20px;
+        @include font-pack(false, 17px, 700, 30px, $cl_primary);
+        font-style: italic;
+        border-left: 4px solid $cl_pink;
+
+        &__link {
+            color: $cl_pink;
+        }
+    }
+
+    &Caption {
+        @include font-pack(false, 17px, 700, 30px, $cl_primary);
+
+        &--big {
+            @extend .sidebarCaption;
+        }
+
+        &--mg {
+            margin-bottom: -10px;
+        }
+    }
+
+    &Tag {
+        @include font-pack(false, 14px, 400, 30px, #5F5F5F);
+
+        &__link {
+            padding: 4px 17px;
+            margin-right: 10px;
+            margin-top: 10px;
+            display: block;
+            border: 1px solid $cl_purple;
+            border-radius: 12px;
+            @include font-pack(false, 14px, 500, false, $cl_primary);
+
+            &:hover {
+                color: $cl_pink;
+            }
+        }
+    }
+
+    &Bottom {
+        padding-bottom: 30px;
+        border-bottom: 1px solid #DADADA;
+    }
+}

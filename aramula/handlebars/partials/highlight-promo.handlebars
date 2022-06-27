@@ -1,0 +1,34 @@
+<div class="highlight highlight--box highlight--promo mt40">
+    <div class="display-flex aitems-center">
+        <div class="display-flex dir-column">
+            <img src="asset/images/numpang-promo.png" alt="Numpang Promo" width="192" height="81" loading="lazy">
+            <a href="#" class="highlightMore buttonOther aself-center mt20">Lihat Lainnya</a>
+        </div>
+        <div class="highlightList row jcontent-center">
+            <div class="highlightSlide" id="spromo">
+                {{#eachIndex headline}}
+                {{#gt index compare = '1'}}
+                <div class="highlightItem">
+                    <a href="read-promo.html" class="highlightImg__wrap" aria-label="{{item.title}}">
+                        <img src="{{item.img}}{{index}}.jpg" class="highlightImg" alt="" width="233" height="145"
+                            loading="lazy">
+                    </a>
+                    <div class="highlightBox">
+                        <div class="highlightDetail display-flex aitems-center mt10">
+                            <div class="highlightSubtitle">{{item.subtitle}}</div>
+                            <div class="highlightTime">9 menit yang lalu</div>
+                        </div>
+                        <h2 class="highlightTitle mt10"><a href="read-promo.html" class="highlightLink">{{item.title}}</a>
+                        </h2>
+                    </div>
+                </div>
+                {{/gt}}
+                {{/eachIndex}}
+            </div>
+            <div class="highlightBottom">
+                <div class="highlightDots" id="dtpromo">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

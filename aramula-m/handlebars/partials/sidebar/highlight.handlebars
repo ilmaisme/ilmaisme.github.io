@@ -1,0 +1,27 @@
+<div class="highlight highlightBox mt30">
+    <div class="articleCaption__box text-center">Hits Movie : Squid Game</div>
+    <ul>
+        {{#eachIndex headline}}
+        {{#gt index compare = '1'}}
+        <li class="highlightBox__item">
+            <a href="{{item.link}}" class="highlightBox__link">
+                {{#eq index compare= 2}}
+                <div class="highlightBox__wrap">
+                    <img src="{{item.img}}{{index}}.webp" class="highlightBox__img" alt="" width="300" height="191"
+                        loading="lazy">
+                </div>
+                {{/eq}}
+                <div class="highlightBox__content">
+                    <div class="articleDetail display-flex aitems-center">
+                        <div class="articleSubtitle">{{item.subtitle}}</div>
+                        <div class="articleTime">9 menit yang lalu</div>
+                    </div>
+                    <h3 class="articleTitle highlightBox__title mt5">{{item.title}}</h3>
+                </div>
+            </a>
+        </li>
+        {{/gt}}
+        {{/eachIndex}}
+    </ul>
+    <a href="#" class="buttonOther text-center mt20">Lihat Lainnya</a>
+</div>

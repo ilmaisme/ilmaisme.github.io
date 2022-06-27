@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page=""}}
+
+<body>
+    <!-- header -->
+    {{> header page="Stories" login=false}}
+    <!-- header -->
+
+    <!-- main -->
+    <main role="main" class="main">
+        <section class="container">
+            <ul class="storiesRow row">
+                {{#eachIndex stories}}
+                <li class="storiesItem col-gd10-5">
+                    <a href="{{item.link}}" class="storiesLink{{#eq index compare= 0}} storiesVer1{{/eq}}">
+                        <img src="{{item.img}}{{index}}.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big{{#eq index compare= 0}} storiesVer1__box{{/eq}}">
+                            {{#eq item.subtitle compare=""}}{{else}}
+                            <div class="storiesSubtitle storiesSubtitle--big">{{item.subtitle}}</div>
+                            {{/eq}}
+                            <h4
+                                class="storiesTitle storiesTitle--big{{#eq index compare= 0}} storiesVer1__title storiesVer1__title--big{{/eq}} mt10">
+                                {{item.title}}
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                {{/eachIndex}}
+                {{#eachIndex stories}}
+                <li class="storiesItem col-gd10-5">
+                    <a href="{{item.link}}" class="storiesLink{{#eq index compare= 0}} storiesVer1{{/eq}}">
+                        <img src="{{item.img}}{{index}}.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big{{#eq index compare= 0}} storiesVer1__box{{/eq}}">
+                            {{#eq item.subtitle compare=""}}{{else}}
+                            <div class="storiesSubtitle storiesSubtitle--big">{{item.subtitle}}</div>
+                            {{/eq}}
+                            <h4
+                                class="storiesTitle storiesTitle--big{{#eq index compare= 0}} storiesVer1__title storiesVer1__title--big{{/eq}} mt10">
+                                {{item.title}}
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                {{/eachIndex}}
+                {{#eachIndex stories}}
+                <li class="storiesItem col-gd10-5">
+                    <a href="{{item.link}}" class="storiesLink{{#eq index compare= 0}} storiesVer1{{/eq}}">
+                        <img src="{{item.img}}{{index}}.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big{{#eq index compare= 0}} storiesVer1__box{{/eq}}">
+                            {{#eq item.subtitle compare=""}}{{else}}
+                            <div class="storiesSubtitle storiesSubtitle--big">{{item.subtitle}}</div>
+                            {{/eq}}
+                            <h4
+                                class="storiesTitle storiesTitle--big{{#eq index compare= 0}} storiesVer1__title storiesVer1__title--big{{/eq}} mt10">
+                                {{item.title}}
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                {{/eachIndex}}
+                {{#eachIndex stories}}
+                <li class="storiesItem col-gd10-5">
+                    <a href="{{item.link}}" class="storiesLink{{#eq index compare= 0}} storiesVer1{{/eq}}">
+                        <img src="{{item.img}}{{index}}.png" class="storiesImg" alt="" width="153" height="272"
+                            loading="lazy">
+                        <div class="storiesBox storiesBox--big{{#eq index compare= 0}} storiesVer1__box{{/eq}}">
+                            {{#eq item.subtitle compare=""}}{{else}}
+                            <div class="storiesSubtitle storiesSubtitle--big">{{item.subtitle}}</div>
+                            {{/eq}}
+                            <h4
+                                class="storiesTitle storiesTitle--big{{#eq index compare= 0}} storiesVer1__title storiesVer1__title--big{{/eq}} mt10">
+                                {{item.title}}
+                            </h4>
+                        </div>
+                    </a>
+                </li>
+                {{/eachIndex}}
+            </ul>
+            {{> paging active=false mt=10}}
+        </section>
+    </main>
+
+    <!-- footer -->
+    {{> footer page="Stories"}}
+
+    {{> js}}
+
+</body>
+
+</html>

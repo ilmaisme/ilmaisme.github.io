@@ -1,0 +1,132 @@
+.video {
+    &Img {
+        object-fit: cover;
+        object-position: center;
+
+        &__wrap {
+            position: relative;
+            display: block;
+        }
+    }
+
+    &Big {
+        height: 239px;
+
+        &__img {
+            width: 100%;
+            height: 239px;
+        }
+    }
+
+    &Small {
+
+        &__wrap {
+            position: relative;
+        }
+
+        &__item {
+            padding: 15px;
+        }
+
+        &__img {
+            width: 87px;
+            height: 87px;
+            border-radius: 15px;
+        }
+
+        &__title {
+            @include title_overflow(auto, 54px);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            @include font-pack(false, 14px, 600, false, false);
+        }
+    }
+
+    &Icon {
+        width: 35px;
+        height: 35px;
+
+        &:before {
+            width: 35px;
+            height: 35px;
+        }
+
+        &:after {
+            width: 17px;
+            height: 17px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &Row {
+        .slick-current {
+            .videoSmall__item {
+                background: $cl_pink;
+            }
+
+            .videoSmall__title,
+            .articleSubtitle {
+                color: $cl_white;
+            }
+
+            .userName,
+            .articleTime {
+                color: #F2AAE5;
+            }
+        }
+
+        .slick-vertical .slick-slide {
+            border: 0;
+        }
+    }
+
+    &Caption {
+        @include font-pack(false, 14px, 600, false, false);
+
+        &__wrap {
+            padding: 8px 15px;
+        }
+    }
+
+    &Btn {
+        position: relative;
+        @include font-pack(false, 12px, 500, false, false);
+
+        &:after {
+            position: absolute;
+            display: block;
+            content: '';
+            width: 10px;
+            height: 10px;
+            top: 50%;
+            right: 15px;
+            margin-top: -3px;
+            border-bottom: 1px solid #343434;
+            border-right: 1px solid #343434;
+            transform: rotate(45deg) translateY(-50%);
+            transition: all .4s ease-in-out;
+            transform-origin: 50% 0;
+        }
+    }
+
+    &Col {
+        display: block;
+        height: 0;
+        transition: height 1s ease-out;
+        transform: scaleY(0);
+
+        &.active {
+            height: auto;
+            transform: scaleY(1);
+            transform-origin: top;
+            transition: transform .4s ease;
+            border-bottom: 7px solid #DCDCDC;
+        }
+    }
+
+    &Play {
+        position: relative;
+    }
+}

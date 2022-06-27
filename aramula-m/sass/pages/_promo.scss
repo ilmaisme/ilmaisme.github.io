@@ -1,0 +1,67 @@
+.promo {
+    &Text {
+        margin-top: 10px;
+    }
+
+    &Box {
+        padding: 30px 17px;
+        border-radius: 15px;
+        border: 1px solid #9C9C9C;
+
+        &__title {
+            @include font-pack(false, 16px, 600, 28px, $cl_primary);
+        }
+
+        &__price {
+            @include font-pack(false, 14px, 700, 28px, $cl_pink);
+        }
+
+        &__content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+    &Item {
+        display: flex;
+        flex-direction: column;
+        width: 223px;
+        min-height: 381px;
+        padding: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 15px;
+        border: 1px solid #9E9E9E;
+    }
+
+    &Buy {
+        @extend .buttonPink--small;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        width: 100%;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    &Caption {
+        @include font-pack(false, 18px, 700, 26px, $cl_primary);
+    }
+
+    &List {
+        margin-left: -10px;
+        margin-right: -10px;
+
+        .promoBox__title {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            @include title_overflow(auto, 85px);
+        }
+    }
+
+    &Logo{
+        max-width: 234px;
+    }
+}

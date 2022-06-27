@@ -1,0 +1,17 @@
+<ul class="profileNav__list">
+    {{#each menuprofile}}
+    <li class="profileNav__item">
+        <a href="{{link}}" class="profileNav__link{{#eq title compare=../active}} active{{/eq}}{{#eq title compare="
+            Logout"}} profileNav__log{{/eq}} display-flex aitems-center">
+            <span class="icon {{icon}} profileNav__icon"></span>
+            {{title}}
+        </a>
+    </li>
+    {{/each}}
+    <li class="profileNav__item">
+        <a href="#" class="profileNav__link profileNav__log display-flex aitems-center">
+            <span class="icon icon-logout profileNav__icon"></span>
+            Logout
+        </a>
+    </li>
+</ul>

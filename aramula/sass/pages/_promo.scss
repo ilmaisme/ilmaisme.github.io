@@ -1,0 +1,67 @@
+.promo {
+    &Content {
+        margin-left: 20px;
+    }
+
+    &Box {
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid #9C9C9C;
+
+        &__title {
+            @include font-pack(false, 18px, 600, 28px, $cl_primary);
+        }
+
+        &__price {
+            @include font-pack(false, 18px, 700, 28px, $cl_pink);
+        }
+
+        &__content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+    &List {
+        .slick-prev {
+            left: 12px;
+            top: calc(50% - 40px);
+        }
+
+        .slick-next {
+            top: calc(50% - 20px);
+        }
+
+        .promoBox__title {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            @include title_overflow(auto, 85px);
+        }
+    }
+
+    &Item {
+        display: flex;
+        flex-direction: column;
+        width: 223px;
+        min-height: 418px;
+        padding: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 15px;
+        border: 1px solid #9E9E9E;
+    }
+
+    &Buy {
+        @extend .buttonPink--small;
+        width: 100%;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    &Caption {
+        @include font-pack(false, 24px, 700, false, $cl_primary);
+    }
+}
