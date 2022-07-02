@@ -1,38 +1,10 @@
 $(document).ready(function () {
-    //slider product's images
-    if ($('#prolist').is(':visible')) {
-        $('#prolist').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            fade: true,
-            infinite: true,
-            asNavFor: '#pronav'
-        });
-        $('#pronav').slick({
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            asNavFor: '#prolist',
-            dots: false,
-            centerMode: false,
-            infinite: true,
-            focusOnSelect: true
-        });
-    }
     //icon play toggle
     if ($('.videoPlay').is(':visible')) {
         $('.videoPlay').on('click', function () {
             $(this).find($('.icon-play')).toggle();
         });
     }
-
-    //select product's color
-    var pColor = $('#pColor').filter(':checked').val();
-    $('.readColor__val').html(pColor)
-    $(':radio[name="pColor"]').change(function () {
-        var pColor = $(this).filter(':checked').val();
-        $('.readColor__val').html(pColor)
-    });
 
     //select product's number
     var n = 1;
