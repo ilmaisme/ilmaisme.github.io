@@ -7,6 +7,7 @@ $(document).ready(function () {
     }
 
     //select product's number
+    /*
     var n = 1;
     var n_place = $('#readNumb');
     disableSubstract(n)
@@ -27,7 +28,7 @@ $(document).ready(function () {
         } else {
             $('#substract').removeClass('disable');
         }
-    }
+    }*/
 
     //click button Buy Now
     $('#buy').on('click', function () {
