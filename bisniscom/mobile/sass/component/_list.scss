@@ -1,0 +1,36 @@
+.list {
+    &Title {
+        font-family: "gothic";
+        font-size: 24px;
+        color: #999;
+        background: linear-gradient(90deg, #ebf0f7 0%, #f5f7fa 50.52%, #ebf0f6 100%);
+        border-radius: 10px;
+        margin: 15px 0;
+        padding: 13px 20px;
+        @include font-pack("gothic", 24px, $font-weight-normal, 1.2, #999);
+    }
+
+    &Other {
+
+        &__item {
+            min-width: 100%;
+            border-bottom: 1px solid #DEDEDE;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-bottom: 7px;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        &__link {
+            @include font-pack($font-arial, 16px, $font-weight-normal, 1.2, #222);
+
+            &:hover {
+                color: #08ACEA;
+                text-decoration: none;
+            }
+        }
+    }
+}
