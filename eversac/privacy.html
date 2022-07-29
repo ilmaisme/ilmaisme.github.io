@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Eversac">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>Eversac</title>
+    <link rel="shortcut icon" href="./asset/images/favicon.png">
+    <link rel="stylesheet" href="./asset/css/style.min.css" type="text/css">
+    <style>
+        @font-face {
+            font-family: 'Author';
+            src: local('Author Bold'), local('Author-Bold'),
+                url('asset/fonts/Author-Bold.woff2') format('woff2'),
+                url('asset/fonts/Author-Bold.woff') format('woff'),
+                url('asset/fonts/Author-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-display: swap;
+            font-style: normal;
+        }
+    </style>
+
+    <style>
+        @font-face {
+            font-family: 'Author';
+            src: local('Author Light'), local('Author-Light'),
+                url('asset/fonts/Author-Light.woff2') format('woff2'),
+                url('asset/fonts/Author-Light.woff') format('woff'),
+                url('asset/fonts/Author-Light.ttf') format('truetype');
+            font-weight: 300;
+            font-display: swap;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Author';
+            src: local('Author'), local('Author-Regular'),
+                url('asset/fonts/Author-Regular.woff2') format('woff2'),
+                url('asset/fonts/Author-Regular.woff') format('woff'),
+                url('asset/fonts/Author-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Author';
+            src: local('Author Medium'), local('Author-Medium'),
+                url('asset/fonts/Author-Medium.woff2') format('woff2'),
+                url('asset/fonts/Author-Medium.woff') format('woff'),
+                url('asset/fonts/Author-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-display: swap;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Author';
+            src: local('Author Semi-Bold'), local('Author-Semi-Bold'),
+                url('asset/fonts/Author-Semibold.woff2') format('woff2'),
+                url('asset/fonts/Author-Semibold.woff') format('woff'),
+                url('asset/fonts/Author-Semibold.ttf') format('truetype');
+            font-weight: 600;
+            font-display: swap;
+            font-style: normal;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="header load" id="header">
+        <div class="headerTop">
+            <div class="toplist display-flex">
+                <ul class="display-flex items-center">
+                    <li class="toplistItem">
+                        <a href="about-us.html">Our Story
+                        </a>
+                    </li>
+                    <li class="toplistItem">
+                        <a href="blog.html">Blog
+                        </a>
+                    </li>
+                    <li class="toplistItem">
+                        <a href="our-store.html">Our Store
+                        </a>
+                    </li>
+                    <li class="toplistItem">
+                        <a href="contact-us.html">Contact Us
+                        </a>
+                    </li>
+                </ul>
+                <ul class="display-flex">
+                    <li class="share">
+                        <a href="#" class="icon icon-social icon-fb" aria-label="facebook">
+                            <img src="./asset/images/icon-fb.svg" alt=""  width="22" height="22">
+                        </a>
+                    </li>
+                    <li class="share">
+                        <a href="#" class="icon icon-social icon-tw" aria-label="twitter">
+                            <img src="./asset/images/icon-tw.svg" alt=""  width="22" height="22">
+                        </a>
+                    </li>
+                    <li class="share">
+                        <a href="#" class="icon icon-social icon-ig" aria-label="instagram">
+                            <img src="./asset/images/icon-ig.svg" alt=""  width="22" height="22">
+                        </a>
+                    </li>
+                </ul></div>    </div>
+        <div class="headerWrap display-flex items-center">
+            <a href="index.html" class="logo">
+                <h1><img class="logoImg" src="./asset/images/logo-eversac.png" alt="Eversac" width="129" height="53"></h1>
+            </a>
+            <div class="menuWrap display-flex">
+                <div class="menu mobile-only">
+                    <label class="sr-only" for="menuToggle">Open navigation</label>
+                    <input type="checkbox" class="menuToggle" name="check" id="menuToggle" aria-haspopup="true">
+                    <svg class="ham hamRotate" viewBox="0 0 100 100" width="80">
+                        <path class="line top hamLine" d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013" />
+                        <path class="line middle hamLine" d="m 70,50 h -40" />
+                        <path class="line bottom hamLine"
+                            d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40" />
+                    </svg></div>            <nav class="nav display-flex items-center" aria-label="primarynavigation">
+                    <div class="navWrap">
+                        <ul class="navList display-flex">
+                            <li class="navItem">
+                                <div aria-haspopup="true" tabindex="0">
+                                    <a href="#" class="navOpen" id="navOpen">Categories
+                                        <span class="icon icon-chevron"></span>
+                                    </a>                    
+                                    <div class="navMob mobile-only" id="navMob"></div>
+                                </div>
+                            </li>
+                            <li class="navItem">
+                                <a href="promo.html" class="navLink" tabindex="-1">Promo
+                                    <span class="badge"></span>
+                                </a>
+                            </li>
+                            <li class="navItem">
+                                <a href="best.html" class="navLink" tabindex="-1">Best Seller
+                                </a>
+                            </li>
+                            <li class="navItem">
+                                <a href="new.html" class="navLink" tabindex="-1">New Item
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="searchbox mobile-only">
+                        <form action="#">
+                            <input type="text" name="" class="searchboxInput" aria-label="search" placeholder="Cari Produk" value=""
+                                inputmode="search">
+                            <button type="submit" class="button icon icon-search align-center" aria-label="search">
+                                <img src="./asset/images/icon-search.svg" alt="" width="12" height="12" class="icon-search-img">
+                            </button>
+                        </form>
+                    </div></nav>            <div class="headerRight display-flex items-center">
+                    <div class="searchbox desktop-only">
+                        <form action="#">
+                            <input type="text" name="" class="searchboxInput" aria-label="search" placeholder="Cari Produk" value=""
+                                inputmode="search">
+                            <button type="submit" class="button icon icon-search align-center" aria-label="search">
+                                <img src="./asset/images/icon-search.svg" alt="" width="12" height="12" class="icon-search-img">
+                            </button>
+                        </form>
+                    </div>                <a class="headerWishlist" href="profile-fav.html" aria-label="wishlist">
+                        <img src="./asset/images/icon-love.svg" class="icon icon-love" alt="" width="32" height="32"></img>
+                    </a>
+                    <a class="headerLink" href="register.html">Login/Register</a>
+                </div>
+            </div>
+        </div>
+        <div class="headerBottom" id="hBottom">
+            <ul class="navSub display-flex" id="navSub">
+                <li class="navSub__item">
+                    <a href="#" class="navSub__link">All</a>
+                </li>
+                <li class="navSub__item open">
+                    <a href="#" class="navSub__link">Backpack</a>
+                    <ul class="navSeries">
+                        <li class="navSeries__item">
+                            <a href="#" class="navSeries__link">Colorfull Series
+                                <span class="icon icon-chevron icon-chevron-right"></span>
+                            </a>
+                            <ul class="navCateg">
+                                <li>
+                                    <a href="#" class="navCateg__link">Oval Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Flap Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Basic Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Skid Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Twin Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Grip Backpack
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navSeries__item">
+                            <a href="#" class="navSeries__link">Wave Series
+                                <span class="icon icon-chevron icon-chevron-right"></span>
+                            </a>
+                        </li>
+                        <li class="navSeries__item">
+                            <a href="#" class="navSeries__link">Basic Styles
+                                <span class="icon icon-chevron icon-chevron-right"></span>
+                            </a>
+                        </li>
+                        <li class="navSeries__item">
+                            <a href="#" class="navSeries__link">Multi Styles
+                                <span class="icon icon-chevron icon-chevron-right"></span>
+                            </a>
+                            <ul class="navCateg">
+                                <li>
+                                    <a href="#" class="navCateg__link">Oval Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Flap Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Basic Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Skid Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Twin Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Grip Backpack
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navSeries__item">
+                            <a href="#" class="navSeries__link">Urban Styles
+                                <span class="icon icon-chevron icon-chevron-right"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navSub__item">
+                    <a href="#" class="navSub__link">Bags</a>
+                </li>
+                <li class="navSub__item">
+                    <a href="#" class="navSub__link">Accesories</a>
+                </li>
+                <li class="navSub__item open">
+                    <a href="#" class="navSub__link">Collections</a>
+                    <ul class="navSeries">
+                        <li class="navSeries__item">
+                            <a href="#" class="navSeries__link">Colorfull Series
+                                <span class="icon icon-chevron icon-chevron-right"></span>
+                            </a>
+                            <ul class="navCateg">
+                                <li>
+                                    <a href="#" class="navCateg__link">Oval Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Flap Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Basic Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Skid Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Twin Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Grip Backpack
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navSeries__item">
+                            <a href="#" class="navSeries__link">Wave Series
+                                <span class="icon icon-chevron icon-chevron-right"></span>
+                            </a>
+                        </li>
+                        <li class="navSeries__item">
+                            <a href="#" class="navSeries__link">Basic Styles
+                                <span class="icon icon-chevron icon-chevron-right"></span>
+                            </a>
+                        </li>
+                        <li class="navSeries__item">
+                            <a href="#" class="navSeries__link">Multi Styles
+                                <span class="icon icon-chevron icon-chevron-right"></span>
+                            </a>
+                            <ul class="navCateg">
+                                <li>
+                                    <a href="#" class="navCateg__link">Oval Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Flap Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Basic Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Skid Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Twin Backpack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navCateg__link">Grip Backpack
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navSeries__item">
+                            <a href="#" class="navSeries__link">Urban Styles
+                                <span class="icon icon-chevron icon-chevron-right"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="js-nav-offset"></div>    <main role="main">
+        <div class="container">
+            <div class="breadcrumb">
+                <ul class="display-flex">
+                    <li class="breadcrumbItem"><a href="index.html" class="breadcrumbLink">Home</a></li>
+                    <li class="breadcrumbItem active"><a href="#" class="breadcrumbLink">Privacy Policy</a></li>
+                </ul>
+            </div>            <h1 class="titleCaption titleCaption__page">Privacy Policy</h1>
+            <div class="static">
+                <p><strong>PENGUMPULAN DAN PENGGUNAAN INFORMASI PRIBADI</strong><br><br>PT Gramedia Asri Media
+                    ("Gramedia.com"), adalah salah satu perusahaan dalam Grup Kompas Gramedia, informasi pribadi Anda
+                    adalah
+                    perhatian Kami. Kami ingin memastikan bahwa setiap informasi yang kami kumpulkan adalah upaya Kami
+                    untuk
+                    memberikan informasi, konten, dan pengalaman yang paling bermanfaat bagi Anda. Kami berkomitmen
+                    untuk
+                    melindungi informasi pribadi Pelanggan, termasuk Anda, pengunjung media daring, vendor, mitra, dan
+                    banyak pemilik kepentingan terkait lainnya.<br><br>Informasi Pribadi berarti data atau informasi
+                    mengenai diri Anda yang dapat diidentifikasi secara pribadi dan diperoleh melalui media daring Kami
+                    (Aplikasi, Situs web, dll) dan media luring kami (program, toko atau hotel milik Kami, dll), seperti
+                    nama, alamat, tanggal lahir, tempat kelahiran, pekerjaan, tempat bekerja, identitas pribadi, dokumen
+                    identitas lainnya, nomor telepon, alamat surel, dan informasi lainnya yang dapat mengidentifikasi
+                    Anda
+                    sebagai pengguna.<br><br>Anda mungkin akan diminta memberikan informasi pribadi kapan pun Anda
+                    menghubungi Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia. Gramedia
+                    Asri
+                    Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia dapat saling berbagi informasi pribadi
+                    tersebut dan menggunakannya sesuai Kebijakan Privasi ini. Mereka juga dapat menggabungkannya dengan
+                    informasi lain untuk menyediakan dan menyempurnakan produk, layanan, konten, serta iklan. Anda tidak
+                    perlu memberikan informasi pribadi yang kami minta, namun jika demikian, dalam banyak kasus kami
+                    tidak
+                    dapat menyediakan produk atau layanan maupun menjawab pertanyaan Anda.<br><br></p>
+                <hr>
+                <p><br><strong>RUANG LINGKUP</strong><br><br>Kebijakan Privasi ini berlaku untuk semua informasi pribadi
+                    di
+                    seluruh produk/layanan Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia
+                    dan
+                    mitra bisnis Kompas Gramedia (vendor, mitra, dan pemangku kepentingan lainnya). Kebijakan Privasi
+                    ini
+                    juga berlaku untuk setiap transaksi dan kegiatan Pelanggan dalam layanan Kami. Mohon lihat produk,
+                    layanan, dan anak usaha yang merupakan Afiliasi dari Kami di sini (<a
+                        href="https://www.kompasgramedia.com" aria-invalid="true">www.kompasgramedia.com</a>).<br><br>
+                </p>
+                <hr>
+                <p><br><strong>INFORMASI PRIBADI YANG KAMI KUMPULKAN</strong><br><br>Berikut adalah contoh jenis
+                    informasi
+                    pribadi yang dapat dikumpulkan Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas
+                    Gramedia beserta cara menggunakannya.<br><br></p>
+                <ul>
+                    <li style="list-style-type: disc;">Saat Anda membuat akun Gramedia.com, membeli produk, menghubungi
+                        kami, atau mengikuti survei online, kami dapat mengumpulkan berbagai informasi, termasuk nama
+                        dan
+                        informasi kontak (telepon, surel), alamat korespondensi, nomor telepon, alamat email, preferensi
+                        kontak, tanggal lahir, tempat lahir, Demografi: jenis kelamin, pekerjaan, informasi identifikasi
+                        pribadi (KTP, SIM, Paspor, dan identifikasi pribadi lainnya), informasi kontak darurat,
+                        informasi
+                        profil media sosial, informasi pendidikan dan profesional, informasi kartu kredit, dan informasi
+                        pembayaran.</li>
+                    <li style="list-style-type: disc;">Untuk Kami dapat memberikan pelayanan yang lebih baik, Kami juga
+                        mengumpulkan beberapa informasi ketika Anda menggunakan Aplikasi, termasuk informasi tentang
+                        perangkat(-perangkat) yang Anda gunakan, informasi tentang penggunaan layanan, cookies, data
+                        otentikasi dan informasi lokasi.</li>
+                    <li style="list-style-type: disc;">Data yang telah direkam melalui salah satu layanan dibawah
+                        afiliasi
+                        Kami dalam Grup Kompas Gramedia juga akan digunakan untuk meningkatkan pengalaman Pelanggan di
+                        semua
+                        unit bisnis Kami.</li>
+                    <li style="list-style-type: disc;">Bila Anda berbagi konten dengan keluarga dan teman menggunakan
+                        produk
+                        Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia, mengirim kupon
+                        hadiah
+                        dan produk, atau mengundang orang lain untuk berpartisipasi dalam layanan maupun forum Gramedia
+                        Asri
+                        Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia, maka Gramedia Asri Media atau
+                        perusahaan afiliasinya dalam Grup Kompas Gramedia dapat mengumpulkan informasi yang Anda berikan
+                        tentang mereka seperti nama, alamat korespondensi, alamat email, dan nomor telepon. Gramedia
+                        Asri
+                        Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia akan menggunakan informasi tersebut
+                        untuk memenuhi permintaan Anda, menyediakan produk maupun layanan yang relevan, atau untuk
+                        mencegah
+                        penipuan.</li>
+                    <li style="list-style-type: disc;">Kami dapat meminta tanda pengenal yang dikeluarkan pemerintah
+                        dalam
+                        kondisi tertentu termasuk bila diwajibkan berdasarkan hukum.</li>
+                </ul>
+                <p>&nbsp;</p>
+                <hr>
+                <p><br><strong>PENGGUNAAN INFORMASI PRIBADI</strong><br><br></p>
+                <ul>
+                    <li style="list-style-type: disc;">Informasi pribadi yang kami kumpulkan memungkinkan kami terus
+                        mengabari Anda tentang pemberitahuan produk terkini, penerbitan produk, penargetan ulang,
+                        promosi,
+                        penawaran yang dipersonalisasi, pengembangan layanan, pembaruan perangkat lunak, dan acara
+                        mendatang
+                        Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia. Informasi tidak
+                        hanya
+                        terbatas pada produk / layanan yang telah dibeli atau gunakan, tetapi juga produk / layanan dari
+                        Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia lain yang sesuai
+                        dengan
+                        kebutuhan Anda. Kami dapat menggunakan informasi pribadi Anda dan transaksi untuk menganalisis
+                        perilaku pelanggan dan menggunakannya untuk memberikan layanan / pengalaman yang lebih baik bagi
+                        Anda. Jika tidak ingin disertakan lagi dalam milis kami, Anda dapat keluar kapan pun dengan
+                        memperbarui preferensi.</li>
+                    <li style="list-style-type: disc;">Kami juga menggunakan informasi pribadi untuk membantu membuat,
+                        mengembangkan, mengoperasikan, memberikan, dan meningkatkan produk, layanan, konten, dan iklan
+                        kami,
+                        serta untuk mencegah kehilangan dan penipuan.</li>
+                    <li style="list-style-type: disc;">Kami dapat menggunakan informasi pribadi Anda, termasuk tanggal
+                        lahir, untuk melakukan verifikasi identitas, membantu mengidentifikasi pengguna, atau menentukan
+                        layanan yang tepat. Misalnya, kami dapat menggunakan tanggal lahir untuk menentukan usia
+                        pemegang
+                        akun.</li>
+                    <li style="list-style-type: disc;">Kami menggunakan informasi pribadi seperti nama, nomor telepon,
+                        alamat surel, alamat tempat tinggal, dan perusahaan/institusi untuk dapat berhubungan dengan
+                        pelanggan, seperti menghubungi tentang pesanan yang dipesan, pendaftaran suatu kegiatan,
+                        keanggotaan, dan jenis transaksi lainnya. Kami menggunakan data keuangan atau kartu kredit dan
+                        informasi pembayaran untuk memproses pesanan dan mungkin perlu untuk membagikan beberapa
+                        informasi
+                        ini dengan layanan pengiriman, lembaga kliring, dan pihak ketiga lainnya untuk menyelesaikan
+                        transaksi.</li>
+                    <li style="list-style-type: disc;">Kami dapat menggunakan informasi pribadi Anda untuk memberikan
+                        dukungan atau layanan lain yang terkait dengan transaksi yang telah dilakukan pelanggan, seperti
+                        keluhan pelanggan, panggilan pelanggan, konfirmasi pelanggan terkait transaksi, dan banyak
+                        layanan
+                        pelanggan lainnya yang terkait dengan transaksi tersebut.</li>
+                    <li style="list-style-type: disc;">Kami akan menggunakan informasi non-personally-identifiable
+                        attributes and cookies Anda untuk menampilkan iklan yang paling sesuai dengan Anda.</li>
+                    <li style="list-style-type: disc;">Kami dapat membagikan informasi pribadi Anda kepada pihak ketiga
+                        yang
+                        berkaitan dengan produk/layanan dari Gramedia Asri Media atau perusahaan afiliasinya dalam Grup
+                        Kompas Gramedia yang bersentuhan dengan pelanggan. Kami memastikan bahwa pihak ketiga ini
+                        dipilih
+                        dengan kehati-hatian dan berkewajiban untuk menjaga data Anda tetap aman. Kami juga membagikan
+                        informasi Anda dengan pihak ketiga yang menurut kami dapat memberikan konten, produk-produk,
+                        atau
+                        layanan yang sesuai dengan minat Anda.</li>
+                    <li style="list-style-type: disc;">Kami menggunakan informasi pribadi untuk mencegah aktifitas
+                        ilegal
+                        yang potensial dan menegakkan Syarat dan Ketentuan Kami. Kami juga menggunakan bermacam-macam
+                        sistem
+                        teknologi untuk mendeteksi aktifitas yang tidak lazim untuk penyalahgunaan, seperti spam.</li>
+                    <li style="list-style-type: disc;">Dari waktu ke waktu, kami dapat menggunakan informasi pribadi
+                        untuk
+                        mengirimi Anda pemberitahuan penting, seperti komunikasi tentang pembelian serta perubahan
+                        persyaratan, ketentuan, dan kebijakan kami. Karena informasi ini penting untuk berinteraksi
+                        dengan
+                        Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia, Anda tidak dapat
+                        berhenti menerima komunikasi ini.</li>
+                    <li style="list-style-type: disc;">Kami juga dapat menggunakan informasi pribadi untuk tujuan
+                        internal
+                        seperti audit, analisis data, dan penelitian guna menyempurnakan produk-produk Gramedia Asri
+                        Media
+                        atau perusahaan afiliasinya dalam Grup Kompas Gramedia, layanan, dan komunikasi pelanggan.</li>
+                    <li style="list-style-type: disc;">Jika Anda mengikuti undian berhadiah, kontes, atau promosi
+                        serupa,
+                        kami dapat menggunakan informasi yang Anda sediakan untuk mengelola program tersebut.</li>
+                    <li style="list-style-type: disc;">Dari waktu ke waktu, Kami dapat meminta Anda untuk memberikan
+                        saran-saran, agar produk/layanan lebih sesuai dengan yang Anda butuhkan dan minati (sebagai
+                        contoh
+                        lewat survei, riset atas penggunaan, diskusi kelompok).</li>
+                </ul>
+                <p>&nbsp;</p>
+                <hr>
+                <p><br><strong>PENGUMPULAN DAN PENGGUNAAN INFORMASI NON-PRIBADI</strong><br><br>Kami juga mengumpulkan
+                    data
+                    di formulir yang secara terpisah tidak memungkinkan asosiasi langsung dengan individu tertentu. Kami
+                    dapat mengumpulkan, menggunakan, mengalihkan, dan mengungkapkan informasi non-pribadi untuk tujuan
+                    apa
+                    pun. Berikut adalah beberapa contoh informasi non-pribadi yang kami kumpulkan beserta cara
+                    menggunakannya:<br><br></p>
+                <ul>
+                    <li style="list-style-type: disc;">Kami dapat mengumpulkan informasi seperti pekerjaan, bahasa, kode
+                        pos, kode area, pengenal perangkat unik, URL pengarah, lokasi, dan zona waktu saat produk
+                        Gramedia
+                        Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia digunakan agar kami dapat
+                        memahami
+                        perilaku pelanggan secara lebih baik dan menyempurnakan produk, layanan, dan iklan.</li>
+                    <li style="list-style-type: disc;">Kami dapat mengumpulkan informasi tentang aktivitas pelanggan di
+                        situs web kami, layanan dan Gramedia.com, serta dari berbagai produk dan layanan lainnya.
+                        Informasi
+                        ini digabungkan dan digunakan untuk membantu kami menyediakan informasi yang lebih bermanfaat
+                        kepada
+                        pelanggan serta untuk memahami bagian yang paling menarik dari situs web, produk, dan layanan
+                        kami.
+                        Data gabungan akan dianggap sebagai informasi non-pribadi untuk tujuan Kebijakan Privasi ini.
+                    </li>
+                    <li style="list-style-type: disc;">Kami dapat mengumpulkan dan menyimpan rincian tentang cara Anda
+                        menggunakan layanan kami, termasuk permintaan pencarian. Informasi ini dapat digunakan untuk
+                        meningkatkan relevansi hasil yang disediakan layanan kami. Kecuali dalam kasus tertentu untuk
+                        memastikan kualitas layanan kami melalui Internet, informasi tersebut tidak akan dikaitkan
+                        dengan
+                        alamat IP Anda.</li>
+                    <li style="list-style-type: disc;">Kami dapat mengumpulkan data tentang cara Anda menggunakan
+                        perangkat
+                        dan aplikasi untuk membantu pengembang aplikasi menyempurnakan aplikasi mereka.</li>
+                </ul>
+                <p><br>Jika kami menggabungkan informasi non-pribadi dengan informasi pribadi, maka informasi gabungan
+                    akan
+                    ditangani sebagai informasi pribadi selama tetap dalam gabungan.<br><br></p>
+                <hr>
+                <p><br><strong>PENYIMPANAN</strong><br><br>Gramedia Asri Media atau perusahaan afiliasinya dalam Grup
+                    Kompas
+                    Gramedia akan menyimpan informasi pribadi selama data itu dibutuhkan untuk memenuhi tujuan data itu
+                    dikumpulkan, tujuan hukum atau bisnis, atau dibutuhkan oleh hukum. Kami biasanya akan menyimpan
+                    informasi pribadi sampai 10 tahun semenjak informasi pribadi dikumpulkan.<br><br></p>
+                <hr>
+                <p><br><strong>COOKIE DAN TEKNOLOGI LAINNYA</strong><br><br>Situs web, layanan online, aplikasi
+                    interaktif,
+                    pesan email, dan iklan Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia
+                    mungkin menggunakan cookie dan teknologi lain seperti pixel tag dan web beacon. Teknologi ini
+                    membantu
+                    kami memahami perilaku pengguna secara lebih baik, memberi tahu kami bagian di situs web yang
+                    dikunjungi
+                    orang, serta memfasilitasi dan mengukur efektivitas iklan maupun pencarian web. Kami akan menangani
+                    informasi yang dikumpulkan cookie dan teknologi lainnya sebagai informasi non-pribadi. Namun, selama
+                    alamat IP (Protokol Internet) atau pengenal serupa dianggap informasi pribadi oleh undang-undang
+                    setempat, maka kami juga akan menangani pengenal tersebut sebagai informasi pribadi. Selain itu,
+                    selama
+                    informasi non-pribadi digabungkan dengan informasi pribadi, kami akan menangani informasi gabungan
+                    sebagai informasi pribadi untuk tujuan Kebijakan Privasi ini.<br><br>Gramedia Asri Media atau
+                    perusahaan
+                    afiliasinya dalam Grup Kompas Gramedia bersama mitranya menggunakan cookie dan teknologi lain dalam
+                    layanan iklan bergerak untuk mengontrol frekuensi Anda melihat iklan tertentu, menampilkan iklan
+                    yang
+                    sesuai dengan minat Anda, dan mengukur efektivitas kampanye iklan. Jika Anda tidak ingin menerima
+                    iklan
+                    dengan tingkat relevansi ini di perangkat bergerak, Anda dapat berhenti menerima iklan dengan
+                    menghubungi kami. Jika berhenti, Anda akan terus menerima iklan bergerak dalam jumlah sama, namun
+                    mungkin kurang relevan karena tidak didasarkan pada minat Anda. Anda mungkin masih dapat melihat
+                    iklan
+                    terkait konten pada halaman web, dalam aplikasi, atau berdasarkan informasi non-pribadi
+                    lainnya.<br><br>Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia bersama
+                    mitra
+                    kami juga menggunakan cookie dan teknologi lainnya untuk mengingat informasi pribadi saat Anda
+                    menggunakan situs web, layanan online, dan aplikasi kami. Dalam hal ini, tujuan kami adalah membuat
+                    pengalaman Anda bersama Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia
+                    menjadi lebih nyaman dan pribadi. Misalnya, dengan mengetahui nama depan memungkinkan kami
+                    memberikan
+                    sambutan saat Anda mengunjungi Gramedia.com. Dengan mengetahui negara dan bahasa Anda (dan sekolah
+                    Anda
+                    jika Anda seorang pendidik) akan membantu kami menghadirkan pengalaman berbelanja yang lebih pribadi
+                    dan
+                    bermanfaat. Dengan mengetahui seseorang yang menggunakan komputer maupun perangkat Anda telah
+                    berbelanja
+                    produk atau menggunakan layanan tertentu akan membantu kami membuat iklan dan komunikasi email lebih
+                    relevan dengan minat Anda. Dan mengetahui informasi kontak Anda, pengenal perangkat keras, dan
+                    informasi
+                    tentang komputer atau perangkat Anda membantu kami mempersonalisasikan dan memberikan layanan
+                    pelanggan
+                    yang lebih baik untuk Anda.<br><br>Jika Anda ingin menon-aktifkan cookie, hubungi penyedia untuk
+                    mengetahui cara menon-aktifkan cookie. Perlu diketahui bahwa fitur tertentu di situs web Gramedia
+                    Asri
+                    Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia tidak akan tersedia setelah cookie
+                    dinon-aktifkan.<br><br>Sama halnya seperti kebanyakan layanan Internet, kami mengumpulkan beberapa
+                    informasi secara otomatis dan menyimpannya di file log. Informasi ini mencakup alamat IP (Protokol
+                    Internet), jenis dan bahasa browser, ISP (penyedia layanan Internet), situs web dan aplikasi arahan
+                    dan
+                    keluar, sistem operasi, label tanggal/waktu, serta data clickstream.<br><br>Kami menggunakan
+                    informasi
+                    ini untuk memahami dan menganalisis tren, menjalankan situs, mempelajari perilaku pengguna di situs,
+                    menyempurnakan produk dan layanan kami, serta mengumpulkan informasi demografis tentang basis
+                    pengguna
+                    kami secara keseluruhan. Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia
+                    dapat menggunakan informasi ini dalam pemasaran dan layanan iklan kami.<br><br>Di sejumlah pesan
+                    email,
+                    kami menggunakan "URL klik per tayang" yang terhubung ke konten di situs web Gramedia Asri Media
+                    atau
+                    perusahaan afiliasinya dalam Grup Kompas Gramedia. Saat pelanggan mengklik salah satu URL tersebut,
+                    mereka akan melewati server web terpisah sebelum membuka halaman tujuan di situs web kami. Kami
+                    melacak
+                    data klik per tayang tersebut untuk membantu menentukan minat tentang topik tertentu dan mengukur
+                    efektivitas komunikasi kami dengan pelanggan. Jika Anda tidak ingin dilacak dengan cara ini, jangan
+                    klik
+                    link teks atau grafis yang tercantum dalam pesan e-mail.<br><br>Gramedia Asri Media atau perusahaan
+                    afiliasinya dalam Grup Kompas Gramedia dapat menggunakan watermark berisi Informasi Pribadi dan
+                    Informasi Non-Pribadi Anda untuk mencegah penggunaan produk, layanan, dan konten ilegal yang
+                    melanggar
+                    hak-hak pihak lain.<br><br>Pixel tag memungkinkan kami mengirim pesan email dalam format yang dapat
+                    dibaca pelanggan, dan memberi tahu kami saat email tersebut telah dibuka. Kami dapat menggunakan
+                    informasi ini untuk mengurangi atau menghilangkan pesan yang dikirim kepada pelanggan.<br><br></p>
+                <hr>
+                <p><br><strong>PENGUNGKAPAN KEPADA PIHAK KETIGA</strong><br><br>Terkadang Gramedia Asri Media atau
+                    perusahaan afiliasinya dalam Grup Kompas Gramedia dapat memberikan informasi pribadi tertentu kepada
+                    mitra strategis yang bekerja sama dengan Gramedia Asri Media atau perusahaan afiliasinya dalam Grup
+                    Kompas Gramedia untuk menyediakan produk dan layanan, atau membantu Gramedia Asri Media atau
+                    perusahaan
+                    afiliasinya dalam Grup Kompas Gramedia memasarkan kepada pelanggan. Informasi pribadi hanya akan
+                    diberikan untuk menyediakan atau menyempurnakan produk, layanan, maupun iklan kami; dan tidak akan
+                    diberikan kepada pihak ketiga untuk tujuan pemasaran mereka.<br><br></p>
+                <hr>
+                <p><br><strong>PENYEDIA LAYANAN</strong><br><br>Gramedia Asri Media atau perusahaan afiliasinya dalam
+                    Grup
+                    Kompas Gramedia berbagi informasi pribadi dengan perusahaan yang memberikan layanan seperti
+                    pemrosesan
+                    informasi, perpanjangan kredit, pemenuhan pesanan pelanggan, penyediaan produk kepada Anda,
+                    pengelolaan
+                    maupun penyempurnaan data pelanggan, penyediaan layanan pelanggan, penilaian minat Anda atas produk
+                    maupun layanan kami, dan pelaksanaan penelitian pelanggan atau survei kepuasan. Perusahaan tersebut
+                    wajib melindungi informasi Anda dan mungkin berlokasi di mana pun Gramedia Asri Media atau
+                    perusahaan
+                    afiliasinya dalam Grup Kompas Gramedia beroperasi.<br><br></p>
+                <hr>
+                <p><br><strong>LAINNYA</strong><br><br>Undang-undang, proses hukum, litigasi, dan/atau permintaan dari
+                    lembaga publik maupun pemerintah di dalam atau luar negara domisili Anda mungkin mengharuskan
+                    Gramedia
+                    Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia mengungkapkan informasi pribadi
+                    Anda.
+                    Kami juga dapat mengungkapkan informasi tentang Anda jika kami menilai bahwa pengungkapan untuk
+                    tujuan
+                    keamanan nasional, penegakan hukum, atau masalah lain demi kepentingan publik harus atau perlu
+                    dilakukan.<br><br>Kami juga dapat mengungkapkan informasi tentang Anda jika kami menilai bahwa
+                    pengungkapan tersebut dianggap perlu untuk menegakkan persyaratan dan ketentuan kami atau melindungi
+                    operasional kami maupun pengguna. Selain itu, jika terjadi reorganisasi, merger, atau penjualan,
+                    kami
+                    dapat mengalihkan setiap dan semua informasi pribadi yang kami kumpulkan ke pihak ketiga
+                    terkait.<br><br></p>
+                <hr>
+                <p><br><strong>&gt;PERLINDUNGAN INFORMASI PRIBADI</strong><br><br>Gramedia Asri Media atau perusahaan
+                    afiliasinya dalam Grup Kompas Gramedia menangani keamanan informasi pribadi Anda dengan sangat
+                    serius.
+                    Layanan online Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia seperti
+                    Gramedia.com, Aplikasi Gramedia.com, dan layanan lainnya melindungi informasi pribadi Anda selama
+                    pengalihan menggunakan enkripsi, misalnya TLS (Transport Layer Security).<br><br>Ketika Anda
+                    menggunakan
+                    sejumlah produk, layanan, atau aplikasi Gramedia Asri Media atau perusahaan afiliasinya dalam Grup
+                    Kompas Gramedia, maupun memposting di forum Gramedia Asri Media atau perusahaan afiliasinya dalam
+                    Grup
+                    Kompas Gramedia, ruang obrolan, atau layanan jejaring sosial, informasi pribadi dan konten yang Anda
+                    bagikan dapat dilihat oleh pengguna lain dan dapat dibaca, dikumpulkan, atau digunakan oleh mereka.
+                    Dalam hal ini, Anda bertanggung jawab atas informasi pribadi yang Anda bagi atau kirim. Misalnya,
+                    jika
+                    Anda mencantumkan nama dan alamat email dalam posting forum, maka informasi tersebut akan
+                    ditampilkan
+                    secara publik. Hati-hati saat menggunakan fitur tersebut.<br><br>Ketika Anda menggunakan fitur
+                    pembaca,
+                    pemutar video, dan layanan lainnya yang berisi konten berlisensi, watermark berisi informasi pribadi
+                    dan
+                    informasi non-pribadi pada konten Anda dapat dilihat oleh pihak lain dan dikumpulkan, atau digunakan
+                    oleh mereka. Dalam hal ini, Anda bertanggung jawab atas informasi pribadi dan informasi non-pribadi
+                    dalam konten tersebut. Hati-hati saat menggunakan fitur tersebut pada perangkat publik atau
+                    perangkat
+                    yang dapat digunakan bersama-sama dengan pihak lain.<br><br></p>
+                <hr>
+                <p><br><strong>INTEGRITAS DAN PENYIMPANAN INFORMASI PRIBADI</strong><br><br>Gramedia Asri Media atau
+                    perusahaan afiliasinya dalam Grup Kompas Gramedia akan memudahkan Anda menjaga keakuratan,
+                    kelengkapan,
+                    dan kebaruan informasi pribadi Anda. Kami akan menyimpan informasi pribadi Anda selama diperlukan
+                    untuk
+                    memenuhi tujuan yang dijelaskan dalam Kebijakan Privasi ini, kecuali jika masa penyimpanan yang
+                    lebih
+                    lama diperlukan atau diizinkan oleh undang-undang.<br><br></p>
+                <hr>
+                <p><br><strong>AKSES KE INFORMASI PRIBADI</strong><br><br>Anda dapat membantu memastikan bahwa informasi
+                    kontak dan preferensi Anda sudah akurat, lengkap, dan terbaru dengan log in ke akun Anda atau
+                    menghubungi kami. Untuk informasi pribadi lain yang kami simpan, kami akan memberi Anda akses untuk
+                    tujuan apapun, termasuk guna meminta kami mengoreksi data yang tidak akurat jika Gramedia Asri Media
+                    atau perusahaan afiliasinya dalam Grup Kompas Gramedia tidak wajib menyimpannya berdasarkan hukum
+                    atau
+                    untuk keperluan bisnis yang sah. Kami dapat menolak untuk memproses permintaan yang tidak
+                    serius/mengganggu, membahayakan privasi orang lain, sangat tidak praktis, atau yang aksesnya tidak
+                    diwajibkan oleh hukum setempat. Permohonan akses, koreksi dapat diajukan dengan menghubungi
+                    kami.<br><br></p>
+                <hr>
+                <p><br><strong>INFORMASI PRIBADI ANAK DI BAWAH UMUR</strong><br><br>Kami memahami pentingnya mengambil
+                    langkah pencegahan tambahan untuk melindungi privasi dan keselamatan anak yang menggunakan produk
+                    dan
+                    layanan Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia. Karenanya, kami
+                    tidak akan dengan sengaja mengumpulkan, menggunakan, atau mengungkapkan informasi pribadi dari anak
+                    berusia di bawah 17 tahun, atau usia minimum yang setara di yurisdiksi terkait, tanpa persetujuan
+                    orang
+                    tua yang dapat diverifikasi.<br><br>Anak berusia di bawah 17 tahun, atau yang setara di yurisdiksi
+                    terkait, tidak diizinkan membuat akun mereka. Orang tua harus membaca Kebijakan Provasi dan Syarat
+                    dan
+                    Ketentuan, agar dapat memulai proses pembuatan akun untuk anak mereka.<br><br></p>
+                <hr>
+                <p><br><strong>LAYANAN BERBASIS LOKASI</strong><br><br>Untuk menyediakan layanan berbasis lokasi di
+                    produk-produk Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia, Gramedia
+                    Asri
+                    Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia bersama mitra dan pemegang lisensi kami
+                    dapat mengumpulkan, menggunakan, dan berbagi data lokasi yang sebenarnya, termasuk lokasi geografis
+                    real-time komputer maupun perangkat Anda. Bila tersedia, layanan berbasis lokasi dapat menggunakan
+                    GPS,
+                    Bluetooth, dan Alamat IP Anda, beserta lokasi hotspot Wi-Fi publik dan menara seluler, serta
+                    teknologi
+                    lainnya untuk menentukan lokasi pasti perangkat Anda. Kecuali jika Anda memberikan persetujuan, data
+                    lokasi ini akan dikumpulkan secara anonim dalam bentuk yang tidak mengenali Anda secara pribadi dan
+                    digunakan oleh Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia dan mitra
+                    serta pemegang lisensi kami untuk menyediakan dan menyempurnakan produk dan layanan berbasis lokasi.
+                    Misalnya, perangkat Anda mungkin berbagi informasi lokasi geografisnya dengan penyedia aplikasi bila
+                    Anda memilih untuk menggunakan layanan lokasi mereka.<br><br>Sejumlah layanan berbasis lokasi yang
+                    ditawarkan Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia memerlukan
+                    informasi pribadi agar fitur dapat digunakan. Anda dapat menarik persetujuan atas pengumpulan,
+                    penggunaan, pengiriman, pemrosesan, serta pemeliharaan data lokasi dan akun oleh Gramedia Asri Media
+                    atau perusahaan afiliasinya dalam Grup Kompas Gramedia serta mitra dan pemegang lisensinya kapan pun
+                    dengan nonaktifkan Layanan Lokasi (bila berlaku) di perangkat dan komputer Anda.<br><br></p>
+                <hr>
+                <p><br><strong>SITUS DAN LAYANAN PIHAK KETIGA</strong><br><br>Situs web, produk, aplikasi, dan layanan
+                    Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia dapat berisi link ke
+                    situs
+                    web, produk, maupun layanan pihak ketiga. Produk dan layanan kami juga dapat menggunakan atau
+                    menawarkan
+                    produk atau layanan dari pihak ketiga, misalnya aplikasi pihak ketiga. Informasi yang dikumpulkan
+                    pihak
+                    ketiga, yang mungkin menyertakan hal seperti data lokasi atau rincian kontak, diatur oleh praktik
+                    privasi mereka. Kami menganjurkan Anda untuk mempelajari praktik privasi milik pihak ketiga
+                    tersebut.<br><br></p>
+                <hr>
+                <p><br><strong>PENGGUNA INTERNASIONAL</strong><br><br>Semua informasi yang Anda berikan dapat ditransfer
+                    atau diakses oleh entitas di seluruh dunia sebagaimana dijelaskan dalam Kebijakan Privasi
+                    ini.<br><br>
+                </p>
+                <hr>
+                <p><br><strong>KOMITMEN PERUSAHAAN KAMI ATAS PRIVASI ANDA</strong><br><br>Untuk memastikan keamanan
+                    informasi pribadi Anda, kami menginformasikan panduan privasi dan keamanan kami kepada seluruh
+                    karyawan
+                    Gramedia Asri Media atau perusahaan afiliasinya dalam Grup Kompas Gramedia dan menegakkan
+                    perlindungan
+                    privasi secara ketat di perusahaan.<br><br></p>
+                <hr>
+                <p><br><strong>NOTIFIKASI TENTANG PERUBAHAN</strong><br><br>Gramedia Asri Media atau perusahaan
+                    afiliasinya
+                    dalam Grup Kompas Gramedia dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Bila kami
+                    melakukan perubahan penting pada kebijakan, pemberitahuan akan diposting di situs web kami bersama
+                    Kebijakan Privasi yang telah diperbarui.<br><br></p>
+                <hr>
+                <p><br><strong>PERNYATAAN DAN PERSETUJUAN</strong><br><br>Dengan menggunakan Situs-web/Aplikasi/layanan
+                    Kami, berarti Anda menyatakan bahwa Anda telah membaca dan mengerti Kebijakan Privasi ini dan
+                    Ketentuan
+                    Penggunaan dan setuju serta memperkenakan Kami untuk menggunakan, menerapkan, memproses, dan
+                    mengalihkan
+                    informasi pribadi Anda sebagaiamana dinyatakan dalam Kebijakan Privasi ini.<br><br>Anda juga
+                    menyatakan
+                    bahwa Anda berhak untuk membagikan atas seluruh informasi yang telah diberikan kepada Kami dan
+                    memberikan kepada Kami kewenangan untuk menggunakan dan membagikan informasi pribadi Anda untuk
+                    mendukung dan melaksanakan produk/layanan Kami.<br><br></p>
+                <hr>
+                <p><br><strong>HUBUNGI KAMI</strong><br><br>Jika anda mempunyai pertanyaan atau kepentingan atas
+                    Kebijakan
+                    Privasi ini atau mengenai penggunaan informasi pribadi, hubungi Kami melalui:<br><br>PT Gramedia
+                    Asri
+                    Media (Gramedia.com)<br>Lantai 5 Gedung Gramedia Matraman<br>Jl. Matraman Raya No.44,
+                    RT.12/RW.2<br>Kb.
+                    Manggis, Kec. Matraman, Kota Jakarta Timur, Jakarta 13150, Indonesia<br>Email:&nbsp;<a
+                        href="mailto:customercare@gramedia.com">customercare@gramedia.com</a><br><br><br></p>
+                <hr>
+                <p><br>Dengan menggunakan Situs-web/Aplikasi/layanan Kami, Anda dianggap setuju atas Kebijakan Privasi
+                    ini
+                    termasuk namun tidak terbatas pada seluruh perubahannya.</p>
+            </div>
+    </main>
+
+    <div class="help display-flex">
+        <a href="#" class="helpWrap text-center">
+            <div class="icon icon-wa">
+                <img src="./asset/images/icon-wa-help.svg" alt="contact whatsapp" width="87" height="77" loading="lazy">
+            </div>
+            <div class="helpTxt">Langsung chat aja, yuk!</div>
+        </a>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footerWrap display-flex">
+                <div class="footerItem">
+                    <div class="footerCaption">Customer Services</div>
+                    <a href="index.html" class="logo">
+                        <img class="logoImg" src="./asset/images/logo-eversac.png" alt="Eversac" loading="lazy" width="129"
+                            height="53">
+                    </a>
+                    <a href="tel:+6282123456789" class="footerLink">+62 821-2345-6789</a>
+                    <a href="mailto:admin@eversac.com" class="footerLink">admin@eversac.com</a>
+                </div>
+                <div class="footerItem">
+                    <div class="footerCaption">Information</div>
+                    <a href="faq.html" class="footerLink">FAQ</a>
+                    <a href="#" class="footerLink">Syarat dan Ketentuan</a>
+                    <a href="privacy.html" class="footerLink">Kebijakan dan Privasi</a>
+                    <a href="contact-us.html" class="footerLink">Contact us</a>
+                </div>
+                <div class="footerItem">
+                    <div class="footerCaption">Company</div>
+                    <a href="our-story.html" class="footerLink">Our Story</a>
+                    <a href="blog.html" class="footerLink">Blog Articles</a>
+                    <a href="#" class="footerLink">EasyGO</a>
+                    <a href="#" class="footerLink">Evershare Donasi 1000 Guru</a>
+                </div>
+                <div class="footerItem">
+                    <div class="footerCaption">Keep Updates</div>
+                    <ul class="display-flex">
+                        <li class="footerSocial">
+                            <a href="#" class="icon icon-social icon-fb" aria-label="facebook">
+                                <img src="./asset/images/icon-fb.svg" alt="" width="22" height="22" loading="lazy">
+                            </a>
+                        </li>
+                        <li class="footerSocial">
+                            <a href="#" class="icon icon-social icon-tw" aria-label="twitter">
+                                <img src="./asset/images/icon-tw.svg" alt="" width="22" height="22" loading="lazy">
+                            </a>
+                        </li>
+                        <li class="footerSocial">
+                            <a href="#" class="icon icon-social icon-ig" aria-label="instagram">
+                                <img src="./asset/images/icon-ig.svg" alt="" width="22" height="22" loading="lazy">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="footerMisc">Promotions, new products and sales. <br>
+                        Directly to your inbox.</div>
+                    <form action="" class="footerForm">
+                        <input type="email" name="email" placeholder="Your e-mail address" class="footerForm__input"
+                            aria-label="Enter your email address">
+                        <button type="submit" class="button footerForm__btn" aria-label="Send email address">
+                            <img src="./asset/images/icon-send.svg" alt="" width="24" height="24" loading="lazy"
+                                class="icon icon-send">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footerDisc text-center">
+            All rights reserved 2022 @eversac
+        </div>
+    </footer>
+    <script src="./asset/js/jquery-3.5.0.min.js"></script>
+    <script src="./asset/js/slick/slick.min.js"></script>
+    <script defer src="./asset/js/main.min.js"></script>
+    <script src="./asset/js/read.min.js"></script>
+
+</body>
+
+</html>
