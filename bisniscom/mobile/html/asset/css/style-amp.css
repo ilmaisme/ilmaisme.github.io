@@ -1,24 +1,24 @@
 @font-face {
   font-family: 'Manrope';
-  src: url("https://ilmaisme.github.io/bisniscom/mobile/html/asset/fonts/Manrope-Regular.ttf") format("ttf");
+  src: url("./asset/fonts/Manrope-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'Manrope';
-  src: url("https://ilmaisme.github.io/bisniscom/mobile/html/asset/fonts/Manrope-Medium.ttf") format("ttf");
+  src: url("./asset/fonts/Manrope-Medium.ttf") format("truetype");
   font-weight: medium;
   font-style: normal; }
 
 @font-face {
   font-family: 'Manrope';
-  src: url("https://ilmaisme.github.io/bisniscom/mobile/html/asset/fonts/Manrope-Bold.ttf") format("ttf");
+  src: url("./asset/fonts/Manrope-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal; }
 
 @font-face {
   font-family: 'Manrope';
-  src: url("https://ilmaisme.github.io/bisniscom/mobile/html/asset/fonts/Manrope-Light.ttf") format("ttf");
+  src: url("./asset/fonts/Manrope-Light.ttf") format("truetype");
   font-weight: light;
   font-style: normal; }
 
@@ -45,7 +45,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
-  margin: 0; }
+  margin: 0;
+  padding-top: 525px; }
 
 article,
 aside,
@@ -95,7 +96,7 @@ video {
   align-items: center;
   justify-content: space-between;
   padding: 10px 15px;
-  border: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EBEBEB;
   background: #FCFCFC;
   z-index: 2; }
 
@@ -119,6 +120,9 @@ video {
   margin-right: 20px;
   padding: 10px;
   flex: 1; }
+  @media (max-width: 320px) {
+    .buttonNav {
+      margin-right: 10px; } }
   .buttonNav span {
     padding-left: 5px; }
 
@@ -129,6 +133,9 @@ video {
 .buttonLogin {
   color: #FFFFFF;
   background: #245DCB; }
+
+.buttonApp {
+  margin-top: 8px; }
 
 .icon-bar {
   position: relative;
@@ -171,8 +178,7 @@ video {
 
 .navWrap {
   flex-direction: column;
-  max-width: 360px;
-  margin: auto;
+  max-width: 100%;
   padding: 0 15px 35px; }
 
 .navFixed {
@@ -224,10 +230,14 @@ video {
   font-size: 14px;
   line-height: 16px;
   margin-top: 15px;
-  margin-bottom: 15px; }
+  margin-bottom: 7px; }
 
 .navApp {
+  max-width: 335px;
   justify-content: space-between; }
+  @media (max-width: 320px) {
+    .navApp {
+      flex-direction: column; } }
 
 .crumbItem {
   padding-top: 5px;
@@ -251,7 +261,10 @@ video {
     content: none; }
 
 .main {
-  padding: 0 15px; }
+  position: relative;
+  padding: 0 15px 10px;
+  background: #FCFCFC;
+  z-index: 1; }
 
 .readContent {
   font-weight: 400;
@@ -495,11 +508,13 @@ video {
   flex: 1; }
 
 .footer {
+  position: relative;
   padding: 30px 10px;
   background: #222222;
   font-weight: 500;
   font-size: 12px;
-  line-height: 14px; }
+  line-height: 14px;
+  z-index: 1; }
   .footerLink {
     justify-content: space-between;
     margin-top: 30px;
@@ -533,7 +548,7 @@ video {
         content: none; }
   .footerSocmed {
     border-top: 1px solid #3F3F3F;
-    padding-top: 18px;
+    padding-top: 10px;
     margin-top: 20px;
     margin-bottom: 20px; }
     .footerSocmed__nav {
@@ -541,6 +556,9 @@ video {
       margin-left: auto;
       margin-right: auto;
       width: 333px; }
+      @media (max-width: 320px) {
+        .footerSocmed__nav {
+          flex-direction: column; } }
     .footerSocmed__item {
       margin-top: 18px;
       margin-right: 20px; }
@@ -575,6 +593,22 @@ video {
     display: flex;
     align-items: center;
     justify-content: center; }
+  .adsBanner__pushdown {
+    position: fixed;
+    width: 100%;
+    height: 525px;
+    top: 0;
+    z-index: 0; }
+    .adsBanner__pushdown:after {
+      content: "Advertisement -- scroll ke bawah untuk melanjutkan"; }
+  .adsBanner__inner {
+    position: fixed;
+    top: 35px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 320px;
+    height: 480px; }
   .adsBanner__wrap {
     margin: auto;
     width: 300px;

@@ -3,28 +3,28 @@ sans-serif;
 
 @font-face {
     font-family: 'Manrope';
-    src: url('https://ilmaisme.github.io/bisniscom/mobile/html/asset/fonts/Manrope-Regular.ttf') format('ttf');
+    src: url('./asset/fonts/Manrope-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('https://ilmaisme.github.io/bisniscom/mobile/html/asset/fonts/Manrope-Medium.ttf') format('ttf');
+    src: url('./asset/fonts/Manrope-Medium.ttf') format('truetype');
     font-weight: medium;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('https://ilmaisme.github.io/bisniscom/mobile/html/asset/fonts/Manrope-Bold.ttf') format('ttf');
+    src: url('./asset/fonts/Manrope-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('https://ilmaisme.github.io/bisniscom/mobile/html/asset/fonts/Manrope-Light.ttf') format('ttf');
+    src: url('./asset/fonts/Manrope-Light.ttf') format('truetype');
     font-weight: light;
     font-style: normal;
 }
@@ -55,7 +55,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeSpeed;
     margin: 0;
-    // padding: 480px 0 0;
+    padding-top: 525px;
 }
 
 article,
@@ -115,7 +115,7 @@ video {
         align-items: center;
         justify-content: space-between;
         padding: 10px 15px;
-        border: 1px solid #EBEBEB;
+        border-bottom: 1px solid #EBEBEB;
         background: #FCFCFC;
         z-index: 2;
     }
@@ -144,6 +144,10 @@ video {
         padding: 10px;
         flex: 1;
 
+        @media (max-width:320px) {
+            margin-right: 10px;
+        }
+
         span {
             padding-left: 5px;
         }
@@ -157,6 +161,10 @@ video {
     &Login {
         color: #FFFFFF;
         background: #245DCB;
+    }
+
+    &App {
+        margin-top: 8px;
     }
 }
 
@@ -217,8 +225,7 @@ video {
 
     &Wrap {
         flex-direction: column;
-        max-width: 360px;
-        margin: auto;
+        max-width: 100%;
         padding: 0 15px 35px;
     }
 
@@ -285,11 +292,16 @@ video {
         font-size: 14px;
         line-height: 16px;
         margin-top: 15px;
-        margin-bottom: 15px;
+        margin-bottom: 7px;
     }
 
     &App {
+        max-width: 335px;
         justify-content: space-between;
+
+        @media (max-width:320px) {
+            flex-direction: column;
+        }
     }
 }
 
@@ -326,7 +338,10 @@ video {
 }
 
 .main {
-    padding: 0 15px;
+    position: relative;
+    padding: 0 15px 10px;
+    background: #FCFCFC;
+    z-index: 1;
 }
 
 .read {
@@ -659,11 +674,13 @@ video {
 }
 
 .footer {
+    position: relative;
     padding: 30px 10px;
     background: #222222;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
+    z-index: 1;
 
     &Link {
         justify-content: space-between;
@@ -714,7 +731,7 @@ video {
 
     &Socmed {
         border-top: 1px solid #3F3F3F;
-        padding-top: 18px;
+        padding-top: 10px;
         margin-top: 20px;
         margin-bottom: 20px;
 
@@ -723,6 +740,10 @@ video {
             margin-left: auto;
             margin-right: auto;
             width: 333px;
+
+            @media (max-width:320px) {
+                flex-direction: column;
+            }
         }
 
         &__item {
@@ -768,6 +789,28 @@ video {
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        &__pushdown {
+            position: fixed;
+            width: 100%;
+            height: 525px;
+            top: 0;
+            z-index: 0;
+
+            &:after {
+                content: "Advertisement -- scroll ke bawah untuk melanjutkan";
+            }
+        }
+
+        &__inner {
+            position: fixed;
+            top: 35px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 320px;
+            height: 480px;
         }
 
         &__wrap {
