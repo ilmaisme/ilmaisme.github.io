@@ -87,7 +87,8 @@ $(document).ready(function () {
                     },
                     complete: function () {
                         $(".imgSoekarno").velocity({
-                            left: "0", opacity: "1"
+                            left: "0",
+                            opacity: "1"
                         })
                         $(".clockWrap2").velocity({
                             opacity: "1"
@@ -125,7 +126,8 @@ $(document).ready(function () {
                     },
                     complete: function () {
                         $(".imgSoekarno").velocity({
-                            left: "100%", opacity: "0"
+                            left: "100%",
+                            opacity: "0"
                         })
                         $(".clockWrap2").velocity({
                             opacity: "0"
@@ -144,7 +146,8 @@ $(document).ready(function () {
                             opacity: "0"
                         })
                         $(".imgSoekarno").velocity({
-                            left: "100%", opacity: "0"
+                            left: "100%",
+                            opacity: "0"
                         })
                     }
                 })
@@ -155,7 +158,8 @@ $(document).ready(function () {
                     duration: 400,
                     complete: function () {
                         $(".imgSoeharto").velocity({
-                            left: "0", opacity: "1"
+                            left: "0",
+                            opacity: "1"
                         })
                         $(".clockWrap3").velocity({
                             opacity: "1"
@@ -171,7 +175,8 @@ $(document).ready(function () {
                     duration: 400,
                     begin: function () {
                         $(".imgSoekarno").velocity({
-                            left: "0", opacity: "1"
+                            left: "0",
+                            opacity: "1"
                         })
                         $(".clockWrap2").velocity({
                             opacity: "1"
@@ -185,7 +190,8 @@ $(document).ready(function () {
                     duration: 400,
                     complete: function () {
                         $(".imgSoeharto").velocity({
-                            left: "100%", opacity: "0"
+                            left: "100%",
+                            opacity: "0"
                         })
                         $(".clockWrap3").velocity({
                             opacity: "0"
@@ -204,7 +210,8 @@ $(document).ready(function () {
                             opacity: "0"
                         })
                         $(".imgSoeharto").velocity({
-                            left: "100%", opacity: "0"
+                            left: "100%",
+                            opacity: "0"
                         })
                     }
                 })
@@ -215,7 +222,8 @@ $(document).ready(function () {
                     duration: 400,
                     complete: function () {
                         $(".imgSby").velocity({
-                            left: "0", opacity: "1"
+                            left: "0",
+                            opacity: "1"
                         })
                         $(".clockWrap4").velocity({
                             opacity: "1"
@@ -231,7 +239,8 @@ $(document).ready(function () {
                     duration: 400,
                     begin: function () {
                         $(".imgSoeharto").velocity({
-                            left: "0", opacity: "1"
+                            left: "0",
+                            opacity: "1"
                         })
                         $(".clockWrap3").velocity({
                             opacity: "1"
@@ -245,7 +254,8 @@ $(document).ready(function () {
                     duration: 400,
                     complete: function () {
                         $(".imgSby").velocity({
-                            left: "100%", opacity: "0"
+                            left: "100%",
+                            opacity: "0"
                         })
                         $(".clockWrap4").velocity({
                             opacity: "0"
@@ -264,7 +274,8 @@ $(document).ready(function () {
                             opacity: "0"
                         })
                         $(".imgSby").velocity({
-                            left: "100%", opacity: "0"
+                            left: "100%",
+                            opacity: "0"
                         })
                     }
                 })
@@ -275,7 +286,8 @@ $(document).ready(function () {
                     duration: 400,
                     complete: function () {
                         $(".imgJokowi").velocity({
-                            left: "0", opacity: "1"
+                            left: "0",
+                            opacity: "1"
                         })
                         $(".clockWrap5").velocity({
                             opacity: "1"
@@ -291,7 +303,8 @@ $(document).ready(function () {
                     duration: 400,
                     begin: function () {
                         $(".imgSby").velocity({
-                            left: "0", opacity: "1"
+                            left: "0",
+                            opacity: "1"
                         })
                         $(".clockWrap4").velocity({
                             opacity: "1"
@@ -305,7 +318,8 @@ $(document).ready(function () {
                     duration: 400,
                     complete: function () {
                         $(".imgJokowi").velocity({
-                            left: "100%", opacity: "0"
+                            left: "100%",
+                            opacity: "0"
                         })
                         $(".clockWrap5").velocity({
                             opacity: "0"
@@ -325,7 +339,8 @@ $(document).ready(function () {
                             opacity: "0"
                         })
                         $(".imgJokowi").velocity({
-                            left: "100%", opacity: "0"
+                            left: "100%",
+                            opacity: "0"
                         })
                     }
                 })
@@ -362,7 +377,8 @@ $(document).ready(function () {
                             opacity: "1"
                         })
                         $(".imgJokowi").velocity({
-                            left: "0", opacity: "1"
+                            left: "0",
+                            opacity: "1"
                         })
                     }
                 })
@@ -619,37 +635,41 @@ $(document).ready(function () {
     });
 
     $('#goIkn').on('click', function () {
-        fullpage_api.setAllowScrolling(true, 'down');
-        fullpage_api.moveTo('ikn', 9);
-        $(".bgStatic__wrap").addClass('active');
-        $(".clockWrap7").removeClass('opacIkn');
-        $(".clockWrap8").removeClass('opacIkn');
-        $(".clockWrap9").removeClass('opacIkn');
-        $(".articleText8").addClass('opacIkn');
-        $(".sectionCredit").addClass('opacIkn');
-        $(".clockWrap6").addClass('opacIkn');
-        $(".bgText__wrap").addClass('nactive');
-        $(".bgIkn").velocity({
-            opacity: "1"
-        })
-        $(".bgIkn").velocity({
-            bottom: "0"
-        }, {
-            delay: 0,
-            duration: 400,
-            complete: function () {
-                $(".iknItem").removeClass('pushTop');
-                $(".clockWrap7").velocity({
-                    opacity: "1"
-                })
-            }
-        })
-        fullpage_api.setAllowScrolling(false, 'up');
-        //console.log('ikn');
+        $(this).addClass('active');
+        setTimeout(function () {
+            fullpage_api.setAllowScrolling(true, 'down');
+            fullpage_api.moveTo('ikn', 9);
+            $(".bgStatic__wrap").addClass('active');
+            $(".clockWrap7").removeClass('opacIkn');
+            $(".clockWrap8").removeClass('opacIkn');
+            $(".clockWrap9").removeClass('opacIkn');
+            $(".articleText8").addClass('opacIkn');
+            $(".sectionCredit").addClass('opacIkn');
+            $(".clockWrap6").addClass('opacIkn');
+            $(".bgText__wrap").addClass('nactive');
+            $(".bgIkn").velocity({
+                opacity: "1"
+            })
+            $(".bgIkn").velocity({
+                bottom: "0"
+            }, {
+                delay: 0,
+                duration: 400,
+                complete: function () {
+                    $(".iknItem").removeClass('pushTop');
+                    $(".clockWrap7").velocity({
+                        opacity: "1"
+                    })
+                }
+            })
+            fullpage_api.setAllowScrolling(false, 'up');
+            //console.log('ikn');
+        }, 700);
     });
 
     $('#closeIkn').on('click', function () {
         fullpage_api.moveTo('kalimantan', 6);
+        $('#goIkn').removeClass('active');
         $(".clockWrap6").removeClass('opacIkn');
         $(".bgStatic__wrap").removeClass('active');
         $(".bgText__wrap").removeClass('nactive');
