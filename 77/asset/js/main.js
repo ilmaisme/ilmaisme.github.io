@@ -87,7 +87,7 @@ $(document).ready(function () {
                     },
                     complete: function () {
                         $(".imgSoekarno").velocity({
-                            left: "0"
+                            left: "0", opacity: "1"
                         })
                         $(".clockWrap2").velocity({
                             opacity: "1"
@@ -125,7 +125,7 @@ $(document).ready(function () {
                     },
                     complete: function () {
                         $(".imgSoekarno").velocity({
-                            left: "100%"
+                            left: "100%", opacity: "0"
                         })
                         $(".clockWrap2").velocity({
                             opacity: "0"
@@ -144,7 +144,7 @@ $(document).ready(function () {
                             opacity: "0"
                         })
                         $(".imgSoekarno").velocity({
-                            left: "100%"
+                            left: "100%", opacity: "0"
                         })
                     }
                 })
@@ -155,7 +155,7 @@ $(document).ready(function () {
                     duration: 400,
                     complete: function () {
                         $(".imgSoeharto").velocity({
-                            left: "0"
+                            left: "0", opacity: "1"
                         })
                         $(".clockWrap3").velocity({
                             opacity: "1"
@@ -171,7 +171,7 @@ $(document).ready(function () {
                     duration: 400,
                     begin: function () {
                         $(".imgSoekarno").velocity({
-                            left: "0"
+                            left: "0", opacity: "1"
                         })
                         $(".clockWrap2").velocity({
                             opacity: "1"
@@ -185,7 +185,7 @@ $(document).ready(function () {
                     duration: 400,
                     complete: function () {
                         $(".imgSoeharto").velocity({
-                            left: "100%"
+                            left: "100%", opacity: "0"
                         })
                         $(".clockWrap3").velocity({
                             opacity: "0"
@@ -204,7 +204,7 @@ $(document).ready(function () {
                             opacity: "0"
                         })
                         $(".imgSoeharto").velocity({
-                            left: "100%"
+                            left: "100%", opacity: "0"
                         })
                     }
                 })
@@ -215,7 +215,7 @@ $(document).ready(function () {
                     duration: 400,
                     complete: function () {
                         $(".imgSby").velocity({
-                            left: "0"
+                            left: "0", opacity: "1"
                         })
                         $(".clockWrap4").velocity({
                             opacity: "1"
@@ -231,7 +231,7 @@ $(document).ready(function () {
                     duration: 400,
                     begin: function () {
                         $(".imgSoeharto").velocity({
-                            left: "0"
+                            left: "0", opacity: "1"
                         })
                         $(".clockWrap3").velocity({
                             opacity: "1"
@@ -245,7 +245,7 @@ $(document).ready(function () {
                     duration: 400,
                     complete: function () {
                         $(".imgSby").velocity({
-                            left: "100%"
+                            left: "100%", opacity: "0"
                         })
                         $(".clockWrap4").velocity({
                             opacity: "0"
@@ -264,7 +264,7 @@ $(document).ready(function () {
                             opacity: "0"
                         })
                         $(".imgSby").velocity({
-                            left: "100%"
+                            left: "100%", opacity: "0"
                         })
                     }
                 })
@@ -275,7 +275,7 @@ $(document).ready(function () {
                     duration: 400,
                     complete: function () {
                         $(".imgJokowi").velocity({
-                            left: "0"
+                            left: "0", opacity: "1"
                         })
                         $(".clockWrap5").velocity({
                             opacity: "1"
@@ -291,7 +291,7 @@ $(document).ready(function () {
                     duration: 400,
                     begin: function () {
                         $(".imgSby").velocity({
-                            left: "0"
+                            left: "0", opacity: "1"
                         })
                         $(".clockWrap4").velocity({
                             opacity: "1"
@@ -305,7 +305,7 @@ $(document).ready(function () {
                     duration: 400,
                     complete: function () {
                         $(".imgJokowi").velocity({
-                            left: "100%"
+                            left: "100%", opacity: "0"
                         })
                         $(".clockWrap5").velocity({
                             opacity: "0"
@@ -323,6 +323,9 @@ $(document).ready(function () {
                     complete: function () {
                         $(".clockWrap5").velocity({
                             opacity: "0"
+                        })
+                        $(".imgJokowi").velocity({
+                            left: "100%", opacity: "0"
                         })
                     }
                 })
@@ -357,6 +360,9 @@ $(document).ready(function () {
                     complete: function () {
                         $(".clockWrap5").velocity({
                             opacity: "1"
+                        })
+                        $(".imgJokowi").velocity({
+                            left: "0", opacity: "1"
                         })
                     }
                 })
@@ -719,6 +725,18 @@ $(document).ready(function () {
         console.log('close ikn');
     });
 });
+
+$(window).on('load', function () {
+    setTimeout(function () {
+        $("#animationPreload").fadeOut(1000, function () {
+            $('.preloader').remove();
+            $(".imgCover").removeClass("opac0");
+            $(".coverCol").removeClass("opac0");
+            fullpage_api.setAllowScrolling(true);
+            //console.log('remove');
+        })
+    }, 4000);
+})
 
 function refreshPage() {
     window.location.reload(false);

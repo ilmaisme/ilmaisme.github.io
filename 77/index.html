@@ -27,7 +27,9 @@
 
     <link rel=icon type=image/png sizes=16x16 href="https://static.bisnis-cdn.com/interaktif/assets/images/favicon.png">
 
-    <link type="text/css" rel="stylesheet" href="./asset/css/style.css">
+    <link type="text/css" rel="stylesheet" href="./asset/css/style.min.css">
+    <link rel="preload" as="image" href="./asset/images/loader-mob.gif"
+        imagesrcset="./asset/images/loader.gif 800w, ./asset/images/loader.gif 1600w" imagesizes="50vw">
     <style>
         @font-face {
             font-family: 'Interstate';
@@ -52,16 +54,6 @@
             font-display: swap;
             src: local('Interstate Bold'), url('./asset/fonts/InterstateBold.woff') format('woff');
         }
-
-        /*@font-face {
-            font-family: 'Author-Regular';
-            src: url('./asset/fonts/Author-Regular.woff2') format('woff2'),
-                url('./asset/fonts/Author-Regular.woff') format('woff'),
-                url('./asset/fonts/Author-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-display: swap;
-            font-style: normal;
-        }*/
     </style>
 </head>
 <body>
@@ -72,21 +64,30 @@
         <!-- header -->
         <header class="headerWrap">
             <div class="headerItem"><a href="https://interaktif.bisnis.com/" title="Konten Interaktif Bisnis.com"><img
-                        src="./asset/images/content-interaktif-logo-black.png" class="headerLogo" alt="" width="115" height="49"></a></div>
+                        src="./asset/images/content-interaktif-logo-w.png" class="headerLogo" alt="" width="111" height="36"></a></div>
             <div class="headerItem headerItem__right"><a href="https://www.bisnis.com/" title="Bisnis.com"><img
                         src="./asset/images/content-interaktif-bisnis-logo.svg"
                         class="headerLogo" alt="" width="34" height="34"></a></div>
         </header>        <!-- header -->
 
         <!-- preloader -->
-        <!-- preloader -->
+        <div class="preloader" id="animationPreload">
+        	<div class="container preloaderWrap">
+        		<div class="center-flex heightFull">
+        			<picture class="">
+        				<source srcset="./asset/images/loader-mob.gif" media="(max-width: 768px)" alt="">
+        				<img srcset="./asset/images/loader.gif" alt="" class="" width="1070" height="357">
+        			</picture>
+        		</div>
+        	</div>
+        </div>        <!-- preloader -->
         <!-- Template Text Content -->
         <div class="bgText__wrap">
             <div class="bgText">
                 <div class="bgText1 display-flex justify-center heightFull">
                     <div class="articleText articleText1 text-center">
                         <div class="articlewrap1">
-                            <picture class="imgCover">
+                            <picture class="imgCover opac0">
                                 <source srcset="./asset/images/geliat-ibu-kota-negara-nusantara-big.png"
                                     media="(min-width: 1880px)" alt="">
                                 <source srcset="./asset/images/geliat-ibu-kota-negara-nusantara-mob.png"
@@ -96,8 +97,10 @@
                                     height="139">
                             </picture>
                             <div class="center-flex align-start">
-                                <div class="coverCol">
+                                <div class="coverCol opac0">
                                     <picture class="coverCol__img">
+                                        <source srcset="./asset/images/cover-city-mob.gif" media="(max-width: 768px)"
+                                            alt="">
                                         <img srcset="./asset/images/cover-city.gif" alt="Kota Berkelanjutan Dunia"
                                             class="" width="118" height="118">
                                     </picture>
@@ -109,8 +112,10 @@
                                         </span>
                                     </picture>
                                 </div>
-                                <div class="coverCol">
+                                <div class="coverCol opac0">
                                     <picture class="coverCol__img">
+                                        <source srcset="./asset/images/cover-gear-mob.gif" media="(max-width: 768px)"
+                                            alt="">
                                         <img srcset="./asset/images/cover-gear.gif"
                                             alt="Penggerak Ekonomi Indonesia di Masa Depan" class="" width="118"
                                             height="118">
@@ -123,9 +128,12 @@
                                         </span>
                                     </picture>
                                 </div>
-                                <div class="coverCol">
-                                    <picture class="coverCol__img"><img srcset="./asset/images/cover-id.gif"
-                                            alt="Simbol Identitas Nasional" class="" width="118" height="118">
+                                <div class="coverCol opac0">
+                                    <picture class="coverCol__img">
+                                        <source srcset="./asset/images/cover-id-mob.gif" media="(max-width: 768px)"
+                                            alt="">
+                                        <img srcset="./asset/images/cover-id.gif" alt="Simbol Identitas Nasional"
+                                            class="" width="118" height="118">
                                     </picture>
                                     <picture class="coverCol__txt"><img srcset="./asset/images/cover-id-txt.png" alt=""
                                             class="" width="170" height="9">
@@ -192,8 +200,8 @@
                             Jakarta sebagai IKN Indonesia melalui UU No. 10/1964 pada 22 Juni 1964.
                         </p>
                     </div>
-                    <picture class="imgSoekarno imgLeader flex-init pushLeft">
-                        <source srcset="./asset/images/soekarno-mob.png" media="(max-width: 768px)" alt="">
+                    <picture class="imgSoekarno imgLeader opac0 flex-init pushLeft">
+                        <source srcset="./asset/images/soekarno-mob.png" media="(max-width: 767px)" alt="">
                         <img srcset="./asset/images/soekarno.png" alt="" class="" width="539" height="660">
                     </picture>
                 </div>
@@ -206,8 +214,8 @@
                             Presiden Soeharto, bahkan mengeluarkan Keppres No. 1/1997 tentang Koordinasi Pengembangan
                             Kawasan Jonggol sebagai kota mandiri. Namun rencana tersebut akhirnya pupus.</p>
                     </div>
-                    <picture class="imgSoeharto imgLeader flex-init pushLeft">
-                        <source srcset="./asset/images/soeharto-mob.png" media="(max-width: 768px)" alt="">
+                    <picture class="imgSoeharto imgLeader opac0 flex-init pushLeft">
+                        <source srcset="./asset/images/soeharto-mob.png" media="(max-width: 767px)" alt="">
                         <img srcset="./asset/images/soeharto.png" alt="" class="" width="539" height="660">
                     </picture>
                 </div>
@@ -233,8 +241,8 @@
                                 Membangun IKN baru.</li>
                         </ul>
                     </div>
-                    <picture class="imgSby imgLeader flex-init pushLeft">
-                        <source srcset="./asset/images/sby-mob.png" media="(max-width: 768px)" alt="">
+                    <picture class="imgSby imgLeader opac0 flex-init pushLeft">
+                        <source srcset="./asset/images/sby-mob.png" media="(max-width: 767px)" alt="">
                         <img srcset="./asset/images/sby.png" alt="" class="" width="539" height="688">
                     </picture>
                 </div>
@@ -253,8 +261,8 @@
                             Kementerian Pekerjaan Umum dan Perumahan Rakyat (PUPR).
                         </p>
                     </div>
-                    <picture class="imgJokowi imgLeader flex-init pushLeft">
-                        <source srcset="./asset/images/jokowi-mob.png" media="(max-width: 768px)" alt="">
+                    <picture class="imgJokowi imgLeader opac0 flex-init pushLeft">
+                        <source srcset="./asset/images/jokowi-mob.png" media="(max-width: 767px)" alt="">
                         <img srcset="./asset/images/jokowi.png" alt="" class="" width="539" height="664">
                     </picture>
                 </div>
@@ -283,10 +291,12 @@
             <div class="bgText">
                 <div class="container center-flex heightFull">
                     <div class="articleText articleText8 moveUp">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LQHHz2YcxVU"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LQHHz2YcxVU&autoplay=1"
+                            srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/LQHHz2YcxVU?autoplay=1><img src=https://img.youtube.com/vi/LQHHz2YcxVU/hqdefault.jpg alt='Video Resmi! Nama Ibu Kota Negara Baru adalah Nusantara'><span>▶</span></a>"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            title="Resmi! Nama Ibu Kota Negara Baru adalah Nusantara"></iframe>
                     </div>
                 </div>
             </div>
@@ -300,38 +310,41 @@
         </div>
         <!-- Template Background Color -->
         <!-- Template Image Content -->
+        <div class="bgStatic bgStatic--warn">
+            <div class="articleContent text-center">
+                For better experience, rotate your screen or switch to bigger screen.
+            </div>
+        </div>
         <div class="bgStatic__wrap">
             <div class="bgStatic">
                 <picture class="imgClock">
+                    <source srcset="./asset/images/clock-year-mob.gif" media="(max-width: 768px)" alt="">
                     <img srcset="./asset/images/clock-year.gif" alt="" class="" width="140" height="140">
                 </picture>
             </div>
             <div class="bgStatic bgNusantara">
                 <picture class="bgNusantara__img">
                     <source srcset="./asset/images/cover-bg-big.png" media="(min-width: 1880px)" alt="">
-                    <img srcset="./asset/images/cover-bg.png" alt="" class="" width="1300" height="770">
+                    <img srcset="./asset/images/cover-bg.png" alt="" class="" width="1300" height="770" loading="lazy">
                 </picture>
                 <picture class="imgCouple">
-                    <source srcset="./asset/images/couple-mob.png" media="(max-width: 768px)" alt="">
+                    <source srcset="./asset/images/couple-mob.png" media="(max-width: 767px)" alt="">
                     <img srcset="./asset/images/couple.png" alt="" class="" width="330" height="399">
                 </picture>
                 <div class="imgCloud__wrap1">
                     <picture class="imgCloud imgCloud1">
-                        <source srcset="./asset/images/cloud-x1-mob.png" media="(max-width: 768px)" alt="">
-                        <img srcset="./asset/images/cloud-x1.png" alt="" class="">
+                        <img srcset="./asset/images/cloud-x1.png" alt="" class="" loading="lazy">
                     </picture>
                 </div>
                 <div class="bgStatic bgCloud">
                     <div class="imgCloud__wrap2">
                         <picture class="imgCloud imgCloud2">
-                            <source srcset="./asset/images/cloud-x2-mob.png" media="(max-width: 768px)" alt="">
-                            <img srcset="./asset/images/cloud-x2.png" alt="" class="">
+                            <img srcset="./asset/images/cloud-x2.png" alt="" class="" loading="lazy">
                         </picture>
                     </div>
                     <div class="imgCloud__wrap3">
                         <picture class="imgCloud imgCloud3">
-                            <source srcset="./asset/images/cloud-x3-mob.png" media="(max-width: 768px)" alt="">
-                            <img srcset="./asset/images/cloud-x3.png" alt="" class="">
+                            <img srcset="./asset/images/cloud-x3.png" alt="" class="" loading="lazy">
                         </picture>
                     </div>
                 </div>
@@ -345,7 +358,7 @@
                                     <source srcset="./asset/images/2022-ksn-ikn-mob.png" media="(max-width: 768px)"
                                         alt="">
                                     <img srcset="./asset/images/2022-ksn-ikn.png" alt="" class="" width="262"
-                                        height="263">
+                                        height="263" loading="lazy">
                                 </picture>
                                 <div class="iknContent">
                                     <div class="iknTitle">Kawasan Strategis Nasional (KSN) IKN</div>
@@ -504,7 +517,8 @@
                 <div class="articleText articleText9 opac0 display-flex align-center flex-column heightFull">
                     <div class="credit center-flex flex-column">
                         <picture class="creditLogo">
-                            <img srcset="./asset/images/bisnis-indonesia.png" alt="" class="" width="320" height="49">
+                            <img srcset="./asset/images/bisnis-indonesia.png" alt="" class="" width="320" height="49"
+                                loading="lazy">
                         </picture>
                         <div class="creditContent text-center">
                             <div class="creditCol">
@@ -526,10 +540,12 @@
                         </div>
                         <div class="center-flex">
                             <picture class="creditSponsor">
-                                <img srcset="./asset/images/77.png" alt="" class="" width="300" height="133">
+                                <img srcset="./asset/images/77.png" alt="" class="" width="300" height="133"
+                                    loading="lazy">
                             </picture>
                             <picture class="creditSponsor">
-                                <img srcset="./asset/images/ikn.png" alt="" class="" width="300" height="138">
+                                <img srcset="./asset/images/ikn.png" alt="" class="" width="300" height="138"
+                                    loading="lazy">
                             </picture>
                         </div>
                     </div>
@@ -537,7 +553,7 @@
                         <a href="https://www.bisnis.com/" target="_self">
                             <picture class="creditBottom__logo">
                                 <img srcset="./asset/images/bisniscom.png" alt="Bisniscom" class="" width="494"
-                                    height="76">
+                                    height="76" loading="lazy">
                             </picture>
                         </a>
                         <div class="creditSp"></div>
@@ -545,19 +561,19 @@
                             <a href="https://www.instagram.com/bisniscom/" target="_blank" class="creditSoc__item">
                                 <picture class="creditSoc__logo">
                                     <img srcset="./asset/images/icon-ig.png" alt="Instagram" class="" width="40"
-                                        height="40">
+                                        height="40" loading="lazy">
                                 </picture>
                             </a>
                             <a href="https://twitter.com/Bisniscom" target="_blank" class="creditSoc__item">
                                 <picture class="creditSoc__logo">
                                     <img srcset="./asset/images/icon-tw.png" alt="Twitter" class="" width="40"
-                                        height="40">
+                                        height="40" loading="lazy">
                                 </picture>
                             </a>
                             <a href="https://facebook.com/wwwbisniscom" target="_blank" class="creditSoc__item">
                                 <picture class="creditSoc__logo">
                                     <img srcset="./asset/images/icon-fb.png" alt="Facebook" class="" width="40"
-                                        height="40">
+                                        height="40" loading="lazy">
                                 </picture>
                             </a>
                         </div>
@@ -583,7 +599,7 @@
     <script type="text/javascript" src="./asset/js/fullpage.min.js"></script>
     <script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
     <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/main.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
 </body>
 
 </html>
