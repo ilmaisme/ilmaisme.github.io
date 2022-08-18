@@ -430,32 +430,32 @@
                                 </div>
                             </div>
                             <div class="readImage__item">
-                                <div class="readImage__wrap">
-                                    <img src="./asset/images/read/image2big.png" alt="" loading="lazy" width="500" height="448"
+                                <div class="readImage__wrap -zoom">
+                                    <img data-zoom="https://api.lorem.space/image/shoes?w=1110&h=640" src="./asset/images/read/image2big.png" alt="" loading="lazy" width="500" height="448"
                                         class="readImage__img">
                                 </div>
                             </div>
                             <div class="readImage__item">
                                 <div class="readImage__wrap">
-                                    <img src="./asset/images/read/image2big.png" alt="" loading="lazy" width="500" height="448"
+                                    <img data-zoom="./asset/images/read/image2big.png" src="./asset/images/read/image2big.png" alt="" loading="lazy" width="500" height="448"
                                         class="readImage__img">
                                 </div>
                             </div>
                             <div class="readImage__item">
-                                <div class="readImage__wrap">
-                                    <img src="./asset/images/read/image2big.png" alt="" loading="lazy" width="500" height="448"
+                                <div class="readImage__wrap -zoom">
+                                    <img data-zoom="https://api.lorem.space/image/shoes?w=1110&h=640" src="./asset/images/read/image2big.png" alt="" loading="lazy" width="500" height="448"
                                         class="readImage__img">
                                 </div>
                             </div>
                             <div class="readImage__item">
-                                <div class="readImage__wrap">
-                                    <img src="https://api.lorem.space/image/shoes?w=500&h=448" alt="" loading="lazy" width="500" height="448"
+                                <div class="readImage__wrap -zoom">
+                                    <img data-zoom="https://api.lorem.space/image/shoes?w=1110&h=640" src="https://api.lorem.space/image/shoes?w=500&h=448" alt="" loading="lazy" width="500" height="448"
                                         class="readImage__img">
                                 </div>
                             </div>
                             <div class="readImage__item">
-                                <div class="readImage__wrap">
-                                    <img src="https://api.lorem.space/image/shoes?w=500&h=448" alt="" loading="lazy" width="500" height="448"
+                                <div class="readImage__wrap -zoom">
+                                    <img data-zoom="https://api.lorem.space/image/shoes?w=1110&h=640" src="https://api.lorem.space/image/shoes?w=500&h=448" alt="" loading="lazy" width="500" height="448"
                                         class="readImage__img">
                                 </div>
                             </div>
@@ -809,6 +809,57 @@
     <script src="./asset/js/slick/slick.min.js"></script>
     <script defer src="./asset/js/main.min.js"></script>
     <script src="./asset/js/read.min.js"></script>
+    <script defer src="./asset/js/jquery.zoom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //initialize zoom image
+            $('.-zoom').each(function () {
+                var src = $(this).find('img').attr('data-zoom');
+                $(this).zoom({
+                    url: src,
+                    on: 'mouseover',
+                    duration: 50
+                });
+            });
+        });
+
+        //select product's color
+        var pColor = $('#pColor').filter(':checked').val();
+        $('.readColor__val').html(pColor)
+        $(':radio[name="pColor"]').change(function () {
+            var pColor = $(this).filter(':checked').val();
+            $('.readColor__val').html(pColor)
+
+            //go to slide with value
+            let ractive = $('.slick-slide[value=' + pColor + ']:not(.slick-cloned)').eq(0);
+            let nractive = ractive.attr('data-slick-index');
+            $(".readImage__nav").slick('slickGoTo', nractive, true);
+        });
+
+        //slider product's images
+        slickImg()
+        function slickImg() {
+            $('.readImage__list').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                infinite: true,
+                asNavFor: '.readImage__nav'
+            });
+            $('.readImage__nav').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                asNavFor: '.readImage__list',
+                dots: false,
+                centerMode: false,
+                infinite: true,
+                focusOnSelect: true
+            });
+        }
+
+
+    </script>
 
 </body>
 
