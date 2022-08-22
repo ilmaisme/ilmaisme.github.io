@@ -746,14 +746,20 @@ $(document).ready(function () {
     });
 });
 
+var video = $(".preloaderVid");
 $(window).on('load', function () {
     setTimeout(function () {
-        $("#animationPreload").fadeOut(1000, function () {
-            $('.preloader').remove();
-            $(".imgCover").removeClass("opac0");
-            $(".coverCol").removeClass("opac0");
-            fullpage_api.setAllowScrolling(true);
-            //console.log('remove');
+        $("#loaderImg").fadeOut(700, function () {
+            video.removeClass("opac0");
+            setTimeout(function () {
+                $("#animationPreload").fadeOut(700, function () {
+                    $('.preloader').remove();
+                    $(".imgCover").removeClass("opac0");
+                    $(".coverCol").removeClass("opac0");
+                    fullpage_api.setAllowScrolling(true);
+                    //console.log('remove');
+                })
+            }, 2200);
         })
     }, 4000);
 })

@@ -30,6 +30,7 @@
     <link type="text/css" rel="stylesheet" href="./asset/css/style.min.css">
     <link rel="preload" as="image" href="./asset/images/loader-mob.gif"
         imagesrcset="./asset/images/loader.gif 800w, ./asset/images/loader.gif 1600w" imagesizes="50vw">
+    <link rel="preload" as="image" href="./asset/images/loader-vid.gif">
     <style>
         @font-face {
             font-family: 'Interstate';
@@ -73,10 +74,13 @@
         <!-- preloader -->
         <div class="preloader" id="animationPreload">
         	<div class="container preloaderWrap">
-        		<div class="center-flex heightFull">
-        			<picture class="">
+        		<div class="preloaderFlex center-flex heightFull">
+        			<picture class="preloaderImg" id="loaderImg">
         				<source srcset="./asset/images/loader-mob.gif" media="(max-width: 768px)" alt="">
-        				<img srcset="./asset/images/loader.gif" alt="" class="" width="1070" height="357">
+        				<img srcset="./asset/images/loader.gif" alt="" class="" width="280" height="76">
+        			</picture>
+        			<picture class="preloaderVid opac0">
+        				<img srcset="./asset/images/loader-vid.gif" alt="" class="" width="300" height="500">
         			</picture>
         		</div>
         	</div>
@@ -599,7 +603,7 @@
     <script type="text/javascript" src="./asset/js/fullpage.min.js"></script>
     <script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
     <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/main.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
 </body>
 
 </html>
