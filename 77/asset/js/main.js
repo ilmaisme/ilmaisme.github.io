@@ -627,7 +627,7 @@ $(document).ready(function () {
         }
     })
 
-    // fullpage_api.setAllowScrolling(false);
+    fullpage_api.setAllowScrolling(false);
 
     $('#moveTo').on('click', function () {
         fullpage_api.moveTo('start', 1);
