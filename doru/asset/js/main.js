@@ -1,4 +1,24 @@
 $(document).ready(function () {
+    //display content
+    $('#enter').on('click', function () {
+        scrollTop()
+        displayContent()
+        comicSlider();
+        gallerySlider();
+    })
+
+    //nav link
+    if (window.location.href.includes('#')) {
+        displayContent()
+        comicSlider();
+        gallerySlider();
+
+        //nav link
+        if (window.location.hash) {
+            scrollToSection(window.location.hash);
+        }
+    }
+
     //toggle mobile menu
     $('#menuToggle').on('click', function () {
         isChecked = $(this).is(':checked')
@@ -29,9 +49,6 @@ $(document).ready(function () {
             cssEase: 'linear'
         });
     }
-    if ($('#comic').is(':visible')) {
-        comicSlider();
-    }
 
     function gallerySlider() {
         //gallery slider
@@ -42,12 +59,10 @@ $(document).ready(function () {
             slidesToShow: 5,
             slidesToScroll: 3,
             responsive: [{
-                    breakpoint: 1024,
+                    breakpoint: 1230,
                     settings: {
-                        slidesToShow: 5,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: true
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
                     }
                 },
                 {
@@ -73,12 +88,10 @@ $(document).ready(function () {
             slidesToShow: 5,
             slidesToScroll: 3,
             responsive: [{
-                    breakpoint: 1024,
+                    breakpoint: 1230,
                     settings: {
-                        slidesToShow: 5,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: true
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
                     }
                 },
                 {
@@ -98,22 +111,11 @@ $(document).ready(function () {
             ]
         });
     }
-    if ($('.-gal1').is(':visible')) {
-        gallerySlider();
-    }
 
     //back to top on click
     $("#back-top").on("click", function () {
-        $("html, body").animate({
-            scrollTop: 0
-        }, 500);
-        return false;
+        scrollTop()
     });
-
-    //nav link
-    if (window.location.hash) {
-        scrollToSection(window.location.hash);
-    }
 
     //show content faq
     /*var accItem = document.getElementsByClassName('faqItem');
@@ -136,17 +138,21 @@ $(document).ready(function () {
     }*/
 });
 
+//hide content
+function displayContent() {
+    $('#welcome').addClass('display-none')
+    $('#content').addClass('active')
+}
 //display mobile menu
 function updateMenu() {
     if ($('#menu').css('display') == 'none') {
-        console.log("mobile")
+        //console.log("mobile")
         $('.menuMob').removeClass('mobile');
     } else {
         $('.menuMob').addClass('mobile');
     }
 }
 
-//nav link
 $('.navLink').click(function (e) {
     e.preventDefault();
 
@@ -161,6 +167,14 @@ function scrollToSection(id) {
     $('html, body').animate({
         scrollTop: $(id).offset().top - 40
     }, 1000);
+}
+
+//scroll top
+function scrollTop() {
+    $("html, body").animate({
+        scrollTop: 0
+    }, 500);
+    return false;
 }
 
 //show back to top
