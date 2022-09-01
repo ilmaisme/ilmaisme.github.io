@@ -27,7 +27,7 @@
 
     <link rel=icon type=image/png sizes=16x16 href="./asset/images/favicon.png">
 
-    <link type="text/css" rel="stylesheet" href="./asset/css/style.css">
+    <link type="text/css" rel="stylesheet" href="./asset/css/style.min.css">
     <link rel="preload" as="image" href="./asset/images/logo-doru.png">
     <link rel="preload" as="image" href="./asset/images/bg-welcome.jpg"
         imagesrcset="./asset/images/bg-welcome-sm.jpg 400px, ./asset/images/bg-welcome-md.jpg 1024px" imagesizes="50vw">
@@ -82,9 +82,7 @@
                     <div class="menuMob display-flex">
                         <nav class="nav display-none" id="nav">
                             <ul class="navList display-flex">        
-                                <li class="navItem">
-                                    <a href="https://opensea.io/" target="_blank" rel="noopener noreferrer" class="navRel">Adopt a Cat</a>
-                                </li>
+                        
                                 <li class="navItem">
                                     <a href="#road" tabindex="-1" class="button navLink" id="btn-road">Roadmap</a>
                                 </li>
@@ -258,7 +256,7 @@
                 </div>            </div>
             <div class="video center-flex">
                 <iframe width="880" height="495" src="https://www.youtube.com/embed/LQHHz2YcxVU&autoplay=1"
-                    srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/LQHHz2YcxVU?autoplay=1><img src=https://img.youtube.com/vi/LQHHz2YcxVU/hqdefault.jpg alt='Video Resmi! Nama Ibu Kota Negara Baru adalah Nusantara'><span>&#9658;</span></a>"
+                    srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:65px;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/LQHHz2YcxVU?autoplay=1><img src=https://img.youtube.com/vi/LQHHz2YcxVU/hqdefault.jpg alt='Video Resmi! Nama Ibu Kota Negara Baru adalah Nusantara'><span>&#9658;</span></a>"
                     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
                     title="Resmi! Nama Ibu Kota Negara Baru adalah Nusantara"></iframe>            </div>
             <div class="types container">
@@ -1063,9 +1061,13 @@
         </footer>    </section>
 
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/main.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
     <script defer src="./asset/js/slick/slick.min.js"></script>
     <script>
+        $(document).ready(function () {
+            updateMenu()
+        })
+        
         //nav link
         $('.navLink').click(function (e) {
             e.preventDefault();
