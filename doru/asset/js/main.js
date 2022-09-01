@@ -3,6 +3,7 @@ $(document).ready(function () {
     $('#enter').on('click', function () {
         scrollTop()
         displayContent()
+        updateMenu();
         if ($('.comic').is(':visible')) {
             comicSlider();
         }
@@ -58,7 +59,6 @@ $(document).ready(function () {
         }
     })
 
-    updateMenu();
     $(window).resize(function () {
         updateMenu();
     });
@@ -164,6 +164,7 @@ $(document).ready(function () {
 
 //display content
 function displayContent() {
+    $('#menu').removeClass('hide')
     $('#nav').removeClass('display-none')
     $('#welcome').addClass('display-none')
     $('#content').addClass('active')
