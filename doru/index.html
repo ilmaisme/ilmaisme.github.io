@@ -28,9 +28,9 @@
     <link rel=icon type=image/png sizes=16x16 href="./asset/images/favicon.png">
 
     <link type="text/css" rel="stylesheet" href="./asset/css/style.min.css">
+    <link rel="preload" as="image" href="./asset/images/logo-doru.png">
     <link rel="preload" as="image" href="./asset/images/bg-welcome.jpg"
         imagesrcset="./asset/images/bg-welcome-sm.jpg 400px, ./asset/images/bg-welcome-md.jpg 1024px" imagesizes="50vw">
-    <link rel="preload" as="image" href="./asset/images/logo-doru.png">
     <style>
         @font-face {
             font-family: 'ChemyRetro';
@@ -80,25 +80,25 @@
                         </svg>
                     </div>
                     <div class="menuMob mobile display-flex">
-                        <nav class="nav">
+                        <nav class="nav display-none" id="nav">
                             <ul class="navList display-flex">        
                                 <li class="navItem">
                                     <a href="https://opensea.io/" target="_blank" rel="noopener noreferrer" class="navLink">Adopt a Cat</a>
                                 </li>
                                 <li class="navItem">
-                                    <a href="https://ilmaisme.github.io/doru#road" tabindex="-1" class="button navLink" id="btn-road">Roadmap</a>
+                                    <a href="#road" tabindex="-1" class="button navLink" id="btn-road">Roadmap</a>
                                 </li>
                                 <li class="navItem">
-                                    <a href="https://ilmaisme.github.io/doru#gal" tabindex="-1" class="button navLink" id="btn-gal">Gallery</a>
+                                    <a href="#gal" tabindex="-1" class="button navLink" id="btn-gal">Gallery</a>
                                 </li>
                                 <li class="navItem">
-                                    <a href="https://ilmaisme.github.io/doru#merch" tabindex="-1" class="button navLink" id="btn-merch">Merch</a>
+                                    <a href="#merch" tabindex="-1" class="button navLink" id="btn-merch">Merch</a>
                                 </li>
                                 <li class="navItem">
-                                    <a href="https://ilmaisme.github.io/doru#team" tabindex="-1" class="button navLink" id="btn-team">Team</a>
+                                    <a href="#team" tabindex="-1" class="button navLink" id="btn-team">Team</a>
                                 </li>
                                 <li class="navItem">
-                                    <a href="https://ilmaisme.github.io/doru#faq" tabindex="-1" class="button navLink" id="btn-faq">Faq</a>
+                                    <a href="#faq" tabindex="-1" class="button navLink" id="btn-faq">Faq</a>
                                 </li>
                             </ul>
                         </nav>                <div class="headerSoc center-flex">
@@ -522,7 +522,8 @@
                         <div class="galleryName">Zydent Doru</div>
                     </div>
                 </div>                <div class="center-flex">
-                    <a href="gallery.html" class="buttonMore" aria-label="Click to See More in Gallery">See More</a>
+                    <button onclick="displayContentGallery()" class="button buttonMore"
+                        aria-label="Click to See More in Gallery">See More</button>
                 </div>
             </div>
             <div class="section container--big merchandise" id="merch">
@@ -859,27 +860,91 @@
                             turpis massa, non suscipit in bibendum nec volutpat viverra.</div>
                     </div>
                 </div>            </div>
-            <!-- footer -->
-            <button class="button buttonBack" id="back-top" aria-label="Back to Top">
-                <img src="./asset/images/back-top.png" loading="lazy" alt="" width="40" height="123" class="">
-            </button>
-            <footer class="footer container--big text-center">
-                <a href="index.html">
-                    <img src="./asset/images/logo-doru.png" loading="lazy" alt="Doru" width="207" height="72" class="footerLogo">
-                </a>
-                <div class="footerCopy">
-                    All Rights Reserved
-                </div>
-                <div class="footerSoc center-flex">
-                    <a href="#" class="footerLink" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <span class="footerIcon icon icon-ig"></span>
-                    </a>
-                    <a href="#" class="footerLink" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                        <span class="footerIcon icon icon-tw"></span>
-                    </a>
-                </div>
-            </footer>        </section>
+        </section>
+        <section class="content" id="contentgal">
+            <div class="sectionPage container--big">
+                <h1 class="articleTitle articleTitle__page"><span>Gallery</span></h1>
+                <div class="galleryIdx display-flex">
+                    <div class="galleryItem">
+                        <img src="./asset/images/gallery/gal1-1.jpg" alt="" width="294" height="294" class="galleryImg" loading="lazy">
+                        <div class="galleryName">Freanauts Doru</div>
+                    </div>
+                    <div class="galleryItem">
+                        <img src="./asset/images/gallery/gal1-2.jpg" alt="" width="294" height="294" class="galleryImg" loading="lazy">
+                        <div class="galleryName">Freamo Doru</div>
+                    </div>
+                    <div class="galleryItem">
+                        <img src="./asset/images/gallery/gal1-3.jpg" alt="" width="294" height="294" class="galleryImg" loading="lazy">
+                        <div class="galleryName">Freaker Doru</div>
+                    </div>
+                    <div class="galleryItem">
+                        <img src="./asset/images/gallery/gal1-4.jpg" alt="" width="294" height="294" class="galleryImg" loading="lazy">
+                        <div class="galleryName">Freappie Doru</div>
+                    </div>
+                    <div class="galleryItem">
+                        <img src="./asset/images/gallery/gal1-5.jpg" alt="" width="294" height="294" class="galleryImg" loading="lazy">
+                        <div class="galleryName">Freaskater Doru</div>
+                    </div>
+                    <div class="galleryItem">
+                        <img src="./asset/images/gallery/gal1-6.jpg" alt="" width="294" height="294" class="galleryImg" loading="lazy">
+                        <div class="galleryName">Freapo Doru</div>
+                    </div>
+                    <div class="galleryItem">
+                        <img src="./asset/images/gallery/gal1-7.jpg" alt="" width="294" height="294" class="galleryImg" loading="lazy">
+                        <div class="galleryName">Freaboo Doru</div>
+                    </div>
+                    <div class="galleryItem">
+                        <img src="./asset/images/gallery/gal1-8.jpg" alt="" width="294" height="294" class="galleryImg" loading="lazy">
+                        <div class="galleryName">Freaweenie Doru</div>
+                    </div>
+                    <div class="galleryItem">
+                        <img src="./asset/images/gallery/gal1-9.jpg" alt="" width="294" height="294" class="galleryImg" loading="lazy">
+                        <div class="galleryName">Freacasso Doru</div>
+                    </div>
+                    <div class="galleryItem">
+                        <img src="./asset/images/gallery/gal1-10.jpg" alt="" width="294" height="294" class="galleryImg" loading="lazy">
+                        <div class="galleryName">Freaking Doru</div>
+                    </div>
+                    <div class="galleryItem">
+                        <img src="./asset/images/gallery/gal1-11.jpg" alt="" width="294" height="294" class="galleryImg" loading="lazy">
+                        <div class="galleryName">Frearcher Doru</div>
+                    </div>
+                    <div class="galleryItem">
+                        <img src="./asset/images/gallery/gal1-12.jpg" alt="" width="294" height="294" class="galleryImg" loading="lazy">
+                        <div class="galleryName">Freacool Doru</div>
+                    </div>
+
+                    <ul class="paging center-flex">
+                        <li class="pagingItem"><a href="#" class="pagingLink--arr disable" aria-label="Previous Content"><span class="pagingArrow pagingArrow--prev"></span></a></li>
+                        <li class="pagingItem"><a href="#" class="pagingLink active">1</a></li>
+                        <li class="pagingItem"><a href="#" class="pagingLink">2</a></li>
+                        <li class="pagingItem"><a href="#" class="pagingLink">3</a></li>
+                        <li class="pagingItem"><a href="#" class="pagingLink--arr" aria-label="Next Content"><span class="pagingArrow pagingArrow--next"></span></a></li>
+                    </ul>                </div>
+            </div>
+        </section>
     </main>
+    <!-- footer -->
+    <section class="content" id="footer">
+        <button class="button buttonBack" id="back-top" aria-label="Back to Top">
+            <img src="./asset/images/back-top.png" loading="lazy" alt="" width="40" height="123" class="">
+        </button>
+        <footer class="footer container--big text-center">
+            <a href="index.html">
+                <img src="./asset/images/logo-doru.png" loading="lazy" alt="Doru" width="207" height="72" class="footerLogo">
+            </a>
+            <div class="footerCopy">
+                All Rights Reserved
+            </div>
+            <div class="footerSoc center-flex">
+                <a href="#" class="footerLink" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <span class="footerIcon icon icon-ig"></span>
+                </a>
+                <a href="#" class="footerLink" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <span class="footerIcon icon icon-tw"></span>
+                </a>
+            </div>
+        </footer>    </section>
 
     <script src="./asset/js/jquery-3.5.0.min.js"></script> 
     <script defer type="text/javascript" src="./asset/js/main.min.js"></script>

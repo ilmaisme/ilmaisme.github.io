@@ -3,21 +3,42 @@ $(document).ready(function () {
     $('#enter').on('click', function () {
         scrollTop()
         displayContent()
-        comicSlider();
-        gallerySlider();
+        if ($('.comic').is(':visible')) {
+            comicSlider();
+        }
+        if ($('.-gal1').is(':visible')) {
+            gallerySlider();
+        }
     })
 
     //nav link
+    $('.navLink').click(function (e) {
+        e.preventDefault();
+
+        hideContentGallery()
+        scrollToSection(this.hash);
+        
+        /*if (this.pathname === window.location.pathname) {
+            scrollToSection(this.hash);
+        } else {
+            window.location.replace(this.href);
+        }*/
+    });
+
+    /*
     if (window.location.href.includes('#')) {
         displayContent()
-        comicSlider();
-        gallerySlider();
+        if ($('.comic').is(':visible')) {
+            comicSlider();
+        }
+        if ($('.-gal1').is(':visible')) {
+            gallerySlider();
+        }
 
-        //nav link
         if (window.location.hash) {
             scrollToSection(window.location.hash);
         }
-    }
+    }*/
 
     //toggle mobile menu
     $('#menuToggle').on('click', function () {
@@ -138,11 +159,27 @@ $(document).ready(function () {
     }*/
 });
 
-//hide content
+//display content
 function displayContent() {
+    $('#nav').removeClass('display-none')
     $('#welcome').addClass('display-none')
     $('#content').addClass('active')
+    $('#footer').addClass('active')
 }
+
+//display hide gallery
+function displayContentGallery() {
+    scrollTop()
+    $('#content').removeClass('active')
+    $('#contentgal').addClass('active')
+}
+
+function hideContentGallery() {
+    scrollTop()
+    $('#content').addClass('active')
+    $('#contentgal').removeClass('active')
+}
+
 //display mobile menu
 function updateMenu() {
     if ($('#menu').css('display') == 'none') {
@@ -152,16 +189,6 @@ function updateMenu() {
         $('.menuMob').addClass('mobile');
     }
 }
-
-$('.navLink').click(function (e) {
-    e.preventDefault();
-
-    if (this.pathname === window.location.pathname) {
-        scrollToSection(this.hash);
-    } else {
-        window.location.replace(this.href);
-    }
-});
 
 function scrollToSection(id) {
     $('html, body').animate({
