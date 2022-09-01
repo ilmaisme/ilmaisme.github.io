@@ -12,26 +12,6 @@ $(document).ready(function () {
         }
     })
 
-    //nav link
-    $('.navLink').click(function (e) {
-        e.preventDefault();
-
-        if ($('#contentgal').css('display') == 'none') {} else {
-            hideContentGallery()
-        }
-
-        scrollToSection(this.hash);
-        uncheckedMenu()
-        hideMenuMobile()
-
-        /*if (this.pathname === window.location.pathname) {
-            scrollToSection(this.hash);
-        } else {
-            window.location.replace(this.href);
-        }*/
-    });
-
-    /*
     if (window.location.href.includes('#')) {
         displayContent()
         if ($('.comic').is(':visible')) {
@@ -42,9 +22,11 @@ $(document).ready(function () {
         }
 
         if (window.location.hash) {
-            scrollToSection(window.location.hash);
+            setTimeout(function () {
+                scrollToSection(window.location.hash);
+            }, 700);
         }
-    }*/
+    }
 
     //toggle mobile menu
     $('#menuToggle').on('click', function () {
@@ -53,21 +35,17 @@ $(document).ready(function () {
         if (isChecked) {
             $('.menuMob').addClass('active');
             $('.menu').addClass('active');
-            $('body').addClass('stop');
         } else {
             hideMenuMobile()
         }
     })
 
-    $(window).resize(function () {
-        updateMenu();
-    });
-
     function comicSlider() {
         //comic slider
         $('#comic').slick({
             dots: true,
-            infinite: false,
+            infinite: true,
+            autoplay: true,
             speed: 500,
             fade: true,
             cssEase: 'linear'
@@ -142,7 +120,7 @@ $(document).ready(function () {
     });
 
     //show content faq
-    /*var accItem = document.getElementsByClassName('faqItem');
+    var accItem = document.getElementsByClassName('faqItem');
     var accHD = document.getElementsByClassName('-js-show');
     for (i = 0; i < accHD.length; i++) {
         accHD[i].addEventListener('click', toggleItem, false);
@@ -159,7 +137,7 @@ $(document).ready(function () {
         } else {
             this.parentNode.className = 'faqItem close';
         }
-    }*/
+    }
 });
 
 //display content
@@ -169,19 +147,6 @@ function displayContent() {
     $('#welcome').addClass('display-none')
     $('#content').addClass('active')
     $('#footer').addClass('active')
-}
-
-//display hide gallery
-function displayContentGallery() {
-    scrollTop()
-    $('#content').removeClass('active')
-    $('#contentgal').addClass('active')
-}
-
-function hideContentGallery() {
-    scrollTop()
-    $('#content').addClass('active')
-    $('#contentgal').removeClass('active')
 }
 
 //display mobile menu
@@ -197,7 +162,6 @@ function updateMenu() {
 function hideMenuMobile() {
     $('.menuMob').removeClass('active');
     $('.menu').removeClass('active');
-    $('body').removeClass('stop');
 }
 uncheckedMenu()
 
@@ -207,7 +171,7 @@ function uncheckedMenu() {
 
 function scrollToSection(id) {
     $('html, body').animate({
-        scrollTop: $(id).offset().top - 40
+        scrollTop: $(id).offset().top - 100
     }, 1000);
 }
 
@@ -219,12 +183,18 @@ function scrollTop() {
     return false;
 }
 
-//show back to top
 $("#back-top").fadeOut("fast");
 $(window).scroll(function () {
+    //show back to top
     if ($(this).scrollTop() > 275) {
         $("#back-top").fadeIn("fast");
     } else {
         $("#back-top").fadeOut("slow");
     }
+    //fixed header
+    let hd = $("header");
+    var a = $(window).scrollTop(),
+        b = hd.outerHeight();
+    a > b + 40 ? (hd.addClass("fixed")) :
+        (hd.removeClass("fixed"))
 })
