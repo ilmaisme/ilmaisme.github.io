@@ -4,6 +4,7 @@ $(document).ready(function () {
         scrollTop()
         displayContent()
         updateMenu();
+        $('body').removeClass('pgwelcome');
         if ($('.comic').is(':visible')) {
             comicSlider();
         }
@@ -14,6 +15,7 @@ $(document).ready(function () {
 
     if (window.location.href.includes('#')) {
         displayContent()
+        $('body').removeClass('pgwelcome');
         if ($('.comic').is(':visible')) {
             comicSlider();
         }
@@ -26,6 +28,12 @@ $(document).ready(function () {
                 scrollToSection(window.location.hash);
             }, 700);
         }
+    }
+
+    if ($('.pgwelcome').is(':visible')) {
+        $('.menuMob').removeClass('mobile');
+    } else {
+        updateMenu()
     }
 
     //toggle mobile menu
