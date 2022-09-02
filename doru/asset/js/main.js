@@ -23,10 +23,23 @@ $(document).ready(function () {
             gallerySlider();
         }
 
+        // if (window.location.hash) {
+        //     setTimeout(function () {
+        //         scrollToSection(window.location.hash);
+        //     }, 700);
+        // }
+
         if (window.location.hash) {
-            setTimeout(function () {
-                scrollToSection(window.location.hash);
-            }, 700);
+            if(window.chrome) {
+                setTimeout(function () {
+                    scrollToSection(window.location.hash);
+                }, 700);
+            } else {
+                window.location.href = window.location.hash;
+                setTimeout(function () {
+                    scrollToSection(window.location.hash);
+                }, 700);
+            }
         }
     }
 
