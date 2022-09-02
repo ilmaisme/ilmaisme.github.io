@@ -48,7 +48,9 @@ $(document).ready(function () {
             autoplay: true,
             speed: 500,
             fade: true,
-            cssEase: 'linear'
+            cssEase: 'linear',
+            pauseOnHover: false,
+            focusOnSelect: false,
         });
     }
 
