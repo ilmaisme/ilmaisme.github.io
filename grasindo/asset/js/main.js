@@ -41,21 +41,16 @@ function updateMenu() {
         //console.log("desktop")        
         $('.menuMob').removeClass('mobile');
         hd.removeClass('mobile');
+        /* move nav position in desktop */
+        $('.nav').appendTo('.headerWrap');
     } else {
         //console.log("mobile")
         $('.menuMob').addClass('mobile');
         hd.addClass('mobile');
-        /* move nav position in mobile */
-        $('.nav').appendTo('#navMob');
     }
+    $('.headerWrap').removeClass('hidden');
 }
 
 function uncheckedMenu() {
     mTg.prop('checked', false);
 }
-
-$(window).on('resize', function () {
-    updateMenu()
-    uncheckedMenu()
-    jno.removeClass("active")
-});

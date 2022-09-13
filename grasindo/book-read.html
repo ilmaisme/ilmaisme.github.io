@@ -88,7 +88,7 @@
 </head>
 <body>
     <header class="header mobile">
-        <div class="container headerWrap">
+        <div class="container headerWrap hidden">
             <div class="headerTop display-flex">
                 <div class="searchbox desktop-only">
                     <form action="search.html" class="searchboxForm center-flex">
@@ -108,59 +108,60 @@
                         alt="" width="24" height="24" class="icon-search"></a>
                 <a href="#" class="buttonLogin">Login</a>
             </div>
-            <nav class="nav center-flex" aria-label="primarynavigation">
-                <div class="navWrap">
-                    <div class="menu mobile-only" id="menu">
-                        <label class="sr-only" for="menuToggle">Open navigation</label>
-                        <input type="checkbox" class="menuToggle" name="check" id="menuToggle" aria-haspopup="true"
-                            autocomplete="off">
-                        <svg class="ham hamRotate" viewBox="0 0 100 100" width="80">
-                            <path class="line top hamLine"
-                                d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013" />
-                            <path class="line middle hamLine" d="m 70,50 h -40" />
-                            <path class="line bottom hamLine"
-                                d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40" />
-                        </svg>
-                    </div>
-                    <ul class="navList menuMob mobile display-flex">
-                        <li class="navItem">
-                            <a href="index.html" class="navLink" tabindex="-1">Home
-                            </a>
-                        </li>
-                        <li class="navItem">
-                            <a href="index-categories.html" class="navLink" tabindex="-1">Categories
-                            </a>
-                        </li>
-                        <li class="navItem active">
-                            <a href="categories.html" class="navLink" tabindex="-1">Books
-                            </a>
-                        </li>
-                        <li class="navItem">
-                            <div aria-haspopup="true" tabindex="0">
-                                <div class="navOpen" id="navOpen">Promo &amp; Events
-                                    <span class="icon-chevron"></span>
-                                    <div class="navSub">
-                                        <a href="#" class="navLink" tabindex="-1">Promo
-                                        </a>
-                                        <a href="#" class="navLink" tabindex="-1">Event
-                                        </a>
-                                    </div>
+        </div>
+    </header>
+    <div class="navMob mobile-only" id="navMob">
+        <nav class="nav center-flex" aria-label="primarynavigation">
+            <div class="navWrap">
+                <div class="menu mobile-only" id="menu">
+                    <label class="sr-only" for="menuToggle">Open navigation</label>
+                    <input type="checkbox" class="menuToggle" name="check" id="menuToggle" aria-haspopup="true"
+                        autocomplete="off">
+                    <svg class="ham hamRotate" viewBox="0 0 100 100" width="80">
+                        <path class="line top hamLine"
+                            d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013" />
+                        <path class="line middle hamLine" d="m 70,50 h -40" />
+                        <path class="line bottom hamLine"
+                            d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40" />
+                    </svg>
+                </div>
+                <ul class="navList menuMob mobile display-flex">
+                    <li class="navItem">
+                        <a href="index.html" class="navLink" tabindex="-1">Home
+                        </a>
+                    </li>
+                    <li class="navItem">
+                        <a href="index-categories.html" class="navLink" tabindex="-1">Categories
+                        </a>
+                    </li>
+                    <li class="navItem active">
+                        <a href="categories.html" class="navLink" tabindex="-1">Books
+                        </a>
+                    </li>
+                    <li class="navItem">
+                        <div aria-haspopup="true" tabindex="0">
+                            <div class="navOpen" id="navOpen">Promo &amp; Events
+                                <span class="icon-chevron"></span>
+                                <div class="navSub">
+                                    <a href="#" class="navLink" tabindex="-1">Promo
+                                    </a>
+                                    <a href="#" class="navLink" tabindex="-1">Event
+                                    </a>
                                 </div>
                             </div>
-                        </li>
-                        <li class="navItem">
-                            <a href="#" class="navLink" tabindex="-1">Authors
-                            </a>
-                        </li>
-                        <li class="navItem">
-                            <a href="#" class="navLink" tabindex="-1">About us
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>    </div>
-    </header>
-    <div class="navMob mobile-only" id="navMob"></div>
+                        </div>
+                    </li>
+                    <li class="navItem">
+                        <a href="#" class="navLink" tabindex="-1">Authors
+                        </a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#" class="navLink" tabindex="-1">About us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav></div>
     <div class="js-nav-offset"></div>    <main role="main">
         <div class="read container mt2">
             <div class="breadcrumb display-flex align-center">
@@ -170,12 +171,74 @@
                 <div class="breadcrumbItem"><a href="#" class="breadcrumbLink active">5 cm. Aku; Kamu; Samudra; dan  Bintang-Bintang</a></div>
             </div>            <div class="readRow row">
                 <div class="readCol readImg col-12 col-lg-5">
-                    <div class="readImg__list text-center">
-                        <img src="./asset/images/sample/book-1-big.jpg"
-                            alt="5 cm. Aku; Kamu; Samudra; dan Bintang-Bintang">
+                    <div class="readImg__list">
+                        <div class="readImg__item">
+                            <div class="readImg__wrap -zoom">
+                                <img data-zoom="./asset/images/sample/book-1-zoom.jpg" src="./asset/images/sample/book-1-big.jpg" alt=""
+                                    loading="lazy" width="394" height="549" class="readImg__img">
+                            </div>
+                        </div>
+                        <div class="readImg__item">
+                            <div class="readImg__wrap -zoom">
+                                <img data-zoom="https://api.lorem.space/image/book?w=1110&h=640&hash=8B7BCDC2"
+                                    src="https://api.lorem.space/image/book?w=394&h=549&hash=8B7BCDC2" alt="" loading="lazy" width="394" height="549"
+                                    class="readImg__img">
+                            </div>
+                        </div>
+                        <div class="readImg__item">
+                            <div class="readImg__wrap -zoom">
+                                <img data-zoom="https://api.lorem.space/image/book?w=1110&h=640&hash=500B67FB"
+                                    src="https://api.lorem.space/image/book?w=394&h=549&hash=500B67FB" alt="" loading="lazy" width="394" height="549"
+                                    class="readImg__img">
+                            </div>
+                        </div>
+                        <div class="readImg__item">
+                            <div class="readImg__wrap -zoom">
+                                <img data-zoom="https://api.lorem.space/image/book?w=1110&h=640&hash=A89D0DE6"
+                                    src="https://api.lorem.space/image/book?w=394&h=549&hash=A89D0DE6" alt="" loading="lazy" width="394" height="549"
+                                    class="readImg__img">
+                            </div>
+                        </div>
+                        <div class="readImg__item">
+                            <div class="readImg__wrap -zoom">
+                                <img data-zoom="https://api.lorem.space/image/book?w=1110&h=640&hash=225E6693"
+                                    src="https://api.lorem.space/image/book?w=394&h=549&hash=225E6693" alt="" loading="lazy" width="394" height="549"
+                                    class="readImg__img">
+                            </div>
+                        </div>
                     </div>
-                    <div class="readImg__nav"></div>
-                </div>
+                    <div class="readImg__nav">
+                        <div class="readImg__item">
+                            <div class="readImg__wrap readImg--small">
+                                <img src="./asset/images/sample/book-1.jpg" alt="" loading="lazy" width="238" height="332"
+                                    class="readImg__img">
+                            </div>
+                        </div>
+                        <div class="readImg__item">
+                            <div class="readImg__wrap readImg--small">
+                                <img src="https://api.lorem.space/image/book?w=238&h=332&hash=8B7BCDC2" alt="" loading="lazy" width="238" height="332"
+                                    class="readImg__img">
+                            </div>
+                        </div>
+                        <div class="readImg__item">
+                            <div class="readImg__wrap readImg--small">
+                                <img src="https://api.lorem.space/image/book?w=238&h=332&hash=500B67FB" alt="" loading="lazy" width="238" height="332"
+                                    class="readImg__img">
+                            </div>
+                        </div>
+                        <div class="readImg__item">
+                            <div class="readImg__wrap readImg--small">
+                                <img src="https://api.lorem.space/image/book?w=238&h=332&hash=A89D0DE6" alt="" loading="lazy" width="238" height="332"
+                                    class="readImg__img">
+                            </div>
+                        </div>
+                        <div class="readImg__item">
+                            <div class="readImg__wrap readImg--small">
+                                <img src="https://api.lorem.space/image/book?w=238&h=332&hash=225E6693" alt="" loading="lazy" width="238" height="332"
+                                    class="readImg__img">
+                            </div>
+                        </div>
+                    </div>                </div>
                 <div class="readCol readDetail col-12 col-lg-7">
                     <h1 class="readName">5 cm. Aku; Kamu; Samudra; dan Bintang-Bintang</h1>
                     <table class="readTable">
@@ -257,68 +320,93 @@
             </div>
         </div>
         <div class="readTab listTab tablink">
-            <ul class="display-flex align-center container">
+            <ul class="listTab__list display-flex align-center container">
                 <li>
-                    <button class="button listTab__label tabbutton active" onclick="openTab(event, 'release')">
+                    <button class="button listTab__label tabbutton active" onclick="openTab(event, 'synopsis')">
                         Synopsis
                     </button>
                 </li>
                 <li>
-                    <button class="button listTab__label tabbutton" onclick="openTab(event, 'best')">
+                    <button class="button listTab__label tabbutton" onclick="openTab(event, 'detail')">
                         Product Detail
                     </button>
                 </li>
                 <li>
-                    <button class="button listTab__label tabbutton" onclick="openTab(event, 'winner')">
-                        Review (0)
+                    <button class="button listTab__label tabbutton" onclick="openTab(event, 'review')">
+                        Review (2)
                     </button>
                 </li>
                 <li>
-                    <button class="button listTab__label tabbutton" onclick="openTab(event, 'winner')">
+                    <button class="button listTab__label tabbutton" onclick="openTab(event, 'author')">
                         About Author
                     </button>
                 </li>
             </ul>
-            <div class="tablinkwrap">
-                <div class="tablinkcontent container active" id="release">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et imperdiet sapien pellentesque quisque ut
-                        egestas
-                        arcu pretium odio. Odio aliquam auctor duis lectus venenatis, a donec sit sed. Enim eget molestie
-                        posuere
-                        egestas sit tempor nunc, donec. Varius fermentum, ut arcu id pellentesque. Facilisis in molestie vitae
-                        non
-                        consequat mattis nunc mi.</p>
+            <div class="tablinkwrap static">
+                <div class="tablinkcontent container active" id="synopsis">
+                    <div class="readMore">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et imperdiet sapien pellentesque quisque ut
+                            egestas
+                            arcu pretium odio. Odio aliquam auctor duis lectus venenatis, a donec sit sed. Enim eget molestie
+                            posuere
+                            egestas sit tempor nunc, donec. Varius fermentum, ut arcu id pellentesque. Facilisis in molestie
+                            vitae
+                            non
+                            consequat mattis nunc mi.</p>
         
-                    <p>Scelerisque lectus natoque integer dictumst ipsum amet faucibus. Leo eu diam in vel a. Nibh mattis libero
-                        ut
-                        sem in facilisi sit. Tincidunt id auctor scelerisque mi. Pulvinar egestas sed sed neque libero sed. Ut
-                        eget
-                        maecenas lorem nunc, et in feugiat.</p>
+                        <p>Scelerisque lectus natoque integer dictumst ipsum amet faucibus. Leo eu diam in vel a. Nibh mattis
+                            libero
+                            ut
+                            sem in facilisi sit. Tincidunt id auctor scelerisque mi. Pulvinar egestas sed sed neque libero sed.
+                            Ut
+                            eget
+                            maecenas lorem nunc, et in feugiat.</p>
         
-                    <p>Morbi turpis consectetur purus molestie. Aliquet elit vitae ac sit nunc. Faucibus aliquet phasellus
-                        molestie
-                        tortor libero, ornare faucibus morbi. Cursus egestas viverra id sed. Nulla imperdiet imperdiet quam
-                        ultricies tellus, habitant ultrices sed ac. Facilisi id non sodales proin porttitor. Cursus massa, nec
-                        massa
-                        eget elementum nisl auctor. Tempor, lacus, auctor massa mi fusce. Pellentesque platea congue semper
-                        purus
-                        turpis urna. Tristique pulvinar nunc consequat ultricies et, at nulla.</p>
+                        <p>Morbi turpis consectetur purus molestie. Aliquet elit vitae ac sit nunc. Faucibus aliquet phasellus
+                            molestie
+                            tortor libero, ornare faucibus morbi. Cursus egestas viverra id sed. Nulla imperdiet imperdiet quam
+                            ultricies tellus, habitant ultrices sed ac. Facilisi id non sodales proin porttitor. Cursus massa,
+                            nec
+                            massa
+                            eget elementum nisl auctor. Tempor, lacus, auctor massa mi fusce. Pellentesque platea congue semper
+                            purus
+                            turpis urna. Tristique pulvinar nunc consequat ultricies et, at nulla.</p>
         
-                    <p>Ac neque aliquam suspendisse semper eget. Eu semper urna neque tortor posuere in arcu vestibulum, dictum.
-                        Blandit dolor volutpat lectus at at sit. Sem luctus ornare libero ornare imperdiet urna. Duis sagittis
-                        amet
-                        in sit. Pretium nec mauris et odio mauris sit morbi. Fusce accumsan eleifend est risus, ac. Praesent
-                        ligula
-                        mauris venenatis massa diam sem eget in. Dictum nulla elementum, neque aliquam risus fermentum
-                        suspendisse
-                        fusce. Id habitant viverra dapibus sed pellentesque. Metus iaculis aliquam id velit congue cursus lectus
-                        vitae sit. Lectus venenatis natoque viverra sed gravida arcu. Mi risus, consectetur morbi faucibus
-                        fermentum
-                        ultrices duis bibendum blandit. Nulla odio blandit lectus arcu consequat maecenas. Leo pellentesque a
-                        amet
-                        et in egestas neque purus.</p>
+                        <p>Ac neque aliquam suspendisse semper eget. Eu semper urna neque tortor posuere in arcu vestibulum,
+                            dictum.
+                            Blandit dolor volutpat lectus at at sit. Sem luctus ornare libero ornare imperdiet urna. Duis
+                            sagittis
+                            amet
+                            in sit. Pretium nec mauris et odio mauris sit morbi. Fusce accumsan eleifend est risus, ac. Praesent
+                            ligula
+                            mauris venenatis massa diam sem eget in. Dictum nulla elementum, neque aliquam risus fermentum
+                            suspendisse
+                            fusce. Id habitant viverra dapibus sed pellentesque. Metus iaculis aliquam id velit congue cursus
+                            lectus
+                            vitae sit. Lectus venenatis natoque viverra sed gravida arcu. Mi risus, consectetur morbi faucibus
+                            fermentum
+                            ultrices duis bibendum blandit. Nulla odio blandit lectus arcu consequat maecenas. Leo pellentesque
+                            a
+                            amet
+                            et in egestas neque purus.</p>
+                        <h1>Heading 1</h1>
+                        <h2>Heading 2</h2>
+                        <h3>Heading 3</h3>
+                        <h4>Heading 4</h4>
+                        <ul>
+                            <li>option 1</li>
+                            <li>option 2</li>
+                            <li>option 3</li>
+                        </ul>
+                        <ol>
+                            <li>option 1</li>
+                            <li>option 2</li>
+                            <li>option 3</li>
+                        </ol>
+                    </div>
+                    <button class="button buttonTrans buttonMore -more">See More</button>
                 </div>
-                <div class="tablinkcontent container" id="best">
+                <div class="tablinkcontent container" id="detail">
                     <table class="readTable readTable--tab">
                         <tr>
                             <td>ID</td>
@@ -357,16 +445,182 @@
                         </tr>
                     </table>
                 </div>
-                <div class="tablinkcontent container" id="winner">
-                    <div class="center-flex">
-                        Belum ada komentar</div>
+                <div class="tablinkcontent container" id="review">
+                    <!--
+                        <div class="readReview readReview--empty center-flex flex-column">
+                        <span class="readReview__caption">Belum ada komentar</span>
+                        <a href="#" class="button buttonBlue mt3">Login to add comment</a>
+                    </div>
+                    -->
+                    <div class="readReview">
+                        <form action="#">
+                            <textarea class="formArea" name="" id="" cols="32" rows="7" placeholder="Write Comment"
+                                aria-label="Write Comment"></textarea>
+                            <button class="button buttonBlue mt2" type="submit">Post</button>
+                        </form>
+                        <div class="reviewList">
+                            <div class="reviewItem">
+                                <div class="reviewAva display-flex">
+                                    <img src="./asset/images/user.png" alt="" width="50" height="50" loading="lazy">
+                                    <div class="reviewUser__wrap">
+                                        <div class="reviewUser">Fulan bin Fulan</div>
+                                        <div class="reviewTime mt1">10 min ago</div>
+                                    </div>
+                                </div>
+                                <div class="reviewContent">
+                                    <div class="reviewTxt">
+                                        <p>Tellus vitae blandit quam urna urna. Tempor pellentesque nec a,
+                                            scelerisque. Elit in
+                                            lorem eget vitae.
+                                            Ullamcorper faucibus urna ipsum ipsum nisi, malesuada. Vel eget placerat quis enim
+                                            fames.</p>
+                                    </div>
+                                    <button class="button buttonTrans -bReport mt1">Laporkan</button>
+                                </div>
+                            </div>
+                            <div class="reviewItem">
+                                <div class="reviewAva display-flex">
+                                    <img src="./asset/images/user.png" alt="" width="50" height="50" loading="lazy">
+                                    <div class="reviewUser__wrap">
+                                        <div class="reviewUser">Fulan bin Fulan</div>
+                                        <div class="reviewTime mt1">10 min ago</div>
+                                    </div>
+                                </div>
+                                <div class="reviewContent">
+                                    <div class="reviewTxt">
+                                        <p>Tellus vitae blandit quam urna urna. Tempor pellentesque nec a,
+                                            scelerisque. Elit in
+                                            lorem eget vitae.
+                                            Ullamcorper faucibus urna ipsum ipsum nisi, malesuada. Vel eget placerat quis enim
+                                            fames.</p>
+                                    </div>
+                                    <button class="button buttonTrans -bReport mt1">Laporkan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="tablinkcontent container" id="author">
+                    <div class="readAuthor">
+                        <div class="readAuthor__wrap display-flex">
+                            <img src="./asset/images/sample/author-3.png" alt="Karina Oktaviana" class="readAuthor__propic" loading="lazy"
+                                width="150" height="150">
+                            <div class="flex-init">
+                                <div class="readAuthor__name">Karina Oktaviana</div>
+                                <div class="readAuthor__desc">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et imperdiet sapien pellentesque quisque ut
+                                        egestas arcu pretium odio. Odio aliquam auctor duis lectus venenatis, a donec sit sed. Enim eget
+                                        molestie posuere egestas sit tempor nunc, donec. Varius fermentum, ut arcu id pellentesque.
+                                        Facilisis in
+                                        molestie vitae non consequat mattis nunc mi.
+                                    </p>
+                                    <p>Scelerisque lectus natoque integer dictumst ipsum amet faucibus. Leo eu diam in vel a. Nibh mattis
+                                        libero
+                                        ut sem in facilisi sit. Tincidunt id auctor scelerisque mi. Pulvinar egestas sed sed neque libero
+                                        sed.
+                                        Ut eget maecenas lorem nunc, et in feugiat.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titleWrap display-flex titleCaption">Books by Author
+                            <a href="author.html" class="titleLink">Discover More</a>
+                        </div>
+                        <div class="productIdx">
+                            <div class="row">
+                                <div class="productItem productIdx__item display-flex col-6 col-md-4 col-lg-3">
+                                    <div class="productImg">
+                                        <img src="./asset/images/sample/book-1.jpg" alt="5 cm. Aku; Kamu; Samudra; dan Bintang-Bintang" width="238" height="332" loading="lazy">
+                                        <div class="productCta display-flex">
+                                            <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item col-6">
+                                                <span class="icon icon-zoom"></span>
+                                            </a>
+                                            <button aria-label="Like Product" class="button buttonLike productCta__item col-6">
+                                                <span class="icon icon-like"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="productContent mt2">
+                                        <div class="productPrice">
+                                            <span class="productPrice--cut">Rp 200.000</span>
+                                            Rp 180.000
+                                        </div>
+                                        <div class="productTitle">5 cm. Aku; Kamu; Samudra; dan Bintang-Bintang</div>
+                                        <div class="productAuthor">by Donny Dhirgantoro</div>
+                                    </div>
+                                </div>
+                                <div class="productItem productIdx__item display-flex col-6 col-md-4 col-lg-3">
+                                    <div class="productImg">
+                                        <img src="./asset/images/sample/book-2.jpg" alt="Cinta Itu Alasan Sekaligus Tujuan" width="238" height="332" loading="lazy">
+                                        <div class="productCta display-flex">
+                                            <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item col-6">
+                                                <span class="icon icon-zoom"></span>
+                                            </a>
+                                            <button aria-label="Like Product" class="button buttonLike productCta__item col-6">
+                                                <span class="icon icon-like"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="productContent mt2">
+                                        <div class="productPrice">
+                                            <span class="productPrice--cut">Rp 180.000</span>
+                                            Rp 150.000
+                                        </div>
+                                        <div class="productTitle">Cinta Itu Alasan Sekaligus Tujuan</div>
+                                        <div class="productAuthor">by Maman Suherman</div>
+                                    </div>
+                                </div>
+                                <div class="productItem productIdx__item display-flex col-6 col-md-4 col-lg-3">
+                                    <div class="productImg">
+                                        <img src="./asset/images/sample/book-3.jpg" alt="Ada Nama yang Abadi Di Hati Tapi Tak Bisa Dinikahi" width="238" height="332" loading="lazy">
+                                        <div class="productCta display-flex">
+                                            <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item col-6">
+                                                <span class="icon icon-zoom"></span>
+                                            </a>
+                                            <button aria-label="Like Product" class="button buttonLike productCta__item col-6">
+                                                <span class="icon icon-like"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="productContent mt2">
+                                        <div class="productPrice">
+                                            <span class="productPrice--cut">Rp 180.000</span>
+                                            Rp 150.000
+                                        </div>
+                                        <div class="productTitle">Ada Nama yang Abadi Di Hati Tapi Tak Bisa Dinikahi</div>
+                                        <div class="productAuthor">by Maman Suherman</div>
+                                    </div>
+                                </div>
+                                <div class="productItem productIdx__item display-flex col-6 col-md-4 col-lg-3">
+                                    <div class="productImg">
+                                        <img src="./asset/images/sample/book-4.jpg" alt="Seribu Wajah Ayah" width="238" height="332" loading="lazy">
+                                        <div class="productCta display-flex">
+                                            <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item col-6">
+                                                <span class="icon icon-zoom"></span>
+                                            </a>
+                                            <button aria-label="Like Product" class="button buttonLike productCta__item col-6">
+                                                <span class="icon icon-like"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="productContent mt2">
+                                        <div class="productPrice">
+                                            <span class="productPrice--cut">Rp 180.000</span>
+                                            Rp 150.000
+                                        </div>
+                                        <div class="productTitle">Seribu Wajah Ayah</div>
+                                        <div class="productAuthor">by Nurun Ala</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        </div>
             </div>
         </div>        <div class="container">
-            <div class="titleWrap display-flex">
-                <h3 class="titleCaption mt0">Related Books</h3>
+            <h3 class="titleWrap display-flex titleCaption">Related Books
                 <a href="categories.html" class="titleLink">Discover More</a>
-            </div>
+            </h3>
             <div class="productIdx">
                 <div class="row">
                     <div class="productItem productIdx__item display-flex col-6 col-md-4 col-lg-3">
@@ -457,6 +711,47 @@
             </div>
         </div>
     </main>
+    <!-- s: popup report -->
+    <div class="popup popup--hidden center-flex -pReport">
+        <div class="popupWrap reportPopup">
+            <div class="popupTitle">
+                Laporkan Komentar
+            </div>
+            <div class="popupContent">
+                <form action="">
+                    <div class="reportSelect display-flex aitems-center mt2">
+                        <input type="radio" id="report1" class="formRadio mr1" name="report">
+                        <label class="formRadio__label" for="report1">Iklan atau spam</label>
+                    </div>
+                    <div class="reportSelect display-flex aitems-center mt2">
+                        <input type="radio" id="report2" class="formRadio mr1" name="report">
+                        <label class="formRadio__label" for="report2">Porno atau asusila</label>
+                    </div>
+                    <div class="reportSelect display-flex aitems-center mt2">
+                        <input type="radio" id="report3" class="formRadio mr1" name="report">
+                        <label class="formRadio__label" for="report3">Ujaran kebencian atau SARA</label>
+                    </div>
+                    <div class="reportSelect display-flex aitems-center mt2">
+                        <input type="radio" id="report4" class="formRadio mr1" name="report">
+                        <label class="formRadio__label" for="report4">Perundungan atau pelecehan</label>
+                    </div>
+                    <div class="reportSelect display-flex aitems-center mt2">
+                        <input type="radio" id="report5" class="formRadio mr1" name="report">
+                        <label class="formRadio__label" for="report5">Lainnya</label>
+                    </div>
+                    <div class="display-flex jcontent-end mt4">
+                        <button class="button buttonTrans mr2 -btnCl" type="button">
+                            Batal
+                        </button>
+                        <button class="button buttonBlue" type="submit" name="submit">
+                            Laporkan
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>    <!-- e: popup report -->
+
     <footer class="footer">
         <div class="container container--small">
             <div class="text-center">
@@ -524,20 +819,69 @@
     </footer>
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/main.js"></script>
+    <script defer src="./asset/js/jquery.zoom.min.js"></script>
+    <script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
     <script>
         $(document).ready(function () {
+            //slider product's images
+            slickImg()
+            function slickImg() {
+                $('.readImg__list').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    fade: true,
+                    infinite: true,
+                    asNavFor: '.readImg__nav'
+                });
+                $('.readImg__nav').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    asNavFor: '.readImg__list',
+                    dots: false,
+                    centerMode: false,
+                    infinite: true,
+                    focusOnSelect: true
+                });
+            }
+    
+            //initialize zoom image
+            $('.-zoom').each(function () {
+                var src = $(this).find('img').attr('data-zoom');
+                $(this).zoom({
+                    url: src,
+                    on: 'mouseover',
+                    duration: 50
+                });
+            });
+    
             //button buy from
             $('#buy').on('click', function (e) {
                 e.stopPropagation();
                 $(this).siblings('button').toggleClass('active')
             });
-            $(document).click(function () {
+            $(document).on("click", function () {
                 $('#buy').prop('checked', false);
                 $('#buy').siblings('button').removeClass('active')
             });
-    
+            //toggle popup report comment
+            $(".-bReport").on("click", function () {
+                $('.-pReport').addClass('active');
+            });
+            $(".-btnCl").on("click", function () {
+                closePopup()
+            });
+            $('.popup').on("click", function () {
+                closePopup()
+            })
+            $('.popupWrap').on('click', function (e) {
+                e.stopPropagation();
+            })
+            function closePopup() {
+                $('.popup').removeClass('active');
+            }
         });
-        
+    
         //tab read books
         function openTab(evt, cityName) {
             var i, tablinkcontent, tabbutton;
@@ -551,7 +895,29 @@
             }
             document.getElementById(cityName).style.display = "block";
             evt.currentTarget.className += " active";
+    
+            //tab scroll mobile
+            let act = $('.listTab__label.active');
+            if (act.length > 0) {
+                let msp = act.position().left;
+                $('.listTab__list').animate({
+                    scrollLeft: msp
+                });
+            }
         }
+    
+        //more synopsis
+        $('.-more').click(function () {
+            $('.readMore').toggleClass('show');
+            if ($(this).html() == "See More") {
+                $(this).html("See Less")
+            } else {
+                $(this).html("See More")
+                $('html, body').animate({
+                    scrollTop: $('.readTab').offset().top - 100
+                }, 200);
+            }
+        });
     </script>
     <script>
         $('.buttonLike').on('click', function () {
