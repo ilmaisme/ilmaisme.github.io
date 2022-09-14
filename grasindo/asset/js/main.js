@@ -6,6 +6,7 @@ $(document).ready(function () {
     uncheckedMenu()
     //responsive menu
     updateMenu()
+    hideMenuMobile()
 
     // sticky menu
     $(window).scroll(function () {
