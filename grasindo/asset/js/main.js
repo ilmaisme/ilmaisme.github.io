@@ -3,13 +3,20 @@ let jno = $(".js-nav-offset");
 let mTg = $('#menuToggle');
 
 uncheckedMenu()
-updateMenu()
 hideMenuMobile()
+updateMenu()
+if (window.history && window.history.pushState) {
+    window.history.pushState('forward', null, '');
+    $(window).on('popstate', function () {
+        uncheckedMenu()
+        hideMenuMobile()
+    });
+}
 
 $(window).on('resize', function () {
     uncheckedMenu()
-    updateMenu()
     hideMenuMobile()
+    updateMenu()
 });
 
 $(document).ready(function () {
