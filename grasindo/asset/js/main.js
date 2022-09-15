@@ -2,11 +2,17 @@ let hd = $(".header");
 let jno = $(".js-nav-offset");
 let mTg = $('#menuToggle');
 
-$(document).ready(function () {
+uncheckedMenu()
+updateMenu()
+hideMenuMobile()
+
+$(window).on('resize', function () {
     uncheckedMenu()
-    //responsive menu
     updateMenu()
     hideMenuMobile()
+});
+
+$(document).ready(function () {
 
     // sticky menu
     $(window).scroll(function () {
@@ -29,11 +35,6 @@ $(document).ready(function () {
             hideMenuMobile()
         }
     })
-
-    function hideMenuMobile() {
-        $('.menuMob').removeClass('active');
-        $('.menu').removeClass('active');
-    }
 });
 
 //update mobile menu
@@ -48,10 +49,17 @@ function updateMenu() {
         //console.log("mobile")
         $('.menuMob').addClass('mobile');
         hd.addClass('mobile');
+        /* move nav position in mobile */
+        $('.nav').appendTo('#navMob');
     }
     $('.headerWrap').removeClass('hidden');
 }
 
 function uncheckedMenu() {
     mTg.prop('checked', false);
+}
+
+function hideMenuMobile() {
+    $('.menuMob').removeClass('active');
+    $('.menu').removeClass('active');
 }

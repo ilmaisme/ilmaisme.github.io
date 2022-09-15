@@ -259,7 +259,7 @@
         </div>
         <div class="container">
             <h3 class="titleCaption text-center">Shop Your Books</h3>
-            <div class="listTab bookTab tablink">
+            <div class="listTab bookTab tab">
                 <ul class="productLabel center-flex">
                     <li>
                         <button class="button listTab__label tabbutton active" onclick="openTabBook(event, 'release')">
@@ -277,8 +277,8 @@
                         </button>
                     </li>
                 </ul>
-                <div class="tablinkwrap">
-                    <div class="tablinkcontent active" id="release">
+                <div class="tabwrapper">
+                    <div class="tabcontent active" id="release">
                         <div class="product">
                             <div class="row">
                                 <div class="productItem display-flex col-6 col-md-4 col-lg-3">
@@ -455,7 +455,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tablinkcontent" id="best">
+                    <div class="tabcontent" id="best">
                         <div class="product">
                             <div class="row">
                                 <div class="productItem display-flex col-6 col-md-4 col-lg-3">
@@ -548,7 +548,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tablinkcontent" id="winner">
+                    <div class="tabcontent" id="winner">
                         <div class="product">
                             <div class="row">
                                 <div class="productItem display-flex col-6 col-md-4 col-lg-3">
@@ -807,9 +807,9 @@
             </div>        </div>
         <div class="container container--small">
             <h3 class="titleCaption text-center">Upcoming Event</h3>
-            <div class="listTab eventTab tablink">
+            <div class="listTab eventTab tab">
                 <ul class="eventLabel center-flex">
-                    <li class="active">
+                    <li>
                         <button class="button listTab__label tabbutton active" onclick="openTabEvent(event, 'webinar')">
                             Webinar
                         </button>
@@ -825,8 +825,8 @@
                         </button>
                     </li>
                 </ul>
-                <div class="tablinkwrap">
-                    <div class="tablinkcontent readTab__content active" id="webinar">
+                <div class="tabwrapper">
+                    <div class="tabcontent active" id="webinar">
                         <div class="event">
                             <div class="eventItem display-flex">
                                 <div class="eventDate">
@@ -894,12 +894,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tablinkcontent readTab__content" id="show">
+                    <div class="tabcontent" id="show">
                         <div class="center-flex mt2">
                             Saat ini belum ada jadwal Talkshow tersedia.
                         </div>
                     </div>
-                    <div class="tablinkcontent readTab__content" id="tryout">
+                    <div class="tabcontent" id="tryout">
                         <div class="center-flex mt2">
                             Saat ini belum ada jadwal Try Out tersedia.
                         </div>
@@ -1131,7 +1131,7 @@
         function openTabBook(evt, cityName) {
             var book = document.querySelector('.bookTab');
             var i, tablinkcontent, tabbutton;
-            tablinkcontent = book.querySelectorAll(".tablinkcontent");
+            tablinkcontent = book.querySelectorAll(".tabcontent");
             for (i = 0; i < tablinkcontent.length; i++) {
                 tablinkcontent[i].style.display = "none";
             }
@@ -1146,7 +1146,7 @@
         function openTabEvent(evt, cityName) {
             var event = document.querySelector('.eventTab');
             var i, tablinkcontent, tabbutton;
-            tablinkcontent = event.querySelectorAll(".tablinkcontent");
+            tablinkcontent = event.querySelectorAll(".tabcontent");
             for (i = 0; i < tablinkcontent.length; i++) {
                 tablinkcontent[i].style.display = "none";
             }
