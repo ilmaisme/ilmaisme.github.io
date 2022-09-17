@@ -88,7 +88,10 @@
                 <a href="search.html" class="searchLink mobile-only" aria-label="search"><img src="./asset/images/icon-search.svg"
                         alt="" width="24" height="24" class="icon-search"></a>
                 <div class="headerLogin">
-                    <a href="login.html" class="buttonLogin">Login</a>
+                    <a href="profile.html" class="headerLogin__user display-flex">
+                        <img src="./asset/images/user.png" alt="" width="50" height="50" class="headerLogin__img">
+                        <div class="headerLogin__name">Fadhil Ghazali</div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -146,101 +149,83 @@
             </div>
         </nav></div>
     <div class="js-nav-offset"></div>    <main role="main">
-        <div class="about container mt2">
-            <div class="breadcrumb display-flex align-center">
-                <div class="breadcrumbItem"><a href="index.html" class="breadcrumbLink">Home</a></div>
-                <div class="breadcrumbItem"><a href="contact.html" class="breadcrumbLink active">Contact Us</a></div>
-            </div>            <h1 class="titleCaption mt2">Contact Us</h1>
+        <div class="profile profileSection container mt4">
             <div class="row">
-                <div class="col-12 col-md-7 static">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit fermentum non vitae dictum.
-                        Aliquet faucibus ullamcorper volutpat posuere. Curabitur erat dolor imperdiet nibh bibendum eget
-                        dui. Nibh integer adipiscing vivamus sit libero, mauris quam dui. Non in donec etiam gravida
-                        lectus. Phasellus gravida ultrices libero vel diam, habitasse justo.
-                    </p>
-                    <p>
-                        Diam phasellus tortor cursus proin erat. Hendrerit augue vel cras nec. Massa orci eu posuere dui
-                        bibendum pellentesque in. Quam vitae ornare senectus in potenti sed. Diam elit arcu est, augue
-                        porttitor in. Interdum malesuada at dui, eu viverra phasellus ipsum. Sollicitudin sed massa
-                        dignissim porta.
-                    </p>
-                    <p>
-                        Diam accumsan nec placerat rhoncus, proin at est, ultrices lorem. Dolor arcu, amet blandit a
-                        ultricies. Posuere magna tortor egestas vestibulum blandit. Malesuada egestas velit amet,
-                        maecenas neque. Integer ipsum sapien, mattis urna cursus. Ut vulputate odio enim ipsum ut
-                        dictumst ut curabitur. Volutpat vel condimentum eu fermentum lobortis et urna in. A, sit non
-                        ultrices mattis donec nulla. </p>
-                </div>
-                <div class="col-12 col-md-5">
-                    <form action="#" class="">
-                        <div class="formMsg formMsg__success display-flex mt2"><span
-                                class="icon icon-check"></span>Success: The message was sent successfully.</div>
-                        <div class="formMsg formMsg__error display-flex mt2"><span class="icon icon-close"></span>Error
-                            : Message failed to send, please make sure your name, agency name, email address are filled
-                            correctly.</div>
-
-                        <label class="sr-only" for="name">Name</label>
-                        <input type="text" class="formInput formError mt2" name="name" id="name" placeholder="Name">
-                        <div class="formError__txt"><span class="icon icon-error"></span>This field is required</div>
-                        <label class="sr-only" for="email">Email</label>
-                        <input type="email" class="formInput mt2" name="email" id="email" placeholder="Email">
-                        <label class="sr-only" for="subject">Subject</label>
-                        <input type="text" class="formInput mt2" name="subject" id="subject" placeholder="Subject">
-                        <label class="sr-only" for="message">Write a message</label>
-                        <textarea class="formArea mt2" name="message" id="message" cols="32" rows="7"
-                            placeholder="Write a message"></textarea>
-                        <div class="mt2">
-                            <img src="./asset/images/sample/captcha.png" alt="" width="306" height="82">
+                <div class="col-lg-3">
+                    <div class="profileUser display-flex align-center">
+                        <div class="profileUpload upload-box display-flex align-center">
+                            <button class="button profileUpload__btn" aria-label="Upload Image">
+                                <img src="./asset/images/user-big.jpg" alt="" width="120" height="120">
+                            </button>
+                            <div class="profileUpload__icon center-flex">
+                                <span class="icon icon-edit filter-white"></span>
+                            </div>
+                            <input type="file" class="profileUpload__input image-upload" id="uploadImg" name="uploadImg" accept="image/*">
+                            <div class="profileUpload__img image-preview">
+                            </div>
                         </div>
-                        <button class="button buttonBlue mt2" type="submit">
-                            Post
-                        </button>
+                        <h2 class="profileUser__name">Fadhil Ghazali</h2>
+                    </div>                    <div class="profileNav">
+                        <div class="profileNav__item">
+                            <a href="profile.html" class="profileNav__link active">Profile</a>
+                        </div>
+                        <div class="profileNav__item">
+                            <a href="profile-wishlist.html" class="profileNav__link">My Wishlist</a>
+                        </div>
+                        <div class="profileNav__item">
+                            <a href="profile-calendar.html" class="profileNav__link">My Calendar</a>
+                        </div>
+                        <div class="profileNav__item">
+                            <a href="#" class="profileNav__link profileNav__log">Logout<span class="icon icon-logout"></span></a>
+                        </div>                    </div>
+                </div>
+                <div class="profileContent col-lg-9">
+                    <h1 class="titleCaption mt0">Welcome, Fadhil</h1>
+                    <form action="#" class="row profileSetting">
+                        <div class="col-12 col-lg-6">
+                            <div class="profileSetting__wrap mt2">
+                                <label class="profileSetting__label" for="name">Name</label>
+                                <input type="text" class="formInput mt1" name="name" id="name"
+                                    placeholder="Input your name" value="Fadhil Ghazali">
+                            </div>
+                            <div class="profileSetting__wrap mt2">
+                                <label class="profileSetting__label" for="email">Email</label>
+                                <input type="email" class="formInput mt1 formError" name="email" id="email"
+                                    placeholder="Input your email address" value="fadh.ghazali@gmail.com">
+                                <div class="formError__txt display-flex"><span class="icon icon-error"></span>This
+                                    email
+                                    is already
+                                    in use. Maybe another email?</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="profileSetting__wrap mt2">
+                                <label class="profileSetting__label" for="phone">Phone</label>
+                                <input type="text" name="phone" id="phone" class="formInput mt1"
+                                    placeholder="Input your phone number" value="082111111111" inputmode="tel">
+                            </div>
+                            <div class="profileSetting__wrap mt2">
+                                <label class="profileSetting__label" for="password">Password</label>
+                                <div class="profileSetting__wrap mt1">
+                                    <button class="button buttonPass" aria-label="show hide password" id="btnpass"
+                                        toggle="#pass" type="button"></button>
+                                    <input type="password" class="formInput" name="pass" id="pass"
+                                        placeholder="Input your password" value="!@#$%asdfgh_">
+                                    <!--<div class="formError__txt display-flex"><span class="icon icon-error"></span>Password
+                                    minimum 8
+                                    characters, contain capital letters
+                                    and numbers</div>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="button buttonBlue mt3" type="submit">
+                                Update
+                            </button>
+                        </div>
                     </form>
                 </div>
-                <div class="aboutContact col-12 display-flex">
-                    <div class="aboutContact__item mt1 display-flex align-start">
-                        <div class="filter-blue mr1">
-                            <img class="filter-black" src="./asset/images/icon-loc.svg" alt="" width="31" height="31"
-                                loading="lazy" class="footerIcon">
-                        </div>
-                        <div class="flex-init">
-                            PT. Gramedia Widiasarana Indonesia <br>
-                            Gedung Kompas Gramedia Blok 1 / lantai 3 <br>
-                            Jl. Palmerah Barat no. 29 - 37, Jakarta, 10270</div>
-                    </div>
-                    <div class="aboutContact__item mt1 display-flex align-start">
-                        <div class="filter-blue mr1">
-                            <img class="filter-black" src="./asset/images/icon-phone.svg" alt="" width="31" height="31"
-                                loading="lazy" class="footerIcon">
-                        </div>
-                        <div class="flex-init">
-                            (021) 536 50110 - 536 50111 <br> ext. 3300-3305</div>
-                    </div>
-                    <div class="aboutContact__item mt1 display-flex align-start">
-                        <div class="filter-blue mr1">
-                            <img class="filter-black" src="./asset/images/icon-fax.svg" alt="" width="31" height="31"
-                                loading="lazy" class="footerIcon">
-                        </div>
-                        <div class="flex-init aboutContact--center">
-                            (021) 536 98098</div>
-                    </div>
-                    <div class="aboutContact__item mt1 display-flex align-start">
-                        <div class="filter-blue mr1">
-                            <img class="filter-black" src="./asset/images/icon-mail.svg" alt="" width="31" height="31"
-                                loading="lazy" class="footerIcon">
-                        </div>
-                        <div class="flex-init aboutContact--center">
-                            <a href="mailto:redaksi_grasindo@grasindo.id">redaksi_grasindo@grasindo.id</a>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div class="aboutMaps">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4203737867515!2d106.79221721476912!3d-6.208152995505831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6b7ffa66c97%3A0x365d70863c2f5e1!2sPT%20Gramedia%20Widiasarana%20Indonesia!5e0!3m2!1sid!2sid!4v1663313992685!5m2!1sid!2sid"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </main>
     <footer class="footer">
@@ -338,11 +323,72 @@
     <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
     <script>
         $(document).ready(function () {
+            //image upload preview
+            function initImageUpload(box) {
+                let uploadField = box.querySelector('.image-upload');
+    
+                uploadField.addEventListener('change', getFile);
+    
+                function getFile(e) {
+                    let file = e.currentTarget.files[0];
+                    checkType(file);
+                }
+    
+                function previewImage(file) {
+                    let thumb = box.querySelector('.image-preview'),
+                        reader = new FileReader();
+    
+                    reader.onload = function () {
+                        thumb.style.backgroundImage = 'url(' + reader.result + ')';
+                    }
+                    reader.readAsDataURL(file);
+                    thumb.className += ' js--no-default';
+                }
+    
+                function checkType(file) {
+                    let imageType = /image.*/;
+                    if (!file.type.match(imageType)) {
+                        throw 'File bukan gambar';
+                    } else if (!file) {
+                        throw 'Tidak ada gambar yang dipilih';
+                    } else {
+                        previewImage(file);
+                    }
+                }
+    
+            }
+    
+            // initialize box-scope
+            var boxes = document.querySelectorAll('.upload-box');
+    
+            for (let i = 0; i < boxes.length; i++) {
+                let box = boxes[i];
+                initImageUpload(box);
+            }
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
             $('.buttonLike').on('click', function () {
                 $(this).toggleClass('active');
             })
         })
+    </script>    <script>
+        $(document).ready(function () {
+            //show hide password
+            $("#btnpass").click(function () {
+                let input = $($(this).attr("toggle"));
+                if (input.attr("type") == "password") {
+                    input.attr("type", "text");
+                    $(this).addClass("show")
+                } else {
+                    $(this).removeClass("show")
+                    input.attr("type", "password");
+                }
+            });
+        });
     </script>
+
 </body>
 
 </html>
