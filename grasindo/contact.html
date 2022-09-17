@@ -88,7 +88,7 @@
                 <a href="search.html" class="searchLink mobile-only" aria-label="search"><img src="./asset/images/icon-search.svg"
                         alt="" width="24" height="24" class="icon-search"></a>
                 <div class="headerLogin">
-                    <a href="#" class="buttonLogin">Login</a>
+                    <a href="login.html" class="buttonLogin">Login</a>
                 </div>
             </div>
         </div>
@@ -173,6 +173,12 @@
                 </div>
                 <div class="col-12 col-md-5">
                     <form action="#" class="">
+                        <div class="formMsg formMsg__success display-flex mt2"><span
+                                class="icon icon-check"></span>Success: The message was sent successfully.</div>
+                        <div class="formMsg formMsg__error display-flex mt2"><span class="icon icon-close"></span>Error
+                            : Message failed to send, please make sure your name, agency name, email address are filled
+                            correctly.</div>
+
                         <label class="sr-only" for="name">Name</label>
                         <input type="text" class="formInput formError mt2" name="name" id="name" placeholder="Name">
                         <div class="formError__txt"><span class="icon icon-error"></span>This field is required</div>
@@ -189,8 +195,6 @@
                         <button class="button buttonBlue mt2" type="submit">
                             Post
                         </button>
-                        <div class="formMsg formMsg__success display-flex mt3"><span class="icon icon-check"></span>Success: The message was sent successfully.</div>
-                        <div class="formMsg formMsg__error display-flex mt3"><span class="icon icon-close"></span>Error : Message failed to send, please make sure your name, agency name, email address are filled correctly.</div>
                     </form>
                 </div>
                 <div class="aboutContact col-12 display-flex">
@@ -333,8 +337,10 @@
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/main.js"></script>
     <script>
-        $('.buttonLike').on('click', function () {
-            $(this).toggleClass('active');
+        $(document).ready(function () {
+            $('.buttonLike').on('click', function () {
+                $(this).toggleClass('active');
+            })
         })
     </script>
 </body>

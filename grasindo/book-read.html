@@ -88,7 +88,7 @@
                 <a href="search.html" class="searchLink mobile-only" aria-label="search"><img src="./asset/images/icon-search.svg"
                         alt="" width="24" height="24" class="icon-search"></a>
                 <div class="headerLogin">
-                    <a href="#" class="buttonLogin">Login</a>
+                    <a href="login.html" class="buttonLogin">Login</a>
                 </div>
             </div>
         </div>
@@ -275,8 +275,7 @@
                         <div class="readBuy__wrap">
                             <button class="button readBuy__btn">Buy From <span class="icon-caret"></span>
                             </button>
-                            <input type="checkbox" class="readBuyToggle" name="buy" id="buy" aria-haspopup="true"
-                                autocomplete="off">
+                            <input type="checkbox" class="readBuyToggle" name="buy" id="buy" aria-haspopup="true">
                             <ul class="readBuy__list">
                                 <li>
                                     <a href="#" class="readBuy__link display-flex items-center">
@@ -880,16 +879,29 @@
             function closePopup() {
                 $('.popup').removeClass('active');
             }
-        });
     
-        //button buy from
-        $('#buy').on('click', function (e) {
-            e.stopPropagation();
-            $(this).siblings('button').toggleClass('active')
-        });
-        $(document).on("click", function () {
-            $('#buy').prop('checked', false);
-            $('#buy').siblings('button').removeClass('active')
+            //button buy from
+            $('#buy').on('click', function (e) {
+                e.stopPropagation();
+                $(this).siblings('button').toggleClass('active')
+            });
+            $(document).on("click", function () {
+                $('#buy').prop('checked', false);
+                $('#buy').siblings('button').removeClass('active')
+            });
+    
+            //more synopsis
+            $('.-more').click(function () {
+                $('.readMore').toggleClass('show');
+                if ($(this).html() == "See More") {
+                    $(this).html("See Less")
+                } else {
+                    $(this).html("See More")
+                    $('html, body').animate({
+                        scrollTop: $('.readTab').offset().top - 100
+                    }, 200);
+                }
+            });
         });
     
         //tab read books
@@ -915,23 +927,12 @@
                 });
             }
         }
-    
-        //more synopsis
-        $('.-more').click(function () {
-            $('.readMore').toggleClass('show');
-            if ($(this).html() == "See More") {
-                $(this).html("See Less")
-            } else {
-                $(this).html("See More")
-                $('html, body').animate({
-                    scrollTop: $('.readTab').offset().top - 100
-                }, 200);
-            }
-        });
     </script>
     <script>
-        $('.buttonLike').on('click', function () {
-            $(this).toggleClass('active');
+        $(document).ready(function () {
+            $('.buttonLike').on('click', function () {
+                $(this).toggleClass('active');
+            })
         })
     </script>
 </body>
