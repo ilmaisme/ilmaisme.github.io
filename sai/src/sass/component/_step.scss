@@ -1,0 +1,96 @@
+.step {
+    &Section {
+        padding-top: 48px;
+        padding-bottom: 84px;
+
+        @include min-responsive($w-lg) {
+            padding-top: 68px;
+        }
+    }
+
+    &Title {
+        display: inline-block;
+        padding: 6px 46px;
+        background: $cl-red;
+        border-radius: 12px;
+        @include font-pack(false, $font-size-vnormal, $font-weight-bold, $line-base, $cl-white);
+
+        @include min-responsive($w-lg) {
+            font-size: $font-size-xmedium;
+        }
+
+        &__wrap {
+            margin-top: 60px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    }
+
+    &Item {
+        position: relative;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        padding-right: 10px;
+        padding-left: 10px;
+
+        &:before {
+            content: '';
+            width: calc(100% - 30px);
+            position: absolute;
+            top: 14px;
+            left: calc(50% + 15px);
+            border-top: 2px solid $cl-red;
+        }
+
+        &:last-child::before {
+            content: none;
+        }
+
+        &--off {
+            min-width: calc(100%/5);
+
+            @include min-responsive($w-lg) {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+        }
+
+        &--on {
+            min-width: calc(100%/7);
+        }
+
+        &__title {
+            margin-top: 16px;
+            margin-bottom: 16px;
+            @include font-pack(false, $font-size-vnormal, $font-weight-normal, $line-base, $cl-primary-black);
+
+            @include range-responsive($w-lg, $w-xxl) {
+                font-size: $font-size-normal;
+            }
+
+            @include min-responsive($w-xxl) {
+                margin-top: 25px;
+                margin-bottom: 25px;
+                font-size: $font-size-medium;
+            }
+        }
+    }
+
+    &Num {
+        min-width: 34px;
+        min-height: 34px;
+        display: inline-block;
+        background: $cl-red;
+        border-radius: 50%;
+        @include font-pack(false, $font-size-vnormal, $font-weight-bold, $line-base, $cl-white);
+
+        @include min-responsive($w-lg) {
+            font-size: $font-size-normal;
+        }
+    }
+
+    &Img {
+        margin-top: 30px;
+    }
+}

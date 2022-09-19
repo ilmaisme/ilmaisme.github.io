@@ -1,0 +1,38 @@
+.media {
+    &List {
+        @include min-responsive($w-lg) {
+            margin-top: 30px;
+        }
+    }
+
+    &Item {
+        margin-top: 30px;
+    }
+
+    &Link {
+        padding: 35px 32px;
+        display: block;
+        height: 100%;
+        background: $cl-white;
+        border-radius: 10px;
+        overflow: hidden;
+        @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+        @include base_transition(all, .2s);
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    &Lead {
+        color: $cl-gray;
+    }
+
+    &Logo {
+        max-width: 144px;
+    }
+
+    .titleArt {
+        min-height: unset;
+    }
+}

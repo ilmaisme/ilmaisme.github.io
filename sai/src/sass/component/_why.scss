@@ -1,0 +1,70 @@
+.why {
+    &Item {
+        height: inherit;
+        min-height: 470px;
+        margin-top: 30px;
+
+        @include min-responsive($w-lg) {
+            margin-top: 60px;
+        }
+
+        &:hover {
+            .whyBlob {
+                transform: scale(.84);
+            }
+
+            .whyImg {
+                transform: scale(1.18);
+            }
+        }
+
+        &__wrap {
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding-top: 40px;
+            color: $cl-white;
+            background: $cl-red;
+            border-radius: 10px;
+            overflow: hidden;
+            @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+        }
+
+        .titleCaption {
+            color: $cl-white;
+        }
+    }
+
+    &Content {
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 10px;
+    }
+
+    &Bg {
+        position: relative;
+    }
+
+    &Blob {
+        position: absolute;
+        max-width: unset;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        @include base_transition(all, .2s);
+
+        &--bottom {
+            @include min-responsive($w-xl) {
+                top: unset;
+                bottom: 0;
+            }
+        }
+    }
+
+    &Img {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        @include base_transition(all, .2s)
+    }
+}

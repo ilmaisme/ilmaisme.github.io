@@ -1,0 +1,139 @@
+.art {
+    &Section {
+        padding-top: 48px;
+        padding-bottom: 84px;
+
+        @include min-responsive($w-lg) {
+            padding-top: 68px;
+        }
+
+        .slick-slide {
+            height: auto;
+        }
+
+        .slick-track {
+            display: flex;
+            padding-bottom: 20px;
+        }
+
+        .slick-prev {
+            left: -10px;
+
+            @include min-responsive($w-xl) {
+                left: -20px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                left: -30px;
+            }
+        }
+
+
+        .slick-next {
+            right: -10px;
+
+            @include min-responsive($w-xl) {
+                right: -20px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                right: -30px;
+            }
+        }
+    }
+
+    &List {
+        max-height: 438px;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        @include base_transition(opacity, 1s);
+
+        @include min-responsive($w-lg) {
+            max-height: 514px;
+        }
+
+        &.slick-initialized {
+            visibility: visible;
+            opacity: 1;
+            max-height: unset;
+            overflow: unset;
+        }
+
+        @include range-responsive($w-lg, $w-xl) {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+
+        @include min-responsive($w-xl) {
+            margin-left: -30px;
+            margin-right: -30px;
+        }
+    }
+
+    &Item {
+        margin-top: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        @include min-responsive($w-xl) {
+            margin-top: 60px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+
+    &Link {
+        margin-top: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-top: 1px solid #C2C2C2;
+        @include font-pack(false, $font-size-small, $font-weight-bold, false, $cl-red);
+
+        @include min-responsive($w-lg) {
+            font-size: $font-size-vnormal;
+        }
+
+        &__wrap {
+            display: block;
+            height: 100%;
+            background: $cl-white;
+            border-radius: 10px;
+            overflow: hidden;
+            @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+
+            &:hover {
+                .artImg {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    &Content {
+        position: relative;
+        padding: 10px 15px;
+        background: $cl-white;
+
+        @include min-responsive($w-xxl) {
+            padding: 12px 20px;
+        }
+    }
+
+    &Img {
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        @include base_transition(all, .2s);
+    }
+
+    &Date {
+        @include font-pack(false, $font-size-xsmall, false, false, #929292);
+
+        @include min-responsive($w-lg) {
+            font-size: $font-size-small;
+        }
+    }
+}

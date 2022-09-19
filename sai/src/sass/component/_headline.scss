@@ -1,0 +1,36 @@
+.headline {
+    position: relative;
+
+    &Slide {
+        opacity: 0;
+        visibility: hidden;
+        max-height: 512px;
+        overflow: hidden;
+        @include base_transition(opacity, 1s);
+
+        @include min-responsive($w-lg) {
+            max-height: 537px;
+        }
+
+        &.slick-initialized {
+            visibility: visible;
+            opacity: 1;
+            max-height: unset;
+            overflow: unset;
+        }
+    }
+
+    &Img {
+        width: 100%;
+    }
+
+    &Nav {
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .slick-dots {
+        right: 10px;
+    }
+}

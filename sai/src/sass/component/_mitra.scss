@@ -1,0 +1,50 @@
+.mitra {
+    .slick-slide {
+        height: auto;
+    }
+
+    .slick-track {
+        display: flex;
+        padding-bottom: 20px;
+    }
+
+    &List {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 30px;
+        max-height: 94px;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        @include base_transition(opacity, 1s);
+
+        @include min-responsive($w-lg) {
+            margin-top: 60px;
+            margin-left: -10px;
+            margin-right: -10px;
+            padding-left: 0;
+            padding-right: 0;
+            max-height: 132px;
+        }
+
+        &.slick-initialized {
+            visibility: visible;
+            opacity: 1;
+            max-height: unset;
+            overflow: unset;
+        }
+    }
+
+    &Item {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    &Wrap {
+        height: 100%;
+        padding: 20px 30px;
+        background: $cl-white;
+        border-radius: 10px;
+        @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+    }
+}

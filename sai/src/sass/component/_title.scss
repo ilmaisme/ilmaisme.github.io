@@ -1,0 +1,37 @@
+.title {
+    &Caption {
+        @include font-pack(false, $font-size-xxmedium, $font-weight-bold, $line-base, $cl-primary-black);
+
+        @include range-responsive($w-lg, $w-xxl) {
+            font-size: $font-size-large;
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: $font-size-xlarge;
+        }
+
+        &--small {
+            font-size: $font-size-medium;
+
+            @include range-responsive($w-lg, $w-xxl) {
+                font-size: $font-size-xxxmedium;
+            }
+
+            @include min-responsive($w-xxl) {
+                font-size: $font-size-vlarge;
+            }
+        }
+    }
+
+    &Art {
+        @extend .ellipsis;
+        -webkit-line-clamp: 3;
+        min-height: 63px;
+        @include font-pack(false, $font-size-normal, false, 1.3, false);
+
+        @include min-responsive($w-lg) {
+            min-height: 98px;
+            font-size: 25px;
+        }
+    }
+}
