@@ -20,7 +20,6 @@ $(window).on('resize', function () {
 });
 
 $(document).ready(function () {
-
     // sticky menu
     $(window).scroll(function () {
         var a = $(window).scrollTop(),
@@ -29,6 +28,8 @@ $(document).ready(function () {
                 jno.addClass("active")) :
             (hd.removeClass("fixed"),
                 jno.removeClass("active"))
+                
+        a > $(window).height() ? $(".buttonBacktop").show() : $(".buttonBacktop").hide()
     })
 
     //toggle mobile menu
@@ -42,6 +43,13 @@ $(document).ready(function () {
             hideMenuMobile()
         }
     })
+
+    //back to top
+    $(".buttonBacktop").click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, "slow")
+    });
 });
 
 //update mobile menu

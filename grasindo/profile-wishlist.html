@@ -26,7 +26,7 @@
     <meta name="twitter:image" content="" />
     <!-- e:twitter card -->
 
-    <link rel=icon type=image/png sizes=16x16 href="https://static.bisnis-cdn.com/interaktif/assets/images/favicon.png">
+    <link rel=icon type=image/png sizes=16x16 href="./asset/images/favicon.ico">
     <link type="text/css" rel="stylesheet" href="./asset/css/style.min.css">
     <link rel="preload" href="./asset/images/logo-grasindo-w.png" as="image" />
     <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2" as="font"
@@ -85,9 +85,9 @@
                 </div>            <a href="index.html">
                     <img class="headerLogo" src="./asset/images/logo-grasindo-w.png" alt="Grasindo" width="361" height="87">
                 </a>
-                <a href="search.html" class="searchLink mobile-only" aria-label="search"><img src="./asset/images/icon-search.svg"
+                <a href="search.html" class="searchLink" aria-label="search"><img src="./asset/images/icon-search.svg"
                         alt="" width="24" height="24" class="icon-search"></a>
-                <div class="headerLogin">
+                <div class="headerLogin desktop-only">
                     <a href="profile.html" class="headerLogin__user display-flex">
                         <img src="./asset/images/user.png" alt="" width="50" height="50" class="headerLogin__img">
                         <div class="headerLogin__name">Fadhil Ghazali</div>
@@ -112,6 +112,14 @@
                     </svg>
                 </div>
                 <ul class="navList menuMob mobile display-flex">
+                    <li>
+                        <div class="headerLogin mobile-only">
+                            <a href="profile.html" class="headerLogin__user display-flex">
+                                <img src="./asset/images/user.png" alt="" width="50" height="50" class="headerLogin__img">
+                                <div class="headerLogin__name">Fadhil Ghazali</div>
+                            </a>
+                        </div>
+                    </li>
                     <li class="navItem">
                         <a href="index.html" class="navLink" tabindex="-1">Home
                         </a>
@@ -181,15 +189,6 @@
                 </div>
                 <div class="profileContent col-lg-9">
                     <h1 class="titleCaption mt0">My Wishlist</h1>
-                    <!--
-                    <div class="blogEmpty center-flex flex-column mt2">
-                        <img src="./asset/images/empty-wishlist.png" alt="" width="240" height="240">
-                        <div class="blogEmpty__txt text-center mt2">
-                            You don't have a wishlist yet. Discover interesting books here!
-                        </div>
-                        <a href="categories.html" class="buttonBlue mt2">Shopping Now</a>
-                    </div>
-                    -->
                     <div class="profileWish row">
                         <div class="productItem productIdx__item display-flex align-center col-12">
                             <div class="productImg">
@@ -356,6 +355,11 @@
         </div>
     </main>
     <footer class="footer">
+        <button class="button buttonBacktop" aria-label="Back to top">
+            <div class="center-flex">
+                <span class="icon-chevron icon-chevron-up"></span>
+            </div>
+        </button>
         <div class="container container--small">
             <div class="text-center">
                 <a href="index.html">
@@ -401,12 +405,17 @@
                         Quick Link
                     </div>
                     <ul class="footerList">
-                        <li><a href="about-us.html" class="footerLink"><span class="icon-arrow-double mr1"></span>About Us</a></li>
-                        <li><a href="contact.html" class="footerLink"><span class="icon-arrow-double mr1"></span>Contact Us</a></li>
-                        <li><a href="index-blog.html" class="footerLink"><span class="icon-arrow-double mr1"></span>Blog</a></li>
-                        <li><a href="career.html" class="footerLink"><span class="icon-arrow-double mr1"></span>Career</a></li>
+                        <li><a href="about-us.html" class="footerLink"><span class="icon-arrow-double mr1"></span>About
+                                Us</a></li>
+                        <li><a href="contact.html" class="footerLink"><span class="icon-arrow-double mr1"></span>Contact
+                                Us</a></li>
+                        <li><a href="index-blog.html" class="footerLink"><span class="icon-arrow-double mr1"></span>Blog</a>
+                        </li>
+                        <li><a href="career.html" class="footerLink"><span class="icon-arrow-double mr1"></span>Career</a>
+                        </li>
                         <li><a href="faq.html" class="footerLink"><span class="icon-arrow-double mr1"></span>FAQ</a></li>
-                        <li><a href="privacy.html" class="footerLink"><span class="icon-arrow-double mr1"></span>Privacy Policy</a>
+                        <li><a href="privacy.html" class="footerLink"><span class="icon-arrow-double mr1"></span>Privacy
+                                Policy</a>
                         </li>
                     </ul>
                 </div>
@@ -422,23 +431,23 @@
                     <ul class="footerList display-flex">
                         <li>
                             <a href="#" target="_blank" aria-label="Link facebook" rel="noopener noreferrer"
-                                class="footerLink"><span class="icon icon-fb footerSocmed footerIcon"></span></a>
+                                class="footerLink footerSocmed__link"><span class="icon icon-fb footerSocmed footerIcon"></span></a>
                         </li>
                         <li>
                             <a href="#" target="_blank" aria-label="Link instagram" rel="noopener noreferrer"
-                                class="footerLink"><span class="icon icon-ig footerSocmed footerIcon"></span></a>
+                                class="footerLink footerSocmed__link"><span class="icon icon-ig footerSocmed footerIcon"></span></a>
                         </li>
                         <li>
                             <a href="#" target="_blank" aria-label="Link twitter" rel="noopener noreferrer"
-                                class="footerLink"><span class="icon icon-tw footerSocmed footerIcon"></span></a>
+                                class="footerLink footerSocmed__link"><span class="icon icon-tw footerSocmed footerIcon"></span></a>
                         </li>
                         <li>
                             <a href="#" target="_blank" aria-label="Link linkedin" rel="noopener noreferrer"
-                                class="footerLink"><span class="icon icon-ln footerSocmed footerIcon"></span></a>
+                                class="footerLink footerSocmed__link"><span class="icon icon-ln footerSocmed footerIcon"></span></a>
                         </li>
                         <li>
                             <a href="#" target="_blank" aria-label="Link youtube" rel="noopener noreferrer"
-                                class="footerLink"><span class="icon icon-yt footerSocmed footerIcon"></span></a>
+                                class="footerLink footerSocmed__link"><span class="icon icon-yt footerSocmed footerIcon"></span></a>
                         </li>
                     </ul>
                 </div>

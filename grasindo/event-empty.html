@@ -88,7 +88,10 @@
                 <a href="search.html" class="searchLink" aria-label="search"><img src="./asset/images/icon-search.svg"
                         alt="" width="24" height="24" class="icon-search"></a>
                 <div class="headerLogin desktop-only">
-                    <a href="login.html" class="buttonLogin">Login</a>
+                    <a href="profile.html" class="headerLogin__user display-flex">
+                        <img src="./asset/images/user.png" alt="" width="50" height="50" class="headerLogin__img">
+                        <div class="headerLogin__name">Fadhil Ghazali</div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -111,7 +114,10 @@
                 <ul class="navList menuMob mobile display-flex">
                     <li>
                         <div class="headerLogin mobile-only">
-                            <a href="login.html" class="buttonLogin">Login</a>
+                            <a href="profile.html" class="headerLogin__user display-flex">
+                                <img src="./asset/images/user.png" alt="" width="50" height="50" class="headerLogin__img">
+                                <div class="headerLogin__name">Fadhil Ghazali</div>
+                            </a>
                         </div>
                     </li>
                     <li class="navItem">
@@ -126,7 +132,7 @@
                         <a href="categories.html" class="navLink" tabindex="-1">Books
                         </a>
                     </li>
-                    <li class="navItem">
+                    <li class="navItem active">
                         <div aria-haspopup="true" tabindex="0">
                             <div class="navOpen" id="navOpen">Promo &amp; Events
                                 <span class="icon-chevron"></span>
@@ -151,32 +157,44 @@
             </div>
         </nav></div>
     <div class="js-nav-offset"></div>    <main role="main">
-        <div class="about aboutSection container mt2">
+        <div class="blogIdx container mt2">
             <div class="breadcrumb display-flex align-center">
                 <div class="breadcrumbItem"><a href="index.html" class="breadcrumbLink">Home</a></div>
-                <div class="breadcrumbItem"><a href="privacy.html" class="breadcrumbLink active">Privacy & Policy</a></div>
-            </div>            <h1 class="titleCaption mt2">Privacy & Policy</h1>
-            <div class="row">
-                <div class="col-12 col-md-10 col-xl-7 static">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit fermentum non vitae dictum.
-                        Aliquet faucibus ullamcorper volutpat posuere. Curabitur erat dolor imperdiet nibh bibendum eget
-                        dui. Nibh integer adipiscing vivamus sit libero, mauris quam dui. Non in donec etiam gravida
-                        lectus. Phasellus gravida ultrices libero vel diam, habitasse justo.
-                    </p>
-                    <p>
-                        Diam phasellus tortor cursus proin erat. Hendrerit augue vel cras nec. Massa orci eu posuere dui
-                        bibendum pellentesque in. Quam vitae ornare senectus in potenti sed. Diam elit arcu est, augue
-                        porttitor in. Interdum malesuada at dui, eu viverra phasellus ipsum. Sollicitudin sed massa
-                        dignissim porta.
-                    </p>
-                    <p>
-                        Diam accumsan nec placerat rhoncus, proin at est, ultrices lorem. Dolor arcu, amet blandit a
-                        ultricies. Posuere magna tortor egestas vestibulum blandit. Malesuada egestas velit amet,
-                        maecenas neque. Integer ipsum sapien, mattis urna cursus. Ut vulputate odio enim ipsum ut
-                        dictumst ut curabitur. Volutpat vel condimentum eu fermentum lobortis et urna in. A, sit non
-                        ultrices mattis donec nulla. </p>
+                <div class="breadcrumbItem"><a href="index-event.html" class="breadcrumbLink active">Event</a></div>
+            </div>            <div class="blogIdx__row row">
+                <div class="eventIdx__tab col-12 col-md-12 col-lg-9">
+                    <div class="display-flex align-center justify-between">
+                        <h1 class="titleCaption mt0">Event</h1>
+                        <div class="formSelect__wrap eventSort categSort custom-select">
+                            <select name="sort" id="sort" class="formSelect">
+                                <option value="all">All</option>
+                                <option value="">Latest</option>
+                                <option value="">Oldest</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="blogEmpty center-flex flex-column mt4">
+                        <img src="./asset/images/empty-event.png" alt="" width="240" height="240">
+                        <div class="blogEmpty__txt text-center mt1">Your calendar is empty. Find interesting events
+                            here!
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-md-2 col-xl-5">
+                <div class="sidebar sidebarTab col-12 col-md-12 col-lg-3">
+                    <div class="row">
+                        <div class="sidebarLink col-6 col-lg-12">
+                            <a href="promo.html" class="titleLink">
+                                <h3 class="titleWrap titleCaption mt0">Promo
+                                </h3>
+                            </a>
+                        </div>
+                        <div class="sidebarLink col-6 col-lg-12 active">
+                            <a href="event.html" class="titleLink">
+                                <h3 class="titleWrap titleCaption mt0">Event
+                                </h3>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -284,6 +302,7 @@
     </footer>
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/custom-select.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.buttonLike').on('click', function () {
