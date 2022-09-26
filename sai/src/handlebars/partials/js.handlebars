@@ -2,5 +2,44 @@
 <script defer type="text/javascript" src="./asset/js/main.js"></script>
 {{#eq page compare="home"}}
 <script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
+<script type="text/javascript" src="./asset/js/select2.min.js"></script>
 <script defer type="text/javascript" src="./asset/js/home.js"></script>
+<script>
+    $('#domestic').select2({
+        //placeholder: "Pilih Kota/Kecamatan Asal",
+        selectionCssClass: "formSelect",
+        dropdownCssClass: "formDropdown"
+    });
+    $('#foreign').select2({
+        //placeholder: "Pilih Negara Tujuan",
+        selectionCssClass: "formSelect",
+        dropdownCssClass: "formDropdown"
+    });
+    $('#domestic1').select2({
+        selectionCssClass: "formSelect",
+        dropdownCssClass: "formDropdown"
+    });
+    $('#domestic2').select2({
+        selectionCssClass: "formSelect",
+        dropdownCssClass: "formDropdown"
+    });
+    $('#gerai').select2({
+        selectionCssClass: "formSelect",
+        dropdownCssClass: "formDropdown"
+    });
+    $("input[name='shippingtype']:radio").change(function () {
+        if ($(this).val() == '1') {
+            // export
+            $('.simulationInput').removeClass('import')
+            $('.simulationLabelDom').html('From')
+            $('.simulationLabelFor').html('To')
+        }
+        else if ($(this).val() == '2') {
+            // import
+            $('.simulationInput').addClass('import')
+            $('.simulationLabelDom').html('To')
+            $('.simulationLabelFor').html('From')
+        }
+    });
+</script>
 {{/eq}}

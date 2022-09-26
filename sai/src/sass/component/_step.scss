@@ -8,6 +8,22 @@
         }
     }
 
+    &List {
+        flex-flow: row wrap;
+        justify-content: center;
+
+        @include min-responsive($w-xl) {
+            flex-flow: nowrap;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            width: 100%;
+            order: 1;
+        }
+    }
+
     &Title {
         display: inline-block;
         padding: 6px 46px;
@@ -34,7 +50,37 @@
         padding-right: 10px;
         padding-left: 10px;
 
-        &:before {
+        &:nth-child(n + 4) {
+            order: 1;
+        }
+
+        &:nth-child(n + 7) {
+            order: 2;
+        }
+
+        &:nth-child(3):after, &:nth-child(6):after {
+            content: none;
+
+            @include min-responsive($w-xl) {
+                content: '';
+            }
+        }
+
+        &:hover {
+            .stepImg {
+                transform: scale(.5);
+
+                @include min-responsive($w-xl) {
+                    transform: scale(1);
+                }
+
+                .fill {
+                    fill: $cl-red;
+                }
+            }
+        }
+
+        &:after {
             content: '';
             width: calc(100% - 30px);
             position: absolute;
@@ -43,21 +89,28 @@
             border-top: 2px solid $cl-red;
         }
 
-        &:last-child::before {
+        &:last-child::after {
             content: none;
         }
 
         &--off {
-            min-width: calc(100%/5);
+            width: calc(100%/3);
 
-            @include min-responsive($w-lg) {
+            @include min-responsive($w-xl) {
+                width: auto;
+                min-width: calc(100%/5);
                 padding-right: 30px;
                 padding-left: 30px;
             }
         }
 
         &--on {
-            min-width: calc(100%/7);
+            width: calc(100%/3);
+
+            @include min-responsive($w-xl) {
+                width: auto;
+                min-width: calc(100%/7);
+            }
         }
 
         &__title {
@@ -78,19 +131,33 @@
     }
 
     &Num {
-        min-width: 34px;
-        min-height: 34px;
+        min-width: 30px;
+        min-height: 30px;
         display: inline-block;
         background: $cl-red;
         border-radius: 50%;
         @include font-pack(false, $font-size-vnormal, $font-weight-bold, $line-base, $cl-white);
 
         @include min-responsive($w-lg) {
+            min-width: 34px;
+            min-height: 34px;
             font-size: $font-size-normal;
         }
     }
 
     &Img {
-        margin-top: 30px;
+        height: 60px;
+        transform: scale(0.4);
+        @include base_transition(all, .2s);
+        
+        @include min-responsive($w-xl) {
+            height: auto;
+            margin-top: 30px;
+            transform: scale(.84);
+        }
+
+        .fill {
+            fill: white;
+        }
     }
 }

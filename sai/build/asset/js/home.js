@@ -13,6 +13,12 @@ $(document).ready(function () {
         autoplaySpeed: 2000,
         appendDots: $('.-dtheadline')
     });
+
+    //tab simulation
+    $(".tabBody").hide();
+    $(".tabBody:first").show();
+
+
     //slider mitra
     $('.-smitra').slick({
         dots: false,
@@ -62,3 +68,16 @@ $(document).ready(function () {
         ]
     });
 })
+
+$(".tabTrig").click(function () {
+    $(".tabBody").hide();
+    var activeTab = $(this).attr("rel");
+    $("#" + activeTab).fadeIn();
+    if ($(this).attr("rel") == "tab2") {
+        $('.tab').addClass('slide');
+    } else {
+        $('.tab').removeClass('slide');
+    }
+    $(".tabTrig").removeClass("active");
+    $(this).addClass("active");
+});

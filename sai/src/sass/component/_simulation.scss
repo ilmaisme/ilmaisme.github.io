@@ -1,0 +1,222 @@
+.simulation {
+    &Section {
+        margin-top: -15px;
+
+        @include min-responsive($w-md) {
+            margin-top: -36px;
+        }
+    }
+
+    &Item {
+        padding: 20px 15px 30px;
+        margin-bottom: 20px;
+        background: $cl-white;
+        border-radius: 10px;
+        @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+
+        @include min-responsive($w-md) {
+            padding: 20px 30px 30px;
+            margin-bottom: 0;
+        }
+
+        &~.simulationItem {
+            margin-bottom: 0;
+
+            @include min-responsive($w-md) {
+                margin-top: 30px;
+            }
+        }
+    }
+
+    &Title {
+        @include font-pack(false, $font-size-xmedium, $font-weight-bold, $line-base, $cl-primary-black);
+
+        @include min-responsive($w-md) {
+            font-size: $font-size-xxxmedium;
+        }
+    }
+
+    &Arrow {
+        display: none;
+        text-align: center;
+
+        @include min-responsive($w-md) {
+            display: block;
+            margin: 0 10px 14px 13px;
+        }
+
+        .icon-arrow {
+            width: 17px;
+            height: 14px;
+            color: #707070;
+        }
+    }
+
+    &Input {
+        &.import {
+            .simulationArrow {
+                order: -1;
+            }
+
+            .simulationFor {
+                order: -2;
+            }
+        }
+    }
+
+    &Tab {
+        .formWrap {
+            flex-direction: column;
+
+            @include min-responsive($w-md) {
+                flex-direction: row;
+            }
+        }
+
+        .buttonPrimary {
+            width: 100%;
+            margin-top: 20px;
+            padding: 13px 30px;
+
+            @include min-responsive($w-md) {
+                padding: 22px 30px;
+                margin-top: 30px;
+            }
+        }
+    }
+
+    &Dom {
+        width: 100%;
+
+        @include min-responsive($w-md) {
+            width: 50%;
+        }
+    }
+
+    &For {
+        width: 100%;
+
+        @include min-responsive($w-md) {
+            width: 33%;
+        }
+    }
+
+    &Domestic {
+        width: 100%;
+
+        @include min-responsive($w-md) {
+            width: 50%;
+        }
+    }
+
+    .form {
+        &Wrap {
+            @include min-responsive($w-md) {
+                align-items: flex-end;
+            }
+
+            &__radio {
+                min-height: 25px;
+                margin-left: 30px;
+                margin-right: 30px;
+
+                @include min-responsive($w-md) {
+                    min-height: 35px;
+                }
+            }
+
+            &__num {
+                margin-top: 20px;
+
+                @include min-responsive($w-md) {
+                    margin-top: 0;
+                    margin-left: 10px;
+                }
+            }
+
+            &__input {
+                flex: 1;
+
+                @include min-responsive($w-md) {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        &Select {
+            &--dom {
+                width: 100%;
+            }
+
+            &--for {
+                width: 100%;
+            }
+
+            &--domestic {
+                width: 100%;
+            }
+        }
+
+        &Num {
+            width: 100%;
+
+            @include min-responsive($w-md) {
+                width: 60px;
+                text-align: center;
+            }
+        }
+
+        &Input {
+            width: 100%;
+        }
+
+    }
+
+    .select2-selection__arrow {
+        @extend .icon-chevron;
+        position: absolute;
+        right: 18px;
+        top: 15px;
+    }
+
+    &Right {
+        margin-top: 30px;
+        flex-direction: column;
+
+        @include min-responsive($w-md) {
+            flex-direction: row;
+        }
+
+        &__wrap {
+            @include min-responsive($w-md) {
+                padding: 20px 30px 66px;
+            }
+        }
+
+        .buttonPrimary {
+            width: 100%;
+            margin-top: 20px;
+            padding: 13px 30px;
+
+            @include min-responsive($w-md) {
+                width: auto;
+                margin-top: 0;
+            }
+        }
+    }
+
+    &Gerai {
+        .formWrap__select {
+            flex: 1;
+            margin-top: 0;
+
+            @include min-responsive($w-md) {
+                margin-right: 10px;
+            }
+        }
+
+        .formSelect {
+            width: 100%;
+        }
+    }
+}

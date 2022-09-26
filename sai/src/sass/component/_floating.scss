@@ -1,0 +1,101 @@
+.floating {
+    @extend .hidden;
+    position: fixed;
+    top: 42%;
+    right: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: $cl-red;
+    border-top: 3px solid $cl-white;
+    border-bottom: 3px solid $cl-white;
+    border-left: 3px solid $cl-white;
+    border-radius: 10px 0px 0px 10px;
+    @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+    z-index: 2;
+    
+    @include min-responsive($w-xl) {
+        top: 22%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-top: 5px solid $cl-white;
+        border-bottom: 5px solid $cl-white;
+        border-left: 5px solid $cl-white;
+    }
+
+    &.active {
+        @extend .visible;
+    }
+
+    &Icon {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include base_transition(scale, .2s);
+    }
+
+    &Item {
+        position: relative;
+        text-align: center;
+        margin-left: 8px;
+        margin-right: 8px;
+
+        &:last-child {
+            .floatingLink {
+                border-bottom: 0;
+            }
+        }
+    }
+
+    &Link {
+        width: 100%;
+        display: block;
+        padding: 12px 2px;
+        border-bottom: 1px solid #CB210A;
+
+        @include min-responsive($w-xl) {
+            padding: 14px 2px;
+        }
+
+        &:hover {
+            @extend .filter-yellow;
+
+            .icon {
+                transform: scale(1.08);
+                filter: brightness(0) saturate(100%);
+            }
+
+            &~.floatingTxt {
+                @extend .visible;
+            }
+        }
+
+        .icon-wa {
+            width: 20px;
+            height: 20px;
+
+            @include min-responsive($w-xl) {
+                width: 42px;
+                height: 42px;
+            }
+        }
+    }
+
+    &Txt {
+        @extend .hidden;
+        min-width: 77px;
+        position: absolute;
+        top: 36%;
+        right: 75px;
+        padding: 4px 10px;
+        background: $cl-white;
+        border-radius: 14px;
+        text-transform: uppercase;
+        font-size: 13px;
+        color: $cl-red;
+        @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+
+        &--big {
+            min-width: 98px;
+        }
+    }
+}

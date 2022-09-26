@@ -156,11 +156,38 @@ hr {
     filter: invert(96%) sepia(10%) saturate(0%) hue-rotate(64deg) brightness(104%) contrast(104%);
 }
 
+.filter-yellow{
+    filter: invert(70%) sepia(67%) saturate(533%) hue-rotate(3deg) brightness(107%) contrast(107%);
+}
+
 .ellipsis {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.hidden {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.visible {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    @include animation(fadeInFromNone, 0.5s);
+}
+
+.main {
+    padding-top: 53px;
+
+    @include min-responsive($w-xl) {
+        padding-top: 113px;
+    }
 }
 
 .section {

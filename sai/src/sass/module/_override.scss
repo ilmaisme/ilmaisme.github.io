@@ -1,3 +1,7 @@
+.mb1 {
+	margin-bottom: 10px;
+}
+
 .mt2 {
 	margin-top: 20px;
 }
@@ -60,16 +64,18 @@
 	border: 0;
 }
 
-.desktop-hide {
-	@include min-responsive($w-md) {
-		display: none;
+.desktop-only {
+	display: none;
+
+	@include min-responsive($w-xl) {
+		display: block;
 	}
 }
 
-.mobile-hide {
+.mobile-only {
 	display: block;
 
-	@include min-responsive($w-md) {
+	@include min-responsive($w-xl) {
 		display: none;
 	}
 }

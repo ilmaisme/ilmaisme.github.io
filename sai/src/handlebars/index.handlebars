@@ -4,11 +4,36 @@
 {{> head page="home"}}
 
 <body>
-    {{!> header/header login=true}}
     {{> header/header}}
-    <main role="main">
+    <main role="main" class="main">
         <div class="headline">
             {{>headline}}
+        </div>
+        <div class="simulationSection container">
+            <div class="simulation row">
+                <div class="col-lg-7">
+                    <div class="simulationItem">
+                        <h3 class="simulationTitle text-center">
+                            Cek Tarif Kiriman
+                        </h3>
+                        {{>simulation/tab-simulation}}
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="simulationItem simulationRight__wrap">
+                        <h3 class="simulationTitle text-center">
+                            Cek Resi
+                        </h3>
+                        {{>simulation/resi}}
+                    </div>
+                    <div class="simulationItem simulationRight__wrap">
+                        <h3 class="simulationTitle text-center">
+                            Lokasi Gerai
+                        </h3>
+                        {{>simulation/gerai}}
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="section container">
             <div class="about">
@@ -17,18 +42,23 @@
         shape-outside: url(./asset/images/ship.png);" loading="lazy">
                     <h1 class="titleCaption">Tentang SAI Trans</h1>
                     <p>
-                        SAI Trans adalah layanan logistic cepat, aman dan murah untuk memenuhi kebutuhan ekspor & impor
+                        SAI Trans adalah layanan logistic cepat, aman dan murah untuk memenuhi kebutuhan ekspor &
+                        impor
                         paket
                         domestik maupun internasional.
                     </p>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum sit amet neque ac
                         ullamcorper.
-                        Fusce dapibus varius massa at elementum. Donec porttitor quam at fermentum cursus. Integer in
+                        Fusce dapibus varius massa at elementum. Donec porttitor quam at fermentum cursus. Integer
+                        in
                         nunc
-                        tempus, pellentesque est quis, rhoncus nunc. Nullam dapibus feugiat neque nec malesuada. Duis ac
-                        vehicula sapien. Nullam quis pharetra libero, ut aliquet augue. Fusce auctor euismod facilisis.
-                        Vestibulum eu velit nec tortor viverra aliquet at placerat augue. Nam vel massa urna. Maecenas
+                        tempus, pellentesque est quis, rhoncus nunc. Nullam dapibus feugiat neque nec malesuada.
+                        Duis ac
+                        vehicula sapien. Nullam quis pharetra libero, ut aliquet augue. Fusce auctor euismod
+                        facilisis.
+                        Vestibulum eu velit nec tortor viverra aliquet at placerat augue. Nam vel massa urna.
+                        Maecenas
                         ornare
                         libero eget urna suscipit, id sodales dui tristique. Sed rutrum luctus dictum. Pellentesque
                         vitae
@@ -180,6 +210,9 @@
             <div class="container">
                 <h2 class="titleCaption text-center">Artikel</h2>
                 {{>article-slider}}
+                <div class="center-flex">
+                    <a href="#" class="button buttonPrimary">Lihat Semua Artikel</a>
+                </div>
             </div>
         </div>
         <div class="media section container">

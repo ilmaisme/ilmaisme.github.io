@@ -1,0 +1,144 @@
+.form {
+    &Wrap {
+        &__radio {
+            display: flex;
+            align-items: center;
+        }
+
+        &__select {
+            margin-top: 20px;
+
+            @include min-responsive($w-md) {
+                margin-top: 30px;
+            }
+
+            .select2-container--open {
+                .select2-selection__arrow:after {
+                    transform: rotate(225deg);
+                }
+            }
+        }
+    }
+
+    &Radio {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        transition: box-shadow .3s;
+        background: $cl-white;
+        cursor: pointer;
+        border: 1px solid #C2C2C2;
+        appearance: none;
+        -webkit-appearance: none;
+        accent-color: $cl-red;
+
+        &:checked {
+            box-shadow: inset 0 0 0 2px $cl-white;
+            background: $cl-red;
+            border: 1px solid $cl-red;
+
+            &~.formRadio__label {
+                color: $cl-red
+            }
+        }
+
+        &__label {
+            padding-left: 10px;
+            @include font-pack(false, $font-size-vnormal, $font-weight-normal, $line-base, #C2C2C2);
+            cursor: pointer;
+
+            @include min-responsive($w-md) {
+                font-size: $font-size-xmedium;
+            }
+        }
+    }
+
+    &Select {
+        border: 1px solid #C2C2C2;
+        border-radius: 10px;
+        padding: 10px 20px 12px 8px;
+        @include font-pack(false, $font-size-small, $font-weight-normal, $line-base, $cl-gray);
+
+        @include min-responsive($w-md) {
+            padding: 14px 20px 15px 8px;
+            font-size: 17px;
+        }
+
+        &__label {
+            display: block;
+            @include font-pack(false, $font-size-small, $font-weight-normal, $line-base, $cl-gray);
+
+            @include min-responsive($w-md) {
+                font-size: $font-size-vnormal;
+            }
+        }
+    }
+
+
+    &Num,
+    &Input {
+        @extend .formSelect;
+        padding: 10px 14px 12px 14px;
+
+        @include min-responsive($w-md) {
+            padding: 14px 14px 15px 14px;
+        }
+
+        &__label {
+            @extend .formSelect__label;
+        }
+    }
+
+    &Dropdown {
+
+        &.select2-dropdown {
+            border: 1px solid #C2C2C2;
+            border-radius: 10px;
+
+            &--above {
+                margin-top: 8px;
+
+                .select2-results__option {
+
+                    &:last-child:hover {
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: 0;
+                    }
+                }
+            }
+
+            &--below {
+                margin-top: -8px;
+            }
+        }
+
+        .select2-search--dropdown {
+            padding: 10px;
+
+            .select2-search__field {
+                padding: 4px 10px;
+                border: 1px solid #C2C2C2;
+                border-radius: 10px;
+                @include font-pack(false, $font-size-vnormal, $font-weight-normal, $line-base, $cl-gray);
+            }
+        }
+
+        .select2-results__option {
+            padding: 10px;
+            @include font-pack(false, $font-size-small, $font-weight-normal, $line-base, $cl-gray);
+
+            &:hover {
+                background: #F2F2F2;
+            }
+
+            &:last-child:hover {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            @include min-responsive($w-md) {
+                font-size: 17px;
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    z-index: 3;
+    background: $cl-red;
+    @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+
+    @include min-responsive($w-xl) {
+        flex-direction: row;
+    }
+
+    &Wrap {
+        min-height: 53px;
+        padding-left: 0;
+        padding-right: 0;
+        align-items: center;
+        justify-content: space-between;
+        
+        @include min-responsive($w-xl) {
+            min-height: 113px;
+            padding: 30px 15px;
+        }
+
+        &.hidden {
+            height: auto;
+        }
+    }
+
+    &Logo {
+        max-width: 180px;
+
+        @include min-responsive($w-xl) {
+            max-width: 232px;
+        }
+    }
+
+    // &Search {
+    //     position: relative;
+    //     bottom: 2px;
+    //     right: -20px;
+    //     padding: 8px;
+
+    //     .icon-search {
+    //         width: 22px;
+    //         height: 22px;
+    //         background-size: cover;
+    //     }
+    // }
+}

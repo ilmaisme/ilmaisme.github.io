@@ -1,4 +1,6 @@
 .button {
+    padding: 0;
+
     &Primary {
         margin-top: 40px;
         padding: 15px 27px;
@@ -10,6 +12,49 @@
         @include min-responsive($w-lg) {
             margin-top: 60px;
             font-size: 18px;
+        }
+
+        &:hover {
+            background: $cl-red;
+            color: $cl-white;
+        }
+    }
+
+    &Translate {
+        position: relative;
+        margin-left: 14px;
+        margin-right: 14px;
+        padding: 6px 6px 0;
+
+        &:hover {
+            transform: scale(1.2);
+            background: #FF6B57;
+            border-radius: 5px;
+            @include base_transition(all, .2s);
+        }
+
+        .icon-translate {
+            vertical-align: baseline;
+        }
+    }
+
+    &Backtop {
+        display: none;
+        position: fixed;
+        right: 5px;
+        bottom: 5%;
+        width: 35px;
+        height: 35px;
+        border: 1px solid $cl-red;
+        border-radius: 10px;
+        color: $cl-red;
+        background: $cl-white;
+        z-index: 1;
+        
+        @include min-responsive($w-md) {
+            width: 48px;
+            height: 48px;
+            right: 13px;
         }
     }
 }
