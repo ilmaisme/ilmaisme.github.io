@@ -15,7 +15,7 @@ $(document).ready(function () {
             $(".floating").addClass('active')) : ($(".buttonBacktop").hide(),
             $(".floating").removeClass('active'))
     })
-    $(".buttonBacktop").click(function () {
+    $(".buttonBacktop").on('click', function () {
         $("html, body").animate({
             scrollTop: 0
         }, "slow")
@@ -43,7 +43,7 @@ function updateMenu() {
 }
 
 //google translate
-function changeGoogleStyles() {
+function changeGoogleStyles() {    
     if (($goog = $('.goog-te-menu-frame').contents().find('body')).length) {
         var stylesHtml = '<style>' +
             '.goog-te-menu2 {' +
@@ -55,7 +55,7 @@ function changeGoogleStyles() {
             'padding: 8px 10px !important;' +
             '}' +
             '.goog-te-menu2-item {' +
-            'font-family: Montserrat, Candara,Segoe,Segoe UI,Optima,Arial,sans-serif !important;' +
+            'font-family: "Titillium Web", sans-serif; !important;' +
             'font-size: 16px !important;' +
             'font-weight: 400 !important;' +
             'line-height: 1.55 !important;' +
@@ -66,6 +66,9 @@ function changeGoogleStyles() {
             '}' +
             '.goog-te-menu2-item-selected div, .goog-te-menu2-item-selected:link div, .goog-te-menu2-item-selected:visited div, .goog-te-menu2-item-selected:hover div, .goog-te-menu2-item-selected:active div {' +
             'color: #FF3115 !important;' +
+            '}' +
+            '.goog-te-menu2 * {' +
+            'font-family: "Titillium Web", sans-serif; !important;' +
             '}' +
             '</style>';
         $goog.prepend(stylesHtml);
@@ -82,9 +85,10 @@ function changeGoogleStylesDesktop() {
             'width: unset !important;' +
             'border:0 !important;' +
             'padding: 20px 20px !important;' +
+            'font-family: "Titillium Web", sans-serif; !important;' +
             '}' +
             '.goog-te-menu2-item {' +
-            'font-family: Montserrat, Candara,Segoe,Segoe UI,Optima,Arial,sans-serif !important;' +
+            'font-family: "Titillium Web", sans-serif; !important;' +
             'font-size: 16px !important;' +
             'font-weight: 400 !important;' +
             'line-height: 1.55 !important;' +
@@ -98,6 +102,9 @@ function changeGoogleStylesDesktop() {
             '}' +
             '.goog-te-menu2-item:hover div{' +
             'background: #FFD912; !important;' +
+            '}' +
+            '.goog-te-menu2 * {' +
+            'font-family: "Titillium Web", sans-serif; !important;' +
             '}' +
             '</style>';
         $goog.prepend(stylesHtml);
