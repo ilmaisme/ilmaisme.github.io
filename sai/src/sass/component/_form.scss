@@ -18,6 +18,18 @@
                 }
             }
         }
+
+        &__error {
+            display: block;
+            position: relative;
+            min-height: 12px;
+            margin-top: 4px;
+            @include font-pack(false, $font-size-xsmall, $font-weight-normal, 1, $cl-red);
+
+            .error {
+                position: absolute;
+            }
+        }
     }
 
     &Radio {
@@ -143,4 +155,10 @@
             }
         }
     }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

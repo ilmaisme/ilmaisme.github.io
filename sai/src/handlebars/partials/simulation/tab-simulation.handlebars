@@ -10,7 +10,7 @@
 </div>
 <div class="tabContainer simulationTab">
     <div id="tab1" class="tabBody">
-        <form action="">
+        <form action="" id="simulationInt">
             <div class="center-flex">
                 <div class="formWrap__radio">
                     <input type="radio" value="1" id="shippingtype1" class="formRadio" name="shippingtype" checked>
@@ -25,9 +25,10 @@
                 <div class="formWrap__select simulationDom">
                     <label class="formSelect__label mb1 simulationLabelDom" for="domestic">From</label>
                     <select class="formSelect mt1 formSelect--dom" id="domestic" name="domestic">
-                        <option value="">Cengkareng, Kota Jakarta Barat (CGK)</option>
-                        <option value="">Palmerah, Kota Jakarta Barat (CGK)</option>
+                        <option value="CGK">Cengkareng, Kota Jakarta Barat (CGK)</option>
+                        <option value="CGK">Palmerah, Kota Jakarta Barat (CGK)</option>
                     </select>
+                    <div class="formWrap__error" id="msgBox1"></div>
                 </div>
                 <div class="simulationArrow"><span class="icon icon-arrow"></span></div>
                 <div class="formWrap__select simulationFor">
@@ -36,18 +37,21 @@
                         <option value="AL">Alabama</option>
                         <option value="WY">Wyoming</option>
                     </select>
+                    <div class="formWrap__error" id="msgBox2"></div>
                 </div>
                 <div class="formWrap__num">
                     <label class="formNum__label mb1" for="weight">Weight</label>
-                    <input type="text" id="weight" name="weight" value="1"
-                        class="formNum" inputmode="numeric" required="" autocomplete="off">
+                    <input type="number" id="weight" name="weight" value="1" class="formNum" inputmode="numeric"
+                        autocomplete="off" maxlength="3"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                    <div class="formWrap__error" id="msgBox3"></div>
                 </div>
             </div>
             <button type="submit" class="button buttonPrimary">Cek Tarif</button>
         </form>
     </div>
     <div id="tab2" class="tabBody">
-        <form action="">
+        <form action="" id="simulationDom">
             <div class="center-flex">
                 <div class="formWrap__radio">
                 </div>
@@ -58,22 +62,26 @@
                 <div class="formWrap__select simulationDomestic">
                     <label class="formSelect__label mb1" for="domestic1">From</label>
                     <select class="formSelect formSelect--domestic" id="domestic1" name="domestic1">
-                        <option value="">Cengkareng, Kota Jakarta Barat (CGK)</option>
-                        <option value="">Palmerah, Kota Jakarta Barat (CGK)</option>
+                        <option value="CGK">Cengkareng, Kota Jakarta Barat (CGK)</option>
+                        <option value="CGK">Palmerah, Kota Jakarta Barat (CGK)</option>
                     </select>
+                    <div class="formWrap__error" id="msgBox4"></div>
                 </div>
                 <div class="simulationArrow"><span class="icon icon-arrow"></span></div>
                 <div class="formWrap__select simulationDomestic">
                     <label class="formSelect__label mb1" for="domestic2">To</label>
                     <select class="formSelect formSelect--domestic" id="domestic2" name="domestic2">
-                        <option value="">Cengkareng, Kota Jakarta Barat (CGK)</option>
-                        <option value="">Palmerah, Kota Jakarta Barat (CGK)</option>
+                        <option value="CGK">Cengkareng, Kota Jakarta Barat (CGK)</option>
+                        <option value="CGK">Palmerah, Kota Jakarta Barat (CGK)</option>
                     </select>
+                    <div class="formWrap__error" id="msgBox5"></div>
                 </div>
                 <div class="formWrap__num">
                     <label class="formNum__label  mb1" for="weight1">Weight</label>
-                    <input type="text" id="weight1" name="weight1" value="1"
-                        class="formNum" inputmode="numeric" required="" autocomplete="off">
+                    <input type="number" id="weight1" name="weight1" value="1" class="formNum" inputmode="numeric"
+                        required="" autocomplete="off" maxlength="3"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                    <div class="formWrap__error" id="msgBox6"></div>
                 </div>
             </div>
             <button type="submit" class="button buttonPrimary">Cek Tarif</button>

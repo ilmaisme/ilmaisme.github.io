@@ -2,44 +2,141 @@
 <script defer type="text/javascript" src="./asset/js/main.js"></script>
 {{#eq page compare="home"}}
 <script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
-<script type="text/javascript" src="./asset/js/select2.min.js"></script>
+<script defer type="text/javascript" src="./asset/js/select2.min.js"></script>
 <script defer type="text/javascript" src="./asset/js/home.js"></script>
+<script defer type="text/javascript" src="./asset/js/jquery.validate.min.js"></script>
 <script>
-    $('#domestic').select2({
-        //placeholder: "Pilih Kota/Kecamatan Asal",
-        selectionCssClass: "formSelect",
-        dropdownCssClass: "formDropdown"
-    });
-    $('#foreign').select2({
-        //placeholder: "Pilih Negara Tujuan",
-        selectionCssClass: "formSelect",
-        dropdownCssClass: "formDropdown"
-    });
-    $('#domestic1').select2({
-        selectionCssClass: "formSelect",
-        dropdownCssClass: "formDropdown"
-    });
-    $('#domestic2').select2({
-        selectionCssClass: "formSelect",
-        dropdownCssClass: "formDropdown"
-    });
-    $('#gerai').select2({
-        selectionCssClass: "formSelect",
-        dropdownCssClass: "formDropdown"
-    });
-    $("input[name='shippingtype']:radio").change(function () {
-        if ($(this).val() == '1') {
-            // export
-            $('.simulationInput').removeClass('import')
-            $('.simulationLabelDom').html('From')
-            $('.simulationLabelFor').html('To')
-        }
-        else if ($(this).val() == '2') {
-            // import
-            $('.simulationInput').addClass('import')
-            $('.simulationLabelDom').html('To')
-            $('.simulationLabelFor').html('From')
-        }
+    $(document).ready(function () {
+        $('#domestic').select2({
+            //placeholder: "Pilih Kota/Kecamatan Asal",
+            selectionCssClass: "formSelect",
+            dropdownCssClass: "formDropdown",
+            //allowClear: true
+        });
+        $('#foreign').select2({
+            //placeholder: "Pilih Negara Tujuan",
+            selectionCssClass: "formSelect",
+            dropdownCssClass: "formDropdown",
+            //allowClear: true
+        });
+        $('#domestic1').select2({
+            //placeholder: "Pilih Kota/Kecamatan Asal",
+            selectionCssClass: "formSelect",
+            dropdownCssClass: "formDropdown",
+            //allowClear: true
+        });
+        $('#domestic2').select2({
+            //placeholder: "Pilih Kota/Kecamatan Asal",
+            selectionCssClass: "formSelect",
+            dropdownCssClass: "formDropdown",
+            //allowClear: true
+        });
+        $('#gerai').select2({
+            //placeholder: "Pilih Gerai",
+            selectionCssClass: "formSelect",
+            dropdownCssClass: "formDropdown",
+            //allowClear: true
+        });
+        $("input[name='shippingtype']:radio").change(function () {
+            if ($(this).val() == '1') {
+                // export
+                $('.simulationInput').removeClass('import')
+                $('.simulationLabelDom').html('From')
+                $('.simulationLabelFor').html('To')
+            }
+            else if ($(this).val() == '2') {
+                // import
+                $('.simulationInput').addClass('import')
+                $('.simulationLabelDom').html('To')
+                $('.simulationLabelFor').html('From')
+            }
+        });
+
+        //validation
+        $('#simulationInt').validate({
+            ignore: [],
+            rules: {
+                domestic: {
+                    required: true,
+                },
+                foreign: {
+                    required: true,
+                },
+                weight: {
+                    required: true,
+                },
+            },
+            errorPlacement: function (error, element) {
+                if (element.attr("name") == "domestic") {
+                    error.appendTo("#msgBox1");
+                } else if (element.attr("name") == "foreign") {
+                    error.appendTo("#msgBox2");
+                } else if (element.attr("name") == "weight") {
+                    error.appendTo("#msgBox3");
+                } else {
+                    error.insertAfter(element)
+                }
+            }
+        })
+        $('#simulationDom').validate({
+            ignore: [],
+            rules: {
+                domestic1: {
+                    required: true,
+                },
+                domestic2: {
+                    required: true,
+                },
+                weight1: {
+                    required: true,
+                },
+            },
+            errorPlacement: function (error, element) {
+                if (element.attr("name") == "domestic1") {
+                    error.appendTo("#msgBox4");
+                } else if (element.attr("name") == "domestic2") {
+                    error.appendTo("#msgBox5");
+                } else if (element.attr("name") == "weight1") {
+                    error.appendTo("#msgBox6");
+                } else {
+                    error.insertAfter(element)
+                }
+            }
+        })
+        $('#formresi').validate({
+            ignore: [],
+            rules: {
+                resi: {
+                    required: true,
+                },
+            },
+            errorPlacement: function (error, element) {
+                if (element.attr("name") == "resi") {
+                    error.appendTo("#msgBox7");
+                } else {
+                    error.insertAfter(element)
+                }
+            }
+        })
+        $('#formgerai').validate({
+            ignore: [],
+            rules: {
+                gerai: {
+                    required: true,
+                },
+            },
+            errorPlacement: function (error, element) {
+                if (element.attr("name") == "gerai") {
+                    error.appendTo("#msgBox8");
+                } else {
+                    error.insertAfter(element)
+                }
+            }
+        })
+
+        jQuery.extend(jQuery.validator.messages, {
+            required: "*This field is required."
+        });
     });
 </script>
 {{/eq}}
