@@ -2,13 +2,28 @@
     <div class="navWrap">
         <ul class="navList mobile display-flex">
             {{#each menu}}
-            {{#if child}}
+            {{#eq child compare="product"}}
             <li class="navItem{{#eq ../page compare= title}} active{{/eq}}">
                 <div aria-haspopup="true" tabindex="0">
-                    <div class="navOpen" id="navOpen">{{title}}
+                    <div class="navOpen">{{title}}
                         <span class="icon-chevron"></span>
                         <div class="navSub">
                             {{#each ../submenu}}
+                            <a href="{{link}}" class="navLink" tabindex="-1">{{title}}
+                            </a>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{else}}
+            {{#eq child compare="info"}}
+            <li class="navItem{{#eq ../page compare= title}} active{{/eq}}">
+                <div aria-haspopup="true" tabindex="0">
+                    <div class="navOpen">{{title}}
+                        <span class="icon-chevron"></span>
+                        <div class="navSub navSub--large">
+                            {{#each ../submenuinfo}}
                             <a href="{{link}}" class="navLink" tabindex="-1">{{title}}
                             </a>
                             {{/each}}
@@ -21,7 +36,8 @@
                 <a href="{{link}}" class="navLink" tabindex="-1">{{title}}
                 </a>
             </li>
-            {{/if}}
+            {{/eq}}
+            {{/eq}}
             {{/each}}
             <li>
                 <div class="searchbox mobile-only">

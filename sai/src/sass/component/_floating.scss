@@ -1,9 +1,11 @@
 .floating {
     display: none;
+    pointer-events: none;
     z-index: 2;
 
     &.active {
         display: block;
+        pointer-events: all;
     }
 
     &Menu {
@@ -61,11 +63,16 @@
         }
 
         &:hover {
-            @extend .filter-yellow;
+
+            @include min-responsive($w-xl) {
+                filter: invert(70%) sepia(67%) saturate(533%) hue-rotate(3deg) brightness(107%) contrast(107%);
+            }
 
             .icon {
-                transform: scale(1.08);
-                filter: brightness(0) saturate(100%);
+                @include min-responsive($w-xl) {
+                    transform: scale(1.08);
+                    filter: brightness(0) saturate(100%);
+                }
             }
 
             &~.floatingTxt {
@@ -107,15 +114,19 @@
         .floating {
             &Menu {
                 top: unset;
-                bottom: 136px;
+                bottom: 138px;
                 right: 5px;
                 background: transparent;
                 border: 0;
                 box-shadow: none;
+                pointer-events: none;
 
                 &.active {
+                    pointer-events: all;
+
                     .floatingItem {
                         transform: scale(1);
+                        pointer-events: all;
 
                         &:nth-child(4) {
                             transition-delay: 0.05s;
@@ -138,6 +149,7 @@
 
             &Item {
                 transform: scale(0);
+                pointer-events: none;
                 transition: all 0.5s;
                 margin: 5px auto;
                 padding: 0;
@@ -172,6 +184,7 @@
 
             &Txt {
                 @extend .visible;
+                top: 28%;
                 right: 65px;
                 text-transform: none;
             }

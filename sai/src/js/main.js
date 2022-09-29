@@ -4,7 +4,7 @@ $(document).ready(function () {
         $(this).toggleClass('active')
         $('#nav').toggleClass('active')
     })
-    $('#navOpen').hover(function () {
+    $('.navOpen').hover(function () {
         $(this).toggleClass('active')
     })
 
