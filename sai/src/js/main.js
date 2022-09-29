@@ -104,7 +104,8 @@ function changeGoogleStylesDesktop() {
             'background: #FFD912; !important;' +
             '}' +
             '.goog-te-menu2 * {' +
-            'font-family: "Titillium Web", sans-serif; !important;' +
+            'font-family: "Titillium Web", sans-serif !important;' +
+            'margin: auto; !important;' +
             '}' +
             '</style>';
         $goog.prepend(stylesHtml);
