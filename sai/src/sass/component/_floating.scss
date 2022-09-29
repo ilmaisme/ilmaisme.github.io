@@ -1,29 +1,33 @@
 .floating {
-    @extend .hidden;
-    position: fixed;
-    top: 42%;
-    right: 0;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background: $cl-red;
-    border-top: 3px solid $cl-white;
-    border-bottom: 3px solid $cl-white;
-    border-left: 3px solid $cl-white;
-    border-radius: 10px 0px 0px 10px;
-    @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+    display: none;
     z-index: 2;
-    
-    @include min-responsive($w-xl) {
-        top: 22%;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        border-top: 5px solid $cl-white;
-        border-bottom: 5px solid $cl-white;
-        border-left: 5px solid $cl-white;
-    }
 
     &.active {
-        @extend .visible;
+        display: block;
+    }
+
+    &Menu {
+        position: fixed;
+        top: 42%;
+        right: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background: $cl-red;
+        border-top: 3px solid $cl-white;
+        border-bottom: 3px solid $cl-white;
+        border-left: 3px solid $cl-white;
+        border-radius: 10px 0px 0px 10px;
+        @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+        z-index: 2;
+
+        @include min-responsive($w-xl) {
+            top: 22%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-top: 5px solid $cl-white;
+            border-bottom: 5px solid $cl-white;
+            border-left: 5px solid $cl-white;
+        }
     }
 
     &Icon {
@@ -70,8 +74,8 @@
         }
 
         .icon-wa {
-            width: 20px;
-            height: 20px;
+            width: 26px;
+            height: 26px;
 
             @include min-responsive($w-xl) {
                 width: 33px;
@@ -96,6 +100,123 @@
 
         &--big {
             min-width: 98px;
+        }
+    }
+
+    &.mobile {
+        .floating {
+            &Menu {
+                top: unset;
+                bottom: 136px;
+                right: 5px;
+                background: transparent;
+                border: 0;
+                box-shadow: none;
+
+                &.active {
+                    .floatingItem {
+                        transform: scale(1);
+
+                        &:nth-child(4) {
+                            transition-delay: 0.05s;
+                        }
+
+                        &:nth-child(3) {
+                            transition-delay: 0.1s;
+                        }
+
+                        &:nth-child(2) {
+                            transition-delay: 0.15s;
+                        }
+
+                        &:nth-child(1) {
+                            transition-delay: 0.2s;
+                        }
+                    }
+                }
+            }
+
+            &Item {
+                transform: scale(0);
+                transition: all 0.5s;
+                margin: 5px auto;
+                padding: 0;
+
+                &:nth-child(1) {
+                    transition-delay: 0.2s;
+                }
+
+                &:nth-child(2) {
+                    transition-delay: 0.15s;
+                }
+
+                &:nth-child(3) {
+                    transition-delay: 0.1s;
+                }
+
+                &:nth-child(4) {
+                    transition-delay: 0.05s;
+                }
+            }
+
+            &Link {
+                display: block;
+                border: 0;
+                padding: 10px;
+                background: $cl-red;
+                border: 3px solid $cl-white;
+                border-radius: 10px;
+                min-height: 54px;
+                @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+            }
+
+            &Txt {
+                @extend .visible;
+                right: 65px;
+                text-transform: none;
+            }
+        }
+    }
+
+    &Button {
+        margin: auto;
+        padding: 10px 10px;
+        position: fixed;
+        right: 5px;
+        bottom: 87px;
+        background: $cl-red;
+        border: 3px solid $cl-white;
+        border-radius: 10px;
+        transition: all 0.5s;
+        @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+        z-index: 2;
+
+        &.active {
+            background: $cl-white;
+
+            .floatingIcon {
+                position: relative;
+                background-image: none;
+
+                &:after,
+                &:before {
+                    content: "";
+                    display: block;
+                    box-sizing: border-box;
+                    position: absolute;
+                    width: 26px;
+                    height: 3px;
+                    background: $cl-red;
+                    transform: rotate(45deg);
+                    border-radius: 5px;
+                    top: 13px;
+                    left: 1px
+                }
+
+                &:after {
+                    transform: rotate(-45deg)
+                }
+            }
         }
     }
 }

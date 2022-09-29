@@ -20,6 +20,12 @@ $(document).ready(function () {
             scrollTop: 0
         }, "slow")
     });
+
+    //floating button mobile
+    $('#floatingToggle').on('click', function () {
+        $(this).toggleClass('active')
+        $('.floatingMenu').toggleClass('active')
+    })
 });
 
 $(window).on('resize', function () {
@@ -33,10 +39,12 @@ function updateMenu() {
     if ($('#menu').css('display') == 'none') {
         //console.log("desktop")        
         $('.navList').removeClass('mobile');
+        $('.floating').removeClass('mobile');
         changeGoogleStylesDesktop()
     } else {
         //console.log("mobile")
         $('.navList').addClass('mobile');
+        $('.floating').addClass('mobile');
         changeGoogleStyles();
     }
     $('.headerWrap').removeClass('hidden');
