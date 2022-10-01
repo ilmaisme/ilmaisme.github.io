@@ -167,13 +167,20 @@
 }
 
 //scroll
-@mixin scroll($width: false, $active:false, $bg:false) {
+@mixin scroll($width: false, $active: false, $bg: false) {
 
 	/* Firefox */
 	& {
 		scrollbar-width: thin;
 		scrollbar-color: $active $bg;
 		border-radius: 6px;
+
+		@supports (-webkit-overflow-scrolling: touch) {
+			// scrollbar-width: none;
+			// scrollbar-color: auto;
+			// border-radius: unset;
+			// overscroll-behavior-y: unset;
+		}
 	}
 
 	/* Chrome, Edge, and Safari */

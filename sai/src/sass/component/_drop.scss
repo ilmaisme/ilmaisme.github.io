@@ -1,0 +1,78 @@
+.drop {
+    justify-content: flex-end;
+
+    &Box {
+
+        &__title {
+            margin-right: 20px;
+            @include font-pack(false, $font-size-normal, $font-weight-bold, false, $cl-primary-black);
+            flex: 1;
+
+            @include min-responsive($w-md) {
+                font-size: $font-size-medium;
+            }
+        }
+
+        &.open {
+            .dropContent {
+                @extend .visible;
+                padding: 20px 15px;
+
+                @include min-responsive($w-md) {
+                    padding: 28px 47px;
+                }
+            }
+
+            .dropTrig {
+                box-shadow: none;
+            }
+
+            .icon-chevron:after {
+                top: 3px;
+                transform: rotate(225deg);
+            }
+        }
+
+        &.close {
+            .dropContent {
+                @extend .hidden;
+                padding: 0;
+            }
+        }
+    }
+
+    &Trig {
+        cursor: pointer;
+        padding: 10px 15px;
+        border: 1px solid $cl-primary-black;
+        border-radius: 10px;
+        @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+
+        @include min-responsive($w-md) {
+            padding: 28px 47px;
+        }
+    }
+
+    &Content {
+        position: relative;
+        top: -5px;
+        margin-bottom: 20px;
+        border: 1px solid $cl-primary-black;
+        border-top: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+    }
+
+    &Show {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        margin-left: 10px;
+
+        .icon-chevron:after {
+            width: 12px;
+            height: 12px;
+        }
+    }
+}

@@ -15,12 +15,14 @@
         height: 100%;
         background: $cl-white;
         border-radius: 10px;
+        border: 1px solid transparent;
         overflow: hidden;
         @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
         @include base_transition(all, .2s);
 
         &:hover {
-            transform: scale(1.05);
+            box-shadow: none;
+            border: 1px solid $cl-lightgray;
         }
     }
 

@@ -51,7 +51,7 @@ function updateMenu() {
 }
 
 //google translate
-function changeGoogleStyles() {    
+function changeGoogleStyles() {
     if (($goog = $('.goog-te-menu-frame').contents().find('body')).length) {
         var stylesHtml = '<style>' +
             '.goog-te-menu2 {' +
@@ -125,10 +125,30 @@ function changeGoogleStylesDesktop() {
 }
 
 //close popup
-function closePopup(){
+function closePopup() {
     $(".popup").removeClass('active')
 }
 //open popup
-function openPopup(){
+function openPopup() {
     $(".popup").addClass('active')
+}
+
+//show hide content
+var accItem = document.getElementsByClassName('dropBox');
+var accHD = document.getElementsByClassName('-js-show');
+for (i = 0; i < accHD.length; i++) {
+    accHD[i].addEventListener('click', toggleItem, false);
+}
+
+function toggleItem() {
+    var itemClass = this.parentNode.className;
+
+    if (itemClass == 'dropBox close mt2') {
+        for (i = 0; i < accItem.length; i++) {
+            accItem[i].className = 'dropBox close mt2';
+        }
+        this.parentNode.className = 'dropBox open active mt2';
+    } else {
+        this.parentNode.className = 'dropBox close mt2';
+    }
 }

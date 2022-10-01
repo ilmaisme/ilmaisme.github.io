@@ -1,0 +1,72 @@
+.freight {
+    &Caption {
+        padding: 4px 30px;
+        border-radius: 10px;
+        color: $cl-white;
+        background: $cl-red;
+    }
+
+    &Row {
+        @include min-responsive($w-xl) {
+            margin-left: -30px;
+            margin-right: -30px;
+        }
+    }
+
+    &Col {
+        margin-top: 20px;
+
+        @include min-responsive($w-xl) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        &:first-child {
+            @include min-responsive($w-xl) {
+                margin-top: 115px;
+            }
+        }
+    }
+
+    &Menu {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        @include font-pack(false, $font-size-medium, $font-weight-normal, $line-base, $cl-gray);
+
+        @include min-responsive($w-md) {
+            font-size: $font-size-xmedium;
+            flex-direction: column;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            flex-direction: row;
+        }
+
+        &__item {
+            margin-bottom: 15px;
+            padding: 8px 10px;
+            margin-right: 10px;
+            border-radius: 10px;
+            border: 1px solid #C2C2C2;
+
+            @include min-responsive($w-xl) {
+                border: 0;
+                padding: 0 0 10px;
+                margin-right: 0;
+                border-radius: 0;
+                border-bottom: 1px solid #C2C2C2;
+            }
+
+            &.active {
+                color: $cl-red;
+                border: 1px solid $cl-red;
+
+                @include min-responsive($w-xl) {
+                    border: 0;
+                    border-bottom: 1px solid #C2C2C2;
+                }
+            }
+        }
+    }
+}
