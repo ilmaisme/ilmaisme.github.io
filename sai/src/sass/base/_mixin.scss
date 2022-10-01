@@ -165,3 +165,30 @@
 		font-weight: $weight;
 	}
 }
+
+//scroll
+@mixin scroll($width: false, $active:false, $bg:false) {
+
+	/* Firefox */
+	& {
+		scrollbar-width: thin;
+		scrollbar-color: $active $bg;
+		border-radius: 6px;
+	}
+
+	/* Chrome, Edge, and Safari */
+	&::-webkit-scrollbar {
+		width: $width;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $bg;
+		border-radius: 6px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $active;
+		border-radius: 6px;
+		border: transparent;
+	}
+}

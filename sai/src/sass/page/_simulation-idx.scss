@@ -1,0 +1,38 @@
+.simulation {
+    &Idx {
+        .simulationItem {
+            @include min-responsive($w-xl) {
+                padding: 35px 150px 50px;
+            }
+        }
+    }
+
+    &Head {
+        margin-top: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        @include font-pack(false, $font-size-xxmedium, $font-weight-bold, $line-base, $cl-primary-black);
+
+        @include min-responsive($w-md) {
+            flex-direction: row;
+        }
+
+        @include min-responsive($w-lg) {
+            font-size: $font-size-vlarge;
+        }
+
+        &__right {
+            flex: 1;
+            justify-content: flex-end;
+
+            @include min-responsive($w-md) {
+                margin-left: 20px;
+                text-align: right;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                width: 100%;
+            }
+        }
+    }
+}

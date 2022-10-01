@@ -1,10 +1,39 @@
 <script src="./asset/js/jquery-3.6.1.min.js"></script>
 <script defer type="text/javascript" src="./asset/js/main.js"></script>
-{{#eq page compare="home"}}
+{{#eq validate compare=true}}
 <script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
-<script defer type="text/javascript" src="./asset/js/select2.min.js"></script>
-<script defer type="text/javascript" src="./asset/js/home.js"></script>
 <script defer type="text/javascript" src="./asset/js/jquery.validate.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //slider mitra
+        $('.-smitra').slick({
+            dots: false,
+            arrows: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: false,
+            autoplaySpeed: 2000,
+            responsive: [{
+                breakpoint: 1220,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+            ]
+        });
+    });
+</script>
+{{/eq}}
+{{#eq simulation compare=true}}
+<script defer type="text/javascript" src="./asset/js/select2.min.js"></script>
 <script>
     $(document).ready(function () {
         $('#domestic').select2({
@@ -27,12 +56,6 @@
         });
         $('#domestic2').select2({
             //placeholder: "Pilih Kota/Kecamatan Asal",
-            selectionCssClass: "formSelect",
-            dropdownCssClass: "formDropdown",
-            //allowClear: true
-        });
-        $('#gerai').select2({
-            //placeholder: "Pilih Gerai",
             selectionCssClass: "formSelect",
             dropdownCssClass: "formDropdown",
             //allowClear: true
@@ -103,21 +126,42 @@
                 }
             }
         })
-        $('#formresi').validate({
-            ignore: [],
-            rules: {
-                resi: {
-                    required: true,
-                },
-            },
-            errorPlacement: function (error, element) {
-                if (element.attr("name") == "resi") {
-                    error.appendTo("#msgBox7");
-                } else {
-                    error.insertAfter(element)
-                }
+
+        jQuery.extend(jQuery.validator.messages, {
+            required: "*This field is required."
+        });
+
+        //tab simulation
+        $(".tabBody").hide();
+        $(".tabBody:first").show();
+
+        $(".tabTrig").click(function () {
+            $(".tabBody").hide();
+            var activeTab = $(this).attr("rel");
+            $("#" + activeTab).fadeIn();
+            if ($(this).attr("rel") == "tab2") {
+                $('.tab').addClass('slide');
+            } else {
+                $('.tab').removeClass('slide');
             }
-        })
+            $(".tabTrig").removeClass("active");
+            $(this).addClass("active");
+        });
+
+    });
+</script>
+{{/eq}}
+{{#eq page compare="home"}}
+<script defer type="text/javascript" src="./asset/js/home.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#gerai').select2({
+            //placeholder: "Pilih Gerai",
+            selectionCssClass: "formSelect",
+            dropdownCssClass: "formDropdown",
+            //allowClear: true
+        });
+
         $('#formgerai').validate({
             ignore: [],
             rules: {
@@ -133,10 +177,28 @@
                 }
             }
         })
-
-        jQuery.extend(jQuery.validator.messages, {
-            required: "*This field is required."
-        });
+    });
+</script>
+{{/eq}}
+{{#eq resi compare=true}}
+<script>
+    $(document).ready(function () {
+        //validation
+        $('#formresi').validate({
+            ignore: [],
+            rules: {
+                resi: {
+                    required: true,
+                },
+            },
+            errorPlacement: function (error, element) {
+                if (element.attr("name") == "resi") {
+                    error.appendTo("#msgBox7");
+                } else {
+                    error.insertAfter(element)
+                }
+            }
+        })
     });
 </script>
 {{/eq}}

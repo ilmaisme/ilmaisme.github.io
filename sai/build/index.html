@@ -30,8 +30,6 @@
     <!-- e:twitter card -->
 
     <link rel=icon type=image/png sizes=16x16 href="./asset/images/favicon.png">
-    <link rel="stylesheet" href="./asset/css/style-home.css" type="text/css">
-    <link rel="stylesheet" href="./asset/css/style-plugin-select2.css" type="text/css">
     <link rel="preload" href="https://fonts.gstatic.com/s/titilliumweb/v15/NaPDcZTIAOhVxoMyOr9n_E7ffHjDGItzYw.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
     <style>
@@ -54,13 +52,18 @@
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
     </style>
+    <link rel="preload" href="./asset/images/logo-saitrans.png" as="image" />
+    <link rel="stylesheet" href="./asset/css/style-home.css" type="text/css">    
+    <link rel="stylesheet" href="./asset/css/style-plugin-select2.min.css" type="text/css">
 
     <!-- s: google translate -->
     <!-- doc : https://developers.google.com/search/blog/2020/05/google-translates-website-translator -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'id',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+            new google.translate.TranslateElement({
+                pageLanguage: 'id',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
         }
     </script>
 
@@ -88,11 +91,11 @@
                 <div class="navWrap">
                     <ul class="navList mobile display-flex">
                         <li class="navItem">
-                            <a href="#" class="navLink" tabindex="-1">Home
+                            <a href="index.html" class="navLink" tabindex="-1">Home
                             </a>
                         </li>
                         <li class="navItem">
-                            <a href="#" class="navLink" tabindex="-1">About Us
+                            <a href="about-us.html" class="navLink" tabindex="-1">About Us
                             </a>
                         </li>
                         <li class="navItem">
@@ -100,9 +103,9 @@
                                 <div class="navOpen">Product
                                     <span class="icon-chevron"></span>
                                     <div class="navSub">
-                                        <a href="#" class="navLink" tabindex="-1">Freight Forwarding
+                                        <a href="freight.html" class="navLink" tabindex="-1">Freight Forwarding
                                         </a>
-                                        <a href="#" class="navLink" tabindex="-1">Usaha Kurir
+                                        <a href="usaha-kurir.html" class="navLink" tabindex="-1">Usaha Kurir
                                         </a>
                                     </div>
                                 </div>
@@ -115,9 +118,9 @@
                                     <div class="navSub navSub--large">
                                         <a href="#" class="navLink" tabindex="-1">FAQ
                                         </a>
-                                        <a href="#" class="navLink" tabindex="-1">Term &amp; Condition
+                                        <a href="term.html" class="navLink" tabindex="-1">Term &amp; Condition
                                         </a>
-                                        <a href="#" class="navLink" tabindex="-1">Privacy Policy
+                                        <a href="privacy.html" class="navLink" tabindex="-1">Privacy Policy
                                         </a>
                                         <a href="#" class="navLink" tabindex="-1">Artikel
                                         </a>
@@ -165,19 +168,19 @@
         </button>
         <div class="floatingMenu">
             <div class="floatingItem">
-                <a href="#tarif" class="floatingLink" id="btn-tarif">
+                <a href="check-tarif.html" class="floatingLink">
                     <span class="floatingIcon icon icon-check-tarif"></span>
                 </a>
                 <div class="floatingTxt">Cek Tarif</div>
             </div>
             <div class="floatingItem">
-                <a href="#resi" class="floatingLink" id="btn-resi">
+                <a href="check-resi.html" class="floatingLink">
                     <span class="floatingIcon icon icon-check-resi"></span>
                 </a>
                 <div class="floatingTxt">Cek Resi</div>
             </div>
             <div class="floatingItem">
-                <a href="#gerai" class="floatingLink" id="btn-gerai">
+                <a href="gerai.html" class="floatingLink">
                     <span class="floatingIcon icon icon-check-gerai"></span>
                 </a>
                 <div class="floatingTxt floatingTxt--big">Lokasi Gerai</div>
@@ -241,7 +244,7 @@
                         </div>
                         <div class="tabContainer simulationTab">
                             <div id="tab1" class="tabBody">
-                                <form action="" id="simulationInt">
+                                <form action="check-tarif.html" id="simulationInt">
                                     <div class="center-flex">
                                         <div class="formWrap__radio">
                                             <input type="radio" value="1" id="shippingtype1" class="formRadio" name="shippingtype" checked>
@@ -282,7 +285,7 @@
                                 </form>
                             </div>
                             <div id="tab2" class="tabBody">
-                                <form action="" id="simulationDom">
+                                <form action="check-tarif.html" id="simulationDom">
                                     <div class="center-flex">
                                         <div class="formWrap__radio">
                                         </div>
@@ -325,10 +328,10 @@
                         <h3 class="simulationTitle text-center">
                             Cek Resi
                         </h3>
-                        <form action="" id="formresi" class="simulationRight simulationResi display-flex">
+                        <form action="check-resi.html" id="formresi" class="simulationRight simulationResi display-flex">
                             <div class="formWrap__input">
-                                <input type="text" aria-label="resi" id="resi" name="resi" placeholder="CGK 123456789" class="formInput" required=""
-                                    autocomplete="off">
+                                <input type="text" aria-label="resi" id="resi" name="resi" placeholder="CGK 123456789" class="formInput"
+                                    required="" autocomplete="off">
                                 <div class="formWrap__error" id="msgBox7"></div>
                             </div>
                             <button type="submit" class="button buttonPrimary">Cari</button>
@@ -337,7 +340,7 @@
                         <h3 class="simulationTitle text-center">
                             Lokasi Gerai
                         </h3>
-                        <form action="" id="formgerai" class="simulationRight simulationGerai display-flex">
+                        <form action="gerai.html" id="formgerai" class="simulationRight simulationGerai display-flex">
                             <div class="formWrap__select">
                                 <select class="formSelect formSelect--gerai" id="gerai" name="gerai">
                                     <option value="Jkt">Jakarta</option>
@@ -933,7 +936,7 @@
                         <div class="footerTitle">Singapore</div>
                         <div class="footerTxt">
                             95 Airport Cargo Road, Sats Terminal 2, <br>
-                            Level 2 RM 224, Singapore 891461 <br>
+                            Level 2 RM 224, Singapore 819461 <br>
                             <a class="footerLink" href="tel:+62938397"><span>Telp.</span>6293 8397 </a>
                             <a class="footerLink" href="tel:+6592353670"><span>Phone</span> +65 9235 3670</a>
                         </div>
@@ -1005,9 +1008,36 @@
     <script src="./asset/js/jquery-3.6.1.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/main.js"></script>
     <script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/select2.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/home.js"></script>
     <script defer type="text/javascript" src="./asset/js/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //slider mitra
+            $('.-smitra').slick({
+                dots: false,
+                arrows: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                responsive: [{
+                    breakpoint: 1220,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                }
+                ]
+            });
+        });
+    </script>
+    <script defer type="text/javascript" src="./asset/js/select2.min.js"></script>
     <script>
         $(document).ready(function () {
             $('#domestic').select2({
@@ -1030,12 +1060,6 @@
             });
             $('#domestic2').select2({
                 //placeholder: "Pilih Kota/Kecamatan Asal",
-                selectionCssClass: "formSelect",
-                dropdownCssClass: "formDropdown",
-                //allowClear: true
-            });
-            $('#gerai').select2({
-                //placeholder: "Pilih Gerai",
                 selectionCssClass: "formSelect",
                 dropdownCssClass: "formDropdown",
                 //allowClear: true
@@ -1106,21 +1130,40 @@
                     }
                 }
             })
-            $('#formresi').validate({
-                ignore: [],
-                rules: {
-                    resi: {
-                        required: true,
-                    },
-                },
-                errorPlacement: function (error, element) {
-                    if (element.attr("name") == "resi") {
-                        error.appendTo("#msgBox7");
-                    } else {
-                        error.insertAfter(element)
-                    }
+    
+            jQuery.extend(jQuery.validator.messages, {
+                required: "*This field is required."
+            });
+    
+            //tab simulation
+            $(".tabBody").hide();
+            $(".tabBody:first").show();
+    
+            $(".tabTrig").click(function () {
+                $(".tabBody").hide();
+                var activeTab = $(this).attr("rel");
+                $("#" + activeTab).fadeIn();
+                if ($(this).attr("rel") == "tab2") {
+                    $('.tab').addClass('slide');
+                } else {
+                    $('.tab').removeClass('slide');
                 }
-            })
+                $(".tabTrig").removeClass("active");
+                $(this).addClass("active");
+            });
+    
+        });
+    </script>
+    <script defer type="text/javascript" src="./asset/js/home.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#gerai').select2({
+                //placeholder: "Pilih Gerai",
+                selectionCssClass: "formSelect",
+                dropdownCssClass: "formDropdown",
+                //allowClear: true
+            });
+    
             $('#formgerai').validate({
                 ignore: [],
                 rules: {
@@ -1136,10 +1179,26 @@
                     }
                 }
             })
-    
-            jQuery.extend(jQuery.validator.messages, {
-                required: "*This field is required."
-            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            //validation
+            $('#formresi').validate({
+                ignore: [],
+                rules: {
+                    resi: {
+                        required: true,
+                    },
+                },
+                errorPlacement: function (error, element) {
+                    if (element.attr("name") == "resi") {
+                        error.appendTo("#msgBox7");
+                    } else {
+                        error.insertAfter(element)
+                    }
+                }
+            })
         });
     </script>
 

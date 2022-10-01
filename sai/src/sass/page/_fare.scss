@@ -1,0 +1,206 @@
+.fare {
+    &Dest {
+        margin-top: 4px;
+        text-transform: uppercase;
+        @include font-pack(false, $font-size-small, $font-weight-normal, $line-base, $cl-primary-black);
+
+        @include min-responsive($w-md) {
+            margin-top: 14px;
+            margin-right: 30px;
+            font-size: $font-size-vnormal;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            margin-top: 14px;
+            margin-right: 0;
+        }
+
+        @include range-responsive($w-md, $w-lg) {
+            margin-top: 8px;
+        }
+    }
+
+    &Icon {
+        vertical-align: middle;
+        margin-right: 4px;
+
+        @include min-responsive($w-md) {
+            margin-right: 10px;
+        }
+    }
+
+    &Item {
+        margin-top: 30px;
+        padding: 15px;
+        background: $cl-white;
+        border-radius: 10px;
+        @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+
+        @include min-responsive($w-md) {
+            margin-top: 40px;
+            padding: 35px;
+        }
+    }
+
+    &Wrap {
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include min-responsive($w-lg) {
+            flex-direction: row;
+            align-items: flex-end;
+        }
+    }
+
+    &Content {
+        margin-top: 20px;
+        text-align: right;
+
+        @include min-responsive($w-lg) {
+            margin-top: 0;
+        }
+    }
+
+    &Price {
+        @include font-pack(false, $font-size-xmedium, $font-weight-bold, $line-base, $cl-red);
+
+        @include min-responsive($w-md) {
+            font-size: $font-size-xxxmedium;
+        }
+    }
+
+    &Est {
+        color: #929292;
+    }
+
+    &Cta {
+        justify-content: center;
+        margin-top: 16px;
+        border-top: 1px solid $cl-lightgray;
+
+        @include min-responsive($w-md) {
+            justify-content: flex-end;
+        }
+
+    }
+
+    &Book {
+        width: 100%;
+        margin-top: 28px;
+
+        @include min-responsive($w-md) {
+            width: auto;
+            padding: 16px 64px;
+        }
+    }
+
+    &Agen {
+        &__name {
+            color: #929292;
+        }
+
+        &__logo {
+            margin-top: 8px;
+            max-width: 180px;
+
+            @include min-responsive($w-md) {
+                max-width: 228px;
+            }
+        }
+    }
+
+    &Snk {
+        margin-top: 40px;
+        margin-bottom: 80px;
+        color: $cl-gray;
+
+        @include min-responsive($w-md) {
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        &__item {
+            margin: 0 0 .5em;
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+
+            &:before {
+                content: "";
+                width: 9px;
+                height: 9px;
+                border-radius: 10px;
+                margin-right: 16px;
+                background: $cl-red;
+                display: inline-block;
+                position: relative;
+            }
+        }
+    }
+
+    &Info {
+        margin-top: 20px;
+        padding: 14px;
+        background: $cl-red;
+        border-radius: 10px;
+        @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+
+        @include min-responsive($w-lg) {
+            margin-top: 30px;
+            padding: 50px 60px;
+        }
+
+        &__wrap {
+            margin-top: 10px;
+            padding: 8px 8px 8px 14px;
+            background: $cl-white;
+            border-radius: 10px;
+            @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+
+            @include min-responsive($w-lg) {
+                margin-top: 20px;
+                padding: 40px 30px 40px 50px;
+            }
+        }
+
+
+        &__content {
+            height: 420px;
+            overflow-y: auto;
+            padding-right: 8px;
+            overscroll-behavior-y: contain;
+            @include scroll(4px, $cl-red, #EBEBEB);
+
+            @include min-responsive($w-lg) {
+                padding-right: 20px;
+                @include scroll(11px, $cl-red, #EBEBEB);
+            }
+
+            p:first-child {
+                @include min-responsive($w-lg) {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &__icon {
+            margin-left: 20px;
+            vertical-align: middle;
+
+            @include min-responsive($w-lg) {
+                margin-left: 12px;
+            }
+
+            img {
+                max-width: 20px;
+
+                @include min-responsive($w-lg) {
+                    max-width: auto;
+                }
+            }
+        }
+
+        .titleCaption {
+            color: $cl-white;
+        }
+    }
+}

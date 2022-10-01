@@ -1,0 +1,22 @@
+.breadcrumb {
+    &Item {
+        @include font-pack(false, $font-size-small, $font-weight-bold, false, $cl-red);
+
+        @include min-responsive($w-lg) {
+            font-size: $font-size-medium;
+        }
+
+        &:after {
+            content: '>';
+            margin-left: 8px;
+            margin-right: 10px;
+            position: relative;
+            display: inline-block;
+            font-weight: $font-weight-normal;
+        }
+
+        &:last-child:after {
+            content: none;
+        }
+    }
+}

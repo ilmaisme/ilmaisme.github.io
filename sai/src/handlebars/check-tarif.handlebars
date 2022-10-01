@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head dropdown=true}}
+
+<body>
+    {{> header/header}}
+    <main role="main" class="main">
+        <div class="headline">
+            <div class="headlineItem">
+                <picture>
+                    <source srcset="./asset/images/teaser.jpg" media="(min-width: 780px)" alt="">
+                    <img srcset="./asset/images/teaser-xs.jpg" alt="" class="headlineImg" width="1920" height="329">
+                </picture>
+            </div>
+        </div>
+        <div class="simulationSection container">
+            <div class="simulation simulationIdx">
+                <div class="simulationItem col-lg-12">
+                    {{>simulation/tab-simulation title="Cek Tarif Kiriman"}}
+                </div>
+            </div>
+        </div>
+        <div class="section container">
+            {{>breadcrumb page="tarif"}}
+            <div class="simulationHead display-flex flex-wrap">
+                <h2 class="titleCaption">Cek Tarif Kiriman</h2>
+                <div class="simulationHead__right display-flex align-center flex-wrap">
+                    <div class="fareDest">Cengkareng, Kota Jakarta Barat (CGK) - Malaysia (MY)</div>
+                    <div class="fareWeight">
+                        <img src="./asset/images/icon/icon-weight.png" class="fareIcon icon-weight" width="26"
+                            height="31" loading="lazy"></img>
+                        500 kg
+                    </div>
+                </div>
+            </div>
+            {{>simulation/info}}
+            <div class="fare">
+                {{#each fare}}
+                <div class="fareItem">
+                    <div class="fareWrap display-flex">
+                        <div class="fareAgen">
+                            <div class="fareAgen__name">{{agen}}</div>
+                            <div class="fareAgen__logo">
+                                <img src="{{logo}}" alt="Logo {{agen}}" width="228" height="36" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="fareContent">
+                            <div class="fareEst"><span class="icon-duration"></span> {{est}}</div>
+                            <div class="farePrice">{{fare}}</div>
+                        </div>
+                    </div>
+                    <div class="fareCta display-flex">
+                        <button class="button fareBook buttonPrimary" onclick="openPopup()">Pesan Sekarang</button>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <ul class="fareSnk">
+                <li class="fareSnk__item">Harga sudah termasuk fuel surcharge
+                <li class="fareSnk__item">Harga tidak termasuk Pajak/VAT, Bea masuk, Permit, Fumigasi, dan Remote Area
+                    untuk kota-kota yang terletak di luar wilayah pengantaran.</li>
+                <li class="fareSnk__item">Harap baca syarat dan ketentuan pengiriman</li>
+                <li class="fareSnk__item">Harap baca daftar barang dilarang kirim</li>
+                <li class="fareSnk__item">Perhitungan volumetrik untuk kiriman internasional: PxLxT/5000 = ... Kg</li>
+            </ul>
+            {{>simulation/info}}
+        </div>
+        <div class="stepSection section bg-yellow">
+            <div class="container">
+                <h2 class="titleCaption">Proses Pengiriman</h2>
+                <p>Sebelum melakukan pengiriman, hitunglah terlebih dahulu dengan form simulasi ini. Harga sewaktu-waktu
+                    bisa berubah tanpa pemberitahuan. Tersedia proses offline maupun online untuk melakukan proses
+                    ekspedisi,</p>
+                <div class="stepTitle__wrap">
+                    <h3 class="stepTitle">Offline</h3>
+                </div>
+                <ul class="stepList display-flex">
+                    {{>step-off}}
+                </ul>
+                <div class="stepTitle__wrap">
+                    <h3 class="stepTitle">Online</h3>
+                </div>
+                <ul class="stepList display-flex">
+                    {{>step-on}}
+                </ul>
+            </div>
+        </div>
+        <div class="mitra section container text-center">
+            <h2 class="titleCaption">Mitra</h2>
+            <p>SAI Trans bekerja sama dengan banyak partner penyedia jasa logistik yang terpercaya dan terbukti aman
+                sebagai pilihan pengiriman paket anda. Pilih Sesuai dengan kebutuhan anda.</p>
+            {{>mitra-slider}}
+        </div>
+    </main>
+    {{> footer}}
+
+    <!-- s: popup -->
+    {{>popup-booking}}
+    <!-- e: popup -->
+
+    {{> js simulation=true validate=true}}
+    <script>
+        $(document).ready(function () {
+            //validation
+            $('#formbooking').validate({
+                rules: {
+                    bookori: {
+                        required: true,
+                    },
+                    bookdest: {
+                        required: true,
+                    },
+                    sender: {
+                        required: true,
+                    },
+                    receiver: {
+                        required: true,
+                    },
+                    hpsender: {
+                        required: true,
+                    },
+                    hpreceiver: {
+                        required: true,
+                    },
+                    bookitem: {
+                        required: true,
+                    },
+                    bookweight: {
+                        required: true,
+                    },
+                },
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element)
+                }
+            })
+        });
+    </script>
+
+</body>
+
+</html>

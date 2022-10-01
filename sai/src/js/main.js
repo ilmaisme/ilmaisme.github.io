@@ -67,6 +67,7 @@ function changeGoogleStyles() {
             'font-size: 16px !important;' +
             'font-weight: 400 !important;' +
             'line-height: 1.55 !important;' +
+            'font-style: normal !important;' +
             'color: #2D2D2D !important;' +
             '}' +
             '.goog-te-menu2-item div,.goog-te-menu2-item:link div,.goog-te-menu2-item:visited div,.goog-te-menu2-item:active div {' +
@@ -100,6 +101,7 @@ function changeGoogleStylesDesktop() {
             'font-size: 16px !important;' +
             'font-weight: 400 !important;' +
             'line-height: 1.55 !important;' +
+            'font-style: normal !important;' +
             'color: #2D2D2D !important;' +
             '}' +
             '.goog-te-menu2-item div,.goog-te-menu2-item:link div,.goog-te-menu2-item:visited div,.goog-te-menu2-item:active div {' +
@@ -113,11 +115,20 @@ function changeGoogleStylesDesktop() {
             '}' +
             '.goog-te-menu2 * {' +
             'font-family: "Titillium Web", sans-serif !important;' +
-            'margin: auto; !important;' +
+            'margin: auto !important;' +
             '}' +
             '</style>';
         $goog.prepend(stylesHtml);
     } else {
         setTimeout(changeGoogleStylesDesktop, 50);
     }
+}
+
+//close popup
+function closePopup(){
+    $(".popup").removeClass('active')
+}
+//open popup
+function openPopup(){
+    $(".popup").addClass('active')
 }
