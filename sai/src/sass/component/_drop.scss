@@ -5,11 +5,15 @@
 
         &__title {
             margin-right: 20px;
-            @include font-pack(false, $font-size-normal, $font-weight-bold, false, $cl-primary-black);
+            @include font-pack(false, $font-size-vnormal, $font-weight-bold, false, $cl-primary-black);
             flex: 1;
 
-            @include min-responsive($w-md) {
+            @include min-responsive($w-xl) {
                 font-size: $font-size-medium;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                font-size: $font-size-normal;
             }
         }
 
@@ -18,8 +22,12 @@
                 @extend .visible;
                 padding: 20px 15px;
 
-                @include min-responsive($w-md) {
+                @include min-responsive($w-xl) {
                     padding: 28px 47px;
+                }
+
+                @include range-responsive($w-md, $w-xl) {
+                    padding: 28px 30px;
                 }
             }
 
@@ -48,8 +56,12 @@
         border-radius: 10px;
         @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
 
-        @include min-responsive($w-md) {
+        @include min-responsive($w-xl) {
             padding: 28px 47px;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            padding: 28px 30px;
         }
     }
 
@@ -73,6 +85,7 @@
         .icon-chevron:after {
             width: 12px;
             height: 12px;
+            color: $cl-primary-black;
         }
     }
 }

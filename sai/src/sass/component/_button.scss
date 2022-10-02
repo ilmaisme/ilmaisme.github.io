@@ -4,12 +4,15 @@
     &Primary {
         margin-top: 40px;
         padding: 13px 27px;
-        min-height: 56px;
         border: 1px solid $cl-red;
         border-radius: 10px;
         text-transform: uppercase;
         @include base_transition(all, .2s);
         @include font-pack(false, $font-size-vnormal, $font-weight-bold, $line-base, $cl-red);
+
+        @include min-responsive($w-md) {
+            min-height: 57px;
+        }
 
         @include min-responsive($w-lg) {
             margin-top: 60px;

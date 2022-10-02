@@ -37,6 +37,7 @@
         background-position: center;
         background-repeat: no-repeat;
         @include base_transition(scale, .2s);
+        @extend .filter-white;
     }
 
     &Item {
@@ -63,15 +64,11 @@
         }
 
         &:hover {
-
-            @include min-responsive($w-xl) {
-                filter: invert(70%) sepia(67%) saturate(533%) hue-rotate(3deg) brightness(107%) contrast(107%);
-            }
-
+            
             .icon {
                 @include min-responsive($w-xl) {
                     transform: scale(1.08);
-                    filter: brightness(0) saturate(100%);
+                    filter: invert(70%) sepia(67%) saturate(533%) hue-rotate(3deg) brightness(107%) contrast(107%);
                 }
             }
 
@@ -210,6 +207,7 @@
             .floatingIcon {
                 position: relative;
                 background-image: none;
+                filter: none;
 
                 &:after,
                 &:before {

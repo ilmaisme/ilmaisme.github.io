@@ -1,4 +1,31 @@
 $(document).ready(function () {
+    //slider mitra
+    if ($('.-smitra').is(':visible')) {
+        $('.-smitra').slick({
+            dots: false,
+            arrows: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: false,
+            autoplaySpeed: 2000,
+            responsive: [{
+                breakpoint: 1220,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+            ]
+        });
+    }
+
     //toggle mobile menu
     $('#menuToggle').on('click', function () {
         $(this).toggleClass('active')
