@@ -1,0 +1,46 @@
+.paging {
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 36px;
+
+    &Link {
+        display: inline-block;
+        min-width: 46px;
+        height: 47px;
+        padding: 10px 18px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        background: $cl-white;
+        border-radius: 12px;
+        text-align: center;
+        border: 1px solid #929292;
+        @include font-pack(false, $font-size-vnormal, $font-weight-bold, false, #929292);
+
+        @include min-responsive($w-md) {
+            min-width: 55px;
+            height: 55px;
+            padding: 12px 22px;
+            font-size: $font-size-normal;
+        }
+
+        &.active,
+        &:hover {
+            color: $cl-white;
+            border: 1px solid $cl-red;
+            background: $cl-red;
+        }
+
+        &.disable {
+            color: $cl-white;
+            background: $cl-gray;
+            border-color: $cl-gray;
+            pointer-events: none;
+        }
+    }
+
+    &Icon {
+        @extend .center-flex;
+        padding: 10px;
+    }
+}
