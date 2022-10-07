@@ -1,0 +1,36 @@
+.socmed {
+    &Link {
+        &:hover {
+            .icon {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &List {
+        margin-top: 10px;
+
+        @include min-responsive($w-lg) {
+            margin-top: 20px;
+        }
+    }
+
+    &Item {
+        margin-right: 17px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        .icon {
+            width: 32px;
+            height: 32px;
+            @include base_transition(all, .2s);
+
+            @include min-responsive($w-lg) {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    }
+}
