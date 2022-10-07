@@ -1,0 +1,29 @@
+.share {
+    &Item {
+        margin-left: 7px;
+        margin-right: 7px;
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            filter: invert(74%) sepia(0%) saturate(437%) hue-rotate(166deg) brightness(79%) contrast(85%);
+            @include base_transition(all, .2s);
+
+            @include min-responsive($w-xl) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    &Link {
+        &:hover {
+            .icon {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
