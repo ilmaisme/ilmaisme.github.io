@@ -1,9 +1,9 @@
 .art {
     &Idx {
         &__item {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
             border-bottom: 1px solid #C2C2C2;
 
             &:last-child {
@@ -178,6 +178,12 @@
         }
     }
 
+    &Main {
+        @include min-responsive($w-xl) {
+            padding-right: 45px;
+        }
+    }
+
     &Read {
         margin-top: 30px;
 
@@ -227,12 +233,64 @@
             margin-top: 60px;
         }
 
-        &__caption{
-            @include font-pack(false, $font-size-xxmedium, $font-weight-bold, 1.12, $cl-primary-black);
+    }
 
-            @include min-responsive($w-lg) {
-                font-size: $font-size-xxxmedium;
-            }
+    &Caption {
+        @include font-pack(false, $font-size-xxmedium, $font-weight-bold, 1.12, $cl-primary-black);
+
+        @include min-responsive($w-lg) {
+            font-size: $font-size-xxxmedium;
         }
+    }
+
+    &Head {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+
+        @include min-responsive($w-xl) {
+            align-items: flex-end;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .titleCaption {
+            line-height: 1.12;
+        }
+    }
+
+    &Sort {
+        min-width: 210px;
+        margin-top: 8px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+        align-items: center;
+        align-self: flex-end;
+
+        @include min-responsive($w-xl) {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        &__caption {
+            color: #C2C2C2;
+            margin-right: 14px;
+        }
+
+        .select2-selection__arrow {
+            @extend .icon-chevron;
+            position: absolute;
+            right: 18px;
+            top: 9px;
+        }
+
+        .formSelect {
+            width: 100%;
+            padding: 8px 20px 8px 8px;
+            min-height: 44px;
+            border: 1px solid $cl-red;
+            color: $cl-red;
+        }
+
     }
 }
