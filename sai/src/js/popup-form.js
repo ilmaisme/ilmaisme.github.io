@@ -72,7 +72,9 @@ $(document).ready(function () {
         }
     })
 
-    updatePicker()
+    if ($('.datepick').is(':visible')) {
+        updatePicker()
+    }
 
     function updatePicker() {
         if ($('#menu').css('display') == 'none') {

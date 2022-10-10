@@ -263,7 +263,7 @@
                                     <div class="formWrap simulationInput display-flex">
                                         <div class="formWrap__select simulationDom">
                                             <label class="formSelect__label mb1 simulationLabelDom" for="domestic">From</label>
-                                            <select class="formSelect mt1 formSelect--dom" id="domestic" name="domestic">
+                                            <select class="formSelect mt1 formSelect--dom js-example-data-ajax" id="domestic" name="domestic">
                                                 <option value="CGK">Cengkareng, Kota Jakarta Barat (CGK)</option>
                                                 <option value="CGK">Palmerah, Kota Jakarta Barat (CGK)</option>
                                             </select>
@@ -1021,11 +1021,15 @@
     <script defer type="text/javascript" src="./asset/js/select2.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#domestic').select2({
-                //placeholder: "Pilih Kota/Kecamatan Asal",
+            var $ajax = $(".js-example-data-ajax");
+            $ajax.select2({
                 selectionCssClass: "formSelect",
                 dropdownCssClass: "formDropdown",
-                //allowClear: true
+                ajax: {
+                    url: "https://api.github.com/search/repositories",
+                    dataType: 'json',
+                    delay: 450
+                }
             });
             $('#foreign').select2({
                 //placeholder: "Pilih Negara Tujuan",
