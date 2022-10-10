@@ -100,42 +100,7 @@
     <!-- e: popup -->
 
     {{> js simulation=true validate=true}}
-    <script>
-        $(document).ready(function () {
-            //validation
-            $('#formbooking').validate({
-                rules: {
-                    bookori: {
-                        required: true,
-                    },
-                    bookdest: {
-                        required: true,
-                    },
-                    sender: {
-                        required: true,
-                    },
-                    receiver: {
-                        required: true,
-                    },
-                    hpsender: {
-                        required: true,
-                    },
-                    hpreceiver: {
-                        required: true,
-                    },
-                    bookitem: {
-                        required: true,
-                    },
-                    bookweight: {
-                        required: true,
-                    },
-                },
-                errorPlacement: function (error, element) {
-                    error.insertAfter(element)
-                }
-            })
-        });
-    </script>
+    <script defer type="text/javascript" src="./asset/js/popup-form.min.js"></script>
 
 </body>
 

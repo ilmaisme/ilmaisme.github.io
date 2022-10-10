@@ -116,13 +116,23 @@
                 </div>
             </div>
             <div class="center-flex text-center">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="buttonPrimary buttonFull">Ajukan Klaim</a>
+                <button class="button buttonPrimary buttonFull" onclick="openPopup()">Ajukan Klaim</button>
             </div>
         </div>
     </main>
     {{> footer}}
 
+    <!-- s: popup -->
+    {{>popup-claim}}
+    <!-- e: popup -->
+
     {{> js}}
+    <script defer type="text/javascript" src="./asset/js/jquery.validate.min.js"></script>
+    <!-- s: corejs for datepicker -->
+    <script defer type="text/javascript" src="./asset/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- e: corejs for datepicker -->
+    <script defer type="text/javascript" src="./asset/js/popup-form.min.js"></script>
 
 </body>
 

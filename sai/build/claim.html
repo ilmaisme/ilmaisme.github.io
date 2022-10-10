@@ -322,7 +322,7 @@
                 </div>
             </div>
             <div class="center-flex text-center">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="buttonPrimary buttonFull">Ajukan Klaim</a>
+                <button class="button buttonPrimary buttonFull" onclick="openPopup()">Ajukan Klaim</button>
             </div>
         </div>
     </main>
@@ -430,8 +430,115 @@
             </div>
         </div>
     </footer>
+    <!-- s: popup -->
+    <div class="popup popup--hidden active center-flex">
+        <div class="popupWrap bookPopup">
+            <button onclick="closePopup()" class="button buttonClose" aria-label="Close Popup"><span
+                    class="icon-close"></span></button>
+            <div class="titleCaption titleCaption--small text-center">
+                Form Pengajuan Klaim
+            </div>
+            <div class="popupContent">
+                <form action="#" id="formclaim">
+                    <div class="formWrap__area mt2">
+                        <label class="formArea__label bookLabel mb1" for="claimori">Alamat Asal</label>
+                        <textarea class="formArea bookForm" name="claimori" id="claimori" cols="" rows="3"
+                            placeholder="Tulis Disini ..."></textarea>
+                    </div>
+                    <div class="formWrap__area mt2">
+                        <label class="formArea__label bookLabel mb1" for="claimdest">Alamat Tujuan</label>
+                        <textarea class="formArea bookForm" name="claimdest" id="claimdest" cols="" rows="3"
+                            placeholder="Tulis Disini ..."></textarea>
+                    </div>
+                    <div class="bookWrap row mt2">
+                        <div class="bookWrap__item col-md-6">
+                            <div class="formWrap__input">
+                                <label class="formInput__label bookLabel mb1" for="sender">Nama Pengirim</label>
+                                <input type="text" id="sender" name="sender" class="formInput bookForm"
+                                    placeholder="Tulis Disini ...">
+                            </div>
+                            <div class="formWrap__num mt2">
+                                <label class="formNum__label bookLabel mb1" for="hpsender">No. HP Pengirim</label>
+                                <input type="tel" id="hpsender" name="hpsender" class="formNum bookForm" inputmode="numeric"
+                                    placeholder="Tulis Disini ...">
+                            </div>
+                        </div>
+                        <div class="bookWrap__item col-md-6">
+                            <div class="formWrap__input">
+                                <label class="formInput__label bookLabel mb1" for="receiver">Nama Penerima</label>
+                                <input type="text" id="receiver" name="receiver" class="formInput bookForm"
+                                    placeholder="Tulis Disini ...">
+                            </div>
+                            <div class="formWrap__num mt2">
+                                <label class="formNum__label bookLabel mb1" for="hpreceiver">No. HP Penerima</label>
+                                <input type="tel" id="hpreceiver" name="hpreceiver" class="formNum bookForm"
+                                    inputmode="numeric" placeholder="Tulis Disini ...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="formWrap__input mt2">
+                                <label class="formInput__label bookLabel mb1" for="claimitem">Nama Barang yang
+                                    Dikirim</label>
+                                <input type="text" id="claimitem" name="claimitem" class="formInput bookForm"
+                                    placeholder="Tulis Disini ...">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="formWrap__num mt2">
+                                <label class="formNum__label bookLabel mb1" for="claimweight">Berat/kg</label>
+                                <input type="number" id="claimweight" name="claimweight" value="1" class="formNum bookForm"
+                                    inputmode="numeric" autocomplete="off" maxlength="3"
+                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formWrap__input mt2">
+                        <label class="formInput__label bookLabel mb1" for="wrap">Dibungkus dengan</label>
+                        <input type="text" id="wrap" name="wrap" class="formInput bookForm"
+                            placeholder="Tulis Disini ...">
+                    </div>
+                    <div class="formWrap__input mt2">
+                        <label class="formInput__label bookLabel mb1" for="pickup">Diangkut dengan</label>
+                        <input type="text" id="pickup" name="pickup" class="formInput bookForm"
+                            placeholder="Tulis Disini ...">
+                    </div>
+                    <div class="formWrap__input mt2">
+                        <label class="formInput__label bookLabel mb1" for="agen">Nama Perusahaan Pengangkutan</label>
+                        <input type="text" id="agen" name="agen" class="formInput bookForm"
+                            placeholder="Tulis Disini ...">
+                    </div>
+                    <div class="formWrap__input formWrap__date mt2">
+                        <label class="formInput__label bookLabel mb1" for="datepick">Berangkat Tanggal</label>
+                        <input type="text" id="datepick" name="datepick" class="formInput bookForm datepick"
+                            placeholder="Tulis Disini ...">
+                    </div>
+                    <div class="formWrap__num mt2">
+                        <label class="formNum__label bookLabel mb1" for="claimprice">Harga Barang yang Diangkut/Jumlah yang
+                            Dipertanggungkan</label>
+                        <input type="number" id="claimprice" name="claimprice" value="" class="formNum bookForm"
+                            inputmode="numeric" autocomplete="off" placeholder="Tulis Disini ...">
+                    </div>
+                    <div class="formWrap__input mt2">
+                        <label class="formInput__label bookLabel mb1" for="claimcondi">Kondisi Pertanggungan</label>
+                        <input type="text" id="claimcondi" name="claimcondi" class="formInput bookForm"
+                            placeholder="Tulis Disini ..." value="ALL RISK" disabled>
+                    </div>
+                    <button type="submit" class="button buttonPrimary buttonFull">Kirim Pengajuan Klaim</button>
+                </form>
+            </div>
+        </div>
+    </div>    <!-- e: popup -->
+
     <script src="./asset/js/jquery-3.6.1.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/jquery.validate.min.js"></script>
+    <!-- s: corejs for datepicker -->
+    <script defer type="text/javascript" src="./asset/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- e: corejs for datepicker -->
+    <script defer type="text/javascript" src="./asset/js/popup-form.min.js"></script>
 
 </body>
 
