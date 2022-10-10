@@ -254,6 +254,18 @@
             justify-content: space-between;
         }
 
+        &--row {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            @include max-responsive($w-xm) {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-end;
+            }
+        }
+
         .titleCaption {
             line-height: 1.12;
         }
@@ -287,9 +299,13 @@
         .formSelect {
             width: 100%;
             padding: 8px 20px 8px 8px;
-            min-height: 44px;
+            min-height: 40px;
             border: 1px solid $cl-red;
             color: $cl-red;
+
+            @include min-responsive($w-xl) {
+                min-height: 44px;
+            }
         }
 
     }
