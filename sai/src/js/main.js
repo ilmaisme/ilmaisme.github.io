@@ -11,17 +11,17 @@ $(document).ready(function () {
             autoplay: false,
             autoplaySpeed: 2000,
             responsive: [{
-                breakpoint: 1220,
-                settings: {
-                    slidesToShow: 3
+                    breakpoint: 1220,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 2
+                    }
                 }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 2
-                }
-            }
             ]
         });
     }
@@ -177,5 +177,37 @@ function toggleItem() {
         this.parentNode.className = 'dropBox open active mt2';
     } else {
         this.parentNode.className = 'dropBox close mt2';
+    }
+}
+
+// alert
+function alertStatus(msg, link) {
+    // console.log(btn)
+    let ts = document.querySelector('[data-alert]')
+    if (ts) {
+        // btn.setAttribute('disabled','disabled')
+        ts.firstElementChild.innerHTML = msg
+        ts.classList.remove('-hide')
+        ts.classList.add('-show')
+        let tsk = ts.getElementsByTagName('a')[0]
+        if (tsk) {
+            if (link) {
+                tsk.innerHTML = 'Kembali'
+                tsk.href = link
+            } else {
+                tsk.innerHTML = 'Oke'
+                tsk.href = '#'
+            }
+            tsk.addEventListener('click', function (e) {
+                e.preventDefault()
+                if (link) {
+                    window.location.href = link
+                } else {
+                    ts.classList.add('-hide')
+                }
+                console.log('i')
+            })
+        }
+        //alertAutoDismiss(ts)
     }
 }

@@ -1,13 +1,6 @@
 .gerai {
     &Item {
         margin-top: 30px;
-        text-align: center;
-        @include font-pack(false, $font-size-vnormal, $font-weight-bold, $line-base, $cl-red);
-        
-        @include min-responsive($w-md) {
-            text-align: left;
-            font-size: $font-size-normal;
-        }
 
         @include min-responsive($w-lg) {
             margin-top: 60px;
@@ -15,6 +8,12 @@
     }
 
     &Img {
+        text-align: center;
+
+        @include min-responsive($w-md) {
+            text-align: left;
+        }
+
         img {
             border-radius: 10px;
         }
@@ -22,8 +21,12 @@
 
     &Name {
         margin-top: 10px;
+        text-align: center;
+        @include font-pack(false, $font-size-vnormal, $font-weight-bold, $line-base, $cl-red);
 
         @include min-responsive($w-md) {
+            text-align: left;
+            font-size: $font-size-normal;
             margin-top: 0;
         }
     }

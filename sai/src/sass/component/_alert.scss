@@ -1,0 +1,52 @@
+.alert {
+    position: fixed;
+    width: auto;
+    min-width: max-content;
+    bottom: 160px;
+    left: 50%;
+    z-index: 12;
+    visibility: hidden;
+    opacity: 0;
+    padding: 12px 15px;
+    @include base_transition(all, .2s);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    background: #333;
+    box-shadow: 0px 1px 40px rgba(0, 0, 0, 0.15);
+
+    &.-show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.-hide {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &[data-alert='bottom'] {
+        @include transform(translate(-50%, 50px));
+
+        &.-show {
+            @include transform(translate(-50%, 0));
+        }
+
+        &.-hide {
+            @include transform(translate(-50%, -50px));
+        }
+    }
+
+    &Content {
+        margin-right: 12px;
+        flex-grow: 1;
+        flex-basis: 0;
+        @include font-pack(false, 14px, 400, 1.4, $cl-white);
+    }
+
+    &Dismiss {
+        flex-grow: 0;
+        text-align: center;
+        @include font-pack(false, 14px, 700, false, $cl-yellow);
+    }
+}

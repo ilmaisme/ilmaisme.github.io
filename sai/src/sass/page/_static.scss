@@ -10,11 +10,12 @@
     }
 
     a {
+        display: inline-block;
         font-weight: 500;
         color: $cl-red;
 
         &:hover {
-            color: $cl-primary-black;
+            color: $cl-red;
         }
     }
 
@@ -59,6 +60,97 @@
 
     img {
         border-radius: 10px;
+    }
+
+    .table {
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        line-height: 24px;
+        color: $cl-primary-black;
+        border-radius: 10px;
+        border-spacing: 0;
+        @include box_shadow(0 3px 6px rgba(0, 0, 0, .16));
+
+        &~.table {
+            margin-top: 30px;
+        }
+
+        &Caption {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 24px;
+            color: $cl-white;
+
+            th {
+                background: $cl-red;
+                border-radius: 10px 10px 0px 0px;
+
+            }
+        }
+
+        .tableCaption {
+            th {
+                padding: 10px 24px;
+            }
+
+            ~.tableTitle {
+                th {
+                    border-radius: 0;
+                }
+            }
+        }
+
+        td {
+            padding: 0 10px;
+            text-align: center;
+
+            ~td {
+                border-left: 1px solid #D2C9A7;
+            }
+        }
+
+        tr {
+            &:nth-child(even) {
+                background: #FFFDF6;
+            }
+
+            &:nth-child(odd) {
+                background: #FFF4CC;
+            }
+
+            &:last-child {
+                td {
+                    &:last-child {
+                        border-bottom-right-radius: 10px;
+                    }
+
+                    &:first-child {
+                        border-bottom-left-radius: 10px;
+                    }
+                }
+            }
+        }
+
+        &Title {
+            th {
+                background: $cl-yellow;
+                padding: 10px;
+
+                &:last-child {
+                    border-top-right-radius: 10px;
+                }
+
+                &:first-child {
+                    border-top-left-radius: 10px;
+                }
+
+                ~th {
+                    border-left: 1px solid #D2C9A7;
+                }
+            }
+        }
     }
 
     .blockquote {

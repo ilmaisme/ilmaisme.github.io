@@ -56,7 +56,7 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        justify-content: flex-end;
+        justify-content: flex-start;
         margin-top: 10px;
 
         @include min-responsive($w-xl) {
@@ -123,6 +123,14 @@
         }
     }
 
+    &Share {
+        margin-top: 8px;
+
+        @include min-responsive($w-xl) {
+            margin-top: 0;
+        }
+    }
+
     &Writer {
         display: flex;
         align-items: center;
@@ -178,14 +186,9 @@
         }
     }
 
-    &Main {
-        @include min-responsive($w-xl) {
-            padding-right: 45px;
-        }
-    }
-
     &Read {
         margin-top: 30px;
+        justify-content: space-between;
 
         &__caption {
             margin-top: 10px;
