@@ -1,7 +1,24 @@
 .share {
     &Item {
-        margin-left: 7px;
-        margin-right: 7px;
+        margin-left: 4px;
+        margin-right: 4px;
+
+        @include min-responsive($w-xl) {
+            margin-left: 7px;
+            margin-right: 7px;
+        }
+
+        &:first-child {
+            margin-left: 0;
+
+            @include min-responsive($w-xl) {
+                margin-left: 7px;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
 
         .icon {
             width: 16px;
@@ -9,7 +26,7 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
-            filter: invert(74%) sepia(0%) saturate(437%) hue-rotate(166deg) brightness(79%) contrast(85%);
+            @extend .filter-white;
             @include base_transition(all, .2s);
 
             @include min-responsive($w-xl) {
@@ -20,10 +37,39 @@
     }
 
     &Link {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        border-radius: 35px;
+        padding: 3px;
+        text-align: center;
+
         &:hover {
-            .icon {
-                transform: scale(1.1);
-            }
+            transform: scale(1.1);
+        }
+
+        &--fb {
+            background: $cl-fb;
+        }
+
+        &--tw {
+            background: $cl-tw;
+        }
+
+        &--wa {
+            background: $cl-wa;
+        }
+
+        &--tele {
+            background: $cl-tele;
+        }
+
+        &--ln {
+            background: $cl-ln;
+        }
+
+        &--link {
+            background: $cl-link;
         }
     }
 }
