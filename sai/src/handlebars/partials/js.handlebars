@@ -1,5 +1,35 @@
 <script src="./asset/js/jquery-3.6.1.min.js"></script>
-<script defer type="text/javascript" src="./asset/js/main.js"></script>
+<script defer type="text/javascript" src="./asset/js/main.min.js"></script>
+
+{{#eq page compare="home"}}
+<script defer type="text/javascript" src="./asset/js/home.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#gerai').select2({
+            //placeholder: "Pilih Gerai",
+            selectionCssClass: "formSelect",
+            dropdownCssClass: "formDropdown",
+            //allowClear: true
+        });
+
+        $('#formgerai').validate({
+            ignore: [],
+            rules: {
+                gerai: {
+                    required: true,
+                },
+            },
+            errorPlacement: function (error, element) {
+                if (element.attr("name") == "gerai") {
+                    error.appendTo("#msgBox8");
+                } else {
+                    error.insertAfter(element)
+                }
+            }
+        })
+    });
+</script>
+{{/eq}}
 {{#eq validate compare=true}}
 <script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
 <script defer type="text/javascript" src="./asset/js/jquery.validate.min.js"></script>
@@ -124,35 +154,6 @@
             $(this).addClass("active");
         });
 
-    });
-</script>
-{{/eq}}
-{{#eq page compare="home"}}
-<script defer type="text/javascript" src="./asset/js/home.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#gerai').select2({
-            //placeholder: "Pilih Gerai",
-            selectionCssClass: "formSelect",
-            dropdownCssClass: "formDropdown",
-            //allowClear: true
-        });
-
-        $('#formgerai').validate({
-            ignore: [],
-            rules: {
-                gerai: {
-                    required: true,
-                },
-            },
-            errorPlacement: function (error, element) {
-                if (element.attr("name") == "gerai") {
-                    error.appendTo("#msgBox8");
-                } else {
-                    error.insertAfter(element)
-                }
-            }
-        })
     });
 </script>
 {{/eq}}
