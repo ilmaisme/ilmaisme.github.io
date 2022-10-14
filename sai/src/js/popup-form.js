@@ -48,16 +48,10 @@ $(document).ready(function () {
             hpsender: {
                 required: true,
             },
-            hpreceiver: {
-                required: true,
-            },
             claimitem: {
                 required: true,
             },
             claimweight: {
-                required: true,
-            },
-            agen: {
                 required: true,
             },
             datepick: {
@@ -115,4 +109,10 @@ $(document).ready(function () {
             });
         }
     }
+
+    //upload image
+    $('input[type=file]').change(function (e) {
+        $in = $(this);
+        $in.next().html($in.val());
+    });
 })
