@@ -13,6 +13,12 @@ $(document).ready(function () {
             var leavingSection = this;
 
             if (origin.index == 0 && direction == 'down') {
+                $(".imgPlay").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 400
+                })
                 $(".intro").velocity({
                     opacity: "0"
                 }, {
@@ -29,17 +35,30 @@ $(document).ready(function () {
                         })
                     }
                 })
-                $(".invitation").velocity({
+                $(".bride").velocity({
                     display: "block"
                 }, {
                     delay: 0,
                     duration: 400,
                     complete: function () {
-                        $(".invitation").velocity({
+                        $(".bride").velocity({
                             opacity: "1"
                         })
+                        $(".imgFlower svg").addClass('animation-stroke');
                     }
                 })
+                // $(".invitation").velocity({
+                //     display: "block"
+                // }, {
+                //     delay: 0,
+                //     duration: 400,
+                //     complete: function () {
+                //         $(".invitation").velocity({
+                //             opacity: "1"
+                //         })
+                //         $(".imgFlower svg").addClass('animation-stroke');
+                //     }
+                // })
                 $(".imgFlower__wrap").velocity({
                     opacity: "1"
                 }, {
@@ -48,6 +67,12 @@ $(document).ready(function () {
                 })
             }
             if (origin.index == 1 && direction == 'up') {
+                $(".imgPlay").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400
+                })
                 $(".intro").velocity({
                     display: "block"
                 }, {
@@ -64,17 +89,30 @@ $(document).ready(function () {
                         })
                     }
                 })
-                $(".invitation").velocity({
+                $(".bride").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
                     duration: 400,
                     complete: function () {
-                        $(".invitation").velocity({
+                        $(".bride").velocity({
                             display: "none"
                         })
+                        $(".imgFlower svg").removeClass('animation-stroke');
                     }
                 })
+                // $(".invitation").velocity({
+                //     opacity: "0"
+                // }, {
+                //     delay: 0,
+                //     duration: 400,
+                //     complete: function () {
+                //         $(".invitation").velocity({
+                //             display: "none"
+                //         })
+                //         $(".imgFlower svg").removeClass('animation-stroke');
+                //     }
+                // })
                 $(".imgFlower__wrap").velocity({
                     opacity: "0"
                 }, {
@@ -83,24 +121,24 @@ $(document).ready(function () {
                 })
             }
             if (origin.index == 1 && direction == 'down') {
-                $(".invitation").velocity({
+                $(".bride").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
                     duration: 400,
                     complete: function () {
-                        $(".invitation").velocity({
+                        $(".bride").velocity({
                             display: "none"
                         })
                     }
                 })
-                $(".gift").velocity({
+                $(".invitation").velocity({
                     display: "block"
                 }, {
                     delay: 0,
                     duration: 400,
                     complete: function () {
-                        $(".gift").velocity({
+                        $(".invitation").velocity({
                             opacity: "1"
                         })
                     }
@@ -108,6 +146,54 @@ $(document).ready(function () {
             }
             if (origin.index == 2 && direction == 'up') {
                 $(".invitation").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    complete: function () {
+                        $(".invitation").velocity({
+                            display: "none"
+                        })
+                    }
+                })
+                $(".bride").velocity({
+                    display: "block"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    complete: function () {
+                        $(".bride").velocity({
+                            opacity: "1"
+                        })
+                    }
+                })
+            }
+            if (origin.index == 2 && direction == 'down') {
+                $(".invitation").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    complete: function () {
+                        $(".invitation").velocity({
+                            display: "none"
+                        })
+                    }
+                })
+                $(".gift").velocity({
+                    display: "block"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    complete: function () {
+                        $(".gift").velocity({
+                            opacity: "1"
+                        })
+                    }
+                })
+            }
+            if (origin.index == 3 && direction == 'up') {
+                $(".invitation").velocity({
                     display: "block"
                 }, {
                     delay: 0,
@@ -130,7 +216,7 @@ $(document).ready(function () {
                     }
                 })
             }
-            if (origin.index == 2 && direction == 'down') {
+            if (origin.index == 3 && direction == 'down') {
                 $(".gift").velocity({
                     opacity: "0"
                 }, {
@@ -140,6 +226,7 @@ $(document).ready(function () {
                         $(".gift").velocity({
                             display: "none"
                         })
+                        $(".imgFlower svg").removeClass('animation-stroke');
                     }
                 })
 
@@ -150,7 +237,7 @@ $(document).ready(function () {
                     duration: 400
                 })
             }
-            if (origin.index == 3 && direction == 'up') {
+            if (origin.index == 4 && direction == 'up') {
                 $(".gift").velocity({
                     display: "block"
                 }, {
@@ -160,6 +247,7 @@ $(document).ready(function () {
                         $(".gift").velocity({
                             opacity: "1"
                         })
+                        $(".imgFlower svg").addClass('animation-stroke');
                     }
                 })
 
@@ -208,6 +296,7 @@ $(document).ready(function () {
         }($(".giftContent ul").after(msgRek)));
     };
 });
+
 $(window).on('load', function () {
     setTimeout(function () {
         $("#preloader").fadeOut(700, function () {
@@ -220,6 +309,11 @@ $(window).on('load', function () {
         })
     }, 2000);
 })
+
+function music() {
+    var myAudio = $("#audio")[0];
+    return myAudio.paused ? myAudio.play() : myAudio.pause();
+}
 
 // function refreshPage() {
 //     window.location.reload(false);
