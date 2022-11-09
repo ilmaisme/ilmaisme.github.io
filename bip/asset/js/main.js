@@ -85,3 +85,10 @@ function openCategory(e){
     jQuery(e).toggleClass('active');
     drop.toggleClass('visible');
 }
+
+//open user menu
+function openUserMenu(e){
+    let drop = $('.userDrop');
+    jQuery(e).toggleClass('active');
+    drop.toggleClass('visible');
+}
