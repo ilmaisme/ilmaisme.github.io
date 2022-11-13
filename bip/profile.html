@@ -118,8 +118,24 @@
                     </a>
                     <div class="headerLogin desktop-only">
                         <div class="center-flex">
-                            <a href="login.html" class="buttonLogin">Masuk/Daftar</a>
-                            <div class="headerLang">
+                            <button class="button headerLogin__user display-flex" onclick="openUserMenu(this)">
+                                <div class="headerLogin__img">
+                                    <span class="icon icon-user"></span>
+                                </div>
+                                <div class="headerLogin__name">Fadhil Ghazali</div>
+                                <span class="icon-chevron"></span>
+                            </button>
+                            <div class="userDrop navSub">
+                                <a href="profile.html" class="navLink" tabindex="-1">Profile
+                                </a>
+                                <a href="profile-wishlist.html" class="navLink" tabindex="-1">My Wishlist
+                                </a>
+                                <a href="profile-calendar.html" class="navLink" tabindex="-1">My Calendar
+                                </a>
+                                <a href="#" class="navLink navLink--red" tabindex="-1">Log Out
+                                    <span class="icon icon-logout ml1"></span>
+                                </a>
+                            </div>                        <div class="headerLang">
                                 <div class="formSelect__wrap headerLang__select custom-select">
                                     <select name="lang" id="lang" class="formSelect">
                                         <option value="">IND</option>
@@ -196,7 +212,10 @@
                 <ul class="navList menuMob mobile display-flex">
                     <li>
                         <div class="headerLogin mobile-only">
-                            <a href="login.html" class="buttonLogin">Masuk/Daftar</a>
+                            <a href="profile.html" class="headerLogin__user display-flex">
+                                <img src="./asset/images/user.png" alt="" width="50" height="50" class="headerLogin__img">
+                                <div class="headerLogin__name">Fadhil Ghazali</div>
+                            </a>
                         </div>
                     </li>
                     <li class="navItem">
@@ -275,49 +294,82 @@
             </div>
         </nav></div>
     <div class="js-nav-offset"></div>    <main role="main">
-        <div class="about container mt2">
-            <div class="breadcrumb display-flex align-center">
-                <div class="breadcrumbItem"><a href="index.html" class="breadcrumbLink" aria-label="Back to home"><span
-                            class="icon icon-home"></span></a></div>
-                <div class="breadcrumbItem"><a href="about-us.html" class="breadcrumbLink">About Us</a></div>
-                <div class="breadcrumbItem"><a href="#" class="breadcrumbLink active">Visi & Misi</a></div>
-            </div>            <div class="row mt3">
-                <div class="sidebar sidebarMenu col-12 col-md-12 col-lg-3">
-                    <div class="sidebarMenu__item">
-                        <a href="about-us.html" class="sidebarMenu__link">
-                            <h2 class="sidebarMenu__title">
-                                About Us
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="sidebarMenu__item active">
-                        <a href="visi.html" class="sidebarMenu__link">
-                            <h2 class="sidebarMenu__title">
-                                Visi &amp; Misi
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="sidebarMenu__item">
-                        <a href="faq.html" class="sidebarMenu__link">
-                            <h2 class="sidebarMenu__title">
-                                FAQ
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="sidebarMenu__item">
-                        <a href="contact.html" class="sidebarMenu__link">
-                            <h2 class="sidebarMenu__title">
-                                Contact Us
-                            </h2>
-                        </a>
-                    </div>
+        <div class="profile profileSection container mt4">
+            <div class="row">
+                <div class="sidebar sidebarProfile col-12 col-md-12 col-lg-3">
+                    <div class="profileUser display-flex align-center">
+                        <div class="profileUpload upload-box display-flex align-center">
+                            <button class="button profileUpload__btn" aria-label="Upload Image">
+                                <div class="userPropic center-flex">
+                                    <span class="icon icon-user"></span>
+                                </div>
+                            </button>
+                            <div class="profileUpload__icon center-flex">
+                                <span class="icon icon-edit"></span>
+                            </div>
+                            <input type="file" class="profileUpload__input image-upload" id="uploadImg" name="uploadImg" accept="image/*">
+                            <div class="profileUpload__img image-preview">
+                            </div>
+                        </div>
+                        <h2 class="profileUser__name">Fadhil Ghazali</h2>
+                    </div>                    <div class="profileNav sidebarMenu">
+                        <div class="sidebarMenu__item active">
+                            <a href="profile.html" class="sidebarMenu__link"><h2 class="sidebarMenu__title">Profile</h2></a>
+                        </div>
+                        <div class="sidebarMenu__item">
+                            <a href="profile-wishlist.html" class="sidebarMenu__link"><h2 class="sidebarMenu__title">My Wishlist</h2></a>
+                        </div>
+                        <div class="sidebarMenu__item">
+                            <a href="profile-calendar.html" class="sidebarMenu__link"><h2 class="sidebarMenu__title">My Calendar</h2></a>
+                        </div>
+                        <div class="sidebarMenu__item sidebarMenu__log">
+                            <a href="#" class="sidebarMenu__link"><h2 class="sidebarMenu__title">Logout<span class="icon icon-logout"></span></h2></a>
+                        </div>                    </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-9 mt2">
-                    <h1 class="aboutCaption">Visi & Misi</h1>
-                    <div class="aboutContent static mt2">
-                        <p>Menjadi perusahaan jaringan ritel dan penerbitan terbesar, tersebar dan terpadu di Asia
-                            Tenggara melalui penyediaan produk berorientasi pasar, layanan unggul, inovatif dan perilaku
-                            bisnis yang beretika</p>
+                    <h1 class="titleCaption mt0">Profil</h1>
+                    <div class="profileContent">
+                        <form action="#" class="formBorder profileSetting row">
+                            <div class="col-12 col-lg-6">
+                                <div class="profileSetting__wrap mt2">
+                                    <label class="profileSetting__label" for="name">Nama Lengkap</label>
+                                    <input type="text" class="formInput mt1" name="name" id="name"
+                                        value="Fadhil Ghazali">
+                                </div>
+                                <div class="profileSetting__wrap mt2">
+                                    <label class="profileSetting__label" for="email">Email</label>
+                                    <input type="email" class="formInput mt1 formError" name="email" id="email"
+                                        value="fadh.ghazali@gmail.com">
+                                    <div class="formError__txt"><span class="icon icon-report"></span>Email
+                                        sudah terpakai. Gunakan alamat email lainnya?</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="profileSetting__wrap mt2">
+                                    <label class="profileSetting__label" for="phone">Nomor Telepon</label>
+                                    <input type="tel" name="phone" id="phone" class="formInput mt1" value="082111111111"
+                                        inputmode="numeric">
+                                </div>
+                                <div class="profileSetting__wrap mt2">
+                                    <label class="profileSetting__label" for="password">Password</label>
+                                    <div class="profileSetting__wrap mt1">
+                                        <button class="button buttonPass" aria-label="show hide password" id="btnpass"
+                                            toggle="#pass" type="button"></button>
+                                        <input type="password" class="formInput" name="pass" id="pass"
+                                            value="!@#$%asdfgh_">
+                                        <!--<div class="formError__txt display-flex"><span class="icon icon-error"></span>Password
+                                    minimum 8
+                                    characters, contain capital letters
+                                    and numbers</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="button buttonPrimary mt3" type="submit">
+                                    Update
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -435,11 +487,81 @@
     <script defer type="text/javascript" src="./asset/js/custom-select.min.js"></script>
     <script>
         $(document).ready(function () {
+            //tab scroll mobile
+            let act = $('.sidebarMenu__item.active');
+            if (act.length > 0) {
+                let msp = act.position().left - 15;
+                $('.sidebarMenu').animate({
+                    scrollLeft: msp
+                });
+            }
+    
+            //image upload preview
+            function initImageUpload(box) {
+                let uploadField = box.querySelector('.image-upload');
+    
+                uploadField.addEventListener('change', getFile);
+    
+                function getFile(e) {
+                    let file = e.currentTarget.files[0];
+                    checkType(file);
+                }
+    
+                function previewImage(file) {
+                    let thumb = box.querySelector('.image-preview'),
+                        reader = new FileReader();
+    
+                    reader.onload = function () {
+                        thumb.style.backgroundImage = 'url(' + reader.result + ')';
+                    }
+                    reader.readAsDataURL(file);
+                    thumb.className += ' js--no-default';
+                }
+    
+                function checkType(file) {
+                    let imageType = /image.*/;
+                    if (!file.type.match(imageType)) {
+                        throw 'File bukan gambar';
+                    } else if (!file) {
+                        throw 'Tidak ada gambar yang dipilih';
+                    } else {
+                        previewImage(file);
+                    }
+                }
+    
+            }
+    
+            // initialize box-scope
+            var boxes = document.querySelectorAll('.upload-box');
+    
+            for (let i = 0; i < boxes.length; i++) {
+                let box = boxes[i];
+                initImageUpload(box);
+            }
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
             $('.buttonLike').on('click', function () {
                 $(this).toggleClass('active');
             })
         })
+    </script>    <script>
+        $(document).ready(function () {
+            //show hide password
+            $("#btnpass").click(function () {
+                let input = $($(this).attr("toggle"));
+                if (input.attr("type") == "password") {
+                    input.attr("type", "text");
+                    $(this).addClass("show")
+                } else {
+                    $(this).removeClass("show")
+                    input.attr("type", "password");
+                }
+            });
+        });
     </script>
+
 </body>
 
 </html>

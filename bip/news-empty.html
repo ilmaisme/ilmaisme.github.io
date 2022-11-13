@@ -118,8 +118,24 @@
                     </a>
                     <div class="headerLogin desktop-only">
                         <div class="center-flex">
-                            <a href="login.html" class="buttonLogin">Masuk/Daftar</a>
-                            <div class="headerLang">
+                            <button class="button headerLogin__user display-flex" onclick="openUserMenu(this)">
+                                <div class="headerLogin__img">
+                                    <span class="icon icon-user"></span>
+                                </div>
+                                <div class="headerLogin__name">Fadhil Ghazali</div>
+                                <span class="icon-chevron"></span>
+                            </button>
+                            <div class="userDrop navSub">
+                                <a href="profile.html" class="navLink" tabindex="-1">Profile
+                                </a>
+                                <a href="profile-wishlist.html" class="navLink" tabindex="-1">My Wishlist
+                                </a>
+                                <a href="profile-calendar.html" class="navLink" tabindex="-1">My Calendar
+                                </a>
+                                <a href="#" class="navLink navLink--red" tabindex="-1">Log Out
+                                    <span class="icon icon-logout ml1"></span>
+                                </a>
+                            </div>                        <div class="headerLang">
                                 <div class="formSelect__wrap headerLang__select custom-select">
                                     <select name="lang" id="lang" class="formSelect">
                                         <option value="">IND</option>
@@ -196,7 +212,10 @@
                 <ul class="navList menuMob mobile display-flex">
                     <li>
                         <div class="headerLogin mobile-only">
-                            <a href="login.html" class="buttonLogin">Masuk/Daftar</a>
+                            <a href="profile.html" class="headerLogin__user display-flex">
+                                <img src="./asset/images/user.png" alt="" width="50" height="50" class="headerLogin__img">
+                                <div class="headerLogin__name">Fadhil Ghazali</div>
+                            </a>
                         </div>
                     </li>
                     <li class="navItem">
@@ -275,49 +294,35 @@
             </div>
         </nav></div>
     <div class="js-nav-offset"></div>    <main role="main">
-        <div class="about container mt2">
+        <div class="newsIdx container mt2">
             <div class="breadcrumb display-flex align-center">
                 <div class="breadcrumbItem"><a href="index.html" class="breadcrumbLink" aria-label="Back to home"><span
                             class="icon icon-home"></span></a></div>
-                <div class="breadcrumbItem"><a href="about-us.html" class="breadcrumbLink">About Us</a></div>
-                <div class="breadcrumbItem"><a href="#" class="breadcrumbLink active">Visi & Misi</a></div>
-            </div>            <div class="row mt3">
-                <div class="sidebar sidebarMenu col-12 col-md-12 col-lg-3">
-                    <div class="sidebarMenu__item">
-                        <a href="about-us.html" class="sidebarMenu__link">
-                            <h2 class="sidebarMenu__title">
-                                About Us
-                            </h2>
-                        </a>
-                    </div>
+                <div class="breadcrumbItem"><a href="news.html" class="breadcrumbLink active">News</a></div>
+            </div>            <div class="newsIdx__row row">
+                <div class="sidebar sidebarMenu sidebarMenu--update col-12 col-md-12 col-lg-3">
+                    <div class="sidebarMenu__caption">Kategori</div>
                     <div class="sidebarMenu__item active">
-                        <a href="visi.html" class="sidebarMenu__link">
+                        <a href="news.html" class="sidebarMenu__link">
                             <h2 class="sidebarMenu__title">
-                                Visi &amp; Misi
+                                News
                             </h2>
                         </a>
                     </div>
-                    <div class="sidebarMenu__item">
-                        <a href="faq.html" class="sidebarMenu__link">
+                    <div class="sidebarMenu__item">    
+                        <a href="event.html" class="sidebarMenu__link">
                             <h2 class="sidebarMenu__title">
-                                FAQ
+                                Event
                             </h2>
                         </a>
-                    </div>
-                    <div class="sidebarMenu__item">
-                        <a href="contact.html" class="sidebarMenu__link">
-                            <h2 class="sidebarMenu__title">
-                                Contact Us
-                            </h2>
-                        </a>
-                    </div>
-                </div>
+                    </div>                </div>
                 <div class="col-12 col-md-12 col-lg-9 mt2">
-                    <h1 class="aboutCaption">Visi & Misi</h1>
-                    <div class="aboutContent static mt2">
-                        <p>Menjadi perusahaan jaringan ritel dan penerbitan terbesar, tersebar dan terpadu di Asia
-                            Tenggara melalui penyediaan produk berorientasi pasar, layanan unggul, inovatif dan perilaku
-                            bisnis yang beretika</p>
+                    <h1 class="aboutCaption mt0">Semua Berita</h1>
+                    <div class="mt2">
+                        <div class="newsEmpty center-flex flex-column mt4">
+                            <img src="./asset/images/empty-news.png" alt="" width="250" height="250">
+                            <div class="newsEmpty__txt text-center mt1">Belum ada berita terbaru saat ini.</div>
+                        </div>
                     </div>
                 </div>
             </div>

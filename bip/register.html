@@ -92,32 +92,92 @@
 </head>
 <body>
     <main role="main">
-        <div class="about container">
-            <div class="aboutRow about404 center-flex row">
-                <div class="aboutWrap col-12 col-md-8 col-lg-6 text-center">
-                    <a href="index.html" class="">
-                        <img class="aboutLogo" src="./asset/images/logo-bip.png" alt="Bhuana Ilmu Populer" width="327" height="52">
-                    </a>
-                    <form action="search.html" class="searchboxForm mt3">
-                        <button type="submit" class="button buttonSearch buttonSearch--trans center-flex"
-                            aria-label="search">
-                            <span class="icon icon-search"></span>
+        <div class="aboutAccess container" style="background-image: url(./asset/images/bg-login.jpg)">
+            <div class="aboutRow aboutAccess__row center-flex">
+                <div class="aboutWrap col-12 col-md-7 col-lg-5 col-xl-5">
+                    <div class="text-center">
+                        <a href="index.html" class="">
+                            <img class="aboutLogo" src="./asset/images/logo-bip.png" alt="Bhuana Ilmu Populer"
+                                width="327" height="52">
+                        </a>
+                        <h1 class="aboutCaption aboutAccess__title mt2">Registrasi</h1>
+                    </div>
+                    <form action="#" class="accessForm">
+                        <div class="accessForm__wrap formBorder mt2">
+                            <label class="formLabel" for="email">Email</label>
+                            <input type="email" class="formInput formError mt1" name="" id="">
+                            <div class="formError__txt"><span class="icon icon-report"></span>Email sudah terpakai.
+                                Gunakan alamat email lainnya?</div>
+                        </div>
+
+                        <div class="accessForm__wrap mt2">
+                            <label class="formLabel" for="pass">Password</label>
+                            <div class="accessForm__wrap mt1">
+                                <button class="button buttonPass" aria-label="show hide password" id="btnpass"
+                                    toggle="#pass" type="button"></button>
+                                <input type="password" class="formInput formError" name="pass" id="pass">
+                                <div class="formError__txt"><span class="icon icon-report"></span>Password terdiri dari
+                                    8 karakter. Gunakan huruf kapital dan angka
+                                    agar passwordmu lebih aman.</div>
+                            </div>
+                        </div>
+
+                        <div class="formMsg formMsg__error display-flex align-center mt2"><span
+                                class="icon icon-close mr1"></span>Terjadi kesalahan! Silakan cek kembali password dan
+                            alamat emailmu.</div>
+
+                        <div class="mt2 center-flex">
+                            <img src="./asset/images/sample/captcha.png" alt="" width="306" height="82">
+                        </div>
+                        <button class="button buttonPrimary buttonFull align-center mt2" type="submit">
+                            Registrasi
                         </button>
-                        <input type="text" name="" class="searchboxInput searchboxInput--full"
-                            aria-label="Search book title, writer, illustrator" placeholder="Cari judul buku, penulis, atau illustrator" value="" inputmode="search">
                     </form>
-                    <h1 class="about404__title">
-                        <!--404-->
-                        <img src="./asset/images/404.png" alt="404" width="499" height="239" class="mt4">
-                    </h1>
-                    <div class="titleCaption mt2">Ups! Halaman Tidak Ditemukan</div>
-                    <p>Maaf halaman yang kamu cari tidak bisa ditemukan atau telah dihapus. Silakan coba beberapa waktu
-                        kembali.</p>
-                    <a href="index.html" class="buttonPrimary buttonWhite mt2">Kembali Ke Beranda</a>
+                    <div class="accessMisc text-center mt3">atau registrasi dengan</div>
+                    <div class="accessButton__wrap center-flex">
+                        <button class="button accessButton buttonFull center-flex mt1">
+                            <img src="./asset/images/icon/icon-google.png" alt="" loading="lazy" width="25" height="25"
+                                class="mr1">
+                            <span>Google</span>
+                        </button>
+                        <button class="button accessButton buttonFull center-flex mt1">
+                            <span class="icon icon-fb mr1"></span>
+                            <span>Facebook</span>
+                        </button>
+                        <button class="button accessButton buttonFull center-flex mt1">
+                            <img src="./asset/images/icon/icon-365.png" alt="" loading="lazy" width="25" height="25"
+                                class="mr1">
+                            <span>Microsot 365</span>
+                        </button>
+                    </div>
+                    <div class="accessForm__wrap text-center mt3">
+                        Dengan membuat akun, Anda menyetujui <a class="accessLink" href="privacy.html">Ketentuan
+                            Penggunaan, Kebijakan Privasi</a> dan untuk menerima
+                        berita dan pembaruan.
+                    </div>
+                    <div class="accessBottom text-center mt2">
+                        Sudah punya akun? <a class="accessLink" href="login.html">Login</a>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+    <script src="./asset/js/jquery-3.5.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //show hide password
+            $("#btnpass").click(function () {
+                let input = $($(this).attr("toggle"));
+                if (input.attr("type") == "password") {
+                    input.attr("type", "text");
+                    $(this).addClass("show")
+                } else {
+                    $(this).removeClass("show")
+                    input.attr("type", "password");
+                }
+            });
+        });
+    </script>
 
 </body>
 

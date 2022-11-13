@@ -118,8 +118,24 @@
                     </a>
                     <div class="headerLogin desktop-only">
                         <div class="center-flex">
-                            <a href="login.html" class="buttonLogin">Masuk/Daftar</a>
-                            <div class="headerLang">
+                            <button class="button headerLogin__user display-flex" onclick="openUserMenu(this)">
+                                <div class="headerLogin__img">
+                                    <span class="icon icon-user"></span>
+                                </div>
+                                <div class="headerLogin__name">Fadhil Ghazali</div>
+                                <span class="icon-chevron"></span>
+                            </button>
+                            <div class="userDrop navSub">
+                                <a href="profile.html" class="navLink" tabindex="-1">Profile
+                                </a>
+                                <a href="profile-wishlist.html" class="navLink" tabindex="-1">My Wishlist
+                                </a>
+                                <a href="profile-calendar.html" class="navLink" tabindex="-1">My Calendar
+                                </a>
+                                <a href="#" class="navLink navLink--red" tabindex="-1">Log Out
+                                    <span class="icon icon-logout ml1"></span>
+                                </a>
+                            </div>                        <div class="headerLang">
                                 <div class="formSelect__wrap headerLang__select custom-select">
                                     <select name="lang" id="lang" class="formSelect">
                                         <option value="">IND</option>
@@ -196,7 +212,10 @@
                 <ul class="navList menuMob mobile display-flex">
                     <li>
                         <div class="headerLogin mobile-only">
-                            <a href="login.html" class="buttonLogin">Masuk/Daftar</a>
+                            <a href="profile.html" class="headerLogin__user display-flex">
+                                <img src="./asset/images/user.png" alt="" width="50" height="50" class="headerLogin__img">
+                                <div class="headerLogin__name">Fadhil Ghazali</div>
+                            </a>
                         </div>
                     </li>
                     <li class="navItem">
@@ -275,50 +294,199 @@
             </div>
         </nav></div>
     <div class="js-nav-offset"></div>    <main role="main">
-        <div class="about container mt2">
+        <div class="newsIdx container mt2">
             <div class="breadcrumb display-flex align-center">
                 <div class="breadcrumbItem"><a href="index.html" class="breadcrumbLink" aria-label="Back to home"><span
                             class="icon icon-home"></span></a></div>
-                <div class="breadcrumbItem"><a href="about-us.html" class="breadcrumbLink">About Us</a></div>
-                <div class="breadcrumbItem"><a href="#" class="breadcrumbLink active">Visi & Misi</a></div>
-            </div>            <div class="row mt3">
-                <div class="sidebar sidebarMenu col-12 col-md-12 col-lg-3">
+                <div class="breadcrumbItem"><a href="index-event.html" class="breadcrumbLink active">Event</a></div>
+            </div>            <div class="newsIdx__row row">
+                <div class="sidebar sidebarMenu sidebarMenu--update col-12 col-md-12 col-lg-3">
+                    <div class="sidebarMenu__caption">Kategori</div>
                     <div class="sidebarMenu__item">
-                        <a href="about-us.html" class="sidebarMenu__link">
+                        <a href="news.html" class="sidebarMenu__link">
                             <h2 class="sidebarMenu__title">
-                                About Us
+                                News
                             </h2>
                         </a>
                     </div>
-                    <div class="sidebarMenu__item active">
-                        <a href="visi.html" class="sidebarMenu__link">
+                    <div class="sidebarMenu__item active">    
+                        <a href="event.html" class="sidebarMenu__link">
                             <h2 class="sidebarMenu__title">
-                                Visi &amp; Misi
+                                Event
                             </h2>
                         </a>
-                    </div>
-                    <div class="sidebarMenu__item">
-                        <a href="faq.html" class="sidebarMenu__link">
-                            <h2 class="sidebarMenu__title">
-                                FAQ
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="sidebarMenu__item">
-                        <a href="contact.html" class="sidebarMenu__link">
-                            <h2 class="sidebarMenu__title">
-                                Contact Us
-                            </h2>
-                        </a>
-                    </div>
-                </div>
+                    </div>                </div>
                 <div class="col-12 col-md-12 col-lg-9 mt2">
-                    <h1 class="aboutCaption">Visi & Misi</h1>
-                    <div class="aboutContent static mt2">
-                        <p>Menjadi perusahaan jaringan ritel dan penerbitan terbesar, tersebar dan terpadu di Asia
-                            Tenggara melalui penyediaan produk berorientasi pasar, layanan unggul, inovatif dan perilaku
-                            bisnis yang beretika</p>
+                    <div class="aboutCaption__wrap mt0">
+                        <h1 class="aboutCaption mt0">Semua Event</h1>
+                        <div class="aboutCaption__form display-flex jcontent-end">
+                            <form action="#" class="searchboxForm">
+                                <button type="submit" class="button buttonSearch buttonSearch--trans center-flex"
+                                    aria-label="search">
+                                    <span class="icon icon-search"></span>
+                                </button>
+                                <input type="text" name="" class="searchboxInput searchboxInput--full"
+                                    aria-label="Search Event" placeholder="Cari Event..." value="" inputmode="search">
+                            </form>
+                            <div class="display-flex align-center">
+                                Urutkan
+                                <div class="formSelect__wrap catSelect custom-select">
+                                    <select name="sort" id="sort" class="formSelect">
+                                        <option value="newest">Terbaru</option>
+                                        <option value="newest">1 Minggu yang Lalu</option>
+                                        <option value="newest">1 Bulan yang Lalu</option>
+                                        <option value="newest">1 Tahun yang Lalu</option>
+                                        <option value="newest">Terlawas</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="eventIdx row mt2">
+                        <div class="eventItem col-6">
+                            <a href="event-read.html" class="eventIdx__link">
+                                <div class="eventImg">
+                                    <img src="./asset/images/sample/event-1.png" alt="Peluncuran dan Diskusi Novel Semua Ikan di Langit Karya Ziggy Z." width="391" height="211">
+                                </div>
+                                <h2 class="titleItem mt1">Peluncuran dan Diskusi Novel Semua Ikan di Langit Karya Ziggy Z.</h2>
+                                <div class="eventDate">
+                                    <div class="eventDate__item">
+                                        23 Mei 2022 - 30 Mei 2022
+                                    </div>
+                                    <div class="eventDate__item">
+                                        Zoom Meeting
+                                    </div>
+                                </div>
+                                <div class="eventDesc titleDesc mt1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, non et bibendum elementum quis suspendisse proin at.</div>
+                            </a>
+                        </div>
+                        <div class="eventItem col-6">
+                            <a href="event-read.html" class="eventIdx__link">
+                                <div class="eventImg">
+                                    <img src="./asset/images/sample/event-2.png" alt="Pre-Order The Time We Walk Together" width="391" height="211">
+                                </div>
+                                <h2 class="titleItem mt1">Pre-Order The Time We Walk Together</h2>
+                                <div class="eventDate">
+                                    <div class="eventDate__item">
+                                        23 Mei 2022 - 30 Mei 2022
+                                    </div>
+                                    <div class="eventDate__item">
+                                        Google Meeting
+                                    </div>
+                                </div>
+                                <div class="eventDesc titleDesc mt1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, non et bibendum elementum quis suspendisse proin at.</div>
+                            </a>
+                        </div>
+                        <div class="eventItem col-6">
+                            <a href="event-read.html" class="eventIdx__link">
+                                <div class="eventImg">
+                                    <img src="./asset/images/sample/event-3.png" alt="Kala Ikan Tidak Hanya di Laut, Tapi Juga di Langit" width="391" height="211">
+                                </div>
+                                <h2 class="titleItem mt1">Kala Ikan Tidak Hanya di Laut, Tapi Juga di Langit</h2>
+                                <div class="eventDate">
+                                    <div class="eventDate__item">
+                                        23 Mei 2022 - 30 Mei 2022
+                                    </div>
+                                    <div class="eventDate__item">
+                                        Gedung Kompas Gramedia
+                                    </div>
+                                </div>
+                                <div class="eventDesc titleDesc mt1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, non et bibendum elementum quis suspendisse proin at.</div>
+                            </a>
+                        </div>
+                        <div class="eventItem col-6">
+                            <a href="event-read.html" class="eventIdx__link">
+                                <div class="eventImg">
+                                    <img src="./asset/images/sample/event-1.png" alt="Peluncuran dan Diskusi Novel Semua Ikan di Langit Karya Ziggy Z." width="391" height="211">
+                                </div>
+                                <h2 class="titleItem mt1">Peluncuran dan Diskusi Novel Semua Ikan di Langit Karya Ziggy Z.</h2>
+                                <div class="eventDate">
+                                    <div class="eventDate__item">
+                                        23 Mei 2022 - 30 Mei 2022
+                                    </div>
+                                    <div class="eventDate__item">
+                                        Zoom Meeting
+                                    </div>
+                                </div>
+                                <div class="eventDesc titleDesc mt1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, non et bibendum elementum quis suspendisse proin at.</div>
+                            </a>
+                        </div>
+                        <div class="eventItem col-6">
+                            <a href="event-read.html" class="eventIdx__link">
+                                <div class="eventImg">
+                                    <img src="./asset/images/sample/event-2.png" alt="Pre-Order The Time We Walk Together" width="391" height="211">
+                                </div>
+                                <h2 class="titleItem mt1">Pre-Order The Time We Walk Together</h2>
+                                <div class="eventDate">
+                                    <div class="eventDate__item">
+                                        23 Mei 2022 - 30 Mei 2022
+                                    </div>
+                                    <div class="eventDate__item">
+                                        Google Meeting
+                                    </div>
+                                </div>
+                                <div class="eventDesc titleDesc mt1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, non et bibendum elementum quis suspendisse proin at.</div>
+                            </a>
+                        </div>
+                        <div class="eventItem col-6">
+                            <a href="event-read.html" class="eventIdx__link">
+                                <div class="eventImg">
+                                    <img src="./asset/images/sample/event-3.png" alt="Kala Ikan Tidak Hanya di Laut, Tapi Juga di Langit" width="391" height="211">
+                                </div>
+                                <h2 class="titleItem mt1">Kala Ikan Tidak Hanya di Laut, Tapi Juga di Langit</h2>
+                                <div class="eventDate">
+                                    <div class="eventDate__item">
+                                        23 Mei 2022 - 30 Mei 2022
+                                    </div>
+                                    <div class="eventDate__item">
+                                        Gedung Kompas Gramedia
+                                    </div>
+                                </div>
+                                <div class="eventDesc titleDesc mt1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, non et bibendum elementum quis suspendisse proin at.</div>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="paging center-flex">
+                        <li>
+                            <a href="#" class="pagingLink disable" aria-label="Go to First Page">
+                                <span class="icon icon-arrow icon-arrow-prev icon-arrow-line"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pagingLink disable" aria-label="Go to Previous Page">
+                                <span class="icon icon-arrow icon-arrow-prev"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pagingLink active">
+                                1
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pagingLink">
+                                2
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pagingLink">
+                                ..
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pagingLink">
+                                12
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pagingLink" aria-label="Go to Next Page">
+                                <span class="icon icon-arrow"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pagingLink" aria-label="Go to Last Page">
+                                <span class="icon icon-arrow icon-arrow-line"></span>
+                            </a>
+                        </li>                    </ul>
                 </div>
             </div>
         </div>
