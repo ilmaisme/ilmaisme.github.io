@@ -28,7 +28,7 @@ $(document).ready(function () {
                 jno.addClass("active")) :
             (hd.removeClass("fixed"),
                 jno.removeClass("active"))
-                
+
         a > $(window).height() ? $(".buttonWhatsapp").show() : $(".buttonWhatsapp").hide()
     })
 
@@ -49,6 +49,16 @@ $(document).ready(function () {
         $("html, body").animate({
             scrollTop: 0
         }, "slow")
+    });
+
+    //open category child menu
+    $(".dropItem__parent").on('click', function () {
+        if ($(this).hasClass('active')) {
+            $(".dropItem__parent").removeClass('active');
+        } else {
+            $(".dropItem__parent").removeClass('active');
+            $(this).addClass('active');
+        }
     });
 });
 
@@ -80,14 +90,14 @@ function hideMenuMobile() {
 }
 
 //open category menu
-function openCategory(e){
+function openCategory(e) {
     let drop = $('.drop');
     jQuery(e).toggleClass('active');
     drop.toggleClass('visible');
 }
 
 //open user menu
-function openUserMenu(e){
+function openUserMenu(e) {
     let drop = $('.userDrop');
     jQuery(e).toggleClass('active');
     drop.toggleClass('visible');
