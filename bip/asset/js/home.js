@@ -91,7 +91,21 @@ $(document).ready(function () {
         slidesToScroll: 1,
         autoplay: false,
         autoplaySpeed: 2000,
-        responsive: [{
+        responsive: [
+            {
+                breakpoint: 1900,
+                settings: {
+                    centerPadding: '220px',
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 1400,
+                settings: {
+                    centerPadding: '220px',
+                    slidesToShow: 4,
+                }
+            },{
                 breakpoint: 1220,
                 settings: {
                     centerPadding: '120px',
