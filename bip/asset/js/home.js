@@ -10,8 +10,8 @@ $(document).ready(function () {
         mobileFirst: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 2000,
+        autoplay: true,
+        autoplaySpeed: 5000,
         appendDots: $('.-dtheadline'),
         responsive: [{
                 breakpoint: 1220,
@@ -147,8 +147,8 @@ $(document).ready(function () {
         mobileFirst: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 2000,
+        autoplay: true,
+        autoplaySpeed: 5000,
         responsive: [{
                 breakpoint: 1220,
                 settings: {
