@@ -27,9 +27,10 @@
     <!-- e:twitter card -->
 
     <link rel=icon type=image/png sizes=16x16 href="./asset/images/favicon.ico">
-    <link rel="stylesheet" href="./asset/css/style-home.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style-home.min.css" type="text/css">
     <link rel="preload" as="image" href="./asset/images/sample/headline-1.png">
-    <link rel="preload" href="./asset/images/logo-bip.png" as="image" />
+    <link rel="preload" as="image" href="./asset/images/icon-BIP.png"
+        imagesrcset="./asset/images/icon-BIP.png 400px, ./asset/images/logo-bip.png 1180px" imagesizes="50vw">
     <link rel="preload" href="https://fonts.gstatic.com/s/manrope/v13/xn7gYHE41ni1AdIRggexSg.woff2" as="font"
         type="font/woff2" crossorigin="anonymous">
     <link media="none" onload="if(media!=='all')media='all'"
@@ -98,169 +99,199 @@
             <div class="container">
                 <div class="headerTop display-flex">
                     <h1>
-                        <a href="index.html">
-                            <img class="headerLogo" src="./asset/images/logo-bip.png" alt="Bhuana Ilmu Populer" width="327"
-                                height="52">
+                        <a href="index.html" class="headerLink">
+                            <picture>
+                                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                <source srcset="./asset/images/logo-bip.png" media="(min-width: 540px)" alt="">
+                                <img srcset="./asset/images/icon-BIP.png" alt="Bhuana Ilmu Populer" class="headerLogo"
+                                    width="327" height="52">
+                                <!--[if IE 9]></video><![endif]-->
+                            </picture>
                         </a>
                     </h1>
-                    <div class="headerCenter center-flex">
-                        <button class="button buttonCateg center-flex" onclick="openCategory(this)"><span
+                    <div class="headerCenter center-flex flex-init">
+                        <button class="button buttonCateg" onclick="openCategory(this)"><span
                                 class="icon icon-categ"></span>Kategori<span class="icon-chevron"></span></button>
-                        <div class="searchbox desktop-only">
+                        <div class="searchbox">
                             <form action="search.html" class="searchboxForm">
                                 <button type="submit" class="button buttonSearch center-flex" aria-label="search">
                                     <span class="icon icon-search"></span>
                                 </button>
-                                <input type="text" name="" class="searchboxInput" aria-label="Search title, author"
+                                <input type="text" name="" id="search" class="searchboxInput" aria-label="Search title, author"
                                     placeholder="Cari judul buku, author, atau illustrator" value="" inputmode="search">
                             </form>
                         </div>                </div>
-                    <a href="search.html" class="searchLink button buttonSearch" aria-label="search">
-                        <span class="icon icon-search"></span>
-                    </a>
+                    <div class="navMob mobile-only" id="navMob">
+                        <nav class="nav center-flex" aria-label="primarynavigation">
+                            <div class="navWrap">
+                                <div class="menu mobile-only" id="menu">
+                                    <label class="sr-only" for="menuToggle">Open navigation</label>
+                                    <input type="checkbox" class="menuToggle" name="check" id="menuToggle" aria-haspopup="true"
+                                        autocomplete="off">
+                                    <svg class="ham hamRotate" viewBox="0 0 100 100" width="80">
+                                        <path class="line top hamLine"
+                                            d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013" />
+                                        <path class="line middle hamLine" d="m 70,50 h -40" />
+                                        <path class="line bottom hamLine"
+                                            d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40" />
+                                    </svg>
+                                </div>
+                                <!-- s: tab -->
+                                <div class="menuMob mobile">
+                                    <div class="headerLogin mobile-only container">
+                                        <a href="login.html" class="buttonLogin">Masuk/Daftar</a>
+                                    </div>
+                                    <div class="menuTab listTab tab mt0">
+                                        <ul class="listTab__list container mobile-only">
+                                            <li>
+                                                <button class="button listTab__label menuTab__btn tabbutton active" onclick="openTabMenu(event, 'utama')">
+                                                    Menu Utama
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button class="button listTab__label menuTab__btn tabbutton" onclick="openTabMenu(event, 'kategori');">
+                                                    Kategori
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        <div class="tabwrapper container">
+                                            <div class="tabcontent menuTab__content active" id="utama">
+                                                <ul class="navList display-flex">
+                                                    <li class="navItem">
+                                                        <a href="index.html" class="navLink" tabindex="-1">Home
+                                                        </a>
+                                                    </li>
+                                                    <li class="navItem">
+                                                        <div aria-haspopup="true" tabindex="0">
+                                                            <div class="navOpen" id="navOpen">Contributors
+                                                                <span class="icon-chevron"></span>
+                                                                <div class="navSub navSub--big">
+                                                                    <a href="author.html" class="navLink" tabindex="-1">Meet Our Authors
+                                                                    </a>
+                                                                    <a href="illustrator.html" class="navLink" tabindex="-1">Meet Our Illustrators
+                                                                    </a>
+                                                                    <a href="team.html" class="navLink" tabindex="-1">Meet Our Team
+                                                                    </a>
+                                                                    <a href="author-submit.html" class="navLink" tabindex="-1">Author Submission
+                                                                    </a>
+                                                                    <a href="illustrator-submit.html" class="navLink" tabindex="-1">Illustrator Submission
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="navItem">
+                                                        <div aria-haspopup="true" tabindex="0">
+                                                            <div class="navOpen" id="navOpen">Updates
+                                                                <span class="icon-chevron"></span>
+                                                                <div class="navSub">
+                                                                    <a href="news.html" class="navLink" tabindex="-1">News
+                                                                    </a>
+                                                                    <a href="event.html" class="navLink" tabindex="-1">Event
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="navItem">
+                                                        <div aria-haspopup="true" tabindex="0">
+                                                            <div class="navOpen" id="navOpen">About Us
+                                                                <span class="icon-chevron"></span>
+                                                                <div class="navSub">
+                                                                    <a href="about-us.html" class="navLink" tabindex="-1">About Us
+                                                                    </a>
+                                                                    <a href="visi.html" class="navLink" tabindex="-1">Visi &amp; Misi
+                                                                    </a>
+                                                                    <a href="faq.html" class="navLink" tabindex="-1">FAQ
+                                                                    </a>
+                                                                    <a href="contact.html" class="navLink" tabindex="-1">Contact Us
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="navItem">
+                                                        <a href="catalog.html" class="navLink" tabindex="-1">Katalog
+                                                            <span class="navTag">new</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="navItem">
+                                                        <a href="career.html" class="navLink" tabindex="-1">Careers
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tabcontent menuTab__content" id="kategori">
+                                                <div class="dropMob" id="dropMob"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- e: tab -->
+                            </div>
+                        </nav>                </div>
                     <div class="headerLogin desktop-only">
                         <div class="center-flex">
                             <a href="login.html" class="buttonLogin">Masuk/Daftar</a>
                         </div>
                     </div>
                 </div>
-                <div class="drop">
-                    <ul class="dropWrap container">
-                        <li class="dropItem"><a href="#" class="dropLink">best seller</a></li>
-                        <li class="dropItem"><a href="#" class="dropLink">new release</a></li>
-                        <li class="dropItem"><a href="#" class="dropLink">coming soon</a></li>
-                        <li class="dropItem dropItem__parent"><a href="#" class="dropLink">anak</a>
-                            <ul class="dropChild">
-                                <li class="dropItem"><a href="#" class="dropLink">Picture Book</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Aktivitas</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Ensiklopedia</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Bilingual</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Buku Mandi</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Board Book</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Religion</a>
-                            </ul>
-                        </li>
-                        <li class="dropItem dropItem__parent"><a href="#" class="dropLink">komik</a>
-                            <ul class="dropChild">
-                                <li class="dropItem"><a href="#" class="dropLink">Edukomik</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Religion</a>
-                            </ul>
-                        </li>
-                        <li class="dropItem dropItem__parent"><a href="#" class="dropLink">novel</a>
-                            <ul class="dropChild">
-                                <li class="dropItem"><a href="#" class="dropLink">Romance</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Mystery</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Action</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Thriller</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Fantasy</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Poems</a>
-                            </ul>
-                        </li>
-                        <li class="dropItem dropItem__parent"><a href="#" class="dropLink">non fiksi</a>
-                            <ul class="dropChild">
-                                <li class="dropItem"><a href="#" class="dropLink">Self Improvement</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Business</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Self Improvement</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Parenting</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Cooking</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Religion</a>
-                                <li class="dropItem"><a href="#" class="dropLink">Reference</a>
-                            </ul>
-                        </li>
-                        <li class="dropItem dropItem__parent"><a href="#" class="dropLink">e-book</a></li>
-                    </ul>
-                </div>        </div>
+                <div id="dropDesk">
+                    <div class="drop">
+                        <ul class="dropWrap container">
+                            <li class="dropItem"><a href="#" class="dropLink">best seller</a></li>
+                            <li class="dropItem"><a href="#" class="dropLink">new release</a></li>
+                            <li class="dropItem"><a href="#" class="dropLink">coming soon</a></li>
+                            <li class="dropItem dropItem__parent">
+                                <div class="dropLink">anak</div>
+                                <ul class="dropChild">
+                                    <li class="dropItem"><a href="#" class="dropLink">Picture Book</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Aktivitas</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Ensiklopedia</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Bilingual</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Buku Mandi</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Board Book</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Religion</a>
+                                </ul>
+                            </li>
+                            <li class="dropItem dropItem__parent">
+                                <div class="dropLink">komik</div>
+                                <ul class="dropChild">
+                                    <li class="dropItem"><a href="#" class="dropLink">Edukomik</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Religion</a>
+                                </ul>
+                            </li>
+                            <li class="dropItem dropItem__parent">
+                                <div class="dropLink">novel</div>
+                                <ul class="dropChild">
+                                    <li class="dropItem"><a href="#" class="dropLink">Romance</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Mystery</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Action</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Thriller</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Fantasy</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Poems</a>
+                                </ul>
+                            </li>
+                            <li class="dropItem dropItem__parent">
+                                <div class="dropLink">non fiksi</div>
+                                <ul class="dropChild">
+                                    <li class="dropItem"><a href="#" class="dropLink">Self Improvement</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Business</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Self Improvement</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Parenting</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Cooking</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Religion</a>
+                                    <li class="dropItem"><a href="#" class="dropLink">Reference</a>
+                                </ul>
+                            </li>
+                            <li class="dropItem dropItem__parent">
+                                <div class="dropLink">e-book</div>
+                            </li>
+                        </ul>
+                    </div>            </div>
+            </div>
         </div>
     </header>
-    <div class="navMob mobile-only" id="navMob">
-        <nav class="nav center-flex" aria-label="primarynavigation">
-            <div class="navWrap">
-                <div class="menu mobile-only" id="menu">
-                    <label class="sr-only" for="menuToggle">Open navigation</label>
-                    <input type="checkbox" class="menuToggle" name="check" id="menuToggle" aria-haspopup="true"
-                        autocomplete="off">
-                    <svg class="ham hamRotate" viewBox="0 0 100 100" width="80">
-                        <path class="line top hamLine"
-                            d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013" />
-                        <path class="line middle hamLine" d="m 70,50 h -40" />
-                        <path class="line bottom hamLine"
-                            d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40" />
-                    </svg>
-                </div>
-                <ul class="navList menuMob mobile display-flex">
-                    <li>
-                        <div class="headerLogin mobile-only">
-                            <a href="profile.html" class="headerLogin__user display-flex">
-                                <img src="./asset/images/user.png" alt="" width="50" height="50" class="headerLogin__img">
-                                <div class="headerLogin__name">Fadhil Ghazali</div>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="navItem">
-                        <a href="index.html" class="navLink" tabindex="-1">Home
-                        </a>
-                    </li>
-                    <li class="navItem">
-                        <div aria-haspopup="true" tabindex="0">
-                            <div class="navOpen" id="navOpen">Contributors
-                                <span class="icon-chevron"></span>
-                                <div class="navSub navSub--big">
-                                    <a href="author.html" class="navLink" tabindex="-1">Meet Our Authors
-                                    </a>
-                                    <a href="illustrator.html" class="navLink" tabindex="-1">Meet Our Illustrators
-                                    </a>
-                                    <a href="team.html" class="navLink" tabindex="-1">Meet Our Team
-                                    </a>
-                                    <a href="author-submit.html" class="navLink" tabindex="-1">Author Submission
-                                    </a>
-                                    <a href="illustrator-submit.html" class="navLink" tabindex="-1">Illustrator Submission
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="navItem">
-                        <div aria-haspopup="true" tabindex="0">
-                            <div class="navOpen" id="navOpen">Updates
-                                <span class="icon-chevron"></span>
-                                <div class="navSub">
-                                    <a href="news.html" class="navLink" tabindex="-1">News
-                                    </a>
-                                    <a href="event.html" class="navLink" tabindex="-1">Event
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="navItem">
-                        <div aria-haspopup="true" tabindex="0">
-                            <div class="navOpen" id="navOpen">About Us
-                                <span class="icon-chevron"></span>
-                                <div class="navSub">
-                                    <a href="about-us.html" class="navLink" tabindex="-1">About Us
-                                    </a>
-                                    <a href="visi.html" class="navLink" tabindex="-1">Visi &amp; Misi
-                                    </a>
-                                    <a href="faq.html" class="navLink" tabindex="-1">FAQ
-                                    </a>
-                                    <a href="contact.html" class="navLink" tabindex="-1">Contact Us
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="navItem">
-                        <a href="catalog.html" class="navLink" tabindex="-1">Katalog
-                            <span class="navTag">new</span>
-                        </a>
-                    </li>
-                    <li class="navItem">
-                        <a href="career.html" class="navLink" tabindex="-1">Careers
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav></div>
     <div class="js-nav-offset"></div>    <main role="main">
         <div class="headline">
             <div class="headlineSlide -sheadline">
@@ -292,49 +323,49 @@
             <ul class="categList display-flex">
                 <li class="categItem col-4 col-md-3 col-lg-1 text-center">
                     <a href="#" class="categLink">
-                        <img src="./asset/images/categ-best.png" alt="100 Best Seller" width="76" height="76" class="categImg" loading="lazy">
+                        <img src="./asset/images/categ-best.png" alt="100 Best Seller" width="76" height="76" class="categImg">
                         <h2 class="categTitle">100 Best Seller</h2>
                     </a>
                 </li>
                 <li class="categItem col-4 col-md-3 col-lg-1 text-center">
                     <a href="#" class="categLink">
-                        <img src="./asset/images/categ-new.png" alt="New Releases" width="76" height="76" class="categImg" loading="lazy">
+                        <img src="./asset/images/categ-new.png" alt="New Releases" width="76" height="76" class="categImg">
                         <h2 class="categTitle">New Releases</h2>
                     </a>
                 </li>
                 <li class="categItem col-4 col-md-3 col-lg-1 text-center">
                     <a href="#" class="categLink">
-                        <img src="./asset/images/categ-soon.png" alt="Coming Soon" width="76" height="76" class="categImg" loading="lazy">
+                        <img src="./asset/images/categ-soon.png" alt="Coming Soon" width="76" height="76" class="categImg">
                         <h2 class="categTitle">Coming Soon</h2>
                     </a>
                 </li>
                 <li class="categItem col-4 col-md-3 col-lg-1 text-center">
                     <a href="novels.html" class="categLink">
-                        <img src="./asset/images/categ-child.png" alt="Anak" width="76" height="76" class="categImg" loading="lazy">
+                        <img src="./asset/images/categ-child.png" alt="Anak" width="76" height="76" class="categImg">
                         <h2 class="categTitle">Anak</h2>
                     </a>
                 </li>
                 <li class="categItem col-4 col-md-3 col-lg-1 text-center">
                     <a href="#" class="categLink">
-                        <img src="./asset/images/categ-komik.png" alt="Komik" width="76" height="76" class="categImg" loading="lazy">
+                        <img src="./asset/images/categ-komik.png" alt="Komik" width="76" height="76" class="categImg">
                         <h2 class="categTitle">Komik</h2>
                     </a>
                 </li>
                 <li class="categItem col-4 col-md-3 col-lg-1 text-center">
                     <a href="#" class="categLink">
-                        <img src="./asset/images/categ-novel.png" alt="Novel" width="76" height="76" class="categImg" loading="lazy">
+                        <img src="./asset/images/categ-novel.png" alt="Novel" width="76" height="76" class="categImg">
                         <h2 class="categTitle">Novel</h2>
                     </a>
                 </li>
                 <li class="categItem col-4 col-md-3 col-lg-1 text-center">
                     <a href="#" class="categLink">
-                        <img src="./asset/images/categ-nonfiksi.png" alt="Non Fiksi" width="76" height="76" class="categImg" loading="lazy">
+                        <img src="./asset/images/categ-nonfiksi.png" alt="Non Fiksi" width="76" height="76" class="categImg">
                         <h2 class="categTitle">Non Fiksi</h2>
                     </a>
                 </li>
                 <li class="categItem col-4 col-md-3 col-lg-1 text-center">
                     <a href="#" class="categLink">
-                        <img src="./asset/images/categ-ebook.png" alt="E-Book" width="76" height="76" class="categImg" loading="lazy">
+                        <img src="./asset/images/categ-ebook.png" alt="E-Book" width="76" height="76" class="categImg">
                         <h2 class="categTitle">E-Book</h2>
                     </a>
                 </li>
@@ -988,7 +1019,7 @@
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
     <script type="text/javascript" src="./asset/js/main.min.js"></script>
     <script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
-    <script type="text/javascript" src="./asset/js/home.js"></script>
+    <script type="text/javascript" src="./asset/js/home.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.buttonLike').on('click', function () {

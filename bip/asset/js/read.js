@@ -65,11 +65,11 @@ $(document).ready(function () {
 //tab read books
 function openTab(evt, cityName) {
     var i, tablinkcontent, tabbutton;
-    tablinkcontent = document.getElementsByClassName("tabcontent");
+    tablinkcontent = document.getElementsByClassName("readTab__content");
     for (i = 0; i < tablinkcontent.length; i++) {
         tablinkcontent[i].style.display = "none";
     }
-    tabbutton = document.getElementsByClassName("tabbutton");
+    tabbutton = document.getElementsByClassName("readTab__btn");
     for (i = 0; i < tabbutton.length; i++) {
         tabbutton[i].className = tabbutton[i].className.replace(" active", "");
     }
@@ -77,11 +77,11 @@ function openTab(evt, cityName) {
     evt.currentTarget.className += " active";
 
     //tab scroll mobile
-    let act = $('.listTab__label.active');
+    let act = $('.readTab__btn.active');
     if (act.length > 0) {
         let msp = act.position().left;
-        $('.listTab__list').animate({
-            scrollLeft: msp
+        $('.readTab__list').animate({
+            scrollLeft: msp - 10
         });
     }
 }
