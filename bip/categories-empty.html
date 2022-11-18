@@ -739,36 +739,39 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <!-- e: corejs for datepicker -->
     <script>
-        if ($('.datepick').is(':visible')) {
-            updatePicker()
-        }
-    
-        function updatePicker() {
-            if ($('#menu').css('display') == 'none') {
-                //console.log("desktop")        
-                $('.datepick').datepicker({
-                    dateFormat: 'dd/mm/yy',
-                });
-            } else {
-                //console.log("mobile")
-                $('.datepick').datepicker({
-                    dateFormat: 'dd/mm/yy',
-                    beforeShow: function (input, inst) {
-                        var input = $('#datepickmob');
-                        // Handle calendar position before showing it.
-                        var calendar = inst.dpDiv;
-                        setTimeout(function () {
-                            calendar.position({
-                                my: 'left top',
-                                at: 'left top',
-                                collision: 'none',
-                                of: input
-                            });
-                        }, 1);
-                    }
-                });
+        $(document).ready(function () {
+            if ($('.datepick').is(':visible')) {
+                updatePicker()
             }
-        }
+    
+            function updatePicker() {
+                var stylecateg = $('.listMobile__top').css('display');
+                if (stylecateg == 'none') {
+                    //console.log("desktop")
+                    $('.datepick').datepicker({
+                        dateFormat: 'dd/mm/yy',
+                    });
+                } else {
+                    //console.log("mobile")
+                    $('.datepick').datepicker({
+                        dateFormat: 'dd/mm/yy',
+                        beforeShow: function (input, inst) {
+                            var input = $('#datepickmob');
+                            // Handle calendar position before showing it.
+                            var calendar = inst.dpDiv;
+                            setTimeout(function () {
+                                calendar.position({
+                                    my: 'left top',
+                                    at: 'left top',
+                                    collision: 'none',
+                                    of: input
+                                });
+                            }, 1);
+                        }
+                    });
+                }
+            }
+        });
     
         //filter button on mobile
         $("#filterbtn").click(function () {
