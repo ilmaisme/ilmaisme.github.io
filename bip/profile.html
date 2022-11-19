@@ -109,7 +109,7 @@
                         </a>
                     </h1>
                     <div class="headerCenter center-flex flex-init">
-                        <button class="button buttonCateg" onclick="openCategory(this)"><span
+                        <button class="button buttonCateg" onclick="openCategory(this); event.stopPropagation();"><span
                                 class="icon icon-categ"></span>Kategori<span class="icon-chevron"></span></button>
                         <div class="searchbox">
                             <form action="search.html" class="searchboxForm">
@@ -146,12 +146,12 @@
                                     <div class="menuTab listTab tab mt0">
                                         <ul class="listTab__list container mobile-only">
                                             <li>
-                                                <button class="button listTab__label menuTab__btn tabbutton active" onclick="openTabMenu(event, 'utama')">
+                                                <button class="button listTab__label menuTab__btn tabbutton active" id="utamabtn" onclick="openTabMenu(event, 'utama')">
                                                     Menu Utama
                                                 </button>
                                             </li>
                                             <li>
-                                                <button class="button listTab__label menuTab__btn tabbutton" onclick="openTabMenu(event, 'kategori');">
+                                                <button class="button listTab__label menuTab__btn tabbutton" id="kategbtn" onclick="openTabMenu(event, 'kategori');">
                                                     Kategori
                                                 </button>
                                             </li>
@@ -236,7 +236,9 @@
                         <div class="center-flex">
                             <button class="button headerLogin__user display-flex" onclick="openUserMenu(this)">
                                 <div class="headerLogin__img">
-                                    <span class="icon icon-user"></span>
+                                    <!--<span class="icon icon-user"></span>-->
+                                    <img src="https://api.lorem.space/image/face?w=20&amp;h=20&amp;hash=225E6693" alt=""
+                                        width="20" height="20">
                                 </div>
                                 <div class="headerLogin__name">Fadhil Ghazali</div>
                                 <span class="icon-chevron"></span>
@@ -318,7 +320,9 @@
                         <div class="profileUpload upload-box display-flex align-center">
                             <button class="button profileUpload__btn" aria-label="Upload Image">
                                 <div class="userPropic center-flex">
-                                    <span class="icon icon-user"></span>
+                                    <!--<span class="icon icon-user"></span>-->
+                                    <img src="https://api.lorem.space/image/face?w=100&amp;h=100&amp;hash=225E6693" alt="" width="100"
+                                        height="100">
                                 </div>
                             </button>
                             <div class="profileUpload__icon center-flex">
@@ -500,7 +504,7 @@
         <div class="footerCopy text-center">Copyright 2022. BIP All Rights Reserved by Bisnis.com</div>
     </footer>
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
-    <script type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script type="text/javascript" src="./asset/js/main.js"></script>
     <script>
         $(document).ready(function () {
             //tab scroll mobile

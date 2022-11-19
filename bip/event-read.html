@@ -109,7 +109,7 @@
                         </a>
                     </h1>
                     <div class="headerCenter center-flex flex-init">
-                        <button class="button buttonCateg" onclick="openCategory(this)"><span
+                        <button class="button buttonCateg" onclick="openCategory(this); event.stopPropagation();"><span
                                 class="icon icon-categ"></span>Kategori<span class="icon-chevron"></span></button>
                         <div class="searchbox">
                             <form action="search.html" class="searchboxForm">
@@ -146,12 +146,12 @@
                                     <div class="menuTab listTab tab mt0">
                                         <ul class="listTab__list container mobile-only">
                                             <li>
-                                                <button class="button listTab__label menuTab__btn tabbutton active" onclick="openTabMenu(event, 'utama')">
+                                                <button class="button listTab__label menuTab__btn tabbutton active" id="utamabtn" onclick="openTabMenu(event, 'utama')">
                                                     Menu Utama
                                                 </button>
                                             </li>
                                             <li>
-                                                <button class="button listTab__label menuTab__btn tabbutton" onclick="openTabMenu(event, 'kategori');">
+                                                <button class="button listTab__label menuTab__btn tabbutton" id="kategbtn" onclick="openTabMenu(event, 'kategori');">
                                                     Kategori
                                                 </button>
                                             </li>
@@ -236,7 +236,9 @@
                         <div class="center-flex">
                             <button class="button headerLogin__user display-flex" onclick="openUserMenu(this)">
                                 <div class="headerLogin__img">
-                                    <span class="icon icon-user"></span>
+                                    <!--<span class="icon icon-user"></span>-->
+                                    <img src="https://api.lorem.space/image/face?w=20&amp;h=20&amp;hash=225E6693" alt=""
+                                        width="20" height="20">
                                 </div>
                                 <div class="headerLogin__name">Fadhil Ghazali</div>
                                 <span class="icon-chevron"></span>
@@ -325,7 +327,9 @@
                         <div class="newsThumb">
                             <div class="newsThumb__item cl-purple">
                                 <span class="newsAuthor">
-                                    <span class="icon icon-user"></span>
+                                    <!--<span class="icon icon-user"></span>-->
+                                    <img src="https://api.lorem.space/image/face?w=35&amp;h=35&amp;hash=225E6693" alt=""
+                                        width="35" height="35">
                                 </span>Superadmin_BIP
                             </div>
                             <div class="newsThumb__item newsThumb__cal">
@@ -386,7 +390,7 @@
                                     <tr>
                                         <td>
                                             <img src="https://api.lorem.space/image/face?w=50&h=50&hash=225E6693" alt=""
-                                                loading="lazy" class="eventSpeaker__img">
+                                                loading="lazy" class="eventSpeaker__img" width="50" height="50">
                                             <div class="eventSpeaker__content">
                                                 <div class="eventSpeaker__name">Sheila Agnesia</div>
                                                 <div class="eventSpeaker__title">Content Creator</div>
@@ -410,7 +414,7 @@
                                     <tr>
                                         <td>
                                             <img src="https://api.lorem.space/image/face?w=50&h=50&hash=A89D0DE6" alt=""
-                                                loading="lazy" class="eventSpeaker__img">
+                                                loading="lazy" class="eventSpeaker__img" width="50" height="50">
                                             <div class="eventSpeaker__content">
                                                 <div class="eventSpeaker__name">Arshanda</div>
                                                 <div class="eventSpeaker__title">Penulis & Musisi</div>
@@ -418,7 +422,7 @@
                                         </td>
                                         <td>
                                             <img src="https://api.lorem.space/image/face?w=50&h=50&hash=9D9539E7" alt=""
-                                                loading="lazy" class="eventSpeaker__img">
+                                                loading="lazy" class="eventSpeaker__img" width="50" height="50">
                                             <div class="eventSpeaker__content">
                                                 <div class="eventSpeaker__name">Anoman Studio</div>
                                                 <div class="eventSpeaker__title">Photo & Video Editor</div>
@@ -428,7 +432,7 @@
                                     <tr>
                                         <td>
                                             <img src="https://api.lorem.space/image/face?w=50&h=50&hash=4F32C4CF" alt=""
-                                                loading="lazy" class="eventSpeaker__img">
+                                                loading="lazy" class="eventSpeaker__img" width="50" height="50">
                                             <div class="eventSpeaker__content">
                                                 <div class="eventSpeaker__name">Feni Rose</div>
                                                 <div class="eventSpeaker__title">MC</div>
@@ -436,7 +440,7 @@
                                         </td>
                                         <td>
                                             <img src="https://api.lorem.space/image/face?w=50&h=50&hash=8B7BCDC2" alt=""
-                                                loading="lazy" class="eventSpeaker__img">
+                                                loading="lazy" class="eventSpeaker__img" width="50" height="50">
                                             <div class="eventSpeaker__content">
                                                 <div class="eventSpeaker__name">Ilma Akrimatunnisa</div>
                                                 <div class="eventSpeaker__title">Seksi Sibuk</div>
@@ -671,7 +675,7 @@
         <div class="footerCopy text-center">Copyright 2022. BIP All Rights Reserved by Bisnis.com</div>
     </footer>
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
-    <script type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script type="text/javascript" src="./asset/js/main.js"></script>
     <script>
         $(document).ready(function () {
             $('.buttonLike').on('click', function () {

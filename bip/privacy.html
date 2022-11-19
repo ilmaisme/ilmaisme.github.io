@@ -109,7 +109,7 @@
                         </a>
                     </h1>
                     <div class="headerCenter center-flex flex-init">
-                        <button class="button buttonCateg" onclick="openCategory(this)"><span
+                        <button class="button buttonCateg" onclick="openCategory(this); event.stopPropagation();"><span
                                 class="icon icon-categ"></span>Kategori<span class="icon-chevron"></span></button>
                         <div class="searchbox">
                             <form action="search.html" class="searchboxForm">
@@ -143,12 +143,12 @@
                                     <div class="menuTab listTab tab mt0">
                                         <ul class="listTab__list container mobile-only">
                                             <li>
-                                                <button class="button listTab__label menuTab__btn tabbutton active" onclick="openTabMenu(event, 'utama')">
+                                                <button class="button listTab__label menuTab__btn tabbutton active" id="utamabtn" onclick="openTabMenu(event, 'utama')">
                                                     Menu Utama
                                                 </button>
                                             </li>
                                             <li>
-                                                <button class="button listTab__label menuTab__btn tabbutton" onclick="openTabMenu(event, 'kategori');">
+                                                <button class="button listTab__label menuTab__btn tabbutton" id="kategbtn" onclick="openTabMenu(event, 'kategori');">
                                                     Kategori
                                                 </button>
                                             </li>
@@ -987,7 +987,7 @@
         <div class="footerCopy text-center">Copyright 2022. BIP All Rights Reserved by Bisnis.com</div>
     </footer>
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
-    <script type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script type="text/javascript" src="./asset/js/main.js"></script>
     <script>
         $(document).ready(function () {
             $('.buttonLike').on('click', function () {

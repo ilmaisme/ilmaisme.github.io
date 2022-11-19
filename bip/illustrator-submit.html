@@ -109,7 +109,7 @@
                         </a>
                     </h1>
                     <div class="headerCenter center-flex flex-init">
-                        <button class="button buttonCateg" onclick="openCategory(this)"><span
+                        <button class="button buttonCateg" onclick="openCategory(this); event.stopPropagation();"><span
                                 class="icon icon-categ"></span>Kategori<span class="icon-chevron"></span></button>
                         <div class="searchbox">
                             <form action="search.html" class="searchboxForm">
@@ -143,12 +143,12 @@
                                     <div class="menuTab listTab tab mt0">
                                         <ul class="listTab__list container mobile-only">
                                             <li>
-                                                <button class="button listTab__label menuTab__btn tabbutton active" onclick="openTabMenu(event, 'utama')">
+                                                <button class="button listTab__label menuTab__btn tabbutton active" id="utamabtn" onclick="openTabMenu(event, 'utama')">
                                                     Menu Utama
                                                 </button>
                                             </li>
                                             <li>
-                                                <button class="button listTab__label menuTab__btn tabbutton" onclick="openTabMenu(event, 'kategori');">
+                                                <button class="button listTab__label menuTab__btn tabbutton" id="kategbtn" onclick="openTabMenu(event, 'kategori');">
                                                     Kategori
                                                 </button>
                                             </li>
@@ -298,8 +298,7 @@
                             class="icon icon-home"></span></a></div>
                 <div class="breadcrumbItem"><a href="#" class="breadcrumbLink active">Illustrator Submission</a></div>
             </div>            <div class="submissHeading">
-                <img src="./asset/images/bg-illustrator-banner.jpg" width="1153" height="265" alt=""
-                    class="">
+                <img src="./asset/images/bg-illustrator-banner.jpg" width="1153" height="265" alt="" class="">
             </div>
             <div class="submissWrap row">
                 <div class="submissCol static col-12 col-md-6 mt2">
@@ -322,19 +321,21 @@
                         ultrices mattis donec nulla. </p>
                 </div>
                 <div class="col-12 col-md-6 mt1">
-                    <form action="#" class="formBorder submissForm">
+                    <form action="#" class="formBorder submissForm" id="illussubmit">
                         <label class="formLabel mt2" for="name">Nama<span class="formRequired"> *</span></label>
-                        <input type="text" class="formInput formError mt1" name="name" id="name">
-                        <div class="formError__txt"><span class="icon icon-report"></span>Nama harus diisi</div>
+                        <input type="text" class="formInput mt1" name="name" id="name">
+                        <div class="formError__txt" id="errname"></div>
 
                         <label class="formLabel mt2" for="email">Email<span class="formRequired">*</span></label>
                         <input type="email" class="formInput mt1" name="email" id="email">
+                        <div class="formError__txt" id="erremail"></div>
 
                         <label class="formLabel mt2" for="messagetitle">Portfolio Link<span class="formRequired">
                                 *</span></label>
                         <div class="submissMisc mt1">Anda dapat memasukkan beberapa tautan portofolio. Klik Enter untuk
                             menambahkan yang baru.</div>
                         <input type="text" class="formInput mt1" name="messagetitle" id="messagetitle">
+                        <div class="formError__txt" id="errport"></div>
 
                         <label class="formLabel mt2" for="message">Catatan untuk BIP</label>
                         <textarea class="formArea mt1" name="message" id="message" cols="32" rows="7"></textarea>
@@ -454,7 +455,7 @@
         <div class="footerCopy text-center">Copyright 2022. BIP All Rights Reserved by Bisnis.com</div>
     </footer>
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
-    <script type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script type="text/javascript" src="./asset/js/main.js"></script>
     <script>
         $(document).ready(function () {
             $('.buttonLike').on('click', function () {
@@ -462,6 +463,46 @@
             })
         })
     </script>
+    <script defer type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#illussubmit').validate({
+                rules: {
+                    name: {
+                        required: true,
+                    },
+                    email: {
+                        required: true,
+                    },
+                    messagetitle: {
+                        required: true,
+                    }
+                },
+                messages: {
+                    name: '<span class="icon icon-report"></span>Nama harus diisi',
+                    email: '<span class="icon icon-report"></span>Email harus diisi',
+                    messagetitle: '<span class="icon icon-report"></span>Portfolio link harus diisi',
+                },
+                errorPlacement: function (error, element) {
+                    if (element.attr("name") == "name") {
+                        error.appendTo("#errname");
+                        element.addClass('formError');
+                    } else if (element.attr("name") == "email") {
+                        error.appendTo("#erremail");
+                        element.addClass('formError');
+                    } else if (element.attr("name") == "messagetitle") {
+                        error.appendTo("#errport");
+                        element.addClass('formError');
+                    }
+                },
+                unhighlight: function (element) {
+                    $(element).removeClass('formError');
+                },
+            })
+        })
+    </script>
+
 </body>
 
 </html>
