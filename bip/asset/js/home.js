@@ -11,7 +11,7 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 3000,
         appendDots: $('.-dtheadline'),
         responsive: [{
                 breakpoint: 1220,
@@ -148,7 +148,7 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 3000,
         responsive: [{
                 breakpoint: 1220,
                 settings: {

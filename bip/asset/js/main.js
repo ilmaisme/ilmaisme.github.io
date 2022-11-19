@@ -34,6 +34,7 @@ $(document).ready(function () {
 
     //toggle mobile menu
     mTg.on('click', function () {
+        resetMobileMenu()
         isChecked = $(this).is(':checked')
 
         if (isChecked) {
@@ -66,7 +67,8 @@ $(document).ready(function () {
 //update mobile menu
 function updateMenu() {
     $(".dropItem__parent>.dropLink").find("span").remove();
-    
+    resetMobileMenu()
+
     if ($('#menu').css('display') == 'none') {
         //console.log("desktop")        
         $('.menuMob').removeClass('mobile');
@@ -74,7 +76,7 @@ function updateMenu() {
         /* move nav position in desktop */
         $('.nav').appendTo('.headerWrap');
         $('.drop').appendTo('#dropDesk');
-        $('#search').attr('placeholder','Cari judul buku, author, atau illustrator');
+        $('#search').attr('placeholder', 'Cari judul buku, author, atau illustrator');
     } else {
         //console.log("mobile")
         $('.menuMob').addClass('mobile');
@@ -83,11 +85,16 @@ function updateMenu() {
         $('.nav').appendTo('#navMob');
         $('.drop').appendTo('#dropMob');
         $(".dropItem__parent>.dropLink").append("<span class='icon-chevron'></span>");
-        $('#search').attr('placeholder','Cari disini');
+        $('#search').attr('placeholder', 'Cari disini');
     }
+    $('.headerWrap').removeClass('hidden');
+}
+
+function resetMobileMenu(){
+    $('.menuTab__btn').removeClass('active');
+    $('#utamabtn').addClass('active');
     $('.menuTab__content').removeClass('active').css("display", "none");
     $('#utama').addClass('active').css("display", "block");
-    $('.headerWrap').removeClass('hidden');
 }
 
 function uncheckedMenu() {
@@ -102,11 +109,21 @@ function hideMenuMobile() {
 }
 
 //open category menu
+let drop = $('.drop');
 function openCategory(e) {
-    let drop = $('.drop');
     jQuery(e).toggleClass('active');
     drop.toggleClass('visible');
 }
+
+document.getElementsByTagName("body")[0].addEventListener("click", function (event) {
+    //hide category menu
+    $('.buttonCateg').removeClass('active');
+    drop.removeClass('visible');
+}, false);
+
+drop.on('click', function (e) {
+    e.stopPropagation();
+})
 
 //open user menu
 function openUserMenu(e) {
