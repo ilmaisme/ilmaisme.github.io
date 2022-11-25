@@ -28,6 +28,19 @@
 
     <link rel=icon type=image/png sizes=16x16 href="./asset/images/favicon.ico">
     <link type="text/css" rel="stylesheet" href="./asset/css/style-games.css">
+    <!-- s: styling for games -->
+    <link rel="stylesheet" href="./css/reset.css" type="text/css">
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+    <link rel="stylesheet" href="./css/orientation_utils.css" type="text/css">
+    <link rel="stylesheet" href="./css/ios_fullscreen.css" type="text/css">
+    <!-- e: styling for games -->
+
+    <!-- s: javascript for games -->
+    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./js/easeljs-NEXT.min.js"></script>
+    <script type="text/javascript" src="./js/howler.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <!-- e: javascript for games -->
     <link rel="preload" as="image" href="./asset/images/icon-BIP.png"
         imagesrcset="./asset/images/icon-BIP.png 400px, ./asset/images/logo-bip.png 1180px" imagesizes="50vw">
     <link rel="preload" href="https://fonts.gstatic.com/s/manrope/v13/xn7gYHE41ni1AdIRggexSg.woff2" as="font"
@@ -92,7 +105,7 @@
         }
     </style>
 </head>
-<body>
+<body ondragstart="return false;" ondrop="return false;">
     <main role="main">
         <div class="games" style="background-image: url(./asset/images/games/coloring-bg.jpg)">
             <div class="gamesRow container center-flex">
@@ -105,9 +118,127 @@
                         height="43">
                 </h1>
                 <div class="gamesContent">
-                    <!--<iframe></iframe>-->
-                    <img alt="Dinosaurs Coloring Book - HTML5 Educational Game (.c3p &amp; .capx)"
-                        src="https://s3.envato.com/files/343386158/Screenshot03.png">
+                    <!-- s: games content -->
+                    <script>
+                        $(document).ready(function () {
+                            var oMain = new CMain({
+
+                                min_stroke_size: 1,  //MINIMUM STROKE SIZE OF THE PEN
+                                max_stroke_size: 40, //MAXIMUM STROKE SIZE OF THE PEN
+
+                                colors: [
+                                    "#8B4513", //COLOR 1
+                                    "#800000", //COLOR 2
+                                    "#FF0000", //COLOR 3
+                                    "#FF4500", //COLOR 4
+                                    "#FFA500", //COLOR 5
+                                    "#ffff00", //COLOR 6
+                                    "#9ACD32", //COLOR 7
+                                    "#00FF00", //COLOR 8
+                                    "#008000", //COLOR 9 
+                                    "#00FA9A", //COLOR 10
+                                    "#20B2AA", //COLOR 11
+                                    "#00FFFF", //COLOR 12   
+                                    "#00BFFF", //COLOR 13 
+                                    "#0000FF", //COLOR 14 
+                                    "#000080", //COLOR 15 
+                                    "#4B0082", //COLOR 16
+                                    "#8B008B", //COLOR 17 
+                                    "#EE82EE", //COLOR 18
+                                    "#BC8F8F", //COLOR 19
+                                    "#FFC0CB", //COLOR 20
+                                    "#FFE4C4", //COLOR 21 
+                                    "#F5F5F5", //COLOR 22 
+                                    "#808080", //COLOR 23  
+                                    "#000000"  //COLOR 24
+
+                                ],
+
+                                /////////////GENERAL SETTINGS
+                                fullscreen: true,            //SET THIS TO FALSE IF YOU DON'T WANT TO SHOW FULLSCREEN BUTTON
+                                check_orientation: true,     //SET TO FALSE IF YOU DON'T WANT TO SHOW ORIENTATION ALERT ON MOBILE DEVICES 
+                                audio_enable_on_startup: false,  //ENABLE/DISABLE AUDIO WHEN GAME STARTS 
+                                show_print_button: true,         //SET THIS TO FALSE IF YOU DON'T WANT TO SHOW PRINT BUTTON
+                                show_save_button: true,          //SET THIS TO FALSE IF YOU DON'T WANT TO SHOW SAVE IMAGE BUTTON
+                                //////////////////////////////////////////////////////////////////////////////////////////
+                                ad_show_counter: 8     //NUMBER OF COLORS PICKED BEFORE AD SHOWN
+                                //
+                                //// THIS FUNCTIONALITY IS ACTIVATED ONLY WITH CTL ARCADE PLUGIN.///////////////////////////
+                                /////////////////// YOU CAN GET IT AT: /////////////////////////////////////////////////////////
+                                // http://codecanyon.net/item/ctl-arcade-wordpress-plugin/13856421?s_phrase=&s_rank=27 ///////////
+
+                            });
+
+
+                            $(oMain).on("start_session", function (evt) {
+                                if (getParamValue('ctl-arcade') === "true") {
+                                    parent.__ctlArcadeStartSession();
+                                }
+                                //...ADD YOUR CODE HERE EVENTUALLY
+                            });
+
+                            $(oMain).on("end_session", function (evt) {
+                                if (getParamValue('ctl-arcade') === "true") {
+                                    parent.__ctlArcadeEndSession();
+                                }
+                                //...ADD YOUR CODE HERE EVENTUALLY
+                                $('.gamesIntro').addClass('active');
+                                $('.gamesCanvas').addClass('active');
+                            });
+
+                            $(oMain).on("restart_level", function (evt, iLevel) {
+                                if (getParamValue('ctl-arcade') === "true") {
+                                    parent.__ctlArcadeRestartLevel({ level: iLevel });
+                                }
+                                //...ADD YOUR CODE HERE EVENTUALLY
+                            });
+
+                            $(oMain).on("start_level", function (evt, iLevel) {
+                                if (getParamValue('ctl-arcade') === "true") {
+                                    parent.__ctlArcadeStartLevel({ level: iLevel });
+                                }
+                                //...ADD YOUR CODE HERE EVENTUALLY
+                                $('.gamesIntro').removeClass('active');
+                                $('.gamesCanvas').removeClass('active');
+                            });
+
+                            $(oMain).on("end_level", function (evt, iLevel) {
+                                if (getParamValue('ctl-arcade') === "true") {
+                                    parent.__ctlArcadeEndLevel({ level: iLevel });
+                                }
+                                //...ADD YOUR CODE HERE EVENTUALLY
+                                $('.gamesIntro').addClass('active');
+                                $('.gamesCanvas').addClass('active');
+                            });
+
+                            $(oMain).on("show_interlevel_ad", function (evt) {
+                                if (getParamValue('ctl-arcade') === "true") {
+                                    parent.__ctlArcadeShowInterlevelAD();
+                                }
+                                //...ADD YOUR CODE HERE EVENTUALLY
+                            });
+
+                            if (isIOS()) {
+                                setTimeout(function () { sizeHandler(); }, 200);
+                            } else {
+                                sizeHandler();
+                            }
+                        });
+
+                    </script>
+
+                    <canvas id="draw_canvas" class='ani_hack gamesCanvas active' width="1920" height="1080" style="position:fixed;">
+                    </canvas>
+                    <canvas id="canvas" class='ani_hack gamesCanvas active' width="1920" height="1080"> </canvas>
+                    <canvas id="interactivecanvas" class='ani_hack gamesIntro active' width="1920" height="1080" style="position:fixed;">
+                    </canvas>
+                    <div data-orientation="landscape" class="orientation-msg-container">
+                        <p class="orientation-msg-text">Please rotate your device</p>
+                    </div>
+                    <div id="block_game"
+                        style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%; display:none">
+                    </div>
+                    <!-- e: games content -->
                 </div>
             </div>
         </div>

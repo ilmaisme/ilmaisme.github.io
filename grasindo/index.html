@@ -894,15 +894,9 @@
             </div>        </div>
         <div class="author">
             <div class="container authorWrap display-flex">
-                <div class="authorCaption flex-init">
-                    <h3 class="titleCaption">Meet Our Authors</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, non et bibendum elementum quis suspendisse
-                        proin
-                        at. Tincidunt consequat sagittis, eleifend adipiscing aliquet tristique in sagittis, diam. </p>
-                    <a href="#" class="buttonBlue mt2">See More</a>
-                </div>
                 <div class="authorSlide__wrap">
-                    <div class="authorSlide -sauthor">
+                    <h3 class="titleCaption text-center">Meet Our Authors</h3>
+                    <div class="authorSlide mt3 -sauthor">
                         <div class="authorItem text-center">
                             <a href="author-read.html" class="authorLink">
                                 <img src="./asset/images/sample/author-1.png" alt="Maman Suherman" class="authorPropic" loading="lazy" width="150" height="150">
@@ -917,9 +911,61 @@
                                 <div class="authorCount">12 buku</div>
                             </a>
                         </div>
+                        <div class="authorItem text-center">
+                            <a href="author-read.html" class="authorLink">
+                                <img src="./asset/images/sample/author-3.png" alt="Dewi Hughes" class="authorPropic" loading="lazy" width="150" height="150">
+                                <h4 class="authorName">Dewi Hughes</h4>
+                                <div class="authorCount">12 buku</div>
+                            </a>
+                        </div>
+                        <div class="authorItem text-center">
+                            <a href="author-read.html" class="authorLink">
+                                <img src="https://api.lorem.space/image/face?w&#x3D;150&amp;h&#x3D;151&amp;hash&#x3D;8B7BCDC2" alt="Karina Oktaviana" class="authorPropic" loading="lazy" width="150" height="150">
+                                <h4 class="authorName">Karina Oktaviana</h4>
+                                <div class="authorCount">12 buku</div>
+                            </a>
+                        </div>
+                        <div class="authorItem text-center">
+                            <a href="author-read.html" class="authorLink">
+                                <img src="./asset/images/user-big.jpg" alt="Wigy wahyu" class="authorPropic" loading="lazy" width="150" height="150">
+                                <h4 class="authorName">Wigy wahyu</h4>
+                                <div class="authorCount">12 buku</div>
+                            </a>
+                        </div>
+                        <div class="authorItem text-center">
+                            <a href="author-read.html" class="authorLink">
+                                <img src="https://api.lorem.space/image/face?w&#x3D;150&amp;h&#x3D;151&amp;hash&#x3D;A89D0DE6" alt="Abraham Derry Suryawinata" class="authorPropic" loading="lazy" width="150" height="150">
+                                <h4 class="authorName">Abraham Derry Suryawinata</h4>
+                                <div class="authorCount">12 buku</div>
+                            </a>
+                        </div>
+                        <div class="authorItem text-center">
+                            <a href="author-read.html" class="authorLink">
+                                <img src="https://api.lorem.space/image/face?w&#x3D;150&amp;h&#x3D;151&amp;hash&#x3D;225E6693" alt="Eky Priagung" class="authorPropic" loading="lazy" width="150" height="150">
+                                <h4 class="authorName">Eky Priagung</h4>
+                                <div class="authorCount">12 buku</div>
+                            </a>
+                        </div>
+                        <div class="authorItem text-center">
+                            <a href="author-read.html" class="authorLink">
+                                <img src="https://api.lorem.space/image/face?w&#x3D;150&amp;h&#x3D;151&amp;hash&#x3D;9D9539E7" alt="Diaz Hazrina" class="authorPropic" loading="lazy" width="150" height="150">
+                                <h4 class="authorName">Diaz Hazrina</h4>
+                                <div class="authorCount">12 buku</div>
+                            </a>
+                        </div>
+                        <div class="authorItem text-center">
+                            <a href="author-read.html" class="authorLink">
+                                <img src="https://api.lorem.space/image/face?w&#x3D;150&amp;h&#x3D;151&amp;hash&#x3D;7F5AE56A" alt="Genta Putra Mawardi" class="authorPropic" loading="lazy" width="150" height="150">
+                                <h4 class="authorName">Genta Putra Mawardi</h4>
+                                <div class="authorCount">12 buku</div>
+                            </a>
+                        </div>
                     </div>
                     <div class="authorNav center-flex -dtauthor">
-                    </div>    </div>
+                    </div>        <div class="center-flex">
+                        <a href="#" class="buttonBlue">See More</a>
+                    </div>
+                </div>
             </div>        </div>
         <div class="container container--small">
             <h3 class="titleCaption text-center">Upcoming Event</h3>
@@ -1248,11 +1294,34 @@
                 arrows: false,
                 infinite: false,
                 speed: 500,
-                slidesToShow: 3,
-                slidesToScroll: 3,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                mobileFirst: true,
                 autoplay: false,
                 autoplaySpeed: 2000,
-                appendDots: $('.-dtauthor')
+                appendDots: $('.-dtauthor'),
+                responsive: [{
+                    breakpoint: 1220,
+                    settings: {
+                        slidesToShow: 6,
+                        slidesToScroll: 6,
+                    }
+                },
+                {
+                    breakpoint: 700,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                }
+                ]
             });
         });
         //tab books
