@@ -47,8 +47,8 @@ $('#passSubmit').on('click', function () {
         $(".passContent").velocity({
             opacity: "0"
         }, {
-            delay: 3000,
-            duration: 2000,
+            delay: 2400,
+            duration: 1000,
             begin: function () {
                 $('.passGranted').removeClass('active');
                 $('.passGranted__txt').html('Welcome');
@@ -189,12 +189,13 @@ $(document).ready(function () {
                 setTimeout(function () {
                     $(".intro").removeClass("opac0");
                     $(".introCta__cursor").addClass("active");
+                    $(".introCta__btn").addClass("enable");
                 }, 3300);
             }
             if (origin.index == 2 && direction == 'down') {
                 $(".bgColor__global").removeClass("opac0");
                 $(".global").removeClass("opac0");
-                $(".introCta__btn").addClass("disable");
+                $(".introCta__btn").removeClass("enable");
                 $(".intro").velocity({
                     opacity: "0"
                 }, {
@@ -400,16 +401,14 @@ $(document).ready(function () {
                     begin: function () {
                         $(".privilege2").removeClass("opac0");
                     },
-                    complete: function () {
-                    }
+                    complete: function () {}
                 });
                 $(".privilegeLeft2").velocity({
                     top: "0"
                 }, {
                     delay: 0,
                     duration: 700,
-                    begin: function () {
-                    },
+                    begin: function () {},
                     complete: function () {
                         $(".privilegeReq__item1").addClass("scale");
                     }
@@ -426,8 +425,7 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
-                    begin: function () {
-                    },
+                    begin: function () {},
                     complete: function () {
                         $(".invitationLeft1").removeClass("opac0");
                     }
@@ -437,8 +435,7 @@ $(document).ready(function () {
                 }, {
                     delay: 400,
                     duration: 700,
-                    begin: function () {
-                    },
+                    begin: function () {},
                     complete: function () {}
                 });
             }
@@ -461,8 +458,7 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 700,
-                    begin: function () {
-                    },
+                    begin: function () {},
                     complete: function () {}
                 });
             }
@@ -485,8 +481,7 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 700,
-                    begin: function () {
-                    },
+                    begin: function () {},
                     complete: function () {}
                 });
             }
@@ -497,21 +492,155 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
-                    begin: function () {
-                    },
-                    complete: function () {
-                    }
+                    begin: function () {},
+                    complete: function () {}
                 });
                 $(".invitationRight4").velocity({
                     top: "0"
                 }, {
                     delay: 0,
                     duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 13 && direction == 'down') {
+                $(".bgColor__contact").removeClass("opac0");
+                $(".invitationRight4").velocity({
+                    top: "-100%"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $(".invitationImg3").fadeOut(300)
+                    },
+                    complete: function () {
+                        $(".contactCaption").addClass("scale");
+                    }
+                });
+                $(".contact1").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {},
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 14 && direction == 'down') {
+                $(".contact1").velocity({
+                    top: "-100%"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".contact2").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {
+                        $(".contactList1 .contactItem").addClass("active");
+                    }
+                });
+                $(".contactList1").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 15 && direction == 'down') {
+                $(".contactInfo").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".contactList1").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 700,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".contactList2").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".contactMobile__content1").addClass("scale");
+                    },
+                    complete: function () {
+                        $(".contactList2 .contactItem9").addClass("active");
+                        $(".contactList1 .contactItem").removeClass("active");
+                    }
+                });
+            }
+            if (origin.index == 16 && direction == 'down') {
+                $(".contactList2 .contactItem10").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $(".contactMobile__content2").addClass("scale");
+                        $(".contactList2 .contactItem10").addClass("active");
+                    },
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 17 && direction == 'down') {
+                $(".contactList2 .contactItem11").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $(".contactMobile__content3").addClass("scale");
+                        $(".contactList2 .contactItem11").addClass("active");
+                        $(".contactPrivilege").addClass("opac1");
+                    },
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 18 && direction == 'down') {
+                //credit
+                $(".bgColor__bca").removeClass("opac0");
+                $(".contact").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
                     begin: function () {
                     },
                     complete: function () {}
+                });
+                $(".credit").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {
+                        $(".creditSocmed__item").addClass("active");
+                        $(".creditButton").addClass("active");
+                    }
                 });
             }
         }
     })
 });
+
+function refreshPage() {
+    window.location.reload(false);
+}
