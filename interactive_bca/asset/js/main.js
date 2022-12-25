@@ -17,8 +17,8 @@ $(".passInput").keyup(function (e) {
 });
 
 function validateForm() {
-    // var isValid = false;
-    var isValid = true;
+    var isValid = false;
+    // var isValid = true;
     $('.passInput').each(function () {
         if ($(".passInput:nth-child(1)").val() === 'B' ||
             $(".passInput:nth-child(1)").val() === 'b' &&
@@ -55,6 +55,7 @@ $('#passSubmit').on('click', function () {
             },
             complete: function () {
                 $(".passSection").fadeOut(300);
+                $(".passBg").addClass('glow');
                 fullpage_api.moveTo('start', 2);
                 console.log('start');
             }
@@ -73,6 +74,21 @@ $('#introbtn').on('click', function () {
     fullpage_api.setKeyboardScrolling(true, 'down');
     fullpage_api.moveTo('global', 3);
     console.log('global');
+})
+$('#coverbtn').on('click', function () {
+    fullpage_api.moveTo('pass', 1);
+    console.log('pass');
+})
+
+$(window).on('load', function () {
+    setTimeout(function () {
+        $('.preloader').fadeOut(700);
+        $('.preloader').remove();
+    }, 3000);
+    setTimeout(function () {
+        $('.preloader').remove();
+    }, 3700);
+    console.log('loaded');
 })
 
 $(document).ready(function () {
@@ -116,7 +132,7 @@ $(document).ready(function () {
     var playHNWII;
     playHNWII = bodymovin.loadAnimation(paramHNWII);
 
-    // 3. Animation HNWI Dunia
+    // 4. Animation HNWI Dunia
     var paramHNWID = {
         container: document.getElementById('animationHNWID'),
         renderer: 'svg',
@@ -127,6 +143,42 @@ $(document).ready(function () {
     };
     var playHNWID;
     playHNWID = bodymovin.loadAnimation(paramHNWID);
+
+    // 5. Animation Shaking hand
+    var paramShaking = {
+        container: document.getElementById('animationShaking'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: 'asset/json/men-shaking-hands.json',
+        name: 'myAnimation',
+    };
+    var playShaking;
+    playShaking = bodymovin.loadAnimation(paramShaking);
+
+    // 6. Animation Security
+    var paramSecurity = {
+        container: document.getElementById('animationSecurity'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: 'asset/json/sistem-keamanan.json',
+        name: 'myAnimation',
+    };
+    var playSecurity;
+    playSecurity = bodymovin.loadAnimation(paramSecurity);
+
+    // 7. Animation Connect
+    var paramConnect = {
+        container: document.getElementById('animationConnect'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: 'asset/json/connection.json',
+        name: 'myAnimation',
+    };
+    var playConnect;
+    playConnect = bodymovin.loadAnimation(paramConnect);
 
     new fullpage('#fullpage', {
         //options here
@@ -208,22 +260,24 @@ $(document).ready(function () {
                         $(".globalCenter").removeClass("opac0");
                     }
                 });
-                $(".globalAnim1").velocity({
+                $(".globalLeft").velocity({
                     bottom: "0"
                 }, {
                     delay: 200,
                     duration: 700,
-                    begin: function () {},
+                    begin: function () {
+                    },
                     complete: function () {
                         playWoman.play();
                     }
                 });
-                $(".globalAnim2").velocity({
+                $(".globalRight").velocity({
                     top: "0"
                 }, {
                     delay: 400,
                     duration: 700,
-                    begin: function () {},
+                    begin: function () {                        
+                    },
                     complete: function () {
                         playMen.play();
                     }
@@ -251,21 +305,25 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 4 && direction == 'down') {
-                $(".globalAnim1").velocity({
+                $(".globalLeft").velocity({
                     bottom: "100%"
                 }, {
                     delay: 0,
                     duration: 300,
-                    begin: function () {},
+                    begin: function () {
+                    },
                     complete: function () {}
                 });
-                $(".globalAnim2").velocity({
+                $(".globalRight").velocity({
                     top: "100%"
                 }, {
                     delay: 0,
                     duration: 300,
                     begin: function () {},
-                    complete: function () {}
+                    complete: function () {
+                        $(".globalLeft").addClass('opac0');
+                        $(".globalRight").addClass('opac0');
+                    }
                 });
                 $(".bgColor__blue").velocity({
                     opacity: "1"
@@ -428,6 +486,8 @@ $(document).ready(function () {
                     begin: function () {},
                     complete: function () {
                         $(".invitationLeft1").removeClass("opac0");
+                        playShaking.play();
+                        playConnect.play();
                     }
                 });
                 $(".invitationRight1").velocity({
@@ -451,6 +511,7 @@ $(document).ready(function () {
                     },
                     complete: function () {
                         $(".invitationLeft2").removeClass("opac0");
+                        playSecurity.play();
                     }
                 });
                 $(".invitationRight2").velocity({
@@ -560,14 +621,16 @@ $(document).ready(function () {
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 400,
-                    begin: function () {},
+                    duration: 700,
+                    begin: function () {                        
+                        $(".contactMobile__content1").addClass("scale");
+                    },
                     complete: function () {}
                 });
                 $(".contactList1").velocity({
                     opacity: "0"
                 }, {
-                    delay: 700,
+                    delay: 400,
                     duration: 700,
                     begin: function () {},
                     complete: function () {}
@@ -575,10 +638,9 @@ $(document).ready(function () {
                 $(".contactList2").velocity({
                     opacity: "1"
                 }, {
-                    delay: 0,
+                    delay: 700,
                     duration: 700,
                     begin: function () {
-                        $(".contactMobile__content1").addClass("scale");
                     },
                     complete: function () {
                         $(".contactList2 .contactItem9").addClass("active");
@@ -621,8 +683,7 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
-                    begin: function () {
-                    },
+                    begin: function () {},
                     complete: function () {}
                 });
                 $(".credit").velocity({

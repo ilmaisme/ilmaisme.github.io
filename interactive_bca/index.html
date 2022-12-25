@@ -30,7 +30,16 @@ dan non-perbankan bagi para nasabah." />
     <!-- e:twitter card -->
 
     <link rel=icon type=image/png sizes=16x16 href="https://static.bisnis-cdn.com/interaktif/assets/images/favicon.png">
-    <link rel="stylesheet" href="./asset/css/style.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style.min.css" type="text/css">
+
+
+    <link rel="preload" as="image" href="./asset/images/loading-bca-logo-mob.png"
+        imagesrcset="./asset/images/loading-bca-logo.png 768w, ./asset/images/loading-bca-logo.png 1600w"
+        imagesizes="50vw">
+    <link rel="preload" as="image" href="./asset/images/loading-bg-mob.png"
+        imagesrcset="./asset/images/loading-bg.png 1024w, ./asset/images/loading-bg.png 1600w" imagesizes="50vw">
+    <link rel="preload" as="image" href="./asset/images/cover-bg-mob.svg"
+        imagesrcset="./asset/images/cover-bg.svg 768w, ./asset/images/cover-bg.svg 1600w" imagesizes="50vw">
     <style>
         @font-face {
             font-family: 'Author';
@@ -64,6 +73,116 @@ dan non-perbankan bagi para nasabah." />
                 url('./asset/fonts/Author-Semibold.woff') format('woff'),
                 url('./asset/fonts/Author-Semibold.ttf') format('truetype');
         }
+
+        /*preloader*/
+        .preloader {
+            top: 0;
+            background: #3e3e3e;
+            background: -moz-radial-gradient(circle, #3e3e3e 0, #1e1e1e 100%);
+            background: -webkit-radial-gradient(circle, #3e3e3e 0, #1e1e1e 100%);
+            background: radial-gradient(circle, #3e3e3e 0, #1e1e1e 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3e3e3e", endColorstr="#1e1e1e", GradientType=1);
+            background-size: cover;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            transition: opacity .4s ease-in-out;
+            height: 100%;
+            width: 100%;
+            z-index: 1001;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            overflow: hidden
+        }
+
+        .preloaderWrap {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: .4px;
+            font-family: Author, sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.24;
+            color: #fff
+        }
+
+        @media (min-width:768px) {
+            .preloaderWrap {
+                font-size: 24px
+            }
+        }
+
+        .preloaderWrap:after,
+        .preloaderWrap:before {
+            content: "";
+            width: 300px;
+            height: 237px;
+            position: absolute;
+            opacity: 1;
+            z-index: 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url(asset/images/loading-bg-mob.png)
+        }
+
+        @media (min-width:1024px) {
+
+            .preloaderWrap:after,
+            .preloaderWrap:before {
+                width: 539px;
+                height: 426px;
+                background-image: url(asset/images/loading-bg.png)
+            }
+        }
+
+        .preloaderWrap:before {
+            background-position: 0 0;
+            top: 0;
+            left: 0;
+            -moz-transform: scaleX(-1) rotateX(180deg);
+            -o-transform: scaleX(-1) rotateX(180deg);
+            -ms-transform: scaleX(-1) rotateX(180deg);
+            -webkit-transform: scaleX(-1) rotateX(180deg);
+            transform: scaleX(-1) rotateX(180deg)
+        }
+
+        .preloaderWrap:after {
+            background-position: 100% 100%;
+            bottom: 0;
+            right: 0
+        }
+
+        .preloaderTxt {
+            -moz-animation: opacityloading 3s infinite;
+            -o-animation: opacityloading 3s infinite;
+            -ms-animation: opacityloading 3s infinite;
+            -webkit-animation: opacityloading 3s infinite;
+            animation: opacityloading 3s infinite;
+            min-width: 177px
+        }
+
+        .preloaderLogo {
+            position: absolute;
+            z-index: 1;
+            bottom: 25px;
+            right: 25px;
+            -moz-animation: fliploading 3s infinite;
+            -o-animation: fliploading 3s infinite;
+            -ms-animation: fliploading 3s infinite;
+            -webkit-animation: fliploading 3s infinite;
+            animation: fliploading 3s infinite
+        }
+
+        @media (min-width:1024px) {
+            .preloaderLogo {
+                bottom: 50px;
+                right: 50px
+            }
+        }
+
+        /*preloader*/
     </style>
 </head>
 <body>
@@ -80,7 +199,17 @@ dan non-perbankan bagi para nasabah." />
         </header>        <!-- header -->
 
         <!-- preloader -->
-        <!-- preloader -->
+        <div class="preloader">
+        	<div class="preloaderWrap">
+        		<div class="preloaderTxt center-flex heightFull">
+        			Now Loading...
+        		</div>
+        		<picture class="preloaderLogo">
+        			<source srcset="./asset/images/loading-bca-logo-mob.png" media="(max-width: 768px)" alt="">
+        			<img srcset="./asset/images/loading-bca-logo.png" alt="" class="">
+        		</picture>
+        	</div>
+        </div>        <!-- preloader -->
 
         <div class="bgStatic bgStatic--warn">
             <div class="articleContent text-center">
@@ -120,12 +249,13 @@ dan non-perbankan bagi para nasabah." />
                 <div class="cover heightFull display-flex">
                     <div class="coverImg center-flex">
                         <picture class="coverBuilding heightFull center-flex">
-                            <source srcset="./asset/images/cover-bg-mob.svg" media="(max-width: 768px)" alt="">
-                            <img srcset="./asset/images/cover-bg.svg" alt="" class="">
+                            <source srcset="./asset/images/cover-bg-mob.svg" media="(max-width: 768px)" alt=""
+                                width="563" height="633">
+                            <img srcset="./asset/images/cover-bg.svg" alt="" class="" width="1246" height="633">
                         </picture>
                     </div>
                     <div class="coverCta center-flex">
-                        <button class="button coverCta__btn center-flex">
+                        <button class="button coverCta__btn center-flex" id="coverbtn">
                             <span class="icon-scroll"></span>
                             <span class="icon-arrow-down"></span>
                             scroll ke bawah
@@ -139,9 +269,9 @@ dan non-perbankan bagi para nasabah." />
                         <h1>
                             <picture class="passContent passLogo">
                                 <source srcset="./asset/images/logo-bca-soliprio-mob.png" media="(max-width: 768px)"
-                                    alt="">
+                                    alt="" width="310" height="50">
                                 <img srcset="./asset/images/logo-bca-soliprio.png" alt="Solitaire BCA Prioritas"
-                                    class="">
+                                    class="" width="350" height="56">
                             </picture>
                         </h1>
                         <div class="passContent passWrap">
@@ -166,17 +296,17 @@ dan non-perbankan bagi para nasabah." />
                             <div class="passGranted__img center-flex">
                                 <picture class="passGranted__img1">
                                     <source srcset="./asset/images/pass-success-loading-circle-1-mob.png"
-                                        media="(max-width: 1024px)" alt="">
+                                        media="(max-width: 767px)" alt="">
                                     <img srcset="./asset/images/pass-success-loading-circle-1.png" alt="Access Granted">
                                 </picture>
                                 <picture class="passGranted__img2">
                                     <source srcset="./asset/images/pass-success-loading-circle-2-mob.png"
-                                        media="(max-width: 1024px)" alt="">
+                                        media="(max-width: 767px)" alt="">
                                     <img srcset="./asset/images/pass-success-loading-circle-2.png" alt="">
                                 </picture>
                                 <picture class="passGranted__img3">
                                     <source srcset="./asset/images/pass-success-loading-line-mob.png"
-                                        media="(max-width: 1024px)" alt="">
+                                        media="(max-width: 767px)" alt="">
                                     <img srcset="./asset/images/pass-success-loading-line.png" alt="">
                                 </picture>
                             </div>
@@ -191,15 +321,21 @@ dan non-perbankan bagi para nasabah." />
                 <div class="intro display-flex heightFull opac0">
                     <div class="introContent display-flex">
                         <picture class="introTeller heightFull">
-                            <source srcset="./asset/images/intro-teller-mob.png" media="(max-width: 768px)" alt="">
-                            <img srcset="./asset/images/intro-teller.png" alt="" class="">
+                            <source srcset="./asset/images/intro-teller-mob.png" media="(max-width: 768px)" alt=""
+                                width="202" height="313">
+                            <img srcset="./asset/images/intro-teller.png" alt="" class="" width="469" height="668">
                         </picture>
                         <div class="introTxt">Selamat datang di BCA. Yuk ikuti perjalanan kami mengawal kebutuhan
                             Nasabah BCA Solitaire dan Prioritas.</div>
                     </div>
                     <div class="introCta">
-                        klik disini
-                        <img srcset="./asset/images/cursor-right.png" alt="" class="introCta__cursor">
+                        <span>klik disini</span>
+                        <picture>
+                            <source srcset="./asset/images/cursor-right-mob.png" media="(max-width: 1024px)" alt=""
+                                width="51" height="51">
+                            <img srcset="./asset/images/cursor-right.png" alt="" class="introCta__cursor" width="40"
+                                height="40">
+                        </picture>
                         <button type="button" class="introCta__btn button" id="introbtn">enter</button>
                     </div>
                 </div>
@@ -227,7 +363,7 @@ dan non-perbankan bagi para nasabah." />
                                 <strong>HNWI Dunia</strong>
                                 <div class="globalAnim__hnwi globalAnim__hnwi2 mt2" id="animationHNWID"></div>
                             </div>
-                            <div class="articleSmall mt3">Sumber: Knight Frank</div>
+                            <div class="articleSmall">Sumber: Knight Frank</div>
                         </div>
                     </div>
                     <div class="globalRight">
@@ -239,12 +375,14 @@ dan non-perbankan bagi para nasabah." />
                 <div class="solitaire center-flex text-center heightFull">
                     <div class="articleContent solitaireContent solitaire1">
                         BCA menyadari segmen ini memiliki kebutuhan perbankan yang berbeda. <br>
-                        Untuk memenuhi kebutuhan itu, BCA menghadirkan layanan
+                        <span>Untuk memenuhi kebutuhan itu, <br> BCA menghadirkan layanan</span>
                     </div>
                     <div class="solitaireContent solitaire2">
                         <picture class="solitaireImg">
-                            <source srcset="./asset/images/logo-bca-soliprio-mob.png" media="(max-width: 768px)" alt="">
-                            <img srcset="./asset/images/logo-bca-soliprio.png" alt="Solitaire BCA Prioritas" class="">
+                            <source srcset="./asset/images/logo-bca-soliprio-mob.png" media="(max-width: 768px)" alt=""
+                                width="310" height="50">
+                            <img srcset="./asset/images/logo-bca-soliprio.png" alt="Solitaire BCA Prioritas" class=""
+                                width="350" height="56">
                         </picture>
                     </div>
                     <div class="articleContent solitaireContent solitaire3">
@@ -267,9 +405,9 @@ dan non-perbankan bagi para nasabah." />
                         <div class="privilegeRight privilegeRight1 privilegeList">
                             <div class="privilegeItem privilegeItem1">
                                 <picture class="privilegeItem__img">
-                                    <source srcset="./asset/images/privilege-1-mob.png" media="(max-width: 1024px)"
-                                        alt="">
-                                    <img srcset="./asset/images/privilege-1.png" alt="">
+                                    <source srcset="./asset/images/privilege-1-mob.png" media="(max-width: 767px)"
+                                        alt="" width="55" height="55">
+                                    <img srcset="./asset/images/privilege-1.png" alt="" width="119" height="119">
                                 </picture>
                                 <div class="privilegeItem__txt">Bergabung dengan jaringan pebisnis dari seluruh
                                     Indonesia.
@@ -277,36 +415,36 @@ dan non-perbankan bagi para nasabah." />
                             </div>
                             <div class="privilegeItem privilegeItem2">
                                 <picture class="privilegeItem__img">
-                                    <source srcset="./asset/images/privilege-2-mob.png" media="(max-width: 1024px)"
-                                        alt="">
-                                    <img srcset="./asset/images/privilege-2.png" alt="">
+                                    <source srcset="./asset/images/privilege-2-mob.png" media="(max-width: 767px)"
+                                        alt="" width="55" height="55">
+                                    <img srcset="./asset/images/privilege-2.png" alt="" width="119" height="119">
                                 </picture>
                                 <div class="privilegeItem__txt">Penawaran khusus dari
                                     BCA dan mitra.</div>
                             </div>
                             <div class="privilegeItem privilegeItem3">
                                 <picture class="privilegeItem__img">
-                                    <source srcset="./asset/images/privilege-3-mob.png" media="(max-width: 1024px)"
-                                        alt="">
-                                    <img srcset="./asset/images/privilege-3.png" alt="">
+                                    <source srcset="./asset/images/privilege-3-mob.png" media="(max-width: 767px)"
+                                        alt="" width="55" height="55">
+                                    <img srcset="./asset/images/privilege-3.png" alt="" width="119" height="119">
                                 </picture>
                                 <div class="privilegeItem__txt">Kemudahan dan kenyamanan bertransaksi di kantor cabang
                                 </div>
                             </div>
                             <div class="privilegeItem privilegeItem4">
                                 <picture class="privilegeItem__img">
-                                    <source srcset="./asset/images/privilege-4-mob.png" media="(max-width: 1024px)"
-                                        alt="">
-                                    <img srcset="./asset/images/privilege-4.png" alt="">
+                                    <source srcset="./asset/images/privilege-4-mob.png" media="(max-width: 767px)"
+                                        alt="" width="55" height="55">
+                                    <img srcset="./asset/images/privilege-4.png" alt="" width="119" height="119">
                                 </picture>
                                 <div class="privilegeItem__txt">Layanan <i>contact center</i> khusus.
                                 </div>
                             </div>
                             <div class="privilegeItem privilegeItem5">
                                 <picture class="privilegeItem__img">
-                                    <source srcset="./asset/images/privilege-5-mob.png" media="(max-width: 1024px)"
-                                        alt="">
-                                    <img srcset="./asset/images/privilege-5.png" alt="">
+                                    <source srcset="./asset/images/privilege-5-mob.png" media="(max-width: 767px)"
+                                        alt="" width="55" height="56">
+                                    <img srcset="./asset/images/privilege-5.png" alt="" width="117" height="119">
                                 </picture>
                                 <div class="privilegeItem__txt">Media komunikasi dan
                                     fitur digital khusus.
@@ -314,9 +452,9 @@ dan non-perbankan bagi para nasabah." />
                             </div>
                             <div class="privilegeItem privilegeItem6">
                                 <picture class="privilegeItem__img">
-                                    <source srcset="./asset/images/privilege-6-mob.png" media="(max-width: 1024px)"
-                                        alt="">
-                                    <img srcset="./asset/images/privilege-6.png" alt="">
+                                    <source srcset="./asset/images/privilege-6-mob.png" media="(max-width: 767px)"
+                                        alt="" width="55" height="55">
+                                    <img srcset="./asset/images/privilege-6.png" alt="" width="119" height="119">
                                 </picture>
                                 <div class="privilegeItem__txt">Tarif dan biaya
                                     perbankan khusus.</div>
@@ -359,11 +497,9 @@ dan non-perbankan bagi para nasabah." />
                 <div class="invitation invitation1 heightFull opac0">
                     <div class="invitationWrap display-flex heightFull container">
                         <div class="invitationLeft invitationLeft1 opac0">
-                            <picture class="invitationImg invitationImg1">
-                                <source srcset="./asset/images/invitation-join-mob.png" media="(max-width: 1024px)"
-                                    alt="">
-                                <img srcset="./asset/images/invitation-join.png" alt="">
-                            </picture>
+                            <div class="invitationImg invitationImg1" id="animationShaking"></div>
+                            <div class="invitationImg invitationImg1 invitationImg__connect" id="animationConnect">
+                            </div>
                         </div>
                         <div class="invitationRight invitationRight1">
                             <div class="articleContent">
@@ -381,11 +517,12 @@ dan non-perbankan bagi para nasabah." />
                             <div class="invitationImg invitationImg2">
                                 <picture class="">
                                     <source srcset="./asset/images/invitation-wa-mob.png" media="(max-width: 1024px)"
-                                        alt="">
-                                    <img srcset="./asset/images/invitation-wa.png" alt="">
+                                        alt="" width="375" height="449">
+                                    <img srcset="./asset/images/invitation-wa.png" alt="" width="606" height="725">
                                 </picture>
                                 <div class="invitationImg__gif">
-                                    <img src="./asset/images/chow.gif" alt="">
+                                    <img src="./asset/images/chow.gif" alt="shocking man's image" width="202"
+                                        height="202">
                                 </div>
                             </div>
                         </div>
@@ -405,12 +542,7 @@ dan non-perbankan bagi para nasabah." />
                 <div class="invitation invitation3 heightFull opac0">
                     <div class="invitationWrap display-flex heightFull container">
                         <div class="invitationLeft invitationLeft3 opac0">
-                            <div class="invitationImg invitationImg3">
-                                <picture class="">
-                                    <source srcset="./asset/images/invitation-secure-mob.png"
-                                        media="(max-width: 1024px)" alt="">
-                                    <img srcset="./asset/images/invitation-secure.png" alt="">
-                                </picture>
+                            <div class="invitationImg invitationImg3" id="animationSecurity">
                             </div>
                         </div>
                         <div class="invitationRight invitationRight3">
@@ -458,28 +590,28 @@ dan non-perbankan bagi para nasabah." />
                             <div class="contactMobile__wrap text-center">
                                 <div class="contactMobile__img">
                                     <picture class="">
-                                        <source srcset="./asset/images/contact-phone-mob.png"
-                                            media="(max-width: 1024px)" alt="">
-                                        <img srcset="./asset/images/contact-phone.png" alt="">
+                                        <source srcset="./asset/images/contact-phone-mob.png" media="(max-width: 768px)"
+                                            alt="" width="109" height="197">
+                                        <img srcset="./asset/images/contact-phone.png" alt="" width="303" height="570">
                                     </picture>
                                 </div>
                                 <div class="contactMobile__content contactMobile__content1">
                                     <picture class="">
-                                        <source srcset="./asset/images/contact-web-mob.png" media="(max-width: 1024px)"
+                                        <source srcset="./asset/images/contact-web-mob.png" media="(max-width: 768px)"
                                             alt="">
                                         <img srcset="./asset/images/contact-web.png" alt="">
                                     </picture>
                                 </div>
                                 <div class="contactMobile__content contactMobile__content2">
                                     <picture class="">
-                                        <source srcset="./asset/images/contact-magz-mob.png" media="(max-width: 1024px)"
+                                        <source srcset="./asset/images/contact-magz-mob.png" media="(max-width: 768px)"
                                             alt="">
                                         <img srcset="./asset/images/contact-magz.png" alt="">
                                     </picture>
                                 </div>
                                 <div class="contactMobile__content contactMobile__content3">
                                     <picture class="">
-                                        <source srcset="./asset/images/contact-mbca-mob.png" media="(max-width: 1024px)"
+                                        <source srcset="./asset/images/contact-mbca-mob.png" media="(max-width: 768px)"
                                             alt="">
                                         <img srcset="./asset/images/contact-mbca.png" alt="">
                                     </picture>
@@ -487,8 +619,9 @@ dan non-perbankan bagi para nasabah." />
                                 <div class="contactPrivilege">
                                     <picture class="">
                                         <source srcset="./asset/images/menu-bca-prioritas-mob.png"
-                                            media="(max-width: 1024px)" alt="">
-                                        <img srcset="./asset/images/menu-bca-prioritas.png" alt="">
+                                            media="(max-width: 768px)" alt="" width="100" height="100">
+                                        <img srcset="./asset/images/menu-bca-prioritas.png" alt="" width="140"
+                                            height="140">
                                     </picture>
                                 </div>
                             </div>
@@ -575,10 +708,12 @@ dan non-perbankan bagi para nasabah." />
                 <div class="credit heightFull">
                     <div class="creditWrap center-flex heightFull container">
                         <picture class="creditImg">
-                            <source srcset="./asset/images/logo-bca-soliprio-mob.png" media="(max-width: 768px)" alt="">
-                            <img srcset="./asset/images/logo-bca-soliprio.png" alt="Solitaire BCA Prioritas" class="">
+                            <source srcset="./asset/images/logo-bca-soliprio-mob.png" media="(max-width: 768px)" alt=""
+                                width="310" height="50">
+                            <img srcset="./asset/images/logo-bca-soliprio.png" alt="Solitaire BCA Prioritas" class=""
+                                width="350" height="56">
                         </picture>
-                        <div class="creditCaption text-center">
+                        <div class="creditCaption center-flex">
                             <div class="creditItem">
                                 BCA berizin dan diawasi oleh Otoritas Jasa Keuangan
                             </div>
@@ -644,7 +779,7 @@ dan non-perbankan bagi para nasabah." />
     <script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
     <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/lottie.min.js"></script>
-    <script type="text/javascript" src="./asset/js/main.js"></script>
+    <script type="text/javascript" src="./asset/js/main.min.js"></script>
 </body>
 
 </html>
