@@ -601,17 +601,17 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700,
                     begin: function () {},
-                    complete: function () {
-                        $(".contactList1 .contactItem").addClass("active");
-                    }
+                    complete: function () {}
                 });
                 $(".contactList1").velocity({
                     opacity: "1"
                 }, {
                     delay: 400,
-                    duration: 700,
+                    duration: 400,
                     begin: function () {},
-                    complete: function () {}
+                    complete: function () {
+                        $(".contactList1 .contactItem").addClass("active");
+                    }
                 });
             }
             if (origin.index == 15 && direction == 'down') {
@@ -629,7 +629,7 @@ $(document).ready(function () {
                     opacity: "0"
                 }, {
                     delay: 400,
-                    duration: 700,
+                    duration: 400,
                     begin: function () {},
                     complete: function () {}
                 });
@@ -637,7 +637,7 @@ $(document).ready(function () {
                     opacity: "1"
                 }, {
                     delay: 700,
-                    duration: 700,
+                    duration: 400,
                     begin: function () {},
                     complete: function () {
                         $(".contactList2 .contactItem9").addClass("active");
@@ -653,9 +653,10 @@ $(document).ready(function () {
                     duration: 400,
                     begin: function () {
                         $(".contactMobile__content2").addClass("scale");
-                        $(".contactList2 .contactItem10").addClass("active");
                     },
-                    complete: function () {}
+                    complete: function () {
+                        $(".contactList2 .contactItem10").addClass("active");
+                    }
                 });
             }
             if (origin.index == 17 && direction == 'down') {
@@ -666,10 +667,11 @@ $(document).ready(function () {
                     duration: 400,
                     begin: function () {
                         $(".contactMobile__content3").addClass("scale");
-                        $(".contactList2 .contactItem11").addClass("active");
                         $(".contactPrivilege").addClass("opac1");
                     },
-                    complete: function () {}
+                    complete: function () {
+                        $(".contactList2 .contactItem11").addClass("active");
+                    }
                 });
             }
             if (origin.index == 18 && direction == 'down') {
