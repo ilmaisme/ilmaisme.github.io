@@ -1,7 +1,7 @@
 var is_mobile = false;
 
 function focusOnMyInputBox() {
-    document.getElementById("password").focus();
+    document.getElementById("pass1").focus();
 }
 
 $(".passInput").keyup(function (e) {
@@ -20,23 +20,24 @@ function validateForm() {
     var isValid = false;
     // var isValid = true;
     $('.passInput').each(function () {
-        if ($(".passInput:nth-child(1)").val() === 'B' ||
-            $(".passInput:nth-child(1)").val() === 'b' &&
-            $(".passInput:nth-child(2)").val() === 'C' ||
-            $(".passInput:nth-child(2)").val() === 'c' &&
-            $(".passInput:nth-child(3)").val() === 'A' ||
-            $(".passInput:nth-child(3)").val() === 'a' &&
-            $(".passInput:nth-child(4)").val() === 'P' ||
-            $(".passInput:nth-child(4)").val() === 'p' &&
-            $(".passInput:nth-child(5)").val() === 'R' ||
-            $(".passInput:nth-child(5)").val() === 'r' &&
-            $(".passInput:nth-child(6)").val() === 'I' ||
-            $(".passInput:nth-child(6)").val() === 'i' &&
-            $(".passInput:nth-child(7)").val() === 'O' ||
-            $(".passInput:nth-child(7)").val() === 'o') {
+        if (($("#pass1").val() == 'B' ||
+                $("#pass1").val() == 'b') &&
+            ($("#pass2").val() == 'C' ||
+                $("#pass2").val() == 'c') &&
+            ($("#pass3").val() == 'A' ||
+                $("#pass3").val() == 'a') &&
+            ($("#pass4").val() == 'P' ||
+                $("#pass4").val() == 'p') &&
+            ($("#pass5").val() == 'R' ||
+                $("#pass5").val() == 'r') &&
+            ($("#pass6").val() == 'I' ||
+                $("#pass6").val() == 'i') &&
+            ($("#pass7").val() == 'O' ||
+                $("#pass7").val() == 'o')) {
             isValid = true;
         }
     });
+    console.log($("#pass1").val(), $("#pass2").val(), $("#pass3").val(), $("#pass4").val(), $("#pass5").val(), $("#pass6").val(), $("#pass7").val())
     return isValid;
 }
 
@@ -265,8 +266,7 @@ $(document).ready(function () {
                 }, {
                     delay: 200,
                     duration: 700,
-                    begin: function () {
-                    },
+                    begin: function () {},
                     complete: function () {
                         playWoman.play();
                     }
@@ -276,8 +276,7 @@ $(document).ready(function () {
                 }, {
                     delay: 400,
                     duration: 700,
-                    begin: function () {                        
-                    },
+                    begin: function () {},
                     complete: function () {
                         playMen.play();
                     }
@@ -310,8 +309,7 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 300,
-                    begin: function () {
-                    },
+                    begin: function () {},
                     complete: function () {}
                 });
                 $(".globalRight").velocity({
@@ -622,7 +620,7 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 700,
-                    begin: function () {                        
+                    begin: function () {
                         $(".contactMobile__content1").addClass("scale");
                     },
                     complete: function () {}
@@ -640,8 +638,7 @@ $(document).ready(function () {
                 }, {
                     delay: 700,
                     duration: 700,
-                    begin: function () {
-                    },
+                    begin: function () {},
                     complete: function () {
                         $(".contactList2 .contactItem9").addClass("active");
                         $(".contactList1 .contactItem").removeClass("active");
