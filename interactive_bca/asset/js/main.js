@@ -25,19 +25,11 @@ function validateForm() {
             ($("#pass2").val() == 'C' ||
                 $("#pass2").val() == 'c') &&
             ($("#pass3").val() == 'A' ||
-                $("#pass3").val() == 'a') &&
-            ($("#pass4").val() == 'P' ||
-                $("#pass4").val() == 'p') &&
-            ($("#pass5").val() == 'R' ||
-                $("#pass5").val() == 'r') &&
-            ($("#pass6").val() == 'I' ||
-                $("#pass6").val() == 'i') &&
-            ($("#pass7").val() == 'O' ||
-                $("#pass7").val() == 'o')) {
+                $("#pass3").val() == 'a')) {
             isValid = true;
         }
     });
-    console.log($("#pass1").val(), $("#pass2").val(), $("#pass3").val(), $("#pass4").val(), $("#pass5").val(), $("#pass6").val(), $("#pass7").val())
+    console.log($("#pass1").val(), $("#pass2").val(), $("#pass3").val())
     return isValid;
 }
 
@@ -243,7 +235,7 @@ $(document).ready(function () {
                     $(".intro").removeClass("opac0");
                     $(".introCta__cursor").addClass("active");
                     $(".introCta__btn").addClass("enable");
-                }, 3300);
+                }, 2000);
             }
             if (origin.index == 2 && direction == 'down') {
                 $(".bgColor__global").removeClass("opac0");
@@ -341,26 +333,28 @@ $(document).ready(function () {
                     begin: function () {},
                     complete: function () {}
                 });
+
+                //logo bca prio slide up
+                setTimeout(function () {
+                    $(".solitaire1").velocity({
+                        top: "-8%"
+                    }, {
+                        delay: 0,
+                        duration: 700,
+                        begin: function () {},
+                        complete: function () {}
+                    });
+                    $(".solitaire2").velocity({
+                        top: "0"
+                    }, {
+                        delay: 400,
+                        duration: 700,
+                        begin: function () {},
+                        complete: function () {}
+                    });
+                }, 700);
             }
             if (origin.index == 5 && direction == 'down') {
-                $(".solitaire1").velocity({
-                    top: "-8%"
-                }, {
-                    delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
-                });
-                $(".solitaire2").velocity({
-                    top: "0"
-                }, {
-                    delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
-                });
-            }
-            if (origin.index == 6 && direction == 'down') {
                 $(".solitaire1").velocity({
                     top: "-100%"
                 }, {
@@ -386,7 +380,7 @@ $(document).ready(function () {
                     complete: function () {}
                 });
             }
-            if (origin.index == 7 && direction == 'down') {
+            if (origin.index == 6 && direction == 'down') {
                 $(".privilegeLeft1").velocity({
                     top: "0"
                 }, {
@@ -448,7 +442,7 @@ $(document).ready(function () {
                     complete: function () {}
                 });
             }
-            if (origin.index == 8 && direction == 'down') {
+            if (origin.index == 7 && direction == 'down') {
                 $(".privilege1").velocity({
                     top: "-100%"
                 }, {
@@ -473,7 +467,7 @@ $(document).ready(function () {
                     $(".privilegeReq__item2").addClass("scale");
                 }, 1400);
             }
-            if (origin.index == 9 && direction == 'down') {
+            if (origin.index == 8 && direction == 'down') {
                 $(".bgColor__invite").removeClass("opac0");
                 $(".invitation1").removeClass("opac0");
                 $(".privilege2").velocity({
@@ -497,7 +491,7 @@ $(document).ready(function () {
                     complete: function () {}
                 });
             }
-            if (origin.index == 10 && direction == 'down') {
+            if (origin.index == 9 && direction == 'down') {
                 $(".invitation2").removeClass("opac0");
                 $(".invitationRight1").velocity({
                     top: "-100%"
@@ -521,7 +515,7 @@ $(document).ready(function () {
                     complete: function () {}
                 });
             }
-            if (origin.index == 11 && direction == 'down') {
+            if (origin.index == 10 && direction == 'down') {
                 $(".invitation3").removeClass("opac0");
                 $(".invitationRight2").velocity({
                     top: "-100%"
@@ -544,7 +538,7 @@ $(document).ready(function () {
                     complete: function () {}
                 });
             }
-            if (origin.index == 12 && direction == 'down') {
+            if (origin.index == 11 && direction == 'down') {
                 $(".invitation4").removeClass("opac0");
                 $(".invitationRight3").velocity({
                     top: "-100%"
@@ -563,7 +557,7 @@ $(document).ready(function () {
                     complete: function () {}
                 });
             }
-            if (origin.index == 13 && direction == 'down') {
+            if (origin.index == 12 && direction == 'down') {
                 $(".bgColor__contact").removeClass("opac0");
                 $(".invitationRight4").velocity({
                     top: "-100%"
@@ -586,7 +580,7 @@ $(document).ready(function () {
                     complete: function () {}
                 });
             }
-            if (origin.index == 14 && direction == 'down') {
+            if (origin.index == 13 && direction == 'down') {
                 $(".contact1").velocity({
                     top: "-100%"
                 }, {
@@ -607,14 +601,15 @@ $(document).ready(function () {
                     opacity: "1"
                 }, {
                     delay: 400,
-                    duration: 400,
+                    duration: 700,
                     begin: function () {},
-                    complete: function () {
-                        $(".contactList1 .contactItem").addClass("active");
-                    }
+                    complete: function () {}
                 });
+                setTimeout(function () {
+                    $(".contactList1 .contactItem").addClass("active");
+                }, 400);
             }
-            if (origin.index == 15 && direction == 'down') {
+            if (origin.index == 14 && direction == 'down') {
                 $(".contactInfo").velocity({
                     opacity: "1"
                 }, {
@@ -637,44 +632,48 @@ $(document).ready(function () {
                     opacity: "1"
                 }, {
                     delay: 700,
-                    duration: 400,
-                    begin: function () {},
-                    complete: function () {
-                        $(".contactList2 .contactItem9").addClass("active");
+                    duration: 700,
+                    begin: function () {
                         $(".contactList1 .contactItem").removeClass("active");
-                    }
+                    },
+                    complete: function () {}
                 });
+                setTimeout(function () {
+                    $(".contactList2 .contactItem9").addClass("active");
+                }, 700);
             }
-            if (origin.index == 16 && direction == 'down') {
+            if (origin.index == 15 && direction == 'down') {
                 $(".contactList2 .contactItem10").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 400,
+                    duration: 700,
                     begin: function () {
                         $(".contactMobile__content2").addClass("scale");
                     },
-                    complete: function () {
-                        $(".contactList2 .contactItem10").addClass("active");
-                    }
+                    complete: function () {}
                 });
+                setTimeout(function () {
+                    $(".contactList2 .contactItem10").addClass("active");
+                }, 700);
             }
-            if (origin.index == 17 && direction == 'down') {
+            if (origin.index == 16 && direction == 'down') {
                 $(".contactList2 .contactItem11").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 400,
+                    duration: 700,
                     begin: function () {
                         $(".contactMobile__content3").addClass("scale");
                         $(".contactPrivilege").addClass("opac1");
                     },
-                    complete: function () {
-                        $(".contactList2 .contactItem11").addClass("active");
-                    }
+                    complete: function () {}
                 });
+                setTimeout(function () {
+                    $(".contactList2 .contactItem11").addClass("active");
+                }, 700);
             }
-            if (origin.index == 18 && direction == 'down') {
+            if (origin.index == 17 && direction == 'down') {
                 //credit
                 $(".bgColor__bca").removeClass("opac0");
                 $(".contact").velocity({
