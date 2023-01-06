@@ -204,7 +204,7 @@ $(document).ready(function () {
                         focusOnMyInputBox()
                     }
                 });
-                fullpage_api.setAllowScrolling(false);
+                fullpage_api.setAllowScrolling(false, 'down');
                 fullpage_api.setKeyboardScrolling(false, 'down');
             }
             if (origin.index == 1 && direction == 'up') {
@@ -218,14 +218,18 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 800,
                     begin: function () {
+                        $(".bgColor__cloud").removeClass("opac0");
                         $(".bgColor__pass").addClass("opac0");
                         $(".passSection").fadeOut(300);
                     },
                     complete: function () {}
                 });
+                fullpage_api.setAllowScrolling(true);
+                fullpage_api.setKeyboardScrolling(true);
             }
             if (origin.index == 1 && direction == 'down') {
                 $(".passBg").addClass("active");
+                $(".passBg").removeClass("close");
                 $(".passBg").addClass("open");
                 $(".bgIntro").removeClass("opac0");
                 setTimeout(function () {
@@ -235,7 +239,31 @@ $(document).ready(function () {
                     $(".intro").removeClass("opac0");
                     $(".introCta__cursor").addClass("active");
                     $(".introCta__btn").addClass("enable");
+                    fullpage_api.setAllowScrolling(true, 'down');
+                    fullpage_api.setKeyboardScrolling(true, 'down');
                 }, 2000);
+            }
+            if (origin.index == 2 && direction == 'up') {
+                $(".introCta__btn").removeClass("enable");
+                $(".intro").addClass("opac0");
+                $(".passBg").removeClass("open");
+                $('.passGranted').addClass('display-none');
+                $(".passBg").addClass("close");
+                $(".passContent").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 3000,
+                    duration: 1000,
+                    begin: function () {
+                        $(".passSection").fadeIn(300);
+                        $('#passSubmit').removeClass('disable');
+                    },
+                    complete: function () {
+                        $(".bgIntro").addClass("opac0");
+                    }
+                });
+                fullpage_api.setAllowScrolling(false, 'down');
+                fullpage_api.setKeyboardScrolling(false, 'down');
             }
             if (origin.index == 2 && direction == 'down') {
                 $(".bgColor__global").removeClass("opac0");
@@ -274,6 +302,35 @@ $(document).ready(function () {
                     }
                 });
             }
+            if (origin.index == 3 && direction == 'up') {
+                $(".bgColor__global").addClass("opac0");
+                $(".introCta__btn").addClass("enable");
+                $(".intro").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 200,
+                    begin: function () {
+                        $(".globalCenter").addClass("opac0");
+                    },
+                    complete: function () {
+                        $(".intro").removeClass("opac0");
+                        $(".global").addClass("opac0");
+                    }
+                });
+                $(".globalLeft").velocity({
+                    bottom: "100%"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".globalRight").velocity({
+                    top: "100%"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
             if (origin.index == 3 && direction == 'down') {
                 $(".globalView").velocity({
                     opacity: "0"
@@ -293,6 +350,23 @@ $(document).ready(function () {
                         playHNWII.play();
                         playHNWID.play();
                     }
+                });
+            }
+            if (origin.index == 4 && direction == 'up') {
+                $(".globalView").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 200,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".globalHnwi").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 200,
+                    begin: function () {}
                 });
             }
             if (origin.index == 4 && direction == 'down') {
@@ -336,14 +410,6 @@ $(document).ready(function () {
 
                 //logo bca prio slide up
                 setTimeout(function () {
-                    $(".solitaire1").velocity({
-                        top: "-8%"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        begin: function () {},
-                        complete: function () {}
-                    });
                     $(".solitaire2").velocity({
                         top: "0"
                     }, {
@@ -352,7 +418,48 @@ $(document).ready(function () {
                         begin: function () {},
                         complete: function () {}
                     });
-                }, 700);
+                }, 400);
+            }
+            if (origin.index == 5 && direction == 'up') {
+                $(".globalLeft").velocity({
+                    bottom: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".globalRight").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".globalLeft").removeClass('opac0');
+                        $(".globalRight").removeClass('opac0');
+                    },
+                    complete: function () {}
+                });
+                $(".bgColor__blue").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        $(".globalCenter").fadeIn(300)
+                    },
+                    complete: function () {}
+                });
+                $(".solitaireContent").velocity({
+                    top: "100%"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {},
+                    complete: function () {}
+                });
+
+                // $(".solitaireContent").addClass("hidden");
             }
             if (origin.index == 5 && direction == 'down') {
                 $(".solitaire1").velocity({
@@ -372,22 +479,63 @@ $(document).ready(function () {
                     complete: function () {}
                 });
                 $(".solitaire3").velocity({
-                    top: "-10%"
+                    top: "0"
                 }, {
                     delay: 400,
                     duration: 700,
                     begin: function () {},
                     complete: function () {}
                 });
+                $(".solitaire1").removeClass("visible");
+                $(".solitaire3").removeClass("hiddenbtm");
+            }
+            if (origin.index == 6 && direction == 'up') {
+                $(".solitaire1").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                // $(".solitaire1").addClass("visible");
+                $(".solitaire2").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".solitaire3").removeClass("hidden");
+                    },
+                    complete: function () {}
+                });
+                $(".solitaire3").velocity({
+                    top: "100%"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                // $(".solitaire3").removeClass("hidden");
+                // $(".solitaire3").addClass("hiddenbtm");
             }
             if (origin.index == 6 && direction == 'down') {
+                $(".solitaire3").velocity({
+                    top: "-100%"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {},
+                    complete: function () {}
+                });
                 $(".privilegeLeft1").velocity({
                     top: "0"
                 }, {
                     delay: 0,
                     duration: 700,
                     begin: function () {
-                        $(".solitaire3").addClass("hidden");
+                        // $(".solitaire3").addClass("hidden");
                         $(".privilege1").removeClass("opac0");
                         $(".bgColor__privilege").removeClass("opac0");
                     },
@@ -442,6 +590,37 @@ $(document).ready(function () {
                     complete: function () {}
                 });
             }
+            if (origin.index == 7 && direction == 'up') {
+                $(".privilegeLeft1").velocity({
+                    top: "100%"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        // $(".solitaire3").removeClass("hidden");
+                        $(".bgColor__privilege").addClass("opac0");
+                    },
+                    complete: function () {}
+                });
+                $(".privilegeItem").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {},
+                    complete: function () {
+                        $(".privilege1").addClass("opac0");
+                    }
+                });
+                $(".solitaire3").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+            }
             if (origin.index == 7 && direction == 'down') {
                 $(".privilege1").velocity({
                     top: "-100%"
@@ -467,6 +646,28 @@ $(document).ready(function () {
                     $(".privilegeReq__item2").addClass("scale");
                 }, 1400);
             }
+            if (origin.index == 8 && direction == 'up') {
+                $(".privilege1").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".privilege2").addClass("opac0");
+                    },
+                    complete: function () {}
+                });
+                $(".privilegeLeft2").velocity({
+                    top: "100%"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {},
+                    complete: function () {
+                        $(".privilegeReq__item").removeClass("scale");
+                    }
+                });
+            }
             if (origin.index == 8 && direction == 'down') {
                 $(".bgColor__invite").removeClass("opac0");
                 $(".invitation1").removeClass("opac0");
@@ -487,6 +688,29 @@ $(document).ready(function () {
                 }, {
                     delay: 400,
                     duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 9 && direction == 'up') {
+                $(".bgColor__invite").addClass("opac0");
+                $(".privilege2").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".invitationLeft1").addClass("opac0");
+                    },
+                    complete: function () {
+                        $(".invitation1").addClass("opac0");
+                    }
+                });
+                $(".invitationRight1").velocity({
+                    top: "100%"
+                }, {
+                    delay: 0,
+                    duration: 400,
                     begin: function () {},
                     complete: function () {}
                 });
@@ -515,6 +739,29 @@ $(document).ready(function () {
                     complete: function () {}
                 });
             }
+            if (origin.index == 10 && direction == 'up') {
+                $(".invitationRight1").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".invitationImg1").fadeIn(700)
+                        $(".invitationLeft2").addClass("opac0");
+                    },
+                    complete: function () {
+                        $(".invitation2").addClass("opac0");
+                    }
+                });
+                $(".invitationRight2").velocity({
+                    top: "100%"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {},
+                    complete: function () {}
+                });
+            }
             if (origin.index == 10 && direction == 'down') {
                 $(".invitation3").removeClass("opac0");
                 $(".invitationRight2").velocity({
@@ -538,6 +785,29 @@ $(document).ready(function () {
                     complete: function () {}
                 });
             }
+            if (origin.index == 11 && direction == 'up') {
+                $(".invitationRight2").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".invitationImg2").fadeIn(700)
+                        $(".invitationLeft3").addClass("opac0");
+                    },
+                    complete: function () {
+                        $(".invitation3").addClass("opac0");
+                    }
+                });
+                $(".invitationRight3").velocity({
+                    top: "100%"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {},
+                    complete: function () {}
+                });
+            }
             if (origin.index == 11 && direction == 'down') {
                 $(".invitation4").removeClass("opac0");
                 $(".invitationRight3").velocity({
@@ -553,6 +823,26 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 12 && direction == 'up') {
+                $(".invitationRight3").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {
+                        $(".invitation4").addClass("opac0");
+                    }
+                });
+                $(".invitationRight4").velocity({
+                    top: "100%"
+                }, {
+                    delay: 0,
+                    duration: 400,
                     begin: function () {},
                     complete: function () {}
                 });
@@ -573,6 +863,29 @@ $(document).ready(function () {
                 });
                 $(".contact1").velocity({
                     opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {},
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 13 && direction == 'up') {
+                $(".bgColor__contact").addClass("opac0");
+                $(".invitationRight4").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".invitationImg3").fadeIn(700)
+                        $(".contactCaption").removeClass("scale");
+                    },
+                    complete: function () {
+                    }
+                });
+                $(".contact1").velocity({
+                    opacity: "0"
                 }, {
                     delay: 0,
                     duration: 400,
@@ -609,6 +922,33 @@ $(document).ready(function () {
                     $(".contactList1 .contactItem").addClass("active");
                 }, 400);
             }
+            if (origin.index == 14 && direction == 'up') {
+                $(".contact1").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".contact2").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".contactList1").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".contactList1 .contactItem").removeClass("active");
+            }
             if (origin.index == 14 && direction == 'down') {
                 $(".contactInfo").velocity({
                     opacity: "1"
@@ -642,6 +982,37 @@ $(document).ready(function () {
                     $(".contactList2 .contactItem9").addClass("active");
                 }, 700);
             }
+            if (origin.index == 15 && direction == 'up') {
+                $(".contactInfo").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $(".contactMobile__content1").removeClass("scale");
+                    },
+                    complete: function () {}
+                });
+                $(".contactList1").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".contactList2").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $(".contactList1 .contactItem").addClass("active");
+                    },
+                    complete: function () {}
+                });
+                $(".contactList2 .contactItem9").removeClass("active");
+            }
             if (origin.index == 15 && direction == 'down') {
                 $(".contactList2 .contactItem10").velocity({
                     opacity: "1"
@@ -656,6 +1027,19 @@ $(document).ready(function () {
                 setTimeout(function () {
                     $(".contactList2 .contactItem10").addClass("active");
                 }, 700);
+            }
+            if (origin.index == 16 && direction == 'up') {
+                $(".contactList2 .contactItem10").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $(".contactMobile__content2").removeClass("scale");
+                    },
+                    complete: function () {}
+                });
+                $(".contactList2 .contactItem10").removeClass("active");
             }
             if (origin.index == 16 && direction == 'down') {
                 $(".contactList2 .contactItem11").velocity({
@@ -672,6 +1056,20 @@ $(document).ready(function () {
                 setTimeout(function () {
                     $(".contactList2 .contactItem11").addClass("active");
                 }, 700);
+            }
+            if (origin.index == 17 && direction == 'up') {
+                $(".contactList2 .contactItem11").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $(".contactMobile__content3").removeClass("scale");
+                        $(".contactPrivilege").removeClass("opac1");
+                    },
+                    complete: function () {}
+                });
+                $(".contactList2 .contactItem11").removeClass("active");
             }
             if (origin.index == 17 && direction == 'down') {
                 //credit
@@ -693,6 +1091,28 @@ $(document).ready(function () {
                     complete: function () {
                         $(".creditSocmed__item").addClass("active");
                         $(".creditButton").addClass("active");
+                    }
+                });
+            }
+            if (origin.index == 18 && direction == 'up') {
+                $(".bgColor__bca").addClass("opac0");
+                $(".contact").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".credit").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $(".creditSocmed__item").removeClass("active");
+                        $(".creditButton").removeClass("active");},
+                    complete: function () {
                     }
                 });
             }
