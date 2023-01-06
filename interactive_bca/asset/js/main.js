@@ -117,7 +117,7 @@ $(document).ready(function () {
     var paramHNWII = {
         container: document.getElementById('animationHNWII'),
         renderer: 'svg',
-        loop: true,
+        loop: false,
         autoplay: false,
         path: 'asset/json/hnwi-indonesia.json',
         name: 'myAnimation',
@@ -129,7 +129,7 @@ $(document).ready(function () {
     var paramHNWID = {
         container: document.getElementById('animationHNWID'),
         renderer: 'svg',
-        loop: true,
+        loop: false,
         autoplay: false,
         path: 'asset/json/hnwi-dunia.json',
         name: 'myAnimation',
@@ -268,6 +268,7 @@ $(document).ready(function () {
             if (origin.index == 2 && direction == 'down') {
                 $(".bgColor__global").removeClass("opac0");
                 $(".global").removeClass("opac0");
+                $(".scroll-guide").removeClass("opac0");
                 $(".introCta__btn").removeClass("enable");
                 $(".intro").velocity({
                     opacity: "0"
@@ -305,6 +306,7 @@ $(document).ready(function () {
             if (origin.index == 3 && direction == 'up') {
                 $(".bgColor__global").addClass("opac0");
                 $(".introCta__btn").addClass("enable");
+                $(".scroll-guide").addClass("opac0");
                 $(".intro").velocity({
                     opacity: "0"
                 }, {
@@ -370,6 +372,7 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 4 && direction == 'down') {
+                $(".scroll-guide").addClass("-black");
                 $(".globalLeft").velocity({
                     bottom: "100%"
                 }, {
@@ -421,6 +424,7 @@ $(document).ready(function () {
                 }, 400);
             }
             if (origin.index == 5 && direction == 'up') {
+                $(".scroll-guide").removeClass("-black");
                 $(".globalLeft").velocity({
                     bottom: "0"
                 }, {
@@ -622,6 +626,7 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 7 && direction == 'down') {
+                $(".scroll-guide").removeClass("-black");
                 $(".privilege1").velocity({
                     top: "-100%"
                 }, {
@@ -647,6 +652,7 @@ $(document).ready(function () {
                 }, 1400);
             }
             if (origin.index == 8 && direction == 'up') {
+                $(".scroll-guide").removeClass("-black");
                 $(".privilege1").velocity({
                     top: "0"
                 }, {
@@ -671,6 +677,7 @@ $(document).ready(function () {
             if (origin.index == 8 && direction == 'down') {
                 $(".bgColor__invite").removeClass("opac0");
                 $(".invitation1").removeClass("opac0");
+                $(".scroll-guide").addClass("-black");
                 $(".privilege2").velocity({
                     top: "-100%"
                 }, {
@@ -693,6 +700,7 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 9 && direction == 'up') {
+                $(".scroll-guide").removeClass("-black");
                 $(".bgColor__invite").addClass("opac0");
                 $(".privilege2").velocity({
                     top: "0"
@@ -848,6 +856,7 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 12 && direction == 'down') {
+                $(".scroll-guide").removeClass("-black");
                 $(".bgColor__contact").removeClass("opac0");
                 $(".invitationRight4").velocity({
                     top: "-100%"
@@ -871,6 +880,7 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 13 && direction == 'up') {
+                $(".scroll-guide").addClass("-black");
                 $(".bgColor__contact").addClass("opac0");
                 $(".invitationRight4").velocity({
                     top: "0"
@@ -1072,6 +1082,7 @@ $(document).ready(function () {
                 $(".contactList2 .contactItem11").removeClass("active");
             }
             if (origin.index == 17 && direction == 'down') {
+                $(".scroll-guide").addClass("opac0");
                 //credit
                 $(".bgColor__bca").removeClass("opac0");
                 $(".contact").velocity({
@@ -1095,6 +1106,7 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 18 && direction == 'up') {
+                $(".scroll-guide").removeClass("opac0");
                 $(".bgColor__bca").addClass("opac0");
                 $(".contact").velocity({
                     opacity: "1"
