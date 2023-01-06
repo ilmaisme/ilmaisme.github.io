@@ -78,9 +78,6 @@ $(window).on('load', function () {
         $('.preloader').fadeOut(700);
         $('.preloader').remove();
     }, 3000);
-    setTimeout(function () {
-        $('.preloader').remove();
-    }, 3700);
     console.log('loaded');
 })
 
@@ -228,6 +225,8 @@ $(document).ready(function () {
                 fullpage_api.setKeyboardScrolling(true);
             }
             if (origin.index == 1 && direction == 'down') {
+                fullpage_api.setAllowScrolling(false, 'up');
+                fullpage_api.setKeyboardScrolling(false, 'up');
                 $(".passBg").addClass("active");
                 $(".passBg").removeClass("close");
                 $(".passBg").addClass("open");
@@ -239,8 +238,10 @@ $(document).ready(function () {
                     $(".intro").removeClass("opac0");
                     $(".introCta__cursor").addClass("active");
                     $(".introCta__btn").addClass("enable");
-                    fullpage_api.setAllowScrolling(true, 'down');
-                    fullpage_api.setKeyboardScrolling(true, 'down');
+                    fullpage_api.setAllowScrolling(true);
+                    fullpage_api.setKeyboardScrolling(true);
+                    fullpage_api.setAllowScrolling(true);
+                    fullpage_api.setKeyboardScrolling(true);
                 }, 2000);
             }
             if (origin.index == 2 && direction == 'up') {
@@ -249,6 +250,8 @@ $(document).ready(function () {
                 $(".passBg").removeClass("open");
                 $('.passGranted').addClass('display-none');
                 $(".passBg").addClass("close");
+                fullpage_api.setAllowScrolling(false, 'up');
+                fullpage_api.setKeyboardScrolling(false, 'up');
                 $(".passContent").velocity({
                     opacity: "1"
                 }, {
@@ -260,6 +263,8 @@ $(document).ready(function () {
                     },
                     complete: function () {
                         $(".bgIntro").addClass("opac0");
+                        fullpage_api.setAllowScrolling(true, 'up');
+                        fullpage_api.setKeyboardScrolling(true, 'up');
                     }
                 });
                 fullpage_api.setAllowScrolling(false, 'down');
@@ -891,8 +896,7 @@ $(document).ready(function () {
                         $(".invitationImg3").fadeIn(700)
                         $(".contactCaption").removeClass("scale");
                     },
-                    complete: function () {
-                    }
+                    complete: function () {}
                 });
                 $(".contact1").velocity({
                     opacity: "0"
@@ -1123,9 +1127,9 @@ $(document).ready(function () {
                     duration: 400,
                     begin: function () {
                         $(".creditSocmed__item").removeClass("active");
-                        $(".creditButton").removeClass("active");},
-                    complete: function () {
-                    }
+                        $(".creditButton").removeClass("active");
+                    },
+                    complete: function () {}
                 });
             }
         }
