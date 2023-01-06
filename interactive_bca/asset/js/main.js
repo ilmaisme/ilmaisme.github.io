@@ -76,8 +76,10 @@ $('#coverbtn').on('click', function () {
 $(window).on('load', function () {
     setTimeout(function () {
         $('.preloader').fadeOut(700);
-        $('.preloader').remove();
     }, 3000);
+    setTimeout(function () {
+        $('.preloader').remove();
+    }, 3700);
     console.log('loaded');
 })
 
