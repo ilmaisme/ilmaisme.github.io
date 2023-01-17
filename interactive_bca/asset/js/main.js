@@ -969,17 +969,18 @@ $(document).ready(function () {
                 $(".contactInfo").velocity({
                     opacity: "1"
                 }, {
-                    delay: 0,
+                    delay: 400,
                     duration: 700,
                     begin: function () {
                         $(".contactMobile__content1").addClass("scale");
+                        $(".contact").addClass("base");
                     },
                     complete: function () {}
                 });
                 $(".contactList1").velocity({
                     opacity: "0"
                 }, {
-                    delay: 400,
+                    delay: 0,
                     duration: 400,
                     begin: function () {},
                     complete: function () {}
@@ -992,9 +993,11 @@ $(document).ready(function () {
                     begin: function () {
                         $(".contactList1 .contactItem").removeClass("active");
                     },
-                    complete: function () {}
+                    complete: function () {
+                    }
                 });
                 setTimeout(function () {
+                    $(".contact").addClass("show");
                     $(".contactList2 .contactItem9").addClass("active");
                 }, 700);
             }
@@ -1005,7 +1008,9 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 400,
                     begin: function () {
-                        $(".contactMobile__content1").removeClass("scale");
+                        $(".contactMobile__content1").removeClass("scale");                        
+                        $(".contact").removeClass("base");
+                        $(".contact").removeClass("show");
                     },
                     complete: function () {}
                 });
