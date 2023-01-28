@@ -24,16 +24,24 @@
     <!-- e:twitter card -->
 
     <link rel=icon type=image/png sizes=16x16 href="https://static.bisnis-cdn.com/interaktif/assets/images/favicon.png">
-    
-    <link rel="preload" href="./asset/images/logo-bni-w.png" as="image" />
-    <link rel="preload" href="./asset/images/cursor.png" as="image" />
-    
-    <link rel="preload" as="image" href="./asset/images/loader-vr-mob.png"
-        imagesrcset="./asset/images/loader-vr.png 800w, ./asset/images/loader-vr.png 1600w" imagesizes="50vw">
-    <link rel="preload" as="image" href="./asset/images/loader-vr.png">
 
-    <link type="text/css" rel="stylesheet" href="./asset/css/style-preload.css">
-    <link type="text/css" rel="stylesheet" href="./asset/css/style.css">
+    {{#eq page compare="home"}}
+    <link rel="preload" href="{{>loc page="home"}}asset/images/logo-bni-w.png" as="image" />
+    <link rel="preload" href="{{>loc page="home"}}asset/images/cursor.png" as="image" />
+
+    <link rel="preload" as="image" href="{{>loc page="home"}}asset/images/loader-vr-mob.png"
+        imagesrcset="{{>loc page="home"}}asset/images/loader-vr.png 800w, {{>loc page="home"}}asset/images/loader-vr.png 1600w" imagesizes="50vw">
+    <link rel="preload" as="image" href="{{>loc page="home"}}asset/images/loader-vr.png">
+
+    <link type="text/css" rel="stylesheet" href="{{>loc page="home"}}asset/css/style-preload.css">
+    <link type="text/css" rel="stylesheet" href="{{>loc page="home"}}asset/css/style.css">
+    {{/eq}}
+    {{#eq page compare="digital"}}
+    <link rel="preload" href="{{>loc page="digital"}}asset/images/logo-bni-w.png" as="image" />
+
+    <link type="text/css" rel="stylesheet" href="{{>loc page="digital"}}asset/css/style-preload-digi.css">
+    <link type="text/css" rel="stylesheet" href="{{>loc page="digital"}}asset/css/style-digi.css">
+    {{/eq}}
     <link rel="preload" href="https://fonts.gstatic.com/s/prompt/v10/-W__XJnvUD7dzB2KYNod.woff2" as="font"
         type="font/woff2" crossorigin="anonymous">
     <style>
@@ -46,6 +54,7 @@
                 url(https://fonts.gstatic.com/s/prompt/v10/-W_9XJnvUD7dzB2KZeofTkY.woff2) format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
+
         /*
         @font-face {
             font-family: 'PromptBoldItalic';

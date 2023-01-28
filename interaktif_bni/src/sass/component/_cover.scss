@@ -8,7 +8,7 @@
         @include min-responsive($w-vlg) {
             font-size: 60px;
 
-            @include max-height($w-hmd) {
+            @include max-height($w-hlg) {
                 font-size: 44px;
             }
         }
@@ -59,6 +59,7 @@
     }
 
     &Globe {
+        text-align: center;
         width: 100%;
         bottom: 0;
         left: 50%;
@@ -74,6 +75,10 @@
 
         @include min-responsive($w-xxl) {
             width: 1153px;
+
+            @include max-height($w-hlg) {
+                width: 1000px;
+            }
         }
     }
 
@@ -109,15 +114,28 @@
             transform: scaleX(-1);
             filter: FlipH;
 
+            @include range-responsive($w-md, $w-hlg) {
+                left: 160px;
+            }
+
             @include min-responsive($w-vlg) {
                 left: 78px;
                 bottom: 54px;
+            }
+
+            @include range-responsive($w-hlg, $w-vlg) {
+                left: 18px;
+                bottom: 120px;
             }
         }
 
         &--right {
             bottom: 100px;
             right: 20px;
+
+            @include range-responsive($w-md, $w-hlg) {
+                right: 180px;
+            }
 
             @include min-responsive($w-vlg) {
                 max-width: 60px;
@@ -133,6 +151,11 @@
             @include min-responsive($w-xxl) {
                 max-width: unset;
                 right: 141px;
+            }
+
+            @include range-responsive($w-hlg, $w-vlg) {
+                right: 75px;
+                bottom: 200px;
             }
         }
     }

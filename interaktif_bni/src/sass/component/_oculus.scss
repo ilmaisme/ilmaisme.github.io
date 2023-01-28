@@ -40,24 +40,32 @@
             width: 235px;
             height: 208px;
             top: 98px;
-            background: url(../images/loader-hand-left-mob.png);
+            background-image: url(../images/loader-hand-left-mob.png);
             background-size: contain;
             background-repeat: no-repeat;
             z-index: -1;
 
-            @include min-responsive($w-vlg) {
-                display: none;
+            @include min-responsive($w-md) {
+                content: none;
             }
         }
 
         &:before {
             left: -154px;
+
+            @include range-responsive($w-md, $w-hlg) {
+                left: -122px;
+            }
         }
 
         &:after {
             right: -154px;
             transform: scaleX(-1);
             filter: FlipH;
+
+            @include range-responsive($w-md, $w-hlg) {
+                right: -122px;
+            }
         }
     }
 
@@ -67,12 +75,16 @@
         bottom: 0;
         z-index: 0;
 
-        @include min-responsive($w-vlg) {
+        @include min-responsive($w-md) {
             display: block;
 
             @include max-height($w-hmd) {
                 max-width: 420px;
             }
+        }
+
+        @include range-responsive($w-hlg, $w-vlg) {
+            bottom: 80px;
         }
 
         @include min-responsive($w-xxxl) {
@@ -81,6 +93,10 @@
 
         &--left {
             left: 0;
+
+            @include range-responsive($w-md, $w-vlg) {
+                left: -280px;
+            }
 
             @include min-responsive($w-xxxl) {
                 left: 228px;
@@ -91,6 +107,10 @@
             right: 0;
             transform: scaleX(-1);
             filter: FlipH;
+
+            @include range-responsive($w-md, $w-vlg) {
+                right: -280px;
+            }
 
             @include min-responsive($w-xxxl) {
                 right: 228px;
