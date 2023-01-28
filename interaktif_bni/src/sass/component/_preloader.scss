@@ -1,0 +1,77 @@
+.preloader {
+    top: 0;
+    background: rgb(1, 20, 22);
+    background: -moz-linear-gradient(4deg, rgba(1, 20, 22, 1) 0%, rgba(7, 43, 48, 1) 100%);
+    background: -webkit-linear-gradient(4deg, rgba(1, 20, 22, 1) 0%, rgba(7, 43, 48, 1) 100%);
+    background: linear-gradient(4deg, rgba(1, 20, 22, 1) 0%, rgba(7, 43, 48, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#011416", endColorstr="#072b30", GradientType=1);
+    @include display_full;
+    z-index: 99;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transition: opacity .4s ease-in-out;
+
+    &Wrap {
+        @include display_full;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        flex-direction: column;
+        z-index: 1;
+        transition: opacity .4s ease-in-out;
+    }
+
+    &Txt {
+        margin-bottom: 5px;
+        @include font-pack($font-base, 14px, $font-weight-normal, 1.5, $cl-white);
+    }
+
+    &Cursor {
+        margin-bottom: 10px;
+        @include animation(down 1.5s infinite);
+
+        &__wrap {
+            text-align: center;
+        }
+    }
+
+    &Vr {
+        &__btn {
+            padding: 0;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+        }
+    }
+}
+
+@keyframes down {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translateY(15px);
+    }
+
+    40% {
+        transform: translate(0);
+    }
+}
+
+@-webkit-keyframes down {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translateY(15px);
+    }
+
+    40% {
+        transform: translate(0);
+    }
+}

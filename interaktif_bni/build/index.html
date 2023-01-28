@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Bisnis.com - Interaktif BNI</title>
+    <meta name="description" content="Bisnis.com - Interaktif BNI">
+    <meta name="keywords" content="">
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Bisnis.com - Interaktif BNI" />
+    <meta property="og:description" content="Bisnis.com - Interaktif BNI" />
+
+    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="fb:app_id" content="324557847592228" />
+    <!-- s:twitter card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:title" content="Bisnis.com - Interaktif BNI" />
+    <meta name="twitter:description" content="Bisnis.com - Interaktif BNI" />
+    <meta name="twitter:image" content="" />
+    <!-- e:twitter card -->
+
+    <link rel=icon type=image/png sizes=16x16 href="https://static.bisnis-cdn.com/interaktif/assets/images/favicon.png">
+    
+    <link rel="preload" href="./asset/images/logo-bni-w.png" as="image" />
+    <link rel="preload" href="./asset/images/cursor.png" as="image" />
+    
+    <link rel="preload" as="image" href="./asset/images/loader-vr-mob.png"
+        imagesrcset="./asset/images/loader-vr.png 800w, ./asset/images/loader-vr.png 1600w" imagesizes="50vw">
+    <link rel="preload" as="image" href="./asset/images/loader-vr.png">
+
+    <link type="text/css" rel="stylesheet" href="./asset/css/style-preload.css">
+    <link type="text/css" rel="stylesheet" href="./asset/css/style.css">
+    <link rel="preload" href="https://fonts.gstatic.com/s/prompt/v10/-W__XJnvUD7dzB2KYNod.woff2" as="font"
+        type="font/woff2" crossorigin="anonymous">
+    <style>
+        @font-face {
+            font-family: 'PromptItalic';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Prompt Italic'), local('Prompt-Regular-Italic'),
+                url(https://fonts.gstatic.com/s/prompt/v10/-W_9XJnvUD7dzB2KZeofTkY.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        /*
+        @font-face {
+            font-family: 'PromptBoldItalic';
+            font-style: italic;
+            font-weight: 700;
+            font-display: swap;
+            src: local('Prompt Bold'), local('Prompt-Bold'), url(https://fonts.gstatic.com/s/prompt/v10/-W_6XJnvUD7dzB2KZeKka1MsW5A.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }*/
+
+        @font-face {
+            font-family: 'Prompt';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Prompt'), local('Prompt Regular'),
+                url(https://fonts.gstatic.com/s/prompt/v10/-W__XJnvUD7dzB2KYNod.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'PromptSemiBold';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: local('Prompt Semibold'), local('Prompt-Semibold'), url(https://fonts.gstatic.com/s/prompt/v10/-W_8XJnvUD7dzB2Cv_4IaWMu.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'PromptBold';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local('Prompt Bold'), local('Prompt-Bold'), url(https://fonts.gstatic.com/s/prompt/v10/-W_8XJnvUD7dzB2C2_8IaWMu.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* inline style preload
+        .headerWrap{position:fixed;width:100%;z-index:100;display:flex;justify-content:space-between;pointer-events:none}.headerItem{padding-top:10px;pointer-events:all}@media (min-width:768px){.headerItem{padding-top:10px}}.headerItem img{width:80%}@media (min-width:768px){.headerItem img{width:auto}}.preloader{top:0;background:#011416;background:-moz-linear-gradient(4deg,#011416 0,#072b30 100%);background:-webkit-linear-gradient(4deg,#011416,#072b30);background:linear-gradient(4deg,#011416,#072b30);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#011416",endColorstr="#072b30",GradientType=1);transition:opacity .4s ease-in-out;z-index:99;position:fixed;overflow:hidden}.preloader,.preloaderWrap{width:100%;height:100%;display:flex;justify-content:center}.preloaderWrap{align-items:center;position:relative;flex-direction:column}.preloaderTxt{margin-bottom:5px;font-family:Prompt,sans-serif;font-size:14px;font-weight:400;line-height:1.5;color:#fff}.preloaderCursor{margin-bottom:10px;-moz-animation:down 1.5s infinite;-o-animation:down 1.5s infinite;-ms-animation:down 1.5s infinite;-webkit-animation:down 1.5s infinite;animation:down 1.5s infinite}.preloaderCursor__wrap{text-align:center}.preloaderVr__btn{padding:0;cursor:pointer;background:transparent;border:0}@keyframes down{0%{transform:translate(0)}20%{transform:translateY(15px)}40%{transform:translate(0)}}@-webkit-keyframes down{0%{transform:translate(0)}20%{transform:translateY(15px)}40%{transform:translate(0)}}
+        /* inline style preload*/
+    </style>
+</head>
+<body>
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="preloaderWrap">
+            <div class="preloaderCursor__wrap">
+                <div class="preloaderTxt">
+                    klik disini
+                </div>
+                <div class="preloaderCursor">
+                    <picture class="">
+                        <source srcset="./asset/images/cursor.png" media="(max-width: 768px)" alt="" width="51" height="50">
+                        <img srcset="./asset/images/cursor.png" alt="" class="" width="51" height="50">
+                    </picture>
+                </div>
+            </div>
+            <button class="preloaderVr__btn" onclick="triggerOculus()" aria-label="Begin web interactive">
+                <picture class="preloaderVr">
+                    <source srcset="./asset/images/loader-vr-mob.png" media="(max-width: 768px)" alt="" width="300"
+                        height="169">
+                    <img srcset="./asset/images/loader-vr.png" alt="" class="" width="664" height="375">
+                </picture>
+            </button>
+        </div>
+    
+        <div class="oculus heightFull center-flex opac0">
+            <div class="oculusImg">
+                <picture class="">
+                    <source srcset="./asset/images/loader-oculus-mob.png" media="(max-width: 768px)" alt="" width="300"
+                        height="169">
+                    <img srcset="./asset/images/loader-oculus.png" alt="" class="" width="672" height="354">
+                </picture>
+            </div>
+            <div class="oculusHand oculusHand--left">
+                <picture class="">
+                    <source srcset="./asset/images/loader-hand-left.png" media="(max-width: 768px)" alt="" width="627"
+                        height="557">
+                    <img srcset="./asset/images/loader-hand-left.png" alt="" class="" width="627" height="557">
+                </picture>
+            </div>
+            <div class="oculusHand oculusHand--right">
+                <picture class="">
+                    <source srcset="./asset/images/loader-hand-left.png" media="(max-width: 768px)" alt="" width="627"
+                        height="557">
+                    <img srcset="./asset/images/loader-hand-left.png" alt="" class="" width="627" height="557">
+                </picture>
+            </div>
+        </div>
+    </div>    <!-- preloader -->
+
+    <!-- header -->
+    <header class="headerWrap">
+        <div class="headerItem">
+            <a href="https://bni.co.id" title="">
+                <img src="./asset/images/logo-bni-w.png" class="headerLogo headerLogo--white" alt="BNI Logo" width="94" height="28">
+                <img src="./asset/images/logo-bni.png" class="headerLogo headerLogo--color display-none" alt="BNI Logo" width="94" height="28">
+            </a>
+        </div>
+    </header>    <!-- header -->
+
+    <main role="main">
+
+        <div class="bgStatic bgStatic--warn">
+            <div class="articleContent text-center">
+                For better experience, rotate your screen or switch to bigger screen.
+            </div>
+        </div>
+
+        <!-- Template Background Color -->
+        <div class="bgColor__wrap">
+            <div class="bgColor bgColor__white"></div>
+            <div class="bgColor bgColor__circle opac0">
+                <picture class="">
+                    <source srcset="./asset/images/bg-wheel-mob.png" media="(max-width: 768px)" alt="" width="700"
+                        height="591">
+                    <img srcset="./asset/images/bg-wheel.png" alt="" class="" width="1440" height="1216">
+                </picture>
+            </div>
+            <div class="bgColor bgColor__orange opac0"></div>
+        </div>
+        <!-- Template Background Color -->
+
+        <!-- Template Image Content -->
+        <div class="bgStatic__wrap active">
+            <div class="bgStatic">
+                <div class="cover heightFull center-flex opac0">
+                    <div class="coverContent container text-center">
+                        <div class="coverLogo">
+                            <picture class="">
+                                <source srcset="./asset/images/logo-bni-mob.png" media="(max-width: 768px)"
+                                    alt="BNI Logo" width="100" height="29">
+                                <img srcset="./asset/images/logo-bni.png" alt="BNI Logo" class="" width="198"
+                                    height="58">
+                            </picture>
+                        </div>
+                        <div class="coverIcon">
+                            <picture class="">
+                                <source srcset="./asset/images/logo-kilas-balik-2022.png" media="(max-width: 768px)"
+                                    alt="Kilas Balik 2022" width="106" height="70">
+                                <img srcset="./asset/images/logo-kilas-balik-2022.png" alt="BNI Logo" class=""
+                                    width="106" height="70">
+                            </picture>
+                        </div>
+                        <h1 class="coverTitle">
+                            Siasat BNI
+                            Perkuat Bisnis Global <br>
+                            yang Berkelanjutan
+                        </h1>
+                    </div>
+                    <div class="coverBg">
+                        <div class="coverImg coverGlobe">
+                            <picture class="">
+                                <source srcset="./asset/images/teaser-globe-mob.png" media="(max-width: 768px)" alt=""
+                                    width="400" height="187">
+                                <img srcset="./asset/images/teaser-globe.png" alt="" class="" width="1153" height="539">
+                            </picture>
+                        </div>
+                        <div class="coverImg coverWheel coverWheel--left">
+                            <picture class="">
+                                <source srcset="./asset/images/bg-wheel-mob.png" media="(max-width: 768px)" alt=""
+                                    width="700" height="591">
+                                <img srcset="./asset/images/bg-wheel.png" alt="" class="" width="1153" height="539">
+                            </picture>
+                        </div>
+                        <div class="coverImg coverWheel coverWheel--right">
+                            <picture class="">
+                                <source srcset="./asset/images/bg-wheel-mob.png" media="(max-width: 768px)" alt=""
+                                    width="700" height="591">
+                                <img srcset="./asset/images/bg-wheel.png" alt="" class="" width="1153" height="539">
+                            </picture>
+                        </div>
+                        <div class="coverImg coverLock coverLock--left">
+                            <picture class="">
+                                <source srcset="./asset/images/teaser-bg-shield-mob.png" media="(max-width: 768px)"
+                                    alt="" width="40" height="55">
+                                <img srcset="./asset/images/teaser-bg-shield.png" alt="" class="" width="89"
+                                    height="122">
+                            </picture>
+                        </div>
+                        <div class="coverImg coverLock coverLock--right">
+                            <div class="coverLock__img">
+                                <picture class="">
+                                    <source srcset="./asset/images/teaser-bg-lock-mob.png" media="(max-width: 768px)"
+                                        alt="" width="20" height="27">
+                                    <img srcset="./asset/images/teaser-bg-lock.png" alt="" class="" width="30"
+                                        height="41">
+                                </picture>
+                            </div>
+                            <div class="coverShield">
+                                <picture class="">
+                                    <source srcset="./asset/images/teaser-bg-shield-mob.png" media="(max-width: 768px)"
+                                        alt="" width="40" height="55">
+                                    <img srcset="./asset/images/teaser-bg-shield.png" alt="" class="" width="89"
+                                        height="122">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="coverImg coverDot coverDot--left">
+                            <picture class="">
+                                <source srcset="./asset/images/bg-wheel-dots-mob.png" media="(max-width: 768px)" alt=""
+                                    width="100" height="41">
+                                <img srcset="./asset/images/bg-wheel-dots.png" alt="" class="" width="145" height="60">
+                            </picture>
+                        </div>
+                        <div class="coverImg coverDot coverDot--right">
+                            <picture class="">
+                                <source srcset="./asset/images/bg-wheel-dots-mob.png" media="(max-width: 768px)" alt=""
+                                    width="" height="">
+                                <img srcset="./asset/images/bg-wheel-dots.png" alt="" class="" width="145" height="60">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-guide center-flex opac0">
+                    <span class="icon-scroll"></span>
+                    scroll
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="teaser teaser-1 heightFull center-flex">
+                    <div class="articleContent teaserContent teaserContent-1 container">
+                        <p>PT Bank Negara Indonesia (Persero) Tbk, terus berperan aktif serta responsif sebagai jembatan
+                            perdagangan dalam membawa hasil karya anak bangsa ke kancah internasional. Dengan
+                            keberhasilan
+                            transformasi, BNI secara konsisten mendorong UMKM naik kelas dan mengoptimalkan potensi
+                            pasar
+                            global.
+                        </p>
+
+                        <p>BNI menjadi salah satu lokomotif transformasi bagi BUMN agar dapat diandalkan dan bermanfaat
+                            bagi seluruh rakyat Indonesia.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="teaser teaser-2 heightFull center-flex">
+                    <div class="articleContent teaserContent teaserContent-2 container">
+                        <p>Bersamaan dengan peran yang tengah dijalani, bank ini juga terus mendorong kinerja tiga
+                            <i>Product Champion</i> yakni BNI Mobile Banking, BNI Direct, dan BNI Xpora yang memberikan
+                            solusi
+                            komprehensif transaksi individu, cash management institusi, hingga pemberdayaan UMKM melalui
+                            optimalisasi ekosistem jaringan luar negeri.
+                        </p>
+                        <p>
+                            Dengan <i>outlet-outlet</i> luar negeri yang menjangkau seluruh dunia, BNI siap melayani
+                            kebutuhan
+                            international banking nasabah. BNI juga berkomitmen untuk menerapkan prinsip keberlanjutan
+                            dan memperkuat peran sebagai pionir green banking di Tanah Air.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="teaser teaser-3 heightFull center-flex">
+                    <div class="articleContent teaserContent teaserContent-3 container">
+                        <p>Berikut catatan mengesankan BNI dalam menjalani transformasi bisnis tiga Product Champion
+                            sepanjang 2022 :</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="menu heightFull center-flex opac0">
+                    <div class="menuContent container text-center">
+                        <div class="coverLogo">
+                            <picture class="">
+                                <source srcset="./asset/images/logo-bni-mob.png" media="(max-width: 768px)"
+                                    alt="BNI Logo" width="198" height="58">
+                                <img srcset="./asset/images/logo-bni.png" alt="BNI Logo" class="" width="198"
+                                    height="58">
+                            </picture>
+                        </div>
+                        <div class="menuTxt articleContent">
+                            <p>
+                                Pilih salah satu poin di bawah ini
+                            </p>
+                        </div>
+                        <ul class="menuList">
+                            <li class="menuItem menuItem-1">
+                                <a href="#" class="menuLink">
+                                    <picture class="">
+                                        <source srcset="./asset/images/banking-digital-mob.png"
+                                            media="(max-width: 768px)" alt="" width="198" height="58">
+                                        <img srcset="./asset/images/banking-digital.png" alt="" class="" width="221"
+                                            height="188">
+                                    </picture>
+                                    <div class="menuButton">Digital banking</div>
+                                </a>
+                            </li>
+                            <li class="menuItem menuItem-2">
+                                <a href="#" class="menuLink">
+                                    <picture class="">
+                                        <source srcset="./asset/images/banking-green-mob.png" media="(max-width: 768px)"
+                                            alt="" width="198" height="58">
+                                        <img srcset="./asset/images/banking-green.png" alt="" class="" width="221"
+                                            height="188">
+                                    </picture>
+                                    <div class="menuButton">Green banking</div>
+                                </a>
+                            </li>
+                            <li class="menuItem menuItem-3">
+                                <a href="#" class="menuLink">
+                                    <picture class="">
+                                        <source srcset="./asset/images/banking-international-mob.png"
+                                            media="(max-width: 768px)" alt="" width="198" height="58">
+                                        <img srcset="./asset/images/banking-international.png" alt="" class=""
+                                            width="221" height="188">
+                                    </picture>
+                                    <div class="menuButton">International <br> banking</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Template Image Content -->
+
+        <!-- Fullpage Content -->
+        <div id="fullpage" class="fullpage">
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+        </div>
+        <!-- Fullpage Content -->
+
+    </main>
+
+
+    <script src="./asset/js/jquery-3.5.0.min.js"></script>
+    <script type="text/javascript" src="./asset/js/fullpage.min.js"></script>
+    <script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
+    <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.js"></script>
+</body>
+
+</html>

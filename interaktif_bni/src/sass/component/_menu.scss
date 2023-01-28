@@ -1,0 +1,112 @@
+.menu {
+    transition: opacity .4s ease-in-out;
+
+    &Txt {
+        margin-top: 24px;
+        margin-bottom: 26px;
+
+        @include min-responsive($w-vlg) {
+            margin-top: 44px;
+            margin-bottom: 46px;
+
+            @include max-height($w-hmd) {
+                margin-top: 24px;
+            }
+        }
+    }
+
+    &List {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @include min-responsive($w-vlg) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &Item {
+        margin: 8px;
+        position: relative;
+        transform: translateY(200%);
+        transition: all .4s ease-in;
+
+        @include min-responsive($w-vlg) {
+            margin: 0 26px;
+        }
+
+        &-1 {
+            background: $cl-primary-orange;
+            background: linear-gradient(0deg, #F15B26, #F15B26), #D9D9D9;
+            transition-delay: 100ms;
+        }
+
+        &-2 {
+            background: $cl-primary-green;
+            background: linear-gradient(0deg, #0A878F, #0A878F), #D9D9D9;
+            transition-delay: 300ms;
+        }
+
+        &-3 {
+            background: $cl-blue;
+            background: linear-gradient(0deg, #2B7097, #2B7097), #D9D9D9;
+            transition-delay: 600ms;
+        }
+
+        &.active {
+            transform: translateY(0);
+        }
+    }
+
+    &Link {
+        display: block;
+        text-align: center;
+        pointer-events: all;
+        padding: 30px 12px 15px;
+        min-width: 156px;
+
+        @include min-responsive($w-vlg) {
+            padding: 50px 32px;
+        }
+
+        &:hover {
+            box-shadow: 5px 5px 0px #005E6A;
+
+            @include min-responsive($w-vlg) {
+                box-shadow: 8px 8px 0px #005E6A;
+            }
+
+            .menuButton {
+                background: $cl-white;
+                color: $cl-primary-orange;
+            }
+        }
+    }
+
+    &Button {
+        margin-top: 25px;
+        border: 1px solid $cl-white;
+        padding: 8px;
+        text-transform: uppercase;
+        @include font-pack($font-base, 13px, $font-weight-normal, $line-base, $cl-white);
+        transition: all .2s ease-in-out;
+
+        @include max-responsive($w-xm) {
+            font-size: 12px;
+        }
+
+        @include min-responsive($w-vlg) {
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        br {
+            display: inline-block;
+
+            @include min-responsive($w-vlg) {
+                display: none;
+            }
+        }
+    }
+}
