@@ -4,7 +4,7 @@ $(document).ready(function () {
         //options here
         autoScrolling: true,
         scrollHorizontally: true,
-        //navigation: true,
+        // navigation: true,
         anchors: ['cover', 'teaser-1', 'teaser-2', 'teaser-3', 'menu'],
         lockAnchors: true,
         //scrollOverflow: true,

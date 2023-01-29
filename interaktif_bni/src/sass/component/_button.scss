@@ -1,0 +1,91 @@
+.button {
+    &Champion {
+        position: absolute;
+        bottom: 29px;
+        right: 20px;
+        border: 0;
+        min-width: 48px;
+        min-height: 48px;
+        padding: 11px 9px 9px;
+        border-radius: 50%;
+        background: $cl-white;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        pointer-events: all;
+        z-index: 999;
+
+        @include min-responsive($w-vlg) {
+            bottom: 56px;
+            right: 46px;
+        }
+
+        &.active {
+            bottom: 38px;
+
+            @include min-responsive($w-md) {
+                bottom: 58px;
+            }
+        }
+
+        &:hover {
+            .buttonChampion__misc {
+                @media (hover: hover) {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &__misc {
+            width: 185px;
+            top: -5px;
+            right: 48px;
+            text-align: left;
+            opacity: 0;
+            position: absolute;
+            pointer-events: none;
+            border-radius: 5px;
+            padding: 7px 15px;
+            margin-right: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            @include font-pack($font-base, 14px, $font-weight-normal, $line-base, $cl-white);
+            transition: all .2s ease-in;
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                bottom: 40%;
+                right: -1em;
+                border: 0.65rem solid transparent;
+                border-top: none;
+                border-bottom-color: rgba(0, 0, 0, 0.8);
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &Credit {
+        position: absolute;
+        bottom: 29px;
+        right: 20px;
+        border: 0;
+        pointer-events: none;
+        opacity: 0;
+        padding: 10px 15px;
+        background: $cl-white;
+        text-transform: uppercase;
+        @include font-pack($font-base, 13px, $font-weight-normal, $line-base, $cl-primary-orange);
+        cursor: pointer;
+        z-index: 999;
+
+        @include min-responsive($w-md) {
+            font-size: 16px;
+        }
+
+        &.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}
