@@ -12,6 +12,7 @@ $('#menubtn').on('click', function () {
     $('.buttonCredit').removeClass('active');
     $('.digi').addClass('opac0');
     $('.green').addClass('opac0');
+    $('.intern').addClass('opac0');
     $(this).addClass('opac0');
     fullpage_api.setAllowScrolling(false);
     fullpage_api.setKeyboardScrolling(false);

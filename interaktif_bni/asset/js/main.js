@@ -198,7 +198,9 @@ function zoomOculus() {
         //bg white fadeout  
         bcv.classList.remove('opac0');
         bcc.classList.remove('opac0');
-    }, 5600);
+        $('.coverIcon').addClass('animation__sizeOpac');
+        $('.coverTitle').addClass('animation__sizeOut');
+    }, 5400);
     setTimeout(function () {
         //content cover fadein
         hdc.classList.add('display-none');
@@ -206,5 +208,5 @@ function zoomOculus() {
         scg.classList.remove('opac0');
         fullpage_api.setAllowScrolling(true);
         fullpage_api.setKeyboardScrolling(true);
-    }, 5800);
+    }, 5600);
 }
