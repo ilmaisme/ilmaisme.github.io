@@ -13,6 +13,7 @@
         cursor: pointer;
         pointer-events: all;
         z-index: 999;
+        transition: all .4s ease-out;
 
         @include min-responsive($w-vlg) {
             bottom: 56px;
@@ -20,11 +21,14 @@
         }
 
         &.active {
-            bottom: 38px;
-
-            @include min-responsive($w-md) {
-                bottom: 58px;
+            @include min-responsive($w-vlg) {
+                transform: translateY(-53px);
             }
+        }
+
+        &.hide {
+            pointer-events: none;
+            opacity: 0;
         }
 
         &:hover {
@@ -67,20 +71,51 @@
 
     &Credit {
         position: absolute;
-        bottom: 29px;
-        right: 20px;
+        bottom: 33px;
+        left: 20px;
         border: 0;
         pointer-events: none;
         opacity: 0;
         padding: 10px 15px;
         background: $cl-white;
         text-transform: uppercase;
-        @include font-pack($font-base, 13px, $font-weight-normal, $line-base, $cl-primary-orange);
+        @include font-pack($font-base, 12px, $font-weight-normal, $line-base, $cl-primary-orange);
         cursor: pointer;
         z-index: 999;
+        transition: all .4s ease-out;
 
-        @include min-responsive($w-md) {
+        @include min-responsive($w-vlg) {
             font-size: 16px;
+            left: unset;
+            bottom: 48px;
+            right: 46px;
+        }
+
+        &.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    &Close {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 33px;
+        right: 20px;
+        border: 0;
+        pointer-events: none;
+        opacity: 0;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        background: $cl-white;
+        cursor: pointer;
+
+        @include min-responsive($w-vlg) {
+            top: 48px;
+            right: 46px;
+            width: 55px;
+            height: 55px;
         }
 
         &.active {

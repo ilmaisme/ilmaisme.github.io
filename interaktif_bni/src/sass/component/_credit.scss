@@ -1,0 +1,85 @@
+.credit {
+    text-align: center;
+    background: #EEEEEE;
+    transition: all .4s ease-out;
+    position: relative;
+    z-index: 1;
+
+    &Content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include min-responsive($w-xxl) {
+            justify-content: flex-end;
+            padding-bottom: 60px;
+        }
+    }
+
+    &Bisniscom {
+        margin-bottom: 30px;
+
+        @include min-responsive($w-md) {
+            margin-bottom: 5px;
+        }
+    }
+
+    &Logo {
+        margin-top: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 120px;
+
+        @include max-responsive($w-xm) {
+            margin-top: 40px;
+        }
+
+        @include min-responsive($w-md) {
+            margin-top: 100px;
+            max-width: unset;
+
+            @include max-height($w-hlg) {
+                margin-top: 50px;
+            }
+        }
+    }
+
+    &Txt {
+        position: relative;
+        transition: all .4s ease-in;
+        @include font-pack($font-bold, 14px, $font-weight-bold, $line-base, #006699);
+
+        @include min-responsive($w-vlg) {
+            font-size: 18px;
+        }
+
+        &.active {
+            transform: translateX(0);
+        }
+
+    }
+
+    &Title {
+        margin-top: 20px;
+        transform: translateX(-100vw);
+        @include font-pack($font-base, false, $font-weight-normal, false, false);
+
+        @include min-responsive($w-md) {
+            margin-top: 40px;
+
+            @include max-height($w-hmd) {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &Name {
+        transform: translateX(100vw);
+        font-size: 16px;
+        @include font-pack($font-bold, false, $font-weight-bold, false, false);
+
+        @include min-responsive($w-vlg) {
+            font-size: 18px;
+        }
+    }
+}

@@ -28,7 +28,7 @@ $(document).ready(function () {
         autoScrolling: true,
         scrollHorizontally: true,
         //navigation: true,
-        anchors: ['cover', 'teaser-1', 'teaser-2', 'teaser-3', 'menu'],
+        // anchors: ['cover', 'teaser-1', 'teaser-2', 'teaser-3', 'menu'],
         lockAnchors: true,
         //scrollOverflow: true,
 
@@ -284,6 +284,8 @@ $(document).ready(function () {
                     },
                     complete: function () {
                         $('.scroll-guide').addClass('opac0');
+                        $('.buttonChampion').addClass('active');
+                        $('.buttonCredit').addClass('active');
                     }
                 });
             }
@@ -306,6 +308,8 @@ $(document).ready(function () {
                     begin: function () {
                         $('.digiMobile').removeClass('opac0');
                         $('.digiDirect').addClass('opac0');
+                        $('.buttonChampion').removeClass('active');
+                        $('.buttonCredit').removeClass('active');
                     },
                     complete: function () {
                         $('.scroll-guide').removeClass('opac0');
@@ -318,19 +322,3 @@ $(document).ready(function () {
     fullpage_api.setAllowScrolling(false);
     fullpage_api.setKeyboardScrolling(false);
 });
-
-//trigger menu
-$('#menubtn').on('click', function () {
-    $('.headerLogo').addClass('display-none');
-    $('.bgColor__orange').removeClass('opac0');
-    $('.bgColor__circle').removeClass('opac0');
-    $('.cover').removeClass('opac0');
-    $('.coverImg').removeClass('opac0');
-    $('.menu').removeClass('opac0');
-    $('.menuItem').addClass('active');
-    $('.scroll-guide').addClass('opac0');
-    $('.digi').addClass('opac0');
-    $(this).addClass('opac0');
-    fullpage_api.setAllowScrolling(false);
-    fullpage_api.setKeyboardScrolling(false);
-})
