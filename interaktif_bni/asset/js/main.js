@@ -192,7 +192,7 @@ function zoomOculus() {
         hdc.classList.remove('display-none');
     }, 3800);
     setTimeout(function () {
-        pre.classList.add('display-none');
+        pre.remove();
     }, 4200);
     setTimeout(function () {
         //bg white fadeout  
