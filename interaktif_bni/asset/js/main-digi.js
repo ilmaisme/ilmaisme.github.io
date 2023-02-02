@@ -22,6 +22,48 @@ $(window).on('load', function () {
 })
 
 $(document).ready(function () {
+    // 1. Animation Preloader
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationDigi__prelod'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '../asset/json/thumb-digi.json',
+        name: 'myAnimation',
+    });
+    // 2. Animation Metaverse
+    var paramMeta = {
+        container: document.getElementById('animationDigi__meta'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: '../asset/json/ekspansi-metaverse.json',
+        name: 'myAnimation',
+    };
+    var playMeta;
+    playMeta = bodymovin.loadAnimation(paramMeta);
+
+    // 3. Animation KTT
+    var paramKTT = {
+        container: document.getElementById('animationDigi__KTT'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: '../asset/json/metaverse-g20.json',
+        name: 'myAnimation',
+    };
+    var playKTT;
+    playKTT = bodymovin.loadAnimation(paramKTT);
+
+    // 4. Animation Digital
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationDigi__digital'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '../asset/json/digital.json',
+        name: 'myAnimation',
+    });
 
     new fullpage('#fullpage', {
         //options here
@@ -45,7 +87,12 @@ $(document).ready(function () {
                         $('.digiMayora').removeClass('opac0');
                         $('.digiProduct').addClass('opac0');
                     },
-                    complete: function () {}
+                    complete: function () {
+                        $('.digiMayora__stonks').removeClass('opac0');
+                        setTimeout(function () {
+                            $('.digiMayora__stonks').addClass('active');
+                        }, 200);
+                    }
                 });
             }
             if (origin.index == 1 && direction == 'up') {
@@ -56,8 +103,10 @@ $(document).ready(function () {
                     duration: 400,
                     begin: function () {
                         $('.digiMayora').addClass('opac0');
+                        $('.digiMayora__stonks').addClass('opac0');
                     },
                     complete: function () {
+                        $('.digiMayora__stonks').removeClass('active');
                         $('.digiProduct').removeClass('opac0');
                     }
                 });
@@ -69,8 +118,10 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 400,
                     begin: function () {
+                        $('.digiMayora__stonks').addClass('opac0');
                     },
                     complete: function () {
+                        $('.digiMayora__stonks').removeClass('active');
                     }
                 });
                 $(".digiQris__content").velocity({
@@ -83,9 +134,19 @@ $(document).ready(function () {
                         $('.bgColor__blue').removeClass('opac0');
                     },
                     complete: function () {
-                        $('.digiQris').removeClass('opac0');                        
+                        $('.digiQris').removeClass('opac0');
                         $('.digiMap').removeClass('opac0');
+                        $('.digiMap').addClass('active');
                     }
+                });
+                setTimeout(function () {
+                    $(".mapdot").addClass("animationPin");
+                }, 800);
+                $(".digiQris__img").velocity({
+                    bottom: "0"
+                }, {
+                    delay: 2300,
+                    duration: 400
                 });
             }
             if (origin.index == 2 && direction == 'up') {
@@ -94,9 +155,12 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
-                    begin: function () {
-                    },
+                    begin: function () {},
                     complete: function () {
+                        $('.digiMayora__stonks').removeClass('opac0');
+                        setTimeout(function () {
+                            $('.digiMayora__stonks').addClass('active');
+                        }, 200);
                     }
                 });
                 $(".digiQris__content").velocity({
@@ -109,9 +173,16 @@ $(document).ready(function () {
                         $('.bgColor__blue').addClass('opac0');
                         $('.digiQris').addClass('opac0');
                         $('.digiMap').addClass('opac0');
+                        $('.digiMap').removeClass('active');
+                        $(".mapdot").removeClass("animationPin");
                     },
-                    complete: function () {
-                    }
+                    complete: function () {}
+                });
+                $(".digiQris__img").velocity({
+                    bottom: "-100%"
+                }, {
+                    delay: 0,
+                    duration: 400
                 });
             }
             if (origin.index == 2 && direction == 'down') {
@@ -120,9 +191,9 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
-                    begin: function () {
-                    },
+                    begin: function () {},
                     complete: function () {
+                        playMeta.play();
                     }
                 });
                 $(".digiQris__content").velocity({
@@ -134,9 +205,16 @@ $(document).ready(function () {
                         $('.digiMeta').removeClass('opac0');
                         $('.digiQris').addClass('opac0');
                         $('.digiMap').addClass('opac0');
+                        $('.digiMap').removeClass('active');
+                        $(".mapdot").removeClass("animationPin");
                     },
-                    complete: function () {
-                    }
+                    complete: function () {}
+                });
+                $(".digiQris__img").velocity({
+                    bottom: "-100%"
+                }, {
+                    delay: 0,
+                    duration: 400
                 });
             }
             if (origin.index == 3 && direction == 'up') {
@@ -145,10 +223,8 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
-                    begin: function () {
-                    },
-                    complete: function () {
-                    }
+                    begin: function () {},
+                    complete: function () {}
                 });
                 $(".digiQris__content").velocity({
                     top: "0"
@@ -158,10 +234,19 @@ $(document).ready(function () {
                     begin: function () {
                         $('.digiQris').removeClass('opac0');
                         $('.digiMap').removeClass('opac0');
+                        $('.digiMap').addClass('active');
                         $('.digiMeta').addClass('opac0');
                     },
-                    complete: function () {
-                    }
+                    complete: function () {}
+                });
+                setTimeout(function () {
+                    $(".mapdot").addClass("animationPin");
+                }, 800);
+                $(".digiQris__img").velocity({
+                    bottom: "0"
+                }, {
+                    delay: 2300,
+                    duration: 400
                 });
             }
             if (origin.index == 3 && direction == 'down') {
@@ -170,10 +255,8 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
-                    begin: function () {
-                    },
-                    complete: function () {
-                    }
+                    begin: function () {},
+                    complete: function () {}
                 });
                 $(".digiG20__content").velocity({
                     top: "0"
@@ -186,6 +269,7 @@ $(document).ready(function () {
                         $('.digiMeta').addClass('opac0');
                     },
                     complete: function () {
+                        playKTT.play()
                     }
                 });
             }
@@ -195,10 +279,8 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
-                    begin: function () {
-                    },
-                    complete: function () {
-                    }
+                    begin: function () {},
+                    complete: function () {}
                 });
                 $(".digiG20__content").velocity({
                     top: "100%"
@@ -210,8 +292,7 @@ $(document).ready(function () {
                         $('.bgColor__grey').addClass('opac0');
                         $('.digiMeta').removeClass('opac0');
                     },
-                    complete: function () {
-                    }
+                    complete: function () {}
                 });
             }
             if (origin.index == 4 && direction == 'down') {
@@ -220,10 +301,8 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
-                    begin: function () {
-                    },
-                    complete: function () {
-                    }
+                    begin: function () {},
+                    complete: function () {}
                 });
                 $(".digiG20__content").velocity({
                     top: "-100%"
@@ -234,8 +313,7 @@ $(document).ready(function () {
                         $('.digiG20').addClass('opac0');
                         $('.digiMobile').removeClass('opac0');
                     },
-                    complete: function () {
-                    }
+                    complete: function () {}
                 });
             }
             if (origin.index == 5 && direction == 'up') {
@@ -244,10 +322,8 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
-                    begin: function () {
-                    },
-                    complete: function () {
-                    }
+                    begin: function () {},
+                    complete: function () {}
                 });
                 $(".digiG20__content").velocity({
                     top: "0"
@@ -258,8 +334,7 @@ $(document).ready(function () {
                         $('.digiG20').removeClass('opac0');
                         $('.digiMobile').addClass('opac0');
                     },
-                    complete: function () {
-                    }
+                    complete: function () {}
                 });
             }
             if (origin.index == 5 && direction == 'down') {
@@ -268,10 +343,8 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
-                    begin: function () {
-                    },
-                    complete: function () {
-                    }
+                    begin: function () {},
+                    complete: function () {}
                 });
                 $(".digiMobile__content").velocity({
                     top: "-100%"
@@ -295,10 +368,8 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
-                    begin: function () {
-                    },
-                    complete: function () {
-                    }
+                    begin: function () {},
+                    complete: function () {}
                 });
                 $(".digiDirect__content").velocity({
                     top: "100%"

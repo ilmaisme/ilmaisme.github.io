@@ -29,7 +29,6 @@
     <link rel=icon type=image/png sizes=16x16 href="https://static.bisnis-cdn.com/interaktif/assets/images/favicon.png">
 
 
-    <link rel="preload" href="./asset/images/preload-intern.gif" as="image" />
     <link type="text/css" rel="stylesheet" href="../asset/css/style-intern.min.css">
 
     <style>
@@ -209,10 +208,7 @@
     <div class="preloader preloader--intern">
         <div class="preloaderWrap">
             <div class="preloaderLogo">
-                <picture class="">
-                    <source srcset="./asset/images/preload-intern.gif" media="(max-width: 768px)" alt="">
-                    <img srcset="./asset/images/preload-intern.gif" alt="" class="" width="220" height="187">
-                </picture>
+                <div class="animationPreload" id="animationIntern__prelod"></div>
             </div>
             <div class="preloaderTxt">
                 Now Loading...
@@ -329,7 +325,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bgStatic">
+            <div class="bgStatic internEngland__static">
                 <div class="intern internContent internEngland heightFull display-flex">
                     <div class="internEngland__bg internEngland__mount">
                     </div>
@@ -338,6 +334,14 @@
                     <div class="internEngland__bg internEngland__tree">
                     </div>
                     <div class="internEngland__bg internEngland__land">
+                    </div>
+                    <div class="internEngland__bus">
+                        <picture class="">
+                            <source srcset="./asset/images/3-england-bus-mob.png" media="(max-width: 820px)" alt=""
+                                width="" height="">
+                            <img srcset="./asset/images/3-england-bus.png" alt="" class="" width="303" height="194"
+                                sizes="(min-width: 1024px) 240vw, 303vw">
+                        </picture>
                     </div>
                     <div class="internEngland__view">
                         <div class="internEngland__windmill">
@@ -367,13 +371,9 @@
                             </picture>
                         </div>
                     </div>
-                    <div class="internEngland__bus">
-                        <picture class="">
-                            <source srcset="./asset/images/3-england-bus-mob.png" media="(max-width: 820px)" alt=""
-                                width="" height="">
-                            <img srcset="./asset/images/3-england-bus.png" alt="" class="" width="303" height="194"
-                                sizes="(min-width: 1024px) 240vw, 303vw">
-                        </picture>
+                    <div class="internJapan__crossing">
+                        <div class="internJapan__rail">
+                        </div>
                     </div>
                     <div class="articleContent internEngland__content">
                         <div class="articleBox">
@@ -424,8 +424,8 @@
                     </div>
                     <div class="internJapan__bg internJapan__land">
                     </div>
-                    <div class="internJapan__bg internJapan__crossing">
-                        <div class="internJapan__rail">
+                    <div class="internJapan__crossing internJapan__crossing--zero">
+                        <div class="internJapan__rail internJapan__rail--zero">
                         </div>
                         <div class="internJapan__train">
                             <picture class="">
@@ -469,7 +469,7 @@
                     </div>
                     <div class="internTurki__bg internTurki__balloon-5 mobile-hide">
                         <picture class="">
-                            <source srcset="./asset/images/3-turki-balloon-b-mob.png" media="(max-width: 820px)" alt=""
+                            <source srcset="./asset/images/3-turki-balloon-b.png" media="(max-width: 820px)" alt=""
                                 width="240" height="251">
                             <img srcset="./asset/images/3-turki-balloon-b.png" alt="" class="" width="103" height="145"
                                 sizes="(min-width: 1024px) 240vw, 103vw">
@@ -599,6 +599,8 @@
                         </div>
                         <button class="buttonClose" id="creditclose" aria-label="Close credit title"><span
                                 class="icon-close"></span></button>
+                        <a href="/" class="buttonRestart" id="restart"><span
+                                class="icon-undo"></span>Restart</a>
                     </div>
                 </div>
             </div>
@@ -699,35 +701,20 @@
                         </div>
                         <ul class="menuList">
                             <li class="menuItem menuItem-1">
-                                <a href="https://ilmaisme.github.io/interaktif_bni/digital" class="menuLink">
-                                    <picture class="">
-                                        <source srcset="../asset/images/banking-digital-mob.png"
-                                            media="(max-width: 768px)" alt="" width="198" height="58">
-                                        <img srcset="../asset/images/banking-digital.png" alt="" class=""
-                                            width="221" height="188">
-                                    </picture>
+                                <a href="/digital" class="menuLink">
+                                    <div class="animationMenu" id="animationDigi"></div>
                                     <h2 class="menuButton">Digital banking</h2>
                                 </a>
                             </li>
                             <li class="menuItem menuItem-2">
-                                <a href="https://ilmaisme.github.io/interaktif_bni/green" class="menuLink">
-                                    <picture class="">
-                                        <source srcset="../asset/images/banking-green-mob.png"
-                                            media="(max-width: 768px)" alt="" width="198" height="58">
-                                        <img srcset="../asset/images/banking-green.png" alt="" class="" width="221"
-                                            height="188">
-                                    </picture>
+                                <a href="/green" class="menuLink">
+                                    <div class="animationMenu" id="animationGreen"></div>
                                     <h2 class="menuButton">Green banking</h2>
                                 </a>
                             </li>
                             <li class="menuItem menuItem-3">
-                                <a href="https://ilmaisme.github.io/interaktif_bni/international" class="menuLink">
-                                    <picture class="">
-                                        <source srcset="../asset/images/banking-international-mob.png"
-                                            media="(max-width: 768px)" alt="" width="198" height="58">
-                                        <img srcset="../asset/images/banking-international.png" alt="" class=""
-                                            width="221" height="188">
-                                    </picture>
+                                <a href="/international" class="menuLink">
+                                    <div class="animationMenu" id="animationIntern"></div>
                                     <h2 class="menuButton">International <br> banking</h2>
                                 </a>
                             </li>
@@ -757,6 +744,7 @@
     <script type="text/javascript" src="../asset/js/fullpage.min.js"></script>
     <script type="text/javascript" src="../asset/js/fullpage.extensions.min.js"></script>
     <script type="text/javascript" src="../asset/js/velocity.min.js"></script>
+    <script defer type="text/javascript" src="../asset/js/lottie.min.js"></script>
     <script defer type="text/javascript" src="../asset/js/main-nav.min.js"></script>
     <script defer type="text/javascript" src="../asset/js/main-intern.min.js"></script>
 

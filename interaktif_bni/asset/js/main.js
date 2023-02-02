@@ -1,4 +1,31 @@
-$(document).ready(function () {
+$(document).ready(function () {   
+    // 1. Animation Menu Digital
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationDigi'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/thumb-digi.json',
+        name: 'myAnimation',
+    });
+    // 2. Animation Menu Green
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationGreen'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/thumb-green.json',
+        name: 'myAnimation',
+    });
+    // 3. Animation Menu International
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationIntern'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/thumb-intern.json',
+        name: 'myAnimation',
+    });
 
     new fullpage('#fullpage', {
         //options here
@@ -127,6 +154,9 @@ $(document).ready(function () {
                         $('.menu').removeClass('opac0');
                         $('.menuItem').addClass('active');
                         $('.headerLogo--color').addClass('display-none');
+                        setTimeout(function () {
+                            $('.menuItem').addClass('ease');
+                        }, 1400);
                     }
                 });
             }
@@ -150,7 +180,7 @@ $(document).ready(function () {
                     delay: 400,
                     duration: 0,
                     begin: function () {
-                        $('.menuItem').removeClass('active');
+                        $('.menuItem').removeClass('active ease');
                     },
                     complete: function () {}
                 });
@@ -184,23 +214,23 @@ function zoomOculus() {
     setTimeout(function () {
         //oculus zoomin
         imgo.classList.add('zoom');
-    }, 1800);
+    }, 400);
     setTimeout(function () {
         //preloader fadeout  
         pre.classList.add('opac0');
         hdw.classList.add('display-none');
         hdc.classList.remove('display-none');
-    }, 3800);
+    }, 1600);
     setTimeout(function () {
         pre.remove();
-    }, 4200);
+    }, 2600);
     setTimeout(function () {
         //bg white fadeout  
         bcv.classList.remove('opac0');
         bcc.classList.remove('opac0');
         $('.coverIcon').addClass('animation__sizeOpac');
         $('.coverTitle').addClass('animation__sizeOut');
-    }, 5400);
+    }, 2800);
     setTimeout(function () {
         //content cover fadein
         hdc.classList.add('display-none');
@@ -208,5 +238,5 @@ function zoomOculus() {
         scg.classList.remove('opac0');
         fullpage_api.setAllowScrolling(true);
         fullpage_api.setKeyboardScrolling(true);
-    }, 5600);
+    }, 3200);
 }

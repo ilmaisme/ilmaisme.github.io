@@ -8,14 +8,13 @@ $(window).on('load', function () {
         $('.headerLogo--color').removeClass('display-none');
         $('.scroll-guide').removeClass('opac0');
         $('.buttonChampion').removeClass('opac0');
-
+        $('.internSinergi__img').addClass('active float');
         fullpage_api.setAllowScrolling(true);
         fullpage_api.setKeyboardScrolling(true);
 
     }, 3700);
 
     setTimeout(function () {
-        //content green fadein
         $('.internSinergi').removeClass('opac0');
         $('.internSinergi__content').addClass('active');
 
@@ -29,6 +28,15 @@ $(window).on('load', function () {
 })
 
 $(document).ready(function () {
+    // 1. Animation Preloader
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationIntern__prelod'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '../asset/json/thumb-intern.json',
+        name: 'myAnimation',
+    });
 
     new fullpage('#fullpage', {
         //options here
@@ -165,6 +173,12 @@ $(document).ready(function () {
                         $(".internJapan__train").addClass('active')
                     }
                 });
+                setInterval(function () {
+                    $(".internJapan__train").addClass('opac0');
+                }, 3000);
+                setInterval(function () {
+                    $(".internJapan__train").removeClass('opac0');
+                }, 6000);
             }
             if (origin.index == 3 && direction == 'up') {
                 $(".internEngland").velocity({
@@ -183,7 +197,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 400,
                     begin: function () {
-                        $(".bgColor__orange").addClass('opac0');      
+                        $(".bgColor__orange").addClass('opac0');
                     },
                     complete: function () {}
                 });
@@ -202,7 +216,11 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
-                    begin: function () {},
+                    begin: function () {
+                        $(".internEngland__bus img").addClass('opac0');
+                        $(".internJapan__crossing").addClass('opac0');
+                        $(".internJapan__train img").addClass('opac0');
+                    },
                     complete: function () {}
                 });
                 $(".internTurki").velocity({
@@ -229,7 +247,9 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 400,
                     begin: function () {},
-                    complete: function () {}
+                    complete: function () {
+                        $(".internJapan__crossing").removeClass('opac0');
+                    }
                 });
                 $(".internTurki").velocity({
                     top: "-100%"
@@ -254,9 +274,16 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".internXpora__content").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
                     begin: function () {
                         $('.internXpora').removeClass('opac0');
-                        $('.internXpora__content').addClass('active');
                     },
                     complete: function () {}
                 });
@@ -275,17 +302,41 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 400,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".internXpora__content").velocity({
+                    top: "100%"
+                }, {
+                    delay: 0,
+                    duration: 400,
                     begin: function () {
                         $('.internXpora').addClass('opac0');
-                        $('.internXpora__content').removeClass('active');
                     },
                     complete: function () {}
                 });
             }
             if (origin.index == 5 && direction == 'down') {
-                $('.internXpora').addClass('opac0');
-                $('.internKorea').removeClass('opac0');
-                $('.internKorea__content').addClass('active');
+                $(".internXpora__content").velocity({
+                    top: "-100%"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.internXpora').addClass('opac0');
+                    },
+                    complete: function () {}
+                });
+                $(".internKorea__content").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.internKorea').removeClass('opac0');
+                    },
+                    complete: function () {}
+                });
                 setTimeout(function () {
                     $('.scroll-guide').addClass('opac0');
                     $('.buttonChampion').addClass('active');
@@ -293,9 +344,26 @@ $(document).ready(function () {
                 }, 400);
             }
             if (origin.index == 6 && direction == 'up') {
-                $('.internXpora').removeClass('opac0');
-                $('.internKorea').addClass('opac0');                
-                $('.internKorea__content').removeClass('active');
+                $(".internXpora__content").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.internXpora').removeClass('opac0');
+                    },
+                    complete: function () {}
+                });
+                $(".internKorea__content").velocity({
+                    top: "100%"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.internKorea').addClass('opac0');
+                    },
+                    complete: function () {}
+                });
                 $('.buttonChampion').removeClass('active');
                 $('.buttonCredit').removeClass('active');
                 setTimeout(function () {

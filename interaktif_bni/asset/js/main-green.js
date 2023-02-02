@@ -22,6 +22,63 @@ $(window).on('load', function () {
 })
 
 $(document).ready(function () {
+    // 1. Animation Preloader
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationGreen__prelod'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '../asset/json/thumb-green.json',
+        name: 'myAnimation',
+    });
+
+    // 2. Animation SLL
+    var paramSLL = {
+        container: document.getElementById('animationGreen__SLL'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: '../asset/json/kerjasama-sll.json',
+        name: 'myAnimation',
+    };
+    var playSLL;
+    playSLL = bodymovin.loadAnimation(paramSLL);
+
+    // 3 Animation bond
+    var paramBond = {
+        container: document.getElementById('animationGreen__bond'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: '../asset/json/green-bond.json',
+        name: 'myAnimation',
+    };
+    var playBond;
+    playBond = bodymovin.loadAnimation(paramBond);
+
+    // 4 Animation SPKLU
+    var paramSPKLU = {
+        container: document.getElementById('animationGreen__SPKLU'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: '../asset/json/mobil-listrik.json',
+        name: 'myAnimation',
+    };
+    var playSPKLU;
+    playSPKLU = bodymovin.loadAnimation(paramSPKLU);
+
+    // 4 Animation Penyu
+    var paramPenyu = {
+        container: document.getElementById('animationGreen__penyu'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: '../asset/json/penyu.json',
+        name: 'myAnimation',
+    };
+    var playPenyu;
+    playPenyu = bodymovin.loadAnimation(paramPenyu);
 
     new fullpage('#fullpage', {
         //options here
@@ -105,7 +162,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 400,
                     begin: function () {
-                        $('.greenRehab').addClass('opac0');                        
+                        $('.greenRehab').addClass('opac0');
                     },
                     complete: function () {
                         $('.greenNature__img').removeClass('zoom');
@@ -120,8 +177,11 @@ $(document).ready(function () {
                 }, {
                     delay: 400,
                     duration: 400,
-                    begin: function () {},
-                    complete: function () {}
+                    begin: function () {
+                        playPenyu.play()
+                    },
+                    complete: function () {
+                    }
                 });
                 $(".bgColor__bunaken").velocity({
                     top: "0"
@@ -202,7 +262,9 @@ $(document).ready(function () {
                     delay: 400,
                     duration: 400,
                     begin: function () {},
-                    complete: function () {}
+                    complete: function () {
+                        playSPKLU.play()
+                    }
                 });
                 $(".bgColor__dblue").velocity({
                     top: "0"
@@ -280,7 +342,9 @@ $(document).ready(function () {
                     begin: function () {
                         $('.greenSll').removeClass('opac0');
                     },
-                    complete: function () {}
+                    complete: function () {
+                        playSLL.play()
+                    }
                 });
                 $(".greenSpklu__content").velocity({
                     top: "-100%"
@@ -327,7 +391,9 @@ $(document).ready(function () {
                         $('.headerLogo--white').addClass('display-none');
                         $('.headerLogo--color').removeClass('display-none');
                     },
-                    complete: function () {}
+                    complete: function () {
+                        playBond.play()
+                    }
                 });
                 $(".greenSll__content").velocity({
                     top: "-100%"
