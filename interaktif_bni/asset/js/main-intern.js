@@ -173,12 +173,23 @@ $(document).ready(function () {
                         $(".internJapan__train").addClass('active')
                     }
                 });
-                setInterval(function () {
-                    $(".internJapan__train").addClass('opac0');
-                }, 3000);
-                setInterval(function () {
-                    $(".internJapan__train").removeClass('opac0');
-                }, 6000);
+                if (window.innerWidth > 1024) {
+                    setInterval(function () {
+                        $(".internJapan__train").addClass('opac0');
+                    }, 3000);
+                    setInterval(function () {
+                        $(".internJapan__train").removeClass('opac0');
+                    }, 6000);
+                    // console.log('desktop')
+                } else {
+                    setInterval(function () {
+                        $(".internJapan__train").addClass('opac0');
+                    }, 5000);
+                    setInterval(function () {
+                        $(".internJapan__train").removeClass('opac0');
+                    }, 10000);
+                    // console.log('mobile')
+                }
             }
             if (origin.index == 3 && direction == 'up') {
                 $(".internEngland").velocity({
