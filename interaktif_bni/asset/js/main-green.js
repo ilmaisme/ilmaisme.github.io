@@ -137,9 +137,9 @@ $(document).ready(function () {
                     duration: 400,
                     begin: function () {
                         $('.greenRehab').removeClass('opac0');
-                        $('.greenCloud').addClass('opac0');
                     },
                     complete: function () {
+                        $('.greenCloud').addClass('opac0');
                         $('.greenNature__img').addClass('zoom');
                         $('.scroll-guide').addClass('-black');
                     }

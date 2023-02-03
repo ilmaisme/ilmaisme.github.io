@@ -145,7 +145,7 @@ $(document).ready(function () {
                 $(".digiQris__img").velocity({
                     bottom: "0"
                 }, {
-                    delay: 2300,
+                    delay: 1200,
                     duration: 400
                 });
             }
@@ -245,7 +245,7 @@ $(document).ready(function () {
                 $(".digiQris__img").velocity({
                     bottom: "0"
                 }, {
-                    delay: 2300,
+                    delay: 1200,
                     duration: 400
                 });
             }
