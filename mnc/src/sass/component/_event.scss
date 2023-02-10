@@ -1,0 +1,73 @@
+.event {
+    &Headline {
+        margin-top: 80px;
+    }
+
+    &List {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+
+    &Item {
+        margin-top: 20px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    &Box {
+        display: block;
+        height: 100%;
+        border: 1px solid #C1C1C1;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    &Link {
+        &:hover {
+            .eventTitle {
+                color: $cl-red;
+            }
+        }
+    }
+
+    &Content {
+        padding: 15px 10px;
+    }
+
+    &Img {
+        position: relative;
+        width: 100%;
+        height: 197px;
+        background: #C9C9C9;
+
+        img {
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+        }
+    }
+
+    &Title {
+        @extend .ellipsis;
+        -webkit-line-clamp: 3;
+        @include font-pack($font-base, 18px, $font-weight-bold, $line-base, $cl-black);
+    }
+
+    &Date {
+        align-items: center;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        @include font-pack($font-base, 10px, $font-weight-normal, 1.5, $cl-red);
+
+        .icoCal {
+            @extend %filter-red;
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+    }
+}

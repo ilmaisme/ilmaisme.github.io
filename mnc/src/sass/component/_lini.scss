@@ -1,0 +1,86 @@
+.lini {
+    &List {
+
+        @include min-responsive($w-md) {
+            margin-top: 100px;
+        }
+    }
+
+    &Link {
+        position: relative;
+
+        &:hover,
+        &:focus {
+            .liniTitle {
+                opacity: 1;
+            }
+        }
+    }
+
+    &Title {
+        display: inline-block;
+        position: relative;
+        margin-bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        padding: 10px 15px;
+        border-radius: 8px;
+        opacity: 0;
+        @include font-pack($font-base, $font-text, $font-weight-normal, $line-base, $cl-white);
+        @include base_transition(all, .4s);
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-bottom: 0;
+            margin-bottom: -10px;
+        }
+
+        &0 {
+            background: $cl-akasha;
+
+            &::before {
+                border-top-color: $cl-akasha;
+            }
+        }
+
+        &1 {
+            background: $cl-koloni;
+
+            &::before {
+                border-top-color: $cl-koloni;
+            }
+        }
+
+        &2 {
+            background: $cl-funtastic;
+
+            &::before {
+                border-top-color: $cl-funtastic;
+            }
+        }
+
+        &3 {
+            background: $cl-clover;
+
+            &::before {
+                border-top-color: $cl-clover;
+            }
+        }
+
+        &4 {
+            background: $cl-miracle;
+
+            &::before {
+                border-top-color: $cl-miracle;
+            }
+        }
+    }
+}

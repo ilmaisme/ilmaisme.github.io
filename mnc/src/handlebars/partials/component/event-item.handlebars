@@ -1,0 +1,22 @@
+{{#each event}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="eventItem col-lg-3">
+    <a href="{{link}}" class="eventBox eventLink">
+        <div class="eventImg">
+            <img src="{{image}}" alt="{{title}}" width="237" height="197" loading="lazy">
+        </div>
+        <div class="eventContent">
+            <div class="eventDate display-flex">
+                <span class="icoInline icoCal"></span>
+                {{dateevent}}
+            </div>
+            <h4 class="eventTitle">{{title}}</h4>
+        </div>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

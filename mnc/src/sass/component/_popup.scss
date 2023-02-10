@@ -1,0 +1,57 @@
+.popup {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(52, 52, 52, .5);
+    z-index: 11; //above header
+
+    &--hidden {
+        @extend .hidden;
+    }
+
+    &.active {
+        @extend .visible;
+        height: 100%;
+    }
+
+    &Title {
+        @include font-pack(false, $font-size-xmedium, $font-weight-sbold, false, $cl-primaryblack);
+    }
+
+    &Box {
+        width: calc(100% - 10px);
+        margin: auto;
+        position: relative;
+
+        @include min-responsive($w-md) {
+            width: auto;
+        }
+
+        .buttonClose {
+            top: -20px;
+            right: 12px;
+            position: absolute;
+            z-index: 1;
+
+            @include min-responsive($w-md) {
+                top: -30px;
+                right: -30px;
+            }
+        }
+
+        .icon-close {
+            @extend %icon-close;
+        }
+    }
+
+    &Wrap {
+        background: $cl-white;
+        padding: 30px;
+        border-radius: 15px;
+
+        @include min-responsive($w-md) {
+            width: 536px;
+        }
+    }
+}

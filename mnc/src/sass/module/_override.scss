@@ -1,0 +1,56 @@
+.mt2 {
+	margin-top: 20px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.display-block {
+	display: block;
+}
+
+.display-none {
+	display: none;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.desktop-only {
+	display: none;
+
+	@include min-responsive($w-xl) {
+		display: block;
+	}
+}
+
+.mobile-only {
+	display: block;
+
+	@include min-responsive($w-xl) {
+		display: none;
+	}
+}
+
+.word-break {
+	word-break: break-word;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+
+	input,
+	input:focus,
+	textarea,
+	textarea:focus {
+		font-size: $font-input;
+	}
+}

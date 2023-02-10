@@ -1,0 +1,42 @@
+<div class="listTab productTab tab">
+    <ul class="productLabel center-flex">
+        <li>
+            <button class="button listTab__label tabbutton active" onclick="openTabBook(event, 'new')">
+                New Release
+            </button>
+        </li>
+        <li>
+            <button class="button listTab__label tabbutton" onclick="openTabBook(event, 'best')">
+                Best Seller
+            </button>
+        </li>
+        <li>
+            <button class="button listTab__label tabbutton" onclick="openTabBook(event, 'editor')">
+                Editor's Choice
+            </button>
+        </li>
+    </ul>
+    <div class="tabwrapper">
+        <div class="tabcontent -active" id="new">
+            <div class="productSlide row -snew">
+
+                {{> component/product-list type="new" total=10 index_start=0 index_end=10}}
+
+            </div>
+        </div>
+        <div class="tabcontent" id="best">
+            <div class="productSlide row -sbest">
+
+                {{> component/product-list type="best" total=10 index_start=0 index_end=10}}
+
+            </div>
+        </div>
+        <div class="tabcontent" id="editor">
+            <div class="productSlide row -seditor">
+
+                {{> component/product-list type="editor" total=10 index_start=0 index_end=10}}
+
+            </div>
+        </div>
+    </div>
+</div>

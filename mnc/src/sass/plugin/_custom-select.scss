@@ -1,0 +1,67 @@
+/*the container must be positioned relative:*/
+.custom-select {
+    position: relative;
+
+    .formSelect {
+        display: none;
+    }
+
+    .styledSelect {
+        padding: 15px 25px 15px 10px;
+
+        &.open {
+            &:after {
+                top: 23px;
+                transform: rotate(225deg);
+            }
+        }
+
+        &:after {
+            @extend .icon-chevron;
+            position: absolute;
+            content: "";
+            top: 21px;
+            right: 0;
+            left: unset;
+            @include base_transition(all, .2s);
+        }
+    }
+
+    .select {
+        position: relative;
+        text-align: left;
+        min-width: calc(100%);
+        min-height: 48px;
+        background: $cl-white;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .options {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: $cl-white;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.12);
+        z-index: 1;
+
+        li {
+            width: 100%;
+            padding: 10px;
+            border: 0;
+            cursor: pointer;
+            user-select: none;
+            text-align: center;
+            border-bottom: 1px solid #D7D7D7;
+
+            &:last-child{
+                border-bottom: 0;
+            }
+
+            &:hover {
+                color: #824BB7
+            }
+        }
+    }
+}

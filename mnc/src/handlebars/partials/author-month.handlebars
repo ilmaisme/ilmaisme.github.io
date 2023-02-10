@@ -1,0 +1,29 @@
+<div class="authorMonth">
+    <div class="container">
+        {{#each author}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="authorMonth__wrap display-flex">
+            <div class="authorMonth__content">
+                <h3 class="titleCaption">Author of the Month</h3>
+                <h4 class="titleText mt2">{{name}}</h4>
+                <p class="titleParagraph">{{desc}}</p>
+                <a href="{{link}}" class="linkMore linkMore__arrow">
+                    see more
+                    <span class="icoBase icoInline icoArrow"></span>
+                </a>
+                <div class="authorMonth__books row">
+                    {{>component/author-month-books total=2 index_start=0 index_end=2}}
+                </div>
+            </div>
+            <div class="authorMonth__img">
+                <img src="{{propic}}" alt="{{name}}" loading="lazy" width="450" height="527">
+            </div>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+</div>

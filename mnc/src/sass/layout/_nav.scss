@@ -1,0 +1,106 @@
+.nav {
+    position: relative;
+
+    &List {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    &Item {
+        position: relative;
+        margin-left: 8px;
+        margin-right: 8px;
+
+        &.active {
+
+            .navLink,
+            .navOpen {
+                color: $cl-red;
+            }
+        }
+
+        &>.navLink,
+        .navOpen {
+            outline: 0;
+        }
+    }
+
+    &Link,
+    &Open {
+        display: block;
+        margin-top: 16px;
+        padding: 10px;
+        position: relative;
+        text-transform: uppercase;
+        @include font-pack($font-base, $font-text, $font-weight-sbold, $line-base, $cl-black-medium);
+    }
+
+    &Open {
+        padding-bottom: 26px;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            .navSub {
+                @extend .visible;
+            }
+        }
+    }
+
+    &Sub {
+        @extend .hidden;
+        min-width: 180px;
+        position: absolute;
+        top: 55px;
+        left: -10px;
+        border: 1px solid #D7D7D7;
+        background: $cl-white;
+        z-index: 1;
+
+        .navLink {
+            outline: 0;
+            margin-top: 0;
+            padding: 10px 20px;
+            text-transform: none;
+            @include font-pack(false, false, $font-weight-mbold, $line-base, $cl-black);
+
+            &:hover {
+                color: $cl-red;
+                background: #FFE7E7;
+            }
+        }
+    }
+
+    &Dot {
+        position: absolute;
+        top: 10px;
+        right: 3px;
+        width: 6px;
+        height: 6px;
+        border-radius: 6px;
+        background: $cl-red;
+        pointer-events: none;
+    }
+
+    &Mob {
+        position: relative;
+        z-index: 99;
+
+        .nav {
+            justify-content: flex-start;
+            border-top: 0;
+
+            &Sub {
+                position: relative;
+                background: transparent;
+                border: 0;
+                top: 0;
+                left: 10px;
+            }
+
+            &List {
+                margin-top: 0;
+            }
+        }
+    }
+}

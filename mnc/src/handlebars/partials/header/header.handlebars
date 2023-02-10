@@ -1,0 +1,42 @@
+<header class="header mobile">
+    <div class="headerWrap container">
+        <h1>
+            <a href="index.html" class="headerLink">
+                <img src="{{site.logo}}" alt="Comic MNC" class="headerLogo" width="83" height="48">
+            </a>
+        </h1>
+        <div class="navDesk desktop-only" id="navDesk">
+            {{!>header/nav}}
+        </div>
+        <div class="headerRight center-flex">
+            <button class="button buttonSearch" aria-label="search" onclick="openSearch()">
+                <span class="icoInline icoSearch"></span>
+            </button>
+            <div class="navMob mobile-only" id="navMob">
+
+                {{>header/nav}}
+                
+            </div>
+            <div class="headerLogin desktop-only">
+                {{#eq login compare=true}}
+                <button class="button headerLogin__user" onclick="openUserMenu(this)">
+                    <div class="headerLogin__img">
+                        <img src="./asset/images/user-login-default.png" alt="" width="24" height="24">
+                    </div>
+                    <div class="headerLogin__name">Fadhil Ghazali</div>
+                    <span class="icon-chevron"></span>
+                </button>
+
+                {{>header/user}}
+
+                {{else}}
+                <a href="login.html" class="buttonLogin">
+                    <img src="./asset/images/user-default.png" alt="" width="24" height="24">
+                    Login
+                </a>
+                {{/eq}}
+            </div>
+        </div>
+    </div>
+</header>
+<div class="js-nav-offset"></div>

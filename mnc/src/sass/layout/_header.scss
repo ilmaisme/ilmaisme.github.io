@@ -1,0 +1,83 @@
+.header {
+    --height-mob: 60px;
+    --height-desk: 72px;
+    background: $cl-white;
+    border-bottom: 1px solid #D3D3D3;
+
+    @include min-responsive($w-xl) {
+        min-height: var(--height-desk);
+    }
+
+    &.fixed {
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+
+        @include min-responsive($w-xl) {
+            animation: slide-down .7s ease;
+        }
+    }
+
+    &Wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: var(--height-mob);
+
+        @include min-responsive($w-xl) {
+            min-height: var(--height-desk);
+        }
+    }
+
+    &Link {
+        display: inline-block;
+    }
+
+    &Login {
+        margin-left: 24px;
+        text-transform: uppercase;
+        @include font-pack($font-base, $font-date, $font-weight-sbold, $line-base, $cl-red);
+    }
+}
+
+.header.mobile {
+    position: relative;
+    min-height: var(--height-mob);
+
+    &.fixed {
+        position: fixed;
+
+        .headerWrap {
+            justify-content: center;
+        }
+
+        ~.navMob {
+            position: fixed;
+        }
+    }
+
+    .headerLogo {
+        max-width: 70px;
+
+        @include min-responsive($w-md) {
+            max-width: 200px;
+        }
+    }
+
+    .searchboxInput {
+        width: 100%;
+        min-width: unset;
+        margin-left: 0;
+    }
+}
+
+.js-nav-offset {
+    &.active {
+        padding-top: var(--height-mob);
+
+        @include min-responsive($w-xl) {
+            padding-top: var(--height-desk);
+        }
+    }
+}

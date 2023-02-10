@@ -1,0 +1,33 @@
+{{#eq type compare="new"}}
+{{#each book.New}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+{{>component/product-item}}
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}
+{{/eq}}
+{{#eq type compare="best"}}
+{{#each book.Best}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+{{>component/product-item}}
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}
+{{/eq}}
+{{#eq type compare="editor"}}
+{{#each book.Editor}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+{{>component/product-item}}
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}
+{{/eq}}
