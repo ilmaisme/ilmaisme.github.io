@@ -1,0 +1,23 @@
+.breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+
+    &Item {
+        margin-right: 20px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &Link {
+        padding: 8px;
+        text-transform: uppercase;
+        @include font-pack($font-base, $font-date, $font-weight-mbold, $line-base, $cl-grey-medium);
+
+        &.active {
+            color: $cl-red;
+        }
+    }
+}

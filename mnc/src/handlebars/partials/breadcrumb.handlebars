@@ -1,0 +1,17 @@
+<div class="breadcrumb display-flex align-center">
+    <div class="breadcrumbItem">
+        <a href="index.html" class="breadcrumbLink">Home</a>
+    </div>
+    <div class="breadcrumbItem">
+        {{#if link}}
+        <a href="{{link}}" class="breadcrumbLink{{#if sublink}}{{else}} active{{/if}}">{{title}}</a>
+        {{else}}
+        <div class="breadcrumbLink">{{title}}</div>
+        {{/if}}
+    </div>
+    {{#if sublink}}
+    <div class="breadcrumbItem">
+        <a href="{{sublink}}" class="breadcrumbLink active">{{subtitle}}</a>
+    </div>
+    {{/if}}
+</div>

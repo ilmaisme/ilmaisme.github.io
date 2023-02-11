@@ -3,6 +3,7 @@ $('select').each(function () {
 
     // Cache the number of options
     var $this = $(this),
+        $selected = $(this).children('option:selected'),
         numberOfOptions = $(this).children('option').length;
 
     // Hides the select element
@@ -18,7 +19,8 @@ $('select').each(function () {
     var $styledSelect = $this.next('div.styledSelect');
 
     // Show the first select option in the styled div
-    $styledSelect.text($this.children('option').eq(0).text());
+    // $styledSelect.text($this.children('option').eq(0).text());
+    $styledSelect.text($selected.text());
 
     // Insert an unordered list after the styled div and also cache the list
     var $list = $('<ul />', {

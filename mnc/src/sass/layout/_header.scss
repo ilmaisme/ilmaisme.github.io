@@ -11,6 +11,7 @@
     &.fixed {
         position: fixed;
         width: 100%;
+        top: 0;
         z-index: 10;
 
         @include min-responsive($w-xl) {
@@ -30,14 +31,61 @@
         }
     }
 
+    &Right {
+        @include min-responsive($w-xl) {
+            max-width: 192px;
+        }
+    }
+
     &Link {
         display: inline-block;
     }
 
     &Login {
+        position: relative;
         margin-left: 24px;
         text-transform: uppercase;
         @include font-pack($font-base, $font-date, $font-weight-sbold, $line-base, $cl-red);
+
+        &__user {
+            display: flex;
+            align-items: center;
+            padding: 6px 8px;
+
+            &.active {
+                .icoChevron {
+                    transform: translate(8px, -2px) rotate(180deg);
+                }
+            }
+        }
+
+        &__name {
+            @extend .ellipsis;
+            -webkit-line-clamp: 1;
+            flex: 1;
+            margin-left: 8px;
+            text-transform: uppercase;
+            @include font-pack($font-base, $font-date, $font-weight-sbold, $line-base, $cl-red);
+        }
+
+        .icoChevron {
+            margin-top: 2px;
+            margin-left: 0;
+        }
+
+        .icoLogout {
+            @extend %filter-red;
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            vertical-align: sub;
+        }
+    }
+
+    &Drop {
+        &.navSub {
+            left: -15px;
+        }
     }
 }
 

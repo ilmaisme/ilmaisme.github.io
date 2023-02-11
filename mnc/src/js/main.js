@@ -103,7 +103,7 @@ function openSearch(){
 
 //open user menu
 function openUserMenu(e) {
-    let drop = $('.userDrop');
+    let drop = $('.headerDrop');
     jQuery(e).toggleClass('active');
     drop.toggleClass('visible');
 }

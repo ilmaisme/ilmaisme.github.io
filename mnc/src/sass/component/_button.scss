@@ -27,4 +27,34 @@
             background-size: contain;
         }
     }
+
+    &Primary {
+        padding: 15px 20px;
+        border-radius: 30px;
+        background: $cl-red;
+        border: 1px solid $cl-red;
+        @include font-pack($font-base, $font-input, $font-weight-sbold, $line-base, $cl-white);
+        @include base_transition(all, .2s);
+
+        &:hover {
+            color: $cl-red;
+            background: $cl-white;
+            border: 1px solid $cl-red;
+        }
+    }
+
+    &Secondary {
+        padding: 15px 20px;
+        border-radius: 30px;
+        background: $cl-white;
+        border: 1px solid $cl-black-lighter;
+        @include font-pack($font-base, $font-input, $font-weight-sbold, $line-base, $cl-black-lighter);
+        @include base_transition(all, .2s);
+
+        &:hover {
+            color: $cl-white;
+            background: $cl-black-lighter;
+            border: 1px solid $cl-black-lighter;
+        }
+    }
 }

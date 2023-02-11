@@ -7,7 +7,7 @@
     }
 
     .styledSelect {
-        padding: 15px 25px 15px 10px;
+        padding: 15px 34px 15px 18px;
 
         &.open {
             &:after {
@@ -17,11 +17,11 @@
         }
 
         &:after {
-            @extend .icon-chevron;
+            @extend .icoChevron;
             position: absolute;
             content: "";
             top: 21px;
-            right: 0;
+            right: 18px;
             left: unset;
             @include base_transition(all, .2s);
         }
@@ -33,17 +33,19 @@
         min-width: calc(100%);
         min-height: 48px;
         background: $cl-white;
+        border: 1px solid #CFCFCF;
+        border-radius: 30px;
         cursor: pointer;
         user-select: none;
     }
 
     .options {
         position: absolute;
+        width: 100%;
         top: 100%;
         left: 0;
-        width: 100%;
+        border: 1px solid #D7D7D7;
         background: $cl-white;
-        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.12);
         z-index: 1;
 
         li {
@@ -52,15 +54,11 @@
             border: 0;
             cursor: pointer;
             user-select: none;
-            text-align: center;
-            border-bottom: 1px solid #D7D7D7;
-
-            &:last-child{
-                border-bottom: 0;
-            }
+            padding: 15px 18px;
 
             &:hover {
-                color: #824BB7
+                color: $cl-red;
+                background: #FFE7E7;
             }
         }
     }

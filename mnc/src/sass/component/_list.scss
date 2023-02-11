@@ -1,0 +1,76 @@
+.list {
+    &Title {
+        margin-top: 36px;
+        padding: 12px;
+        border-bottom: 1px solid #CFCFCF;
+        @include font-pack($font-base, 18px, $font-weight-sbold, $line-base, $cl-black-lighter);
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    &Menu {
+        @include min-responsive($w-xl) {
+            padding-right: 25px;
+        }
+    }
+
+    &Box {
+        padding: 15px 12px;
+    }
+
+    &Item {
+        @extend .titleParagraph;
+        line-height: $line-base;
+        margin-bottom: 14px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &__radio {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+    &Link {
+        position: relative;
+
+        &.active {
+            padding-left: 15px;
+            color: $cl-black;
+
+            &::before {
+                content: '';
+                border-top: 1px solid $cl-black;
+                position: absolute;
+                top: 10px;
+                left: 0;
+                width: 10px;
+                height: 1px;
+            }
+        }
+    }
+
+    &Cta {
+        margin-top: 36px;
+        display: flex;
+        gap: 20px;
+    }
+
+    &Wrap {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &Sort{
+        min-width: 183px;
+        @include font-pack(false, false, $font-weight-mbold, $line-base, $cl-black);
+    }
+}

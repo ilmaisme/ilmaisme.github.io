@@ -1,5 +1,50 @@
 .footer {
+    background: $cl-black;
+    @include font-pack($font-base, $font-text, $font-weight-normal, $line-base, $cl-white);
+
     @include min-responsive($w-xl) {
         margin-top: 100px;
+    }
+
+    &Wrap {
+        padding-top: 36px;
+        padding-bottom: 25px;
+    }
+
+    &Item {
+        display: flex;
+        text-align: left;
+        justify-content: center;
+
+        .icoInline {
+            @extend %filter-white;
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+    }
+
+    &Nav {
+        @extend .center-flex;
+        margin-top: 25px;
+
+        &__item {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        &__link {
+            display: inline-block;
+            padding: 5px;
+            font-size: 13px;
+            color: $cl-grey-lighter;
+        }
+    }
+
+    &Copy{
+        padding: 15px;
+        font-size: 10px;
+        color: #7B7B7B;
+        border-top: 1px solid #434343;
     }
 }
