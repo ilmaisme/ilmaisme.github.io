@@ -1,0 +1,28 @@
+{{#each book.Best}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="readTag">Best Seller</div>
+<h1 class="readName">{{title}}</h1>
+<table class="productTable" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td valign="top">Author</td>
+        <td valign="top">:</td>
+        <td valign="top">{{author}}</td>
+    </tr>
+    <tr>
+        <td valign="top">Category</td>
+        <td valign="top">:</td>
+        <td valign="top">{{../categ}}</td>
+    </tr>
+</table>
+<div class="readPrice">{{price}}</div>
+
+{{>read/read-cta}}
+
+{{>read/read-tag type=../type}}
+
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

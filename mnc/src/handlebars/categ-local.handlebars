@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head}}
+
+<body>
+    {{!>header/header login=true page="Home"}}
+    {{>header/header page="Home"}}
+
+    <main role="main">
+
+        <div class="container">
+            {{>breadcrumb title="Books Categories" subtitle="Indonesian Comic" sublink="#" type="local"}}
+
+            <div class="list row">
+                <div class="listMenu col-lg-3">
+                    <div class="listMobile mobile-only">
+                        <div class="listMobile__title text-center">Filter</div>
+                        <button class="button buttonClose -closeFilter" aria-label="close">x</button>
+                    </div>
+                    <div class="listMobile__sort mobile-only">
+
+                        {{>list/sort-pill title="Sort By"}}
+
+                    </div>
+
+                    {{>list/list page="Indonesian Comic" title="Categories"}}
+
+                    {{>list/list title="Rating"}}
+
+                    {{>list/list title="Price"}}
+
+                    {{>list/list title="Genre"}}
+
+                    <div class="listCta">
+                        <button class="button buttonFull buttonPrimary -closeFilter">Apply</button>
+                        <button class="button buttonFull buttonSecondary -resetFilter" type="button">Reset</button>
+                    </div>
+                </div>
+                <div class="listShow col-lg-9">
+                    <div class="listFilter mobile-only">
+                        <button class="button listFilter__btn" id="filterbtn">
+                            <img src="./asset/images/icon/filter.png" alt="" width="16" height="16">
+                            <span class="ml10">Filter</span>
+                        </button>
+                    </div>
+                    <div class="listCaption">
+                        <h2 class="titleCaption">Indonesian Comic</h2>
+                        <div class="listWrap">
+                            <div class="listResult">Show products 1 - 5 of 100 result</div>
+                            <div class="listSort desktop-only">
+
+                                {{>list/sort-select}}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listProduct">
+                        <div class="productSlider">
+                            {{>list/product-slider type="local" total=5 index_start=10 index_end=15}}
+                        </div>
+                    </div>
+                    <ul class="paging center-flex">
+                        {{>paging}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    {{>footer/footer}}
+
+    {{>js page="categ" select=true}}
+
+</body>
+
+</html>

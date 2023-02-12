@@ -1,11 +1,11 @@
 $(document).ready(function () {
     //toggle popup read image
-    $(".-bRimg").on("click", function () {
-        $('.-pRimg').addClass('active');
+    $(".-bPrev").on("click", function () {
+        $('.-pPrev').addClass('active');
     });
     //toggle popup read aloud
-    $(".-bRaloud").on("click", function () {
-        $('.-pRaloud').addClass('active');
+    $(".-bVideo").on("click", function () {
+        $('.-pVideo').addClass('active');
     });
     //toggle popup report comment
     $(".-bReport").on("click", function () {
@@ -46,19 +46,6 @@ $(document).ready(function () {
         } else {
             $(this).html('Baca Selanjutnya<span class="icon-chevron"></span>')
         }
-    });
-
-    //slider read image
-    $('.-simage').slick({
-        dots: false,
-        arrows: true,
-        infinite: true,
-        speed: 500,
-        mobileFirst: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 2000,
     });
 });
 

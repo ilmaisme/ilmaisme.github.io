@@ -28,10 +28,12 @@
 
     <link rel=icon type=image/png sizes=16x16 href="./asset/images/favicon.ico">
     <link rel="stylesheet" href="./asset/css/style-home.css" type="text/css">
+
+    <link rel="preload" as="image" href="./asset/images/sample/banner-1.png">
+
+    <link rel="preload" href="./asset/images/logo-mnc.png" as="image" />
     <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2" as="font"
         type="font/woff2" crossorigin="anonymous">
-    <link media="none" onload="if(media!=='all')media='all'"
-        href="https://api.fontshare.com/v2/css?f[]=bevellier@700&display=swap" rel="stylesheet">
     <style>
         @font-face {
             font-family: 'Poppins';
@@ -90,7 +92,7 @@
             <div class="navDesk desktop-only" id="navDesk">
             </div>
             <div class="headerRight center-flex">
-                <button class="button buttonSearch" aria-label="search" onclick="openSearch()">
+                <button class="button buttonSearch" aria-label="search" onclick="openSearch(this)">
                     <span class="icoInline icoSearch"></span>
                 </button>
                 <div class="navMob mobile-only" id="navMob">
@@ -142,7 +144,7 @@
                                                 </a>
                                                 <a href="categ-novel.html" class="navLink" tabindex="-1">Novel
                                                 </a>
-                                                <a href="categ-nonfic.html" class="navLink" tabindex="-1">Nonfiction
+                                                <a href="categ-nonfic.html" class="navLink" tabindex="-1">Non-fiction
                                                 </a>
                                             </div>
                                         </div>
@@ -332,6 +334,35 @@
                                 <div class="productBox">
                                     <div class="productWrap">
                                         <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
+                                            <img src="http://www.mncgramedia.id/uploads/MY_HERO_ACADEMIA_16.jpg" alt="My Hero Academia Vol.16" width="176" height="265" loading="lazy">
+                                        </a>
+                                        <div class="productCta display-flex">
+                                            <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
+                                                <span class="icoInline icoShow"></span>
+                                            </a>
+                                            <button aria-label="Like Product" class="button buttonLike productCta__item" onclick="likeButton(this)">
+                                                <span class="icoInline icoLike"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="productContent">
+                                        <a href="book-read.html">
+                                            <h4 class="productTitle">My Hero Academia Vol.16</h4>
+                                        </a>
+                                        <div class="productAuthor__wrap">
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">Kohei Horikoshi</div>
+                                            </a>
+                                        </div>
+                                        <div class="productPrice">
+                                            Rp 40.000
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><div class="productItem">
+                                <div class="productBox">
+                                    <div class="productWrap">
+                                        <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
                                             <img src="http://www.mncgramedia.id/uploads/compress_artgirl.jpeg" alt="Art Girl Setsuko Negishi Dan Kawan-kawannya" width="176" height="265" loading="lazy">
                                         </a>
                                         <div class="productCta display-flex">
@@ -383,35 +414,6 @@
                                         </div>
                                         <div class="productPrice">
                                             Rp 68.000
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="productItem">
-                                <div class="productBox">
-                                    <div class="productWrap">
-                                        <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
-                                            <img src="http://www.mncgramedia.id/uploads/MY_HERO_ACADEMIA_16.jpg" alt="My Hero Academia Vol.16" width="176" height="265" loading="lazy">
-                                        </a>
-                                        <div class="productCta display-flex">
-                                            <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
-                                                <span class="icoInline icoShow"></span>
-                                            </a>
-                                            <button aria-label="Like Product" class="button buttonLike productCta__item" onclick="likeButton(this)">
-                                                <span class="icoInline icoLike"></span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="productContent">
-                                        <a href="book-read.html">
-                                            <h4 class="productTitle">My Hero Academia Vol.16</h4>
-                                        </a>
-                                        <div class="productAuthor__wrap">
-                                            <a href="author-read.html">
-                                                <div class="productAuthor">Kohei Horikoshi</div>
-                                            </a>
-                                        </div>
-                                        <div class="productPrice">
-                                            Rp 40.000
                                         </div>
                                     </div>
                                 </div>
@@ -602,7 +604,7 @@
                                 <div class="productBox">
                                     <div class="productWrap">
                                         <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
-                                            <img src="http://www.mncgramedia.id/uploads/koloni_kill_starter_1.jpeg" alt="KOLONI Kill Starter Vol. 1" width="176" height="265" loading="lazy">
+                                            <img src="http://www.mncgramedia.id/uploads/Rev_Cover-Sword_Art_Online_01_INA.jpg" alt="SWORD ART ONLINE 001 AINCRAD" width="176" height="265" loading="lazy">
                                         </a>
                                         <div class="productCta display-flex">
                                             <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
@@ -615,15 +617,18 @@
                                     </div>
                                     <div class="productContent">
                                         <a href="book-read.html">
-                                            <h4 class="productTitle">KOLONI Kill Starter Vol. 1</h4>
+                                            <h4 class="productTitle">SWORD ART ONLINE 001 AINCRAD</h4>
                                         </a>
                                         <div class="productAuthor__wrap">
                                             <a href="author-read.html">
-                                                <div class="productAuthor">ERFAN FAJAR</div>
+                                                <div class="productAuthor">Reki Kawahara</div>
+                                            </a>
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">Abec</div>
                                             </a>
                                         </div>
                                         <div class="productPrice">
-                                            Rp 62.000
+                                            Rp 98.000
                                         </div>
                                     </div>
                                 </div>
@@ -658,70 +663,6 @@
                                             </a>
                                             <a href="author-read.html">
                                                 <div class="productAuthor">Selvi Andani</div>
-                                            </a>
-                                        </div>
-                                        <div class="productPrice">
-                                            Rp 98.000
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="productItem">
-                                <div class="productBox">
-                                    <div class="productWrap">
-                                        <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
-                                            <img src="http://www.mncgramedia.id/uploads/Rev_Cover-Sword_Art_Online_01_INA.jpg" alt="SWORD ART ONLINE 001 AINCRAD" width="176" height="265" loading="lazy">
-                                        </a>
-                                        <div class="productCta display-flex">
-                                            <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
-                                                <span class="icoInline icoShow"></span>
-                                            </a>
-                                            <button aria-label="Like Product" class="button buttonLike productCta__item" onclick="likeButton(this)">
-                                                <span class="icoInline icoLike"></span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="productContent">
-                                        <a href="book-read.html">
-                                            <h4 class="productTitle">SWORD ART ONLINE 001 AINCRAD</h4>
-                                        </a>
-                                        <div class="productAuthor__wrap">
-                                            <a href="author-read.html">
-                                                <div class="productAuthor">Reki Kawahara</div>
-                                            </a>
-                                            <a href="author-read.html">
-                                                <div class="productAuthor">Abec</div>
-                                            </a>
-                                        </div>
-                                        <div class="productPrice">
-                                            Rp 98.000
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="productItem">
-                                <div class="productBox">
-                                    <div class="productWrap">
-                                        <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
-                                            <img src="http://www.mncgramedia.id/uploads/fate_strange_fake_2.jpg" alt="FATE/STRANGE FAKE 2" width="176" height="265" loading="lazy">
-                                        </a>
-                                        <div class="productCta display-flex">
-                                            <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
-                                                <span class="icoInline icoShow"></span>
-                                            </a>
-                                            <button aria-label="Like Product" class="button buttonLike productCta__item" onclick="likeButton(this)">
-                                                <span class="icoInline icoLike"></span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="productContent">
-                                        <a href="book-read.html">
-                                            <h4 class="productTitle">FATE/STRANGE FAKE 2</h4>
-                                        </a>
-                                        <div class="productAuthor__wrap">
-                                            <a href="author-read.html">
-                                                <div class="productAuthor">RYOHGO NARITA</div>
-                                            </a>
-                                            <a href="author-read.html">
-                                                <div class="productAuthor">SIDUKI MORII</div>
                                             </a>
                                         </div>
                                         <div class="productPrice">
@@ -794,7 +735,7 @@
                                 <div class="productBox">
                                     <div class="productWrap">
                                         <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
-                                            <img src="http://www.mncgramedia.id/uploads/CATATAN_SERAM.jpg" alt="Catatan Seram - Ghost Stories Around You" width="176" height="265" loading="lazy">
+                                            <img src="http://www.mncgramedia.id/uploads/jacket_Miiko-33-PREMIUM.jpg" alt="Hai, Miiko! 33 - Premium (bonus masker)" width="176" height="265" loading="lazy">
                                         </a>
                                         <div class="productCta display-flex">
                                             <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
@@ -807,15 +748,15 @@
                                     </div>
                                     <div class="productContent">
                                         <a href="book-read.html">
-                                            <h4 class="productTitle">Catatan Seram - Ghost Stories Around You</h4>
+                                            <h4 class="productTitle">Hai, Miiko! 33 - Premium (bonus masker)</h4>
                                         </a>
                                         <div class="productAuthor__wrap">
                                             <a href="author-read.html">
-                                                <div class="productAuthor">Rei Efendi</div>
+                                                <div class="productAuthor">ERIKO ONO</div>
                                             </a>
                                         </div>
                                         <div class="productPrice">
-                                            Rp 48.000
+                                            Rp 60.000
                                         </div>
                                     </div>
                                 </div>
@@ -823,7 +764,7 @@
                                 <div class="productBox">
                                     <div class="productWrap">
                                         <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
-                                            <img src="http://www.mncgramedia.id/uploads/MY_HERO_ACADEMIA_16.jpg" alt="My Hero Academia Vol.16" width="176" height="265" loading="lazy">
+                                            <img src="http://www.mncgramedia.id/uploads/cover_Pemburu_Laut_Dalam.jpg" alt="Plants VS Zombies - Komik Dinosaurus : Pemburu di Laut Dalam" width="176" height="265" loading="lazy">
                                         </a>
                                         <div class="productCta display-flex">
                                             <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
@@ -836,15 +777,15 @@
                                     </div>
                                     <div class="productContent">
                                         <a href="book-read.html">
-                                            <h4 class="productTitle">My Hero Academia Vol.16</h4>
+                                            <h4 class="productTitle">Plants VS Zombies - Komik Dinosaurus : Pemburu di Laut Dalam</h4>
                                         </a>
                                         <div class="productAuthor__wrap">
                                             <a href="author-read.html">
-                                                <div class="productAuthor">Kohei Horikoshi</div>
+                                                <div class="productAuthor">Mitsuru Hanagata</div>
                                             </a>
                                         </div>
                                         <div class="productPrice">
-                                            Rp 40.000
+                                            Rp 98.000
                                         </div>
                                     </div>
                                 </div>
@@ -852,39 +793,7 @@
                                 <div class="productBox">
                                     <div class="productWrap">
                                         <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
-                                            <img src="http://www.mncgramedia.id/uploads/RECORD_OF_RAGNAROK_03.jpg" alt="AKASHA : Record of Ragnarok 03" width="176" height="265" loading="lazy">
-                                        </a>
-                                        <div class="productCta display-flex">
-                                            <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
-                                                <span class="icoInline icoShow"></span>
-                                            </a>
-                                            <button aria-label="Like Product" class="button buttonLike productCta__item" onclick="likeButton(this)">
-                                                <span class="icoInline icoLike"></span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="productContent">
-                                        <a href="book-read.html">
-                                            <h4 class="productTitle">AKASHA : Record of Ragnarok 03</h4>
-                                        </a>
-                                        <div class="productAuthor__wrap">
-                                            <a href="author-read.html">
-                                                <div class="productAuthor">AJICHIKA</div>
-                                            </a>
-                                            <a href="author-read.html">
-                                                <div class="productAuthor">SHINYA UMEMURA</div>
-                                            </a>
-                                        </div>
-                                        <div class="productPrice">
-                                            Rp 45.000
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="productItem">
-                                <div class="productBox">
-                                    <div class="productWrap">
-                                        <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
-                                            <img src="hhttp://www.mncgramedia.id/uploads/LEETEUK_COOK_BOOK.jpg" alt="LEE TEUK COOK BOOK: RESEP MUDAH DAN PRAKTIS" width="176" height="265" loading="lazy">
+                                            <img src="http://www.mncgramedia.id/uploads/LEETEUK_COOK_BOOK.jpg" alt="LEE TEUK COOK BOOK: RESEP MUDAH DAN PRAKTIS" width="176" height="265" loading="lazy">
                                         </a>
                                         <div class="productCta display-flex">
                                             <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
@@ -938,17 +847,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tabcontent" id="editor">
-                        <div class="productSlide row -seditor">
-            
-                            <div class="productItem">
+                            </div><div class="productItem">
                                 <div class="productBox">
                                     <div class="productWrap">
                                         <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
-                                            <img src="http://www.mncgramedia.id/uploads/cover_Pemburu_Laut_Dalam.jpg" alt="Plants VS Zombies - Komik Dinosaurus : Pemburu di Laut Dalam" width="176" height="265" loading="lazy">
+                                            <img src="http://www.mncgramedia.id/uploads/[INA]_COVER_WITH_NETFLIX_BURST_-_ENOLA_HOLMES_5_CASE_OF_THE_CRYPTIC_CRINOLINE_-_Copy.jpg" alt="Kisah Misteri Enola Holmes : Kisah Kode Rahasia Crinoline" width="176" height="265" loading="lazy">
                                         </a>
                                         <div class="productCta display-flex">
                                             <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
@@ -961,11 +864,107 @@
                                     </div>
                                     <div class="productContent">
                                         <a href="book-read.html">
-                                            <h4 class="productTitle">Plants VS Zombies - Komik Dinosaurus : Pemburu di Laut Dalam</h4>
+                                            <h4 class="productTitle">Kisah Misteri Enola Holmes : Kisah Kode Rahasia Crinoline</h4>
                                         </a>
                                         <div class="productAuthor__wrap">
                                             <a href="author-read.html">
-                                                <div class="productAuthor">Mitsuru Hanagata</div>
+                                                <div class="productAuthor">Nancy Springer</div>
+                                            </a>
+                                        </div>
+                                        <div class="productPrice">
+                                            Rp 89.000
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><div class="productItem">
+                                <div class="productBox">
+                                    <div class="productWrap">
+                                        <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
+                                            <img src="http://www.mncgramedia.id/uploads/CATATAN_SERAM.jpg" alt="Catatan Seram - Ghost Stories Around You" width="176" height="265" loading="lazy">
+                                        </a>
+                                        <div class="productCta display-flex">
+                                            <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
+                                                <span class="icoInline icoShow"></span>
+                                            </a>
+                                            <button aria-label="Like Product" class="button buttonLike productCta__item" onclick="likeButton(this)">
+                                                <span class="icoInline icoLike"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="productContent">
+                                        <a href="book-read.html">
+                                            <h4 class="productTitle">Catatan Seram - Ghost Stories Around You</h4>
+                                        </a>
+                                        <div class="productAuthor__wrap">
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">Rei Efendi</div>
+                                            </a>
+                                        </div>
+                                        <div class="productPrice">
+                                            Rp 48.000
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><div class="productItem">
+                                <div class="productBox">
+                                    <div class="productWrap">
+                                        <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
+                                            <img src="http://www.mncgramedia.id/uploads/KOLONI_THEIR_STORY.jpg" alt="KOLONI Their Story" width="176" height="265" loading="lazy">
+                                        </a>
+                                        <div class="productCta display-flex">
+                                            <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
+                                                <span class="icoInline icoShow"></span>
+                                            </a>
+                                            <button aria-label="Like Product" class="button buttonLike productCta__item" onclick="likeButton(this)">
+                                                <span class="icoInline icoLike"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="productContent">
+                                        <a href="book-read.html">
+                                            <h4 class="productTitle">KOLONI Their Story</h4>
+                                        </a>
+                                        <div class="productAuthor__wrap">
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">Egi Mugia</div>
+                                            </a>
+                                        </div>
+                                        <div class="productPrice">
+                                            Rp 38.000
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabcontent" id="editor">
+                        <div class="productSlide row -seditor">
+            
+                            <div class="productItem">
+                                <div class="productBox">
+                                    <div class="productWrap">
+                                        <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
+                                            <img src="http://www.mncgramedia.id/uploads/Detektif_Sains_Anak_CSI_01-min1.jpg" alt="Komik Pintar : Detektif Sains Anak CSI 01 - Pecahkan Kasus Misteri dengan Sains!" width="176" height="265" loading="lazy">
+                                        </a>
+                                        <div class="productCta display-flex">
+                                            <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
+                                                <span class="icoInline icoShow"></span>
+                                            </a>
+                                            <button aria-label="Like Product" class="button buttonLike productCta__item" onclick="likeButton(this)">
+                                                <span class="icoInline icoLike"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="productContent">
+                                        <a href="book-read.html">
+                                            <h4 class="productTitle">Komik Pintar : Detektif Sains Anak CSI 01 - Pecahkan Kasus Misteri dengan Sains!</h4>
+                                        </a>
+                                        <div class="productAuthor__wrap">
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">GO HEE-JUNG</div>
+                                            </a>
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">YANG SEON MO</div>
                                             </a>
                                         </div>
                                         <div class="productPrice">

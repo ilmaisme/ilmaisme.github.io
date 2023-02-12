@@ -14,13 +14,9 @@
     }
 
     &Arrow {
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6 12a.75.75 0 0 1 .75-.75h8.69l-3.221-3.219a.751.751 0 0 1 1.062-1.062l4.5 4.5a.75.75 0 0 1 0 1.062l-4.5 4.5a.75.75 0 0 1-1.062-1.062l3.22-3.219H6.75A.75.75 0 0 1 6 12Z' fill='%23000'/%3E%3C/svg%3E");
-
-        &Prev {
-            transform: scaleX(-1);
-        }
     }
 
     &Cal {
@@ -79,6 +75,44 @@
                 height: 12px;
                 transform: rotate(225deg);
             }
+        }
+    }
+
+    &Close {
+        position: relative;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+
+        @include min-responsive($w-md) {
+            width: 30px;
+            height: 30px;
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+            box-sizing: border-box;
+            position: absolute;
+            width: 12px;
+            height: 2px;
+            background: $cl-white;
+            transform: rotate(45deg);
+            border-radius: 5px;
+            top: 10px;
+            left: 5px;
+
+            @include min-responsive($w-md) {
+                width: 20px;
+                height: 4px;
+                top: 13px;
+                left: 5px;
+            }
+        }
+
+        &:after {
+            transform: rotate(-45deg);
         }
     }
 

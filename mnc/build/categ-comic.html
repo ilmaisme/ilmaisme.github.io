@@ -28,10 +28,10 @@
 
     <link rel=icon type=image/png sizes=16x16 href="./asset/images/favicon.ico">
     <link type="text/css" rel="stylesheet" href="./asset/css/style.css">
+
+    <link rel="preload" href="./asset/images/logo-mnc.png" as="image" />
     <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2" as="font"
         type="font/woff2" crossorigin="anonymous">
-    <link media="none" onload="if(media!=='all')media='all'"
-        href="https://api.fontshare.com/v2/css?f[]=bevellier@700&display=swap" rel="stylesheet">
     <style>
         @font-face {
             font-family: 'Poppins';
@@ -90,7 +90,7 @@
             <div class="navDesk desktop-only" id="navDesk">
             </div>
             <div class="headerRight center-flex">
-                <button class="button buttonSearch" aria-label="search" onclick="openSearch()">
+                <button class="button buttonSearch" aria-label="search" onclick="openSearch(this)">
                     <span class="icoInline icoSearch"></span>
                 </button>
                 <div class="navMob mobile-only" id="navMob">
@@ -142,7 +142,7 @@
                                                 </a>
                                                 <a href="categ-novel.html" class="navLink" tabindex="-1">Novel
                                                 </a>
-                                                <a href="categ-nonfic.html" class="navLink" tabindex="-1">Nonfiction
+                                                <a href="categ-nonfic.html" class="navLink" tabindex="-1">Non-fiction
                                                 </a>
                                             </div>
                                         </div>
@@ -255,19 +255,19 @@
                             <a href="#" class="listLink">All</a>
                         </div>
                         <div class="listItem">
-                            <a href="categories-comic.html" class="listLink active">Comic</a>
+                            <a href="categ-comic.html" class="listLink active">Comic</a>
                         </div>
                         <div class="listItem">
-                            <a href="categories-children.html" class="listLink">Children Book</a>
+                            <a href="categ-local.html" class="listLink">Indonesian Comic</a>
                         </div>
                         <div class="listItem">
-                            <a href="categories-novel.html" class="listLink">Novel</a>
+                            <a href="categ-children.html" class="listLink">Children Book</a>
                         </div>
                         <div class="listItem">
-                            <a href="categories-comic-id.html" class="listLink">Indonesian Comic</a>
+                            <a href="categ-novel.html" class="listLink">Novel</a>
                         </div>
                         <div class="listItem">
-                            <a href="categories-non-fiction.html" class="listLink">Non-Fiction</a>
+                            <a href="categ-nonfic.html" class="listLink">Non-fiction</a>
                         </div>
                     
                     
@@ -383,7 +383,436 @@
                         </div>
                     </div>
                     <div class="listProduct">
-                        <div class="productWrap display-flex">
+                        <div class="productSlider">
+                            <div class="productItem">
+                                <div class="productBox productSlider__box row">
+                                    <div class="productWrap productSlider__wrap col-lg-7">
+                            
+                                        <a href="book-read.html" aria-label="Open detail's Product">
+                                            <div class="productSlide productSlide15">
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="http://www.mncgramedia.id/uploads/MY_HERO_ACADEMIA_16.jpg" alt="My Hero Academia Vol.16" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="./asset/images/sample/slider-sample-1.png" alt="My Hero Academia Vol.16" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="./asset/images/sample/slider-sample-2.png" alt="My Hero Academia Vol.16" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="productContent productSlider__content col-lg-5">
+                                        <a href="book-read.html">
+                                            <h4 class="productTitle">My Hero Academia Vol.16</h4>
+                                        </a>
+                                        <div class="productAuthor__wrap">
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">Kohei Horikoshi</div>
+                                            </a>
+                                        </div>
+                                        <div class="productPrice">
+                                            Rp 40.000
+                                        </div>
+                            
+                                        <table class="productTable" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td valign="top">Size</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">11,4 x 17,2 cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Jenis Rate</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">13+</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Jumlah Halaman</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">192 halaman</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">ISBN</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">978-623-03-0282-4</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Published Date</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">17 Feb, 2021</td>
+                                            </tr>
+                                        </table>
+                                        <div class="productTag productTag--comic">
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Self Help
+                                                </a>
+                                            </div>
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Children
+                                                </a>
+                                            </div>
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Action
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productItem">
+                                <div class="productBox productSlider__box row">
+                                    <div class="productWrap productSlider__wrap col-lg-7">
+                            
+                                        <a href="book-read.html" aria-label="Open detail's Product">
+                                            <div class="productSlide productSlide16">
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="http://www.mncgramedia.id/uploads/azur_lane_02.jpeg" alt="Azur Lane Queen&#x27;s Order 02" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="./asset/images/sample/slider-sample-1.png" alt="Azur Lane Queen&#x27;s Order 02" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="./asset/images/sample/slider-sample-2.png" alt="Azur Lane Queen&#x27;s Order 02" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="productContent productSlider__content col-lg-5">
+                                        <a href="book-read.html">
+                                            <h4 class="productTitle">Azur Lane Queen&#x27;s Order 02</h4>
+                                        </a>
+                                        <div class="productAuthor__wrap">
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">TSUCHII</div>
+                                            </a>
+                                        </div>
+                                        <div class="productPrice">
+                                            Rp 45.000
+                                        </div>
+                            
+                                        <table class="productTable" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td valign="top">Size</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">11,4 x 17,2 cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Jenis Rate</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">13+</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Jumlah Halaman</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">192 halaman</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">ISBN</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">978-623-03-0282-4</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Published Date</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">17 Feb, 2021</td>
+                                            </tr>
+                                        </table>
+                                        <div class="productTag productTag--comic">
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Self Help
+                                                </a>
+                                            </div>
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Children
+                                                </a>
+                                            </div>
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Action
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productItem">
+                                <div class="productBox productSlider__box row">
+                                    <div class="productWrap productSlider__wrap col-lg-7">
+                            
+                                        <a href="book-read.html" aria-label="Open detail's Product">
+                                            <div class="productSlide productSlide17">
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="http://www.mncgramedia.id/uploads/Rev_Cover-Sword_Art_Online_01_INA.jpg" alt="SWORD ART ONLINE 001 AINCRAD" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="./asset/images/sample/slider-sample-1.png" alt="SWORD ART ONLINE 001 AINCRAD" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="./asset/images/sample/slider-sample-2.png" alt="SWORD ART ONLINE 001 AINCRAD" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="productContent productSlider__content col-lg-5">
+                                        <a href="book-read.html">
+                                            <h4 class="productTitle">SWORD ART ONLINE 001 AINCRAD</h4>
+                                        </a>
+                                        <div class="productAuthor__wrap">
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">Reki Kawahara</div>
+                                            </a>
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">Abec</div>
+                                            </a>
+                                        </div>
+                                        <div class="productPrice">
+                                            Rp 98.000
+                                        </div>
+                            
+                                        <table class="productTable" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td valign="top">Size</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">11,4 x 17,2 cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Jenis Rate</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">13+</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Jumlah Halaman</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">192 halaman</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">ISBN</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">978-623-03-0282-4</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Published Date</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">17 Feb, 2021</td>
+                                            </tr>
+                                        </table>
+                                        <div class="productTag productTag--comic">
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Self Help
+                                                </a>
+                                            </div>
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Children
+                                                </a>
+                                            </div>
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Action
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productItem">
+                                <div class="productBox productSlider__box row">
+                                    <div class="productWrap productSlider__wrap col-lg-7">
+                            
+                                        <a href="book-read.html" aria-label="Open detail's Product">
+                                            <div class="productSlide productSlide18">
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="http://www.mncgramedia.id/uploads/fate_strange_fake_2.jpg" alt="FATE/STRANGE FAKE 2" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="./asset/images/sample/slider-sample-1.png" alt="FATE/STRANGE FAKE 2" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="./asset/images/sample/slider-sample-2.png" alt="FATE/STRANGE FAKE 2" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="productContent productSlider__content col-lg-5">
+                                        <a href="book-read.html">
+                                            <h4 class="productTitle">FATE/STRANGE FAKE 2</h4>
+                                        </a>
+                                        <div class="productAuthor__wrap">
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">RYOHGO NARITA</div>
+                                            </a>
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">SIDUKI MORII</div>
+                                            </a>
+                                        </div>
+                                        <div class="productPrice">
+                                            Rp 98.000
+                                        </div>
+                            
+                                        <table class="productTable" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td valign="top">Size</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">11,4 x 17,2 cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Jenis Rate</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">13+</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Jumlah Halaman</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">192 halaman</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">ISBN</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">978-623-03-0282-4</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Published Date</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">17 Feb, 2021</td>
+                                            </tr>
+                                        </table>
+                                        <div class="productTag productTag--comic">
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Self Help
+                                                </a>
+                                            </div>
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Children
+                                                </a>
+                                            </div>
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Action
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productItem">
+                                <div class="productBox productSlider__box row">
+                                    <div class="productWrap productSlider__wrap col-lg-7">
+                            
+                                        <a href="book-read.html" aria-label="Open detail's Product">
+                                            <div class="productSlide productSlide19">
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="http://www.mncgramedia.id/uploads/RECORD_OF_RAGNAROK_03.jpg" alt="AKASHA : Record of Ragnarok 03" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="./asset/images/sample/slider-sample-1.png" alt="AKASHA : Record of Ragnarok 03" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                                <div class="productSlider__item">
+                                                    <div class="productSlider__img">
+                                                        <img src="./asset/images/sample/slider-sample-2.png" alt="AKASHA : Record of Ragnarok 03" width="200" height="297">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="productContent productSlider__content col-lg-5">
+                                        <a href="book-read.html">
+                                            <h4 class="productTitle">AKASHA : Record of Ragnarok 03</h4>
+                                        </a>
+                                        <div class="productAuthor__wrap">
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">AJICHIKA</div>
+                                            </a>
+                                            <a href="author-read.html">
+                                                <div class="productAuthor">SHINYA UMEMURA</div>
+                                            </a>
+                                        </div>
+                                        <div class="productPrice">
+                                            Rp 45.000
+                                        </div>
+                            
+                                        <table class="productTable" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td valign="top">Size</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">11,4 x 17,2 cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Jenis Rate</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">13+</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Jumlah Halaman</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">192 halaman</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">ISBN</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">978-623-03-0282-4</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">Published Date</td>
+                                                <td valign="top">:</td>
+                                                <td valign="top">17 Feb, 2021</td>
+                                            </tr>
+                                        </table>
+                                        <div class="productTag productTag--comic">
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Self Help
+                                                </a>
+                                            </div>
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Children
+                                                </a>
+                                            </div>
+                                            <div class="productTag__item">
+                                                <a href="#" class="productTag__link">
+                                                    Action
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <ul class="paging center-flex">

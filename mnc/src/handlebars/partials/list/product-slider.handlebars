@@ -1,0 +1,43 @@
+{{#each book.Best}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="productItem">
+    <div class="productBox productSlider__box row">
+        <div class="productWrap productSlider__wrap col-lg-7">
+
+            {{>list/product-img type=../type}}
+
+        </div>
+        <div class="productContent productSlider__content col-lg-5">
+            <a href="{{link}}">
+                <h4 class="productTitle">{{title}}</h4>
+            </a>
+            <div class="productAuthor__wrap">
+                {{#if authors}}
+                {{#each authors}}
+                <a href="{{authorlink}}">
+                    <div class="productAuthor">{{author}}</div>
+                </a>
+                {{/each}}
+                {{else}}
+                <a href="{{authorlink}}">
+                    <div class="productAuthor">{{author}}</div>
+                </a>
+                {{/if}}
+            </div>
+            <div class="productPrice">
+                {{price}}
+            </div>
+
+            {{>list/product-table}}
+
+            {{>list/product-tag type=../type}}
+
+        </div>
+    </div>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

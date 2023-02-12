@@ -136,7 +136,7 @@
 }
 
 //placeholder
-@mixin placeholder($size: false, $weight:false, $color: false) {
+@mixin placeholder($size: false, $weight: false, $color: false) {
 	&::-webkit-input-placeholder {
 		/* Chrome/Opera/Safari */
 		color: $color;
@@ -163,5 +163,30 @@
 		color: $color;
 		font-size: $size;
 		font-weight: $weight;
+	}
+}
+
+//scroll
+@mixin scroll($width: false, $active: false, $bg: false) {
+
+	/* Firefox */
+	& {
+		scrollbar-width: thin;
+		scrollbar-color: $active $bg;
+	}
+
+	/* Chrome, Edge, and Safari */
+	&::-webkit-scrollbar {
+		width: $width;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $bg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $active;
+		border-radius: 15px;
+		border: transparent;
 	}
 }

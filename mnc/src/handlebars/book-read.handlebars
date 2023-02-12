@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="read"}}
+
+<body>
+    {{>header/header login=true page="Home"}}
+    {{!>header/header page="Home"}}
+
+    <main role="main">
+
+        <div class="container">
+            {{>breadcrumb title="Books Categories" subtitle="Comics" sublink="#"}}
+
+            <div class="read row">
+                <div class="readImg col-lg-4">
+
+                    {{>read/read-img total=1 index_start=15 index_end=16}}
+
+                    <button class="button readPreview readPreview--comic mt2 -bPrev">Preview Book</button>
+
+                </div>
+                <div class="readContent col-lg-8">
+
+                    {{>read/read-content total=1 index_start=15 index_end=16 categ="Comics" type="comic"}}
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- s: popup preview book -->
+    {{>read/popup-preview}}
+    <!-- e: popup preview book -->
+    <!-- s: popup video -->
+    {{>read/popup-video}}
+    <!-- e: popup video -->
+    <!-- s: popup report -->
+    {{!>read/popup-report}}
+    <!-- e: popup report -->
+
+    {{>footer/footer}}
+
+    {{>js page="read"}}
+
+</body>
+
+</html>

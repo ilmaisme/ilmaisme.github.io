@@ -72,7 +72,7 @@ function viewport() {
 //update mobile menu
 function updateMenu() {
     if (viewport().width >= 1180) {
-        console.log("desktop")        
+        console.log("desktop")
         $('.menuMob').removeClass('mobile');
         hd.removeClass('mobile');
         /* move nav position in desktop */
@@ -96,9 +96,18 @@ function hideMenuMobile() {
 }
 
 //open search box
-function openSearch(){
-    $('.searchboxInput').animate({width: 'toggle'}, 700);
-    $('#search').focus();
+function openSearch(e) {
+    let s = $('#search')
+    $('.searchboxInput').animate({
+        width: 'toggle'
+    }, 700);
+    //cursor focus on search
+    s.focus();
+    jQuery(e).toggleClass('-removeSearch')
+    //remove search value
+    if (jQuery(e).hasClass('-removeSearch')) {
+        s.val('');
+    }
 }
 
 //open user menu
@@ -109,6 +118,6 @@ function openUserMenu(e) {
 }
 
 //like button
-function likeButton(e){
+function likeButton(e) {
     jQuery(e).toggleClass('active');
 }

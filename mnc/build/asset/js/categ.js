@@ -30,8 +30,28 @@ $(document).ready(function () {
         //reset genre
         $('input[name="genre"]').attr('checked', false);
         //reset range price
-        $('#prices').attr({value: 0});
+        $('#prices').attr({
+            value: 0
+        });
         rangeBullet.style.left = 0 + "px";
         rangeBullet.innerHTML = 0;
+    });
+
+    //slider product
+    $('.productSlide').slick({
+        dots: false,
+        arrows: true,
+        infinite: true,
+        accessibility: true,
+        centerMode: true,
+        centerPadding: '28px',
+        speed: 500,
+        mobileFirst: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    });
+
+    $('.productSlide .slick-arrow').click(function (e) {
+        e.preventDefault();
     });
 })
