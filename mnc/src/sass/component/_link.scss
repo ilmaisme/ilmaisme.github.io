@@ -1,7 +1,12 @@
 .link {
     &More {
-        text-transform: uppercase;
-        @include font-pack($font-base, $font-text, $font-weight-sbold, 2, $cl-red);
+        @include font-pack($font-base, $font-date, $font-weight-normal, 2, $cl-red);
+        
+        @include min-responsive($w-md) {
+            font-size: $font-text;
+            text-transform: uppercase;
+            font-weight: $font-weight-sbold;
+        }
         
         &__arrow {
             display: flex;

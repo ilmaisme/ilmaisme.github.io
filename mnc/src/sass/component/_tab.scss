@@ -12,19 +12,26 @@
 
 .list {
     &Tab {
-        margin-top: 12px;
+        margin-top: 8px;
+
+        @include min-responsive($w-md) {
+            margin-top: 12px;
+        }
 
         &__label {
-            margin-left: 8px;
-            margin-right: 8px;
+            margin-left: 4px;
+            margin-right: 4px;
             padding: 10px 14px;
             border-bottom: 3px solid transparent;
-            @include font-pack($font-base, $font-input, $font-weight-mbold, $line-base, $cl-black-lighter);
-            
+            @include font-pack($font-base, $font-date, $font-weight-mbold, $line-base, $cl-black-lighter);
+
             @include min-responsive($w-md) {
+                margin-left: 8px;
+                margin-right: 8px;
                 padding: 12px 20px;
                 margin-left: 18px;
                 margin-right: 18px;
+                font-size: $font-input;
                 line-height: 1.5;
             }
 

@@ -23,6 +23,13 @@
     &Slide {
         @extend %slick-load;
         max-height: 461px;
+        padding-left: 6px;
+        padding-right: 6px;
+
+        @include min-responsive($w-md) {
+            padding-left: 0;
+            padding-right: 0;
+        }
 
         &.slick-initialized {
             @extend %slick-loaded;
@@ -35,6 +42,19 @@
         .slick-slide {
             height: inherit;
         }
+
+        .slick-list {
+            padding-right: 60px;
+            // @include base_transition(all, .2s);
+
+            @include max-responsive($w-xm) {
+                padding-right: 130px;
+            }
+
+            @include min-responsive($w-md) {
+                padding-right: 0;
+            }
+        }
     }
 
     &Wrap {
@@ -44,11 +64,16 @@
     &Item {
         display: flex;
         margin-top: 20px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 9px;
+        padding-right: 9px;
         height: inherit;
         flex-direction: column;
         justify-content: flex-end;
+
+        @include min-responsive($w-md) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
 
         &:hover {
             .productCta {
@@ -66,13 +91,22 @@
                 display: flex;
                 align-items: center;
                 flex-direction: row;
-                padding: 12px 28px;
+                padding: 8px 20px;
+
+                @include min-responsive($w-md) {
+                    padding: 12px 28px;
+                }
             }
 
             .productImg {
                 padding: 0;
-                max-width: 100px;
-                height: 150px;
+                max-width: 80px;
+                height: 122px;
+
+                @include min-responsive($w-md) {
+                    max-width: 100px;
+                    height: 150px;
+                }
 
                 img {
                     max-height: 100%;
@@ -95,17 +129,30 @@
         height: 100%;
         background: $cl-white;
         border: 1px solid #C1C1C1;
-        border-radius: 15px;
-        @include font-pack($font-base, $font-input, $font-weight-sbold, 1.2, $cl-black);
+        border-radius: 10px;
+        @include font-pack($font-base, $font-date, $font-weight-sbold, 1.2, $cl-black);
+
+        @include min-responsive($w-md) {
+            font-size: $font-input;
+            border-radius: 15px;
+        }
     }
 
     &Content {
-        padding: 10px 10px 23px;
+        padding: 6px 6px 10px;
+
+        @include min-responsive($w-md) {
+            padding: 10px 10px 23px;
+        }
     }
 
     &Title {
         @extend .ellipsis;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 3;
+
+        @include min-responsive($w-md) {
+            -webkit-line-clamp: 2;
+        }
     }
 
     &Author {
@@ -113,7 +160,11 @@
             @extend .ellipsis;
             -webkit-line-clamp: 2;
             margin-top: 5px;
-            @include font-pack($font-base, $font-text, $font-weight-normal, $line-base, $cl-grey-medium);
+            @include font-pack($font-base, 10px, $font-weight-normal, $line-base, $cl-grey-medium);
+
+            @include min-responsive($w-md) {
+                font-size: $font-text;
+            }
 
             a {
                 display: inline-block;
@@ -136,14 +187,27 @@
     }
 
     &Price {
-        margin-top: 12px;
+        margin-top: 7px;
         @include font-pack($font-base, false, false, 2, $cl-red);
+
+        @include min-responsive($w-md) {
+            margin-top: 12px;
+        }
     }
 
     &Img {
         @extend .center-flex;
-        height: 285px;
-        padding: 15px 19px 5px;
+        height: 178px;
+        padding: 10px 10px 3px;
+
+        @include min-responsive($w-md) {
+            height: 285px;
+            padding: 15px 19px 5px;
+        }
+
+        img {
+            max-height: 100%;
+        }
     }
 
     &Cta {
@@ -176,12 +240,12 @@
                     @extend %filter-red;
                 }
             }
-            
+
             &:last-child {
                 bottom: 72px;
             }
-            
-            &.active{
+
+            &.active {
                 .icoLike {
                     @extend %filter-red;
                     @extend .icoLiked;
@@ -191,6 +255,7 @@
             .icoInline {
                 background-size: contain;
             }
+
             .icoShow {
                 width: 48px;
                 height: 48px;
@@ -200,6 +265,17 @@
                 width: 40px;
                 height: 40px;
             }
+        }
+    }
+
+    &More {
+        height: 100%;
+        padding: 10px;
+        flex-direction: column-reverse;
+        justify-content: center;
+
+        &__wrap {
+            height: 100%;
         }
     }
 }

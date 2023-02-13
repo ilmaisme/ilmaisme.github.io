@@ -1,5 +1,10 @@
 <header class="header mobile">
     <div class="headerWrap container">
+        <div class="navMob mobile-only" id="navMob">
+
+            {{>header/nav}}
+
+        </div>
         <h1>
             <a href="index.html" class="headerLink">
                 <img src="{{site.logo}}" alt="Comic MNC" class="headerLogo" width="83" height="48">
@@ -12,11 +17,6 @@
             <button class="button buttonSearch" aria-label="search" onclick="openSearch(this)">
                 <span class="icoInline icoSearch"></span>
             </button>
-            <div class="navMob mobile-only" id="navMob">
-
-                {{>header/nav}}
-                
-            </div>
             <div class="headerLogin desktop-only">
                 {{#eq login compare=true}}
                 <button class="button headerLogin__user" onclick="openUserMenu(this)">

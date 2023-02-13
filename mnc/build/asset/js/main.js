@@ -36,7 +36,7 @@ $(document).ready(function () {
 
     //toggle mobile menu
     mTg.on('click', function () {
-        resetMobileMenu()
+        // resetMobileMenu()
         isChecked = $(this).is(':checked')
 
         if (isChecked) {

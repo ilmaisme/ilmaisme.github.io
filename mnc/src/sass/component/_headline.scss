@@ -3,7 +3,11 @@
 
     &Slide {
         @extend %slick-load;
-        max-height: 450px;
+        max-height: 122px;
+
+        @include min-responsive($w-xl) {
+            max-height: 450px;
+        }
 
         &.slick-initialized {
             @extend %slick-loaded;
@@ -57,11 +61,15 @@
     &Nav {
         position: absolute;
         width: 100%;
-        bottom: 24px;
+        bottom: -18px;
+
+        @include min-responsive($w-xl) {
+            bottom: 24px;
+        }
     }
 
-    &Img{
-        img{
+    &Img {
+        img {
             width: 100%;
         }
     }

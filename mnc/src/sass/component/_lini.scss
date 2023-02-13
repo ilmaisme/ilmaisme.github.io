@@ -1,8 +1,40 @@
 .lini {
     &List {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        margin-top: 60px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        margin-right: -7px;
+        margin-left: -7px;
 
-        @include min-responsive($w-md) {
+        @include min-responsive($w-xl) {
             margin-top: 100px;
+            margin-bottom: 48px;
+            padding-bottom: 0;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+    }
+
+    &Item {
+        padding-right: 7px;
+        padding-left: 7px;
+        flex-basis: 152px;
+        flex-shrink: 0;
+
+        @include max-responsive($w-xm) {
+            flex-basis: 135px;
+        }
+
+        @include range-responsive($w-md, $w-lg) {
+            flex-basis: 200px;
+        }
+
+        @include min-responsive($w-xl) {
+            padding-right: 15px;
+            padding-left: 15px;
         }
     }
 
@@ -18,68 +50,143 @@
     }
 
     &Title {
-        display: inline-block;
-        position: relative;
-        margin-bottom: 15px;
+        @extend .center-flex;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        border-radius: 100px;
+        transform: translate(-50%, -50%);
         text-align: center;
         padding: 10px 15px;
-        border-radius: 8px;
-        opacity: 0;
         @include font-pack($font-base, $font-text, $font-weight-normal, $line-base, $cl-white);
         @include base_transition(all, .4s);
+        opacity: 0;
+        overflow: hidden;
+
+        @include min-responsive($w-xl) {
+            display: inline-block;
+            width: auto;
+            height: auto;
+            border-radius: 8px;
+            position: relative;
+            margin-bottom: 15px;
+            top: unset;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: unset;
+        }
 
         &::before {
             content: '';
+            width: 100%;
+            height: 100%;
             position: absolute;
-            bottom: 0;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border: 10px solid transparent;
-            border-bottom: 0;
-            margin-bottom: -10px;
+            transform: translate(-50%, -50%);
+            opacity: .5;
+            z-index: -1;
+
+            @include min-responsive($w-xl) {
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: unset;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                border: 10px solid transparent;
+                border-bottom: 0;
+                margin-bottom: -10px;
+                opacity: 1;
+                z-index: 1;
+            }
         }
 
         &0 {
-            background: $cl-akasha;
+            background: transparent;
+
+            @include min-responsive($w-xl) {
+                background: $cl-akasha;
+            }
 
             &::before {
-                border-top-color: $cl-akasha;
+                background: $cl-akasha;
+
+                @include min-responsive($w-xl) {
+                    background: transparent;
+                    border-top-color: $cl-akasha;
+                }
             }
         }
 
         &1 {
-            background: $cl-koloni;
+            background: transparent;
+
+            @include min-responsive($w-xl) {
+                background: $cl-koloni;
+            }
 
             &::before {
-                border-top-color: $cl-koloni;
+                background: $cl-koloni;
+
+                @include min-responsive($w-xl) {
+                    background: transparent;
+                    border-top-color: $cl-koloni;
+                }
             }
         }
 
         &2 {
-            background: $cl-funtastic;
+            background: transparent;
+
+            @include min-responsive($w-xl) {
+                background: $cl-funtastic;
+            }
 
             &::before {
-                border-top-color: $cl-funtastic;
+                background: $cl-funtastic;
+
+                @include min-responsive($w-xl) {
+                    background: transparent;
+                    border-top-color: $cl-funtastic;
+                }
             }
         }
 
         &3 {
-            background: $cl-clover;
+            background: transparent;
+
+            @include min-responsive($w-xl) {
+                background: $cl-clover;
+            }
 
             &::before {
-                border-top-color: $cl-clover;
+                background: $cl-clover;
+
+                @include min-responsive($w-xl) {
+                    background: transparent;
+                    border-top-color: $cl-clover;
+                }
             }
         }
 
         &4 {
-            background: $cl-miracle;
+            background: transparent;
+
+            @include min-responsive($w-xl) {
+                background: $cl-miracle;
+            }
 
             &::before {
-                border-top-color: $cl-miracle;
+                background: $cl-miracle;
+
+                @include min-responsive($w-xl) {
+                    background: transparent;
+                    border-top-color: $cl-miracle;
+                }
             }
         }
     }

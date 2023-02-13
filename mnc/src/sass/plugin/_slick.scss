@@ -250,10 +250,10 @@
     display: flex;
 
     button {
-        margin-left: 4px;
-        margin-right: 4px;
-        width: 10px;
-        height: 10px;
+        width: 6px;
+        height: 6px;
+        margin-left: 3px;
+        margin-right: 3px;
         background: #ABABAB;
         border: 0;
         padding: 0;
@@ -261,12 +261,23 @@
         border-radius: 10px;
         cursor: pointer;
         transition: width .4s ease;
+
+        @include min-responsive($w-xl) {
+            width: 10px;
+            height: 10px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
     }
 
     .slick-active {
         button {
-            width: 35px;
+            width: 22px;
             background: $cl-red;
+
+            @include min-responsive($w-xl) {
+                width: 35px;
+            }
         }
     }
 }

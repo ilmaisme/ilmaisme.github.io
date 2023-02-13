@@ -25,6 +25,7 @@
         background: $cl-white;
         border-top-left-radius: 24px;
         border-bottom-left-radius: 24px;
+        max-width: calc(100% - 116px);
         @include font-pack($font-base, $font-input, $font-weight-normal, 1.2, $cl-black-lighter);
         @include placeholder($font-date, $font-weight-normal, $cl-black-lighter);
 
@@ -38,13 +39,17 @@
         background: $cl-red;
         border-top-right-radius: 24px;
         border-bottom-right-radius: 24px;
-        @include font-pack($font-base, $font-input, $font-weight-mbold, $line-base, $cl-white);
+        @include font-pack($font-base, $font-text, $font-weight-mbold, $line-base, $cl-white);
+
+        @include min-responsive($w-md) {
+            font-size: $font-input;
+        }
     }
-    
-    &Msg{
+
+    &Msg {
         @include font-pack($font-base, $font-text, $font-weight-normal, $line-base, #82EF29);
 
-        .icoCheck{
+        .icoCheck {
             margin-right: 10px;
             vertical-align: text-bottom;
         }

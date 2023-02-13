@@ -1,38 +1,112 @@
 .author {
     &Month {
         background: radial-gradient(57.56% 429.76% at 50% 50%, #FFFFFF 0%, #E0E0E0 100%);
+        margin-top: 40px;
 
         @include min-responsive($w-xl) {
             margin-top: 80px;
         }
 
+        &__wrap {
+            flex-direction: column;
+
+            @include min-responsive($w-lg) {
+                flex-direction: row;
+            }
+        }
+
         &__content {
+            padding-top: 30px;
             flex: 1;
 
-            @include min-responsive($w-xl) {
+            @include min-responsive($w-lg) {
                 padding-top: 42px;
                 padding-bottom: 72px;
             }
         }
 
         &__books {
-            margin-top: 10px;
-            margin-right: -12px;
-            margin-left: -12px;
+            margin-right: -9px;
+            margin-left: -9px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding-bottom: 20px;
 
+            @include min-responsive($w-md) {
+                margin-right: -12px;
+                margin-left: -12px;
+                flex-wrap: wrap;
+                margin-top: 10px;
+            }
+            
             @include min-responsive($w-xl) {
                 padding-right: 60px;
+                padding-bottom: 0;
             }
 
             .productItem {
-                padding-left: 12px;
-                padding-right: 12px;
+                padding-left: 9px;
+                padding-right: 9px;
+                flex-shrink: 0;
+
+                @include min-responsive($w-md) {
+                    padding-left: 12px;
+                    padding-right: 12px;
+                }
             }
         }
 
         &__img {
-            @include min-responsive($w-xl) {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            max-width: 268px;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include min-responsive($w-lg) {
                 margin-left: 54px;
+            }
+            
+            @include min-responsive($w-xl) {
+                max-width: unset;
+            }
+
+            &:hover {
+                img {
+                    filter: grayscale(0);
+                }
+            }
+
+            img {
+                position: relative;
+                @include base_transition(filter, 1s);
+                z-index: 1;
+
+                @media (hover: hover) {
+                    filter: grayscale(1);
+                }
+            }
+        }
+
+        &__bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #EF233C;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            z-index: 0;
+
+            @include range-responsive($w-lg, $w-xl) {
+                top: 80%;
+            }
+
+            @include min-responsive($w-xl) {
+                width: 347px;
+                height: 347px;
             }
         }
     }

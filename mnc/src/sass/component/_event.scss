@@ -4,14 +4,19 @@
     }
 
     &List {
-        margin-left: -25px;
-        margin-right: -25px;
+        @include min-responsive($w-xlg) {
+            margin-left: -25px;
+            margin-right: -25px;
+        }
     }
 
     &Item {
         margin-top: 20px;
-        padding-left: 25px;
-        padding-right: 25px;
+
+        @include min-responsive($w-xlg) {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
     }
 
     &Box {
@@ -54,7 +59,11 @@
     &Title {
         @extend .ellipsis;
         -webkit-line-clamp: 3;
-        @include font-pack($font-base, 18px, $font-weight-bold, $line-base, $cl-black);
+        @include font-pack($font-base, $font-input, $font-weight-bold, $line-base, $cl-black);
+
+        @include min-responsive($w-md) {
+            font-size: 18px;
+        }
     }
 
     &Date {
