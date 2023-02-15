@@ -1,7 +1,12 @@
 .product {
     &Slide {
-        padding-left: 83px;
-        padding-right: 83px;
+        padding-left: 35px;
+        padding-right: 35px;
+
+        @include min-responsive($w-xl) {
+            padding-left: 83px;
+            padding-right: 83px;
+        }
 
         .slick-arrow {
             transform: translate(0px, -20px) scale(.5);
@@ -46,8 +51,16 @@
             display: block;
             position: relative;
             width: 100%;
-            height: 297px;
+            height: 250px;
             background: $cl-white;
+
+            @include range-responsive($w-md, $w-xl) {
+                height: auto;
+            }
+
+            @include min-responsive($w-xl) {
+                height: 297px;
+            }
 
             img {
                 position: absolute;
@@ -58,6 +71,20 @@
                 object-fit: cover;
                 object-position: center;
                 z-index: 1;
+
+                @include range-responsive($w-md, $w-xl) {
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    transform: none;
+                }
+
+                @include min-responsive($w-xl) {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
             }
         }
     }

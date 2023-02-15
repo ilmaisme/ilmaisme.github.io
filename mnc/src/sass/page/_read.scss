@@ -1,6 +1,9 @@
 .read {
     &Content {
+        margin-top: 30px;
+
         @include min-responsive($w-xl) {
+            margin-top: 0;
             padding-left: 25px;
         }
 
@@ -21,17 +24,39 @@
                 margin-right: 14px;
             }
         }
+
+        .buttonLike {
+            display: flex;
+            align-items: center;
+            padding: 6px 8px;
+            margin-left: 10px;
+        }
+
+        .icoLike {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px
+        }
     }
 
     &Name {
-        @include font-pack($font-base, $font-h1, $font-weight-bold, 1.2, $cl-black);
+        @include font-pack($font-base, 22px, $font-weight-bold, 1.2, $cl-black);
+
+        @include min-responsive($w-md) {
+            font-size: $font-h1;
+        }
     }
 
     &Tag {
-        margin-bottom: 8px;
+        margin-bottom: 2px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        @include font-pack($font-base, $font-h6, $font-weight-bold, $line-base, $cl-red-lighter);
+        @include font-pack($font-base, $font-input, $font-weight-bold, $line-base, $cl-red-lighter);
+
+        @include min-responsive($w-md) {
+            margin-bottom: 8px;
+            font-size: $font-h6;
+        }
     }
 
     &Price {
@@ -40,7 +65,58 @@
     }
 
     &Detail {
+        @extend .productTab;
         margin-top: 16px;
+
+        &__box {
+            padding: 15px;
+            background: #F3F3F3;
+            border-radius: 12px;
+            border-top-left-radius: 0;
+
+            .productTable {
+                margin-top: 0;
+                border-top: 9px solid transparent;
+                border-bottom: 9px solid transparent;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+
+                td:first-child {
+                    min-width: 125px;
+                }
+            }
+        }
+
+        &__list {
+            li {
+                margin-left: 5px;
+                margin-right: 5px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &__btn {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            background: #C7C7C7;
+            border: 0;
+            margin: 0;
+            @include base_transition(all, .2s);
+
+            &:hover,
+            &.active {
+                background: #F3F3F3;
+                border: 0;
+                color: $cl-black-lighter;
+            }
+        }
     }
 
     &Preview {
@@ -48,7 +124,11 @@
         padding: 15px 30px;
         background: #EFEFEF;
         border-radius: 30px;
-        @include font-pack($font-base, $font-input, $font-weight-sbold, 1.2, false);
+        @include font-pack($font-base, $font-text, $font-weight-sbold, 1.2, false);
+
+        @include min-responsive($w-md) {
+            font-size: $font-input;
+        }
 
         &:hover {
             background: #DDDDDD;
@@ -91,7 +171,7 @@
         position: relative;
 
         &__btn {
-            justify-content: space-between;
+            justify-content: center;
             position: relative;
             width: 100%;
             height: 50px;
@@ -99,7 +179,15 @@
             background: $cl-accept;
             border-radius: 30px;
             text-align: left;
-            @include font-pack($font-base, $font-input, $font-weight-sbold, 1.2, $cl-white);
+            @include font-pack($font-base, $font-text, $font-weight-sbold, 1.2, $cl-white);
+
+            @include min-responsive($w-md) {
+                font-size: $font-input;
+            }
+
+            @include min-responsive($w-xl) {
+                justify-content: space-between;
+            }
 
             &.active {
                 background: #408B06;
@@ -199,9 +287,104 @@
             overflow-y: auto;
             overscroll-behavior: none;
 
-            @include scroll(10px, #FFC6C6, $cl-white) @include min-responsive($w-xl) {
+            @include scroll(10px, #FFC6C6, $cl-white);
+
+            @include min-responsive($w-xl) {
                 padding: 45px;
             }
+        }
+    }
+
+    &Tab {
+        margin-top: 40px;
+        margin-bottom: 60px;
+
+        @include min-responsive($w-lg) {
+            margin-bottom: 80px;
+        }
+
+        ul {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding-bottom: 4px;
+
+            @include min-responsive($w-md) {
+                flex-wrap: wrap;
+                padding-bottom: 0;
+            }
+
+            li {
+                flex-basis: 40%;
+                flex-shrink: 0;
+
+                @include min-responsive($w-md) {
+                    flex-basis: auto;
+                }
+
+                &:first-child {
+                    .listTab__label {
+                        margin-left: 0;
+                    }
+                }
+
+                &:last-child {
+                    .listTab__label {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+
+        .listTab {
+
+            &__label {
+                min-width: 126px;
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 8px 15px;
+                border-bottom: 3px solid transparent;
+                @include font-pack($font-base, $font-input, $font-weight-mbold, 1.2, $cl-black-lighter);
+
+                @include min-responsive($w-md) {
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    padding: 12px 20px;
+                }
+
+                &.active,
+                &:hover {
+                    border-radius: 0;
+                    border-bottom: 3px solid $cl-black-lighter;
+                }
+            }
+        }
+
+        .tabwrapper {
+            padding-bottom: 40px;
+
+            hr {
+                margin-top: -4px;
+                border-bottom: 1px solid #DFDFDF;
+
+                @include min-responsive($w-md) {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .buttonTertiery {
+            display: inline-block;
+        }
+    }
+
+    &Review {
+        margin-top: 30px;
+        margin-bottom: 10px;
+
+        &--empty {
+            margin-top: 24px;
+            margin-bottom: 24px;
         }
     }
 }

@@ -7,10 +7,6 @@ $(document).ready(function () {
     $(".-bVideo").on("click", function () {
         $('.-pVideo').addClass('active');
     });
-    //toggle popup report comment
-    $(".-bReport").on("click", function () {
-        $('.-pReport').addClass('active');
-    });
     $(".-btnCl").on("click", function () {
         closePopup()
     });
@@ -71,4 +67,22 @@ function openTab(evt, cityName) {
             scrollLeft: msp - 10
         });
     }
+}
+
+//tab books detail
+function openTabdetails(evt, cityName) {
+    var details = document.querySelector('.readDetail');
+    var i, tablinkcontent, tabbutton;
+    tablinkcontent = details.querySelectorAll(".tabcontent");
+    for (i = 0; i < tablinkcontent.length; i++) {
+        // tablinkcontent[i].style.display = "none";
+        tablinkcontent[i].classList.remove("-active");
+    }
+    tabbutton = details.querySelectorAll(".tabbutton");
+    for (i = 0; i < tabbutton.length; i++) {
+        tabbutton[i].className = tabbutton[i].className.replace(" active", "");
+    }
+    // document.getElementById(cityName).style.display = "block";
+    document.getElementById(cityName).classList.add("-active");
+    evt.currentTarget.className += " active";
 }

@@ -67,6 +67,8 @@ body {
             @extend .ellipsis;
             -webkit-line-clamp: 1;
             flex: 1;
+            text-align: left;
+            word-break: break-all;
             margin-left: 8px;
             text-transform: uppercase;
             @include font-pack($font-base, $font-date, $font-weight-sbold, $line-base, $cl-red);
@@ -113,10 +115,14 @@ body {
         }
     }
 
-    .searchboxInput {
+    .searchbox {
         width: 100%;
-        min-width: unset;
-        margin-left: 0;
+        height: 100%;
+        position: absolute;
+        background: $cl-white;
+        top: 0;
+        padding: 8px 55px 8px 15px;
+        z-index: 99; //above .navMob
     }
 }
 

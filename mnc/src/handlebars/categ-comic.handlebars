@@ -4,8 +4,8 @@
 {{>head}}
 
 <body>
-    {{!>header/header login=true page="Home"}}
-    {{>header/header page="Home"}}
+    {{!>header/header login=true page="Books categories"}}
+    {{>header/header page="Books categories"}}
 
     <main role="main">
 
@@ -13,10 +13,12 @@
             {{>breadcrumb title="Books Categories" subtitle="Comics" sublink="#"}}
 
             <div class="list row">
-                <div class="listMenu col-lg-3">
-                    <div class="listMobile mobile-only">
+                <div class="listMenu listMobile col-xl-3" id="listmob">
+                    <div class="listMobile__top mobile-only">
                         <div class="listMobile__title text-center">Filter</div>
-                        <button class="button buttonClose -closeFilter" aria-label="close">x</button>
+                        <button class="button buttonClose -closeFilter" aria-label="close">
+                            <span class="icoInline icoClose center-flex"></span>
+                        </button>
                     </div>
                     <div class="listMobile__sort mobile-only">
 
@@ -37,11 +39,11 @@
                         <button class="button buttonFull buttonSecondary -resetFilter" type="button">Reset</button>
                     </div>
                 </div>
-                <div class="listShow col-lg-9">
-                    <div class="listFilter mobile-only">
+                <div class="listShow col-xl-9">
+                    <div class="listFilter">
                         <button class="button listFilter__btn" id="filterbtn">
                             <img src="./asset/images/icon/filter.png" alt="" width="16" height="16">
-                            <span class="ml10">Filter</span>
+                            <span>Filter</span>
                         </button>
                     </div>
                     <div class="listCaption">

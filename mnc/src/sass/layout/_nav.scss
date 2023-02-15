@@ -16,6 +16,15 @@
             .navLink,
             .navOpen {
                 color: $cl-red;
+
+                .navLink {
+                    color: $cl-black-medium;
+
+                    &:hover,
+                    &.active {
+                        color: $cl-red;
+                    }
+                }
             }
         }
 
@@ -36,8 +45,11 @@
     }
 
     &Open {
-        padding-bottom: 26px;
         cursor: pointer;
+
+        @include min-responsive($w-xl) {
+            padding-bottom: 26px;
+        }
 
         &:hover,
         &:focus {
@@ -69,7 +81,7 @@
                 background: #FFE7E7;
             }
 
-            &--red{
+            &--red {
                 color: $cl-red;
             }
         }

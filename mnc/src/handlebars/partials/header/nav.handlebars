@@ -14,16 +14,18 @@
         </div>
         <!-- s: navigation -->
         <div class="menuMob mobile">
-            <div class="headerLogin mobile-only container">
+            <div class="headerLogin mobile-only">
                 {{#eq login compare=true}}
-                <button class="button headerLogin__user" onclick="openUserMenu(this)">
+                <a href="profil.html" class="button headerLogin__user">
                     <div class="headerLogin__img">
                         <img src="./asset/images/user-login-default.png" alt="" width="24" height="24">
                     </div>
-                    <div class="headerLogin__name">Fadhil Ghazali</div>
+                    <div class="headerLogin__name">Hi, user123</div>
                     <span class="icoInline icoChevron"></span>
-                </button>
+                </a>
+
                 {{>header/user}}
+
                 {{else}}
                 <a href="login.html" class="buttonLogin">
                     <img src="./asset/images/user-default.png" alt="" width="24" height="24">
@@ -60,6 +62,6 @@
         <!-- e: navigation -->
     </div>
 
-    {{>header/searchbox}}
+    {{!>header/searchbox}}
     
 </nav>

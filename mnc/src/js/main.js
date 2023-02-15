@@ -36,7 +36,6 @@ $(document).ready(function () {
 
     //toggle mobile menu
     mTg.on('click', function () {
-        // resetMobileMenu()
         isChecked = $(this).is(':checked')
 
         if (isChecked) {
@@ -77,12 +76,14 @@ function updateMenu() {
         hd.removeClass('mobile');
         /* move nav position in desktop */
         $('.nav').appendTo('#navDesk');
+        $('.searchbox').appendTo('#navDesk nav');
     } else {
         console.log("mobile")
         $('.menuMob').addClass('mobile');
         hd.addClass('mobile');
         /* move nav position in mobile */
-        // $('.nav').appendTo('#navMob');
+        $('.nav').appendTo('#navMob');
+        $('.searchbox').appendTo('.header');
     }
 }
 
@@ -98,6 +99,7 @@ function hideMenuMobile() {
 //open search box
 function openSearch(e) {
     let s = $('#search')
+    $('.searchbox').toggle()
     $('.searchboxInput').animate({
         width: 'toggle'
     }, 700);

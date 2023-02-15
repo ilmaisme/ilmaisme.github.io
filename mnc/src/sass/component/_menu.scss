@@ -1,7 +1,7 @@
 .menu {
     position: relative;
     top: 0;
-    left: 0;
+    left: -4px;
     width: 44px;
     height: 44px;
     opacity: 1;
@@ -18,7 +18,7 @@
         position: absolute;
         cursor: pointer;
         top: 0;
-        left: 10px;
+        left: 0;
         opacity: 0;
         z-index: 2;
 
@@ -61,7 +61,7 @@
         width: 100%;
         height: 100%;
         margin-top: 0;
-        padding: 10px;
+        padding: 70px 10px 10px;
         top: 0;
         left: 0;
         background: rgba(255, 255, 255, .95);
@@ -84,6 +84,7 @@
             width: 100%;
 
             &List {
+                margin-left: 0;
                 margin-right: 0;
                 flex-direction: column;
             }
@@ -103,14 +104,11 @@
                     }
 
                     .navSub {
+                        padding-top: 10px;
 
                         .navLink,
                         .navOpen {
-                            margin-top: 2px;
-                            margin-bottom: 2px;
-                            padding-top: 10px;
-                            color: $cl-black;
-                            border: 0;
+                            color: $cl-black-medium;
 
                             &.active,
                             &:hover {
@@ -119,13 +117,40 @@
                         }
                     }
                 }
+
+                &>.navLink {
+                    display: inline-block;
+                }
+            }
+
+            &Sub {
+                .navLink {
+                    margin-top: 0;
+                }
             }
 
             &Link,
             &Open {
-                display: block;
-                padding-bottom: 10px;
-                color: $cl-black;
+                margin-top: 8px;
+            }
+        }
+
+        .headerLogin {
+            margin-left: 0;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            .buttonLogin {
+                padding: 8px;
+                border: 1px solid $cl-red;
+                border-radius: 21px;
+                justify-content: center;
+            }
+
+            .icoChevron {
+                color: $cl-black-medium;
+                transform: rotate(270deg) translate(2px, 0);
             }
         }
     }

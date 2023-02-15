@@ -29,11 +29,41 @@
 
         &.-removeSearch {
             @extend .icoClose;
-            background: $cl-grey;
+            width: 30px;
+            height: 30px;
             transition: all 0.2s ease 400ms;
+            z-index: 999; //above .mobile .searchbox
+
+            @include min-responsive($w-xl) {
+                background: $cl-black-lighter;
+            }
+
+            &:before,
+            &:after {
+                width: 20px;
+                height: 2px;
+                top: 13px;
+                left: 5px;
+                background: $cl-black;
+
+                @include min-responsive($w-xl) {
+                    height: 4px;
+                    background: $cl-white;
+                }
+            }
 
             .icoSearch {
                 background-image: none;
+            }
+        }
+    }
+
+    &Like{        
+
+        &.active {
+            .icoLike {
+                @extend %filter-red;
+                @extend .icoLiked;
             }
         }
     }
@@ -46,25 +76,63 @@
         @include font-pack($font-base, $font-input, $font-weight-sbold, $line-base, $cl-white);
         @include base_transition(all, .2s);
 
-        &:hover {
-            color: $cl-red;
-            background: $cl-white;
-            border: 1px solid $cl-red;
+        @media (hover:hover) {
+            &:hover {
+                color: $cl-red;
+                background: $cl-white;
+                border: 1px solid $cl-red;
+            }
         }
     }
 
     &Secondary {
-        padding: 15px 20px;
+        padding: 10px 24px;
         border-radius: 30px;
         background: $cl-white;
         border: 1px solid $cl-black-lighter;
         @include font-pack($font-base, $font-input, $font-weight-sbold, $line-base, $cl-black-lighter);
         @include base_transition(all, .2s);
 
-        &:hover {
-            color: $cl-white;
-            background: $cl-black-lighter;
-            border: 1px solid $cl-black-lighter;
+        @include min-responsive($w-xl) {
+            padding: 15px 20px;
+        }
+
+        @media (hover:hover) {
+            &:hover {
+                color: $cl-white;
+                background: $cl-black-lighter;
+                border: 1px solid $cl-black-lighter;
+            }
+        }
+
+        &--red {
+            border: 1px solid $cl-red;
+            color: $cl-red;
+
+            @media (hover:hover) {
+                &:hover {
+                    color: $cl-white;
+                    background: $cl-red;
+                    border: 1px solid $cl-red;
+                }
+            }
+        }
+    }
+
+    &Tertiery {
+        padding: 16px 53px;
+        border-radius: 36px;
+        background: #484848;
+        border: 1px solid #484848;
+        @include font-pack($font-base, $font-input, $font-weight-sbold, $line-base, $cl-white);
+        @include base_transition(all, .2s);
+
+        @media (hover:hover) {
+            &:hover {
+                color: #484848;
+                background: $cl-white;
+                border: 1px solid #484848;
+            }
         }
     }
 }

@@ -100,14 +100,14 @@
                         </div>
                         <!-- s: navigation -->
                         <div class="menuMob mobile">
-                            <div class="headerLogin mobile-only container">
+                            <div class="headerLogin mobile-only">
                                 <a href="login.html" class="buttonLogin">
                                     <img src="./asset/images/user-default.png" alt="" width="24" height="24">
                                     Login
                                 </a>
                             </div>
                             <ul class="navList display-flex">
-                                <li class="navItem active">
+                                <li class="navItem">
                                     <a href="index.html" class="navLink" tabindex="-1">
                                         Home
                                     </a>
@@ -118,7 +118,7 @@
                                         <span class="navDot"></span>
                                     </a>
                                 </li>
-                                <li class="navItem">
+                                <li class="navItem active">
                                     <div class="navOpen" id="navOpen" aria-haspopup="true" tabindex="0">
                                         Books categories
                                         <span class="icoInline icoChevron"></span>
@@ -174,12 +174,7 @@
                         <!-- e: navigation -->
                     </div>
                 
-                    <div class="searchbox">
-                        <form action="search.html" class="searchboxForm">
-                            <input type="text" name="" id="search" class="searchboxInput" aria-label="Search title, author"
-                                placeholder="Search title, author, or event here..." value="" inputmode="search">
-                        </form>
-                    </div>    
+                    
                 </nav>
             </div>
             <h1>
@@ -201,6 +196,13 @@
                 </div>
             </div>
         </div>
+    
+        <div class="searchbox">
+            <form action="search.html" class="searchboxForm">
+                <input type="text" name="" id="search" class="searchboxInput" aria-label="Search title, author"
+                    placeholder="Search title, author, or event here..." value="" inputmode="search">
+            </form>
+        </div>    
     </header>
     <div class="js-nav-offset"></div>
     <main role="main">
@@ -218,10 +220,12 @@
                 </div>
             </div>
             <div class="list row">
-                <div class="listMenu col-lg-3">
-                    <div class="listMobile mobile-only">
+                <div class="listMenu listMobile col-xl-3" id="listmob">
+                    <div class="listMobile__top mobile-only">
                         <div class="listMobile__title text-center">Filter</div>
-                        <button class="button buttonClose -closeFilter" aria-label="close">x</button>
+                        <button class="button buttonClose -closeFilter" aria-label="close">
+                            <span class="icoInline icoClose center-flex"></span>
+                        </button>
                     </div>
                     <div class="listMobile__sort mobile-only">
 
@@ -359,8 +363,8 @@
                         <button class="button buttonFull buttonSecondary -resetFilter" type="button">Reset</button>
                     </div>
                 </div>
-                <div class="listShow col-lg-9">
-                    <div class="listFilter mobile-only">
+                <div class="listShow col-xl-9">
+                    <div class="listFilter">
                         <button class="button listFilter__btn" id="filterbtn">
                             <img src="./asset/images/icon/filter.png" alt="" width="16" height="16">
                             <span class="ml10">Filter</span>

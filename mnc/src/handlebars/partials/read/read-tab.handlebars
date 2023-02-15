@@ -1,0 +1,86 @@
+<div class="readTab listTab tab">
+    <ul class="listTab__list readTab__list display-flex align-center container">
+        <li>
+            <button class="button listTab__label readTab__btn tabbutton active" onclick="openTab(event, 'review')">
+                Review
+            </button>
+        </li>
+        <li>
+            <button class="button listTab__label readTab__btn tabbutton" onclick="openTab(event, 'author')">
+                About Author
+            </button>
+        </li>
+    </ul>
+    <div class="tabwrapper container">
+        <hr>
+        <div class="tabcontent readTab__content active" id="review">
+            {{#if empty}}
+            <div class="readReview readReview--empty">
+                <p>Oh no, you are not logged in. Please login to leave a review</p>
+                <a class="button buttonTertiery" href="login.html">Login</a>
+            </div>
+            {{else}}
+            <div class="readReview">
+                <div class="reviewList">
+                    <div class="reviewItem">
+                        <div class="reviewAva display-flex">
+                            <div class="reviewAva__img">
+                                <img src="https://api.lorem.space/image/face?w=50&amp;h=50&amp;hash=A89D0DE6" alt=""
+                                    width="50" height="50">
+                            </div>
+                            <div class="reviewUser__wrap">
+                                <div class="reviewUser">Fulan bin Fulan</div>
+                                <div class="reviewTime">1 hari yang lalu</div>
+                                <div class="reviewContent">
+                                    <div class="reviewTxt">
+                                        <p>Tellus vitae blandit quam urna urna. Tempor pellentesque nec a,
+                                            scelerisque. Elit in
+                                            lorem eget vitae.
+                                            Ullamcorper faucibus urna ipsum ipsum nisi, malesuada. Vel eget placerat
+                                            quis enim
+                                            fames.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviewItem">
+                        <div class="reviewAva display-flex">
+                            <div class="reviewAva__img">
+                                <!--<span class="icon icon-user"></span>-->
+                                <img src="https://api.lorem.space/image/face?w=50&amp;h=50&amp;hash=225E6693" alt=""
+                                    width="50" height="50">
+                            </div>
+                            <div class="reviewUser__wrap">
+                                <div class="reviewUser">Fulan bin Fulan</div>
+                                <div class="reviewTime">1 hari yang lalu</div>
+                                <div class="reviewContent">
+                                    <div class="reviewTxt">
+                                        <p>Tellus vitae blandit quam urna urna. Tempor pellentesque nec a,
+                                            scelerisque. Elit in
+                                            lorem eget vitae.
+                                            Ullamcorper faucibus urna ipsum ipsum nisi, malesuada. Vel eget placerat
+                                            quis enim
+                                            fames.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form action="#">
+                    <textarea class="formArea mt1" name="" id="" cols="32" rows="7" placeholder="Tulis Komentar"
+                        aria-label="Write Comment"></textarea>
+                    <div class="display-flex mt2">
+                        <button class="button buttonPrimary" type="submit">Tulis Review</button>
+                        <button class="button buttonTrans ml1" type="submit">Batal</button>
+                    </div>
+                </form>
+            </div>
+            {{/if}}
+        </div>
+        <div class="tabcontent readTab__content" id="author">
+            {{!>read/author-book}}
+        </div>
+    </div>
+</div>

@@ -102,14 +102,15 @@
                         </div>
                         <!-- s: navigation -->
                         <div class="menuMob mobile">
-                            <div class="headerLogin mobile-only container">
-                                <button class="button headerLogin__user" onclick="openUserMenu(this)">
+                            <div class="headerLogin mobile-only">
+                                <a href="profil.html" class="button headerLogin__user">
                                     <div class="headerLogin__img">
                                         <img src="./asset/images/user-login-default.png" alt="" width="24" height="24">
                                     </div>
-                                    <div class="headerLogin__name">Fadhil Ghazali</div>
+                                    <div class="headerLogin__name">Hi, user123</div>
                                     <span class="icoInline icoChevron"></span>
-                                </button>
+                                </a>
+                
                                 <div class="headerDrop navSub">
                                     <a href="profile.html" class="navLink">
                                         User Profile
@@ -124,7 +125,8 @@
                                         Log Out
                                         <span class="icoInline icoLogout"></span>
                                     </a>
-                                </div>            </div>
+                                </div>
+                            </div>
                             <ul class="navList display-flex">
                                 <li class="navItem active">
                                     <a href="index.html" class="navLink" tabindex="-1">
@@ -193,12 +195,7 @@
                         <!-- e: navigation -->
                     </div>
                 
-                    <div class="searchbox">
-                        <form action="search.html" class="searchboxForm">
-                            <input type="text" name="" id="search" class="searchboxInput" aria-label="Search title, author"
-                                placeholder="Search title, author, or event here..." value="" inputmode="search">
-                        </form>
-                    </div>    
+                    
                 </nav>
             </div>
             <h1>
@@ -239,6 +236,13 @@
                 </div>
             </div>
         </div>
+    
+        <div class="searchbox">
+            <form action="search.html" class="searchboxForm">
+                <input type="text" name="" id="search" class="searchboxInput" aria-label="Search title, author"
+                    placeholder="Search title, author, or event here..." value="" inputmode="search">
+            </form>
+        </div>    
     </header>
     <div class="js-nav-offset"></div>
     <main role="main">
@@ -282,6 +286,66 @@
                         </tr>
                     </table>
                     <div class="readPrice">Rp 40.000</div>
+                    
+                    <!-- s: read details tab -->
+                    <div class="readDetail listTab tab">
+                        <ul class="listTab__list readDetail__list display-flex align-center">
+                            <li>
+                                <button class="button listTab__label readDetail__btn tabbutton active"
+                                    onclick="openTabdetails(event, 'summary')">
+                                    Summary
+                                </button>
+                            </li>
+                            <li>
+                                <button class="button listTab__label readDetail__btn tabbutton" onclick="openTabdetails(event, 'details')">
+                                    Books Detail
+                                </button>
+                            </li>
+                            <li>
+                                <button aria-label="Like Product" class="button buttonLike" onclick="likeButton(this)">
+                                    <span class="icoInline icoLike"></span>Add to Wishlist
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tabwrapper">
+                            <div class="tabcontent readDetail__content -active" id="summary">
+                                <div class="readDetail__box">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Enim habitant enim ullamcorper quis urna semper pulvinar. Fames mollis maecenas sodales augue vulputate faucibus ut at. Orci malesuada enim vitae fermentum. Vel sed nullam sed molestie venenatis lacus sed tincidunt id. In urna pharetra nec est viverra aliquam lectus. Volutpat elit mauris laoreet lobortis porta aliquam sociis in mattis. Porta eget dui scelerisque ut mattis neque elit.</p><p>Lorem ipsum dolor sit amet consectetur. Enim habitant enim ullamcorper quis urna semper pulvinar. Fames mollis maecenas sodales augue vulputate faucibus ut at. Orci malesuada enim vitae fermentum. Vel sed nullam sed molestie venenatis lacus sed tincidunt id. In urna pharetra nec est viverra aliquam lectus. Volutpat elit mauris laoreet lobortis porta aliquam sociis in mattis. Porta eget dui scelerisque ut mattis neque elit.</p>
+                                </div>
+                            </div>
+                            <div class="tabcontent readDetail__content" id="details">
+                                <div class="readDetail__box">
+                                    <table class="productTable" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td valign="top">ISBN</td>
+                                            <td valign="top">:</td>
+                                            <td valign="top">978-623-03-0282-4</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top">Jumlah Halaman</td>
+                                            <td valign="top">:</td>
+                                            <td valign="top">192 halaman</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top">Size</td>
+                                            <td valign="top">:</td>
+                                            <td valign="top">11,4 x 17,2 cm</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top">Published Date</td>
+                                            <td valign="top">:</td>
+                                            <td valign="top">17 Feb, 2021</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top">Format</td>
+                                            <td valign="top">:</td>
+                                            <td valign="top">Soft cover</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- e: read details tab -->
                     
                     <div class="readCta row">
                         <div class="readCta__item col-12 col-lg-5">
@@ -332,9 +396,192 @@
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
+
+            <!-- s: read tab -->
+            <div class="readTab listTab tab">
+                <ul class="listTab__list readTab__list display-flex align-center container">
+                    <li>
+                        <button class="button listTab__label readTab__btn tabbutton active" onclick="openTab(event, 'review')">
+                            Review
+                        </button>
+                    </li>
+                    <li>
+                        <button class="button listTab__label readTab__btn tabbutton" onclick="openTab(event, 'author')">
+                            About Author
+                        </button>
+                    </li>
+                </ul>
+                <div class="tabwrapper container">
+                    <hr>
+                    <div class="tabcontent readTab__content active" id="review">
+                        <div class="readReview readReview--empty">
+                            <p>Oh no, you are not logged in. Please login to leave a review</p>
+                            <a class="button buttonTertiery" href="login.html">Login</a>
+                        </div>
+                    </div>
+                    <div class="tabcontent readTab__content" id="author">
+                    </div>
+                </div>
+            </div>            <!-- e: read tab -->
+
+            <div class="related">
+                <h2 class="titleCaption">Related Book</h2>
+                <div class="row">
+
+                <div class="productItem col">
+                    <div class="productBox">
+                        <div class="productWrap">
+                            <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
+                                <img src="http://www.mncgramedia.id/uploads/MY_HERO_ACADEMIA_16.jpg" alt="My Hero Academia Vol.16" width="176" height="265" loading="lazy">
+                            </a>
+                            <div class="productCta display-flex">
+                                <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
+                                    <span class="icoInline icoShow"></span>
+                                </a>
+                                <button aria-label="Like Product" class="button buttonLike productCta__item" onclick="likeButton(this)">
+                                    <span class="icoInline icoLike"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="productContent">
+                            <a href="book-read.html">
+                                <h4 class="productTitle">My Hero Academia Vol.16</h4>
+                            </a>
+                            <div class="productAuthor__wrap">
+                                <a href="author-read.html">
+                                    <div class="productAuthor">Kohei Horikoshi</div>
+                                </a>
+                            </div>
+                            <div class="productPrice">
+                                Rp 40.000
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="productItem col">
+                    <div class="productBox">
+                        <div class="productWrap">
+                            <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
+                                <img src="http://www.mncgramedia.id/uploads/compress_artgirl.jpeg" alt="Art Girl Setsuko Negishi Dan Kawan-kawannya" width="176" height="265" loading="lazy">
+                            </a>
+                            <div class="productCta display-flex">
+                                <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
+                                    <span class="icoInline icoShow"></span>
+                                </a>
+                                <button aria-label="Like Product" class="button buttonLike productCta__item" onclick="likeButton(this)">
+                                    <span class="icoInline icoLike"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="productContent">
+                            <a href="book-read.html">
+                                <h4 class="productTitle">Art Girl Setsuko Negishi Dan Kawan-kawannya</h4>
+                            </a>
+                            <div class="productAuthor__wrap">
+                                <a href="author-read.html">
+                                    <div class="productAuthor">Mitsuru Hanagata</div>
+                                </a>
+                            </div>
+                            <div class="productPrice">
+                                Rp 92.000
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="productItem col">
+                    <div class="productBox">
+                        <div class="productWrap">
+                            <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
+                                <img src="http://www.mncgramedia.id/uploads/ITO_JUNJI_-_BEST_SELECTIONS.jpg" alt="Ito Junji Best Of The Best Short Story Collection" width="176" height="265" loading="lazy">
+                            </a>
+                            <div class="productCta display-flex">
+                                <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
+                                    <span class="icoInline icoShow"></span>
+                                </a>
+                                <button aria-label="Like Product" class="button buttonLike productCta__item" onclick="likeButton(this)">
+                                    <span class="icoInline icoLike"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="productContent">
+                            <a href="book-read.html">
+                                <h4 class="productTitle">Ito Junji Best Of The Best Short Story Collection</h4>
+                            </a>
+                            <div class="productAuthor__wrap">
+                                <a href="author-read.html">
+                                    <div class="productAuthor">Junji Ito</div>
+                                </a>
+                            </div>
+                            <div class="productPrice">
+                                Rp 68.000
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="productItem col">
+                    <div class="productBox">
+                        <div class="productWrap">
+                            <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
+                                <img src="http://www.mncgramedia.id/uploads/SECOND_SUMMER_NEVER_SEE_YOU_AGAIN_02.jpg" alt="Second Summer, Never See You Again 02 - tamat" width="176" height="265" loading="lazy">
+                            </a>
+                            <div class="productCta display-flex">
+                                <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
+                                    <span class="icoInline icoShow"></span>
+                                </a>
+                                <button aria-label="Like Product" class="button buttonLike productCta__item" onclick="likeButton(this)">
+                                    <span class="icoInline icoLike"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="productContent">
+                            <a href="book-read.html">
+                                <h4 class="productTitle">Second Summer, Never See You Again 02 - tamat</h4>
+                            </a>
+                            <div class="productAuthor__wrap">
+                                <a href="author-read.html">
+                                    <div class="productAuthor">Hirotaka Akagi</div>
+                                </a>
+                                <a href="author-read.html">
+                                    <div class="productAuthor">Motomi Minamoto</div>
+                                </a>
+                            </div>
+                            <div class="productPrice">
+                                Rp 28.000
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="productItem col">
+                    <div class="productBox">
+                        <div class="productWrap">
+                            <a href="book-read.html" aria-label="Open detail's Product" class="productImg">
+                                <img src="http://www.mncgramedia.id/uploads/menjadi_pelajar_islami_abad_211.jpeg" alt="Menjadi Pelajar Islami Abad 21: Prestasi dalam Genggaman, Surga Kamu Dapatkan. Ubah Cara Belajarmu yang Membosankan" width="176" height="265" loading="lazy">
+                            </a>
+                            <div class="productCta display-flex">
+                                <a href="book-read.html" aria-label="Open detail's Product" class="productCta__item">
+                                    <span class="icoInline icoShow"></span>
+                                </a>
+                                <button aria-label="Like Product" class="button buttonLike productCta__item" onclick="likeButton(this)">
+                                    <span class="icoInline icoLike"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="productContent">
+                            <a href="book-read.html">
+                                <h4 class="productTitle">Menjadi Pelajar Islami Abad 21: Prestasi dalam Genggaman, Surga Kamu Dapatkan. Ubah Cara Belajarmu yang Membosankan</h4>
+                            </a>
+                            <div class="productAuthor__wrap">
+                                <a href="author-read.html">
+                                    <div class="productAuthor">Mahestra Rastra Andaara, S.Pd.</div>
+                                </a>
+                            </div>
+                            <div class="productPrice">
+                                Rp 72.000
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                </div>
+            </div>
+
         </div>
 
     </main>
@@ -371,8 +618,6 @@
             </div>
         </div>
     </div>    <!-- e: popup video -->
-    <!-- s: popup report -->
-    <!-- e: popup report -->
 
     <footer class="footer">
     
