@@ -1,0 +1,36 @@
+{{#each author}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="author">
+    <div class="authorWrap display-flex">
+        <div class="authorImg">
+            <img src="{{propic}}" alt="{{name}}" loading="lazy" width="451" height="500">
+        </div>
+        <div class="authorContent">
+            <h3 class="titleText">{{name}}</h3>
+            <p class="titleParagraph">{{desc}}</p>
+            <a href="{{link}}" class="linkMore linkMore__arrow">
+                see more
+                <span class="icoBase icoInline icoArrow"></span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="titleWrap display-flex">
+    <h2 class="titleCaption titleCaption--up">Books from Author</h2>
+    <a href="author-read.html" class="linkMore linkMore__arrow">
+        see more
+        <span class="icoBase icoInline icoArrow"></span>
+    </a>
+</div>
+<div class="row">
+
+    {{> component/product-list type="authorbooks" total=5 index_start=0 index_end=5 col=true}}
+
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

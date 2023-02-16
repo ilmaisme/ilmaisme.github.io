@@ -1,0 +1,62 @@
+.review {
+    &Item {
+        margin-bottom: 20px;
+    }
+
+    &User {
+        flex: 1;
+
+        &__img {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+            border-radius: 33px;
+            background: $cl-white;
+            overflow: hidden;
+
+            img {
+                @extend %template-img;
+            }
+        }
+    }
+
+    &Time {
+        margin-top: 3px;
+        @include font-pack(false, $font-date, $font-weight-normal, 1.6, $cl-grey-medium);
+    }
+
+    &Txt {
+        margin-top: 12px;
+    }
+
+    &Img {
+        margin-top: 12px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 18px;
+
+        img {
+            display: inline-block;
+        }
+    }
+
+    &Form {
+        margin-top: 30px;
+        padding: 20px 25px;
+        border: 1px solid #D3D3D3;
+        border-radius: 15px;
+
+        &__cta{
+            display: flex;
+            margin-top: 32px;
+            gap: 18px;
+        }
+
+        .formArea{
+            margin-top: 12px;
+        }
+    }
+}

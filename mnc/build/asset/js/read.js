@@ -34,14 +34,19 @@ $(document).ready(function () {
         $('#buy').siblings('button').removeClass('active')
     });
 
-    //more synopsis
+    //more summary
     $('.-more').click(function () {
-        $('.readSinopsis__content').toggleClass('show');
-        if ($(this).html() == 'Baca Selanjutnya<span class="icon-chevron"></span>') {
-            $(this).html('Baca Lebih Sedikit<span class="icon-chevron"></span>')
+        $('.readMore__content').toggleClass('show');
+        if ($(this).html() == 'Read More<span class="icoInline icoChevron"></span>') {
+            $(this).html('Read Less<span class="icoInline icoChevron"></span>')
         } else {
-            $(this).html('Baca Selanjutnya<span class="icon-chevron"></span>')
+            $(this).html('Read More<span class="icoInline icoChevron"></span>')
         }
+    });
+
+    //share to socmed
+    $('.-share').on('click', function () {
+        $(this).parent().find($('.readShare')).toggle();
     });
 });
 

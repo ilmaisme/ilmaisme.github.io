@@ -12,16 +12,25 @@
             </button>
         </li>
         <li>
-            <button aria-label="Like Product" class="button buttonLike" onclick="likeButton(this)">
-                <span class="icoInline icoLike"></span>Add to Wishlist
+            <button aria-label="Like Product" class="button buttonLike readDetail__cta" onclick="likeButton(this)">
+                <span class="icoInline icoLike readDetail__ico"></span>Add to Wishlist
             </button>
+        </li>
+        <li>
+            <button aria-label="Like Product" class="button readDetail__cta -share">
+                <span class="icoInline icoShare readDetail__ico"></span>Share
+            </button>
+            <div class="readShare">
+                {{>share}}
+            </div>
         </li>
     </ul>
     <div class="tabwrapper">
         <div class="tabcontent readDetail__content -active" id="summary">
-            <div class="readDetail__box">
+            <div class="readDetail__box readMore__content">
                 {{{read.content}}}
             </div>
+            <button class="button readMore -more">Read More<span class="icoInline icoChevron"></span></button>
         </div>
         <div class="tabcontent readDetail__content" id="details">
             <div class="readDetail__box">

@@ -24,19 +24,6 @@
                 margin-right: 14px;
             }
         }
-
-        .buttonLike {
-            display: flex;
-            align-items: center;
-            padding: 6px 8px;
-            margin-left: 10px;
-        }
-
-        .icoLike {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px
-        }
     }
 
     &Name {
@@ -66,6 +53,7 @@
 
     &Detail {
         @extend .productTab;
+        position: relative;
         margin-top: 16px;
 
         &__box {
@@ -89,6 +77,7 @@
 
         &__list {
             li {
+                position: relative;
                 margin-left: 5px;
                 margin-right: 5px;
 
@@ -115,6 +104,61 @@
                 background: #F3F3F3;
                 border: 0;
                 color: $cl-black-lighter;
+            }
+        }
+
+        &__cta {
+            display: flex;
+            align-items: center;
+            padding: 6px 8px;
+            margin-left: 10px;
+        }
+
+        &__ico {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px
+        }
+    }
+
+    &More {
+        position: absolute;
+        padding: 8px 12px;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include font-pack(false, $font-text, $font-weight-sbold, false, $cl-red);
+
+        &__content {
+            padding-bottom: 20px;
+            height: 200px;
+            overflow: hidden;
+            @include base_transition(height, .4s);
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 160px;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 66.67%);
+            }
+
+            &.show {
+                height: auto;
+
+                &:after {
+                    content: none;
+                }
+
+                &~.readMore {
+                    bottom: 0;
+
+                    .icoChevron {
+                        transform: rotate(180deg);
+                    }
+                }
             }
         }
     }
@@ -373,18 +417,48 @@
             }
         }
 
+        .author {
+            &Img {
+                position: relative;
+                max-width: 180px;
+                min-width: 150px;
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &Wrap {
+                align-items: center;
+                margin-top: 24px;
+                margin-bottom: 30px;
+            }
+        }
+
         .buttonTertiery {
             display: inline-block;
         }
     }
 
-    &Review {
-        margin-top: 30px;
-        margin-bottom: 10px;
+    &Share {
+        display: none;
 
-        &--empty {
-            margin-top: 24px;
-            margin-bottom: 24px;
+        ul {
+            position: absolute;
+            bottom: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: $cl-white;
+            padding: 10px 15px;
+            margin-bottom: 12px;
+            box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
         }
+    }
+
+    &Review {
+        margin-top: 24px;
+        margin-bottom: 10px;
     }
 }

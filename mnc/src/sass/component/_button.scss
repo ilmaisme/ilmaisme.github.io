@@ -58,7 +58,7 @@
         }
     }
 
-    &Like{        
+    &Like {
 
         &.active {
             .icoLike {
@@ -69,12 +69,16 @@
     }
 
     &Primary {
-        padding: 15px 20px;
+        padding: 10px 24px;
         border-radius: 30px;
         background: $cl-red;
         border: 1px solid $cl-red;
         @include font-pack($font-base, $font-input, $font-weight-sbold, $line-base, $cl-white);
         @include base_transition(all, .2s);
+
+        @include min-responsive($w-xl) {
+            padding: 15px 45px;
+        }
 
         @media (hover:hover) {
             &:hover {
@@ -94,7 +98,7 @@
         @include base_transition(all, .2s);
 
         @include min-responsive($w-xl) {
-            padding: 15px 20px;
+            padding: 15px 45px;
         }
 
         @media (hover:hover) {

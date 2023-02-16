@@ -1,0 +1,30 @@
+.share {
+    &Item {
+        margin-left: 6px;
+        margin-right: 6px;
+        line-height: 0;
+    }
+
+    &Link {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $cl-white;
+        @include base_transition(all, .2s);
+
+        &:hover {
+            background: $cl-red;
+
+            .icoInline {
+                @extend %filter-white;
+            }
+        }
+    }
+
+    .icoInline {
+        width: 40px;
+        height: 40px;
+        background-size: contain;
+    }
+}

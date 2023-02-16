@@ -16,9 +16,11 @@ $(document).ready(function () {
     if (viewport().width >= 1180) {
         // console.log("desktop")        
         var numleft = 220;
+        $('#listmob').removeClass('listMobile');
     } else {
         // console.log("mobile")
         var numleft = 258;
+        $('#listmob').addClass('listMobile');
     }
 
     //reset filter on pagelist

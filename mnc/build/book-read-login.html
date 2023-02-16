@@ -103,10 +103,29 @@
                         <!-- s: navigation -->
                         <div class="menuMob mobile">
                             <div class="headerLogin mobile-only">
-                                <a href="login.html" class="buttonLogin">
-                                    <img src="./asset/images/user-default.png" alt="" width="24" height="24">
-                                    Login
+                                <a href="profil.html" class="button headerLogin__user">
+                                    <div class="headerLogin__img">
+                                        <img src="./asset/images/user-login-default.png" alt="" width="24" height="24">
+                                    </div>
+                                    <div class="headerLogin__name">Hi, user123</div>
+                                    <span class="icoInline icoChevron"></span>
                                 </a>
+                
+                                <div class="headerDrop navSub">
+                                    <a href="profile.html" class="navLink">
+                                        User Profile
+                                    </a>
+                                    <a href="profile-wishlist.html" class="navLink">
+                                        My Wishlist
+                                    </a>
+                                    <a href="profile-review.html" class="navLink">
+                                        My Review
+                                    </a>
+                                    <a href="#" class="navLink navLink--red">
+                                        Log Out
+                                        <span class="icoInline icoLogout"></span>
+                                    </a>
+                                </div>
                             </div>
                             <ul class="navList display-flex">
                                 <li class="navItem active">
@@ -191,10 +210,29 @@
                     <span class="icoInline icoSearch"></span>
                 </button>
                 <div class="headerLogin desktop-only">
-                    <a href="login.html" class="buttonLogin">
-                        <img src="./asset/images/user-default.png" alt="" width="24" height="24">
-                        Login
-                    </a>
+                    <button class="button headerLogin__user" onclick="openUserMenu(this)">
+                        <div class="headerLogin__img">
+                            <img src="./asset/images/user-login-default.png" alt="" width="24" height="24">
+                        </div>
+                        <div class="headerLogin__name">Hi, user123</div>
+                        <span class="icoChevron"></span>
+                    </button>
+    
+                    <div class="headerDrop navSub">
+                        <a href="profile.html" class="navLink">
+                            User Profile
+                        </a>
+                        <a href="profile-wishlist.html" class="navLink">
+                            My Wishlist
+                        </a>
+                        <a href="profile-review.html" class="navLink">
+                            My Review
+                        </a>
+                        <a href="#" class="navLink navLink--red">
+                            Log Out
+                            <span class="icoInline icoLogout"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -407,9 +445,66 @@
                 <div class="tabwrapper container">
                     <hr>
                     <div class="tabcontent readTab__content active" id="review">
+            
                         <div class="readReview">
-                            <p>Oh no, you are not logged in. Please login to leave a review</p>
-                            <a class="button buttonTertiery" href="login.html">Login</a>
+                            <div class="reviewList">
+                                <div class="reviewItem">
+                                    <div class="reviewUser__wrap display-flex">
+                                        <div class="reviewUser__img">
+                                            <img src="https://picsum.photos/id/64/40/" alt="" width="40" height="40">
+                                        </div>
+                                        <div class="reviewUser">
+                                            <div class="reviewUser__name">Astrid Putri</div>
+                                            <div class="reviewTime">2 Days Ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="reviewTxt">
+                                        <p>Worth it!</p>
+                                    </div>
+                                </div>
+                                <div class="reviewItem">
+                                    <div class="reviewUser__wrap display-flex">
+                                        <div class="reviewUser__img">
+                                            <img src="./asset/images/user.png" alt="" width="40" height="40">
+                                        </div>
+                                        <div class="reviewUser">
+                                            <div class="reviewUser__name">Ivan Sugandi</div>
+                                            <div class="reviewTime">12 Days Ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="reviewTxt">
+                                        <p>Karasuno continues to grow with the guardian deity finally back on the court and his partner showing up behind the scenes. Its probably no surprise that they manage to get him to finally commit to the team, leading us to having the fully assembled Karasuno. The best part of this volume is that we get a full game with the all the Karasuno key players, all that&#x27;s needed now though is a coach and a high level opponent.V3 managed to be just as strong as the previous ones and this time not driven on the freak duo having issues or just random spats, however true growth and development and growing more together and united as a team was here.The bonus story in this volume is great and made me wish the shirts were actually sold, some of them are hilarious (best reaction was easily Tsukishima and Kageyama). Character profiles continue to be a great way to learn the characters names and personalities, it adds more life into characters who had limited visibility.</p>
+                                    </div>
+                                </div>
+                                <div class="reviewItem">
+                                    <div class="reviewUser__wrap display-flex">
+                                        <div class="reviewUser__img">
+                                            <img src="https://picsum.photos/id/91/40/" alt="" width="40" height="40">
+                                        </div>
+                                        <div class="reviewUser">
+                                            <div class="reviewUser__name">Reynaldo titano</div>
+                                            <div class="reviewTime">1 Month Ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="reviewTxt">
+                                        <p>Came in great condition. Love the content</p>
+                                    </div>
+                                    <div class="reviewImg">
+                                        <img src="./asset/images/sample/upload-1.png" alt="">
+                                        <img src="./asset/images/sample/upload-2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <form action="#" class="reviewForm">
+                                <div class="formMisc">Leave a review for this product</div>
+                                <textarea class="formArea" name="" id="" rows="5" placeholder="Write a comment here"
+                                    aria-label="Write Comment"></textarea>
+                                <div class="formMisc mt2">Share photos of the products you receive</div>
+                                <div class="reviewForm__cta">
+                                    <button class="button buttonPrimary" type="submit">Submit</button>
+                                    <button class="button buttonSecondary" type="button">Cancel</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="tabcontent readTab__content" id="author">

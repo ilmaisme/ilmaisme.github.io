@@ -1,0 +1,43 @@
+<div class="readReview">
+    <div class="reviewList">
+        {{#each review}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="reviewItem">
+            <div class="reviewUser__wrap display-flex">
+                <div class="reviewUser__img">
+                    <img src="{{propic}}" alt="" width="40" height="40">
+                </div>
+                <div class="reviewUser">
+                    <div class="reviewUser__name">{{user}}</div>
+                    <div class="reviewTime">{{time}}</div>
+                </div>
+            </div>
+            <div class="reviewTxt">
+                <p>{{content}}</p>
+            </div>
+            {{#if images}}
+            <div class="reviewImg">
+                {{#each images}}
+                <img src="{{img}}" alt="{{title}}">
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+    <form action="#" class="reviewForm">
+        <div class="formMisc">Leave a review for this product</div>
+        <textarea class="formArea" name="" id="" rows="5" placeholder="Write a comment here"
+            aria-label="Write Comment"></textarea>
+        <div class="formMisc mt2">Share photos of the products you receive</div>
+        <div class="reviewForm__cta">
+            <button class="button buttonPrimary" type="submit">Submit</button>
+            <button class="button buttonSecondary" type="button">Cancel</button>
+        </div>
+    </form>
+</div>

@@ -31,3 +31,14 @@
 {{/gte}}
 {{/each}}
 {{/eq}}
+{{#eq type compare="authorbooks"}}
+{{#each book}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+{{>component/product-item col=../col}}
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}
+{{/eq}}
