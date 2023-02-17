@@ -123,3 +123,11 @@ function openUserMenu(e) {
 function likeButton(e) {
     jQuery(e).toggleClass('active');
 }
+
+//on submit newsletter
+$(".newsletterForm").submit(function (e) {
+    $(".newsletterMsg").html('<span class="icoInline icoCheck"></span><span>Thank you for subscribe</span>')
+    e.preventDefault()
+    // error message example
+    // $(".newsletterMsg").html('<span class="icoInline icoClose"></span><span>Please double check your email</span>')
+});

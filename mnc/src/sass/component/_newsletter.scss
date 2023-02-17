@@ -49,9 +49,26 @@
     &Msg {
         @include font-pack($font-base, $font-text, $font-weight-normal, $line-base, #82EF29);
 
-        .icoCheck {
+        .icoInline {
             margin-right: 10px;
+        }
+
+        .icoCheck {
             vertical-align: text-bottom;
+        }
+
+        .icoClose {
+            background: $cl-red;
+            vertical-align: middle;
+            
+            &::before,
+            &::after {
+                background: $cl-white;
+            }
+
+            &~span{
+                color: $cl-white;
+            }
         }
     }
 }

@@ -15,24 +15,34 @@ $(document).ready(function () {
     })
     $('.popupBox').on('click', function (e) {
         e.stopPropagation();
+        //uncheck button buy
+        closeButtonBuy()
     })
 
     function closePopup() {
         $('.popup').removeClass('active');
     }
 
-    //button buy from
-    $('#buy').on('click', function (e) {
+    //button buy
+    $('.readBuyToggle').on('click', function (e) {
         e.stopPropagation();
         $(this).siblings('button').toggleClass('active')
     });
-    $('#buy').hover(function () {
+    $('.readBuyToggle').hover(function () {
         $(this).siblings('button').toggleClass('hover')
     });
     $(document).on("click", function () {
-        $('#buy').prop('checked', false);
-        $('#buy').siblings('button').removeClass('active')
+        //uncheck button buy
+        closeButtonBuy()
+        
+        //hide share to socmed
+        $('.readShare').hide()
     });
+
+    function closeButtonBuy(){        
+        $('.readBuyToggle').prop('checked', false);
+        $('.readBuyToggle').siblings('button').removeClass('active')
+    }
 
     //more summary
     $('.-more').click(function () {
@@ -45,7 +55,8 @@ $(document).ready(function () {
     });
 
     //share to socmed
-    $('.-share').on('click', function () {
+    $('.-share').on('click', function (e) {
+        e.stopPropagation();
         $(this).parent().find($('.readShare')).toggle();
     });
 });

@@ -9,7 +9,7 @@
         margin-left: -7px;
 
         @include min-responsive($w-xl) {
-            margin-top: 100px;
+            margin-top: 50px;
             margin-bottom: 48px;
             padding-bottom: 0;
             flex-wrap: wrap;
@@ -39,14 +39,36 @@
     }
 
     &Link {
+        display: inline-block;
         position: relative;
 
-        &:hover,
-        &:focus {
+        @media (hover: hover) {
+            &:hover {
+                .liniImg {
+                    transform: translateY(-50px);
+                }
+            }
+        }
+
+        &:hover {
             .liniTitle {
                 opacity: 1;
             }
         }
+
+        &:focus {
+            .liniTitle {
+                opacity: 1;
+
+                @media (hover: hover) {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &Img {
+        @include base_transition(transform, .4s);
     }
 
     &Title {
@@ -71,7 +93,7 @@
             height: auto;
             border-radius: 8px;
             position: relative;
-            margin-bottom: 15px;
+            margin-bottom: 65px;
             top: unset;
             left: 50%;
             transform: translateX(-50%);

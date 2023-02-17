@@ -330,6 +330,7 @@
             justify-content: space-between;
             width: 100%;
             padding: 10px 20px 12px;
+            @include font-pack($font-base, $font-text, $font-weight-normal, $line-base, $cl-black-lighter);
 
             &:hover {
                 color: $cl-red;
@@ -353,20 +354,38 @@
     }
 
     &Popup {
-        &__preview {
-            height: 100%;
 
-            &.popupBox {
-                .buttonClose {
-                    top: 30px;
-                    right: 30px;
+        &.popupBox {
+            .buttonClose {
+                line-height: 1;
+                border-radius: 50%;
+                padding: 2px 3px 2px;
+                background: $cl-red;
+                @include base_transition(all, .2s);
 
-                    .icoClose {
-                        width: 36px;
-                        height: 36px;
+                @include min-responsive($w-md) {
+                    padding: 6px 8px 8px;
+                }
 
-                        &:before,
-                        &:after {
+                @include min-responsive($w-xl) {
+                    background: transparent;
+                }
+
+                &:hover {
+                    background: $cl-red;
+                }
+
+                .icoClose {
+                    width: 36px;
+                    height: 36px;
+
+                    &:before,
+                    &:after {
+                        top: 17px;
+                        left: 7px;
+                        width: 22px;
+
+                        @include min-responsive($w-md) {
                             top: 15px;
                             left: 0;
                             width: 34px;
@@ -376,17 +395,69 @@
             }
         }
 
+        .productItem {
+            @include min-responsive($w-xl) {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+
+        &__preview {
+            height: 100%;
+
+            &.popupBox {
+                .buttonClose {
+                    top: 12px;
+                    right: 16px;
+
+                    @include min-responsive($w-md) {
+                        top: 30px;
+                        right: 30px;
+                    }
+                }
+            }
+        }
+
+        &__buy {
+            @extend .center-flex;
+            flex-direction: column;
+            margin-top: 30px;
+            @include font-pack($font-base, 15px, $font-weight-sbold, 1.2, $cl-black);
+
+            @include min-responsive($w-md) {
+                flex-direction: row;
+                font-size: 18px;
+                margin-top: 60px;
+            }
+
+            .readBuy {
+                width: 100%;
+                margin-top: 10px;
+
+                @include min-responsive($w-md) {
+                    width: 285px;
+                    margin-top: 0;
+                    margin-left: 15px;
+                }
+
+                @include min-responsive($w-xl) {
+                    margin-left: 35px;
+                }
+            }
+        }
+
         &__bg {
+            padding: 20px 10px;
             margin: auto;
             background: $cl-white;
             height: 100%;
             overflow-y: auto;
             overscroll-behavior: none;
-
-            @include scroll(10px, #FFC6C6, $cl-white);
+            @include scroll(4px, #FFC6C6, $cl-white);
 
             @include min-responsive($w-xl) {
-                padding: 45px;
+                @include scroll(10px, #FFC6C6, $cl-white);
+                padding: 45px 91px;
             }
         }
     }

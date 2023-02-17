@@ -1,5 +1,5 @@
 <div class="popup popup--hidden center-flex -pPrev">
-    <div class="popupBox readPopup__preview container">
+    <div class="popupBox readPopup readPopup__preview container">
         <button class="button buttonClose -btnCl" aria-label="Close Popup"><span
                 class="icoInline icoClose center-flex"></span></button>
         <div class="readPopup__bg col-lg-10">
@@ -7,6 +7,26 @@
             <img src="./asset/images/sample/preview-2.png" alt="" width="886" height="1300" loading="lazy">
             <img src="./asset/images/sample/preview-3.png" alt="" width="886" height="1300" loading="lazy">
             <img src="./asset/images/sample/preview-4.png" alt="" width="886" height="1300" loading="lazy">
+
+            <div class="readPopup__buy">
+                Interest with our product? Get it now
+                {{>read/button-buy popup=true}}
+            </div>
+
+            <div class="related">
+                <h2 class="titleCaption titleCaption--up text-center">Related Book</h2>
+                <div class="productScroll row">
+                    {{#each author}}
+                    {{#gte @index compare=../index_start}}
+                    {{#gte @index compare=../index_end}}
+                    {{else}}
+                    {{> component/product-list type="authorbooks" total=3 index_start=0 index_end=3 col=true}}
+                    {{/gte}}
+                    {{else}}
+                    {{/gte}}
+                    {{/each}}
+                </div>
+            </div>
         </div>
     </div>
 </div>
