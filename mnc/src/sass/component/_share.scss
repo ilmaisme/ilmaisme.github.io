@@ -7,11 +7,16 @@
 
     &Link {
         display: inline-block;
-        width: 40px;
-        height: 40px;
+        width: 24px;
+        height: 24px;
         border-radius: 50%;
         background: $cl-white;
         @include base_transition(all, .2s);
+
+        @include min-responsive($w-md) {
+            width: 40px;
+            height: 40px;
+        }
 
         &:hover {
             background: $cl-red;
@@ -23,8 +28,14 @@
     }
 
     .icoInline {
-        width: 40px;
-        height: 40px;
+        width: 24px;
+        height: 24px;
         background-size: contain;
+        @include base_transition(all, .2s);
+
+        @include min-responsive($w-md) {
+            width: 40px;
+            height: 40px;
+        }
     }
 }

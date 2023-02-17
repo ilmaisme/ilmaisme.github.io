@@ -57,10 +57,14 @@
         margin-top: 16px;
 
         &__box {
-            padding: 15px;
+            padding: 10px 15px;
             background: #F3F3F3;
             border-radius: 12px;
             border-top-left-radius: 0;
+
+            @include min-responsive($w-md) {
+                padding: 15px;
+            }
 
             .productTable {
                 margin-top: 0;
@@ -76,17 +80,44 @@
         }
 
         &__list {
-            li {
-                position: relative;
+            flex-wrap: wrap;
+
+            @include min-responsive($w-md) {
+                flex-wrap: nowrap;
+            }
+        }
+
+        &__item {
+            position: relative;
+
+            @include min-responsive($w-md) {
                 margin-left: 5px;
                 margin-right: 5px;
+            }
 
-                &:first-child {
-                    margin-left: 0;
+            &:first-child {
+                margin-left: 0;
+                order: 3;
+
+                @include min-responsive($w-md) {
+                    order: unset;
                 }
+            }
 
-                &:last-child {
-                    margin-right: 0;
+            &:nth-child(2) {
+                order: 4;
+
+                @include min-responsive($w-md) {
+                    order: unset;
+                }
+            }
+
+            &:last-child {
+                margin-right: 0;
+                flex: 0 0 50%;
+
+                @include min-responsive($w-md) {
+                    flex: unset;
                 }
             }
         }
@@ -111,13 +142,29 @@
             display: flex;
             align-items: center;
             padding: 6px 8px;
-            margin-left: 10px;
+            margin-left: -8px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: $font-date;
+
+            @include min-responsive($w-md) {
+                margin-left: 10px;
+                margin-right: 0;
+                margin-bottom: 0;
+                font-size: $font-text;
+            }
         }
 
         &__ico {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            background-size: contain;
+
+            @include min-responsive($w-md) {
+                width: 24px;
+                height: 24px;
+            }
         }
     }
 
@@ -134,6 +181,11 @@
             height: 200px;
             overflow: hidden;
             @include base_transition(height, .4s);
+            font-size: $font-date;
+
+            @include min-responsive($w-md) {
+                font-size: $font-text;
+            }
 
             &:after {
                 content: '';
@@ -341,7 +393,7 @@
 
     &Tab {
         margin-top: 40px;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
 
         @include min-responsive($w-lg) {
             margin-bottom: 80px;
@@ -388,12 +440,13 @@
                 margin-right: 10px;
                 padding: 8px 15px;
                 border-bottom: 3px solid transparent;
-                @include font-pack($font-base, $font-input, $font-weight-mbold, 1.2, $cl-black-lighter);
+                @include font-pack($font-base, $font-text, $font-weight-mbold, 1.2, $cl-black-lighter);
 
                 @include min-responsive($w-md) {
                     margin-left: 20px;
                     margin-right: 20px;
                     padding: 12px 20px;
+                    font-size: $font-input;
                 }
 
                 &.active,
@@ -430,9 +483,13 @@
             }
 
             &Wrap {
-                align-items: center;
+                align-items: flex-start;
                 margin-top: 24px;
                 margin-bottom: 30px;
+
+                @include min-responsive($w-md) {
+                    align-items: center;
+                }
             }
         }
 
@@ -450,10 +507,14 @@
             left: 50%;
             transform: translateX(-50%);
             background: $cl-white;
-            padding: 10px 15px;
+            padding: 8px 10px;
             margin-bottom: 12px;
             box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.25);
             border-radius: 12px;
+
+            @include min-responsive($w-md) {
+                padding: 10px 15px;
+            }
         }
     }
 

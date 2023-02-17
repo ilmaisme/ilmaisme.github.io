@@ -290,23 +290,23 @@
                     <!-- s: read details tab -->
                     <div class="readDetail listTab tab">
                         <ul class="listTab__list readDetail__list display-flex align-center">
-                            <li>
+                            <li class="readDetail__item">
                                 <button class="button listTab__label readDetail__btn tabbutton active"
                                     onclick="openTabdetails(event, 'summary')">
                                     Summary
                                 </button>
                             </li>
-                            <li>
+                            <li class="readDetail__item">
                                 <button class="button listTab__label readDetail__btn tabbutton" onclick="openTabdetails(event, 'details')">
                                     Books Detail
                                 </button>
                             </li>
-                            <li>
+                            <li class="readDetail__item">
                                 <button aria-label="Like Product" class="button buttonLike readDetail__cta" onclick="likeButton(this)">
                                     <span class="icoInline icoLike readDetail__ico"></span>Add to Wishlist
                                 </button>
                             </li>
-                            <li>
+                            <li class="readDetail__item">
                                 <button aria-label="Like Product" class="button readDetail__cta -share">
                                     <span class="icoInline icoShare readDetail__ico"></span>Share
                                 </button>
@@ -429,7 +429,7 @@
             </div>
 
             <!-- s: read tab -->
-            <div class="readTab listTab tab">
+            <div class="readTab listTab tab row">
                 <ul class="listTab__list readTab__list display-flex align-center container">
                     <li>
                         <button class="button listTab__label readTab__btn tabbutton active" onclick="openTab(event, 'review')">
@@ -500,6 +500,18 @@
                                 <textarea class="formArea" name="" id="" rows="5" placeholder="Write a comment here"
                                     aria-label="Write Comment"></textarea>
                                 <div class="formMisc mt2">Share photos of the products you receive</div>
+                        
+                                <div class="upload uploadWrap">
+                                    <div class="uploadBox">
+                                        <label class="uploadBtn">
+                                            <div class="sr-only">Upload images</div>
+                                            <span class="icoInline icoUpload"></span>
+                                            <input type="file" multiple="" data-max_length="2" class="uploadInput">
+                                        </label>
+                                    </div>
+                                    <div class="uploadImg__wrap"></div>
+                                </div>
+                                <div class="formMisc uploadWarn"></div>
                                 <div class="reviewForm__cta">
                                     <button class="button buttonPrimary" type="submit">Submit</button>
                                     <button class="button buttonSecondary" type="button">Cancel</button>
@@ -532,7 +544,7 @@
                                 <span class="icoBase icoInline icoArrow"></span>
                             </a>
                         </div>
-                        <div class="row">
+                        <div class="productScroll row">
                         
                             <div class="productItem col">
                                 <div class="productBox">
@@ -688,7 +700,7 @@
 
             <div class="related">
                 <h2 class="titleCaption titleCaption--up">Related Book</h2>
-                <div class="row">
+                <div class="productScroll row">
 
                 <div class="productItem col">
                     <div class="productBox">
@@ -972,6 +984,7 @@
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
     <script type="text/javascript" src="./asset/js/main.js"></script>
     <script defer type="text/javascript" src="./asset/js/read.js"></script>
+    <script defer type="text/javascript" src="./asset/js/img-upload.js"></script>
 
 </body>
 

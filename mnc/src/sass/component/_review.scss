@@ -5,6 +5,11 @@
 
     &User {
         flex: 1;
+        font-size: $font-date;
+
+        @include min-responsive($w-md) {
+            font-size: $font-text;
+        }
 
         &__img {
             position: relative;
@@ -23,11 +28,20 @@
 
     &Time {
         margin-top: 3px;
-        @include font-pack(false, $font-date, $font-weight-normal, 1.6, $cl-grey-medium);
+        @include font-pack(false, 10px, $font-weight-normal, 1.6, $cl-grey-medium);
+
+        @include min-responsive($w-md) {
+            font-size: $font-date;
+        }
     }
 
     &Txt {
         margin-top: 12px;
+        font-size: $font-date;
+
+        @include min-responsive($w-md) {
+            font-size: $font-text;
+        }
     }
 
     &Img {
@@ -45,17 +59,29 @@
 
     &Form {
         margin-top: 30px;
-        padding: 20px 25px;
+        padding: 10px 15px 15px;
         border: 1px solid #D3D3D3;
         border-radius: 15px;
 
-        &__cta{
+        @include min-responsive($w-md) {
+            padding: 20px 25px;
+        }
+
+        &__cta {
             display: flex;
             margin-top: 32px;
             gap: 18px;
+
+            .button {
+                width: 100%;
+
+                @include min-responsive($w-md) {
+                    width: auto;
+                }
+            }
         }
 
-        .formArea{
+        .formArea {
             margin-top: 12px;
         }
     }

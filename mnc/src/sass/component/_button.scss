@@ -73,11 +73,12 @@
         border-radius: 30px;
         background: $cl-red;
         border: 1px solid $cl-red;
-        @include font-pack($font-base, $font-input, $font-weight-sbold, $line-base, $cl-white);
+        @include font-pack($font-base, $font-text, $font-weight-sbold, $line-base, $cl-white);
         @include base_transition(all, .2s);
 
         @include min-responsive($w-xl) {
             padding: 15px 45px;
+            font-size: $font-input;
         }
 
         @media (hover:hover) {
@@ -94,11 +95,12 @@
         border-radius: 30px;
         background: $cl-white;
         border: 1px solid $cl-black-lighter;
-        @include font-pack($font-base, $font-input, $font-weight-sbold, $line-base, $cl-black-lighter);
+        @include font-pack($font-base, $font-text, $font-weight-sbold, $line-base, $cl-black-lighter);
         @include base_transition(all, .2s);
 
         @include min-responsive($w-xl) {
             padding: 15px 45px;
+            font-size: $font-input;
         }
 
         @media (hover:hover) {
@@ -124,12 +126,17 @@
     }
 
     &Tertiery {
-        padding: 16px 53px;
+        padding: 10px 35px;
         border-radius: 36px;
         background: #484848;
         border: 1px solid #484848;
-        @include font-pack($font-base, $font-input, $font-weight-sbold, $line-base, $cl-white);
+        @include font-pack($font-base, $font-text, $font-weight-sbold, $line-base, $cl-white);
         @include base_transition(all, .2s);
+
+        @include min-responsive($w-xl) {
+            padding: 16px 53px;
+            font-size: $font-input;
+        }
 
         @media (hover:hover) {
             &:hover {

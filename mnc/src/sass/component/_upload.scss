@@ -1,0 +1,107 @@
+.upload {
+
+    &Wrap {
+        margin-top: 3px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+
+        @include min-responsive($w-md) {
+            flex-direction: row;
+            gap: 18px;
+        }
+    }
+
+    &Input {
+        width: .1px;
+        height: .1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+    &Box {
+        margin-top: 4px;
+        order: 1;
+
+        @include min-responsive($w-md) {
+            margin-top: 9px;
+        }
+    }
+
+    &Btn {
+        @extend .center-flex;
+        text-align: center;
+        width: 99px;
+        height: 99px;
+        cursor: pointer;
+        border: 0;
+        background: #FFE0E1;
+
+        @include min-responsive($w-md) {
+            width: 120px;
+            height: 120px;
+        }
+
+        .icoUpload {
+            @extend %filter-red;
+            width: 66px;
+            height: 66px;
+            transition: all .3s ease;
+        }
+
+        &:hover {
+            .icoUpload {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &Img {
+        &__wrap {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -4px;
+
+            @include min-responsive($w-md) {
+                margin: 0 -9px;
+            }
+        }
+
+        &__box {
+            width: 107px;
+            height: 107px;
+            padding: 4px;
+
+            @include min-responsive($w-md) {
+                width: 138px;
+                height: 138px;
+                padding: 9px;
+            }
+        }
+
+        &__bg {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            padding-bottom: 100%;
+        }
+
+        &__close {
+            @extend .button;
+            @extend .icoInline;
+            @extend .icoClose;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    }
+
+    &Warn {
+        color: $cl-red;
+    }
+}
