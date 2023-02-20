@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head}}
+
+<body>
+    {{>header/header login=true}}
+    {{!>header/header}}
+
+    <main role="main">
+
+        <div class="container">
+
+            {{>breadcrumb title="Contact us" link="#" sublink=false}}
+
+            <div class="contact row">
+                <div class="contactCol col-md-12 col-lg-8 col-xl-9">
+                    <h2 class="titleCaption titleCaption--up">Contact us</h2>
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="formLabel mt2" for="name">Full Name</label>
+                                <div class="formInput__icon">
+                                    <span class="icoInline icoUser"></span>
+                                    <input type="text" class="formInput" name="name" id="name" placeholder="Lukman Hakim">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="formLabel mt2" for="email">Email</label>
+                                <div class="formInput__icon">
+                                    <span class="icoInline icoMail"></span>
+                                    <input type="email" class="formInput" name="email" id="email" placeholder="lukman.hakim@gmail.com">
+                                </div>
+                            </div>
+                        </div>
+                        <label class="formLabel mt2" for="subject">Subject</label>
+                        <input type="text" class="formInput" name="subject" id="subject">
+                        <label class="formLabel mt2" for="message">Write Message here</label>
+                        <textarea class="formArea" name="message" id="message" cols="32" rows="7"></textarea>
+
+                        <div class="mt2">
+                            <img src="./asset/images/sample/captcha.png" alt="" width="306" height="82">
+                        </div>
+
+                        <div class="formMsg formMsg__success display-flex mt2"><span
+                                class="icon icon-check"></span>Sukses: Pesan berhasil terkirim.</div>
+                        <div class="formMsg formMsg__error display-flex mt2"><span class="icon icon-close"></span>Gagal:
+                            Pastikan nama, email dan pesan yang
+                            Anda
+                            masukkan sudah terisi dengan benar.</div>
+                        <button class="contactSend button buttonPrimary mt2" type="submit">
+                            Send
+                        </button>
+                    </form>
+                </div>
+                <sidebar class="sidebar col-md-12 col-lg-4 col-xl-3">
+                    <div class="sidebarMaps">
+                        <!--<iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.419504013295!2d106.7925127147691!3d-6.208268495505742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6c6104e4311%3A0x9fc3198ad2359262!2sKompas%20Gramedia%20Building%20Palbar!5e0!3m2!1sid!2sid!4v1676907967815!5m2!1sid!2sid"
+                            width="300" height="225" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+                        <a href="https://goo.gl/maps/5jLqLKJ4Fk2Jvvft5" target="_blank" rel="noopener noreferrer">
+                            <img src="./asset/images/maps.png" alt="Maps M&C" width="300" height="225">
+                        </a>
+                    </div>
+                    <div class="sidebarContact">
+                        <div class="sidebarContact__item mt1 display-flex">
+                            <div class="sidebarContact__icon">
+                                <span class="icoInline icoLoc"></span>
+                            </div>
+                            <div class="flex-init">
+                                {{{contact.address}}}
+                            </div>
+                        </div>
+                        <div class="sidebarContact__item mt1 display-flex align-center">
+                            <div class="sidebarContact__icon">
+                                <span class="icoInline icoPhone"></span>
+                            </div>
+                            <div class="flex-init">
+                                {{contact.phone}}
+                            </div>
+                        </div>
+                        <div class="sidebarContact__item mt1 display-flex align-center">
+                            <div class="sidebarContact__icon">
+                                <span class="icoInline icoMail"></span>
+                            </div>
+                            <div class="flex-init">
+                                <a href="mailto:{{contact.email}}">{{contact.email}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </sidebar>
+            </div>
+        </div>
+
+    </main>
+
+    {{>footer/footer}}
+
+    {{>js}}
+
+</body>
+
+</html>

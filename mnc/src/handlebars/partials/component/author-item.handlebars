@@ -1,0 +1,25 @@
+{{#each author}}
+{{#gte @index compare=../index_startauthor}}
+{{#gte @index compare=../index_endauthor}}
+{{else}}
+<div class="authorWrap display-flex">
+    <div class="authorImg">
+        <a href="{{link}}">
+            <img src="{{propic}}" alt="{{name}}" loading="lazy" width="451" height="500">
+        </a>
+    </div>
+    <div class="authorContent">
+        <h3 class="titleText">{{name}}</h3>
+        <p class="titleParagraph">{{desc}}</p>
+        {{#if ../more}}
+        <a href="{{link}}" class="linkMore linkMore__arrow">
+            see more
+            <span class="icoBase icoInline icoArrow"></span>
+        </a>
+        {{/if}}
+    </div>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

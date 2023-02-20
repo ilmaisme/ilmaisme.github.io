@@ -8,6 +8,20 @@
             margin-left: -25px;
             margin-right: -25px;
         }
+
+        .eventDate {
+            align-items: center;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            @include font-pack($font-base, 10px, $font-weight-normal, 1.5, $cl-red);
+
+            .icoCal {
+                @extend %filter-red;
+                width: 18px;
+                height: 18px;
+                margin-right: 10px;
+            }
+        }
     }
 
     &Item {
@@ -57,20 +71,6 @@
 
         @include min-responsive($w-md) {
             font-size: $font-input;
-        }
-    }
-
-    &Date {
-        align-items: center;
-        margin-bottom: 12px;
-        text-transform: uppercase;
-        @include font-pack($font-base, 10px, $font-weight-normal, 1.5, $cl-red);
-
-        .icoCal {
-            @extend %filter-red;
-            width: 18px;
-            height: 18px;
-            margin-right: 10px;
         }
     }
 }

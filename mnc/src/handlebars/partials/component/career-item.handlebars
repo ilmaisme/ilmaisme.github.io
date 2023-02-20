@@ -1,0 +1,16 @@
+{{#each career}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="careerItem">
+    <div class="careerCaption titleWrap display-flex">
+        <div class="careerTitle">{{position}}</div>
+        <div class="careerAvail">{{avail}} Jobs in This Position</div>
+    </div>
+    <div class="careerDesc">{{desc}}</div>
+    <a href="#" class="buttonPrimary careerCta">Apply this job</a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

@@ -1,0 +1,20 @@
+.product{
+    &Col{        
+        .productItem {
+            flex-grow: 0;
+            flex-basis: calc(100%/2);
+
+            @include min-responsive($w-md) {
+                flex-basis: calc(100%/3);
+            }
+
+            @include min-responsive($w-lg) {
+                flex-basis: calc(100%/4);
+            }
+
+            @include min-responsive($w-xl) {
+                flex-basis: calc(100%/5);
+            }
+        }
+    }
+}

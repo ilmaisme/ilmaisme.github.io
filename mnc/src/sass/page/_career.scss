@@ -1,0 +1,29 @@
+.career {
+    &Item {
+        margin-top: 20px;
+        padding: 15px 20px;
+        border: 1px solid $cl-black-lighter;
+        border-radius: 15px;
+    }
+
+    &Title {
+        @include font-pack($font-base, $font-text, $font-weight-mbold, 1.2, $cl-black);
+
+        @include min-responsive($w-md) {
+            font-size: $font-input
+        }
+    }
+
+    &Avail {
+        @include font-pack($font-base, $font-date, $font-weight-normal, $line-base, $cl-red);
+    }
+
+    &Desc {
+        margin-top: 12px;
+    }
+
+    &Cta {
+        margin-top: 20px;
+        display: inline-block;
+    }
+}

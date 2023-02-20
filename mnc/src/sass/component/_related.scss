@@ -1,4 +1,26 @@
 .related {
+    @extend .spacing;
+
+    &Event {
+        .titleCaption {
+            font-size: $font-input;
+
+            @include min-responsive($w-md) {
+                font-size: $font-h1
+            }
+        }
+    }
+
+    &Txt {
+        display: none;
+
+        @include min-responsive($w-md) {
+            display: block;
+        }
+    }
+}
+
+.spacing{    
     margin-top: 40px;
 
     @include min-responsive($w-md) {

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head}}
+
+<body>
+    {{!>header/header login=true}}
+    {{>header/header page="Authors"}}
+
+    <main role="main">
+
+        <div class="container">
+
+            {{>breadcrumb title="Authors" link="#" sublink=false}}
+
+        </div>
+
+        {{>author-month page="Authors" total=1 index_start=0 index_end=1}}
+
+        </div>
+        <div class="container">
+            <ul class="authorSort">
+                <li><button class="button authorSort__btn active">All</button></li>
+                <li><button class="button authorSort__btn">A</button></li>
+                <li><button class="button authorSort__btn">B</button></li>
+                <li><button class="button authorSort__btn">C</button></li>
+                <li><button class="button authorSort__btn">D</button></li>
+                <li><button class="button authorSort__btn">E</button></li>
+                <li><button class="button authorSort__btn">F</button></li>
+                <li><button class="button authorSort__btn">G</button></li>
+                <li><button class="button authorSort__btn">H</button></li>
+                <li><button class="button authorSort__btn">I</button></li>
+                <li><button class="button authorSort__btn">J</button></li>
+                <li><button class="button authorSort__btn">K</button></li>
+                <li><button class="button authorSort__btn">L</button></li>
+                <li><button class="button authorSort__btn">M</button></li>
+                <li><button class="button authorSort__btn">N</button></li>
+                <li><button class="button authorSort__btn">O</button></li>
+                <li><button class="button authorSort__btn">P</button></li>
+                <li><button class="button authorSort__btn">Q</button></li>
+                <li><button class="button authorSort__btn">R</button></li>
+                <li><button class="button authorSort__btn">S</button></li>
+                <li><button class="button authorSort__btn">T</button></li>
+                <li><button class="button authorSort__btn">U</button></li>
+                <li><button class="button authorSort__btn">V</button></li>
+                <li><button class="button authorSort__btn">W</button></li>
+                <li><button class="button authorSort__btn">X</button></li>
+                <li><button class="button authorSort__btn">Y</button></li>
+                <li><button class="button authorSort__btn">Z</button></li>
+            </ul>
+            <div class="authorList row">
+                {{>component/author-list index_start=0 index_end=9}}
+                {{>component/author-list index_start=2 index_end=5}}
+            </div>
+            <ul class="paging center-flex">
+                {{>paging}}
+            </ul>
+        </div>
+
+    </main>
+
+    {{>footer/footer}}
+
+    {{>js}}
+
+</body>
+
+</html>

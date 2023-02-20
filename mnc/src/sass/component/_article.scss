@@ -1,0 +1,162 @@
+.article {
+    @include min-responsive($w-xl) {
+        padding-right: 65px;
+    }
+
+    &Title {
+        @include font-pack($font-base, $font-h5, $font-weight-sbold, 1.2, $cl-black);
+
+        @include min-responsive($w-md) {
+            font-size: $font-h2
+        }
+    }
+
+    &Img {
+        margin-top: 18px;
+        margin-bottom: 25px;
+    }
+
+    blockquote {
+        margin: 0;
+        padding: 20px;
+        border-left: 3px solid $cl-red;
+
+        span {
+            display: block;
+            margin-top: 14px;
+            font-weight: $font-weight-bold;
+
+            &:before {
+                content: '';
+                display: inline-block;
+                position: relative;
+                top: -4px;
+                width: 22px;
+                height: 2px;
+                border-top: 2px solid $cl-red;
+                margin-right: 8px;
+            }
+        }
+    }
+
+    &404 {
+        height: 100%;
+        min-height: 100vh;
+        flex-direction: column;
+
+        &__caption {
+            margin-top: 36px;
+            text-transform: uppercase;
+            @include font-pack($font-base, 120px, $font-weight-normal, 1.5, $cl-red);
+
+            @include min-responsive($w-md) {
+                font-size: 170px;
+            }
+        }
+
+        &__cta {
+            margin-top: 24px;
+        }
+
+        .titleParagraph {
+            margin-top: 12px;
+        }
+
+        .searchForm{
+            margin-top: 30px;
+        }
+    }
+}
+
+.static {
+    ul {
+        list-style-type: disc;
+        padding-left: 22px;
+    }
+
+    ol {
+        list-style-type: decimal;
+        padding-left: 22px;
+    }
+
+    a {
+        color: $cl-black-lighter;
+
+        &:hover {
+            color: $cl-red;
+        }
+    }
+
+    iframe,
+    img,
+    video {
+        max-height: 300px;
+        max-width: 100%;
+
+        @include min-responsive($w-md) {
+            max-height: unset;
+        }
+    }
+
+    strong {
+        font-weight: 700;
+        line-height: 30px
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-top: .67em;
+        margin-bottom: .67em;
+        font-weight: 700
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-top: .83em;
+        margin-bottom: .83em;
+        font-weight: 700
+    }
+
+    h3 {
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        font-weight: 700
+    }
+
+    h4,
+    pre {
+        font-size: 1em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em
+    }
+
+    .buttonPrimary {
+        color: $cl-white;
+
+        &:hover {
+            color: $cl-red;
+        }
+    }
+
+    .paging {
+        list-style: none;
+        padding-left: 0;
+
+        &Link {
+            color: $cl-red;
+
+            &:hover {
+                color: $cl-white;
+            }
+
+            &.active {
+                color: $cl-white;
+
+                &:hover {
+                    color: $cl-white;
+                }
+            }
+        }
+    }
+}

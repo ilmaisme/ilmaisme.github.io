@@ -1,4 +1,19 @@
 .author {
+    margin-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: radial-gradient(57.56% 429.76% at 50% 50%, #FFFFFF 0%, #E0E0E0 100%);
+
+    @include min-responsive($w-md) {
+        padding-top: 75px;
+        padding-bottom: 75px;
+        margin-bottom: 60px;
+    }
+
+    &Idx {
+        margin-top: 20px;
+    }
+
     &Img {
         border-radius: 15px;
         margin-bottom: 20px;
@@ -21,6 +36,94 @@
 
         @include min-responsive($w-md) {
             flex-direction: row;
+        }
+    }
+
+    &List {
+        @include min-responsive($w-xlg) {
+            margin-left: -27px;
+            margin-right: -27px;
+        }
+    }
+
+    &Item {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+
+        @include min-responsive($w-xlg) {
+            padding-left: 27px;
+            padding-right: 27px;
+        }
+
+        &__img {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: auto;
+
+            img {
+                @extend %template-img
+            }
+        }
+    }
+
+    &Sort {
+        margin-top: 40px;
+        margin-bottom: 4px;
+        display: flex;
+        margin-left: -11px;
+        margin-right: -11px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        position: relative;
+
+        @include min-responsive($w-xl) {
+            justify-content: space-around;
+            padding-bottom: 0;
+            margin-top: 80px;
+        }
+
+        li {
+            margin-top: 6px;
+            padding-left: 11px;
+            padding-right: 11px;
+        }
+
+        &__btn {
+            width: 30px;
+            padding: 5px;
+            @include font-pack($font-base, $font-text, $font-weight-sbold, $line-base, $cl-black-medium);
+
+            @include min-responsive($w-md) {
+                font-size: $font-input
+            }
+
+            @include min-responsive($w-xl) {
+                width: auto;
+            }
+
+            &:hover,
+            &.active {
+                color: $cl-red;
+            }
+        }
+    }
+
+    &Misc {
+        margin-top: 8px;
+    }
+
+    &Name {
+        @extend .word-break;
+        margin-top: 12px;
+        @include font-pack($font-base, $font-text, $font-weight-sbold, 1.2, $cl-black);
+
+        @include min-responsive($w-md) {
+            font-size: $font-input
         }
     }
 }

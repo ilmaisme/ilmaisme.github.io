@@ -1,0 +1,17 @@
+{{#each author}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="authorItem col-6 col-md-3 col-lg-3 col-xl-2">
+    <a href="{{link}}" class="">
+        <div class="authorItem__img authorImg">
+            <img src="{{propic}}" alt="{{name}}" width="150" height="150">
+        </div>
+        <h4 class="authorName authorItem__name">{{name}}</h4>
+        <div class="authorMisc">25 books published</div>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

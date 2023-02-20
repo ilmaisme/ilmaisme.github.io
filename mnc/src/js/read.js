@@ -36,7 +36,7 @@ $(document).ready(function () {
         closeButtonBuy()
         
         //hide share to socmed
-        $('.readShare').hide()
+        $('.shareWrap').hide()
     });
 
     function closeButtonBuy(){        
@@ -57,7 +57,7 @@ $(document).ready(function () {
     //share to socmed
     $('.-share').on('click', function (e) {
         e.stopPropagation();
-        $(this).parent().find($('.readShare')).toggle();
+        $(this).parent().find($('.shareWrap')).toggle();
     });
 });
 
