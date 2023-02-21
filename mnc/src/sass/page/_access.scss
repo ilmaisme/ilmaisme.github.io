@@ -1,0 +1,72 @@
+.access {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    height: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+
+    @include range-responsive($w-lg, $w-xl) {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    @include min-responsive($w-xl) {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    &Form {
+        width: 100%;
+        margin-top: 24px;
+
+        .formMsg {
+            margin-top: 10px;
+            font-size: $font-date;
+        }
+    }
+
+    &Title {
+        margin-top: 24px;
+    }
+
+    &Link {
+        color: $cl-red;
+    }
+
+    &Misc {
+        margin-top: 36px;
+
+        &--small {
+            font-size: $font-date;
+        }
+    }
+
+    &Button {
+        margin-top: 14px;
+        padding: 12px;
+        border: 1px solid $cl-black-lighter;
+        border-radius: 42px;
+        font-size: $font-date;
+
+        span {
+            margin-left: 8px;
+        }
+
+        &__wrap {
+            margin-left: -5px;
+            margin-right: -5px;
+            width: calc(100% + 10px);
+        }
+
+        &__item {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    }
+
+    .buttonPrimary {
+        margin-top: 24px;
+        text-transform: uppercase;
+        font-weight: $font-weight-mbold;
+    }
+}

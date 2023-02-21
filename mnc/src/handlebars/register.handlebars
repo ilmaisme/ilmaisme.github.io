@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head}}
+
+<body>
+
+    <main role="main">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="access col-md-7 col-lg-6 col-xl-5 mx-auto center-flex">
+                    <h1>
+                        <a href="index.html">
+                            <img src="{{site.logo}}" alt="Comic MNC" width="83" height="48">
+                        </a>
+                    </h1>
+                    <h2 class="accessTitle titleCaption titleCaption--up text-center">Register</h2>
+                    <form action="#" class="accessForm">
+                        <div class="formMsg display-flex align-center">
+                            <span class="icoInline icoClose"></span>
+                            <span>There is an error! Please check your password and email address again.</span>
+                        </div>
+                        <div class="accessForm__wrap mt2">
+                            <label class="formLabel" for="email">Email</label>
+                            <div class="formInput__icon">
+                                <span class="icoInline icoMail"></span>
+                                <input type="email" class="formInput formError" name="email" id="email"
+                                    placeholder="youremail@example.com">
+                            </div>
+                            <div class="formMsg display-flex align-center">
+                                <span class="icoInline icoReport"></span>
+                                <span>Email already used. Use another email address?</span>
+                            </div>
+                        </div>
+
+                        <div class="accessForm__wrap mt2">
+                            <label class="formLabel" for="pass">Password</label>
+                            <div class="formInput__icon">
+                                <button class="button buttonPass -btnpass" aria-label="show hide password"
+                                    toggle="#pass" type="button"></button>
+                                <span class="icoInline icoPass"></span>
+                                <input type="password" class="formInput formError" name="pass" id="pass"
+                                    placeholder="*******">
+                                <div class="formMsg display-flex align-center">
+                                    <span class="icoInline icoReport"></span>
+                                    <span>The password consists of 8 characters. Use capital letters and numbers to make
+                                        your password more secure.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt2 center-flex">
+                            <img src="./asset/images/sample/captcha.png" alt="" width="306" height="82">
+                        </div>
+
+                        <div class="titleWrap display-flex align-start mt2">
+                            <input type="checkbox" id="agree" name="genre" class="formCheck">
+                            <label for="agree" class="flex-init">By creating an account, you agree to the <a
+                                    href="privacy.html" class="accessLink">Terms of Use,
+                                    Privacy Policy</a> and to receive news and updates.</label>
+                        </div>
+                        <button class="button buttonPrimary buttonFull" type="submit">
+                            Register
+                        </button>
+                    </form>
+                    <div class="accessMisc accessMisc--small text-center">Or</div>
+                    <div class="accessButton__wrap center-flex row">
+                        <div class="accessButton__item col-xl-4">
+                            <button class="button accessButton buttonFull center-flex">
+                                <img src="./asset/images/icon/icon-google.png" alt="" width="25" height="25">
+                                <span>Google</span>
+                            </button>
+                        </div>
+                        <div class="accessButton__item col-xl-4">
+                            <button class="button accessButton buttonFull center-flex">
+                                <img src="./asset/images/icon/icon-fb.png" alt="" width="25" height="25">
+                                <span>Facebook</span>
+                            </button>
+                        </div>
+                        <div class="accessButton__item col-xl-4">
+                            <button class="button accessButton buttonFull center-flex">
+                                <img src="./asset/images/icon/icon-365.png" alt="" width="25" height="25">
+                                <span>Microsoft 365</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="accessMisc text-center">
+                        Already a member?<a class="accessLink" href="login.html"> Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    {{>js}}
+    <script>
+        $(document).ready(function () {
+            //show hide password
+            $(".-btnpass").click(function () {
+                let input = $($(this).attr("toggle"));
+                if (input.attr("type") == "password") {
+                    input.attr("type", "text");
+                    $(this).addClass("show")
+                } else {
+                    $(this).removeClass("show")
+                    input.attr("type", "password");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

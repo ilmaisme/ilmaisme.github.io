@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head}}
+
+<body>
+
+    <main role="main">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="access col-md-7 col-lg-6 col-xl-5 mx-auto center-flex">
+                    <h1>
+                        <a href="index.html">
+                            <img src="{{site.logo}}" alt="Comic MNC" width="83" height="48">
+                        </a>
+                    </h1>
+                    <h2 class="accessTitle titleCaption titleCaption--up text-center">Forgot Password</h2>
+                    <form action="#" class="accessForm">
+                        <div class="accessForm__wrap mt2">
+                            <label class="formLabel" for="npass">New Password</label>
+                            <div class="formInput__icon">
+                                <button class="button buttonPass -btnpass" aria-label="show hide password"
+                                    toggle="#npass" type="button"></button>
+                                <span class="icoInline icoPass"></span>
+                                <input type="password" class="formInput" name="npass" id="npass"
+                                    placeholder="*******">
+                            </div>
+                        </div>
+                        <div class="accessForm__wrap mt2">
+                            <label class="formLabel" for="cpass">Confirm Password</label>
+                            <div class="formInput__icon">
+                                <button class="button buttonPass -btnpass" aria-label="show hide password"
+                                    toggle="#cpass" type="button"></button>
+                                <span class="icoInline icoPass"></span>
+                                <input type="password" class="formInput" name="cpass" id="cpass"
+                                    placeholder="*******">
+                            </div>
+                        </div>
+
+                        <!--<div class="mt2 center-flex">
+                            <img src="./asset/images/sample/captcha.png" alt="" width="306" height="82">
+                        </div>-->
+
+                        <button class="button buttonPrimary buttonFull" type="submit">
+                            Change Password
+                        </button>
+                    </form>
+                    <div class="accessMisc text-center">
+                        <a class="accessLink" href="forgot-mail.html">Forgot email?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    {{>js}}
+    <script>
+        $(document).ready(function () {
+            //show hide password
+            $(".-btnpass").click(function () {
+                let input = $($(this).attr("toggle"));
+                if (input.attr("type") == "password") {
+                    input.attr("type", "text");
+                    $(this).addClass("show")
+                } else {
+                    $(this).removeClass("show")
+                    input.attr("type", "password");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

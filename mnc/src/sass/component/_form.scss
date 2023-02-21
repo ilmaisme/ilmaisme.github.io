@@ -191,7 +191,7 @@
         border: 1px solid $cl-black-lighter;
         border-radius: 34px;
         @include font-pack(false, $font-input, $font-weight-normal, 1.6, $cl-black-lighter);
-        @include placeholder($font-date, $font-weight-normal, $cl-black-lighter);
+        @include placeholder($font-date, $font-weight-normal, 2.6, $cl-black-lighter);
 
         &__icon {
             position: relative;
@@ -212,12 +212,67 @@
                 filter: invert(26%) sepia(0%) saturate(1293%) hue-rotate(161deg) brightness(106%) contrast(88%);
             }
         }
+
+        &.formError{
+            border-color: $cl-red;
+            @include placeholder($font-date, $font-weight-normal, 2.6, $cl-red);
+        }
     }
 
     &Area {
         @extend .formInput;
         background: $cl-white;
         resize: vertical;
-        @include placeholder($font-date, $font-weight-normal, $cl-grey-lighter);
+        @include placeholder($font-date, $font-weight-normal, 2, $cl-grey-lighter);
+    }
+
+    &Msg {
+        @include font-pack($font-base, $font-text, $font-weight-normal, $line-base, $cl-accept);
+
+        .icoInline {
+            margin-right: 10px;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .icoCheck {
+            vertical-align: text-bottom;
+
+            &:after {
+                left: 4px;
+                top: 0;
+            }
+        }
+
+        .icoClose {
+            background: $cl-white;
+            border: 2px solid $cl-red;
+            vertical-align: middle;
+
+            &::before,
+            &::after {
+                background: $cl-red;
+                width: 14px;
+                height: 2px;
+                top: 9px;
+                left: 3px;
+            }
+
+            &~span {
+                color: $cl-red;
+            }
+        }
+
+        .icoReport {
+            position: relative;
+            top: unset;
+            left: unset;
+            filter: none;
+
+            &~span {
+                color: $cl-red;
+            }
+        }
     }
 }
