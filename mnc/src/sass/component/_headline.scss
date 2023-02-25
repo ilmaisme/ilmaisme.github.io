@@ -2,69 +2,59 @@
     position: relative;
 
     &Slide {
-        @extend %slick-load;
+        width: 100%;
         max-height: 122px;
+        overflow: hidden;
 
         @include min-responsive($w-xl) {
             max-height: 450px;
         }
 
-        &.slick-initialized {
+        &.swiper-initialized {
             @extend %slick-loaded;
-        }
-
-        .slick-arrow {
-            opacity: 0;
-        }
-
-        .slick-prev {
-            @include min-responsive($w-lg) {
-                -webkit-transform: translate(80px, -50%);
-                -ms-transform: translate(80px, -50%);
-                transform: translate(80px, -50%);
-            }
-        }
-
-        .slick-next {
-            @include min-responsive($w-lg) {
-                -webkit-transform: translate(-80px, -50%);
-                -ms-transform: translate(-80px, -50%);
-                transform: translate(-80px, -50%);
-            }
-        }
-
-        &:hover,
-        &:focus {
-            .slick-arrow {
-                opacity: 1;
-            }
-
-            .slick-prev {
-                @include min-responsive($w-lg) {
-                    -webkit-transform: translate(60px, -50%);
-                    -ms-transform: translate(60px, -50%);
-                    transform: translate(60px, -50%);
-                }
-
-            }
-
-            .slick-next {
-                @include min-responsive($w-lg) {
-                    -webkit-transform: translate(-60px, -50%);
-                    -ms-transform: translate(-60px, -50%);
-                    transform: translate(-60px, -50%);
-                }
-            }
         }
     }
 
-    &Nav {
-        position: absolute;
-        width: 100%;
-        bottom: -18px;
+    .swiper-button-prev,
+    .swiper-button-next {
+        opacity: 0;
+    }
 
-        @include min-responsive($w-xl) {
-            bottom: 24px;
+    .swiper-button-prev {
+        left: 8px;
+
+        @include min-responsive($w-lg) {
+            transform: translate(80px, -50%) scale(1);
+        }
+    }
+
+    .swiper-button-next {
+        right: 8px;
+
+        @include min-responsive($w-lg) {
+            transform: translate(-80px, -50%) scale(1);
+        }
+    }
+
+    &:hover,
+    &:focus {
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            opacity: 1;
+        }
+
+        .swiper-button-prev {
+            @include min-responsive($w-lg) {
+                transform: translate(60px, -50%) scale(1);
+            }
+
+        }
+
+        .swiper-button-next {
+            @include min-responsive($w-lg) {
+                transform: translate(-60px, -50%) scale(1);
+            }
         }
     }
 

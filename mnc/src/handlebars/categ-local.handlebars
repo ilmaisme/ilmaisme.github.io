@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{>head}}
+{{>head swiper=true}}
 
 <body>
     {{!>header/header login=true page="Books categories"}}
@@ -59,7 +59,9 @@
                     </div>
                     <div class="listProduct">
                         <div class="productSlider">
-                            {{>list/product-slider type="local" total=5 index_start=10 index_end=15}}
+
+                            {{>list/product-slider swiper=true type="local" total=5 index_start=10 index_end=15}}
+
                         </div>
                     </div>
                     <ul class="paging center-flex">
@@ -73,7 +75,7 @@
 
     {{>footer/footer}}
 
-    {{>js page="categ" select=true}}
+    {{>js page="categ" select=true swiper=true}}
 
 </body>
 

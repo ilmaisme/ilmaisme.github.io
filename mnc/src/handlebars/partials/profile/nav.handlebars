@@ -1,0 +1,14 @@
+{{#each userMenu}}
+<div class="profileNav__item{{#eq ../page compare=title}} active{{/eq}}">
+    {{#if icon compare=true}}
+    <a href="{{link}}" class="profileNav__link profileNav__link--red">
+        {{title}}
+        <span class="icoInline icoLogout"></span>
+    </a>
+    {{else}}
+    <a href="{{link}}" class="profileNav__link">
+        {{title}}
+    </a>
+    {{/if}}
+</div>
+{{/each}}

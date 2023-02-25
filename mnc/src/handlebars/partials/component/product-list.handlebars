@@ -42,3 +42,14 @@
 {{/gte}}
 {{/each}}
 {{/eq}}
+{{#eq type compare="row"}}
+{{#each book.New}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+{{>component/product-item-row}}
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}
+{{/eq}}

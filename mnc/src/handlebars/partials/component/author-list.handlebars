@@ -2,7 +2,8 @@
 {{#gte @index compare=../index_start}}
 {{#gte @index compare=../index_end}}
 {{else}}
-<div class="authorItem col-6 col-md-3 col-lg-3 col-xl-2">
+<div
+    class="authorItem{{#eq ../col compare=5}} col-6 col-md-3 col-lg-4 col-xl-3{{else}} col-6 col-md-3 col-xl-2{{/eq}}">
     <a href="{{link}}" class="">
         <div class="authorItem__img authorImg">
             <img src="{{propic}}" alt="{{name}}" width="150" height="150">

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="profile"}}
+
+<body>
+    {{>header/header login=true}}
+    {{!>header/header}}
+
+    <main role="main">
+
+        <div class="container">
+
+            {{>breadcrumb title="Profile" subtitle="User Profile" sublink="#"}}
+
+            <div class="profile row">
+                <sidebar class="profileNav col-lg-3">
+
+                    {{>profile/nav page="User Profile"}}
+
+                </sidebar>
+                <div class="col-lg-9">
+                    <h2 class="titleCaption titleCaption--up">User Profile</h2>
+                    <div class="profileContent">
+                        <form action="#" class="profileSetting row">
+                            <div class="profileUpload col-12">
+                                <h3 class="titleText">Profile Picture</h3>
+                                {{>profile/upload}}
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="profileSetting__wrap">
+                                    <label class="formLabel" for="name">Name</label>
+                                    <div class="formInput__icon">
+                                        <span class="icoInline icoUser"></span>
+                                        <input type="text" class="formInput formUpdate" name="name" id="name"
+                                            value="Lukman Hakim" placeholder="Your name here" disabled>
+                                    </div>
+                                </div>
+                                <div class="profileSetting__wrap">
+                                    <label class="formLabel" for="phone">Phone Number</label>
+                                    <div class="formInput__icon">
+                                        <span class="icoInline icoPhone"></span>
+                                        <input type="tel" name="phone" id="phone" class="formInput formUpdate"
+                                            value="081234567890" inputmode="numeric" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="profileSetting__wrap">
+                                    <label class="formLabel" for="email">Email</label>
+                                    <div class="formInput__icon">
+                                        <span class="icoInline icoMail"></span>
+                                        <input type="email" class="formInput formUpdate" name="email" id="email"
+                                            value="lukman.hakim@gmail.com" placeholder="youremail@example.com" disabled>
+                                        <!--<div class="formMsg display-flex">
+                                            <span class="icoInline icoReport"></span>
+                                            <span>Email already used. Use another email address?</span>
+                                        </div>-->
+                                    </div>
+                                </div>
+                                <div class="profileSetting__wrap">
+                                    <label class="formLabel" for="password">Password</label>
+                                    <div class="formInput__icon">
+                                        <span class="icoInline icoPass"></span>
+                                        <input type="password" class="formInput" name="pass" id="pass"
+                                            placeholder="*******" disabled>
+                                        <!--<div class="formMsg display-flex">
+                                            <span class="icoInline icoReport"></span>
+                                            <span>The password consists of 8 characters. Use capital letters and numbers
+                                                to make
+                                                your password more secure.</span>
+                                        </div>-->
+                                    </div>
+                                    <a href="profile-change.html" class="profileSetting__link" style="display: none;">
+                                        <span class="icoInline icoPass"></span>
+                                        Change password
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-12 profileCta__wrap row">
+                                <button class="profileCta button buttonPrimary mt3 -updatepro" type="button">
+                                    Update
+                                </button>
+                                <button class="profileCta button buttonSecondary buttonSecondary--trans mt3 -cancelpro"
+                                    type="button" style="display: none;">
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    {{>footer/footer}}
+
+    {{>js page="profile" image-upload=true}}
+    <script>
+        $(document).ready(function () {
+            $(".-updatepro").click(function () {
+                $(".formUpdate[disabled]").prop('disabled', false)
+                $(this).html("Save")
+                $(".-cancelpro").show()
+                $(".profileSetting__link").show()
+            })
+            $(".-cancelpro").click(function () {
+                cancelUpdate()
+            })
+
+            function cancelUpdate() {
+                $(".formUpdate").prop('disabled', true);
+                $(".-cancelpro").hide()
+                $(".-updatepro").html("Update")
+                $(".profileSetting__link").hide()
+            }
+        });
+    </script>
+
+</body>
+
+</html>

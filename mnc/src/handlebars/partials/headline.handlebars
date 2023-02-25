@@ -1,13 +1,17 @@
-<div class="headlineSlide -sheadline">
-    {{#each banner}}
-    <div class="headlineItem">
-        <a href="{{link}}" class="headlineLink">
-            <div class="headlineImg">
-                <img src="{{image}}" alt="{{title}}" width="1440" height="450">
-            </div>
-        </a>
+<div class="headlineSlide swiper">
+    <div class="swiper-wrapper">
+        {{#each banner}}
+        <div class="headlineItem swiper-slide">
+            <a href="{{link}}" class="headlineLink">
+                <div class="headlineImg">
+                    <img src="{{image}}" alt="{{title}}" width="1440" height="450">
+                </div>
+            </a>
+        </div>
+        {{/each}}
     </div>
-    {{/each}}
 </div>
-<div class="headlineNav center-flex -dtheadline">
+<div class="headlineNav center-flex swiper-pagination">
 </div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>

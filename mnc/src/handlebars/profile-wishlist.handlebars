@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="profile"}}
+
+<body>
+    {{>header/header login=true}}
+    {{!>header/header}}
+
+    <main role="main">
+
+        <div class="container">
+
+            {{>breadcrumb title="Profile" subtitle="My Wishlist" sublink="#"}}
+
+            <div class="profile row">
+                <sidebar class="profileNav col-lg-3">
+
+                    {{>profile/nav page="My Wishlist"}}
+
+                </sidebar>
+                <div class="col-lg-9">
+                    <h2 class="titleCaption titleCaption--up">My Wishlist</h2>
+                    <div class="profileContent">
+                        <div class="titleWrap display-flex">
+                            <div class="profileWish__all">
+                                <input type="checkbox" id="checkAll" class="formCheck">
+                                <label for="checkAll">Select All</label>
+                            </div>
+                            <button class="profileWish__del button">Hapus</button>
+                        </div>
+                        <div class="profileWish">
+
+                            {{>profile/product-item total=10 index_start=0 index_end=10}}
+
+                        </div>
+
+                        <ul class="paging center-flex">
+                            {{>paging}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    {{>footer/footer}}
+
+    {{>js page="profile"}}
+    <script>
+        $(document).ready(function () {
+            //check all wishlist
+            $("#checkAll").click(function () {
+                $('input.formCheck:checkbox').not(this).prop('checked', this.checked);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

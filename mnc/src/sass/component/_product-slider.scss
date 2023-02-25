@@ -1,15 +1,23 @@
 .product {
-    &Slide {
-        padding-left: 35px;
-        padding-right: 35px;
+    &Swiper {
+        --heightdesk: 297px;
+        --heightmob: 250px;
+        --widthdesk: 200px;
+        --widthmob: 164px;
 
-        @include min-responsive($w-xl) {
-            padding-left: 83px;
-            padding-right: 83px;
+        width: var(--widthmob);
+        height: var(--heightmob);
+
+        @include range-responsive($w-md, $w-xl) {
+            height: auto;
         }
 
-        .slick-arrow {
-            transform: translate(0px, -20px) scale(.5);
+        @include min-responsive($w-md) {
+            width: var(--widthdesk);
+        }
+
+        @include min-responsive($w-xl) {
+            height: var(--heightdesk);
         }
     }
 
@@ -26,6 +34,12 @@
         }
 
         &__wrap {
+            overflow: hidden;
+
+            @include max-responsive($w-xm) {
+                overflow: visible;
+            }
+
             @include min-responsive($w-xl) {
                 margin-top: 16px;
                 margin-bottom: 16px;
@@ -35,15 +49,11 @@
         }
 
         &__content {
+            margin-top: 20px;
             padding: 10px;
-        }
 
-        &__item {
-            transform: translateX(0) scale(0.9);
-            @include base_transition(all, .2s);
-
-            &.slick-active {
-                transform: translateX(0) scale(1);
+            @include min-responsive($w-lg) {
+                margin-top: 0;
             }
         }
 
@@ -51,16 +61,8 @@
             display: block;
             position: relative;
             width: 100%;
-            height: 250px;
+            height: 100%;
             background: $cl-white;
-
-            @include range-responsive($w-md, $w-xl) {
-                height: auto;
-            }
-
-            @include min-responsive($w-xl) {
-                height: 297px;
-            }
 
             img {
                 position: absolute;

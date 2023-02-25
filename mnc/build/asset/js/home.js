@@ -1,18 +1,23 @@
 $(document).ready(function () {
-    //slider headline
-    $('.-sheadline').slick({
-        dots: true,
-        arrows: true,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'ease',
-        mobileFirst: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        appendDots: $('.-dtheadline')
+    //initialize swiper
+    var swiper = new Swiper(".headlineSlide", {
+        effect: "fade",
+        grabCursor: true,
+        loop: true,
+        initialSlide: 0,
+        autoHeight: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        }
     });
 
     //slider new release

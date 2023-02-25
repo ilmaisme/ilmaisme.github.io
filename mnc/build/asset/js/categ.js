@@ -1,4 +1,21 @@
 $(document).ready(function () {
+    //initialize swiper
+    var swiper = new Swiper(".productSwiper", {
+        effect: "cards",
+        grabCursor: true,
+        //loop: true,
+        initialSlide: 0,
+        cardsEffect: {
+            perSlideOffset: 15,
+            rotate: false,
+            slideShadows: false
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        }
+    });
+    
     //price range on pagelist
     var rangeSlider = document.getElementById("prices"),
         rangeBullet = document.getElementById("prices-bullet");
@@ -45,36 +62,5 @@ $(document).ready(function () {
     $(".-closeFilter").click(function () {
         $("body").removeAttr("style");
         $('#listmob').removeClass('active');
-    });
-
-    //slider product
-    $('.productSlide').slick({
-        dots: false,
-        arrows: true,
-        infinite: true,
-        accessibility: true,
-        centerMode: true,
-        centerPadding: '28px',
-        speed: 500,
-        mobileFirst: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        responsive: [{
-                breakpoint: 1220,
-                settings: {
-                    centerPadding: '28px',
-                }
-            },
-            {
-                breakpoint: 700,
-                settings: {
-                    centerPadding: '60px',
-                }
-            }
-        ]
-    });
-
-    $('.productSlide .slick-arrow').click(function (e) {
-        e.preventDefault();
     });
 })

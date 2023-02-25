@@ -4,12 +4,16 @@
 {{else}}
 <div class="productItem">
     <div class="productBox productSlider__box row">
-        <div class="productWrap productSlider__wrap col-lg-7">
+        <div class="productWrap productSlider__wrap col-lg-6 col-xl-7">
 
+            {{#if ../swiper}}
+            {{>list/product-img-swiper type=../type}}
+            {{else}}
             {{>list/product-img type=../type}}
+            {{/if}}
 
         </div>
-        <div class="productContent productSlider__content col-lg-5">
+        <div class="productContent productSlider__content col-lg-6 col-xl-5">
             <a href="{{link}}">
                 <h4 class="productTitle">{{title}}</h4>
             </a>

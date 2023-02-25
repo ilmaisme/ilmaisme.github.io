@@ -71,14 +71,14 @@ function viewport() {
 //update mobile menu
 function updateMenu() {
     if (viewport().width >= 1180) {
-        console.log("desktop")
+        // console.log("desktop")
         $('.menuMob').removeClass('mobile');
         hd.removeClass('mobile');
         /* move nav position in desktop */
         $('.nav').appendTo('#navDesk');
         $('.searchbox').appendTo('#navDesk nav');
     } else {
-        console.log("mobile")
+        // console.log("mobile")
         $('.menuMob').addClass('mobile');
         hd.addClass('mobile');
         /* move nav position in mobile */

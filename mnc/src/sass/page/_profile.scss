@@ -1,0 +1,432 @@
+.profile {
+    &Nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        margin-bottom: 20px;
+
+        @include min-responsive($w-lg) {
+            flex-direction: column;
+            padding-right: 25px;
+            margin-bottom: 0;
+        }
+
+        &__item {
+            position: relative;
+            margin-bottom: 5px;
+            margin-left: 12px;
+            margin-right: 12px;
+            flex-basis: auto;
+            flex-shrink: 0;
+
+            @include min-responsive($w-lg) {
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 12px;
+            }
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0
+            }
+
+            &.active {
+                .profileNav__link {
+                    color: $cl-black;
+
+                    @include min-responsive($w-lg) {
+                        padding-left: 23px;
+                    }
+
+                    &:before {
+                        content: '';
+                        border-top: 1px solid #232221;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 1px;
+
+                        @include min-responsive($w-lg) {
+                            width: 10px;
+                            bottom: unset;
+                            top: 14px;
+                            left: 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__link {
+            display: block;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            padding-left: 19px;
+            padding-right: 19px;
+            @include font-pack($font-base, $font-text, $font-weight-mbold, 2, $cl-black-medium);
+
+            @include min-responsive($w-lg) {
+                line-height: 1.2;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+
+            &--red {
+                color: $cl-red;
+
+                @include min-responsive($w-lg) {
+                    margin-top: 15px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+            }
+
+            .icoLogout {
+                @extend %filter-red;
+                width: 20px;
+                height: 20px;
+                margin-left: 10px;
+                vertical-align: sub;
+            }
+        }
+    }
+
+    &Content {
+        margin-top: 20px;
+
+        @include min-responsive($w-md) {
+            margin-top: 30px;
+        }
+    }
+
+    &Setting {
+
+        &__link {
+            display: block;
+            margin-top: 12px;
+            @include font-pack($font-base, $font-date, $font-weight-normal, $line-base, $cl-red);
+
+            .icoInline {
+                @extend %filter-red;
+                width: 24px;
+                height: 24px;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+        }
+
+        &__wrap {
+            margin-top: 16px;
+
+            @include min-responsive($w-md) {
+                margin-top: 30px;
+            }
+        }
+    }
+
+    &Upload {
+
+        &__wrap {
+            display: flex;
+            align-items: center;
+            margin-top: 12px;
+        }
+
+        &__guide {
+            margin-left: 20px;
+            max-width: 264px;
+
+            @include min-responsive($w-md) {
+                margin-left: 24px;
+            }
+        }
+
+        &__cta {
+            display: flex;
+            margin-top: 12px;
+            margin-left: -4px;
+            margin-right: -4px;
+            gap: 10px;
+
+            .button {
+                padding: 4px;
+                font-weight: $font-weight-sbold;
+
+                &Upload {
+                    color: $cl-red;
+                }
+
+                &Remove {
+                    color: $cl-black;
+                }
+            }
+        }
+
+        &__pic {
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            border-radius: 7px;
+        }
+
+        .upload {
+            position: relative;
+
+            &Box {
+                margin-top: 0;
+                order: unset;
+            }
+
+            &Btn {
+                width: 100px;
+                height: 100px;
+                border-radius: 7px;
+            }
+
+            &Img {
+                &__wrap {
+                    margin: 0;
+                }
+
+                &__box {
+                    width: 100px;
+                    height: 100px;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    &Cta {
+        padding: 15px 43px;
+        margin-top: 24px;
+
+        @include min-responsive($w-md) {
+            padding: 15px 58px;
+            margin-top: 36px;
+        }
+
+        &__wrap {
+            gap: 15px;
+            flex-wrap: nowrap;
+            padding: 0 30px;
+
+            @include min-responsive($w-md) {
+                gap: 24px;
+            }
+        }
+
+        &.buttonPrimary {
+            min-width: 141px;
+
+            @include min-responsive($w-md) {
+                min-width: 235px;
+            }
+        }
+    }
+
+    &Wish {
+        &__all {
+            display: flex;
+            align-items: center;
+
+            label {
+                margin-left: 12px;
+            }
+        }
+
+        &__del {
+            color: $cl-red;
+        }
+
+        &__check {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateX(-50%);
+        }
+
+        &__price {
+            margin-top: 10px;
+            padding-left: 45px;
+            order: 3;
+
+            @include min-responsive($w-md) {
+                margin-top: 0;
+                order: unset;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                padding-left: 0;
+            }
+
+            @include min-responsive($w-xl) {
+                padding-left: 15px;
+            }
+        }
+
+        &__categ {
+            margin-top: 10px;
+            order: 4;
+
+            @include min-responsive($w-md) {
+                margin-top: 0;
+                order: unset;
+            }
+        }
+
+        &__cta {
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+
+            @include min-responsive($w-md) {
+                padding-left: 15px;
+            }
+
+            .icoInline {
+                width: 36px;
+                height: 36px;
+                filter: invert(31%) sepia(0%) saturate(1383%) hue-rotate(244deg) brightness(92%) contrast(88%);
+            }
+        }
+
+        .productWrap {
+            padding-left: 45px;
+            padding-right: 0;
+
+            @include range-responsive($w-md, $w-lg) {
+                padding-left: 35px;
+            }
+        }
+
+        .productBox {
+            padding: 10px 15px;
+
+            @include min-responsive($w-xl) {
+                padding: 15px 20px;
+            }
+        }
+
+        .productItem {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .productContent {
+            margin-left: 0;
+            padding-right: 15px;
+            padding-left: 15px;
+
+            @include min-responsive($w-xl) {
+                padding-right: 50px;
+            }
+        }
+
+        .productAuthor__wrap a {
+            display: block;
+
+            @include min-responsive($w-md) {
+                display: inline-block;
+            }
+        }
+
+        .productMisc {
+            margin-top: 5px;
+            @include font-pack($font-base, false, false, 1.5, $cl-red);
+
+            @include min-responsive($w-md) {
+                line-height: 2;
+            }
+
+            &__title {
+                @include font-pack($font-base, $font-date, $font-weight-normal, $line-base, $cl-black-lighter);
+
+                @include min-responsive($w-md) {
+                    font-size: $font-text;
+                }
+            }
+        }
+    }
+
+    &Review {
+        &__link {
+            flex-wrap: nowrap;
+            align-items: center;
+
+            @include min-responsive($w-md) {
+                align-items: flex-start;
+            }
+        }
+
+        &__mob {
+            display: block;
+            margin-bottom: 14px;
+
+            @include min-responsive($w-md) {
+                display: none;
+            }
+        }
+
+        .productTitle {
+            flex: 1;
+        }
+
+        .productBox {
+            padding: 12px 0;
+            align-items: flex-start;
+            flex-direction: column;
+
+            @include min-responsive($w-md) {
+                padding: 15px 0;
+                flex-direction: row;
+            }
+        }
+
+        .productContent {
+            margin-left: 0;
+            padding-right: 15px;
+            padding-left: 15px;
+
+            @include min-responsive($w-md) {
+                margin-left: 5px;
+                padding-right: 15px;
+                padding-left: 0;
+            }
+        }
+
+        .productImg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .productMisc {
+            font-size: 0;
+            white-space: nowrap;
+            color: transparent;
+
+            &:after {
+                @extend .icoChevron;
+                transform: rotate(315deg) translate(-10px, -4px);
+                width: 12px;
+                height: 12px;
+                border-radius: 1px;
+                color: $cl-red;
+
+                @include min-responsive($w-md) {
+                    content: none
+                }
+            }
+
+            @include min-responsive($w-md) {
+                @include font-pack($font-base, $font-text, $font-weight-sbold, $line-base, $cl-red);
+            }
+        }
+    }
+}

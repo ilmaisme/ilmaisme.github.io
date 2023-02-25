@@ -24,6 +24,9 @@
     <!-- e:twitter card -->
 
     <link rel=icon type=image/png sizes=16x16 href="./asset/images/favicon.png">
+    {{#if swiper}}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    {{/if}}
     {{#eq page compare="home"}}
     <link rel="stylesheet" href="./asset/css/style-home.css" type="text/css">
 
@@ -34,7 +37,11 @@
 
     <link rel="preload" as="image" href="http://www.mncgramedia.id/uploads/MY_HERO_ACADEMIA_16.jpg">
     {{else}}
+    {{#eq page compare="profile"}}
+    <link rel="stylesheet" href="./asset/css/style-profile.css" type="text/css">
+    {{else}}
     <link type="text/css" rel="stylesheet" href="./asset/css/style.css">
+    {{/eq}}
     {{/eq}}
     {{/eq}}
 
