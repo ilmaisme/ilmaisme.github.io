@@ -5,11 +5,16 @@
 <div class="authorWrap display-flex">
     <div class="authorImg">
         <a href="{{link}}">
-            <img src="{{propic}}" alt="{{name}}" loading="lazy" width="451" height="500">
+            <img src="{{propic}}" alt="{{name}}" {{#eq ../page compare="Authors" }}{{else}}loading="lazy" {{/eq}}
+                width="451" height="500">
         </a>
     </div>
     <div class="authorContent">
+        {{#eq ../page compare="Authors"}}
+        <h2 class="titleText">{{name}}</h2>
+        {{else}}
         <h3 class="titleText">{{name}}</h3>
+        {{/eq}}
         <p class="titleParagraph">{{desc}}</p>
         {{#if ../more}}
         <a href="{{link}}" class="linkMore linkMore__arrow">

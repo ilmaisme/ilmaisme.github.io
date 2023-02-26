@@ -1,5 +1,12 @@
 .headline {
     position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 24px;
+
+    @include min-responsive($w-xl) {
+        padding-bottom: 0;
+    }
 
     &Slide {
         width: 100%;
@@ -11,8 +18,12 @@
         }
 
         &.swiper-initialized {
-            @extend %slick-loaded;
+            max-height: unset;
         }
+    }
+
+    &Link {
+        width: 100%;
     }
 
     .swiper-button-prev,

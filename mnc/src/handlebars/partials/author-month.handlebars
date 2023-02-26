@@ -6,10 +6,15 @@
         {{else}}
         <div class="authorMonth__wrap display-flex">
             <div class="authorMonth__content">
+                {{#eq page compare="Authors"}}
                 <h3 class="titleCaption">Author of the Month</h3>
                 <h4 class="titleText mt2">{{name}}</h4>
+                {{else}}
+                <h2 class="titleCaption">Author of the Month</h2>
+                <h3 class="titleText mt2">{{name}}</h3>
+                {{/eq}}
                 <p class="titleParagraph">{{desc}}</p>
-                <a href="{{link}}" class="linkMore linkMore__arrow">
+                <a href="{{link}}" class="linkMore linkMore__arrow" aria-label="see more author of the month">
                     see more
                     <span class="icoBase icoInline icoArrow"></span>
                 </a>
