@@ -86,6 +86,7 @@ $(document).ready(function () {
         $('#prices').val(0);
         rangeBullet.style.left = 0 + "px";
         rangeBullet.innerHTML = 0;
+        rangeSlider.style.background = 'linear-gradient(to right, #232221 0%, #232221 ' + 0 + '%, #D9D9D9 ' + 0 + '%, #D9D9D9 100%)'
     });
 
     //filter button on mobile
