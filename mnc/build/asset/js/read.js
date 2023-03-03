@@ -7,6 +7,13 @@ $(document).ready(function () {
     $(".-bVideo").on("click", function () {
         $('.-pVideo').addClass('active');
     });
+
+    $('.home-video-item').on('click', function (e) {
+        for (i = 0; i < iframes.length; i++) {
+            players[i].pauseVideo();
+        }
+    })
+
     $(".-btnCl").on("click", function () {
         closePopup()
     });
@@ -14,13 +21,20 @@ $(document).ready(function () {
         closePopup()
     })
     $('.popupBox').on('click', function (e) {
-        e.stopPropagation();
         //uncheck button buy
         closeButtonBuy()
+        closePopup()
+    })
+    $('.readPopup__bg').on('click', function (e) {
+        e.stopPropagation();
     })
 
     function closePopup() {
         $('.popup').removeClass('active');
+        if ($('#video').length > 0) {
+            //pause video
+            $('#video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+        }
     }
 
     //button buy
@@ -34,12 +48,12 @@ $(document).ready(function () {
     $(document).on("click", function () {
         //uncheck button buy
         closeButtonBuy()
-        
+
         //hide share to socmed
         $('.shareWrap').hide()
     });
 
-    function closeButtonBuy(){        
+    function closeButtonBuy() {
         $('.readBuyToggle').prop('checked', false);
         $('.readBuyToggle').siblings('button').removeClass('active')
     }

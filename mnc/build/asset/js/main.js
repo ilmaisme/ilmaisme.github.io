@@ -14,10 +14,10 @@ if (window.history && window.history.pushState) {
 }
 
 $(window).on('resize', function () {
+    updateMenu()
     if (viewport().width >= 1180) {
         uncheckedMenu()
         hideMenuMobile()
-        updateMenu()
     }
 });
 
@@ -97,10 +97,12 @@ function hideMenuMobile() {
 }
 
 //open search box
+let s = $('#search')
+
 function openSearch(e) {
-    let s = $('#search')
+    event.stopPropagation();
     $('.searchbox').toggle()
-    $('.searchboxInput').animate({
+    s.animate({
         width: 'toggle'
     }, 700);
     //cursor focus on search
@@ -130,4 +132,16 @@ $(".newsletterForm").submit(function (e) {
     e.preventDefault()
     // error message example
     // $(".newsletterMsg").html('<span class="icoInline icoClose"></span><span>Please double check your email</span>')
+});
+
+$(document).on("click", function () {
+    //hide searchbox
+    if ($('.-removeSearch').length > 0) {
+        $('.searchbox').toggle()
+        s.animate({
+            width: 'toggle'
+        }, 700);
+        $('.buttonSearch').toggleClass('-removeSearch')
+        s.val('');
+    }
 });
