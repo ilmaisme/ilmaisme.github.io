@@ -27,7 +27,7 @@
     <!-- e:twitter card -->
 
     <link rel=icon type=image/png sizes=16x16 href="./asset/images/favicon.png">
-    <link type="text/css" rel="stylesheet" href="./asset/css/style.css">
+    <link type="text/css" rel="stylesheet" href="./asset/css/style.min.css">
 
     <link rel="preload" href="./asset/images/logo-mnc.png" as="image" />
     <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2" as="font"
@@ -259,7 +259,6 @@
                                     <button class="button faqShow" aria-label="Show hide content">Show</button>
                                 </div>
                                 <div class="faqContent faqBox__content">
-                                    <p>
                                     <ol>
                                         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin
                                             et
@@ -277,7 +276,6 @@
                                             id eu
                                             libero.</li>
                                     </ol>
-                                    </p>
                                 </div>
                             </div>
                             <div class="faqBox close">
@@ -490,25 +488,33 @@
     <script type="text/javascript" src="./asset/js/main.min.js"></script>
     <script>
         //show content faq
-        var accItem = document.getElementsByClassName('faqBox');
-        var accHD = document.getElementsByClassName('-js-show');
+        var accItem = document.getElementsByClassName('faqBox'),
+            accHD = document.getElementsByClassName('-js-show');
         for (i = 0; i < accHD.length; i++) {
             accHD[i].addEventListener('click', toggleItem, false);
         }
 
         function toggleItem() {
-            var itemClass = this.parentNode.className;
+            var itemClass = this.parentNode.className,
+                contentClass = this.parentNode.getElementsByClassName('faqContent')[0];
 
             if (itemClass == 'faqBox close') {
                 for (i = 0; i < accItem.length; i++) {
                     accItem[i].className = 'faqBox close';
                     accHD[i].querySelector('.faqShow').innerHTML = "Show";
                 }
+                
+                Array.from(document.getElementsByClassName('faqContent')).forEach(elem => {
+                    elem.style.maxHeight = 0;
+                });
+
                 this.parentNode.className = 'faqBox open active';
                 this.querySelector('.faqShow').innerHTML = "Hide";
+                contentClass.style.maxHeight = contentClass.scrollHeight + 'px';
             } else {
                 this.parentNode.className = 'faqBox close';
                 this.querySelector('.faqShow').innerHTML = "Show";
+                contentClass.style.maxHeight = 0;
             }
         }
     </script>
