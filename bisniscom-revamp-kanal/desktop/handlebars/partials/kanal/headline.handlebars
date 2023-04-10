@@ -1,0 +1,77 @@
+<div class="hL">
+    <div class="hLWrap">
+        <div class="hLBig">
+            <div class="hLSlide -js-hL-slider-for">
+                {{#each channel}}
+                {{#gte @index compare=../index_start}}
+                {{#gte @index compare=../index_end}}
+                {{else}}
+                <div class="hLBigItem">
+                    <div class="hLBigImg">
+                        <img src="https://images.bisnis.com/posts/{{img}}" alt="{{title}}">
+                    </div>
+                    <div class="hLBigContent{{#if premium}} -premium{{/if}}">
+                        <div class="artChannel">
+                            {{#if premium}}
+                            Premium<span class="icoInline icoPremium"></span>
+                            {{else}}
+                            {{channel}}
+                            {{/if}}
+                        </div>
+                        <a href="{{link}}" class="hLLink">
+                            <h1 class="hLBigTitle hLTitle">
+                                {{title}}
+                            </h1>
+                        </a>
+                        <div class="hLBigLead">
+                            {{lead}}
+                        </div>
+                        <div class="artDate">
+                            9 menit yang lalu
+                        </div>
+                    </div>
+                </div>
+                {{/gte}}
+                {{else}}
+                {{/gte}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="hLNav">
+            <div class="hLSlide -js-hL-slider-nav">
+                {{#each channel}}
+                {{#gte @index compare=../index_start}}
+                {{#gte @index compare=../index_end}}
+                {{else}}
+                <div class="hLNavItem">
+                    <div class="hLNavWrap{{#if premium}} -premium{{/if}}">
+                        <div class="hLNavImg artImg">
+                            <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=98&h=98" alt="{{title}}">
+                        </div>
+                        <div class="hLNavContent">
+                            <div class="artChannel">
+                                {{#if premium}}
+                                Premium<span class="icoInline icoPremium"></span>
+                                {{else}}
+                                {{channel}}
+                                {{/if}}
+                            </div>
+                            <a href="{{link}}" class="hLLink">
+                                <h2 class="hLNavTitle hLTitle">
+                                    {{title}}
+                                </h2>
+                            </a>
+                            <div class="artDate">
+                                9 menit yang lalu
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/gte}}
+                {{else}}
+                {{/gte}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

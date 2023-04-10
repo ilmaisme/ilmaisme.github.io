@@ -1,0 +1,162 @@
+// s: override style bisniscom
+#myImg-inject {
+    border-radius: 0;
+}
+
+.wrapper-description h1 {
+    @include font-pack($font-faustina !important, false, 600, false, false);
+}
+
+.wrapper-description .subtitle {
+    font-style: normal;
+    font-family: $font-faustina;
+}
+
+.wrapper-description .author {
+    font-family: $font-faustina;
+    font-weight: 700;
+
+    a {
+        color: #EF7E2C;
+    }
+
+    .premiumDet__date {
+        left: 0;
+    }
+}
+
+.wrapper-description .detail-description {
+    font-family: $font-faustina;
+    color: #5A5A5A;
+}
+
+.new-baca {
+    border: 1px solid #E98B31;
+    background: #FCFCFC;
+    @include font-pack(false, 16px, 600, 28px, white);
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+.new-baca table tbody tr td:first-child,
+.new-baca table tbody tr td:last-child {
+    background: transparent !important;
+    line-height: 22px;
+    padding: 8px 3px;
+
+    a {
+        color: #333333;
+
+        &:hover {
+            color: #AB601A;
+            text-decoration: none;
+        }
+    }
+}
+
+.new-baca table tbody tr td.bg-baca img {
+    margin-left: -2px;
+    min-height: 50px;
+}
+
+.new-premium h5 em {
+    background: transparent;
+    font-style: normal;
+    @include font-pack(false, 14px, 400 !important, false, #4F4F4F !important);
+    border-bottom: 1px dashed #4F4F4F;
+    width: 100% !important;
+    margin-left: 0;
+    margin-bottom: 25px;
+}
+
+.wrapper-description .font-size {
+    padding: 0;
+    margin: 0 15px 0 15px;
+    display: block;
+    text-align: left;
+    left: auto;
+    border: 0;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #D6D6D6;
+        position: absolute;
+        top: 38px;
+    }
+
+    a {
+        background: #ededed;
+        border: 1px solid #ededed;
+        border-radius: 100px;
+        width: 35px;
+        height: 35px;
+        display: inline-block;
+        margin-left: 0;
+        padding: 5px 9px;
+        @include font-pack(false, 20px, 100 !important, false, #555 !important);
+
+        &:hover {
+            background: transparent;
+            border: 1px solid #ededed;
+        }
+    }
+}
+
+.wrapper-description .author img {
+    width: 60px;
+    height: 60px;
+}
+
+.wrapper-description .detail-description {
+
+    a {
+        color: #ED821B;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// e: override style bisniscom
+
+.premiumDet {
+    &__date {
+        @include font-pack(false, 13px, 400, 13px, #999999);
+    }
+
+    &__quote {
+        border-left: 0;
+        margin-left: 45px;
+        position: relative;
+        @include font-pack(false, 22px, 700, false, #333333);
+
+        &:before {
+            content: '';
+            background-image: url("data:image/svg+xml,%3Csvg width='70' height='55' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.446 55H0V36.817C0 29.46.634 23.671 1.902 19.45c1.328-4.282 3.743-8.111 7.244-11.488C12.648 4.583 17.116 1.93 22.548 0l4.981 10.493c-5.071 1.689-8.724 4.041-10.957 7.056-2.174 3.016-3.32 7.026-3.441 12.032h12.315V55Zm42.471 0H42.471V36.817c0-7.417.634-13.237 1.902-17.458 1.328-4.222 3.743-8.021 7.244-11.398C55.18 4.583 59.647 1.93 65.02 0L70 10.493c-5.071 1.689-8.724 4.041-10.957 7.056-2.174 3.016-3.32 7.026-3.441 12.032h12.315V55Z' fill='%23E98B31'/%3E%3C/svg%3E");
+            width: 45px;
+            height: 55px;
+            display: block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            left: -45px;
+            position: absolute;
+
+        }
+    }
+
+    &__fontWrapper {
+        width: 115px;
+        background: #fcfcfc;
+        position: relative;
+        padding: 0 20px;
+        display: flex;
+        margin: 10px auto;
+    }
+
+    &__share {
+        @include font-pack($font-faustina, 16px, false, false, #969696);
+    }
+}

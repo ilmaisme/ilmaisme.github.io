@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="kanal" slick=true}}
+
+<body class="kanalTheme--lifestyle">
+    {{!>header/header login=true page="Home"}}
+    {{!>header/header page="Home"}}
+
+    <!-- s: top billboard -->
+    {{>ads/top}}
+    <!-- e: top billboard -->
+
+    <main role="main">
+        <div class="container">
+
+            <!-- s: headline -->
+            {{>kanal/headline channel=kanal.Lifestyle.hL total=4 index_start=0 index_end=4}}
+
+            <!-- e: headline -->
+
+            <!-- s: stream -->
+            {{>stream channel=stream pos="center" total=2 index_start=0 index_end=1}}
+
+            <!-- e: stream -->
+
+            <!-- s: topic -->
+            <h3 class="kanalCaption mt50"><span class="clKanal">Hot</span> Topic</h3>
+            {{>topic channel=topic total=9 index_start=0 index_end=9}}
+
+            <!-- e: topic -->
+
+            <div class="row mt50">
+                <div class="col-7 col-left">
+                    <!-- s: stream -->
+                    {{>stream channel=stream pos="left" total=2 index_start=1 index_end=2}}
+
+                    <!-- e: stream -->
+
+                    <!-- s: latest -->
+                    <h3 class="kanalCaption mt50">Berita Terbaru</h3>
+                    {{>kanal/latest channel=kanal.Lifestyle.latest pos="top" type="row" total=10 index_start=0
+                    index_end=5}}
+
+                    <!-- e: latest -->
+
+                    <!-- s: rec -->
+                    <div class="kanalBox mt50">
+                        <div class="kanalCaptionWrap">
+                            <h3 class="kanalCaptionBox">
+                                Rekomendasi Film Terbaru
+                            </h3>
+                            <a href="#" class="kanalOthers">Lihat Lainnya<span class="icoInline icoArrow"></span></a>
+                        </div>
+                        {{>kanal/article channel=channel.Entertainment.latest type="col" total=3 index_start=0
+                        index_end=3}}
+                    </div>
+
+                    <!-- e: rec -->
+
+                    <!-- s: travel -->
+                    <div class="kanalCaptionWrap mt50">
+                        <h3 class="kanalCaption">
+                            Travel
+                        </h3>
+                        <a href="#" class="kanalOthers">Lihat Lainnya<span class="icoInline icoArrow"></span></a>
+                    </div>
+                    {{>kanal/article channel=channel.Travel.latest type="col-left" total=5 index_start=0
+                    index_end=5}}
+
+                    <!-- e: travel -->
+
+                    {{>kanal/latest channel=kanal.Lifestyle.latest type="row" total=10 index_start=5
+                    index_end=9}}
+
+                </div>
+                <div class="col-3 col-right">
+                    <!-- s: rectangle billboard -->
+                    {{>ads/middle}}
+                    <!-- e: rectangle billboard -->
+
+                    <h3 class="kanalCaption mt50">Terpopuler</h3>
+                </div>
+            </div>
+
+            <!-- s: leaderboard billboard -->
+            <div class="mt50">
+                {{>ads/leaderboard}}
+            </div>
+            <!-- e: leaderboard billboard -->
+        </div>
+
+        <!-- s: video -->
+        <div class="kanalVid mt50">
+            <div class="container">
+                <div class="kanalCaptionWrap">
+                    <h3 class="kanalCaption">
+                        Video Pilihan
+                    </h3>
+                    <a href="#" class="kanalOthers">Lihat Lainnya<span class="icoInline icoArrow"></span></a>
+                </div>
+                {{>kanal/article channel=channel.Video.latest video=true type="col" total=3 index_start=0
+                index_end=3}}
+
+            </div>
+        </div>
+
+        <!-- e: video -->
+        <div class="container">
+            <!-- s: leaderboard billboard -->
+            <div class="mt50">
+                {{>ads/leaderboard}}
+            </div>
+            <!-- e: leaderboard billboard -->
+
+            <!-- s: infotainment -->
+            <div class="kanalCaptionWrap mt50">
+                <h3 class="kanalCaption">
+                    Infotainment
+                </h3>
+                <a href="#" class="kanalOthers">Lihat Lainnya<span class="icoInline icoArrow"></span></a>
+            </div>
+            {{>kanal/article channel=channel.Infotainment.latest type="col-center" total=5 index_start=0
+            index_end=5}}
+
+            <!-- e: infotainment -->
+
+            <!-- s: leaderboard billboard -->
+            <div class="mt50">
+                {{>ads/leaderboard}}
+            </div>
+            <!-- e: leaderboard billboard -->
+        </div>
+    </main>
+
+    {{!>footer/footer}}
+
+    {{>footer/script page="kanal" slick=true}}
+
+</body>
+
+</html>

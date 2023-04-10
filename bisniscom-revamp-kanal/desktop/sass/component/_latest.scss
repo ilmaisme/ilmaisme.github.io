@@ -1,0 +1,37 @@
+.latest {
+    &Wrap {
+        &.-top {
+            .latestItem:first-child {
+                margin-top: 16px;
+
+                .latestImg {
+                    flex-basis: 369px;
+                    height: 277px;
+                }
+
+                .latestTitle {
+                    @include title_clamp(4);
+                    @include font-pack(false, 30px, false, 1.2, false);
+                }
+
+                .latestDate {
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+
+    &Item {
+        margin-top: 20px;
+    }
+
+    &Img {
+        position: relative;
+        flex-basis: 190px;
+        height: 142px;
+
+        img {
+            @extend %template-img
+        }
+    }
+}

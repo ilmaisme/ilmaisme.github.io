@@ -1,0 +1,145 @@
+.kanal {
+    &Theme {
+        &--lifestyle {
+            --cl-lifestyle: #A20087;
+
+            .kanal {
+                &Others {
+                    color: var(--cl-lifestyle);
+                    border-color: var(--cl-lifestyle);
+                }
+
+                &CaptionBox {
+                    background: var(--cl-lifestyle);
+                }
+            }
+
+            .clKanal {
+                color: var(--cl-lifestyle);
+            }
+
+            .art {
+                &Channel {
+                    color: var(--cl-lifestyle);
+                }
+
+                &Link:hover {
+                    .artTitle {
+                        color: var(--cl-lifestyle);
+                    }
+                }
+            }
+
+            .hL {
+                &Big {
+                    .art {
+                        &Channel {
+                            color: var(--cl-lifestyle);
+                        }
+                    }
+                }
+
+                &Nav {
+                    &Item {
+                        &.slick-current {
+                            .hLNavWrap {
+                                border-color: var(--cl-lifestyle);
+
+                                &.-premium {
+                                    border-color: $cl-white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .topic {
+                &Link {
+                    border-color: var(--cl-lifestyle);
+
+                    &:hover {
+                        background: var(--cl-lifestyle);
+                    }
+                }
+
+                &Title {
+                    color: var(--cl-lifestyle);
+                }
+            }
+        }
+    }
+
+    &Caption {
+        text-transform: uppercase;
+        @include font-pack($font-body, 24px, $font-weight-bold, $line-base, $cl-black);
+
+        &Wrap {
+            @include display_flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &Box {
+            padding: 12px 24px;
+            border-top-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            text-transform: uppercase;
+            @include font-pack($font-body, 20px, $font-weight-bold, 1, $cl-white);
+        }
+    }
+
+    &Box {
+        padding-bottom: 20px;
+        border: 1px solid #C7C7C7;
+        border-radius: 12px;
+
+        .art {
+            padding-top: 20px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .kanalOthers {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    &Vid {
+        background: $cl-black;
+        padding-top: 34px;
+        padding-bottom: 48px;
+
+        .kanalCaption,
+        .kanalOthers,
+        .artChannel,
+        .artTitle {
+            color: $cl-white
+        }
+
+        .art {
+            margin-top: 16px;
+        }
+
+        .artWrap.-col {
+            gap: 43px;
+
+            .artImg {
+                padding-top: calc(3/4 * 100% - 88px);
+            }
+        }
+
+        .artDate {
+            color: #C7C7C7
+        }
+    }
+
+    &Others {
+        @include font-pack($font-body, 14px, $font-weight-sbold, $line-base, false);
+
+        .icoArrow {
+            margin-left: 5px;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+<div class="stream{{#if pos}} -{{pos}}{{/if}}">
+    {{#eq pos compare="center"}}
+    <img src="./asset/images/stream-bg.jpg" alt="" class="streamBg" loading="lazy" width="1082" height="400">
+    <div class="streamWrap mt50">
+        <img src="./asset/images/stream-banner.png" alt="" loading="lazy" width="540" height="271">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="streamVidWrap">
+            <div class="streamCaption">
+                <img src="./asset/images/icon/icon-live.svg" class="streamIcon" alt="" loading="lazy" width="24"
+                    height="24">
+                <strong>Live</strong>
+                Streaming
+            </div>
+            <div class="streamVid">
+                <div class="streamImg"><img src="https://images.bisnis.com/thumb/posts/{{img}}?w=460&h=260" alt=""
+                        loading="lazy" width="460" height="260"></div>
+                {{!-- <iframe src="" frameborder="0" alt="{{title}}"></iframe> --}}
+            </div>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+    {{/eq}}
+    {{#eq pos compare="left"}}
+    <img src="./asset/images/stream-bg-left.jpg" alt="" class="streamBg" loading="lazy" width="740" height="284">
+    <div class="streamWrap">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="streamVid">
+            <div class="streamImg"><img src="https://images.bisnis.com/thumb/posts/{{img}}?w=460&h=260" alt=""
+                    loading="lazy" width="460" height="260"></div>
+            {{!-- <iframe src="" frameborder="0" alt="{{title}}"></iframe> --}}
+        </div>
+        <div class="streamContent">
+            <div class="streamCaption">
+                <img src="./asset/images/icon/icon-live.svg" class="streamIcon" alt="" loading="lazy" width="24"
+                    height="24">
+                <strong>Live</strong>
+                Streaming
+            </div>
+            <div class="streamBreaking">Breaking<span>News</span></div>
+            <h4 class="streamTitle">{{title}}</h4>
+            <a href="{{link}}" class="streamLink"><span class="icoInline icoPlay"></span>Klik Di Sini</a>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+    {{/eq}}
+</div>

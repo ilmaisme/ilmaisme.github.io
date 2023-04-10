@@ -1,0 +1,65 @@
+.ico {
+    &Inline {
+        display: inline-block;
+    }
+
+    &Arrow {
+        position: relative;
+        width: 22px;
+        height: 22px;
+        vertical-align: middle;
+
+        &::after,
+        &::before {
+            content: "";
+            display: block;
+            box-sizing: border-box;
+            position: absolute;
+            right: 3px
+        }
+
+        &::after {
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid;
+            border-right: 2px solid;
+            transform: rotate(45deg);
+            bottom: 7px
+        }
+
+        &::before {
+            width: 14px;
+            height: 2px;
+            bottom: 10px;
+            background: currentColor
+        }
+
+        &-left {
+            transform: rotate(181deg);
+        }
+    }
+
+    &Premium {
+        width: 10px;
+        height: 10px;
+        margin-left: 4px;
+        background-size: cover;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' style='enable-background:new 0 0 11 10' viewBox='0 0 11 10'%3E%3Cpath d='m5.6.5 1.5 3 3.3.5L8 6.4l.5 3.3-3-1.5-3 1.5.5-3.3L.7 4 4 3.5l1.6-3z'/%3E%3C/svg%3E");
+    }
+
+    &Play {
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            box-sizing: border-box;
+            position: absolute;
+            width: 0;
+            height: 10px;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 8px solid;
+        }
+    }
+}

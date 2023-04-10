@@ -1,0 +1,41 @@
+// font template
+@mixin font-pack($family: false, $size: false, $weight: false, $lh: false, $colour: false) {
+	@if $family {
+		font-family: $family;
+	}
+
+	@if $size {
+		font-size: $size;
+	}
+
+	@if $weight {
+		font-weight: $weight;
+	}
+
+	@if $lh {
+		line-height: $lh;
+	}
+
+	@if $colour {
+		color: $colour;
+	}
+}
+
+// media
+@mixin max-responsive ($media) {
+	@media (max-width: $media) {
+		@content;
+	}
+}
+
+@mixin min-responsive ($media) {
+	@media (min-width: $media) {
+		@content;
+	}
+}
+
+@mixin range-responsive ($media, $media2) {
+	@media (min-width: $media) and (max-width: $media2) {
+		@content;
+	}
+}

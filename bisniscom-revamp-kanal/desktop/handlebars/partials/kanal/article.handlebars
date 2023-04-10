@@ -1,0 +1,66 @@
+<div class="art">
+    <div class="artWrap{{#if type}} -{{type}}{{/if}}">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="artItem">
+            <a href="{{link}}" class="artLink{{#if ../type}} art--{{../type}}{{/if}}">
+                <div class="artImg">
+                    {{#if ../video}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=331&h=186" width="331" height="186"
+                        alt="{{title}}" loading="lazy">
+                    <div class="artDuration">
+                        <span class="icoInline icoPlay"></span>
+                        04.22
+                    </div>
+                    {{else}}
+                    {{#eq ../type compare="col-left"}}
+                    {{#eq @index compare= 0}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=310&h=413" width="310" height="413"
+                        alt="{{title}}" loading="lazy">
+                    {{else}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=155&h=116" width="155" height="116"
+                        alt="{{title}}" loading="lazy">
+                    {{/eq}}
+                    {{else}}
+                    {{#eq ../type compare="col-center"}}
+                    {{#eq @index compare= 2}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=410&h=547" width="410" height="547"
+                        alt="{{title}}" loading="lazy">
+                    {{else}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=300&h=225" width="300" height="225"
+                        alt="{{title}}" loading="lazy">
+                    {{/eq}}
+                    {{else}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=217&h=163" width="217" height="163"
+                        alt="{{title}}" loading="lazy">
+                    {{/eq}}
+                    {{/eq}}
+                    {{/if}}
+                </div>
+                <div class="artContent">
+                    {{#if premium}}
+                    <div class="artChannel -premium">
+                        Premium<span class="icoInline icoPremium"></span>
+                    </div>
+                    {{else}}
+                    <div class="artChannel">
+                        {{channel}}
+                    </div>
+                    {{/if}}
+                    <h4 class="artTitle">
+                        {{title}}
+                    </h4>
+                    <div class="artDate">
+                        9 menit yang lalu
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+</div>
