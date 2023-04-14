@@ -1,0 +1,16 @@
+<nav class="navMenu" aria-label="primarynavigation">
+    <ul class="navList center-flex">
+        <li class="navItem">
+            <a href="https://www.bisnis.com/">
+                <img src="./asset/images/icon/icon-bisniscom.svg" alt="Bisniscom icon" width="36" height="36">
+            </a>
+        </li>
+        {{#each channel}}
+        <li class="navItem{{#eq ../active compare=title}} -active{{/eq}}">
+            <a href="{{link}}" class="navLink">
+                {{title}}
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</nav>

@@ -1,0 +1,32 @@
+<div class="art">
+    <div class="artWrap -js-photo-slider">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="artItem">
+            <div class="artImg">
+                <img src="https://images.bisnis.com/photos/{{img}}" width="1080" height="450" alt="{{title}}"
+                    loading="lazy">
+            </div>
+            <div class="artContent">
+                <div class="artPhotoCount">
+                    <span class="icoInline icoPhoto"></span>5 Foto
+                </div>
+                <a href="{{link}}" class="artLink">
+                    <h4 class="artTitle">
+                        {{title}}
+                    </h4>
+                    <div class="artDate">
+                        9 menit yang lalu
+                    </div>
+                </a>
+                <a href="{{link}}" class="artPhotoMore">Lihat Foto</a>
+            </div>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+</div>

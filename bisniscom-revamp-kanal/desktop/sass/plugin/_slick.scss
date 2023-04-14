@@ -127,17 +127,17 @@
     line-height: 0;
     position: absolute;
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     padding: 0;
     -webkit-transform: scale(.8) translate(0, -50%);
     -ms-transform: scale(.8) translate(0, -50%);
     transform: scale(.8) translate(0, -50%);
     cursor: pointer;
-    color: transparent;
+    color: white;
     border: none;
     outline: none;
-    background: #EC9F38;
+    background: transparent;
     border-radius: 50%;
     z-index: 1;
     box-shadow: none;
@@ -149,68 +149,45 @@
         transform: translate(0, -50%);
     }
 
-    &:hover,
-    &:focus {
-        &:before {
-            opacity: 1;
-        }
-    }
-
     &.slick-disabled {
         opacity: 0;
     }
 
-    &:before {
-        opacity: .8;
-        color: #000000;
+    &::after,
+    &::before {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        border-radius: 1px;
+    }
+
+    &::after {
+        width: 14px;
+        height: 14px;
+        border-top: 2px solid;
+        border-right: 2px solid;
+        transform: rotate(45deg);
+        bottom: 14px;
+        right: 13px;
+    }
+
+    &::before {
+        width: 20px;
+        height: 2px;
+        bottom: 20px;        
+        right: 12px;
+        background: currentColor
     }
 }
 
 .slick-prev {
     left: 8px;
     top: calc(50%);
+    transform: rotate(181deg);
 
     @include min-responsive($mntablet) {
-        left: 4px;
-    }
-
-    [dir='rtl'] & {
-        right: 0;
-        left: auto;
-    }
-
-    &:before {
-        content: "";
-        display: inline-block;
-        position: relative;
-        border-bottom: 2px solid $cl-white;
-        border-left: 2px solid $cl-white;
-        transform: rotate(45deg);
-        left: 3px;
-        top: 1px;
-        width: 14px;
-        height: 14px;
-        stroke-width: 0;
-        stroke: currentColor;
-        fill: currentColor;
-        transition: .2s ease-out;
-
-        [dir='rtl'] & {
-            content: "";
-            display: inline-block;
-            position: relative;
-            border-bottom: 2px solid $cl-white;
-            border-left: 2px solid $cl-white;
-            transform: rotate(45deg);
-            left: 3px;
-            top: 1px;
-            width: 14px;
-            height: 14px;
-            stroke-width: 0;
-            stroke: currentColor;
-            fill: currentColor;
-            transition: .2s ease-out;
-        }
+        left: 178px;
     }
 }
 
@@ -219,46 +196,7 @@
     right: 8px;
 
     @include min-responsive($mntablet) {
-        right: 4px;
-    }
-
-    [dir='rtl'] & {
-        right: auto;
-        left: 0;
-    }
-
-    &:before {
-        content: "";
-        display: inline-block;
-        position: relative;
-        border-bottom: 2px solid $cl-white;
-        border-right: 2px solid $cl-white;
-        transform: rotate(-45deg);
-        right: 3px;
-        top: 1px;
-        width: 14px;
-        height: 14px;
-        stroke-width: 0;
-        stroke: currentColor;
-        fill: currentColor;
-        transition: .2s ease-out;
-
-        [dir='rtl'] & {
-            content: "";
-            display: inline-block;
-            position: relative;
-            border-bottom: 2px solid $cl-white;
-            border-right: 2px solid $cl-white;
-            transform: rotate(-45deg);
-            right: 3px;
-            top: 1px;
-            width: 14px;
-            height: 14px;
-            stroke-width: 0;
-            stroke: currentColor;
-            fill: currentColor;
-            transition: .2s ease-out;
-        }
+        right: 178px;
     }
 }
 
@@ -276,11 +214,5 @@
         font-size: 0;
         border-radius: 50%;
         cursor: pointer;
-    }
-
-    .slick-active {
-        button {
-            background: #E67A13;
-        }
     }
 }

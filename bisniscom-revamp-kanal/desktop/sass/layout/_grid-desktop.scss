@@ -15,3 +15,35 @@
         padding-right: 18px;
     }
 }
+
+.root {
+    position: relative;
+    background: $cl-white;
+
+    .main {
+        padding-top: 70px;
+    }
+
+    .flashnews {
+        ~.main {
+            padding-top: 100px;
+
+            .menuPanel {
+                top: 100px;
+                height: calc(100vh - 100px);
+            }
+        }
+
+        ~header .headerTop {
+            top: 30px;
+        }
+
+        ~.skyscrapper {
+            transform: translateY(160px);
+
+            &.-top {
+                transform: translateY(100px);
+            }
+        }
+    }
+}

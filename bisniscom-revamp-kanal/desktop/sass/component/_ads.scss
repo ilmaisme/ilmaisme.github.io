@@ -5,16 +5,35 @@
 .billboardBottom,
 .billboardBig,
 .billboardLeaderboard {
-    &:after {
-        background-color: #D9D9D9;
+    &::before {
+        content: '';
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        left: 0;
+        top: -14px;
+        width: 100%;
+        height: 100%;
+        background: url(../images/icon/icon-bisniscom-circle.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &::after {
+        background-color: #F4F4F4;
         content: "Advertisement";
         position: absolute;
-        z-index: -1;
+        z-index: 0;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        @include font-pack($font-body, 14px, $font-weight-normal, 1.4, #939393);
+        padding-top: 36px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        @include font-pack($font-body, 11px, $font-weight-sbold, 1.6, #939393);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -25,13 +44,17 @@
     position: fixed;
     width: 100%;
     top: 0;
-    transform: translateY(95px);
+    transform: translateY(130px);
     z-index: 1;
     transition: transform .5s ease;
 
+    &.-top{
+        transform: translateY(70px);
+    }
+
     &Fluid {
         position: absolute;
-        width: calc((100% - 1100px)/2);
+        width: calc((100% - 1110px)/2);
         display: block;
         top: 0;
 
@@ -72,17 +95,18 @@
     &Top {
         width: 970px;
         min-height: 250px;
+        text-align: center;
 
-        &:after {
-            content: '';
+        &~.header~.root {
+            // top: 60px;
         }
     }
 
-    &Sticky {
-        position: sticky;
-        text-align: center;
-        top: 156px;
-    }
+    // &Sticky {
+    //     position: sticky;
+    //     text-align: center;
+    //     top: 0;
+    // }
 
     &Rectangle {
         width: 300px;
@@ -104,7 +128,7 @@
         min-height: 600px;
     }
 
-    &Leaderboard{
+    &Leaderboard {
         width: 728px;
         min-height: 90px;
     }

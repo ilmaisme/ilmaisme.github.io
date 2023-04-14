@@ -1,4 +1,4 @@
-<div class="art">
+<div class="art{{#if mt}} mt{{mt}}{{/if}}">
     <div class="artWrap{{#if type}} -{{type}}{{/if}}">
         {{#each channel}}
         {{#gte @index compare=../index_start}}
@@ -12,7 +12,7 @@
                         alt="{{title}}" loading="lazy">
                     <div class="artDuration">
                         <span class="icoInline icoPlay"></span>
-                        04.22
+                        {{#if ../btv}}{{else}}04.22{{/if}}
                     </div>
                     {{else}}
                     {{#eq ../type compare="col-left"}}
@@ -33,8 +33,18 @@
                         alt="{{title}}" loading="lazy">
                     {{/eq}}
                     {{else}}
+                    {{#eq ../type compare="col-top"}}
+                    {{#eq @index compare= 6}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=300&h=225" width="300" height="225"
+                        alt="{{title}}" loading="lazy">
+                    {{else}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=94&h=94" width="94" height="94"
+                        alt="{{title}}" loading="lazy">
+                    {{/eq}}
+                    {{else}}
                     <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=217&h=163" width="217" height="163"
                         alt="{{title}}" loading="lazy">
+                    {{/eq}}
                     {{/eq}}
                     {{/eq}}
                     {{/if}}
@@ -45,15 +55,22 @@
                         Premium<span class="icoInline icoPremium"></span>
                     </div>
                     {{else}}
+                    {{#if ../btv}}
+                    {{else}}
                     <div class="artChannel">
                         {{channel}}
                     </div>
+                    {{/if}}
                     {{/if}}
                     <h4 class="artTitle">
                         {{title}}
                     </h4>
                     <div class="artDate">
+                        {{#if ../btv}}
+                        22 November 2022
+                        {{else}}
                         9 menit yang lalu
+                        {{/if}}
                     </div>
                 </div>
             </a>

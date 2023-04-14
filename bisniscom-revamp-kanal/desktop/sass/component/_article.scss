@@ -48,7 +48,8 @@
         flex-direction: column;
         gap: 13px;
 
-        &-left {
+        &-left,
+        &-top {
             @include display_flex;
             flex-direction: row;
             gap: 16px;
@@ -183,6 +184,45 @@
                     @include title_clamp(2);
                 }
             }
+
+            &-top {
+                .artItem {
+                    margin-top: 34px;
+
+                    &:first-child {
+                        margin-top: 16px;
+
+                        .art--col-top {
+                            flex-direction: column;
+                            padding-bottom: 14px;
+                            border-bottom: 1px solid #9E9E9E;
+                        }
+
+                        .artImg {
+                            flex-basis: 100%;
+                            padding-top: calc(3/4 * 100%);
+                        }
+
+                        .artDate {
+                            margin-top: 8px;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        margin-top: 20px;
+                    }
+                }
+
+                .artImg {
+                    position: relative;
+                    flex-basis: 94px;
+                    height: 94px;
+
+                    img {
+                        @extend %template-img
+                    }
+                }
+            }
         }
     }
 
@@ -199,6 +239,52 @@
             top: 2px;
             margin-left: 6px;
             margin-right: 16px;
+            @extend %icoPlay;
+        }
+    }
+
+    &Photo {
+        &Count {
+            @include display_flex;
+            align-items: center;
+            padding: 3px 10px;
+            background: #E7B68E;
+            text-transform: uppercase;
+            @include font-pack($font-body, 12px, $font-weight-normal, 1, #6A4B37);
+
+            .icoPhoto {
+                width: 20px;
+                height: 20px;
+                margin-right: 6px;
+                filter: invert(26%) sepia(21%) saturate(1147%) hue-rotate(340deg) brightness(94%) contrast(77%);
+                @extend %icoPhoto;
+            }
+        }
+
+        &More {
+            margin-top: 20px;
+            padding: 12px 18px;
+            background: $cl-white;
+            text-transform: uppercase;
+            @include font-pack($font-body, 14px, $font-weight-sbold, $line-base, #6A4B37);
+        }
+    }
+    
+    &Other {
+        &Item {
+            min-width: 100%;
+            border-bottom: 1px solid #9E9E9E;
+            margin-bottom: 12px;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        &Link {
+            display: block;
+            padding-top: 4px;
+            padding-bottom: 10px;
         }
     }
 }

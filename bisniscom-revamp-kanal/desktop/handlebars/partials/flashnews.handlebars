@@ -1,0 +1,18 @@
+<div class="flashnews">
+    <div class="flashnewsCaption">Breaking News</div>
+    <marquee class="flashnewsWrap" behavior="scroll" direction="left" onmouseover="this.stop();"
+        onmouseout="this.start();">
+        {{#each channel}}
+        <div class="flashnewsItem">
+            <img src="./asset/images/icon/icon-bisniscom-wsmall.svg" alt="" class="flashnewsIcon">
+            <a href="{{link}}" class="flashnewsLink">
+                {{#eq @index compare = 4}}
+                <span class="flashnewsLive">Live : </span>{{title}}
+                {{else}}
+                {{title}}
+                {{/eq}}
+            </a>
+        </div>
+        {{/each}}
+    </marquee>
+</div>
