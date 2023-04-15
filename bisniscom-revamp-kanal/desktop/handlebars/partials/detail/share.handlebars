@@ -1,39 +1,54 @@
-<div class="display-flex justify-between mt10">
-    <div class="shareSocmed__wrap display-flex items-center"> Bagikan
-        <ul class="shareSocmed align-center">
-            <input type="hidden" id="url"
-                value="https://market.bisnis.com/read/20220623/192/1546972/hadapi-ancaman-larangan-ekspor-timah-ini-persiapan-tins">
-            <li class="fb"><button class="button buttonSocmed align-center" aria-label="Facebook"
-                    onclick="sharesocmed('https://market.bisnis.com/read/20220623/192/1546972/hadapi-ancaman-larangan-ekspor-timah-ini-persiapan-tins','fb');"
-                    title="Facebook"><i class="fab fa-facebook"></i></button></li>
-            <li class="tw"><button class="button buttonSocmed align-center" aria-label="Twitter"
-                    onclick="sharesocmed('Hadapi Ancaman Larangan Ekspor Timah, Ini Persiapan TINS https://market.bisnis.com/read/20220623/192/1546972/hadapi-ancaman-larangan-ekspor-timah-ini-persiapan-tins','twitter');"
-                    title="Twitter"><i class="fab fa-twitter"></i></button></li>
-            <li class="tl"><button class="button buttonSocmed align-center" aria-label="Telegram"
-                    onclick="sharesocmed('https://market.bisnis.com/read/20220623/192/1546972/hadapi-ancaman-larangan-ekspor-timah-ini-persiapan-tins','telegram');"
-                    title="telegram"><i class="fab fa-telegram-plane"></i></button>
-            </li>
-            <li class="li"><button class="button buttonSocmed align-center" aria-label="Linkedin"
-                    onclick="sharesocmed('https://market.bisnis.com/read/20220623/192/1546972/hadapi-ancaman-larangan-ekspor-timah-ini-persiapan-tins','linkedin');"
-                    title="Linkedin"><i class="fab fa-linkedin"></i></button></li>
-            <li class="ml share-custom"><button class="button buttonSocmed align-center" aria-label="Copy Link" class="tooltip-copy"
-                    data-toggle="copy-tooltip" data-placement="right" onclick="copyLink();return false;"><img
-                        src="https://static.bisnis-cdn.com/bisnis/assets/images/share-link-icon.svg" alt=""></button>
-            </li>
-            <li class="wa"><button class="button buttonSocmed align-center" aria-label="Whatsapp"
-                    onclick="sharesocmed(encodeURIComponent('Hadapi Ancaman Larangan Ekspor Timah, Ini Persiapan TINS')+' - '+encodeURIComponent('https://market.bisnis.com/read/20220623/192/1546972/hadapi-ancaman-larangan-ekspor-timah-ini-persiapan-tins'),'whatsapp');"
-                    title="Whatsapp" rel="noopener"><i class="fab fa-whatsapp"></i></button>
-            </li>
-        </ul>
-    </div>
-    {{#eq top compare= true}}
-    <div class="readFont font-size" data-font="16">
-        <button title="A-" class="button buttonFtsize font-size-link minus">
-            A<sup>-</sup>
-        </button>
-        <button title="A+" class="button buttonFtsize font-size-link plus">
-            A<sup>+</sup>
-        </button>
-    </div>
-    {{/eq}}
+<div class="shareSocmedWrap display-flex"> Bagikan
+    <input type="hidden" id="url" value="{{url}}">
+    <ul class="shareSocmed center-flex">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <li class="shareSocmedItem shareSocmedItem--fb">
+            <button class="button shareSocmedCta" aria-label="Share Facebook" title="Facebook">
+                <span class="icoInline icoShareFb"></span>
+            </button>
+        </li>
+        <li class="shareSocmedItem shareSocmedItem--tw">
+            <button class="button shareSocmedCta" aria-label="Share Twitter" title="Twitter">
+                <span class="icoInline icoShareTwitter"></span>
+            </button>
+        </li>
+        <li class="shareSocmedItem shareSocmedItem--tg">
+            <button class="button shareSocmedCta" aria-label="Share Telegram" title="Telegram">
+                <span class="icoInline icoShareTg"></span>
+            </button>
+        </li>
+        <li class="shareSocmedItem shareSocmedItem--ln">
+            <button class="button shareSocmedCta" aria-label="Share Linkedin" title="Linkedin">
+                <span class="icoInline icoShareLn"></span>
+            </button>
+        </li>
+        <li class="shareSocmedItem shareSocmedItem--link share-custom">
+            <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" class="tooltip-copy"
+                data-toggle="copy-tooltip" data-placement="right" onclick="copyLink(); return false;">
+                <span class="icoInline icoShareLink"></span>
+            </button>
+        </li>
+        <li class="shareSocmedItem shareSocmedItem--wa">
+            <button class="button shareSocmedCta" aria-label="Share Whatsapp" title="Whatsapp">
+                <span class="icoInline icoShareWa"></span>
+            </button>
+        </li>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </ul>
 </div>
+{{#eq top compare= true}}
+<div class="readFont font-size" data-font="16">
+    <button title="A-" class="button buttonFtsize font-size-link minus">
+        A<sup>-</sup>
+    </button>
+    <button title="A+" class="button buttonFtsize font-size-link plus">
+        A<sup>+</sup>
+    </button>
+</div>
+{{/eq}}

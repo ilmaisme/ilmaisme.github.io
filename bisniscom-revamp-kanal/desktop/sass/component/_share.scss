@@ -1,54 +1,94 @@
 .shareSocmed {
-    list-style: none;
-    margin: 0;
-
-    li {
-        margin: 0 5px;
-        border-radius: 5px;
-        border: 1px solid transparent;
-        -webkit-appearance: none;
-        -webkit-transition: background-color .2s linear;
-        -moz-transition: background-color .2s linear;
-        -o-transition: background-color .2s linear;
-        transition: background-color .2s linear;
+    &Wrap {
+        align-items: center;
+        @include font-pack($font-body, 16px, $font-weight-sbold, $line-base, #434343);
     }
 
-    .fab{
-        font-size: 17px;
+    &Cta {
+        @extend .center-flex;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        transition: transform .2s linear;
     }
 
-    &__wrap {
-        text-transform: uppercase;
-        @include font-pack($font-arial, 14px, 700, false, #222222);
-    }
+    &Item {
+        margin-left: 8px;
+        margin-right: 8px;
 
-    .fb:hover {
-        .buttonSocmed {
-            color: #2361d4
+        &:first-child {
+            margin-left: 16px
         }
-    }
 
-    .tw:hover {
-        .buttonSocmed {
-            color: #48aef5;
+        &--fb {
+            .icoInline {
+                @extend %icoShareFb;
+                @extend %filter-white;
+            }
+
+            .shareSocmedCta {
+                background: #3A589B
+            }
         }
-    }
 
-    .wa:hover {
-        .buttonSocmed {
-            color: #29B200;
+        &--tw {
+            .icoInline {
+                @extend %icoShareTw;
+                @extend %filter-white;
+            }
+
+            .shareSocmedCta {
+                background: #1CB7EB;
+            }
         }
-    }
 
-    .tl:hover {
-        .buttonSocmed {
-            color: #08c;
+        &--wa {
+            .icoInline {
+                @extend %icoShareWa;
+                @extend %filter-white;
+            }
+
+            .shareSocmedCta {
+                background: #3CBB28;
+            }
         }
-    }
 
-    .li:hover {
-        .buttonSocmed {
-            color: #1188c6
+        &--tg {
+            .icoInline {
+                @extend %icoShareTg;
+                @extend %filter-white;
+            }
+
+            .shareSocmedCta {
+                background: #24A1DE;
+            }
+        }
+
+        &--ln {
+            .icoInline {
+                @extend %icoShareLn;
+                @extend %filter-white;
+            }
+
+            .shareSocmedCta {
+                background: #24A1DE
+            }
+        }
+
+        &--link {
+            .icoInline {
+                @extend %icoShareLink;
+                @extend %filter-white;
+            }
+
+            .shareSocmedCta {
+                background: #9F3AEE
+            }
+        }
+
+        .icoInline {
+            width: 34px;
+            height: 34px;
         }
     }
 }

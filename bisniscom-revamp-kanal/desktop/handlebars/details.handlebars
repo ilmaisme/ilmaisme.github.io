@@ -14,8 +14,8 @@
         {{>flashnews channel=flashnews}}
         <!-- e: flashnews -->
 
-        {{!>header/header login=true kanal="Lifestyle"}}
-        {{>header/header kanal="Lifestyle"}}
+        {{>header/header login=true kanal="Lifestyle"}}
+        {{!>header/header kanal="Lifestyle"}}
 
         <!-- s: skyscrapper billboard -->
         {{>ads/skyscrapper}}
@@ -36,11 +36,15 @@
 
                 {{>breadcrumb kanal="Lifestyle" subkanal="Entertainment"}}
 
+                {{>detail/cover channel=details mt="40" total=6 index_start=0 index_end=1}}
+                {{>detail/title channel=details total=6 index_start=0 index_end=1}}
+
                 <div class="row">
                     <div class="col-7 col-left">
 
-                        <h1>title</h1>
-                        {{!>details/article}}
+                        {{>detail/share channel=details pos="top" total=6 index_start=0 index_end=1}}
+
+                        {{>detail/content}}
 
                         <!-- s: premium -->
                         {{>premium/article}}
