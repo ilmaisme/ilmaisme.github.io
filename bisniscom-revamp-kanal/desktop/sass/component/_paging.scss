@@ -1,19 +1,16 @@
 .paging {
     margin-top: 30px;
-    margin-bottom: 60px;
-    padding-top: 20px;
-    border-top: 1px solid #CDCDCD;
+    margin-bottom: 50px;
 
     &Wrap {
-        display: flex;
-        margin-top: 10px;
+        @include display_flex;
+        align-items: center;
     }
 
     &List {
         padding: 0;
-        margin: 0 10px;
         list-style-type: none;
-        display: flex;
+        @include display_flex;
     }
 
     &Item {
@@ -21,58 +18,33 @@
         margin-right: 5px;
 
         &:first-child {
-            margin-left: 0;
-        }
-
-        &:last-child {
-            margin-right: 0;
+            margin-left: 12px;
         }
     }
 
     &Link,
     &Show {
-        display: block;
-        padding: 3px 13px;
+        @extend .center-flex;
+        padding: 5px 11px;
         min-width: 34px;
-        height: 35px;
-        background: #0062A7;
-        border-radius: 6px;
-        @include font-pack($font-body, 16px, 500, 28px, $cl-primary-white);
+        height: 34px;
+        background: $cl-white;
+        border: 1px solid #555555;
+        border-radius: 25px;
+        @include font-pack($font-body, 15px, $font-weight-sbold, 1.4, #434343);
 
-        &--active,
+        &.-active,
         &:hover {
-            color: $cl-primary-white;
-            background: #21BCFF;
+            color: $cl-white;
         }
     }
 
-    &Intro {
-        @include font-pack($font-body, 16px, 600, 34px, #333333);
+    &Caption {
+        @include font-pack($font-body, 16px, $font-weight-bold, 1.4, #434343);
     }
 
     &Show {
-        padding: 3px 16px;
-        border: 0;
-    }
-
-    &More {
-        display: none;
-        visibility: hidden;
-        @include font-pack($font-body, 19px, 400, false, #0062A7);
-
-        &__wrap {
-            position: relative;
-            min-height: 28px;
-            margin-bottom: 10px;
-        }
-
-        &--active {
-            display: inline-block;
-            visibility: visible;
-        }
-
-        &:hover {
-            color: #0062A7;
-        }
+        margin-left: 5px;
+        padding: 5px 12px;
     }
 }

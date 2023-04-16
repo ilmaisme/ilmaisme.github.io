@@ -34,29 +34,33 @@
 
             <div class="container mt50">
 
-                {{>breadcrumb kanal="Lifestyle" subkanal="Entertainment"}}
+                {{>breadcrumb kanal="Lifestyle" subkanal="Inspirasi"}}
 
-                {{>detail/cover channel=details.content mt="40" total=6 index_start=0 index_end=1}}
-                {{>detail/title default=true channel=details.content total=6 index_start=0 index_end=1}}
+                {{>detail/cover channel=details.content mt="40" total=6 index_start=3 index_end=4}}
+                {{>detail/title default=true channel=details.content total=6 index_start=3 index_end=4}}
 
                 <div class="row">
                     <div class="col-7 col-left">
 
-                        {{>detail/share channel=details.content pos="top" total=6 index_start=0 index_end=1}}
+                        {{>detail/share channel=details.content pos="top" total=6 index_start=3 index_end=4}}
 
                         <article class="detailsContent mt40">
-                            {{>detail/content}}
-                            
+                            {{>detail/content-live channel=details.live}}
+
                         </article>
+
+                        <!-- s: detail pagination -->
+                        {{>detail/paging}}
+                        <!-- e: detail pagination -->
 
                         <div class="titleCaption mt40">
                             Simak video di bawah ini:
                         </div>
                         {{>detail/video}}
 
-                        {{>detail/author channel=details.content total=6 index_start=0 index_end=1}}
+                        {{>detail/author channel=details.content total=6 index_start=3 index_end=4}}
 
-                        {{>detail/share channel=details.content mt="40" total=6 index_start=0 index_end=1}}
+                        {{>detail/share channel=details.content mt="40" total=6 index_start=3 index_end=4}}
 
                         {{>detail/tag channel=details.tag}}
 

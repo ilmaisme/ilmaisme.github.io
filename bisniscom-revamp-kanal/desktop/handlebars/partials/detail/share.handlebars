@@ -1,54 +1,57 @@
-<div class="shareSocmedWrap display-flex"> Bagikan
-    <input type="hidden" id="url" value="{{url}}">
-    <ul class="shareSocmed center-flex">
-        {{#each channel}}
-        {{#gte @index compare=../index_start}}
-        {{#gte @index compare=../index_end}}
-        {{else}}
-        <li class="shareSocmedItem shareSocmedItem--fb">
-            <button class="button shareSocmedCta" aria-label="Share Facebook" title="Facebook">
-                <span class="icoInline icoShareFb"></span>
-            </button>
-        </li>
-        <li class="shareSocmedItem shareSocmedItem--tw">
-            <button class="button shareSocmedCta" aria-label="Share Twitter" title="Twitter">
-                <span class="icoInline icoShareTwitter"></span>
-            </button>
-        </li>
-        <li class="shareSocmedItem shareSocmedItem--tg">
-            <button class="button shareSocmedCta" aria-label="Share Telegram" title="Telegram">
-                <span class="icoInline icoShareTg"></span>
-            </button>
-        </li>
-        <li class="shareSocmedItem shareSocmedItem--ln">
-            <button class="button shareSocmedCta" aria-label="Share Linkedin" title="Linkedin">
-                <span class="icoInline icoShareLn"></span>
-            </button>
-        </li>
-        <li class="shareSocmedItem shareSocmedItem--link share-custom">
-            <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" class="tooltip-copy"
-                data-toggle="copy-tooltip" data-placement="right" onclick="copyLink(); return false;">
-                <span class="icoInline icoShareLink"></span>
-            </button>
-        </li>
-        <li class="shareSocmedItem shareSocmedItem--wa">
-            <button class="button shareSocmedCta" aria-label="Share Whatsapp" title="Whatsapp">
-                <span class="icoInline icoShareWa"></span>
-            </button>
-        </li>
-        {{/gte}}
-        {{else}}
-        {{/gte}}
-        {{/each}}
-    </ul>
+<div class="detailsWrap display-flex{{#if mt}} mt{{mt}}{{/if}}">
+    <div class="shareSocmedWrap display-flex"> Bagikan
+        <input type="hidden" id="url" value="{{url}}">
+        <ul class="shareSocmed center-flex">
+            {{#each channel}}
+            {{#gte @index compare=../index_start}}
+            {{#gte @index compare=../index_end}}
+            {{else}}
+            <li class="shareSocmedItem shareSocmedItem--fb">
+                <button class="button shareSocmedCta" aria-label="Share Facebook" title="Facebook">
+                    <span class="icoInline icoShareFb"></span>
+                </button>
+            </li>
+            <li class="shareSocmedItem shareSocmedItem--tw">
+                <button class="button shareSocmedCta" aria-label="Share Twitter" title="Twitter">
+                    <span class="icoInline icoShareTwitter"></span>
+                </button>
+            </li>
+            <li class="shareSocmedItem shareSocmedItem--tg">
+                <button class="button shareSocmedCta" aria-label="Share Telegram" title="Telegram">
+                    <span class="icoInline icoShareTg"></span>
+                </button>
+            </li>
+            <li class="shareSocmedItem shareSocmedItem--ln">
+                <button class="button shareSocmedCta" aria-label="Share Linkedin" title="Linkedin">
+                    <span class="icoInline icoShareLn"></span>
+                </button>
+            </li>
+            <li class="shareSocmedItem shareSocmedItem--link share-custom">
+                <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" class="tooltip-copy"
+                    data-toggle="copy-tooltip" data-placement="right" onclick="copyLink(); return false;">
+                    <span class="icoInline icoShareLink"></span>
+                </button>
+            </li>
+            <li class="shareSocmedItem shareSocmedItem--wa">
+                <button class="button shareSocmedCta" aria-label="Share Whatsapp" title="Whatsapp">
+                    <span class="icoInline icoShareWa"></span>
+                </button>
+            </li>
+            {{/gte}}
+            {{else}}
+            {{/gte}}
+            {{/each}}
+        </ul>
+    </div>
+    {{#eq pos compare="top"}}
+    <div class="detailsFont">
+        <button class="button detailsFontCta -minus">
+            Smallest <br> Font
+        </button>
+        <input type="range" min=".8" max="2.6" step=".2" id="sliderFont" class="detailsFontRange">
+        <button class="button detailsFontCta -plus">
+            Largest <br> Font
+        </button>
+    </div>
+    {{/eq}}
 </div>
-{{#eq top compare= true}}
-<div class="readFont font-size" data-font="16">
-    <button title="A-" class="button buttonFtsize font-size-link minus">
-        A<sup>-</sup>
-    </button>
-    <button title="A+" class="button buttonFtsize font-size-link plus">
-        A<sup>+</sup>
-    </button>
-</div>
-{{/eq}}
