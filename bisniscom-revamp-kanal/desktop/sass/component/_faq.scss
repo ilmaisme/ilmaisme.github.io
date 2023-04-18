@@ -1,0 +1,109 @@
+.faq {
+    &List {
+        margin-top: 16px;
+        margin-bottom: 50px;
+    }
+
+    &Box {
+        min-height: 51px;
+        margin-bottom: 20px;
+        border: 1px solid #DDDDDD;
+        border-radius: 7px;
+
+        &Title {
+            margin-left: 15px;
+            flex: 1;
+            @include font-pack($font-body, 18px, $font-weight-bold, $line-base, $cl-black);
+        }
+
+        &.open {
+            .faqContent {
+                opacity: 1;
+                max-height: 10em;
+                transition: opacity 400ms linear 400ms, max-height 400ms linear;
+                will-change: opacity, max-height;
+            }
+
+            .icoAdd:after {
+                opacity: 0;
+            }
+        }
+
+        &.close {
+            .faqContent {
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: opacity 400ms linear 400ms, max-height 400ms linear;
+                will-change: opacity, max-height;
+            }
+        }
+    }
+
+    &Trig {
+        padding: 15px 27px 15px 17px;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &Content {
+        margin-left: 50px;
+        margin-right: 15px;
+        @include font-pack($font-body, 15px, $font-weight-sbold, 1.47, #434343);
+        word-break: break-word;
+
+        p,
+        ol,
+        li {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-bottom: 1em;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 15px;
+
+            &.check {
+                list-style-type: none;
+                padding-left: 25px;
+
+                li {
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 2px;
+                        left: -25px;
+                        width: 15px;
+                        height: 15px;
+                        @extend .icoInline;
+                        @extend %icoCheck;
+                        background-repeat: no-repeat;
+                        filter: invert(54%) sepia(53%) saturate(612%) hue-rotate(95deg) brightness(98%) contrast(81%);
+                    }
+                }
+            }
+        }
+
+        ol {
+            list-style-type: decimal;
+            padding-left: 15px;
+        }
+
+        a {
+            color: $cl-premium;
+        }
+    }
+
+    &Show {
+        .icoAdd {
+            @extend %icoAdd;
+
+            &:after {
+                transition: opacity .4s linear;
+            }
+        }
+    }
+}

@@ -107,6 +107,21 @@
         word-break: break-word;
         @include font-pack($font-body, 17px, $font-weight-sbold, 1.41, #434343);
 
+        &.-lock {
+            position: relative;
+            padding-bottom: 96px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 190px;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0) -8.01%, #FFFFFF 34.25%);
+            }
+        }
+
         a {
             color: #395dd2;
         }
@@ -174,6 +189,30 @@
                 height: 42px;
                 background-size: contain;
                 background-repeat: no-repeat;
+            }
+        }
+    }
+
+    &Quote {
+        &Author {
+            margin-top: 23px;
+            text-align: center;
+            font-style: normal;
+            font-size: 17px;
+            line-height: 1.4;
+
+            span {
+                position: relative;
+                padding-top: 8px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: calc(50%/2);
+                    width: 50%;
+                    border-top: 2px solid;
+                }
             }
         }
     }
@@ -374,6 +413,174 @@
             padding-right: 12px;
             background: $cl-white;
             @include font-pack(false, 17px, $font-weight-sbold, 1.4, false);
+        }
+    }
+
+    &Live {
+        &Caption {
+            flex-shrink: 0;
+            @include font-pack($font-body, 20px, $font-weight-sbold, 1.1, $cl-black);
+            padding: 7px 12px 7px 16px;
+
+            span {
+                display: inline-block;
+                position: relative;
+                text-transform: uppercase;
+                @include font-pack(false, false, $font-weight-bold, false, #AE0F0F);
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 6px;
+                    left: -16px;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 8px;
+                    background: #AE0F0F;
+                }
+            }
+        }
+
+        &Wrap {
+            @include display_flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        &Slider {
+            flex: 1;
+            width: calc(100% - 155px);
+            border-left: 1px solid #AE0F0F;
+            padding-left: 24px;
+            max-height: 44px;
+            overflow: hidden;
+
+            .slick {
+                &-list {
+                    padding-left: 2px;
+                    padding-right: 110px;
+                }
+
+                &-arrow {
+                    border-radius: 5px;
+                    width: 41px;
+                    height: 41px;
+                }
+
+                &-next {
+                    right: 0;
+                    background: #AE0F0F;
+                }
+
+                &-prev {
+                    left: 0;
+                    top: 0;
+                    background: #797979;
+                }
+            }
+
+            &Wrap {
+                position: relative;
+                padding-left: 60px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    right: 0;
+                    width: 65px;
+                    height: 100%;
+                    background: linear-gradient(270deg, #FFFFFF 54.4%, rgba(255, 255, 255, 0) 123.5%);
+                }
+            }
+        }
+
+        &Anchor {
+            padding: 9px 12px;
+            background: $cl-white;
+            border-radius: 12px;
+            border: 1px solid #434343;
+            @include font-pack($font-body, 17px, $font-weight-sbold, 1.4, #434343);
+
+            &.-active,
+            &:hover {
+                background: #AE0F0F;
+                color: $cl-white;
+                border-color: #AE0F0F;
+            }
+        }
+
+        &TL {
+            position: relative;
+            margin-top: 30px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 94px;
+                width: 1px;
+                height: 100%;
+                border: 1px solid rgba(67, 67, 67, .5);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 153px;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 84.97%);
+            }
+        }
+
+        &Item {
+            position: relative;
+            margin-bottom: 24px;
+            padding-left: 120px;
+
+            &.-active {
+                .detailsLiveTime {
+                    color: #AE0F0F;
+
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &Time {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 96px;
+            padding-top: 9px;
+            padding-bottom: 9px;
+            padding-right: 20px;
+            @include font-pack($font-body, 14px, $font-weight-bold, 1, #434343);
+
+            &::after {
+                content: '';
+                position: relative;
+                display: block;
+                background: #AE0F0F;
+                border-radius: 16px;
+                left: 92px;
+                bottom: 20px;
+                width: 4px;
+                height: 24px;
+                opacity: 0;
+                transition: opacity .4s ease .5s;
+            }
+        }
+
+        &Title {
+            @include font-pack($font-body, 24px, $font-weight-sbold, $line-base, $cl-black);
         }
     }
 

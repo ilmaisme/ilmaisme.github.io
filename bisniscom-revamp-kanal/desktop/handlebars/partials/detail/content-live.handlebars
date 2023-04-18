@@ -1,3 +1,9 @@
+<div class="detailsLiveWrap mt50">
+    <div class="detailsLiveCaption"><span>Live</span> Timeline</div>
+    <div class="detailsLiveSlider">
+        {{>detail/live-slider}}
+    </div>
+</div>
 <p><strong>Bisnis.com,</strong> JAKARTA - Ajang pencarian bakat penyanyi <a
         href="https://www.bisnis.com/topic/43153/indonesian-idol" rel="noopener" target="_self">Indonesian Idol</a> kini
     sudah memasuki babak Spektakuler Show: Top 6 Indonesian Idol 2023, yang ditayangkan pada Senin (3/4/23) malam di
@@ -6,10 +12,22 @@
     Parulian.</p>
 <p>Sementara itu, kontestan Novia Situmeang tereliminasi pada babak sebelumnya.</p>
 
-<div class="detailsLive">
+<div class="detailsLiveTL">
     {{#each channel}}
-    <div class="detailsLiveTime">{{livetime}}</div>
-    <div class="detailsLiveTitle">{{title}}</div>
-    <div class="detailsLiveContent">{{{content}}}</div>
+    {{#gte @index compare=../index_start}}
+    {{#gte @index compare=../index_end}}
+    {{else}}
+    <div class="detailsLiveItem{{#if active}} -active{{/if}}" content="live{{@index}}">
+        <div class="detailsLiveTime">{{livetime}} WIB</div>
+        <div class="detailsLiveTitle">{{title}}</div>
+        <div class="detailsLiveContent">{{{content}}}</div>
+    </div>
+    {{/gte}}
+    {{else}}
+    {{/gte}}
     {{/each}}
 </div>
+
+<!-- s: parallax billboard -->
+{{>ads/parallax}}
+<!-- e: parallax billboard -->

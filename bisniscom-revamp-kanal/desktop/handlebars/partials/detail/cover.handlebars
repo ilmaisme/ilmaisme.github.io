@@ -3,6 +3,13 @@
     {{#gte @index compare=../index_start}}
     {{#gte @index compare=../index_end}}
     {{else}}
+    {{#if ../premium}}
+    <div class="detailsCoverImg artImg">
+        <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=1080&h=606" alt="{{title}}" width="1080" height="606">
+    </div>
+
+    {{>detail/title premium=../premium channel=../channel index_start=../index_start index_end=../index_end}}
+    {{else}}
     <div class="detailsCoverImg artImg">
         <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=1080&h=378" alt="{{title}}" width="1080" height="378">
     </div>
@@ -10,6 +17,7 @@
         <span class="icoInline icoZoom"></span>
         Perbesar
     </button>
+    {{/if}}
     {{/gte}}
     {{else}}
     {{/gte}}

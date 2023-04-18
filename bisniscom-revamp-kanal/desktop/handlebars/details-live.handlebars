@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{>head page="details" kanal="Lifestyle"}}
+{{>head page="details" kanal="Lifestyle" slick=true}}
 
 <body class="theme--lifestyle">
 
@@ -44,8 +44,8 @@
 
                         {{>detail/share channel=details.content pos="top" total=6 index_start=3 index_end=4}}
 
-                        <article class="detailsContent mt40">
-                            {{>detail/content-live channel=details.live}}
+                        <article class="detailsContent detailsLive mt40">
+                            {{>detail/content-live channel=details.live index_start=0 index_end=3}}
 
                         </article>
 
@@ -74,7 +74,7 @@
                         {{>newsletter}}
 
                         <h3 class="titleCaption mt40">Artikel Terkait</h3>
-                        {{>kanal/article channel=channel.Entertainment.latest type="col" mt="16" total=3 index_start=0
+                        {{>kanal/article channel=channel.Entertainment.latest type="col" details=true mt="16" total=3 index_start=0
                         index_end=3}}
 
                         <h3 class="titleCaption mt40">Berita Lainnya</h3>
@@ -85,7 +85,7 @@
                         index_end=7}}
 
                         <div class="center-flex">
-                            <a href="#" class="buttonPrimary">Indeks</a>
+                            <a href="#" class="buttonPrimary">Berita Lainnya</a>
                         </div>
 
                     </div>
@@ -114,7 +114,42 @@
 
     {{>footer/footer}}
 
-    {{>footer/script page="details"}}
+    {{>footer/script page="details" slick=true}}
+    <script>
+        $(document).ready(function () {
+            //live details slider anchor
+            if ($('.-js-slider-live').length > 0) {
+                $('.-js-slider-live').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    fade: false,
+                    swipe: false,
+                });
+            }
+
+            //live anchor trigger
+            $('.detailsLiveAnchor').on("click", function () {
+                var a = $(this).attr("anchor"),
+                    b = $('.detailsLive').find("[content='" + a + "']"),
+                    scrollb = b.offset().top - 90,
+                    scrollf = b.offset().top - 120;
+                //console.log(b)
+                $('.detailsLiveItem').removeClass("-active");
+                b.addClass("-active");
+                if ($('.flashnews').length > 0) {
+                    $("html, body").animate({
+                        scrollTop: scrollf
+                    }, 500);
+                } else {
+                    $("html, body").animate({
+                        scrollTop: scrollb
+                    }, 500);
+                }
+                return false;
+            });
+        })
+    </script>
 
 </body>
 

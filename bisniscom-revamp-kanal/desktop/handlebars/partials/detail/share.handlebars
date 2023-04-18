@@ -1,7 +1,15 @@
-<div class="detailsWrap display-flex{{#if mt}} mt{{mt}}{{/if}}">
+<div class="detailsWrap display-flex{{#if pos}} -{{pos}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}">
     <div class="shareSocmedWrap display-flex"> Bagikan
-        <input type="hidden" id="url" value="{{url}}">
-        <ul class="shareSocmed center-flex">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <input type="text" style="display: none;" id="copyLinkUrl" value="{{url}}">
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+        <ul class="shareSocmed center-flex" id="share">
             {{#each channel}}
             {{#gte @index compare=../index_start}}
             {{#gte @index compare=../index_end}}
@@ -27,8 +35,8 @@
                 </button>
             </li>
             <li class="shareSocmedItem shareSocmedItem--link share-custom">
-                <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" class="tooltip-copy"
-                    data-toggle="copy-tooltip" data-placement="right" onclick="copyLink(); return false;">
+                <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" data-form="copyLinkUrl"
+                    data-copy="copy-url" data-title="URL Berhasil disalin">
                     <span class="icoInline icoShareLink"></span>
                 </button>
             </li>

@@ -5,6 +5,7 @@
     }
 
     &Cta {
+        position: relative;
         @extend .center-flex;
         width: 34px;
         height: 34px;
@@ -13,6 +14,21 @@
 
         &:hover {
             transform: scale(1.2);
+        }
+
+        &.-tooltip:before {
+            content: attr(data-title);
+            position: absolute;
+            width: auto;
+            background: #2d2d2d;
+            color: #fff;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-size: 10px;
+            text-align: center;
+            white-space: nowrap;
+            top: -20px;
+            left: calc(50% - 99px/2);
         }
     }
 
@@ -83,6 +99,7 @@
             .icoInline {
                 @extend %icoShareLink;
                 @extend %filter-white;
+                pointer-events: none;
             }
 
             .shareSocmedCta {

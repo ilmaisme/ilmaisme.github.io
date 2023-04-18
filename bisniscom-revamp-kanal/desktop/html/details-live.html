@@ -27,8 +27,12 @@
     <!-- e:twitter card -->
 
     <link rel=icon type=image/png sizes=16x16 href="https://cdn.bisnis.com/bisnis/assets/images/favicon.png">
+    <!-- slick CSS -->
+    <link rel="stylesheet" href="./asset/css/slick.css" type="text/css">
 
     <link rel="stylesheet" href="./asset/css/style-details.css" type="text/css">
+    <link rel="preload" as="image"
+        href="https://images.bisnis.com/thumb/posts/2023/01/25/1621417/dungeons--dragons-honor-among-thieves.jpg?w=1080&h=378">
     <link rel="preload" as="image"
         href="https://images.bisnis.com/thumb/posts/2023/01/25/1621417/dungeons--dragons-honor-among-thieves.jpg?w=1080&h=378">
 
@@ -351,10 +355,10 @@
                 <div class="row">
                     <div class="col-7 col-left">
 
-                        <div class="detailsWrap display-flex">
+                        <div class="detailsWrap display-flex -top">
                             <div class="shareSocmedWrap display-flex"> Bagikan
-                                <input type="hidden" id="url" value="">
-                                <ul class="shareSocmed center-flex">
+                                <input type="text" style="display: none;" id="copyLinkUrl" value="https://lifestyle.bisnis.com/read/20230405/254/1644119/indonesian-idol-masuk-5-besar-siapa-pemenangnya-salma-atau-nyoman">
+                                <ul class="shareSocmed center-flex" id="share">
                                     <li class="shareSocmedItem shareSocmedItem--fb">
                                         <button class="button shareSocmedCta" aria-label="Share Facebook" title="Facebook">
                                             <span class="icoInline icoShareFb"></span>
@@ -376,8 +380,8 @@
                                         </button>
                                     </li>
                                     <li class="shareSocmedItem shareSocmedItem--link share-custom">
-                                        <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" class="tooltip-copy"
-                                            data-toggle="copy-tooltip" data-placement="right" onclick="copyLink(); return false;">
+                                        <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" data-form="copyLinkUrl"
+                                            data-copy="copy-url" data-title="URL Berhasil disalin">
                                             <span class="icoInline icoShareLink"></span>
                                         </button>
                                     </li>
@@ -398,7 +402,25 @@
                                 </button>
                             </div>
                         </div>
-                        <article class="detailsContent mt40">
+                        <article class="detailsContent detailsLive mt40">
+                            <div class="detailsLiveWrap mt50">
+                                <div class="detailsLiveCaption"><span>Live</span> Timeline</div>
+                                <div class="detailsLiveSlider">
+                                    <div class="detailsLiveSliderWrap -js-slider-live">
+                                        <div class="detailsLiveSliderTime">
+                                            <button class="button detailsLiveAnchor" anchor="live0">10.00 WIB</button>
+                                        </div>
+                                        <div class="detailsLiveSliderTime">
+                                            <button class="button detailsLiveAnchor" anchor="live1">09.30 WIB</button>
+                                        </div>
+                                        <div class="detailsLiveSliderTime">
+                                            <button class="button detailsLiveAnchor" anchor="live2">09.00 WIB</button>
+                                        </div>
+                                        <div class="detailsLiveSliderTime">
+                                            <button class="button detailsLiveAnchor" anchor="live3">08.30 WIB</button>
+                                        </div>
+                                    </div>    </div>
+                            </div>
                             <p><strong>Bisnis.com,</strong> JAKARTA - Ajang pencarian bakat penyanyi <a
                                     href="https://www.bisnis.com/topic/43153/indonesian-idol" rel="noopener" target="_self">Indonesian Idol</a> kini
                                 sudah memasuki babak Spektakuler Show: Top 6 Indonesian Idol 2023, yang ditayangkan pada Senin (3/4/23) malam di
@@ -407,17 +429,41 @@
                                 Parulian.</p>
                             <p>Sementara itu, kontestan Novia Situmeang tereliminasi pada babak sebelumnya.</p>
                             
-                            <div class="detailsLive">
-                                <div class="detailsLiveTime">09.00</div>
-                                <div class="detailsLiveTitle">Babak Trio Medley Song &amp; Solo Pop Ballad</div>
-                                <div class="detailsLiveContent"><p>Penampilan pertama yang memeriahkan Indonesian Idol adalah penampilan Nabila Taqiyyah, Nyoman Paul, dan Rony Parulian yang membawakan lagu medley ‘Cantik’ milik Kahitna, ‘Aku Wanita’ milik Reza Artamevia, dan ‘Panah Asmara’ milik Afgan. Penampilan ini mendapatkan 3 standing ovation dari juri.</p></div>
-                                <div class="detailsLiveTime">09.30</div>
-                                <div class="detailsLiveTitle">Penampilan kedua dari trio Salma Salsabil, Novia Situmeang, dan Raisa Syarla yang mendapatkan 5 standing ovation</div>
-                                <div class="detailsLiveContent"><p>Mereka membawakan lagu medley berjudul ‘Cinta’ dari Krisdayanti ft. Melly Goeslaw, Titiek Puspa, dan Vina Panduwinata.</p><p>Setelah penampilan trio selesai, penampilan solo pertama adalah Paul yang membawakan ‘Komang’ milik Raim Laode. Walaupun merupakan 3 terbawah, dia mendapatkan 5 standing ovation dan banjir pujian di media sosial Indonesian Idol.</p></div>
-                                <div class="detailsLiveTime">10.00</div>
-                                <div class="detailsLiveTitle">Penampilan dari Novia yang membawakan ‘Sial’ milik Mahalini.</div>
-                                <div class="detailsLiveContent"><p>Sayangnya, penampilan tersebut adalah penampilan terakhir Novia di Indonesian Idol musim ke-12 ini. Setelah Novia, Salma menampilkan ‘Tak Segampang Itu’ milik Anggi Marito. Video penampilannya di YouTube menjadi populer dan trending nomor 4.</p><p>Rony yang merupakan 3 terbawah dalam babak ini menampilkan ‘Menyesal’ milik Yovie Widianto ft. Lyodra, Tiara Andini, dan Ziva Magnolya. Babak ini ditutup dengan penampilan Syarla dengan ‘Lupakan Cinta’ milik Rossa. Semua penampilan dari para kontestan memiliki kelebihannya masing-masing.</p></div>
+                            <div class="detailsLiveTL">
+                                <div class="detailsLiveItem -active" content="live0">
+                                    <div class="detailsLiveTime">10.00 WIB</div>
+                                    <div class="detailsLiveTitle">Warganet banyak yang menuangkan prediksi pemenang Indonesian Idol 2023</div>
+                                    <div class="detailsLiveContent"><p>Paul dan Salma paling banyak digadang-gadangkan masuk ke grand final oleh warganet.</p><p>Tidak hanya dari warganet, Salma juga mendapatkan pujian dari juri, Anang Hermansyah, mengenai kelayakan tampil di grand final. Syarla juga diunggulkan oleh warganet karena jumlah vote miliknya dari penonton termasuk tinggi sehingga menjadikan kemungkinan Syarla masuk ke grand final.</p></div>
+                                </div>
+                                <div class="detailsLiveItem" content="live1">
+                                    <div class="detailsLiveTime">09.30 WIB</div>
+                                    <div class="detailsLiveTitle">Penampilan dari Novia yang membawakan ‘Sial’ milik Mahalini.</div>
+                                    <div class="detailsLiveContent"><p>Sayangnya, penampilan tersebut adalah penampilan terakhir Novia di Indonesian Idol musim ke-12 ini. Setelah Novia, Salma menampilkan ‘Tak Segampang Itu’ milik Anggi Marito. Video penampilannya di YouTube menjadi populer dan trending nomor 4.</p><p>Rony yang merupakan 3 terbawah dalam babak ini menampilkan ‘Menyesal’ milik Yovie Widianto ft. Lyodra, Tiara Andini, dan Ziva Magnolya. Babak ini ditutup dengan penampilan Syarla dengan ‘Lupakan Cinta’ milik Rossa. Semua penampilan dari para kontestan memiliki kelebihannya masing-masing.</p></div>
+                                </div>
+                                <div class="detailsLiveItem" content="live2">
+                                    <div class="detailsLiveTime">09.00 WIB</div>
+                                    <div class="detailsLiveTitle">Penampilan kedua dari trio Salma Salsabil, Novia Situmeang, dan Raisa Syarla yang mendapatkan 5 standing ovation</div>
+                                    <div class="detailsLiveContent"><p>Mereka membawakan lagu medley berjudul ‘Cinta’ dari Krisdayanti ft. Melly Goeslaw, Titiek Puspa, dan Vina Panduwinata.</p><p>Setelah penampilan trio selesai, penampilan solo pertama adalah Paul yang membawakan ‘Komang’ milik Raim Laode. Walaupun merupakan 3 terbawah, dia mendapatkan 5 standing ovation dan banjir pujian di media sosial Indonesian Idol.</p></div>
+                                </div>
                             </div>
+                            
+                            <!-- s: parallax billboard -->
+                            <div class="billboard billboardParallax mt40">
+                                <div class="billboardFlying">
+                                    <div class="billboardFlyingInner">
+                                        <div class="billboardFlyingFix">
+                                            <div class="billboardFlyingBanner">
+                                                <div class="billboardFlyingWrap">
+                                                    <!-- ad script here -->
+                                                    <!--<img src="https://placehold.co/300x600/000/F4F4F4?font=nunitosans&text=Parallax%20BILLBOARD%20IS%20HERE"
+                                                        alt="" width="300" height="600">-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- e: parallax billboard -->
+
                         </article>
 
                         <!-- s: detail pagination -->
@@ -455,13 +501,13 @@
                                 allowfullscreen="" title="Jepretan Fotografer Jalanan, Manjakan Para Sport Enthusiast"></iframe>
                         </div>
                         <div class="detailsAuthor">
-                            <div class="detailsAuthorItem">Penulis : <a href="#">Mia Chitra Dinisari</a></div>
-                            <div class="detailsAuthorItem">Editor : <a href="#">Salma Permata Dewi</a></div>
+                            <div class="detailsAuthorItem">Penulis : <a href="#">Salma Permata Dewi</a></div>
+                            <div class="detailsAuthorItem">Editor : <a href="#">Mia Chitra Dinisari</a></div>
                         </div>
                         <div class="detailsWrap display-flex mt40">
                             <div class="shareSocmedWrap display-flex"> Bagikan
-                                <input type="hidden" id="url" value="">
-                                <ul class="shareSocmed center-flex">
+                                <input type="text" style="display: none;" id="copyLinkUrl" value="https://lifestyle.bisnis.com/read/20230405/254/1644119/indonesian-idol-masuk-5-besar-siapa-pemenangnya-salma-atau-nyoman">
+                                <ul class="shareSocmed center-flex" id="share">
                                     <li class="shareSocmedItem shareSocmedItem--fb">
                                         <button class="button shareSocmedCta" aria-label="Share Facebook" title="Facebook">
                                             <span class="icoInline icoShareFb"></span>
@@ -483,8 +529,8 @@
                                         </button>
                                     </li>
                                     <li class="shareSocmedItem shareSocmedItem--link share-custom">
-                                        <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" class="tooltip-copy"
-                                            data-toggle="copy-tooltip" data-placement="right" onclick="copyLink(); return false;">
+                                        <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" data-form="copyLinkUrl"
+                                            data-copy="copy-url" data-title="URL Berhasil disalin">
                                             <span class="icoInline icoShareLink"></span>
                                         </button>
                                     </li>
@@ -522,7 +568,7 @@
                                     <div class="artItem">
                                         <a href="details-premium-lock.html" class="artLink art--col">
                                             <div class="artImg">
-                                                <img src="https://images.bisnis.com/thumb/posts/2023/03/30/1642230/hari-film-nasional-premium.jpg?w=217&h=163" width="217" height="163"
+                                                <img src="https://images.bisnis.com/thumb/posts/2023/03/30/1642230/hari-film-nasional-premium.jpg?w=233&h=175" width="233" height="175"
                                                     alt="Suka-suka Sutradara Muda Sinema Kita" loading="lazy">
                                             </div>
                                             <div class="artContent">
@@ -541,7 +587,7 @@
                                     <div class="artItem">
                                         <a href="details-premium-lock.html" class="artLink art--col">
                                             <div class="artImg">
-                                                <img src="https://images.bisnis.com/thumb/posts/2023/04/01/1642818/whatsapp-image-2022-05-06-at-22.53.53.jpeg?w=217&h=163" width="217" height="163"
+                                                <img src="https://images.bisnis.com/thumb/posts/2023/04/01/1642818/whatsapp-image-2022-05-06-at-22.53.53.jpeg?w=233&h=175" width="233" height="175"
                                                     alt="Jasa Marga (JSMR) Siap Panen Cuan dari Berkah Momentum Mudik Lebaran" loading="lazy">
                                             </div>
                                             <div class="artContent">
@@ -560,7 +606,7 @@
                                     <div class="artItem">
                                         <a href="details-premium-lock.html" class="artLink art--col">
                                             <div class="artImg">
-                                                <img src="https://images.bisnis.com/thumb/posts/2023/03/31/1642487/netflix.jpg?w=217&h=163" width="217" height="163"
+                                                <img src="https://images.bisnis.com/thumb/posts/2023/03/31/1642487/netflix.jpg?w=233&h=175" width="233" height="175"
                                                     alt="Satu Lagi Utak-Atik Taktik Netflix" loading="lazy">
                                             </div>
                                             <div class="artContent">
@@ -605,7 +651,7 @@
                                 <div class="artItem">
                                     <a href="details.html" class="artLink art--col">
                                         <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/04/1643856/sinopsi_film_blue_beetle.jpg?w=217&h=163" width="217" height="163"
+                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/04/1643856/sinopsi_film_blue_beetle.jpg?w=233&h=175" width="233" height="175"
                                                 alt="Blue Beetle, Film Terbaru DC Rilis Tahun Ini" loading="lazy">
                                         </div>
                                         <div class="artContent">
@@ -624,7 +670,7 @@
                                 <div class="artItem">
                                     <a href="details.html" class="artLink art--col">
                                         <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/03/28/1641248/film_john_wick_3_tayang_di_bioskop_trans_tv_hari_ini_1676624621.jpg?w=217&h=163" width="217" height="163"
+                                            <img src="https://images.bisnis.com/thumb/posts/2023/03/28/1641248/film_john_wick_3_tayang_di_bioskop_trans_tv_hari_ini_1676624621.jpg?w=233&h=175" width="233" height="175"
                                                 alt="Chapter 4 Sukses Berat, Rumah Produksi Mau Bikin John Wick 5?" loading="lazy">
                                         </div>
                                         <div class="artContent">
@@ -643,7 +689,7 @@
                                 <div class="artItem">
                                     <a href="details.html" class="artLink art--col">
                                         <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/04/1643738/autobiography-film.jpg?w=217&h=163" width="217" height="163"
+                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/04/1643738/autobiography-film.jpg?w=233&h=175" width="233" height="175"
                                                 alt="Usai Keliling 40 Festival Film, Autobiography Siap Tayang di Prime Video" loading="lazy">
                                         </div>
                                         <div class="artContent">
@@ -748,7 +794,7 @@
                             </div>
                         </div>
                         <div class="center-flex">
-                            <a href="#" class="buttonPrimary">Indeks</a>
+                            <a href="#" class="buttonPrimary">Berita Lainnya</a>
                         </div>
 
                     </div>
@@ -769,10 +815,10 @@
                                 </a>
                             </div>
                             <div class="mostItem">
-                                <a href="details-live.html" class="artLink">
+                                <a href="details.html" class="artLink">
                                     <div class="mostNum">2</div>
                                     <h4 class="artTitle">
-                                        Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?
+                                        Kapan Waktu yang Tepat untuk Anak Mulai Diajari Puasa? Ini Jawaban Ahli
                                     </h4>
                                 </a>
                             </div>
@@ -988,8 +1034,44 @@
         To top
     </button>
     <script type="text/javascript" src="./asset/js/jquery-3.5.0.min.js"></script>
+    <script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
     <script type="text/javascript" src="./asset/js/script-main.js"></script>
     <script type="text/javascript" src="./asset/js/script-details.js"></script>
+    <script>
+        $(document).ready(function () {
+            //live details slider anchor
+            if ($('.-js-slider-live').length > 0) {
+                $('.-js-slider-live').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    fade: false,
+                    swipe: false,
+                });
+            }
+
+            //live anchor trigger
+            $('.detailsLiveAnchor').on("click", function () {
+                var a = $(this).attr("anchor"),
+                    b = $('.detailsLive').find("[content='" + a + "']"),
+                    scrollb = b.offset().top - 90,
+                    scrollf = b.offset().top - 120;
+                //console.log(b)
+                $('.detailsLiveItem').removeClass("-active");
+                b.addClass("-active");
+                if ($('.flashnews').length > 0) {
+                    $("html, body").animate({
+                        scrollTop: scrollf
+                    }, 500);
+                } else {
+                    $("html, body").animate({
+                        scrollTop: scrollb
+                    }, 500);
+                }
+                return false;
+            });
+        })
+    </script>
 
 </body>
 
