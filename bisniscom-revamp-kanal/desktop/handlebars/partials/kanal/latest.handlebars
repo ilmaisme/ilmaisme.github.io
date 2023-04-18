@@ -9,8 +9,13 @@
                 <div class="latestImg artImg">
                     {{#eq ../pos compare="top"}}
                     {{#eq @index compare=0}}
+                    {{#if ../subkanal}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=369&h=277" width="369" height="277"
+                        alt="{{title}}">
+                    {{else}}
                     <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=369&h=277" width="369" height="277"
                         alt="{{title}}" loading="lazy">
+                    {{/if}}
                     {{else}}
                     <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=190&h=142" width="190" height="142"
                         alt="{{title}}" loading="lazy">
@@ -29,7 +34,7 @@
                     <div class="artChannel">
                         {{channel}}
                     </div>
-                    {{/if}}                    
+                    {{/if}}
                     {{#if live}}
                     <div class="artLive"><span>Live</span></div>
                     {{/if}}

@@ -8,13 +8,13 @@
             </div>
             <div class="headerLogoWrap">
                 <div class="headerLogo headerLogo--kanal">
-                    <a href="index.html">
+                    <a href="index.html" aria-label="kanal {{kanal}}">
                         <img src="./asset/images/logo/{{replace (lowercase kanal)}}-logo.svg" alt="" width="180"
                             height="49">
                     </a>
                 </div>
                 <div class="headerLogo headerLogo--bisniscom">
-                    <a href="https://bisnis.com/">
+                    <a href="https://bisnis.com/" aria-label="Bisnis.com">
                         <img src="./asset/images/logo/bisniscom-logo.svg" alt="" width="190" height="43" loading="lazy">
                     </a>
                 </div>
@@ -28,8 +28,10 @@
                 <div class="headerLogin">
                     {{#if login}}
                     <a href="https://id.bisnis.com/user" class="buttonProfile" aria-label="Profile">
-                        <img src="./asset/images/icon/icon-profile.png" class="headerLoginDefault" alt="" width="37"
-                            height="37">
+                        <div class="profileImg profileImgDefault">
+                            <img src="./asset/images/icon/icon-profile.png" alt="" width="37"
+                                height="37">
+                        </div>
                     </a>
                     {{else}}
                     <a href="#" aria-label="Login">

@@ -11,7 +11,7 @@
             margin-bottom: 12px;
             @include font-pack(false, 18px, false, 1.66, $cl-black);
         }
-        
+
         &Cta {
             min-width: 372px;
             min-height: 48px;
@@ -21,6 +21,69 @@
             background: $cl-premium;
             text-transform: uppercase;
             @include font-pack(false, 14px, $font-weight-normal, 1.4, $cl-white);
+        }
+    }
+
+    &Gate {
+        position: relative;
+        padding: 19px 30px;
+
+        &Bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        &Box {
+            position: relative;
+            z-index: 1;
+        }
+
+        &Wrap {
+            @include display_flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &Logo {
+            margin-bottom: 20px;
+            display: inline-flex;
+
+            &::after {
+                content: "|";
+                margin-left: 10px;
+                margin-right: 10px;
+                position: relative;
+                bottom: 1px;
+                color: #A4A4A4;
+            }
+
+            &:last-child::after {
+                content: none;
+            }
+        }
+
+        &Content {
+            max-width: 382px;
+            @include font-pack(false, 12px, $font-weight-normal, 1.5, #DCDCDC);
+        }
+
+        &Caption {
+            margin-bottom: 12px;
+            @include font-pack(false, 20px, $font-weight-sbold, $line-base, $cl-white);
+        }
+
+        &Cta {
+            display: block;
+            padding: 14px;
+            min-height: 48px;
+            background: #F4B334;
+            text-transform: uppercase;
+            @include font-pack(false, 12px, $font-weight-sbold, 1.66, $cl-black);
         }
     }
 }

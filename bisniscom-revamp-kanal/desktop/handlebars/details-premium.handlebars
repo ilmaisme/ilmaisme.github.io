@@ -83,9 +83,23 @@
         </main>
     </div>
 
+    <!-- modal image -->
+    {{>detail/modal-image}}
+
+    <!-- modal template -->
+    {{>modal}}
+
     {{>footer/footer}}
 
     {{>footer/script page="details"}}
+    <script>
+        function openModalImage(el, e) {
+            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
+                caption = e.parentNode.parentNode.getElementsByClassName('caption')[0].innerHTML;
+
+            openModal(el, image, caption)
+        }
+    </script>
 
 </body>
 
