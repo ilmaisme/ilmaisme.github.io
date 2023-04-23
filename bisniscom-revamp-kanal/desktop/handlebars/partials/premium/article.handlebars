@@ -1,12 +1,22 @@
 <div class="premiumBox{{#if mt}} mt{{mt}}{{/if}}">
     <div class="titleCaptionWrap">
         <div class="premiumBoxBtn"><span class="icoInline icoPremium"></span>Konten Premium</div>
+        {{#if center}}
+        <h3 class="premiumBoxCaption">
+            Nikmati Konten Premium Untuk Informasi Yang Lebih Dalam
+        </h3>
+        <a href="#" class="premiumBoxLogin">Masuk / Daftar</a>
+        {{else}}
         <a href="#" class="premiumBoxLogin"><span class="icoInline icoLoginPremium"></span>Login</a>
+        {{/if}}
     </div>
+    {{#if center}}
+    {{else}}
     <h3 class="premiumBoxCaption">
         Nikmati Konten Premium Untuk Informasi Yang Lebih Dalam
     </h3>
-    {{>kanal/article channel=channel.Premium.latest type="col" total=3 index_start=0
+    {{/if}}
+    {{>tekno/article channel=channel type="col" total=3 index_start=0
     index_end=3}}
 
     <a href="#" class="titleOthers">Lihat Lainnya</a>

@@ -8,9 +8,10 @@
             </div>
             <div class="headerLogoWrap">
                 <div class="headerLogo headerLogo--kanal">
-                    <a href="index.html" aria-label="kanal {{kanal}}">
-                        <img src="./asset/images/logo/{{replace (lowercase kanal)}}-logo.svg" alt="" width="180"
-                            height="49">
+                    <a href="index-{{replace (lowercase kanal)}}.html" aria-label="kanal {{kanal}}">
+                        <img src="./asset/images/logo/{{replace (lowercase kanal)}}-logo.svg" alt=""
+                            width="{{#if width}}{{width}}{{else}}180{{/if}}"
+                            height="{{#if height}}{{height}}{{else}}49{{/if}}">
                     </a>
                 </div>
                 <div class="headerLogo headerLogo--bisniscom">
@@ -19,6 +20,13 @@
                     </a>
                 </div>
             </div>
+            {{#if nav}}
+            <div class="nav">
+
+                {{>header/nav channel=mainMenu.Tekno active=active}}
+
+            </div>
+            {{/if}}
             <div class="headerCta">
                 <div class="headerSearch">
                     <a href="#" class="buttonSearch center-flex" aria-label="Cari berita terkini">
@@ -29,8 +37,7 @@
                     {{#if login}}
                     <a href="https://id.bisnis.com/user" class="buttonProfile" aria-label="Profile">
                         <div class="profileImg profileImgDefault">
-                            <img src="./asset/images/icon/icon-profile.png" alt="" width="37"
-                                height="37">
+                            <img src="./asset/images/icon/icon-profile.png" alt="" width="37" height="37">
                         </div>
                     </a>
                     {{else}}

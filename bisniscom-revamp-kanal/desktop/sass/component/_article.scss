@@ -56,6 +56,18 @@
         @include font-pack($font-body, 18px, $font-weight-bold, $line-base, $cl-black);
     }
 
+    &Content {
+        &Wrap {
+            @include display_flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            div:first-child {
+                margin-right: 8px
+            }
+        }
+    }
+
     &--row {
         @include display_flex;
         flex-direction: row;

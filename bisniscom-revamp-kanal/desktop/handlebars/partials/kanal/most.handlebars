@@ -4,7 +4,29 @@
     {{#gte @index compare=../index_end}}
     {{else}}
     <div class="mostItem">
-        <a href="{{link}}" class="artLink">
+        <a href="{{link}}" class="mostLink artLink">
+            {{#if ../chan}}
+            <div class="artContentWrap">
+                {{#if premium}}
+                <div class="artChannel -premium">
+                    Premium<span class="icoInline icoPremium"></span>
+                </div>
+                {{else}}
+                <div class="artChannel">
+                    {{channel}}
+                </div>
+                {{/if}}
+                <div class="artDate">
+                    22 November 2022
+                </div>
+            </div>
+            {{else}}
+            {{#if ../dates}}
+            <div class="artDate">
+                22 November 2022
+            </div>
+            {{/if}}
+            {{/if}}
             <div class="mostNum">{{add @index 1}}</div>
             <h4 class="artTitle">
                 {{title}}

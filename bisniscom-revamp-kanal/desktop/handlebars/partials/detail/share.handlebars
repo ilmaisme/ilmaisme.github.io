@@ -9,7 +9,7 @@
         {{else}}
         {{/gte}}
         {{/each}}
-        <ul class="shareSocmed center-flex" id="share">
+        <ul class="shareSocmed center-flex">
             {{#each channel}}
             {{#gte @index compare=../index_start}}
             {{#gte @index compare=../index_end}}
@@ -36,7 +36,7 @@
             </li>
             <li class="shareSocmedItem shareSocmedItem--link share-custom">
                 <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" data-form="copyLinkUrl"
-                    data-copy="copy-url" data-title="Tautan tersalin">
+                    data-copy="copy-url" data-title="Tautan tersalin" onclick="copyLink('copyLinkUrl', this)">
                     <span class="icoInline icoShareLink"></span>
                 </button>
             </li>
@@ -52,15 +52,29 @@
         </ul>
     </div>
     {{#eq pos compare="top"}}
+    {{#if type}}
+    <div class="detailsFont">
+        <button class="button detailsFontCta -normal -active" value="14px">
+            Teks normal
+        </button>
+        <button class="button detailsFontCta -medium" value="1.5em">
+            Teks sedang
+        </button>        
+        <button class="button detailsFontCta -big" value="2em">
+            Teks besar
+        </button>
+    </div>
+    {{else}}
     <div class="detailsFont">
         <button class="button detailsFontCta -minus">
             Smallest <br> Font
         </button>
-        <input type="range" min=".8" max="2.6" step=".2" id="sliderFont" class="detailsFontRange"
+        <input type="range" min=".8" max="2" step=".2" id="sliderFont" class="detailsFontRange"
             aria-label="Customize font size">
         <button class="button detailsFontCta -plus">
             Largest <br> Font
         </button>
     </div>
+    {{/if}}
     {{/eq}}
 </div>

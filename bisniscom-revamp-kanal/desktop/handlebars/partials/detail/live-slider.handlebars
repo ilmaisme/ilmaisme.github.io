@@ -1,7 +1,24 @@
 <div class="detailsLiveSliderWrap -js-slider-live">
+    {{#if index_start_anchor}}
+    {{#each channel}}
+    {{#gte @index compare=../index_start_anchor}}
+    {{#gte @index compare=../index_end_anchor}}
+    {{else}}
+    <div class="detailsLiveSliderTime">
+        <button class="button detailsLiveAnchor{{#if active}} -active{{/if}}"
+            anchor="live{{@index}}">{{livetime}} WIB</button>
+    </div>
+    {{/gte}}
+    {{else}}
+    {{/gte}}
+    {{/each}}
+
+    {{else}}
     {{#each channel}}
     <div class="detailsLiveSliderTime">
-        <button class="button detailsLiveAnchor" anchor="live{{@index}}">{{livetime}} WIB</button>
+        <button class="button detailsLiveAnchor{{#if active}} -active{{/if}}"
+            anchor="live{{@index}}">{{livetime}} WIB</button>
     </div>
     {{/each}}
+    {{/if}}
 </div>

@@ -34,7 +34,7 @@
         padding-top: 36px;
         letter-spacing: 0.03em;
         text-transform: uppercase;
-        @include font-pack($font-body, 11px, $font-weight-sbold, 1.6, #939393);
+        @include font-pack($font-manrope, 11px, $font-weight-med, 1.6, #939393);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -55,7 +55,7 @@
 
     &Fluid {
         position: absolute;
-        width: calc((100% - 1110px)/2);
+        width: calc((100% - 1120px)/2);
         display: block;
         top: 0;
 
@@ -115,9 +115,12 @@
     }
 
     &Bottom {
-        width: 1100px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
         min-height: 90px;
-        background: #D9D9D9;
+        background: rgba(244, 244, 244, .5);
+        z-index: 1;
 
         &:after {
             background-color: transparent;
@@ -174,5 +177,19 @@
             position: relative;
             z-index: 1;
         }
+    }
+
+    &Close {
+        @extend .icoClose;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        border: 0;
+        color: $cl-white;
+        background: #BCBCBC;
+        cursor: pointer;
+        z-index: 99;
     }
 }

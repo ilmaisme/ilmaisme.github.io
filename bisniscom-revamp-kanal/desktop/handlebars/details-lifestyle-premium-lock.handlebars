@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Lifestyle" channel=site.Lifestyle type="details" premium=true}}
+
+<body class="theme--lifestyle theme--premium">
+
+    <!-- s: pushdown billboard -->
+    {{!>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{!>header/header login=true kanal="Lifestyle"}}
+        {{>header/header kanal="Lifestyle"}}
+
+        <!-- s: skyscrapper billboard -->
+        {{!>ads/skyscrapper}}
+        <!-- e: skyscrapper billboard -->
+
+        <main role="main" class="main details">
+            <div class="nav">
+
+                {{>header/nav channel=mainMenu.Lifestyle}}
+
+            </div>
+
+            <!-- s: menu panel -->
+            {{>header/menu}}
+            <!-- e: menu panel -->
+
+            <div class="container mt50">
+
+                {{>breadcrumb kanal="Lifestyle" subkanal="Entertainment"}}
+
+                {{>detail/cover premium=true channel=kanal.Lifestyle.details.content mt="40" total=6 index_start=5 index_end=6}}
+
+                <div class="row">
+                    <div class="col-7 mx-auto mt50">
+
+                        {{>detail/share channel=kanal.Lifestyle.details.content pos="top" total=6 index_start=5 index_end=6}}
+
+                        <article class="detailsContent -lock mt40">
+                            {{>detail/content-premium-lock}}
+
+                        </article>
+
+                        {{!>detail/author premium=true channel=kanal.Lifestyle.details.content total=6 index_start=5 index_end=6}}
+
+                        {{!>detail/share pos="bottom" channel=kanal.Lifestyle.details.content mt="40" total=6 index_start=5
+                        index_end=6}}
+
+                        {{!>detail/tag premium=true channel=kanal.Lifestyle.details}}
+
+                        {{>premium/lock mt="40"}}
+
+                        {{>premium/gate}}
+
+                        <h2 class="titleCaption text-center mt50">FAQ</h2>
+                        {{>premium/faq channel=faq total=12 index_start=0 index_end=12}}
+
+                        <!-- s: premium -->
+                        {{>premium/article channel=kanal.Lifestyle.Premium.latest mt="40"}}
+
+                        <!-- e: premium -->
+
+                        {{>newsletter mt="40"}}
+
+                        <h3 class="titleCaption mt40">Artikel Terkait</h3>
+                        {{>kanal/article channel=kanal.Lifestyle.Premium.latest type="col" details=true mt="16" total=3
+                        index_start=0 index_end=3}}
+
+                        <h3 class="titleCaption mt40">Berita Lainnya</h3>
+                        {{>detail/article-other channel=kanal.Lifestyle.hL mt="16" total=5 index_start=2 index_end=5}}
+
+                        <h3 class="titleCaption mt40">Berita Terkini</h3>
+                        {{>kanal/latest channel=kanal.Lifestyle.Premium.latest type="row" total=3 index_start=0 index_end=3}}
+
+                        <div class="center-flex">
+                            <a href="#" class="buttonPrimary">Berita Lainnya</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    {{>footer/footer}}
+
+    {{>footer/script page="lifestyle" type="details"}}
+    <script>
+        //show content faq
+        var accItem = document.getElementsByClassName('faqBox'),
+            accHD = document.getElementsByClassName('-js-show');
+        for (i = 0; i < accHD.length; i++) {
+            accHD[i].addEventListener('click', toggleItem, false);
+        }
+
+        function toggleItem() {
+            var itemClass = this.parentNode.className,
+                contentClass = this.parentNode.getElementsByClassName('faqContent')[0];
+
+            if (itemClass == 'faqBox close') {
+                for (i = 0; i < accItem.length; i++) {
+                    accItem[i].className = 'faqBox close';
+                }
+
+                Array.from(document.getElementsByClassName('faqContent')).forEach(elem => {
+                    elem.style.maxHeight = 0;
+                });
+
+                this.parentNode.className = 'faqBox open active';
+                contentClass.style.maxHeight = contentClass.scrollHeight + 'px';
+            } else {
+                this.parentNode.className = 'faqBox close';
+                contentClass.style.maxHeight = 0;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

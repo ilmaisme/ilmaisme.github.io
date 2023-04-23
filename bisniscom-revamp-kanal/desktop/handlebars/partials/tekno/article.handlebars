@@ -1,0 +1,104 @@
+<div class="art{{#if mt}} mt{{mt}}{{/if}}">
+    <div class="artWrap{{#if type}} -{{type}}{{/if}}">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="artItem">
+            <a href="{{link}}" class="artLink{{#if ../type}} art--{{../type}}{{/if}}">
+                {{#if ../sidebar}}
+                {{#eq @index compare = 0}}
+                <div class="artImg">
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=355&h=202" width="355" height="202"
+                        alt="{{title}}" loading="lazy">
+                </div>
+                {{else}}
+                {{/eq}}
+                <div class="artContent">
+                    <div class="artContentWrap">
+                        {{#if premium}}
+                        <div class="artChannel -premium">
+                            Premium<span class="icoInline icoPremium"></span>
+                        </div>
+                        {{else}}
+                        <div class="artChannel">
+                            {{channel}}
+                        </div>
+                        {{/if}}
+                        <div class="artDate">
+                            22 November 2022
+                        </div>
+                    </div>
+                    <h4 class="artTitle">
+                        {{title}}
+                    </h4>
+                </div>
+                {{else}}
+                <div class="artImg">
+                    {{#if ../video}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=331&h=186" width="331" height="186"
+                        alt="{{title}}" loading="lazy">
+                    <div class="artDuration">
+                        <span class="icoInline icoPlay"></span>
+                    </div>
+                    {{else}}
+                    {{#eq ../type compare="col-left"}}
+                    {{#eq @index compare= 0}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=310&h=413" width="310" height="413"
+                        alt="{{title}}" loading="lazy">
+                    {{else}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=155&h=116" width="155" height="116"
+                        alt="{{title}}" loading="lazy">
+                    {{/eq}}
+                    {{else}}
+                    {{#eq ../type compare="col-top"}}
+                    {{#eq @index compare= 0}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=355&h=202" width="355" height="202"
+                        alt="{{title}}" loading="lazy">
+                    {{else}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=96&h=96" width="96" height="96"
+                        alt="{{title}}" loading="lazy">
+                    {{/eq}}
+                    {{else}}
+                    {{#if ../details}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=233&h=130" width="233" height="130"
+                        alt="{{title}}" loading="lazy">
+                    {{else}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=217&h=163" width="217" height="163"
+                        alt="{{title}}" loading="lazy">
+                    {{/if}}
+                    {{/eq}}
+                    {{/eq}}
+                    {{/if}}
+                </div>
+                <div class="artContent">
+                    <div class="artContentWrap">
+                        {{#if ../btv}}
+                        {{else}}
+                        {{#if premium}}
+                        <div class="artChannel -premium">
+                            Premium<span class="icoInline icoPremium"></span>
+                        </div>
+                        {{else}}
+                        <div class="artChannel">
+                            {{channel}}
+                        </div>
+                        {{/if}}
+                        <div class="artDate">
+                            22 November 2022
+                        </div>
+                        {{/if}}
+                    </div>
+                    <h4 class="artTitle">
+                        {{title}}
+                    </h4>
+                </div>
+                {{/if}}
+            </a>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+</div>

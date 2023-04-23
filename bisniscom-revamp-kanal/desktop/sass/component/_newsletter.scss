@@ -3,6 +3,20 @@
     border: 1px solid #515151;
     border-radius: 12px;
 
+    &.-sidebar {
+        border: 0;
+        padding: 0;
+
+        .newsletterFormWrap {
+            flex-direction: column;
+        }
+
+        .formInput {
+            min-width: 100%;
+            background: #F7F7F7;
+        }
+    }
+
     &Caption {
         @include font-pack($font-body, 22px, $font-weight-bold, $line-base, $cl-black);
     }
@@ -11,15 +25,15 @@
         margin-top: 8px;
         @include font-pack($font-body, 17px, $font-weight-sbold, 1.4, #434343);
     }
-    
+
     &Form {
         margin-top: 20px;
-        
+
         &Wrap {
             @include display_flex;
             justify-content: center;
         }
-        
+
         .formInput {
             min-width: 356px;
             padding: 10px 14px;

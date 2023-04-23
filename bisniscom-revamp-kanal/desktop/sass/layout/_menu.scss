@@ -69,15 +69,14 @@
         position: fixed;
         top: 70px;
         left: 0;
-        width: 340px;
+        width: 376.8px;
         height: calc(100vh - 70px);
         overflow-y: auto;
-        background-color: #fcfcfc;
-        border-right: 1px solid #ddd;
+        background-color: $cl-white;
         transition: .3s ease-in-out;
         padding-top: 20px;
-        padding-left: 25px;
-        padding-right: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
         z-index: 99;
         backface-visibility: hidden;
         visibility: hidden;
@@ -105,10 +104,10 @@
         .premiumBoxBtn {
             display: flex;
             justify-content: center;
-            margin: 15px -5px;
-            border-radius: 7px;
-            font-size: 12px;
-            font-weight: 700;
+            margin: 22px 0 7px;
+            padding: 13px 15px;
+            border-radius: 50px;
+            @include font-pack($font-manrope, 12px, $font-weight-med, false, false);
 
             .icoPremium {
                 position: relative;
@@ -117,7 +116,18 @@
         }
 
         &Logo {
-            max-width: 130px;
+            width: 100%;
+            padding: 7px 12px;
+            background: #FCFCFC;
+            border: 1px solid #000000;
+            border-radius: 20px;
+            @include font-pack($font-manrope, 11px, $font-weight-med, 2.219, #333333);
+
+            img {
+                width: 24px;
+                height: 24px;
+                margin-right: 8px;
+            }
         }
 
         &Wrap {
@@ -156,12 +166,22 @@
             margin-bottom: 5px;
         }
 
+        &App{
+            gap: 9px;
+        }
+
         &Label {
             margin-bottom: 5px;
-            @include font-pack($font-body, 18px, $font-weight-normal, 1.4, #333);
+            letter-spacing: 0.02em;
+            @include font-pack($font-manrope, 20px, $font-weight-normal, 1.4, #333);
 
             span {
                 color: #f37826;
+            }
+
+            small{
+                font-size: 14px;
+                letter-spacing: 0;
             }
         }
 
@@ -177,7 +197,7 @@
             align-items: center;
             padding-top: 2px;
             padding-bottom: 2px;
-            @include font-pack($font-body, 13px, $font-weight-sbold, 1.4, #333);
+            @include font-pack($font-manrope, 14px, $font-weight-med, 1.4, #333);
         }
     }
 }

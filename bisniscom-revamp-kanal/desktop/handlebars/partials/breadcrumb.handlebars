@@ -5,11 +5,11 @@
         </li>
         {{#if kanal}}
         <li class="breadcrumbItem">
-            <a href="index.html" class="breadcrumbLink">{{kanal}}</a>
+            <a href="index-{{replace (lowercase kanal)}}.html" class="breadcrumbLink">{{kanal}}</a>
         </li>
         {{/if}}
         {{#if subkanal}}
-        <li class="breadcrumbItem">
+        <li class="breadcrumbItem{{#if active}} -active{{/if}}">
             <a href="#" class="breadcrumbLink">{{subkanal}}</a>
         </li>
         {{/if}}
