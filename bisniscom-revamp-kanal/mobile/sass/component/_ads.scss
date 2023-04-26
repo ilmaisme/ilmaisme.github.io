@@ -1,63 +1,123 @@
-// #megabillboard {
-//     height: 520px;
-//     z-index: 0;
+.billboardRectangle,
+.billboardBottom,
+.billboardFlyingBanner {
+    &::before {
+        content: '';
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        left: 0;
+        top: -14px;
+        width: 100%;
+        height: 100%;
+        background: url(../images/icon/icon-bisniscom-circle.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-//     &~header {
-//         .header2_detail_inject {
-//             position: relative;
-//             margin-top: 0;
-//         }
-//     }
-
-//     &~.wrapper-description{
-//         position: relative;
-//         z-index: 1;
-//         background: #fcfcfc;
-//         margin-top: 0;
-//         padding-top: 60px;
-//     }
-    
-//     &~#div-gpt-ad-mr2, &~.row .col-sm-12 .wrapper-list-news, &~#div-gpt-ad-oop1, &~.footer{
-//         background: #fcfcfc;
-//         position: relative;
-//     }
-// }
-
-// #gpt-megabillboard {
-//     top: 10px;
-//     height: 480px;
-//     position: fixed;
-//     display: block !important;
-//     visibility: visible;
-//     opacity: 1;
-
-//     &:before {
-//         content: "Advertisement";
-//         position: absolute;
-//         z-index: -1;
-//         left: 0;
-//         top: 0;
-//         width: 100%;
-//         height: 100%;
-//         font: 400 11px/1.4 Open sans, sans-serif;
-//         color: #c8ccce;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         visibility: visible;
-//         opacity: 1;
-//     }
-// }
-
-.wrapper__ads-download {
-    height: 50px;
-
-    // ~#megabillboard #gpt-megabillboard {
-    //     top: 60px;
-    // }
+    &::after {
+        background-color: #F4F4F4;
+        content: "Advertisement";
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding-top: 36px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        @include font-pack($font-manrope, 11px, $font-weight-med, 1.6, #939393);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
-.ads-download__flex {
-    width: 100%;
-    height: 30px;
+.billboard {
+    position: relative;
+    margin: auto;
+
+    &Rectangle {
+        width: 300px;
+        min-height: 250px;
+    }
+
+    &Bottom {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        min-height: 50px;
+        background: rgba(244, 244, 244, .5);
+        z-index: 1;
+
+        &::before {
+            top: -8px;
+            background-size: 20px;
+        }
+
+        &:after {
+            background-color: transparent;
+            padding-top: 24px;
+            font-size: 10px;
+        }
+    }
+
+    &Parallax {
+        width: 100%
+    }
+
+    &Flying {
+        width: 100%;
+        position: relative;
+        overflow: visible;
+        height: 300px;
+
+        &Fix,
+        &Inner {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0
+        }
+
+        &Inner {
+            position: absolute;
+            clip: rect(auto, auto, auto, auto)
+        }
+
+        &Fix {
+            position: fixed;
+            margin: 0 auto
+        }
+
+        &Banner {
+            min-width: 300px;
+            min-height: 600px;
+            position: absolute;
+            top: 100px;
+            left: calc(((100% - 1110px)/2) + 150px + 75px)
+        }
+
+        &Wrap {
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    &Close {
+        @extend .icoClose;
+        position: absolute;
+        right: 0;
+        top: -24px;
+        width: 24px;
+        height: 24px;
+        border: 0;
+        color: $cl-white;
+        background: #BCBCBC;
+        cursor: pointer;
+        z-index: 99;
+    }
 }

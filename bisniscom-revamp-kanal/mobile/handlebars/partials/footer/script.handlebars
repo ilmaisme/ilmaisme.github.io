@@ -1,10 +1,28 @@
-{{#eq flashnews compare= "true"}}
-<script src="./asset/js/vendor.min.js"></script>
-<script src="./asset/js/flashnews.min.js"></script>
+<script type="text/javascript" src="./asset/js/jquery-3.5.0.min.js"></script>
+{{#if slick}}
+<script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
+{{/if}}
+<script defer type="text/javascript" src="./asset/js/script-main.js"></script>
+{{#eq type compare="details"}}
+<script defer type="text/javascript" src="./asset/js/script-details.js"></script>
 {{/eq}}
-{{#eq page compare= "read-plus"}}
-<script src="./asset/js/script-read-plus.min.js"></script>
+
+{{#eq page compare="lifestyle"}}
+{{#eq type compare="details"}}
+<script defer type="text/javascript" src="./asset/js/script-lifestyle-details.js"></script>
+{{else}}
+<script type="text/javascript" src="./asset/js/script-lifestyle.js"></script>
 {{/eq}}
-{{#eq page compare= "premium"}}
-<script defer src="./asset/js/main-premium-index.min.js"></script>
 {{/eq}}
+
+{{#eq page compare="tekno"}}
+{{#eq type compare="details"}}
+<script defer type="text/javascript" src="./asset/js/script-tekno-details.js"></script>
+{{else}}
+<script type="text/javascript" src="./asset/js/script-tekno.js"></script>
+{{/eq}}
+{{/eq}}
+
+{{#if player}}
+<script type="text/javascript" src="https://cdn.bisnis.com/bisnis/assets/jwplayer/jwplayer.js"></script>
+{{/if}}

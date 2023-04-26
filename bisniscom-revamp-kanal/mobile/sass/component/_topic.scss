@@ -1,0 +1,26 @@
+.topic {
+    &List {
+        @include display_flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 16px;
+    }
+
+    &Link {
+        display: block;
+        padding: 3px 12px;
+        border: 1px solid;
+        border-radius: 12px;
+        background: transparent;
+
+        &:hover {
+            .topicTitle {
+                color: $cl-white;
+            }
+        }
+    }
+
+    &Title {
+        @include font-pack($font-body, 15px, $font-weight-bold, 2, false);
+    }
+}

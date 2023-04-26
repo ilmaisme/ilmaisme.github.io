@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Tekno" slick=true hl=true channel=site.Tekno}}
+
+<body class="theme--tekno">
+
+    <!-- s: pushdown billboard -->
+    {{>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{>header/header kanal="Tekno" active="Home" width=127 height=40}}
+
+        <main role="main" class="main">
+            <div class="nav">
+
+                {{>header/nav channel=mainMenu.Tekno active="Home"}}
+
+            </div>
+
+            <!-- s: menu panel -->
+            {{!>header/menu login=true}}
+            {{>header/menu}}
+            <!-- e: menu panel -->
+
+            <!-- s: headline only for 3 items-->
+            {{!>kanal/headline pos="bottom" dates=true size="66" others=true channel=kanal.Tekno.hL total=3
+            index_start=0
+            index_end=3}}
+
+            <!-- e: headline only for 3 items-->
+
+            <!-- s: stream -->
+            {{>stream channel=stream kanal="Tekno" pos="top" mt="30" width="345" height="191" total=2 index_start=0
+            index_end=1}}
+
+            <!-- e: stream -->
+
+            <div class="container mt30">
+
+                <!-- s: stream -->
+                {{>stream channel=stream kanal="Tekno" pos="bottom" mt="30" width=383 height=215 total=2 index_start=1
+                index_end=2}}
+
+                <!-- e: stream -->
+
+                <!-- s: latest -->
+                <h3 class="titleCaption mt30">Berita Terbaru</h3>
+                {{>tekno/article channel=kanal.Tekno.latest dates=true pos="top" three=true type="col" widthtop="330"
+                heighttop="182"
+                width="157" height="103" total=8 index_start=0
+                index_end=3}}
+
+                <!-- e: latest -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                {{>tekno/article channel=kanal.Tekno.latest mt="30" type="row" width="124" height="70" total=8
+                index_start=3
+                index_end=8}}
+
+                <!-- s: rec -->
+                <div class="kanalBox mt30">
+                    <div class="titleCaptionWrap">
+                        <h3 class="titleCaptionBox">
+                            Rekomendasi HP
+                        </h3>
+                        <a href="#" class="titleOthers" aria-label="See other articles"><span
+                                class="icoInline icoArrow"></span></a>
+                    </div>
+                    {{>tekno/article channel=kanal.Tekno.Gadget.latest type="col" width="195" height="108" total=3 index_start=0
+                    index_end=3}}
+
+                </div>
+
+                <!-- e: rec -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                <!-- s: premium -->
+                {{>premium/article channel=kanal.Tekno.Premium.latest mt="30" width="195" height="146"}}
+
+                <!-- e: premium -->
+
+                <!-- s: terpopuler -->
+                <h3 class="titleCaption mt30">Terpopuler</h3>
+                {{>kanal/most dates=true channel=kanal.Tekno.most total=5 index_start=0 index_end=5}}
+
+                <!-- e: terpopuler -->
+
+                <!-- s: topic -->
+                <h3 class="titleCaption mt30">Topik-Topik Pilihan</h3>
+                {{>topic channel=topic total=9 index_start=3 index_end=9}}
+
+                <!-- e: topic -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                <!-- s: bplus -->
+                <h3 class="titleCaption mt30">
+                    <div class="bplusCaption">
+                        <img src="./asset/images/logo/logo-bisnis-plus.png" alt="Bisnis Plus logo" loading="lazy"
+                            width="162" height="23">
+                    </div>
+                </h3>
+                {{>kanal/bplus channel=kanal.Tekno.BisnisPlus.latest total=4 index_start=0 index_end=4}}
+
+                <!-- e: bplus -->
+
+                <h3 class="titleCaption mt30">Subscribe Newsletter Bisnis Indonesia</h3>
+                {{>newsletter pos="sidebar"}}
+
+                <!-- s: bisnistv -->
+                <div class="kanalBisnistv mt30">
+                    <h3 class="titleCaption">
+                        <img src="./asset/images/logo/bisnistv-logo.png" alt="Bisnistv logo" loading="lazy" width="119"
+                            height="31">
+                    </h3>
+                    {{>tekno/article center=true channel=kanal.Tekno.Video.latest video=true btv=true type="col" total=1
+                    index_start=0 index_end=1}}
+
+                </div>
+
+                <!-- e: bisnistv -->
+
+                <!-- s: review -->
+                <div class="kanalVid">
+                    <div class="container">
+                        <div class="titleCaptionWrap">
+                            <h3 class="titleCaption">
+                                Review Terbaru
+                            </h3>
+                            <a href="#" class="titleOthers" aria-label="See other articles"><span
+                                    class="icoInline icoArrow"></span></a>
+                        </div>
+                        {{!>tekno/article channel=kanal.Tekno.Review.latest video=true type="col" total=4 index_start=0
+                        index_end=3}}
+
+                    </div>
+                </div>
+
+                <!-- e: review -->
+
+                <div class="titleCaptionWrap">
+                    <h3 class="titleCaption">
+                        Startup
+                    </h3>
+                    <a href="#" class="titleOthers" aria-label="See other articles"><span
+                            class="icoInline icoArrow"></span></a>
+                </div>
+                {{>tekno/article channel=kanal.Tekno.Startup.latest type="col-top" total=4 index_start=0
+                index_end=4}}
+
+                <div class="titleCaptionWrap">
+                    <h3 class="titleCaption">
+                        Gadget
+                    </h3>
+                    <a href="#" class="titleOthers" aria-label="See other articles"><span
+                            class="icoInline icoArrow"></span></a>
+                </div>
+                {{>tekno/article channel=kanal.Tekno.Gadget.latest type="col-top" total=4 index_start=0
+                index_end=4}}
+
+                <!-- s: latest -->
+                {{>tekno/latest channel=kanal.Tekno.latest mt="30" type="row" total=8 index_start=0
+                index_end=5}}
+
+                <!-- e: latest -->
+
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary mt30">Index</a>
+                </div>
+
+                <!-- s: rectangle billboard -->
+                {{>ads/middle}}
+                <!-- e: rectangle billboard -->
+
+                <!-- s: rec -->
+                <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
+                {{>tekno/article channel=kanal.Tekno.latest sidebar=true type="col-top" total=8 index_start=0
+                index_end=4}}
+
+                <!-- e: rec -->
+
+                <!-- s: foto -->
+                <div class="titleCaptionWrap mt30">
+                    <h3 class="titleCaption">
+                        Foto
+                    </h3>
+                    <a href="#" class="titleOthers" aria-label="See other articles"><span
+                            class="icoInline icoArrow"></span></a>
+                </div>
+                {{>tekno/photo channel=kanal.Tekno.Foto.latest total=1 index_start=0 index_end=1}}
+
+                <!-- e: foto -->
+
+                <!-- s: QR Bisnis Indonesia -->
+                <div class="mt30">
+                    <img src="./asset/images/QR-bisnis-indonesia.jpg" alt="Scan QR Code Bisnis Indonesia e-paper"
+                        loading="lazy" width="301" height="412">
+                </div>
+                <!-- e: QR Bisnis Indonesia -->
+            </div>
+        </main>
+    </div>
+
+    <!-- s: bottom billboard -->
+    {{!>ads/bottom}}
+    <!-- e: bottom billboard -->
+
+    {{!>footer/footer}}
+
+    {{>footer/script page="tekno" slick=true}}
+
+</body>
+
+</html>

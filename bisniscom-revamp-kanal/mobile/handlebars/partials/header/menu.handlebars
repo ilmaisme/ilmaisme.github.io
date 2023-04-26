@@ -1,0 +1,68 @@
+<div class="menuPanel">
+    <a href="https://www.bisnis.com" class="menuPanelLogo center-flex">
+        <img src="./asset/images/icon/icon-bisniscom.svg" alt="Bisniscom icon" width="24" height="24" loading="lazy">
+        Back to Bisnis.com
+    </a>
+    <div class="menuCtaWrap center-flex">
+        <a href="https://www.bisnis.com/premium" class="premiumBoxBtn menuCta">
+            <span class="icoInline icoPremium"></span>Konten Premium
+        </a>
+        <div class="menuLogin menuCta">
+            {{#if login}}
+            <a href="https://id.bisnis.com/user" class="buttonProfile" aria-label="Profile">
+                <div class="profileImg profileImgDefault">
+                    <img src="./asset/images/icon/icon-profile.png" alt="" width="37" height="37">
+                </div>
+                Profil BisnisID
+            </a>
+            {{else}}
+            <a href="#" class="buttonProfile" aria-label="Login">
+                <span class="icoInline icoLogin"></span> Login BisnisID
+            </a>
+            {{/if}}
+        </div>
+    </div>
+    <div class="menuPanelWrap menuPanelWrap--kanal">
+        <div class="menuPanelLabel">Bisnis<span>com</span></div>
+        <ul class="menuPanelList">
+            {{#each kanalMenu}}
+            <li class="menuPanelItem"><a href="{{link}}" class="menuPanelLink">{{title}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="menuPanelWrap menuPanelWrap--network">
+        <div class="menuPanelLabel">Bisnis <span>Network</span></div>
+        <ul class="menuPanelList">
+            {{#each networkMenu}}
+            <li class="menuPanelItem">
+                <a href="{{link}}" target="_blank" class="menuPanelLink">
+                    <img src="{{img}}" alt="{{title}}" loading="lazy" width="{{width}}" height="{{height}}">
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="menuPanelWrap menuPanelWrap--regional">
+        <div class="menuPanelLabel">Bisnis <span>Regional</span></div>
+        <ul class="menuPanelList">
+            {{#each regionalMenu}}
+            <li class="menuPanelItem"><a href="{{link}}" class="menuPanelLink">{{title}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="menuPanelWrap">
+        <div class="menuPanelLabel">
+            <small>Available on:</small>
+        </div>
+        <div class="menuPanelApp center-flex">
+            <a href="https://play.google.com/store/apps/details?id=bisnis.com.official" class=""
+                title="Android app on Google Play">
+                <img src="./asset/images/logo/m-google-play.svg" class="" alt="" width="160" height="38" loading="lazy">
+            </a>
+            <a href="https://itunes.apple.com/id/app/bisnis-com/id945608365?mt=8" class=""
+                title="Download on the App Store">
+                <img src="./asset/images/logo/m-app-store.svg" class="" alt="" width="160" height="38" loading="lazy">
+            </a>
+        </div>
+    </div>
+</div>

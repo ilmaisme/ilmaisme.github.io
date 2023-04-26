@@ -1,0 +1,80 @@
+<div class="detailsWrap display-flex{{#if pos}} -{{pos}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}">
+    <div class="shareSocmedWrap display-flex"> Bagikan
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <input type="text" style="display: none;" id="copyLinkUrl" value="{{url}}">
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+        <ul class="shareSocmed center-flex">
+            {{#each channel}}
+            {{#gte @index compare=../index_start}}
+            {{#gte @index compare=../index_end}}
+            {{else}}
+            <li class="shareSocmedItem shareSocmedItem--fb">
+                <button class="button shareSocmedCta" aria-label="Share Facebook" title="Facebook">
+                    <span class="icoInline icoShareFb"></span>
+                </button>
+            </li>
+            <li class="shareSocmedItem shareSocmedItem--tw">
+                <button class="button shareSocmedCta" aria-label="Share Twitter" title="Twitter">
+                    <span class="icoInline icoShareTwitter"></span>
+                </button>
+            </li>
+            <li class="shareSocmedItem shareSocmedItem--tg">
+                <button class="button shareSocmedCta" aria-label="Share Telegram" title="Telegram">
+                    <span class="icoInline icoShareTg"></span>
+                </button>
+            </li>
+            <li class="shareSocmedItem shareSocmedItem--ln">
+                <button class="button shareSocmedCta" aria-label="Share Linkedin" title="Linkedin">
+                    <span class="icoInline icoShareLn"></span>
+                </button>
+            </li>
+            <li class="shareSocmedItem shareSocmedItem--link share-custom">
+                <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" data-form="copyLinkUrl"
+                    data-copy="copy-url" data-title="Tautan tersalin" onclick="copyLink('copyLinkUrl', this)">
+                    <span class="icoInline icoShareLink"></span>
+                </button>
+            </li>
+            <li class="shareSocmedItem shareSocmedItem--wa">
+                <button class="button shareSocmedCta" aria-label="Share Whatsapp" title="Whatsapp">
+                    <span class="icoInline icoShareWa"></span>
+                </button>
+            </li>
+            {{/gte}}
+            {{else}}
+            {{/gte}}
+            {{/each}}
+        </ul>
+    </div>
+    {{#eq pos compare="top"}}
+    {{#if type}}
+    <div class="detailsFont">
+        <button class="button detailsFontCta -normal -active" value="14px">
+            Teks normal
+        </button>
+        <button class="button detailsFontCta -medium" value="1.5em">
+            Teks sedang
+        </button>        
+        <button class="button detailsFontCta -big" value="2em">
+            Teks besar
+        </button>
+    </div>
+    {{else}}
+    <div class="detailsFont">
+        <button class="button detailsFontCta -minus">
+            Smallest <br> Font
+        </button>
+        <input type="range" min=".8" max="2" step=".2" id="sliderFont" class="detailsFontRange"
+            aria-label="Customize font size">
+        <button class="button detailsFontCta -plus">
+            Largest <br> Font
+        </button>
+    </div>
+    {{/if}}
+    {{/eq}}
+</div>

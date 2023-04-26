@@ -1,0 +1,44 @@
+.nav {
+    --hg-hmenu: 50px;
+    position: relative;
+    top: 0;
+    background: #FAFAFA;
+    z-index: 4;
+
+    &Menu {
+        height: var(--hg-hmenu);
+        overflow: hidden;
+    }
+
+    &List {
+        overflow-x: auto;
+        align-items: center;
+        padding-bottom: 2px;
+        padding-right: 5px;
+    }
+
+    &Item {
+        flex-shrink: 0;
+        margin-left: 5px;
+        margin-right: 5px;
+        min-width: 55px;
+        min-height: 50px;
+
+        &.-b {
+            min-width: unset;
+            min-height: unset;
+
+            img {
+                max-width: 30px;
+            }
+        }
+    }
+
+    &Link {
+        display: block;
+        padding: 15px 5px 10px;
+        border-bottom: 3px solid transparent;
+        text-transform: uppercase;
+        @include font-pack($font-body, 15px, $font-weight-bold, 1.37, $cl-black);
+    }
+}

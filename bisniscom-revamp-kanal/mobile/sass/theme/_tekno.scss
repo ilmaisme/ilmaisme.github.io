@@ -1,0 +1,532 @@
+.theme {
+    &--tekno {
+        --cl-tekno: #0845DD;
+        font-family: $font-body2;
+
+        .button {
+            &Primary {
+                min-width: 250px;
+                padding: 14px;
+                border-radius: 0;
+                border: 1px solid #0845DD;
+                @include font-pack($font-body2, false, $font-weight-normal, 1.315, var(--cl-tekno));
+            }
+        }
+
+        .flashnews {
+            &Wrap {
+                background: #052981;
+            }
+
+            &Caption {
+                background: $cl-white;
+                @include font-pack($font-body2, false, false, false, #052981);
+            }
+
+            &Link {
+                @include font-pack($font-body2, 12px, $font-weight-med, false, false);
+            }
+        }
+
+        .nav {
+            background: #F9F9F9;
+
+            &Menu {
+                height: 38px;
+            }
+
+            &Item {
+                margin-left: 7px;
+                margin-right: 7px;
+                min-height: 38px;
+
+                &.-active {
+                    .navLink {
+                        color: var(--cl-tekno);
+                        border-bottom: 3px solid var(--cl-tekno);
+                    }
+                }
+
+                &.-b {
+                    min-width: unset;
+                    min-height: unset;
+                }
+            }
+
+            &Link {
+                @include font-pack($font-body2, 12px, $font-weight-sbold, 1.55, false);
+                padding: 10px 10px 7px;
+
+                &:hover {
+                    color: var(--cl-tekno);
+                }
+            }
+        }
+
+        .header {
+            &Top {
+                border-bottom: 1px solid #EAEAEA;
+            }
+
+            &Logo {
+                min-width: 190px;
+
+                img {
+                    max-width: 130px;
+                }
+            }
+
+            .icoLogin {
+                filter: invert(14%) sepia(70%) saturate(7496%) hue-rotate(227deg) brightness(91%) contrast(94%);
+            }
+        }
+
+        .headerSearch {
+            .icoSearch {
+                width: 26px;
+                height: 26px;
+                @extend %icoSearch-tekno;
+                filter: invert(0%) sepia(88%) saturate(738%) hue-rotate(348deg) brightness(101%) contrast(80%);
+            }
+
+            .buttonSearch {
+                padding: 0;
+                border: 0;
+            }
+        }
+
+        .hL {
+            &Wrap {
+                height: 680px;
+            }
+
+            &Big {
+                &Title {
+                    @include font-pack($font-body2, 36px, $font-weight-sbold, false, false);
+                }
+
+                &Img {
+                    img {
+                        height: 680px;
+                    }
+                }
+            }
+
+            .artDate {
+                color: #DCDCDC;
+            }
+
+            .titleOthers {
+                display: block;
+                margin-top: 18px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                font-size: 14px;
+                color: $cl-white;
+
+                .icoArrow {
+                    @extend %filter-white;
+                }
+            }
+        }
+
+        .stream {
+            &Caption {
+                text-transform: uppercase;
+                @include font-pack($font-body2, 15px, false, false, false);
+
+                strong {
+                    font-weight: $font-weight-med
+                }
+            }
+
+            &Title {
+                @include font-pack(false, 15px, $font-weight-sbold, 1.47, false);
+            }
+
+            &Content {
+                @include font-pack($font-body2, 16px, $font-weight-med, false, false);
+            }
+
+            &Link {
+                @include font-pack($font-body2, false, $font-weight-med, false, #F4B334);
+            }
+
+            &.-top {
+                .streamCaption {
+                    strong {
+                        color: #AE0F0F;
+                    }
+                }
+            }
+        }
+
+        .kanal {
+            &Box {
+                border-radius: 0;
+
+                .art {
+                    &Wrap.-col {
+                        gap: 16px;
+                    }
+                }
+            }
+
+            &Vid {
+                background: #090E3C;
+                padding-bottom: 34px;
+
+                .artWrap.-col .artImg {
+                    height: 185px;
+                    padding-top: calc(3/4 * 100% - 111px);
+                }
+            }
+
+            &Bisnistv {
+                .artTitle {
+                    font-size: 15px;
+                    line-height: 1.47;
+                }
+
+                .artDuration {
+                    .icoPlay {
+                        width: 18px;
+                        height: 20px;
+                        color: var(--cl-tekno);
+
+                        &::before {
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .title {
+            &Caption {
+                text-transform: none;
+                @include font-pack($font-body2, false, $font-weight-sbold, 1.44, false);
+
+                &Med {
+                    font-size: 22px;
+                }
+
+                &Box {
+                    border-top-left-radius: 0;
+                    background: var(--cl-tekno);
+                    @include font-pack($font-body2, false, $font-weight-sbold, 1, false);
+                }
+            }
+
+            &Others {
+                font-family: $font-body2
+            }
+        }
+
+        .art {
+
+            &--row,
+            &--col {
+                gap: 12px;
+            }
+
+            &Wrap {
+                &.-col {
+                    .artImg {
+                        padding-top: calc(2/4 * 100% + 10px);
+                    }
+
+                    .artItem {
+                        flex-basis: 195px;
+                    }
+
+                }
+
+                &.-row {
+                    .artImg {
+                        flex-basis: 124px;
+                        height: 70px;
+                    }
+                }
+
+                &.-three {
+                    .artTitle {
+                        -webkit-line-clamp: 3;
+                    }
+
+                    .artLive {
+                        top: 14px;
+                        left: 14px;
+                    }
+                }
+            }
+
+            &Img {
+                border-radius: 0;
+            }
+
+            &Link {
+                &:hover .artTitle {
+                    color: var(--cl-tekno);
+                }
+            }
+
+            &Title {
+                margin-top: 4px;
+                @include font-pack($font-body2, false, $font-weight-sbold, false, false);
+            }
+
+            &Channel {
+                padding: 0;
+                letter-spacing: 0.03em;
+                @include font-pack($font-body2, 10px, $font-weight-med, 1.637, var(--cl-tekno));
+            }
+
+            &Date {
+                margin-top: 0;
+                letter-spacing: 0.03em;
+                @include font-pack($font-body2, 10px, $font-weight-light, 1.637, #545454);
+            }
+
+            &Live {
+                position: absolute;
+                border-radius: 4px;
+                background: $cl-white;
+                top: 4px;
+                left: 4px;
+                padding-left: 20px;
+                padding-right: 10px;
+                z-index: 1;
+                letter-spacing: 0.03em;
+                @include font-pack($font-body2, false, $font-weight-normal, 1.637, false);
+
+                &::before {
+                    top: 8px;
+                    left: 8px;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 6px;
+                }
+            }
+
+            &Duration {
+                width: 65px;
+                height: 48px;
+                background: #090e3c;
+                border-top-right-radius: 12px;
+                align-items: center;
+                justify-content: center;
+
+                .icoPlay {
+                    width: 24px;
+                    height: 27px;
+                    margin-left: 0;
+                    margin-right: 0;
+
+                    &::before {
+                        height: 27px;
+                        border-top: 14px solid transparent;
+                        border-bottom: 12px solid transparent;
+                        border-left: 24px solid;
+                    }
+                }
+            }
+        }
+
+        .premiumBox {
+
+            &Caption {
+                @include font-pack($font-body2, 12px, false, 1.667, #F9BC73);
+            }
+
+            .art {
+                &Wrap.-col {
+                    gap: 16px;
+
+                    .artItem {
+                        flex-basis: 195px;
+                    }
+
+                    .artImg {
+                        padding-top: calc(3/4 * 100%);
+                    }
+
+                    .artTitle {
+                        -webkit-line-clamp: 2;
+                    }
+                }
+
+                &Channel {
+                    letter-spacing: 0.03em;
+                    @include font-pack($font-body2, 11px, $font-weight-med, 1.637, false);
+                }
+
+                &Title {
+                    @include font-pack(false, 15px, false, 1.47, false);
+                }
+            }
+
+            .-premium {
+                color: $cl-white;
+
+                .icoPremium {
+                    @extend %filter-white;
+                }
+            }
+
+            .titleOthers {
+                @include font-pack($font-body2, false, $font-weight-med, false, false);
+            }
+        }
+
+        .most {
+            &Item {
+                margin-top: 14px;
+                padding-bottom: 17px;
+                border-bottom: 1px solid #DCDCDC;
+
+                .mostLink {
+                    display: block;
+                    padding-left: 52px;
+                }
+            }
+
+            &Num {
+                min-width: 35px;
+                text-align: center;
+                bottom: 40px;
+                left: 0;
+                right: unset;
+                @include font-pack($font-body2, 45px, $font-weight-normal, .5335, var(--cl-tekno));
+            }
+
+            .artTitle {
+                font-size: 15px;
+            }
+        }
+
+        .topic {
+
+            &Link {
+                padding: 10px;
+                border: 0;
+                background: #F8FCFF;
+
+                &:hover {
+                    color: #F8FCFF;
+                    background: var(--cl-tekno)
+                }
+            }
+
+            &Title {
+                @include font-pack($font-body2, false, $font-weight-med, 1.38, var(--cl-tekno));
+            }
+        }
+
+        .bplus {
+            &Item {
+                padding: 12px 14px;
+            }
+
+            &Others {
+                @include font-pack($font-body2, 16px, false, 2, false);
+            }
+
+            &Link:hover {
+                .bplusTitle {
+                    color: $cl-white;
+                }
+            }
+        }
+
+        .newsletter {
+            border: 1px solid #D8D8D8;
+            border-radius: 0;
+            padding: 18px 20px;
+
+            &Caption {
+                @include font-pack($font-body2, 18px, $font-weight-sbold, 1.44, false);
+            }
+
+            &Lead {
+                margin-top: 12px;
+                @include font-pack($font-body2, 14px, $font-weight-normal, 1.57, false);
+            }
+
+            &Cta {
+                padding: 14px;
+                border-radius: 0;
+                background: var(--cl-tekno);
+                font-family: $font-body2
+            }
+
+            &Form {
+                &Wrap {
+                    gap: 12px;
+                }
+            }
+
+            .formInput {
+                flex: 1;
+                border: 0;
+                border-radius: 0;
+                padding: 14px;
+                background: #EDEDED;
+                @include font-pack($font-body2, false, false, 1, $cl-black);
+                @include placeholder(false, false, 1, #434343)
+            }
+        }
+
+        .sidebar {
+            .artWrap.-col-top {
+                .artItem {
+                    margin-top: 20px;
+                }
+
+                .artItem:first-child .art--col-top,
+                .art--col-top {
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid #DCDCDC;
+                }
+
+                .artTitle {
+                    font-size: 18px;
+                }
+            }
+
+            .-photo {
+                position: relative;
+                margin-top: 20px;
+
+                .artPhotoCount {
+                    position: absolute;
+                    padding: 7px 12px;
+                    top: 0;
+                    left: 0;
+                    border-bottom-right-radius: 12px;
+                    @include font-pack($font-body2, 11px, $font-weight-med, 1, $cl-black);
+                    z-index: 1;
+
+                    .icoPhoto {
+                        margin-right: 3px;
+                        filter: invert(0%) sepia(10%) saturate(461%) hue-rotate(349deg) brightness(86%) contrast(80%);
+                    }
+                }
+
+                .artImg {
+                    position: relative;
+                    padding-top: calc(3/4 * 100%);
+
+                    img {
+                        @extend %template-img
+                    }
+                }
+            }
+        }
+
+        .profileImgDefault,
+        .icoArrow {
+            filter: invert(14%) sepia(70%) saturate(7496%) hue-rotate(227deg) brightness(91%) contrast(94%);
+        }
+    }
+}

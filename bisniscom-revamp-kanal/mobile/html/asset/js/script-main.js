@@ -1,0 +1,51 @@
+$(document).ready(function () {
+    let hd = $(".headerTop"),
+        nav = $(".nav"),
+        back = $(".-js-backtop")
+    $(window).scroll(function () {
+        var a = $(window).scrollTop()
+        // header logo bisniscom
+        var b = hd.outerHeight(),
+            c = nav.outerHeight()
+        a > b + c ? ($(".headerLogo--kanal").addClass("hidden"),
+                $(".headerLogo--bisniscom").addClass("visible")) :
+            ($(".headerLogo--kanal").removeClass("hidden"),
+                $(".headerLogo--bisniscom").removeClass("visible"))
+
+        // visible back to top button
+        if (a > 175) {
+            back.fadeIn("slow");
+        } else {
+            back.fadeOut("slow");
+        }
+    })
+
+    // back to top button
+    back.on("click", function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+})
+
+//close billboard
+var cBillboard = document.querySelector('.billboardClose');
+if (cBillboard != null) {
+    cBillboard.addEventListener("click", function () {
+        this.parentNode.style.display = "none";
+    });
+}
+
+//open menu
+function toggleMenu(e) {
+    let menu = $('.menuPanel');
+    jQuery(e).toggleClass('-active');
+    menu.toggleClass('-open');
+    event.stopPropagation();
+}
+
+document.body.addEventListener('click', function (e) {
+    this.getElementsByClassName('menuPanel')[0].classList.remove('-open');
+    this.getElementsByClassName('menuBar')[0].classList.remove('-active');
+});

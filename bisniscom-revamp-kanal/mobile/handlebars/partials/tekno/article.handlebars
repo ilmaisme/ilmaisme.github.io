@@ -1,0 +1,69 @@
+<div class="art{{#if mt}} mt{{mt}}{{/if}}">
+    <div
+        class="artWrap{{#if type}} -{{type}}{{/if}}{{#if pos}}-{{pos}}{{/if}}{{#if small}} -small{{/if}}{{#if center}} -center{{/if}}{{#if three}} -three{{/if}}">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="artItem">
+            <a href="{{link}}" class="artLink{{#if ../type}} art--{{../type}}{{/if}}">
+                <div class="artImg">
+                    {{#eq @index compare=0}}
+                    {{#if ../subkanal}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../width}}&h={{../height}}"
+                        width="{{../width}}" height="{{../height}}" alt="{{title}}">
+                    {{/if}}
+                    {{#eq ../pos compare="top"}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../widthtop}}&h={{../heighttop}}"
+                        width="{{../widthtop}}" height="{{../heighttop}}" alt="{{title}}" loading="lazy">
+                    {{else}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../width}}&h={{../height}}"
+                        width="{{../width}}" height="{{../height}}" alt="{{title}}" loading="lazy">
+                    {{/eq}}
+                    {{else}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../width}}&h={{../height}}"
+                        width="{{../width}}" height="{{../height}}" alt="{{title}}" loading="lazy">
+                    {{/eq}}
+                    {{#if ../video}}
+                    <div class="artDuration">
+                        <span class="icoInline icoPlay"></span>
+                        {{#if ../btv}}{{else}}04.22{{/if}}
+                    </div>
+                    {{/if}}
+                    {{#if live}}
+                    <div class="artLive"><span>Live</span></div>
+                    {{/if}}
+                </div>
+                <div class="artContent">
+                    <div class="artContentWrap">
+                        {{#if premium}}
+                        <div class="artChannel -premium">
+                            Premium<span class="icoInline icoPremium"></span>
+                        </div>
+                        {{else}}
+                        {{#if ../subkanal}}
+                        <div class="artChannel">
+                            Gadget
+                        </div>
+                        {{else}}
+                        <div class="artChannel">
+                            {{channel}}
+                        </div>
+                        {{/if}}
+                        {{/if}}
+                        <div class="artDate">
+                            22 November 2022
+                        </div>
+                    </div>
+                    <h4 class="artTitle">
+                        {{title}}
+                    </h4>
+                </div>
+            </a>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+</div>
