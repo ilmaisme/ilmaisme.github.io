@@ -49,3 +49,17 @@ document.body.addEventListener('click', function (e) {
     this.getElementsByClassName('menuPanel')[0].classList.remove('-open');
     this.getElementsByClassName('menuBar')[0].classList.remove('-active');
 });
+
+// active scroll left
+let das = document.querySelector('[data-active=scroll]')
+if (!!das) {
+    let sadt = das.querySelector('.-active')
+    if (sadt) {
+        var sw = sadt.clientWidth,
+            sv = sadt.getBoundingClientRect()['x']
+    } else {
+        var sw = 0,
+            sv = 0
+    }
+    das.scrollLeft = sv - sw
+}

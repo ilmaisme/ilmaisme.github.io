@@ -1,14 +1,17 @@
 .paging {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 50px;
 
     &Wrap {
         @include display_flex;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     &List {
         padding: 0;
+        margin-top: 10px;
+        margin-right: 10px;
         list-style-type: none;
         @include display_flex;
     }
@@ -18,7 +21,7 @@
         margin-right: 5px;
 
         &:first-child {
-            margin-left: 12px;
+            margin-left: 0;
         }
     }
 
@@ -40,11 +43,12 @@
     }
 
     &Caption {
+        margin-top: 10px;
         @include font-pack($font-body, 16px, $font-weight-bold, 1.4, #434343);
     }
 
     &Show {
-        margin-left: 5px;
+        margin-top: 10px;
         padding: 5px 12px;
     }
 }

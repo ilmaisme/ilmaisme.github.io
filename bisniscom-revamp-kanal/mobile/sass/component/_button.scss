@@ -23,6 +23,10 @@
         border-radius: 12px;
         text-transform: uppercase;
         @include font-pack($font-body, 14px, $font-weight-sbold, $line-base, false);
+
+        @include max-responsive($mstablet) {
+            min-width: 300px;
+        }
     }
 
     &Backtop {
@@ -51,5 +55,9 @@
         padding: 10px 15px;
         background: #245DCB;
         color: $cl-white;
+
+        @include max-responsive($mstablet) {
+            padding: 10px;
+        }
     }
 }

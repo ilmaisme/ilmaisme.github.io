@@ -28,27 +28,34 @@
     <link rel=icon type=image/png sizes=16x16 href="https://cdn.bisnis.com/bisnis/assets/images/favicon.png">
     {{#if slick}}
     <!-- slick CSS -->
-    <link rel="stylesheet" href="./asset/css/slick.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/slick.min.css" type="text/css">
     {{/if}}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     {{#eq page compare="Lifestyle"}}
     {{#eq type compare="details"}}
-    <link
+    <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap"
-        rel="stylesheet">
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap">
+    </noscript>
     {{#if premium}}
-    <link rel="stylesheet" href="./asset/css/style-lifestyle-details-premium.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style-lifestyle-details-premium.min.css" type="text/css">
     {{else}}
-    <link rel="stylesheet" href="./asset/css/style-lifestyle-details.css" type="text/css">
-    <link rel="preload" as="image"
-        href="https://images.bisnis.com/thumb/posts/2023/01/25/1621417/dungeons--dragons-honor-among-thieves.jpg?w=1080&h=378">
+    <link rel="stylesheet" href="./asset/css/style-lifestyle-details.min.css" type="text/css">
     {{/if}}
     {{else}}
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./asset/css/style-lifestyle.css" type="text/css">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,700&display=swap">
+    </noscript>
+    <link rel="stylesheet" href="./asset/css/style-lifestyle.min.css" type="text/css">
     {{/eq}}
     {{#if hl}}
     <link rel="preload" as="image"
@@ -61,22 +68,27 @@
     {{/eq}}
     {{#eq page compare="Tekno"}}
     {{#eq type compare="details"}}
-    <link
+    <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&display=swap"
-        rel="stylesheet">
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&display=swap">
+    </noscript>
     {{#if premium}}
-    <link rel="stylesheet" href="./asset/css/style-tekno-details-premium.css" type="text/css">
-    <link rel="preload" as="image"
-        href="https://images.bisnis.com/thumb/posts/2023/03/30/1642230/hari-film-nasional-premium.jpg?w=1440&h=840">
+    <link rel="stylesheet" href="./asset/css/style-tekno-details-premium.min.css" type="text/css">
     {{else}}
-    <link rel="stylesheet" href="./asset/css/style-tekno-details.css" type="text/css">
-    <link rel="preload" as="image"
-        href="https://images.bisnis.com/thumb/posts/2022/11/21/1600267/twitter-.jpg?w=740&amp;h=420">
+    <link rel="stylesheet" href="./asset/css/style-tekno-details.min.css" type="text/css">
     {{/if}}
     {{else}}
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,600;1,600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./asset/css/style-tekno.css" type="text/css">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,600;1,600&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,600;1,600&display=swap">
+    </noscript>
+    <link rel="stylesheet" href="./asset/css/style-tekno.min.css" type="text/css">
     {{/eq}}
     {{#if hl}}
     <link rel="preload" as="image" href="https://images.bisnis.com/posts/2022/11/21/1600267/twitter-.jpg">
@@ -88,10 +100,6 @@
     {{/eq}}
 
     <!--font menu & footer -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap">
-    </noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap">
     <link rel="preload" href="./asset/images/logo/{{replace (lowercase page)}}-logo-m.svg" as="image" />
 </head>

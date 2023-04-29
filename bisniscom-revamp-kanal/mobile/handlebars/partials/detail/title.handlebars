@@ -1,5 +1,5 @@
 {{#eq pos compare="left"}}
-<div class="detailsTitle{{#if pos}} -{{pos}}{{/if}}">
+<div class="detailsTitle{{#if pos}} -{{pos}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}">
     {{#each channel}}
     {{#gte @index compare=../index_start}}
     {{#gte @index compare=../index_end}}
@@ -10,6 +10,8 @@
             <span class="icoInline icoProfile"></span>
             <div class="authorName">{{author}}</div>
         </span>
+    </div>
+    <div class="detailsAttribute">
         <span class="detailsAttributeItem">
             <span class="icoInline icoCal"></span>
             {{dates}}
@@ -36,13 +38,15 @@
     <div class="artChannel">{{channel}}</div>
     {{/if}}
     <h1 class="detailsTitleCaption">{{title}}</h1>
-    <div class="detailsAttribute{{#if ../premium}}{{else}} center-flex{{/if}}">
-        <span class="detailsAttributeAuthor">
+    <div class="detailsAttribute">
+        <div class="detailsAttributeAuthor center-flex">
             <div class="profileImg{{#if ../default}} profileImgDefault{{/if}}">
                 <img src="{{authorphoto}}" alt="{{author}}" loading="lazy" width="26" height="26">
             </div>
             <div class="authorName">{{author}}</div>
-        </span>
+        </div>
+    </div>
+    <div class="detailsAttribute{{#if ../premium}}{{else}} center-flex{{/if}}">
         <span>{{dates}}</span>
         <span>5 menit baca</span>
     </div>

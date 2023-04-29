@@ -1,5 +1,5 @@
 .newsletter {
-    padding: 30px 42px;
+    padding: 18px 20px;
     border: 1px solid #515151;
     border-radius: 12px;
 
@@ -32,27 +32,26 @@
         &Wrap {
             @include display_flex;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .formInput {
-            min-width: 356px;
+            flex: 1;
             padding: 10px 14px;
             background: $cl-white;
             border: 1px solid #9E9E9E;
-            border-top-left-radius: 12px;
-            border-bottom-left-radius: 12px;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+            border-radius: 12px;
             @include font-pack($font-body, 16px, $font-weight-normal, 1, $cl-black);
             @include placeholder(14px, $font-weight-normal, 1, #9E9E9E)
         }
     }
 
     &Cta {
+        width: 100%;
         min-height: 44px;
         padding: 12px 16px;
-        border-top-right-radius: 12px;
-        border-bottom-right-radius: 12px;
+        border-radius: 12px;
         text-transform: uppercase;
         @include font-pack($font-body, 14px, $font-weight-normal, 1.4, $cl-white);
     }

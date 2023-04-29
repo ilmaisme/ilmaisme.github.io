@@ -30,20 +30,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
+    <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap"
-        rel="stylesheet">
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap">
+    </noscript>
     <link rel="stylesheet" href="./asset/css/style-lifestyle-details.min.css" type="text/css">
-    <link rel="preload" as="image"
-        href="https://images.bisnis.com/thumb/posts/2023/01/25/1621417/dungeons--dragons-honor-among-thieves.jpg?w=1080&h=378">
 
     <!--font menu & footer -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap">
-    </noscript>
-    <link rel="preload" href="./asset/images/logo/lifestyle-logo.svg" as="image" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap">
+    <link rel="preload" href="./asset/images/logo/lifestyle-logo-m.svg" as="image" />
 </head>
 <body class="theme--lifestyle">
 
@@ -55,13 +53,14 @@
                 <div class="billboardPushdownInner">
                     <div class="billboardPushdownPromo">
                         <!-- ad script here -->
-                        <!--<img src="https://placehold.co/970x250/000/F4F4F4?font=nunitosans&text=PUSHDOWN%20BILLBOARD%20IS%20HERE"
-                            alt="" width="970" height="250">-->
+                        <!--<img src="https://placehold.co/320x480/000/F4F4F4?font=nunitosans&text=PUSHDOWN%20BILLBOARD%20IS%20HERE"
+                            alt="" width="320" height="480">-->
                     </div>
                 </div>
                 <button class="billboardPushdownClose" aria-label="Close billboard"></button>
             </div>
         </div>
+        <div class="billboardPushdownSwipe">Scroll untuk melanjutkan membaca</div>
         <script defer src="./asset/js/script-billboard-pushdown.min.js"></script>
     </div>    <!-- e: pushdown billboard -->
 
@@ -70,7 +69,7 @@
         <div class="flashnews">
             <div class="flashnewsCaption">Breaking News</div>
             <marquee class="flashnewsWrap" behavior="scroll" direction="left" onmouseover="this.stop();"
-                onmouseout="this.start();">
+                onmouseout="this.start();" scrollamount="4">
                 <div class="flashnewsItem">
                     <img src="./asset/images/icon/icon-bisniscom-wsmall.svg" alt="" width="11" height="14" class="flashnewsIcon">
                     <a href="#" class="flashnewsLink">
@@ -133,14 +132,14 @@
                     <div class="headerLogoWrap">
                         <div class="headerLogo headerLogo--kanal">
                             <a href="index-lifestyle.html" aria-label="kanal Lifestyle">
-                                <img src="./asset/images/logo/lifestyle-logo.svg" alt=""
-                                    width="180"
-                                    height="49">
+                                <img src="./asset/images/logo/lifestyle-logo-m.svg" alt=""
+                                    width="104"
+                                    height="42">
                             </a>
                         </div>
                         <div class="headerLogo headerLogo--bisniscom">
-                            <a href="https://bisnis.com/" aria-label="Bisnis.com">
-                                <img src="./asset/images/logo/bisniscom-logo.svg" alt="" width="190" height="43" loading="lazy">
+                            <a href="https://m.bisnis.com/" aria-label="Bisnis.com">
+                                <img src="./asset/images/logo/bisniscom-logo-m.svg" alt="" width="165" height="38" loading="lazy">
                             </a>
                         </div>
                     </div>
@@ -150,34 +149,15 @@
                                 <span class="icoInline icoSearch"></span>
                             </a>
                         </div>
-                        <div class="headerLogin">
-                            <a href="https://id.bisnis.com/user" class="buttonProfile" aria-label="Profile">
-                                <div class="profileImg profileImgDefault">
-                                    <img src="./asset/images/icon/icon-profile.png" alt="" width="37" height="37">
-                                </div>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
         </header>
-        <!-- s: skyscrapper billboard -->
-        <div class="skyscrapper">
-            <div class="skyscrapperFluid skyscrapperFluid--left">
-                <div class="skyscrapper--left">
-                </div>
-            </div>
-            <div class="skyscrapperFluid skyscrapperFluid--right">
-                <div class="skyscrapper--right">
-                </div>
-            </div>
-        </div>        <!-- e: skyscrapper billboard -->
-
         <main role="main" class="main details">
             <div class="nav">
 
                 <nav class="navMenu" aria-label="primarynavigation">
-                    <ul class="navList center-flex">
+                    <ul class="navList display-flex" data-active="scroll">
                         <li class="navItem -b">
                             <a href="https://www.bisnis.com/">
                                 <img src="./asset/images/icon/icon-bisniscom.svg" alt="Bisniscom icon" width="36" height="36">
@@ -233,9 +213,19 @@
                     <img src="./asset/images/icon/icon-bisniscom.svg" alt="Bisniscom icon" width="24" height="24" loading="lazy">
                     Back to Bisnis.com
                 </a>
-                <a href="https://www.bisnis.com/premium" class="premiumBoxBtn">
-                    <span class="icoInline icoPremium"></span>Konten Premium
-                </a>
+                <div class="menuCtaWrap center-flex">
+                    <a href="https://www.bisnis.com/premium" class="premiumBoxBtn menuCta">
+                        <span class="icoInline icoPremium"></span>Konten Premium
+                    </a>
+                    <div class="menuLogin menuCta">
+                        <a href="https://id.bisnis.com/user" class="buttonProfile" aria-label="Profile">
+                            <div class="profileImg profileImgDefault">
+                                <img src="./asset/images/icon/icon-profile.png" alt="" width="37" height="37">
+                            </div>
+                            Profil BisnisID
+                        </a>
+                    </div>
+                </div>
                 <div class="menuPanelWrap menuPanelWrap--kanal">
                     <div class="menuPanelLabel">Bisnis<span>com</span></div>
                     <ul class="menuPanelList">
@@ -336,7 +326,7 @@
                 </div>
             </div>            <!-- e: menu panel -->
 
-            <div class="container mt50">
+            <div class="container">
 
                 <div class="breadcrumb">
                     <ul class="breadcrumbList">
@@ -347,15 +337,15 @@
                             <a href="index-lifestyle.html" class="breadcrumbLink">Lifestyle</a>
                         </li>
                         <li class="breadcrumbItem">
-                            <a href="#" class="breadcrumbLink">Inspirasi</a>
+                            <a href="#" class="breadcrumbLink">Entertainment</a>
                         </li>
                     </ul>
                 </div>
-                <div class="detailsCover mt40">
+                <div class="detailsCover mt16">
                     <div class="detailsCoverImg artImg">
-                        <img src="https://images.bisnis.com/thumb/posts/2023/03/28/1641377/bisnis.com-rahasia-sukses-bisnis-fashion-milik-zaskia-mecca-atasi-masalah-logistik.png?w=1080&h=378" alt="Rahasia Sukses Bisnis Fashion Milik Zaskia Mecca Atasi Masalah Logistik" width="1080" height="378"
+                        <img src="https://images.bisnis.com/thumb/posts/2023/03/28/1641377/bisnis.com-rahasia-sukses-bisnis-fashion-milik-zaskia-mecca-atasi-masalah-logistik.png?w=740&amp;h=420" alt="Rahasia Sukses Bisnis Fashion Milik Zaskia Mecca Atasi Masalah Logistik" width="740" height="420"
                             class="image" url="https://images.bisnis.com/posts/2023/03/28/1641377/bisnis.com-rahasia-sukses-bisnis-fashion-milik-zaskia-mecca-atasi-masalah-logistik.png">
-                        <button class="button detailsZoom" onclick="openModalImage('detail-modal-image', this)">
+                        <button class="button detailsZoom" onclick="openModalImage('detail-modal-image', this)" aria-label="Zoom image">
                             <span class="icoInline icoZoom"></span>
                             Perbesar
                         </button>
@@ -364,581 +354,434 @@
                 <div class="detailsTitle text-center">
                     <div class="artChannel">Fashion</div>
                     <h1 class="detailsTitleCaption">Rahasia Sukses Bisnis Fashion Milik Zaskia Mecca Atasi Masalah Logistik</h1>
-                    <div class="detailsAttribute center-flex">
-                        <span class="detailsAttributeAuthor">
+                    <div class="detailsAttribute">
+                        <div class="detailsAttributeAuthor center-flex">
                             <div class="profileImg">
                                 <img src="https://images.bisnis.com/profile/162/mediadigital.jpg" alt="Media Digital" loading="lazy" width="26" height="26">
                             </div>
                             <div class="authorName">Media Digital</div>
-                        </span>
+                        </div>
+                    </div>
+                    <div class="detailsAttribute center-flex">
                         <span>28 Maret 2023 - 17:11 WIB</span>
                         <span>5 menit baca</span>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-7 col-left">
-
-                        <div class="detailsWrap display-flex -top">
-                            <div class="shareSocmedWrap display-flex"> Bagikan
-                                <input type="text" style="display: none;" id="copyLinkUrl" value="https://lifestyle.bisnis.com/read/20230328/104/1641377/rahasia-sukses-bisnis-fashion-milik-zaskia-mecca-atasi-masalah-logistik">
-                                <ul class="shareSocmed center-flex">
-                                    <li class="shareSocmedItem shareSocmedItem--fb">
-                                        <button class="button shareSocmedCta" aria-label="Share Facebook" title="Facebook">
-                                            <span class="icoInline icoShareFb"></span>
-                                        </button>
-                                    </li>
-                                    <li class="shareSocmedItem shareSocmedItem--tw">
-                                        <button class="button shareSocmedCta" aria-label="Share Twitter" title="Twitter">
-                                            <span class="icoInline icoShareTwitter"></span>
-                                        </button>
-                                    </li>
-                                    <li class="shareSocmedItem shareSocmedItem--tg">
-                                        <button class="button shareSocmedCta" aria-label="Share Telegram" title="Telegram">
-                                            <span class="icoInline icoShareTg"></span>
-                                        </button>
-                                    </li>
-                                    <li class="shareSocmedItem shareSocmedItem--ln">
-                                        <button class="button shareSocmedCta" aria-label="Share Linkedin" title="Linkedin">
-                                            <span class="icoInline icoShareLn"></span>
-                                        </button>
-                                    </li>
-                                    <li class="shareSocmedItem shareSocmedItem--link share-custom">
-                                        <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" data-form="copyLinkUrl"
-                                            data-copy="copy-url" data-title="Tautan tersalin" onclick="copyLink('copyLinkUrl', this)">
-                                            <span class="icoInline icoShareLink"></span>
-                                        </button>
-                                    </li>
-                                    <li class="shareSocmedItem shareSocmedItem--wa">
-                                        <button class="button shareSocmedCta" aria-label="Share Whatsapp" title="Whatsapp">
-                                            <span class="icoInline icoShareWa"></span>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="detailsFont">
-                                <button class="button detailsFontCta -minus">
-                                    Smallest <br> Font
+                <div class="detailsWrap display-flex -top">
+                    <div class="shareSocmedWrap display-flex"> Bagikan
+                        <input type="text" style="display: none;" id="copyLinkUrl" value="https://lifestyle.bisnis.com/read/20230328/104/1641377/rahasia-sukses-bisnis-fashion-milik-zaskia-mecca-atasi-masalah-logistik">
+                        <ul class="shareSocmed center-flex">
+                            <li class="shareSocmedItem shareSocmedItem--fb">
+                                <button class="button shareSocmedCta" aria-label="Share Facebook" title="Facebook">
+                                    <span class="icoInline icoShareFb"></span>
                                 </button>
-                                <input type="range" min=".8" max="2" step=".2" id="sliderFont" class="detailsFontRange"
-                                    aria-label="Customize font size">
-                                <button class="button detailsFontCta -plus">
-                                    Largest <br> Font
+                            </li>
+                            <li class="shareSocmedItem shareSocmedItem--tw">
+                                <button class="button shareSocmedCta" aria-label="Share Twitter" title="Twitter">
+                                    <span class="icoInline icoShareTwitter"></span>
                                 </button>
-                            </div>
-                        </div>
-                        <article class="detailsContent mt40">
-                            <p><strong>Bisnis.com,</strong> JAKARTA - <a href="https://www.bisnis.com/topic/53463/tips-puasa" rel="noopener"
-                                    target="_self">Tips</a> produktif saat puasa menjadi hal yang penting untuk diperhatikan karena seringkali saat
-                                bulan puasa produktivitas menurun.</p>
-                            <blockquote>
-                                Puasa bukan menjadi alasan untuk bermalas-malasan. Saat berpuasa, kita tetap harus beraktivitas seperti biasa.
-                            </blockquote>
-                            
-                            <!-- s: parallax billboard -->
-                            <div class="billboard billboardParallax mt40">
-                                <div class="billboardFlying">
-                                    <div class="billboardFlyingInner">
-                                        <div class="billboardFlyingFix">
-                                            <div class="billboardFlyingBanner">
-                                                <div class="billboardFlyingWrap">
-                                                    <!-- ad script here -->
-                                                    <!--<img src="https://placehold.co/300x600/000/F4F4F4?font=nunitosans&text=Parallax%20BILLBOARD%20IS%20HERE"
-                                                        alt="" width="300" height="600">-->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- e: parallax billboard -->
-                            
-                            <p>
-                                Agar bisa menjaga produktivitas tersebut Anda perlu mengetahui bagaimana cara untuk tetap produktif meskipun sedang
-                                dalam kondisi berpuasa. Berikut ini beberapa tips yang bisa dilakukan untuk bisa menjalankan
-                                kegiatan produktif saat puasa.
-                            </p>
-                            
-                            <div class="detailsOther">
-                                <div class="detailsOtherCaption">Baca Juga</div>
-                                <a href="https://lifestyle.bisnis.com/read/20230120/254/1620159/sinopsis-the-last-of-us-adaptasi-game-yang-viral-di-medsos"
-                                    title="Sinopsis The Last of Us, Adaptasi Game yang Viral di Medsos">Sinopsis The Last of Us, Adaptasi Game yang
-                                    Viral di Medsos</a>
-                            </div>
-                            <p>
-                                Cras auctor cras hendrerit hac. Turpis proin sed leo vehicula. Diam sed cursus massa pellentesque proin. Cras
-                                consequat tortor pretium faucibus arcu ipsum. Aliquet ut sed amet, justo sit. Nisl tortor mauris aliquet urna.
-                                Luctus sit eu sed ipsum consectetur id.
-                            </p>
-                        </article>
-
-                        <!-- s: detail pagination -->
-                        <div class="paging">
-                            <div class="pagingWrap">
-                                <span class="pagingCaption">Halaman:</span>
-                                <ol class="pagingList">
-                                    <li class="pagingItem">
-                                        <a href="#" class="pagingLink -active">1</a>
-                                    </li>
-                                    <li class="pagingItem">
-                                        <a href="#" class="pagingLink">2</a>
-                                    </li>
-                                    <li class="pagingItem">
-                                        <a href="#" class="pagingLink">3</a>
-                                    </li>
-                                    <li class="pagingItem">
-                                        <a href="#" class="pagingLink">4</a>
-                                    </li>
-                                    <li class="pagingItem">
-                                        <a href="#" class="pagingLink">5</a>
-                                    </li>
-                                </ol>
-                                <button class="button pagingShow">Tampilkan Semua</button>
-                            </div>
-                        </div>                        <!-- e: detail pagination -->
-
-                        <h2 class="titleCaption mt40">
-                            Simak video di bawah ini:
-                        </h2>
-                        <div class="detailsVid">
-                            <iframe width="740" height="415" src="https://www.youtube.com/embed/avDRlDPMnVw?controls=0"
-                                srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/avDRlDPMnVw?autoplay=1><img src=https://img.youtube.com/vi/avDRlDPMnVw/hqdefault.jpg alt=''><span>▶</span></a>"
-                                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen="" title="Jepretan Fotografer Jalanan, Manjakan Para Sport Enthusiast"></iframe>
-                        </div>
-                        <div class="detailsAuthor">
-                            <div class="detailsAuthorItem">Penulis : <a href="#">Media Digital</a></div>
-                            <div class="detailsAuthorItem">Editor : <a href="#">Media Digital</a></div>
-                        </div>
-                        <div class="detailsWrap display-flex mt40">
-                            <div class="shareSocmedWrap display-flex"> Bagikan
-                                <input type="text" style="display: none;" id="copyLinkUrl" value="https://lifestyle.bisnis.com/read/20230328/104/1641377/rahasia-sukses-bisnis-fashion-milik-zaskia-mecca-atasi-masalah-logistik">
-                                <ul class="shareSocmed center-flex">
-                                    <li class="shareSocmedItem shareSocmedItem--fb">
-                                        <button class="button shareSocmedCta" aria-label="Share Facebook" title="Facebook">
-                                            <span class="icoInline icoShareFb"></span>
-                                        </button>
-                                    </li>
-                                    <li class="shareSocmedItem shareSocmedItem--tw">
-                                        <button class="button shareSocmedCta" aria-label="Share Twitter" title="Twitter">
-                                            <span class="icoInline icoShareTwitter"></span>
-                                        </button>
-                                    </li>
-                                    <li class="shareSocmedItem shareSocmedItem--tg">
-                                        <button class="button shareSocmedCta" aria-label="Share Telegram" title="Telegram">
-                                            <span class="icoInline icoShareTg"></span>
-                                        </button>
-                                    </li>
-                                    <li class="shareSocmedItem shareSocmedItem--ln">
-                                        <button class="button shareSocmedCta" aria-label="Share Linkedin" title="Linkedin">
-                                            <span class="icoInline icoShareLn"></span>
-                                        </button>
-                                    </li>
-                                    <li class="shareSocmedItem shareSocmedItem--link share-custom">
-                                        <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" data-form="copyLinkUrl"
-                                            data-copy="copy-url" data-title="Tautan tersalin" onclick="copyLink('copyLinkUrl', this)">
-                                            <span class="icoInline icoShareLink"></span>
-                                        </button>
-                                    </li>
-                                    <li class="shareSocmedItem shareSocmedItem--wa">
-                                        <button class="button shareSocmedCta" aria-label="Share Whatsapp" title="Whatsapp">
-                                            <span class="icoInline icoShareWa"></span>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="detailsTag">
-                            <h2 class="detailsTagCaption">Tags :</h2>
-                            <ul class="detailsTagList display-flex">
-                                <li><a href="#" class="detailsTagLink">#Netflix</a></li>
-                                <li><a href="#" class="detailsTagLink">#Film</a></li>
-                                <li><a href="#" class="detailsTagLink">#Movie</a></li>
-                                <li><a href="#" class="detailsTagLink">#Rekomendasi</a></li>
-                                <li><a href="#" class="detailsTagLink">#Sinopsis Film</a></li>
-                            </ul>
-                        </div>
-                        <hr>
-
-                        <!-- s: premium -->
-                        <div class="premiumBox mt40">
-                            <div class="titleCaptionWrap">
-                                <div class="premiumBoxBtn"><span class="icoInline icoPremium"></span>Konten Premium</div>
-                                <a href="#" class="premiumBoxLogin"><span class="icoInline icoLoginPremium"></span>Login</a>
-                            </div>
-                            <h3 class="premiumBoxCaption">
-                                Nikmati Konten Premium Untuk Informasi Yang Lebih Dalam
-                            </h3>
-                            <div class="art mt40">
-                                <div class="artWrap -col">
-                                    <div class="artItem">
-                                        <a href="details-lifestyle-premium-lock.html" class="artLink art--col">
-                                            <div class="artImg">
-                                                <img src="https://images.bisnis.com/thumb/posts/2023/03/30/1642230/hari-film-nasional-premium.jpg?w=217&h=163" width="217" height="163"
-                                                    alt="Suka-suka Sutradara Muda Sinema Kita" loading="lazy">
-                                            </div>
-                                            <div class="artContent">
-                                                <div class="artContentWrap">
-                                                    <div class="artChannel -premium">
-                                                        Premium<span class="icoInline icoPremium"></span>
-                                                    </div>
-                                                    <div class="artDate">
-                                                        22 November 2022
-                                                    </div>
-                                                </div>
-                                                <h4 class="artTitle">
-                                                    Suka-suka Sutradara Muda Sinema Kita
-                                                </h4>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="artItem">
-                                        <a href="details-lifestyle-premium-lock.html" class="artLink art--col">
-                                            <div class="artImg">
-                                                <img src="https://images.bisnis.com/thumb/posts/2023/04/01/1642818/whatsapp-image-2022-05-06-at-22.53.53.jpeg?w=217&h=163" width="217" height="163"
-                                                    alt="Jasa Marga (JSMR) Siap Panen Cuan dari Berkah Momentum Mudik Lebaran" loading="lazy">
-                                            </div>
-                                            <div class="artContent">
-                                                <div class="artContentWrap">
-                                                    <div class="artChannel -premium">
-                                                        Premium<span class="icoInline icoPremium"></span>
-                                                    </div>
-                                                    <div class="artDate">
-                                                        22 November 2022
-                                                    </div>
-                                                </div>
-                                                <h4 class="artTitle">
-                                                    Jasa Marga (JSMR) Siap Panen Cuan dari Berkah Momentum Mudik Lebaran
-                                                </h4>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="artItem">
-                                        <a href="details-lifestyle-premium-lock.html" class="artLink art--col">
-                                            <div class="artImg">
-                                                <img src="https://images.bisnis.com/thumb/posts/2023/03/31/1642487/netflix.jpg?w=217&h=163" width="217" height="163"
-                                                    alt="Satu Lagi Utak-Atik Taktik Netflix" loading="lazy">
-                                            </div>
-                                            <div class="artContent">
-                                                <div class="artContentWrap">
-                                                    <div class="artChannel -premium">
-                                                        Premium<span class="icoInline icoPremium"></span>
-                                                    </div>
-                                                    <div class="artDate">
-                                                        22 November 2022
-                                                    </div>
-                                                </div>
-                                                <h4 class="artTitle">
-                                                    Satu Lagi Utak-Atik Taktik Netflix
-                                                </h4>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#" class="titleOthers">Lihat Lainnya</a>
-                        </div>
-                        <!-- e: premium -->
-
-                        <div class="newsletter text-center mt40">
-                            <div class="newsletterCaption">Subscribe Newsletter Bisnis Indonesia</div>
-                            <p class="newsletterLead">Bergabung dan dapatkan analisis informasi ekonomi dan bisnis melalui email Anda.</p>
-                            <form action="#" name="" class="newsletterForm">
-                                <div class="newsletterFormWrap">
-                                    <input type="email" class="formInput" name="email" placeholder="Email Anda"
-                                        aria-label="Input your email address">
-                                    <button type="submit" class="button newsletterCta">Subscribe</button>
-                                </div>
-                                <div class="formResponse mt16" style="display: none;">
-                                    <div class="-error">
-                                        error
-                                    </div>
-                                    <div class="-success">
-                                        success
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <h3 class="titleCaption mt40">Artikel Terkait</h3>
-                        <div class="art mt16">
-                            <div class="artWrap -col">
-                                <div class="artItem">
-                                    <a href="details-lifestyle.html" class="artLink art--col">
-                                        <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/04/1643856/sinopsi_film_blue_beetle.jpg?w=233&h=175" width="233" height="175"
-                                                alt="Blue Beetle, Film Terbaru DC Rilis Tahun Ini" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="artTitle">
-                                                Blue Beetle, Film Terbaru DC Rilis Tahun Ini
-                                            </h4>
-                                            <div class="artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="artItem">
-                                    <a href="details-lifestyle.html" class="artLink art--col">
-                                        <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/03/28/1641248/film_john_wick_3_tayang_di_bioskop_trans_tv_hari_ini_1676624621.jpg?w=233&h=175" width="233" height="175"
-                                                alt="Chapter 4 Sukses Berat, Rumah Produksi Mau Bikin John Wick 5?" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="artTitle">
-                                                Chapter 4 Sukses Berat, Rumah Produksi Mau Bikin John Wick 5?
-                                            </h4>
-                                            <div class="artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="artItem">
-                                    <a href="details-lifestyle.html" class="artLink art--col">
-                                        <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/04/1643738/autobiography-film.jpg?w=233&h=175" width="233" height="175"
-                                                alt="Usai Keliling 40 Festival Film, Autobiography Siap Tayang di Prime Video" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="artTitle">
-                                                Usai Keliling 40 Festival Film, Autobiography Siap Tayang di Prime Video
-                                            </h4>
-                                            <div class="artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <h3 class="titleCaption mt40">Berita Lainnya</h3>
-                        <ul class="artOther mt16">
-                            <li class="artOtherItem">
-                                <a class="artOtherLink artLink" href="details-lifestyle-bersambung.html">
-                                    <h4 class="artTitle">
-                                        Rahasia Sukses Bisnis Fashion Milik Zaskia Mecca Atasi Masalah Logistik
-                                    </h4>
-                                </a>
                             </li>
-                            <li class="artOtherItem">
-                                <a class="artOtherLink artLink" href="details-lifestyle.html">
-                                    <h4 class="artTitle">
-                                        Gandeng Yoasobi, Uniqlo Hadirkan T-shirt dari Video Musik
-                                    </h4>
-                                </a>
+                            <li class="shareSocmedItem shareSocmedItem--tg">
+                                <button class="button shareSocmedCta" aria-label="Share Telegram" title="Telegram">
+                                    <span class="icoInline icoShareTg"></span>
+                                </button>
                             </li>
-                            <li class="artOtherItem">
-                                <a class="artOtherLink artLink" href="details-lifestyle.html">
-                                    <h4 class="artTitle">
-                                        Manfaat Olahraga Bagi Kesehatan Tubuh, Mental, dan Wajah
-                                    </h4>
-                                </a>
+                            <li class="shareSocmedItem shareSocmedItem--ln">
+                                <button class="button shareSocmedCta" aria-label="Share Linkedin" title="Linkedin">
+                                    <span class="icoInline icoShareLn"></span>
+                                </button>
+                            </li>
+                            <li class="shareSocmedItem shareSocmedItem--link share-custom">
+                                <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" data-form="copyLinkUrl"
+                                    data-copy="copy-url" data-title="Tautan tersalin" onclick="copyLink('copyLinkUrl', this)">
+                                    <span class="icoInline icoShareLink"></span>
+                                </button>
+                            </li>
+                            <li class="shareSocmedItem shareSocmedItem--wa">
+                                <button class="button shareSocmedCta" aria-label="Share Whatsapp" title="Whatsapp">
+                                    <span class="icoInline icoShareWa"></span>
+                                </button>
                             </li>
                         </ul>
-                        <h3 class="titleCaption mt40">Berita Terkini</h3>
-                        <div class="latest">
-                            <div class="latestWrap">
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644407/barbie.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644153/ilustrasi-paylater.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Gaya Hidup
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle-series.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg?w=190&h=142" width="190" height="142"
-                                                alt="Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Inspirasi
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="center-flex">
-                            <a href="#" class="buttonPrimary">Berita Lainnya</a>
-                        </div>
-
                     </div>
-                    <sidebar class="sidebar col-3 col-right">
-                        <!-- s: rectangle billboard -->
-                        <div class="billboard billboardRectangle">
-                        </div>                        <!-- e: rectangle billboard -->
-
-                        <!-- s: terpopuler -->
-                        <h3 class="titleCaption mt40">Terpopuler</h3>
-                        <div class="most">
-                            <div class="mostItem">
-                                <a href="details-lifestyle.html" class="mostLink artLink">
-                                    <div class="mostNum">1</div>
-                                    <h4 class="artTitle">
-                                        Ini Daftar Negara dengan Sekolah dan Rumah Sakit Gratis
-                                    </h4>
-                                </a>
-                            </div>
-                            <div class="mostItem">
-                                <a href="details-lifestyle.html" class="mostLink artLink">
-                                    <div class="mostNum">2</div>
-                                    <h4 class="artTitle">
-                                        Kapan Waktu yang Tepat untuk Anak Mulai Diajari Puasa? Ini Jawaban Ahli
-                                    </h4>
-                                </a>
-                            </div>
-                            <div class="mostItem">
-                                <a href="details-lifestyle.html" class="mostLink artLink">
-                                    <div class="mostNum">3</div>
-                                    <h4 class="artTitle">
-                                        Ini 10 Tips Mengurangi Kecemasan Secara Alami
-                                    </h4>
-                                </a>
-                            </div>
-                            <div class="mostItem">
-                                <a href="details-lifestyle.html" class="mostLink artLink">
-                                    <div class="mostNum">4</div>
-                                    <h4 class="artTitle">
-                                        Ini 6 Cara Komunikasi Agar lebih Bermakna
-                                    </h4>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- e: terpopuler -->
-
-                        <!-- s: rec -->
-                        <h3 class="titleCaption mt40">Rekomendasi Kami</h3>
-                        <div class="art">
-                            <div class="artWrap -col-top">
-                                <div class="artItem">
-                                    <a href="details-lifestyle-series.html" class="artLink art--col-top">
-                                        <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg?w=300&h=225" width="300" height="225"
-                                                alt="Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Inspirasi
-                                            </div>
-                                            <h4 class="artTitle">
-                                                Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat
-                                            </h4>
-                                            <div class="artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="artItem">
-                                    <a href="details-lifestyle.html" class="artLink art--col-top">
-                                        <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/04/1643606/angelina-jolie-re.jpg?w=94&h=94" width="94" height="94"
-                                                alt="Angelina Jolie Jajal Bisnis Fesyen Mewah" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Infotainment
-                                            </div>
-                                            <h4 class="artTitle">
-                                                Angelina Jolie Jajal Bisnis Fesyen Mewah
-                                            </h4>
-                                            <div class="artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="artItem">
-                                    <a href="details-lifestyle.html" class="artLink art--col-top">
-                                        <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/03/1643417/images-41_copy_800x500.jpeg?w=94&h=94" width="94" height="94"
-                                                alt="Selama Ramadan, Aktivitas Online Orang Indonesia Meningkat" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Gaya Hidup
-                                            </div>
-                                            <h4 class="artTitle">
-                                                Selama Ramadan, Aktivitas Online Orang Indonesia Meningkat
-                                            </h4>
-                                            <div class="artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="artItem">
-                                    <a href="details-lifestyle.html" class="artLink art--col-top">
-                                        <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/03/1643225/011113_rhn-bisnis-06-hijab-day.JPG?w=94&h=94" width="94" height="94"
-                                                alt="Lebaran Makin Dekat, Tren Belanja Baju Muslim Keluarga Naik 4 Kali Lipat" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Fashion
-                                            </div>
-                                            <h4 class="artTitle">
-                                                Lebaran Makin Dekat, Tren Belanja Baju Muslim Keluarga Naik 4 Kali Lipat
-                                            </h4>
-                                            <div class="artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- e: rec -->
-                    </sidebar>
+                    <div class="detailsFont">
+                        <button class="button detailsFontCta -minus">
+                            Smallest <br> Font
+                        </button>
+                        <input type="range" min=".8" max="2" step=".2" id="sliderFont" class="detailsFontRange"
+                            aria-label="Customize font size">
+                        <button class="button detailsFontCta -plus">
+                            Largest <br> Font
+                        </button>
+                    </div>
                 </div>
+                <article class="detailsContent mt40">
+                    <p><strong>Bisnis.com,</strong> JAKARTA - <a href="https://www.bisnis.com/topic/53463/tips-puasa" rel="noopener"
+                            target="_self">Tips</a> produktif saat puasa menjadi hal yang penting untuk diperhatikan karena seringkali saat
+                        bulan puasa produktivitas menurun.</p>
+                    <blockquote>
+                        Puasa bukan menjadi alasan untuk bermalas-malasan. Saat berpuasa, kita tetap harus beraktivitas seperti biasa.
+                    </blockquote>
+                    
+                    <!-- s: parallax billboard -->
+                    <div class="billboard billboardParallax mt30">
+                        <div class="billboardFlying">
+                            <div class="billboardFlyingInner">
+                                <div class="billboardFlyingFix">
+                                    <div class="billboardFlyingBanner">
+                                        <div class="billboardFlyingWrap">
+                                            <!-- ad script here -->
+                                            <!--<img src="https://placehold.co/300x600/000/F4F4F4?font=nunitosans&text=Parallax%20BILLBOARD%20IS%20HERE"
+                                                alt="" width="300" height="600">-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- e: parallax billboard -->
+                    
+                    <p>
+                        Agar bisa menjaga produktivitas tersebut Anda perlu mengetahui bagaimana cara untuk tetap produktif meskipun sedang
+                        dalam kondisi berpuasa. Berikut ini beberapa tips yang bisa dilakukan untuk bisa menjalankan
+                        kegiatan produktif saat puasa.
+                    </p>
+                    
+                    <div class="detailsOther">
+                        <div class="detailsOtherCaption">Baca Juga</div>
+                        <a href="https://lifestyle.bisnis.com/read/20230120/254/1620159/sinopsis-the-last-of-us-adaptasi-game-yang-viral-di-medsos"
+                            title="Sinopsis The Last of Us, Adaptasi Game yang Viral di Medsos">Sinopsis The Last of Us, Adaptasi Game yang
+                            Viral di Medsos</a>
+                    </div>
+                    <p>
+                        Cras auctor cras hendrerit hac. Turpis proin sed leo vehicula. Diam sed cursus massa pellentesque proin. Cras
+                        consequat tortor pretium faucibus arcu ipsum. Aliquet ut sed amet, justo sit. Nisl tortor mauris aliquet urna.
+                        Luctus sit eu sed ipsum consectetur id.
+                    </p>
+                </article>
+
+                <!-- s: detail pagination -->
+                <div class="paging">
+                    <div class="pagingCaption">Halaman:</div>
+                    <div class="pagingWrap">
+                        <ol class="pagingList">
+                            <li class="pagingItem">
+                                <a href="#" class="pagingLink -active">1</a>
+                            </li>
+                            <li class="pagingItem">
+                                <a href="#" class="pagingLink">2</a>
+                            </li>
+                            <li class="pagingItem">
+                                <a href="#" class="pagingLink">3</a>
+                            </li>
+                            <li class="pagingItem">
+                                <a href="#" class="pagingLink">4</a>
+                            </li>
+                            <li class="pagingItem">
+                                <a href="#" class="pagingLink">5</a>
+                            </li>
+                        </ol>
+                        <button class="button pagingShow">Tampilkan Semua</button>
+                    </div>
+                </div>                <!-- e: detail pagination -->
+
+                <h2 class="titleCaption mt40">
+                    Simak video di bawah ini:
+                </h2>
+                <div class="detailsVid">
+                    <iframe width="740" height="200" src="https://www.youtube.com/embed/avDRlDPMnVw?controls=0"
+                        srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/avDRlDPMnVw?autoplay=1><img src=https://img.youtube.com/vi/avDRlDPMnVw/hqdefault.jpg alt=''><span>▶</span></a>"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen="" title="Jepretan Fotografer Jalanan, Manjakan Para Sport Enthusiast"></iframe>
+                </div>
+                <div class="detailsAuthor">
+                    <div class="detailsAuthorItem">Penulis : <a href="#">Media Digital</a></div>
+                    <div class="detailsAuthorItem">Editor : <a href="#">Media Digital</a></div>
+                </div>
+                <div class="detailsWrap display-flex mt40">
+                    <div class="shareSocmedWrap display-flex"> Bagikan
+                        <input type="text" style="display: none;" id="copyLinkUrl" value="https://lifestyle.bisnis.com/read/20230328/104/1641377/rahasia-sukses-bisnis-fashion-milik-zaskia-mecca-atasi-masalah-logistik">
+                        <ul class="shareSocmed center-flex">
+                            <li class="shareSocmedItem shareSocmedItem--fb">
+                                <button class="button shareSocmedCta" aria-label="Share Facebook" title="Facebook">
+                                    <span class="icoInline icoShareFb"></span>
+                                </button>
+                            </li>
+                            <li class="shareSocmedItem shareSocmedItem--tw">
+                                <button class="button shareSocmedCta" aria-label="Share Twitter" title="Twitter">
+                                    <span class="icoInline icoShareTwitter"></span>
+                                </button>
+                            </li>
+                            <li class="shareSocmedItem shareSocmedItem--tg">
+                                <button class="button shareSocmedCta" aria-label="Share Telegram" title="Telegram">
+                                    <span class="icoInline icoShareTg"></span>
+                                </button>
+                            </li>
+                            <li class="shareSocmedItem shareSocmedItem--ln">
+                                <button class="button shareSocmedCta" aria-label="Share Linkedin" title="Linkedin">
+                                    <span class="icoInline icoShareLn"></span>
+                                </button>
+                            </li>
+                            <li class="shareSocmedItem shareSocmedItem--link share-custom">
+                                <button class="button shareSocmedCta" aria-label="Copy Link" title="Copy Link" data-form="copyLinkUrl"
+                                    data-copy="copy-url" data-title="Tautan tersalin" onclick="copyLink('copyLinkUrl', this)">
+                                    <span class="icoInline icoShareLink"></span>
+                                </button>
+                            </li>
+                            <li class="shareSocmedItem shareSocmedItem--wa">
+                                <button class="button shareSocmedCta" aria-label="Share Whatsapp" title="Whatsapp">
+                                    <span class="icoInline icoShareWa"></span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detailsTag mt30">
+                    <h2 class="detailsTagCaption mt16">Tags :</h2>
+                    <ul class="detailsTagList display-flex">
+                        <li><a href="#" class="detailsTagLink">#Netflix</a></li>
+                        <li><a href="#" class="detailsTagLink">#Film</a></li>
+                        <li><a href="#" class="detailsTagLink">#Movie</a></li>
+                        <li><a href="#" class="detailsTagLink">#Rekomendasi</a></li>
+                        <li><a href="#" class="detailsTagLink">#Sinopsis Film</a></li>
+                    </ul>
+                </div>
+                <!-- s: premium -->
+                <div class="premiumBox mt30">
+                    <div class="titleCaptionWrap">
+                        <div class="premiumBoxBtn"><span class="icoInline icoPremium"></span>Konten Premium</div>
+                        <a href="#" class="premiumBoxLogin" aria-label="Login or register"><span
+                                class="icoInline icoLoginPremium"></span></a>
+                    </div>
+                    <h3 class="premiumBoxCaption">
+                        Nikmati Konten Premium Untuk Informasi Yang Lebih Dalam
+                    </h3>
+                    <div class="art mt30">
+                        <div
+                            class="artWrap -col">
+                            <div class="artItem">
+                                <a href="details-lifestyle-premium-lock.html" class="artLink art--col">
+                                    <div class="artImg">
+                                        <img src="https://images.bisnis.com/thumb/posts/2023/03/30/1642230/hari-film-nasional-premium.jpg?w=210&h=158"
+                                            width="210" height="158" alt="Suka-suka Sutradara Muda Sinema Kita" loading="lazy">
+                                    </div>
+                                    <div class="artContent">
+                                        <div class="artContentWrap">
+                                            <div class="artChannel -premium">
+                                                Premium<span class="icoInline icoPremium"></span>
+                                            </div>
+                                            <div class="artDate">
+                                                22 November 2022
+                                            </div>
+                                        </div>
+                                        <h4 class="artTitle">
+                                            Suka-suka Sutradara Muda Sinema Kita
+                                        </h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="artItem">
+                                <a href="details-lifestyle-premium-lock.html" class="artLink art--col">
+                                    <div class="artImg">
+                                        <img src="https://images.bisnis.com/thumb/posts/2023/04/01/1642818/whatsapp-image-2022-05-06-at-22.53.53.jpeg?w=210&h=158"
+                                            width="210" height="158" alt="Jasa Marga (JSMR) Siap Panen Cuan dari Berkah Momentum Mudik Lebaran" loading="lazy">
+                                    </div>
+                                    <div class="artContent">
+                                        <div class="artContentWrap">
+                                            <div class="artChannel -premium">
+                                                Premium<span class="icoInline icoPremium"></span>
+                                            </div>
+                                            <div class="artDate">
+                                                22 November 2022
+                                            </div>
+                                        </div>
+                                        <h4 class="artTitle">
+                                            Jasa Marga (JSMR) Siap Panen Cuan dari Berkah Momentum Mudik Lebaran
+                                        </h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="artItem">
+                                <a href="details-lifestyle-premium-lock.html" class="artLink art--col">
+                                    <div class="artImg">
+                                        <img src="https://images.bisnis.com/thumb/posts/2023/03/31/1642487/netflix.jpg?w=210&h=158"
+                                            width="210" height="158" alt="Satu Lagi Utak-Atik Taktik Netflix" loading="lazy">
+                                    </div>
+                                    <div class="artContent">
+                                        <div class="artContentWrap">
+                                            <div class="artChannel -premium">
+                                                Premium<span class="icoInline icoPremium"></span>
+                                            </div>
+                                            <div class="artDate">
+                                                22 November 2022
+                                            </div>
+                                        </div>
+                                        <h4 class="artTitle">
+                                            Satu Lagi Utak-Atik Taktik Netflix
+                                        </h4>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="titleOthers">Lihat Lainnya</a>
+                </div>
+                <!-- e: premium -->
+
+                <div class="newsletter text-center mt30">
+                    <div class="newsletterCaption">Subscribe Newsletter Bisnis Indonesia</div>
+                    <p class="newsletterLead">Bergabung dan dapatkan analisis informasi ekonomi dan bisnis melalui email Anda.</p>
+                    <form action="#" name="" class="newsletterForm">
+                        <div class="newsletterFormWrap">
+                            <input type="email" class="formInput" name="email" placeholder="Email Anda"
+                                aria-label="Input your email address">
+                            <button type="submit" class="button newsletterCta">Subscribe</button>
+                        </div>
+                        <div class="formResponse mt16" style="display: none;">
+                            <div class="-error">
+                                error
+                            </div>
+                            <div class="-success">
+                                success
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <h3 class="titleCaption mt30">Artikel Terkait</h3>
+                <div class="art mt16">
+                    <div
+                        class="artWrap -col -two">
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--col">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/04/1643856/sinopsi_film_blue_beetle.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Blue Beetle, Film Terbaru DC Rilis Tahun Ini" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Blue Beetle, Film Terbaru DC Rilis Tahun Ini
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--col">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/03/28/1641248/film_john_wick_3_tayang_di_bioskop_trans_tv_hari_ini_1676624621.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Chapter 4 Sukses Berat, Rumah Produksi Mau Bikin John Wick 5?" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Chapter 4 Sukses Berat, Rumah Produksi Mau Bikin John Wick 5?
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="titleCaption mt30">Berita Lainnya</h3>
+                <ul class="artOther mt16">
+                    <li class="artOtherItem">
+                        <a class="artOtherLink artLink" href="details-lifestyle-bersambung.html">
+                            <h4 class="artTitle">
+                                Rahasia Sukses Bisnis Fashion Milik Zaskia Mecca Atasi Masalah Logistik
+                            </h4>
+                        </a>
+                    </li>
+                    <li class="artOtherItem">
+                        <a class="artOtherLink artLink" href="details-lifestyle.html">
+                            <h4 class="artTitle">
+                                Gandeng Yoasobi, Uniqlo Hadirkan T-shirt dari Video Musik
+                            </h4>
+                        </a>
+                    </li>
+                    <li class="artOtherItem">
+                        <a class="artOtherLink artLink" href="details-lifestyle.html">
+                            <h4 class="artTitle">
+                                Manfaat Olahraga Bagi Kesehatan Tubuh, Mental, dan Wajah
+                            </h4>
+                        </a>
+                    </li>
+                </ul>
+                <h3 class="titleCaption mt30">Berita Terkini</h3>
+                <div class="art">
+                    <div
+                        class="artWrap -row">
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644407/barbie.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644153/ilustrasi-paylater.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Gaya Hidup
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle-series.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg?w=145&h=109"
+                                        width="145" height="109" alt="Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Inspirasi
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary">Berita Lainnya</a>
+                </div>
+
             </div>
         </main>
     </div>
@@ -964,102 +807,98 @@
     </div>
     <footer class="footer">
         <div class="footerWrap container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <a href="https://www.bisnis.com/">
-                        <img src="https://static.bisnis-cdn.com/bisnis/assets/images/2020/logo-footer.svg" class=""
-                            alt="Bisnis.com" title="Bisnis.com" width="158" height="36" />
-                    </a>
-                    <div class="footerSocmed">
-                        <div class="footerAppWrap">
-                            <a href="https://play.google.com/store/apps/details?id=bisnis.com.official" class="footerApp"
-                                title="Android app on Google Play">
-                                <img src="./asset/images/logo/google-play.svg" class="" alt="" width="110" height="33"
-                                    loading="lazy">
-                            </a>
-                            <a href="https://itunes.apple.com/id/app/bisnis-com/id945608365?mt=8" class="footerApp"
-                                title="Download on the App Store">
-                                <img src="./asset/images/logo/app-store.svg" class="" alt="" width="110" height="33"
-                                    loading="lazy">
-                            </a>
-                        </div>
-                        <div class="footerSocmedWrap">
-                            <div class="footerSocmedCaption text-center">Connect With Us</div>
-                            <a href="#" class="footerSocmedLink" title="facebook">
-                                <span class="icoInline icoSocmed footerSocmed--fb"></span>
-                            </a>
-                            <a href="#" class="footerSocmedLink" title="twitter">
-                                <span class="icoInline icoSocmed footerSocmed--tw"></span>
-                            </a>
-                            <a href="#" class="footerSocmedLink" title="instagram">
-                                <span class="icoInline icoSocmed footerSocmed--ig"></span>
-                            </a>
-                            <a href="#" class="footerSocmedLink" title="youtube">
-                                <span class="icoInline icoSocmed footerSocmed--yt"></span>
-                            </a>
-                        </div>
+            <div class="text-center">
+                <a href="https://m.bisnis.com/">
+                    <img src="https://static.bisnis-cdn.com/bisnis/assets/images/2020/logo-footer.svg" class=""
+                        alt="Bisnis.com" title="Bisnis.com" width="158" height="36" loading="lazy" />
+                </a>
+                <div class="footerSocmed text-center">
+                    <div class="footerAppWrap">
+                        <a href="https://play.google.com/store/apps/details?id=bisnis.com.official" class="footerApp"
+                            title="Android app on Google Play">
+                            <img src="./asset/images/logo/google-play.svg" class="" alt="" width="158" height="48"
+                                loading="lazy">
+                        </a>
+                        <a href="https://itunes.apple.com/id/app/bisnis-com/id945608365?mt=8" class="footerApp"
+                            title="Download on the App Store">
+                            <img src="./asset/images/logo/app-store.svg" class="" alt="" width="158" height="48"
+                                loading="lazy">
+                        </a>
                     </div>
-                    <div class="footerCopyright">Copyright © 2022 - Bisnis Indonesia.</div>
-                </div>
-                <div class="col-sm-7">
-                    <div class="footerContent">
-                        <div class="footerCol">
-                            <div class="footerLink footerLink--big">BIG Media</div>
-                            <a href="#" class="footerLink footerLink--small">Bisnis.com</a>
-                            <a href="#" class="footerLink footerLink--small">BisnisIndonesia.id</a>
-                            <a href="#" class="footerLink footerLink--small">BisnisMuda.id</a>
-                            <a href="#" class="footerLink footerLink--small">HypeAbis.id</a>
-                            <a href="#" class="footerLink footerLink--small">Context.id</a>
-                            <a href="#" class="footerLink footerLink--small">DataIndonesia.id</a>
-                            <a href="#" class="footerLink footerLink--small">Solopos.com</a>
-                            <a href="#" class="footerLink footerLink--small">HarianJogja.com</a>
-                        </div>
-                        <div class="footerCol">
-                            <div class="footerLink footerLink--big">BIG Services</div>
-                            <a href="#" class="footerLink footerLink--small">Epaper Bisnis Indonesia</a>
-                            <a href="#" class="footerLink footerLink--small">Konten Interaktif</a>
-                            <a href="#" class="footerLink footerLink--small">Konten Premium</a>
-                            <a href="#" class="footerLink footerLink--small">Bisnis Plus</a>
-                            <a href="#" class="footerLink footerLink--small">Bisnis TV</a>
-                            <a href="#" class="footerLink footerLink--small">BroadCast</a>
-                        </div>
-                        <div class="footerCol">
-                            <div class="footerLink footerLink--big">Regional</div>
-                            <div class="footerContent">
-                                <div class="footerCol footerCol--small">
-                                    <a href="https://jakarta.bisnis.com/" class="footerLink footerLink--small">Jakarta</a>
-                                    <a href="https://bandung.bisnis.com/" class="footerLink footerLink--small">Bandung</a>
-                                    <a href="https://banten.bisnis.com/" class="footerLink footerLink--small">Banten</a>
-                                    <a href="https://semarang.bisnis.com/" class="footerLink footerLink--small">Semarang</a>
-                                    <a href="https://bali.bisnis.com/" class="footerLink footerLink--small">Bali</a>
-                                </div>
-                                <div class="footerCol footerCol--small">
-                                    <a href="https://sumatra.bisnis.com/" class="footerLink footerLink--small">Sumatra</a>
-                                    <a href="https://surabaya.bisnis.com/" class="footerLink footerLink--small">Surabaya</a>
-                                    <a href="https://kalimantan.bisnis.com/"
-                                        class="footerLink footerLink--small">Kalimantan</a>
-                                    <a href="https://sulawesi.bisnis.com/" class="footerLink footerLink--small">Sulawesi</a>
-                                    <a href="https://papua.bisnis.com/" class="footerLink footerLink--small">Papua</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footerCol">
-                            <div class="footerLink footerLink--big">Informasi</div>
-                            <a href="https://www.bisnis.com/page/about-us" class="footerLink footerLink--small">Tentang
-                                Kami</a>
-                            <a href="https://www.bisnis.com/page/advertise-with-us"
-                                class="footerLink footerLink--small">Info Iklan</a>
-                            <a href="https://www.bisnis.com/page/privacy-policy"
-                                class="footerLink footerLink--small">Kebijakan Privasi</a>
-                            <a href="https://www.bisnis.com/page/code-of-conduct" class="footerLink footerLink--small">Kode
-                                Etik</a>
-                            <a href="https://www.bisnis.com/page/contact-us" class="footerLink footerLink--small">Kontak
-                                Kami</a>
-                            <a href="https://www.bisnis.com/page/career" class="footerLink footerLink--small">Karir</a>
-                        </div>
+                    <div class="footerSocmedWrap">
+                        <div class="footerSocmedCaption text-center">Connect With Us</div>
+                        <a href="#" class="footerSocmedLink" title="facebook">
+                            <span class="icoInline icoSocmed footerSocmed--fb"></span>
+                        </a>
+                        <a href="#" class="footerSocmedLink" title="twitter">
+                            <span class="icoInline icoSocmed footerSocmed--tw"></span>
+                        </a>
+                        <a href="#" class="footerSocmedLink" title="instagram">
+                            <span class="icoInline icoSocmed footerSocmed--ig"></span>
+                        </a>
+                        <a href="#" class="footerSocmedLink" title="youtube">
+                            <span class="icoInline icoSocmed footerSocmed--yt"></span>
+                        </a>
                     </div>
                 </div>
             </div>
+            <div class="footerContent">
+                <div class="footerCol">
+                    <div class="footerLink footerLink--big">BIG Media</div>
+                    <a href="#" class="footerLink footerLink--small">Bisnis.com</a>
+                    <a href="#" class="footerLink footerLink--small">BisnisIndonesia.id</a>
+                    <a href="#" class="footerLink footerLink--small">BisnisMuda.id</a>
+                    <a href="#" class="footerLink footerLink--small">HypeAbis.id</a>
+                    <a href="#" class="footerLink footerLink--small">Context.id</a>
+                    <a href="#" class="footerLink footerLink--small">DataIndonesia.id</a>
+                    <a href="#" class="footerLink footerLink--small">Solopos.com</a>
+                    <a href="#" class="footerLink footerLink--small">HarianJogja.com</a>
+                </div>
+                <div class="footerCol">
+                    <div class="footerLink footerLink--big">BIG Services</div>
+                    <a href="#" class="footerLink footerLink--small">Epaper Bisnis Indonesia</a>
+                    <a href="#" class="footerLink footerLink--small">Konten Interaktif</a>
+                    <a href="#" class="footerLink footerLink--small">Konten Premium</a>
+                    <a href="#" class="footerLink footerLink--small">Bisnis Plus</a>
+                    <a href="#" class="footerLink footerLink--small">Bisnis TV</a>
+                    <a href="#" class="footerLink footerLink--small">BroadCast</a>
+                </div>
+                <div class="footerContent">
+                    <div class="footerCol">
+                        <div class="footerLink footerLink--big">Regional</div>
+                        <a href="https://m.bisnis.com/jakarta" class="footerLink footerLink--small">Jakarta</a>
+                        <a href="https://m.bisnis.com/bandung" class="footerLink footerLink--small">Bandung</a>
+                        <a href="https://m.bisnis.com/banten" class="footerLink footerLink--small">Banten</a>
+                        <a href="https://m.bisnis.com/semarang" class="footerLink footerLink--small">Semarang</a>
+                        <a href="https://m.bisnis.com/bali" class="footerLink footerLink--small">Bali</a>
+                    </div>
+                    <div class="footerCol footerCol--small">
+                        <a href="https://m.bisnis.com/sumatra" class="footerLink footerLink--small">Sumatra</a>
+                        <a href="https://m.bisnis.com/surabaya" class="footerLink footerLink--small">Surabaya</a>
+                        <a href="https://m.bisnis.com/kalimantan" class="footerLink footerLink--small">Kalimantan</a>
+                        <a href="https://m.bisnis.com/sulawesi" class="footerLink footerLink--small">Sulawesi</a>
+                        <a href="https://m.bisnis.com/papua" class="footerLink footerLink--small">Papua</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footerContent">
+                <div class="footerCol">
+                    <div class="footerLink footerLink--big">Informasi</div>
+                    <a href="https://m.bisnis.com/page/about-us" class="footerLink footerLink--small">Tentang
+                        Kami</a>
+                    <a href="https://m.bisnis.com/page/advertise-with-us" class="footerLink footerLink--small">Info
+                        Iklan</a>
+                    <a href="https://m.bisnis.com/page/privacy-policy" class="footerLink footerLink--small">Kebijakan
+                        Privasi</a>
+                    <a href="https://m.bisnis.com/page/code-of-conduct" class="footerLink footerLink--small">Kode
+                        Etik</a>
+                    <a href="https://m.bisnis.com/page/contact-us" class="footerLink footerLink--small">Kontak
+                        Kami</a>
+                    <a href="https://m.bisnis.com/page/career" class="footerLink footerLink--small">Karir</a>
+                </div>
+            </div>
+        </div>
+        <div class="footerCopyright text-center">Copyright © 2022 - Bisnis Indonesia.</div>
         </div>
     </footer>
     
@@ -1070,9 +909,7 @@
     <script type="text/javascript" src="./asset/js/jquery-3.5.0.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/script-main.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/script-details.min.js"></script>
-    
     <script defer type="text/javascript" src="./asset/js/script-lifestyle-details.min.js"></script>
-    
     
     <script>
         function openModalImage(el, e) {

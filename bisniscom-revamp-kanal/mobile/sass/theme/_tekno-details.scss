@@ -24,7 +24,7 @@
         .details {
             &Title {
                 &Caption {
-                    @include font-pack($font-body2, 36px, $font-weight-sbold, 1.22, false);
+                    @include font-pack($font-body2, 18px, $font-weight-sbold, 1.5, false);
                 }
             }
 
@@ -32,27 +32,26 @@
                 display: flex;
                 align-items: center;
                 letter-spacing: 0;
-                @include font-pack($font-body2, 14px, $font-weight-normal, 1.57, var(--cl-tekno));
+                margin-top: 0;
+                @include font-pack($font-body2, 12px, $font-weight-normal, 1.57, var(--cl-tekno));
 
                 span::after {
                     content: none;
                 }
 
                 &Item {
+                    margin-top: 8px;
                     align-items: center;
 
                     &:first-child {
-                        .icoInline {
-                            margin-left: 0;
-                        }
+                        margin-right: 8px;
                     }
                 }
 
                 .icoInline {
-                    width: 18px;
-                    height: 18px;
-                    margin-left: 12px;
-                    margin-right: 10px;
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 6px;
                     background-size: contain;
                     background-repeat: no-repeat;
                     filter: invert(14%) sepia(70%) saturate(7496%) hue-rotate(227deg) brightness(91%) contrast(94%);
@@ -75,10 +74,9 @@
                 border-radius: 0;
 
                 &Caption {
-                    margin-top: 12px;
                     text-align: unset;
                     letter-spacing: 0.02em;
-                    @include font-pack($font-body2, 12px, false, false, #545454);
+                    @include font-pack($font-body2, 11px, false, false, #545454);
                 }
             }
 
@@ -86,10 +84,6 @@
                 .icoZoom {
                     margin-right: 0;
                 }
-            }
-
-            &Wrap {
-                margin-top: 30px;
             }
 
             &Font {
@@ -100,6 +94,10 @@
                     border-radius: 39px;
                     letter-spacing: 0;
                     @include font-pack($font-body2, false, $font-weight-normal, false, $cl-black);
+
+                    @include max-responsive($mstablet) {
+                        padding: 10px;
+                    }
 
                     &.-active {
                         border: 1px solid var(--cl-tekno);
@@ -152,20 +150,18 @@
             }
 
             &Other {
-                padding-top: 22px;
-                padding-bottom: 22px;
                 border-radius: 8px;
                 background: #F8FCFF;
                 @include font-pack(false, 15px, false, false, false);
 
                 &::after {
                     content: '';
-                    position: relative;
+                    position: absolute;
                     display: block;
                     background: var(--cl-tekno);
                     border-radius: 16px;
-                    right: -30px;
-                    bottom: 0;
+                    right: -2px;
+                    top: 40%;
                     width: 6px;
                     height: 36px;
                 }
@@ -201,6 +197,10 @@
                     padding: 10px;
                     background: #F8FCFF;
                     @include font-pack(false, false, $font-weight-med, 1.375, var(--cl-tekno));
+                }
+
+                &Caption {
+                    font-weight: $font-weight-sbold;
                 }
             }
 
@@ -265,27 +265,19 @@
                 &Anchor {
                     border-radius: 39px;
                     @include font-pack($font-body2, 12px, $font-weight-normal, 1.5, #434343);
+
+                    @include max-responsive($mstablet) {
+                        font-size: 11px;
+                    }
                 }
 
                 &Slider {
                     max-height: 38px;
 
                     .slick-list {
-                        padding-right: 50px;
-                    }
-
-                    .slick-arrow {
-                        width: 34px;
-                        height: 34px;
-
-                        &::after {
-                            top: 1px;
-                            left: 1px;
-                        }
-                    }
-
-                    .slick-prev {
-                        top: 2px;
+                        padding-top: 2px;
+                        padding-bottom: 2px;
+                        padding-right: 65px;
                     }
 
                     &Wrap {
@@ -293,16 +285,12 @@
                     }
                 }
 
-                &TL::before{
-                    left: 42px;
-                }
-
                 &Time {
+                    left: -10px;
                     padding-left: 12px;
                     padding-right: 12px;
                     border-radius: 39px;
                     min-width: 84px;
-                    height: 36px;
                     background: $cl-white;
                     border: 1px solid #555555;
                     @include font-pack($font-body2, 12px, $font-weight-normal, 1.5, #555555);
@@ -312,8 +300,15 @@
                     }
                 }
 
+                &TL {
+                    &::before {
+                        left: 5px;
+                    }
+                }
+
                 &Item {
-                    padding-left: 104px;
+                    padding-top: 45px;
+                    padding-left: 25px;
 
                     &.-active .detailsLiveTime {
                         color: $cl-white;
@@ -323,14 +318,14 @@
                 }
 
                 &Title {
-                    @include font-pack($font-body2, 1.57em, false, 1.45, false);
+                    @include font-pack($font-body2, 1.2em, false, 1.4, false);
                 }
             }
         }
 
         .share {
             &SocmedWrap {
-                @include font-pack($font-body2, 14px, false, 1.57, false);
+                @include font-pack($font-body2, 12px, false, 1.57, false);
             }
         }
 
@@ -351,7 +346,7 @@
             }
         }
 
-        .artOtherItem{
+        .artOtherItem {
             border-bottom: 1px solid #DCDCDC;
         }
     }

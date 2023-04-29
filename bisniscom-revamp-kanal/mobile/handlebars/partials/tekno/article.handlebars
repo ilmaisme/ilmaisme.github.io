@@ -1,6 +1,6 @@
 <div class="art{{#if mt}} mt{{mt}}{{/if}}">
     <div
-        class="artWrap{{#if type}} -{{type}}{{/if}}{{#if pos}}-{{pos}}{{/if}}{{#if small}} -small{{/if}}{{#if center}} -center{{/if}}{{#if three}} -three{{/if}}">
+        class="artWrap{{#if type}} -{{type}}{{/if}}{{#if pos}}-{{pos}}{{/if}}{{#if small}} -small{{/if}}{{#if center}} -center{{/if}}{{#if col}} -{{col}}{{/if}}">
         {{#each channel}}
         {{#gte @index compare=../index_start}}
         {{#gte @index compare=../index_end}}
@@ -9,13 +9,14 @@
             <a href="{{link}}" class="artLink{{#if ../type}} art--{{../type}}{{/if}}">
                 <div class="artImg">
                     {{#eq @index compare=0}}
-                    {{#if ../subkanal}}
-                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../width}}&h={{../height}}"
-                        width="{{../width}}" height="{{../height}}" alt="{{title}}">
-                    {{/if}}
                     {{#eq ../pos compare="top"}}
+                    {{#if ../subkanal}}
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../widthtop}}&h={{../heighttop}}"
+                        width="{{../widthtop}}" height="{{../heighttop}}" alt="{{title}}">
+                    {{else}}
                     <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../widthtop}}&h={{../heighttop}}"
                         width="{{../widthtop}}" height="{{../heighttop}}" alt="{{title}}" loading="lazy">
+                    {{/if}}
                     {{else}}
                     <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../width}}&h={{../height}}"
                         width="{{../width}}" height="{{../height}}" alt="{{title}}" loading="lazy">
@@ -27,7 +28,7 @@
                     {{#if ../video}}
                     <div class="artDuration">
                         <span class="icoInline icoPlay"></span>
-                        {{#if ../btv}}{{else}}04.22{{/if}}
+                        {{#if ../btv}}{{else}}{{#if ../icon}}{{else}}04.22{{/if}}{{/if}}
                     </div>
                     {{/if}}
                     {{#if live}}

@@ -30,17 +30,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,700&display=swap"
-        rel="stylesheet">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,700&display=swap">
+    </noscript>
     <link rel="stylesheet" href="./asset/css/style-lifestyle.min.css" type="text/css">
 
     <!--font menu & footer -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap">
-    </noscript>
-    <link rel="preload" href="./asset/images/logo/lifestyle-logo.svg" as="image" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap">
+    <link rel="preload" href="./asset/images/logo/lifestyle-logo-m.svg" as="image" />
 </head>
 <body class="theme--lifestyle">
 
@@ -52,13 +53,14 @@
                 <div class="billboardPushdownInner">
                     <div class="billboardPushdownPromo">
                         <!-- ad script here -->
-                        <!--<img src="https://placehold.co/970x250/000/F4F4F4?font=nunitosans&text=PUSHDOWN%20BILLBOARD%20IS%20HERE"
-                            alt="" width="970" height="250">-->
+                        <!--<img src="https://placehold.co/320x480/000/F4F4F4?font=nunitosans&text=PUSHDOWN%20BILLBOARD%20IS%20HERE"
+                            alt="" width="320" height="480">-->
                     </div>
                 </div>
                 <button class="billboardPushdownClose" aria-label="Close billboard"></button>
             </div>
         </div>
+        <div class="billboardPushdownSwipe">Scroll untuk melanjutkan membaca</div>
         <script defer src="./asset/js/script-billboard-pushdown.min.js"></script>
     </div>    <!-- e: pushdown billboard -->
 
@@ -67,7 +69,7 @@
         <div class="flashnews">
             <div class="flashnewsCaption">Breaking News</div>
             <marquee class="flashnewsWrap" behavior="scroll" direction="left" onmouseover="this.stop();"
-                onmouseout="this.start();">
+                onmouseout="this.start();" scrollamount="4">
                 <div class="flashnewsItem">
                     <img src="./asset/images/icon/icon-bisniscom-wsmall.svg" alt="" width="11" height="14" class="flashnewsIcon">
                     <a href="#" class="flashnewsLink">
@@ -130,14 +132,14 @@
                     <div class="headerLogoWrap">
                         <div class="headerLogo headerLogo--kanal">
                             <a href="index-lifestyle.html" aria-label="kanal Lifestyle">
-                                <img src="./asset/images/logo/lifestyle-logo.svg" alt=""
-                                    width="180"
-                                    height="49">
+                                <img src="./asset/images/logo/lifestyle-logo-m.svg" alt=""
+                                    width="104"
+                                    height="42">
                             </a>
                         </div>
                         <div class="headerLogo headerLogo--bisniscom">
-                            <a href="https://bisnis.com/" aria-label="Bisnis.com">
-                                <img src="./asset/images/logo/bisniscom-logo.svg" alt="" width="190" height="43" loading="lazy">
+                            <a href="https://m.bisnis.com/" aria-label="Bisnis.com">
+                                <img src="./asset/images/logo/bisniscom-logo-m.svg" alt="" width="165" height="38" loading="lazy">
                             </a>
                         </div>
                     </div>
@@ -147,34 +149,15 @@
                                 <span class="icoInline icoSearch"></span>
                             </a>
                         </div>
-                        <div class="headerLogin">
-                            <a href="https://id.bisnis.com/user" class="buttonProfile" aria-label="Profile">
-                                <div class="profileImg profileImgDefault">
-                                    <img src="./asset/images/icon/icon-profile.png" alt="" width="37" height="37">
-                                </div>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
         </header>
-        <!-- s: skyscrapper billboard -->
-        <div class="skyscrapper">
-            <div class="skyscrapperFluid skyscrapperFluid--left">
-                <div class="skyscrapper--left">
-                </div>
-            </div>
-            <div class="skyscrapperFluid skyscrapperFluid--right">
-                <div class="skyscrapper--right">
-                </div>
-            </div>
-        </div>        <!-- e: skyscrapper billboard -->
-
         <main role="main" class="main">
             <div class="nav">
 
                 <nav class="navMenu" aria-label="primarynavigation">
-                    <ul class="navList center-flex">
+                    <ul class="navList display-flex" data-active="scroll">
                         <li class="navItem -b">
                             <a href="https://www.bisnis.com/">
                                 <img src="./asset/images/icon/icon-bisniscom.svg" alt="Bisniscom icon" width="36" height="36">
@@ -230,9 +213,19 @@
                     <img src="./asset/images/icon/icon-bisniscom.svg" alt="Bisniscom icon" width="24" height="24" loading="lazy">
                     Back to Bisnis.com
                 </a>
-                <a href="https://www.bisnis.com/premium" class="premiumBoxBtn">
-                    <span class="icoInline icoPremium"></span>Konten Premium
-                </a>
+                <div class="menuCtaWrap center-flex">
+                    <a href="https://www.bisnis.com/premium" class="premiumBoxBtn menuCta">
+                        <span class="icoInline icoPremium"></span>Konten Premium
+                    </a>
+                    <div class="menuLogin menuCta">
+                        <a href="https://id.bisnis.com/user" class="buttonProfile" aria-label="Profile">
+                            <div class="profileImg profileImgDefault">
+                                <img src="./asset/images/icon/icon-profile.png" alt="" width="37" height="37">
+                            </div>
+                            Profil BisnisID
+                        </a>
+                    </div>
+                </div>
                 <div class="menuPanelWrap menuPanelWrap--kanal">
                     <div class="menuPanelLabel">Bisnis<span>com</span></div>
                     <ul class="menuPanelList">
@@ -333,673 +326,679 @@
                 </div>
             </div>            <!-- e: menu panel -->
 
-            <div class="container mt50">
+            <div class="container">
 
-                <div class="row">
-                    <div class="col-7 col-left">
-
-                        <h3 class="titleCaption">Berita Terbaru</h3>
-                        <div class="latest">
-                            <div class="latestWrap -top">
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1643981/diabetes_1668425885.jpg?w=369&h=277" width="369" height="277"
-                                                alt="Ternyata, Diabetes Bisa Picu Stroke, Ini Alasannya">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Ternyata, Diabetes Bisa Picu Stroke, Ini Alasannya
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
+                <!-- s: latest -->
+                <h3 class="titleCaption mt30">Berita Terbaru</h3>
+                <div class="art">
+                    <div
+                        class="artWrap -row-top">
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1643981/diabetes_1668425885.jpg?w=340&h=255"
+                                        width="340" height="255" alt="Ternyata, Diabetes Bisa Picu Stroke, Ini Alasannya" loading="lazy">
                                 </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644585/colombiana.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Sinopsis Colombiana, Kisah Balas Dendam Zoe Saldana Tayang di Bioskop Trans TV" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Sinopsis Colombiana, Kisah Balas Dendam Zoe Saldana Tayang di Bioskop Trans TV
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Health
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Ternyata, Diabetes Bisa Picu Stroke, Ini Alasannya
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
                                 </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle-premium.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644625/sakit-jantung.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Benarkah Tidur Berkualitas Bisa Cegah Penyakit Kardiovaskular?" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel -premium">
-                                                Premium<span class="icoInline icoPremium"></span>
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Benarkah Tidur Berkualitas Bisa Cegah Penyakit Kardiovaskular?
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle-live.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644119/5_besar_kontestan_indonesian_idol.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <div class="artLive"><span>Live</span></div>
-                                            <h4 class="latestTitle artTitle">
-                                                Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644407/barbie.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644153/ilustrasi-paylater.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle-series.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg?w=190&h=142" width="190" height="142"
-                                                alt="Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-                        <!-- s: leaderboard billboard -->
-                        <div class="mt50">
-                            <div class="billboard billboardLeaderboard">
-                            </div>                        </div>
-                        <!-- e: leaderboard billboard -->
-
-                        <div class="latest mt50">
-                            <div class="latestWrap -top">
-                                <div class="latestItem">
-                                    <a href="details-lifestyle-live.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644119/5_besar_kontestan_indonesian_idol.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <div class="artLive"><span>Live</span></div>
-                                            <h4 class="latestTitle artTitle">
-                                                Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644585/colombiana.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Sinopsis Colombiana, Kisah Balas Dendam Zoe Saldana Tayang di Bioskop Trans TV" loading="lazy">
                                 </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644407/barbie.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Sinopsis Colombiana, Kisah Balas Dendam Zoe Saldana Tayang di Bioskop Trans TV
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
                                 </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644153/ilustrasi-paylater.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle-series.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg?w=190&h=142" width="190" height="142"
-                                                alt="Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/04/1643606/angelina-jolie-re.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Angelina Jolie Jajal Bisnis Fesyen Mewah" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Angelina Jolie Jajal Bisnis Fesyen Mewah
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/03/1643417/images-41_copy_800x500.jpeg?w=190&h=142" width="190" height="142"
-                                                alt="Selama Ramadan, Aktivitas Online Orang Indonesia Meningkat" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Selama Ramadan, Aktivitas Online Orang Indonesia Meningkat
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/03/1643225/011113_rhn-bisnis-06-hijab-day.JPG?w=190&h=142" width="190" height="142"
-                                                alt="Lebaran Makin Dekat, Tren Belanja Baju Muslim Keluarga Naik 4 Kali Lipat" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Lebaran Makin Dekat, Tren Belanja Baju Muslim Keluarga Naik 4 Kali Lipat
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-                        <!-- s: leaderboard billboard -->
-                        <div class="mt50">
-                            <div class="billboard billboardLeaderboard">
-                            </div>                        </div>
-                        <!-- e: leaderboard billboard -->
-
-                        <div class="latest mt50">
-                            <div class="latestWrap -top">
-                                <div class="latestItem">
-                                    <a href="details-lifestyle-premium.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644625/sakit-jantung.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Benarkah Tidur Berkualitas Bisa Cegah Penyakit Kardiovaskular?" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel -premium">
-                                                Premium<span class="icoInline icoPremium"></span>
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Benarkah Tidur Berkualitas Bisa Cegah Penyakit Kardiovaskular?
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
+                        <div class="artItem">
+                            <a href="details-lifestyle-premium.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644625/sakit-jantung.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Benarkah Tidur Berkualitas Bisa Cegah Penyakit Kardiovaskular?" loading="lazy">
                                 </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle-live.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644119/5_besar_kontestan_indonesian_idol.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <div class="artLive"><span>Live</span></div>
-                                            <h4 class="latestTitle artTitle">
-                                                Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
+                                <div class="artContent">
+                                    <div class="artChannel -premium">
+                                        Premium<span class="icoInline icoPremium"></span>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Benarkah Tidur Berkualitas Bisa Cegah Penyakit Kardiovaskular?
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
                                 </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644407/barbie.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644153/ilustrasi-paylater.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle-series.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg?w=190&h=142" width="190" height="142"
-                                                alt="Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/04/1643606/angelina-jolie-re.jpg?w=190&h=142" width="190" height="142"
-                                                alt="Angelina Jolie Jajal Bisnis Fesyen Mewah" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Angelina Jolie Jajal Bisnis Fesyen Mewah
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-lifestyle.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/03/1643417/images-41_copy_800x500.jpeg?w=190&h=142" width="190" height="142"
-                                                alt="Selama Ramadan, Aktivitas Online Orang Indonesia Meningkat" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Entertainment
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Selama Ramadan, Aktivitas Online Orang Indonesia Meningkat
-                                            </h4>
-                                            <div class="latestDate artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="center-flex">
-                            <a href="#" class="buttonPrimary">Indeks</a>
+                        <div class="artItem">
+                            <a href="details-lifestyle-live.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644119/5_besar_kontestan_indonesian_idol.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <div class="artLive"><span>Live</span></div>
+                                    <h4 class="artTitle">
+                                        Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644407/barbie.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644153/ilustrasi-paylater.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Gaya Hidup
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle-series.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg?w=145&h=109"
+                                        width="145" height="109" alt="Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Inspirasi
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <sidebar class="sidebar col-3 col-right">
-                        <!-- s: rectangle billboard -->
-                        <div class="billboard billboardRectangle">
-                        </div>                        <!-- e: rectangle billboard -->
-
-                        <!-- s: terpopuler -->
-                        <h3 class="titleCaption mt40">Terpopuler</h3>
-                        <div class="most">
-                            <div class="mostItem">
-                                <a href="details-lifestyle.html" class="mostLink artLink">
-                                    <div class="mostNum">1</div>
-                                    <h4 class="artTitle">
-                                        Ini Daftar Negara dengan Sekolah dan Rumah Sakit Gratis
-                                    </h4>
-                                </a>
-                            </div>
-                            <div class="mostItem">
-                                <a href="details-lifestyle.html" class="mostLink artLink">
-                                    <div class="mostNum">2</div>
-                                    <h4 class="artTitle">
-                                        Kapan Waktu yang Tepat untuk Anak Mulai Diajari Puasa? Ini Jawaban Ahli
-                                    </h4>
-                                </a>
-                            </div>
-                            <div class="mostItem">
-                                <a href="details-lifestyle.html" class="mostLink artLink">
-                                    <div class="mostNum">3</div>
-                                    <h4 class="artTitle">
-                                        Ini 10 Tips Mengurangi Kecemasan Secara Alami
-                                    </h4>
-                                </a>
-                            </div>
-                            <div class="mostItem">
-                                <a href="details-lifestyle.html" class="mostLink artLink">
-                                    <div class="mostNum">4</div>
-                                    <h4 class="artTitle">
-                                        Ini 6 Cara Komunikasi Agar lebih Bermakna
-                                    </h4>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- e: terpopuler -->
-
-                        <!-- s: rec -->
-                        <h3 class="titleCaption mt40">Rekomendasi Kami</h3>
-                        <div class="art">
-                            <div class="artWrap -col-top">
-                                <div class="artItem">
-                                    <a href="details-lifestyle-series.html" class="artLink art--col-top">
-                                        <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg?w=300&h=225" width="300" height="225"
-                                                alt="Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Inspirasi
-                                            </div>
-                                            <h4 class="artTitle">
-                                                Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat
-                                            </h4>
-                                            <div class="artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="artItem">
-                                    <a href="details-lifestyle.html" class="artLink art--col-top">
-                                        <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/04/1643606/angelina-jolie-re.jpg?w=94&h=94" width="94" height="94"
-                                                alt="Angelina Jolie Jajal Bisnis Fesyen Mewah" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Infotainment
-                                            </div>
-                                            <h4 class="artTitle">
-                                                Angelina Jolie Jajal Bisnis Fesyen Mewah
-                                            </h4>
-                                            <div class="artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="artItem">
-                                    <a href="details-lifestyle.html" class="artLink art--col-top">
-                                        <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/03/1643417/images-41_copy_800x500.jpeg?w=94&h=94" width="94" height="94"
-                                                alt="Selama Ramadan, Aktivitas Online Orang Indonesia Meningkat" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Gaya Hidup
-                                            </div>
-                                            <h4 class="artTitle">
-                                                Selama Ramadan, Aktivitas Online Orang Indonesia Meningkat
-                                            </h4>
-                                            <div class="artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="artItem">
-                                    <a href="details-lifestyle.html" class="artLink art--col-top">
-                                        <div class="artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/03/1643225/011113_rhn-bisnis-06-hijab-day.JPG?w=94&h=94" width="94" height="94"
-                                                alt="Lebaran Makin Dekat, Tren Belanja Baju Muslim Keluarga Naik 4 Kali Lipat" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artChannel">
-                                                Fashion
-                                            </div>
-                                            <h4 class="artTitle">
-                                                Lebaran Makin Dekat, Tren Belanja Baju Muslim Keluarga Naik 4 Kali Lipat
-                                            </h4>
-                                            <div class="artDate">
-                                                9 menit yang lalu
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- e: rec -->
-                    </sidebar>
                 </div>
+                <!-- e: latest -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    <div class="billboard billboardRectangle">
+                    </div>                </div>
+                <!-- e: rectangle billboard -->
+
+                <div class="art">
+                    <div
+                        class="artWrap -row-top">
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1643981/diabetes_1668425885.jpg?w=340&h=255"
+                                        width="340" height="255" alt="Ternyata, Diabetes Bisa Picu Stroke, Ini Alasannya" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Health
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Ternyata, Diabetes Bisa Picu Stroke, Ini Alasannya
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644585/colombiana.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Sinopsis Colombiana, Kisah Balas Dendam Zoe Saldana Tayang di Bioskop Trans TV" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Sinopsis Colombiana, Kisah Balas Dendam Zoe Saldana Tayang di Bioskop Trans TV
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle-premium.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644625/sakit-jantung.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Benarkah Tidur Berkualitas Bisa Cegah Penyakit Kardiovaskular?" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel -premium">
+                                        Premium<span class="icoInline icoPremium"></span>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Benarkah Tidur Berkualitas Bisa Cegah Penyakit Kardiovaskular?
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle-live.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644119/5_besar_kontestan_indonesian_idol.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <div class="artLive"><span>Live</span></div>
+                                    <h4 class="artTitle">
+                                        Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644407/barbie.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644153/ilustrasi-paylater.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Gaya Hidup
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle-series.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg?w=145&h=109"
+                                        width="145" height="109" alt="Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Inspirasi
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    <div class="billboard billboardRectangle">
+                    </div>                </div>
+                <!-- e: rectangle billboard -->
+
+                <div class="art">
+                    <div
+                        class="artWrap -row-top">
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1643981/diabetes_1668425885.jpg?w=340&h=255"
+                                        width="340" height="255" alt="Ternyata, Diabetes Bisa Picu Stroke, Ini Alasannya" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Health
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Ternyata, Diabetes Bisa Picu Stroke, Ini Alasannya
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644585/colombiana.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Sinopsis Colombiana, Kisah Balas Dendam Zoe Saldana Tayang di Bioskop Trans TV" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Sinopsis Colombiana, Kisah Balas Dendam Zoe Saldana Tayang di Bioskop Trans TV
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle-premium.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644625/sakit-jantung.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Benarkah Tidur Berkualitas Bisa Cegah Penyakit Kardiovaskular?" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel -premium">
+                                        Premium<span class="icoInline icoPremium"></span>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Benarkah Tidur Berkualitas Bisa Cegah Penyakit Kardiovaskular?
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle-live.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644119/5_besar_kontestan_indonesian_idol.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <div class="artLive"><span>Live</span></div>
+                                    <h4 class="artTitle">
+                                        Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644407/barbie.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Setelah Penantian Panjang, Film Barbie Siap Tayang Juli 2023
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644153/ilustrasi-paylater.jpg?w=145&h=109"
+                                        width="145" height="109" alt="Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Gaya Hidup
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Atome Perluas Pasar, Fashion dan Beauty Masih Mendominasi
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle-series.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg?w=145&h=109"
+                                        width="145" height="109" alt="Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Inspirasi
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary">Indeks</a>
+                </div>
+
+                <!-- s: terpopuler -->
+                <h3 class="titleCaption mt30">Terpopuler</h3>
+                <div class="most">
+                    <div class="mostItem">
+                        <a href="details-lifestyle.html" class="mostLink artLink">
+                            <div class="mostNum">1</div>
+                            <h4 class="artTitle">
+                                Ini Daftar Negara dengan Sekolah dan Rumah Sakit Gratis
+                            </h4>
+                        </a>
+                    </div>
+                    <div class="mostItem">
+                        <a href="details-lifestyle.html" class="mostLink artLink">
+                            <div class="mostNum">2</div>
+                            <h4 class="artTitle">
+                                Kapan Waktu yang Tepat untuk Anak Mulai Diajari Puasa? Ini Jawaban Ahli
+                            </h4>
+                        </a>
+                    </div>
+                    <div class="mostItem">
+                        <a href="details-lifestyle.html" class="mostLink artLink">
+                            <div class="mostNum">3</div>
+                            <h4 class="artTitle">
+                                Ini 10 Tips Mengurangi Kecemasan Secara Alami
+                            </h4>
+                        </a>
+                    </div>
+                    <div class="mostItem">
+                        <a href="details-lifestyle.html" class="mostLink artLink">
+                            <div class="mostNum">4</div>
+                            <h4 class="artTitle">
+                                Ini 6 Cara Komunikasi Agar lebih Bermakna
+                            </h4>
+                        </a>
+                    </div>
+                </div>
+                <!-- e: terpopuler -->
+
+                <!-- s: rec -->
+                <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
+                <div class="art">
+                    <div
+                        class="artWrap -row-top -small">
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1643981/diabetes_1668425885.jpg?w=340&h=255"
+                                        width="340" height="255" alt="Ternyata, Diabetes Bisa Picu Stroke, Ini Alasannya" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Health
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Ternyata, Diabetes Bisa Picu Stroke, Ini Alasannya
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644585/colombiana.jpg?w=94&h=94"
+                                        width="94" height="94" alt="Sinopsis Colombiana, Kisah Balas Dendam Zoe Saldana Tayang di Bioskop Trans TV" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Sinopsis Colombiana, Kisah Balas Dendam Zoe Saldana Tayang di Bioskop Trans TV
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle-premium.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/06/1644625/sakit-jantung.jpg?w=94&h=94"
+                                        width="94" height="94" alt="Benarkah Tidur Berkualitas Bisa Cegah Penyakit Kardiovaskular?" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel -premium">
+                                        Premium<span class="icoInline icoPremium"></span>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Benarkah Tidur Berkualitas Bisa Cegah Penyakit Kardiovaskular?
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-lifestyle-live.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644119/5_besar_kontestan_indonesian_idol.jpg?w=94&h=94"
+                                        width="94" height="94" alt="Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artChannel">
+                                        Entertainment
+                                    </div>
+                                    <div class="artLive"><span>Live</span></div>
+                                    <h4 class="artTitle">
+                                        Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?
+                                    </h4>
+                                    <div class="artDate">
+                                        9 menit yang lalu
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- e: rec -->
+
             </div>
         </main>
     </div>
 
+    <!-- s: bottom billboard -->
+    <div class="billboard billboardBottom">
+        <button class="billboardClose" aria-label="Close billboard"></button>
+        <!--<div id='div-gpt-ad-sticky'>
+                <script>
+                    googletag.cmd.push(function () {
+                        googletag.display('div-gpt-ad-sticky');
+                    });
+                </script>
+            </div>-->
+    </div>    <!-- e: bottom billboard -->
+
     <footer class="footer">
         <div class="footerWrap container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <a href="https://www.bisnis.com/">
-                        <img src="https://static.bisnis-cdn.com/bisnis/assets/images/2020/logo-footer.svg" class=""
-                            alt="Bisnis.com" title="Bisnis.com" width="158" height="36" />
-                    </a>
-                    <div class="footerSocmed">
-                        <div class="footerAppWrap">
-                            <a href="https://play.google.com/store/apps/details?id=bisnis.com.official" class="footerApp"
-                                title="Android app on Google Play">
-                                <img src="./asset/images/logo/google-play.svg" class="" alt="" width="110" height="33"
-                                    loading="lazy">
-                            </a>
-                            <a href="https://itunes.apple.com/id/app/bisnis-com/id945608365?mt=8" class="footerApp"
-                                title="Download on the App Store">
-                                <img src="./asset/images/logo/app-store.svg" class="" alt="" width="110" height="33"
-                                    loading="lazy">
-                            </a>
-                        </div>
-                        <div class="footerSocmedWrap">
-                            <div class="footerSocmedCaption text-center">Connect With Us</div>
-                            <a href="#" class="footerSocmedLink" title="facebook">
-                                <span class="icoInline icoSocmed footerSocmed--fb"></span>
-                            </a>
-                            <a href="#" class="footerSocmedLink" title="twitter">
-                                <span class="icoInline icoSocmed footerSocmed--tw"></span>
-                            </a>
-                            <a href="#" class="footerSocmedLink" title="instagram">
-                                <span class="icoInline icoSocmed footerSocmed--ig"></span>
-                            </a>
-                            <a href="#" class="footerSocmedLink" title="youtube">
-                                <span class="icoInline icoSocmed footerSocmed--yt"></span>
-                            </a>
-                        </div>
+            <div class="text-center">
+                <a href="https://m.bisnis.com/">
+                    <img src="https://static.bisnis-cdn.com/bisnis/assets/images/2020/logo-footer.svg" class=""
+                        alt="Bisnis.com" title="Bisnis.com" width="158" height="36" loading="lazy" />
+                </a>
+                <div class="footerSocmed text-center">
+                    <div class="footerAppWrap">
+                        <a href="https://play.google.com/store/apps/details?id=bisnis.com.official" class="footerApp"
+                            title="Android app on Google Play">
+                            <img src="./asset/images/logo/google-play.svg" class="" alt="" width="158" height="48"
+                                loading="lazy">
+                        </a>
+                        <a href="https://itunes.apple.com/id/app/bisnis-com/id945608365?mt=8" class="footerApp"
+                            title="Download on the App Store">
+                            <img src="./asset/images/logo/app-store.svg" class="" alt="" width="158" height="48"
+                                loading="lazy">
+                        </a>
                     </div>
-                    <div class="footerCopyright">Copyright © 2022 - Bisnis Indonesia.</div>
-                </div>
-                <div class="col-sm-7">
-                    <div class="footerContent">
-                        <div class="footerCol">
-                            <div class="footerLink footerLink--big">BIG Media</div>
-                            <a href="#" class="footerLink footerLink--small">Bisnis.com</a>
-                            <a href="#" class="footerLink footerLink--small">BisnisIndonesia.id</a>
-                            <a href="#" class="footerLink footerLink--small">BisnisMuda.id</a>
-                            <a href="#" class="footerLink footerLink--small">HypeAbis.id</a>
-                            <a href="#" class="footerLink footerLink--small">Context.id</a>
-                            <a href="#" class="footerLink footerLink--small">DataIndonesia.id</a>
-                            <a href="#" class="footerLink footerLink--small">Solopos.com</a>
-                            <a href="#" class="footerLink footerLink--small">HarianJogja.com</a>
-                        </div>
-                        <div class="footerCol">
-                            <div class="footerLink footerLink--big">BIG Services</div>
-                            <a href="#" class="footerLink footerLink--small">Epaper Bisnis Indonesia</a>
-                            <a href="#" class="footerLink footerLink--small">Konten Interaktif</a>
-                            <a href="#" class="footerLink footerLink--small">Konten Premium</a>
-                            <a href="#" class="footerLink footerLink--small">Bisnis Plus</a>
-                            <a href="#" class="footerLink footerLink--small">Bisnis TV</a>
-                            <a href="#" class="footerLink footerLink--small">BroadCast</a>
-                        </div>
-                        <div class="footerCol">
-                            <div class="footerLink footerLink--big">Regional</div>
-                            <div class="footerContent">
-                                <div class="footerCol footerCol--small">
-                                    <a href="https://jakarta.bisnis.com/" class="footerLink footerLink--small">Jakarta</a>
-                                    <a href="https://bandung.bisnis.com/" class="footerLink footerLink--small">Bandung</a>
-                                    <a href="https://banten.bisnis.com/" class="footerLink footerLink--small">Banten</a>
-                                    <a href="https://semarang.bisnis.com/" class="footerLink footerLink--small">Semarang</a>
-                                    <a href="https://bali.bisnis.com/" class="footerLink footerLink--small">Bali</a>
-                                </div>
-                                <div class="footerCol footerCol--small">
-                                    <a href="https://sumatra.bisnis.com/" class="footerLink footerLink--small">Sumatra</a>
-                                    <a href="https://surabaya.bisnis.com/" class="footerLink footerLink--small">Surabaya</a>
-                                    <a href="https://kalimantan.bisnis.com/"
-                                        class="footerLink footerLink--small">Kalimantan</a>
-                                    <a href="https://sulawesi.bisnis.com/" class="footerLink footerLink--small">Sulawesi</a>
-                                    <a href="https://papua.bisnis.com/" class="footerLink footerLink--small">Papua</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footerCol">
-                            <div class="footerLink footerLink--big">Informasi</div>
-                            <a href="https://www.bisnis.com/page/about-us" class="footerLink footerLink--small">Tentang
-                                Kami</a>
-                            <a href="https://www.bisnis.com/page/advertise-with-us"
-                                class="footerLink footerLink--small">Info Iklan</a>
-                            <a href="https://www.bisnis.com/page/privacy-policy"
-                                class="footerLink footerLink--small">Kebijakan Privasi</a>
-                            <a href="https://www.bisnis.com/page/code-of-conduct" class="footerLink footerLink--small">Kode
-                                Etik</a>
-                            <a href="https://www.bisnis.com/page/contact-us" class="footerLink footerLink--small">Kontak
-                                Kami</a>
-                            <a href="https://www.bisnis.com/page/career" class="footerLink footerLink--small">Karir</a>
-                        </div>
+                    <div class="footerSocmedWrap">
+                        <div class="footerSocmedCaption text-center">Connect With Us</div>
+                        <a href="#" class="footerSocmedLink" title="facebook">
+                            <span class="icoInline icoSocmed footerSocmed--fb"></span>
+                        </a>
+                        <a href="#" class="footerSocmedLink" title="twitter">
+                            <span class="icoInline icoSocmed footerSocmed--tw"></span>
+                        </a>
+                        <a href="#" class="footerSocmedLink" title="instagram">
+                            <span class="icoInline icoSocmed footerSocmed--ig"></span>
+                        </a>
+                        <a href="#" class="footerSocmedLink" title="youtube">
+                            <span class="icoInline icoSocmed footerSocmed--yt"></span>
+                        </a>
                     </div>
                 </div>
             </div>
+            <div class="footerContent">
+                <div class="footerCol">
+                    <div class="footerLink footerLink--big">BIG Media</div>
+                    <a href="#" class="footerLink footerLink--small">Bisnis.com</a>
+                    <a href="#" class="footerLink footerLink--small">BisnisIndonesia.id</a>
+                    <a href="#" class="footerLink footerLink--small">BisnisMuda.id</a>
+                    <a href="#" class="footerLink footerLink--small">HypeAbis.id</a>
+                    <a href="#" class="footerLink footerLink--small">Context.id</a>
+                    <a href="#" class="footerLink footerLink--small">DataIndonesia.id</a>
+                    <a href="#" class="footerLink footerLink--small">Solopos.com</a>
+                    <a href="#" class="footerLink footerLink--small">HarianJogja.com</a>
+                </div>
+                <div class="footerCol">
+                    <div class="footerLink footerLink--big">BIG Services</div>
+                    <a href="#" class="footerLink footerLink--small">Epaper Bisnis Indonesia</a>
+                    <a href="#" class="footerLink footerLink--small">Konten Interaktif</a>
+                    <a href="#" class="footerLink footerLink--small">Konten Premium</a>
+                    <a href="#" class="footerLink footerLink--small">Bisnis Plus</a>
+                    <a href="#" class="footerLink footerLink--small">Bisnis TV</a>
+                    <a href="#" class="footerLink footerLink--small">BroadCast</a>
+                </div>
+                <div class="footerContent">
+                    <div class="footerCol">
+                        <div class="footerLink footerLink--big">Regional</div>
+                        <a href="https://m.bisnis.com/jakarta" class="footerLink footerLink--small">Jakarta</a>
+                        <a href="https://m.bisnis.com/bandung" class="footerLink footerLink--small">Bandung</a>
+                        <a href="https://m.bisnis.com/banten" class="footerLink footerLink--small">Banten</a>
+                        <a href="https://m.bisnis.com/semarang" class="footerLink footerLink--small">Semarang</a>
+                        <a href="https://m.bisnis.com/bali" class="footerLink footerLink--small">Bali</a>
+                    </div>
+                    <div class="footerCol footerCol--small">
+                        <a href="https://m.bisnis.com/sumatra" class="footerLink footerLink--small">Sumatra</a>
+                        <a href="https://m.bisnis.com/surabaya" class="footerLink footerLink--small">Surabaya</a>
+                        <a href="https://m.bisnis.com/kalimantan" class="footerLink footerLink--small">Kalimantan</a>
+                        <a href="https://m.bisnis.com/sulawesi" class="footerLink footerLink--small">Sulawesi</a>
+                        <a href="https://m.bisnis.com/papua" class="footerLink footerLink--small">Papua</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footerContent">
+                <div class="footerCol">
+                    <div class="footerLink footerLink--big">Informasi</div>
+                    <a href="https://m.bisnis.com/page/about-us" class="footerLink footerLink--small">Tentang
+                        Kami</a>
+                    <a href="https://m.bisnis.com/page/advertise-with-us" class="footerLink footerLink--small">Info
+                        Iklan</a>
+                    <a href="https://m.bisnis.com/page/privacy-policy" class="footerLink footerLink--small">Kebijakan
+                        Privasi</a>
+                    <a href="https://m.bisnis.com/page/code-of-conduct" class="footerLink footerLink--small">Kode
+                        Etik</a>
+                    <a href="https://m.bisnis.com/page/contact-us" class="footerLink footerLink--small">Kontak
+                        Kami</a>
+                    <a href="https://m.bisnis.com/page/career" class="footerLink footerLink--small">Karir</a>
+                </div>
+            </div>
+        </div>
+        <div class="footerCopyright text-center">Copyright © 2022 - Bisnis Indonesia.</div>
         </div>
     </footer>
     
@@ -1009,8 +1008,7 @@
     </button>
     <script type="text/javascript" src="./asset/js/jquery-3.5.0.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/script-main.min.js"></script>
-    
-    
+    <script type="text/javascript" src="./asset/js/script-lifestyle.min.js"></script>
     
 
 </body>

@@ -1,14 +1,14 @@
 .shareSocmed {
     &Wrap {
         align-items: center;
-        @include font-pack($font-body, 16px, $font-weight-sbold, $line-base, #434343);
+        @include font-pack($font-body, 14px, $font-weight-sbold, $line-base, #434343);
     }
 
     &Cta {
         position: relative;
         @extend .center-flex;
-        width: 34px;
-        height: 34px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         transition: transform .2s ease;
 
@@ -36,8 +36,17 @@
         margin-left: 8px;
         margin-right: 8px;
 
+        @include max-responsive($mstablet) {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
         &:first-child {
-            margin-left: 16px
+            margin-left: 16px;
+
+            @include max-responsive($mstablet) {
+                margin-left: 6px;
+            }
         }
 
         &--fb {
@@ -108,8 +117,8 @@
         }
 
         .icoInline {
-            width: 34px;
-            height: 34px;
+            width: 30px;
+            height: 30px;
         }
     }
 }

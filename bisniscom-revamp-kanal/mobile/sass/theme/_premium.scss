@@ -2,9 +2,12 @@
     &--premium {
         .details {
             &Cover {
+                margin-left: -15px;
+                margin-right: -15px;
 
                 &Img {
                     height: auto;
+                    border-radius: 0;
                     padding-top: calc(2/4 * 100% + 66px);
 
                     &::before {
@@ -14,9 +17,16 @@
                         display: block;
                         width: 100%;
                         height: 100%;
-                        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 44.53%, #000000 103.59%);
                         z-index: 2;
+                        background: radial-gradient(82.9% 243.63% at 50% 50%, transparent 0, #000 100%), linear-gradient(180deg, transparent -35.02%, #000);
                     }
+                }
+
+                .premiumBoxBtn {
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                    z-index: 2;
                 }
             }
 
@@ -26,20 +36,23 @@
                 left: 0;
                 bottom: 0;
                 margin-bottom: 0;
-                padding: 37px 90px;
+                padding: 10px 15px;
                 transform: none;
                 background: transparent;
                 z-index: 2;
 
                 &Caption {
-                    @include font-pack(false, 36px, false, 1.36, $cl-white);
+                    @include font-pack(false, 20px, false, 1.36, $cl-white);
                 }
+            }
+
+            &Lead{                
+                @include font-pack(false, 12px, false, 1.5, false);
             }
 
             &Attribute {
                 @include display_flex;
                 align-items: center;
-                color: #DCDCDC;
             }
 
             &Wrap.-bottom,
@@ -87,6 +100,7 @@
             &Caption {
                 color: $cl-premium;
                 border-right: 0;
+                border-bottom: 0;
             }
 
             a {
@@ -95,12 +109,12 @@
 
             &::after {
                 content: '';
-                position: relative;
+                position: absolute;
                 display: block;
                 background: $cl-premium;
                 border-radius: 16px;
-                right: -30px;
-                bottom: 0;
+                right: -2px;
+                top: 40%;
                 width: 6px;
                 height: 36px;
             }

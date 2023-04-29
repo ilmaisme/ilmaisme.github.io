@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Lifestyle" channel=site.Lifestyle}}
+
+<body class="theme--lifestyle">
+
+    <!-- s: pushdown billboard -->
+    {{>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{>header/header kanal="Lifestyle"}}
+
+        <main role="main" class="main">
+            <div class="nav">
+
+                {{>header/nav channel=mainMenu.Lifestyle active="Entertainment"}}
+
+            </div>
+
+            <!-- s: menu panel -->
+            {{>header/menu login=true}}
+            {{!>header/menu}}
+            <!-- e: menu panel -->
+
+            <div class="container">
+
+                <!-- s: latest -->
+                <h3 class="titleCaption mt30">Berita Terbaru</h3>
+                {{>kanal/article channel=kanal.Lifestyle.latest pos="top" type="row" widthtop="340" heighttop="255"
+                width="145" height="109" total=10 index_start=0
+                index_end=7}}
+
+                <!-- e: latest -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                {{>kanal/article channel=kanal.Lifestyle.latest pos="top" type="row" widthtop="340" heighttop="255"
+                width="145" height="109" total=10 index_start=0
+                index_end=7}}
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                {{>kanal/article channel=kanal.Lifestyle.latest pos="top" type="row" widthtop="340" heighttop="255"
+                width="145" height="109" total=10 index_start=0
+                index_end=7}}
+
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary">Indeks</a>
+                </div>
+
+                <!-- s: terpopuler -->
+                <h3 class="titleCaption mt30">Terpopuler</h3>
+                {{>kanal/most channel=kanal.Lifestyle.most total=4 index_start=0 index_end=4}}
+
+                <!-- e: terpopuler -->
+
+                <!-- s: rec -->
+                <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
+                {{>kanal/article channel=kanal.Lifestyle.latest pos="top" type="row" small=true widthtop="340"
+                heighttop="255" width="94" height="94" total=10 index_start=0
+                index_end=4}}
+
+                <!-- e: rec -->
+
+            </div>
+        </main>
+    </div>
+
+    <!-- s: bottom billboard -->
+    {{>ads/bottom}}
+    <!-- e: bottom billboard -->
+
+    {{>footer/footer}}
+
+    {{>footer/script page="lifestyle"}}
+
+</body>
+
+</html>

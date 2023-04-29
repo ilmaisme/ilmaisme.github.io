@@ -30,17 +30,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,600;1,600&display=swap"
-        rel="stylesheet">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,600;1,600&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,600;1,600&display=swap">
+    </noscript>
     <link rel="stylesheet" href="./asset/css/style-tekno.min.css" type="text/css">
 
     <!--font menu & footer -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap">
-    </noscript>
-    <link rel="preload" href="./asset/images/logo/tekno-logo.svg" as="image" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap">
+    <link rel="preload" href="./asset/images/logo/tekno-logo-m.svg" as="image" />
 </head>
 <body class="theme--tekno">
 
@@ -52,13 +53,14 @@
                 <div class="billboardPushdownInner">
                     <div class="billboardPushdownPromo">
                         <!-- ad script here -->
-                        <!--<img src="https://placehold.co/970x250/000/F4F4F4?font=nunitosans&text=PUSHDOWN%20BILLBOARD%20IS%20HERE"
-                            alt="" width="970" height="250">-->
+                        <!--<img src="https://placehold.co/320x480/000/F4F4F4?font=nunitosans&text=PUSHDOWN%20BILLBOARD%20IS%20HERE"
+                            alt="" width="320" height="480">-->
                     </div>
                 </div>
                 <button class="billboardPushdownClose" aria-label="Close billboard"></button>
             </div>
         </div>
+        <div class="billboardPushdownSwipe">Scroll untuk melanjutkan membaca</div>
         <script defer src="./asset/js/script-billboard-pushdown.min.js"></script>
     </div>    <!-- e: pushdown billboard -->
 
@@ -67,7 +69,7 @@
         <div class="flashnews">
             <div class="flashnewsCaption">Breaking News</div>
             <marquee class="flashnewsWrap" behavior="scroll" direction="left" onmouseover="this.stop();"
-                onmouseout="this.start();">
+                onmouseout="this.start();" scrollamount="4">
                 <div class="flashnewsItem">
                     <img src="./asset/images/icon/icon-bisniscom-wsmall.svg" alt="" width="11" height="14" class="flashnewsIcon">
                     <a href="#" class="flashnewsLink">
@@ -130,63 +132,16 @@
                     <div class="headerLogoWrap">
                         <div class="headerLogo headerLogo--kanal">
                             <a href="index-tekno.html" aria-label="kanal Tekno">
-                                <img src="./asset/images/logo/tekno-logo.svg" alt=""
-                                    width="127"
-                                    height="40">
+                                <img src="./asset/images/logo/tekno-logo-m.svg" alt=""
+                                    width="100"
+                                    height="32">
                             </a>
                         </div>
                         <div class="headerLogo headerLogo--bisniscom">
-                            <a href="https://bisnis.com/" aria-label="Bisnis.com">
-                                <img src="./asset/images/logo/bisniscom-logo.svg" alt="" width="190" height="43" loading="lazy">
+                            <a href="https://m.bisnis.com/" aria-label="Bisnis.com">
+                                <img src="./asset/images/logo/bisniscom-logo-m.svg" alt="" width="165" height="38" loading="lazy">
                             </a>
                         </div>
-                    </div>
-                    <div class="nav">
-        
-                        <nav class="navMenu" aria-label="primarynavigation">
-                            <ul class="navList center-flex">
-                                <li class="navItem -b">
-                                    <a href="https://www.bisnis.com/">
-                                        <img src="./asset/images/icon/icon-bisniscom.svg" alt="Bisniscom icon" width="36" height="36">
-                                    </a>
-                                </li>
-                                <li class="navItem">
-                                    <a href="index-tekno.html" class="navLink">
-                                        Home
-                                    </a>
-                                </li>
-                                <li class="navItem -active">
-                                    <a href="subkanal-tekno.html" class="navLink">
-                                        Gadget
-                                    </a>
-                                </li>
-                                <li class="navItem">
-                                    <a href="subkanal-tekno.html" class="navLink">
-                                        Review
-                                    </a>
-                                </li>
-                                <li class="navItem">
-                                    <a href="subkanal-tekno.html" class="navLink">
-                                        Start Up
-                                    </a>
-                                </li>
-                                <li class="navItem">
-                                    <a href="subkanal-tekno.html" class="navLink">
-                                        Telco
-                                    </a>
-                                </li>
-                                <li class="navItem">
-                                    <a href="subkanal-tekno.html" class="navLink">
-                                        Sains
-                                    </a>
-                                </li>
-                                <li class="navItem">
-                                    <a href="subkanal-tekno.html" class="navLink">
-                                        Gaming
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                     <div class="headerCta">
                         <div class="headerSearch">
@@ -194,28 +149,58 @@
                                 <span class="icoInline icoSearch"></span>
                             </a>
                         </div>
-                        <div class="headerLogin">
-                            <a href="#" aria-label="Login">
-                                <span class="icoInline icoLogin"></span>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
         </header>
-        <!-- s: skyscrapper billboard -->
-        <div class="skyscrapper">
-            <div class="skyscrapperFluid skyscrapperFluid--left">
-                <div class="skyscrapper--left">
-                </div>
-            </div>
-            <div class="skyscrapperFluid skyscrapperFluid--right">
-                <div class="skyscrapper--right">
-                </div>
-            </div>
-        </div>        <!-- e: skyscrapper billboard -->
-
         <main role="main" class="main">
+            <div class="nav">
+
+                <nav class="navMenu" aria-label="primarynavigation">
+                    <ul class="navList display-flex" data-active="scroll">
+                        <li class="navItem -b">
+                            <a href="https://www.bisnis.com/">
+                                <img src="./asset/images/icon/icon-bisniscom.svg" alt="Bisniscom icon" width="36" height="36">
+                            </a>
+                        </li>
+                        <li class="navItem">
+                            <a href="index-tekno.html" class="navLink">
+                                Home
+                            </a>
+                        </li>
+                        <li class="navItem -active">
+                            <a href="subkanal-tekno.html" class="navLink">
+                                Gadget
+                            </a>
+                        </li>
+                        <li class="navItem">
+                            <a href="subkanal-tekno.html" class="navLink">
+                                Review
+                            </a>
+                        </li>
+                        <li class="navItem">
+                            <a href="subkanal-tekno.html" class="navLink">
+                                Start Up
+                            </a>
+                        </li>
+                        <li class="navItem">
+                            <a href="subkanal-tekno.html" class="navLink">
+                                Telco
+                            </a>
+                        </li>
+                        <li class="navItem">
+                            <a href="subkanal-tekno.html" class="navLink">
+                                Sains
+                            </a>
+                        </li>
+                        <li class="navItem">
+                            <a href="subkanal-tekno.html" class="navLink">
+                                Gaming
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
             <!-- s: menu panel -->
             <div class="menuPanel">
@@ -223,9 +208,19 @@
                     <img src="./asset/images/icon/icon-bisniscom.svg" alt="Bisniscom icon" width="24" height="24" loading="lazy">
                     Back to Bisnis.com
                 </a>
-                <a href="https://www.bisnis.com/premium" class="premiumBoxBtn">
-                    <span class="icoInline icoPremium"></span>Konten Premium
-                </a>
+                <div class="menuCtaWrap center-flex">
+                    <a href="https://www.bisnis.com/premium" class="premiumBoxBtn menuCta">
+                        <span class="icoInline icoPremium"></span>Konten Premium
+                    </a>
+                    <div class="menuLogin menuCta">
+                        <a href="https://id.bisnis.com/user" class="buttonProfile" aria-label="Profile">
+                            <div class="profileImg profileImgDefault">
+                                <img src="./asset/images/icon/icon-profile.png" alt="" width="37" height="37">
+                            </div>
+                            Profil BisnisID
+                        </a>
+                    </div>
+                </div>
                 <div class="menuPanelWrap menuPanelWrap--kanal">
                     <div class="menuPanelLabel">Bisnis<span>com</span></div>
                     <ul class="menuPanelList">
@@ -326,438 +321,543 @@
                 </div>
             </div>            <!-- e: menu panel -->
 
-            <div class="container mt50">
+            <div class="container mt30">
 
-                <div class="row mt50">
-                    <div class="col-7 col-left">
-
-                        <!-- s: latest -->
-                        <h3 class="titleCaption">Berita Terbaru</h3>
-                        <div class="latest">
-                            <div class="latestWrap -three">
-                                <div class="latestItem">
-                                    <a href="details-tekno-live.html" class="artLink art--col">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/03/30/1642192/cyber_security.jpg?w=740&h=393" width="740" height="393"
-                                                alt="Ini Dia 5 Negara dengan Keamanan Siber Tercanggih di Dunia">
-                                            <div class="artLive"><span>Live</span></div>
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artContentWrap">
-                                                <div class="artChannel">
-                                                    Gadget
-                                                </div>
-                                                <div class="artDate">
-                                                    22 November 2022
-                                                </div>
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Ini Dia 5 Negara dengan Keamanan Siber Tercanggih di Dunia
-                                            </h4>
-                                        </div>
-                                    </a>
+                <!-- s: latest -->
+                <h3 class="titleCaption mt30">Berita Terbaru</h3>
+                <div class="art">
+                    <div
+                        class="artWrap -col-top -three">
+                        <div class="artItem">
+                            <a href="details-tekno-live.html" class="artLink art--col">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/03/30/1642192/cyber_security.jpg?w=330&h=182"
+                                        width="330" height="182" alt="Ini Dia 5 Negara dengan Keamanan Siber Tercanggih di Dunia">
+                                    <div class="artLive"><span>Live</span></div>
                                 </div>
-                            </div>
+                                <div class="artContent">
+                                    <div class="artContentWrap">
+                                        <div class="artChannel">
+                                            Gadget
+                                        </div>
+                                        <div class="artDate">
+                                            22 November 2022
+                                        </div>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Ini Dia 5 Negara dengan Keamanan Siber Tercanggih di Dunia
+                                    </h4>
+                                </div>
+                            </a>
                         </div>
-                        <!-- e: latest -->
-
-                        <!-- s: leaderboard billboard -->
-                        <div class="mt50">
-                            <div class="billboard billboardLeaderboard">
-                            </div>                        </div>
-                        <!-- e: leaderboard billboard -->
-
-                        <div class="latest mt50">
-                            <div class="latestWrap">
-                                <div class="latestItem">
-                                    <a href="details-tekno.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/14/1646993/bulan.jpg?w=213&h=120" width="213" height="120"
-                                                alt="Lima Tahun Lagi, China Bangun Pangkalan di Bulan" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artContentWrap">
-                                                <div class="artChannel">
-                                                    Gadget
-                                                </div>
-                                                <div class="artDate">
-                                                    22 November 2022
-                                                </div>
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Lima Tahun Lagi, China Bangun Pangkalan di Bulan
-                                            </h4>
-                                        </div>
-                                    </a>
+                        <div class="artItem">
+                            <a href="details-tekno.html" class="artLink art--col">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/14/1646993/bulan.jpg?w=157&h=103"
+                                        width="157" height="103" alt="Lima Tahun Lagi, China Bangun Pangkalan di Bulan" loading="lazy">
                                 </div>
-                                <div class="latestItem">
-                                    <a href="details-tekno.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/14/1646987/ucapan-lebaran-10.jpg?w=213&h=120" width="213" height="120"
-                                                alt="Ini Cara Menentukan Hari Lebaran Idulfitri dengan Sains dan Agama" loading="lazy">
+                                <div class="artContent">
+                                    <div class="artContentWrap">
+                                        <div class="artChannel">
+                                            Gadget
                                         </div>
-                                        <div class="artContent">
-                                            <div class="artContentWrap">
-                                                <div class="artChannel">
-                                                    Gadget
-                                                </div>
-                                                <div class="artDate">
-                                                    22 November 2022
-                                                </div>
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Ini Cara Menentukan Hari Lebaran Idulfitri dengan Sains dan Agama
-                                            </h4>
+                                        <div class="artDate">
+                                            22 November 2022
                                         </div>
-                                    </a>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Lima Tahun Lagi, China Bangun Pangkalan di Bulan
+                                    </h4>
                                 </div>
-                                <div class="latestItem">
-                                    <a href="details-tekno.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/18/1648335/hil-tokopedia-2.jpg?w=213&h=120" width="213" height="120"
-                                                alt="Penjualan Produk Fesyen Hingga Hampers di Tokopedia Melejit Jelang Lebaran" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artContentWrap">
-                                                <div class="artChannel">
-                                                    Gadget
-                                                </div>
-                                                <div class="artDate">
-                                                    22 November 2022
-                                                </div>
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Penjualan Produk Fesyen Hingga Hampers di Tokopedia Melejit Jelang Lebaran
-                                            </h4>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-tekno-premium.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/18/1648055/arf-starup-4.jpg?w=213&h=120" width="213" height="120"
-                                                alt="Tak Cuma Sayurbox, Ini Startup Agritech yang PHK hingga Tutup Layanan" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artContentWrap">
-                                                <div class="artChannel -premium">
-                                                    Premium<span class="icoInline icoPremium"></span>
-                                                </div>
-                                                <div class="artDate">
-                                                    22 November 2022
-                                                </div>
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Tak Cuma Sayurbox, Ini Startup Agritech yang PHK hingga Tutup Layanan
-                                            </h4>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-tekno.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/17/1647590/oppo-reuters-edgar-su-msl.jpg?w=213&h=120" width="213" height="120"
-                                                alt="Daftar HP OPPO dan Vivo Terbaru 2023 Harga Rp2 Jutaan" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artContentWrap">
-                                                <div class="artChannel">
-                                                    Gadget
-                                                </div>
-                                                <div class="artDate">
-                                                    22 November 2022
-                                                </div>
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Daftar HP OPPO dan Vivo Terbaru 2023 Harga Rp2 Jutaan
-                                            </h4>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-                        <!-- s: leaderboard billboard -->
-                        <div class="mt50">
-                            <div class="billboard billboardLeaderboard">
-                            </div>                        </div>
-                        <!-- e: leaderboard billboard -->
-
-                        <div class="latest mt50">
-                            <div class="latestWrap">
-                                <div class="latestItem">
-                                    <a href="details-tekno.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/18/1648335/hil-tokopedia-2.jpg?w=213&h=120" width="213" height="120"
-                                                alt="Penjualan Produk Fesyen Hingga Hampers di Tokopedia Melejit Jelang Lebaran" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artContentWrap">
-                                                <div class="artChannel">
-                                                    Gadget
-                                                </div>
-                                                <div class="artDate">
-                                                    22 November 2022
-                                                </div>
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Penjualan Produk Fesyen Hingga Hampers di Tokopedia Melejit Jelang Lebaran
-                                            </h4>
-                                        </div>
-                                    </a>
+                        <div class="artItem">
+                            <a href="details-tekno.html" class="artLink art--col">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/14/1646987/ucapan-lebaran-10.jpg?w=157&h=103"
+                                        width="157" height="103" alt="Ini Cara Menentukan Hari Lebaran Idulfitri dengan Sains dan Agama" loading="lazy">
                                 </div>
-                                <div class="latestItem">
-                                    <a href="details-tekno-premium.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/18/1648055/arf-starup-4.jpg?w=213&h=120" width="213" height="120"
-                                                alt="Tak Cuma Sayurbox, Ini Startup Agritech yang PHK hingga Tutup Layanan" loading="lazy">
+                                <div class="artContent">
+                                    <div class="artContentWrap">
+                                        <div class="artChannel">
+                                            Gadget
                                         </div>
-                                        <div class="artContent">
-                                            <div class="artContentWrap">
-                                                <div class="artChannel -premium">
-                                                    Premium<span class="icoInline icoPremium"></span>
-                                                </div>
-                                                <div class="artDate">
-                                                    22 November 2022
-                                                </div>
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Tak Cuma Sayurbox, Ini Startup Agritech yang PHK hingga Tutup Layanan
-                                            </h4>
+                                        <div class="artDate">
+                                            22 November 2022
                                         </div>
-                                    </a>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Ini Cara Menentukan Hari Lebaran Idulfitri dengan Sains dan Agama
+                                    </h4>
                                 </div>
-                                <div class="latestItem">
-                                    <a href="details-tekno.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/17/1647590/oppo-reuters-edgar-su-msl.jpg?w=213&h=120" width="213" height="120"
-                                                alt="Daftar HP OPPO dan Vivo Terbaru 2023 Harga Rp2 Jutaan" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artContentWrap">
-                                                <div class="artChannel">
-                                                    Gadget
-                                                </div>
-                                                <div class="artDate">
-                                                    22 November 2022
-                                                </div>
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Daftar HP OPPO dan Vivo Terbaru 2023 Harga Rp2 Jutaan
-                                            </h4>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-tekno.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/17/1647792/cara_transfer_kuota_telkomsel_twitter_telkomsel_1669055413.jpg?w=213&h=120" width="213" height="120"
-                                                alt="Jelajah Lebaran 2023: Telkomsel Prediksi Lalu Lintas Data Naik Signifikan" loading="lazy">
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artContentWrap">
-                                                <div class="artChannel">
-                                                    Gadget
-                                                </div>
-                                                <div class="artDate">
-                                                    22 November 2022
-                                                </div>
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                Jelajah Lebaran 2023: Telkomsel Prediksi Lalu Lintas Data Naik Signifikan
-                                            </h4>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latestItem">
-                                    <a href="details-tekno-live.html" class="artLink art--row">
-                                        <div class="latestImg artImg">
-                                            <img src="https://images.bisnis.com/thumb/posts/2023/04/17/1647642/starship_1675679683.jpg?w=213&h=120" width="213" height="120"
-                                                alt="SpaceX Bakal Luncurkan Starship, Pesawat Luar Angkasa Terbaru untuk Capai Mars" loading="lazy">
-                                            <div class="artLive"><span>Live</span></div>
-                                        </div>
-                                        <div class="artContent">
-                                            <div class="artContentWrap">
-                                                <div class="artChannel">
-                                                    Gadget
-                                                </div>
-                                                <div class="artDate">
-                                                    22 November 2022
-                                                </div>
-                                            </div>
-                                            <h4 class="latestTitle artTitle">
-                                                SpaceX Bakal Luncurkan Starship, Pesawat Luar Angkasa Terbaru untuk Capai Mars
-                                            </h4>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="center-flex">
-                            <a href="#" class="buttonPrimary mt50">Index</a>
-                        </div>
-
                     </div>
-                    <sidebar class="sidebar col-3 col-right">
-                        <!-- s: rectangle billboard -->
-                        <div class="billboard billboardRectangle">
-                        </div>                        <!-- e: rectangle billboard -->
-
-                        <!-- s: terpopuler -->
-                        <h3 class="titleCaption mt50">Terpopuler</h3>
-                        <div class="most">
-                            <div class="mostItem">
-                                <a href="details-tekno.html" class="mostLink artLink">
-                                    <div class="artDate">
-                                        22 November 2022
-                                    </div>
-                                    <div class="mostNum">1</div>
-                                    <h4 class="artTitle">
-                                        5 Aplikasi Penting untuk Mudik Lebaran 2023, Buruan Download!
-                                    </h4>
-                                </a>
-                            </div>
-                            <div class="mostItem">
-                                <a href="details-tekno.html" class="mostLink artLink">
-                                    <div class="artDate">
-                                        22 November 2022
-                                    </div>
-                                    <div class="mostNum">2</div>
-                                    <h4 class="artTitle">
-                                        Muncul Menjelang Lebaran, Ini Jadwal dan Lokasi Nonton Gerhana Matahari Hibrida
-                                    </h4>
-                                </a>
-                            </div>
-                            <div class="mostItem">
-                                <a href="details-tekno.html" class="mostLink artLink">
-                                    <div class="artDate">
-                                        22 November 2022
-                                    </div>
-                                    <div class="mostNum">3</div>
-                                    <h4 class="artTitle">
-                                        Elon Musk Luncurkan TruthGPT, Chatbot AI Pesaing ChatGPT
-                                    </h4>
-                                </a>
-                            </div>
-                            <div class="mostItem">
-                                <a href="details-tekno.html" class="mostLink artLink">
-                                    <div class="artDate">
-                                        22 November 2022
-                                    </div>
-                                    <div class="mostNum">4</div>
-                                    <h4 class="artTitle">
-                                        Mark Zuckerberg Mau PHK Massal 4.000 Karyawan Meta Hari Ini
-                                    </h4>
-                                </a>
-                            </div>
-                            <div class="mostItem">
-                                <a href="details-tekno.html" class="mostLink artLink">
-                                    <div class="artDate">
-                                        22 November 2022
-                                    </div>
-                                    <div class="mostNum">5</div>
-                                    <h4 class="artTitle">
-                                        Rekomendasi HP Harga di Bawah Rp3 Jutaan
-                                    </h4>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- e: terpopuler -->
-
-                        <!-- s: topic -->
-                        <h3 class="titleCaption mt50">Topik-Topik Pilihan</h3>
-                        <div class="topic">
-                            <ul class="topicList">
-                                <li class="topicItem">
-                                    <a href="#" class="topicLink">
-                                        <h4 class="topicTitle">Ramadan</h4>
-                                    </a>
-                                </li>
-                                <li class="topicItem">
-                                    <a href="#" class="topicLink">
-                                        <h4 class="topicTitle">UU Cipta Kerja</h4>
-                                    </a>
-                                </li>
-                                <li class="topicItem">
-                                    <a href="#" class="topicLink">
-                                        <h4 class="topicTitle">Silicon Valley Bank (SVB)</h4>
-                                    </a>
-                                </li>
-                                <li class="topicItem">
-                                    <a href="#" class="topicLink">
-                                        <h4 class="topicTitle">Harta Kekayaan Pejabat</h4>
-                                    </a>
-                                </li>
-                                <li class="topicItem">
-                                    <a href="#" class="topicLink">
-                                        <h4 class="topicTitle">Merger Bank Nobu dan MNC Bank</h4>
-                                    </a>
-                                </li>
-                                <li class="topicItem">
-                                    <a href="#" class="topicLink">
-                                        <h4 class="topicTitle">KAP Crowe Dicabut</h4>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- e: topic -->
-
-                        <!-- s: rectangle billboard -->
-                        <div class="mt50">
-                            <div class="billboard billboardRectangle">
-                            </div>                        </div>
-                        <!-- e: rectangle billboard -->
-
-                        <h3 class="titleCaption mt50">Subscribe Newsletter Bisnis Indonesia</h3>
-                        <div class="newsletter -sidebar text-center">
-                            <form action="#" name="" class="newsletterForm">
-                                <div class="newsletterFormWrap">
-                                    <input type="email" class="formInput" name="email" placeholder="Email Anda"
-                                        aria-label="Input your email address">
-                                    <button type="submit" class="button newsletterCta">Subscribe</button>
-                                </div>
-                                <div class="formResponse mt16" style="display: none;">
-                                    <div class="-error">
-                                        error
-                                    </div>
-                                    <div class="-success">
-                                        success
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- s: bisnistv -->
-                        <div class="kanalBisnistv mt50">
-                            <h3 class="titleCaption">
-                                <img src="./asset/images/logo/bisnistv-logo.png" alt="Bisnistv logo" loading="lazy"
-                                    width="119" height="31">
-                            </h3>
-                            <div class="art">
-                                <div class="artWrap -col">
-                                    <div class="artItem">
-                                        <a href="#" class="artLink art--col">
-                                            <div class="artImg">
-                                                <img src="https://images.bisnis.com/thumb/posts/2023/04/13/1646727/n3KvqjoOrh4.jpg?w=331&h=186" width="331" height="186"
-                                                    alt="Usai Cabut dari GOTO, Softbank Bakal Lepas Saham Alibaba " loading="lazy">
-                                                <div class="artDuration">
-                                                    <span class="icoInline icoPlay"></span>
-                                                </div>
-                                            </div>
-                                            <div class="artContent">
-                                                <div class="artContentWrap">
-                                                </div>
-                                                <h4 class="artTitle">
-                                                    Usai Cabut dari GOTO, Softbank Bakal Lepas Saham Alibaba 
-                                                </h4>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- e: bisnistv -->
-                    </sidebar>
                 </div>
+                <!-- e: latest -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    <div class="billboard billboardRectangle">
+                    </div>                </div>
+                <!-- e: rectangle billboard -->
+
+                <div class="art mt30">
+                    <div
+                        class="artWrap -row">
+                        <div class="artItem">
+                            <a href="details-tekno.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/18/1648335/hil-tokopedia-2.jpg?w=124&h=70"
+                                        width="124" height="70" alt="Penjualan Produk Fesyen Hingga Hampers di Tokopedia Melejit Jelang Lebaran" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artContentWrap">
+                                        <div class="artChannel">
+                                            Startup
+                                        </div>
+                                        <div class="artDate">
+                                            22 November 2022
+                                        </div>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Penjualan Produk Fesyen Hingga Hampers di Tokopedia Melejit Jelang Lebaran
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-tekno-premium.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/18/1648055/arf-starup-4.jpg?w=124&h=70"
+                                        width="124" height="70" alt="Tak Cuma Sayurbox, Ini Startup Agritech yang PHK hingga Tutup Layanan" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artContentWrap">
+                                        <div class="artChannel -premium">
+                                            Premium<span class="icoInline icoPremium"></span>
+                                        </div>
+                                        <div class="artDate">
+                                            22 November 2022
+                                        </div>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Tak Cuma Sayurbox, Ini Startup Agritech yang PHK hingga Tutup Layanan
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-tekno.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/17/1647590/oppo-reuters-edgar-su-msl.jpg?w=124&h=70"
+                                        width="124" height="70" alt="Daftar HP OPPO dan Vivo Terbaru 2023 Harga Rp2 Jutaan" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artContentWrap">
+                                        <div class="artChannel">
+                                            Gadget
+                                        </div>
+                                        <div class="artDate">
+                                            22 November 2022
+                                        </div>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Daftar HP OPPO dan Vivo Terbaru 2023 Harga Rp2 Jutaan
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-tekno.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/17/1647792/cara_transfer_kuota_telkomsel_twitter_telkomsel_1669055413.jpg?w=124&h=70"
+                                        width="124" height="70" alt="Jelajah Lebaran 2023: Telkomsel Prediksi Lalu Lintas Data Naik Signifikan" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artContentWrap">
+                                        <div class="artChannel">
+                                            Telekomunikasi
+                                        </div>
+                                        <div class="artDate">
+                                            22 November 2022
+                                        </div>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Jelajah Lebaran 2023: Telkomsel Prediksi Lalu Lintas Data Naik Signifikan
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-tekno-live.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/17/1647642/starship_1675679683.jpg?w=124&h=70"
+                                        width="124" height="70" alt="SpaceX Bakal Luncurkan Starship, Pesawat Luar Angkasa Terbaru untuk Capai Mars" loading="lazy">
+                                    <div class="artLive"><span>Live</span></div>
+                                </div>
+                                <div class="artContent">
+                                    <div class="artContentWrap">
+                                        <div class="artChannel">
+                                            Sains
+                                        </div>
+                                        <div class="artDate">
+                                            22 November 2022
+                                        </div>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        SpaceX Bakal Luncurkan Starship, Pesawat Luar Angkasa Terbaru untuk Capai Mars
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    <div class="billboard billboardRectangle">
+                    </div>                </div>
+                <!-- e: rectangle billboard -->
+
+                <div class="art mt30">
+                    <div
+                        class="artWrap -row">
+                        <div class="artItem">
+                            <a href="details-tekno-live.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/03/30/1642192/cyber_security.jpg?w=124&h=70"
+                                        width="124" height="70" alt="Ini Dia 5 Negara dengan Keamanan Siber Tercanggih di Dunia" loading="lazy">
+                                    <div class="artLive"><span>Live</span></div>
+                                </div>
+                                <div class="artContent">
+                                    <div class="artContentWrap">
+                                        <div class="artChannel">
+                                            Sains
+                                        </div>
+                                        <div class="artDate">
+                                            22 November 2022
+                                        </div>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Ini Dia 5 Negara dengan Keamanan Siber Tercanggih di Dunia
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-tekno.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/14/1646993/bulan.jpg?w=124&h=70"
+                                        width="124" height="70" alt="Lima Tahun Lagi, China Bangun Pangkalan di Bulan" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artContentWrap">
+                                        <div class="artChannel">
+                                            Sains
+                                        </div>
+                                        <div class="artDate">
+                                            22 November 2022
+                                        </div>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Lima Tahun Lagi, China Bangun Pangkalan di Bulan
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-tekno.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/14/1646987/ucapan-lebaran-10.jpg?w=124&h=70"
+                                        width="124" height="70" alt="Ini Cara Menentukan Hari Lebaran Idulfitri dengan Sains dan Agama" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artContentWrap">
+                                        <div class="artChannel">
+                                            Sains
+                                        </div>
+                                        <div class="artDate">
+                                            22 November 2022
+                                        </div>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Ini Cara Menentukan Hari Lebaran Idulfitri dengan Sains dan Agama
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-tekno.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/18/1648335/hil-tokopedia-2.jpg?w=124&h=70"
+                                        width="124" height="70" alt="Penjualan Produk Fesyen Hingga Hampers di Tokopedia Melejit Jelang Lebaran" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artContentWrap">
+                                        <div class="artChannel">
+                                            Startup
+                                        </div>
+                                        <div class="artDate">
+                                            22 November 2022
+                                        </div>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Penjualan Produk Fesyen Hingga Hampers di Tokopedia Melejit Jelang Lebaran
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="artItem">
+                            <a href="details-tekno-premium.html" class="artLink art--row">
+                                <div class="artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2023/04/18/1648055/arf-starup-4.jpg?w=124&h=70"
+                                        width="124" height="70" alt="Tak Cuma Sayurbox, Ini Startup Agritech yang PHK hingga Tutup Layanan" loading="lazy">
+                                </div>
+                                <div class="artContent">
+                                    <div class="artContentWrap">
+                                        <div class="artChannel -premium">
+                                            Premium<span class="icoInline icoPremium"></span>
+                                        </div>
+                                        <div class="artDate">
+                                            22 November 2022
+                                        </div>
+                                    </div>
+                                    <h4 class="artTitle">
+                                        Tak Cuma Sayurbox, Ini Startup Agritech yang PHK hingga Tutup Layanan
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary mt30">Index</a>
+                </div>
+                <!-- s: terpopuler -->
+                <h3 class="titleCaption mt30">Terpopuler</h3>
+                <div class="most">
+                    <div class="mostItem">
+                        <a href="details-tekno.html" class="mostLink artLink">
+                            <div class="artDate">
+                                22 November 2022
+                            </div>
+                            <div class="mostNum">1</div>
+                            <h4 class="artTitle">
+                                5 Aplikasi Penting untuk Mudik Lebaran 2023, Buruan Download!
+                            </h4>
+                        </a>
+                    </div>
+                    <div class="mostItem">
+                        <a href="details-tekno.html" class="mostLink artLink">
+                            <div class="artDate">
+                                22 November 2022
+                            </div>
+                            <div class="mostNum">2</div>
+                            <h4 class="artTitle">
+                                Muncul Menjelang Lebaran, Ini Jadwal dan Lokasi Nonton Gerhana Matahari Hibrida
+                            </h4>
+                        </a>
+                    </div>
+                    <div class="mostItem">
+                        <a href="details-tekno.html" class="mostLink artLink">
+                            <div class="artDate">
+                                22 November 2022
+                            </div>
+                            <div class="mostNum">3</div>
+                            <h4 class="artTitle">
+                                Elon Musk Luncurkan TruthGPT, Chatbot AI Pesaing ChatGPT
+                            </h4>
+                        </a>
+                    </div>
+                    <div class="mostItem">
+                        <a href="details-tekno.html" class="mostLink artLink">
+                            <div class="artDate">
+                                22 November 2022
+                            </div>
+                            <div class="mostNum">4</div>
+                            <h4 class="artTitle">
+                                Mark Zuckerberg Mau PHK Massal 4.000 Karyawan Meta Hari Ini
+                            </h4>
+                        </a>
+                    </div>
+                    <div class="mostItem">
+                        <a href="details-tekno.html" class="mostLink artLink">
+                            <div class="artDate">
+                                22 November 2022
+                            </div>
+                            <div class="mostNum">5</div>
+                            <h4 class="artTitle">
+                                Rekomendasi HP Harga di Bawah Rp3 Jutaan
+                            </h4>
+                        </a>
+                    </div>
+                </div>
+                <!-- e: terpopuler -->
+
+                <!-- s: topic -->
+                <h3 class="titleCaption mt30">Topik-Topik Pilihan</h3>
+                <div class="topic">
+                    <ul class="topicList">
+                        <li class="topicItem">
+                            <a href="#" class="topicLink">
+                                <h4 class="topicTitle">Ramadan</h4>
+                            </a>
+                        </li>
+                        <li class="topicItem">
+                            <a href="#" class="topicLink">
+                                <h4 class="topicTitle">UU Cipta Kerja</h4>
+                            </a>
+                        </li>
+                        <li class="topicItem">
+                            <a href="#" class="topicLink">
+                                <h4 class="topicTitle">Silicon Valley Bank (SVB)</h4>
+                            </a>
+                        </li>
+                        <li class="topicItem">
+                            <a href="#" class="topicLink">
+                                <h4 class="topicTitle">Harta Kekayaan Pejabat</h4>
+                            </a>
+                        </li>
+                        <li class="topicItem">
+                            <a href="#" class="topicLink">
+                                <h4 class="topicTitle">Merger Bank Nobu dan MNC Bank</h4>
+                            </a>
+                        </li>
+                        <li class="topicItem">
+                            <a href="#" class="topicLink">
+                                <h4 class="topicTitle">KAP Crowe Dicabut</h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- e: topic -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    <div class="billboard billboardRectangle">
+                    </div>                </div>
+                <!-- e: rectangle billboard -->
+
+                <!-- s: bplus -->
+                <h3 class="titleCaption mt30">
+                    <div class="bplusCaption">
+                        <img src="./asset/images/logo/logo-bisnis-plus.png" alt="Bisnis Plus logo" loading="lazy"
+                            width="162" height="23">
+                    </div>
+                </h3>
+                <div class="bplus">
+                    <div class="bplusItem">
+                        <a href="details-lifestyle.html" class="bplusLink artLink">
+                            <img src="https://images.bisnis.com/plus/50/bank_digital_thumbnails.jpg" alt="Adu Gengsi &#x27;7 Samurai&#x27; Bank Digital" class="bplusImg" loading="lazy" width="300" height="170">
+                            <div class="bplusContent">
+                                <h4 class="bplusTitle artTitle">
+                                    Adu Gengsi &#x27;7 Samurai&#x27; Bank Digital
+                                </h4>
+                                <div class="artDate">
+                                    9 menit yang lalu
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bplusItem">
+                        <a href="details-lifestyle.html" class="bplusLink artLink">
+                            <div class="bplusContent">
+                                <h4 class="bplusTitle artTitle">
+                                    Dari Luhut hingga Hartono, Berebut Kue Subsidi Kendaraan Listrik
+                                </h4>
+                                <div class="artDate">
+                                    9 menit yang lalu
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bplusItem">
+                        <a href="details-lifestyle.html" class="bplusLink artLink">
+                            <div class="bplusContent">
+                                <h4 class="bplusTitle artTitle">
+                                    Andil Trump dan Becker di Balik Robohnya 3 Bank Raksasa AS
+                                </h4>
+                                <div class="artDate">
+                                    9 menit yang lalu
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bplusItem">
+                        <a href="details-lifestyle.html" class="bplusLink artLink">
+                            <div class="bplusContent">
+                                <h4 class="bplusTitle artTitle">
+                                    Grab vs GoTo, Untung Apa Buntung?
+                                </h4>
+                                <div class="artDate">
+                                    9 menit yang lalu
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="center-flex">
+                        <a href="#" class="bplusOthers">Artikel Lainnya</a>
+                    </div>
+                </div>
+                <!-- e: bplus -->
+
+                <h3 class="titleCaption mt30">Subscribe Newsletter Bisnis Indonesia</h3>
+                <div class="newsletter -sidebar text-center">
+                    <form action="#" name="" class="newsletterForm">
+                        <div class="newsletterFormWrap">
+                            <input type="email" class="formInput" name="email" placeholder="Email Anda"
+                                aria-label="Input your email address">
+                            <button type="submit" class="button newsletterCta">Subscribe</button>
+                        </div>
+                        <div class="formResponse mt16" style="display: none;">
+                            <div class="-error">
+                                error
+                            </div>
+                            <div class="-success">
+                                success
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- s: bisnistv -->
+                <div class="kanalBisnistv mt30">
+                    <h3 class="titleCaption">
+                        <img src="./asset/images/logo/bisnistv-logo.png" alt="Bisnistv logo" loading="lazy" width="119"
+                            height="31">
+                    </h3>
+                    <div class="art">
+                        <div
+                            class="artWrap -col -center">
+                            <div class="artItem">
+                                <a href="#" class="artLink art--col">
+                                    <div class="artImg">
+                                        <img src="https://images.bisnis.com/thumb/posts/2023/04/13/1646727/n3KvqjoOrh4.jpg?w=335&h=170"
+                                            width="335" height="170" alt="Usai Cabut dari GOTO, Softbank Bakal Lepas Saham Alibaba " loading="lazy">
+                                        <div class="artDuration">
+                                            <span class="icoInline icoPlay"></span>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="artContent">
+                                        <div class="artContentWrap">
+                                            <div class="artChannel">
+                                                Video
+                                            </div>
+                                            <div class="artDate">
+                                                22 November 2022
+                                            </div>
+                                        </div>
+                                        <h4 class="artTitle">
+                                            Usai Cabut dari GOTO, Softbank Bakal Lepas Saham Alibaba 
+                                        </h4>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- e: bisnistv -->
             </div>
         </main>
     </div>
@@ -776,102 +876,98 @@
 
     <footer class="footer">
         <div class="footerWrap container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <a href="https://www.bisnis.com/">
-                        <img src="https://static.bisnis-cdn.com/bisnis/assets/images/2020/logo-footer.svg" class=""
-                            alt="Bisnis.com" title="Bisnis.com" width="158" height="36" />
-                    </a>
-                    <div class="footerSocmed">
-                        <div class="footerAppWrap">
-                            <a href="https://play.google.com/store/apps/details?id=bisnis.com.official" class="footerApp"
-                                title="Android app on Google Play">
-                                <img src="./asset/images/logo/google-play.svg" class="" alt="" width="110" height="33"
-                                    loading="lazy">
-                            </a>
-                            <a href="https://itunes.apple.com/id/app/bisnis-com/id945608365?mt=8" class="footerApp"
-                                title="Download on the App Store">
-                                <img src="./asset/images/logo/app-store.svg" class="" alt="" width="110" height="33"
-                                    loading="lazy">
-                            </a>
-                        </div>
-                        <div class="footerSocmedWrap">
-                            <div class="footerSocmedCaption text-center">Connect With Us</div>
-                            <a href="#" class="footerSocmedLink" title="facebook">
-                                <span class="icoInline icoSocmed footerSocmed--fb"></span>
-                            </a>
-                            <a href="#" class="footerSocmedLink" title="twitter">
-                                <span class="icoInline icoSocmed footerSocmed--tw"></span>
-                            </a>
-                            <a href="#" class="footerSocmedLink" title="instagram">
-                                <span class="icoInline icoSocmed footerSocmed--ig"></span>
-                            </a>
-                            <a href="#" class="footerSocmedLink" title="youtube">
-                                <span class="icoInline icoSocmed footerSocmed--yt"></span>
-                            </a>
-                        </div>
+            <div class="text-center">
+                <a href="https://m.bisnis.com/">
+                    <img src="https://static.bisnis-cdn.com/bisnis/assets/images/2020/logo-footer.svg" class=""
+                        alt="Bisnis.com" title="Bisnis.com" width="158" height="36" loading="lazy" />
+                </a>
+                <div class="footerSocmed text-center">
+                    <div class="footerAppWrap">
+                        <a href="https://play.google.com/store/apps/details?id=bisnis.com.official" class="footerApp"
+                            title="Android app on Google Play">
+                            <img src="./asset/images/logo/google-play.svg" class="" alt="" width="158" height="48"
+                                loading="lazy">
+                        </a>
+                        <a href="https://itunes.apple.com/id/app/bisnis-com/id945608365?mt=8" class="footerApp"
+                            title="Download on the App Store">
+                            <img src="./asset/images/logo/app-store.svg" class="" alt="" width="158" height="48"
+                                loading="lazy">
+                        </a>
                     </div>
-                    <div class="footerCopyright">Copyright © 2022 - Bisnis Indonesia.</div>
-                </div>
-                <div class="col-sm-7">
-                    <div class="footerContent">
-                        <div class="footerCol">
-                            <div class="footerLink footerLink--big">BIG Media</div>
-                            <a href="#" class="footerLink footerLink--small">Bisnis.com</a>
-                            <a href="#" class="footerLink footerLink--small">BisnisIndonesia.id</a>
-                            <a href="#" class="footerLink footerLink--small">BisnisMuda.id</a>
-                            <a href="#" class="footerLink footerLink--small">HypeAbis.id</a>
-                            <a href="#" class="footerLink footerLink--small">Context.id</a>
-                            <a href="#" class="footerLink footerLink--small">DataIndonesia.id</a>
-                            <a href="#" class="footerLink footerLink--small">Solopos.com</a>
-                            <a href="#" class="footerLink footerLink--small">HarianJogja.com</a>
-                        </div>
-                        <div class="footerCol">
-                            <div class="footerLink footerLink--big">BIG Services</div>
-                            <a href="#" class="footerLink footerLink--small">Epaper Bisnis Indonesia</a>
-                            <a href="#" class="footerLink footerLink--small">Konten Interaktif</a>
-                            <a href="#" class="footerLink footerLink--small">Konten Premium</a>
-                            <a href="#" class="footerLink footerLink--small">Bisnis Plus</a>
-                            <a href="#" class="footerLink footerLink--small">Bisnis TV</a>
-                            <a href="#" class="footerLink footerLink--small">BroadCast</a>
-                        </div>
-                        <div class="footerCol">
-                            <div class="footerLink footerLink--big">Regional</div>
-                            <div class="footerContent">
-                                <div class="footerCol footerCol--small">
-                                    <a href="https://jakarta.bisnis.com/" class="footerLink footerLink--small">Jakarta</a>
-                                    <a href="https://bandung.bisnis.com/" class="footerLink footerLink--small">Bandung</a>
-                                    <a href="https://banten.bisnis.com/" class="footerLink footerLink--small">Banten</a>
-                                    <a href="https://semarang.bisnis.com/" class="footerLink footerLink--small">Semarang</a>
-                                    <a href="https://bali.bisnis.com/" class="footerLink footerLink--small">Bali</a>
-                                </div>
-                                <div class="footerCol footerCol--small">
-                                    <a href="https://sumatra.bisnis.com/" class="footerLink footerLink--small">Sumatra</a>
-                                    <a href="https://surabaya.bisnis.com/" class="footerLink footerLink--small">Surabaya</a>
-                                    <a href="https://kalimantan.bisnis.com/"
-                                        class="footerLink footerLink--small">Kalimantan</a>
-                                    <a href="https://sulawesi.bisnis.com/" class="footerLink footerLink--small">Sulawesi</a>
-                                    <a href="https://papua.bisnis.com/" class="footerLink footerLink--small">Papua</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footerCol">
-                            <div class="footerLink footerLink--big">Informasi</div>
-                            <a href="https://www.bisnis.com/page/about-us" class="footerLink footerLink--small">Tentang
-                                Kami</a>
-                            <a href="https://www.bisnis.com/page/advertise-with-us"
-                                class="footerLink footerLink--small">Info Iklan</a>
-                            <a href="https://www.bisnis.com/page/privacy-policy"
-                                class="footerLink footerLink--small">Kebijakan Privasi</a>
-                            <a href="https://www.bisnis.com/page/code-of-conduct" class="footerLink footerLink--small">Kode
-                                Etik</a>
-                            <a href="https://www.bisnis.com/page/contact-us" class="footerLink footerLink--small">Kontak
-                                Kami</a>
-                            <a href="https://www.bisnis.com/page/career" class="footerLink footerLink--small">Karir</a>
-                        </div>
+                    <div class="footerSocmedWrap">
+                        <div class="footerSocmedCaption text-center">Connect With Us</div>
+                        <a href="#" class="footerSocmedLink" title="facebook">
+                            <span class="icoInline icoSocmed footerSocmed--fb"></span>
+                        </a>
+                        <a href="#" class="footerSocmedLink" title="twitter">
+                            <span class="icoInline icoSocmed footerSocmed--tw"></span>
+                        </a>
+                        <a href="#" class="footerSocmedLink" title="instagram">
+                            <span class="icoInline icoSocmed footerSocmed--ig"></span>
+                        </a>
+                        <a href="#" class="footerSocmedLink" title="youtube">
+                            <span class="icoInline icoSocmed footerSocmed--yt"></span>
+                        </a>
                     </div>
                 </div>
             </div>
+            <div class="footerContent">
+                <div class="footerCol">
+                    <div class="footerLink footerLink--big">BIG Media</div>
+                    <a href="#" class="footerLink footerLink--small">Bisnis.com</a>
+                    <a href="#" class="footerLink footerLink--small">BisnisIndonesia.id</a>
+                    <a href="#" class="footerLink footerLink--small">BisnisMuda.id</a>
+                    <a href="#" class="footerLink footerLink--small">HypeAbis.id</a>
+                    <a href="#" class="footerLink footerLink--small">Context.id</a>
+                    <a href="#" class="footerLink footerLink--small">DataIndonesia.id</a>
+                    <a href="#" class="footerLink footerLink--small">Solopos.com</a>
+                    <a href="#" class="footerLink footerLink--small">HarianJogja.com</a>
+                </div>
+                <div class="footerCol">
+                    <div class="footerLink footerLink--big">BIG Services</div>
+                    <a href="#" class="footerLink footerLink--small">Epaper Bisnis Indonesia</a>
+                    <a href="#" class="footerLink footerLink--small">Konten Interaktif</a>
+                    <a href="#" class="footerLink footerLink--small">Konten Premium</a>
+                    <a href="#" class="footerLink footerLink--small">Bisnis Plus</a>
+                    <a href="#" class="footerLink footerLink--small">Bisnis TV</a>
+                    <a href="#" class="footerLink footerLink--small">BroadCast</a>
+                </div>
+                <div class="footerContent">
+                    <div class="footerCol">
+                        <div class="footerLink footerLink--big">Regional</div>
+                        <a href="https://m.bisnis.com/jakarta" class="footerLink footerLink--small">Jakarta</a>
+                        <a href="https://m.bisnis.com/bandung" class="footerLink footerLink--small">Bandung</a>
+                        <a href="https://m.bisnis.com/banten" class="footerLink footerLink--small">Banten</a>
+                        <a href="https://m.bisnis.com/semarang" class="footerLink footerLink--small">Semarang</a>
+                        <a href="https://m.bisnis.com/bali" class="footerLink footerLink--small">Bali</a>
+                    </div>
+                    <div class="footerCol footerCol--small">
+                        <a href="https://m.bisnis.com/sumatra" class="footerLink footerLink--small">Sumatra</a>
+                        <a href="https://m.bisnis.com/surabaya" class="footerLink footerLink--small">Surabaya</a>
+                        <a href="https://m.bisnis.com/kalimantan" class="footerLink footerLink--small">Kalimantan</a>
+                        <a href="https://m.bisnis.com/sulawesi" class="footerLink footerLink--small">Sulawesi</a>
+                        <a href="https://m.bisnis.com/papua" class="footerLink footerLink--small">Papua</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footerContent">
+                <div class="footerCol">
+                    <div class="footerLink footerLink--big">Informasi</div>
+                    <a href="https://m.bisnis.com/page/about-us" class="footerLink footerLink--small">Tentang
+                        Kami</a>
+                    <a href="https://m.bisnis.com/page/advertise-with-us" class="footerLink footerLink--small">Info
+                        Iklan</a>
+                    <a href="https://m.bisnis.com/page/privacy-policy" class="footerLink footerLink--small">Kebijakan
+                        Privasi</a>
+                    <a href="https://m.bisnis.com/page/code-of-conduct" class="footerLink footerLink--small">Kode
+                        Etik</a>
+                    <a href="https://m.bisnis.com/page/contact-us" class="footerLink footerLink--small">Kontak
+                        Kami</a>
+                    <a href="https://m.bisnis.com/page/career" class="footerLink footerLink--small">Karir</a>
+                </div>
+            </div>
+        </div>
+        <div class="footerCopyright text-center">Copyright © 2022 - Bisnis Indonesia.</div>
         </div>
     </footer>
     
@@ -881,8 +977,6 @@
     </button>
     <script type="text/javascript" src="./asset/js/jquery-3.5.0.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/script-main.min.js"></script>
-    
-    
     <script type="text/javascript" src="./asset/js/script-tekno.min.js"></script>
     
 

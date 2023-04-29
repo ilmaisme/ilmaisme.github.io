@@ -14,7 +14,7 @@
         {{>flashnews channel=flashnews}}
         <!-- e: flashnews -->
 
-        {{>header/header kanal="Tekno" active="Home" width=127 height=40}}
+        {{>header/header kanal="Tekno" width=100 height=32}}
 
         <main role="main" class="main">
             <div class="nav">
@@ -29,7 +29,7 @@
             <!-- e: menu panel -->
 
             <!-- s: headline only for 3 items-->
-            {{!>kanal/headline pos="bottom" dates=true size="66" others=true channel=kanal.Tekno.hL total=3
+            {{>tekno/headline pos="bottom" dates=true width="200" height="66" others=true channel=kanal.Tekno.hL total=3
             index_start=0
             index_end=3}}
 
@@ -51,7 +51,7 @@
 
                 <!-- s: latest -->
                 <h3 class="titleCaption mt30">Berita Terbaru</h3>
-                {{>tekno/article channel=kanal.Tekno.latest dates=true pos="top" three=true type="col" widthtop="330"
+                {{>tekno/article channel=kanal.Tekno.latest dates=true pos="top" col="three" type="col" widthtop="330"
                 heighttop="182"
                 width="157" height="103" total=8 index_start=0
                 index_end=3}}
@@ -77,7 +77,8 @@
                         <a href="#" class="titleOthers" aria-label="See other articles"><span
                                 class="icoInline icoArrow"></span></a>
                     </div>
-                    {{>tekno/article channel=kanal.Tekno.Gadget.latest type="col" width="195" height="108" total=3 index_start=0
+                    {{>tekno/article channel=kanal.Tekno.Film.latest type="col" width="195" height="108" total=3
+                    index_start=0
                     index_end=3}}
 
                 </div>
@@ -133,7 +134,8 @@
                         <img src="./asset/images/logo/bisnistv-logo.png" alt="Bisnistv logo" loading="lazy" width="119"
                             height="31">
                     </h3>
-                    {{>tekno/article center=true channel=kanal.Tekno.Video.latest video=true btv=true type="col" total=1
+                    {{>tekno/article channel=kanal.Tekno.Video.latest video=true btv=true center=true width="335"
+                    height="170" type="col" total=1
                     index_start=0 index_end=1}}
 
                 </div>
@@ -141,7 +143,7 @@
                 <!-- e: bisnistv -->
 
                 <!-- s: review -->
-                <div class="kanalVid">
+                <div class="kanalVid mt30">
                     <div class="container">
                         <div class="titleCaptionWrap">
                             <h3 class="titleCaption">
@@ -150,43 +152,15 @@
                             <a href="#" class="titleOthers" aria-label="See other articles"><span
                                     class="icoInline icoArrow"></span></a>
                         </div>
-                        {{!>tekno/article channel=kanal.Tekno.Review.latest video=true type="col" total=4 index_start=0
-                        index_end=3}}
+                        {{>tekno/article channel=kanal.Tekno.Review.latest video=true icon=true type="col" center=true
+                        width="335"
+                        height="185" total=4 index_start=0
+                        index_end=1}}
 
                     </div>
                 </div>
 
                 <!-- e: review -->
-
-                <div class="titleCaptionWrap">
-                    <h3 class="titleCaption">
-                        Startup
-                    </h3>
-                    <a href="#" class="titleOthers" aria-label="See other articles"><span
-                            class="icoInline icoArrow"></span></a>
-                </div>
-                {{>tekno/article channel=kanal.Tekno.Startup.latest type="col-top" total=4 index_start=0
-                index_end=4}}
-
-                <div class="titleCaptionWrap">
-                    <h3 class="titleCaption">
-                        Gadget
-                    </h3>
-                    <a href="#" class="titleOthers" aria-label="See other articles"><span
-                            class="icoInline icoArrow"></span></a>
-                </div>
-                {{>tekno/article channel=kanal.Tekno.Gadget.latest type="col-top" total=4 index_start=0
-                index_end=4}}
-
-                <!-- s: latest -->
-                {{>tekno/latest channel=kanal.Tekno.latest mt="30" type="row" total=8 index_start=0
-                index_end=5}}
-
-                <!-- e: latest -->
-
-                <div class="center-flex">
-                    <a href="#" class="buttonPrimary mt30">Index</a>
-                </div>
 
                 <!-- s: rectangle billboard -->
                 {{>ads/middle}}
@@ -194,7 +168,8 @@
 
                 <!-- s: rec -->
                 <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
-                {{>tekno/article channel=kanal.Tekno.latest sidebar=true type="col-top" total=8 index_start=0
+                {{>tekno/article-rec channel=kanal.Tekno.latest pos="top" type="row" thumb=false border=true widthtop="335"
+                heighttop="185" total=8 index_start=0
                 index_end=4}}
 
                 <!-- e: rec -->
@@ -212,20 +187,46 @@
                 <!-- e: foto -->
 
                 <!-- s: QR Bisnis Indonesia -->
-                <div class="mt30">
+                <div class="mt30 text-center">
                     <img src="./asset/images/QR-bisnis-indonesia.jpg" alt="Scan QR Code Bisnis Indonesia e-paper"
                         loading="lazy" width="301" height="412">
                 </div>
                 <!-- e: QR Bisnis Indonesia -->
+
+                <div class="titleCaptionWrap mt30">
+                    <h3 class="titleCaption">
+                        Startup
+                    </h3>
+                    <a href="#" class="titleOthers" aria-label="See other articles"><span
+                            class="icoInline icoArrow"></span></a>
+                </div>
+                {{>tekno/article channel=kanal.Tekno.Startup.latest pos="top" type="row" widthtop="340" heighttop="255"
+                width="124" height="70" total=4 index_start=0
+                index_end=5}}
+
+                <div class="titleCaptionWrap mt30">
+                    <h3 class="titleCaption">
+                        Gadget
+                    </h3>
+                    <a href="#" class="titleOthers" aria-label="See other articles"><span
+                            class="icoInline icoArrow"></span></a>
+                </div>
+                {{>tekno/article channel=kanal.Tekno.Gadget.latest pos="top" type="row" widthtop="340" heighttop="255"
+                width="124" height="70" total=4 index_start=0
+                index_end=5}}
+
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary mt30">Index</a>
+                </div>
             </div>
         </main>
     </div>
 
     <!-- s: bottom billboard -->
-    {{!>ads/bottom}}
+    {{>ads/bottom}}
     <!-- e: bottom billboard -->
 
-    {{!>footer/footer}}
+    {{>footer/footer}}
 
     {{>footer/script page="tekno" slick=true}}
 

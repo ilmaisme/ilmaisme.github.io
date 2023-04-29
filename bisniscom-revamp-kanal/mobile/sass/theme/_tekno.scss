@@ -5,7 +5,6 @@
 
         .button {
             &Primary {
-                min-width: 250px;
                 padding: 14px;
                 border-radius: 0;
                 border: 1px solid #0845DD;
@@ -96,18 +95,15 @@
         }
 
         .hL {
-            &Wrap {
-                height: 680px;
-            }
 
             &Big {
                 &Title {
-                    @include font-pack($font-body2, 36px, $font-weight-sbold, false, false);
+                    @include font-pack($font-body2, 18px, $font-weight-sbold, 1.5, false);
                 }
 
                 &Img {
                     img {
-                        height: 680px;
+                        height: 200px;
                     }
                 }
             }
@@ -118,14 +114,15 @@
 
             .titleOthers {
                 display: block;
-                margin-top: 18px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                font-size: 14px;
-                color: $cl-white;
+                margin-top: 5px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                font-size: 12px;
+                font-weight: $font-weight-normal;
+                color: #F4B334;
 
                 .icoArrow {
-                    @extend %filter-white;
+                    filter: invert(84%) sepia(20%) saturate(2684%) hue-rotate(334deg) brightness(102%) contrast(91%);
                 }
             }
         }
@@ -164,21 +161,17 @@
         .kanal {
             &Box {
                 border-radius: 0;
-
-                .art {
-                    &Wrap.-col {
-                        gap: 16px;
-                    }
-                }
             }
 
             &Vid {
                 background: #090E3C;
-                padding-bottom: 34px;
 
                 .artWrap.-col .artImg {
-                    height: 185px;
-                    padding-top: calc(3/4 * 100% - 111px);
+                    padding-top: calc(3/4 * 100% - 100px);
+
+                    @include max-responsive($mstablet) {
+                        padding-top: 136px;
+                    }
                 }
             }
 
@@ -208,7 +201,7 @@
                 @include font-pack($font-body2, false, $font-weight-sbold, 1.44, false);
 
                 &Med {
-                    font-size: 22px;
+                    font-size: 14px;
                 }
 
                 &Box {
@@ -232,6 +225,8 @@
 
             &Wrap {
                 &.-col {
+                    gap: 16px;
+
                     .artImg {
                         padding-top: calc(2/4 * 100% + 10px);
                     }
@@ -247,6 +242,31 @@
                         flex-basis: 124px;
                         height: 70px;
                     }
+
+                    &-top {
+
+                        .artItem:first-child {
+                            .artImg {
+                                padding-top: calc(2/4 * 100% + 24px);
+                            }
+
+                            .artDate {
+                                margin-top: 0;
+                            }
+                        }
+
+                        .artItem:not(:first-child) {
+                            .artImg {
+                                flex-basis: 124px;
+                                height: 70px;
+                            }
+                        }
+
+                        .artLive {
+                            top: 14px;
+                            left: 14px;
+                        }
+                    }
                 }
 
                 &.-three {
@@ -261,6 +281,35 @@
                 }
             }
 
+            .-photo {
+                position: relative;
+                margin-top: 14px;
+
+                .artPhotoCount {
+                    position: absolute;
+                    padding: 7px 12px;
+                    top: 0;
+                    left: 0;
+                    border-bottom-right-radius: 12px;
+                    @include font-pack($font-body2, 11px, $font-weight-med, 1, $cl-black);
+                    z-index: 1;
+
+                    .icoPhoto {
+                        margin-right: 3px;
+                        filter: invert(0%) sepia(10%) saturate(461%) hue-rotate(349deg) brightness(86%) contrast(80%);
+                    }
+                }
+
+                .artImg {
+                    position: relative;
+                    padding-top: calc(3/4 * 100%);
+
+                    img {
+                        @extend %template-img
+                    }
+                }
+            }
+
             &Img {
                 border-radius: 0;
             }
@@ -268,6 +317,15 @@
             &Link {
                 &:hover .artTitle {
                     color: var(--cl-tekno);
+                }
+
+                &.-border {
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid #DCDCDC;
+
+                    .artItem {
+                        margin-top: 14px;
+                    }
                 }
             }
 
@@ -311,7 +369,7 @@
 
             &Duration {
                 width: 65px;
-                height: 48px;
+                height: 49px;
                 background: #090e3c;
                 border-top-right-radius: 12px;
                 align-items: center;
@@ -442,7 +500,6 @@
         .newsletter {
             border: 1px solid #D8D8D8;
             border-radius: 0;
-            padding: 18px 20px;
 
             &Caption {
                 @include font-pack($font-body2, 18px, $font-weight-sbold, 1.44, false);
@@ -460,14 +517,7 @@
                 font-family: $font-body2
             }
 
-            &Form {
-                &Wrap {
-                    gap: 12px;
-                }
-            }
-
             .formInput {
-                flex: 1;
                 border: 0;
                 border-radius: 0;
                 padding: 14px;
@@ -477,54 +527,6 @@
             }
         }
 
-        .sidebar {
-            .artWrap.-col-top {
-                .artItem {
-                    margin-top: 20px;
-                }
-
-                .artItem:first-child .art--col-top,
-                .art--col-top {
-                    padding-bottom: 10px;
-                    border-bottom: 1px solid #DCDCDC;
-                }
-
-                .artTitle {
-                    font-size: 18px;
-                }
-            }
-
-            .-photo {
-                position: relative;
-                margin-top: 20px;
-
-                .artPhotoCount {
-                    position: absolute;
-                    padding: 7px 12px;
-                    top: 0;
-                    left: 0;
-                    border-bottom-right-radius: 12px;
-                    @include font-pack($font-body2, 11px, $font-weight-med, 1, $cl-black);
-                    z-index: 1;
-
-                    .icoPhoto {
-                        margin-right: 3px;
-                        filter: invert(0%) sepia(10%) saturate(461%) hue-rotate(349deg) brightness(86%) contrast(80%);
-                    }
-                }
-
-                .artImg {
-                    position: relative;
-                    padding-top: calc(3/4 * 100%);
-
-                    img {
-                        @extend %template-img
-                    }
-                }
-            }
-        }
-
-        .profileImgDefault,
         .icoArrow {
             filter: invert(14%) sepia(70%) saturate(7496%) hue-rotate(227deg) brightness(91%) contrast(94%);
         }

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Tekno" channel=site.Tekno type="details" premium=true}}
+
+<body class="theme--tekno theme--premium">
+
+    <!-- s: pushdown billboard -->
+    {{!>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{!>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{>premium/header kanal="Tekno" width=100 height=32}}
+
+        <main role="main" class="main details">
+            <!-- s: menu panel -->
+            {{>header/menu login=true}}
+            {{!>header/menu}}
+            <!-- e: menu panel -->
+
+            <div class="container">
+
+                {{>breadcrumb kanal="Teknologi" subkanal="Telekomunikasi" active=true}}
+
+                {{>premium/details-cover kanal=" tekno" channel=kanal.Lifestyle.details.content total=6 index_start=4 index_end=5}}
+                {{>premium/details-lead kanal=" tekno" mt="16" channel=kanal.Lifestyle.details.content total=6 index_start=4 index_end=5}}
+
+                {{>detail/share mt="40" channel=kanal.Tekno.details.content pos="top" type="button" total=6 index_start=0
+                index_end=1}}
+
+                <article class="detailsContent mt40">
+                    {{>detail/content-premium zoomtxt=false}}
+
+                </article>
+
+                {{>detail/author premium=true channel=kanal.Tekno.details.content total=6 index_start=0 index_end=1}}
+
+                {{>detail/share mt="30" channel=kanal.Tekno.details.content total=6 index_start=0
+                index_end=1}}
+
+                <!-- s: premium -->
+                {{>premium/article channel=kanal.Tekno.Premium.latest mt="30" width="195" height="146"}}
+
+                <!-- e: premium -->
+
+                <!-- s: terpopuler -->
+                <h3 class="titleCaption mt30">Terpopuler</h3>
+                {{>kanal/most chan=true dates=true channel=kanal.Tekno.most total=5 index_start=0 index_end=5}}
+
+                <!-- e: terpopuler -->
+
+                <!-- s: topic -->
+                <h3 class="titleCaption mt30">Topik-Topik Pilihan</h3>
+                {{>topic channel=topic total=9 index_start=3 index_end=9}}
+
+                <!-- e: topic -->
+
+                <h3 class="titleCaption titleCaptionMed mt30">Berita Lainnya</h3>
+                {{>detail/article-other channel=kanal.Tekno.most mt="16" total=5 index_start=0 index_end=5}}
+            </div>
+        </main>
+    </div>
+
+    <!-- modal image -->
+    {{>detail/modal-image}}
+
+    <!-- modal template -->
+    {{>modal}}
+
+    {{>footer/footer}}
+
+    {{>footer/script page="tekno" type="details"}}
+    <script>
+        function openModalImage(el, e) {
+            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
+                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
+            if (!!wcaption) {
+                var caption = wcaption.innerHTML;
+                openModal(el, image, caption)
+            }
+            else {
+                openModal(el, image)
+            }
+        }
+    </script>
+
+</body>
+
+</html>

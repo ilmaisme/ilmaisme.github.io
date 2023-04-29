@@ -112,6 +112,12 @@
                 }
             }
 
+            &.-two {
+                .artItem {
+                    flex-basis: calc(100%/2 - 8px);
+                }
+            }
+
             .artItem {
                 flex-shrink: 0;
                 flex-basis: 145px;
@@ -130,7 +136,7 @@
                     @extend %template-img
                 }
             }
-        }        
+        }
 
         &.-three {
             display: grid;
@@ -160,7 +166,7 @@
                 width: 100%;
                 flex-basis: 100%;
                 height: unset;
-                padding-top: calc(2/4 * 100% + 24px);
+                padding-top: calc(2/4 * 100% + 10px);
 
                 img {
                     @extend %template-img
@@ -171,6 +177,10 @@
         &.-row {
             .artItem {
                 margin-top: 20px;
+
+                &:first-child {
+                    margin-top: 16px;
+                }
             }
 
             .artImg {

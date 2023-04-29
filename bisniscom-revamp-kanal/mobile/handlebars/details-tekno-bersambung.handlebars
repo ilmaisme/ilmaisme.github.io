@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Tekno" channel=site.Tekno type="details"}}
+
+<body class="theme--tekno">
+
+    <!-- s: pushdown billboard -->
+    {{>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{>header/header kanal="Tekno" width=100 height=32}}
+
+        <main role="main" class="main details">
+            <div class="nav">
+
+                {{>header/nav channel=mainMenu.Tekno}}
+
+            </div>
+
+            <!-- s: menu panel -->
+            {{>header/menu login=true}}
+            {{!>header/menu}}
+            <!-- e: menu panel -->
+
+            <div class="container mt30">
+
+                {{>breadcrumb kanal="Teknologi" subkanal="Telekomunikasi" active=true}}
+
+                {{>detail/title pos="left" default=true channel=kanal.Tekno.details.content mt="16" total=6
+                index_start=0
+                index_end=1}}
+                {{>detail/cover pos="left" channel=kanal.Tekno.details.content mt="40" total=6 index_start=0
+                index_end=1}}
+
+                {{>detail/share mt="16" channel=kanal.Tekno.details.content pos="top" type="button" total=6
+                index_start=0
+                index_end=1}}
+
+                <article class="detailsContent mt40">
+                    {{>detail/content-series zoomtxt=false quoteau=true}}
+
+                </article>
+
+                <!-- s: detail pagination -->
+                {{>detail/paging}}
+                <!-- e: detail pagination -->
+
+                <h2 class="titleCaption titleCaptionMed mt40">
+                    Simak video di bawah ini:
+                </h2>
+                {{>detail/video}}
+
+                {{>detail/tag channel=kanal.Tekno.details caption="Simak berita lainnya seputar topik artikel ini di
+                sini:"}}
+
+                {{>detail/author channel=kanal.Tekno.details.content total=6 index_start=0 index_end=1}}
+
+                {{>detail/share mt="30" channel=kanal.Tekno.details.content total=6 index_start=0
+                index_end=1}}
+
+                <!-- s: premium -->
+                {{>premium/article channel=kanal.Tekno.Premium.latest mt="30" width="195" height="146"}}
+
+                <!-- e: premium -->
+
+                {{>newsletter mt="30"}}
+
+                <h3 class="titleCaption titleCaptionMed mt30">Artikel Terbaru</h3>
+                {{>tekno/article channel=kanal.Tekno.latest type="col" col="two" mt="16"
+                width="157" height="103" total=3
+                index_start=0
+                index_end=2}}
+
+                <h3 class="titleCaption titleCaptionMed mt30">Berita Lainnya</h3>
+                {{>detail/article-other channel=kanal.Tekno.most mt="16" total=5 index_start=0 index_end=5}}
+
+                <h3 class="titleCaption titleCaptionMed mt30">Berita Terkini</h3>
+                {{>tekno/article channel=kanal.Tekno.latest type="row" mt="16" width="124" height="70" total=8
+                index_start=3
+                index_end=8}}
+
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary">Index</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- modal image -->
+    {{>detail/modal-image}}
+
+    <!-- modal template -->
+    {{>modal}}
+
+    {{>footer/footer}}
+
+    {{>footer/script page="tekno" type="details"}}
+    <script>
+        function openModalImage(el, e) {
+            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
+                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
+            if (!!wcaption) {
+                var caption = wcaption.innerHTML;
+                openModal(el, image, caption)
+            }
+            else {
+                openModal(el, image)
+            }
+        }
+    </script>
+
+</body>
+
+</html>

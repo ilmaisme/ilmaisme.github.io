@@ -7,7 +7,7 @@
     <div class="detailsCoverImg artImg">
         <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=740&h=420" alt="{{title}}" width="740" height="420"
             class="image" url="https://images.bisnis.com/posts/{{img}}">
-        <button class="button detailsZoom" onclick="openModalImage('detail-modal-image', this)">
+        <button class="button detailsZoom" onclick="openModalImage('detail-modal-image', this)" aria-label="Zoom image">
             <span class="icoInline icoZoom"></span>
         </button>
     </div>
@@ -23,22 +23,14 @@
     {{#gte @index compare=../index_start}}
     {{#gte @index compare=../index_end}}
     {{else}}
-    {{#if ../premium}}
     <div class="detailsCoverImg artImg">
-        <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=1080&h=606" alt="{{title}}" width="1080" height="606">
-    </div>
-
-    {{>detail/title premium=../premium channel=../channel index_start=../index_start index_end=../index_end}}
-    {{else}}
-    <div class="detailsCoverImg artImg">
-        <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=1080&h=378" alt="{{title}}" width="1080" height="378"
+        <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=740&amp;h=420" alt="{{title}}" width="740" height="420"
             class="image" url="https://images.bisnis.com/posts/{{img}}">
-        <button class="button detailsZoom" onclick="openModalImage('detail-modal-image', this)">
+        <button class="button detailsZoom" onclick="openModalImage('detail-modal-image', this)" aria-label="Zoom image">
             <span class="icoInline icoZoom"></span>
             Perbesar
         </button>
     </div>
-    {{/if}}
     {{/gte}}
     {{else}}
     {{/gte}}
