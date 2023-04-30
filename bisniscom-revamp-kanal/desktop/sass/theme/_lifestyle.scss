@@ -1,6 +1,7 @@
 .theme {
     &--lifestyle {
         --cl-lifestyle: #A20087;
+        --filter-lifestyle: invert(12%) sepia(60%) saturate(6232%) hue-rotate(300deg) brightness(90%) contrast(113%);
 
         .nav {
             &Item {
@@ -19,7 +20,8 @@
 
         .header {
             .icoLogin {
-                filter: invert(14%) sepia(98%) saturate(5241%) hue-rotate(302deg) brightness(70%) contrast(114%);
+                filter: var(--filter-lifestyle);
+                -webkit-filter: var(--filter-lifestyle);
             }
         }
 
@@ -137,7 +139,8 @@
         .profileImgDefault,
         .icoArrow,
         blockquote:before {
-            filter: invert(14%) sepia(98%) saturate(5241%) hue-rotate(302deg) brightness(70%) contrast(114%);
+            filter: var(--filter-lifestyle);
+            -webkit-filter: var(--filter-lifestyle);
         }
     }
 }

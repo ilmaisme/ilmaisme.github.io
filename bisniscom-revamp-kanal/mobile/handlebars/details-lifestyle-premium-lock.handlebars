@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Lifestyle" channel=site.Lifestyle type="details" premium=true}}
+
+<body class="theme--lifestyle theme--premium">
+
+    <!-- s: pushdown billboard -->
+    {{!>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{>header/header kanal="Lifestyle"}}
+
+        <main role="main" class="main details">
+            <div class="nav">
+
+                {{>header/nav channel=mainMenu.Lifestyle}}
+
+            </div>
+
+            <!-- s: menu panel -->
+            {{>header/menu login=true}}
+            {{!>header/menu}}
+            <!-- e: menu panel -->
+
+            <div class="container">
+
+                {{>breadcrumb kanal="Lifestyle" subkanal="Entertainment"}}
+
+                {{>premium/details-cover channel=kanal.Lifestyle.details.content mt="16" total=6 index_start=4
+                index_end=5}}
+                {{>premium/details-lead mt="16" channel=kanal.Lifestyle.details.content total=6 index_start=4
+                index_end=5}}
+
+                {{>detail/share channel=kanal.Lifestyle.details.content pos="top" mt="40" total=6 index_start=4
+                index_end=5}}
+
+                <article class="detailsContent -lock mt40">
+                    {{>detail/content-premium-lock}}
+
+                </article>
+
+                {{!>detail/author premium=true channel=kanal.Lifestyle.details.content total=6 index_start=4
+                index_end=5}}
+
+                {{!>detail/share channel=kanal.Lifestyle.details.content mt="40" total=6 index_start=4 index_end=5}}
+
+                {{!>detail/tag premium=true mt="16" channel=kanal.Lifestyle.details}}
+
+                {{>premium/lock}}
+
+                {{>premium/gate}}
+
+                <h2 class="titleCaption text-center mt30">FAQ</h2>
+                {{>premium/faq channel=faq total=12 index_start=0 index_end=12}}
+
+                <!-- s: premium -->
+                {{>premium/article mt="30" channel=kanal.Lifestyle.Premium.latest width="210" height="158"}}
+
+                <!-- e: premium -->
+
+                {{>newsletter mt="30"}}
+
+                <h3 class="titleCaption mt30">Artikel Terkait</h3>
+                {{>kanal/article channel=kanal.Lifestyle.Entertainment.latest type="col" col="two" mt="16" width="145"
+                height="109"
+                total=3 index_start=0 index_end=2}}
+
+                <h3 class="titleCaption mt30">Berita Lainnya</h3>
+                {{>detail/article-other channel=kanal.Lifestyle.hL mt="16" total=5 index_start=2 index_end=5}}
+
+                <h3 class="titleCaption mt30">Berita Terkini</h3>
+                {{>kanal/article channel=kanal.Lifestyle.latest type="row" width="145" height="109" total=10
+                index_start=4
+                index_end=7}}
+
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary">Berita Lainnya</a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- modal image -->
+    {{>detail/modal-image}}
+
+    <!-- modal template -->
+    {{>modal}}
+
+    {{>footer/footer}}
+
+    {{>footer/script page="lifestyle" type="details"}}
+    <script>
+        function openModalImage(el, e) {
+            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
+                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
+            if (!!wcaption) {
+                var caption = wcaption.innerHTML;
+                openModal(el, image, caption)
+            }
+            else {
+                openModal(el, image)
+            }
+        }
+
+        //show content faq
+        var accItem = document.getElementsByClassName('faqBox'),
+            accHD = document.getElementsByClassName('-js-show');
+        for (i = 0; i < accHD.length; i++) {
+            accHD[i].addEventListener('click', toggleItem, false);
+        }
+
+        function toggleItem() {
+            var itemClass = this.parentNode.className,
+                contentClass = this.parentNode.getElementsByClassName('faqContent')[0];
+
+            if (itemClass == 'faqBox close') {
+                for (i = 0; i < accItem.length; i++) {
+                    accItem[i].className = 'faqBox close';
+                }
+
+                Array.from(document.getElementsByClassName('faqContent')).forEach(elem => {
+                    elem.style.maxHeight = 0;
+                });
+
+                this.parentNode.className = 'faqBox open active';
+                contentClass.style.maxHeight = contentClass.scrollHeight + 'px';
+            } else {
+                this.parentNode.className = 'faqBox close';
+                contentClass.style.maxHeight = 0;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
