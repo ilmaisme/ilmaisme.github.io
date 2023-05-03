@@ -16,7 +16,7 @@
 
         {{>header/header kanal="Lifestyle"}}
 
-        <main role="main" class="main details" id="pswp-gallery">
+        <main role="main" class="main details">
             <div class="nav">
 
                 {{>header/nav channel=mainMenu.Lifestyle}}
@@ -87,28 +87,10 @@
         </main>
     </div>
 
-    <!-- modal image -->
-    {{>detail/modal-image}}
-
-    <!-- modal template -->
-    {{>modal}}
-
     {{>footer/footer}}
 
-    {{>footer/script page="lifestyle" type="details" photozoom=true}}
+    {{>footer/script page="lifestyle" type="details"}}
     <script>
-        function openModalImage(el, e) {
-            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
-                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
-            if (!!wcaption) {
-                var caption = wcaption.innerHTML;
-                openModal(el, image, caption)
-            }
-            else {
-                openModal(el, image)
-            }
-        }
-
         //show content faq
         var accItem = document.getElementsByClassName('faqBox'),
             accHD = document.getElementsByClassName('-js-show');

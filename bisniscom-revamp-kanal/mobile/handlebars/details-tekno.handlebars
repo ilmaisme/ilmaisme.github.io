@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{>head page="Tekno" channel=site.Tekno type="details"}}
+{{>head page="Tekno" channel=site.Tekno type="details" photozoom=true}}
 
 <body class="theme--tekno">
 
@@ -86,28 +86,9 @@
         </main>
     </div>
 
-    <!-- modal image -->
-    {{>detail/modal-image}}
-
-    <!-- modal template -->
-    {{>modal}}
-
     {{>footer/footer}}
 
-    {{>footer/script page="tekno" type="details"}}
-    <script>
-        function openModalImage(el, e) {
-            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
-                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
-            if (!!wcaption) {
-                var caption = wcaption.innerHTML;
-                openModal(el, image, caption)
-            }
-            else {
-                openModal(el, image)
-            }
-        }
-    </script>
+    {{>footer/script page="tekno" type="details" photozoom=true}}
 
 </body>
 

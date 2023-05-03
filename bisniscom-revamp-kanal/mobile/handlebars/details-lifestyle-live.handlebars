@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{>head page="Lifestyle" channel=site.Lifestyle type="details" slick=true}}
+{{>head page="Lifestyle" channel=site.Lifestyle type="details" slick=true photozoom=true}}
 
 <body class="theme--lifestyle">
 
@@ -85,27 +85,10 @@
         </main>
     </div>
 
-    <!-- modal image -->
-    {{>detail/modal-image}}
-
-    <!-- modal template -->
-    {{>modal}}
-
     {{>footer/footer}}
 
-    {{>footer/script page="lifestyle" type="details" slick=true}}
+    {{>footer/script page="lifestyle" type="details" slick=true photozoom=true}}
     <script>
-        function openModalImage(el, e) {
-            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
-                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
-            if (!!wcaption) {
-                var caption = wcaption.innerHTML;
-                openModal(el, image, caption)
-            }
-            else {
-                openModal(el, image)
-            }
-        }
 
         $(document).ready(function () {
             //live details slider anchor

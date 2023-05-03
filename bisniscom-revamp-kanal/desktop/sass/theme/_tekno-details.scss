@@ -81,6 +81,21 @@
                     letter-spacing: 0.02em;
                     @include font-pack($font-body2, 12px, false, false, #545454);
                 }
+
+                &:hover {
+                    ~.detailsZoom {
+                        background: rgba(3, 61, 255, .75);
+                    }
+                }
+            }
+
+            .detailsImg,
+            .detailsCoverImg {
+                &:hover {
+                    .detailsZoom {
+                        background: rgba(3, 61, 255, .75);
+                    }
+                }
             }
 
             &Zoom {
@@ -102,7 +117,8 @@
                     letter-spacing: 0;
                     @include font-pack($font-body2, false, $font-weight-normal, false, $cl-black);
 
-                    &.-active {
+                    &.-active,
+                    &:hover {
                         border: 1px solid var(--cl-tekno);
                         background: var(--cl-tekno);
                         color: $cl-white
@@ -111,7 +127,7 @@
             }
 
             &Content {
-                @include font-pack($font-body2, 14px, $font-weight-normal, 1.57, false);
+                @include font-pack($font-body2, 16px, $font-weight-normal, 1.57, false);
 
                 .baca-juga {
                     border-radius: 8px;
@@ -123,7 +139,7 @@
 
                         th {
                             text-transform: uppercase;
-                            @include font-pack(false, 15px, false, false, false);
+                            @include font-pack(false, 16px, false, false, false);
                             color: var(--cl-tekno)
                         }
                     }
@@ -151,7 +167,7 @@
                     background: #F7F7F7;
                     border-left: 3px solid #989898;
                     font-style: italic;
-                    font-size: 16px;
+                    font-size: 1.5em;
                     font-weight: $font-weight-med;
 
                     &::before {
@@ -179,6 +195,10 @@
 
             &Author {
                 @include font-pack(false, 14px, $font-weight-sbold, 1.57, $cl-black);
+
+                a:hover {
+                    color: #0845dd;
+                }
             }
 
             &Tag {
@@ -194,6 +214,11 @@
                     padding: 10px;
                     background: #F8FCFF;
                     @include font-pack(false, false, $font-weight-med, 1.375, var(--cl-tekno));
+
+                    &:hover {
+                        background: var(--cl-tekno);
+                        color: #F8FCFF;
+                    }
                 }
             }
 

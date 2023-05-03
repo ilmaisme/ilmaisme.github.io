@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{>head page="Tekno" channel=site.Tekno type="details" slick=true}}
+{{>head page="Tekno" channel=site.Tekno type="details" slick=true photozoom=true}}
 
 <body class="theme--tekno">
 
@@ -27,11 +27,11 @@
             {{>header/menu}}
             <!-- e: menu panel -->
 
-            <div class="container mt50">
+            <div class="container mt16">
 
                 {{>breadcrumb kanal="Teknologi" subkanal="Telekomunikasi" active=true}}
 
-                <div class="row mt40">
+                <div class="row mt16">
                     <div class="col-7 col-left">
 
                         {{>detail/title pos="left" default=true channel=kanal.Tekno.details.content total=6
@@ -161,22 +161,11 @@
             </div>
         </main>
     </div>
- 
+
     {{>footer/footer}}
 
-    {{>footer/script page="tekno" type="details" slick=true}}
+    {{>footer/script page="tekno" type="details" slick=true photozoom=true}}
     <script>
-        function openModalImage(el, e) {
-            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
-                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
-            if (!!wcaption) {
-                var caption = wcaption.innerHTML;
-                openModal(el, image, caption)
-            }
-            else {
-                openModal(el, image)
-            }
-        }
 
         $(document).ready(function () {
             //live details slider anchor

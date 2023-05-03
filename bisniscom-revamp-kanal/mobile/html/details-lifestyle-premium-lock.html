@@ -137,7 +137,7 @@
                 </div>
             </div>
         </header>
-        <main role="main" class="main details" id="pswp-gallery">
+        <main role="main" class="main details">
             <div class="nav">
 
                 <nav class="navMenu" aria-label="primarynavigation">
@@ -842,25 +842,6 @@
         </main>
     </div>
 
-    <!-- modal image -->
-    <div class="modalWrap detailsModal" data-modal-target="detail-modal-image">
-        <div class="modalHeader">
-            <button class="button modalDismiss" aria-label="Close modal" data-modal-button="dismiss">
-                <span class="icoInline icoClose"></span>
-            </button>
-        </div>
-        <div class="modalBody">
-            <div class="detailsModalImg">
-                <img src="" alt="" loading="lazy" class="image">
-            </div>
-            <div class="detailsModalCaption caption">  
-            </div>
-        </div>
-    </div>
-    <!-- modal template -->
-    <div class="modal" id="modal">
-        <div class="modalContent"></div>
-    </div>
     <footer class="footer">
         <div class="footerWrap container">
             <div class="text-center">
@@ -966,58 +947,7 @@
     <script defer type="text/javascript" src="./asset/js/script-main.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/script-details.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/script-lifestyle-details.min.js"></script>
-    <!-- initial script for image photo zoom -->
-    <script type="module">
-        import PhotoSwipeLightbox from './asset/js/photoswipe/photoswipe-lightbox.esm.min.js';
-        const options = {
-            gallery: '#pswp-gallery',
-            children: 'figure a',
-            showHideAnimationType: 'zoom',
-            initialZoomLevel: .36,
-            pswpModule: () => import('./asset/js/photoswipe/photoswipe.esm.min.js')
-        };
-        const lightbox = new PhotoSwipeLightbox(options);
-        lightbox.on('uiRegister', function () {
-            lightbox.pswp.ui.registerElement({
-                name: 'custom-caption',
-                order: 9,
-                isButton: false,
-                appendTo: 'root',
-                html: 'Caption text',
-                onInit: (el, pswp) => {
-                    lightbox.pswp.on('change', () => {
-                        const currSlideElement = lightbox.pswp.currSlide.data.element;
-                        let captionHTML = '';
-                        if (currSlideElement) {
-                            const hiddenCaption = currSlideElement.querySelector('.detailsImgCaption');
-                            if (hiddenCaption) {
-                                // get caption from element with class hidden-caption-content
-                                captionHTML = hiddenCaption.innerHTML;
-                            } else {
-                                // get caption from alt attribute
-                                captionHTML = currSlideElement.querySelector('img').getAttribute('alt');
-                            }
-                        }
-                        el.innerHTML = captionHTML || '';
-                    });
-                }
-            });
-        });
-        lightbox.init();
-    </script>
     <script>
-        function openModalImage(el, e) {
-            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
-                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
-            if (!!wcaption) {
-                var caption = wcaption.innerHTML;
-                openModal(el, image, caption)
-            }
-            else {
-                openModal(el, image)
-            }
-        }
-
         //show content faq
         var accItem = document.getElementsByClassName('faqBox'),
             accHD = document.getElementsByClassName('-js-show');

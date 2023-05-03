@@ -152,7 +152,7 @@
                             </a>
                         </div>
                         <div class="headerLogin">
-                            <a href="https://id.bisnis.com/user" class="buttonProfile" aria-label="Profile">
+                            <a href="https://id.bisnis.com/user" class="buttonProfile" aria-label="Profile" title="Profil Bisnis ID">
                                 <div class="profileImg profileImgDefault">
                                     <img src="./asset/images/icon/icon-profile.png" alt="" width="37" height="37">
                                 </div>
@@ -359,7 +359,7 @@
                             <img src="https://images.bisnis.com/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg" alt="Felis eget egestas sapien netus." width="1080"
                                 height="378" />
                         </a>
-                        <button class="button detailsZoom" onclick="openModalImage('detail-modal-image', this)" aria-label="Zoom image">
+                        <button class="button detailsZoom" aria-label="Zoom image">
                             <span class="icoInline icoZoom"></span>Perbesar
                         </button>
                     </figure>
@@ -1193,7 +1193,10 @@
     <!-- initial script for image photo zoom -->
     <script type="module">
         import PhotoSwipeLightbox from './asset/js/photoswipe/photoswipe-lightbox.esm.min.js';
+        const leftArrowSVGString = '';
         const options = {
+            arrowPrevSVG: leftArrowSVGString,
+            arrowNextSVG: leftArrowSVGString,
             gallery: '#pswp-gallery',
             children: 'figure a',
             showHideAnimationType: 'zoom',

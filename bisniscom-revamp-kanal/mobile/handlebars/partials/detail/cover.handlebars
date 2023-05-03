@@ -4,14 +4,16 @@
     {{#gte @index compare=../index_start}}
     {{#gte @index compare=../index_end}}
     {{else}}
-    <div class="detailsCoverImg artImg">
-        <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=740&h=420" alt="{{title}}" width="740" height="420"
-            class="image" url="https://images.bisnis.com/posts/{{img}}">
+    <figure class="detailsCoverImg artImg">
+        <a href="https://images.bisnis.com/posts/{{img}}" data-pswp-width="1000" data-pswp-height="667"
+            data-cropped="true">
+            <img src="https://images.bisnis.com/posts/{{img}}" alt="{{imgcap}}" width="600" height="400" />
+        </a>
+        <figcaption class="detailsImgCaption">{{imgcap}}</figcaption>
         <button class="button detailsZoom" onclick="openModalImage('detail-modal-image', this)" aria-label="Zoom image">
             <span class="icoInline icoZoom"></span>
         </button>
-    </div>
-    <div class="detailsImgCaption caption">{{imgcap}}</div>
+    </figure>
     {{/gte}}
     {{else}}
     {{/gte}}

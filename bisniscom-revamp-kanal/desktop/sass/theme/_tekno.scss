@@ -9,8 +9,13 @@
                 min-width: 250px;
                 padding: 14px;
                 border-radius: 0;
-                border: 1px solid #0845DD;
+                border: 1px solid var(--cl-tekno);
                 @include font-pack($font-body2, false, $font-weight-normal, 1.315, var(--cl-tekno));
+
+                &:hover {
+                    background: var(--cl-tekno);
+                    color: $cl-white;
+                }
             }
         }
 
@@ -59,10 +64,11 @@
                 @include font-pack($font-body2, 14px, $font-weight-sbold, 1.729, false);
                 border-bottom: 5px solid transparent;
                 padding-top: 23px;
-                padding-bottom: 5px;
+                padding-bottom: 18px;
 
                 &:hover {
                     color: var(--cl-tekno);
+                    border-bottom: 5px solid var(--cl-tekno);
                 }
             }
         }
@@ -125,7 +131,15 @@
             &Nav {
                 &Title {
                     margin-top: 0;
-                    @include font-pack($font-body2, false, $font-weight-sbold, 1.572, false);
+                    @include font-pack($font-body2, false, $font-weight-sbold, 1.4, false);
+                }
+            }
+
+            &Link {
+                &:hover {
+                    .hLTitle {
+                        color: #f9bc73;
+                    }
                 }
             }
 
@@ -218,6 +232,17 @@
                     height: 185px;
                     padding-top: calc(3/4 * 100% - 111px);
                 }
+
+                .artLink:hover {
+                    .artTitle {
+                        color: #1C92FF;
+                        text-decoration: none;
+                    }
+
+                    .icoPlay {
+                        filter: invert(48%) sepia(86%) saturate(3121%) hue-rotate(190deg) brightness(101%) contrast(101%);
+                    }
+                }
             }
 
             &Bisnistv {
@@ -252,12 +277,13 @@
                 &Box {
                     border-top-left-radius: 0;
                     background: var(--cl-tekno);
-                    @include font-pack($font-body2, 22px, $font-weight-sbold, 1, false);
+                    @include font-pack($font-body2, 16px, $font-weight-sbold, 1, false);
                 }
             }
 
             &Others {
                 @include font-pack($font-body2, 12px, $font-weight-normal, 1.67, var(--cl-tekno));
+                letter-spacing: 1px;
             }
         }
 
@@ -422,6 +448,12 @@
                 border: 1px solid #F9BC73;
                 border-radius: 50px;
                 @include font-pack($font-body2, 14px, false, 1.315, #EDA73F);
+
+                &:hover {
+                    background: $cl-white;
+                    color: $cl-black;
+                    border: 1px solid $cl-black;
+                }
             }
 
             .art {
@@ -488,7 +520,7 @@
             }
 
             .artTitle {
-                font-size: 15px;
+                font-size: 17px;
             }
         }
 

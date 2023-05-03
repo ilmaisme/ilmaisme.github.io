@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="./asset/css/style-tekno-details-premium.min.css" type="text/css">
     <link rel="preload" as="image"
         href="https://images.bisnis.com/thumb/posts/2023/03/30/1642230/hari-film-nasional-premium.jpg?w=1440&h=840">
+    <link rel="stylesheet" type="text/css" href="./asset/css/photoswipe/photoswipe.min.css">
 
     <!--font menu & footer -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" as="style"
@@ -274,7 +275,7 @@
                                 </ul>
                             </div>
                             <div class="detailsFont">
-                                <button class="button detailsFontCta -normal -active" value="14px">
+                                <button class="button detailsFontCta -normal -active" value="1em">
                                     Teks normal
                                 </button>
                                 <button class="button detailsFontCta -medium" value="1.5em">
@@ -825,6 +826,48 @@
     
     
     <script defer type="text/javascript" src="./asset/js/script-tekno-details.min.js"></script>
+    <!-- initial script for image photo zoom -->
+    <script type="module">
+        import PhotoSwipeLightbox from './asset/js/photoswipe/photoswipe-lightbox.esm.min.js';
+        const leftArrowSVGString = '';
+        const options = {
+            arrowPrevSVG: leftArrowSVGString,
+            arrowNextSVG: leftArrowSVGString,
+            gallery: '#pswp-gallery',
+            children: 'figure a',
+            showHideAnimationType: 'zoom',
+            initialZoomLevel: .7,
+            pswpModule: () => import('./asset/js/photoswipe/photoswipe.esm.min.js')
+        };
+        const lightbox = new PhotoSwipeLightbox(options);
+        lightbox.on('uiRegister', function () {
+            lightbox.pswp.ui.registerElement({
+                name: 'custom-caption',
+                order: 9,
+                isButton: false,
+                appendTo: 'root',
+                html: 'Caption text',
+                onInit: (el, pswp) => {
+                    lightbox.pswp.on('change', () => {
+                        const currSlideElement = lightbox.pswp.currSlide.data.element;
+                        let captionHTML = '';
+                        if (currSlideElement) {
+                            const hiddenCaption = currSlideElement.querySelector('.detailsImgCaption');
+                            if (hiddenCaption) {
+                                // get caption from element with class hidden-caption-content
+                                captionHTML = hiddenCaption.innerHTML;
+                            } else {
+                                // get caption from alt attribute
+                                captionHTML = currSlideElement.querySelector('img').getAttribute('alt');
+                            }
+                        }
+                        el.innerHTML = captionHTML || '';
+                    });
+                }
+            });
+        });
+        lightbox.init();
+    </script>
 
 </body>
 
