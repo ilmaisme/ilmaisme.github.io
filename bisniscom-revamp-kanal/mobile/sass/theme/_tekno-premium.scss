@@ -76,11 +76,20 @@
             &Header {
                 &Wrap {
                     display: flex;
-                    gap: 10px;
+                    // gap: 10px;
+                    margin-left: -5px;
+                    margin-right: -5px;
+
+                    .menu {
+                        margin-left: 5px;
+                        margin-right: 5px;
+                    }
                 }
 
                 &Logo {
                     @extend .menuBar;
+                    margin-left: 5px;
+                    margin-right: 5px;
 
                     img {
                         @extend %filter-white;
@@ -176,37 +185,25 @@
                     color: var(--cl-premium);
                 }
 
-                blockquote {
+                .big-orange {
                     background: #FEFBF8;
                     border: 0;
                     padding: 66px 33px 16px;
                     font-size: 16px;
                 }
+
+                table {
+                    .thead_title {
+                        font-size: 16px
+                    }
+                }
             }
 
-            &Other {
+            .baca-juga {
                 font-size: 15px;
 
                 a {
                     color: $cl-black;
-                }
-            }
-
-            &QuoteAuthor {
-                text-align: center;
-                margin-top: 23px;
-                color: var(--cl-premium);
-
-                span {
-                    padding-top: 8px;
-                    padding-left: 0;
-
-                    &::before {
-                        top: 0;
-                        left: calc(50%/2);
-                        width: 50%;
-                        border-top: 2px solid var(--cl-premium);
-                    }
                 }
             }
 

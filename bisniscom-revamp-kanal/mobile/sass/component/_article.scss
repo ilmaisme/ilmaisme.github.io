@@ -52,7 +52,7 @@
     &Title {
         @include title_clamp(2);
         margin-top: 6px;
-        @include font-pack($font-body, 16px, $font-weight-bold, $line-base, $cl-black);
+        @include font-pack($font-body, 17px, $font-weight-bold, $line-base, $cl-black);
     }
 
     &Content {
@@ -70,22 +70,47 @@
     &--row {
         @include display_flex;
         flex-direction: row;
-        gap: 16px;
+        // gap: 16px;
+        margin-left: -8px;
+        margin-right: -8px;
+
+        .artImg {
+            margin-left: 8px;
+            margin-right: 8px;
+        }
 
         .artContent {
             flex: 1;
+            margin-left: 8px;
+            margin-right: 8px;
         }
     }
 
     &--col {
         @include display_flex;
         flex-direction: column;
-        gap: 13px;
+        // gap: 13px;
+        margin-top: -7px;
+        margin-bottom: -7px;
+
+        .artContent,
+        .artImg {
+            margin-top: 7px;
+            margin-bottom: 7px;
+        }
 
         &-top {
             @include display_flex;
             flex-direction: row;
-            gap: 16px;
+            // gap: 16px;
+            margin-top: -8px;
+            margin-bottom: -8px;
+
+            .artImg,
+            .artContent {
+                margin-top: 8px;
+                margin-bottom: 8px;
+            }
 
             .artContent {
                 flex: 1;
@@ -98,27 +123,42 @@
         &.-col {
             @include display_flex;
             flex-direction: row;
-            gap: 10px;
+            // gap: 10px;
             margin-left: -14px;
             margin-right: -14px;
-            padding-left: 14px;
-            padding-right: 14px;
+            padding-left: 10px;
+            padding-right: 10px;
             padding-bottom: 14px;
             overflow-x: auto;
 
             &.-center {
+                margin: 0;
+                padding-left: 0;
+                padding-right: 0;
+
                 .artItem {
+                    margin-left: 0;
+                    margin-right: 0;
                     flex-basis: 100%;
                 }
             }
 
             &.-two {
+                width: calc(100% + 10px);
+                margin-left: -10px;
+                margin-right: -10px;
+                padding-left: 5px;
+                padding-right: 5px;
+                overflow: hidden;
+
                 .artItem {
                     flex-basis: calc(100%/2 - 8px);
                 }
             }
 
             .artItem {
+                margin-left: 5px;
+                margin-right: 5px;
                 flex-shrink: 0;
                 flex-basis: 145px;
             }
@@ -202,11 +242,20 @@
 
                         .artLink {
                             flex-direction: column;
+                            margin-top: -8px;
+                            margin-bottom: -8px;
                         }
 
                         .artImg {
+                            margin-top: 8px;
+                            margin-bottom: 8px;
                             flex-basis: 100%;
                             padding-top: calc(3/4 * 100%);
+                        }
+
+                        .artContent {
+                            margin-top: 8px;
+                            margin-bottom: 8px;
                         }
 
                         .artDate {

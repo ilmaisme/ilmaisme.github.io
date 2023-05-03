@@ -113,8 +113,41 @@
             &Content {
                 @include font-pack($font-body2, 14px, $font-weight-normal, 1.57, false);
 
-                blockquote {
-                    padding: 28px 16px 16px;
+                .baca-juga {
+                    border-radius: 8px;
+                    background: #F8FCFF;
+
+                    table {
+                        padding-top: 22px;
+                        padding-bottom: 22px;
+
+                        th {
+                            text-transform: uppercase;
+                            @include font-pack(false, 15px, false, false, false);
+                            color: var(--cl-tekno)
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        display: block;
+                        background: var(--cl-tekno);
+                        border-radius: 16px;
+                        right: 0;
+                        top: 25%;
+                        width: 6px;
+                        height: 36px;
+                    }
+
+                    a {
+                        color: #1A1A1A;
+                        text-transform: none;
+                    }
+                }
+
+                .big-orange {
+                    padding: 38px 16px 16px;
                     background: #F7F7F7;
                     border-left: 3px solid #989898;
                     font-style: italic;
@@ -129,55 +162,14 @@
                         height: 22px;
                         filter: invert(33%) sepia(0%) saturate(0%) hue-rotate(334deg) brightness(96%) contrast(95%);
                     }
-                }
-            }
 
-            &Quote {
-                &Author {
-                    text-align: left;
-                    margin-top: 20px;
-                    @include font-pack(false, 14px, $font-weight-normal, 1.57, #434343);
-
-                    span {
-                        padding-top: 0;
-                        padding-left: 52px;
+                    .author {
+                        @include font-pack(false, 14px, $font-weight-normal, 1.57, #434343);
 
                         &::before {
-                            top: 10px;
-                            left: 0;
-                            width: 40px;
                             border-top: 2px solid #545454;
                         }
                     }
-                }
-            }
-
-            &Other {
-                padding-top: 22px;
-                padding-bottom: 22px;
-                border-radius: 8px;
-                background: #F8FCFF;
-                @include font-pack(false, 15px, false, false, false);
-
-                &::after {
-                    content: '';
-                    position: relative;
-                    display: block;
-                    background: var(--cl-tekno);
-                    border-radius: 16px;
-                    right: -30px;
-                    bottom: 0;
-                    width: 6px;
-                    height: 36px;
-                }
-
-                a {
-                    color: #1A1A1A;
-                }
-
-                &Caption {
-                    text-transform: uppercase;
-                    color: var(--cl-tekno)
                 }
             }
 

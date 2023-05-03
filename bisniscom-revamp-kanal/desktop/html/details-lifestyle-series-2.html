@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="./asset/css/style-lifestyle-details.min.css" type="text/css">
     <link rel="preload" as="image"
         href="https://images.bisnis.com/thumb/posts/2023/01/25/1621417/dungeons--dragons-honor-among-thieves.jpg?w=1080&h=378">
+    <link rel="stylesheet" type="text/css" href="./asset/css/photoswipe/photoswipe.min.css">
 
     <!--font menu & footer -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" as="style"
@@ -146,7 +147,7 @@
                     </div>
                     <div class="headerCta">
                         <div class="headerSearch">
-                            <a href="#" class="buttonSearch center-flex" aria-label="Cari berita terkini">
+                            <a href="#" class="buttonSearch center-flex" aria-label="Cari berita terkini" title="Cari di sini">
                                 <span class="icoInline icoSearch"></span>
                             </a>
                         </div>
@@ -173,7 +174,7 @@
             </div>
         </div>        <!-- e: skyscrapper billboard -->
 
-        <main role="main" class="main details">
+        <main role="main" class="main details" id="pswp-gallery">
             <div class="nav">
 
                 <nav class="navMenu" aria-label="primarynavigation">
@@ -336,7 +337,7 @@
                 </div>
             </div>            <!-- e: menu panel -->
 
-            <div class="container mt50">
+            <div class="container mt16">
 
                 <div class="breadcrumb">
                     <ul class="breadcrumbList">
@@ -351,15 +352,17 @@
                         </li>
                     </ul>
                 </div>
-                <div class="detailsCover mt40">
-                    <div class="detailsCoverImg artImg">
-                        <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg?w=1080&h=378" alt="Simak 6 Tips Produktif Saat Puasa Agar Lebih Bersemangat" width="1080" height="378"
-                            class="image" url="https://images.bisnis.com/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg">
+                <div class="detailsCover mt16">
+                    <figure class="detailsCoverImg artImg">
+                        <a href="https://images.bisnis.com/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg" data-pswp-width="1000" data-pswp-height="667"
+                            data-cropped="true">
+                            <img src="https://images.bisnis.com/posts/2023/04/05/1644026/6_tips_produktif_saat_puasa,_apa_saja__(pexels).jpg" alt="Felis eget egestas sapien netus." width="1080"
+                                height="378" />
+                        </a>
                         <button class="button detailsZoom" onclick="openModalImage('detail-modal-image', this)" aria-label="Zoom image">
-                            <span class="icoInline icoZoom"></span>
-                            Perbesar
+                            <span class="icoInline icoZoom"></span>Perbesar
                         </button>
-                    </div>
+                    </figure>
                 </div>
                 <div class="detailsTitle text-center">
                     <div class="artChannel">Inspirasi</div>
@@ -950,26 +953,7 @@
             </div>
         </main>
     </div>
-
-    <!-- modal image -->
-    <div class="modalWrap detailsModal" data-modal-target="detail-modal-image">
-        <div class="modalHeader">
-            <button class="button modalDismiss" aria-label="Close modal" data-modal-button="dismiss">
-                <span class="icoInline icoClose"></span>
-            </button>
-        </div>
-        <div class="modalBody">
-            <div class="detailsModalImg">
-                <img src="" alt="" loading="lazy" class="image">
-            </div>
-            <div class="detailsModalCaption caption">  
-            </div>
-        </div>
-    </div>
-    <!-- modal template -->
-    <div class="modal" id="modal">
-        <div class="modalContent"></div>
-    </div>
+ 
     <footer class="footer">
         <div class="footerWrap container">
             <div class="row">
@@ -1081,19 +1065,44 @@
     
     <script defer type="text/javascript" src="./asset/js/script-lifestyle-details.min.js"></script>
     
-    
-    <script>
-        function openModalImage(el, e) {
-            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
-                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
-            if (!!wcaption) {
-                var caption = wcaption.innerHTML;
-                openModal(el, image, caption)
-            }
-            else {
-                openModal(el, image)
-            }
-        }
+    <!-- initial script for image photo zoom -->
+    <script type="module">
+        import PhotoSwipeLightbox from './asset/js/photoswipe/photoswipe-lightbox.esm.min.js';
+        const options = {
+            gallery: '#pswp-gallery',
+            children: 'figure a',
+            showHideAnimationType: 'zoom',
+            initialZoomLevel: .7,
+            pswpModule: () => import('./asset/js/photoswipe/photoswipe.esm.min.js')
+        };
+        const lightbox = new PhotoSwipeLightbox(options);
+        lightbox.on('uiRegister', function () {
+            lightbox.pswp.ui.registerElement({
+                name: 'custom-caption',
+                order: 9,
+                isButton: false,
+                appendTo: 'root',
+                html: 'Caption text',
+                onInit: (el, pswp) => {
+                    lightbox.pswp.on('change', () => {
+                        const currSlideElement = lightbox.pswp.currSlide.data.element;
+                        let captionHTML = '';
+                        if (currSlideElement) {
+                            const hiddenCaption = currSlideElement.querySelector('.detailsImgCaption');
+                            if (hiddenCaption) {
+                                // get caption from element with class hidden-caption-content
+                                captionHTML = hiddenCaption.innerHTML;
+                            } else {
+                                // get caption from alt attribute
+                                captionHTML = currSlideElement.querySelector('img').getAttribute('alt');
+                            }
+                        }
+                        el.innerHTML = captionHTML || '';
+                    });
+                }
+            });
+        });
+        lightbox.init();
     </script>
 
 </body>

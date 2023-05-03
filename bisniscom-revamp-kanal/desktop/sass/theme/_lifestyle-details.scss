@@ -11,17 +11,22 @@
         .detailsTagLink {
             color: var(--cl-lifestyle);
             border: 1px solid var(--cl-lifestyle);
+
+            &:hover {
+                background: var(--cl-lifestyle);
+                color: $cl-white;
+            }
         }
 
-        .detailsOther {
+        .baca-juga {
             background: #FFD2F8;
 
-            &Caption {
+            th {
                 color: var(--cl-lifestyle);
-                border-right: 2px solid var(--cl-lifestyle);
             }
 
             a {
+                border-left: 2px solid var(--cl-lifestyle);
                 color: $cl-black;
             }
         }
@@ -47,6 +52,22 @@
 
             &Caption {
                 color: var(--cl-lifestyle);
+            }
+        }
+
+        .detailsImg {
+            &:hover {
+                ~.detailsZoom {
+                    background: rgba(158, 19, 165, .75);
+                }
+            }
+        }
+
+        .detailsImg, .detailsCoverImg {
+            &:hover {
+                .detailsZoom {
+                    background: rgba(158, 19, 165, .75);
+                }
             }
         }
 

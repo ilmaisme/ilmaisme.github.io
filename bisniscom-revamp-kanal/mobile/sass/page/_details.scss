@@ -13,6 +13,7 @@
             position: relative;
             width: 100%;
             height: 184px;
+            margin: 0;
 
             img {
                 @extend %template-img
@@ -31,6 +32,7 @@
         background: rgba(31, 31, 31, 0.75);
         letter-spacing: 0.02em;
         @include font-pack($font-body, 12px, $font-weight-bold, $line-base, $cl-white);
+        pointer-events: none;
         z-index: 1;
 
         .icoZoom {
@@ -114,10 +116,14 @@
     &Font {
         @include display_flex;
         align-items: center;
-        gap: 10px;
+        // gap: 10px;
+        margin-left: -5px;
+        margin-right: -5px;
         margin-top: 20px;
 
         &Cta {
+            margin-left: 5px;
+            margin-right: 5px;
             min-width: 104px;
             letter-spacing: 0.05em;
             @include font-pack($font-body, 12px, $font-weight-sbold, 1.2, #000000);
@@ -129,6 +135,8 @@
 
         &Range {
             width: 117px;
+            margin-left: 5px;
+            margin-right: 5px;
             accent-color: #ABABAB;
         }
     }
@@ -149,6 +157,123 @@
                 width: 100%;
                 height: 190px;
                 background: linear-gradient(180deg, rgba(255, 255, 255, 0) -8.01%, #FFFFFF 34.25%);
+            }
+        }
+
+        table {
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            color: #000;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.13);
+            border-spacing: 0;
+
+            &~table {
+                margin-top: 30px;
+            }
+
+            thead {
+                tr:first-child {
+                    th {
+                        &:first-child {
+                            border-top-left-radius: 10px;
+                        }
+
+                        &:last-child {
+                            border-top-right-radius: 10px;
+                        }
+                    }
+                }
+            }
+
+            .thead_title {
+                font-weight: $font-weight-bold;
+                font-size: 1em;
+                line-height: $line-base;
+                color: $cl-white;
+                background: #004CE0;
+                padding: 10px 24px;
+            }
+
+            .thead_column {
+                border-radius: 0;
+                background: #FFCE21;
+                padding: 10px;
+                border-left: 1px solid #d2c9a7;
+
+                &:first-child {
+                    border-left: 0;
+                }
+            }
+
+            td {
+                padding: 10px;
+
+                ~td {
+                    border-left: 1px solid #D2C9A7;
+                }
+            }
+
+            tr {
+                &:nth-child(even) {
+                    background: #FFFDF6;
+                }
+
+                &:nth-child(odd) {
+                    background: #FFF4CC;
+                }
+
+                &:last-child {
+                    td {
+                        &:last-child {
+                            border-bottom-right-radius: 10px;
+                        }
+
+                        &:first-child {
+                            border-bottom-left-radius: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .baca-juga {
+            position: relative;
+            min-height: 73px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+
+            table {
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: 8px 10px;
+                border-radius: 0;
+                box-shadow: none;
+
+                tr:nth-child(odd),
+                tr:nth-child(even) {
+                    background: transparent;
+                }
+
+                th {
+                    @include display_flex;
+                    flex-direction: column;
+                    text-align: left;
+                    @include font-pack(false, 16px, $font-weight-sbold, $line-base, false);
+
+                    span {
+                        flex: 1;
+                    }
+                }
+            }
+
+            a {
+                margin-top: 4px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+                text-align: left;
+                @include title_clamp(2);
             }
         }
 
@@ -200,14 +325,14 @@
             list-style-type: decimal;
         }
 
-        blockquote {
+        .big-orange {
             position: relative;
             margin-block-start: 1.8em;
             margin-block-end: 1.8em;
             margin-inline-start: 0;
             padding-left: 40px;
             margin-inline-end: 0;
-            @include font-pack(false, 20px, false, false, $cl-black);
+            @include font-pack(false, 1.18em, false, false, $cl-black);
 
             &::before {
                 content: "";
@@ -219,6 +344,24 @@
                 height: 42px;
                 background-size: contain;
                 background-repeat: no-repeat;
+            }
+
+            .author {
+                display: block;
+                margin-top: 20px;
+                padding-left: 52px;
+                position: relative;
+                font-style: normal;
+                @include font-pack(false, .8em, $font-weight-sbold, 1.57, false);
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                    width: 40px;
+                    border-top: 2px solid;
+                }
             }
         }
     }
@@ -249,16 +392,25 @@
 
     &Img {
         position: relative;
+        margin: 0;
+        display: block;
+        width: 100%;
+        padding-top: calc(6/4 * 100% - 29px);
         height: auto;
         background: #C4C4C4;
         border-radius: 12px;
         overflow: hidden;
 
         img {
-            width: 100%;
+            @extend %template-img;
         }
 
         &Wrap {
+            clear: both;
+            position: relative;
+            margin-top: 0;
+            margin-left: 0;
+            margin-right: 0;
             margin-bottom: 16px;
 
             &.-center {
@@ -273,20 +425,20 @@
             }
 
             &.-col {
-                width: 100%;
+                width: calc(100% + 10px);
                 @include display_flex;
                 justify-content: center;
                 flex-wrap: wrap;
-                column-gap: 10px;
+                // column-gap: 10px;
+                margin-left: -5px;
+                margin-right: -5px;
 
                 .detailsImg {
+                    margin-left: 5px;
+                    margin-right: 5px;
                     flex-shrink: 0;
-                    width: calc(100%/2 - 5px);
+                    width: calc(100%/2 - 10px);
                     padding-top: calc(3/4 * 100% - 83px);
-
-                    img {
-                        @extend %template-img;
-                    }
                 }
             }
         }
@@ -338,28 +490,6 @@
         }
     }
 
-    &Other {
-        position: relative;
-        @include display_flex;
-        flex-direction: column;
-        padding: 8px 10px;
-        min-height: 73px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        @include font-pack(false, 16px, $font-weight-sbold, $line-base, false);
-
-        &Caption {
-            display: inline-block;
-            margin-bottom: 8px;
-            padding-bottom: 6px;
-        }
-
-        a {
-            flex: 1;
-            @include title_clamp(2);
-        }
-    }
-
     &Paging {
         margin-top: 30px;
         margin-bottom: 50px;
@@ -382,11 +512,14 @@
             border-radius: 12px;
             @include display_flex;
             flex-direction: row;
-            gap: 10px;
+            margin-left: -5px;
+            margin-right: -5px;
         }
 
         &Thumb {
             position: relative;
+            margin-left: 5px;
+            margin-right: 5px;
             width: 124px;
             height: 70px;
             background: #D9D9D9;
@@ -400,6 +533,8 @@
 
         &Content {
             flex: 1;
+            margin-left: 5px;
+            margin-right: 5px;
             @include font-pack($font-body, 16px, $font-weight-bold, $line-base, $cl-black);
 
             &.-prev {

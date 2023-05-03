@@ -16,7 +16,7 @@
 
         {{>premium/header kanal="Tekno" width=100 height=32}}
 
-        <main role="main" class="main details">
+        <main role="main" class="main details" id="pswp-gallery">
             <!-- s: menu panel -->
             {{>header/menu login=true}}
             {{!>header/menu}}
@@ -75,28 +75,10 @@
         </main>
     </div>
 
-    <!-- modal image -->
-    {{>detail/modal-image}}
-
-    <!-- modal template -->
-    {{>modal}}
-
     {{>footer/footer}}
 
     {{>footer/script page="tekno" type="details"}}
     <script>
-        function openModalImage(el, e) {
-            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
-                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
-            if (!!wcaption) {
-                var caption = wcaption.innerHTML;
-                openModal(el, image, caption)
-            }
-            else {
-                openModal(el, image)
-            }
-        }
-
         //show content faq
         var accItem = document.getElementsByClassName('faqBox'),
             accHD = document.getElementsByClassName('-js-show');

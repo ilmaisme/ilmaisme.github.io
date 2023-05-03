@@ -148,7 +148,7 @@
                     </div>
                     <div class="headerCta">
                         <div class="headerSearch">
-                            <a href="#" class="buttonSearch center-flex" aria-label="Cari berita terkini">
+                            <a href="#" class="buttonSearch center-flex" aria-label="Cari berita terkini" title="Cari di sini">
                                 <span class="icoInline icoSearch"></span>
                             </a>
                         </div>
@@ -175,7 +175,7 @@
             </div>
         </div>        <!-- e: skyscrapper billboard -->
 
-        <main role="main" class="main details">
+        <main role="main" class="main details" id="pswp-gallery">
             <div class="nav">
 
                 <nav class="navMenu" aria-label="primarynavigation">
@@ -338,7 +338,7 @@
                 </div>
             </div>            <!-- e: menu panel -->
 
-            <div class="container mt50">
+            <div class="container mt16">
 
                 <div class="breadcrumb">
                     <ul class="breadcrumbList">
@@ -353,15 +353,17 @@
                         </li>
                     </ul>
                 </div>
-                <div class="detailsCover mt40">
-                    <div class="detailsCoverImg artImg">
-                        <img src="https://images.bisnis.com/thumb/posts/2023/04/05/1644119/5_besar_kontestan_indonesian_idol.jpg?w=1080&h=378" alt="Indonesian Idol Masuk 5 Besar, Siapa Pemenangnya? Salma atau Nyoman?" width="1080" height="378"
-                            class="image" url="https://images.bisnis.com/posts/2023/04/05/1644119/5_besar_kontestan_indonesian_idol.jpg">
+                <div class="detailsCover mt16">
+                    <figure class="detailsCoverImg artImg">
+                        <a href="https://images.bisnis.com/posts/2023/04/05/1644119/5_besar_kontestan_indonesian_idol.jpg" data-pswp-width="1000" data-pswp-height="667"
+                            data-cropped="true">
+                            <img src="https://images.bisnis.com/posts/2023/04/05/1644119/5_besar_kontestan_indonesian_idol.jpg" alt="Felis eget egestas sapien netus." width="1080"
+                                height="378" />
+                        </a>
                         <button class="button detailsZoom" onclick="openModalImage('detail-modal-image', this)" aria-label="Zoom image">
-                            <span class="icoInline icoZoom"></span>
-                            Perbesar
+                            <span class="icoInline icoZoom"></span>Perbesar
                         </button>
-                    </div>
+                    </figure>
                 </div>
                 <div class="detailsTitle text-center">
                     <div class="artChannel">Entertainment</div>
@@ -967,26 +969,7 @@
             </div>
         </main>
     </div>
-
-    <!-- modal image -->
-    <div class="modalWrap detailsModal" data-modal-target="detail-modal-image">
-        <div class="modalHeader">
-            <button class="button modalDismiss" aria-label="Close modal" data-modal-button="dismiss">
-                <span class="icoInline icoClose"></span>
-            </button>
-        </div>
-        <div class="modalBody">
-            <div class="detailsModalImg">
-                <img src="" alt="" loading="lazy" class="image">
-            </div>
-            <div class="detailsModalCaption caption">  
-            </div>
-        </div>
-    </div>
-    <!-- modal template -->
-    <div class="modal" id="modal">
-        <div class="modalContent"></div>
-    </div>
+ 
     <footer class="footer">
         <div class="footerWrap container">
             <div class="row">
@@ -1098,7 +1081,6 @@
     <script defer type="text/javascript" src="./asset/js/script-details.min.js"></script>
     
     <script defer type="text/javascript" src="./asset/js/script-lifestyle-details.min.js"></script>
-    
     
     <script>
         function openModalImage(el, e) {

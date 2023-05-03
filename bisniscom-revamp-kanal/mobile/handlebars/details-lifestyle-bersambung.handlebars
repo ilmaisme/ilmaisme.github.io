@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{>head page="Lifestyle" channel=site.Lifestyle type="details"}}
+{{>head page="Lifestyle" channel=site.Lifestyle type="details" photozoom=true}}
 
 <body class="theme--lifestyle">
 
@@ -16,7 +16,7 @@
 
         {{>header/header kanal="Lifestyle"}}
 
-        <main role="main" class="main details">
+        <main role="main" class="main details" id="pswp-gallery">
             <div class="nav">
 
                 {{>header/nav channel=mainMenu.Lifestyle}}
@@ -85,28 +85,9 @@
         </main>
     </div>
 
-    <!-- modal image -->
-    {{>detail/modal-image}}
-
-    <!-- modal template -->
-    {{>modal}}
-
     {{>footer/footer}}
 
-    {{>footer/script page="lifestyle" type="details"}}
-    <script>
-        function openModalImage(el, e) {
-            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
-                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
-            if (!!wcaption) {
-                var caption = wcaption.innerHTML;
-                openModal(el, image, caption)
-            }
-            else {
-                openModal(el, image)
-            }
-        }
-    </script>
+    {{>footer/script page="lifestyle" type="details" photozoom=true}}
 
 </body>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{>head page="Lifestyle" channel=site.Lifestyle type="details" premium=true}}
+{{>head page="Lifestyle" channel=site.Lifestyle type="details" premium=true photozoom=true}}
 
 <body class="theme--lifestyle theme--premium">
 
@@ -16,7 +16,7 @@
 
         {{>header/header kanal="Lifestyle"}}
 
-        <main role="main" class="main details">
+        <main role="main" class="main details" id="pswp-gallery">
             <div class="nav">
 
                 {{>header/nav channel=mainMenu.Lifestyle}}
@@ -32,17 +32,21 @@
 
                 {{>breadcrumb kanal="Lifestyle" subkanal="Entertainment"}}
 
-                {{>premium/details-cover channel=kanal.Lifestyle.details.content mt="16" total=6 index_start=4 index_end=5}}
-                {{>premium/details-lead mt="16" channel=kanal.Lifestyle.details.content total=6 index_start=4 index_end=5}}
+                {{>premium/details-cover channel=kanal.Lifestyle.details.content mt="16" total=6 index_start=4
+                index_end=5}}
+                {{>premium/details-lead mt="16" channel=kanal.Lifestyle.details.content total=6 index_start=4
+                index_end=5}}
 
-                {{>detail/share channel=kanal.Lifestyle.details.content pos="top" mt="40" total=6 index_start=4 index_end=5}}
+                {{>detail/share channel=kanal.Lifestyle.details.content pos="top" mt="40" total=6 index_start=4
+                index_end=5}}
 
                 <article class="detailsContent mt40">
                     {{>detail/content-premium}}
 
                 </article>
 
-                {{>detail/author premium=true channel=kanal.Lifestyle.details.content total=6 index_start=4 index_end=5}}
+                {{>detail/author premium=true channel=kanal.Lifestyle.details.content total=6 index_start=4
+                index_end=5}}
 
                 {{>detail/share channel=kanal.Lifestyle.details.content mt="40" total=6 index_start=4 index_end=5}}
 
@@ -76,28 +80,9 @@
         </main>
     </div>
 
-    <!-- modal image -->
-    {{>detail/modal-image}}
-
-    <!-- modal template -->
-    {{>modal}}
-
     {{>footer/footer}}
 
-    {{>footer/script page="lifestyle" type="details"}}
-    <script>
-        function openModalImage(el, e) {
-            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
-                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
-            if (!!wcaption) {
-                var caption = wcaption.innerHTML;
-                openModal(el, image, caption)
-            }
-            else {
-                openModal(el, image)
-            }
-        }
-    </script>
+    {{>footer/script page="lifestyle" type="details" photozoom=true}}
 
 </body>
 

@@ -111,12 +111,12 @@
             &Content {
                 @include font-pack($font-body2, 14px, $font-weight-normal, 1.57, false);
 
-                blockquote {
-                    padding: 28px 16px 16px;
+                .big-orange {
+                    padding: 34px 16px 16px;
                     background: #F7F7F7;
                     border-left: 3px solid #989898;
                     font-style: italic;
-                    font-size: 16px;
+                    font-size: 1.14em;
                     font-weight: $font-weight-med;
 
                     &::before {
@@ -127,53 +127,48 @@
                         height: 22px;
                         filter: invert(33%) sepia(0%) saturate(0%) hue-rotate(334deg) brightness(96%) contrast(95%);
                     }
-                }
-            }
 
-            &Quote {
-                &Author {
-                    text-align: left;
-                    margin-top: 20px;
-                    @include font-pack(false, 14px, $font-weight-normal, 1.57, #434343);
-
-                    span {
-                        padding-top: 0;
-                        padding-left: 52px;
+                    .author {
+                        @include font-pack(false, .9em, $font-weight-normal, 1.57, #434343);
 
                         &::before {
-                            top: 10px;
-                            left: 0;
-                            width: 40px;
                             border-top: 2px solid #545454;
                         }
                     }
                 }
-            }
 
-            &Other {
-                border-radius: 8px;
-                background: #F8FCFF;
-                @include font-pack(false, 15px, false, false, false);
+                .baca-juga {
+                    border-radius: 8px;
+                    background: #F8FCFF;
+                    
+                    table{
+                        th{
+                            text-transform: uppercase;
+                            @include font-pack(false, 15px, false, false, var(--cl-tekno));                            
+                        }
+                    }
 
-                &::after {
-                    content: '';
-                    position: absolute;
-                    display: block;
-                    background: var(--cl-tekno);
-                    border-radius: 16px;
-                    right: -2px;
-                    top: 40%;
-                    width: 6px;
-                    height: 36px;
-                }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        display: block;
+                        background: var(--cl-tekno);
+                        border-radius: 16px;
+                        right: -2px;
+                        top: 24%;
+                        width: 6px;
+                        height: 36px;
+                    }
 
-                a {
-                    color: #1A1A1A;
-                }
+                    a {
+                        color: #1A1A1A;
+                        text-transform: none;
+                    }
 
-                &Caption {
-                    text-transform: uppercase;
-                    color: var(--cl-tekno)
+                    &Caption {
+                        text-transform: uppercase;
+                        color: var(--cl-tekno)
+                    }
                 }
             }
 

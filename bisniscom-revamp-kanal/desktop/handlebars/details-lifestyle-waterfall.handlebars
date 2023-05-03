@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{>head page="Lifestyle" channel=site.Lifestyle type="details"}}
+{{>head page="Lifestyle"  channel=site.Lifestyle type="details" photozoom=true}}
 
 <body class="theme--lifestyle">
 
@@ -21,7 +21,7 @@
         {{>ads/skyscrapper}}
         <!-- e: skyscrapper billboard -->
 
-        <main role="main" class="main details">
+        <main role="main" class="main details" id="pswp-gallery">
             <div class="nav">
 
                 {{>header/nav channel=mainMenu.Lifestyle}}
@@ -32,11 +32,11 @@
             {{>header/menu}}
             <!-- e: menu panel -->
 
-            <div class="container mt50">
+            <div class="container mt16">
 
                 {{>breadcrumb kanal="Lifestyle" subkanal="Inspirasi"}}
 
-                {{>detail/cover channel=kanal.Lifestyle.details.content mt="40" total=6 index_start=1 index_end=2}}
+                {{>detail/cover channel=kanal.Lifestyle.details.content mt="16" total=6 index_start=1 index_end=2}}
                 {{>detail/title default=true channel=kanal.Lifestyle.details.content total=6 index_start=1 index_end=2}}
 
                 <div class="row">
@@ -123,29 +123,10 @@
             </div>
         </main>
     </div>
-
-    <!-- modal image -->
-    {{>detail/modal-image}}
-
-    <!-- modal template -->
-    {{>modal}}
-
+ 
     {{>footer/footer}}
 
-    {{>footer/script page="lifestyle" type="details"}}
-    <script>
-        function openModalImage(el, e) {
-            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
-                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
-            if (!!wcaption) {
-                var caption = wcaption.innerHTML;
-                openModal(el, image, caption)
-            }
-            else {
-                openModal(el, image)
-            }
-        }
-    </script>
+    {{>footer/script page="lifestyle" type="details" photozoom=true}}
 
 </body>
 

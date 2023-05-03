@@ -29,6 +29,14 @@
             align-items: center;
             @include font-pack($font-body, 16px, $font-weight-normal, $line-base, #F2B007);
 
+            &:hover {
+                color: $cl-white;
+
+                .icoLoginPremium {
+                    @extend %filter-white
+                }
+            }
+
             .icoLoginPremium {
                 width: 32px;
                 height: 32px;
@@ -72,6 +80,16 @@
             &Link:hover {
                 .artTitle {
                     color: $cl-white;
+                    text-decoration: underline;
+
+                }
+
+                .artChannel {
+                    color: $cl-white;
+
+                    .icoPremium {
+                        @extend %filter-white
+                    }
                 }
             }
         }
@@ -86,6 +104,10 @@
                 background: #2F2F2F;
                 text-transform: uppercase;
                 @include font-pack($font-body, false, $font-weight-sbold, 1.5, $cl-white);
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }

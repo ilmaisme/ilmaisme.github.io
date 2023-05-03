@@ -20,7 +20,47 @@
 <script type="text/javascript" src="./asset/js/script-tekno.min.js"></script>
 {{/eq}}
 {{/eq}}
-
+{{#if photozoom}}
+<!-- initial script for image photo zoom -->
+<script type="module">
+    import PhotoSwipeLightbox from './asset/js/photoswipe/photoswipe-lightbox.esm.min.js';
+    const options = {
+        gallery: '#pswp-gallery',
+        children: 'figure a',
+        showHideAnimationType: 'zoom',
+        initialZoomLevel: .36,
+        pswpModule: () => import('./asset/js/photoswipe/photoswipe.esm.min.js')
+    };
+    const lightbox = new PhotoSwipeLightbox(options);
+    lightbox.on('uiRegister', function () {
+        lightbox.pswp.ui.registerElement({
+            name: 'custom-caption',
+            order: 9,
+            isButton: false,
+            appendTo: 'root',
+            html: 'Caption text',
+            onInit: (el, pswp) => {
+                lightbox.pswp.on('change', () => {
+                    const currSlideElement = lightbox.pswp.currSlide.data.element;
+                    let captionHTML = '';
+                    if (currSlideElement) {
+                        const hiddenCaption = currSlideElement.querySelector('.detailsImgCaption');
+                        if (hiddenCaption) {
+                            // get caption from element with class hidden-caption-content
+                            captionHTML = hiddenCaption.innerHTML;
+                        } else {
+                            // get caption from alt attribute
+                            captionHTML = currSlideElement.querySelector('img').getAttribute('alt');
+                        }
+                    }
+                    el.innerHTML = captionHTML || '';
+                });
+            }
+        });
+    });
+    lightbox.init();
+</script>
+{{/if}}
 {{#if player}}
 <script type="text/javascript" src="https://cdn.bisnis.com/bisnis/assets/jwplayer/jwplayer.min.js"></script>
 {{/if}}

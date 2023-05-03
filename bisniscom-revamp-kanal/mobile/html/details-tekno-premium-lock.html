@@ -68,7 +68,7 @@
                 </div>
             </div>
         </header>
-        <main role="main" class="main details">
+        <main role="main" class="main details" id="pswp-gallery">
             <!-- s: menu panel -->
             <div class="menuPanel">
                 <a href="https://www.bisnis.com" class="menuPanelLogo center-flex">
@@ -731,25 +731,6 @@
         </main>
     </div>
 
-    <!-- modal image -->
-    <div class="modalWrap detailsModal" data-modal-target="detail-modal-image">
-        <div class="modalHeader">
-            <button class="button modalDismiss" aria-label="Close modal" data-modal-button="dismiss">
-                <span class="icoInline icoClose"></span>
-            </button>
-        </div>
-        <div class="modalBody">
-            <div class="detailsModalImg">
-                <img src="" alt="" loading="lazy" class="image">
-            </div>
-            <div class="detailsModalCaption caption">  
-            </div>
-        </div>
-    </div>
-    <!-- modal template -->
-    <div class="modal" id="modal">
-        <div class="modalContent"></div>
-    </div>
     <footer class="footer">
         <div class="footerWrap container">
             <div class="text-center">
@@ -855,20 +836,7 @@
     <script defer type="text/javascript" src="./asset/js/script-main.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/script-details.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/script-tekno-details.min.js"></script>
-    
     <script>
-        function openModalImage(el, e) {
-            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
-                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
-            if (!!wcaption) {
-                var caption = wcaption.innerHTML;
-                openModal(el, image, caption)
-            }
-            else {
-                openModal(el, image)
-            }
-        }
-
         //show content faq
         var accItem = document.getElementsByClassName('faqBox'),
             accHD = document.getElementsByClassName('-js-show');
