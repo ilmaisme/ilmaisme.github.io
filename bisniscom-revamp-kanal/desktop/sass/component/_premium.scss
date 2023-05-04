@@ -66,7 +66,11 @@
 
             &Channel {
                 letter-spacing: 0;
-                @include font-pack($font-body, 12px, $font-weight-normal, $line-base, false);
+                @include font-pack($font-body, 12px, $font-weight-normal, $line-base, $cl-white);
+
+                &.-premium .icoPremium {
+                    @extend %filter-white;
+                }
             }
 
             &Title {
@@ -82,14 +86,6 @@
                     color: $cl-white;
                     text-decoration: underline;
 
-                }
-
-                .artChannel {
-                    color: $cl-white;
-
-                    .icoPremium {
-                        @extend %filter-white
-                    }
                 }
             }
         }
