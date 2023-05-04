@@ -9,12 +9,8 @@ $(document).ready(function () {
         if (sky.length > 0) {
             var b = hd.outerHeight(),
                 c = nav.outerHeight()
-            a > b + c ? (sky.addClass("-top"),
-                    $(".headerLogo--kanal").addClass("hidden"),
-                    $(".headerLogo--bisniscom").addClass("visible")) :
-                (sky.removeClass("-top"),
-                    $(".headerLogo--kanal").removeClass("hidden"),
-                    $(".headerLogo--bisniscom").removeClass("visible"))
+            a > b + c ? (sky.addClass("-top")) :
+                (sky.removeClass("-top"))
         }
 
         // visible back to top button
