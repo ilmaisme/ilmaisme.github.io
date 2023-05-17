@@ -112,14 +112,20 @@
     &Font {
         @include display_flex;
         align-items: center;
-        gap: 10px;
+        // gap: 10px;        
+        margin-left: -5px;
+        margin-right: -5px;
 
         &Cta {
+            margin-left: 5px;
+            margin-right: 5px;
             letter-spacing: 0.05em;
             @include font-pack($font-body, 12px, $font-weight-sbold, 1.2, #000000);
         }
 
         &Range {
+            margin-left: 5px;
+            margin-right: 5px;
             accent-color: #ABABAB;
         }
     }
@@ -402,9 +408,10 @@
             &.-col {
                 width: 100%;
                 @include display_flex;
-                justify-content: center;
+                justify-content: space-between;
+                text-align: center;
                 flex-wrap: wrap;
-                column-gap: 32px;
+                // column-gap: 32px;
 
                 .detailsImg {
                     flex-shrink: 0;
@@ -474,7 +481,8 @@
         &Wrap {
             @include display_flex;
             flex-direction: row;
-            gap: 40px;
+            // gap: 40px;
+            justify-content: space-between;
 
             &.-first {
                 justify-content: flex-end;
@@ -490,7 +498,7 @@
             border-radius: 12px;
             @include display_flex;
             flex-direction: row;
-            gap: 10px;
+            // gap: 10px;
         }
 
         &Thumb {
@@ -499,6 +507,7 @@
             height: 70px;
             background: #D9D9D9;
             border-radius: 12px;
+            margin-right: 10px;
             overflow: hidden;
 
             img {
