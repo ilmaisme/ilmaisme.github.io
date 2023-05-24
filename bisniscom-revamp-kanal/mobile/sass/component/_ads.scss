@@ -1,6 +1,7 @@
 .billboardRectangle,
 .billboardBottom,
-.billboardFlyingBanner {
+.billboardFlyingInner,
+.billboardLeaderboard {
     &::before {
         content: '';
         position: absolute;
@@ -65,14 +66,19 @@
         }
     }
 
+    &Leaderboard{
+        width: 320px;
+        min-height: 100px;  
+    }
+
     &Parallax {
-        width: 100%
+        width: 100%;
     }
 
     &Flying {
         width: 100%;
         position: relative;
-        overflow: visible;
+        overflow: hidden;
         height: 300px;
 
         &Fix,
@@ -85,25 +91,35 @@
 
         &Inner {
             position: absolute;
-            clip: rect(auto, auto, auto, auto)
+            clip: rect(auto, auto, auto, auto);
+            overflow: hidden;
+
+            &::before,
+            &::after {
+                position: fixed;
+                z-index: -1;
+            }
         }
 
         &Fix {
             position: fixed;
-            margin: 0 auto
+            margin: 0 auto;
+            transform: translateZ(0);
         }
 
         &Banner {
             min-width: 300px;
             min-height: 600px;
             position: absolute;
-            top: 100px;
-            left: calc(((100% - 300px)/2))
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
         }
 
         &Wrap {
             position: relative;
-            z-index: 1;
+            z-index: 0;
         }
     }
 
