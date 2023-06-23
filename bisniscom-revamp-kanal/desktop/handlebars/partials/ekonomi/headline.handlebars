@@ -1,0 +1,73 @@
+<div class="hL">
+    <div class="hLSmall">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="hLSmallItem">
+            <div class="hLContent">
+                <div class="artContentWrap">
+                    <div class="artChannel{{#if premium}} -premium{{/if}}">
+                        <a href="subkanal-ekonomi.html">
+                            {{#if premium}}
+                            <span class="icoInline icoPremium"></span>Premium
+                            {{else}}
+                            {{channel}}
+                            {{/if}}
+                        </a>
+                    </div>
+                    <div class="artDate">
+                        9 menit yang lalu
+                    </div>
+                </div>
+                <a href="{{link}}" class="hLLink artLink">
+                    <h2 class="artTitle">
+                        {{title}}
+                    </h2>
+                </a>
+            </div>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+    <div class="hLBig">
+        {{#each channel}}
+        {{#gte @index compare=../index_big_start}}
+        {{#gte @index compare=../index_big_end}}
+        {{else}}
+        <div class="hLBigItem">
+            <a href="{{link}}" class="hLLink artLink">
+                <div class="hLBigImg">
+                    <img src="https://images.bisnis.com/posts/{{img}}" alt="{{title}}" width="1080" height="610">
+                </div>
+            </a>
+            <div class="hLBigContent">
+                <div class="artContentWrap">
+                    <div class="artChannel{{#if premium}} -premium{{/if}}">
+                        <a href="subkanal-ekonomi.html">
+                            {{#if premium}}
+                            <span class="icoInline icoPremium"></span>Premium
+                            {{else}}
+                            {{channel}}
+                            {{/if}}
+                        </a>
+                    </div>
+                    <div class="artDate">
+                        9 menit yang lalu
+                    </div>
+                </div>
+                <a href="{{link}}" class="hLLink artLink">
+                    <h1 class="hLBigTitle artTitle">
+                        {{title}}
+                    </h1>
+                </a>
+            </div>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+</div>

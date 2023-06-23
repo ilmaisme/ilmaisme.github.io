@@ -1,10 +1,13 @@
 <nav class="navMenu" aria-label="primarynavigation">
     <ul class="navList center-flex">
+        {{#if icon}}
+        {{else}}
         <li class="navItem -b">
             <a href="https://www.bisnis.com/">
                 <img src="./asset/images/icon/icon-bisniscom.svg" alt="Bisniscom icon" width="36" height="36">
             </a>
         </li>
+        {{/if}}
         {{#each channel}}
         <li class="navItem{{#eq ../active compare=title}} -active{{/eq}}">
             <a href="{{link}}" class="navLink">

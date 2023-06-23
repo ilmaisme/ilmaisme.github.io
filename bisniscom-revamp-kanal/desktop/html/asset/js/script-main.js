@@ -2,6 +2,7 @@ $(document).ready(function () {
     let hd = $(".headerTop"),
         nav = $(".nav"),
         sky = $(".skyscrapper"),
+        net = $(".network"),
         back = $(".-js-backtop")
     $(window).scroll(function () {
         var a = $(window).scrollTop()

@@ -1,10 +1,31 @@
+{{#eq type compare= "slider"}}
+<div class="flashnews flashnewsSlider">
+    <div class="flashnewsSliderWrap container">
+        <div class="flashnewsCaption">Breaking News</div>
+        <div class="flashnewsWrap -js-flashnews">
+            {{#each channel}}
+            <div class="flashnewsItem">
+                <a href="{{link}}" class="flashnewsLink">
+                    {{#eq @index compare = 4}}
+                    <span class="flashnewsLive">Live : </span>{{title}}
+                    {{else}}
+                    {{title}}
+                    {{/eq}}
+                </a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+{{else}}
 <div class="flashnews">
     <div class="flashnewsCaption">Breaking News</div>
     <marquee class="flashnewsWrap" behavior="scroll" direction="left" onmouseover="this.stop();"
         onmouseout="this.start();">
         {{#each channel}}
         <div class="flashnewsItem">
-            <img src="./asset/images/icon/icon-bisniscom-wsmall.svg" alt="" width="11" height="14" class="flashnewsIcon">
+            <img src="./asset/images/icon/icon-bisniscom-wsmall.svg" alt="" width="11" height="14"
+                class="flashnewsIcon">
             <a href="{{link}}" class="flashnewsLink">
                 {{#eq @index compare = 4}}
                 <span class="flashnewsLive">Live : </span>{{title}}
@@ -16,3 +37,4 @@
         {{/each}}
     </marquee>
 </div>
+{{/eq}}
