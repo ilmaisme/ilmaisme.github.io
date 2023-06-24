@@ -15,6 +15,26 @@
             }
         }
 
+        .col-left {
+            padding-right: 46px;
+
+            .billboardLeaderboard {
+                margin-left: -6px;
+                margin-right: -6px;
+            }
+        }
+
+        .billboardPushdown {
+            margin-top: 16px;
+            margin-bottom: 50px;
+            margin-left: auto;
+            margin-right: auto;
+
+            &Inner {
+                position: relative;
+            }
+        }
+
         .flashnews {
             &Slider {
                 height: 36px;
@@ -25,16 +45,6 @@
                 &Wrap {
                     display: flex;
                     align-items: center;
-                }
-
-                .slick-prev {
-                    left: unset;
-                    right: 23px;
-                    top: -1.5px;
-                }
-
-                .slick-next {
-                    right: 0;
                 }
 
                 .slick-prev,
@@ -50,6 +60,16 @@
                         filter: none;
                         transform: rotate(315deg);
                     }
+                }
+
+                .slick-prev {
+                    left: unset;
+                    right: 23px;
+                    top: -2px;
+                }
+
+                .slick-next {
+                    right: 0;
                 }
             }
 
@@ -142,6 +162,7 @@
 
                     .menuPanel {
                         top: 48px;
+                        height: calc(100vh - 48px);
                     }
 
                 }
@@ -268,10 +289,98 @@
         }
 
         .art {
-            &Link:hover {
-                .artTitle {
-                    color: var(--cl-ekonomi)
+            &Wrap.-col {
+                .artImg {
+                    padding-top: 56.322%;
+                    margin-bottom: 14px;
                 }
+
+                .artContentWrap {
+                    margin-top: 3px;
+                }
+            }
+
+            &Wrap.-row {
+                .artItem {
+                    margin-top: 20px;
+                }
+
+                .artContent {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin-left: 0;
+                    margin-right: 20px;
+                }
+
+                .artLinkImg {
+                    order: 1;
+                }
+
+                .artImg {
+                    position: relative;
+                    width: 184px;
+                    padding-top: 56.322%;
+
+                    img {
+                        @extend %template-img
+                    }
+                }
+            }
+
+            &Wrap.-center {
+                .artContent {
+                    justify-content: flex-start;
+
+                    &Wrap {
+                        order: 1;
+                    }
+                }
+
+                .artTitle {
+                    margin-top: 0;
+                    margin-bottom: 6px;
+                }
+
+                .artChannel {
+                    width: 100px;
+                    padding: 4px 10px;
+                    margin-right: 20px;
+                    text-align: center;
+                }
+            }
+
+            &Item {
+                &.-photo {
+                    position: relative;
+                    margin-top: 24px;
+                }
+            }
+
+            &PhotoCount {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 8px 12px;
+                border-bottom-left-radius: 7px;
+            }
+
+            &Link {
+                &:hover {
+                    .artTitle {
+                        color: var(--cl-ekonomi)
+                    }
+
+                    ~.artContent {
+                        .artTitle {
+                            color: var(--cl-ekonomi)
+                        }
+                    }
+                }
+            }
+
+            &Img {
+                border-radius: 7px;
             }
 
             &Title {
@@ -285,6 +394,7 @@
             }
 
             &Date {
+                margin-top: 0;
                 letter-spacing: 0.08em;
                 @include font-pack($font-manrope, 10px, $font-weight-med, $line-base, #585858);
             }
@@ -342,7 +452,7 @@
                 }
 
                 .artDate {
-                    margin-top: 2px;
+                    margin-top: 0;
                 }
             }
 
@@ -393,9 +503,111 @@
             }
         }
 
+        .kanal {
+            &Qr {
+                img {
+                    border-radius: 7px;
+                }
+            }
+
+            &Bisnistv {
+                border-radius: 12px;
+
+                .artWrap.-col .artImg {
+                    border-radius: 7px;
+                }
+
+                .artTitle {
+                    order: 0;
+                    margin-top: 0;
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    color: #000;
+                }
+
+                .artDuration .icoPlay {
+                    &::before {
+                        left: 5px;
+                        border-left: 19px solid var(--cl-ekonomi);
+                    }
+                }
+            }
+        }
+
+        .sidebar {
+            .artWrap.-row {
+                .artContent {
+                    justify-content: flex-start;
+                    margin-left: 20px;
+                    margin-right: 0;
+                }
+
+                .artLinkImg {
+                    order: 0;
+                }
+
+                .artImg {
+                    width: 80px;
+                    padding-top: calc(2/2*100%);
+                }
+
+                .artTitle {
+                    margin-top: 0;
+                    -webkit-line-clamp: 3;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .most {
+            &Item {
+                margin-top: 20px;
+
+                .mostLink {
+                    display: block;
+                    padding-left: 38px;
+                }
+
+                &:first-child {
+                    margin-top: 24px;
+                }
+            }
+
+            &Num {
+                min-width: 18px;
+                text-align: center;
+                top: 0;
+                bottom: unset;
+                left: 0;
+                right: unset;
+                letter-spacing: 2.4px;
+                @include font-pack($font-manrope, 30px, $font-weight-normal, false, #585858);
+            }
+
+            .artTitle {
+                margin-top: 0;
+                margin-bottom: 10px;
+                -webkit-line-clamp: 3;
+                font-size: 14px;
+            }
+        }
+
         .icoPremium {
             margin-left: 0;
             margin-right: 5px;
+        }
+
+        .buttonPrimary {
+            min-width: 160px;
+            border: 1px solid var(--cl-ekonomi);
+            border-radius: 7px;
+            text-transform: none;
+            @include font-pack($font-manrope, false, false, false, var(--cl-ekonomi));
+
+            &:hover {
+                color: $cl-white;
+                background: var(--cl-ekonomi);
+            }
         }
     }
 }

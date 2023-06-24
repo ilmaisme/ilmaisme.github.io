@@ -1,0 +1,73 @@
+<div class="art{{#if mt}} mt{{mt}}{{/if}}">
+    <div class="artWrap{{#if type}} -{{type}}{{/if}}{{#if pos}} -{{pos}}{{/if}}">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="artItem">
+            <div class="{{#if ../type}} art--{{../type}}{{/if}}">
+                <a href="{{link}}" class="artLink artLinkImg">
+                    <div class="artImg">
+                        <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../w}}&h={{../h}}" width="{{../w}}"
+                            height="{{../h}}" alt="{{title}}" loading="lazy">
+                        {{#if ../video}}
+                        <div class="artDuration">
+                            <span class="icoInline icoPlay"></span>
+                        </div>
+                        {{/if}}
+                    </div>
+                </a>
+                {{#compare ../pos "==" "center"}}
+                {{#if premium}}
+                <div class="artChannel -premium">
+                    <a href="subkanal-ekonomi.html">
+                        <span class="icoInline icoPremium"></span>Premium
+                    </a>
+                </div>
+                {{else}}
+                <div class="artChannel">
+                    <a href="subkanal-ekonomi.html">
+                        {{channel}}
+                    </a>
+                </div>
+                {{/if}}
+                {{/compare}}
+                <div class="artContent">
+                    {{#compare ../dates "==" false}}
+                    {{else}}
+                    <div class="artContentWrap">
+                        {{#compare ../pos "==" "center"}}
+                        {{else}}
+                        {{#if premium}}
+                        <div class="artChannel -premium">
+                            <a href="subkanal-ekonomi.html">
+                                <span class="icoInline icoPremium"></span>Premium
+                            </a>
+                        </div>
+                        {{else}}
+                        <div class="artChannel">
+                            <a href="subkanal-ekonomi.html">
+                                {{channel}}
+                            </a>
+                        </div>
+                        {{/if}}
+                        {{/compare}}
+                        <div class="artDate">
+                            9 menit yang lalu
+                        </div>
+                    </div>
+                    {{/compare}}
+                    <a href="{{link}}" class="artLink">
+                        <h4 class="artTitle">
+                            {{title}}
+                        </h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+</div>

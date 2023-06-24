@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{>head page="Ekonomi" slick=true hl=true channel=site.Ekonomi font=true}}
+{{>head page="Ekonomi" slick=true latest=true channel=site.Ekonomi font=true}}
 
 <body class="theme--ekonomi">
+
+    <!-- s: pushdown billboard -->
+    {{!>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
     <div class="root">
 
         <!-- s: network -->
@@ -14,8 +19,8 @@
         {{>flashnews type="slider" channel=flashnews}}
         <!-- e: flashnews -->
 
-        {{>header/header login=true kanal="Ekonomi" font=true label="Login" icon=true premium=true}}
-        {{!>header/header kanal="Ekonomi" font=true label="Login" icon=true premium=true}}
+        {{!>header/header login=true kanal="Ekonomi" font=true label="Login" icon=true premium=true}}
+        {{>header/header kanal="Ekonomi" font=true label="Login" icon=true premium=true}}
 
         <!-- s: skyscrapper billboard -->
         {{>ads/skyscrapper}}
@@ -24,7 +29,7 @@
         <main role="main" class="main">
             <div class="nav">
 
-                {{>header/nav channel=mainMenu.Ekonomi active="Home" icon=true}}
+                {{>header/nav channel=mainMenu.Ekonomi active="Infrastruktur" icon=true}}
 
             </div>
 
@@ -34,54 +39,12 @@
 
             <div class="container mt50">
                 <div class="row">
-
+                    
                     <!-- s: pushdown billboard -->
                     {{>ads/pushdown}}
                     <!-- e: pushdown billboard -->
-
-                    <div class="col-7 hLCol">
-                        <!-- s: headline -->
-                        {{>ekonomi/headline channel=kanal.Ekonomi.hL total=5 index_start=0 index_end=4 index_big_start=4
-                        index_big_end=5}}
-
-                        <!-- e: headline -->
-                    </div>
-                    <sidebar class="sidebar col-3 col-right">
-                        <!-- s: rectangle billboard -->
-                        {{>ads/middle}}
-                        <!-- e: rectangle billboard -->
-
-                        <!-- s: topic -->
-                        <h3 class="titleCaption mt30"><span class="topicCaption">#</span> Hot Topic</h3>
-                        {{>topic channel=topic total=9 index_start=0 index_end=7}}
-
-                        <!-- e: topic -->
-
-                    </sidebar>
-                </div>
-
-                <!-- s: live -->
-                {{>live channel=kanal.Ekonomi.live.latest total=4 index_start=0 index_end=4}}
-                <!-- e: live -->
-
-                <div class="row">
-                    <div class="col-10">
-                        <!-- s: rec -->
-                        <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
-                        {{>ekonomi/article channel=kanal.Ekonomi.recommend.latest type="col" mt="16" total=4
-                        index_start=0
-                        index_end=4 w=255 h=144 dates=false}}
-
-                        <!-- e: rec -->
-
-                        <!-- s: leaderboard billboard -->
-                        <div class="mt50">
-                            {{>ads/leaderboard}}
-                        </div>
-                        <!-- e: leaderboard billboard -->
-                    </div>
-
-                    <div class="col-7 col-left mt50">
+                    
+                    <div class="col-7 col-left">
 
                         <!-- s: latest -->
                         <h3 class="titleCaption">Berita Terbaru</h3>
@@ -122,10 +85,18 @@
                         </div>
 
                     </div>
-                    <sidebar class="sidebar col-3 col-right mt50">
+                    <sidebar class="sidebar col-3 col-right">
                         <!-- s: rectangle billboard -->
                         {{>ads/middle}}
                         <!-- e: rectangle billboard -->
+                        
+                        <!-- s: rec -->
+                        <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
+                        {{>ekonomi/article channel=kanal.Ekonomi.recommend.latest type="row" mt="16" total=4
+                        index_start=0
+                        index_end=4 w=80 h=80 dates=false}}
+
+                        <!-- e: rec -->
 
                         <!-- s: bisnistv -->
                         <div class="kanalBisnistv mt50">
@@ -139,6 +110,12 @@
                         </div>
 
                         <!-- e: bisnistv -->
+
+                        <!-- s: terpopuler -->
+                        <h3 class="titleCaption mt50">Terpopuler</h3>
+                        {{>kanal/most channel=kanal.Ekonomi.most total=5 index_start=0 index_end=5 countdates=true}}
+
+                        <!-- e: terpopuler -->
 
                         <!-- s: foto -->
                         <div class="titleCaptionWrap mt50">
