@@ -166,6 +166,199 @@
                 }
             }
 
+            &Paging {
+                @include display_flex;
+                margin-bottom: 40px;
+                margin-left: -10px;
+                margin-right: -10px;
+
+                &Wrap {
+                    flex-direction: column;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    flex: 1;
+                }
+
+                &Item {
+                    max-width: unset;
+                    margin-top: 14px;
+                    padding: 14px 0;
+                    border-radius: 0;
+                    border-left: 0;
+                    border-right: 0;
+                    border-top: 1px solid #3D3D3D;
+                    border-bottom: 1px solid #3D3D3D;
+
+                    &:hover {
+                        .detailsPagingContent {
+                            color: var(--cl-ekonomi);
+
+                            .icoArrow {
+                                filter: var(--filter-ekonomi);
+                            }
+                        }
+                    }
+                }
+
+                &Content {
+                    @include display_flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    @include font-pack($font-manrope, 14px, $font-weight-sbold, false, #222);
+
+                    .icoArrow {
+                        width: 30px;
+                        height: 30px;
+                        flex-shrink: 0;
+                        margin-left: 30px;
+                    }
+
+                    &.-prev {
+                        .icoArrow {
+                            transform: rotate(180deg);
+                            margin-right: 30px;
+                            margin-left: 0;
+                            order: -1;
+                        }
+                    }
+                }
+
+                &Title {
+                    margin-top: 0;
+                }
+            }
+
+            &Break {
+                border-bottom: 1px solid var(--cl-ekonomi);
+
+                &Caption {
+                    letter-spacing: 0.39px;
+                    @include font-pack(false, 13px, $font-weight-med, 1.69, var(--cl-ekonomi));
+                }
+            }
+
+            &Live {
+                &Caption {
+                    padding: 3px 8px 3px 18px;
+                    border-radius: 5px;
+                    background: #D11616;
+                    text-transform: uppercase;
+                    letter-spacing: 0.6px;
+                    @include font-pack($font-manrope, 12px, false, 1.334, $cl-white);
+
+                    span {
+                        font-weight: $font-weight-sbold;
+                        color: $cl-white;
+
+                        &::before {
+                            top: 4px;
+                            left: -10px;
+                            width: 6px;
+                            height: 6px;
+                            border-radius: 6px;
+                            background: #EC8A8A;
+                        }
+                    }
+                }
+
+                &Anchor {
+                    padding: 5px 8px;
+                    border-radius: 7px;
+                    letter-spacing: 0.6px;
+                    @include font-pack($font-manrope, 12px, false, 1.5, false);
+
+                    &.-active,
+                    &:hover {
+                        background: $cl-white;
+                        color: #D11616;
+                        border-color: #D11616;
+                    }
+                }
+
+                &Slider {
+                    max-height: 30px;
+                    border-left: 0;
+                    padding-left: 30px;
+
+                    .slick-arrow {
+                        width: 30px;
+                        height: 30px;
+
+                        &::after {
+                            top: 0;
+                            left: -2px;
+                        }
+                    }
+
+                    .slick-prev,
+                    .slick-next {
+                        background: #D11616;
+
+                        &.slick-disabled {
+                            opacity: 1;
+                            background: #BDBDBD;
+                        }
+
+                        &::after {
+                            background-image: none;
+                            @extend %icoChevron;
+                            filter: none;
+                            width: 14px;
+                            height: 14px;
+                            border-bottom: 2px solid $cl-white;
+                            border-right: 2px solid $cl-white;
+                            transform: rotate(315deg);
+                        }
+                    }
+
+                    .slick-prev {
+                        right: 35px;
+                        left: unset;
+                    }
+
+                    &Wrap {
+                        padding-left: 0;
+
+                        &::after {
+                            width: 125px
+                        }
+                    }
+                }
+
+                &Item {
+                    &.-active {
+                        .detailsLiveTime {
+                            color: #D11616;
+
+                            &::after {
+                                background: #D11616;
+                            }
+                        }
+                    }
+                }
+
+                &Time {
+                    padding-top: 14px;
+                    padding-bottom: 14px;
+                    letter-spacing: 0.6px;
+                    @include font-pack($font-manrope, 12px, $font-weight-sbold, false, #585858);
+
+                    &::after {
+                        opacity: 1;
+                        background: #585858;
+                        border-radius: 0;
+                        left: 93px;
+                        bottom: 26px;
+                        width: 3px;
+                        height: 37px;
+                    }
+                }
+
+                &Title {
+                    @include font-pack($font-manrope, 1.57em, false, 1.45, false);
+                }
+            }
+
             .baca-juga {
                 &-box {
                     margin-top: 30px;
@@ -250,7 +443,7 @@
                 margin-top: 36px;
             }
 
-            .artWrap.-col .artImg {
+            .artWrap.-col .artLinkImg .artImg {
                 padding-top: 75%;
             }
         }

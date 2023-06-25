@@ -49,15 +49,16 @@
                             <button class="button detailsFontCta -minus">
                                 Smallest Font
                             </button>
-                            <input type="range" min=".4" max="1.6" value="1" step=".2" id="sliderFont" class="detailsFontRange"
-                                aria-label="Customize font size">
+                            <input type="range" min=".4" max="1.6" value="1" step=".2" id="sliderFont"
+                                class="detailsFontRange" aria-label="Customize font size">
                             <button class="button detailsFontCta -plus">
                                 Largest Font
                             </button>
                         </div>
 
-                        <article class="detailsContent mt40">
-                            {{>detail/content-series bacatype="box" channel=kanal.Ekonomi.recommend.latest index_start=0 index_end=3}}
+                        <article class="detailsContent detailsLive mt40">
+                            {{>detail/content-live tekno=true channel=kanal.Ekonomi.details.live index_start=0
+                            index_end=3}}
 
                         </article>
 
@@ -156,6 +157,59 @@
     {{>footer/footer}}
 
     {{>footer/script page="ekonomi" slick=true type="details" photozoom=true}}
+    <script>
+
+        $(document).ready(function () {
+            //live details slider anchor
+            if ($('.-js-slider-live').length > 0) {
+                $('.-js-slider-live').slick({
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    fade: false,
+                    swipe: false,
+                    infinite: false
+                });
+            }
+
+            //live anchor trigger
+            $('.detailsLiveAnchor').on("click", function () {
+                var a = $(this).attr("anchor"),
+                    b = $('.detailsLive').find("[content='" + a + "']"),
+                    pg = $('.paging');
+                //console.log(b)
+                $('.detailsLiveAnchor').removeClass("-active");
+                $('.detailsLiveItem').removeClass("-active");
+                $(this).addClass("-active");
+                if (b.length > 0) {
+                    var scroll = b.offset().top;
+                    b.addClass("-active");
+
+                    if ($('.flashnews').length > 0) {
+                        $("html, body").animate({
+                            scrollTop: scroll - 120
+                        }, 500);
+                    } else {
+                        $("html, body").animate({
+                            scrollTop: scroll - 90
+                        }, 500);
+                    }
+                } else {
+                    var scrollpg = pg.offset().top;
+                    if ($('.flashnews').length > 0) {
+                        $("html, body").animate({
+                            scrollTop: scrollpg - 120
+                        }, 500);
+                    } else {
+                        $("html, body").animate({
+                            scrollTop: scrollpg - 90
+                        }, 500);
+                    }
+                }
+                return false;
+            });
+        })
+    </script>
 
 </body>
 

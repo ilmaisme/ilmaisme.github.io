@@ -57,13 +57,25 @@
                         </div>
 
                         <article class="detailsContent mt40">
-                            {{>detail/content-series bacatype="box" channel=kanal.Ekonomi.recommend.latest index_start=0 index_end=3}}
+                            {{>detail/content-series quoteau=true bacatype="box" channel=kanal.Ekonomi.recommend.latest index_start=0 index_end=3}}
+
+                            <!-- s: details break -->
+                            {{>detail/break page=1}}
+                            <!-- e: details break -->
+
+                            {{>detail/content-series-2}}
+
+                            <!-- s: details break -->
+                            {{>detail/break page=2}}
+                            <!-- e: details break -->
+
+                            {{>detail/content-series-3}}
+
+                            <!-- s: details break -->
+                            {{>detail/break page=3}}
+                            <!-- e: details break -->
 
                         </article>
-
-                        <!-- s: detail pagination -->
-                        {{>detail/paging caption="Halaman"}}
-                        <!-- e: detail pagination -->
 
                         {{>detail/author channel=kanal.Ekonomi.details.content total=6 index_start=0 index_end=1}}
 
