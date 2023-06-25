@@ -76,6 +76,12 @@
             &Wrap {
                 width: calc(100% - 128px);
                 background: #D11616;
+                opacity: 0;
+                transition: opacity .5s ease;
+
+                &.slick-initialized {
+                    opacity: 1;
+                }
             }
 
             &Item {
@@ -107,6 +113,13 @@
             .header {
                 .headerTop {
                     transform: translateY(0);
+                }
+
+                &LoginLabel {
+                    opacity: 0;
+                    visibility: hidden;
+                    width: 0;
+                    margin-left: 0;
                 }
             }
 
@@ -224,13 +237,17 @@
             @include font-pack($font-manrope, 12px, $font-weight-bold, false, #3D3D3D);
             letter-spacing: 0.02em;
 
+            &Label{
+                margin-left: 5px;
+                transition: opacity .5s ease-out;
+            }
+
             a {
                 @include display_flex;
                 align-items: center;
             }
 
             .icoLogin {
-                margin-right: 5px;
                 @extend %icoLoginPremium;
                 background-repeat: no-repeat;
                 filter: invert(20%) sepia(0%) saturate(22%) hue-rotate(151deg) brightness(98%) contrast(86%);

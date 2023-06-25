@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{>head page="Ekonomi" slick=true latest=true channel=site.Ekonomi font=true}}
+{{>head page="Ekonomi" slick=true channel=site.Ekonomi font=true type="details" photozoom=true}}
 
 <body class="theme--ekonomi">
 
@@ -22,10 +22,10 @@
         {{>ads/skyscrapper}}
         <!-- e: skyscrapper billboard -->
 
-        <main role="main" class="main">
+        <main role="main" class="main details" id="pswp-gallery">
             <div class="nav">
 
-                {{>header/nav channel=mainMenu.Ekonomi active="Infrastruktur" icon=true}}
+                {{>header/nav channel=mainMenu.Ekonomi icon=true}}
 
             </div>
 
@@ -35,49 +35,63 @@
 
             <div class="container mt50">
                 <div class="row">
-                    
-                    <!-- s: pushdown billboard -->
-                    {{>ads/pushdown}}
-                    <!-- e: pushdown billboard -->
-                    
+
                     <div class="col-7 col-left">
+                        {{>breadcrumb kanal="Ekonomi" subkanal="Industri" active=true}}
 
-                        <!-- s: latest -->
-                        <h3 class="titleCaption">Berita Terbaru</h3>
-                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="col" total=10 index_start=0
-                        index_end=2 w=348 h=196 mt="16"}}
+                        {{>detail/title pos="left" channel=kanal.Ekonomi.details.content total=6
+                        index_start=0
+                        index_end=1 mt="30" lead=true share=true photo=true}}
+                        {{>detail/cover pos="left" channel=kanal.Ekonomi.details.content mt="40" total=6 index_start=0
+                        index_end=1}}
 
-                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="row" pos="center" total=10 index_start=2
-                        index_end=6 w=184 h=104 mt="30"}}
-
-                        <!-- e: latest -->
-
-                        <!-- s: leaderboard billboard -->
-                        <div class="mt30">
-                            {{>ads/leaderboard}}
+                        <div class="detailsFont center-flex mt30">
+                            <button class="button detailsFontCta -minus">
+                                Smallest Font
+                            </button>
+                            <input type="range" min=".4" max="1.6" value="1" step=".2" id="sliderFont" class="detailsFontRange"
+                                aria-label="Customize font size">
+                            <button class="button detailsFontCta -plus">
+                                Largest Font
+                            </button>
                         </div>
-                        <!-- e: leaderboard billboard -->
 
-                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="col" total=10 index_start=6
-                        index_end=8 w=348 h=196 mt="50"}}
+                        <article class="detailsContent mt40">
+                            {{>detail/content-series bacatype="box" channel=kanal.Ekonomi.recommend.latest index_start=0 index_end=3}}
 
-                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="row" pos="center" total=10 index_start=0
-                        index_end=4 w=184 h=104 mt="30"}}
+                        </article>
 
-                        <!-- s: leaderboard billboard -->
-                        <div class="mt30">
-                            {{>ads/leaderboard}}
-                        </div>
-                        <!-- e: leaderboard billboard -->
+                        <!-- s: detail pagination -->
+                        {{>detail/paging}}
+                        <!-- e: detail pagination -->
 
-                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="col" total=10 index_start=8
-                        index_end=10 w=348 h=196 mt="50"}}
+                        {{>detail/author channel=kanal.Ekonomi.details.content total=6 index_start=0 index_end=1}}
 
-                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="row" pos="center" total=10 index_start=4
-                        index_end=8 w=184 h=104 mt="30"}}
+                        {{>detail/tag channel=kanal.Ekonomi.details caption="Tag"}}
+
+                        {{>detail/share channel=kanal.Ekonomi.details.content total=6 index_start=0
+                        index_end=1 caption="Share" mt="16"}}
+
+                        <h2 class="titleCaption titleCaptionMed mt30">
+                            Simak video di bawah ini:
+                        </h2>
+                        {{>detail/video}}
+
+                        {{>newsletter mt="40"}}
+
+                        <h3 class="titleCaption mt40">Artikel Terkait</h3>
+                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="col" details=true mt="16" total=4
+                        index_start=0 index_end=4 w=164 h=123 dates=false}}
+
+                        <h3 class="titleCaption mt40">Berita Terbaru</h3>
+                        {{>detail/article-other channel=kanal.Ekonomi.most mt="16" total=5 index_start=0 index_end=5}}
+
+                        <h3 class="titleCaption mt40">Berita Lainnya</h3>
+                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="row" total=3 index_start=4
+                        index_end=7 w=184 h=104}}
 
                         <div class="center-flex">
-                            <a href="#" class="buttonPrimary">Indeks Berita</a>
+                            <a href="#" class="buttonPrimary">Berita Lainnya</a>
                         </div>
 
                     </div>
@@ -85,7 +99,7 @@
                         <!-- s: rectangle billboard -->
                         {{>ads/middle}}
                         <!-- e: rectangle billboard -->
-                        
+
                         <!-- s: rec -->
                         <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
                         {{>ekonomi/article channel=kanal.Ekonomi.recommend.latest type="row" mt="16" total=4
@@ -141,7 +155,7 @@
 
     {{>footer/footer}}
 
-    {{>footer/script page="ekonomi" slick=true}}
+    {{>footer/script page="ekonomi" slick=true type="details" photozoom=true}}
 
 </body>
 

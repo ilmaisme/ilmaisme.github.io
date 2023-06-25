@@ -3,7 +3,16 @@ $(document).ready(function () {
         nav = $(".nav"),
         net = $(".network"),
         body = $("body")
+
     $(window).scroll(function () {
+        scrollNav()
+    })
+
+    $(window).on('load', function () {
+        scrollNav()
+    })
+
+    function scrollNav() {
         var a = $(window).scrollTop()
 
         // network navigation header
@@ -19,7 +28,7 @@ $(document).ready(function () {
             a > b + c ? (body.addClass("-nav")) :
                 (body.removeClass("-nav"))
         }
-    })
+    }
 
     if ($('.-js-flashnews').length > 0) {
         // slider flashnews

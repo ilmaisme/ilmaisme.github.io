@@ -1,0 +1,311 @@
+.theme {
+    &--ekonomi {
+        .breadcrumb {
+            padding: 6px 2px;
+
+            &Item {
+                &.-active {
+                    .breadcrumbLink {
+                        color: var(--cl-ekonomi);
+                    }
+                }
+            }
+
+            &Link {
+                @include font-pack($font-manrope, 13px, $font-weight-med, false, #3D3D3D);
+            }
+        }
+
+        .details {
+            font-size: 13px;
+
+            &Title {
+                &Caption {
+                    @include font-pack($font-manrope, 30px, $font-weight-sbold, 1.4, #222);
+                }
+
+                .detailsWrap {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+
+            &Lead {
+                margin-top: 15px;
+                letter-spacing: 0.39px;
+                @include font-pack(false, 13px, $font-weight-med, 1.7, #585858);
+            }
+
+            &Attribute {
+                margin-top: 15px;
+                letter-spacing: 0.39px;
+                @include font-pack($font-manrope, 13px, $font-weight-normal, false, #222);
+
+                &Author {
+                    display: flex;
+                }
+
+                &Dates {
+                    margin-top: 4px;
+                    letter-spacing: 0.8px;
+                    @include font-pack(false, 10px, $font-weight-med, false, #585858);
+                }
+
+                &Item {
+                    flex-direction: column;
+                }
+
+                .profileImg {
+                    width: 36px;
+                    height: 36px;
+                    margin-right: 8px;
+                }
+            }
+
+            &Img {
+                img {
+                    border-radius: 12px;
+                    overflow: hidden;
+                    object-position: top center;
+                    width: auto;
+                    height: auto;
+                    margin: auto;
+                    position: unset;
+                    object-fit: contain;
+                }
+
+                &Wrap {
+                    width: fit-content;
+                    margin: auto;
+
+                    &.-center {
+                        .detailsImg {
+                            padding-top: 0;
+                            width: fit-content;
+                            margin: auto;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                &Caption {
+                    letter-spacing: 0.44px;
+                    @include font-pack(false, 11px, $font-weight-med, 1.6, #585858);
+                }
+            }
+
+            &Zoom {
+                padding: 8px 10px;
+                border-radius: 12px;
+                @include font-pack($font-manrope, 14px, $font-weight-sbold, false, false);
+
+                .icoZoom {
+                    width: 22px;
+                    height: 22px;
+                    margin-right: 10px;
+                }
+            }
+
+            &Cover {
+                &Img {
+                    border-radius: 12px;
+                }
+            }
+
+            &Font {
+                &Cta {
+                    letter-spacing: 0.39px;
+                    @include font-pack($font-manrope, 13px, $font-weight-med, false, false);
+                }
+
+                &Range {
+                    width: 166px;
+                }
+            }
+
+            &Content {
+                letter-spacing: 0.39px;
+                @include font-pack($font-manrope, 13px, $font-weight-med, 1.69, #3D3D3D);
+
+                a {
+                    color: #D11616;
+                }
+
+            }
+
+            &Author {
+                margin-top: 14px;
+                letter-spacing: 0.39px;
+                @include font-pack(false, 13px, false, false, #222);
+
+                a {
+                    font-weight: $font-weight-med;
+                }
+            }
+
+            &Tag {
+                margin-top: 10px;
+
+                &Link {
+                    padding: 2px 8px;
+                    border-radius: 7px;
+                    letter-spacing: 0.6px;
+                    border: 1px solid #D11616;
+                    @include font-pack(false, 12px, $font-weight-sbold, false, #222);
+
+                    &:hover {
+                        background: #D11616;
+                        color: $cl-white;
+                    }
+                }
+
+                &Caption {
+                    letter-spacing: 0.39px;
+                    @include font-pack(false, 13px, false, false, #222);
+                }
+            }
+
+            .baca-juga {
+                &-box {
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    padding: 20px;
+                    border-top: 1px solid #3D3D3D;
+                    border-bottom: 1px solid #3D3D3D;
+
+                    ul {
+                        list-style-type: none;
+                        padding: 0;
+                        margin-top: 6px;
+                        margin-bottom: 0;
+                    }
+
+                    li {
+                        padding: 2px 0;
+
+                        a {
+                            display: block;
+                            position: relative;
+                            padding-top: 4px;
+                            padding-bottom: 4px;
+                            padding-left: 18px;
+                            @include font-pack(false, 16px, $font-weight-sbold, false, #222);
+
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                display: block;
+                                top: 14px;
+                                left: 0;
+                                width: 8px;
+                                height: 8px;
+                                background: #D11616;
+                            }
+                        }
+                    }
+                }
+
+                &-title {
+                    margin-top: 0;
+                    margin-bottom: 6px;
+                    @include font-pack(false, 18px, $font-weight-med, false, #222);
+                    text-transform: uppercase;
+                }
+            }
+
+            .paging {
+                margin-top: 37px;
+                margin-bottom: 37px;
+
+                &Wrap {
+                    padding-top: 14px;
+                    padding-bottom: 14px;
+                    position: relative;
+                    justify-content: flex-end;
+                    border-top: 1px solid #3D3D3D;
+                    border-bottom: 1px solid #3D3D3D;
+                }
+
+                &Caption {
+                    position: absolute;
+                    left: 0;
+                    @include font-pack($font-manrope, 14px, $font-weight-sbold, 1.57, #222);
+                }
+
+                &Link,
+                &Show {
+                    @include font-pack($font-manrope, 14px, $font-weight-sbold, false, #222);
+
+                    &.-active,
+                    &:hover {
+                        color: $cl-white;
+                        background: #222;
+                        border: 1px solid #222;
+                    }
+                }
+            }
+
+            hr {
+                margin-top: 36px;
+            }
+
+            .artWrap.-col .artImg {
+                padding-top: 75%;
+            }
+        }
+
+        .shareSocmed {
+            &Item {
+                margin-left: 4px;
+                margin-right: 4px;
+
+                .shareSocmedCta {
+                    background: $cl-white;
+                }
+
+                .icoInline {
+                    filter: none;
+                }
+            }
+
+            &Wrap {
+                letter-spacing: 0.39px;
+                @include font-pack($font-manrope, 13px, $font-weight-bold, false, #222);
+            }
+        }
+
+        .titleCaptionMed {
+            text-transform: none;
+            @include font-pack(false, 16px, $font-weight-sbold, false, false);
+        }
+
+        .newsletter {
+            padding-top: 37px;
+            padding-bottom: 37px;
+
+            &Caption {
+                @include font-pack($font-manrope, 16px, $font-weight-sbold, false, false);
+            }
+
+            &Lead {
+                margin-top: 12px;
+                letter-spacing: 0.39px;
+                @include font-pack($font-manrope, 13px, $font-weight-med, false, false);
+            }
+
+            &Cta {
+                min-width: 142px;
+                background: var(--cl-ekonomi);
+                font-family: $font-manrope
+            }
+
+            &Form {
+                .formInput {
+                    font-family: $font-manrope;
+                    @include placeholder(false, false, false, #3D3D3D)
+                }
+            }
+        }
+    }
+}
