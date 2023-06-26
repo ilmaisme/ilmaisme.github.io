@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Ekonomi" slick=true channel=site.Ekonomi font=true type="details" premium=true photozoom=true}}
+
+<body class="theme--ekonomi theme--premium">
+
+    <div class="root">
+
+        <!-- s: flashnews -->
+        {{>flashnews type="slider" channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{! >header/header login=true kanal="Ekonomi" font=true label="Login" icon=true premium=true}}
+        {{>header/header kanal="Ekonomi" font=true label="Login" icon=true premium=true}}
+
+        <main role="main" class="main details" id="pswp-gallery">
+            <div class="nav">
+
+                {{>header/nav channel=mainMenu.Ekonomi icon=true}}
+
+            </div>
+
+            <!-- s: menu panel -->
+            {{>header/menu}}
+            <!-- e: menu panel -->
+
+            {{>premium/cover-ekonomi channel=kanal.Ekonomi.details.content total=6 index_start=0
+            index_end=1}}
+
+            <div class="detailsParallax">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-9 mx-auto">
+
+                            {{>premium/title-parallax pos="left" parallax=true channel=kanal.Ekonomi.details.content
+                            total=6
+                            index_start=0
+                            index_end=1 lead=true share=true photo=true}}
+
+                            <div class="detailsFont center-flex mt30">
+                                <button class="button detailsFontCta -minus">
+                                    Smallest Font
+                                </button>
+                                <input type="range" min=".4" max="1.6" value="1" step=".2" id="sliderFont"
+                                    class="detailsFontRange" aria-label="Customize font size">
+                                <button class="button detailsFontCta -plus">
+                                    Largest Font
+                                </button>
+                            </div>
+
+                            <article class="detailsContent -lock mt40">
+                                {{>detail/content-premium-lock}}
+
+                            </article>
+
+                            {{!--
+                            <hr>
+
+                            {{>detail/author channel=kanal.Ekonomi.details.content total=6 index_start=0 index_end=1}}
+
+                            {{>detail/tag channel=kanal.Ekonomi.details caption="Tag"}}
+
+                            {{>detail/share channel=kanal.Ekonomi.details.content total=6 index_start=0
+                            index_end=1 caption="Share" mt="16"}} --}}
+                            {{>premium/lock pos="top"}}
+
+                            {{>premium/gate}}
+
+                            <h2 class="titleCaption titleCaptionBig mt30">FAQ</h2>
+                            {{>premium/faq channel=faq total=12 index_start=0 index_end=12}}
+
+                            {{>newsletter mt="40"}}
+
+                            <h3 class="titleCaption mt40">Artikel Terkait</h3>
+                            {{>ekonomi/article channel=kanal.Ekonomi.latest type="col" details=true mt="16" total=4
+                            index_start=0 index_end=4 w=164 h=123 dates=false}}
+
+                            <h3 class="titleCaption mt40">Berita Terbaru</h3>
+                            {{>detail/article-other channel=kanal.Ekonomi.most mt="16" total=5 index_start=0
+                            index_end=5}}
+
+                            <h3 class="titleCaption mt40">Berita Lainnya</h3>
+                            {{>ekonomi/article channel=kanal.Ekonomi.latest type="row" total=3 index_start=4
+                            index_end=7 w=184 h=104}}
+
+                            <div class="center-flex">
+                                <a href="#" class="buttonPrimary">Berita Lainnya</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    {{>footer/footer}}
+
+    {{>footer/script page="ekonomi" slick=true type="details" premium=true photozoom=true}}
+
+</body>
+
+</html>
