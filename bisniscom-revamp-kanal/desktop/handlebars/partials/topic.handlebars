@@ -6,7 +6,11 @@
         {{else}}
         <li class="topicItem">
             <a href="{{link}}" class="topicLink">
+                {{#if ../heading}}
+                <{{../heading}} class="topicTitle">{{title}}</{{../heading}}>
+                {{else}}
                 <h4 class="topicTitle">{{title}}</h4>
+                {{/if}}
             </a>
         </li>
         {{/gte}}

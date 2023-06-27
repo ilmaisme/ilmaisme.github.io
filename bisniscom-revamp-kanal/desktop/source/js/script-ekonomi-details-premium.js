@@ -1,16 +1,34 @@
 $(document).ready(function () {
-    //hide navigation
+
+    // detect idle time
+    var time;
     let hdr = document.querySelector('.headerTop'),
         flash = document.querySelector('.flashnews');
+    resetTimer()
+    var events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
+    events.forEach(function (name) {
+        document.addEventListener(name, resetTimer, true);
+        document.addEventListener(name, removehideNavigation, true);
+    });
 
-    hideNavigation()
+    function resetTimer() {
+        clearTimeout(time);
+        time = setTimeout(hideNavigation, 10000)
+        // 1000 milliseconds = 1 second
+    }
 
+    //hide navigation
     function hideNavigation() {
         if (hdr != null && flash != null) {
-            setTimeout(() => {
-                hdr.classList.add('hidden');
-                flash.classList.add('hidden');
-            }, 10000);
+            hdr.classList.add('hidden');
+            flash.classList.add('hidden');
+        }
+    }
+
+    function removehideNavigation() {
+        if (hdr != null && flash != null) {
+            hdr.classList.remove('hidden');
+            flash.classList.remove('hidden')
         }
     }
 
@@ -24,10 +42,8 @@ $(document).ready(function () {
             c = $(".nav").outerHeight()
         if (a <= b + c) {
             if ($(".headerTop").find(".hidden").length == 0) {
-                hideNavigation()
+                resetTimer()
             }
-        } else {
-            hdr.classList.remove('hidden'), flash.classList.remove('hidden')
         }
     }
 })

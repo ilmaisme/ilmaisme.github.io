@@ -203,6 +203,7 @@
                 position: relative;
                 margin-top: 100vh;
                 background: $cl-white;
+                padding-bottom: 120px;
             }
 
             &Content .big-orange {
@@ -284,6 +285,44 @@
                     letter-spacing: 1.12px;
                 }
             }
+
+            &-alert {
+                width: fit-content;
+                margin-bottom: 12px;
+                padding: 5px 20px;
+                background: transparent;
+                letter-spacing: 0.39px;
+                @include font-pack(false, 13px, $font-weight-med, 1.69, false);
+
+                &-green {
+                    border: 1px solid #0F5D1B;
+                    color: #0F5D1B;
+
+                    &::before {
+                        filter: invert(24%) sepia(92%) saturate(476%) hue-rotate(78deg) brightness(94%) contrast(95%);
+                    }
+                }
+
+                &-red {
+                    border: 1px solid #D11616;
+                    color: #D11616;
+
+                    &::before {
+                        filter: invert(18%) sepia(61%) saturate(3374%) hue-rotate(345deg) brightness(103%) contrast(112%);
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    position: relative;
+                    @extend %icoInfo;
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 10px;
+                    background-size: contain;
+                    background-repeat: no-repeat
+                }
+            }
         }
 
         .faq {
@@ -294,6 +333,10 @@
             &Content {
                 @include font-pack($font-manrope, 14px, $font-weight-med, 1.57, false);
             }
+        }
+
+        .footer {
+            margin-top: 0;
         }
     }
 }
