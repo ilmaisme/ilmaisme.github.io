@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Ekonomi" hl=true channel=site.Ekonomi font=true}}
+
+<body class="theme--ekonomi">
+
+    <!-- s: pushdown billboard -->
+    {{>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{>header/header kanal="Ekonomi" font=true nav=true active="Home"}}
+
+        <main role="main" class="main">
+
+            <!-- s: menu panel -->
+            {{>header/menu login=true}}
+            {{!>header/menu}}
+            <!-- e: menu panel -->
+
+            <div class="container mt20">
+
+                <!-- s: headline -->
+                {{>ekonomi/headline channel=kanal.Ekonomi.hL total=5 index_start=0 index_end=4 index_big_start=4
+                index_big_end=5}}
+
+                <!-- e: headline -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                <!-- s: topic -->
+                <h3 class="titleCaption mt30"><span class="topicCaption">#</span> Hot Topic</h3>
+                {{>topic channel=topic total=9 index_start=3 index_end=9}}
+
+                <!-- e: topic -->
+
+                <!-- s: live -->
+                {{!>live channel=kanal.Ekonomi.live.latest total=4 index_start=0 index_end=4}}
+                <!-- e: live -->
+
+                <!-- s: rec -->
+                <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
+                {{>tekno/article-rec channel=kanal.Tekno.latest pos="top" type="row" thumb=false border=true
+                widthtop="335"
+                heighttop="185" total=8 index_start=0
+                index_end=4}}
+
+                <!-- e: rec -->
+
+                <!-- s: latest -->
+                <h3 class="titleCaption mt30">Berita Terbaru</h3>
+                {{>tekno/article channel=kanal.Tekno.latest dates=true pos="top" col="three" type="col" widthtop="330"
+                heighttop="182"
+                width="157" height="103" total=8 index_start=0
+                index_end=3}}
+
+                <!-- e: latest -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                {{>tekno/article channel=kanal.Tekno.latest dates=true pos="top" col="three" type="col" widthtop="330"
+                heighttop="182"
+                width="157" height="103" total=8 index_start=0
+                index_end=3}}
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                {{>tekno/article channel=kanal.Tekno.latest dates=true pos="top" col="three" type="col" widthtop="330"
+                heighttop="182"
+                width="157" height="103" total=8 index_start=0
+                index_end=3}}
+
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary mt30">Indeks Berita</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- s: bottom billboard -->
+    {{>ads/bottom}}
+    <!-- e: bottom billboard -->
+
+    {{>footer/footer}}
+
+    {{>footer/script page="ekonomi"}}
+
+</body>
+
+</html>

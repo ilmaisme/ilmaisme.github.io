@@ -30,6 +30,12 @@
             a {
                 border-top: 2px solid var(--cl-lifestyle);
                 color: $cl-black;
+                padding-top: 8px !important;
+                font-weight: bold;
+            }
+
+            span{
+                margin-top: 4px !important;
             }
         }
 
@@ -57,6 +63,20 @@
             }
         }
 
+        .detailsImgWrap{
+            width: fit-content;
+            margin: auto;
+
+            &.-center{
+                .detailsImg{
+                    padding-top: 0;
+                    width: fit-content;
+                    margin: auto;
+                    text-align: center;
+                }
+            }
+        }
+
         .detailsImg {
             &:hover {
                 ~.detailsZoom {
@@ -66,7 +86,15 @@
 
             img{
                 border-radius: 12px;
+                height: auto !important;
+                margin: auto;
+                -o-object-fit: contain;
+                object-fit: contain !important;
+                -o-object-position: top center;
+                object-position: top center;
                 overflow: hidden;
+                position: unset !important;
+                width: auto !important;
             }
         }
 

@@ -44,7 +44,7 @@ function toggleMenu(e) {
     let menu = $('.menuPanel');
     jQuery(e).toggleClass('-active');
     menu.toggleClass('-open');
-    e.stopPropagation();
+    event.stopPropagation();
 }
 
 document.body.addEventListener('click', function (e) {

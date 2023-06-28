@@ -1,6 +1,6 @@
 .billboardRectangle,
 .billboardBottom,
-.billboardFlyingInner,
+.billboardFlyingBanner,
 .billboardLeaderboard {
     &::before {
         content: '';
@@ -41,6 +41,11 @@
     position: relative;
     margin: auto;
 
+    &Banner {
+        position: relative;
+        z-index: 2;
+    }
+
     &Rectangle {
         width: 300px;
         min-height: 250px;
@@ -66,13 +71,13 @@
         }
     }
 
-    &Leaderboard{
+    &Leaderboard {
         width: 320px;
-        min-height: 100px;  
+        min-height: 100px;
     }
 
     &Parallax {
-        width: 100%;
+        width: 100%
     }
 
     &Flying {

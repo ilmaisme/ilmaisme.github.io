@@ -16,6 +16,8 @@ if (pushdownBanner != null) {
     window.addEventListener("scroll", pushdownScroll);
 }
 
+window.addEventListener("load", pushdownScroll);
+
 //close pushdown
 if (closePushdown != null) {
     closePushdown.addEventListener("click", function () {

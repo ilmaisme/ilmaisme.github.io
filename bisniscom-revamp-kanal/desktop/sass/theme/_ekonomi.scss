@@ -61,6 +61,8 @@
                 .slick-next {
                     width: 30px;
                     height: 30px;
+                    top: 4px;
+                    transform: scale(1);
 
                     &::after {
                         @extend %icoChevron;
@@ -75,7 +77,8 @@
                 .slick-prev {
                     left: unset;
                     right: 23px;
-                    top: 1px;
+                    top: 2px;
+                    transform: scale(1) rotate(180deg);
                 }
 
                 .slick-next {
@@ -107,8 +110,13 @@
             }
 
             &Link {
+                width: calc(100% - 48px);
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                text-overflow: ellipsis;
                 padding: 8px 5px;
-                @include font-pack($font-manrope, false, $font-weight-med, false, false);
+                @include font-pack($font-manrope, false, $font-weight-med, 2, false);
                 text-decoration: underline;
             }
         }
@@ -150,6 +158,7 @@
 
                     &Menu {
                         background: $cl-white;
+                        min-width: unset;
                         width: 1024px;
                         padding-right: 0;
                         padding-left: 0;

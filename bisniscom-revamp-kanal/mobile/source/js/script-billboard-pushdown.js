@@ -3,7 +3,7 @@ var pushdownBanner = document.querySelector('.billboardPushdown');
 
 //pushdownScroll 
 function pushdownScroll() {
-    var pd_height = 480;
+    var pd_height = 500;
     var st = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset || window.scrollY;
     // console.log(st);
     if (st >= pd_height) {
@@ -15,6 +15,8 @@ function pushdownScroll() {
 if (pushdownBanner != null) {
     window.addEventListener("scroll", pushdownScroll);
 }
+
+window.addEventListener("load", pushdownScroll);
 
 //close pushdown
 if (closePushdown != null) {

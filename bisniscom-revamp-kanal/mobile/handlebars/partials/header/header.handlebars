@@ -8,11 +8,17 @@
             </div>
             <div class="headerLogoWrap">
                 <div class="headerLogo headerLogo--kanal">
+                    {{#if font}}
+                    <a href="index-{{replace (lowercase kanal)}}.html">
+                        {{kanal}}
+                    </a>
+                    {{else}}
                     <a href="index-{{replace (lowercase kanal)}}.html" aria-label="kanal {{kanal}}">
                         <img src="./asset/images/logo/{{replace (lowercase kanal)}}-logo-m.svg" alt=""
                             width="{{#if width}}{{width}}{{else}}104{{/if}}"
                             height="{{#if height}}{{height}}{{else}}42{{/if}}">
                     </a>
+                    {{/if}}
                 </div>
             </div>
             <div class="headerCta">
@@ -23,5 +29,12 @@
                 </div>
             </div>
         </div>
+        {{#if nav}}
+        <div class="nav">
+
+            {{>header/nav channel=mainMenu.Ekonomi active=active}}
+
+        </div>
+        {{/if}}
     </div>
 </header>

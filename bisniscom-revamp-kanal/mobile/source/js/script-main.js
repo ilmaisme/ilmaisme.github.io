@@ -1,16 +1,7 @@
 $(document).ready(function () {
-    let hd = $(".headerTop"),
-        nav = $(".nav"),
-        back = $(".-js-backtop")
+    let back = $(".-js-backtop")
     $(window).scroll(function () {
         var a = $(window).scrollTop()
-        // header logo bisniscom
-        var b = hd.outerHeight(),
-            c = nav.outerHeight()
-        // a > b + c ? ($(".headerLogo--kanal").addClass("hidden"),
-        //         $(".headerLogo--bisniscom").addClass("visible")) :
-        //     ($(".headerLogo--kanal").removeClass("hidden"),
-        //         $(".headerLogo--bisniscom").removeClass("visible"))
 
         // visible back to top button
         if (a > 175) {
