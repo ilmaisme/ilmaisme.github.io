@@ -32,15 +32,17 @@
                 {{>detail/cover pos="top" channel=kanal.Ekonomi.details.content mt="40" total=6 index_start=0
                 index_end=1}}
 
-                {{>detail/share channel=kanal.Ekonomi.details.content mt="16" pos="top" total=6 index_start=0 index_end=1 caption="Share" min=".4" max="1.6"}}
+                {{>detail/share channel=kanal.Ekonomi.details.content mt="16" pos="top" total=6 index_start=0
+                index_end=1 caption="Share" min=".4" max="1.6"}}
 
                 <article class="detailsContent mt30">
-                    {{>ekonomi/detail-content bacatype="box" quoteau=true channel=kanal.Ekonomi.recommend.latest
-                    index_start=0 index_end=3}}
+                    {{>detail/content-series-2}}
 
                 </article>
 
-                <hr>
+                <!-- s: series pagination -->
+                {{>ekonomi/series-paging page=2 kanal="ekonomi"}}
+                <!-- e: series pagination -->
 
                 {{>detail/author channel=kanal.Ekonomi.details.content total=6 index_start=0 index_end=1}}
 

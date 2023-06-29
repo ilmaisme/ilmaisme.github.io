@@ -40,6 +40,10 @@
                         width: 36px;
                         height: 36px;
                         margin-right: 8px;
+
+                        &Default {
+                            filter: var(--filter-ekonomi);
+                        }
                     }
                 }
 
@@ -131,7 +135,7 @@
                     @include font-pack($font-manrope, 13px, $font-weight-med, false, false);
 
                     br {
-                        display: inline-block;
+                        display: none;
                     }
                 }
             }
@@ -181,20 +185,21 @@
 
             &Paging {
                 @include display_flex;
+                flex-direction: column;
+                margin-top: 0;
                 margin-bottom: 40px;
-                margin-left: -10px;
-                margin-right: -10px;
 
                 &Wrap {
                     flex-direction: column;
-                    margin-left: 10px;
-                    margin-right: 10px;
-                    flex: 1;
+                    margin-top: 30px;
+                    width: 100%;
                 }
 
                 &Item {
                     max-width: unset;
                     margin-top: 14px;
+                    margin-left: 0;
+                    margin-right: 0;
                     padding: 14px 0;
                     border-radius: 0;
                     border-left: 0;
@@ -216,7 +221,6 @@
                 &Content {
                     @include display_flex;
                     align-items: center;
-                    justify-content: space-between;
                     @include font-pack($font-manrope, 14px, $font-weight-sbold, false, #222);
 
                     .icoArrow {
@@ -251,6 +255,10 @@
             }
 
             &Live {
+                &Wrap {
+                    align-items: flex-start;
+                }
+
                 &Caption {
                     padding: 3px 8px 3px 18px;
                     border-radius: 5px;
@@ -290,10 +298,16 @@
 
                 &Slider {
                     max-height: 30px;
-                    border-left: 0;
-                    padding-left: 30px;
+
+                    .slick-list {
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        padding-left: 0;
+                        padding-right: 65px;
+                    }
 
                     .slick-arrow {
+                        top: 0;
                         width: 30px;
                         height: 30px;
 
@@ -360,8 +374,6 @@
                         opacity: 1;
                         background: #585858;
                         border-radius: 0;
-                        left: 93px;
-                        bottom: 26px;
                         width: 3px;
                         height: 37px;
                     }
@@ -427,8 +439,7 @@
             }
 
             .paging {
-                margin-top: 37px;
-                margin-bottom: 37px;
+                position: relative;
 
                 &Wrap {
                     padding-top: 14px;
@@ -439,15 +450,24 @@
                     border-bottom: 1px solid #3D3D3D;
                 }
 
+                &List {
+                    margin-right: 0;
+                    flex-wrap: wrap;
+                }
+
+                &Item {
+                    margin-top: 10px;
+                }
+
                 &Caption {
                     position: absolute;
                     left: 0;
-                    @include font-pack($font-manrope, 14px, $font-weight-sbold, 1.57, #222);
+                    @include font-pack($font-manrope, 14px, false, 1.57, #222);
                 }
 
                 &Link,
                 &Show {
-                    @include font-pack($font-manrope, 14px, $font-weight-sbold, false, #222);
+                    @include font-pack($font-manrope, 14px, false, false, #222);
 
                     &.-active,
                     &:hover {
