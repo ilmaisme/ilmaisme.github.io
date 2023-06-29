@@ -73,15 +73,22 @@
 
             &Img {
                 border-radius: 0;
+                padding-top: calc(6/4 * 100% - 29px);
 
                 &Caption {
                     text-align: center;
                     letter-spacing: 0.02em;
                     @include font-pack($font-body2, 14px, false, false, #545454);
                 }
+
+                &Wrap.-center .detailsImg {
+                    padding-top: calc(3/4 * 100%);
+                }
             }
 
             &Zoom {
+                font-family: $font-body2;
+
                 .icoZoom {
                     margin-right: 12px;
                 }
@@ -141,8 +148,8 @@
                     border-radius: 8px;
                     background: #F8FCFF;
 
-                    table{
-                        th{
+                    table {
+                        th {
                             text-transform: uppercase;
                             @include font-pack(false, 15px, false, false, var(--cl-tekno));
                         }

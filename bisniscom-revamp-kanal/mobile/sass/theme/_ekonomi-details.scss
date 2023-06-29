@@ -1,0 +1,521 @@
+.theme {
+    &--ekonomi {
+        .breadcrumb {
+            padding: 6px 2px;
+
+            &Item {
+                &.-active {
+                    .breadcrumbLink {
+                        color: var(--cl-ekonomi);
+                    }
+                }
+            }
+
+            &Link {
+                @include font-pack($font-manrope, 13px, $font-weight-med, false, #3D3D3D);
+            }
+        }
+
+        .details {
+            font-size: 13px;
+
+            &Title {
+                &Caption {
+                    @include font-pack($font-manrope, false, $font-weight-sbold, 1.4, #222);
+                }
+            }
+
+            &Lead {
+                margin-top: 8px;
+                letter-spacing: 0.39px;
+                @include font-pack(false, 13px, $font-weight-med, 1.7, #585858);
+            }
+
+            &Attribute {
+                &Author {
+                    display: flex;
+                    margin-top: 12px;
+
+                    .profileImg {
+                        width: 36px;
+                        height: 36px;
+                        margin-right: 8px;
+                    }
+                }
+
+                &Dates {
+                    margin-top: 4px;
+                    letter-spacing: 0.8px;
+                    @include font-pack(false, 10px, $font-weight-med, false, #585858);
+                }
+
+                &Item {
+                    flex-direction: column;
+                }
+            }
+
+            &Img {
+                img {
+                    border-radius: 12px;
+                    overflow: hidden;
+                    object-position: top center;
+                    width: auto;
+                    height: auto;
+                    margin: auto;
+                    position: unset;
+                    object-fit: contain;
+                }
+
+                &Wrap {
+                    clear: both;
+                    width: fit-content;
+                    margin: auto;
+
+                    &.-center {
+                        .detailsImg {
+                            padding-top: 0;
+                            width: fit-content;
+                            margin: auto;
+                            text-align: center;
+
+                            img {
+                                border-radius: 12px;
+                                overflow: hidden;
+                                object-position: top center;
+                                width: auto;
+                                height: auto;
+                                margin: auto;
+                                position: unset;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+
+                &Caption {
+                    letter-spacing: 0.44px;
+                    @include font-pack(false, 11px, $font-weight-med, 1.6, #585858);
+                }
+            }
+
+            &Zoom {
+                padding: 8px 10px;
+                border-radius: 12px;
+                @include font-pack($font-manrope, 14px, $font-weight-sbold, false, false);
+
+                .icoZoom {
+                    width: 22px;
+                    height: 22px;
+                    margin-right: 10px;
+                }
+            }
+
+            &Cover {
+                &Img {
+                    background: transparent;
+                    padding-top: 0;
+                    height: auto;
+
+                    a {
+                        display: block;
+                        position: relative;
+                        padding-top: calc(2/4 * 100% + 12px);
+                        background: #C4C4C4;
+                    }
+                }
+            }
+
+            &Font {
+                &Cta {
+                    letter-spacing: 0.39px;
+                    @include font-pack($font-manrope, 13px, $font-weight-med, false, false);
+
+                    br {
+                        display: inline-block;
+                    }
+                }
+            }
+
+            &Content {
+                letter-spacing: 0.39px;
+                @include font-pack($font-manrope, 13px, $font-weight-med, 1.69, #3D3D3D);
+
+                a {
+                    color: #D11616;
+                }
+
+            }
+
+            &Author {
+                margin-top: 14px;
+                letter-spacing: 0.39px;
+                @include font-pack(false, 13px, false, false, #222);
+
+                a {
+                    font-weight: $font-weight-med;
+                }
+            }
+
+            &Tag {
+                margin-top: 10px;
+
+                &Link {
+                    padding: 2px 8px;
+                    border-radius: 7px;
+                    letter-spacing: 0.6px;
+                    border: 1px solid #D11616;
+                    @include font-pack(false, 12px, $font-weight-sbold, false, #222);
+
+                    &:hover {
+                        background: #D11616;
+                        color: $cl-white;
+                    }
+                }
+
+                &Caption {
+                    margin-top: 16px;
+                    letter-spacing: 0.39px;
+                    @include font-pack(false, 13px, false, false, #222);
+                }
+            }
+
+            &Paging {
+                @include display_flex;
+                margin-bottom: 40px;
+                margin-left: -10px;
+                margin-right: -10px;
+
+                &Wrap {
+                    flex-direction: column;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    flex: 1;
+                }
+
+                &Item {
+                    max-width: unset;
+                    margin-top: 14px;
+                    padding: 14px 0;
+                    border-radius: 0;
+                    border-left: 0;
+                    border-right: 0;
+                    border-top: 1px solid #3D3D3D;
+                    border-bottom: 1px solid #3D3D3D;
+
+                    &:hover {
+                        .detailsPagingContent {
+                            color: var(--cl-ekonomi);
+
+                            .icoArrow {
+                                filter: var(--filter-ekonomi);
+                            }
+                        }
+                    }
+                }
+
+                &Content {
+                    @include display_flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    @include font-pack($font-manrope, 14px, $font-weight-sbold, false, #222);
+
+                    .icoArrow {
+                        width: 30px;
+                        height: 30px;
+                        flex-shrink: 0;
+                        margin-left: 30px;
+                    }
+
+                    &.-prev {
+                        .icoArrow {
+                            transform: rotate(180deg);
+                            margin-right: 30px;
+                            margin-left: 0;
+                            order: -1;
+                        }
+                    }
+                }
+
+                &Title {
+                    margin-top: 0;
+                }
+            }
+
+            &Break {
+                border-bottom: 1px solid var(--cl-ekonomi);
+
+                &Caption {
+                    letter-spacing: 0.39px;
+                    @include font-pack(false, 13px, $font-weight-med, 1.69, var(--cl-ekonomi));
+                }
+            }
+
+            &Live {
+                &Caption {
+                    padding: 3px 8px 3px 18px;
+                    border-radius: 5px;
+                    background: #D11616;
+                    text-transform: uppercase;
+                    letter-spacing: 0.6px;
+                    @include font-pack($font-manrope, 12px, false, 1.334, $cl-white);
+
+                    span {
+                        font-weight: $font-weight-sbold;
+                        color: $cl-white;
+
+                        &::before {
+                            top: 4px;
+                            left: -10px;
+                            width: 6px;
+                            height: 6px;
+                            border-radius: 6px;
+                            background: #EC8A8A;
+                        }
+                    }
+                }
+
+                &Anchor {
+                    padding: 5px 8px;
+                    border-radius: 7px;
+                    letter-spacing: 0.6px;
+                    @include font-pack($font-manrope, 12px, false, 1.5, false);
+
+                    &.-active,
+                    &:hover {
+                        background: $cl-white;
+                        color: #D11616;
+                        border-color: #D11616;
+                    }
+                }
+
+                &Slider {
+                    max-height: 30px;
+                    border-left: 0;
+                    padding-left: 30px;
+
+                    .slick-arrow {
+                        width: 30px;
+                        height: 30px;
+
+                        &::after {
+                            top: 0;
+                            left: -2px;
+                        }
+                    }
+
+                    .slick-prev,
+                    .slick-next {
+                        background: #D11616;
+
+                        &.slick-disabled {
+                            opacity: 1;
+                            background: #BDBDBD;
+                        }
+
+                        &::after {
+                            background-image: none;
+                            @extend %icoChevron;
+                            filter: none;
+                            width: 14px;
+                            height: 14px;
+                            border-bottom: 2px solid $cl-white;
+                            border-right: 2px solid $cl-white;
+                            transform: rotate(315deg);
+                        }
+                    }
+
+                    .slick-prev {
+                        right: 35px;
+                        left: unset;
+                    }
+
+                    &Wrap {
+                        padding-left: 0;
+
+                        &::after {
+                            width: 125px
+                        }
+                    }
+                }
+
+                &Item {
+                    &.-active {
+                        .detailsLiveTime {
+                            color: #D11616;
+
+                            &::after {
+                                background: #D11616;
+                            }
+                        }
+                    }
+                }
+
+                &Time {
+                    padding-top: 14px;
+                    padding-bottom: 14px;
+                    letter-spacing: 0.6px;
+                    @include font-pack($font-manrope, 12px, $font-weight-sbold, false, #585858);
+
+                    &::after {
+                        opacity: 1;
+                        background: #585858;
+                        border-radius: 0;
+                        left: 93px;
+                        bottom: 26px;
+                        width: 3px;
+                        height: 37px;
+                    }
+                }
+
+                &Title {
+                    @include font-pack($font-manrope, 1.57em, false, 1.45, false);
+                }
+            }
+
+            &Wrap {
+                &.-left {
+                    align-items: flex-start;
+                }
+            }
+
+            .baca-juga {
+                &-box {
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    padding: 10px 15px;
+                    border-top: 1px solid #3D3D3D;
+                    border-bottom: 1px solid #3D3D3D;
+
+                    ul {
+                        list-style-type: none;
+                        padding: 0;
+                        margin-top: 6px;
+                        margin-bottom: 0;
+                    }
+
+                    li {
+                        padding: 2px 0;
+
+                        a {
+                            display: block;
+                            position: relative;
+                            padding-top: 4px;
+                            padding-bottom: 4px;
+                            padding-left: 18px;
+                            @include font-pack(false, 15px, $font-weight-sbold, false, #222);
+
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                display: block;
+                                top: 14px;
+                                left: 0;
+                                width: 8px;
+                                height: 8px;
+                                background: #D11616;
+                            }
+                        }
+                    }
+                }
+
+                &-title {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    @include font-pack(false, 16px, $font-weight-med, false, #222);
+                    text-transform: uppercase;
+                }
+            }
+
+            .paging {
+                margin-top: 37px;
+                margin-bottom: 37px;
+
+                &Wrap {
+                    padding-top: 14px;
+                    padding-bottom: 14px;
+                    position: relative;
+                    justify-content: flex-end;
+                    border-top: 1px solid #3D3D3D;
+                    border-bottom: 1px solid #3D3D3D;
+                }
+
+                &Caption {
+                    position: absolute;
+                    left: 0;
+                    @include font-pack($font-manrope, 14px, $font-weight-sbold, 1.57, #222);
+                }
+
+                &Link,
+                &Show {
+                    @include font-pack($font-manrope, 14px, $font-weight-sbold, false, #222);
+
+                    &.-active,
+                    &:hover {
+                        color: $cl-white;
+                        background: #222;
+                        border: 1px solid #222;
+                    }
+                }
+            }
+
+            hr {
+                margin-top: 36px;
+            }
+        }
+
+        .shareSocmed {
+            &Item {
+                margin-left: 4px;
+                margin-right: 4px;
+
+                .shareSocmedCta {
+                    background: $cl-white;
+                }
+
+                .icoInline {
+                    filter: none;
+                }
+            }
+
+            &Wrap {
+                letter-spacing: 0.39px;
+                @include font-pack($font-manrope, 13px, $font-weight-bold, false, #222);
+            }
+        }
+
+        .titleCaptionMed {
+            text-transform: none;
+            @include font-pack(false, 16px, $font-weight-sbold, false, false);
+        }
+
+        .newsletter {
+            &Caption {
+                @include font-pack($font-manrope, 16px, $font-weight-sbold, false, false);
+            }
+
+            &Lead {
+                margin-top: 12px;
+                letter-spacing: 0.39px;
+                @include font-pack($font-manrope, 13px, $font-weight-med, false, false);
+            }
+
+            &Cta {
+                min-width: 142px;
+                background: var(--cl-ekonomi);
+                font-family: $font-manrope
+            }
+
+            &Form {
+                .formInput {
+                    font-family: $font-manrope;
+                    @include placeholder(false, false, false, #3D3D3D)
+                }
+            }
+        }
+
+        .pswp__custom-caption {
+            padding: 20px 10px;
+            font-size: 14px;
+        }
+    }
+}

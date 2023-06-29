@@ -1,5 +1,5 @@
 <div class="detailsWrap center-flex{{#if pos}} -{{pos}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}">
-    <div class="shareSocmedWrap display-flex"> Bagikan
+    <div class="shareSocmedWrap display-flex"> {{#if caption}}{{caption}}{{else}}Bagikan{{/if}}
         {{#each channel}}
         {{#gte @index compare=../index_start}}
         {{#gte @index compare=../index_end}}
@@ -69,7 +69,7 @@
         <button class="button detailsFontCta -minus">
             Smallest <br> Font
         </button>
-        <input type="range" min=".8" max="2" step=".2" id="sliderFont" class="detailsFontRange"
+        <input type="range" min="{{#if min}}{{min}}{{else}}.8{{/if}}" max="{{#if max}}{{max}}{{else}}2{{/if}}" step=".2" id="sliderFont" class="detailsFontRange"
             aria-label="Customize font size">
         <button class="button detailsFontCta -plus">
             Largest <br> Font

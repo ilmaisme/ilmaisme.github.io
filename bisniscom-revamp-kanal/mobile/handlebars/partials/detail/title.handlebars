@@ -5,6 +5,22 @@
     {{#gte @index compare=../index_end}}
     {{else}}
     <h1 class="detailsTitleCaption">{{title}}</h1>
+    {{#if ../lead}}
+    <div class="detailsLead">{{lead}}</div>
+    {{/if}}
+    {{#if ../photo}}
+    <div class="detailsAttributeAuthor">
+        <div class="profileImg{{#if ../default}} profileImgDefault{{/if}}">
+            <img src="{{authorphoto}}" alt="{{author}}" loading="lazy" width="36" height="36">
+        </div>
+        <span class="detailsAttributeItem">
+            <div class="authorName"><strong>{{author}}</strong> - Bisnis.com</div>
+            <div class="detailsAttributeDates">
+                {{dates}}
+            </div>
+        </span>
+    </div>
+    {{else}}
     <div class="detailsAttribute">
         <span class="detailsAttributeItem detailsAttributeAuthor">
             <span class="icoInline icoProfile"></span>
@@ -21,6 +37,7 @@
             5 menit baca
         </span>
     </div>
+    {{/if}}
     {{/gte}}
     {{else}}
     {{/gte}}

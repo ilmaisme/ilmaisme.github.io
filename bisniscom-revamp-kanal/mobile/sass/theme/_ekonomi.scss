@@ -142,9 +142,95 @@
         }
 
         .art {
+            &Wrap {
+                &.row {
+                    margin-right: -10px;
+                    margin-left: -10px;
+
+                    .artItem {
+                        padding-right: 10px;
+                        padding-left: 10px;
+                        margin-bottom: 20px;
+                    }
+
+                    .artTitle {
+                        margin-top: 14px;
+                        -webkit-line-clamp: 3;
+                    }
+                }
+
+                &.-row {
+                    .artItem {
+                        display: flex;
+                    }
+
+                    .artLinkImg {
+                        order: 1;
+                        margin-left: 14px;
+                        flex-basis: 127px;
+                        flex-shrink: 0;
+                    }
+
+                    .artImg {
+                        height: unset;
+                    }
+
+                    .artChannel {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-width: 89px;
+                    }
+                }
+
+                &.-row-top {
+                    .artItem {
+                        &:not(:first-child) {
+                            display: flex;
+
+                            .artLinkImg {
+                                order: 1;
+                                margin-left: 14px;
+                                flex-basis: 127px;
+                                flex-shrink: 0;
+                            }
+
+                            .artImg {
+                                height: unset;
+                            }
+
+                            .artChannel {
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                max-width: 89px;
+                            }
+                        }
+
+                        &:first-child {
+                            .artDate {
+                                margin-top: 0;
+                            }
+
+                            .artImg {
+                                margin-top: 14px;
+                                margin-bottom: 11px;
+                                padding-top: 56.173%;
+                            }
+                        }
+                    }
+                }
+            }
 
             &Img {
-                border-radius: 7px;
+                position: relative;
+                padding-top: 56.173%;
+
+                img {
+                    @extend %template-img;
+                    border-radius: 7px;
+                    height: 100%;
+                }
             }
 
             &Title {
@@ -271,6 +357,53 @@
             &Title {
                 letter-spacing: 0.05em;
                 @include font-pack($font-manrope, 12px, $font-weight-sbold, $line-base, #222222);
+            }
+        }
+
+        .live {
+            &Title {
+                font-size: 14px;
+            }
+        }
+
+        .most {
+            &Item {
+
+                .mostLink {
+                    display: block;
+                    padding-left: 34px;
+                }
+            }
+
+            &Num {
+                min-width: 21px;
+                text-align: center;
+                top: 0;
+                bottom: unset;
+                left: 0;
+                right: unset;
+                letter-spacing: 2.4px;
+                @include font-pack($font-manrope, 30px, $font-weight-normal, false, #585858);
+            }
+
+            .artTitle {
+                margin-top: 0;
+                margin-bottom: 10px;
+                -webkit-line-clamp: 3;
+                font-size: 14px;
+            }
+        }
+
+        .buttonPrimary {
+            min-width: 160px;
+            border: 1px solid var(--cl-ekonomi);
+            border-radius: 7px;
+            text-transform: none;
+            @include font-pack($font-manrope, false, false, false, var(--cl-ekonomi));
+
+            &:hover {
+                color: $cl-white;
+                background: var(--cl-ekonomi);
             }
         }
 

@@ -1,3 +1,19 @@
+{{#eq bacatype compare="box"}}
+<div class="baca-juga-box">
+    <p class="baca-juga-title">Baca Juga</p>
+    <ul>
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <li><a href="{{link}}" target="_blank" title="{{title}}" rel="noopener">{{title}}</a></li>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </ul>
+</div>
+{{else}}
 <div class="baca-juga">
     <table>
         <tbody>
@@ -14,3 +30,4 @@
         </tbody>
     </table>
 </div>
+{{/eq}}
