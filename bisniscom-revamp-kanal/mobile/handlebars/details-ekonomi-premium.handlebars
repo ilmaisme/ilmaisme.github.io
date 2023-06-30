@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Ekonomi" channel=site.Ekonomi font=true type="details" premium=true photozoom=true}}
+
+<body class="theme--ekonomi theme--premium">
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{>header/header kanal="Ekonomi" font=true nav=true}}
+
+        <main role="main" class="main details" id="pswp-gallery">
+
+            <!-- s: menu panel -->
+            {{>header/menu login=true}}
+            {{!>header/menu}}
+            <!-- e: menu panel -->
+
+            {{>premium/cover-ekonomi channel=kanal.Ekonomi.details.content total=6 index_start=0
+            index_end=1}}
+
+            <div class="detailsParallax">
+                <div class="container">
+
+                    {{>premium/title-parallax pos="left" parallax=true channel=kanal.Ekonomi.details.content
+                    total=6
+                    index_start=0
+                    index_end=1 lead=true photo=true}}
+
+                    {{>detail/share channel=kanal.Ekonomi.details.content mt="30" pos="top" total=6 index_start=0
+                    index_end=1 caption="Share" min=".4" max="1.6"}}
+
+                    <article class="detailsContent mt30">
+                        {{>detail/content-premium quoteau=false bacatype="box"
+                        channel=kanal.Ekonomi.recommend.latest index_start=0 index_end=3}}
+
+                    </article>
+
+                    <hr>
+
+                    {{>detail/author channel=kanal.Ekonomi.details.content total=6 index_start=0 index_end=1}}
+
+                    {{>detail/tag channel=kanal.Ekonomi.details caption="Tag"}}
+
+                    {{>detail/share channel=kanal.Ekonomi.details.content pos="left" mt="16" caption="Share" total=6
+                    index_start=0 index_end=1}}
+
+                    {{>newsletter mt="30"}}
+
+                    <h3 class="titleCaption mt30">Artikel Terkait</h3>
+                    {{>ekonomi/article channel=kanal.Ekonomi.recommend.latest grid="row" column="col-5" mt="16"
+                    width="145"
+                    height="109"
+                    total=4 index_start=0 index_end=2 dates=false}}
+
+                    <h3 class="titleCaption mt30">Berita Terbaru</h3>
+                    {{>detail/article-other channel=kanal.Ekonomi.hL mt="16" total=5 index_start=0 index_end=5}}
+
+                    <h3 class="titleCaption mt30">Berita Lainnya</h3>
+                    {{>ekonomi/article channel=kanal.Ekonomi.latest type="row" width="127" height="72" total=5
+                    index_start=0
+                    index_end=3}}
+
+                    <div class="center-flex">
+                        <a href="#" class="buttonPrimary">Berita Lainnya</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    {{>footer/footer}}
+
+    {{>footer/script page="ekonomi" type="details" premium=true photozoom=true}}
+
+</body>
+
+</html>

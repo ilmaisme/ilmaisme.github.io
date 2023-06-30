@@ -1,0 +1,16 @@
+<div class="detailsCover">
+    {{#each channel}}
+    {{#gte @index compare=../index_start}}
+    {{#gte @index compare=../index_end}}
+    {{else}}
+    <figure class="detailsCoverImg artImg">
+        <a href="https://images.bisnis.com/posts/{{img}}" data-pswp-width="1000" data-pswp-height="667"
+            data-cropped="true">
+            <img src="https://images.bisnis.com/posts/{{img}}" alt="{{imgcap}}" width="1080" height="378" />
+        </a>
+    </figure>
+    {{/gte}}
+    {{else}}
+    {{/gte}}
+    {{/each}}
+</div>
