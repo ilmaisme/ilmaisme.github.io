@@ -11,8 +11,10 @@
         {{>flashnews type="slider" channel=flashnews}}
         <!-- e: flashnews -->
 
-        {{>header/header login=true kanal="Ekonomi" font=true label="Login" icon=true premium=true}}
-        {{!>header/header kanal="Ekonomi" font=true label="Login" icon=true premium=true}}
+        {{>header/header login=true kanal="Ekonomi" font=true label="Login" icon=true premium=true detailtitle=true channel=kanal.Ekonomi.details.content index_start=0
+            index_end=1}}
+        {{!>header/header kanal="Ekonomi" font=true label="Login" icon=true premium=true detailtitle=true channel=kanal.Ekonomi.details.content index_start=0
+            index_end=1}}
 
         <main role="main" class="main details" id="pswp-gallery">
             <div class="nav">
@@ -38,16 +40,7 @@
                             index_start=0
                             index_end=1 lead=true share=true photo=true}}
 
-                            <div class="detailsFont center-flex mt30">
-                                <button class="button detailsFontCta -minus">
-                                    Smallest Font
-                                </button>
-                                <input type="range" min=".4" max="1.6" value="1" step=".2" id="sliderFont"
-                                    class="detailsFontRange" aria-label="Customize font size">
-                                <button class="button detailsFontCta -plus">
-                                    Largest Font
-                                </button>
-                            </div>
+                            {{!>ekonomi/detail-font mt="30"}}
 
                             <article class="detailsContent mt40">
                                 {{>detail/content-premium quoteau=false bacatype="box"

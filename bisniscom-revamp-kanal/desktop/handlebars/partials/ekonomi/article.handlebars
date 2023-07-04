@@ -5,11 +5,11 @@
         {{#gte @index compare=../index_end}}
         {{else}}
         <div class="artItem">
-            <div class="{{#if ../type}} art--{{../type}}{{/if}}">
+            <div class="{{#if ../type}}art--{{../type}}{{/if}}">
                 <a href="{{link}}" class="artLink artLinkImg">
                     <div class="artImg">
                         <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../w}}&h={{../h}}" width="{{../w}}"
-                            height="{{../h}}" alt="{{title}}" {{#if ../lcp}}{{else}}loading="lazy"{{/if}}>
+                            height="{{../h}}" alt="{{title}}" {{#if ../lcp}}{{else}}loading="lazy" {{/if}}>
                         {{#if ../video}}
                         <div class="artDuration">
                             <span class="icoInline icoPlay"></span>
@@ -17,27 +17,16 @@
                         {{/if}}
                     </div>
                 </a>
-                {{#compare ../pos "==" "center"}}
-                {{#if premium}}
-                <div class="artChannel -premium">
-                    <a href="subkanal-ekonomi.html">
-                        <span class="icoInline icoPremium"></span>Premium
-                    </a>
-                </div>
-                {{else}}
-                <div class="artChannel">
-                    <a href="subkanal-ekonomi.html">
-                        {{channel}}
-                    </a>
-                </div>
-                {{/if}}
-                {{/compare}}
                 <div class="artContent">
                     {{#compare ../dates "==" false}}
+                    <a href="{{link}}" class="artLink">
+                        <h4 class="artTitle">
+                            {{title}}
+                        </h4>
+                    </a>
                     {{else}}
+                    {{#compare ../pos "==" "center"}}
                     <div class="artContentWrap">
-                        {{#compare ../pos "==" "center"}}
-                        {{else}}
                         {{#if premium}}
                         <div class="artChannel -premium">
                             <a href="subkanal-ekonomi.html">
@@ -51,17 +40,44 @@
                             </a>
                         </div>
                         {{/if}}
-                        {{/compare}}
+                    </div>
+                    <a href="{{link}}" class="artLink">
+                        {{#if live}}
+                        <div class="artLive"><span>Live</span></div>
+                        {{/if}}
+                        <h4 class="artTitle">
+                            {{title}}
+                        </h4>
+                        <div class="artDate">
+                            9 menit yang lalu
+                        </div>
+                    </a>
+                    {{else}}
+                    <div class="artContentWrap">
+                        {{#if premium}}
+                        <div class="artChannel -premium">
+                            <a href="subkanal-ekonomi.html">
+                                <span class="icoInline icoPremium"></span>Premium
+                            </a>
+                        </div>
+                        {{else}}
+                        <div class="artChannel">
+                            <a href="subkanal-ekonomi.html">
+                                {{channel}}
+                            </a>
+                        </div>
+                        {{/if}}
                         <div class="artDate">
                             9 menit yang lalu
                         </div>
                     </div>
-                    {{/compare}}
                     <a href="{{link}}" class="artLink">
                         <h4 class="artTitle">
                             {{title}}
                         </h4>
                     </a>
+                    {{/compare}}
+                    {{/compare}}
                 </div>
             </div>
         </div>

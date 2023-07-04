@@ -17,11 +17,12 @@
         }
 
         .details {
-            font-size: 13px;
+            --default-font: 17px;
+            font-size: var(--default-font);
 
             &Title {
                 &Caption {
-                    @include font-pack($font-manrope, 30px, $font-weight-sbold, 1.4, #222);
+                    @include font-pack($font-manrope, 32px, $font-weight-sbold, 1.3, #222);
                 }
 
                 .detailsWrap {
@@ -34,7 +35,7 @@
             &Lead {
                 margin-top: 15px;
                 letter-spacing: 0.39px;
-                @include font-pack(false, 13px, $font-weight-med, 1.7, #585858);
+                @include font-pack(false, 15px, $font-weight-med, 1.6, #585858);
             }
 
             &Attribute {
@@ -91,7 +92,7 @@
 
                 &Caption {
                     letter-spacing: 0.44px;
-                    @include font-pack(false, 11px, $font-weight-med, 1.6, #585858);
+                    @include font-pack(false, 13px, $font-weight-med, 1.5, #585858);
                 }
             }
 
@@ -126,7 +127,7 @@
 
             &Content {
                 letter-spacing: 0.39px;
-                @include font-pack($font-manrope, 13px, $font-weight-med, 1.69, #3D3D3D);
+                @include font-pack($font-manrope, var(--default-font), $font-weight-med, 1.7, #3D3D3D);
 
                 a {
                     color: #D11616;
@@ -177,6 +178,19 @@
                     margin-left: 10px;
                     margin-right: 10px;
                     flex: 1;
+
+                    &.-prev {
+                        .icoArrow {
+                            transform: rotate(180deg);
+                            margin-right: 30px;
+                            margin-left: 0;
+                            order: -1;
+                        }
+                    }
+
+                    &.-next {
+                        text-align: right;
+                    }
                 }
 
                 &Item {
@@ -204,7 +218,7 @@
                     @include display_flex;
                     align-items: center;
                     justify-content: space-between;
-                    @include font-pack($font-manrope, 14px, $font-weight-sbold, false, #222);
+                    @include font-pack($font-manrope, 17px, $font-weight-sbold, false, #222);
 
                     .icoArrow {
                         width: 30px;
@@ -212,19 +226,14 @@
                         flex-shrink: 0;
                         margin-left: 30px;
                     }
-
-                    &.-prev {
-                        .icoArrow {
-                            transform: rotate(180deg);
-                            margin-right: 30px;
-                            margin-left: 0;
-                            order: -1;
-                        }
-                    }
                 }
 
                 &Title {
                     margin-top: 0;
+                }
+
+                &Caption {
+                    font-size: 15px;
                 }
             }
 
@@ -383,7 +392,7 @@
                             padding-top: 4px;
                             padding-bottom: 4px;
                             padding-left: 18px;
-                            @include font-pack(false, 16px, $font-weight-sbold, false, #222);
+                            @include font-pack(false, 18px, $font-weight-sbold, false, #222);
 
                             &:before {
                                 content: '';

@@ -1,0 +1,16 @@
+<div class="onfixed">
+    <div class="onfixedWrap container">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="detailTitle">{{title}}</div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+        {{#compare kanal "==" "Ekonomi"}}
+        {{>ekonomi/detail-font}}
+        {{/compare}}
+    </div>
+</div>

@@ -116,8 +116,11 @@
                 -webkit-line-clamp: 1;
                 text-overflow: ellipsis;
                 padding: 8px 5px;
-                @include font-pack($font-manrope, false, $font-weight-med, 2, false);
-                text-decoration: underline;
+                @include font-pack($font-manrope, 13px, $font-weight-med, false, false);
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
 
@@ -367,12 +370,22 @@
             }
 
             &Wrap.-center {
+                .art--row {
+                    align-items: center;
+                }
+
                 .artContent {
+                    flex-direction: row;
                     justify-content: flex-start;
 
                     &Wrap {
-                        order: 1;
+                        align-items: flex-start;
                     }
+                }
+
+                .artLink {
+                    display: flex;
+                    flex-direction: column;
                 }
 
                 .artTitle {
@@ -413,16 +426,34 @@
                         .artTitle {
                             color: var(--cl-ekonomi)
                         }
+
+                        .artImg {
+                            img {
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
+
+                    .artImg {
+                        img {
+                            transform: scale(1.2);
+                        }
                     }
                 }
             }
 
             &Img {
                 border-radius: 7px;
+
+                img {
+                    transform: scale(1);
+                    will-change: transform;
+                    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                }
             }
 
             &Title {
-                @include font-pack($font-manrope, 16px, $font-weight-sbold, 1.38, #222222);
+                @include font-pack($font-manrope, false, $font-weight-sbold, 1.38, #222222);
             }
 
             &Channel {
@@ -435,6 +466,23 @@
                 margin-top: 0;
                 letter-spacing: 0.08em;
                 @include font-pack($font-manrope, 10px, $font-weight-med, $line-base, #585858);
+            }
+
+            &Live {
+                padding-left: 17px;
+                padding-right: 7px;
+                align-self: flex-start;
+                margin-top: 0;
+                margin-bottom: 5px;
+                border-radius: 5px;
+                @include font-pack(false, 12px, $font-weight-sbold, false, $cl-white);
+                background: #D11616;
+
+                &::before {
+                    top: 8px;
+                    left: 8px;
+                    background: $cl-white
+                }
             }
         }
 
@@ -455,6 +503,10 @@
                         margin-bottom: 0;
                     }
                 }
+
+                &Title {
+                    font-size: 17px;
+                }
             }
 
             &Link:hover {
@@ -468,7 +520,7 @@
                 padding-left: 20px;
 
                 &Title {
-                    @include font-pack(false, 22px, false, 1.32, #000000);
+                    @include font-pack(false, 24px, false, 1.32, #000000);
                 }
 
                 &Item::before {
@@ -500,6 +552,10 @@
                 &.-premium {
                     color: #8E4107;
                 }
+            }
+
+            .artDate{
+                color: #585858;
             }
 
         }
@@ -559,7 +615,7 @@
                     order: 0;
                     margin-top: 0;
                     margin-bottom: 8px;
-                    font-size: 14px;
+                    font-size: 15px;
                     color: #000;
                 }
 
@@ -592,7 +648,7 @@
                 .artTitle {
                     margin-top: 0;
                     -webkit-line-clamp: 3;
-                    font-size: 14px;
+                    font-size: 15px;
                 }
             }
         }
@@ -626,7 +682,7 @@
                 margin-top: 0;
                 margin-bottom: 10px;
                 -webkit-line-clamp: 3;
-                font-size: 14px;
+                font-size: 15px;
             }
         }
 
