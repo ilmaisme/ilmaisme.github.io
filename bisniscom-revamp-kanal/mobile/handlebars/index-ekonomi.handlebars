@@ -49,7 +49,8 @@
 
                 <!-- s: rec -->
                 <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
-                {{>ekonomi/article channel=kanal.Ekonomi.recommend.latest grid="row" column="col-5" mt="16" width="145" height="109"
+                {{>ekonomi/article channel=kanal.Ekonomi.recommend.latest grid="row" column="col-5" mt="16" width="145"
+                height="109"
                 total=4 index_start=0 index_end=4 dates=false}}
 
                 <!-- e: rec -->
@@ -68,7 +69,8 @@
                 </div>
                 <!-- e: rectangle billboard -->
 
-                {{>ekonomi/article channel=kanal.Ekonomi.latest mt="30" pos="top" type="row" widthtop="384" heighttop="216"
+                {{>ekonomi/article channel=kanal.Ekonomi.latest mt="30" pos="top" type="row" widthtop="384"
+                heighttop="216"
                 width="127" height="72" total=5 index_start=0
                 index_end=5}}
 
@@ -78,7 +80,8 @@
                 </div>
                 <!-- e: rectangle billboard -->
 
-                {{>ekonomi/article channel=kanal.Ekonomi.latest mt="30" pos="top" type="row" widthtop="384" heighttop="216"
+                {{>ekonomi/article channel=kanal.Ekonomi.latest mt="30" pos="top" type="row" widthtop="384"
+                heighttop="216"
                 width="127" height="72" total=5 index_start=0
                 index_end=5}}
 
@@ -96,6 +99,24 @@
     {{>footer/footer}}
 
     {{>footer/script page="ekonomi"}}
+    <script>
+        var imgLCP = document.getElementById("imgLCP");
+        const preloadImage = src =>
+            new Promise(resolve => {
+                const image = new Image();
+                const onLoad = () => {
+                    resolve(image);
+                };
+                image.addEventListener('load', onLoad, { once: true });
+                image.src = src;
+            });
+        const src = 'https://images.bisnis.com/thumb/posts/2023/06/19/1666608/mpv-shot0004-1-1.jpg?w=384&h=216';
+        preloadImage(src).then(image => {
+            // Here the image has been loaded and is available to be appended, or otherwise.
+            imgLCP.firstElementChild.style.display = 'none';
+            imgLCP.append(image);
+        });
+    </script>
 
 </body>
 

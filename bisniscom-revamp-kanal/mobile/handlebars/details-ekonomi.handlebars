@@ -29,10 +29,11 @@
                 {{>detail/title pos="left" channel=kanal.Ekonomi.details.content total=6
                 index_start=0
                 index_end=1 mt="16" lead=true photo=true}}
-                {{>detail/cover pos="top" channel=kanal.Ekonomi.details.content mt="40" total=6 index_start=0
+                {{>ekonomi/detail-cover pos="top" channel=kanal.Ekonomi.details.content mt="40" total=6 index_start=0
                 index_end=1}}
 
-                {{>detail/share channel=kanal.Ekonomi.details.content mt="16" pos="top" total=6 index_start=0 index_end=1 caption="Share" min=".4" max="1.6"}}
+                {{>detail/share channel=kanal.Ekonomi.details.content mt="16" pos="top" total=6 index_start=0
+                index_end=1 caption="Share" min="1" max="2" value="1"}}
 
                 <article class="detailsContent mt30">
                     {{>ekonomi/detail-content bacatype="box" quoteau=true channel=kanal.Ekonomi.recommend.latest
@@ -82,6 +83,23 @@
     {{>footer/footer}}
 
     {{>footer/script page="ekonomi" type="details" photozoom=true}}
+    <script>
+        var imgLCP = document.getElementById("imgLCP");
+        const preloadImage = src =>
+            new Promise(resolve => {
+                const image = new Image();
+                const onLoad = () => {
+                    resolve(image);
+                };
+                image.addEventListener('load', onLoad, { once: true });
+                image.src = src;
+            });
+        const src = 'https://images.bisnis.com/thumb/posts/2023/06/05/1662334/14032023-bi-dul-23-komoditas_pangan-2_1680516502.jpg?w=384&h=216';
+        preloadImage(src).then(image => {
+            // Here the image has been loaded and is available to be appended, or otherwise.
+            imgLCP.append(image);
+        });
+    </script>
 
 </body>
 

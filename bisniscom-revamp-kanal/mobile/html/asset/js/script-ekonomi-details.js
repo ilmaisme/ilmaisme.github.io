@@ -1,17 +1,22 @@
-$(document).ready(function () {
-    //font details slider range custom
-    $('#sliderFont').on('input', function () {
-        var v = $(this).val();
-        $('.detailsContent').css('font-size', v + 'em')
-    });
-    $('.detailsFontCta.-minus').on("click", function () {
-        var minus = $('#sliderFont').attr('min')
-        $('#sliderFont').val(minus)
-        $('.detailsContent').css('font-size', minus + 'em')
-    });
-    $('.detailsFontCta.-plus').on("click", function () {
-        var plus = $('#sliderFont').attr('max')
-        $('#sliderFont').val(plus)
-        $('.detailsContent').css('font-size', plus + 'em')
-    });
-})
+//font details slider range custom
+var content = document.querySelector('.detailsContent'),
+    sizermin = document.querySelector('.-minus'),
+    sizerplus = document.querySelector('.-plus'),
+    sizer = document.getElementById('sliderFont')
+
+sizer.addEventListener("input", (event) => {
+    var valsz = event.target.value
+    content.style.fontSize = valsz + 'em'
+});
+sizermin.addEventListener("click", (event) => {
+    var valmin = sizer.getAttribute('min')
+    sizer.setAttribute("value", valmin);
+    console.log(valmin);
+    content.style.fontSize = valmin + 'em'
+});
+sizerplus.addEventListener("click", (event) => {
+    var valplus = sizer.getAttribute('max')
+    sizer.setAttribute("value", valplus);
+    console.log(valplus);
+    content.style.fontSize = valplus + 'em'
+});

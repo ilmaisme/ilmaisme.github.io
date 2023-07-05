@@ -1,22 +1,19 @@
-$(document).ready(function () {
-    let back = $(".-js-backtop")
-    $(window).scroll(function () {
-        var a = $(window).scrollTop()
+let back = document.querySelector(".-js-backtop")
+window.addEventListener("scroll", function (event) {
+    // var top = this.scrollY,
+    //     left = this.scrollX;
+    var top = window.pageYOffset || document.documentElement.scrollTop
 
-        // visible back to top button
-        if (a > 175) {
-            back.fadeIn("slow");
-        } else {
-            back.fadeOut("slow");
-        }
-    })
-
-    // back to top button
-    back.on("click", function () {
-        $("html, body").animate({
-            scrollTop: 0
-        }, 500);
-        return false;
+    if (top > 175) {
+        back.style.display = "block";
+    } else {
+        back.style.display = "none";
+    }
+}, false);
+back.addEventListener("click", (event) => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
 })
 
@@ -30,9 +27,9 @@ if (cBillboard != null) {
 
 //open menu
 function toggleMenu(e) {
-    let menu = $('.menuPanel');
-    jQuery(e).toggleClass('-active');
-    menu.toggleClass('-open');
+    let menu = document.querySelector('.menuPanel');
+    e.classList.toggle('-active');
+    menu.classList.toggle('-open');
     event.stopPropagation();
 }
 
