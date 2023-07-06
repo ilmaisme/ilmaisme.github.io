@@ -1,0 +1,110 @@
+.premium {
+
+    &Box {
+        background: $cl-black;
+        padding-top: 14px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: -15px;
+        margin-right: -15px;
+        margin-bottom: 30px;
+
+        &Btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 11px 15px;
+            background: linear-gradient(90deg, #FDA085 0%, #F6D365 100%);
+            border-radius: 23px;
+            @include font-pack($font-manrope, 11px, $font-weight-med, 1, #954700);
+
+            .icoPremium {
+                width: 14px;
+                height: 14px;
+                margin-left: 0;
+                margin-right: 8px;
+                filter: invert(22%) sepia(95%) saturate(1798%) hue-rotate(25deg) brightness(99%) contrast(101%);
+
+                @supports (-webkit-touch-callout: none) {
+                    font-size: 14px
+                }
+            }
+        }
+
+        &Login {
+            @include display_flex;
+            align-items: center;
+            @include font-pack($font-body, 16px, $font-weight-normal, $line-base, #F2B007);
+
+            .icoLoginPremium {
+                width: 24px;
+                height: 24px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                filter: invert(71%) sepia(80%) saturate(915%) hue-rotate(352deg) brightness(94%) contrast(102%);
+                @extend %icoLoginPremium;
+            }
+        }
+
+        &Caption {
+            margin-top: 24px;
+            @include font-pack($font-body, 17px, $font-weight-normal, $line-base, #F2B007);
+        }
+
+        .art {
+            margin-top: 20px;
+            margin-bottom: 10px;
+
+            &Wrap {
+                &.-col {
+                    // gap: 25px;
+                    margin-left: -12px;
+                    margin-right: -12px;
+                    padding-left: 2px;
+                    padding-right: 2px;
+
+                    .artItem {
+                        flex-basis: 210px;
+                        margin-left: 12px;
+                        margin-right: 12px;
+                    }
+                }
+            }
+
+            &Channel {
+                letter-spacing: 0;
+                @include font-pack($font-body, 12px, $font-weight-normal, $line-base, $cl-white);
+
+                &.-premium .icoPremium {
+                    @extend %filter-white;
+                }
+            }
+
+            &Title {
+                color: $cl-white
+            }
+
+            &Date {
+                color: #C7C7C7;
+            }
+
+            &Link:hover {
+                .artTitle {
+                    color: $cl-white;
+                }
+            }
+        }
+
+        .title {
+            &Others {
+                display: flex;
+                justify-content: center;
+                margin-left: -15px;
+                margin-right: -15px;
+                padding: 14px;
+                background: #2F2F2F;
+                text-transform: uppercase;
+                @include font-pack($font-body, false, $font-weight-sbold, 1.5, $cl-white);
+            }
+        }
+    }
+}

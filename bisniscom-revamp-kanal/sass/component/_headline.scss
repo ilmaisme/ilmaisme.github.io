@@ -1,0 +1,151 @@
+.hL {
+    &Wrap {
+        position: relative;
+        height: 270px;
+        overflow: hidden;
+        background: #C4C4C4;
+        @include font-pack($font-body, 15px, $font-weight-normal, $line-base, $cl-white);
+
+        &.-bottom {
+
+            .hLBigContent{
+                @extend .container;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .hLBig {
+                z-index: 1;
+
+                &Content {
+                    bottom: 14px;
+                }
+
+                &Item::before {
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+                }
+            }
+
+            .hLNav {
+                &Item {
+
+                    &.slick-current {
+                        .hLNavWrap {
+                            border-top: 3px solid #DB892A
+                        }
+                    }
+                }
+
+                &Wrap {
+                    border-top: 3px solid #48545C;
+                }
+            }
+
+            .artDate {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &Slide {
+        width: 100%;
+        max-height: 100%;
+    }
+
+    &Big {
+        position: relative;
+        width: 100%;
+        z-index: 0;
+
+        &Item {
+            position: relative;
+            width: 100%;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0) 50%, #000000 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 7.72%, #000000 100%);
+                z-index: 0;
+            }
+        }
+
+        &Content {            
+            @extend .container;
+            position: absolute;
+            bottom: 38px;
+            z-index: 1;
+
+            &.-premium {
+                .artChannel {
+                    color: $cl-white;
+                }
+            }
+        }
+
+        &Img {
+            img {
+                width: 100%;
+                height: 270px;
+                object-fit: cover;
+            }
+        }
+
+        &Title {
+            margin-top: 8px;
+            @include font-pack($font-body, 20px, $font-weight-bold, $line-base, $cl-white);
+        }
+
+        .art {
+            &Date {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    &Nav {
+        position: relative;
+        width: 100%;
+        @include display_flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+
+        &Wrap {
+            width: 100%;
+        }
+
+        &Item{
+            width: calc(100%/3);
+        }
+
+        &Img {
+            position: relative;
+            width: 100%;
+            height: 66px;
+            background: #D9D9D9;
+
+            img {
+                @extend %template-img;
+            }
+        }
+
+        .slick {
+            &-track {
+                transform: translate3d(0px, 0px, 0px) !important; //takeout if headline items > 4
+            }
+        }
+    }
+
+    .art {
+        &Channel {
+            color: $cl-white;
+
+            .icoPremium {
+                @extend %filter-white;
+            }
+        }
+    }
+}
