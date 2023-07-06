@@ -11,14 +11,17 @@
                     {{#eq ../pos compare="top"}}
                     {{#eq @index compare=0}}
                     <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../widthtop}}&h={{../heighttop}}"
-                        width="{{../widthtop}}" height="{{../heighttop}}" alt="{{title}}" {{#if ../lcp}}{{else}}loading="lazy"{{/if}}>
+                        width="{{../widthtop}}" height="{{../heighttop}}" alt="{{title}}" {{#if
+                        ../lcp}}{{else}}loading="lazy" {{/if}}>
                     {{else}}
                     <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../width}}&h={{../height}}"
-                        width="{{../width}}" height="{{../height}}" alt="{{title}}" {{#if ../lcp}}{{else}}loading="lazy"{{/if}}>
+                        width="{{../width}}" height="{{../height}}" alt="{{title}}" {{#if ../lcp}}{{else}}loading="lazy"
+                        {{/if}}>
                     {{/eq}}
                     {{else}}
                     <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../width}}&h={{../height}}"
-                        width="{{../width}}" height="{{../height}}" alt="{{title}}" {{#if ../lcp}}{{else}}loading="lazy"{{/if}}>
+                        width="{{../width}}" height="{{../height}}" alt="{{title}}" {{#if ../lcp}}{{else}}loading="lazy"
+                        {{/if}}>
                     {{/eq}}
                     {{#if ../video}}
                     <div class="artDuration">
@@ -54,6 +57,9 @@
                 </div>
                 {{/compare}}
                 <a href="{{link}}" class="artLink">
+                    {{#if live}}
+                    <div class="artLive"><span>Live</span></div>
+                    {{/if}}
                     <h4 class="artTitle">
                         {{title}}
                     </h4>

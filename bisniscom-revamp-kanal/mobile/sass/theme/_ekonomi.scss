@@ -119,10 +119,10 @@
             transform: translateY(92px);
 
             &Caption {
-                padding: 11px 7px 11px 15px;
+                padding: 10px 7px 10px 15px;
                 border-right: 1px solid $cl-white;
                 letter-spacing: -0.2px;
-                @include font-pack($font-manrope, 10px, $font-weight-bold, false, false);
+                @include font-pack($font-manrope, 12px, $font-weight-bold, false, false);
             }
 
             &Wrap {
@@ -136,8 +136,7 @@
 
             &Link {
                 padding: 7px 5px;
-                @include font-pack($font-manrope, 12px, $font-weight-med, false, false);
-                text-decoration: underline;
+                @include font-pack($font-manrope, 13px, $font-weight-med, false, false);
             }
         }
 
@@ -184,6 +183,10 @@
                 }
 
                 &.-row-top {
+                    .artContent {
+                        flex: 1;
+                    }
+
                     .artItem {
                         &:not(:first-child) {
                             display: flex;
@@ -197,6 +200,7 @@
 
                             .artImg {
                                 height: unset;
+                                padding-top: calc(3/4 * 100%);
                             }
 
                             .artChannel {
@@ -208,6 +212,10 @@
                         }
 
                         &:first-child {
+                            .artTitle {
+                                font-size: 20px;
+                            }
+
                             .artDate {
                                 margin-top: 0;
                             }
@@ -234,7 +242,7 @@
             }
 
             &Title {
-                @include font-pack($font-manrope, 16px, $font-weight-sbold, 1.38, #222222);
+                @include font-pack($font-manrope, 18px, $font-weight-sbold, 1.38, #222222);
             }
 
             &Channel {
@@ -247,6 +255,20 @@
                 margin-top: 0;
                 letter-spacing: 0.8px;
                 @include font-pack($font-manrope, 10px, $font-weight-med, $line-base, #585858);
+            }
+
+            &Live {
+                display: inline-block;
+                padding-left: 17px;
+                padding-right: 7px;
+                border-radius: 5px;
+                color: $cl-white;
+                background: #d11616;
+
+                &::before {
+                    left: 8px;
+                    background: $cl-white;
+                }
             }
         }
 
@@ -270,14 +292,15 @@
                 }
 
                 &Title {
-                    @include font-pack(false, 14px, false, false, false);
+                    @include font-pack(false, 17px, false, false, false);
                 }
             }
 
             &Big {
 
                 &Title {
-                    @include font-pack(false, false, false, false, #000000);
+                    -webkit-line-clamp: unset;
+                    @include font-pack(false, 22px, false, false, #000000);
                 }
 
                 &Item {
@@ -358,13 +381,7 @@
 
             &Title {
                 letter-spacing: 0.05em;
-                @include font-pack($font-manrope, 12px, $font-weight-sbold, $line-base, #222222);
-            }
-        }
-
-        .live {
-            &Title {
-                font-size: 14px;
+                @include font-pack($font-manrope, 16px, $font-weight-sbold, $line-base, #222222);
             }
         }
 
@@ -392,7 +409,7 @@
                 margin-top: 0;
                 margin-bottom: 10px;
                 -webkit-line-clamp: 3;
-                font-size: 14px;
+                font-size: 18px;
             }
         }
 
