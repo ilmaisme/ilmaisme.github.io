@@ -25,3 +25,16 @@ function toggleItem() {
         contentClass.style.maxHeight = 0;
     }
 }
+
+//title fixed on details
+var titlefx = document.querySelector('.onfixed')
+window.addEventListener("scroll", function (event) {
+    var titledt = document.querySelector('.detailsTitleCaption')
+    var titlehg = titledt.getBoundingClientRect().top
+
+    if (titlehg <= 0) {
+        titlefx.classList.add('active');
+    } else {
+        titlefx.classList.remove('active');
+    }
+}, false);

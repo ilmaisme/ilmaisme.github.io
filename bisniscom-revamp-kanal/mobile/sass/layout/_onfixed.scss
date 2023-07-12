@@ -1,0 +1,20 @@
+.onfixed {
+    background: #dbdbdb;
+    transition: all .5s ease-out;
+    // height: 32px;
+    // padding-top: 6px;
+    // padding-bottom: 6px;
+    overflow: hidden;
+    @extend .hidden;
+
+    .detailTitle {
+        @include title_clamp(1);
+        @include font-pack(false, 15px, $font-weight-sbold, false, $cl-black);
+    }
+
+    &.active{
+        padding-top: 6px;
+        padding-bottom: 6px;
+        @extend .visible;
+    }
+}

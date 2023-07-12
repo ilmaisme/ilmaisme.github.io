@@ -10,13 +10,13 @@ sizer.addEventListener("input", (event) => {
 });
 sizermin.addEventListener("click", (event) => {
     var valmin = sizer.getAttribute('min')
-    sizer.setAttribute("value", valmin);
-    console.log(valmin);
+    sizer.value = valmin;
+    // console.log(valmin);
     content.style.fontSize = valmin + 'em'
 });
 sizerplus.addEventListener("click", (event) => {
     var valplus = sizer.getAttribute('max')
-    sizer.setAttribute("value", valplus);
-    console.log(valplus);
+    sizer.value = valplus;
+    // console.log(valplus);
     content.style.fontSize = valplus + 'em'
 });
