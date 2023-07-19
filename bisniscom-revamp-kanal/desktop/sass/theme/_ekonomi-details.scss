@@ -55,6 +55,7 @@
 
                 &Item {
                     flex-direction: column;
+                    max-width: 370px;
                 }
 
                 .profileImg {
@@ -133,6 +134,10 @@
                     color: #D11616;
                 }
 
+                h2 {
+                    line-height: 1.2;
+                }
+
             }
 
             &Author {
@@ -153,7 +158,7 @@
                     border-radius: 7px;
                     letter-spacing: 0.6px;
                     border: 1px solid #D11616;
-                    @include font-pack(false, 12px, $font-weight-sbold, false, #222);
+                    @include font-pack(false, 14px, $font-weight-sbold, false, #222);
 
                     &:hover {
                         background: #D11616;
@@ -202,6 +207,7 @@
                     border-right: 0;
                     border-top: 1px solid #3D3D3D;
                     border-bottom: 1px solid #3D3D3D;
+                    height: 75px;
 
                     &:hover {
                         .detailsPagingContent {
@@ -469,6 +475,62 @@
 
             hr {
                 margin-top: 36px;
+            }
+
+            .premiumBox {
+                padding: 35px 0 25px;
+                border-radius: 0;
+                background: transparent;
+                border-top: 1px solid #3D3D3D;
+                border-bottom: 1px solid #3D3D3D;
+
+                &Caption {
+                    margin-top: 15px;
+                    @include font-pack($font-manrope, 13px, $font-weight-med, 1.69, #222);
+                    letter-spacing: 0.39px;
+
+                    a {
+                        @include font-pack(false, 14px, $font-weight-bold, false, var(--cl-premium, #803C00));
+                        letter-spacing: 0.42px;
+                        text-decoration: underline;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .art {
+                    margin-bottom: 0;
+                }
+
+                .artWrap.-col {
+                    .artLinkImg .artImg {
+                        padding-top: 56.322%;
+                    }
+                }
+
+                .artLink:hover .artTitle {
+                    color: var(--cl-ekonomi);
+                    text-decoration: none;
+                }
+
+                .artDate {
+                    color: #585858;
+                }
+
+                .artTitle {
+                    color: #222222;
+                }
+
+                .artChannel {
+                    margin-right: 6px;
+                    letter-spacing: 0.6px;
+                    @include font-pack($font-manrope, false, $font-weight-med, false, var(--cl-premium, #803C00));
+
+                    &.-premium {
+                        .icoPremium {
+                            filter: invert(22%) sepia(95%) saturate(1798%) hue-rotate(25deg) brightness(99%) contrast(101%);
+                        }
+                    }
+                }
             }
 
             .artWrap.-col .artLinkImg .artImg {

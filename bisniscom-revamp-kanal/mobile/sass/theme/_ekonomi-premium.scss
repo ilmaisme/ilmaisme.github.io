@@ -17,7 +17,7 @@
                 position: relative;
 
                 &.-parallax {
-                    width: calc(100% - 30px);
+                    width: calc(100% - 20px);
                     padding-top: 10px;
                     padding-left: 15px;
                     padding-right: 15px;
@@ -55,7 +55,7 @@
             &Cover {
                 width: 100%;
                 position: fixed;
-                top: 0;
+                top: 124px;
                 margin-left: 0;
                 margin-right: 0;
 
@@ -64,20 +64,28 @@
                 }
 
                 &Img {
-                    padding-top: 100vh;
+                    padding-top: calc(2/3 * 100%);
                     border-radius: 0;
 
                     &::before {
                         background: linear-gradient(180deg, transparent 44.53%, #000 103.59%);
+                    }
+
+                    img {
+                        border-radius: 0;
                     }
                 }
             }
 
             &Parallax {
                 position: relative;
-                margin-top: 100vh;
+                margin-top: calc(2/3 * 180%);
                 background: $cl-white;
                 padding-bottom: 65px;
+
+                @include min-responsive($mntablet) {
+                    margin-top: calc(2/3 * 120%);
+                }
             }
 
             &Content .big-orange {
@@ -131,7 +139,6 @@
         }
 
         .premium {
-
             &Lock {
                 max-width: 516px;
                 margin-left: auto;
