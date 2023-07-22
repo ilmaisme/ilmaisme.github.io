@@ -1,0 +1,110 @@
+.pass {
+    background: rgba(0, 0, 0, 0.75);
+
+    &.disable {
+
+        .passSubmit,
+        .passForm {
+            pointer-events: none;
+        }
+    }
+
+    &Wrap {
+        width: 100%;
+        max-width: 630px;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 20px 24px;
+        border-radius: 15px;
+        background: $cl-white;
+        
+        @include min-responsive($w-vlg) {
+            margin-left: 0;
+            margin-right: 0;
+            padding: 20px 30px;
+        }
+    }
+
+    &Logo {
+        svg {
+            max-width: 60px;
+
+            @include min-responsive($w-vlg) {
+                max-width: unset;
+            }
+        }
+
+        &.active {
+            .passUnlock {
+                opacity: 1;
+            }
+
+            .passLock {
+                opacity: 0;
+            }
+        }
+    }
+
+    &Unlock {
+        opacity: 0;
+        @include base_transition(all, .2s);
+    }
+
+    &Lock {
+        opacity: 1;
+        @include base_transition(all, .2s);
+    }
+
+    &Form {
+        margin-bottom: 20px;
+        border-radius: 15px;
+        border: 4px solid #B39151;
+        pointer-events: all;
+        
+        @include min-responsive($w-vlg) {
+            margin-top: 37px;
+            margin-bottom: 37px;
+            padding: 52px 20px 56px;
+        }
+    }
+
+    &Label {
+        @include font-pack(false, 16px, false, false, false);
+
+        @include min-responsive($w-vlg) {
+            font-size: 18px;
+        }
+
+        &.active {
+            color: $cl-red;
+        }
+    }
+
+    &Input {
+        width: 30px;
+        height: 34px;
+        margin: 15px 6px 18px;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        outline: 0;
+        border-bottom: 2px solid #B39151;
+        background: transparent;
+        text-transform: uppercase;
+        text-align: center;
+        @include font-pack($font-base, 34px, $font-weight-normal, 34px, #363636);
+
+        @include min-responsive($w-vlg) {
+            width: 137px;
+            height: 68px;
+            margin: 0 8px 0;
+            font-size: 70px;
+            line-height: $line-base;
+        }
+    }
+
+    &Submit {
+        margin: 37px auto 0;
+        pointer-events: all;
+    }
+}

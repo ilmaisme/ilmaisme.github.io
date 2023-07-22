@@ -1,0 +1,257 @@
+.menu {
+    position: relative;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 8vh;
+    left: 200%;
+    background: radial-gradient(76.23% 61.06% at 32.59% -16.10%, #494949 0%, #1B1B1B 100%);
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 52px;
+        top: 25px;
+        right: 15px;
+        background: url(../images/dot-bg-corner.png);
+
+        @include min-responsive($w-vlg) {
+            width: 80px;
+            height: 82px;
+            top: 50px;
+            right: 50px;
+
+            @include max-height($w-hmd) {
+                width: 60px;
+                height: 62px;
+                top: 20px;
+                right: 25px;
+            }
+        }
+    }
+
+    @include range-responsive($w-md, $w-xl) {
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    @include min-responsive($w-xl) {
+        align-items: center;
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    &.disable {
+
+        .menuLink,
+        .buttonInfo {
+            pointer-events: none;
+        }
+    }
+
+    &Caption {
+        max-width: 474px;
+        padding-left: 15px;
+        padding-right: 15px;
+        @include font-pack($font-bold, 28px, $font-weight-bold, false, #DBBC74);
+
+        @include max-responsive($w-xm) {
+            font-size: 22px;
+        }
+
+        @include min-responsive($w-vlg) {
+            padding-left: 0;
+            padding-right: 0;
+            font-size: 34px;
+            margin-left: 60px;
+
+            @include max-height($w-hmd) {
+                margin-left: 45px;
+            }
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 36px;
+            margin-left: 70px;
+        }
+
+        @include range-responsive($w-md, $w-vlg) {
+            margin-left: 320px;
+        }
+    }
+
+    &Scroll {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include min-responsive($w-vlg) {
+            bottom: 20px;
+        }
+
+        .buttonScroll {
+            color: $cl-white;
+        }
+
+        .icon-scroll {
+            &::before {
+                top: 3px;
+                animation: none;
+            }
+        }
+    }
+
+    &Info {
+        order: 1;
+        flex-direction: column;
+        margin: auto auto auto 280px;
+        @include font-pack($font-base, 14px, false, false, $cl-white);
+
+        @include max-responsive($w-xm) {
+            margin: auto auto auto 240px;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            margin: 20px 25px 0 60px;
+        }
+
+        @include min-responsive($w-xl) {
+            order: unset;
+            flex-direction: row;
+            margin: 0 0 0 610px;
+            font-size: 18px;
+
+            @include max-height($w-hmd) {
+                margin: 0px 0 0 485px;
+            }
+        }
+
+        img {
+            order: 1;
+            max-width: 60px;
+            margin-top: 8px;
+
+            @include range-responsive($w-md, $w-xl) {
+                max-width: unset;
+            }
+
+            @include min-responsive($w-xl) {
+                order: unset;
+                margin-top: 0;
+                margin-right: 12px;
+                max-width: unset;
+            }
+        }
+    }
+
+    &Wheel {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        text-align: center;
+        left: -300px;
+        top: calc(50% + 83px);
+        transform: translateY(-50%);
+        flex-shrink: 0;
+
+        @include max-responsive($w-xm) {
+            width: 500px;
+            height: 500px;
+            left: -250px;
+        }
+
+        @include range-responsive($w-md, $w-vlg) {
+            width: 800px;
+            height: 800px;
+            left: -400px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @include range-responsive($w-vlg, $w-xl) {
+            width: 1040px;
+            height: 1040px;
+            left: -520px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @include min-responsive($w-xl) {
+            width: 1313px;
+            height: 1313px;
+            left: -657px;
+            top: unset;
+            transform: none;
+
+            @include max-height($w-hmd) {
+                width: 1040px;
+                height: 1040px;
+                left: -520px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        svg {
+            width: 600px;
+            height: 600px;
+
+            @include max-responsive($w-xm) {
+                width: 500px;
+                height: 500px;
+            }
+
+            @include range-responsive($w-md, $w-vlg) {
+                width: 800px;
+                height: 800px;
+            }
+
+            @include range-responsive($w-vlg, $w-xl) {
+                width: 1040px;
+                height: 1040px;
+            }
+
+            @include min-responsive($w-xl) {
+                width: 1313px;
+                height: 1313px;
+
+                @include max-height($w-hmd) {
+                    width: 1040px;
+                    height: 1040px;
+                }
+            }
+        }
+
+        &.a1 {
+            transform: rotate(0);
+        }
+
+        &.a2 {
+            transform: rotate(-60deg);
+        }
+
+        &.a3 {
+            transform: rotate(-120deg);
+        }
+
+        &.a4 {
+            transform: rotate(-180deg);
+        }
+
+        &.a5 {
+            transform: rotate(-240deg);
+        }
+
+        &.a6 {
+            transform: rotate(-300deg);
+        }
+    }
+
+    &Link {
+        display: block;
+        pointer-events: all;
+        cursor: pointer;
+    }
+}

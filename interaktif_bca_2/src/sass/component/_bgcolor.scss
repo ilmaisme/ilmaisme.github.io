@@ -1,0 +1,88 @@
+.bgColor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include display_full;
+
+    &__cloud {
+        background-image: url(../images/cover-cloud-mob.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;        
+        transition: opacity .3s ease-in-out;
+
+        @include min-responsive($w-vlg) {
+            background-image: url(../images/cover-cloud.jpg);
+        }
+    }
+
+    &__start {
+        background-image: url(../images/start-bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: opacity .3s ease-in-out;
+    }
+
+    &__black {
+        background: radial-gradient(76.23% 61.06% at 32.59% -16.10%, #494949 0%, #1B1B1B 100%);
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 52px;
+            top: 25px;
+            right: 15px;
+            background: url(../images/dot-bg-corner.png);
+
+            @include min-responsive($w-vlg) {
+                width: 80px;
+                height: 82px;
+                top: 50px;
+                right: 50px;
+
+                @include max-height($w-hmd) {
+                    width: 60px;
+                    height: 62px;
+                    top: 20px;
+                    right: 25px;
+                }
+            }
+        }
+    }
+
+    &__white {
+        background-image: url(../images/white-bg-mob.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+
+        @include min-responsive($w-vlg) {
+            background-image: url(../images/white-bg.jpg);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 52px;
+            bottom: 25px;
+            left: 15px;
+            transform: rotate(180deg);
+            background: url(../images/dot-bg-corner.png);
+
+            @include min-responsive($w-vlg) {
+                width: 80px;
+                height: 82px;
+                bottom: 50px;
+                left: 50px;
+
+                @include max-height($w-hmd) {
+                    width: 60px;
+                    height: 62px;
+                    bottom: 20px;
+                    left: 25px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head}}
+
+<body>
+    <main role="main">
+        {{!> header/header}}
+
+        <!-- preloader -->
+        {{!> preloader}}
+        <!-- preloader -->
+
+        <div class="bgStatic bgStatic--warn">
+            <div class="articleContent text-center">
+                For better experience, rotate your screen or switch to bigger screen.
+            </div>
+        </div>
+
+        <!-- Template Background Color -->
+        <div class="bgColor__wrap">
+            <div class="bgColor bgColor__cloud"></div>
+            <div class="bgColor bgColor__start opac0"></div>
+            {{!-- <div class="bgColor bgColor__black"></div> --}}
+            <div class="bgColor bgColor__white opac0"></div>
+        </div>
+        <!-- Template Background Color -->
+        <!-- Template Image Content -->
+        <div class="bgStatic__wrap active">
+            <div class="bgStatic">
+                <div class="cover heightFull display-flex">
+                    <div class="coverImg center-flex">
+                        <picture class="coverBuilding heightFull center-flex">
+                            <source srcset="./asset/images/cover-bg-mob.png" media="(max-width: 768px)" alt=""
+                                width="563" height="633">
+                            <img srcset="./asset/images/cover-bg.png" alt="" class="" width="1246" height="633">
+                        </picture>
+                    </div>
+                    <div class="coverCta center-flex">
+                        <button class="button buttonScroll center-flex">
+                            <span class="icon-scroll"></span>
+                            <span class="icon-arrow-down"></span>
+                            scroll ke bawah
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="pass center-flex heightFull disable opac0">
+                    <div class="passWrap text-center">
+                        <div class="passLogo">
+                            {{>pass-logo}}
+                        </div>
+                        <form class="passForm">
+                            <div class="passInput__wrap center-flex">
+                                <input class="passInput" type="text" maxlength="1" autofocus="" autocomplete="off"
+                                    id="pass1">
+                                <input class="passInput" type="text" maxlength="1" autocomplete="off" id="pass2">
+                                <input class="passInput" type="text" maxlength="1" autocomplete="off" id="pass3">
+                            </div>
+                        </form>
+                        <label for="password" class="passLabel">Ketikkan “BCA” kemudian tekan enter</label>
+                        <button type="button" class="passSubmit button buttonSubmit" id="passSubmit">enter</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="start center-flex heightFull opac0">
+                    <picture class="startImg">
+                        <source srcset="./asset/images/start-card-mob.png" media="(max-width: 768px)" alt="" width="500"
+                            height="115">
+                        <img srcset="./asset/images/start-card.png" alt="" class="" width="1395" height="320">
+                    </picture>
+                    <div class="startScroll center-flex">
+                        <button class="button buttonScroll center-flex">
+                            scroll
+                            <span class="icon-scroll"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="intro display-flex heightFull opac0">
+                    <div class="introContent display-flex">
+                        <picture class="introImg">
+                            <source srcset="./asset/images/intro-cs-mob.png" media="(max-width: 768px)" alt=""
+                                width="220" height="300">
+                            <img srcset="./asset/images/intro-cs.png" alt="" class="" width="469" height="639">
+                        </picture>
+                        <div class="articleContent introTxt">BCA berupaya memenuhi kebutuhan nasabah BCA Solitaire dan Prioritas dengan
+                            memberikan benefit yang mendukung dan melengkapi kebutuhan bisnis dan gaya hidup nasabah.
+                        </div>
+                    </div>
+                    <div class="introCta center-flex">
+                        <span>klik disini</span>
+                        <picture class="introCursor">
+                            <img src="./asset/images/cursor.png" alt="" class="" width="51" height="51">
+                        </picture>
+                        <button type="button" class="introButton button buttonSubmit" id="introbtn">enter</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="menu display-flex heightFull">
+                    {{>wheel}}
+                    <h1 class="menuCaption">Benefit Nasabah BCA <br> Solitaire & Prioritas</h1>
+                    <div class="menuScroll center-flex">
+                        <button class="button buttonScroll center-flex">
+                            scroll untuk memilih kategori
+                            <span class="icon-arrow-up"></span>
+                            <span class="icon-scroll"></span>
+                            <span class="icon-arrow-down"></span>
+                        </button>
+                    </div>
+                    <button type="button" class="button buttonInfo" id="infobtn" aria-label="Informasi nasabah">
+                        <img src="./asset/images/menu-cs.png" alt="" width="42" height="29">
+                    </button>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="info center-flex text-center heightFull disable opac0">
+                    <picture class="infoImg">
+                        <source srcset="./asset/images/logo-bca-soliprio-mob.svg" media="(max-width: 768px)" alt=""
+                            width="310" height="50">
+                        <img srcset="./asset/images/logo-bca-soliprio.svg" alt="Solitaire BCA Prioritas" class=""
+                            width="350" height="56">
+                    </picture>
+                    <h2 class="articleContent infoContent">
+                        <p>Wujudkan segala keistimewaan persembahan kami dalam keluarga besar BCA Prioritas.
+                        </p>
+                        <p>
+                            Untuk informasi lebih lanjut tentang keanggotaan BCA Solitaire & Prioritas, <br>
+                            silakan hubungi cabang BCA Anda.</p>
+                    </h2>
+                    <button type="button" class="button buttonClose" id="closeinfo" aria-label="Close information">
+                        <span class="icon-close"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Template Image Content -->
+        <!-- Fullpage Content -->
+        <div id="fullpage" class="fullpage">
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+        </div>
+        <!-- Fullpage Content -->
+        <div id="some-element"></div>
+    </main>
+    {{> footer}}
+
+    {{> js}}
+
+</body>
+
+</html>

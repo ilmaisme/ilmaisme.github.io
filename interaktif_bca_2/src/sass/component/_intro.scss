@@ -1,0 +1,146 @@
+.intro {
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    background: rgba(26, 26, 26, 0.85);
+    @include base_transition(opacity, .2s);
+
+    &Img {
+        position: relative;
+        order: 1;
+
+        @include min-responsive($w-xl) {
+            order: unset;
+        }
+
+        img {
+            @include min-responsive($w-vlg) {
+                @include max-height($w-hmd) {
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+
+    &Txt {
+        display: flex;
+        align-self: flex-start;
+        align-items: center;
+        max-width: 355px;
+        position: relative;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 15px;
+        padding: 15px 10px;
+        background: $cl-white;
+        border-radius: 10px;
+        color: $cl-primary-black;
+        
+        @include range-responsive($w-md, $w-vlg) {
+            margin-bottom: 30px;
+            max-width: 400px;
+        }
+        
+        @include min-responsive($w-vlg) {
+            margin-bottom: 30px;
+            max-width: 590px;
+            padding: 17px 20px;
+        }
+
+        @include min-responsive($w-xl) {
+            max-width: 630px;
+            margin-left: -60px;
+            margin-right: 0;
+            margin-bottom: 0;
+            border-bottom-left-radius: 0;
+
+            @include max-height($w-hmd) {
+                margin-left: -100px;
+            }
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 150px;
+            bottom: -28px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 28px 28px 0 0;
+            border-radius: 0;
+            border-bottom-left-radius: 10px;
+            border-color: $cl-white transparent transparent transparent;
+
+            @include min-responsive($w-vlg) {
+                left: 250px;
+            }
+
+            @include min-responsive($w-xl) {
+                left: 0;
+                bottom: -43px;
+                border-width: 43px 43px 0 0;
+            }
+        }
+    }
+
+    &Content {
+        flex-direction: column;
+
+        @include min-responsive($w-xl) {
+            flex-direction: row;
+        }
+    }
+
+    &Cta {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        @include font-pack($font-base, 14px, $font-weight-normal, 20px, $cl-white);
+
+        @include min-responsive($w-vlg) {
+            right: 70px;
+            bottom: 70px;
+            font-size: 18px;
+        }
+
+        @include min-responsive($w-xl) {
+            align-items: center;
+            flex-direction: row;
+        }
+    }
+
+    &Cursor {
+        position: relative;
+        margin-left: 25px;
+        margin-right: 30px;
+        margin-bottom: 10px;
+        max-width: 35px;
+        transform: rotate(90deg);
+        
+        @include min-responsive($w-xl) {
+            max-width: unset;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            transform: none
+        }
+
+        &.active {
+            @include animation(scrolldown 2s infinite);
+
+            @include min-responsive($w-xl) {
+                @include animation(scrollright 2s infinite);
+            }
+        }
+    }
+
+    &Button {
+        &.enable {
+            pointer-events: all;
+        }
+    }
+}
