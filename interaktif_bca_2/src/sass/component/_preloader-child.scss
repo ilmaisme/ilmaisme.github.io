@@ -1,0 +1,80 @@
+.preloader {
+    top: 0;
+    transition: opacity .4s ease-in-out;
+    height: 100%;
+    width: 100%;
+    z-index: 1001;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    
+    &--komunitas{
+        background: linear-gradient(135deg, #195A8E 0%, #0D2E5E 100%);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &--privilege{
+        background: linear-gradient(189deg, #FFF 0%, #EFEFEF 100%);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &Wrap {
+        @include display_full;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        @include font-pack($font-base, 20px, $font-weight-bold, 1.24, #EACC8F);        
+    }
+
+    &Txt {
+        margin-top: 30px;
+        min-width: 80px;
+        @include animation(opacityloading 3s infinite);
+        background: -webkit-linear-gradient(#EACC8F, #B49555);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@-webkit-keyframes opacityloading {
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes opacityloading {
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

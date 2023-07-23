@@ -8,4 +8,35 @@
             font-size: 20px;
         }
     }
+
+    &Caption {
+        @include font-pack($font-bold, 28px, $font-weight-bold, false, false);
+
+        @include max-responsive($w-xm) {
+            font-size: 22px;
+        }
+
+        @include min-responsive($w-vlg) {
+            font-size: 34px;
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 36px;
+        }
+    }
+
+    &Img {
+        max-height: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        @include min-responsive($w-vlg) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        img {
+            max-height: calc(100vh - 40px);
+        }
+    }
 }

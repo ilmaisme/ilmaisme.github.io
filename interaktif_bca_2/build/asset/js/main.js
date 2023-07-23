@@ -199,18 +199,10 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 2 && direction == 'down') {
-                $(".menu").velocity({
-                    left: "0"
-                }, {
-                    delay: 0,
-                    duration: 700,
-                    begin: function () {
-                        $(".introCursor").removeClass("active");
-                        $(".introButton").removeClass("enable");
-                    },
-                    complete: function () {
-                    }
-                });
+                $(".introCursor").removeClass("active");
+                $(".introButton").removeClass("enable");
+                $('.menu').addClass("bounce");
+                $('.menuWheel').addClass("rotate");
             }
         }
     })

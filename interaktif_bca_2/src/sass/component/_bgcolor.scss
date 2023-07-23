@@ -7,7 +7,7 @@
     &__cloud {
         background-image: url(../images/cover-cloud-mob.jpg);
         background-size: cover;
-        background-repeat: no-repeat;        
+        background-repeat: no-repeat;
         transition: opacity .3s ease-in-out;
 
         @include min-responsive($w-vlg) {
@@ -81,6 +81,59 @@
                     height: 62px;
                     bottom: 20px;
                     left: 25px;
+                }
+            }
+        }
+    }
+
+    &__blue {
+        background: linear-gradient(135deg, #195A8E 0%, #0D2E5E 100%);
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 52px;
+            bottom: 25px;
+            left: 15px;
+            transform: rotate(180deg);
+            background: url(../images/dot-bg-corner.png);
+
+            @include min-responsive($w-vlg) {
+                width: 80px;
+                height: 82px;
+                bottom: 50px;
+                left: 50px;
+
+                @include max-height($w-hmd) {
+                    width: 60px;
+                    height: 62px;
+                    bottom: 20px;
+                    left: 25px;
+                }
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 52px;
+            top: 25px;
+            right: 15px;
+            background: url(../images/dot-bg-corner.png);
+
+            @include min-responsive($w-vlg) {
+                width: 80px;
+                height: 82px;
+                top: 50px;
+                right: 50px;
+
+                @include max-height($w-hmd) {
+                    width: 60px;
+                    height: 62px;
+                    top: 20px;
+                    right: 25px;
                 }
             }
         }

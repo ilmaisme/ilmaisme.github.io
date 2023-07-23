@@ -1,0 +1,56 @@
+.privilege {
+    &Wrap {
+        flex-direction: column;
+
+        @include min-responsive($w-vlg) {
+            flex-direction: row;
+        }
+    }
+
+    &Cta {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+
+        .buttonScroll {
+            color: $cl-white;
+        }
+
+        .icon-scroll {
+            margin-top: 12px;
+        }
+    }
+
+    .article {
+        &Caption {
+            color: #DBBC74;
+            margin-top: 24px;
+
+            @include min-responsive($w-vlg) {
+                margin-top: 44px;
+            }
+        }
+
+        &Content {
+            position: relative;
+            padding: 16px 30px 46px;
+            color: $cl-black;
+            background: $cl-white;
+            box-shadow: 10px 14px 0 #CFAC68;
+
+            &::after{
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 16px;
+                right: 14px;
+                border-style: solid;
+                border-width: 52px 52px 0 0;
+                border-color: #EAD5A4 transparent transparent transparent;
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

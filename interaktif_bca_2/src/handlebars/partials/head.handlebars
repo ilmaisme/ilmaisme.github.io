@@ -27,15 +27,9 @@ dan non-perbankan bagi para nasabah." />
     <!-- e:twitter card -->
 
     <link rel=icon type=image/png sizes=16x16 href="https://static.bisnis-cdn.com/interaktif/assets/images/favicon.png">
-    <link rel="stylesheet" href="./asset/css/style.css" type="text/css">
 
-    {{!-- <link rel="preload" as="image" href="./asset/images/loading-bca-logo-mob.png"
-        imagesrcset="./asset/images/loading-bca-logo.png 768w, ./asset/images/loading-bca-logo.png 1600w"
-        imagesizes="50vw">
-    <link rel="preload" as="image" href="./asset/images/loading-bg-mob.png"
-        imagesrcset="./asset/images/loading-bg.png 1024w, ./asset/images/loading-bg.png 1600w" imagesizes="50vw">
-    <link rel="preload" as="image" href="./asset/images/cover-bg-mob.svg"
-        imagesrcset="./asset/images/cover-bg.svg 768w, ./asset/images/cover-bg.svg 1600w" imagesizes="50vw"> --}}
+    {{#eq page compare="home"}}
+    <link rel="stylesheet" href="{{>loc page=" home"}}asset/css/style.css" type="text/css">
     <style>
         @font-face {
             font-family: 'BCA';
@@ -74,4 +68,72 @@ dan non-perbankan bagi para nasabah." />
 
         /*preloader*/
     </style>
+    {{/eq}}
+    {{#eq page compare="digital"}}
+    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-digital.css" type="text/css">
+    {{/eq}}
+    {{#eq page compare="insights"}}
+    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-insights.css" type="text/css">
+    {{/eq}}
+    {{#eq page compare="komunitas"}}
+    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-komunitas.css" type="text/css">
+    {{/eq}}
+    {{#eq page compare="privilege"}}
+    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-privilege.css" type="text/css">
+    {{/eq}}
+    {{#eq page compare="tarif"}}
+    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-tarif.css" type="text/css">
+    {{/eq}}
+    {{#eq page compare="treatment"}}
+    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-treatment.css" type="text/css">
+    {{/eq}}
+    {{#if child}}
+    <style>
+        @font-face {
+            font-family: 'BCA';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('BCA DRAFT 2.3'),
+                url('{{>loc page=" child"}}asset/fonts/BCADRAFT2.3-Regular.woff2') format('woff2'),
+                url('{{>loc page=" child"}}asset/fonts/BCADRAFT2.3-Regular.woff') format('woff'),
+                url('{{>loc page=" child"}}asset/fonts/BCADRAFT2.3-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'BCA-Italic';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: local('BCA DRAFT 2.3 Italic'),
+                url('{{>loc page=" child"}}asset/fonts/BCADRAFT2.3-Italic.woff2') format('woff2'),
+                url('{{>loc page=" child"}}asset/fonts/BCADRAFT2.3-Italic.woff') format('woff'),
+                url('{{>loc page=" child"}}asset/fonts/BCADRAFT2.3-Italic.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'BCA-Bold';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local('BCA DRAFT 2.3 Bold'),
+                url('{{>loc page=" child"}}asset/fonts/BCADRAFT2.3-Bold.woff2') format('woff2'),
+                url('{{>loc page=" child"}}asset/fonts/BCADRAFT2.3-Bold.woff') format('woff'),
+                url('{{>loc page=" child"}}asset/fonts/BCADRAFT2.3-Bold.ttf') format('truetype');
+        }
+
+        /*preloader*/
+
+        /*preloader*/
+    </style>
+    {{/if}}
+    {{!--
+    <link rel="preload" as="image" href="./asset/images/loading-bca-logo-mob.png"
+        imagesrcset="./asset/images/loading-bca-logo.png 768w, ./asset/images/loading-bca-logo.png 1600w"
+        imagesizes="50vw">
+    <link rel="preload" as="image" href="./asset/images/loading-bg-mob.png"
+        imagesrcset="./asset/images/loading-bg.png 1024w, ./asset/images/loading-bg.png 1600w" imagesizes="50vw">
+    <link rel="preload" as="image" href="./asset/images/cover-bg-mob.svg"
+        imagesrcset="./asset/images/cover-bg.svg 768w, ./asset/images/cover-bg.svg 1600w" imagesizes="50vw"> --}}
+
 </head>

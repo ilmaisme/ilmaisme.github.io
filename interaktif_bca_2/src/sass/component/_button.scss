@@ -11,7 +11,7 @@
         @include range-responsive($w-md, $w-xxl) {
             font-size: 12px;
         }
-        
+
         @include min-responsive($w-xxl) {
             font-size: 14px;
         }
@@ -49,6 +49,7 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         pointer-events: all;
         cursor: pointer;
+        transition: all .4s ease-out;
 
         @include min-responsive($w-md) {
             width: 57px;
@@ -57,11 +58,55 @@
             bottom: 40px;
         }
 
+        &:hover {
+            .buttonInfo__misc {
+                opacity: 1;
+            }
+        }
+
+        &.active {
+            transform: translateY(-64px);
+
+            @include min-responsive($w-md) {
+                transform: translateY(-77px);
+            }
+        }
+
         img {
             max-width: 30px;
 
             @include min-responsive($w-md) {
                 max-width: unset;
+            }
+        }
+
+        &__misc {
+            width: 195px;
+            width: 195px;
+            top: 15px;
+            right: 66px;
+            text-align: center;
+            opacity: 0;
+            position: absolute;
+            pointer-events: none;
+            padding: 8px 19px;
+            margin-right: 12px;
+            background: rgba(60, 60, 60, 0.75);
+            font-size: 12px;
+            color: $cl-white;
+            transition: opacity .2s ease-in;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                bottom: 10px;
+                right: -6px;
+                border-style: solid;
+                border-width: 12px 12px 0 0;
+                border-color: rgba(60, 60, 60, 0.75) transparent transparent transparent;
+                transform: rotate(135deg);
             }
         }
     }

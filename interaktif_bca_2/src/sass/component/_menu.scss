@@ -3,8 +3,15 @@
     align-items: flex-start;
     flex-direction: column;
     margin-top: 8vh;
-    left: 200%;
+    transform: translateX(200%);
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
     background: radial-gradient(76.23% 61.06% at 32.59% -16.10%, #494949 0%, #1B1B1B 100%);
+
+    &.bounce {
+        animation-name: bounce;
+        animation-timing-function: ease;
+    }
 
     &::after {
         content: '';
@@ -54,16 +61,12 @@
         max-width: 474px;
         padding-left: 15px;
         padding-right: 15px;
-        @include font-pack($font-bold, 28px, $font-weight-bold, false, #DBBC74);
-
-        @include max-responsive($w-xm) {
-            font-size: 22px;
-        }
+        color: #DBBC74;
+        @include font-pack($font-bold, 28px, $font-weight-bold, false, false);
 
         @include min-responsive($w-vlg) {
             padding-left: 0;
             padding-right: 0;
-            font-size: 34px;
             margin-left: 60px;
 
             @include max-height($w-hmd) {
@@ -72,7 +75,6 @@
         }
 
         @include min-responsive($w-xxl) {
-            font-size: 36px;
             margin-left: 70px;
         }
 
@@ -155,6 +157,10 @@
         top: calc(50% + 83px);
         transform: translateY(-50%);
         flex-shrink: 0;
+
+        &.rotate {
+            animation: rotate linear 3s forwards;
+        }
 
         @include max-responsive($w-xm) {
             width: 500px;
