@@ -8,7 +8,7 @@
         {{!> header/header}}
 
         <!-- preloader -->
-        {{!> preloader}}
+        {{> preloader}}
         <!-- preloader -->
 
         <div class="bgStatic bgStatic--warn">
@@ -21,8 +21,6 @@
         <div class="bgColor__wrap">
             <div class="bgColor bgColor__cloud"></div>
             <div class="bgColor bgColor__start opac0"></div>
-            {{!-- <div class="bgColor bgColor__black"></div> --}}
-            <div class="bgColor bgColor__white opac0"></div>
         </div>
         <!-- Template Background Color -->
         <!-- Template Image Content -->
@@ -95,7 +93,9 @@
                     <div class="introCta center-flex">
                         <span>klik disini</span>
                         <picture class="introCursor">
-                            <img src="./asset/images/cursor.png" alt="" class="" width="51" height="51">
+                            <source srcset="./asset/images/cursor-mob.png" media="(max-width: 768px)" alt=""
+                                width="35" height="35">
+                            <img srcset="./asset/images/cursor.png" alt="" class="" width="51" height="51">
                         </picture>
                         <button type="button" class="introButton button buttonSubmit" id="introbtn">enter</button>
                     </div>
@@ -104,7 +104,11 @@
             <div class="bgStatic">
                 <div class="menu display-flex heightFull">
                     {{>wheel}}
-                    <h1 class="menuCaption articleCaption">Benefit Nasabah BCA <br> Solitaire & Prioritas</h1>
+                    <div class="menuContent">
+                        <h1 class="menuCaption articleCaption">Seluruh informasi benefit sesuai pada saat dikeluarkan
+                            dan akan diperbarui dari waktu ke waktu.</h1>
+                        <p class="articleContent mt2">Nasabah disarankan untuk mengecek secara berkala.</p>
+                    </div>
                     <div class="menuScroll center-flex">
                         <button class="button buttonScroll center-flex">
                             scroll untuk memilih kategori
@@ -119,7 +123,7 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="info center-flex text-center heightFull disable opac0">
+                <div class="info center-flex text-center heightFull opac0">
                     <picture class="infoImg">
                         <source srcset="./asset/images/logo-bca-soliprio-mob.svg" media="(max-width: 768px)" alt=""
                             width="310" height="50">
@@ -142,6 +146,12 @@
         <!-- Template Image Content -->
         <!-- Fullpage Content -->
         <div id="fullpage" class="fullpage">
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section menuSection"></section>
+            <section class="section"></section>
+            <section class="section"></section>
             <section class="section"></section>
             <section class="section"></section>
             <section class="section"></section>

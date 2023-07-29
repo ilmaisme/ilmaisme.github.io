@@ -1,49 +1,18 @@
 .credit {
+    position: relative;
     background-image: url(../images/credit-bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
+    z-index: 3;
+    
     &.active {
 
         .creditSocmed__item,
-        .creditButton {
+        .creditButton,
+        .buttonClose {
             pointer-events: all;
             opacity: 1;
-        }
-    }
-
-    &Button {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        right: 0;
-        bottom: 2px;
-        width: 44px;
-        height: 44px;
-        pointer-events: none;
-        opacity: 0;
-        flex-direction: column;
-
-        @include min-responsive($w-md) {
-            flex-direction: row;
-            width: 93px;
-            height: 28px;
-        }
-
-        .icon-credit {
-            @extend %icon-credit;
-            background-size: contain;
-            width: 44px;
-            height: 44px;
-            display: block;
-            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(104deg) brightness(106%) contrast(101%);
-            transition: opacity .4s ease-out;
-
-            @include min-responsive($w-md) {
-                width: 57px;
-                height: 57px;
-            }
         }
     }
 
@@ -97,30 +66,36 @@
         margin-right: 20px;
         align-items: center;
         justify-content: space-between;
-        flex-direction: column;
+        flex-direction: row;
 
         @include min-responsive($w-md) {
             width: calc(100% - 78px*2);
             bottom: 40px;
             margin-left: 78px;
             margin-right: 78px;
-            flex-direction: row;
         }
     }
 
     &Socmed {
         display: flex;
         align-items: center;
-        align-self: flex-start;
-        @include font-pack($font-base, 14px, $font-weight-normal, 1.24, #2D2D2D);
-
-        @include max-responsive($w-xm) {
-            font-size: 12px;
-        }
+        @include font-pack($font-base, 12px, $font-weight-normal, 1.24, #2D2D2D);
 
         @include min-responsive($w-md) {
             align-self: unset;
             font-size: 17px;
+        }
+
+        &__caption {
+            position: absolute;
+            top: -25px;
+            left: 4px;
+
+            @include min-responsive($w-md) {
+                position: relative;
+                top: unset;
+                left: unset;
+            }
         }
 
         &__item {
@@ -141,7 +116,9 @@
             }
 
             &:first-of-type {
-                margin-left: 20px;
+                @include min-responsive($w-md) {
+                    margin-left: 20px;
+                }
             }
 
             &:hover {
@@ -183,12 +160,10 @@
     }
 
     &Button {
-        margin-top: 20px;
         align-self: flex-end;
         @include font-pack($font-base, 14px, $font-weight-normal, 1, #222222);
 
         @include min-responsive($w-md) {
-            margin-top: 0;
             align-self: unset;
             font-size: 16px;
         }
@@ -209,9 +184,56 @@
                 height: 24px;
             }
         }
+    }
+
+    &Trigger {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 15px;
+        bottom: 25px;
+        width: 44px;
+        height: 44px;
+        pointer-events: none;
+        opacity: 0;
+        flex-direction: column;
+
+        @include min-responsive($w-md) {
+            width: 57px;
+            height: 57px;
+            right: 40px;
+            bottom: 40px;
+        }
+
+        .icon-credit {
+            @extend %icon-credit;
+            background-size: contain;
+            width: 44px;
+            height: 44px;
+            display: block;
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(104deg) brightness(106%) contrast(101%);
+            transition: opacity .4s ease-out;
+
+            @include min-responsive($w-md) {
+                width: 57px;
+                height: 57px;
+            }
+        }
+
+        &__misc{
+            @extend .buttonInfo__misc;
+            width: 110px;
+        }
 
         &.active {
             pointer-events: all;
+            opacity: 1;
+        }
+
+        &:hover {
+            .creditTrigger__misc {
+                opacity: 1;
+            }
         }
     }
 }

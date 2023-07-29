@@ -1,9 +1,44 @@
 .info {
     flex-direction: column;
+    background-image: url(../images/white-bg-mob.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
 
-    &.disable {
+    @include min-responsive($w-vlg) {
+        background-image: url(../images/white-bg.jpg);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 45px;
+        height: 47px;
+        bottom: 15px;
+        left: 15px;
+        transform: rotate(180deg);
+        background: url(../images/dot-bg-corner.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include min-responsive($w-vlg) {
+            width: 80px;
+            height: 82px;
+            bottom: 50px;
+            left: 50px;
+
+            @include max-height($w-hmd) {
+                width: 60px;
+                height: 62px;
+                bottom: 20px;
+                left: 25px;
+            }
+        }
+    }
+
+    &.active {
         .buttonClose {
-            pointer-events: none;
+            pointer-events: all;
         }
     }
 

@@ -76,7 +76,17 @@ dan non-perbankan bagi para nasabah." />
     <main role="main" class="komunitas">
 
         <!-- preloader -->
-        <!-- preloader -->
+        <div class="preloader preloader--privilege" style="background-image: url(./asset/images/loading-bg.jpg);">
+        	<div class="preloaderWrap">
+        		<picture class="preloaderLogo">
+        			<source srcset="./asset/images/loading-mob.png" media="(max-width: 768px)" alt="">
+        			<img srcset="./asset/images/loading.png" alt="" class="">
+        		</picture>
+        		<div class="preloaderTxt">
+        			Loading...
+        		</div>
+        	</div>
+        </div>        <!-- preloader -->
 
         <div class="bgStatic bgStatic--warn">
             <div class="articleContent text-center">
@@ -92,7 +102,7 @@ dan non-perbankan bagi para nasabah." />
         <!-- Template Image Content -->
         <div class="bgStatic__wrap active">
             <div class="bgStatic">
-                <div class="business container heightFull opac0">
+                <div class="business container heightFull">
                     <div class="komunitasWrap center-flex heightFull">
                         <div class="articleContent">
                             <h1 class="articleCaption">Business Community</h1>
@@ -119,7 +129,7 @@ dan non-perbankan bagi para nasabah." />
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="young container heightFull">
+                <div class="young container heightFull opac0">
                     <div class="komunitasWrap center-flex heightFull">
                         <div class="articleContent">
                             <h2 class="articleCaption">BCA Young Community</h2>
@@ -142,20 +152,66 @@ dan non-perbankan bagi para nasabah." />
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="bgStatic">
                 <div class="komunitasCta center-flex">
                     <button class="button buttonScroll center-flex">
                         scroll
                         <span class="icon-scroll"></span>
                     </button>
                 </div>
-                <button type="button" class="button buttonInfo" id="infobtn" aria-label="Informasi nasabah">
-                    <img src="../asset/images/loading-bca-logo-mob.png" alt="" width="30"
-                        height="29">
+                
+                <a href="/" class="button buttonInfo" id="infobtn" aria-label="Informasi nasabah">
+                    <img src="../asset/images/loading-bca-logo-mob.png" alt="" width="30" height="29">
                     <div class="buttonInfo__misc">klik untuk kembali ke menu</div>
-                </button>
-                <button type="button" class="button creditButton center-flex" id="creditbtn" aria-label="Credit Title">
+                </a>
+                <button type="button" class="button creditTrigger center-flex" id="creditbtn" aria-label="Credit Title">
                     <span class="icon-credit"></span>
+                    <div class="creditTrigger__misc">credit title</div>
                 </button>
+            </div>
+            <div class="bgStatic">
+                <div class="credit heightFull opac0">
+                    <div class="creditWrap center-flex heightFull container">
+                        <picture class="creditImg">
+                            <source srcset="../asset/images/logo-bca-soliprio-mob.svg" media="(max-width: 768px)"
+                                alt="" width="310" height="50">
+                            <img srcset="../asset/images/logo-bca-soliprio.svg" alt="Solitaire BCA Prioritas"
+                                class="" width="350" height="56">
+                        </picture>
+                        <div class="creditCaption center-flex">
+                            <div class="creditItem">
+                                BCA berizin dan diawasi oleh Otoritas Jasa Keuangan
+                            </div>
+                            <div class="creditItem">
+                                BCA merupakan peserta penjaminan LPS
+                            </div>
+                            <div class="creditItem">
+                                prioritas.bca.co.id
+                            </div>
+                        </div>
+                    </div>
+                    <div class="creditBottom display-flex">
+                        <div class="creditSocmed">
+                            <span class="creditSocmed__caption">Follow Our Social Media</span>
+                            <a href="https://" target="_blank" rel="noopener noreferrer" class="creditSocmed__item"
+                                aria-label="Facebook">
+                                <span class="creditIcon creditIcon--fb"></span></a>
+                            <a href="https://" target="_blank" rel="noopener noreferrer" class="creditSocmed__item"
+                                aria-label="Instagram">
+                                <span class="creditIcon creditIcon--ig"></span></a>
+                            <a href="https://" target="_blank" rel="noopener noreferrer" class="creditSocmed__item"
+                                aria-label="Twitter">
+                                <span class="creditIcon creditIcon--tw"></span></a>
+                        </div>
+                        <button class="button creditButton" onclick="window.location.reload(false)" aria-label="Restart Page">
+                            <span class="creditButton--restart"></span>Restart
+                        </button>
+                    </div>
+                    <button type="button" class="button buttonClose" id="closecredit" aria-label="Close credit information">
+                        <span class="icon-close"></span>
+                    </button>
+                </div>
             </div>
         </div>
         <!-- Template Image Content -->
@@ -172,6 +228,8 @@ dan non-perbankan bagi para nasabah." />
     <script type="text/javascript" src="../asset/js/fullpage.min.js"></script>
     <script type="text/javascript" src="../asset/js/fullpage.extensions.min.js"></script>
     <script type="text/javascript" src="../asset/js/velocity.min.js"></script>
+    <script defer type="text/javascript" src="../asset/js/main-child.js"></script>
+    <script defer type="text/javascript" src="../asset/js/main-komunitas.js"></script>
 
 </body>
 

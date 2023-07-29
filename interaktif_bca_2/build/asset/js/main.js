@@ -73,16 +73,34 @@ $('#introbtn').on('click', function () {
     fullpage_api.moveTo('menu', 3);
     console.log('menu');
 })
-
-// $(window).on('load', function () {
-//     setTimeout(function () {
-//         $('.preloader').fadeOut(700);
-//     }, 3000);
-//     setTimeout(function () {
-//         $('.preloader').remove();
-//     }, 3700);
-//     console.log('loaded');
-// })
+$('#infobtn').on('click', function () {
+    $(".info").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 700,
+        begin: function () {
+            $(".menu").removeClass("active");
+            $(".info").addClass("active");
+        },
+        complete: function () {}
+    });
+    //console.log('info');
+})
+$('#closeinfo').on('click', function () {
+    $(".info").velocity({
+        opacity: "0"
+    }, {
+        delay: 0,
+        duration: 700,
+        begin: function () {
+            $(".menu").addClass("active");
+            $(".info").removeClass("active");
+        },
+        complete: function () {}
+    });
+    //console.log('close info');
+})
 
 $(document).ready(function () {
     if ($('#some-element').css('display') == 'none') {
@@ -94,7 +112,7 @@ $(document).ready(function () {
         autoScrolling: true,
         scrollHorizontally: true,
         //navigation: true,
-        anchors: ['cover', 'start', 'intro', 'menu'],
+        anchors: ['cover', 'start', 'intro', 'menu', 'menu2', 'menu3', 'menu4', 'menu5', 'menu6'],
         lockAnchors: true,
         //scrollOverflow: true,
 
@@ -166,10 +184,9 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $(".introCursor").addClass("active");
+                        $(".intro").addClass("active");
                     },
-                    complete: function () {
-                        $(".introButton").addClass("enable");
-                    }
+                    complete: function () {}
                 });
                 $(".startImg").velocity({
                     top: "10%"
@@ -186,10 +203,9 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $(".introCursor").removeClass("active");
+                        $(".intro").removeClass("active");
                     },
-                    complete: function () {
-                        $(".introButton").removeClass("enable");
-                    }
+                    complete: function () {}
                 });
                 $(".startImg").velocity({
                     top: "0"
@@ -200,9 +216,105 @@ $(document).ready(function () {
             }
             if (origin.index == 2 && direction == 'down') {
                 $(".introCursor").removeClass("active");
-                $(".introButton").removeClass("enable");
-                $('.menu').addClass("bounce");
+                $(".intro").removeClass("active");
+                $('.menu').addClass("active bounce");
                 $('.menuWheel').addClass("rotate");
+                setTimeout(function () {
+                    $('.menuWheel').removeClass("rotate");
+                }, 3000);
+                //MENU COMEIN
+            }
+            if (origin.index == 3 && direction == 'up') {
+                //if ($('.menu').hasClass("active")){
+                $('.menuWheel').removeClass(function (index, css) {
+                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+                });
+                $('.menuWheel').addClass("rotate6");
+                console.log('MENU 1, to menu 6')
+                fullpage_api.moveTo('menu6', 8);
+
+                $('.menuWheel').removeClass("rotate");
+                //}
+            }
+            if (origin.index == 3 && direction == 'down') {
+                $('.menuWheel').removeClass(function (index, css) {
+                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+                });
+                $('.menuWheel').addClass("rotate2");
+                console.log('MENU 1, to menu 2')
+
+                $('.menuWheel').removeClass("rotate");
+            }
+            if (origin.index == 4 && direction == 'up') {
+                $('.menuWheel').removeClass(function (index, css) {
+                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+                });
+                $('.menuWheel').addClass("rotate1");
+                console.log('MENU 2, to menu 1')
+            }
+            if (origin.index == 4 && direction == 'down') {
+                $('.menuWheel').removeClass(function (index, css) {
+                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+                });
+                $('.menuWheel').addClass("rotate3");
+                console.log('MENU 2, to menu 3')
+            }
+            if (origin.index == 5 && direction == 'up') {
+                $('.menuWheel').removeClass(function (index, css) {
+                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+                });
+                $('.menuWheel').addClass("rotate2");
+                console.log('MENU 3, to menu 2')
+            }
+            if (origin.index == 5 && direction == 'down') {
+                $('.menuWheel').removeClass(function (index, css) {
+                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+                });
+                $('.menuWheel').addClass("rotate4");
+                console.log('MENU 3, to menu 4')
+            }
+            if (origin.index == 6 && direction == 'up') {
+                $('.menuWheel').removeClass(function (index, css) {
+                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+                });
+                $('.menuWheel').addClass("rotate3");
+                console.log('MENU 4, to menu 3')
+            }
+            if (origin.index == 6 && direction == 'down') {
+                $('.menuWheel').removeClass(function (index, css) {
+                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+                });
+                $('.menuWheel').addClass("rotate5");
+                console.log('MENU 4, to menu 5')
+            }
+            if (origin.index == 7 && direction == 'up') {
+                $('.menuWheel').removeClass(function (index, css) {
+                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+                });
+                $('.menuWheel').addClass("rotate4");
+                console.log('MENU 5, to menu 4')
+            }
+            if (origin.index == 7 && direction == 'down') {
+                $('.menuWheel').removeClass(function (index, css) {
+                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+                });
+                $('.menuWheel').addClass("rotate6");
+                console.log('MENU 5, to menu 6')
+            }
+            if (origin.index == 8 && direction == 'up') {
+                $('.menuWheel').removeClass(function (index, css) {
+                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+                });
+                $('.menuWheel').addClass("rotate5");
+                console.log('MENU 6, to menu 5')
+            }
+            if (origin.index == 8 && direction == 'down') {
+                $('.menuWheel').removeClass(function (index, css) {
+                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+                });
+                $('.menuWheel').addClass("rotate1");
+                console.log('MENU 6, to menu 1')
+                fullpage_api.moveTo('menu', 3);
             }
         }
     })

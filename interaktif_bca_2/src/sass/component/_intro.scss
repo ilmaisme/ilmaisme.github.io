@@ -6,6 +6,12 @@
     background: rgba(26, 26, 26, 0.85);
     @include base_transition(opacity, .2s);
 
+    &.active {
+        .introButton {
+            pointer-events: all;
+        }
+    }
+
     &Img {
         position: relative;
         order: 1;
@@ -36,12 +42,12 @@
         background: $cl-white;
         border-radius: 10px;
         color: $cl-primary-black;
-        
+
         @include range-responsive($w-md, $w-vlg) {
             margin-bottom: 30px;
             max-width: 400px;
         }
-        
+
         @include min-responsive($w-vlg) {
             margin-bottom: 30px;
             max-width: 590px;
@@ -120,13 +126,11 @@
         margin-right: 30px;
         margin-bottom: 10px;
         max-width: 35px;
-        transform: rotate(90deg);
-        
+
         @include min-responsive($w-xl) {
             max-width: unset;
             margin-left: 10px;
             margin-bottom: 10px;
-            transform: none
         }
 
         &.active {
@@ -135,12 +139,6 @@
             @include min-responsive($w-xl) {
                 @include animation(scrollright 2s infinite);
             }
-        }
-    }
-
-    &Button {
-        &.enable {
-            pointer-events: all;
         }
     }
 }

@@ -2,7 +2,7 @@
     position: relative;
     align-items: flex-start;
     flex-direction: column;
-    margin-top: 8vh;
+    padding-top: 8vh;
     transform: translateX(200%);
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -16,11 +16,18 @@
     &::after {
         content: '';
         position: absolute;
-        width: 50px;
-        height: 52px;
-        top: 25px;
+        width: 45px;
+        height: 47px;
+        top: 15px;
         right: 15px;
         background: url(../images/dot-bg-corner.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0;
+
+        @include min-responsive($w-md) {
+            opacity: 1;
+        }
 
         @include min-responsive($w-vlg) {
             width: 80px;
@@ -40,34 +47,34 @@
     @include range-responsive($w-md, $w-xl) {
         justify-content: center;
         align-items: center;
-        margin-top: 0;
+        padding-top: 0;
     }
 
     @include min-responsive($w-xl) {
         align-items: center;
         flex-direction: row;
-        margin-top: 0;
+        padding-top: 0;
     }
 
-    &.disable {
+    &.active {
 
         .menuLink,
         .buttonInfo {
-            pointer-events: none;
+            pointer-events: all;
         }
     }
 
-    &Caption {
+    &Content {
         max-width: 474px;
         padding-left: 15px;
         padding-right: 15px;
         color: #DBBC74;
-        @include font-pack($font-bold, 28px, $font-weight-bold, false, false);
 
         @include min-responsive($w-vlg) {
             padding-left: 0;
             padding-right: 0;
             margin-left: 60px;
+            margin-right: 40px;
 
             @include max-height($w-hmd) {
                 margin-left: 45px;
@@ -80,6 +87,23 @@
 
         @include range-responsive($w-md, $w-vlg) {
             margin-left: 320px;
+        }
+
+        .articleContent {
+            font-size: 14px;
+            padding: 0;
+
+            @include min-responsive($w-vlg) {
+                font-size: 16px;
+            }
+        }
+
+        .articleCaption {
+            font-size: 20px;
+
+            @include min-responsive($w-vlg) {
+                font-size: 24px;
+            }
         }
     }
 
@@ -116,7 +140,7 @@
         }
 
         @include range-responsive($w-md, $w-xl) {
-            margin: 20px 25px 0 60px;
+            margin: 20px 25px 0 0;
         }
 
         @include min-responsive($w-xl) {
@@ -154,9 +178,10 @@
         height: 600px;
         text-align: center;
         left: -300px;
-        top: calc(50% + 83px);
-        transform: translateY(-50%);
+        top: calc(5% + 150px);
+        // transform: translateY(-50%);
         flex-shrink: 0;
+        transition: transform .4s ease;
 
         &.rotate {
             animation: rotate linear 3s forwards;
@@ -171,17 +196,17 @@
         @include range-responsive($w-md, $w-vlg) {
             width: 800px;
             height: 800px;
-            left: -400px;
-            top: 50%;
-            transform: translateY(-50%);
+            left: -445px;
+            top: 10%;
+            // transform: translateY(-50%);
         }
 
         @include range-responsive($w-vlg, $w-xl) {
             width: 1040px;
             height: 1040px;
-            left: -520px;
-            top: 50%;
-            transform: translateY(-50%);
+            left: -620px;
+            top: 10%;
+            // transform: translateY(-50%);
         }
 
         @include min-responsive($w-xl) {
@@ -195,8 +220,6 @@
                 width: 1040px;
                 height: 1040px;
                 left: -520px;
-                top: 50%;
-                transform: translateY(-50%);
             }
         }
 
@@ -230,34 +253,33 @@
             }
         }
 
-        &.a1 {
+        &.rotate1 {
             transform: rotate(0);
         }
 
-        &.a2 {
+        &.rotate2 {
             transform: rotate(-60deg);
         }
 
-        &.a3 {
+        &.rotate3 {
             transform: rotate(-120deg);
         }
 
-        &.a4 {
+        &.rotate4 {
             transform: rotate(-180deg);
         }
 
-        &.a5 {
+        &.rotate5 {
             transform: rotate(-240deg);
         }
 
-        &.a6 {
+        &.rotate6 {
             transform: rotate(-300deg);
         }
     }
 
     &Link {
         display: block;
-        pointer-events: all;
         cursor: pointer;
     }
 }

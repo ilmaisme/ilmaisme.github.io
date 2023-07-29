@@ -8,7 +8,7 @@
         {{!> header/header}}
 
         <!-- preloader -->
-        {{!> preloader-komunitas}}
+        {{> preloader-komunitas}}
         <!-- preloader -->
 
         <div class="bgStatic bgStatic--warn">
@@ -25,7 +25,7 @@
         <!-- Template Image Content -->
         <div class="bgStatic__wrap active">
             <div class="bgStatic">
-                <div class="business container heightFull opac0">
+                <div class="business container heightFull">
                     <div class="komunitasWrap center-flex heightFull">
                         <div class="articleContent">
                             <h1 class="articleCaption">Business Community</h1>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="young container heightFull">
+                <div class="young container heightFull opac0">
                     <div class="komunitasWrap center-flex heightFull">
                         <div class="articleContent">
                             <h2 class="articleCaption">BCA Young Community</h2>
@@ -75,20 +75,23 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="bgStatic">
                 <div class="komunitasCta center-flex">
                     <button class="button buttonScroll center-flex">
                         scroll
                         <span class="icon-scroll"></span>
                     </button>
                 </div>
-                <button type="button" class="button buttonInfo" id="infobtn" aria-label="Informasi nasabah">
-                    <img src="{{>loc page=" child"}}asset/images/loading-bca-logo-mob.png" alt="" width="30"
-                        height="29">
-                    <div class="buttonInfo__misc">klik untuk kembali ke menu</div>
-                </button>
-                <button type="button" class="button creditButton center-flex" id="creditbtn" aria-label="Credit Title">
-                    <span class="icon-credit"></span>
-                </button>
+                
+                {{> button-info}}
+
+                {{> button-credit}}
+
+            </div>
+            <div class="bgStatic">
+                {{>credit}}
+
             </div>
         </div>
         <!-- Template Image Content -->
