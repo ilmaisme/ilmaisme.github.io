@@ -101,6 +101,10 @@
         .articleCaption {
             font-size: 20px;
 
+            @include max-responsive($w-xm) {
+                font-size: 18px;
+            }
+
             @include min-responsive($w-vlg) {
                 font-size: 24px;
             }
@@ -179,6 +183,7 @@
         text-align: center;
         left: -300px;
         top: calc(5% + 150px);
+        transform: rotate(0);
         // transform: translateY(-50%);
         flex-shrink: 0;
         transition: transform .4s ease;

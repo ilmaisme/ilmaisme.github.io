@@ -543,13 +543,21 @@
             background-repeat: no-repeat;
 
             &1 {
-                width: 478px;
+                width: 178px;
                 height: 125px;
-                top: 179px;
-                left: -130px;
+                top: 60px;
+                left: -30px;
                 @include animation(cloud-move 7s linear infinite alternate both);
 
+                @include min-responsive($w-md) {
+                    width: 378px;
+                    top: 179px;
+                    left: -130px;
+                }
+
                 @include min-responsive($w-xl) {
+                    width: 478px;
+
                     @include max-height($w-hmd) {
                         top: calc(179px - 160px);
                     }
@@ -557,13 +565,22 @@
             }
 
             &2 {
-                width: 277px;
+                width: 77px;
                 height: 51px;
-                top: 360px;
-                left: 376px;
+                top: 105px;
+                left: 50px;
                 @include animation(cloud-move2 7s linear infinite alternate both);
 
+                @include min-responsive($w-md) {
+                    width: 177px;
+                    top: 260px;
+                    left: 376px;
+                }
+                
                 @include min-responsive($w-xl) {
+                    width: 277px;
+                    top: 360px;
+
                     @include max-height($w-hmd) {
                         top: calc(360px - 160px);
                     }
@@ -571,13 +588,21 @@
             }
 
             &3 {
-                width: 503px;
+                width: 103px;
                 height: 109px;
-                top: 155px;
+                top: 5px;
                 right: 100px;
                 @include animation(cloud-move 7s linear infinite alternate both);
 
+                @include min-responsive($w-md) {
+                    top: 55px;
+                    width: 303px;
+                }
+                
                 @include min-responsive($w-xl) {
+                    width: 503px;
+                    top: 155px;
+
                     @include max-height($w-hmd) {
                         top: calc(155px - 160px);
                     }
@@ -585,13 +610,21 @@
             }
 
             &4 {
-                width: 271px;
+                width: 131px;
                 height: 44px;
-                top: 295px;
-                right: -130px;
+                top: 100px;
+                right: -30px;
                 @include animation(cloud-move2 7s linear infinite alternate both);
 
+                @include min-responsive($w-md) {
+                    width: 271px;
+                    top: 95px;
+                    right: -130px;
+                }
+
                 @include min-responsive($w-xl) {
+                    top: 295px;
+
                     @include max-height($w-hmd) {
                         top: calc(295px - 160px);
                     }

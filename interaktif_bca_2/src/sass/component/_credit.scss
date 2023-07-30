@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
     background-position: center;
     z-index: 3;
-    
+
     &.active {
 
         .creditSocmed__item,
@@ -36,6 +36,10 @@
         margin-right: 3px;
         padding-right: 9px;
         @include font-pack($font-bold, 12px, $font-weight-bold, 1.24, $cl-black);
+
+        @include max-responsive($w-xm) {
+            font-size: 10px;
+        }
 
         &:after {
             content: '';
@@ -220,7 +224,7 @@
             }
         }
 
-        &__misc{
+        &__misc {
             @extend .buttonInfo__misc;
             width: 110px;
         }
