@@ -52,9 +52,9 @@
                         <form class="passForm">
                             <div class="passInput__wrap center-flex">
                                 <input class="passInput" type="text" maxlength="1" autofocus="" autocomplete="off"
-                                    id="pass1">
-                                <input class="passInput" type="text" maxlength="1" autocomplete="off" id="pass2">
-                                <input class="passInput" type="text" maxlength="1" autocomplete="off" id="pass3">
+                                    id="pass1" aria-label="Input B charcter">
+                                <input class="passInput" type="text" maxlength="1" autocomplete="off" id="pass2" aria-label="Input C charcter">
+                                <input class="passInput" type="text" maxlength="1" autocomplete="off" id="pass3" aria-label="Input A charcter">
                             </div>
                         </form>
                         <label for="password" class="passLabel">Ketikkan “BCA” kemudian tekan enter</label>
@@ -93,8 +93,8 @@
                     <div class="introCta center-flex">
                         <span>klik disini</span>
                         <picture class="introCursor">
-                            <source srcset="./asset/images/cursor-mob.png" media="(max-width: 768px)" alt=""
-                                width="35" height="35">
+                            <source srcset="./asset/images/cursor-mob.png" media="(max-width: 768px)" alt="" width="35"
+                                height="35">
                             <img srcset="./asset/images/cursor.png" alt="" class="" width="51" height="51">
                         </picture>
                         <button type="button" class="introButton button buttonSubmit" id="introbtn">enter</button>
@@ -102,45 +102,10 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="menu display-flex heightFull">
-                    {{>wheel}}
-                    <div class="menuContent">
-                        <h1 class="menuCaption articleCaption">Seluruh informasi benefit sesuai pada saat dikeluarkan
-                            dan akan diperbarui dari waktu ke waktu.</h1>
-                        <p class="articleContent mt2">Nasabah disarankan untuk mengecek secara berkala.</p>
-                    </div>
-                    <div class="menuScroll center-flex">
-                        <button class="button buttonScroll center-flex">
-                            scroll untuk memilih kategori
-                            <span class="icon-arrow-up"></span>
-                            <span class="icon-scroll"></span>
-                            <span class="icon-arrow-down"></span>
-                        </button>
-                    </div>
-                    <button type="button" class="button buttonInfo" id="infobtn" aria-label="Informasi nasabah">
-                        <img src="./asset/images/menu-cs.png" alt="" width="42" height="29">
-                    </button>
-                </div>
+                {{>menu-ui page="home"}}
             </div>
             <div class="bgStatic">
-                <div class="info center-flex text-center heightFull opac0">
-                    <picture class="infoImg">
-                        <source srcset="./asset/images/logo-bca-soliprio-mob.svg" media="(max-width: 768px)" alt=""
-                            width="310" height="50">
-                        <img srcset="./asset/images/logo-bca-soliprio.svg" alt="Solitaire BCA Prioritas" class=""
-                            width="350" height="56">
-                    </picture>
-                    <h2 class="articleContent infoContent">
-                        <p>Wujudkan segala keistimewaan persembahan kami dalam keluarga besar BCA Prioritas.
-                        </p>
-                        <p>
-                            Untuk informasi lebih lanjut tentang keanggotaan BCA Solitaire & Prioritas, <br>
-                            silakan hubungi cabang BCA Anda.</p>
-                    </h2>
-                    <button type="button" class="button buttonClose" id="closeinfo" aria-label="Close information">
-                        <span class="icon-close"></span>
-                    </button>
-                </div>
+                {{>info page="home"}}
             </div>
         </div>
         <!-- Template Image Content -->
@@ -150,12 +115,6 @@
             <section class="section"></section>
             <section class="section"></section>
             <section class="section menuSection"></section>
-            <section class="section"></section>
-            <section class="section"></section>
-            <section class="section"></section>
-            <section class="section"></section>
-            <section class="section"></section>
-            <section class="section"></section>
         </div>
         <!-- Fullpage Content -->
         <div id="some-element"></div>

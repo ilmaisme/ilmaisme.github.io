@@ -1,0 +1,26 @@
+<div class="menu display-flex heightFull">
+    {{>wheel}}
+    <div class="menuContent">
+        <h1 class="menuCaption articleCaption">Seluruh informasi benefit sesuai pada saat dikeluarkan
+            dan akan diperbarui dari waktu ke waktu.</h1>
+        <p class="articleContent mt2">Nasabah disarankan untuk mengecek secara berkala.</p>
+    </div>
+    <div class="menuScroll center-flex">
+        <div class="buttonScroll center-flex">
+            klik untuk memilih kategori
+            <button class="button menuIndicator" aria-label="up kategori" id="UP"><span
+                    class="icon-arrow-up"></span></button>
+            <span class="icon-scroll"></span>
+            <button class="button menuIndicator" aria-label="down kategori" id="DOWN"><span
+                    class="icon-arrow-down"></span></button>
+        </div>
+    </div>
+    <button type="button" class="button buttonInfo" id="infobtn" aria-label="Informasi nasabah">
+        {{#eq page compare="home"}}
+        <img src="{{>loc page=" home"}}asset/images/menu-cs.png" alt="" width="42" height="29">
+        {{/eq}}
+        {{#eq page compare="child"}}
+        <img src="{{>loc page=" child"}}asset/images/menu-cs.png" alt="" width="42" height="29">
+        {{/eq}}
+    </button>
+</div>

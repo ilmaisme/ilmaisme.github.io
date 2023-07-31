@@ -29,7 +29,7 @@ dan non-perbankan bagi para nasabah." />
     <link rel=icon type=image/png sizes=16x16 href="https://static.bisnis-cdn.com/interaktif/assets/images/favicon.png">
 
     {{#eq page compare="home"}}
-    <link rel="stylesheet" href="{{>loc page=" home"}}asset/css/style.css" type="text/css">
+    <link rel="stylesheet" href="{{>loc page=" home"}}asset/css/style.min.css" type="text/css">
     <style>
         @font-face {
             font-family: 'BCA';
@@ -65,27 +65,27 @@ dan non-perbankan bagi para nasabah." />
         }
 
         /*preloader*/
-
+        .preloader{top:0;background:#3e3e3e;background:radial-gradient(157.88% 76.84% at 50% 50%,#3e3e3e 0,#1e1e1e 100%);background-size:cover;background-position:50%;background-repeat:no-repeat;transition:opacity .4s ease-in-out;z-index:1001;position:fixed;overflow:hidden}.preloader,.preloaderWrap{height:100%;width:100%;display:flex;justify-content:center}.preloaderWrap{align-items:center;flex-direction:column;position:relative;font-family:BCA,sans-serif;font-size:14px;font-weight:400;line-height:1.24;color:#fff}.preloaderMeter{background:#b7b7b7;width:282px;height:20px;margin:24px auto 18px;box-sizing:content-box}.preloaderMeter,.preloaderMeter>span{position:relative;border-radius:17px;overflow:hidden}.preloaderMeter>span{display:block;height:100%;background-color:#cfac68;box-shadow:inset 0 2px 9px hsla(0,0%,100%,.3),inset 0 -2px 6px rgba(0,0,0,.4)}.preloaderMeter .anim>span>span,.preloaderMeter>span:after{content:"";position:absolute;top:0;left:0;bottom:0;right:0;background-image:linear-gradient(-45deg,hsla(0,0%,100%,.2) 25%,transparent 0,transparent 50%,hsla(0,0%,100%,.2) 0,hsla(0,0%,100%,.2) 75%,transparent 0,transparent);z-index:1;background-size:50px 50px;animation:moveloading 2s linear infinite;border-radius:17px;overflow:hidden}.preloaderBar{width:0}.preloaderTxt{min-width:81px}.preloaderLogo{-moz-animation:fliploading 3s infinite;-o-animation:fliploading 3s infinite;-ms-animation:fliploading 3s infinite;-webkit-animation:fliploading 3s infinite;animation:fliploading 3s infinite}
         /*preloader*/
     </style>
     {{/eq}}
     {{#eq page compare="digital"}}
-    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-digital.css" type="text/css">
+    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-digital.min.css" type="text/css">
     {{/eq}}
     {{#eq page compare="insights"}}
-    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-insights.css" type="text/css">
+    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-insights.min.css" type="text/css">
     {{/eq}}
     {{#eq page compare="komunitas"}}
-    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-komunitas.css" type="text/css">
+    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-komunitas.min.css" type="text/css">
     {{/eq}}
     {{#eq page compare="privilege"}}
-    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-privilege.css" type="text/css">
+    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-privilege.min.css" type="text/css">
     {{/eq}}
     {{#eq page compare="tarif"}}
-    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-tarif.css" type="text/css">
+    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-tarif.min.css" type="text/css">
     {{/eq}}
     {{#eq page compare="treatment"}}
-    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-treatment.css" type="text/css">
+    <link rel="stylesheet" href="{{>loc page=" child"}}asset/css/style-treatment.min.css" type="text/css">
     {{/eq}}
     {{#if child}}
     <style>
@@ -123,17 +123,13 @@ dan non-perbankan bagi para nasabah." />
         }
 
         /*preloader*/
-
+        .preloader{top:0;transition:opacity .4s ease-in-out;height:100%;width:100%;z-index:1001;position:fixed;display:flex;justify-content:center;overflow:hidden;background-size:cover;background-position:50%;background-repeat:no-repeat;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.7s}.preloader.done{opacity:0;pointer-events:none}.preloaderWrap{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;position:relative;font-family:BCA,sans-serif;font-size:20px;font-weight:700;line-height:1.24;color:#eacc8f}.preloaderTxt{margin-top:30px;min-width:80px;-moz-animation:opacityloading 3s infinite;-o-animation:opacityloading 3s infinite;-ms-animation:opacityloading 3s infinite;-webkit-animation:opacityloading 3s infinite;animation:opacityloading 3s infinite;background:-webkit-linear-gradient(#eacc8f,#b49555);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
         /*preloader*/
     </style>
+    
+    <link rel="preload" as="image" href="./asset/images/loading-mob.png"
+        imagesrcset="./asset/images/loading.png 768w, ./asset/images/loading.png 1600w">
+    <link rel="preload" as="image" href="./asset/images/loading-bg.jpg">
     {{/if}}
-    {{!--
-    <link rel="preload" as="image" href="./asset/images/loading-bca-logo-mob.png"
-        imagesrcset="./asset/images/loading-bca-logo.png 768w, ./asset/images/loading-bca-logo.png 1600w"
-        imagesizes="50vw">
-    <link rel="preload" as="image" href="./asset/images/loading-bg-mob.png"
-        imagesrcset="./asset/images/loading-bg.png 1024w, ./asset/images/loading-bg.png 1600w" imagesizes="50vw">
-    <link rel="preload" as="image" href="./asset/images/cover-bg-mob.svg"
-        imagesrcset="./asset/images/cover-bg.svg 768w, ./asset/images/cover-bg.svg 1600w" imagesizes="50vw"> --}}
 
 </head>

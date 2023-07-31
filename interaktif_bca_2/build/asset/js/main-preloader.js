@@ -19,6 +19,10 @@ function check_element(ele) {
         }, 10, function () {
             if (document.getElementById("bar").style.width == "100%") {
                 $(".preloader").fadeOut(2000);
+                setTimeout(function () {
+                    fullpage_api.setAllowScrolling(true);
+                    fullpage_api.setKeyboardScrolling(true);
+                }, 1000);
             }
         });
     } else {

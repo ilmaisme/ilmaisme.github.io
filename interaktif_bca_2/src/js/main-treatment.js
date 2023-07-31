@@ -2,6 +2,8 @@ $(window).on('load', function () {
     setTimeout(function () {
         $('.preloader').addClass("done");
         $(".buttonInfo").addClass("enable");
+        fullpage_api.setAllowScrolling(true);
+        fullpage_api.setKeyboardScrolling(true);
     }, 3000);
     setTimeout(function () {
         $(".vip").addClass("active");
@@ -136,4 +138,7 @@ $(document).ready(function () {
             }
         }
     })
+    
+    fullpage_api.setAllowScrolling(false);
+    fullpage_api.setKeyboardScrolling(false);
 })

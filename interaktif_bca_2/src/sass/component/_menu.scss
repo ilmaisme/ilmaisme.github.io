@@ -7,6 +7,7 @@
     animation-duration: 2s;
     animation-fill-mode: forwards;
     background: radial-gradient(76.23% 61.06% at 32.59% -16.10%, #494949 0%, #1B1B1B 100%);
+    z-index: 3;
 
     &.bounce {
         animation-name: bounce;
@@ -59,6 +60,7 @@
     &.active {
 
         .menuLink,
+        .menuIndicator,
         .buttonInfo {
             pointer-events: all;
         }
@@ -92,14 +94,26 @@
         .articleContent {
             font-size: 14px;
             padding: 0;
+            width: auto;
+            color: inherit;
+            background: transparent;
+            box-shadow: none;
 
             @include min-responsive($w-vlg) {
                 font-size: 16px;
+            }
+
+            &::after {
+                content: none;
             }
         }
 
         .articleCaption {
             font-size: 20px;
+            background: transparent;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+            color: inherit;
 
             @include max-responsive($w-xm) {
                 font-size: 18px;
@@ -260,6 +274,10 @@
 
         &.rotate1 {
             transform: rotate(0);
+
+            &.slow {
+                transition: transform 2.4s ease;
+            }
         }
 
         &.rotate2 {
@@ -280,11 +298,17 @@
 
         &.rotate6 {
             transform: rotate(-300deg);
+
+            &.slow {
+                transition: transform 2.4s ease;
+            }
         }
     }
 
     &Link {
         display: block;
         cursor: pointer;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
     }
 }

@@ -31,7 +31,7 @@ dan non-perbankan bagi para nasabah." />
 
     <link rel=icon type=image/png sizes=16x16 href="https://static.bisnis-cdn.com/interaktif/assets/images/favicon.png">
 
-    <link rel="stylesheet" href="./asset/css/style.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style.min.css" type="text/css">
     <style>
         @font-face {
             font-family: 'BCA';
@@ -67,7 +67,7 @@ dan non-perbankan bagi para nasabah." />
         }
 
         /*preloader*/
-
+        .preloader{top:0;background:#3e3e3e;background:radial-gradient(157.88% 76.84% at 50% 50%,#3e3e3e 0,#1e1e1e 100%);background-size:cover;background-position:50%;background-repeat:no-repeat;transition:opacity .4s ease-in-out;z-index:1001;position:fixed;overflow:hidden}.preloader,.preloaderWrap{height:100%;width:100%;display:flex;justify-content:center}.preloaderWrap{align-items:center;flex-direction:column;position:relative;font-family:BCA,sans-serif;font-size:14px;font-weight:400;line-height:1.24;color:#fff}.preloaderMeter{background:#b7b7b7;width:282px;height:20px;margin:24px auto 18px;box-sizing:content-box}.preloaderMeter,.preloaderMeter>span{position:relative;border-radius:17px;overflow:hidden}.preloaderMeter>span{display:block;height:100%;background-color:#cfac68;box-shadow:inset 0 2px 9px hsla(0,0%,100%,.3),inset 0 -2px 6px rgba(0,0,0,.4)}.preloaderMeter .anim>span>span,.preloaderMeter>span:after{content:"";position:absolute;top:0;left:0;bottom:0;right:0;background-image:linear-gradient(-45deg,hsla(0,0%,100%,.2) 25%,transparent 0,transparent 50%,hsla(0,0%,100%,.2) 0,hsla(0,0%,100%,.2) 75%,transparent 0,transparent);z-index:1;background-size:50px 50px;animation:moveloading 2s linear infinite;border-radius:17px;overflow:hidden}.preloaderBar{width:0}.preloaderTxt{min-width:81px}.preloaderLogo{-moz-animation:fliploading 3s infinite;-o-animation:fliploading 3s infinite;-ms-animation:fliploading 3s infinite;-webkit-animation:fliploading 3s infinite;animation:fliploading 3s infinite}
         /*preloader*/
     </style>
 
@@ -79,8 +79,8 @@ dan non-perbankan bagi para nasabah." />
         <div class="preloader">
         	<div class="preloaderWrap">
         		<picture class="preloaderLogo">
-        			<source srcset="./asset/images/loading-bca-logo-mob.png" media="(max-width: 768px)" alt="">
-        			<img srcset="./asset/images/loading-bca-logo.png" alt="" class="">
+        			<source srcset="./asset/images/loading-bca-logo-mob.png" media="(max-width: 768px)" alt="" width="30" height="29">
+        			<img srcset="./asset/images/loading-bca-logo.png" alt="" class="" width="66" height="64">
         		</picture>
                 <div class="preloaderMeter anim">
                     <span class="preloaderBar" id="bar" value="0"><span></span></span>
@@ -152,9 +152,9 @@ dan non-perbankan bagi para nasabah." />
                         <form class="passForm">
                             <div class="passInput__wrap center-flex">
                                 <input class="passInput" type="text" maxlength="1" autofocus="" autocomplete="off"
-                                    id="pass1">
-                                <input class="passInput" type="text" maxlength="1" autocomplete="off" id="pass2">
-                                <input class="passInput" type="text" maxlength="1" autocomplete="off" id="pass3">
+                                    id="pass1" aria-label="Input B charcter">
+                                <input class="passInput" type="text" maxlength="1" autocomplete="off" id="pass2" aria-label="Input C charcter">
+                                <input class="passInput" type="text" maxlength="1" autocomplete="off" id="pass3" aria-label="Input A charcter">
                             </div>
                         </form>
                         <label for="password" class="passLabel">Ketikkan “BCA” kemudian tekan enter</label>
@@ -193,8 +193,8 @@ dan non-perbankan bagi para nasabah." />
                     <div class="introCta center-flex">
                         <span>klik disini</span>
                         <picture class="introCursor">
-                            <source srcset="./asset/images/cursor-mob.png" media="(max-width: 768px)" alt=""
-                                width="35" height="35">
+                            <source srcset="./asset/images/cursor-mob.png" media="(max-width: 768px)" alt="" width="35"
+                                height="35">
                             <img srcset="./asset/images/cursor.png" alt="" class="" width="51" height="51">
                         </picture>
                         <button type="button" class="introButton button buttonSubmit" id="introbtn">enter</button>
@@ -603,24 +603,25 @@ dan non-perbankan bagi para nasabah." />
                     <div class="menuInfo center-flex">
                         <img src="./asset/images/menu-arrow.png" alt="" width="77" height="23">
                         klik disini
-                    </div>                    <div class="menuContent">
+                    </div>    <div class="menuContent">
                         <h1 class="menuCaption articleCaption">Seluruh informasi benefit sesuai pada saat dikeluarkan
                             dan akan diperbarui dari waktu ke waktu.</h1>
                         <p class="articleContent mt2">Nasabah disarankan untuk mengecek secara berkala.</p>
                     </div>
                     <div class="menuScroll center-flex">
-                        <button class="button buttonScroll center-flex">
-                            scroll untuk memilih kategori
-                            <span class="icon-arrow-up"></span>
+                        <div class="buttonScroll center-flex">
+                            klik untuk memilih kategori
+                            <button class="button menuIndicator" aria-label="up kategori" id="UP"><span
+                                    class="icon-arrow-up"></span></button>
                             <span class="icon-scroll"></span>
-                            <span class="icon-arrow-down"></span>
-                        </button>
+                            <button class="button menuIndicator" aria-label="down kategori" id="DOWN"><span
+                                    class="icon-arrow-down"></span></button>
+                        </div>
                     </div>
                     <button type="button" class="button buttonInfo" id="infobtn" aria-label="Informasi nasabah">
                         <img src="./asset/images/menu-cs.png" alt="" width="42" height="29">
                     </button>
-                </div>
-            </div>
+                </div>            </div>
             <div class="bgStatic">
                 <div class="info center-flex text-center heightFull opac0">
                     <picture class="infoImg">
@@ -639,8 +640,7 @@ dan non-perbankan bagi para nasabah." />
                     <button type="button" class="button buttonClose" id="closeinfo" aria-label="Close information">
                         <span class="icon-close"></span>
                     </button>
-                </div>
-            </div>
+                </div>            </div>
         </div>
         <!-- Template Image Content -->
         <!-- Fullpage Content -->
@@ -649,12 +649,6 @@ dan non-perbankan bagi para nasabah." />
             <section class="section"></section>
             <section class="section"></section>
             <section class="section menuSection"></section>
-            <section class="section"></section>
-            <section class="section"></section>
-            <section class="section"></section>
-            <section class="section"></section>
-            <section class="section"></section>
-            <section class="section"></section>
         </div>
         <!-- Fullpage Content -->
         <div id="some-element"></div>
@@ -664,8 +658,9 @@ dan non-perbankan bagi para nasabah." />
     <script type="text/javascript" src="./asset/js/fullpage.min.js"></script>
     <script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
     <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/main.js"></script>
-    <script type="text/javascript" src="./asset/js/main-preloader.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main-menu.min.js"></script>
+    <script type="text/javascript" src="./asset/js/main-preloader.min.js"></script>
 
 </body>
 

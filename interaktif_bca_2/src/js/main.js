@@ -111,8 +111,8 @@ $(document).ready(function () {
         //options here
         autoScrolling: true,
         scrollHorizontally: true,
-        //navigation: true,
-        anchors: ['cover', 'start', 'intro', 'menu', 'menu2', 'menu3', 'menu4', 'menu5', 'menu6'],
+        // navigation: true,
+        anchors: ['cover', 'start', 'intro', 'menu'],
         lockAnchors: true,
         //scrollOverflow: true,
 
@@ -194,6 +194,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
+                console.log('intro')
             }
             if (origin.index == 2 && direction == 'up') {
                 $(".intro").velocity({
@@ -213,6 +214,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
+                console.log('intro up')
             }
             if (origin.index == 2 && direction == 'down') {
                 $(".introCursor").removeClass("active");
@@ -221,105 +223,104 @@ $(document).ready(function () {
                 $('.menuWheel').addClass("rotate");
                 setTimeout(function () {
                     $('.menuWheel').removeClass("rotate");
+                    $('.menuWheel').addClass("rotate1");
                 }, 3000);
-                //MENU COMEIN
+                console.log('menu')
+                fullpage_api.destroy();
             }
-            if (origin.index == 3 && direction == 'up') {
-                //if ($('.menu').hasClass("active")){
-                $('.menuWheel').removeClass(function (index, css) {
-                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
-                });
-                $('.menuWheel').addClass("rotate6");
-                console.log('MENU 1, to menu 6')
-                fullpage_api.moveTo('menu6', 8);
+            // if (origin.index == 3 && direction == 'up') {
+            //     $('.menuWheel').removeClass(function (index, css) {
+            //         return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+            //     });
+            //     $('.menuWheel').addClass("rotate6");
+            //     console.log('MENU 1, to menu 6')
+            //     fullpage_api.moveTo('menu6', 8);
 
-                $('.menuWheel').removeClass("rotate");
-                //}
-            }
-            if (origin.index == 3 && direction == 'down') {
-                $('.menuWheel').removeClass(function (index, css) {
-                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
-                });
-                $('.menuWheel').addClass("rotate2");
-                console.log('MENU 1, to menu 2')
+            //     $('.menuWheel').removeClass("rotate");
+            // }
+            // if (origin.index == 3 && direction == 'down') {
+            //     $('.menuWheel').removeClass(function (index, css) {
+            //         return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+            //     });
+            //     $('.menuWheel').addClass("rotate2");
+            //     console.log('MENU 1, to menu 2')
 
-                $('.menuWheel').removeClass("rotate");
-            }
-            if (origin.index == 4 && direction == 'up') {
-                $('.menuWheel').removeClass(function (index, css) {
-                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
-                });
-                $('.menuWheel').addClass("rotate1");
-                console.log('MENU 2, to menu 1')
-            }
-            if (origin.index == 4 && direction == 'down') {
-                $('.menuWheel').removeClass(function (index, css) {
-                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
-                });
-                $('.menuWheel').addClass("rotate3");
-                console.log('MENU 2, to menu 3')
-            }
-            if (origin.index == 5 && direction == 'up') {
-                $('.menuWheel').removeClass(function (index, css) {
-                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
-                });
-                $('.menuWheel').addClass("rotate2");
-                console.log('MENU 3, to menu 2')
-            }
-            if (origin.index == 5 && direction == 'down') {
-                $('.menuWheel').removeClass(function (index, css) {
-                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
-                });
-                $('.menuWheel').addClass("rotate4");
-                console.log('MENU 3, to menu 4')
-            }
-            if (origin.index == 6 && direction == 'up') {
-                $('.menuWheel').removeClass(function (index, css) {
-                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
-                });
-                $('.menuWheel').addClass("rotate3");
-                console.log('MENU 4, to menu 3')
-            }
-            if (origin.index == 6 && direction == 'down') {
-                $('.menuWheel').removeClass(function (index, css) {
-                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
-                });
-                $('.menuWheel').addClass("rotate5");
-                console.log('MENU 4, to menu 5')
-            }
-            if (origin.index == 7 && direction == 'up') {
-                $('.menuWheel').removeClass(function (index, css) {
-                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
-                });
-                $('.menuWheel').addClass("rotate4");
-                console.log('MENU 5, to menu 4')
-            }
-            if (origin.index == 7 && direction == 'down') {
-                $('.menuWheel').removeClass(function (index, css) {
-                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
-                });
-                $('.menuWheel').addClass("rotate6");
-                console.log('MENU 5, to menu 6')
-            }
-            if (origin.index == 8 && direction == 'up') {
-                $('.menuWheel').removeClass(function (index, css) {
-                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
-                });
-                $('.menuWheel').addClass("rotate5");
-                console.log('MENU 6, to menu 5')
-            }
-            if (origin.index == 8 && direction == 'down') {
-                $('.menuWheel').removeClass(function (index, css) {
-                    return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
-                });
-                $('.menuWheel').addClass("rotate1");
-                console.log('MENU 6, to menu 1')
-                fullpage_api.moveTo('menu', 3);
-            }
+            //     $('.menuWheel').removeClass("rotate");
+            // }
+            // if (origin.index == 4 && direction == 'up') {
+            //     $('.menuWheel').removeClass(function (index, css) {
+            //         return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+            //     });
+            //     $('.menuWheel').addClass("rotate1");
+            //     console.log('MENU 2, to menu 1')
+            // }
+            // if (origin.index == 4 && direction == 'down') {
+            //     $('.menuWheel').removeClass(function (index, css) {
+            //         return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+            //     });
+            //     $('.menuWheel').addClass("rotate3");
+            //     console.log('MENU 2, to menu 3')
+            // }
+            // if (origin.index == 5 && direction == 'up') {
+            //     $('.menuWheel').removeClass(function (index, css) {
+            //         return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+            //     });
+            //     $('.menuWheel').addClass("rotate2");
+            //     console.log('MENU 3, to menu 2')
+            // }
+            // if (origin.index == 5 && direction == 'down') {
+            //     $('.menuWheel').removeClass(function (index, css) {
+            //         return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+            //     });
+            //     $('.menuWheel').addClass("rotate4");
+            //     console.log('MENU 3, to menu 4')
+            // }
+            // if (origin.index == 6 && direction == 'up') {
+            //     $('.menuWheel').removeClass(function (index, css) {
+            //         return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+            //     });
+            //     $('.menuWheel').addClass("rotate3");
+            //     console.log('MENU 4, to menu 3')
+            // }
+            // if (origin.index == 6 && direction == 'down') {
+            //     $('.menuWheel').removeClass(function (index, css) {
+            //         return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+            //     });
+            //     $('.menuWheel').addClass("rotate5");
+            //     console.log('MENU 4, to menu 5')
+            // }
+            // if (origin.index == 7 && direction == 'up') {
+            //     $('.menuWheel').removeClass(function (index, css) {
+            //         return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+            //     });
+            //     $('.menuWheel').addClass("rotate4");
+            //     console.log('MENU 5, to menu 4')
+            // }
+            // if (origin.index == 7 && direction == 'down') {
+            //     $('.menuWheel').removeClass(function (index, css) {
+            //         return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+            //     });
+            //     $('.menuWheel').addClass("rotate6");
+            //     console.log('MENU 5, to menu 6')
+            // }
+            // if (origin.index == 8 && direction == 'up') {
+            //     $('.menuWheel').removeClass(function (index, css) {
+            //         return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+            //     });
+            //     $('.menuWheel').addClass("rotate5");
+            //     console.log('MENU 6, to menu 5')
+            // }
+            // if (origin.index == 8 && direction == 'down') {
+            //     $('.menuWheel').removeClass(function (index, css) {
+            //         return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+            //     });
+            //     $('.menuWheel').addClass("rotate1");
+            //     console.log('MENU 6, to menu 1')
+            //     fullpage_api.moveTo('menu', 3);
+            // }
         }
     })
-});
 
-function refreshPage() {
-    window.location.reload(false);
-}
+    fullpage_api.setAllowScrolling(false);
+    fullpage_api.setKeyboardScrolling(false);
+});

@@ -1,6 +1,8 @@
 $(window).on('load', function () {
     setTimeout(function () {
         $('.preloader').addClass("done");
+        fullpage_api.setAllowScrolling(true);
+        fullpage_api.setKeyboardScrolling(true);
     }, 3000);
     setTimeout(function () {
         $(".buttonInfo").addClass("enable");
