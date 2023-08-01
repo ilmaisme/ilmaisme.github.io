@@ -230,7 +230,7 @@
 }
 
 .edu {
-    top: 100vh;
+    top: var(--app-height);
     background: linear-gradient(to bottom, #F5F5F5 calc(100% - 325px), #EAD5A4 325px);
 
     @include min-responsive($w-md) {
@@ -481,7 +481,7 @@
 }
 
 .airport {
-    top: -100vh;
+    top: calc(var(--app-height) - (var(--app-height)*2));
     background: #B39151;
 
     .articleImg {
@@ -510,12 +510,12 @@
             img {
                 object-fit: cover;
                 width: 100vw;
-                max-height: 100vh;
+                max-height: var(--app-height);
 
                 @include min-responsive($w-xl) {
                     @include max-height($w-hmd) {
                         object-fit: cover;
-                        max-height: calc(100vh - 124px);
+                        max-height: calc(var(--app-height) - 124px);
                     }
                 }
             }
@@ -576,7 +576,7 @@
                     top: 260px;
                     left: 376px;
                 }
-                
+
                 @include min-responsive($w-xl) {
                     width: 277px;
                     top: 360px;
@@ -598,7 +598,7 @@
                     top: 55px;
                     width: 303px;
                 }
-                
+
                 @include min-responsive($w-xl) {
                     width: 503px;
                     top: 155px;
@@ -675,8 +675,8 @@
     }
 
     100% {
-        -webkit-transform: translate(calc(100vw + 232px), calc(-100vh)) scale(.5);
-        transform: translate(calc(100vw + 232px), calc(-100vh)) scale(.5);
+        -webkit-transform: translate(calc(100vw + 232px), calc(var(--app-height) - (var(--app-height)*2))) scale(.5);
+        transform: translate(calc(100vw + 232px), calc(var(--app-height) - (var(--app-height)*2))) scale(.5);
     }
 }
 

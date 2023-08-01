@@ -59,19 +59,19 @@
         transition-duration: .7s;
 
         &1 {
-            top: -100vh;
+            top: calc(var(--app-height) - (var(--app-height)*2));
 
             @include min-responsive($w-xl) {
                 @include max-height($w-hmd) {
                     img {
-                        max-height: calc(100vh - 80px);
+                        max-height: calc(var(--app-height) - 80px);
                     }
                 }
             }
         }
 
         &2 {
-            top: 100vh;
+            top: var(--app-height);
 
             @include min-responsive($w-xl) {
                 margin-top: 67px;
@@ -80,7 +80,7 @@
                     margin-top: 30px;
 
                     img {
-                        max-height: calc(100vh - 80px);
+                        max-height: calc(var(--app-height) - 80px);
                     }
                 }
             }

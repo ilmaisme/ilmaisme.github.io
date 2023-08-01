@@ -34,8 +34,7 @@ $(document).ready(function () {
                         $(".vip").removeClass("active");
                         $(".branch").addClass("active");
                     },
-                    complete: function () {
-                    }
+                    complete: function () {}
                 });
                 $(".vip").velocity({
                     opacity: "0"
@@ -111,8 +110,7 @@ $(document).ready(function () {
                         $(".creditTrigger").removeClass("active");
                         $(".branch").addClass("active");
                     },
-                    complete: function () {
-                    }
+                    complete: function () {}
                 });
                 $(".halo").velocity({
                     opacity: "0"
@@ -138,7 +136,7 @@ $(document).ready(function () {
             }
         }
     })
-    
+
     fullpage_api.setAllowScrolling(false);
     fullpage_api.setKeyboardScrolling(false);
 })

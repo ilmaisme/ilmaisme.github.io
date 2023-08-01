@@ -224,9 +224,9 @@ $(document).ready(function () {
                 setTimeout(function () {
                     $('.menuWheel').removeClass("rotate");
                     $('.menuWheel').addClass("rotate1");
+                    fullpage_api.destroy();
                 }, 3000);
                 console.log('menu')
-                fullpage_api.destroy();
             }
             // if (origin.index == 3 && direction == 'up') {
             //     $('.menuWheel').removeClass(function (index, css) {

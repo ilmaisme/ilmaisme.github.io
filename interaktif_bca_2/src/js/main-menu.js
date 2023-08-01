@@ -1,11 +1,18 @@
 //MENU
+var c_time = 0;
 window.addEventListener('wheel', function (event) {
-    if (event.deltaY < 0 && ($('#fullpage').hasClass("fp-destroyed"))) {
-        console.log('scrolling up');
-        UPRotate()
-    } else if (event.deltaY > 0 && ($('#fullpage').hasClass("fp-destroyed"))) {
-        console.log('scrolling down');
-        DOWNRotate()
+    // console.log(event.wheelDeltaY);
+    if (($.now() - c_time) > 400) //0.4s
+    {
+        c_time = $.now();
+        //console.log(c_time);
+        if (event.wheelDeltaY < 0 && ($('#fullpage').hasClass("fp-destroyed"))) {
+            console.log('scrolling down');
+            DOWNRotate()
+        } else if (event.wheelDeltaY > 0 && ($('#fullpage').hasClass("fp-destroyed"))) {
+            console.log('scrolling up');
+            UPRotate()
+        }
     }
 });
 
@@ -48,58 +55,31 @@ $("#DOWN").on('click', function () {
     DOWNRotate()
 })
 
-function initRotate() {
-    $('.menuWheel').removeClass(function (index, css) {
-        return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+// function initRotate() {
+//     $('.menuWheel').removeClass(function (index, css) {
+//         return (css.match(/(^|\s)rotate\S+/g) || []).join(' ');
+//     });
+// }
+var rot = 0
+
+function UPRotate() {
+    rot += 60
+    $('.menuWheel').css({
+        'transform': `rotate(${rot}deg)`
     });
 }
 
-function UPRotate() {
-    if ($('.menuWheel').hasClass("rotate1")) {
-        initRotate()
-        $('.menuWheel').addClass("slow");
-        $('.menuWheel').addClass("rotate6");
-        console.log('MENU 1, to menu 6')
-    } else if ($('.menuWheel').hasClass("rotate6")) {
-        initRotate()
-        $('.menuWheel').removeClass("slow");
-        $('.menuWheel').addClass("rotate5");
-    } else if ($('.menuWheel').hasClass("rotate5")) {
-        initRotate()
-        $('.menuWheel').addClass("rotate4");
-    } else if ($('.menuWheel').hasClass("rotate4")) {
-        initRotate()
-        $('.menuWheel').addClass("rotate3");
-    } else if ($('.menuWheel').hasClass("rotate3")) {
-        initRotate()
-        $('.menuWheel').addClass("rotate2");
-    } else if ($('.menuWheel').hasClass("rotate2")) {
-        initRotate()
-        $('.menuWheel').addClass("rotate1");
-    }
+function DOWNRotate() {
+    rot -= 60
+    $('.menuWheel').css({
+        'transform': `rotate(${rot}deg)`
+    });
 }
 
-function DOWNRotate() {
-    if ($('.menuWheel').hasClass("rotate1")) {
-        initRotate()
-        $('.menuWheel').removeClass("slow");
-        $('.menuWheel').addClass("rotate2");
-        console.log('MENU 1, to menu 2')
-    } else if ($('.menuWheel').hasClass("rotate2")) {
-        initRotate()
-        $('.menuWheel').addClass("rotate3");
-    } else if ($('.menuWheel').hasClass("rotate3")) {
-        initRotate()
-        $('.menuWheel').addClass("rotate4");
-    } else if ($('.menuWheel').hasClass("rotate4")) {
-        initRotate()
-        $('.menuWheel').addClass("rotate5");
-    } else if ($('.menuWheel').hasClass("rotate5")) {
-        initRotate()
-        $('.menuWheel').addClass("rotate6");
-    } else if ($('.menuWheel').hasClass("rotate6")) {
-        initRotate()
-        $('.menuWheel').addClass("slow");
-        $('.menuWheel').addClass("rotate1");
-    }
+//GET HEIGHT Device
+const appHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
 }
+window.addEventListener("resize", appHeight)
+appHeight()
