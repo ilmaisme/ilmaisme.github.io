@@ -1,0 +1,76 @@
+.total {
+    &Content {
+        position: relative;
+        padding: 20px 40px;
+        margin-left: auto;
+        margin-right: auto;
+        background: url(../images/total-content-bg.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include min-responsive($w-vlg) {
+            width: 804px;
+            height: 250px;
+            margin-top: calc(var(--app-height) - (var(--app-height) + 30%));
+        }
+
+        @include min-responsive($w-xxxl) {
+            width: 1027px;
+            height: 273px;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &::before {
+            width: 70px;
+            height: 50px;
+            top: 36px;
+            left: 18px;
+            background: url(../images/content-before.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include min-responsive($w-xxxl) {
+                width: 89px;
+                top: 30px;
+                left: 30px;
+            }
+        }
+
+        &::after {
+            width: 72px;
+            height: 46px;
+            bottom: 30px;
+            right: 30px;
+            background: url(../images/content-after.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include min-responsive($w-xxxl) {
+                width: 85px;
+                height: 46px;
+            }
+        }
+    }
+
+    &Title {
+        @include min-responsive($w-vlg) {
+            font-size: 30px;
+
+            @include max-height($w-hmd) {
+                font-size: 26px;
+            }
+
+            span {
+                color: #FFD600;
+            }
+        }
+    }
+}

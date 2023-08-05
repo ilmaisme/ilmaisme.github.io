@@ -1,0 +1,27 @@
+.article {
+    &Caption {
+        @include font-pack($family: $font_caption, $size: 24px, $lh: 1.15, $weight: $font-weight-normal);
+
+        @include min-responsive($w-vlg) {
+            font-size: 64px;
+
+            @include max-height($w-hmd) {
+                font-size: 42px;
+            }
+        }
+    }
+
+    &Title {
+        @include font-pack($family: $font_caption, $size: 40px, $weight: $font-weight-normal)
+    }
+
+    &Content {
+        @include font-pack($size: 24px, $weight: $font-weight-sbold);
+
+        @include min-responsive($w-vlg) {
+            @include max-height($w-hmd) {
+                font-size: 20px;
+            }
+        }
+    }
+}

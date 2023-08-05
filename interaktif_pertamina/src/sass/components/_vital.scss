@@ -1,0 +1,86 @@
+.vital {
+
+    &Wrap {
+        @include min-responsive($w-vlg) {
+            margin-bottom: calc(var(--app-height) - (var(--app-height) - 5%));
+        }
+    }
+
+    &Content {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        background: url(../images/vital-content-bg.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include min-responsive($w-vlg) {
+            padding: 20px 26px;
+            width: 935px;
+            height: 220px;
+
+            @include max-height($w-hmd) {
+                width: 790px;
+            }
+        }
+
+        @include min-responsive($w-xxxl) {
+            padding: 20px 48px;
+            width: 1027px;
+            height: 183px;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &::before {
+            width: 58px;
+            height: 50px;
+            top: 46px;
+            left: 16px;
+            background: url(../images/content-before.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                @include max-height($w-hmd) {
+                    top: 54px;
+                    left: 10px;
+                }
+            }
+
+            @include min-responsive($w-xxxl) {
+                width: 89px;
+                top: 20px;
+            }
+        }
+
+        &::after {
+            width: 60px;
+            height: 46px;
+            bottom: 30px;
+            right: 16px;
+            background: url(../images/content-after.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                @include max-height($w-hmd) {
+                    bottom: 40px;
+                }
+            }
+
+            @include min-responsive($w-xxxl) {
+                width: 85px;
+                height: 46px;
+                bottom: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,88 @@
+.buffer {
+    &.active {
+        .bufferLine {
+            animation: draw 1400ms linear 400ms 1 forwards;
+        }
+    }
+
+    &Content {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        background: url(../images/buffer-content-bg.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include min-responsive($w-vlg) {
+            padding: 20px;
+            width: 472px;
+            height: 385px;
+
+            @include max-height($w-hmd) {
+                padding: 20px;
+                width: 396px;
+                height: 320px;
+            }
+        }
+
+        @include min-responsive($w-xxxl) {
+            padding: 20px 64px;
+            width: 527px;
+            height: 403px
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &::before {
+            width: 58px;
+            height: 50px;
+            top: 40px;
+            left: 20px;
+            background: url(../images/content-before-thick.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include min-responsive($w-xxxl) {
+                width: 89px;
+            }
+        }
+
+        &::after {
+            width: 60px;
+            height: 46px;
+            bottom: 15px;
+            right: 20px;
+            background: url(../images/content-after.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include min-responsive($w-xxxl) {
+                width: 85px;
+                height: 46px;
+                bottom: 20px;
+            }
+        }
+    }
+
+    &Line {
+        position: absolute;
+        bottom: 75px;
+        left: -130px;
+        width: 140px;
+        stroke-dasharray: 273;
+        stroke-dashoffset: 273;
+
+        @include min-responsive($w-xxxl) {
+            width: auto;
+            bottom: 100px;
+            left: -280px;
+        }
+    }
+}

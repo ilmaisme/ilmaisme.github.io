@@ -1,0 +1,51 @@
+.status {
+    &Content {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        background: url(../images/status-content-bg.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &1 {
+            @include min-responsive($w-vlg) {
+                width: 414px;
+                height: 310px;
+                padding: 20px 63px 20px 90px;
+            }
+
+            @include min-responsive($w-xxxl) {
+                width: 403px;
+                height: 358px;
+                padding: 20px 80px;
+            }
+        }
+
+        &2 {
+            @include min-responsive($w-vlg) {
+                width: 421px;
+                height: 335px;
+                padding: 20px 45px 20px 85px;
+            }
+
+            @include min-responsive($w-xxxl) {
+                width: 421px;
+                height: 371px;
+                padding: 20px 45px 20px 85px;
+            }
+        }
+    }
+
+    &Title {
+        @include font-pack($size: 20px);
+
+        span {
+            @include font-pack($size: 30px, $colour: $cl-yellow);
+
+            @include min-responsive($w-xxxl) {
+                font-size: 36px;
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+.distance {
+    &.active {
+        .distanceLine {
+            animation: draw 700ms linear 400ms 1 forwards;
+        }
+    }
+
+    &Content {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        background: url(../images/distance-content-bg.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include min-responsive($w-vlg) {
+            padding: 20px 30px;
+            width: 398px;
+            height: 290px;
+
+            @include max-height($w-hmd) {
+                padding: 20px;
+                width: 380px;
+                height: 260px
+            }
+        }
+
+        @include min-responsive($w-xxxl) {
+            padding: 20px 50px;
+            width: 449px;
+            height: 312px;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &::before {
+            width: 58px;
+            height: 50px;
+            top: 26px;
+            left: 20px;
+            background: url(../images/content-before-thick.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include min-responsive($w-xxxl) {
+                width: 89px;
+                top: 20px;
+            }
+        }
+
+        &::after {
+            width: 60px;
+            height: 46px;
+            bottom: 15px;
+            right: 20px;
+            background: url(../images/content-after.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include min-responsive($w-xxxl) {
+                width: 85px;
+                height: 46px;
+                bottom: 20px;
+            }
+        }
+    }
+
+    &Line {
+        position: absolute;
+        bottom: -68px;
+        right: calc(100% - 318px/2 - 40px);
+        width: 318px;
+        stroke-dasharray: 660;
+        stroke-dashoffset: 660;
+
+        @include min-responsive($w-xxxl) {
+            width: auto;
+            bottom: -100px;
+            right: calc(100% - 573px/2 + 40px);
+        }
+    }
+}

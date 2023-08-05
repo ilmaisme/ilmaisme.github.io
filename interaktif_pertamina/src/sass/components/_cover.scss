@@ -1,0 +1,297 @@
+.cover {
+    &.active {
+        .coverButton {
+            pointer-events: all;
+        }
+
+        .coverContent {
+            transform: scale(1);
+        }
+
+        .coverPic {
+            transform: translate(-50%, calc(var(--app-height) - var(--app-height)*2));
+        }
+    }
+
+    &Bg {
+        width: 100%;
+        height: auto;
+    }
+
+    &Pic {
+        position: absolute;
+        width: 100%;
+        bottom: calc(var(--app-height) - var(--app-height)*2);
+        left: 50%;
+        transform: translateX(-50%);
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+        transition-duration: .7s;
+
+        @include min-responsive($w-xxxl) {
+            width: auto;
+        }
+
+        img {
+            max-width: 100%;
+
+            @include min-responsive($w-xxxl) {
+                max-width: unset;
+            }
+        }
+    }
+
+    &House {
+        transition-delay: .4s;
+    }
+
+    &White {
+        transition-delay: .8s;
+    }
+
+    &Grey {
+        transition-delay: 1.2s;
+    }
+
+    &Perwira {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+
+        img {
+            @include min-responsive($w-vlg) {
+                width: 370px;
+
+                @include max-height($w-hmd) {
+                    width: 280px;
+                }
+            }
+
+            @include min-responsive($w-xxxl) {
+                width: auto;
+            }
+        }
+
+        &__wrap {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &Map {
+        position: relative;
+
+        @include min-responsive($w-vlg) {
+            bottom: 40px;
+        }
+
+        @include min-responsive($w-xxxl) {
+            bottom: 56px;
+        }
+
+        img {
+            @include min-responsive($w-vlg) {
+                width: 370px;
+
+                @include max-height($w-hmd) {
+                    width: 280px;
+                }
+            }
+
+            @include min-responsive($w-xxxl) {
+                width: auto;
+            }
+        }
+    }
+
+    &Zoom {
+        position: absolute;
+        right: 76px;
+        bottom: 80px;
+        transform: scale(1);
+        animation: zoom 2s ease infinite both;
+
+        @include min-responsive($w-vlg) {
+            @include max-height($w-hmd) {
+                right: 30px;
+                bottom: 58px;
+            }
+        }
+
+        @include min-responsive($w-xxxl) {
+            bottom: 108px;
+        }
+    }
+
+    &Info {
+        width: 156px;
+        height: 67px;
+        padding: 12px 14px 12px 18px;
+        position: absolute;
+        right: -187px;
+        background: url(../images/cover-info.png);
+        @include font-pack($weight: $font-weight-sbold, $colour: $cl-green);
+
+        &::before {
+            content: "i";
+            position: absolute;
+            width: 31px;
+            height: 31px;
+            top: -12px;
+            left: -12px;
+            border: 3px solid $cl-green;
+            border-radius: 50%;
+            text-align: center;
+            background: $cl-white;
+            @include font-pack($size: 20px, $weight: $font-weight-bold);
+        }
+
+        @include min-responsive($w-vlg) {
+            bottom: 42px;
+        }
+
+        @include min-responsive($w-xxxl) {
+            bottom: 62px;
+        }
+    }
+
+    &Cloud {
+        position: absolute;
+        width: 110px;
+        height: 51px;
+        background: url(../images/cover-cloud.png) no-repeat;
+        background-size: contain;
+        z-index: 1;
+
+        @include min-responsive($w-vlg) {
+            margin-top: calc(var(--app-height) - (var(--app-height) - 52px));
+
+            @include max-height($w-hmd) {
+                margin-top: calc(var(--app-height) - (var(--app-height) - 10px));
+            }
+        }
+
+        @include min-responsive($w-xxxl) {
+            margin-top: calc(var(--app-height) - (var(--app-height) - 90px));
+        }
+
+        &--big {
+            position: absolute;
+            width: 755px;
+            height: 271px;
+            background: url(../images/cover-cloud-back.png) no-repeat;
+            background-size: contain;
+            z-index: 0;
+
+            @include min-responsive($w-vlg) {
+                top: -20px;
+
+                @include max-height($w-hmd) {
+                    top: -126px;
+                }
+            }
+
+            &1 {
+                left: -180px;
+                @include animation(cloud-move3 12s linear infinite alternate both);
+            }
+
+            &2 {
+                right: -80px;
+                @include animation(cloud-move 12s linear infinite alternate both);
+            }
+        }
+
+        &1 {
+            width: 86px;
+            top: 200px;
+            left: 50px;
+            @include animation(cloud-move2 7s linear infinite alternate both);
+        }
+
+        &2 {
+            width: 108px;
+            top: 218px;
+            left: 218px;
+            @include animation(cloud-move2 7s linear infinite alternate both);
+        }
+
+        &3 {
+            width: 109px;
+            top: 70px;
+            left: 110px;
+            @include animation(cloud-move2 7s linear infinite alternate both);
+
+            @include min-responsive($w-xxl) {
+                left: 148px;
+            }
+        }
+
+        &4 {
+            width: 85px;
+            top: 160px;
+            left: 314px;
+            @include animation(cloud-move2 7s linear infinite alternate both);
+        }
+
+        &5 {
+            width: 86px;
+            top: 200px;
+            right: 50px;
+            @include animation(cloud-move 7s linear infinite alternate both);
+        }
+
+        &6 {
+            width: 108px;
+            top: 218px;
+            right: 218px;
+            @include animation(cloud-move 7s linear infinite alternate both);
+        }
+
+        &7 {
+            width: 109px;
+            top: 70px;
+            right: 110px;
+            @include animation(cloud-move 7s linear infinite alternate both);
+
+            @include min-responsive($w-xxl) {
+                right: 148px;
+            }
+        }
+
+        &8 {
+            width: 85px;
+            top: 160px;
+            right: 314px;
+            @include animation(cloud-move 7s linear infinite alternate both);
+        }
+    }
+
+    &Content {
+        max-width: 890px;
+        position: relative;
+        text-align: center;
+        color: $cl-blue;
+        text-transform: uppercase;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+        transition-duration: .7s;
+        transform: scale(0);
+
+        @include min-responsive($w-vlg) {
+            margin-top: calc(var(--app-height) - (var(--app-height) - 72px));
+
+            @include max-height($w-hmd) {
+                max-width: 724px;
+            }
+        }
+
+        @include min-responsive($w-xxxl) {
+            margin-top: calc(var(--app-height) - (var(--app-height) - 110px));
+        }
+    }
+}
