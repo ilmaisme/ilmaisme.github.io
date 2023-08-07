@@ -50,15 +50,19 @@ $('#passSubmit').on('click', function () {
             complete: function () {
                 fullpage_api.moveTo('start', 1);
                 console.log('start');
-                fullpage_api.setAllowScrolling(true);
-                fullpage_api.setKeyboardScrolling(true);
             }
         });
         $(".startImg").velocity({
             top: "0"
         }, {
             delay: 700,
-            duration: 700
+            duration: 700,
+            complete: function () {
+                $('.startItem__img').addClass('bounce');
+                setTimeout(function () {
+                    fullpage_api.moveTo('intro', 2);
+                }, 2000);
+            }
         });
         $('.pass').addClass('disable');
         $('.passLabel').removeClass('active');
@@ -139,7 +143,13 @@ $(document).ready(function () {
                         opacity: "1"
                     }, {
                         delay: 0,
-                        duration: 700
+                        duration: 700,
+                        complete: function () {
+                            $('.startItem__img').addClass('bounce');
+                            setTimeout(function () {
+                                fullpage_api.moveTo('intro', 2);
+                            }, 2000);
+                        }
                     });
                     $(".cover").velocity({
                         opacity: "0"
@@ -164,6 +174,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $(".bgColor__start").addClass("opac0");
+                        $('.startItem__img').removeClass('bounce');
                     }
                 });
                 $(".cover").velocity({
@@ -186,13 +197,19 @@ $(document).ready(function () {
                         $(".introCursor").addClass("active");
                         $(".intro").addClass("active");
                     },
-                    complete: function () {}
+                    complete: function () {
+                        fullpage_api.setAllowScrolling(true);
+                        fullpage_api.setKeyboardScrolling(true);                        
+                    }
                 });
                 $(".startImg").velocity({
                     top: "10%"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $('.startItem__img').removeClass('bounce');
+                    }
                 });
                 console.log('intro')
             }
@@ -212,7 +229,10 @@ $(document).ready(function () {
                     top: "0"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,                    
+                    complete: function () {
+                        $('.startItem__img').addClass('bounce');
+                    }
                 });
                 console.log('intro up')
             }
