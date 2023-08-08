@@ -38,14 +38,25 @@ $('#menu').on('click', function () {
     $(".scrollCta").fadeOut(400);
     $(".buttonInfo").removeClass("active");
     $(".creditTrigger").removeClass("active");
-    $('.menu').addClass("active bounce");
-    $('.menuWheel').addClass("rotate");
+    
+    fullpage_api.setAllowScrolling(false);
+    fullpage_api.setKeyboardScrolling(false);
+    $(".menu").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 400,
+        begin: function () {
+            $('.menu').addClass("active");
+            $('.menuContent').addClass("active");
+            $('.menuWheel').addClass("rotate");
+        },
+    });
     setTimeout(function () {
         $('.menuWheel').removeClass("rotate");
         $('.menuWheel').addClass("rotate1");
-    }, 3000);
-    console.log('menu')
-    fullpage_api.destroy();
+        fullpage_api.destroy();
+    }, 3400);
 })
 
 $('#infobtn').on('click', function () {

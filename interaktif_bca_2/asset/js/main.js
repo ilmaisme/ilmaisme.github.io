@@ -197,7 +197,7 @@ $(document).ready(function () {
                     },
                     complete: function () {
                         fullpage_api.setAllowScrolling(true);
-                        fullpage_api.setKeyboardScrolling(true);                        
+                        fullpage_api.setKeyboardScrolling(true);
                     }
                 });
                 $(".introTxt").velocity({
@@ -243,13 +243,24 @@ $(document).ready(function () {
             if (origin.index == 2 && direction == 'down') {
                 $(".introCursor").removeClass("active");
                 $(".intro").removeClass("active");
-                $('.menu').addClass("active bounce");
-                $('.menuWheel').addClass("rotate");
+                fullpage_api.setAllowScrolling(false);
+                fullpage_api.setKeyboardScrolling(false);
+                $(".menu").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.menu').addClass("active");
+                        $('.menuContent').addClass("active");
+                        $('.menuWheel').addClass("rotate");
+                    },
+                });
                 setTimeout(function () {
                     $('.menuWheel').removeClass("rotate");
                     $('.menuWheel').addClass("rotate1");
                     fullpage_api.destroy();
-                }, 3000);
+                }, 3400);
                 console.log('menu')
             }
             // if (origin.index == 3 && direction == 'up') {
