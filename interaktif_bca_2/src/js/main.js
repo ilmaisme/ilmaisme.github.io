@@ -145,7 +145,6 @@ $(document).ready(function () {
                         delay: 0,
                         duration: 700,
                         complete: function () {
-                            $('.startItem__img').addClass('bounce');
                             setTimeout(function () {
                                 fullpage_api.moveTo('intro', 2);
                             }, 2000);
@@ -174,7 +173,6 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $(".bgColor__start").addClass("opac0");
-                        $('.startItem__img').removeClass('bounce');
                     }
                 });
                 $(".cover").velocity({
@@ -202,14 +200,17 @@ $(document).ready(function () {
                         fullpage_api.setKeyboardScrolling(true);                        
                     }
                 });
+                $(".introTxt").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 1200,
+                    duration: 700
+                });
                 $(".startImg").velocity({
                     top: "10%"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {
-                        $('.startItem__img').removeClass('bounce');
-                    }
+                    duration: 700
                 });
                 console.log('intro')
             }
@@ -225,14 +226,17 @@ $(document).ready(function () {
                     },
                     complete: function () {}
                 });
+                $(".introTxt").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
                 $(".startImg").velocity({
                     top: "0"
                 }, {
                     delay: 0,
-                    duration: 700,                    
-                    complete: function () {
-                        $('.startItem__img').addClass('bounce');
-                    }
+                    duration: 700
                 });
                 console.log('intro up')
             }
