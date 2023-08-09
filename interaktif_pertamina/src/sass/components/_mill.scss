@@ -1,0 +1,109 @@
+.mill {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background: #a2a2a2;
+
+    &Bg {
+        position: absolute;
+        top: 0;
+        left: -650px;
+
+        @include min-responsive($w-vmd) {
+            left: 0;
+        }
+
+        img {
+            height: 1080px;
+            max-width: unset;
+        }
+    }
+
+    &Anim {
+        position: absolute;
+        width: 1240px;
+        top: 112px;
+        left: -297px;
+
+        @include min-responsive($w-vmd) {
+            top: 112px;
+            left: 355px;
+        }
+    }
+
+    &Distance {
+        transform: scale(0);
+        transition: transform 1.4s ease;
+        position: absolute;
+        top: 24px;
+        left: -406px;
+
+        @include min-responsive($w-vmd) {
+            top: 32px;
+            left: 230px;
+        }
+
+        img {
+            width: 1486px;
+            max-width: unset;
+        }
+
+        &.active {
+            transform: scale(1);
+
+            &.blink {
+                animation: blink 1s linear 4 forwards;
+            }
+        }
+
+        &__green {
+            transform: scale(0);
+            position: absolute;
+            top: -200px;
+            left: -406px;
+            transition: transform .7s ease;
+
+            @include min-responsive($w-vmd) {
+                top: -78px;
+                left: 30px;
+            }
+
+            img {
+                width: 1898px;
+                max-width: unset;
+            }
+
+            &.active {
+                // transform: scale(1);
+                animation: scale_distance 2500ms linear 0ms 1 forwards;
+            }
+        }
+
+        &__50 {
+            position: absolute;
+            left: 120px;
+            top: 160px;
+            opacity: 0;
+            transform: translateX(-100%) translateY(100%);
+            transition: all 1.1s ease;
+
+            @include min-responsive($w-vmd) {
+                left: 775px;
+                top: 78px;
+            }
+
+            img {
+                width: 180px;
+
+                @include min-responsive($w-vmd) {
+                    width: auto;
+                }
+            }
+
+            &.active {
+                opacity: 1;
+                transform: translateX(0) translateY(0);
+            }
+        }
+    }
+}

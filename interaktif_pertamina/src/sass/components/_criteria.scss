@@ -3,12 +3,12 @@
     flex-direction: column;
 
     &Content {
-        background: url(../images/intro-content-bg.png);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-
         @include min-responsive($w-vlg) {
+            background: url(../images/intro-content-bg.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+
             @include max-height($w-hmd) {
                 padding: 20px 75px;
             }
@@ -34,6 +34,8 @@
     }
 
     &Title {
+        font-size: 16px;
+
         @include min-responsive($w-vlg) {
             font-size: 30px;
 
@@ -47,6 +49,11 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        margin-top: 20px;
+
+        @include min-responsive($w-vlg) {
+            margin-top: 0;
+        }
 
         @include min-responsive($w-xxxl) {
             margin-top: 35px;
@@ -55,15 +62,31 @@
 
     &Item {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         position: relative;
-        width: calc(100%/2);
-        margin: 20px 20px 60px 60px;
-        padding-left: 60px;
-        padding-right: 12px;
+        width: 152.5px;
+        // width: calc(100%/2 - 20px);
         background: #769F25;
-        border-radius: 5px;
-        border-top-right-radius: 22px;
+        border-radius: 2px;
+        margin: 20px 10px;
+        padding: 20px 10px 4px 10px;
+        height: 136px;
+        top: var(--app-height);
+
+        @include max-responsive($w-xm) {
+            margin: 20px -4px;
+        }
+
+        @include min-responsive($w-vlg) {
+            align-items: center;
+            margin: 20px 20px 60px 60px;
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 60px;
+            padding-right: 12px;
+            border-radius: 5px;
+            border-top-right-radius: 22px;
+        }
 
         &::before,
         &::after {
@@ -71,27 +94,42 @@
             left: 0;
             width: 100%;
             position: absolute;
-            background-size: cover;
+            background-size: contain;
             background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                background-size: cover;
+            }
         }
 
         &::before {
-            top: -25px;
+            top: -11px;
             height: 26px;
             background-image: url(../images/criteria-list-top.png);
             background-position: top;
+
+            @include min-responsive($w-vlg) {
+                top: -25px;
+            }
         }
 
         &::after {
-            bottom: -27px;
+            bottom: -13px;
             height: 28px;
             background-image: url(../images/criteria-list-bottom.png);
             background-position: bottom;
+
+            @include min-responsive($w-vlg) {
+                bottom: -27px;
+            }
         }
 
         &1 {
-            width: 334px;
-            height: 170px;
+
+            @include min-responsive($w-vlg) {
+                width: 334px;
+                height: 170px;
+            }
 
             .criteriaItem__wrap::before {
                 @include min-responsive($w-vlg) {
@@ -102,10 +140,11 @@
             }
 
             .criteriaItem__wrap::after {
-                top: -13px;
-                height: calc(100% + 37px);
 
                 @include min-responsive($w-vlg) {
+                    top: -13px;
+                    height: calc(100% + 37px);
+
                     @include max-height($w-hmd) {
                         top: -8px;
                         height: calc(100% + 28px);
@@ -115,17 +154,23 @@
         }
 
         &2 {
-            width: 400px;
-            height: 170px;
+
+            @include min-responsive($w-vlg) {
+                width: 400px;
+                height: 170px;
+            }
 
             &::before {
-                left: -5px;
+                @include min-responsive($w-vlg) {
+                    left: -5px;
+                }
             }
 
             .criteriaItem__wrap::after {
-                height: calc(100% + 20px);
 
                 @include min-responsive($w-vlg) {
+                    height: calc(100% + 20px);
+
                     @include max-height($w-hmd) {
                         right: -7px;
                     }
@@ -133,19 +178,25 @@
             }
 
             .criteriaItem__wrap::before {
-                top: -1px;
-                left: -7px;
+                @include min-responsive($w-vlg) {
+                    top: -1px;
+                    left: -7px;
+                }
             }
         }
 
         &3 {
-            width: 391px;
-            height: 206px;
+
+            @include min-responsive($w-vlg) {
+                width: 391px;
+                height: 206px;
+            }
 
             .criteriaItem__wrap::after {
-                top: -15px;
 
                 @include min-responsive($w-vlg) {
+                    top: -15px;
+
                     @include max-height($w-hmd) {
                         top: -4px;
                         right: -9px;
@@ -164,18 +215,24 @@
             }
 
             &::before {
-                left: -4px;
+                @include min-responsive($w-vlg) {
+                    left: -4px;
+                }
             }
         }
 
         &4 {
-            width: 340px;
-            height: 225px;
+
+            @include min-responsive($w-vlg) {
+                width: 340px;
+                height: 225px;
+            }
 
             .criteriaItem__wrap::after {
-                top: -33px;
 
                 @include min-responsive($w-vlg) {
+                    top: -33px;
+
                     @include max-height($w-hmd) {
                         top: -8px;
                     }
@@ -183,9 +240,10 @@
             }
 
             .criteriaItem__wrap::before {
-                top: -5px;
 
                 @include min-responsive($w-vlg) {
+                    top: -5px;
+
                     @include max-height($w-hmd) {
                         top: 2px;
                         left: -9px;
@@ -213,13 +271,16 @@
             }
 
             &::before {
-                left: -10px;
+                left: -8px;
                 width: 11px;
                 background-image: url(../images/criteria-list-left.png);
-                background-size: cover;
+                background-size: contain;
                 background-position: left;
 
                 @include min-responsive($w-vlg) {
+                    left: -10px;
+                    background-size: cover;
+
                     @include max-height($w-hmd) {
                         background-size: contain;
                     }
@@ -227,13 +288,19 @@
             }
 
             &::after {
-                top: -2px;
-                right: -11px;
-                height: calc(100% + 28px);
+                top: -6px;
+                right: -13px;
+                height: calc(100% + 18px);
                 width: 32px;
                 background-image: url(../images/criteria-list-right.png);
                 background-size: contain;
                 background-position: right;
+
+                @include min-responsive($w-vlg) {
+                    top: -2px;
+                    right: -11px;
+                    height: calc(100% + 28px);
+                }
             }
         }
     }
@@ -241,13 +308,31 @@
     &Num {
         position: absolute;
         text-align: right;
-        top: 28px;
-        left: -46px;
-        width: 93px;
+        top: -21px;
+        left: 10px;
+        width: 28px;
 
         @include min-responsive($w-vlg) {
+            top: 28px;
+            left: -46px;
+            width: 93px;
+
             @include max-height($w-hmd) {
                 top: 18px;
+            }
+        }
+    }
+
+    &Txt {
+        position: relative;
+        font-size: 12px;
+        z-index: 1;
+
+        @include min-responsive($w-vlg) {
+            font-size: 24px;
+
+            @include max-height($w-hmd) {
+                font-size: 18px;
             }
         }
     }

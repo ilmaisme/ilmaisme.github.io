@@ -1,28 +1,39 @@
 .buffer {
     &.active {
         .bufferLine {
-            animation: draw 1400ms linear 400ms 1 forwards;
+            animation: draw 700ms linear 2000ms 1 forwards;
         }
     }
 
     &Content {
-        position: relative;
+        position: absolute;
+        margin-top: 375px;
         margin-left: auto;
         margin-right: auto;
-        background: url(../images/buffer-content-bg.png);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
+        background: #289928;
+        border-radius: 7px;
+        top: var(--app-height);
+
+        @include range-responsive($w-md, $w-vlg) {
+            max-width: 345px;
+        }
 
         @include min-responsive($w-vlg) {
+            position: relative;
+            margin-top: 180px;
             padding: 20px;
             width: 472px;
             height: 385px;
+            background: url(../images/buffer-content-bg.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
 
             @include max-height($w-hmd) {
                 padding: 20px;
                 width: 396px;
                 height: 320px;
+                margin-top: 270px;
             }
         }
 
@@ -38,16 +49,23 @@
             position: absolute;
             background-size: contain;
             background-repeat: no-repeat;
+            z-index: 1;
         }
 
         &::before {
             width: 58px;
             height: 50px;
-            top: 40px;
-            left: 20px;
-            background: url(../images/content-before-thick.png);
+            top: 0;
+            left: 4px;
+            background-image: url(../images/content-before-thick-m.png);
             background-size: contain;
             background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                top: 40px;
+                left: 20px;
+                background-image: url(../images/content-before-thick.png);
+            }
 
             @include min-responsive($w-xxxl) {
                 width: 89px;
@@ -55,13 +73,20 @@
         }
 
         &::after {
-            width: 60px;
+            width: 56px;
             height: 46px;
-            bottom: 15px;
-            right: 20px;
-            background: url(../images/content-after.png);
+            bottom: 0;
+            right: 0;
+            background-image: url(../images/content-after-thick-m.png);
             background-size: contain;
             background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                width: 60px;
+                bottom: 15px;
+                right: 20px;
+                background-image: url(../images/content-after.png);
+            }
 
             @include min-responsive($w-xxxl) {
                 width: 85px;
@@ -73,16 +98,111 @@
 
     &Line {
         position: absolute;
-        bottom: 75px;
-        left: -130px;
-        width: 140px;
+        transform: rotate(90deg);
+        top: -52px;
+        left: 30%;
+        width: 85px;
         stroke-dasharray: 273;
-        stroke-dashoffset: 273;
+        stroke-dashoffset: -273;
+
+        @include min-responsive($w-vmd) {
+            top: unset;
+            bottom: 75px;
+            left: -130px;
+            width: 140px;
+            transform: none;
+        }
 
         @include min-responsive($w-xxxl) {
             width: auto;
             bottom: 100px;
             left: -280px;
+        }
+    }
+
+    &Title {
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 0;
+
+            @include min-responsive($w-vlg) {
+                content: none;
+            }
+        }
+
+        &::before {
+            left: -22px;
+            width: calc(100% + 51px);
+            top: -22px;
+            height: 33px;
+            background-image: url(../images/buffer-content-top-m.png);
+            background-position: top;
+
+            @include max-responsive($w-xm) {
+                top: -15px;
+                width: calc(100% + 49px);
+            }
+        }
+
+        &::after {
+            left: -19px;
+            width: calc(100% + 30px);
+            bottom: -17px;
+            height: 25px;
+            background-image: url(../images/buffer-content-bottom-m.png);
+            background-position: bottom;
+
+            @include max-responsive($w-xm) {
+                bottom: -9px;
+            }
+        }
+
+        &__wrap {
+            padding: 18px 20px 10px;
+            height: 174px;
+            display: flex;
+            align-items: center;
+
+            @include min-responsive($w-vlg) {
+                padding: 0;
+                height: auto;
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: 0;
+
+                @include min-responsive($w-vlg) {
+                    content: none;
+                }
+            }
+
+            &::before {
+                top: -16px;
+                left: -19px;
+                height: calc(100% + 27px);
+                width: 26px;
+                background-image: url(../images/buffer-content-left-m.png);
+                background-position: top;
+            }
+
+            &::after {
+                top: -18px;
+                right: -20px;
+                height: calc(100% + 25px);
+                width: 34px;
+                background-image: url(../images/buffer-content-right-m.png);
+                background-position: bottom;
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
     &Caption {
         @include font-pack($family: $font_caption, $size: 24px, $lh: 1.15, $weight: $font-weight-normal);
 
-        @include min-responsive($w-vlg) {
+        @include min-responsive($w-vmd) {
             font-size: 64px;
 
             @include max-height($w-hmd) {
@@ -12,13 +12,132 @@
     }
 
     &Title {
-        @include font-pack($family: $font_caption, $size: 40px, $weight: $font-weight-normal)
+        @include font-pack($family: $font_caption, $size: 20px, $weight: $font-weight-normal);
+        letter-spacing: 1px;
+
+        @include max-responsive($w-xm) {
+            font-size: 18px;
+        }
+
+        @include min-responsive($w-vmd) {
+            font-size: 40px;
+            letter-spacing: unset;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: -1;
+
+            @include min-responsive($w-vlg) {
+                content: none;
+            }
+        }
+
+        &::before {
+            left: -9px;
+            width: calc(100% + 16px);
+            top: -9px;
+            height: 20px;
+            background-image: url(../images/intro-content-top-m.png);
+            background-position: top;
+
+            @include max-responsive($w-xm) {
+                top: -8px;
+            }
+
+            @include range-responsive($w-md, $w-vlg) {
+                left: -19px;
+                width: calc(100% + 33px);
+                top: -19px;
+            }
+        }
+
+        &::after {
+            left: -7px;
+            width: calc(100% + 14px);
+            bottom: -11px;
+            height: 18px;
+            background-image: url(../images/intro-content-bottom-m.png);
+            background-position: bottom;            
+
+            @include range-responsive($w-md, $w-vlg) {
+                left: -16px;
+                width: calc(100% + 32px);
+                bottom: -24px;
+                height: 25px;
+            }
+
+            @include max-responsive($w-xm) {
+                bottom: -9px;
+            }
+        }
+
+        &__wrap {
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: -1;
+
+                @include min-responsive($w-vlg) {
+                    content: none;
+                }
+            }
+
+            &::before {
+                top: -13px;
+                left: -16px;
+                height: calc(100% + 26px);
+                width: 20px;
+                background-image: url(../images/intro-content-left-m.png);
+                background-position: top;
+
+                @include max-responsive($w-xm) {
+                    top: -14px;
+                    left: -16px;
+                }
+
+                @include range-responsive($w-md, $w-vlg) {
+                    top: -8px;
+                    left: -14px;
+                    height: calc(100% + 16px);
+                }
+            }
+
+            &::after {
+                top: -12px;
+                right: -12px;
+                height: calc(100% + 28px);
+                width: 16px;
+                background-image: url(../images/intro-content-right-m.png);
+                background-position: bottom;
+
+                @include range-responsive($w-md, $w-vlg) {
+                    top: -7px;
+                    right: -11px;
+                    height: calc(100% + 17px);
+                }
+            }
+        }
     }
 
     &Content {
-        @include font-pack($size: 24px, $weight: $font-weight-sbold);
+        @include font-pack($size: 16px, $weight: $font-weight-sbold);
+
+        @include max-responsive($w-xm) {
+            font-size: 14px
+        }
 
         @include min-responsive($w-vlg) {
+            font-size: 24px;
+
             @include max-height($w-hmd) {
                 font-size: 20px;
             }

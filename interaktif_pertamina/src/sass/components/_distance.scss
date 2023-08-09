@@ -6,23 +6,37 @@
     }
 
     &Content {
-        position: relative;
+        position: absolute;
         margin-left: auto;
         margin-right: auto;
-        background: url(../images/distance-content-bg.png);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
+        background: #E60000;
+        border-radius: 7px;
+        top: var(--app-height);
+        margin-top: 50px;
+        left: 0;
+
+        @include range-responsive($w-md, $w-vlg) {
+            max-width: 345px;
+        }
 
         @include min-responsive($w-vlg) {
+            margin-top: 0;
+            left: 873px;
             padding: 20px 30px;
             width: 398px;
+            max-width: unset;
             height: 290px;
+            background: url(../images/distance-content-bg.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
 
             @include max-height($w-hmd) {
                 padding: 20px;
                 width: 380px;
-                height: 260px
+                height: 260px;
+                left: 830px;
+                margin-top: 18px;
             }
         }
 
@@ -30,6 +44,9 @@
             padding: 20px 50px;
             width: 449px;
             height: 312px;
+            position: absolute;
+            left: 878px;
+            margin-top: 18px;
         }
 
         &::before,
@@ -38,36 +55,50 @@
             position: absolute;
             background-size: contain;
             background-repeat: no-repeat;
+            z-index: 1;
         }
 
         &::before {
             width: 58px;
             height: 50px;
-            top: 26px;
-            left: 20px;
-            background: url(../images/content-before-thick.png);
+            top: -7px;
+            left: 4px;
+            background-image: url(../images/content-before-thick-m.png);
             background-size: contain;
             background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                top: 26px;
+                left: 20px;
+            }
 
             @include min-responsive($w-xxxl) {
                 width: 89px;
                 top: 20px;
+                background-image: url(../images/content-before-thick.png);
             }
         }
 
         &::after {
-            width: 60px;
+            width: 56px;
+            bottom: -10px;
+            right: 0;
             height: 46px;
-            bottom: 15px;
-            right: 20px;
-            background: url(../images/content-after.png);
+            background-image: url(../images/content-after-thick-m.png);
             background-size: contain;
             background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                width: 60px;
+                bottom: 15px;
+                right: 20px;
+            }
 
             @include min-responsive($w-xxxl) {
                 width: 85px;
                 height: 46px;
                 bottom: 20px;
+                background-image: url(../images/content-after.png);
             }
         }
     }
@@ -78,12 +109,117 @@
         right: calc(100% - 318px/2 - 40px);
         width: 318px;
         stroke-dasharray: 660;
-        stroke-dashoffset: 660;
+        stroke-dashoffset: -660;
 
         @include min-responsive($w-xxxl) {
             width: auto;
             bottom: -100px;
             right: calc(100% - 573px/2 + 40px);
+        }
+
+        &__mob {
+            display: block;
+            bottom: -117px;
+            height: 105px;
+            right: 11%;
+
+            @include min-responsive($w-vlg) {
+                display: none;
+            }
+        }
+
+        &__desk {
+            display: none;
+
+            @include min-responsive($w-vlg) {
+                display: block;
+            }
+        }
+    }
+
+    &Title {
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 0;
+
+            @include min-responsive($w-vlg) {
+                content: none;
+            }
+        }
+
+        &::before {
+            left: -8px;
+            width: calc(100% + 21px);
+            top: -30px;
+            height: 38px;
+            background-image: url(../images/distance-content-top-m.png);
+            background-position: top;
+
+            @include max-responsive($w-xm) {
+                top: -22px;
+                width: calc(100% + 18px);
+            }
+        }
+
+        &::after {
+            left: -8px;
+            width: calc(100% + 15px);
+            bottom: -27px;
+            height: 37px;
+            background-image: url(../images/distance-content-bottom-m.png);
+            background-position: bottom;
+
+            @include max-responsive($w-xm) {
+                bottom: -18px;
+            }
+        }
+
+        &__wrap {
+            padding: 15px 20px;
+            height: 116px;
+            display: flex;
+            align-items: center;
+
+            @include min-responsive($w-vlg) {
+                padding: 0;
+                height: auto;
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: 0;
+
+                @include min-responsive($w-vlg) {
+                    content: none;
+                }
+            }
+
+            &::before {
+                top: -15px;
+                left: -8px;
+                height: calc(100% + 27px);
+                width: 11px;
+                background-image: url(../images/distance-content-left-m.png);
+                background-position: top;
+            }
+
+            &::after {
+                top: -13px;
+                right: -12px;
+                height: calc(100% + 25px);
+                width: 18px;
+                background-image: url(../images/distance-content-right-m.png);
+                background-position: bottom;
+            }
         }
     }
 }

@@ -1,12 +1,26 @@
 .status {
+    flex-direction: column;
+
+    @include min-responsive($w-md) {
+        flex-direction: row;
+    }
+
     &Content {
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        background: url(../images/status-content-bg.png);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
+        background: #289FC4;
+        margin-top: 25px;
+        margin-bottom: 25px;
+
+        @include min-responsive($w-vlg) {
+            margin-top: 0;
+            margin-bottom: 0;
+            background: url(../images/status-content-bg.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
 
         &1 {
             @include min-responsive($w-vlg) {
@@ -35,16 +49,99 @@
                 padding: 20px 45px 20px 85px;
             }
         }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                content: none;
+            }
+        }
+
+        &::before {
+            width: 40px;
+            height: 35px;
+            top: -2px;
+            left: 8px;
+            background-image: url(../images/content-before-thick-m.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &::after {
+            width: 40px;
+            height: 35px;
+            bottom: 0;
+            right: 4px;
+            background-image: url(../images/content-after-thick-m.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
     }
 
     &Title {
-        @include font-pack($size: 20px);
+        @include font-pack($size: 16px);
+
+        @include min-responsive($w-vlg) {
+            @include font-pack($size: 20px);
+        }
 
         span {
-            @include font-pack($size: 30px, $colour: $cl-yellow);
+            @include font-pack($size: 22px, $colour: $cl-yellow);
+
+            @include min-responsive($w-vlg) {
+                font-size: 30px;
+            }
 
             @include min-responsive($w-xxxl) {
                 font-size: 36px;
+            }
+        }
+
+        &::before {
+            left: -27px;
+            width: calc(100% + 46px);
+            top: -19px;
+            height: 25px;
+            background-image: url(../images/status-content-top-m.png);
+        }
+
+        &::after {
+            width: calc(100% + 16px);
+            bottom: -16px;
+            height: 20px;
+            background-image: url(../images/status-content-bottom-m.png);
+        }
+
+        &__wrap {
+            padding: 15px 16px 5px 36px;
+            width: 275px;
+            height: 189px;
+
+            @include min-responsive($w-vlg) {
+                width: unset;
+                height: unset;
+                padding: 0;
+            }
+
+            &::before {
+                top: -7px;
+                left: -12px;
+                height: calc(100% + 14px);
+                width: 15px;
+                background-image: url(../images/status-content-left-m.png);
+            }
+
+            &::after {
+                top: -4px;
+                right: -17px;
+                height: calc(100% + 10px);
+                width: 23px;
+                background-image: url(../images/status-content-right-m.png);
             }
         }
     }

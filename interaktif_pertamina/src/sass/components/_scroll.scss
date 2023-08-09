@@ -1,13 +1,20 @@
 .scrollWrap {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
+    bottom: 0;
+    transform: translateY(0) scale(.7);
+    right: 10px;
     border-radius: 0.9375rem;
     width: 1.5rem;
     height: 3.4375rem;
     border: 0.1875rem solid $cl-white;
     z-index: 0;
+
+    @include min-responsive($w-vlg) {
+        top: 50%;
+        bottom: unset;
+        transform: translateY(-50%);
+        right: 20px;
+    }
 
     .scroll {
         width: 10px;

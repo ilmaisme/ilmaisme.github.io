@@ -1,15 +1,17 @@
 .total {
     &Content {
         position: relative;
-        padding: 20px 40px;
+        padding: 15px 14px;
         margin-left: auto;
         margin-right: auto;
-        background: url(../images/total-content-bg.png);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
+        background: $cl-green;
 
         @include min-responsive($w-vlg) {
+            padding: 20px 40px;
+            background: url(../images/total-content-bg.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
             width: 804px;
             height: 250px;
             margin-top: calc(var(--app-height) - (var(--app-height) + 30%));
@@ -31,31 +33,44 @@
         &::before {
             width: 70px;
             height: 50px;
-            top: 36px;
-            left: 18px;
-            background: url(../images/content-before.png);
+            top: 6px;
+            left: 0;
+            background: url(../images/content-before-m.png);
             background-size: contain;
             background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                top: 36px;
+                left: 18px;
+            }
 
             @include min-responsive($w-xxxl) {
                 width: 89px;
                 top: 30px;
                 left: 30px;
+                background: url(../images/content-before.png);
             }
         }
 
         &::after {
             width: 72px;
-            height: 46px;
-            bottom: 30px;
-            right: 30px;
-            background: url(../images/content-after.png);
+            height: 35px;
+            bottom: 0;
+            right: 10px;
+            background: url(../images/content-after-m.png);
             background-size: contain;
             background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                bottom: 30px;
+                right: 30px;
+                height: 46px;
+            }
 
             @include min-responsive($w-xxxl) {
                 width: 85px;
                 height: 46px;
+                background: url(../images/content-after.png);
             }
         }
     }
@@ -67,10 +82,33 @@
             @include max-height($w-hmd) {
                 font-size: 26px;
             }
+        }
 
-            span {
-                color: #FFD600;
+        &__wrap {
+            height: 182px;
+
+            @include range-responsive($w-md, $w-vlg) {
+                padding: 55px 0;
             }
+
+            @include min-responsive($w-vlg) {
+                height: unset;
+                padding: 0;
+            }
+
+            &::before {
+                top: -20px;
+                height: calc(100% + 42px);
+            }
+
+            &::after {
+                top: -20px;
+                height: calc(100% + 45px);
+            }
+        }
+
+        span {
+            color: #FFD600;
         }
     }
 }

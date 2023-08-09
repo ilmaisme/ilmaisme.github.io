@@ -1,0 +1,124 @@
+.power {
+    position: absolute;
+
+    @include min-responsive(1441px) {
+        width: 100%;
+    }
+
+    &Bg {
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: unset;
+            width: 424px;
+
+            @include min-responsive($w-sm) {
+                width: 768px;
+            }
+
+            @include min-responsive($w-vmd) {
+                width: 1440px;
+            }
+
+            @include min-responsive(1441px) {
+                width: 1920px;
+                left: unset;
+                right: 0;
+            }
+        }
+    }
+
+    &Anim {
+        position: absolute;
+
+        &__factory {
+            width: 450px;
+            left: -75px;
+            top: 356px;
+
+            @include min-responsive($w-sm) {
+                width: 805px;
+                left: -124px;
+                top: 654px;
+            }
+
+            @include min-responsive($w-vmd) {
+                width: 1000px;
+                left: -124px;
+                top: -150px;
+            }
+
+            @include min-responsive(1441px) {
+                width: 1400px;
+                left: unset;
+                right: 720px;
+                top: -194px;
+            }
+        }
+
+        &__dam {
+            left: 72px;
+            top: -23px;
+            width: 330px;
+
+            @include min-responsive($w-sm) {
+                left: 122px;
+                top: -45px;
+                width: 610px;
+            }
+
+            @include min-responsive($w-vmd) {
+                left: 785px;
+                top: 0;
+                width: 655px;
+            }
+
+            @include min-responsive(1441px) {
+                left: unset;
+                right: 0;
+                top: 0px;
+                width: 880px;
+            }
+        }
+
+        &__windmill {
+            width: 180px;
+            left: 22px;
+
+            @include min-responsive($w-sm) {
+                width: 270px;
+                left: 72px;
+
+                @include min-responsive($w-vmd) {
+                    width: 330px;
+                    left: 712px;
+                    top: 25px;
+                }
+
+                @include min-responsive(1441px) {
+                    width: 400px;
+                    left: unset;
+                    right: 550px;
+                    top: 60px;
+                }
+            }
+
+            &2 {
+                width: 180px;
+                top: 196px;
+                left: -33px;
+
+                @include min-responsive($w-sm) {
+                    width: 270px;
+                    top: 384px;
+                }
+
+                @include min-responsive($w-vmd) {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

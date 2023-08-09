@@ -83,7 +83,18 @@
     <!-- header -->
 
     <!-- preloader -->
-    <!-- preloader -->
+    <div class="preloader" id="preloader">
+    	<div class="preloaderWrap center-flex heightFull">
+    		<div class="preloaderImg__wrap">
+    			<img class="preloaderImg" src="./asset/images/preload-img.png" alt="loading" width="255" height="112">
+    			<img class="preloaderGear" src="./asset/images/preload-gear.png" alt="" width="64" height="64">
+    		</div>
+    		<div class="preloaderMeter anim">
+                <span class="preloaderBar" id="bar" value="0"><span></span></span>
+            </div>
+    		<input type="hidden" id="progress_width" value="0">
+    	</div>
+    </div>    <!-- preloader -->
 
     <!-- main -->
     <main role="main">
@@ -98,29 +109,28 @@
         <div class="bgColor__wrap">
             <div class="bgColor bgColor__start"></div>
             <div class="bgColor bgColor__intro opac0"></div>
-            <div class="bgColor bgColor__grey opac0"></div>
         </div>
         <!-- Template Background Color -->
 
         <!-- Template Image Content -->
         <div class="bgStatic__wrap active">
             <div class="bgStatic">
-                <div class="cover display-flex opac0">
+                <div class="cover display-flex">
                     <div class="coverImg">
                         <div class="coverBg">
                             <picture class="coverPic coverGrey">
                                 <source srcset="./asset/images/cover-grey-m.png" media="(max-width: 768px)" alt=""
-                                    width="563" height="633">
+                                    width="1080" height="1920">
                                 <img srcset="./asset/images/cover-grey.png" alt="" class="" width="1920" height="776">
                             </picture>
                             <picture class="coverPic coverWhite">
                                 <source srcset="./asset/images/cover-white-m.png" media="(max-width: 768px)" alt=""
-                                    width="563" height="633">
+                                    width="1080" height="1920">
                                 <img srcset="./asset/images/cover-white.png" alt="" class="" width="1920" height="685">
                             </picture>
                             <picture class="coverPic coverHouse">
                                 <source srcset="./asset/images/cover-house-m.png" media="(max-width: 768px)" alt=""
-                                    width="563" height="633">
+                                    width="1080" height="1920">
                                 <img srcset="./asset/images/cover-house.png" alt="" class="" width="1920" height="427">
                             </picture>
                         </div>
@@ -137,14 +147,10 @@
                             <div class="coverCloud--big coverCloud--big2"></div>
                         </div>
                         <div class="coverPerwira__wrap">
-                            <picture class="coverPerwira">
-                                <source srcset="./asset/images/cover-perwira-m.png" media="(max-width: 768px)" alt=""
-                                    width="563" height="633">
-                                <img srcset="./asset/images/cover-perwira.png" alt="" class="" width="478" height="687">
-                            </picture>
-                            <button class="button coverButton" id="startbtn" aria-label="start interactive">
+                            <div class="coverPerwira coverAnim" id="coverAnim"></div>
+                            <button class="button coverButton" id="coverbtn" aria-label="start interactive">
                                 <picture class="coverMap">
-                                    <source srcset="./asset/images/cover-map-m.png" media="(max-width: 768px)" alt=""
+                                    <source srcset="./asset/images/cover-map.png" media="(max-width: 768px)" alt=""
                                         width="563" height="633">
                                     <img srcset="./asset/images/cover-map.png" alt="" class="" width="478" height="320">
                                 </picture>
@@ -164,50 +170,89 @@
                 </div>
             </div>
             <div class="bgStatic">
+                <div class="power heightFull opac0">
+                    <picture class="powerBg">
+                        <source srcset="./asset/images/power-bg-m.png" media="(max-width: 768px)" alt="" width="1074"
+                            height="1920">
+                        <img srcset="./asset/images/power-bg.png" alt="" class="" width="1920" height="1080">
+                    </picture>
+                    <div class="powerAnim powerAnim__factory" id="power-factory"></div>
+                    <div class="powerAnim powerAnim__windmill" id="power-windmill"></div>
+                    <div class="powerAnim powerAnim__windmill2" id="power-windmill2"></div>
+                    <div class="powerAnim powerAnim__dam" id="power-dam"></div>
+                </div>
                 <div class="intro center-flex heightFull opac0">
                     <div class="introContent center-flex text-center">
-                        <h2 class="articleTitle">Apa yang Disebut dengan <br>
-                            Objek Vital Nasional?</h2>
+                        <h2 class="articleTitle introTitle">
+                            <div class="articleTitle__wrap introTitle__wrap">Apa yang Disebut dengan <br>
+                                Objek Vital Nasional?
+                            </div>
+                        </h2>
                     </div>
                 </div>
             </div>
             <div class="bgStatic">
                 <div class="criteria container display-flex heightFull opac0">
                     <div class="criteriaContent center-flex">
-                        <h2 class="articleTitle criteriaTitle text-center">Berdasarkan Keputusan Presiden No. 63 Tahun
-                            2004 tentang Pengamanan Objek Vital Nasional, sebuah objek vital strategis setidaknya
-                            memenuhi 4 kriteria:</h2>
+                        <h2 class="articleTitle criteriaTitle text-center">
+                            <div class="articleTitle__wrap criteriaTitle__wrap">Berdasarkan Keputusan Presiden No. 63
+                                Tahun
+                                2004 tentang Pengamanan Objek Vital Nasional, sebuah objek vital strategis setidaknya
+                                memenuhi 4 kriteria:</div>
+                        </h2>
                     </div>
                     <div class="criteriaList">
                         <div class="criteriaItem criteriaItem1">
                             <div class="criteriaItem__wrap">
                                 <div class="criteriaNum">
-                                    <img src="./asset/images/criteria1.png" alt="1" width="51" height="112"
-                                        loading="lazy">
+                                    <picture class="">
+                                        <source srcset="./asset/images/criteria1-m.png" media="(max-width: 768px)"
+                                            alt="" width="28" height="33">
+                                        <img srcset="./asset/images/criteria1.png" alt="1" class="" width="51"
+                                            height="112">
+                                    </picture>
                                 </div>
                                 <h3 class="criteriaTxt articleContent">Menghasilkan kebutuhan pokok sehari-hari.</h3>
                             </div>
                         </div>
                         <div class="criteriaItem criteriaItem2">
                             <div class="criteriaItem__wrap">
-                                <div class="criteriaNum"><img src="./asset/images/criteria2.png" alt="2" width="74"
-                                        height="113" loading="lazy"></div>
+                                <div class="criteriaNum">
+                                    <picture class="">
+                                        <source srcset="./asset/images/criteria2-m.png" media="(max-width: 768px)"
+                                            alt="" width="28" height="33">
+                                        <img srcset="./asset/images/criteria2.png" alt="2" class="" width="74"
+                                            height="113">
+                                    </picture>
+                                </div>
                                 <h3 class="criteriaTxt articleContent">Ancaman dan gangguan terhadap objek dapat
                                     mengakibatkan bencana terhadap kemanusiaan dan pembangunan.</h3>
                             </div>
                         </div>
                         <div class="criteriaItem criteriaItem3">
                             <div class="criteriaItem__wrap">
-                                <div class="criteriaNum"><img src="./asset/images/criteria3.png" alt="3" width="86"
-                                        height="113" loading="lazy"></div>
+                                <div class="criteriaNum">
+                                    <picture class="">
+                                        <source srcset="./asset/images/criteria3-m.png" media="(max-width: 768px)"
+                                            alt="" width="28" height="33">
+                                        <img srcset="./asset/images/criteria3.png" alt="3" class="" width="86"
+                                            height="113">
+                                    </picture>
+                                </div>
                                 <h3 class="criteriaTxt articleContent">Ancaman dan gangguan terhadap objek dapat
                                     mengakibatkan kekacauan transportasi dan komunikasi secara nasional.</h3>
                             </div>
                         </div>
                         <div class="criteriaItem criteriaItem4">
                             <div class="criteriaItem__wrap">
-                                <div class="criteriaNum"><img src="./asset/images/criteria4.png" alt="4" width="94"
-                                        height="112" loading="lazy"></div>
+                                <div class="criteriaNum">
+                                    <picture class="">
+                                        <source srcset="./asset/images/criteria4-m.png" media="(max-width: 768px)"
+                                            alt="" width="28" height="33">
+                                        <img srcset="./asset/images/criteria4.png" alt="4" class="" width="94"
+                                            height="112">
+                                    </picture>
+                                </div>
                                 <h3 class="criteriaTxt articleContent">Ancaman dan gangguan terhadap objek dapat
                                     mengakibatkan terganggunya penyelenggaraan pemerintahan negara.</h3>
                             </div>
@@ -216,22 +261,41 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="warning center-flex heightFull opac0">
+                <div class="warning warningBg center-flex heightFull opac0">
+                    <div id="warning-siren" class="warningSiren"></div>
                 </div>
             </div>
             <div class="bgStatic">
+                <div class="mill center-flex heightFull opac0">
+                    <picture class="millBg">
+                        <img srcset="./asset/images/depo.jpg" alt="" class="" width="1919" height="1078">
+                    </picture>
+                    <picture class="millDistance">
+                        <img srcset="./asset/images/distance-red.png" alt="" class="" width="1486" height="862">
+                    </picture>
+                    <picture class="millDistance__green">
+                        <img srcset="./asset/images/distance-green.png" alt="" class="" width="1898" height="1103">
+                    </picture>
+                    <picture class="millDistance__50">
+                        <img srcset="./asset/images/distance-50.png" alt="" class="" width="309" height="203">
+                    </picture>
+                    <div class="millAnim" id="mill"></div>
+                </div>
                 <div class="accident display-flex heightFull opac0">
                     <div class="accidentWrap container">
                         <div class="accidentContent center-flex text-center">
-                            <h2 class="articleContent">Kejadian kebakaran pipa di depo milik PT Pertamina (Persero) di
-                                Plumpang, Jakarta Utara pada Jumat (3/3/2023) yang berdampak ke masyarakat menjadi
-                                pelajaran
-                                untuk melihat pentingnya pengamanan dan pengelolaan objek vital nasional di sektor
-                                energi.
+                            <h2 class="articleContent accidentTitle">
+                                <div class="accidentTitle__wrap">Kejadian kebakaran pipa di depo milik PT Pertamina
+                                    (Persero) di
+                                    Plumpang, Jakarta Utara pada Jumat (3/3/2023) yang berdampak ke masyarakat menjadi
+                                    pelajaran
+                                    untuk melihat pentingnya pengamanan dan pengelolaan objek vital nasional di sektor
+                                    energi.
+                                </div>
                             </h2>
                             <picture class="accidentWarn">
                                 <source srcset="./asset/images/accident-warn-m.png" media="(max-width: 768px)" alt=""
-                                    width="563" height="633">
+                                    width="48" height="43">
                                 <img srcset="./asset/images/accident-warn.png" alt="" class="" width="135" height="122">
                             </picture>
                         </div>
@@ -242,14 +306,20 @@
                 <div class="distance display-flex heightFull opac0">
                     <div class="distanceWrap container">
                         <div class="distanceContent center-flex text-center">
-                            <h2 class="articleContent">Jarak antara terminal tangki bahan bakar minyak (TBBM) Plumpang
-                                dengan rumah warga dan aktivitas penduduk yang sangat berdekatan, menjadi salah satu
-                                problem utama.
+                            <h2 class="articleContent distanceTitle">
+                                <div class="distanceTitle__wrap">Jarak antara terminal tangki bahan bakar minyak (TBBM)
+                                    Plumpang
+                                    dengan rumah warga dan aktivitas penduduk yang sangat berdekatan, menjadi salah satu
+                                    problem utama.</div>
                             </h2>
-                            <svg class="distanceLine" width="573" height="121" viewBox="0 0 573 121" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="distanceLine distanceLine__desk" width="573" height="121" viewBox="0 0 573 121" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.5 113.5H566V19.5" stroke="#414042" stroke-width="5" stroke-linecap="round" />
                                 <circle cx="7" cy="114" r="7" fill="white" />
                                 <circle cx="566" cy="7" r="7" fill="white" />
+                            </svg>                            <svg class="distanceLine distanceLine__mob" width="15" height="307" viewBox="0 0 15 307" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 298.5V9" stroke="#414042" stroke-width="5" stroke-linecap="round" />
+                                <circle cx="7" cy="7" r="7" fill="white" />
+                                <circle cx="8" cy="300" r="7" fill="white" />
                             </svg>                        </div>
                     </div>
                 </div>
@@ -258,10 +328,14 @@
                 <div class="buffer display-flex heightFull opac0">
                     <div class="bufferWrap container">
                         <div class="bufferContent center-flex text-center">
-                            <h2 class="articleContent">Untuk itu, Kementerian BUMN dan PT Pertamina berencana membangun
-                                buffer zone dengan jarak 50 meter dari pagar pengaman di depo Plumpang. Ini merupakan
-                                langkah antisipasi pemerintah dan PT Pertamina untuk menjaga salah satu asetnya yang
-                                berstatus objek vital nasional.
+                            <h2 class="articleContent bufferTitle">
+                                <div class="bufferTitle__wrap">
+                                    Untuk itu, Kementerian BUMN dan PT Pertamina berencana membangun
+                                    buffer zone dengan jarak 50 meter dari pagar pengaman di depo Plumpang. Ini
+                                    merupakan
+                                    langkah antisipasi pemerintah dan PT Pertamina untuk menjaga salah satu asetnya yang
+                                    berstatus objek vital nasional.
+                                </div>
                             </h2>
                             <svg class="bufferLine" width="300" height="15" viewBox="0 0 300 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.5 7H281" stroke="#414042" stroke-width="5" stroke-linecap="round" />
@@ -275,9 +349,13 @@
                 <div class="vital display-flex heightFull opac0">
                     <div class="vitalWrap container">
                         <div class="vitalContent center-flex text-center">
-                            <h2 class="articleContent">Sebagai informasi PT Pertamina (Persero) memiliki sejumlah aset
-                                yang berstatus objek vital nasional yang tersebar di berbagai penjuru Indonesia. Fakta
-                                itu tertuang dalam Keputusan Menteri Energi dan Sumber Daya Mineral (ESDM) No. 270/2022.
+                            <h2 class="articleContent vitalTitle">
+                                <div class="vitalTitle__wrap">Sebagai informasi PT Pertamina (Persero) memiliki sejumlah
+                                    aset
+                                    yang berstatus objek vital nasional yang tersebar di berbagai penjuru Indonesia.
+                                    Fakta
+                                    itu tertuang dalam Keputusan Menteri Energi dan Sumber Daya Mineral (ESDM) No.
+                                    270/2022.</div>
                             </h2>
                         </div>
                     </div>
@@ -287,10 +365,11 @@
                 <div class="total center-flex heightFull opac0">
                     <div class="totalWrap container">
                         <div class="totalContent center-flex text-center">
-                            <h2 class="articleTitle totalTitle text-center">Dalam Keputusan Menteri Energi dan Sumber
-                                Daya Mineral (ESDM) No. 270/2022, PT Pertamina (Persero) memiliki <span>205</span> aset
-                                yang
-                                berstatus objek vital nasional
+                            <h2 class="articleTitle totalTitle text-center">
+                                <div class="articleTitle__wrap totalTitle__wrap">Dalam Keputusan Menteri Energi dan
+                                    Sumber
+                                    Daya Mineral (ESDM) No. 270/2022, PT Pertamina (Persero) memiliki <span>205</span>
+                                    aset yang berstatus objek vital nasional</div>
                             </h2>
                         </div>
                     </div>
@@ -299,8 +378,10 @@
             <div class="bgStatic">
                 <div class="resource container display-flex heightFull opac0">
                     <div class="resourceContent center-flex">
-                        <h2 class="articleContent resourceTitle">Ratusan aset itu tersebar di 2 dari total 3 subbidang
-                            objek vital nasional bidang energi dan sumber daya mineral (ESDM). Di antaranya adalah:
+                        <h2 class="articleContent resourceTitle">
+                            <div class="resourceTitle__wrap">Ratusan aset itu tersebar di 2 dari total 3 subbidang
+                                objek vital nasional bidang energi dan sumber daya mineral (ESDM). Di antaranya adalah:
+                            </div>
                         </h2>
                     </div>
                     <div class="resourceList">
@@ -339,23 +420,29 @@
                 <div class="status container center-flex heightFull opac0">
                     <div class="statusContent statusContent1 center-flex">
                         <h3 class="articleTitle statusTitle">
-                            Di subbidang minyak dan gas PT Pertamina (Persero) memiliki
-                            <span>199 aset berstatus objek vital nasional.</span>
+                            <div class="articleTitle__wrap statusTitle__wrap">
+                                Di subbidang minyak dan gas PT Pertamina (Persero) memiliki
+                                <span>199 aset berstatus objek vital nasional.</span>
+                            </div>
                         </h3>
                     </div>
                     <div class="statusContent statusContent2 center-flex">
                         <h3 class="articleTitle statusTitle">
-                            Di subbidang energi baru, terbarukan dan konversi energi PT Pertamina (Persero) memiliki
-                            <span>6 aset berstatus objek vital nasional.</span>
+                            <div class="articleTitle__wrap statusTitle__wrap">
+                                Di subbidang energi baru, terbarukan dan konversi energi PT Pertamina (Persero) memiliki
+                                <span>6 aset berstatus objek vital nasional.</span>
+                            </div>
                         </h3>
                     </div>
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="synergy container display-flex heightFull">
+                <div class="synergy container display-flex heightFull opac0">
                     <div class="synergyContent center-flex">
-                        <h2 class="articleTitle synergyTitle text-center">Pentingnya Sinergi Pengamanan dan
-                            Pengelolaan Objek Vital Nasional</h2>
+                        <h2 class="articleTitle synergyTitle text-center">
+                            <div class="articleTitle__wrap">Pentingnya Sinergi Pengamanan dan
+                                Pengelolaan Objek Vital Nasional</div>
+                        </h2>
                     </div>
                     <div class="synergyList">
                         <div class="synergyItem synergyItem1">
@@ -366,7 +453,7 @@
                                     vital dengan kawasan pemukiman maupun kawasan komersial lainnya.</h3>
                             </div>
                         </div>
-                        <div class="synergyItem synergyItem1">
+                        <div class="synergyItem synergyItem2">
                             <div class="synergyItem__wrap">
                                 <h3 class="synergyTxt articleContent">Pemerintah, PT Pertamina (Persero) dan stakeholder
                                     terkait pun berkomitmen untuk melakukan audit dan penataan ulang objek vital
@@ -377,36 +464,448 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="perwiraStatic display-flex heightFull">
-                    <div class="perwiraWrap">
-                        <picture class="perwira">
-                            <source srcset="./asset/images/perwira-body-m.png" media="(max-width: 768px)" alt=""
-                                width="563" height="633">
-                            <img srcset="./asset/images/perwira-body.png" alt="" class="" width="366" height="231">
-                        </picture>
-                        <picture class="perwiraHead">
-                            <source srcset="./asset/images/perwira-wsmile-m.png" media="(max-width: 768px)" alt=""
-                                width="563" height="633">
-                            <img srcset="./asset/images/perwira-wsmile.png" alt="" class="" width="244" height="281">
-                        </picture>
-                        <picture class="perwiraHead">
-                            <source srcset="./asset/images/perwira-angry-m.png" media="(max-width: 768px)" alt=""
-                                width="563" height="633">
-                            <img srcset="./asset/images/perwira-angry.png" alt="" class="" width="244" height="281">
-                        </picture>
-                        <picture class="perwiraHead">
-                            <source srcset="./asset/images/perwira-shock-m.png" media="(max-width: 768px)" alt=""
-                                width="563" height="633">
-                            <img srcset="./asset/images/perwira-shock.png" alt="" class="" width="244" height="281">
-                        </picture>
-                        <picture class="perwiraHead">
-                            <source srcset="./asset/images/perwira-smile-m.png" media="(max-width: 768px)" alt=""
-                                width="563" height="633">
-                            <img srcset="./asset/images/perwira-smile.png" alt="" class="" width="244" height="281">
-                        </picture>
+                <div class="perwiraStatic display-flex heightFull opac0">
+                    <div class="perwiraPos display-flex heightFull">
+                        <div class="perwiraWrap">
+                            <picture class="perwiraHead perwiraHead1">
+                                <source srcset="./asset/images/perwira-smile-m.png" media="(max-width: 768px)" alt=""
+                                    width="57" height="67">
+                                <img srcset="./asset/images/perwira-smile.png" alt="" class="" width="244" height="281">
+                            </picture>
+                            <picture class="perwiraHead perwiraHead2">
+                                <source srcset="./asset/images/perwira-shock-m.png" media="(max-width: 768px)" alt=""
+                                    width="57" height="67">
+                                <img srcset="./asset/images/perwira-shock.png" alt="" class="" width="244" height="281">
+                            </picture>
+                            <picture class="perwiraHead perwiraHead3">
+                                <source srcset="./asset/images/perwira-angry-m.png" media="(max-width: 768px)" alt=""
+                                    width="57" height="67">
+                                <img srcset="./asset/images/perwira-angry.png" alt="" class="" width="244" height="281">
+                            </picture>
+                            <picture class="perwiraHead perwiraHead4">
+                                <source srcset="./asset/images/perwira-wsmile-m.png" media="(max-width: 768px)" alt=""
+                                    width="57" height="67">
+                                <img srcset="./asset/images/perwira-wsmile.png" alt="" class="" width="244"
+                                    height="281">
+                            </picture>
+                            <picture class="perwira">
+                                <source srcset="./asset/images/perwira-body-m.png" media="(max-width: 768px)" alt=""
+                                    width="100" height="63">
+                                <img srcset="./asset/images/perwira-body.png" alt="" class="" width="366" height="231">
+                            </picture>
+                        </div>
                     </div>
                     <div class="scrollWrap">
                         <div class="scroll"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="figure center-flex heightFull opac0">
+                    <h3 class="articleCaption figureCaption text-center">Komitmen
+                        Bersama</h3>
+                    <div class="figureInfo coverInfo">
+                        Klik untuk melihat pernyataan masing-masing tokoh.
+                    </div>
+                    <div class="figureList">
+                        <div class="figureItem figureItem1">
+                            <button class="button figureButton" onclick="triggerPopup(popup1)"
+                                aria-label="trigger popup">
+                                <picture class="figureImg">
+                                    <source srcset="./asset/images/figure/mobile/Erick-Thohir.png"
+                                        media="(max-width: 768px)" alt="" width="329" height="328">
+                                    <img srcset="./asset/images/figure/Erick-Thohir.png" alt="Erick Thohir" class=""
+                                        width="94" height="112">
+                                </picture>
+                                <div class="figureItem__wrap">
+                                    <div class="figureName">Erick Thohir</div>
+                                    <div class="figureTitle">Menteri BUMN</div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="figureItem figureItem2">
+                            <button class="button figureButton" onclick="triggerPopup(popup2)"
+                                aria-label="trigger popup">
+                                <picture class="figureImg">
+                                    <source srcset="./asset/images/figure/mobile/Hadi-Tjahjanto.png"
+                                        media="(max-width: 768px)" alt="" width="329" height="328">
+                                    <img srcset="./asset/images/figure/Hadi-Tjahjanto.png" alt="Hadi Tjahjanto" class=""
+                                        width="94" height="112">
+                                </picture>
+                                <div class="figureItem__wrap">
+                                    <div class="figureName">Hadi Tjahjanto</div>
+                                    <div class="figureTitle">Menteri ATR/Kepala BPN</div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="figureItem figureItem3">
+                            <button class="button figureButton" onclick="triggerPopup(popup3)"
+                                aria-label="trigger popup">
+                                <picture class="figureImg">
+                                    <source srcset="./asset/images/figure/mobile/Nirwono-Joga.png"
+                                        media="(max-width: 768px)" alt="" width="329" height="328">
+                                    <img srcset="./asset/images/figure/Nirwono-Joga.png" alt="Nirwono Joga.png" class=""
+                                        width="94" height="112">
+                                </picture>
+                                <div class="figureItem__wrap">
+                                    <div class="figureName">Nirwono Joga</div>
+                                    <div class="figureTitle">Koordinator Pusat Studi Perkotaan</div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="figureItem figureItem4">
+                            <button class="button figureButton" onclick="triggerPopup(popup4)"
+                                aria-label="trigger popup">
+                                <picture class="figureImg">
+                                    <source srcset="./asset/images/figure/mobile/Bernardus-Djonoputro.png"
+                                        media="(max-width: 768px)" alt="" width="329" height="328">
+                                    <img srcset="./asset/images/figure/Bernardus-Djonoputro.png"
+                                        alt="Bernardus Djonoputro" class="" width="94" height="112">
+                                </picture>
+                                <div class="figureItem__wrap">
+                                    <div class="figureName">Bernardus Djonoputro</div>
+                                    <div class="figureTitle">Ketua Majelis Kode Etik IAP Indonesia</div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="figureItem figureItem5">
+                            <button class="button figureButton" onclick="triggerPopup(popup5)"
+                                aria-label="trigger popup">
+                                <picture class="figureImg">
+                                    <source srcset="./asset/images/figure/mobile/Putra-Adhiguna.png"
+                                        media="(max-width: 768px)" alt="" width="329" height="328">
+                                    <img srcset="./asset/images/figure/Putra-Adhiguna.png" alt="Putra Adhiguna" class=""
+                                        width="94" height="112">
+                                </picture>
+                                <div class="figureItem__wrap">
+                                    <div class="figureName">Putra Adhiguna</div>
+                                    <div class="figureTitle">Analis IEEFA</div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="figureItem figureItem6">
+                            <button class="button figureButton" onclick="triggerPopup(popup6)"
+                                aria-label="trigger popup">
+                                <picture class="figureImg">
+                                    <source srcset="./asset/images/figure/mobile/Yayat-Supriatna.png"
+                                        media="(max-width: 768px)" alt="" width="329" height="328">
+                                    <img srcset="./asset/images/figure/Yayat-Supriatna.png" alt="Yayat Supriatna"
+                                        class="" width="94" height="112">
+                                </picture>
+                                <div class="figureItem__wrap">
+                                    <div class="figureName">Yayat Supriatna</div>
+                                    <div class="figureTitle">Master Planning Universitas Trisakti</div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="figureItem figureItem7">
+                            <button class="button figureButton" onclick="triggerPopup(popup7)"
+                                aria-label="trigger popup">
+                                <picture class="figureImg">
+                                    <source srcset="./asset/images/figure/mobile/Trubus-Rahardiansyah.png"
+                                        media="(max-width: 768px)" alt="" width="329" height="328">
+                                    <img srcset="./asset/images/figure/Trubus-Rahardiansyah.png"
+                                        alt="Trubus Rahardiansyah" class="" width="94" height="112">
+                                </picture>
+                                <div class="figureItem__wrap">
+                                    <div class="figureName">Trubus Rahardiansyah</div>
+                                    <div class="figureTitle">Ketua Umum AAKI</div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="figureItem figureItem8">
+                            <button class="button figureButton" onclick="triggerPopup(popup8)"
+                                aria-label="trigger popup">
+                                <picture class="figureImg">
+                                    <source srcset="./asset/images/figure/mobile/Fabby-Tumiwa.png"
+                                        media="(max-width: 768px)" alt="" width="329" height="328">
+                                    <img srcset="./asset/images/figure/Fabby-Tumiwa.png" alt="Fabby Tumiwa" class=""
+                                        width="94" height="112">
+                                </picture>
+                                <div class="figureItem__wrap">
+                                    <div class="figureName">Fabby Tumiwa</div>
+                                    <div class="figureTitle">Direktur Eksekutif IESR</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="figureBg">
+                        <div class="figureBg__base">
+                            <picture>
+                                <img srcset="./asset/images/figureBase.png" alt="" class="" width="1920" height="391">
+                            </picture>
+                        </div>
+                        <picture class="figureBg__build figureBg--green">
+                            <img srcset="./asset/images/figureBg-green.png" alt="" class="" width="1920" height="1080">
+                        </picture>
+                        <picture class="figureBg__build figureBg--orange">
+                            <img srcset="./asset/images/figureBg-orange.png" alt="" class="" width="1920" height="1080">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="credit center-flex heightFull opac0">
+                    <div class="creditWrap center-flex">
+                    	<div class="creditContent text-center">
+                    		<div class="creditCol">
+                    			<div class="creditTitle">Penulis & Editor Naskah</div>
+                    			<div class="creditName">Yustinus Andri DP</div>
+                    			<div class="creditName">Gajah Kusumo</div>
+                    		</div>
+                    		<div class="creditCol">
+                    			<div class="creditTitle">Ilustrasi & Layout</div>
+                    			<div class="creditName">Muhammad Afandi</div>
+                    			<div class="creditName">Zoya Rasyidi Thoriq</div>
+                    		</div>
+                    		<div class="creditCol">
+                    			<div class="creditTitle">Developer</div>
+                    			<div class="creditName">Tim Bisnis.com</div>
+                    		</div>
+                    	</div>
+                    </div>
+                    <div class="creditBottom center-flex">
+                    	<a href="https://www.bisnis.com/" target="_self">
+                    		<picture class="creditBottom__logo">
+                    			<img srcset="./asset/images/bisniscom.svg" alt="Bisniscom" class="" width="233" height="53" loading="lazy">
+                    		</picture>
+                    	</a>
+                    	<div class="creditSp"></div>
+                    	<div class="creditSoc center-flex">
+                    		<a href="https://www.instagram.com/bisniscom/" target="_blank" class="creditSoc__item">
+                    			<picture class="creditSoc__logo">
+                    				<img srcset="./asset/images/icon-ig.png" alt="Instagram" class="" width="40" height="40" loading="lazy">
+                    			</picture>
+                    		</a>
+                    		<a href="https://twitter.com/Bisniscom" target="_blank" class="creditSoc__item">
+                    			<picture class="creditSoc__logo">
+                    				<img srcset="./asset/images/icon-tw.png" alt="Twitter" class="" width="40" height="40" loading="lazy">
+                    			</picture>
+                    		</a>
+                    		<a href="https://facebook.com/wwwbisniscom" target="_blank" class="creditSoc__item">
+                    			<picture class="creditSoc__logo">
+                    				<img srcset="./asset/images/icon-fb.png" alt="Facebook" class="" width="40" height="40" loading="lazy">
+                    			</picture>
+                    		</a>
+                    	</div>
+                    	<button class="button creditBack" onclick="refreshPage()" aria-label="Back to Top">
+                    		<picture>
+                    			<source srcset="./asset/images/icon-back.png" media="(max-width: 768px)" alt="">
+                    			<img srcset="./asset/images/icon-back.png" alt="" width="40" height="40" class="">
+                    		</picture>
+                    	</button>
+                    </div>                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="popup center-flex" id="popup1">
+                    <div class="popupWrap">
+                        <button class="button buttonClose popupClose" onclick="closePopup()" aria-label="Close popup">
+                            <img src="./asset/images/close.png" alt="" loading="lazy" width="88" height="88">
+                        </button>
+                        <div class="popupContent">
+                            <div class="popupContent__wrap">
+                                <div class="popupName">Erick Thohir</div>
+                                <div class="popupTitle">Menteri BUMN</div>
+                                <div class="popupQuote">“Upaya perluasan buffer zone maupun relokasi permukiman
+                                    memerlukan
+                                    kerja
+                                    sama dari pemerintah daerah… Ini kenapa kerja sama pemerintah pusat dan pemerintah
+                                    daerah
+                                    harus terjalin, khususnya yang Plumpang dulu.”</div>
+                            </div>
+                        </div>
+                        <div class="popupImg">
+                            <picture>
+                                <source srcset="./asset/images/figure/mobile/Erick-Thohir.png"
+                                    media="(max-width: 768px)" alt="" width="314" height="314">
+                                <img srcset="./asset/images/figure/Erick-Thohir.png" alt="Erick Thohir" class=""
+                                    width="94" height="112">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup center-flex" id="popup2">
+                    <div class="popupWrap">
+                        <button class="button buttonClose popupClose" onclick="closePopup()" aria-label="Close popup">
+                            <img src="./asset/images/close.png" alt="" loading="lazy" width="88" height="88">
+                        </button>
+                        <div class="popupContent">
+                            <div class="popupContent__wrap">
+                                <div class="popupName">Hadi Tjahjanto</div>
+                                <div class="popupTitle">Menteri ATR/Kepala BPN</div>
+                                <div class="popupQuote">“Keberadaan Rencana Tata Ruang (RTR), juga telah mengatur
+                                    batasan/ketentuan yang perlu dipenuhi dalam pemanfaatan ruang baik yang
+                                    diperbolehkan seluruhnya, bersyarat, terbatas dan tidak diperbolehkan. Tidak
+                                    terkecuali dengan pemanfaatan ruang di sekitar Obvitnas.”</div>
+                            </div>
+                        </div>
+                        <div class="popupImg">
+                            <picture>
+                                <source srcset="./asset/images/figure/mobile/Hadi-Tjahjanto.png"
+                                    media="(max-width: 768px)" alt="" width="314" height="314">
+                                <img srcset="./asset/images/figure/Hadi-Tjahjanto.png" alt="Hadi Tjahjanto" class=""
+                                    width="94" height="112">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup center-flex" id="popup3">
+                    <div class="popupWrap">
+                        <button class="button buttonClose popupClose" onclick="closePopup()" aria-label="Close popup">
+                            <img src="./asset/images/close.png" alt="" loading="lazy" width="88" height="88">
+                        </button>
+                        <div class="popupContent">
+                            <div class="popupContent__wrap">
+                                <div class="popupName">Nirwono Joga</div>
+                                <div class="popupTitle">Koordinator Pusat Studi Perkotaan</div>
+                                <div class="popupQuote">“Setiap Obvitnas terutama yang terkait dengan migas, saat
+                                    perencanaan dan penataan posisinya tentu harus sudah dipikirkan matang, termasuk
+                                    soal pertahanan dan keamanannya. Sebab, apabila lumpuh, akan berpengaruh terhadap
+                                    stabilitas negara. Soal insiden kemarin, ini terkait lemahnya pengelolaan tata di
+                                    tingkat Pemda.”</div>
+                            </div>
+                        </div>
+                        <div class="popupImg">
+                            <picture>
+                                <source srcset="./asset/images/figure/mobile/Nirwono-Joga.png"
+                                    media="(max-width: 768px)" alt="" width="314" height="314">
+                                <img srcset="./asset/images/figure/Nirwono-Joga.png" alt="Nirwono Joga" class=""
+                                    width="94" height="112">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup popup4 center-flex" id="popup4">
+                    <div class="popupWrap">
+                        <button class="button buttonClose popupClose" onclick="closePopup()" aria-label="Close popup">
+                            <img src="./asset/images/close.png" alt="" loading="lazy" width="88" height="88">
+                        </button>
+                        <div class="popupContent">
+                            <div class="popupContent__wrap">
+                                <div class="popupName">Bernardus Djonoputro</div>
+                                <div class="popupTitle">Ketua Majelis Kode Etik Ikatan
+                                    Ahli Perencanaan (IAP) Indonesia</div>
+                                <div class="popupQuote">“Terkhusus diskursus perencanaan tata ruang yang melibatkan
+                                    objek vital nasional, jangan sampai mendikotomi mana yang salah dan mana yang lebih
+                                    penting. Namun, semua harus dikembalikan lagi kepada kesesuaian, karakter, dan
+                                    carrying capacity kawasan terkait. Jangan sampai setiap revisi rencana detail tata
+                                    ruang (RDTR) hanya mengesahkan kegiatan yang sudah ada di atas kawasan itu.”</div>
+                            </div>
+                        </div>
+                        <div class="popupImg">
+                            <picture>
+                                <source srcset="./asset/images/figure/mobile/Bernardus-Djonoputro.png"
+                                    media="(max-width: 768px)" alt="" width="314" height="314">
+                                <img srcset="./asset/images/figure/Bernardus-Djonoputro.png" alt="Bernardus Djonoputro"
+                                    class="" width="94" height="112">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup popup5 center-flex" id="popup5">
+                    <div class="popupWrap">
+                        <button class="button buttonClose popupClose" onclick="closePopup()" aria-label="Close popup">
+                            <img src="./asset/images/close.png" alt="" loading="lazy" width="88" height="88">
+                        </button>
+                        <div class="popupContent">
+                            <div class="popupContent__wrap">
+                                <div class="popupName">Putra Adhiguna</div>
+                                <div class="popupTitle">Analis Institute for Energy
+                                    Economics and Financial Analysis (IEEFA)</div>
+                                <div class="popupQuote">“Dari hasil audit aset kita akan ketahui bagaimana kondisi objek
+                                    vital tersebut, baik secara fasilitasnya, kondisi lingkungannya, apakah memiliki
+                                    buffer zone atau tidak. Dari situ, kita bisa merumuskan langkah selanjutnya. Untuk
+                                    peraturan, saya pikir ini tugas bersama semua pemangku kebijakan bagaimana penegakan
+                                    peraturan penataan aset Obvitnas harus dijalankan dengan baik.”</div>
+                            </div>
+                        </div>
+                        <div class="popupImg">
+                            <picture>
+                                <source srcset="./asset/images/figure/mobile/Putra-Adhiguna.png"
+                                    media="(max-width: 768px)" alt="" width="314" height="314">
+                                <img srcset="./asset/images/figure/Putra-Adhiguna.png" alt="Putra Adhiguna" class=""
+                                    width="94" height="112">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup center-flex" id="popup6">
+                    <div class="popupWrap">
+                        <button class="button buttonClose popupClose" onclick="closePopup()" aria-label="Close popup">
+                            <img src="./asset/images/close.png" alt="" loading="lazy" width="88" height="88">
+                        </button>
+                        <div class="popupContent">
+                            <div class="popupContent__wrap">
+                                <div class="popupName">Yayat Supriatna</div>
+                                <div class="popupTitle">Master Planning Universitas Trisakti</div>
+                                <div class="popupQuote">“Menurut hemat saya, solusi revitalisasi kawasan bisa diambil.
+                                    Kawasan tersebut ditata ulang, dibuat buffer zone, kemudian dibangunkan rumah susun,
+                                    dengan rumah susun itu dibangun fasilitas ekonomi, tempat sekolah, usaha, dibuat
+                                    cantik, pasti banyak yang tertarik, daripada dibuat kumuh.”</div>
+                            </div>
+                        </div>
+                        <div class="popupImg">
+                            <picture>
+                                <source srcset="./asset/images/figure/mobile/Yayat-Supriatna.png"
+                                    media="(max-width: 768px)" alt="" width="314" height="314">
+                                <img srcset="./asset/images/figure/Yayat-Supriatna.png" alt="Yayat Supriatna" class=""
+                                    width="94" height="112">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup popup7 center-flex" id="popup7">
+                    <div class="popupWrap">
+                        <button class="button buttonClose popupClose" onclick="closePopup()" aria-label="Close popup">
+                            <img src="./asset/images/close.png" alt="" loading="lazy" width="88" height="88">
+                        </button>
+                        <div class="popupContent">
+                            <div class="popupContent__wrap">
+                                <div class="popupName">Trubus Rahardiansyah</div>
+                                <div class="popupTitle">Ketua Umum Asosiasi Analis
+                                    Kebijakan Indonesia (AAKI)</div>
+                                <div class="popupQuote">“Buffer zone merupakan bagian dari Health, Safety, Security, and
+                                    Environment (HSSE) atau keselamatan kerja. Jadi pentingnya buffer zone yang luas
+                                    bukan hanya untuk menjaga dampak kerentanan eksternal, tapi juga kerentanan internal
+                                    karena yang berhubungan dengan migas itu rentan terbakar atau meledak. Itu
+                                    penanggulangannya butuh ruang yang luas dan leluasa.”</div>
+                            </div>
+                        </div>
+                        <div class="popupImg">
+                            <picture>
+                                <source srcset="./asset/images/figure/mobile/Trubus-Rahardiansyah.png"
+                                    media="(max-width: 768px)" alt="" width="314" height="314">
+                                <img srcset="./asset/images/figure/Trubus-Rahardiansyah.png" alt="Trubus Rahardiansyah"
+                                    class="" width="94" height="112">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup popup8 center-flex" id="popup8">
+                    <div class="popupWrap">
+                        <button class="button buttonClose popupClose" onclick="closePopup()" aria-label="Close popup">
+                            <img src="./asset/images/close.png" alt="" loading="lazy" width="88" height="88">
+                        </button>
+                        <div class="popupContent">
+                            <div class="popupContent__wrap">
+                                <div class="popupName">Fabby Tumiwa</div>
+                                <div class="popupTitle">Direktur Eksekutif Institute for
+                                    Essential Services Reform (IESR)</div>
+                                <div class="popupQuote">“Dengan adanya kejadian-kejadian di beberapa Obvitnas terutama
+                                    yang terkait dengan migas, sepertinya perlu ditinjau ulang prosedur,
+                                    kepatuhan/compliance dan pengawasannya. Audit aset-aset internal itu merupakan
+                                    langkah awal, setelah itu untuk setiap aset vital tersebut dipetakan seluruh risiko
+                                    dan disusun rencana mitigasi risiko, serta implementasinya.”</div>
+                            </div>
+                        </div>
+                        <div class="popupImg">
+                            <picture>
+                                <source srcset="./asset/images/figure/mobile/Fabby-Tumiwa.png"
+                                    media="(max-width: 768px)" alt="" width="314" height="314">
+                                <img srcset="./asset/images/figure/Fabby-Tumiwa.png" alt="Fabby Tumiwa" class=""
+                                    width="94" height="112">
+                            </picture>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -414,6 +913,12 @@
         <!-- Template Image Content -->
         <!-- Fullpage Content -->
         <div id="fullpage" class="fullpage">
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section"></section>
             <section class="section"></section>
         </div>
         <!-- Fullpage Content -->
@@ -428,7 +933,7 @@
     <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/lottie.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/main.js"></script>
-
+    <script defer type="text/javascript" src="./asset/js/main-preloader.js"></script>
 </body>
 
 </html>

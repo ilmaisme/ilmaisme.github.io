@@ -12,6 +12,11 @@
         right: 20px;
         top: -66px;
 
+        @include max-responsive($w-vmd) {
+            right: 10px;
+            top: -30px;
+        }
+
         @include min-responsive($w-xxxl) {
             top: -90px;
         }
@@ -19,14 +24,22 @@
         img {
             width: 75%;
 
+            @include range-responsive($w-md, $w-vmd) {
+                width: 60px;
+            }
+
             @include min-responsive($w-xxxl) {
                 width: auto;
             }
         }
     }
 
-    &Wrap{
+    &Wrap {
         @include min-responsive($w-vlg) {
+            margin-bottom: calc(var(--app-height) - (var(--app-height) - 28%));
+        }
+
+        @include min-responsive($w-xl) {
             margin-bottom: calc(var(--app-height) - (var(--app-height) - 5%));
         }
     }
@@ -35,15 +48,18 @@
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        background: url(../images/accident-content-bg.png);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
+        background: #E60000;
+        border-radius: 7px;
+        top: var(--app-height);
 
         @include min-responsive($w-vlg) {
             padding: 20px 80px;
             width: 945px;
             height: 180px;
+            background: url(../images/accident-content-bg.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
         @include min-responsive($w-xxxl) {
@@ -58,16 +74,23 @@
             position: absolute;
             background-size: contain;
             background-repeat: no-repeat;
+            z-index: 1;
         }
 
         &::before {
             width: 58px;
             height: 50px;
-            top: 26px;
-            left: 20px;
-            background: url(../images/content-before.png);
+            top: 0;
+            left: 5px;
+            background-image: url(../images/content-before-m.png);
             background-size: contain;
             background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                top: 26px;
+                left: 20px;
+                background-image: url(../images/content-before.png);
+            }
 
             @include min-responsive($w-xxxl) {
                 width: 89px;
@@ -77,17 +100,140 @@
 
         &::after {
             width: 60px;
-            height: 46px;
-            bottom: 15px;
-            right: 20px;
-            background: url(../images/content-after.png);
+            height: 35px;
+            bottom: -4px;
+            right: 8px;
+            background-image: url(../images/content-after-m.png);
             background-size: contain;
             background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                height: 46px;
+                bottom: 15px;
+                right: 20px;
+                background-image: url(../images/content-after.png);
+            }
 
             @include min-responsive($w-xxxl) {
                 width: 85px;
                 height: 46px;
                 bottom: 20px;
+            }
+        }
+    }
+
+    &Title {
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 0;
+
+            @include min-responsive($w-vlg) {
+                content: none;
+            }
+        }
+
+        &::before {
+            left: -3px;
+            width: calc(100% + 5px);
+            top: -11px;
+            height: 29px;
+            background-image: url(../images/accident-content-top-m.png);
+            background-position: top;
+
+            @include max-responsive($w-xm) {
+                top: -8px;
+            }
+
+            @include range-responsive($w-md, $w-vlg) {
+                left: -45px;
+                width: calc(100% + 32px);
+                top: -25px;
+            }
+        }
+
+        &::after {
+            left: -4px;
+            width: calc(100% + 7px);
+            bottom: -11px;
+            height: 31px;
+            background-image: url(../images/accident-content-bottom-m.png);
+            background-position: bottom;
+
+            @include range-responsive($w-md, $w-vlg) {
+                left: 0;
+                width: calc(100% + 57px);
+                bottom: -24px;
+            }
+
+            @include max-responsive($w-xm) {
+                bottom: -9px;
+            }
+        }
+
+        &__wrap {
+            padding: 10px 20px;
+            height: 166px;
+            display: flex;
+            align-items: center;
+
+            @include min-responsive($w-vlg) {
+                padding: 0;
+                height: auto;
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: 0;
+
+                @include min-responsive($w-vlg) {
+                    content: none;
+                }
+            }
+
+            &::before {
+                top: -17px;
+                left: -7px;
+                height: calc(100% + 36px);
+                width: 8px;
+                background-image: url(../images/accident-content-left-m.png);
+                background-position: top;
+
+                @include max-responsive($w-xm) {
+                    top: -21px;
+                    height: calc(100% + 49px);
+                }
+
+                @include range-responsive($w-md, $w-vlg) {
+                    top: -21px;
+                    height: calc(100% + 42px);
+                }
+            }
+
+            &::after {
+                top: -12px;
+                right: -7px;
+                height: calc(100% + 28px);
+                width: 8px;
+                background-image: url(../images/accident-content-right-m.png);
+                background-position: bottom;
+
+                @include max-responsive($w-xm) {
+                    top: -16px;
+                    height: calc(100% + 36px);
+                }
+
+                @include range-responsive($w-md, $w-vlg) {
+                    height: calc(100% + 30px);
+                }
             }
         }
     }
