@@ -6,22 +6,15 @@
 
     &__start {
         background: #F6E8C2;
+        transition: opacity .7s ease-in-out;
     }
 
     &__intro {
-        background: #98766D;
-    }
+        background: #9f7d74;
+        transition: opacity .7s ease-in-out;
 
-    &__grey {
-        background: #a2a2a2;
-    }
-
-    &__black {
-        // background-image: url(../images/start-bg.jpg);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        transition: opacity .3s ease-in-out;
-        // background: radial-gradient(76.23% 61.06% at 32.59% -16.10%, #494949 0%, #1B1B1B 100%);
+        @include min-responsive($w-vmd) {
+            background: #a1887d;
+        }
     }
 }

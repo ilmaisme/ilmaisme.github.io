@@ -1,6 +1,6 @@
 document.onreadystatechange = function (e) {
     // if (document.readyState == "interactive") {
-    var all = document.getElementsByTagName("*");
+    var all = document.getElementsByTagName("div");
     for (var i = 0, max = all.length; i < max; i++) {
         set_ele(all[i]);
     }
@@ -8,7 +8,7 @@ document.onreadystatechange = function (e) {
 }
 
 function check_element(ele) {
-    var all = document.getElementsByTagName("*");
+    var all = document.getElementsByTagName("div");
     var per_inc = 100 / all.length;
 
     if ($(ele).on()) {
