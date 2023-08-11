@@ -159,15 +159,15 @@
         @include min-responsive($w-vlg) {
             flex-wrap: nowrap;
             position: absolute;
-            bottom: 60px;
-
-            @include max-height($w-hmd) {
-                bottom: -18px
-            }
+            bottom: 30px;
         }
 
         @include min-responsive($w-xl) {
-            bottom: 73px;
+            bottom: 43px;
+
+            @include max-height($w-hmd) {
+                bottom: 28px
+            }
         }
 
         @include min-responsive($w-xxxl) {
@@ -366,10 +366,11 @@
 
             @include min-responsive($w-vlg) {
                 max-height: unset;
+                transform: scale(.8);
             }
 
             @include min-responsive($w-xxxl) {
-                max-width: unset;
+                transform: none;
             }
         }
     }

@@ -955,10 +955,40 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
+                $(".synergyAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 400
+                });
                 $(".perwiraStatic").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
+                    duration: 700
+                });
+                $(".perwiraStatic").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".synergyContent").velocity({
+                    top: "0"
+                }, {
+                    delay: 1400,
+                    duration: 700
+                });
+                $(".synergyItem1").velocity({
+                    top: "0"
+                }, {
+                    delay: 1800,
+                    duration: 700
+                });
+                $(".synergyItem2").velocity({
+                    top: "0"
+                }, {
+                    delay: 2200,
                     duration: 700
                 });
             }
@@ -981,58 +1011,19 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
-                $(".perwiraStatic").velocity({
-                    opacity: "1"
-                }, {
-                    delay: 700,
-                    duration: 700
-                });
-            }
-            if (origin.index == 11 && direction == 'down') {
                 $(".synergyAnim").velocity({
-                    top: "20%"
-                }, {
-                    delay: 0,
-                    duration: 700
-                });
-                $(".perwiraStatic").velocity({
-                    opacity: "1"
-                }, {
-                    delay: 400,
-                    duration: 700
-                });
-                $(".synergyContent").velocity({
-                    top: "0"
-                }, {
-                    delay: 400,
-                    duration: 700
-                });
-                $(".synergyItem1").velocity({
-                    top: "0"
-                }, {
-                    delay: 700,
-                    duration: 700
-                });
-                $(".synergyItem2").velocity({
-                    top: "0"
-                }, {
-                    delay: 1100,
-                    duration: 700
-                });
-            }
-            if (origin.index == 12 && direction == 'up') {
-                $(".synergyAnim").velocity({
-                    top: "0"
-                }, {
-                    delay: 0,
-                    duration: 700
-                });
-                $(".perwiraStatic").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
                     duration: 700
                 });
+                $(".perwiraStatic").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                
                 $(".synergyContent").velocity({
                     top: "100vh"
                 }, {
@@ -1046,7 +1037,7 @@ $(document).ready(function () {
                     duration: 700
                 });
             }
-            if (origin.index == 12 && direction == 'down') {
+            if (origin.index == 11 && direction == 'down') {
                 $(".figure").velocity({
                     top: "0"
                 }, {
@@ -1061,6 +1052,12 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 700
+                });                
+                $(".synergyAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
                 });
                 $(".perwiraStatic").velocity({
                     opacity: "0"
@@ -1069,7 +1066,7 @@ $(document).ready(function () {
                     duration: 700
                 });
             }
-            if (origin.index == 13 && direction == 'up') {
+            if (origin.index == 12 && direction == 'up') {
                 $(".figure").velocity({
                     top: "100vh"
                 }, {
@@ -1084,6 +1081,12 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 700
+                });                
+                $(".synergyAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 400
                 });
                 $(".perwiraStatic").velocity({
                     opacity: "1"
@@ -1092,7 +1095,7 @@ $(document).ready(function () {
                     duration: 700
                 });
             }
-            if (origin.index == 13 && direction == 'down') {
+            if (origin.index == 12 && direction == 'down') {
                 $(".figure").velocity({
                     top: "-100vh"
                 }, {
@@ -1112,7 +1115,7 @@ $(document).ready(function () {
                     }
                 });
             }
-            if (origin.index == 14 && direction == 'up') {
+            if (origin.index == 13 && direction == 'up') {
                 $(".figure").velocity({
                     top: "0"
                 }, {

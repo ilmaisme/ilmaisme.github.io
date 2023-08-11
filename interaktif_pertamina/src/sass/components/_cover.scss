@@ -10,6 +10,14 @@
 
         .coverPic {
             transform: translate(-50%, calc(var(--app-height) - var(--app-height)*2));
+
+            @include min-responsive($w-xl) {
+                transform: translate(-50%, calc(var(--app-height) - var(--app-height)*2 + 20%));
+            }
+
+            @include min-responsive($w-xxxl) {
+                transform: translate(-50%, calc(var(--app-height) - var(--app-height)*2));
+            }
         }
     }
 

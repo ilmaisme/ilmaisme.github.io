@@ -7,12 +7,19 @@
 
     &Content {
         position: absolute;
-        margin-top: 375px;
+        max-width: 345px;
+        margin-top: 240px;
+        padding: 20px;
+        left: calc(50% - 345px/2);
         margin-left: auto;
         margin-right: auto;
         background: #289928;
         border-radius: 7px;
         top: var(--app-height);
+
+        @include max-responsive($w-xm) {
+            padding: 5px 10px 20px;
+        }
 
         @include range-responsive($w-md, $w-vlg) {
             max-width: 345px;
@@ -29,9 +36,9 @@
             position: relative;
             left: 212px;
             margin-top: -46px;
-            padding: 20px;
+            padding: 20px 60px;
             width: 472px;
-            height: 385px;
+            height: 335px;
             background: url(../images/buffer-content-bg.png);
             background-position: center;
             background-size: contain;
@@ -39,18 +46,26 @@
         }
 
         @include min-responsive($w-xl) {
-            margin-top: 180px;
-            left: unset;
+            margin-top: 265px;
+            left: 164px;
 
             @include max-height($w-hmd) {
-                padding: 20px;
+                margin-top: 260px;
+                left: 0;
+                padding: 20px 50px;
                 width: 396px;
                 height: 320px;
-                margin-top: 270px;
+            }
+        }
+
+        @include min-responsive(1441px) {
+            @include max-height($w-lg) {
+                left: 0;
             }
         }
 
         @include min-responsive($w-xxxl) {
+            left: unset;
             padding: 20px 64px;
             width: 527px;
             height: 403px
@@ -75,12 +90,14 @@
             background-repeat: no-repeat;
 
             @include min-responsive($w-vlg) {
-                top: 40px;
-                left: 20px;
+                top: 34px;
+                left: 36px;
                 background-image: url(../images/content-before-thick.png);
             }
 
             @include min-responsive($w-xxxl) {
+                top: 40px;
+                left: 20px;
                 width: 89px;
             }
         }
@@ -96,8 +113,8 @@
 
             @include min-responsive($w-vlg) {
                 width: 60px;
-                bottom: 15px;
-                right: 20px;
+                bottom: 12px;
+                right: 38px;
                 background-image: url(../images/content-after.png);
             }
 
@@ -105,6 +122,7 @@
                 width: 85px;
                 height: 46px;
                 bottom: 20px;
+                right: 20px;
             }
         }
     }
@@ -121,8 +139,8 @@
         @include min-responsive($w-vmd) {
             top: unset;
             bottom: 75px;
-            left: -130px;
-            width: 140px;
+            left: -155px;
+            width: 185px;
             transform: none;
         }
 
@@ -149,8 +167,8 @@
         }
 
         &::before {
-            left: -22px;
-            width: calc(100% + 51px);
+            left: -18px;
+            width: calc(100% + 42px);
             top: -22px;
             height: 33px;
             background-image: url(../images/buffer-content-top-m.png);
@@ -202,19 +220,25 @@
             &::before {
                 top: -16px;
                 left: -19px;
-                height: calc(100% + 27px);
+                height: calc(100% + 32px);
                 width: 26px;
                 background-image: url(../images/buffer-content-left-m.png);
                 background-position: top;
             }
 
             &::after {
-                top: -18px;
+                top: -22px;
                 right: -20px;
-                height: calc(100% + 25px);
+                height: calc(100% + 33px);
                 width: 34px;
                 background-image: url(../images/buffer-content-right-m.png);
                 background-position: bottom;
+
+                @include max-responsive($w-xm) {
+                    top: -16px;
+                    right: -20px;
+                    height: calc(100% + 21px);
+                }
             }
         }
     }

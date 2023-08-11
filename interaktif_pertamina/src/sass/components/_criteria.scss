@@ -10,7 +10,7 @@
             background-repeat: no-repeat;
 
             @include max-height($w-hmd) {
-                padding: 20px 75px;
+                padding: 10px;
             }
         }
 
@@ -40,7 +40,7 @@
             font-size: 30px;
 
             @include max-height($w-hmd) {
-                font-size: 26px;
+                font-size: 22px;
             }
         }
     }
@@ -86,6 +86,11 @@
             padding-right: 12px;
             border-radius: 5px;
             border-top-right-radius: 22px;
+            height: 150px;
+
+            @include max-height($w-hmd) {
+                padding-left: 45px;
+            }
         }
 
         &::before,
@@ -110,6 +115,10 @@
 
             @include min-responsive($w-vlg) {
                 top: -25px;
+
+                @include max-height($w-hmd) {
+                    top: -22px;
+                }
             }
         }
 
@@ -128,26 +137,20 @@
 
             @include min-responsive($w-vlg) {
                 width: 334px;
-                height: 170px;
-            }
-
-            .criteriaItem__wrap::before {
-                @include min-responsive($w-vlg) {
-                    @include max-height($w-hmd) {
-                        left: -7px;
-                    }
-                }
+                height: 120px;
             }
 
             .criteriaItem__wrap::after {
 
                 @include min-responsive($w-vlg) {
-                    top: -13px;
-                    height: calc(100% + 37px);
+                    top: -7px;
+                    right: -7px;
+                    height: calc(100% + 25px);
 
                     @include max-height($w-hmd) {
-                        top: -8px;
-                        height: calc(100% + 28px);
+                        top: -2px;
+                        right: -5px;
+                        height: calc(100% + 12px);
                     }
                 }
             }
@@ -157,7 +160,6 @@
 
             @include min-responsive($w-vlg) {
                 width: 400px;
-                height: 170px;
             }
 
             &::before {
@@ -172,15 +174,10 @@
                     height: calc(100% + 20px);
 
                     @include max-height($w-hmd) {
-                        right: -7px;
+                        top: 6px;
+                        right: -5px;
+                        height: calc(100% + 5px);
                     }
-                }
-            }
-
-            .criteriaItem__wrap::before {
-                @include min-responsive($w-vlg) {
-                    top: -1px;
-                    left: -7px;
                 }
             }
         }
@@ -189,27 +186,18 @@
 
             @include min-responsive($w-vlg) {
                 width: 391px;
-                height: 206px;
             }
 
             .criteriaItem__wrap::after {
 
                 @include min-responsive($w-vlg) {
-                    top: -15px;
+                    right: -10px;
+                    height: calc(100% + 16px);
 
                     @include max-height($w-hmd) {
-                        top: -4px;
-                        right: -9px;
-                        height: calc(100% + 22px);
-                    }
-                }
-            }
-
-            .criteriaItem__wrap::before {
-                @include min-responsive($w-vlg) {
-                    @include max-height($w-hmd) {
-                        top: 2px;
-                        left: -8px;
+                        top: 7px;
+                        right: -6px;
+                        height: calc(100%);
                     }
                 }
             }
@@ -225,16 +213,17 @@
 
             @include min-responsive($w-vlg) {
                 width: 340px;
-                height: 225px;
             }
 
             .criteriaItem__wrap::after {
 
                 @include min-responsive($w-vlg) {
-                    top: -33px;
+                    top: -8px;
 
                     @include max-height($w-hmd) {
-                        top: -8px;
+                        top: -2px;
+                        height: calc(100% + 18px);
+                        right: -5px;
                     }
                 }
             }
@@ -242,20 +231,11 @@
             .criteriaItem__wrap::before {
 
                 @include min-responsive($w-vlg) {
-                    top: -5px;
 
                     @include max-height($w-hmd) {
                         top: 2px;
-                        left: -9px;
                     }
                 }
-            }
-        }
-
-        @include min-responsive($w-vlg) {
-            @include max-height($w-hmd) {
-                margin: 30px 20px 34px 60px;
-                height: 136px;
             }
         }
 
@@ -278,11 +258,9 @@
                 background-position: left;
 
                 @include min-responsive($w-vlg) {
-                    left: -10px;
-                    background-size: cover;
 
                     @include max-height($w-hmd) {
-                        background-size: contain;
+                        left: -4px;
                     }
                 }
             }
@@ -303,6 +281,13 @@
                 }
             }
         }
+
+        @include min-responsive($w-vlg) {
+            @include max-height($w-hmd) {
+                margin: 30px 20px 24px 60px;
+                height: 80px;
+            }
+        }
     }
 
     &Num {
@@ -311,11 +296,12 @@
         top: -21px;
         left: 10px;
         width: 28px;
+        z-index: 1;
 
         @include min-responsive($w-vlg) {
             top: 28px;
             left: -46px;
-            width: 93px;
+            width: 75px;
 
             @include max-height($w-hmd) {
                 top: 18px;
@@ -329,10 +315,10 @@
         z-index: 1;
 
         @include min-responsive($w-vlg) {
-            font-size: 24px;
+            font-size: 20px;
 
             @include max-height($w-hmd) {
-                font-size: 18px;
+                font-size: 16px;
             }
         }
     }

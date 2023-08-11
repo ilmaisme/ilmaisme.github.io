@@ -20,8 +20,12 @@
         }
 
         @include min-responsive($w-vmd) {
-            font-size: 40px;
+            font-size: 34px;
             letter-spacing: unset;
+        }
+
+        @include min-responsive($w-xxxl) {
+            font-size: 40px;
         }
 
         &::before,
@@ -62,7 +66,7 @@
             bottom: -11px;
             height: 18px;
             background-image: url(../images/intro-content-bottom-m.png);
-            background-position: bottom;            
+            background-position: bottom;
 
             @include range-responsive($w-md, $w-vlg) {
                 left: -16px;
@@ -93,7 +97,7 @@
 
             &::before {
                 top: -13px;
-                left: -16px;
+                left: -15px;
                 height: calc(100% + 26px);
                 width: 20px;
                 background-image: url(../images/intro-content-left-m.png);
@@ -136,11 +140,15 @@
         }
 
         @include min-responsive($w-vlg) {
-            font-size: 24px;
+            font-size: 20px;
 
             @include max-height($w-hmd) {
-                font-size: 20px;
+                font-size: 18px;
             }
+        }
+
+        @include min-responsive($w-xxxl) {
+            font-size: 24px;
         }
     }
 }
