@@ -1,4 +1,5 @@
 .status {
+    position: relative;
     flex-direction: column;
 
     @include min-responsive($w-md) {
@@ -12,6 +13,7 @@
         background: #289FC4;
         margin-top: 25px;
         margin-bottom: 25px;
+        top: var(--app-height);
 
         @include min-responsive($w-vlg) {
             margin-top: 0;
@@ -56,6 +58,7 @@
             position: absolute;
             background-size: contain;
             background-repeat: no-repeat;
+            z-index: 1;
 
             @include min-responsive($w-vlg) {
                 content: none;

@@ -59,6 +59,12 @@
 }
 
 // media
+@mixin min-height ($media) {
+  @media (min-height: $media) {
+    @content;
+  }
+}
+
 @mixin max-height ($media) {
   @media (max-height: $media) {
     @content;
@@ -107,11 +113,11 @@
 }
 
 @mixin animation($animations) {
-	-moz-animation: $animations;
-	-o-animation: $animations;
-	-ms-animation: $animations;
-	-webkit-animation: $animations;
-	animation: $animations;
+  -moz-animation: $animations;
+  -o-animation: $animations;
+  -ms-animation: $animations;
+  -webkit-animation: $animations;
+  animation: $animations;
 }
 
 // prefix declarations

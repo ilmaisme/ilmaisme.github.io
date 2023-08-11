@@ -1,5 +1,17 @@
 .figure {
+    position: relative;
     flex-direction: column;
+    top: var(--app-height);
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: #F6E8C2;
+        z-index: 0;
+    }
 
     &.active {
 
@@ -17,7 +29,7 @@
             }
         }
 
-        .figurerBg__build {
+        .figureBg__build {
             transform: translate(-50%, calc(var(--app-height) - var(--app-height)*2));
         }
     }
@@ -26,6 +38,9 @@
         display: none;
         position: absolute;
         bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
 
         @include min-responsive($w-vlg) {
             display: block;
@@ -35,7 +50,23 @@
             }
         }
 
+        @include min-responsive(1441px) {
+
+            @include max-height($w-lg) {
+                bottom: -85px
+            }
+        }
+
         &__base {
+            position: absolute;
+            bottom: 0px;
+            z-index: 1;
+            display: none;
+
+            @include min-responsive($w-vlg) {
+                display: block;
+            }
+
             img {
                 width: 100%;
             }
@@ -75,13 +106,21 @@
     }
 
     &Caption {
+        position: relative;
         color: $cl-green;
         text-transform: uppercase;
+        z-index: 1;
 
         @include min-responsive($w-vlg) {
             margin-top: calc(var(--app-height) - (var(--app-height) + 47%));
 
             @include max-height($w-hmd) {
+                margin-top: calc(var(--app-height) - (var(--app-height) + 40%));
+            }
+        }
+
+        @include min-responsive(1441px) {
+            @include max-height($w-lg) {
                 margin-top: calc(var(--app-height) - (var(--app-height) + 40%));
             }
         }
@@ -100,7 +139,7 @@
             left: 42px;
             width: 255px;
             background-image: url(../images/figure-info.png);
-            z-index: 1;
+            z-index: 2;
 
             @include max-height($w-hmd) {
                 left: 12px;
@@ -115,17 +154,20 @@
         flex-wrap: wrap;
         justify-content: space-around;
         margin-top: 15px;
+        z-index: 1;
 
         @include min-responsive($w-vlg) {
             flex-wrap: nowrap;
             position: absolute;
-            bottom: 73px;
-            z-index: 0;
+            bottom: 60px;
 
             @include max-height($w-hmd) {
                 bottom: -18px
             }
+        }
 
+        @include min-responsive($w-xl) {
+            bottom: 73px;
         }
 
         @include min-responsive($w-xxxl) {
@@ -137,7 +179,7 @@
         }
 
         &:hover {
-            z-index: 1;
+            z-index: 2;
         }
     }
 
@@ -149,6 +191,10 @@
 
         @include min-responsive($w-vlg) {
             width: auto;
+            margin: 0 -60px;
+        }
+
+        @include min-responsive($w-xl) {
             margin: 0 -90px;
         }
 

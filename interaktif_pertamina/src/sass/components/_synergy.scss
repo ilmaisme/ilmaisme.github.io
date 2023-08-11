@@ -2,12 +2,18 @@
     justify-content: center;
     flex-direction: column;
 
+    &Wrap {
+        top: var(--app-height);
+        background: #F6E8C2;
+    }
+
     &Content {
         position: relative;
         padding: 20px 30px;
         margin-left: auto;
         margin-right: auto;
         background: $cl-green;
+        top: var(--app-height);
 
         @include min-responsive($w-vlg) {
             width: 734px;
@@ -33,6 +39,7 @@
             position: absolute;
             background-size: contain;
             background-repeat: no-repeat;
+            z-index: 1;
         }
 
         &::before {
@@ -100,12 +107,32 @@
         }
     }
 
+    &Anim {
+        position: absolute;
+        width: 100%;
+        margin-left: -15px;
+        margin-right: -15px;
+
+        @include min-responsive($w-xl) {
+            width: $width-container;
+
+            @include max-height($w-hmd) {
+                width: $w-vlg;
+            }
+        }
+
+        @include min-responsive($w-xxl) {
+            width: 1280px;
+        }
+    }
+
     &Item {
         position: relative;
         text-align: center;
         margin-top: 15px;
         margin-bottom: 15px;
         border-top-left-radius: 7px;
+        top: var(--app-height);
 
         @include min-responsive($w-vmd) {
             margin-top: 0;
@@ -125,7 +152,7 @@
             position: absolute;
             background-size: contain;
             background-repeat: no-repeat;
-            z-index: -1;
+            z-index: 0;
 
             @include min-responsive($w-vlg) {
                 content: none;
@@ -163,7 +190,7 @@
                 position: absolute;
                 background-size: contain;
                 background-repeat: no-repeat;
-                z-index: -1;
+                z-index: 0;
 
                 @include min-responsive($w-vlg) {
                     content: none;

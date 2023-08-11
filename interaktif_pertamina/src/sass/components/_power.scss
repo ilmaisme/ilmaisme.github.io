@@ -18,7 +18,7 @@
                 width: 768px;
             }
 
-            @include min-responsive($w-vmd) {
+            @include min-responsive($w-vlg) {
                 width: 1440px;
             }
 
@@ -26,6 +26,16 @@
                 width: 1920px;
                 left: unset;
                 right: 0;
+
+                @include max-height($w-lg) {
+                    right: -260px;
+                }
+            }
+
+            @include range-responsive($w-vmd, $w-vlg) {
+                width: 1440px;
+                top: -100px;
+                left: -416px;
             }
         }
     }
@@ -44,7 +54,7 @@
                 top: 654px;
             }
 
-            @include min-responsive($w-vmd) {
+            @include min-responsive($w-vlg) {
                 width: 1000px;
                 left: -124px;
                 top: -150px;
@@ -55,6 +65,19 @@
                 left: unset;
                 right: 720px;
                 top: -194px;
+
+                @include max-height($w-lg) {
+                    right: 484px;
+                    top: -133px;
+                    width: 1200px;
+                }
+            }
+
+            @include range-responsive($w-vmd, $w-vlg) {
+                width: 910px;
+                left: -55px;
+                top: unset;
+                bottom: -64px;
             }
         }
 
@@ -80,6 +103,15 @@
                 right: 0;
                 top: 0px;
                 width: 880px;
+
+                @include max-height($w-lg) {
+                    right: -263px;
+                }
+            }
+
+            @include range-responsive($w-vmd, $w-vlg) {
+                left: 366px;
+                top: -100px;
             }
         }
 
@@ -90,19 +122,28 @@
             @include min-responsive($w-sm) {
                 width: 270px;
                 left: 72px;
+            }
 
-                @include min-responsive($w-vmd) {
-                    width: 330px;
-                    left: 712px;
-                    top: 25px;
-                }
+            @include min-responsive($w-vmd) {
+                width: 330px;
+                left: 712px;
+                top: 25px;
+            }
 
-                @include min-responsive(1441px) {
-                    width: 400px;
-                    left: unset;
-                    right: 550px;
-                    top: 60px;
+            @include min-responsive(1441px) {
+                width: 400px;
+                left: unset;
+                right: 550px;
+                top: 60px;
+
+                @include max-height($w-lg) {
+                    right: 300px;
                 }
+            }
+
+            @include range-responsive($w-vmd, $w-vlg) {
+                left: 285px;
+                top: -50px;
             }
 
             &2 {

@@ -1,10 +1,19 @@
 .total {
+    background: #289FC4;
+    transition: opacity .7s ease-in-out;
+
+    &.active {
+        background: transparent;
+        transition: background 2s ease-in-out;
+    }
+
     &Content {
         position: relative;
         padding: 15px 14px;
         margin-left: auto;
         margin-right: auto;
         background: $cl-green;
+        top: var(--app-height);
 
         @include min-responsive($w-vlg) {
             padding: 20px 40px;
@@ -28,6 +37,7 @@
             position: absolute;
             background-size: contain;
             background-repeat: no-repeat;
+            z-index: 1;
         }
 
         &::before {
@@ -76,6 +86,10 @@
     }
 
     &Title {
+        @include range-responsive($w-md, $w-vmd) {
+            font-size: 24px;
+        }
+
         @include min-responsive($w-vlg) {
             font-size: 30px;
 
@@ -88,7 +102,7 @@
             height: 182px;
 
             @include range-responsive($w-md, $w-vlg) {
-                padding: 55px 0;
+                padding: 28px 40px;
             }
 
             @include min-responsive($w-vlg) {

@@ -16,11 +16,19 @@
 
         @include range-responsive($w-md, $w-vlg) {
             max-width: 345px;
+            left: 50px;
+        }
+
+        @include min-responsive($w-vmd) {
+            margin-top: 485px;
+            left: 456px;
         }
 
         @include min-responsive($w-vlg) {
+            max-width: unset;
             position: relative;
-            margin-top: 180px;
+            left: 212px;
+            margin-top: -46px;
             padding: 20px;
             width: 472px;
             height: 385px;
@@ -28,6 +36,11 @@
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
+        }
+
+        @include min-responsive($w-xl) {
+            margin-top: 180px;
+            left: unset;
 
             @include max-height($w-hmd) {
                 padding: 20px;

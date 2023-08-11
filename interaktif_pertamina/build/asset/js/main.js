@@ -36,7 +36,7 @@ $(document).ready(function () {
                 $(".intro").addClass("active");
             }
         });
-        console.log('intro');
+        //console.log('intro');
     })
 
     // 1. Animation Cover
@@ -99,6 +99,15 @@ $(document).ready(function () {
         loop: true,
         autoplay: true,
         path: 'asset/lottie/mill.json',
+        name: 'myAnimation',
+    });
+    // 7. Animation Synergy
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('synergy'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/lottie/synergy.json',
         name: 'myAnimation',
     });
 
@@ -330,7 +339,7 @@ $(document).ready(function () {
                 fullpage_api.setKeyboardScrolling(true);
             }
             if (origin.index == 3 && direction == 'up') {
-                console.log("to criteria")
+                //console.log("to criteria")
                 $(".warning").velocity({
                     opacity: "0"
                 }, {
@@ -384,7 +393,7 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 4 && direction == 'up') {
-                console.log("to warning")
+                //console.log("to warning")
                 $(".warning").removeClass("active");
                 $(".power").velocity({
                     opacity: "1"
@@ -497,7 +506,7 @@ $(document).ready(function () {
                         $(".millDistance").removeClass("active blink")
                     }
                 });
-                console.log("distance red up")
+                //console.log("distance red up")
             }
             if (origin.index == 5 && direction == 'down') {
                 $(".buffer").velocity({
@@ -519,7 +528,7 @@ $(document).ready(function () {
                 $(".millDistance__50").velocity({
                     opacity: "1"
                 }, {
-                    delay: 2500,
+                    delay: 3000,
                     duration: 700,
                     begin: function () {
                         $(".millDistance__50").addClass("active")
@@ -549,6 +558,18 @@ $(document).ready(function () {
                     begin: function () {
                         $(".millDistance").removeClass("blink")
                     }
+                });
+                $(".perwiraHead2").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".perwiraHead3").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
                 });
             }
             if (origin.index == 6 && direction == 'up') {
@@ -602,6 +623,514 @@ $(document).ready(function () {
                         $(".millDistance__50").removeClass("active")
                     }
                 });
+                $(".perwiraHead2").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".perwiraHead3").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 6 && direction == 'down') {
+                $(".buffer").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".bufferContent").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".buffer").removeClass("active")
+                        $(".millDistance__green").removeClass("active")
+                    }
+                });
+                $(".millDistance__50").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".millDistance__50").removeClass("active")
+                    }
+                });
+                $(".vital").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".vitalContent").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+            }
+            if (origin.index == 7 && direction == 'up') {
+                $(".buffer").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".bufferContent").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700,
+                    complete: function () {
+                        $(".buffer").addClass("active")
+                        $(".millDistance__green").addClass("active")
+                    }
+                });
+                $(".millDistance__50").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 3000,
+                    duration: 700,
+                    begin: function () {
+                        $(".millDistance__50").addClass("active")
+                    }
+                });
+                $(".vital").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".vitalContent").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 7 && direction == 'down') {
+                $(".perwiraHead4").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 2400,
+                    duration: 700
+                });
+                $(".total").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".perwiraStatic").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".totalContent").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 2400,
+                    duration: 700,
+                    begin: function () {
+                        $(".total").addClass("active");
+                    }
+                });
+                $(".totalContent").velocity({
+                    top: "0"
+                }, {
+                    delay: 1000,
+                    duration: 700
+                });
+                $(".perwiraStatic").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 2400,
+                    duration: 700
+                });
+                $(".mill").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 1400,
+                    duration: 700
+                });
+                $(".vital").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".vitalContent").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 8 && direction == 'up') {
+                $(".perwiraHead4").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".total").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".total").removeClass("active");
+                    }
+                });
+                $(".totalContent").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".mill").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 400
+                });
+                $(".vital").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".vitalContent").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+            }
+            if (origin.index == 8 && direction == 'down') {
+                $(".resource").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".resourceContent").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700,
+                    complete: function () {
+                        $(".resourceItem").removeClass("nactive");
+                    }
+                });
+                $(".total").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".totalContent").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 9 && direction == 'up') {
+                $(".total").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".totalContent").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+                $(".resource").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".resourceContent").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".resourceItem").addClass("nactive");
+                    }
+                });
+            }
+            if (origin.index == 9 && direction == 'down') {
+                $(".status").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".statusContent1").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+                $(".statusContent2").velocity({
+                    top: "0"
+                }, {
+                    delay: 800,
+                    duration: 700
+                });
+                $(".resource").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".resourceContent").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".resourceItem").addClass("nactive");
+                    }
+                });
+            }
+            if (origin.index == 10 && direction == 'up') {
+                $(".status").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".statusContent").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".resource").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".resourceContent").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700,
+                    complete: function () {
+                        $(".resourceItem").removeClass("nactive");
+                    }
+                });
+            }
+            if (origin.index == 10 && direction == 'down') {
+                $(".status").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".power").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".synergyWrap").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".perwiraStatic").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 11 && direction == 'up') {
+                $(".status").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".power").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".synergyWrap").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".perwiraStatic").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+            }
+            if (origin.index == 11 && direction == 'down') {
+                $(".synergyAnim").velocity({
+                    top: "20%"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".perwiraStatic").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+                $(".synergyContent").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+                $(".synergyItem1").velocity({
+                    top: "0"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".synergyItem2").velocity({
+                    top: "0"
+                }, {
+                    delay: 1100,
+                    duration: 700
+                });
+            }
+            if (origin.index == 12 && direction == 'up') {
+                $(".synergyAnim").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".perwiraStatic").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".synergyContent").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".synergyItem").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 12 && direction == 'down') {
+                $(".figure").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        $(".figure").addClass("active")
+                    }
+                });
+                $(".synergyWrap").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".perwiraStatic").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 13 && direction == 'up') {
+                $(".figure").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".figure").removeClass("active")
+                    }
+                });
+                $(".synergyWrap").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".perwiraStatic").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+            }
+            if (origin.index == 13 && direction == 'down') {
+                $(".figure").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".figure").removeClass("active")
+                    }
+                });
+                $(".credit").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        $(".credit").addClass("active")
+                    }
+                });
+            }
+            if (origin.index == 14 && direction == 'up') {
+                $(".figure").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        $(".figure").addClass("active")
+                    }
+                });
+                $(".credit").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".credit").removeClass("active")
+                    }
+                });
             }
         }
     })
@@ -615,7 +1144,7 @@ const pop = document.querySelectorAll(".popup");
 
 function triggerPopup(e) {
     e.classList.add('active');
-    console.log(e)
+    //console.log(e)
 }
 
 function closePopup() {

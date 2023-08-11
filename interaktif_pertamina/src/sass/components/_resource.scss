@@ -7,6 +7,7 @@
         margin-left: auto;
         margin-right: auto;
         background: $cl-green;
+        top: var(--app-height);
 
         @include min-responsive($w-vlg) {
             background: url(../images/resource-content-bg.png);
@@ -28,6 +29,42 @@
 
     &List {
         position: relative;
+        width: 424px;
+        height: 450px;
+        top: 0;
+        left: 0;
+
+        @include max-responsive($w-xm) {
+            width: 390px;
+            height: 340px;
+        }
+
+        @include range-responsive($w-hmd, $w-md) {
+            width: 675px;
+            height: 550px;
+            top: 130px;
+        }
+
+        @include min-responsive($w-vlg) {
+            position: absolute;
+            width: 1440px;
+            height: 810px;
+        }
+
+        @include min-responsive(1441px) {
+            width: 1920px;
+            top: 125px;
+            left: unset;
+            right: -350px;
+        }
+
+        @include range-responsive($w-vmd, $w-vlg) {
+            position: relative;
+            width: 630px;
+            height: 450px;
+            top: 0;
+            left: 115px;
+        }
     }
 
     &Item {
@@ -41,6 +78,15 @@
         background-size: contain;
         background-repeat: no-repeat;
         @include font-pack($size: 14px, $weight: $font-weight-sbold, $colour: $cl-black);
+        opacity: 1;
+        transition: all .7s ease-in;
+
+        &.nactive {
+            top: var(--app-height);
+            opacity: 0;
+            transition-delay: 0s;
+            transition: all .7s ease-out;
+        }
 
         @include min-responsive($w-vlg) {
             width: 329px;
@@ -69,23 +115,193 @@
         }
 
         &1 {
-            top: 141px;
+            top: 40px;
             left: 0;
+            transition-delay: .4s;
+
+            @include max-responsive($w-xm) {
+                top: 70px;
+            }
+
+            @include range-responsive($w-hmd, $w-md) {
+                top: 140px;
+            }
+
+            @include min-responsive($w-vlg) {
+                top: 200px;
+                left: 190px;
+            }
+
+            @include min-responsive($w-xl) {
+                top: 400px;
+                left: 190px;
+            }
+
+            @include min-responsive(1441px) {
+                @include min-height($w-hmd) {
+                    top: 380px;
+                    left: 380px;
+                }
+            }
+
+            @include min-responsive($w-xxxl) {
+                left: 0;
+            }
         }
 
         &2 {
-            top: 0;
-            left: calc(50% - 329px/2);
+            right: 140px;
+            top: 240px;
+            transition-delay: .8s;
+
+            @include max-responsive($w-xm) {
+                top: 170px;
+            }
+
+            @include min-responsive($w-vlg) {
+                top: 666px;
+                left: calc(50% - 329px/2);
+            }
+
+            @include min-responsive(1441px) {
+                @include max-height($w-lg) {
+                    top: 300px;
+                }
+            }
+
+            @include min-responsive($w-xxxl) {
+                top: 760px;
+                left: 380px;
+            }
         }
 
         &3 {
-            right: 0;
-            top: 141px;
+            top: 125px;
+            right: 75px;
+            transition-delay: 1.2s;
+
+            @include max-responsive($w-xm) {
+                top: -22px;
+                right: 90px;
+            }
+
+            @include range-responsive($w-vmd, $w-vlg) {
+                right: 0;
+            }
+
+            @include min-responsive($w-vlg) {
+                top: 0;
+            }
+
+            @include min-responsive($w-xl) {
+                right: 340px;
+                top: 440px;
+            }
+
+            @include min-responsive(1441px) {
+                @include min-height($w-hmd) {
+                    right: 540px;
+                }
+            }
+
+            @include min-responsive($w-xxxl) {
+                right: 780px;
+            }
         }
     }
 
     &Line {
         position: absolute;
+
+        &__desk {
+            display: none;
+
+            @include min-responsive($w-xl) {
+                display: block;
+            }
+        }
+
+        &__mob {
+            display: block;
+
+            @include min-responsive($w-xl) {
+                display: none;
+            }
+        }
+
+        &1 {
+            height: 100px;
+            top: 105px;
+            left: -46px;
+
+            @include min-responsive($w-vlg) {
+                height: auto;
+                left: -116px;
+                top: 60px;
+            }
+
+            @include min-responsive($w-xl) {
+                left: -116px;
+                top: -192px;
+            }
+        }
+
+        &2 {
+            top: 110px;
+            left: 20px;
+            height: 50px;
+            transform: rotate(180deg);
+
+            @include max-responsive($w-xm) {
+                left: 80px;
+            }
+
+            @include min-responsive($w-vlg) {
+                top: -124px;
+                left: unset;
+                height: auto;
+                transform: none;
+
+                @include max-height($w-hmd) {
+                    transform: rotate(180deg);
+                    top: 94px;
+                }
+            }
+
+            @include min-responsive(1441px) {
+                @include max-height($w-lg) {
+                    transform: rotate(180deg);
+                    top: 116px;
+                }
+            }
+        }
+
+        &3 {
+            top: -20px;
+            height: 60px;
+
+            @include max-responsive($w-xm) {
+                top: 112px;
+                transform: rotate(180deg);
+            }
+
+            @include min-responsive($w-vlg) {
+                transform: rotate(90deg);
+                top: -14px;
+                right: -70px;
+                height: auto;
+            }
+
+            @include min-responsive($w-xl) {
+                transform: none;
+                top: -80px;
+                right: -100px;
+
+                @include max-height($w-hmd) {
+                    right: -94px;
+                }
+            }
+        }
     }
 
     &Title {
@@ -96,7 +312,7 @@
             position: absolute;
             background-size: contain;
             background-repeat: no-repeat;
-            z-index: -1;
+            z-index: 0;
 
             @include min-responsive($w-vlg) {
                 content: none;
@@ -159,7 +375,7 @@
                 position: absolute;
                 background-size: contain;
                 background-repeat: no-repeat;
-                z-index: -1;
+                z-index: 0;
 
                 @include min-responsive($w-vlg) {
                     content: none;

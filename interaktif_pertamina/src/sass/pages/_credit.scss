@@ -1,4 +1,6 @@
 .credit {
+    position: relative;
+    top: var(--app-height);
     flex-direction: column;
     background: $cl-green;
 
@@ -9,8 +11,9 @@
             pointer-events: all;
         }
 
-        .creditName{
-            left: 0;
+        .creditName {
+            left: 0 !important;
+            opacity: 1;
         }
     }
 
@@ -24,6 +27,7 @@
     }
 
     &Name {
+        opacity: 0;
         position: relative;
         @include font-pack(false, 18px, $font-weight-sbold, $line-base, $cl-white);
         transition-property: all;
@@ -60,7 +64,7 @@
     }
 
     &Col {
-        margin-top: 20px;
+        margin-top: 30px;
 
         @include min-responsive($w-md) {
             margin-top: 40px;
@@ -143,6 +147,14 @@
                 max-width: unset;
                 margin-left: 10px;
                 margin-right: 10px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+
+                @include min-responsive($w-md) {
+                    margin-right: 10px;
+                }
             }
         }
     }

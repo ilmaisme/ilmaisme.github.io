@@ -15,6 +15,7 @@
         margin-left: auto;
         margin-right: auto;
         background: #289FC5;
+        top: var(--app-height);
 
         @include min-responsive($w-vlg) {
             padding: 20px 26px;
@@ -42,6 +43,7 @@
             position: absolute;
             background-size: contain;
             background-repeat: no-repeat;
+            z-index: 1;
         }
 
         &::before {
@@ -106,7 +108,7 @@
             position: absolute;
             background-size: contain;
             background-repeat: no-repeat;
-            z-index: -1;
+            z-index: 0;
 
             @include min-responsive($w-vlg) {
                 content: none;
@@ -169,7 +171,7 @@
                 position: absolute;
                 background-size: contain;
                 background-repeat: no-repeat;
-                z-index: -1;
+                z-index: 0;
 
                 @include min-responsive($w-vlg) {
                     content: none;
