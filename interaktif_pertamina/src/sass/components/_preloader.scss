@@ -31,14 +31,14 @@
     &Meter {
         position: relative;
         width: 260px;
-        height: 20px;
+        height: 16px;
         margin: 2px auto;
         box-sizing: content-box;
         overflow: hidden;
-        padding-top: 3px;
-        padding-bottom: 3px;
-        border-top: 2px solid #fff;
-        border-bottom: 2px solid #fff;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
 
         >span {
             display: block;
@@ -58,7 +58,7 @@
             right: 0;
             background-image: linear-gradient(-90deg, #fff 50%, transparent 0, transparent 50%, #fff 0, #fff calc(100% - 4px), transparent 0, transparent);
             z-index: 1;
-            background-size: 28px 20px;
+            background-size: 28px 16px;
             // animation: moveloading 2s linear infinite;
             margin: auto;
             width: calc(100% - 4px);
@@ -73,13 +73,15 @@
     &Img {
         &__wrap {
             position: relative;
+            max-width: 120px;
         }
     }
 
     &Gear {
         position: absolute;
-        top: 22px;
-        right: 4px;
+        width: 28px;
+        top: 16px;
+        right: 5px;
         @include animation(spinleft 4s linear infinite);
     }
 }

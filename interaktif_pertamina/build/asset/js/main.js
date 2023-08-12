@@ -263,7 +263,7 @@ $(document).ready(function () {
                 $(".warningSiren").velocity({
                     opacity: "1"
                 }, {
-                    delay: 0,
+                    delay: 1100,
                     duration: 700
                 });
                 $(".perwiraHead2").velocity({
@@ -283,7 +283,7 @@ $(document).ready(function () {
                     $(".warningSiren").velocity({
                         opacity: "0"
                     }, {
-                        delay: 0,
+                        delay: 400,
                         duration: 700
                     });
                 }, 3400);
@@ -410,7 +410,7 @@ $(document).ready(function () {
                 $(".warningSiren").velocity({
                     opacity: "1"
                 }, {
-                    delay: 0,
+                    delay: 1100,
                     duration: 700
                 });
                 $(".perwiraHead3").velocity({
