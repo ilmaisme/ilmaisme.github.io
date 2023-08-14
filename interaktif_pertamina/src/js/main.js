@@ -1023,7 +1023,7 @@ $(document).ready(function () {
                     delay: 700,
                     duration: 700
                 });
-                
+
                 $(".synergyContent").velocity({
                     top: "100vh"
                 }, {
@@ -1052,7 +1052,7 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 700
-                });                
+                });
                 $(".synergyAnim").velocity({
                     opacity: "0"
                 }, {
@@ -1081,7 +1081,7 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 700
-                });                
+                });
                 $(".synergyAnim").velocity({
                     opacity: "1"
                 }, {
@@ -1140,10 +1140,19 @@ $(document).ready(function () {
 
     fullpage_api.setAllowScrolling(false);
     fullpage_api.setKeyboardScrolling(false);
+
+    $('.popup').on('click', function () {
+        closePopup()
+    })
+
+    $('.popupWrap').on('click', function (e) {
+        e.stopPropagation();
+    })
 })
 
 //Popup
-const pop = document.querySelectorAll(".popup");
+const pop = document.querySelectorAll(".popup"),
+    popCtn = document.querySelectorAll(".popupWrap");
 
 function triggerPopup(e) {
     e.classList.add('active');

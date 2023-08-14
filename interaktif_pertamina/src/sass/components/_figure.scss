@@ -32,6 +32,10 @@
         .figureBg__build {
             transform: translate(-50%, calc(var(--app-height) - var(--app-height)*2));
         }
+
+        .figureCaption {
+            top: 0;
+        }
     }
 
     &Bg {
@@ -53,12 +57,13 @@
         @include min-responsive(1441px) {
 
             @include max-height($w-lg) {
-                bottom: -85px
+                bottom: -150px
             }
         }
 
         &__base {
             position: absolute;
+            width: 100%;
             bottom: 0px;
             z-index: 1;
             display: none;
@@ -84,7 +89,7 @@
             z-index: -1;
 
             @include min-responsive($w-xxxl) {
-                width: auto;
+                width: 100%;
             }
 
             img {
@@ -92,6 +97,7 @@
 
                 @include min-responsive($w-xxxl) {
                     max-width: unset;
+                    width: 100%;
                 }
             }
         }
@@ -110,6 +116,10 @@
         color: $cl-green;
         text-transform: uppercase;
         z-index: 1;
+        top: var(--app-height);
+        transition-property: all;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+        transition-duration: .7s;
 
         @include min-responsive($w-vlg) {
             margin-top: calc(var(--app-height) - (var(--app-height) + 47%));
@@ -119,14 +129,14 @@
             }
         }
 
+        @include min-responsive($w-xxxl) {
+            margin-top: calc(var(--app-height) - (var(--app-height) + 46%));
+        }
+
         @include min-responsive(1441px) {
             @include max-height($w-lg) {
                 margin-top: calc(var(--app-height) - (var(--app-height) + 40%));
             }
-        }
-
-        @include min-responsive($w-xxxl) {
-            margin-top: calc(var(--app-height) - (var(--app-height) + 45%));
         }
     }
 
