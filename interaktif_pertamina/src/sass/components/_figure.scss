@@ -2,6 +2,11 @@
     position: relative;
     flex-direction: column;
     top: var(--app-height);
+    padding-bottom: 60px;
+
+    @include min-responsive($w-vlg) {
+        padding-bottom: 0;
+    }
 
     &::before {
         content: '';
@@ -141,19 +146,20 @@
     }
 
     &Info {
-        position: relative;
         bottom: unset;
-        top: 17px;
-        left: 0;
+        bottom: 25px;
+        left: calc(50% - 190px/2);
         width: 190px;
         font-size: 12px;
         background-image: url(../images/figure-info.png);
 
+        @include max-responsive($w-xm) {
+            bottom: 6px;
+        }
+
         @include min-responsive($w-vlg) {
-            position: absolute;
             font-size: 16px;
             right: unset;
-            top: unset;
             bottom: 42px;
             left: 42px;
             width: 255px;
@@ -393,6 +399,10 @@
     &Button {
         min-width: 155px;
         position: relative;
+
+        @include max-responsive($w-xm) {
+            min-width: 148px;
+        }
 
         @include min-responsive($w-md) {
             width: auto;
