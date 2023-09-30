@@ -1,0 +1,35 @@
+{{#each product}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="productItem{{#if ../col}} {{../col}}{{/if}}">
+    <a href="{{link}}" class="productLink">
+        <div class="productImg">
+            <img src="{{image}}" alt="{{title}}" width="180" height="180"{{#if ../lazy}} loading="lazy"{{/if}}>
+        </div>
+        <h3 class="productTitle">{{title}}</h3>
+        {{#if disc}}
+        <div class="productDisc">
+            <span class="priceDisc">{{disc}}</span>
+            <span class="priceNet">{{pricenet}}</span>
+        </div>
+        {{/if}}
+        <div class="productPrice">{{price}}</div>
+        <div class="productAttr">
+            <div class="productRating">
+                <span class="icon iconStar"></span>
+                {{rating}}
+            </div>
+            <span class="product--dash">|</span>
+            <div class="productSold">Terjual {{sold}}</div>
+        </div>
+        <div class="productOrigin">{{origin}}</div>
+        {{#if ../remain}}
+        <div class="productRemain">Tersisa 7</div>
+        {{/if}}
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

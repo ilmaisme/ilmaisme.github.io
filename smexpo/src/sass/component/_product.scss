@@ -1,0 +1,93 @@
+.product {
+    &Wrap {
+        margin-right: -5px;
+        margin-left: -5px;
+    }
+
+    &Item {
+        margin-top: 20px;
+        padding-right: 5px;
+        padding-left: 5px;
+        height: 390px !important;
+        overflow: hidden;
+    }
+
+    &Link {
+        display: block;
+        height: 100%;
+        padding: 10px 10px 16px;
+        border-radius: 7px;
+        border: 1px solid #E0E0E0;
+    }
+
+    &Img {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1/1;
+
+        img {
+            @extend %image
+        }
+    }
+
+    &Title,
+    &Disc,
+    &Attr,
+    &Origin,
+    &Remain {
+        margin-top: 8px;
+    }
+
+    &Title {
+        margin-bottom: 8px;
+        @extend %ellipsis;
+        -webkit-line-clamp: 3;
+        @include font-pack($size: 14px, $weight: $font-weight-normal);
+    }
+
+    &Price {
+        margin-top: 4px;
+        @include font-pack($family: $font-xbold, $weight: $font-weight-xbold);
+        text-transform: uppercase;
+    }
+
+    &Attr,
+    &Origin,
+    &Remain {
+        @include font-pack($size: 12px, $color: #525252);
+        letter-spacing: 0.48px;
+    }
+
+    &Attr {
+        @extend %display-flex;
+        @extend %align-center;
+        letter-spacing: 0.48px;
+
+        .iconStar {
+            @extend %iconStar;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-right: 7px;
+        }
+    }
+
+    &Rating {
+        @extend %display-flex;
+        @extend %align-center;
+    }
+
+    &Origin {
+        @extend %ellipsis;
+        -webkit-line-clamp: 1;
+    }
+
+    &Remain {
+        color: #D20B0B;
+    }
+
+    &--dash {
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+}

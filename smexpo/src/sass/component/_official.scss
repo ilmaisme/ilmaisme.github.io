@@ -1,0 +1,35 @@
+.official {
+    @extend %display-flex;
+    &Title {
+        text-transform: uppercase;
+        @include font-pack($family: $font-bold, $size: 24px, $lh: 1.45, $weight: $font-weight-bold, $color:$cl-white);
+
+        &Wrap {
+            @extend %display-flex;
+            @extend %flex-column;
+            @extend %justify-center;
+            padding-left: 34px;
+            padding-right: 34px;
+            min-height: 325px;
+            border-radius: 20px;
+            background: var(--grad-blugreen);
+        }
+    }
+
+    &Teaser {
+        margin-top: 15px;
+        @include font-pack($family: $font-bold, $size: 13px, $lh: 1.45, $weight: $font-weight-bold, $color:$cl-white);
+        letter-spacing: 0.26px;
+    }
+
+    .buttonRect {
+        margin-top: 15px;
+        padding: 11px 20px;
+        align-self: flex-start;
+        border: 2px solid transparent;
+
+        &:hover {
+            border: 2px solid $cl-white;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{{#each seller}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="sellerItem{{#if ../col}} {{../col}}{{/if}}">
+    <div class="sellerImg">
+        <img src="{{image}}" alt="{{name}}" width="180" height="180" {{#if ../lazy}} loading="lazy" {{/if}}>
+    </div>
+    <h3 class="sellerTitle">{{name}}</h3>
+    <div class="sellerOrigin">{{origin}}</div>
+    <div class="sellerCtaWrap">
+        <a href="{{link}}" class="sellerCta">
+            <span class="icon iconSeller"></span>
+            <span class="sellerCtaTxt">Kunjungi Toko</span>
+        </a>
+    </div>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

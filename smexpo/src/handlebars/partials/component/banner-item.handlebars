@@ -1,0 +1,18 @@
+{{#each headline}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="bannerItem{{#if ../col}} {{../col}}{{/if}}">
+    <a href="{{link}}" aria-label="See banner" class="bannerLink">
+        <picture class="bannerImg">
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="./asset/images/{{image}}" media="(min-width: 540px)" alt="">
+            <img srcset="./asset/images/{{image}}" alt="" class="border-sm" width="590" height="177"{{#if ../lazy}} loading="lazy"{{/if}}>
+            <!--[if IE 9]></video><![endif]-->
+        </picture>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

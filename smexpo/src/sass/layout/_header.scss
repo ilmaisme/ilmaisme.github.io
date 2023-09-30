@@ -1,1 +1,197 @@
-.header{}
+.header {
+    border-bottom: 1px solid #CECECE;
+
+    &Wrap {
+        @extend %display-flex;
+        @extend %justify-between;
+        @extend %align-center;
+        width: 100%;
+        max-width: 1500px;
+        padding-top: 24px;
+        padding-left: 40px;
+        padding-right: 40px;
+        margin: auto;
+
+        @include min-responsive($w-xxl) {
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+    }
+
+    &--dash {
+        display: block;
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+        height: 24px;
+        border-left: 1px solid #D0D0D0;
+    }
+
+    &--center {
+        flex: 1;
+        max-width: 600px
+    }
+
+    &--right {
+        @extend %display-flex;
+        @extend %justify-between;
+        @extend %align-center
+    }
+
+    &Item {
+        .icon {
+            @extend %filterBlue
+        }
+    }
+
+    &Login {
+        @extend %buttonPill;
+        @extend %buttonPillGrad;
+        padding: 5px 7px;
+        min-height: 28px;
+        display: block;
+        border-radius: 12px;
+        @include font-pack($family: $font-bold, $size: 13px, $weight: $font-weight-bold);
+        text-transform: uppercase;
+
+        &Wrap {
+            position: relative;
+            background: $cl-white;
+            border-radius: 50px;
+            order: 1;
+
+            &::before {
+                position: absolute;
+                top: -2px;
+                bottom: -2px;
+                left: -2px;
+                right: -2px;
+                background: var(--grad-blugreen);
+                content: '';
+                z-index: -1;
+                border-radius: 50px;
+            }
+
+            ~.header--dash {
+                margin-left: 12.5px;
+                margin-right: 20px;
+            }
+        }
+    }
+
+    &Reg {
+        @extend %buttonRectGrad;
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+        padding: 6px 8px;
+    }
+
+    &Cart {
+        position: relative;
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+
+        .iconCart {
+            @extend %iconCart;
+            width: 41px;
+            height: 34px;
+        }
+
+        .badge {
+            @extend %center-flex;
+            min-width: 20px;
+            min-height: 20px;
+            border: 1px solid $cl-white;
+            letter-spacing: 0.2px;
+            @include font-pack($family: $font-bold, $size: 10px, $weight: $font-weight-bold, $color: $cl-white);
+        }
+    }
+
+    &Inbox {
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+
+        .iconInbox {
+            @extend %iconInbox;
+            width: 26px;
+            height: 24px;
+        }
+    }
+
+    &Notif {
+        position: relative;
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+
+        .iconNotif {
+            @extend %iconNotif;
+            width: 24px;
+            height: 24px;
+        }
+
+        .badge {
+            min-width: 6px;
+            min-height: 6px;
+        }
+    }
+
+    &User {
+        @extend %center-flex;
+        margin-left: 7.5px;
+        width: 34px;
+        height: 34px;
+        background: #2866C3;
+        border-radius: 50%;
+        letter-spacing: -0.54px;
+        text-transform: uppercase;
+        @include font-pack($family: $font-bold, $size: 18px, $weight: $font-weight-bold, $color: $cl-white);
+
+        &Wrap {
+            @extend %display-flex;
+            @extend %align-center;
+            order: 1;
+        }
+    }
+
+    &Seller {
+        position: relative;
+        @extend %display-flex;
+        @extend %align-center;
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+
+        &Name {
+            @extend %ellipsis;
+            -webkit-line-clamp: 1;
+            max-width: 110px;
+            @include font-pack($family: $font-xbold, $weight: $font-weight-xbold);
+        }
+
+        img {
+            margin-right: 8px;
+            width: 34px;
+            height: 34px;
+            object-fit: contain;
+        }
+
+        &:hover {
+            .headerPopover {
+                @extend %visible;
+            }
+        }
+    }
+
+    &Popover {
+        width: 347px;
+        top: 40px;
+        right: 0;
+    }
+
+    .badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #FF6868;
+    }
+}

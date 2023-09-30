@@ -1,0 +1,114 @@
+.footer {
+    &Wrap {
+        @extend %display-flex;
+        @extend %justify-between;
+        margin-top: 40px;
+    }
+
+    &Menu {
+        margin-top: 24px;
+    }
+
+    &Label {
+        @include font-pack($family: $font-sbold, $weight: $font-weight-sbold);
+    }
+
+    &Link {
+        display: block;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        letter-spacing: 0.26px;
+        @include font-pack($font-bold, 13px, $font-weight-bold, 1.45, #676767);
+    }
+
+    &Payment {
+        max-width: 384px;
+
+        @include min-responsive($w-xxl) {
+            max-width: 420px;
+        }
+
+        .footerList {
+            margin-top: 14px;
+            margin-left: -6px;
+            margin-right: -6px;
+        }
+
+        .footerItem {
+            margin: 6px;
+        }
+    }
+
+    &Bank {
+        max-width: 332px;
+
+        .footerList {
+            margin-top: 14px;
+            margin-left: -4px;
+            margin-right: -4px;
+        }
+
+        .footerItem {
+            margin: 4px;
+        }
+    }
+
+    &Delivery {
+        max-width: 335px;
+
+        @include min-responsive($w-xxl) {
+            max-width: 417px;
+        }
+
+        .footerList {
+            margin-top: 14px;
+            margin-left: -3px;
+            margin-right: -3px;
+        }
+
+        .footerItem {
+            margin: 3px;
+        }
+    }
+
+    &Item {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &Bottom {
+        padding-top: 15px;
+        padding-bottom: 25px;
+        border-top: 1px solid #F0F0F0;
+    }
+
+    &Copy {
+        @extend %display-flex;
+        @extend %align-center;
+        @include font-pack($size: 13px, $lh: 19px, $color: #525252);
+        letter-spacing: 0.26px;
+
+        &Txt {
+            position: relative;
+            padding-left: 24px;
+
+            &::before {
+                content: '';
+                left: 0;
+                bottom: 7px;
+                position: absolute;
+                margin-left: 12px;
+                margin-right: 12px;
+                width: 1px;
+                height: 22px;
+                background: #676767;
+            }
+        }
+    }
+
+    &Logo {
+        max-width: 106px;
+    }
+}

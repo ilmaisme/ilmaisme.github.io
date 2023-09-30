@@ -1,0 +1,66 @@
+<header class="header">
+    <div class="headerWrap">
+        <div class="headerItem">
+            <h1>
+                <a href="index.html">
+                    <img src="./asset/images/logo-smexpo.svg" class="headerLogo" alt="Pertamina Smexpo" width="195"
+                        height="195"></a>
+            </h1>
+        </div>
+        <div class="headerItem header--center">
+            <form action="search.html" class="searchbox">
+                <button class="button icon iconSearch" aria-label="search"></button>
+                <input type="text" name="q" value="" class="searchboxInput" aria-label="search"
+                    placeholder="Beras organik murah" inputmode="search">
+            </form>
+        </div>
+        <div class="headerItem header--right">
+            {{#if login}}
+            <a href="cart.html" class="headerCart" aria-label="Shopping cart">
+                <span class="icon iconCart"></span>
+                <div class="badge">17</div>
+            </a>
+            <a href="inbox.html" class="headerInbox" aria-label="Inbox">
+                <span class="icon iconInbox"></span>
+            </a>
+            <a href="notif.html" class="headerNotif" aria-label="Notification">
+                <span class="icon iconNotif"></span>
+                <div class="badge"></div>
+            </a>
+            <div class="headerUserWrap">
+                {{#eq login compare="seller"}}
+                <a href="#" class="headerSeller">
+                    <img src="./asset/images/seller-sm.png" alt="" width="34" height="34">
+                    <span class="headerSellerName">Toko Mustika Sari Dewi</span>
+                    <div class="headerPopover popover">
+                        <div class="popoverTitle">Kelola toko saya</div>
+                        <div class="popoverContent">
+                            Pantau pesanan yang masuk dan cek perkembangan tokomu secara rutin di satu tempat.
+                        </div>
+                        <div class="popoverCta">Dashboard Toko</div>
+                    </div>
+                </a>
+                {{else}}
+                <a href="#" class="headerReg">
+                    <span class="icon iconSeller"></span>
+                    Daftar Toko Gratis
+                </a>
+                {{/eq}}
+                <a href="#" class="headerUser" aria-label="Dashboard Profile">
+                    AB
+                </a>
+            </div>
+            {{else}}
+            <a href="access.html" class="headerCart" aria-label="Shopping cart">
+                <span class="icon iconCart"></span>
+                <div class="badge">0</div>
+            </a>
+            <div class="headerLoginWrap">
+                <a href="access.html" class="headerLogin">Login/Register</a>
+            </div>
+            {{/if}}
+            <span class="header--dash"></span>
+        </div>
+    </div>
+    {{>header/nav page=page}}
+</header>

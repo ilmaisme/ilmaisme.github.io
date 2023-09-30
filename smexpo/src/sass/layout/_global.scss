@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --grad-blugreen: linear-gradient(135deg, #175CC3 23.29%, #20FA55 100%);
+}
+
 body,
 html {
     margin: 0;
@@ -13,7 +17,7 @@ html {
 }
 
 body {
-    @include font-pack($font-base, $font-size-normal, $font-weight-normal, $line-base, $cl-primary-black);
+    @include font-pack($font-base, 16px, $font-weight-normal, $line-base, $cl-primary-black);
     background: $cl-white;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -96,6 +100,7 @@ select {
 
 .button {
     border: 0;
+    padding: 0;
     background: transparent;
     cursor: pointer;
 }
@@ -122,19 +127,98 @@ button:-moz-focusring,
     outline: 1px dotted ButtonText;
 }
 
-.clearfix {
+hr {
+    width: 100%;
+    border: 0;
+    margin: 0;
+    border-top: 1px solid #878787;
+}
+
+%clearfix {
     *zoom: 1;
 }
 
-hr {
-    width: 100%;
-    margin: 0;
-    border-top: hidden;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.gutters {
+%gutters {
     margin-right: 15px;
     margin-left: 15px;
+}
+
+%text-center {
+    text-align: center;
+}
+
+%center-flex {
+    @include display-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%align-start {
+    align-items: flex-start;
+}
+
+%align-center {
+    align-items: center;
+}
+
+%align-end {
+    align-items: end;
+}
+
+%justify-center {
+    justify-content: center;
+}
+
+%justify-between {
+    justify-content: space-between;
+}
+
+%flex-column {
+    flex-direction: column;
+}
+
+%display-flex {
+    @include display-flex;
+}
+
+%hidden {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+%visible {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    @include animation(fadeInFromNone, 0.5s);
+}
+
+%filter {
+    &Blue {
+        filter: invert(27%) sepia(87%) saturate(1470%) hue-rotate(200deg) brightness(94%) contrast(84%);
+    }
+
+    &White {
+        filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(96deg) brightness(106%) contrast(101%);
+    }
+}
+
+%ellipsis {
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+%image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
 }
