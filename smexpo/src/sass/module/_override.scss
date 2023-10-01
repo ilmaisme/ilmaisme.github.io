@@ -1,24 +1,28 @@
-.spacing-xl{
+.spacing-xl {
 	margin-top: 54px;
 }
 
-.spacing-lg{
+.spacing-lg {
 	margin-top: 50px;
 }
 
-.spacing-md{
+.spacing-md {
 	margin-top: 40px;
 }
 
-.spacing-sm{
+.spacing-sm {
 	margin-top: 20px;
 }
 
-.border-sm{
+.spacing-xs {
+	margin-top: 14px;
+}
+
+.border-sm {
 	border-radius: 7px;
 }
 
-.container-xl{
+.container-xl {
 	@include min-responsive($w-xxl) {
 		max-width: 1280px;
 	}
@@ -39,16 +43,18 @@
 	border: 0;
 }
 
-.desktop-hide {
-	@include min-responsive($w-md) {
-		display: none;
+.desktop-only {
+	display: none;
+
+	@include min-responsive($w-xl) {
+		display: block;
 	}
 }
 
-.mobile-hide {
+.mobile-only {
 	display: block;
 
-	@include min-responsive($w-md) {
+	@include min-responsive($w-xl) {
 		display: none;
 	}
 }

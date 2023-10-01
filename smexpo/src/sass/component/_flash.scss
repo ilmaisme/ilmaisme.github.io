@@ -4,26 +4,103 @@
     background: #F0F4FD;
 
     &Title {
+        @include font-pack($family: $font-bold, $size:18px, $lh:1.45, $weight: $font-weight-bold, $color: #EB5757);
+
+        @include min-responsive($w-md) {
+            @include font-pack($size:24px);
+        }
+
         &Wrap {
+            @extend %display-flex;
+            @extend %align-start;
+            @extend %flex-column;
+
+            @include min-responsive($w-md) {
+                flex-direction: row;
+                align-items: center;
+            }
+
             .titleLink {
+                top: 8px;
                 letter-spacing: 0.26px;
                 @include font-pack($family: $font-base, $size:13px, $lh:1.45, $weight: $font-weight-normal);
+
+                @include min-responsive($w-md) {
+                    top: 15px;
+                }
             }
         }
     }
 
     &Slide {
-        width: calc(100% + 5px);
-        margin-right: -5px;
+        width: calc(100% + 20px);
+        margin-right: -20px;
         margin-left: -5px;
 
+        @include min-responsive($w-md) {
+            width: calc(100% + 5px);
+            margin-right: -5px;
+        }
+
         .slick-list {
-            padding-left: 0 !important;
-            padding-right: 150px !important;
+            padding-left: 0;
+            padding-right: 153px;
+
+            @include range-responsive($w-md, $w-xl) {
+                padding-right: 78px;
+            }
+
+            @include min-responsive($w-xl) {
+                padding-right: 150px;
+            }
+        }
+
+        .slick-arrow {
+            @media (hover: none) {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            @include min-responsive($w-xl) {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            &.slick-disabled {
+                @media (hover: none) {
+                    opacity: 0;
+                }
+
+                @include min-responsive($w-xl) {
+                    opacity: .3;
+                }
+            }
+        }
+    }
+
+    &Counter {
+        @extend %display-flex;
+        @extend %align-center;
+        margin-top: 10px;
+        align-self: center;
+        @include font-pack($size:14px);
+
+        @include min-responsive($w-md) {
+            margin-top: 0;
+            margin-left: 15px;
+        }
+
+        .countdown {
+            margin-left: 15px;
         }
     }
 
     .product {
+        &Item {
+            max-width: 212px;
+            height: 390px !important;
+        }
+
         &Title {
             -webkit-line-clamp: 2;
         }

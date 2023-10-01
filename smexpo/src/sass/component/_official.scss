@@ -1,18 +1,47 @@
 .official {
     @extend %display-flex;
+    @extend %flex-column;
+    padding-top: 20px;
+    margin-left: -15px;
+    margin-right: -15px;
+    background: var(--grad-blugreen);
+
+    @include range-responsive($w-md, $w-xl) {
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 20px;
+    }
+    
+    @include min-responsive($w-xl) {
+        flex-direction: row;
+        padding-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        background: transparent;
+        border-radius: 0;
+    }
+
     &Title {
         text-transform: uppercase;
-        @include font-pack($family: $font-bold, $size: 24px, $lh: 1.45, $weight: $font-weight-bold, $color:$cl-white);
+        @include font-pack($family: $font-bold, $size: 18px, $lh: 1.45, $weight: $font-weight-bold, $color:$cl-white);
+
+        @include min-responsive($w-md) {
+            @include font-pack($size:24px);
+        }
 
         &Wrap {
             @extend %display-flex;
             @extend %flex-column;
             @extend %justify-center;
-            padding-left: 34px;
-            padding-right: 34px;
-            min-height: 325px;
-            border-radius: 20px;
-            background: var(--grad-blugreen);
+            border-radius: 0;
+
+            @include min-responsive($w-xl) {
+                padding-left: 34px;
+                padding-right: 34px;
+                min-height: 325px;
+                border-radius: 20px;
+                background: var(--grad-blugreen);
+            }
         }
     }
 

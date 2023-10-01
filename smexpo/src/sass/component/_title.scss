@@ -1,7 +1,11 @@
 .title {
     padding-top: 10px;
     padding-bottom: 10px;
-    @include font-pack($family: $font-bold, $size: 24px, $lh: 1.45, $weight: $font-weight-bold);
+    @include font-pack($family: $font-bold, $size: 18px, $lh: 1.45, $weight: $font-weight-bold);
+
+    @include min-responsive($w-md) {
+        @include font-pack($size:24px);
+    }
 
     &Wrap {
         position: relative;
@@ -9,9 +13,14 @@
 
     &Link {
         position: absolute;
-        top: 15px;
+        top: 18px;
         right: 0;
-        @include font-pack($family: $font-sbold, $weight: $font-weight-sbold, $color:#175CC3);
+        @include font-pack($family: $font-sbold, $size: 12px, $weight: $font-weight-sbold, $color:#175CC3);
+        
+        @include min-responsive($w-md) {
+            @include font-pack($size:16px);
+            top: 15px;
+        }
     }
 
     span {

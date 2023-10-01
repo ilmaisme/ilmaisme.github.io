@@ -1,16 +1,38 @@
 .footer {
+    hr {
+        padding-bottom: 20px;
+
+        @include min-responsive($w-xl) {
+            padding-bottom: 0
+        }
+    }
+
     &Wrap {
         @extend %display-flex;
         @extend %justify-between;
-        margin-top: 40px;
+        @extend %flex-column;
+
+        @include min-responsive($w-xl) {
+            margin-top: 40px;
+            flex-direction: row;
+        }
     }
 
     &Menu {
-        margin-top: 24px;
+        margin-top: 12px;
+
+        @include min-responsive($w-xl) {
+            margin-top: 24px;
+        }
     }
 
     &Label {
+        margin-top: 24px;
         @include font-pack($family: $font-sbold, $weight: $font-weight-sbold);
+
+        @include min-responsive($w-xl) {
+            margin-top: 0;
+        }
     }
 
     &Link {
@@ -24,10 +46,12 @@
     }
 
     &Payment {
-        max-width: 384px;
+        @include min-responsive($w-xl) {
+            max-width: 384px;
+        }
 
         @include min-responsive($w-xxl) {
-            max-width: 420px;
+            max-width: 418px;
         }
 
         .footerList {
@@ -42,7 +66,9 @@
     }
 
     &Bank {
-        max-width: 332px;
+        @include min-responsive($w-xl) {
+            max-width: 332px;
+        }
 
         .footerList {
             margin-top: 14px;
@@ -56,7 +82,9 @@
     }
 
     &Delivery {
-        max-width: 335px;
+        @include min-responsive($w-xl) {
+            max-width: 335px;
+        }
 
         @include min-responsive($w-xxl) {
             max-width: 417px;
@@ -79,9 +107,21 @@
     }
 
     &Bottom {
-        padding-top: 15px;
-        padding-bottom: 25px;
+        position: relative;
+        z-index: 1;
+        background: $cl-white;
+        margin-top: 40px;
+        margin-left: -15px;
+        margin-right: -15px;
+        padding: 15px 15px 25px;
         border-top: 1px solid #F0F0F0;
+        
+        @include min-responsive($w-md) {
+            background: transparent;
+            margin-left: 0;
+            margin-right: 0;
+            padding: 15px 0 25px;
+        }
     }
 
     &Copy {
@@ -89,13 +129,25 @@
         @extend %align-center;
         @include font-pack($size: 13px, $lh: 19px, $color: #525252);
         letter-spacing: 0.26px;
+        @extend %flex-column;
+
+        @include min-responsive($w-md) {
+            flex-direction: row;
+        }
 
         &Txt {
             position: relative;
-            padding-left: 24px;
+            margin-top: 10px;
+            text-align: center;
+
+            @include min-responsive($w-md) {
+                margin-top: 0;
+                padding-left: 24px;
+                text-align: left;
+            }
 
             &::before {
-                content: '';
+                content: none;
                 left: 0;
                 bottom: 7px;
                 position: absolute;
@@ -104,6 +156,18 @@
                 width: 1px;
                 height: 22px;
                 background: #676767;
+
+                @include min-responsive($w-md) {
+                    content: '';
+                }
+            }
+
+            span {
+                display: block;
+
+                @include min-responsive($w-md) {
+                    display: inline-block;
+                }
             }
         }
     }

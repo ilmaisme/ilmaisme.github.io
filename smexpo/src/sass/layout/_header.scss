@@ -1,5 +1,13 @@
 .header {
+    position: fixed;
+    width: 100%;
+    background: $cl-white;
     border-bottom: 1px solid #CECECE;
+    z-index: 999;
+
+    @include min-responsive($w-xl) {
+        min-width: 1200px;
+    }
 
     &Wrap {
         @extend %display-flex;
@@ -7,14 +15,15 @@
         @extend %align-center;
         width: 100%;
         max-width: 1500px;
-        padding-top: 24px;
-        padding-left: 40px;
-        padding-right: 40px;
+        padding: 15px;
         margin: auto;
 
+        @include min-responsive($w-xl) {
+            padding: 24px 40px 0;
+        }
+
         @include min-responsive($w-xxl) {
-            padding-left: 60px;
-            padding-right: 60px;
+            padding: 24px 60px 0;
         }
     }
 
@@ -28,7 +37,12 @@
 
     &--center {
         flex: 1;
-        max-width: 600px
+        max-width: 600px;
+
+        @include min-responsive($w-xl) {
+            margin-left: 40px;
+            margin-right: 40px
+        }
     }
 
     &--right {
@@ -40,6 +54,22 @@
     &Item {
         .icon {
             @extend %filterBlue
+        }
+    }
+
+    &Logo {
+        max-width: 150px;
+
+        @include min-responsive($w-xl) {
+            max-width: unset;
+        }
+
+        &Wrap {
+            line-height: 0;
+        }
+
+        &Link{
+            display: block;
         }
     }
 
@@ -83,6 +113,12 @@
         margin-left: 7.5px;
         margin-right: 7.5px;
         padding: 6px 8px;
+    }
+
+    &Cart,
+    &Inbox,
+    &Notif {
+        @extend %center-flex;
     }
 
     &Cart {

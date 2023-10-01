@@ -8,7 +8,7 @@ $(document).ready(function () {
             infinite: true,
             speed: 1500,
             centerMode: true,
-            centerPadding: '60px',
+            centerPadding: '40px',
             slidesToShow: 1,
             slidesToScroll: 1,
             // autoplay: true,
@@ -37,7 +37,7 @@ $(document).ready(function () {
                 {
                     breakpoint: 480,
                     settings: {
-                        centerPadding: '60px',
+                        centerPadding: '40px',
                     }
                 }
             ]
@@ -52,7 +52,7 @@ $(document).ready(function () {
             arrows: true,
             infinite: false,
             speed: 500,
-            slidesToShow: 2,
+            slidesToShow: 1,
             slidesToScroll: 1,
             swipeToSlide: true,
             autoplay: false,
@@ -66,9 +66,16 @@ $(document).ready(function () {
                     }
                 },
                 {
+                    breakpoint: 960,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
                     breakpoint: 600,
                     settings: {
-                        slidesToShow: 5,
+                        slidesToShow: 3,
                         slidesToScroll: 1,
                     }
                 },

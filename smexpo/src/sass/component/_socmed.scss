@@ -1,7 +1,14 @@
 .socmed {
+    margin-top: 24px;
+
+    @include min-responsive($w-xl) {
+        margin-top: 0;
+    }
+
     &Wrap {
         @extend %display-flex;
         @extend %align-center;
+        @extend %justify-center;
     }
 
     &Item {
@@ -23,6 +30,7 @@
     }
 
     .footerLabel {
+        margin-top: 0;
         margin-right: 16px;
     }
 }
