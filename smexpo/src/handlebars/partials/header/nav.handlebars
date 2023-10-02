@@ -10,13 +10,57 @@
                 d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40" />
         </svg>
     </div>
-    {{!-- <ul class="navList display-flex">
-        {{#each mainMenu}}
-        <li class="navItem{{#eq ../page compare=title}} active{{/eq}}">
-            <a href="{{link}}" class="navLink">
-                {{title}}
-            </a>
-        </li>
-        {{/each}}
-    </ul> --}}
+    <!-- s: navigation -->
+    <div class="menuMob mobile">
+        <div class="headerAccessWrap mobile-only" id="accessMob">
+            <div class="headerAccess">
+                <span class="mobile-only headerTitle title">Menu Utama</span>
+                {{#if login}}
+                <div class="headerUserWrap">
+                    {{#eq login compare="seller"}}
+                    <a href="#" class="headerSeller">
+                        <img src="./asset/images/seller-sm.png" alt="" width="34" height="34">
+                        <span class="headerSellerName">Toko Mustika Sari Dewi</span>
+                        <div class="headerPopover popover">
+                            <div class="popoverTitle">Kelola toko saya</div>
+                            <div class="popoverContent">
+                                Pantau pesanan yang masuk dan cek perkembangan tokomu secara rutin di satu tempat.
+                            </div>
+                            <div class="popoverCta">Dashboard Toko</div>
+                        </div>
+                    </a>
+                    {{else}}
+                    <a href="#" class="headerReg">
+                        <span class="icon iconSeller"></span>
+                        Daftar Toko Gratis
+                    </a>
+                    {{/eq}}
+                    <a href="#" class="headerUser" aria-label="Dashboard Profile">
+                        AB
+                    </a>
+                </div>
+                {{else}}
+                <div class="headerLoginWrap">
+                    <a href="access.html" class="headerLogin">Login/Register</a>
+                </div>
+                {{/if}}
+                <span class="header--dash desktop-only"></span>
+            </div>
+        </div>
+        <ul class="navList display-flex">
+            {{#each mainMenu}}
+            <li class="navItem{{#eq ../page compare=title}} active{{/eq}}">
+                <a href="{{link}}" class="navLink">
+                    {{title}}
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+        <form action="search.html" class="searchbox">
+            <button class="button icon iconSearch" aria-label="search"></button>
+            <input type="text" name="q" value="" class="searchboxInput" aria-label="search"
+                placeholder="Beras organik murah" inputmode="search">
+        </form>
+    </div>
+    <!-- e: navigation -->
 </nav>
