@@ -2,18 +2,26 @@
     position: relative;
     margin-top: 25px;
     max-width: 100%;
+    overflow: hidden;
+
 
     &Wrap {
-        max-height: 152px;
+        height: 152px;
+        width: 100vw;
+        min-width: $w-xm;
+        background-color: #f8f8f8;
+        opacity: .2;
         overflow: hidden;
+        @include base_transition(opacity, .2s);
 
         @include min-responsive($w-xl) {
-            max-height: 351px;
+            height: 351px;
         }
 
         &.slick-initialized {
-            max-height: unset;
-            overflow: unset;
+            height: unset;
+            background-color: transparent;
+            opacity: 1;
         }
     }
 

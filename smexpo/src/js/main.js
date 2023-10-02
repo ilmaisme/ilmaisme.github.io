@@ -57,7 +57,7 @@ function updateMenu() {
         /* move nav position in desktop */
         $('.nav').appendTo('#navDesk');
         $('.headerAccess').appendTo('#accessDesk');
-        // $('.searchbox').appendTo('#navDesk nav');
+        $('.searchbox').appendTo('.searchboxWrap');
     } else {
         // console.log("mobile")
         $('.menuMob').addClass('mobile');
@@ -77,3 +77,16 @@ function hideMenuMobile() {
     $('.menuMob').removeClass('active');
     $('.menu').removeClass('active');
 }
+
+//  deteksi viewport
+const footer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            $('.help').addClass('hide')
+        } else {
+            $('.help').removeClass('hide')
+        }
+    });
+}, {});
+
+footer.observe($("footer")[0]);

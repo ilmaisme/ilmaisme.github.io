@@ -11,8 +11,8 @@
         height: auto;
         overflow: hidden;
 
-        @include min-responsive($w-md) {
-            height: 390px;
+        @include min-responsive($w-xl) {
+            min-height: 390px;
         }
     }
 
@@ -69,10 +69,17 @@
 
         .iconStar {
             @extend %iconStar;
-            width: 20px;
-            height: 20px;
+            width: 14px;
+            height: 14px;
             flex-shrink: 0;
-            margin-right: 7px;
+            margin-right: 4px;
+            background-size: contain;
+
+            @include min-responsive($w-md) {
+                width: 20px;
+                height: 20px;
+                margin-right: 7px;
+            }
         }
     }
 
@@ -91,7 +98,12 @@
     }
 
     &--dash {
-        margin-left: 7px;
-        margin-right: 7px;
+        margin-left: 4px;
+        margin-right: 4px;
+
+        @include min-responsive($w-md) {
+            margin-left: 7px;
+            margin-right: 7px;
+        }
     }
 }

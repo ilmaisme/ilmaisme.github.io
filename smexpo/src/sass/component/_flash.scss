@@ -33,18 +33,29 @@
     }
 
     &Slide {
+        @include base_transition(opacity, .2s);
         width: calc(100% + 20px);
+        height: 410px;
         margin-right: -20px;
         margin-left: -5px;
+        background-color: #f8f8f8;
+        opacity: .2;
+        overflow: hidden;
 
         @include min-responsive($w-md) {
             width: calc(100% + 5px);
             margin-right: -5px;
         }
 
+        &.slick-initialized {
+            height: unset;
+            background-color: transparent;
+            opacity: 1;
+        }
+
         .slick-list {
             padding-left: 0;
-            padding-right: 153px;
+            padding-right: 46%;
 
             @include range-responsive($w-md, $w-xl) {
                 padding-right: 78px;
@@ -96,9 +107,8 @@
     }
 
     .product {
-        &Item {
-            max-width: 212px;
-            height: 390px !important;
+        &Link {
+            min-height: 390px;
         }
 
         &Title {

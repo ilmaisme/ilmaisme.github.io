@@ -77,3 +77,16 @@ function hideMenuMobile() {
     $('.menuMob').removeClass('active');
     $('.menu').removeClass('active');
 }
+
+//  deteksi viewport
+const footer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            $('.help').addClass('hide')
+        } else {
+            $('.help').removeClass('hide')
+        }
+    });
+}, {});
+
+footer.observe($("footer")[0]);

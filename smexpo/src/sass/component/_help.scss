@@ -1,6 +1,14 @@
 .help {
     @extend %display-flex;
     justify-content: flex-end;
+    opacity: 1;
+    pointer-events: all;
+    
+    &.hide {
+        opacity: 0;
+        pointer-events: none;
+        @include base_transition(opacity, .2s);
+    }
 
     &Wrap {
         position: fixed;
@@ -39,7 +47,7 @@
         background: #175CC3;
         @include font-pack($size: 13px, $color: $cl-white);
         letter-spacing: 0.26px;
-        
+
         @include min-responsive($w-md) {
             top: -74px;
             width: 227px;
