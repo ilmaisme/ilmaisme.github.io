@@ -1,1 +1,23 @@
-.catalog{}
+.catalog {
+    margin-top: 30px;
+
+    &Title {
+        @extend %title--small;
+        @include font-pack($family: $font-base, $weight: $font-weight-normal, $color: #676767);
+
+        span {
+            @include font-pack($family: $font-bold, $weight: $font-weight-bold, $color: #175CC3);
+        }
+    }
+
+    &List {
+        @extend %--spacing;
+    }
+
+    &Sort {
+        .sortTitle {
+            text-transform: uppercase;
+            @include font-pack($family: $font-xbold, $weight: $font-weight-xbold);
+        }
+    }
+}

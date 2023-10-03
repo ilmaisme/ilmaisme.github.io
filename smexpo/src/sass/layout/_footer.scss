@@ -41,8 +41,8 @@
         margin-bottom: 2px;
         padding-top: 3px;
         padding-bottom: 3px;
-        letter-spacing: 0.26px;
-        @include font-pack($font-bold, 13px, $font-weight-bold, 1.45, #676767);
+        @extend %title--small;
+        @include font-pack($font-bold, false, $font-weight-bold, false, #676767);
     }
 
     &Payment {
@@ -127,8 +127,8 @@
     &Copy {
         @extend %display-flex;
         @extend %align-center;
-        @include font-pack($size: 13px, $lh: 19px, $color: #525252);
-        letter-spacing: 0.26px;
+        @extend %title--small;
+        @include font-pack($color: #525252);
         @extend %flex-column;
 
         @include min-responsive($w-md) {

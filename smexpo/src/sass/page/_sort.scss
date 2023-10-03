@@ -1,1 +1,45 @@
-.sort{}
+.sort {
+    &Label {
+        @include font-pack($font-bold, 13px, $font-weight-bold, 1.45, #525252);
+        letter-spacing: 0.26px;
+    }
+
+    &Icon {
+        margin-right: 8px
+    }
+
+    &Link {
+        @extend .sortLabel;
+        padding-left: 5px;
+        @include base_transition(all, .2s);
+
+        &:hover,
+        &.active {
+            padding-left: 12px;
+        }
+    }
+
+    &Trig {
+        @extend %display-flex;
+        @extend %align-center;
+        position: relative;
+        width: 100%;
+
+        .iconChevron {
+            @extend %iconChevron;
+            position: absolute;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+            transform: rotate(180deg);
+        }
+    }
+
+    &Box {
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #BDBDBD;
+        background: $cl-white;
+    }
+}
