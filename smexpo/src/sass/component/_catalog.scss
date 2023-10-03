@@ -1,6 +1,15 @@
 .catalog {
     &Menu {
-        @extend %justify-center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 20px;
+        
+        @include min-responsive($w-md) {
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-bottom: 0;
+        }
 
         &Link {
             @extend %center-flex;
@@ -19,8 +28,6 @@
 
     &Item {
         margin-top: 20px;
-        margin-left: -15px;
-        margin-right: -15px;
 
         @include min-responsive($w-xl) {
             margin-left: -25px;
