@@ -18,12 +18,25 @@
     }
 
     &Cta {
-        @extend %buttonRectBlue;
-        @extend %text-center;
-        padding: 13px 20px;
-        border-radius: 10px;
+        @extend .buttonRect;
+        @extend .buttonRectBlue;
         margin-top: 18px;
         width: 100%;
-        @include font-pack($family: $font-sbold, $weight: $font-weight-sbold, $color: $cl-white);
+        
+        &Wrap {
+            @extend %display-flex;
+            margin-left: -5px;
+            margin-right: -5px;
+
+            .button {
+                margin-left: 5px;
+                margin-right: 5px
+            }
+        }
+    }
+
+    &Reset {
+        @extend .popoverCta;
+        @extend %buttonRectWhite;
     }
 }

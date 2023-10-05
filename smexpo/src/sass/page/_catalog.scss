@@ -2,11 +2,21 @@
     margin-top: 30px;
 
     &Title {
+        @extend %ellipsis;
+        -webkit-line-clamp: 1;
+        flex: 1;
+        margin-right: 15px;
         @extend %title--small;
         @include font-pack($family: $font-base, $weight: $font-weight-normal, $color: #676767);
 
         span {
             @include font-pack($family: $font-bold, $weight: $font-weight-bold, $color: #175CC3);
+        }
+
+        &Wrap {
+            @extend %display-flex;
+            @extend %align-center;
+            @extend %justify-between
         }
     }
 
@@ -15,9 +25,95 @@
     }
 
     &Sort {
+        z-index: 2;
+
         .sortTitle {
-            text-transform: uppercase;
             @include font-pack($family: $font-xbold, $weight: $font-weight-xbold);
+
+            @include min-responsive($w-xl) {
+                text-transform: uppercase;
+            }
+        }
+
+        .buttonRectWhite {
+            @extend %buttonRectWhite;
+        }
+
+        &.mobile {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            top: 0;
+            left: 0;
+            padding: 10px 20px 400px;
+            background: $cl-white;
+            overscroll-behavior: none;
+            z-index: 999; //above .navMob
+
+            &.active {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+                @include animation(fadeInFromNone, 0.5s);
+            }
+
+            .sort {
+                &Box {
+                    padding: 0;
+                    border: 0;
+                }
+
+                &Trig {
+                    padding-bottom: 15px;
+                    border-bottom: 1px solid #BDBDBD;
+                }
+
+                &Cta {
+                    position: fixed;
+                    width: calc(100% + 10px);
+                    padding: 16px 20px;
+                    background: $cl-white;
+                    bottom: 0;
+                    left: 0;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, .13);
+                    z-index: 1;
+                }
+            }
+        }
+    }
+
+    &Close {
+        @extend %center-flex;
+        position: absolute;
+        top: 8px;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        background: #c32227;
+        border-radius: 50%;
+
+        .iconClose {
+            @extend %filterWhite
+        }
+    }
+
+    &Filter {
+        @extend %display-flex;
+        @extend %align-center;
+        position: absolute;
+        right: 15px;
+        border-radius: 10px;
+        padding: 11px 20px;
+        border: 1px solid #676767;
+        background: $cl-white;
+
+        &Wrap {
+            position: relative;
+            min-height: 43px;
         }
     }
 }

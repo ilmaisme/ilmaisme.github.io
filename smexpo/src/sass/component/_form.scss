@@ -1,0 +1,34 @@
+.form {
+    &Check {
+        accent-color: #000;
+        cursor: pointer;
+    }
+
+    &Text {
+        border-radius: 10px;
+        border: 1px solid#676767;
+        background: $cl-white;
+    }
+
+    &Pill {
+        display: none;
+
+        &:checked {
+            &~label {
+                color: #175CC3;
+                background: #F0F4FD;
+            }
+        }
+
+        &__label {
+            display: block;
+            margin: 2px 5px 2px 0;
+            padding: 8px 22px;
+            background: $cl-white;
+            border-radius: 50px;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.13);
+            @include font-pack($font-bold, 13px, $font-weight-bold, 1.45, #525252);
+            letter-spacing: 0.26px;
+        }
+    }
+}

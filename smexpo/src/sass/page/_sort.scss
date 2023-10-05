@@ -2,20 +2,81 @@
     &Label {
         @include font-pack($font-bold, 13px, $font-weight-bold, 1.45, #525252);
         letter-spacing: 0.26px;
+        flex: 1;
     }
 
     &Icon {
         margin-right: 8px
     }
 
+    &Box {
+        margin-top: 24px;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #BDBDBD;
+        background: $cl-white;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        &.close {
+            .sortTarget {
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: opacity .4s linear .4s, max-height .4s linear;
+                will-change: opacity, max-height;
+            }
+
+            .iconChevron {
+                transform: rotate(360deg);
+            }
+        }
+
+        &.open {
+            .sortTarget {
+                opacity: 1;
+                max-height: 22px;
+                transition: opacity .4s linear .4s, max-height .4s linear;
+                will-change: opacity, max-height;
+            }
+        }
+    }
+
+    &Item {
+        margin-top: 10px;
+    }
+
     &Link {
         @extend .sortLabel;
-        padding-left: 5px;
+        display: block;
+        position: relative;
+        padding: 1px 1px 1px 5px;
         @include base_transition(all, .2s);
+
+        &::before {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: var(--grad-blugreen);
+            content: '';
+            opacity: 0;
+            @include base_transition(opacity, .4s);
+        }
 
         &:hover,
         &.active {
             padding-left: 12px;
+            background-image: var(--grad-blugreen);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            &::before {
+                opacity: 1;
+            }
         }
     }
 
@@ -33,13 +94,193 @@
             height: 20px;
             background-size: contain;
             transform: rotate(180deg);
+            @include base_transition(transform, .4s);
         }
     }
 
-    &Box {
-        padding: 15px;
-        border-radius: 10px;
-        border: 1px solid #BDBDBD;
-        background: $cl-white;
+    &Target {
+        opacity: 1;
+        max-height: unset;
+        transition: opacity .4s linear .4s, max-height .4s linear;
+        will-change: opacity, max-height;
+
+        >.sortItem {
+            &:first-child {
+                margin-top: 12px
+            }
+        }
+    }
+
+    &Categ {
+        &Box {
+            margin-top: 0;
+        }
+    }
+
+    &Loc {
+        position: relative;
+        @extend %display-flex;
+        padding: 1px 0;
+        margin-left: 5px;
+        margin-right: 5px;
+
+        &Box {
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    &Price {
+        position: relative;
+        margin-top: 12px;
+
+        &Box {
+            .sortLabel {
+                margin-top: 12px;
+            }
+        }
+    }
+
+    &Curr {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        pointer-events: none;
+        @extend .sortLabel;
+        @include font-pack($family: $font-base, $weight: $font-weight-normal)
+    }
+
+    &Check {
+        opacity: 0;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        left: 0;
+
+        &:checked {
+            ~.sortCheckbox::before {
+                opacity: 1;
+            }
+        }
+
+        &box {
+            display: block;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+            border-radius: 4px;
+            pointer-events: none;
+            flex-shrink: 0;
+
+            &::before {
+                content: "";
+                position: relative;
+                top: 17px;
+                left: 5px;
+                content: "";
+                display: block;
+                width: 6px;
+                height: 12px;
+                border-right: 2px solid #000;
+                border-bottom: 2px solid #000;
+                transform: translate3d(0, -16px, 0) rotate(45deg);
+                opacity: 0;
+            }
+        }
+    }
+
+    &Popover {
+        width: 100%;
+
+        @include min-responsive($w-xl) {
+            width: 600px;
+            max-height: 400px;
+        }
+
+        &.visible {
+            @extend %visible;
+        }
+
+        .popoverContent {
+            border-top: 1px solid #F0F3F7;
+            border-bottom: 1px solid #F0F3F7;
+            height: 166px;
+            overflow: auto;
+            overscroll-behavior: none;
+
+            @include min-responsive($w-xl) {
+                height: 250px;
+            }
+        }
+
+        .popoverClose {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+        }
+
+        .sortItem {
+            width: 46%;
+            display: inline-flex;
+
+            @include min-responsive($w-xl) {
+                width: 30%;
+            }
+        }
+    }
+
+    &More {
+        @include font-pack($font-bold, 13px, $font-weight-bold, 1.45, #175CC3);
+        letter-spacing: 0.26px;
+        margin-top: 12px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    &Input {
+        width: 100%;
+        padding: 10px 20px 10px 40px;
+    }
+
+    &Cta {
+        @extend %display-flex;
+        margin-left: -5px;
+        margin-right: -5px;
+
+        @include min-responsive($w-xl) {
+            margin-top: 30px;
+        }
+
+        .buttonRectBlue,
+        .buttonRectWhite {
+            width: 100%;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+    }
+
+    &Filter {
+        @extend %display-flex;
+        @extend %align-center;
+        flex-wrap: wrap;
+        padding-top: 15px;
+        border-top: 1px solid #BDBDBD;
+
+        @include min-responsive($w-xl) {
+            padding-top: 0;
+            border: 0;
+        }
+
+        &Title {
+            margin-right: 12px;
+            @include font-pack($size: 14px, $color:#676767);
+        }
+
+        .formSelect {
+            &Wrap {
+                min-width: 206px;
+            }
+        }
     }
 }

@@ -11,13 +11,45 @@
                 {{>breadcrumb title="Agrobisnis"}}
             </div>
             <div class="row catalog">
-                <div class="col-xl-3 catalogSort">
+                <div class="catalogFilterWrap container mobile-only">
+                    <button class="button catalogFilter" aria-label="Filter Catalog" onclick="showFilter()">
+                        <span class="sortFilterTitle">Filter</span><img src="./asset/images/icon-filter.png" alt=""
+                            width="16" height="16"></button>
+                </div>
+                <div class="col-xl-3 catalogSort mobile" id="sortmob">
+                    <div class="mobile-only">
+                        <div class="titleWrap">
+                            <div class="title">Filter</div>
+                            <button class="button catalogClose" aria-label="Close filter" onclick="hideFilter()">
+                                <span class="icon iconClose"></span>
+                            </button>
+                        </div>
+                        {{>catalog/sort type="filter-mobile"}}
+                    </div>
                     {{>catalog/sort type="categ"}}
+                    {{>catalog/sort type="loc"}}
+                    {{>catalog/sort type="price"}}
+                    <div class="sortCta">
+                        <button class="button buttonRect buttonRectWhite">
+                            Reset
+                        </button>
+                        <button class="button buttonRect buttonRectBlue">
+                            Terapkan
+                        </button>
+                    </div>
                 </div>
                 <div class="col-xl-9">
-                    <h2 class="catalogTitle">
-                        hasil pencarian <span>‘tas laptop’</span>
-                    </h2>
+                    <div class="catalogTitleWrap">
+                        <h2 class="catalogTitle">
+                            hasil pencarian <span>‘tas laptop’</span>
+                        </h2>
+                        <div class="desktop-only">
+                            <div class="sortFilter ">
+                                <span class="sortFilterTitle">Filter</span>
+                                {{>catalog/sort type="filter"}}
+                            </div>
+                        </div>
+                    </div>
                     <div class="catalogList">
                         <div class="productWrap row">
                             {{>component/product-item total=8 index_start=0 index_end=8 col="col-6 col-md-3 col-xl-3"}}
@@ -36,7 +68,12 @@
     {{>help}}
     {{>footer}}
 
-    {{>js page="catalog"}}
+    {{>js page="catalog" sort=true select=true}}
+    <script>
+        $(document).ready(function () {
+            setMaxheight()
+        })
+    </script>
 
 </body>
 

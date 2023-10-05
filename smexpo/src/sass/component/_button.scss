@@ -1,3 +1,42 @@
+
+
+.button {
+    &Rect {
+        border-radius: 10px;
+        padding: 13px 20px;
+
+        &Grad {
+            position: relative;
+            background: $cl-white;
+            @include font-pack($family: $font-sbold, $weight: $font-weight-sbold, $color: #175CC3);
+            @include base_transition(all, .2s);
+
+            &:hover {
+                background: transparent;
+                color: $cl-white;
+            }
+
+            &::before {
+                position: absolute;
+                top: -2px;
+                bottom: -2px;
+                left: -2px;
+                right: -2px;
+                background: var(--grad-blugreen);
+                content: '';
+                z-index: -1;
+                border-radius: 10px;
+            }
+        }
+
+        &Blue {
+            @extend %buttonRectBlue;
+            @extend %text-center;
+            @include font-pack($family: $font-sbold, $weight: $font-weight-sbold, $color: $cl-white);
+        }
+    }
+}
+
 %button {
     &Pill {
         text-align: center;
@@ -23,11 +62,11 @@
             @include font-pack($family: $font-bold, $weight: $font-weight-bold, $color: $cl-white);
             @include base_transition(all, .2s);
 
-            &:hover{
+            &:hover {
                 color: #175CC3;
                 background: $cl-white;
 
-                .icon{
+                .icon {
                     @extend %filterBlue;
                 }
             }
@@ -57,36 +96,13 @@
         &Blue {
             background: #175CC3;
         }
-    }
-}
 
-.button {
-    &Rect {
-        border-radius: 10px;
-        padding: 13px 20px;
-
-        &Grad {
-            position: relative;
+        &White {
+            @extend .buttonRect;
+            @extend .buttonRectBlue;
             background: $cl-white;
-            @include font-pack($family: $font-sbold, $weight: $font-weight-sbold, $color: #175CC3);
-            @include base_transition(all, .2s);
-
-            &:hover {
-                background: transparent;
-                color: $cl-white;
-            }
-
-            &::before {
-                position: absolute;
-                top: -2px;
-                bottom: -2px;
-                left: -2px;
-                right: -2px;
-                background: var(--grad-blugreen);
-                content: '';
-                z-index: -1;
-                border-radius: 10px;
-            }
+            border: 2px solid #175CC3;
+            @include font-pack($color: #175CC3);
         }
     }
 }

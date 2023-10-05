@@ -27,8 +27,8 @@
     <!-- e:twitter card -->
 
     <link rel="icon" type="image/x-icon" sizes="16x16" href="./asset/images/favicon.ico">
-    <link rel="stylesheet" href="./asset/css/style-catalog.css" type="text/css">
-    <link rel="stylesheet" href="./asset/css/style-sort.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style-catalog.min.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style-sort.min.css" type="text/css">
 
     <link rel="preload" href="./asset/images/logo-smexpo.svg" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -193,14 +193,65 @@
                 </div>
             </div>
             <div class="row catalog">
-                <div class="col-xl-3 catalogSort">
-                    <div class="sortBox">
-                        <button class="button sortTrig">
+                <div class="catalogFilterWrap container mobile-only">
+                    <button class="button catalogFilter" aria-label="Filter Catalog" onclick="showFilter()">
+                        <span class="sortFilterTitle">Filter</span><img src="./asset/images/icon-filter.png" alt=""
+                            width="16" height="16"></button>
+                </div>
+                <div class="col-xl-3 catalogSort mobile" id="sortmob">
+                    <div class="mobile-only">
+                        <div class="titleWrap">
+                            <div class="title">Filter</div>
+                            <button class="button catalogClose" aria-label="Close filter" onclick="hideFilter()">
+                                <span class="icon iconClose"></span>
+                            </button>
+                        </div>
+                        <ul class="sortFilter">
+                            <li>
+                                <input type="radio" id="sortmob0" name="sortmob" class="formPill" >
+                                <label for="sortmob0" class="formPill__label">
+                                    Semua
+                                </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="sortmob1" name="sortmob" class="formPill" 
+                                    checked="checked" >
+                                <label for="sortmob1" class="formPill__label">
+                                    Terbaru
+                                </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="sortmob2" name="sortmob" class="formPill" >
+                                <label for="sortmob2" class="formPill__label">
+                                    Terlama
+                                </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="sortmob3" name="sortmob" class="formPill" >
+                                <label for="sortmob3" class="formPill__label">
+                                    Harga Tertinggi
+                                </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="sortmob4" name="sortmob" class="formPill" >
+                                <label for="sortmob4" class="formPill__label">
+                                    Harga Terendah
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sortBox sortCategBox -jsTogglePar">
+                        <button class="button sortTrig -jsToggle" onclick="toggleItem(this)">
                             <div class="sortIcon"><img src="./asset/images/icon-grad/categ.png" alt="" width="20" height="20"></div>
                             <div class="sortTitle">Kategori</div>
                             <span class="icon iconChevron"></span>
                         </button>
-                        <div class="sortTarget">
+                        <div class="sortTarget -jsToggleTg">
+                            <div class="sortItem">
+                                <a href="" class="sortLink active">
+                                    Semua Kategori
+                                </a>
+                            </div>
                             <div class="sortItem">
                                 <a href="product.html" class="sortLink">
                                     Agrobisnis
@@ -233,11 +284,162 @@
                             </div>
                         </div>
                     </div>
+                    <div class="sortBox sortLocBox -jsTogglePar">
+                        <button class="button sortTrig -jsToggle" onclick="toggleItem(this)">
+                            <div class="sortIcon"><img src="./asset/images/icon-grad/loc.png" alt="" width="20" height="20"></div>
+                            <div class="sortTitle">Lokasi</div>
+                            <span class="icon iconChevron"></span>
+                        </button>
+                        <div class="sortTarget -jsToggleTg">
+                            <div class="sortItem sortLoc">
+                                <input type="checkbox" name="loc0" class="formCheck sortCheck">
+                                <span class="sortCheckbox"></span>
+                                <label class="sortLabel">Depok</label>
+                            </div>
+                            <div class="sortItem sortLoc">
+                                <input type="checkbox" name="loc1" class="formCheck sortCheck">
+                                <span class="sortCheckbox"></span>
+                                <label class="sortLabel">DKI Jakarta</label>
+                            </div>
+                            <div class="sortItem sortLoc">
+                                <input type="checkbox" name="loc2" class="formCheck sortCheck">
+                                <span class="sortCheckbox"></span>
+                                <label class="sortLabel">Jakarta Selatan</label>
+                            </div>
+                            <div class="sortItem sortLoc">
+                                <input type="checkbox" name="loc3" class="formCheck sortCheck">
+                                <span class="sortCheckbox"></span>
+                                <label class="sortLabel">Tangerang</label>
+                            </div>
+                            <div class="sortItem sortLoc">
+                                <input type="checkbox" name="loc4" class="formCheck sortCheck">
+                                <span class="sortCheckbox"></span>
+                                <label class="sortLabel">Bekasi</label>
+                            </div>
+                    
+                            <button class="button sortMore" onclick="triggerPopover(this);event.stopPropagation();">Lihat Lainnya</button>
+                            <div class="sortPopover popover">
+                                <div class="popoverTitle">
+                                    Lokasi
+                                </div>
+                                <button class="button popoverClose" aria-label="Close popup" onclick="closePopover(this);">
+                                    <span class="icon iconClose"></span>
+                                </button>
+                                <div class="popoverContent">
+                                    <div class="spacing-sm">
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc0" class="formCheck sortCheck">
+                                            <span class="sortCheckbox"></span>
+                                            <label class="sortLabel">Depok</label>
+                                        </div>
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc1" class="formCheck sortCheck">
+                                            <span class="sortCheckbox"></span>
+                                            <label class="sortLabel">DKI Jakarta</label>
+                                        </div>
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc2" class="formCheck sortCheck">
+                                            <span class="sortCheckbox"></span>
+                                            <label class="sortLabel">Jakarta Selatan</label>
+                                        </div>
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc3" class="formCheck sortCheck">
+                                            <span class="sortCheckbox"></span>
+                                            <label class="sortLabel">Tangerang</label>
+                                        </div>
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc4" class="formCheck sortCheck">
+                                            <span class="sortCheckbox"></span>
+                                            <label class="sortLabel">Bekasi</label>
+                                        </div>
+                                    </div>
+                                    <div class="spacing-sm"><strong>A</strong></div>
+                                    <div class="spacing-xs">
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc6" class="formCheck sortCheck">
+                                            <span class="sortCheckbox"></span>
+                                            <label class="sortLabel">Ambon</label>
+                                        </div>
+                                    </div>
+                                    <div class="spacing-sm"><strong>B</strong></div>
+                                    <div class="spacing-xs">
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc7" class="formCheck sortCheck">
+                                            <span class="sortCheckbox"></span>
+                                            <label class="sortLabel">Bali</label>
+                                        </div>
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc8" class="formCheck sortCheck">
+                                            <span class="sortCheckbox"></span>
+                                            <label class="sortLabel">Banten</label>
+                                        </div>
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc9" class="formCheck sortCheck">
+                                            <span class="sortCheckbox"></span>
+                                            <label class="sortLabel">Bengkulu</label>
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                </div>
+                                <div class="popoverCtaWrap">
+                                    <button class="button popoverReset" onclick="resetLocationOption()">
+                                        Reset
+                                    </button>
+                                    <button class="button popoverCta">
+                                        Terapkan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sortBox sortPriceBox -jsTogglePar">
+                        <button class="button sortTrig -jsToggle" onclick="toggleItem(this)">
+                            <div class="sortIcon"><img src="./asset/images/icon-grad/price.png" alt="" width="20" height="20"></div>
+                            <div class="sortTitle">Harga</div>
+                            <span class="icon iconChevron"></span>
+                        </button>
+                        <div class="sortTarget -jsToggleTg">
+                            <div class="sortLabel">Harga Minimum</div>
+                            <div class="sortPrice">
+                                <input type="text" name="" class="formText sortInput">
+                                <div class="sortCurr">Rp</div>
+                            </div>
+                            <div class="sortLabel">Harga Maksimum</div>
+                            <div class="sortPrice">
+                                <input type="text" name="" class="formText sortInput">
+                                <div class="sortCurr">Rp</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sortCta">
+                        <button class="button buttonRect buttonRectWhite">
+                            Reset
+                        </button>
+                        <button class="button buttonRect buttonRectBlue">
+                            Terapkan
+                        </button>
+                    </div>
                 </div>
                 <div class="col-xl-9">
-                    <h2 class="catalogTitle">
-                        hasil pencarian <span>‘tas laptop’</span>
-                    </h2>
+                    <div class="catalogTitleWrap">
+                        <h2 class="catalogTitle">
+                            hasil pencarian <span>‘tas laptop’</span>
+                        </h2>
+                        <div class="desktop-only">
+                            <div class="sortFilter ">
+                                <span class="sortFilterTitle">Filter</span>
+                                <div class="formSelectWrap custom-select">
+                                    <select name="sort" id="sort" class="formSelect" aria-label="Filter">
+                                        <option value="0">Semua</option>
+                                        <option value="1" selected>Terbaru</option>
+                                        <option value="2">Terlama</option>
+                                        <option value="3">Harga Tertinggi</option>
+                                        <option value="4">Harga Terendah</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="catalogList">
                         <div class="productWrap row">
                             <div class="productItem col-6 col-md-3 col-xl-3">
@@ -853,7 +1055,14 @@
         </div>
     </footer>
     <script src="./asset/js/jquery-3.5.0.min.js"></script> 
-    <script defer type="text/javascript" src="./asset/js/main.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script defer src="./asset/js/sort.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/custom-select.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            setMaxheight()
+        })
+    </script>
 
 </body>
 
