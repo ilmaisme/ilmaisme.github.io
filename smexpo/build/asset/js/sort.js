@@ -4,6 +4,12 @@ if (!!filter) {
     updateFilter()
 }
 
+$(window).on('resize', function () {
+    if (!!filter) {
+        updateFilter()
+    }
+})
+
 function updateFilter() {
     if (viewport().width >= 1230) {
         // console.log("desktop")
