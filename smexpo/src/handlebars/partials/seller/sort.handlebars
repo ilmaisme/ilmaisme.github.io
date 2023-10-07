@@ -1,0 +1,27 @@
+<div class="sortBox sortCategBox -jsTogglePar">
+    <button class="button sortTrig -jsToggle" onclick="toggleItem(this)">
+        <div class="sortIcon"><img src="./asset/images/icon-grad/categ.png" alt="" width="20" height="20"></div>
+        <div class="sortTitle">Kategori</div>
+        <span class="icon iconChevron"></span>
+    </button>
+    <div class="sortTarget -jsToggleTg">
+        <div class="sortItem">
+            <a href="{{link}}" class="sortLink active">
+                Semua Kategori
+            </a>
+        </div>
+        {{#each catalogMenu}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="sortItem">
+            <a href="seller.html" class="sortLink">
+                Kategori {{add @index 1}}
+            </a>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+</div>

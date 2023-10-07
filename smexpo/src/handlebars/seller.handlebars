@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="seller" slick=true countdown=true}}
+
+<body>
+    {{> header/header}}
+    <main role="main" class="main">
+        <div class="container">
+            <div class="breadcrumb">
+                {{>breadcrumb title="kibo_byinu"}}
+            </div>
+            <div class="seller sellerCard row">
+                {{>seller/card total=1 index_start=0 index_end=1}}
+            </div>
+            <div class="sellerNav spacing-md">
+                <div class="sellerNavWrap">
+                    {{>seller/link active="Beranda Toko"}}
+                </div>
+                <div class="sellerSearch">
+                    <form action="#" class="search">
+                        <button class="button icon iconSearch" aria-label="search"></button>
+                        <input type="text" name="q" value="" class="searchInput" aria-label="search"
+                            placeholder="cari produk di Kibo_byinu Shop" inputmode="search">
+                    </form>
+                </div>
+            </div>
+            <div class="titleWrap spacing-md">
+                <h2 class="title">
+                    <span>Kupon Toko</span>
+                </h2>
+                <div class="couponWrap row">
+                    {{>seller/coupon}}
+                    {{>seller/coupon}}
+                    {{>seller/coupon}}
+                </div>
+            </div>
+            <div class="sellerTeaser spacing-xl">
+                {{>seller/teaser}}
+            </div>
+            <div class="titleWrap spacing-xl">
+                <h2 class="title">
+                    <span>Navigasi Toko</span>
+                </h2>
+            </div>
+            <div class="sellerCateg row">
+                {{>seller/nav total=6 index_start=0 index_end=6 col="col-5 col-md-3 col-xl-2" lazy=true}}
+            </div>
+
+            <div class="titleWrap spacing-xl">
+                <h2 class="title">
+                    <span>Terbaru</span>
+                </h2>
+            </div>
+            {{>template/product-list total=6 index_start=0 index_end=6 col="col-6 col-md-3 col-xl-2" lazy=true}}
+
+            <div class="titleWrap spacing-xl">
+                <h2 class="title">
+                    <span>Produk Terlaris</span>
+                </h2>
+            </div>
+            {{>template/product-list total=6 index_start=6 index_end=12 col="col-6 col-md-3 col-xl-2" lazy=true}}
+
+            <div class="titleWrap spacing-xl">
+                <h2 class="title">
+                    <span>Semua Produk </span>
+                </h2>
+            </div>
+            {{>template/product-list total=12 index_start=0 index_end=12 col="col-6 col-md-3 col-xl-2" lazy=true}}
+            {{>template/product-list total=6 index_start=4 index_end=10 col="col-6 col-md-3 col-xl-2" lazy=true}}
+
+            <ul class="paging">
+                {{>paging}}
+            </ul>
+        </div>
+    </main>
+    <!-- popup -->
+    {{>seller/coupon-popup}}
+    <!-- popup -->
+    {{>help}}
+    {{>footer}}
+
+    {{>js page="seller" slick=true popup=true countdown=true}}
+    {{>component/countdown}}
+    <script>
+        function claimCoupon(el) {
+            el.classList.toggle('active');
+        }
+
+        $(document).ready(function () {
+
+            /* slider banner */
+            function createSlick() {
+                $('#sbanner').slick({
+                    dots: true,
+                    arrows: false,
+                    infinite: true,
+                    speed: 1500,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    appendDots: $('#dtbanner'),
+                    mobileFirst: true
+                });
+            }
+            createSlick();
+        });
+    </script>
+
+</body>
+
+</html>

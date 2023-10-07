@@ -1,0 +1,126 @@
+.coupon {
+    &Wrap {
+        @extend %justify-between;
+        @extend %align-start;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    &Item {
+        @extend %display-flex;
+        @extend %align-center;
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 5px;
+        background: #E8F4FF;
+        @extend %title--small;
+
+        @include range-responsive($w-md, $w-lg) {
+            max-width: 334px;
+        }
+        @include range-responsive($w-lg, $w-xl) {
+            max-width: 300px;
+        }
+
+        @include min-responsive($w-xl) {
+            max-width: 375px;
+        }
+    }
+
+    &Box {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    &Title,
+    &Txt,
+    &Date {
+        @extend %ellipsis;
+        -webkit-line-clamp: 1;
+    }
+
+    &Title {
+        @include font-pack($family: $font-mbold, $size: 14px, $weight: $font-weight-mbold);
+    }
+
+    &Txt {
+        margin-top: 8px;
+    }
+
+    &Date {
+        margin-top: 12px;
+        color: #175CC3;
+    }
+
+    &More {
+        margin-left: 12px;
+        color: #39AE36;
+    }
+
+    &Cta {
+        &.active {
+            background: #BDBDBD;
+        }
+    }
+
+    &Tnc {
+
+        &Title,
+        &Item {
+            @extend %display-flex;
+            @extend %align-center;
+        }
+
+        &Item {
+            @extend %justify-between;
+            margin-top: 18px;
+        }
+
+        &Title {
+            font-size: 14px;
+
+            @include min-responsive($w-md) {
+                font-size: 16px;
+            }
+        }
+
+        .icon {
+            display: none;
+            flex-shrink: 0;
+            @extend %filterGrey;
+
+            @include min-responsive($w-md) {
+                display: inline-block;
+                margin-right: 10px;
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .iconClock {
+            @extend %iconClock
+        }
+
+        .iconMinimum {
+            @extend %iconMinimum
+        }
+
+        .countDown__interval_basic_cont {
+            padding-right: 18px;
+        }
+    }
+
+    &Content {
+        &>.popupTitle {
+            font-size: 18px;
+
+            @include min-responsive($w-md) {
+                font-size: 20px;
+            }
+        }
+    }
+
+    &Nom {
+        @include font-pack($family: $font-xbold, $weight: $font-weight-xbold);
+    }
+}

@@ -126,12 +126,21 @@
     &Notif {
         position: relative;
         @extend %center-flex;
-        margin-left: 6px;
-        margin-right: 6px;
+        margin-left: 8px;
+        margin-right: 8px;
 
         @include min-responsive($w-xl) {
-            margin-left: 7.5px;
-            margin-right: 7.5px;
+            min-width: 41px;
+            min-height: 41px;
+            border-radius: 7px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+
+        &:hover {
+            @media(hover:hover) {
+                background: #f0f4fd;
+            }
         }
     }
 
@@ -139,7 +148,7 @@
 
         .iconCart {
             @extend %iconCart;
-            width: 41px;
+            width: 34px;
             height: 34px;
         }
 
@@ -147,6 +156,8 @@
             @extend %center-flex;
             min-width: 20px;
             min-height: 20px;
+            top: 0;
+            right: 0;
             border: 1px solid $cl-white;
             letter-spacing: 0.2px;
             @include font-pack($family: $font-bold, $size: 10px, $weight: $font-weight-bold, $color: $cl-white);
@@ -172,6 +183,13 @@
         .badge {
             min-width: 6px;
             min-height: 6px;
+            top: 0;
+            right: 0;
+
+            @include min-responsive($w-xl) {
+                top: 8px;
+                right: 8px;
+            }
         }
     }
 
@@ -250,8 +268,6 @@
 
     .badge {
         position: absolute;
-        top: 0;
-        right: 0;
         background: #FF6868;
     }
 }

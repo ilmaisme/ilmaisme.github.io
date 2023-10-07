@@ -1,0 +1,396 @@
+.seller {
+    &Card {
+        @extend %justify-between;
+        margin-top: 30px;
+        margin-right: 0;
+        margin-left: 0;
+        padding: 15px 0;
+        border-radius: 10px;
+        border: 1px solid #BDBDBD;
+
+        @include min-responsive($w-md) {
+            padding: 16px 6px;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        &Wrap {
+            @extend %display-flex;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #bdbdbd;
+
+            @include min-responsive($w-xl) {
+                padding-bottom: 0;
+                border-bottom: 0;
+            }
+        }
+
+        &Img {
+            @extend %center-flex;
+            width: 120px;
+            height: 120px;
+            position: relative;
+            flex-shrink: 0;
+            margin-right: 18px;
+
+            img {
+                max-width: 120px;
+                max-height: 120px;
+                object-fit: contain;
+            }
+        }
+
+        &Title {
+            @include font-pack($family: $font-xbold, $size: 16px, $weight: $font-weight-xbold);
+        }
+
+        &Origin {
+            margin-top: 10px;
+            @include font-pack($family: $font-bold, $size:14px, $weight: $font-weight-bold);
+        }
+
+        &Cta {
+            @extend %display-flex;
+            @extend %align-center;
+            flex-wrap: wrap;
+
+            .buttonRect {
+                width: 100%;
+                margin-bottom: 12px;
+                @extend %text-center;
+
+                @include min-responsive($w-md) {
+                    width: 160px;
+                    margin-right: 15px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &Follow {
+            min-height: 50px;
+            padding: 11px 20px;
+            border: 2px solid transparent;
+
+            &.active {
+                background: $cl-white;
+                color: #175CC3;
+                border: 2px solid #175cc3;
+            }
+        }
+
+        &Chat {
+            padding: 11px 20px;
+            width: calc(100% - 4px);
+            margin-left: auto;
+            margin-right: auto;
+
+            &:hover {
+                .iconChat {
+                    @extend %filterWhite;
+                }
+            }
+
+            .iconChat {
+                @extend %iconChat;
+                @extend %filterBlue;
+                width: 24px;
+                height: 24px;
+                vertical-align: middle;
+                margin-right: 4px;
+            }
+        }
+    }
+
+    &Contact {
+        width: 100%;
+        text-align: center;
+
+        @include min-responsive($w-md) {
+            width: auto;
+        }
+
+        &Item {
+            position: relative;
+            display: inline-flex;
+            margin-right: 20px;
+
+            &:hover {
+                @media(hover:hover) {
+                    .tooltip {
+                        height: auto;
+                        opacity: 1;
+                        visibility: visible;
+                        pointer-events: all;
+                        @include animation(fadeInFromNone, 0.5s);
+                    }
+                }
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            .tooltip {
+                @media(hover:none) {
+                    display: none;
+                }
+
+                @include min-responsive($w-md) {
+                    top: -56px;
+                    right: unset;
+                    left: -50px;
+                    width: 126px;
+                }
+            }
+        }
+
+        .icon {
+            @extend %filterGrey;
+            width: 24px;
+            height: 24px;
+            background-size: contain;
+
+            &Wa {
+                @extend %iconWa
+            }
+
+            &Seller {
+                @extend %iconSeller
+            }
+
+            &Share {
+                @extend %iconShare
+            }
+        }
+    }
+
+    &Perform {
+        margin-top: 15px;
+
+        @include min-responsive($w-xl) {
+            margin-top: 0;
+        }
+
+        &Item {
+            @extend %display-flex;
+            @extend %align-center;
+            margin-top: 14px;
+            @include font-pack($font-bold, 13px, $font-weight-bold, false, false);
+
+            @include min-responsive($w-md) {
+                font-size: 14px;
+            }
+
+            &:first-of-type {
+                margin-top: 0
+            }
+        }
+
+        .icon {
+            @extend %filterGrey;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            background-size: contain;
+
+            @include min-responsive($w-md) {
+                width: 24px;
+                height: 24px;
+            }
+
+            &Product {
+                @extend %iconProduct
+            }
+
+            &Chat {
+                @extend %iconChat
+            }
+
+            &Rating {
+                @extend %iconRating
+            }
+
+            &User {
+                @extend %iconUser
+            }
+        }
+
+        span {
+            margin-left: 5px;
+            margin-right: 5px;
+            @include font-pack($color: #175CC3);
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            @include min-responsive($w-md) {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &Nav {
+        position: relative;
+
+        &Item {
+            @extend %text-center;
+            width: 50%;
+            margin-top: 14px;
+            position: relative;
+            border-bottom: 1px solid #E0E0E0;
+            background: $cl-white;
+
+            @include min-responsive($w-md) {
+                width: auto;
+            }
+
+            &.active,
+            &:hover {
+                .sellerLink {
+                    @include font-pack($color: $cl-primary-black);
+                }
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                top: calc(100% - 1px);
+                left: 0;
+                background: var(--grad-blugreen);
+                z-index: 1;
+                opacity: 0;
+                @include base_transition(opacity, .2s)
+            }
+        }
+
+        &Wrap {
+            @extend %display-flex;
+            position: relative;
+        }
+    }
+
+    &Link {
+        display: block;
+        padding: 0px 20px 7px 20px;
+        @include font-pack($family: $font-sbold, $weight: $font-weight-sbold, $color: #676767);
+    }
+
+    &Search {
+        position: relative;
+        margin-top: 10px;
+
+        @include min-responsive($w-xl) {
+            margin-top: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .search {
+            @extend %search;
+
+            @include min-responsive($w-xl) {
+                min-width: 386px;
+            }
+
+            &Input {
+                @extend %searchInput;
+            }
+        }
+    }
+
+    &Categ {
+        margin-left: -6px;
+        margin-right: -6px;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 18px;
+        margin-bottom: -18px;
+
+        @include min-responsive($w-md) {
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        &Item {
+            margin-top: 20px;
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+
+        &Link {
+            display: block;
+
+            &:hover {
+                color: #175CC3;
+            }
+        }
+
+        &Title {
+            margin-top: 18px;
+            @include font-pack(false, 14px, false, false, false);
+        }
+
+        &Img {
+            position: relative;
+            height: 100%;
+            aspect-ratio: 1/1;
+
+            img {
+                @extend %image
+            }
+        }
+    }
+
+    &Teaser {
+        &Wrap {
+            margin-left: -6px;
+            margin-right: -6px;
+        }
+
+        &Col {
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+
+        iframe {
+            max-width: 100%;
+
+            @include max-responsive($w-sm) {
+                height: auto;
+            }
+        }
+    }
+
+    &Slider {
+        &Wrap {
+            width: 100%;
+            min-width: unset
+        }
+
+        &Box {
+            @extend %center-flex;
+            @extend %flex-column;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .headlineBottom {
+            margin-top: 0;
+        }
+    }
+}

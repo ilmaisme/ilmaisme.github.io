@@ -1,0 +1,64 @@
+{{#each seller}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="sellerCardWrap col-xl-7">
+    <div class="sellerCardImg">
+        <img src="{{image}}" alt="{{name}}" width="180" height="180" {{#if ../lazy}} loading="lazy" {{/if}}>
+    </div>
+    <div class="sellerCardInfo">
+        <h2 class="sellerCardTitle">{{name}}</h2>
+        <div class="sellerCardOrigin">
+            <span><img src="./asset/images/icon-grad/loc.png" alt="location" width="20" height="20"></span>
+            {{origin}}
+        </div>
+        <div class="sellerCardCta spacing-sm">
+            <button class="button sellerCardFollow buttonRect buttonRectBlue" onclick="triggerActiveButton(this, 'Diikuti', '+ Ikuti')">
+                + Ikuti
+            </button>
+            <a href="style-dashboard-chat.html" class="sellerCardChat buttonRect buttonRectGrad">
+                <span class="icon iconChat"></span>
+                Chat
+            </a>
+            <div class="sellerContact">
+                <a href="#" class="sellerContactItem" target="_blank" rel="noopener noreferrer"
+                    aria-label="Chat Whatsapp">
+                    <span class="icon iconWa"></span>
+                    <div class="tooltip">
+                        Chat whatsApp
+                    </div>
+                </a>
+                <button class="button sellerContactItem" aria-label="Store Info">
+                    <span class="icon iconSeller"></span>
+                    <div class="tooltip">
+                        Info toko
+                    </div>
+                </button>
+                <button class="button sellerContactItem" aria-label="Share">
+                    <span class="icon iconShare"></span>
+                    <div class="tooltip">
+                        Bagikan
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sellerPerform col-xl-4">
+    <div class="sellerPerformItem">
+        <span class="icon iconProduct"></span>Produk: <span>24</span>
+    </div>
+    <div class="sellerPerformItem">
+        <span class="icon iconChat"></span>Performa Chat: <span>100% (Hitungan menit)</span>
+    </div>
+    <div class="sellerPerformItem">
+        <span class="icon iconRating"></span>Penilaian: <span>4,7 (12,8RB Penilaian)</span>
+    </div>
+    <div class="sellerPerformItem">
+        <span class="icon iconUser"></span>Bergabung: <span>Sejak 2019</span>
+    </div>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

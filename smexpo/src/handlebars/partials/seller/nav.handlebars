@@ -1,0 +1,16 @@
+{{#each catalogMenu}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="sellerCategItem{{#if ../col}} {{../col}}{{/if}}">
+    <a href="seller.html" class="sellerCategLink">
+        <div class="sellerCategImg">
+            <img src="./asset/images/dummy/seller/categ/{{add @index 1}}.png" alt="" class="border-sm" loading="lazy">
+        </div>
+        <div class="sellerCategTitle">Kategori {{add @index 1}}</div>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}
