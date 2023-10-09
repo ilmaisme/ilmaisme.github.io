@@ -1,0 +1,159 @@
+.access {
+    &Wrap {
+        margin: 45px auto 77px;
+        padding: 0;
+    }
+
+    &Header {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #BDBDBD;
+
+        .buttonBack {
+            @extend %display-flex;
+            @extend %align-center;
+            @extend %buttonBack
+        }
+
+        .iconArrow {
+            @extend %iconArrow;
+            width: 24px;
+            height: 24px;
+            margin-right: 14px;
+        }
+    }
+
+    &Title {
+        margin-top: 30px;
+        @include font-pack($family: $font-sbold, $size: 18px, $weight: $font-weight-sbold, $color: #333);
+
+        @include min-responsive($w-md) {
+            font-size: 20px;
+        }
+
+        &--small {
+            @include font-pack(false, 13px, false, 1.45, false);
+            letter-spacing: 0.26px;
+        }
+    }
+
+    &Link {
+        color: #2866C3;
+        text-decoration: underline;
+
+        &--blue {
+            color: #0C68DA;
+        }
+    }
+
+    &Form {
+        max-width: 320px;
+        margin: auto;
+
+        &Wrap {
+            margin-top: 24px;
+
+            .buttonRect {
+                width: 100%;
+            }
+        }
+
+        .formInput {
+            width: 100%;
+            padding: 13px 20px;
+            @include placeholder($size: 13px, $line: 1.45, $color: #676767, $spacing: 0.26px);
+        }
+
+        .buttonPass {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 5px;
+            right: 13px;
+            padding: 20px;
+
+            &.show {
+
+                &::before,
+                &::after {
+                    opacity: 0;
+                }
+            }
+
+            .iconEye {
+                @extend %iconEye;
+                @extend %filterGrey;
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                top: 8px;
+                right: 8px;
+            }
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                border-top: 2px solid $cl-white;
+                top: 18px;
+                right: 8px;
+                opacity: 1;
+                width: 26px;
+                height: 4px;
+                display: block;
+                transform: rotate(40deg);
+                border-radius: 1px;
+                z-index: 1;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                border-top: 2px solid #676767;
+                top: 19px;
+                right: 9px;
+                filter: none;
+            }
+        }
+    }
+
+    &Check {
+        @extend %display-flex;
+    }
+
+    &Button {
+        @include font-pack($font-mbold, 13px, $font-weight-mbold, 1.45, false);
+        letter-spacing: 0.26px;
+
+        &.-google {
+            color: #525252;
+            background: $cl-white;
+            border: 1px solid #676767;
+        }
+
+        &.-fb {
+            color: $cl-white;
+            background: #1976D2;
+            border: 1px solid #1976D2;
+        }
+
+        img {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    }
+
+    &Misc {
+        color: #676767;
+        border-top: 1px solid #676767;
+        line-height: 0;
+        margin-top: 34px;
+        min-height: 18px;
+
+        span {
+            background: $cl-white;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+}

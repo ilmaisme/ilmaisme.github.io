@@ -1,13 +1,54 @@
 .form {
     &Check {
+        opacity: 0;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        left: 0;
         accent-color: #000;
         cursor: pointer;
+
+        &:checked {
+            ~.formCheckbox::before {
+                opacity: 1;
+            }
+        }
+
+        &box {
+            display: block;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+            border-radius: 4px;
+            pointer-events: none;
+            flex-shrink: 0;
+
+            &::before {
+                content: "";
+                position: relative;
+                top: 17px;
+                left: 5px;
+                content: "";
+                display: block;
+                width: 6px;
+                height: 12px;
+                border-right: 2px solid #000;
+                border-bottom: 2px solid #000;
+                transform: translate3d(0, -16px, 0) rotate(45deg);
+                opacity: 0;
+            }
+        }
     }
 
-    &Text {
+    &Input {
         border-radius: 10px;
         border: 1px solid#676767;
         background: $cl-white;
+
+        &Icon {
+            position: relative;
+        }
     }
 
     &Pill {
@@ -20,7 +61,7 @@
             }
         }
 
-        &__label {
+        &Label {
             display: block;
             margin: 2px 5px 2px 0;
             padding: 8px 22px;
@@ -29,6 +70,16 @@
             box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.13);
             @include font-pack($font-bold, 13px, $font-weight-bold, 1.45, #525252);
             letter-spacing: 0.26px;
+        }
+    }
+
+    &Msg {
+        margin-top: 10px;
+        @include font-pack(false, 13px, false, 1.45, false);
+        letter-spacing: 0.26px;
+
+        &.-error {
+            color: #ED3D57;
         }
     }
 }

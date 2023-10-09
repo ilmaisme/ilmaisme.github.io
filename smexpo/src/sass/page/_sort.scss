@@ -158,46 +158,6 @@
         @include font-pack($family: $font-base, $weight: $font-weight-normal)
     }
 
-    &Check {
-        opacity: 0;
-        width: 24px;
-        height: 24px;
-        position: absolute;
-        left: 0;
-
-        &:checked {
-            ~.sortCheckbox::before {
-                opacity: 1;
-            }
-        }
-
-        &box {
-            display: block;
-            margin-right: 10px;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #000;
-            border-radius: 4px;
-            pointer-events: none;
-            flex-shrink: 0;
-
-            &::before {
-                content: "";
-                position: relative;
-                top: 17px;
-                left: 5px;
-                content: "";
-                display: block;
-                width: 6px;
-                height: 12px;
-                border-right: 2px solid #000;
-                border-bottom: 2px solid #000;
-                transform: translate3d(0, -16px, 0) rotate(45deg);
-                opacity: 0;
-            }
-        }
-    }
-
     &Popover {
         width: 100%;
 
