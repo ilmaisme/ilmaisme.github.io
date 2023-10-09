@@ -13,7 +13,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="accessWrap col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="accessWrap col-12 col-md-8 col-lg-12 col-xl-9">
                     <h1 class="text-center">
                         <a href="index.html">
                             <img src="./asset/images/logo-smexpo.svg" class="headerLogo" alt="Pertamina Smexpo"
@@ -21,47 +21,127 @@
                         </a>
                     </h1>
                     <h2 class="accessTitle text-center">Daftar sebagai UMKM</h2>
-                    <form action="#" class="accessForm">
-                        <div class="accessFormWrap">
-                            <label class="formLabel sr-only" for="fname">Full Name</label>
-                            <input type="text" class="formInput" name="fname" id="fname" placeholder="Nama Lengkap">
-                        </div>
-                        <div class="accessFormWrap">
-                            <label class="formLabel sr-only" for="email">Email</label>
-                            <input type="email" class="formInput" name="email" id="email" placeholder="Alamat E-mail">
-                            <div class="formMsg -error">
-                                email sudah terpakai, gunakan email lain?
+                    <form action="#" class="accessForm accessForm--large">
+                        <div class="accessFormRow row">
+                            <div class="accessCaption col-12">Profil Usaha</div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="uname">Nama UMKM</label>
+                                <input type="text" class="formInput" name="uname" id="uname" placeholder="Nama Umkm">
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="oname">Nama Pemilik</label>
+                                <input type="text" class="formInput" name="oname" id="oname" placeholder="Nama Pemilik">
                             </div>
                         </div>
-                        <div class="accessFormWrap">
-                            <label class="formLabel sr-only" for="pass">Password</label>
-                            <div class="formInputIcon">
-                                <button class="button buttonPass" aria-label="show or hide password" toggle="#pass"
-                                    type="button" onclick="togglePassword(this)"><span
-                                        class="icon iconEye"></span></button>
-                                <input type="password" class="formInput" name="pass" id="pass"
-                                    placeholder="Buat Password">
+                        <div class="accessFormRow row">
+                            <div class="accessCaption col-12">Informasi Usaha</div>
+                            <div class="accessFormCol col-xl-12">
+                                <label class="formLabel" for="address">Alamat</label>
+                                <input type="text" class="formInput" name="address" id="address" placeholder="Alamat">
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="province">Provinsi*</label>
+                                <input type="text" class="formInput" name="province" id="province"
+                                    placeholder="Nama Pemilik">
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="city">Kota*</label>
+                                <input type="text" class="formInput" name="city" id="city" placeholder="Nama Pemilik">
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="zipcode">Kode Pos</label>
+                                <input type="text" class="formInput" inputmode="numeric" name="zipcode" id="zipcode"
+                                    placeholder="Kode Pos">
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="phone">Nomor Telepon*</label>
+                                <input type="text" class="formInput" inputmode="numeric" name="phone" id="phone"
+                                    placeholder="08">
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="mail">Email*</label>
+                                <input type="email" class="formInput" name="mail" id="mail" placeholder="Email">
                                 <div class="formMsg -error">
-                                    password harus terdapat 8 karakter. Gunakan huruf kapital dan angka agar passwordmu
-                                    lebih kuat.
+                                    email sudah terpakai, gunakan email lain?
+                                </div>
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="web">Website</label>
+                                <input type="text" class="formInput" name="web" id="web" placeholder="Website">
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="instagram">Akun Instagram</label>
+                                <input type="text" class="formInput" name="instagram" id="instagram"
+                                    placeholder="Akun Instagram">
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="facebook">Akun Facebook</label>
+                                <input type="text" class="formInput" name="facebook" id="facebook"
+                                    placeholder="Akun Facebook">
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="twitter">Akun Twitter (X)</label>
+                                <input type="text" class="formInput" name="twitter" id="twitter"
+                                    placeholder="Akun Twitter (X)">
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="tiktok">Akun Tiktok</label>
+                                <input type="text" class="formInput" name="tiktok" id="tiktok"
+                                    placeholder="Akun Tiktok">
+                            </div>
+                            <div class="accessFormCol col-xl-12">
+                                <label class="formLabel">Kategori UMKM*</label>
+                                <div class="accessRadio">
+                                    {{#eachIndex catalogMenu}}
+                                    <label class="formRadioWrap formLabel">
+                                        <input type="radio" class="formRadio" name="category" {{#eq index compare=0}}
+                                            checked{{/eq}}>
+                                        <span class="formRadiobox"></span>
+                                        <span class="formRadioTitle">{{item.title}}</span>
+                                    </label>
+                                    {{/eachIndex}}
+                                </div>
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="mpower">Jumlah Tenaga Kerja</label>
+                                <input type="text" class="formInput" inputmode="numeric" name="mpower" id="mpower"
+                                    placeholder="1">
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="revenue">Total Omzet Tahunan (Rp) *</label>
+                                <input type="text" class="formInput" inputmode="numeric" name="revenue" id="revenue"
+                                    placeholder="0">
+                                <div class="formMsg">
+                                    Jika belum ada bisa diisi 0
+                                </div>
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="pass">Kata Sandi*</label>
+                                <div class="formInputIcon">
+                                    <button class="button buttonPass" aria-label="show or hide password" toggle="#pass"
+                                        type="button" onclick="togglePassword(this)"><span
+                                            class="icon iconEye"></span></button>
+                                    <input type="password" class="formInput" name="pass" id="pass"
+                                        placeholder="Buat Password">
+                                    <div class="formMsg -error">
+                                        password harus terdapat 8 karakter. Gunakan huruf kapital dan angka agar
+                                        passwordmu
+                                        lebih kuat.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="rpass">Ulang Kata Sandi*</label>
+                                <div class="formInputIcon">
+                                    <button class="button buttonPass" aria-label="show or hide password" toggle="#rpass"
+                                        type="button" onclick="togglePassword(this)"><span
+                                            class="icon iconEye"></span></button>
+                                    <input type="password" class="formInput" name="rpass" id="rpass"
+                                        placeholder="Ketik Ulang Password">
                                 </div>
                             </div>
                         </div>
-                        <div class="accessFormWrap">
-                            <label class="formLabel sr-only" for="rpass">Retype Password</label>
-                            <div class="formInputIcon">
-                                <button class="button buttonPass" aria-label="show or hide password" toggle="#rpass"
-                                    type="button" onclick="togglePassword(this)"><span
-                                        class="icon iconEye"></span></button>
-                                <input type="password" class="formInput" name="rpass" id="rpass"
-                                    placeholder="Ketik Ulang Password">
-                            </div>
-                        </div>
-                        <div class="accessFormWrap">
-                            <label class="formLabel sr-only" for="phone">Phone or mobile phone number</label>
-                            <input type="text" class="formInput" name="phone" id="phone"
-                                placeholder="Nomor Telepon atau HP" inputmode="numeric">
-                        </div>
+                        
                         <div class="accessFormWrap accessCheck accessTitle--small">
                             <div class="formInputIcon">
                                 <input type="checkbox" id="agree" name="genre" class="formCheck">

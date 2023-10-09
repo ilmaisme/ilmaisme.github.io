@@ -7,3 +7,11 @@ function triggerActiveButton(el, txt, txtnon) {
     }
     el.classList.toggle('active');
 }
+
+//copy share link
+function copyLink(id) {
+    let cTxt = document.getElementById(id);    
+    cTxt.select();
+    cTxt.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(cTxt.value);
+}

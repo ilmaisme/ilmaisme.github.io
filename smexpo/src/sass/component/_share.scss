@@ -1,0 +1,80 @@
+.share {
+    &Content {
+        font-size: 14px;
+    }
+
+    &Wrap {
+        @extend %display-flex
+    }
+
+    &Img {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        margin-right: 12px;
+        flex-shrink: 0;
+        overflow: hidden;
+
+        img {
+            @extend %image
+        }
+    }
+
+    &Title {
+        span {
+            display: block;
+            margin-top: 8px;
+            @extend %title--small
+        }
+    }
+
+    &List {
+        @extend %display-flex;
+        @extend %justify-between;
+    }
+
+    &Button {
+        &Title {
+            margin-top: 8px;
+            @extend %title--small;
+            color: $cl-primary-black
+        }
+    }
+
+    &Link {
+        @extend %display-flex;
+        @extend %align-center;
+        margin-top: 16px;
+
+        .formInput {
+            padding: 13px 20px;
+            margin-right: 15px;
+            flex: 1;
+        }
+
+        .buttonRect {
+            min-width: 111px;
+            padding: 0;
+
+            &:hover {
+                span {
+                    background: transparent;
+                }
+            }
+
+            &::before {
+                z-index: 0;
+            }
+
+            span {
+                display: block;
+                border-radius: 10px;
+                padding: 12px 20px;
+                min-width: 111px;
+                position: relative;
+                background: $cl-white;
+                @include base_transition(background, .2s)
+            }
+        }
+    }
+}

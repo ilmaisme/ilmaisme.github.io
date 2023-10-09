@@ -27,7 +27,7 @@
     <!-- e:twitter card -->
 
     <link rel="icon" type="image/x-icon" sizes="16x16" href="./asset/images/favicon.ico">
-    <link rel="stylesheet" href="./asset/css/style-seller.min.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style-seller.css" type="text/css">
     <link rel="stylesheet" href="./asset/css/style-sort.min.css" type="text/css">
 
     <link rel="preload" href="./asset/images/logo-smexpo.svg" as="image" />
@@ -107,8 +107,10 @@
                     <span class="icon iconCart"></span>
                     <div class="badge">0</div>
                 </a>
-                <div class="headerAccessWrap desktop-only" id="accessDesk">
-                </div>
+                <div class="headerAccessWrap desktop-only" id="accessDesk"></div>
+                <button class="button buttonLang desktop-only" aria-label="Translate website" value="id"
+                    onclick="changeLanguage(this)">
+                </button>
                 <div class="navMob mobile-only" id="navMob">
                     <nav class="nav">
                         <div class="menu mobile-only" id="menu">
@@ -225,7 +227,7 @@
                                         Info toko
                                     </div>
                                 </button>
-                                <button class="button sellerContactItem" aria-label="Share">
+                                <button class="button sellerContactItem" aria-label="Share" onclick="triggerPopup('.-pShare')">
                                     <span class="icon iconShare"></span>
                                     <div class="tooltip">
                                         Bagikan
@@ -680,7 +682,62 @@
             </div>
         </div>
     </main>
-
+    <!-- popup -->
+    <div class="popup -pShare">
+        <div class="popupWrap">
+            <div class="popupBox col-12 col-xl-5">
+                <div class="popupHead">
+                    <div class="popupTitle">Bagikan</div>
+                    <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
+                            class="icon iconClose"></span></button>
+                </div>
+                <div class="popupContent shareContent spacing-sm">
+                    <div class="shareWrap">
+                        <div class="shareImg border-sm">
+                            <img src="./asset/images/seller.png" alt="kibo_byinu" width="60" height="60" loading="lazy">
+                        </div>
+                        <div class="shareTitle">kibo_byinu <span>smexpo.com</span></div>
+                    </div>
+                    <div class="shareList spacing-sm">
+                        <div class="shareItem">
+                            <button class="button shareButton" aria-label="Share to Facebook">
+                                <img src="./asset/images/icon-share/fb.svg" alt="" width="34" height="34" loading="lazy">
+                                <div class="shareButtonTitle">Facebook</div>
+                            </button>
+                        </div>
+                        <div class="shareItem">
+                            <button class="button shareButton" aria-label="Share to Line">
+                                <img src="./asset/images/icon-share/line.svg" alt="" width="34" height="34" loading="lazy">
+                                <div class="shareButtonTitle">Line</div>
+                            </button>
+                        </div>
+                        <div class="shareItem">
+                            <button class="button shareButton" aria-label="Share to X (Twitter)">
+                                <img src="./asset/images/icon-share/x.svg" alt="" width="34" height="34" loading="lazy">
+                                <div class="shareButtonTitle">X (Twitter)</div>
+                            </button>
+                        </div>
+                        <div class="shareItem">
+                            <button class="button shareButton" aria-label="Share to Whatsapp">
+                                <img src="./asset/images/icon-share/wa.svg" alt="" width="34" height="34" loading="lazy">
+                                <div class="shareButtonTitle">Whatsapp</div>
+                            </button>
+                        </div>
+                        <div class="shareItem">
+                            <button class="button shareButton" aria-label="Share to Telegram">
+                                <img src="./asset/images/icon-share/tg.svg" alt="" width="34" height="34" loading="lazy">
+                                <div class="shareButtonTitle">Telegram</div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="shareLink">
+                        <input class="formInput" disabled="disabled" type="text" id="copyLinkUrl" value="https://smexpo.pertamina.com/seller/52">
+                        <button class="button buttonRect buttonRectGrad" onclick="copyLink('copyLinkUrl')"><span>Salin</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    <!-- popup -->
     <div class="help">
         <a href="#" class="helpWrap">
             <img src="./asset/images/chat-mina.png" alt="Help Chat MINA" width="91" height="91" loading="lazy">
@@ -947,9 +1004,10 @@
         </div>
     </footer>
     <script src="./asset/js/jquery-3.5.0.min.js"></script> 
-    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.js"></script>
     <script defer src="./asset/js/sort.min.js"></script>
-    <script defer src="./asset/js/seller.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/popup.min.js"></script>
+    <script defer src="./asset/js/seller.js"></script>
     <script>
         $(document).ready(function () {
             setMaxheight()

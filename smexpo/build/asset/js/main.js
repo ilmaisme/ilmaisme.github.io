@@ -78,6 +78,16 @@ function hideMenuMobile() {
     $('.menu').removeClass('active');
 }
 
+// bilingual button
+function changeLanguage(el){
+    lang = el.getAttribute('value');
+    if (lang == "id") {
+        el.setAttribute('value', 'eng');
+    } else {
+        el.setAttribute('value', 'id');
+    }
+}
+
 //  deteksi viewport
 const footer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
