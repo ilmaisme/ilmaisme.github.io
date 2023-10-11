@@ -214,6 +214,10 @@
             &User {
                 @extend %iconUser
             }
+
+            &Loc {
+                @extend %iconLoc
+            }
         }
 
         span {
@@ -392,5 +396,70 @@
         .headlineBottom {
             margin-top: 0;
         }
+    }
+
+    &Info {
+        &Wrap {
+            @extend %justify-between;
+        }
+
+        &Title {
+            @extend .popoverTitle;
+            margin-bottom: 10px;
+
+            @include max-responsive($w-sm) {
+                text-transform: none
+            }
+        }
+
+        &Desc {
+            @extend %title--small;
+            color: #676767;
+        }
+
+        &List {
+            margin-left: -6px;
+            margin-right: -6px;
+        }
+
+        &Item {
+            @extend .text-center;
+            padding-left: 6px;
+            padding-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        &Trig {
+            text-align: left;
+            border: 1px solid #676767;
+            @extend %title--small;
+            @include font-pack($family: $font-bold, $weight: $font-weight-bold);
+            color: #676767;
+
+            span:first-child {
+                margin-right: 25px;
+            }
+
+            &.-jsToggle {
+                .iconChevron {
+                    right: 20px;
+                }
+            }
+        }
+
+        &Note {
+            overflow: hidden;
+        }
+
+        .sellerPerform {
+            .icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    &Popupbox {
+        max-width: 750px;
     }
 }

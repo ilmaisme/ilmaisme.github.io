@@ -25,29 +25,6 @@
                 margin-top: 0;
             }
         }
-
-        &.close {
-            .sortTarget {
-                opacity: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: opacity .4s linear .4s, max-height .4s linear;
-                will-change: opacity, max-height;
-            }
-
-            .iconChevron {
-                transform: rotate(360deg);
-            }
-        }
-
-        &.open {
-            .sortTarget {
-                opacity: 1;
-                max-height: 22px;
-                transition: opacity .4s linear .4s, max-height .4s linear;
-                will-change: opacity, max-height;
-            }
-        }
     }
 
     &Item {
@@ -86,29 +63,7 @@
         }
     }
 
-    &Trig {
-        @extend %display-flex;
-        @extend %align-center;
-        position: relative;
-        width: 100%;
-
-        .iconChevron {
-            @extend %iconChevron;
-            position: absolute;
-            right: 0;
-            width: 20px;
-            height: 20px;
-            background-size: contain;
-            transform: rotate(180deg);
-            @include base_transition(transform, .4s);
-        }
-    }
-
     &Target {
-        opacity: 1;
-        max-height: unset;
-        transition: opacity .4s linear .4s, max-height .4s linear;
-        will-change: opacity, max-height;
 
         >.sortItem {
             &:first-child {
@@ -248,6 +203,62 @@
         .formSelect {
             &Wrap {
                 min-width: 206px;
+            }
+        }
+    }
+}
+
+.-jsToggle {
+    @extend %display-flex;
+    @extend %align-center;
+    position: relative;
+    width: 100%;
+
+    .iconChevron {
+        @extend %iconChevron;
+        position: absolute;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        transform: rotate(180deg);
+        @include base_transition(transform, .4s);
+    }
+
+    &Par {
+        &.close {
+            .-jsToggleTg {
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: opacity .4s linear .4s, max-height .4s linear;
+                will-change: opacity, max-height;
+            }
+
+            .iconChevron {
+                transform: rotate(360deg);
+            }
+        }
+
+        &.open {
+            .-jsToggleTg {
+                opacity: 1;
+                max-height: 22px;
+                transition: opacity .4s linear .4s, max-height .4s linear;
+                will-change: opacity, max-height;
+            }
+        }
+    }
+
+    &Tg {
+        opacity: 1;
+        max-height: unset;
+        transition: opacity .4s linear .4s, max-height .4s linear;
+        will-change: opacity, max-height;
+
+        >.sortItem {
+            &:first-child {
+                margin-top: 12px
             }
         }
     }

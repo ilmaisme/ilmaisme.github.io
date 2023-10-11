@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="./asset/css/style-seller.css" type="text/css">
     <link rel="stylesheet" href="./asset/css/slick.min.css" type="text/css">
     <link rel="stylesheet" href="./asset/css/countdown.min.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style-sort.css" type="text/css">
 
     <link rel="preload" href="./asset/images/logo-smexpo.svg" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -222,7 +223,7 @@
                                         Chat whatsApp
                                     </div>
                                 </a>
-                                <button class="button sellerContactItem" aria-label="Store Info">
+                                <button class="button sellerContactItem" aria-label="Store Info" onclick="triggerPopup('.-pInfo')">
                                     <span class="icon iconSeller"></span>
                                     <div class="tooltip">
                                         Info toko
@@ -1107,9 +1108,115 @@
                 </div>
             </div>
         </div>
+    </div>    <div class="popup -pInfo">
+        <div class="popupWrap">
+            <div class="popupBox sellerPopupbox col-12 col-xl-7">
+                <div class="popupHead">
+                    <div class="popupTitle"></div>
+                    <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
+                            class="icon iconClose"></span></button>
+                </div>
+                <div class="popupContent sellerInfo spacing-sm">
+                    <div class="popupTitle">kibo_byinu Shop</div>
+                    <div class="sellerInfoTitle spacing-sm">Deskripsi Toko</div>
+                    <div class="sellerInfoWrap row">
+                        <div class="sellerInfoDesc col-12 col-md-6">
+                            Jam Operasional: <br> Senin - Jumat 09.00 - 17.30 WIB, <br> Sabtu 09.00 - 12.00 WIB. <br> Minggu dan Public holiday off.
+                        </div>
+                        <div class="sellerPerform col-12 col-md-4">
+                            <div class="sellerPerformItem">
+                                <span class="icon iconLoc"></span>Surabaya</span>
+                            </div>
+                            <div class="sellerPerformItem">
+                                <span class="icon iconUser"></span>Bergabung sejak 2019</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sellerInfoTitle spacing-sm">Catatan Toko</div>
+                    <div class="sellerInfoDesc -jsTogglePar">
+                        <button class="button buttonRect sellerInfoTrig -jsToggle" onclick="toggleItem(this)">
+                            <span>Ketentuan komplain/pengembalian di Kibo_byinu Shop</span>
+                            <span class="icon iconChevron"></span>
+                        </button>
+                        <div class="sellerInfoNote static -jsToggleTg">
+                            <ol class="spacing-sm">
+                                <li>Tidak menerima komplain/pengembalian produk tanpa video unboxing.</li>
+                                <li>Rekam video dengan jelas mulai dari sebelum paket dibuka sampai selesai.</li>
+                                <li>Tidak menerima video yang direkam setelah paket dibuka atau dibungkus ulang.</li>
+                                <li>Tidak menerima video yang terputus-putus dari potongan video atau video yang dipercepat dari speed normal atau hasil editan.</li>
+                            </ol>
+                            <hr class="spacing-sm">
+                        </div>
+                    </div>
+                    <div class="sellerInfoTitle spacing-sm">Layanan Pengiriman</div>
+                    <ul class="sellerInfoList row">
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/ambil-sendiri.png" alt="Ambil sendiri" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/jne.png" alt="JNE Express" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/tiki.png" alt="TiKi" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/pos.png" alt="Pos Indonesia" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/wahana.png" alt="Wahana Express" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/gosend.png" alt="gosend" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/sicepat.png" alt="SICEPAT" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/ninja.png" alt="ninja xpress" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/j&amp;t.png" alt="J&amp;T Express" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/grabexpress.png" alt="Grab Express" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/paxel.png" alt="paxel" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/indah-cargo.png" alt="Indah Cargo" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/cod.png" alt="COD" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/anteraja.png" alt="anteraja" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/lion-parcel.png" alt="Lion parcel" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/rpx.png" alt="RPX" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/sap.png" alt="SAP Express" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/alfatrex.png" alt="Alfatrex" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/janio.png" alt="janio" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="sellerInfoItem col-4 col-md-2">
+                            <img src="./asset/images/logo-delivery/rocket-delivery.png" alt="Rocket Delivery" loading="lazy" width="75" height="26">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>    <div class="popup -pShare">
         <div class="popupWrap">
-            <div class="popupBox col-12 col-xl-5">
+            <div class="popupBox col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="popupHead">
                     <div class="popupTitle">Bagikan</div>
                     <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
@@ -1427,12 +1534,14 @@
             </div>
         </div>
     </footer>
-    <script src="./asset/js/jquery-3.5.0.min.js"></script> 
+    
+    <script src="./asset/js/jquery-3.5.0.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/main.js"></script>
     <!-- slick JS -->
     <script defer src="./asset/js/slick/slick.min.js"></script>
     <!-- countdown JS -->
     <script defer src="./asset/js/countDown.min.js"></script>
+    <script defer src="./asset/js/sort.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/popup.min.js"></script>
     <script defer src="./asset/js/seller.js"></script>
     <script>

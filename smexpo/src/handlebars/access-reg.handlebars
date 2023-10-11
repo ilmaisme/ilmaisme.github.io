@@ -41,12 +41,27 @@
                             </div>
                             <div class="accessFormCol col-lg-6">
                                 <label class="formLabel" for="province">Provinsi*</label>
-                                <input type="text" class="formInput" name="province" id="province"
-                                    placeholder="Nama Pemilik">
+                                <div class="formSelectWrap custom-select">
+                                    <select name="province" id="province" class="formSelect">
+                                        <option value="" selected disabled="disabled">Provinsi</option>
+                                        {{#eachIndex province}}
+                                        <option value="{{index}}">
+                                            {{item.name}}</option>
+                                        {{/eachIndex}}
+                                    </select>
+                                </div>
                             </div>
                             <div class="accessFormCol col-lg-6">
                                 <label class="formLabel" for="city">Kota*</label>
-                                <input type="text" class="formInput" name="city" id="city" placeholder="Nama Pemilik">
+                                <div class="formSelectWrap custom-select">
+                                    <select name="city" id="city" class="formSelect">
+                                        <option value="" selected disabled="disabled">Kota</option>
+                                        {{#eachIndex city}}
+                                        <option value="{{index}}">
+                                            {{item.name}}</option>
+                                        {{/eachIndex}}
+                                    </select>
+                                </div>
                             </div>
                             <div class="accessFormCol col-lg-6">
                                 <label class="formLabel" for="zipcode">Kode Pos</label>
@@ -103,6 +118,23 @@
                                 </div>
                             </div>
                             <div class="accessFormCol col-lg-6">
+                                <label class="formLabel" for="about">Sekilas tentang UMKM*</label>
+                                <textarea class="formArea formInput" id="about" name="" cols="30" rows="5"
+                                    inputmode="text"></textarea>
+                            </div>
+                            <div class="accessFormCol col-lg-6">
+                                <label class="formLabel">Unggah Foto Produk*</label>
+                                <label class="formFile" for="photo">
+                                    <input type="text" placeholder="Pilih file" class="formInput formFileTitle">
+                                    <div class="buttonRect buttonRectGrad"><span>Pilih File</span></div>
+                                    <input type="file" name="photo" id="photo" accept="image/*"
+                                        class="formFileInput" onChange="onFileChange(this)" ref="inputFile">
+                                </label>
+                                <div class="formMsg">
+                                    Unggah hanya 1 foto, ukuran maksimal 2MB
+                                </div>
+                            </div>
+                            <div class="accessFormCol col-lg-6">
                                 <label class="formLabel" for="mpower">Jumlah Tenaga Kerja</label>
                                 <input type="text" class="formInput" inputmode="numeric" name="mpower" id="mpower"
                                     placeholder="1">
@@ -141,7 +173,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accessFormWrap accessCheck accessTitle--small">
                             <div class="formInputIcon">
                                 <input type="checkbox" id="agree" name="genre" class="formCheck">
@@ -163,7 +195,7 @@
 
     </main>
 
-    {{>js page="access"}}
+    {{>js page="access" select=true}}
     <script>
         function togglePassword(el) {
             //show hide password
@@ -177,6 +209,12 @@
                 el.classList.remove("show")
                 pass.setAttribute("type", "password");
             }
+        }
+
+        function onFileChange(el) {
+            let parent = el.parentNode,
+                title = parent.querySelector('.formFileTitle')
+            title.setAttribute('placeholder', el.value);
         }
     </script>
 

@@ -104,7 +104,7 @@
             }
         }
 
-        &Title{
+        &Title {
             vertical-align: top;
         }
 
@@ -120,6 +120,40 @@
 
         &Icon {
             position: relative;
+        }
+    }
+
+    &Area {
+        resize: vertical;
+    }
+
+    &File {
+        position: relative;
+        cursor: pointer;
+
+        &Title {
+            @extend %ellipsis;
+            -webkit-line-clamp: 1;
+            pointer-events: none;
+        }
+
+        .buttonRect {
+            @extend .text-center;
+            @extend %buttonRectSpan;
+            position: absolute;
+            width: 110px;
+            min-width: unset;
+            top: 8px;
+            right: 20px;
+            z-index: 1;
+
+            span {
+                padding: 6px 20px;
+            }
+        }
+
+        &Input {
+            display: none;
         }
     }
 

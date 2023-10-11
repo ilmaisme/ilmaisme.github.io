@@ -1,0 +1,52 @@
+<div class="popup -pInfo">
+    <div class="popupWrap">
+        <div class="popupBox sellerPopupbox col-12 col-xl-7">
+            <div class="popupHead">
+                <div class="popupTitle"></div>
+                <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
+                        class="icon iconClose"></span></button>
+            </div>
+            <div class="popupContent sellerInfo spacing-sm">
+                <div class="popupTitle">kibo_byinu Shop</div>
+                <div class="sellerInfoTitle spacing-sm">Deskripsi Toko</div>
+                <div class="sellerInfoWrap row">
+                    <div class="sellerInfoDesc col-12 col-md-6">
+                        Jam Operasional: <br> Senin - Jumat 09.00 - 17.30 WIB, <br> Sabtu 09.00 - 12.00 WIB. <br> Minggu dan Public holiday off.
+                    </div>
+                    <div class="sellerPerform col-12 col-md-4">
+                        <div class="sellerPerformItem">
+                            <span class="icon iconLoc"></span>Surabaya</span>
+                        </div>
+                        <div class="sellerPerformItem">
+                            <span class="icon iconUser"></span>Bergabung sejak 2019</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sellerInfoTitle spacing-sm">Catatan Toko</div>
+                <div class="sellerInfoDesc -jsTogglePar">
+                    <button class="button buttonRect sellerInfoTrig -jsToggle" onclick="toggleItem(this)">
+                        <span>Ketentuan komplain/pengembalian di Kibo_byinu Shop</span>
+                        <span class="icon iconChevron"></span>
+                    </button>
+                    <div class="sellerInfoNote static -jsToggleTg">
+                        <ol class="spacing-sm">
+                            <li>Tidak menerima komplain/pengembalian produk tanpa video unboxing.</li>
+                            <li>Rekam video dengan jelas mulai dari sebelum paket dibuka sampai selesai.</li>
+                            <li>Tidak menerima video yang direkam setelah paket dibuka atau dibungkus ulang.</li>
+                            <li>Tidak menerima video yang terputus-putus dari potongan video atau video yang dipercepat dari speed normal atau hasil editan.</li>
+                        </ol>
+                        <hr class="spacing-sm">
+                    </div>
+                </div>
+                <div class="sellerInfoTitle spacing-sm">Layanan Pengiriman</div>
+                <ul class="sellerInfoList row">
+                    {{#each delivery}}
+                    <li class="sellerInfoItem col-4 col-md-2">
+                        <img src="./asset/images/{{image}}" alt="{{title}}" loading="lazy" width="75" height="26">
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -123,6 +123,29 @@
             border: 2px solid #175CC3;
             @include font-pack($color: #175CC3);
         }
+
+        &Span {
+            padding: 0;
+
+            &:hover {
+                span {
+                    background: transparent;
+                }
+            }
+
+            &::before {
+                z-index: 0;
+            }
+
+            span {
+                display: block;
+                border-radius: 10px;
+                padding: 12px 20px;
+                position: relative;
+                background: $cl-white;
+                @include base_transition(background, .2s)
+            }
+        }
     }
 
     &Back {

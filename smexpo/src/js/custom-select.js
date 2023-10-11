@@ -3,8 +3,9 @@ $('select').each(function () {
 
     // Cache the number of options
     var $this = $(this),
+        $disabled = $(this).children('option:disabled'),
         $selected = $(this).children('option:selected'),
-        numberOfOptions = $(this).children('option').length;
+        numberOfOptions = $(this).children('option:not([disabled])').length;
 
     // Hides the select element
     $this.addClass('hidden');
@@ -13,7 +14,11 @@ $('select').each(function () {
     $this.wrap('<div class="select"></div>');
 
     // Insert a styled div to sit over the top of the hidden select element
-    $this.after('<div class="styledSelect"></div>');
+    if ($disabled.length > 0) {
+        $this.after('<div class="styledSelect disable"></div>');
+    } else {
+        $this.after('<div class="styledSelect"></div>');
+    }
 
     // Cache the styled div
     var $styledSelect = $this.next('div.styledSelect');
@@ -28,10 +33,16 @@ $('select').each(function () {
     }).insertAfter($styledSelect);
 
     // Insert a list item into the unordered list for each select option
+    if ($disabled.length > 0) {
+        $('<li />', {
+            text: $disabled.text(),
+            disabled: $disabled
+        }).appendTo($list);
+    }
     for (var i = 0; i < numberOfOptions; i++) {
         $('<li />', {
-            text: $this.children('option').eq(i).text(),
-            rel: $this.children('option').eq(i).val()
+            text: $this.children('option:not([disabled])').eq(i).text(),
+            rel: $this.children('option:not([disabled])').eq(i).val()
         }).appendTo($list);
     }
 
@@ -61,6 +72,7 @@ $('select').each(function () {
         $styledSelect.text($(this).text()).removeClass('active open');
         $this.val($(this).attr('rel'));
         $list.addClass('hidden');
+        $styledSelect.removeClass("disable");
         //console.log($this.val()); /*Uncomment this for demonstration! */
     });
 
