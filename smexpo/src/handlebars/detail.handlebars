@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="detail" slick=true}}
+
+<body>
+    {{> header/header}}
+    <main role="main" class="main detail">
+        <div class="container">
+            <div class="breadcrumb">
+                {{>breadcrumb title="Fashion"}}
+            </div>
+
+            <div class="detailWrap row">
+                <div class="col-left row col-12 col-xl-9">
+                    <div class="col-xl-5">
+                        {{>detail/image total=1 index_start=1 index_end=2}}
+
+                    </div>
+                    <div class="detailContent col-xl-7">
+                        {{>detail/content total=1 index_start=1 index_end=2}}
+
+                        <!-- s: details tab -->
+                        {{>detail/tab total=1 index_start=1 index_end=2}}
+                        <!-- e: details tab -->
+
+                        <div class="title spacing-sm">
+                            Kupon Toko
+                        </div>
+                        <div class="detailCoupon col-12 col-xl-10 -jsShowPar">
+                            <div class="detailCouponWrap -jsShowTg">
+                                {{>component/coupon}}
+                                {{>component/coupon}}
+                                {{>component/coupon}}
+                                {{>component/coupon}}
+                            </div>
+                            <button class="button detailCouponMore -jsShowToggle"
+                                onclick="showMore(this, 'Tampilkan Lebih Sedikit', 'Tampilkan Selengkapnya')">
+                                Tampilkan Selengkapnya
+                            </button>
+                        </div>
+                    </div>
+                    <div class="detailNav spacing-xl col-12">
+                        {{>detail/nav active="Ulasan Produk"}}
+                    </div>
+                    <div class="col-xl-5">
+                        <div class="title spacing-sm">
+                            Ulasan Produk
+                        </div>
+
+                        {{>detail/rating}}
+                    </div>
+                    <div class="col-xl-7">
+                        <div class="titleMedium spacing-sm">Kumpulan Foto Ulasan Produk</div>
+
+                        {{>detail/review}}
+                    </div>
+                </div>
+                <div class="col-right summary col-12 col-xl-3">
+                    {{>detail/summary}}
+                </div>
+            </div>
+
+            <div class="titleWrap spacing-xl">
+                <h2 class="title">
+                    <span>Produk Serupa</span>
+                </h2>
+                <a href="product.html" class="titleLink">Lihat Lainnya</a>
+            </div>
+            {{>template/product-list total=6 index_start=0 index_end=6 col="col-6 col-md-3 col-xl-2" lazy=true}}
+        </div>
+    </main>
+    <!-- popup -->
+    {{>share image="./asset/images/seller.png" title="Jual kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel
+    Sekolah" link="https://smexpo.pertamina.com/produk/52"}}
+    <!-- popup -->
+    {{>help}}
+    {{>footer}}
+
+    {{>js page="detail" zoom=true popup=true select=true slick=true more=true}}
+    <script>
+        function claimCoupon(el) {
+            el.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>

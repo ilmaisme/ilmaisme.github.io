@@ -1,0 +1,58 @@
+.tab {
+    &wrapper {
+        &>.tabcontent {
+            display: none;
+        }
+
+        &>.active {
+            display: block;
+        }
+    }
+
+    &Link {
+        display: block;
+        padding: 0px 20px 7px 20px;
+        @include font-pack($family: $font-sbold, $weight: $font-weight-sbold, $color: #676767);
+    }
+
+    &Item {
+        @extend %text-center;
+        width: 50%;
+        position: relative;
+        border-bottom: 1px solid #E0E0E0;
+        background: $cl-white;
+
+        @include min-responsive($w-md) {
+            width: auto;
+        }
+
+        &.active,
+        &:hover {
+            .tabLink {
+                @include font-pack($color: $cl-primary-black);
+            }
+
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            top: calc(100% - 1px);
+            left: 0;
+            background: var(--grad-blugreen);
+            z-index: 1;
+            opacity: 0;
+            @include base_transition(opacity, .2s)
+        }
+
+        &Wrap {
+            @extend %display-flex;
+            position: relative;
+        }
+    }
+}

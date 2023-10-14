@@ -1,0 +1,236 @@
+.detail {
+    &Wrap {
+        margin-top: 30px;
+    }
+
+    &Image {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        cursor: pointer;
+
+        &Wrap {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        &Nav {
+            margin-top: 9px;
+
+            .detailImage {
+                &Item {
+                    margin-top: 6px;
+                    padding-left: 6px;
+                    padding-right: 6px;
+                }
+
+                &Wrap {
+                    border-radius: 10px;
+                }
+            }
+
+            .slick-track {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .slick-arrow {
+                @extend %hidden;
+                top: 35px;
+
+                &.visible {
+                    @extend %visible;
+                    height: 44px;
+                }
+            }
+        }
+    }
+
+    &Content {
+        .product {
+
+            &Attr,
+            &Disc {
+                margin-top: 10px;
+            }
+
+            &Attr {
+                font-size: 16px;
+
+                .iconStar {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            &Disc {
+                @extend %display-flex
+            }
+
+            &--dash {
+                margin-left: 8px;
+                margin-right: 8px;
+
+                @include min-responsive($w-md) {
+                    margin-left: 18px;
+                    margin-right: 18px;
+                }
+            }
+        }
+
+        .price {
+            &Disc {
+                @include font-pack($family: $font-mbold, $size: 15px, $weight: $font-weight-mbold);
+            }
+
+            &Net {
+                @include font-pack($family: $font-base, $size: 15px, $weight: $font-weight-normal, $color: $cl-primary-black);
+            }
+        }
+    }
+
+    &Flash {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 2px 7px;
+        border-radius: 5px;
+        background: linear-gradient(90deg, #C22121 0%, #F05512 100%);
+        text-transform: uppercase;
+        @extend %title--small;
+        @include font-pack($family: $font-sbold, $weight: $font-weight-sbold, $color: $cl-white);
+
+        img {
+            width: 16px;
+            vertical-align: middle;
+        }
+    }
+
+    &Title {
+        @include font-pack($family: $font-mbold, $size: 22px, $weight: $font-weight-mbold);
+    }
+
+    &Price {
+        margin-top: 10px;
+        @include font-pack($family: $font-bold, $size: 24px, $weight: $font-weight-bold);
+    }
+
+    &Tab {
+        &Content {
+            @extend %title--small
+        }
+    }
+
+    &Type {
+        @extend %display-flex;
+        @extend %align-center;
+        flex-wrap: wrap;
+        margin-left: -5px;
+        margin-right: -5px;
+
+        &Item {
+            display: block;
+            cursor: pointer;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        &Label {
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: 1px solid #E0E0E0;
+            pointer-events: none;
+            color: $cl-primary-black;
+
+            &::before {
+                opacity: 0;
+            }
+        }
+
+        &Radio {
+            display: none;
+
+            &:checked {
+                ~.detailTypeLabel {
+                    border: 1px solid transparent;
+
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &:not(:checked) {
+                ~.detailTypeLabel {
+                    min-height: 50px;
+                }
+            }
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+            object-fit: cover;
+        }
+    }
+
+    &Coupon {
+        margin-top: 12px;
+        padding: 12px 14px 6px;
+        border-radius: 7px;
+        border: 1px solid #BDBDBD;
+
+        &More {
+            @extend %justify-center;
+            width: 100%;
+            margin-top: 6px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            @extend %title--small;
+            @include font-pack($family: $font-bold, $weight: $font-weight-bold, $color: #676767);
+
+            &::after {
+                content: '';
+                @extend %iconChevron;
+                @extend %filterGrey;
+                display: inline-block;
+                position: relative;
+                width: 20px;
+                height: 20px;
+                margin-left: 5px;
+                vertical-align: text-top;
+            }
+
+            &.active {
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        &Wrap {
+            max-height: 108px;
+            overflow: hidden;
+            transition: max-height .4s linear;
+            will-change: max-height;
+        }
+
+        .couponItem {
+            max-width: unset;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .iconStar {
+        @extend %iconStar;
+        background-size: contain;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+    }
+}

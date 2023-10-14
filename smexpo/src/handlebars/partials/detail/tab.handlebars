@@ -1,0 +1,42 @@
+{{#each product}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="detailTab tab spacing-md">
+    <ul class="tabItemWrap">
+        <li class="tabItem active">
+            <button class="button tabLink tabbutton" onclick="openTabdetails(this, event, 'variant')">
+                Pilih Varian
+            </button>
+        </li>
+        <li class="tabItem">
+            <button class="button tabLink tabbutton" onclick="openTabdetails(this, event, 'summary')">
+                Detail Produk
+            </button>
+        </li>
+    </ul>
+    <div class="tabwrapper">
+        <div class="tabcontent detailTabContent active" id="variant">
+            <div class="detailType spacing-sm">
+                {{#eachIndex detail.varian}}
+                <label class="detailTypeItem">
+                    <input type="radio" id="type" name="type" value="{{item.value}}" class="detailTypeRadio"{{#eq index compare=0}} checked{{/eq}}>
+                    <button class="detailTypeLabel buttonRectGrad">
+                        <img src="./asset/images/dummy/product/xs/{{index}}.png" alt="" width="30" height="30">
+                        {{item.title}}
+                    </button>
+                </label>
+                {{/eachIndex}}
+            </div>
+        </div>
+        <div class="tabcontent detailTabContent" id="summary">
+            <div class="spacing-sm">
+                {{{detail.desc}}}
+            </div>
+        </div>
+    </div>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

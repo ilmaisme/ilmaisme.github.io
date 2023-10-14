@@ -129,6 +129,8 @@
 
     &File {
         position: relative;
+        display: block;
+        width: 100%;
         cursor: pointer;
 
         &Title {
@@ -190,6 +192,25 @@
 
         &.-error {
             color: #ED3D57;
+        }
+
+        &.-errorbox {
+            margin-top: 24px;
+            padding: 8px 12px 8px 48px;
+            border-radius: 10px;
+            background: #FFEDED;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                left: 12px;
+                width: 24px;
+                height: 24px;
+                @extend %iconError;
+                @extend %filterRed;
+            }
         }
     }
 }
