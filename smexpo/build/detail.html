@@ -28,7 +28,7 @@
 
     <link rel="icon" type="image/x-icon" sizes="16x16" href="./asset/images/favicon.ico">
     <link rel="stylesheet" href="./asset/css/style-detail.css" type="text/css">
-    <link rel="stylesheet" href="./asset/css/slick.min.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/slick.css" type="text/css">
 
     <link rel="preload" href="./asset/images/logo-smexpo.svg" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -200,7 +200,7 @@
 
             <div class="detailWrap row">
                 <div class="col-left row col-12 col-xl-9">
-                    <div class="col-xl-5">
+                    <div class="col-offset-m col-xl-5">
                         <div class="detailImageList">
                             <div class="detailImageItem">
                                 <div class="detailImageWrap -zoom">
@@ -241,7 +241,7 @@
                         </div>
 
                     </div>
-                    <div class="detailContent col-xl-7">
+                    <div class="detailContent col-offset-m col-xl-7">
                         <div class="detailFlash">
                             <img src="./asset/images/icon-flash.png" alt="" width="31" height="31">
                             Flash Sale
@@ -259,7 +259,25 @@
                         <div class="productDisc">
                             <span class="priceDisc">-45%</span>
                             <span class="priceNet">Rp. 300.000</span>
+                            <div class="mobile-only">
+                                <div class="detailCtaWrap">
+                                    <button class="button detailCta detailCtaLove" onclick="triggerActiveButton(this, 'Favorit', 'Favoritkan')" aria-label="Favorite"></button>
+                                    <button class="button detailCta" onclick="triggerPopup('.-pShare')" aria-label="Share"><span
+                                            class="icon iconShare"></span></button>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="detailSummary spacing-sm mobile-only">
+                            <div class="detailCtaWrap">
+                                <button class="button detailCta detailCtaLove" onclick="triggerActiveButton(this, 'Favorit', 'Favoritkan')">Favoritkan</button>
+                                <button class="button detailCta" onclick="triggerPopup('.-pShare')"><span
+                                        class="icon iconShare"></span>Share</button>
+                            </div>
+                            <div class="detailCtaBox">
+                                <a href="style-dashboard-chat.html" class="detailCta desktop-only"><span class="icon iconChat"></span>Hubungi Penjual</a>
+                                <a href="seller.html" class="detailCta"><span class="icon iconSeller"></span>Kunjungi Toko</a>
+                            </div>                        </div>
 
                         <!-- s: details tab -->
                         <div class="detailTab tab spacing-md">
@@ -277,7 +295,7 @@
                             </ul>
                             <div class="tabwrapper">
                                 <div class="tabcontent detailTabContent active" id="variant">
-                                    <div class="detailType spacing-sm">
+                                    <div class="detailType">
                                         <label class="detailTypeItem">
                                             <input type="radio" id="type" name="type" value="0" class="detailTypeRadio" checked>
                                             <button class="detailTypeLabel buttonRectGrad">
@@ -302,7 +320,7 @@
                                     </div>
                                 </div>
                                 <div class="tabcontent detailTabContent" id="summary">
-                                    <div class="spacing-sm">
+                                    <div class="static spacing-sm">
                                         <p>Tas Ransel modis, bisa dipakai untuk usia 5 th sampai dgn dewasa, bahan cordura waterproof.</p><p>Pellentesque tincidunt accumsan ac ut elit.Neque phasellus pretium suspendisse vitae eget quis.Eleifend adipiscing eget lectus nunc.Elit blandit purus mauris porttitor amet odio.Cras congue mauris justo interdum tortor lacus.Tempor eget purus turpis neque non tempor tellus posuere.</p></p>Malesuada sollicitudin dignissim morbi duis malesuada volutpat mollis tempor.Nisi sed nunc eget rutrum ipsum.Malesuada eget integer sit amet ultrices malesuada amet elit.Tincidunt tellus sed risus parturient.Nunc diam tellus vitae nibh lacus leo in sollicitudin.Eget vestibulum non ornare gravida placerat commodo aenean platea.</p>
                                     </div>
                                 </div>
@@ -313,6 +331,7 @@
                         <div class="title spacing-sm">
                             Kupon Toko
                         </div>
+
                         <div class="detailCoupon col-12 col-xl-10 -jsShowPar">
                             <div class="detailCouponWrap -jsShowTg">
                                 <div class="couponItem">
@@ -323,7 +342,7 @@
                                 
                                         </div>
                                     </div>
-                                    <button class="couponCta button buttonRect buttonRectBlue" onclick="claimCoupon(this)">Klaim</button>
+                                    <button class="couponCta button buttonRect buttonRectBlue" onclick="triggerActiveButton(this)">Klaim</button>
                                 </div>                                <div class="couponItem">
                                     <div class="couponBox">
                                         <div class="couponTitle">Promo Oktober</div>
@@ -332,7 +351,7 @@
                                 
                                         </div>
                                     </div>
-                                    <button class="couponCta button buttonRect buttonRectBlue" onclick="claimCoupon(this)">Klaim</button>
+                                    <button class="couponCta button buttonRect buttonRectBlue" onclick="triggerActiveButton(this)">Klaim</button>
                                 </div>                                <div class="couponItem">
                                     <div class="couponBox">
                                         <div class="couponTitle">Promo Oktober</div>
@@ -341,7 +360,7 @@
                                 
                                         </div>
                                     </div>
-                                    <button class="couponCta button buttonRect buttonRectBlue" onclick="claimCoupon(this)">Klaim</button>
+                                    <button class="couponCta button buttonRect buttonRectBlue" onclick="triggerActiveButton(this)">Klaim</button>
                                 </div>                                <div class="couponItem">
                                     <div class="couponBox">
                                         <div class="couponTitle">Promo Oktober</div>
@@ -350,7 +369,7 @@
                                 
                                         </div>
                                     </div>
-                                    <button class="couponCta button buttonRect buttonRectBlue" onclick="claimCoupon(this)">Klaim</button>
+                                    <button class="couponCta button buttonRect buttonRectBlue" onclick="triggerActiveButton(this)">Klaim</button>
                                 </div>                            </div>
                             <button class="button detailCouponMore -jsShowToggle"
                                 onclick="showMore(this, 'Tampilkan Lebih Sedikit', 'Tampilkan Selengkapnya')">
@@ -358,20 +377,20 @@
                             </button>
                         </div>
                     </div>
-                    <div class="detailNav spacing-xl col-12">
+                    <div class="col-offset-m spacing-xl col-12">
                         <ul class="tabItemWrap">
                             <li class="tabItem active">
-                                <a href="detail.html" class="button tabLink">
+                                <a href="detail.html#review" class="button tabLink">
                                     Ulasan Produk
                                 </a>
                             </li>
                             <li class="tabItem">
-                                <a href="detail-diss.html" class="button tabLink">
+                                <a href="detail-dis.html#diskusi" class="button tabLink">
                                     Diskusi
                                 </a>
                             </li>
                         </ul>                    </div>
-                    <div class="col-xl-5">
+                    <div class="detailNav col-xl-5 col-offset-m" id="review">
                         <div class="title spacing-sm">
                             Ulasan Produk
                         </div>
@@ -527,22 +546,37 @@
                                 </div>
                             </div>
                         </div>                    </div>
-                    <div class="col-xl-7">
+                    <div class="col-xl-7 col-offset-m">
                         <div class="titleMedium spacing-sm">Kumpulan Foto Ulasan Produk</div>
 
-                        <div class="review">
+                        <div class="review" id="review">
                             <div class="reviewPhoto">
                                 <div class="reviewPhotoItem">
                                     <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
-                                </div>        <div class="reviewPhotoItem">
-                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
-                                </div>        <div class="reviewPhotoItem">
-                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
-                                </div>        <div class="reviewPhotoItem">
-                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
-                                </div>        <div class="reviewPhotoItem">
-                                    <button class="button reviewPhotoTrig" aria-label="See more photos">+23</button>
                                 </div>
+                                <div class="reviewPhotoItem">
+                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                                </div>
+                                <div class="reviewPhotoItem">
+                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                                </div>
+                                <div class="reviewPhotoItem">
+                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                                </div>
+                                <div class="reviewPhotoItem">
+                                    <button class="button reviewPhotoTrig" onclick="triggerPopup('.-pPhotos'), slickPopupRev()" aria-label="See more photos">+23</button>
+                                </div>
+                            </div>
+                            <div class="reviewNav spacing-xs">
+                                <button class="button reviewNavBtn active">
+                                    Semua
+                                </button>
+                                <button class="button reviewNavBtn">
+                                    Dengan Foto
+                                </button>
+                                <button class="button reviewNavBtn">
+                                    Dengan Deskripsi
+                                </button>
                             </div>
                             <div class="reviewList">
                                 <div class="reviewItem">
@@ -553,21 +587,15 @@
                                         <span class="icon iconStar"></span>
                                         <span class="icon iconStar"></span>
                                     </div>
-                                    <div class="reviewTxt">
+                                    <div class="userPost">
                                         Barang cakep!! Rekomended seller deh..
                                     </div>
-                                    <div class="reviewer">
+                                    <div class="userWrap">
                                         Fulan bin Fulan
-                                        <span class="reviewDate">20 menit lalu</span>
+                                        <span class="userPostDate">20 menit lalu</span>
                                     </div>
                                     <div class="reviewPhoto">
-                                        <div class="reviewPhotoItem">
-                                            <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="80"  height="80">
-                                        </div>        <div class="reviewPhotoItem">
-                                            <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="80"  height="80">
-                                        </div>        <div class="reviewPhotoItem">
-                                            <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="80"  height="80">
-                                        </div>    </div>
+                                    </div>
                                 </div>        <div class="reviewItem">
                                     <div class="ratingList" aria-label="5 Stars Rating">
                                         <span class="icon iconStar"></span>
@@ -576,21 +604,15 @@
                                         <span class="icon iconStar"></span>
                                         <span class="icon iconStar"></span>
                                     </div>
-                                    <div class="reviewTxt">
+                                    <div class="userPost">
                                         Barang cakep!! Rekomended seller deh..
                                     </div>
-                                    <div class="reviewer">
+                                    <div class="userWrap">
                                         Fulan bin Fulan
-                                        <span class="reviewDate">20 menit lalu</span>
+                                        <span class="userPostDate">20 menit lalu</span>
                                     </div>
                                     <div class="reviewPhoto">
-                                        <div class="reviewPhotoItem">
-                                            <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="80"  height="80">
-                                        </div>        <div class="reviewPhotoItem">
-                                            <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="80"  height="80">
-                                        </div>        <div class="reviewPhotoItem">
-                                            <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="80"  height="80">
-                                        </div>    </div>
+                                    </div>
                                 </div>        <div class="reviewItem">
                                     <div class="ratingList" aria-label="5 Stars Rating">
                                         <span class="icon iconStar"></span>
@@ -599,21 +621,15 @@
                                         <span class="icon iconStar"></span>
                                         <span class="icon iconStar"></span>
                                     </div>
-                                    <div class="reviewTxt">
+                                    <div class="userPost">
                                         Barang cakep!! Rekomended seller deh..
                                     </div>
-                                    <div class="reviewer">
+                                    <div class="userWrap">
                                         Fulan bin Fulan
-                                        <span class="reviewDate">20 menit lalu</span>
+                                        <span class="userPostDate">20 menit lalu</span>
                                     </div>
                                     <div class="reviewPhoto">
-                                        <div class="reviewPhotoItem">
-                                            <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="80"  height="80">
-                                        </div>        <div class="reviewPhotoItem">
-                                            <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="80"  height="80">
-                                        </div>        <div class="reviewPhotoItem">
-                                            <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="80"  height="80">
-                                        </div>    </div>
+                                    </div>
                                 </div>    </div>
                             <ul class="paging">
                                 <li>
@@ -653,11 +669,39 @@
                                 </li>    </ul>
                         </div>                    </div>
                 </div>
-                <div class="col-right summary col-12 col-xl-3">
-                    <div class="summaryBox sortBox">
-                        <div class="titleMedium">
-                            Ringkasan Belanja
+                <div class="col-right col-12 col-xl-3">
+                    <div class="summary desktop-only">
+                        <div class="summaryBox sortBox">
+                            <div class="titleMedium">
+                                Ringkasan Belanja
+                            </div>
+                            <div class="summaryQty spacing-sm">
+                                <label class="summaryQtyLabel" for="qty">Atur Jumlah</label>
+                                <div class="qtyWrap">
+                                    <div class="qty">
+                                        <button onclick="dec(this, '0')" class="button qtyBtn disable">-</button>
+                                        <input name="number" type="text" value="0" class="qtyInput" id="qty">
+                                        <button onclick="inc(this, '8')" class="button qtyBtn">+</button>
+                                    </div>
+                                    <span class="qtyAmount">Stok : 8</span>
+                                </div>
+                            </div>
+                            <div class="detailTotal summaryItem">
+                                <div class="summaryLabel"><strong>Subtotal</strong></div>
+                                <div class="summaryAmount">Rp135.000</div>
+                            </div>
+                            <div id="cartDesk"></div>
                         </div>
+                        <div class="detailSummary">
+                            <div class="detailCtaWrap">
+                                <button class="button detailCta detailCtaLove" onclick="triggerActiveButton(this, 'Favorit', 'Favoritkan')">Favoritkan</button>
+                                <button class="button detailCta" onclick="triggerPopup('.-pShare')"><span
+                                        class="icon iconShare"></span>Share</button>
+                            </div>
+                            <div class="detailCtaBox">
+                                <a href="style-dashboard-chat.html" class="detailCta desktop-only"><span class="icon iconChat"></span>Hubungi Penjual</a>
+                                <a href="seller.html" class="detailCta"><span class="icon iconSeller"></span>Kunjungi Toko</a>
+                            </div>    </div>
                     </div>                </div>
             </div>
 
@@ -785,6 +829,16 @@
                     </a>
                 </div>
             </div>        </div>
+        <!-- cart cta mobile -->
+        <div id="cartMob" class="summaryMob">
+            <div class="summaryCtaWrap">
+                <a href="style-dashboard-chat.html" class="detailCta mobile-only" aria-label="Hubungi Penjual"><span class="icon iconChat"></span></a>
+                <button class="summaryCta button buttonRect buttonRectGrad"><span>+ Keranjang</span></button>
+                <a href="cart.html" class="summaryCta button buttonRect buttonRectBlue">
+                    Beli Langsung
+                </a>
+            </div>        </div>
+        <!-- cart cta mobile -->
     </main>
     <!-- popup -->
     <div class="popup -pShare">
@@ -798,10 +852,12 @@
                 <div class="popupContent shareContent spacing-sm">
                     <div class="shareWrap">
                         <div class="shareImg border-sm">
-                            <img src="./asset/images/seller.png" alt="Jual kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel
+                            <img src="https://smexpo.pertamina.com/smexpo-api/seller/products/2021100319571070659.jpg" alt="Jual kimmy
+        Backpack Tas Punggung Anak sekolah / Tas Ransel
         Sekolah" width="60" height="60" loading="lazy">
                         </div>
-                        <div class="shareTitle">Jual kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel
+                        <div class="shareTitle">Jual kimmy
+        Backpack Tas Punggung Anak sekolah / Tas Ransel
         Sekolah <span>smexpo.com</span></div>
                     </div>
                     <div class="shareList spacing-sm">
@@ -839,6 +895,261 @@
                     <div class="shareLink">
                         <input class="formInput" disabled="disabled" type="text" id="copyLinkUrl" value="https://smexpo.pertamina.com/produk/52">
                         <button class="button buttonRect buttonRectGrad" onclick="copyLink('copyLinkUrl')"><span>Salin</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup -pPhotos">
+        <div class="popupWrap">
+            <div class="popupBox reviewPopupbox col-12">
+                <div class="popupHead">
+                    <div class="popupTitle"></div>
+                    <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
+                            class="icon iconClose"></span></button>
+                </div>
+                <div class="popupContent reviewPopup">
+                    <div class="reviewPopupBig col-12 col-xl-8">
+                        <div class="reviewPopupSlider">
+                            <!-- item review -->
+                            <div class="reviewPopupItem">
+                                <div class="reviewPhotoItem">
+                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                                </div>
+                                <div class="reviewPopupContent">
+                                    <div class="ratingList" aria-label="5 Stars Rating">
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                    </div>
+                                    <div class="userPost">
+                                        0 Barang cakep!! Rekomended seller deh..
+                                    </div>
+                                    <div class="userWrap">
+                                        Fulan bin Fulan
+                                        <span class="userPostDate">20 menit lalu</span>
+                                    </div>
+                                </div>
+                            </div>                        <div class="reviewPopupItem">
+                                <div class="reviewPhotoItem">
+                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                                </div>
+                                <div class="reviewPopupContent">
+                                    <div class="ratingList" aria-label="5 Stars Rating">
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                    </div>
+                                    <div class="userPost">
+                                        1 Barang cakep!! Rekomended seller deh..
+                                    </div>
+                                    <div class="userWrap">
+                                        Fulan bin Fulan
+                                        <span class="userPostDate">20 menit lalu</span>
+                                    </div>
+                                </div>
+                            </div>                        <div class="reviewPopupItem">
+                                <div class="reviewPhotoItem">
+                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                                </div>
+                                <div class="reviewPopupContent">
+                                    <div class="ratingList" aria-label="5 Stars Rating">
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                    </div>
+                                    <div class="userPost">
+                                        2 Barang cakep!! Rekomended seller deh..
+                                    </div>
+                                    <div class="userWrap">
+                                        Fulan bin Fulan
+                                        <span class="userPostDate">20 menit lalu</span>
+                                    </div>
+                                </div>
+                            </div>                        <div class="reviewPopupItem">
+                                <div class="reviewPhotoItem">
+                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                                </div>
+                                <div class="reviewPopupContent">
+                                    <div class="ratingList" aria-label="5 Stars Rating">
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                    </div>
+                                    <div class="userPost">
+                                        3 Barang cakep!! Rekomended seller deh..
+                                    </div>
+                                    <div class="userWrap">
+                                        Fulan bin Fulan
+                                        <span class="userPostDate">20 menit lalu</span>
+                                    </div>
+                                </div>
+                            </div>                        <div class="reviewPopupItem">
+                                <div class="reviewPhotoItem">
+                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                                </div>
+                                <div class="reviewPopupContent">
+                                    <div class="ratingList" aria-label="5 Stars Rating">
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                    </div>
+                                    <div class="userPost">
+                                        4 Barang cakep!! Rekomended seller deh..
+                                    </div>
+                                    <div class="userWrap">
+                                        Fulan bin Fulan
+                                        <span class="userPostDate">20 menit lalu</span>
+                                    </div>
+                                </div>
+                            </div>                        <div class="reviewPopupItem">
+                                <div class="reviewPhotoItem">
+                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                                </div>
+                                <div class="reviewPopupContent">
+                                    <div class="ratingList" aria-label="5 Stars Rating">
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                    </div>
+                                    <div class="userPost">
+                                        5 Barang cakep!! Rekomended seller deh..
+                                    </div>
+                                    <div class="userWrap">
+                                        Fulan bin Fulan
+                                        <span class="userPostDate">20 menit lalu</span>
+                                    </div>
+                                </div>
+                            </div>                        <div class="reviewPopupItem">
+                                <div class="reviewPhotoItem">
+                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                                </div>
+                                <div class="reviewPopupContent">
+                                    <div class="ratingList" aria-label="5 Stars Rating">
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                    </div>
+                                    <div class="userPost">
+                                        6 Barang cakep!! Rekomended seller deh..
+                                    </div>
+                                    <div class="userWrap">
+                                        Fulan bin Fulan
+                                        <span class="userPostDate">20 menit lalu</span>
+                                    </div>
+                                </div>
+                            </div>                        <div class="reviewPopupItem">
+                                <div class="reviewPhotoItem">
+                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                                </div>
+                                <div class="reviewPopupContent">
+                                    <div class="ratingList" aria-label="5 Stars Rating">
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                    </div>
+                                    <div class="userPost">
+                                        7 Barang cakep!! Rekomended seller deh..
+                                    </div>
+                                    <div class="userWrap">
+                                        Fulan bin Fulan
+                                        <span class="userPostDate">20 menit lalu</span>
+                                    </div>
+                                </div>
+                            </div>                        <div class="reviewPopupItem">
+                                <div class="reviewPhotoItem">
+                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                                </div>
+                                <div class="reviewPopupContent">
+                                    <div class="ratingList" aria-label="5 Stars Rating">
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                    </div>
+                                    <div class="userPost">
+                                        8 Barang cakep!! Rekomended seller deh..
+                                    </div>
+                                    <div class="userWrap">
+                                        Fulan bin Fulan
+                                        <span class="userPostDate">20 menit lalu</span>
+                                    </div>
+                                </div>
+                            </div>                        <div class="reviewPopupItem">
+                                <div class="reviewPhotoItem">
+                                    <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                                </div>
+                                <div class="reviewPopupContent">
+                                    <div class="ratingList" aria-label="5 Stars Rating">
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                        <span class="icon iconStar"></span>
+                                    </div>
+                                    <div class="userPost">
+                                        9 Barang cakep!! Rekomended seller deh..
+                                    </div>
+                                    <div class="userWrap">
+                                        Fulan bin Fulan
+                                        <span class="userPostDate">20 menit lalu</span>
+                                    </div>
+                                </div>
+                            </div>                        <!-- item review -->
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-4 text-center">
+                        <div class="reviewPhoto">
+                            <!-- navigation review -->
+                            <button class="button reviewPhotoItem" aria-label="Go to image review" onclick="navSlickPopupRev(0)">
+                                <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                            </button>
+                            <button class="button reviewPhotoItem" aria-label="Go to image review" onclick="navSlickPopupRev(1)">
+                                <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                            </button>
+                            <button class="button reviewPhotoItem" aria-label="Go to image review" onclick="navSlickPopupRev(2)">
+                                <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                            </button>
+                            <button class="button reviewPhotoItem" aria-label="Go to image review" onclick="navSlickPopupRev(3)">
+                                <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                            </button>
+                            <button class="button reviewPhotoItem" aria-label="Go to image review" onclick="navSlickPopupRev(4)">
+                                <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                            </button>
+                            <button class="button reviewPhotoItem" aria-label="Go to image review" onclick="navSlickPopupRev(5)">
+                                <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                            </button>
+                            <button class="button reviewPhotoItem" aria-label="Go to image review" onclick="navSlickPopupRev(6)">
+                                <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                            </button>
+                            <button class="button reviewPhotoItem" aria-label="Go to image review" onclick="navSlickPopupRev(7)">
+                                <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                            </button>
+                            <button class="button reviewPhotoItem" aria-label="Go to image review" onclick="navSlickPopupRev(8)">
+                                <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                            </button>
+                            <button class="button reviewPhotoItem" aria-label="Go to image review" onclick="navSlickPopupRev(9)">
+                                <img src="./asset/images/dummy/photo/review.png" alt="" loading="lazy"  width="100"  height="100">
+                            </button>
+                            <!-- navigation review -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1118,12 +1429,9 @@
     <script defer type="text/javascript" src="./asset/js/popup.min.js"></script>
     <script defer src="./asset/js/jquery.zoom.min.js"></script>
     <script defer src="./asset/js/more.js"></script>
+    <script defer src="./asset/js/cart.js"></script>
+    <script defer src="./asset/js/cta.js"></script>
     <script defer src="./asset/js/detail.js"></script>
-    <script>
-        function claimCoupon(el) {
-            el.classList.toggle('active');
-        }
-    </script>
 
 </body>
 

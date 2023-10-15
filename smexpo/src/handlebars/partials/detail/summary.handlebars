@@ -1,5 +1,26 @@
-<div class="summaryBox sortBox">
-    <div class="titleMedium">
-        Ringkasan Belanja
+<div class="summary desktop-only">
+    <div class="summaryBox sortBox">
+        <div class="titleMedium">
+            Ringkasan Belanja
+        </div>
+        <div class="summaryQty spacing-sm">
+            <label class="summaryQtyLabel" for="qty">Atur Jumlah</label>
+            <div class="qtyWrap">
+                <div class="qty">
+                    <button onclick="dec(this, '0')" class="button qtyBtn disable">-</button>
+                    <input name="number" type="text" value="0" class="qtyInput" id="qty">
+                    <button onclick="inc(this, '8')" class="button qtyBtn">+</button>
+                </div>
+                <span class="qtyAmount">Stok : 8</span>
+            </div>
+        </div>
+        <div class="detailTotal summaryItem">
+            <div class="summaryLabel"><strong>Subtotal</strong></div>
+            <div class="summaryAmount">Rp135.000</div>
+        </div>
+        <div id="cartDesk"></div>
+    </div>
+    <div class="detailSummary">
+        {{>detail/cta}}
     </div>
 </div>

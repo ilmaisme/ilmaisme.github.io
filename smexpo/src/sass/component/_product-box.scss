@@ -1,0 +1,43 @@
+.productBox {
+    margin-top: 7px;
+    display: flex;
+    @extend %justify-between;
+    @extend %align-center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    @include min-responsive($w-xl) {
+        flex-wrap: nowrap;
+    }
+
+    &Wrap {
+        @extend %display-flex;
+    }
+
+    &Content {
+        margin-left: 10px;
+        margin-right: 16px;
+        flex: 1;
+    }
+
+    .productImg {
+        width: 85px;
+        height: 85px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .productTitle {
+        -webkit-line-clamp: 2;
+        @include font-pack($family: $font-base);
+    }
+
+    .productPrice {
+        @extend %title--small;
+        @include font-pack($family: $font-base, $weight: $font-weight-normal);
+    }
+
+    .button {
+        flex-shrink: 0;
+    }
+}

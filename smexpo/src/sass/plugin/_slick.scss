@@ -113,8 +113,8 @@
     line-height: 0;
     position: absolute;
     display: block;
-    width: 44px;
-    height: 44px;
+    width: 34px;
+    height: 34px;
     padding: 0;
     transform: translate(0, -50%);
     cursor: pointer;
@@ -141,17 +141,13 @@
     &:before {
         opacity: .8;
         color: #000000;
+        filter: invert(27%) sepia(87%) saturate(1470%) hue-rotate(200deg) brightness(94%) contrast(84%);
     }
 }
 
 .slick-prev {
-    left: 8px;
+    left: 0;
     transform: scaleX(-1) translate(0, -50%);
-    top: calc(50% - 44px/2 + 15px);
-
-    @include min-responsive($w-md) {
-        left: calc(15px - 22px);
-    }
 
     [dir='rtl'] & {
         right: 0;
@@ -180,12 +176,7 @@
 }
 
 .slick-next {
-    top: calc(50% - 44px/2 + 15px);
-    right: 8px;
-
-    @include min-responsive($w-md) {
-        right: -22px;
-    }
+    right: 0;
 
     [dir='rtl'] & {
         right: auto;

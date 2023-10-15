@@ -15,8 +15,18 @@
             overflow: hidden;
         }
 
+        &List {
+            max-width: 350px;
+
+            @include min-responsive($w-xl) {
+                max-width: 100%;
+            }
+        }
+
         &Nav {
             margin-top: 9px;
+            margin-left: -6px;
+            margin-right: -6px;
 
             .detailImage {
                 &Item {
@@ -41,13 +51,19 @@
 
                 &.visible {
                     @extend %visible;
-                    height: 44px;
+                    height: 34px;
                 }
             }
         }
     }
 
     &Content {
+        margin-top: 20px;
+
+        @include min-responsive($w-xl) {
+            margin-top: 0;
+        }
+
         .product {
 
             &Attr,
@@ -65,7 +81,8 @@
             }
 
             &Disc {
-                @extend %display-flex
+                @extend %display-flex;
+                position: relative;
             }
 
             &--dash {
@@ -125,12 +142,14 @@
         @extend %display-flex;
         @extend %align-center;
         flex-wrap: wrap;
+        margin-top: 15px;
         margin-left: -5px;
         margin-right: -5px;
 
         &Item {
             display: block;
             cursor: pointer;
+            margin-top: 5px;
             margin-left: 5px;
             margin-right: 5px;
         }
@@ -183,13 +202,12 @@
         border: 1px solid #BDBDBD;
 
         &More {
+            @extend .titleMore;
             @extend %justify-center;
             width: 100%;
             margin-top: 6px;
             padding-top: 6px;
             padding-bottom: 6px;
-            @extend %title--small;
-            @include font-pack($family: $font-bold, $weight: $font-weight-bold, $color: #676767);
 
             &::after {
                 content: '';
@@ -226,11 +244,188 @@
         }
     }
 
+    &Nav {
+        scroll-margin-top: calc(73px + 54px);
+
+        @include min-responsive($w-xl) {
+            scroll-margin-top: calc(121px + 54px);
+        }
+    }
+
+    &Cta {
+        display: block;
+        min-width: 32px;
+        min-height: 32px;
+        @include font-pack($family:$font-sbold, $size: 14px, $weight: $font-weight-sbold, $color:#676767);
+
+        @include min-responsive($w-xl) {
+            font-size: 16px;
+        }
+
+        .icon {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            vertical-align: middle;
+            background-size: contain;
+            @extend %filterGrey;
+
+            @include min-responsive($w-xl) {
+                margin-right: 8px;
+            }
+
+            &Share {
+                @extend %iconShare
+            }
+
+            &Chat {
+                @extend %iconChat
+            }
+
+            &Seller {
+                @extend %iconSeller;
+                margin-right: 8px;
+            }
+        }
+
+        &Love {
+            text-align: left;
+
+            &::before {
+                content: '';
+                display: block;
+                @extend %iconLove;
+                width: 22px;
+                height: 22px;
+                background-size: contain;
+                @extend %filterGrey;
+
+                @include min-responsive($w-xl) {
+                    position: absolute;
+                    left: 25px;
+                }
+            }
+
+            &.active {
+                &::before {
+                    @extend %iconLoved;
+                    @extend %filterRed;
+                }
+            }
+        }
+
+        &Wrap {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            @extend %display-flex;
+            @extend %align-center;
+            margin-left: -10px;
+            margin-right: -10px;
+
+            @include min-responsive($w-xl) {
+                position: relative;
+                margin-top: 10px;
+            }
+
+            .detailCta {
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 5px;
+                font-size: 0;
+
+                @include min-responsive($w-xl) {
+                    width: calc(50% - 20px);
+                    padding: 13px 0;
+                    font-size: 16px;
+                }
+
+                &Love {
+                    padding-left: 5px;
+
+                    @include min-responsive($w-xl) {
+                        padding-left: 42px;
+                    }
+                }
+            }
+        }
+
+        &Box {
+            position: relative;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: 1px solid #BDBDBD;
+
+            &::before {
+                position: absolute;
+                top: 50%;
+                display: block;
+                width: 100%;
+                height: 1px;
+                border-bottom: 1px solid #BDBDBD;
+
+                @include min-responsive($w-xl) {
+                    content: '';
+                }
+            }
+
+            .detailCta {
+                width: 100%;
+                padding: 10px 18px;
+                text-align: left;
+            }
+        }
+    }
+
+    &Summary {
+        .detailCtaWrap {
+            display: none;
+
+            @include min-responsive($w-xl) {
+                display: flex;
+            }
+        }
+    }
+
+    &Total {
+        margin-top: 27px;
+        margin-bottom: 17px;
+        line-height: normal;
+        letter-spacing: 0;
+
+        .summary {
+            &Label {
+                @include font-pack($size: 14px, $color: #676767);
+            }
+
+            &Amount {
+                @include font-pack($family:$font-sbold, $size: 16px, $weight: $font-weight-sbold);
+            }
+        }
+    }
+
     .iconStar {
         @extend %iconStar;
         background-size: contain;
         vertical-align: middle;
         width: 20px;
         height: 20px;
+    }
+
+    //override to display .summaryMob
+    ~.help .helpWrap {
+        bottom: 70px;
+
+        @include min-responsive($w-xl) {
+            bottom: 20px;
+        }
+    }
+
+    ~.footer {
+        padding-bottom: 60px;
+
+        @include min-responsive($w-xl) {
+            padding-bottom: 0;
+        }
     }
 }

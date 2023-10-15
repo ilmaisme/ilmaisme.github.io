@@ -49,6 +49,10 @@
         }
 
         &ress {
+            @include range-responsive($w-md, $w-xl) {
+                max-width: 370px;
+            }
+
             .iconStar {
                 margin-left: 3px;
                 margin-right: 3px;
@@ -60,6 +64,15 @@
     }
 
     &Filter {
+        .sortFilter {
+            padding-top: 10px;
+            border-top: 0;
+
+            @include min-responsive($w-xl) {
+                padding-top: 0;
+            }
+        }
+
         .custom-select {
             width: 100%;
             margin-top: 10px;
@@ -79,5 +92,9 @@
     &List {
         @extend %display-flex;
         @extend %align-center;
+
+        ~ .userPost{
+            margin-top: 7px;
+        }
     }
 }

@@ -1,0 +1,24 @@
+.user {
+    &Wrap {
+        margin-top: 7px;
+        @extend %title--small;
+        color: #525252;
+
+        .tag ~.userPostDate{
+            display: block;
+            margin-left: 0;
+            @include min-responsive($w-xl) {
+                display: inline-block;
+                margin-left: 8px;
+            }
+        }
+    }
+
+    &Post {
+        @include font-pack($family: $font-bold, $size: 14px, $weight: $font-weight-bold);
+
+        &Date {
+            margin-left: 8px;
+        }
+    }
+}
