@@ -10,7 +10,11 @@
         border: 0;
         padding: 0;
         margin-left: 26px;
-        @include placeholder($size: 14px, $color: #ACACAC);
+        @include placeholder($size: 14px, $color: #676767);
+
+        @include min-responsive($w-xl) {
+            @include placeholder($color: #ACACAC);
+        }
 
         &:focus {
             outline: 0
@@ -19,37 +23,6 @@
 
     .iconSearch {
         @extend %iconSearch;
-        position: absolute;
-        top: 14px;
-        width: 16px;
-        height: 16px;
-    }
-}
-
-%search {
-    position: relative;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #676767;
-    background: $cl-white;
-
-    &Input {
-        width: calc(100% - 26px);
-        background: transparent;
-        border: 0;
-        padding: 0;
-        margin-left: 26px;
-        @include placeholder($size: 13px, $color: #676767, $line: 1.45);
-        letter-spacing: 0.26px;
-
-        &:focus {
-            outline: 0
-        }
-    }
-
-    .iconSearch {
-        @extend %iconSearch;
-        @extend %filterGrey;
         position: absolute;
         top: 14px;
         width: 16px;

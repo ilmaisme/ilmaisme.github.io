@@ -1,4 +1,5 @@
 .static {
+
     ul,
     ol {
         padding-left: 28px;
@@ -10,5 +11,48 @@
 
     ol {
         list-style-type: decimal;
+    }
+
+    &404 {
+        @include font-pack($family: $font-sbold, $size: 130px, $weight: $font-weight-sbold, $color: #175CC3);
+        
+        &Wrap {
+            @extend %align-center;
+            @extend %justify-center;
+            min-height: 100vh;
+        }
+        
+        &Title{
+            @include font-pack($family: $font-xbold, $size: 16px, $weight: $font-weight-xbold, $color: #676767);            
+        }
+
+        &Txt{
+            margin-top: 8px;
+            @extend %title--small;
+            color: #676767
+        }
+
+        &Cta{
+            display: inline-block
+        }
+    }
+
+    .search {
+        @extend %search;
+
+        @include min-responsive($w-xl) {
+            width: 386px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &Input {
+            @extend %searchInput;
+            line-height: 1.75;
+        }
+
+        .iconSearch {
+            top: 18px;
+        }
     }
 }

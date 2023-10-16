@@ -211,6 +211,26 @@
             @extend %align-center;
             order: 1;
         }
+
+        &name {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            @extend %title--small;
+            display: -webkit-box;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            -webkit-line-clamp: 1;
+            order: -1;
+
+            @include min-responsive($w-xl) {
+                display: none;
+            }
+
+            &::after {
+                top: 3px;
+            }
+        }
     }
 
     &Seller {
@@ -263,8 +283,8 @@
 
     &Title {
         position: absolute;
-        top: 10px;
-        left: 20px;
+        top: 2px;
+        left: 56px;
         @include font-pack($color: #333)
     }
 

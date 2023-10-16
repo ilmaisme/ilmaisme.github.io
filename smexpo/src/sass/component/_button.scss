@@ -53,6 +53,7 @@
         &Blue {
             @extend %buttonRectBlue;
             @extend %text-center;
+            border: 1px solid transparent;
             @include font-pack($family: $font-sbold, $weight: $font-weight-sbold, $color: $cl-white);
         }
     }
@@ -61,11 +62,13 @@
         position: absolute;
         width: 24px;
         height: 24px;
-        right: 22px;
+        top: 15px;
+        right: 20px;
 
         @include min-responsive($w-xl) {
             position: relative;
             margin-left: 7.5px;
+            top: unset;
             right: unset;
         }
 

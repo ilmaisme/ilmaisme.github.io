@@ -58,6 +58,7 @@ function updateMenu() {
         $('.nav').appendTo('#navDesk');
         $('.headerAccess').appendTo('#accessDesk');
         $('.searchbox').appendTo('.searchboxWrap');
+        $('.buttonLang').insertAfter('#accessDesk');
     } else {
         // console.log("mobile")
         $('.menuMob').addClass('mobile');
@@ -65,7 +66,8 @@ function updateMenu() {
         /* move nav position in mobile */
         $('.nav').appendTo('#navMob');
         $('.headerAccess').appendTo('#accessMob');
-        $('.searchbox').appendTo('.menuMob');
+        $('.searchbox').insertBefore('#accessMob');
+        $('.buttonLang').insertBefore('.searchbox');
     }
 }
 

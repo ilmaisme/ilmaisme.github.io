@@ -108,9 +108,6 @@
                     <div class="badge">0</div>
                 </a>
                 <div class="headerAccessWrap desktop-only" id="accessDesk"></div>
-                <button class="button buttonLang desktop-only" aria-label="Translate website" value="id"
-                    onclick="changeLanguage(this)">
-                </button>
                 <div class="navMob mobile-only" id="navMob">
                     <nav class="nav">
                         <div class="menu mobile-only" id="menu">
@@ -126,15 +123,20 @@
                         </div>
                         <!-- s: navigation -->
                         <div class="menuMob mobile">
+                            <button class="button buttonLang" aria-label="Translate website" value="id"
+                                onclick="changeLanguage(this)">
+                            </button>
+                            <form action="search.html" class="searchbox">
+                                <button class="button icon iconSearch" aria-label="search"></button>
+                                <input type="text" name="q" value="" class="searchboxInput" aria-label="search"
+                                    placeholder="Beras organik murah" inputmode="search">
+                            </form>
                             <div class="headerAccessWrap mobile-only" id="accessMob">
                                 <div class="headerAccess">
                                     <span class="mobile-only headerTitle title">Menu Utama</span>
                                     <div class="headerLoginWrap">
                                         <a href="access.html" class="headerLogin">Login/Register</a>
                                     </div>
-                                    <button class="button buttonLang mobile-only" aria-label="Translate website" value="id"
-                                        onclick="changeLanguage(this)">
-                                    </button>
                                     <span class="header--dash desktop-only"></span>
                                 </div>
                             </div>
@@ -175,11 +177,6 @@
                                     </a>
                                 </li>
                             </ul>
-                            <form action="search.html" class="searchbox">
-                                <button class="button icon iconSearch" aria-label="search"></button>
-                                <input type="text" name="q" value="" class="searchboxInput" aria-label="search"
-                                    placeholder="Beras organik murah" inputmode="search">
-                            </form>
                         </div>
                         <!-- e: navigation -->
                     </nav>            </div>
@@ -408,7 +405,8 @@
                                             Fulan bin Fulan
                                             <span class="userPostDate">20 menit lalu</span>
                                         </div>
-                                        <button class="button disDots" aria-label="Other menu"></button>
+                                        <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                        <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
                                     </div>
                                 
                                     <div class="disItem">
@@ -424,7 +422,8 @@
                                                 kibo_byinu Shop
                                                 <span class="userPostDate">10 menit lalu</span>
                                             </div>
-                                            <button class="button disDots" aria-label="Other menu"></button>
+                                            <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                            <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
                                         </div>
                                     </div>
                                     <div class="disHide -jsShowTg">
@@ -441,7 +440,8 @@
                                                     <span class="tag tagBlue">Penjual</span>
                                                     <span class="userPostDate">9 menit lalu</span>
                                                 </div>
-                                                <button class="button disDots" aria-label="Other menu"></button>
+                                                <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                                <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
                                             </div>
                                         </div>
                                         <div class="disItem">
@@ -473,7 +473,8 @@
                                                     <span class="tag tagBlue">Penjual</span>
                                                     <span class="userPostDate">9 menit lalu</span>
                                                 </div>
-                                                <button class="button disDots" aria-label="Other menu"></button>
+                                                <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                                <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
                                             </div>
                                         </div>
                                         <input type="text" class="formInput" name="" placeholder="Balas diskusi ini" aria-label="Balas diskusi ini">
@@ -493,7 +494,8 @@
                                             Fulan bin Fulan
                                             <span class="userPostDate">20 menit lalu</span>
                                         </div>
-                                        <button class="button disDots" aria-label="Other menu"></button>
+                                        <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                        <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
                                     </div>
                                 
                                     <div class="disItem">
@@ -509,7 +511,8 @@
                                                 kibo_byinu Shop
                                                 <span class="userPostDate">10 menit lalu</span>
                                             </div>
-                                            <button class="button disDots" aria-label="Other menu"></button>
+                                            <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                            <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
                                         </div>
                                     </div>
                                     <div class="disHide -jsShowTg">
@@ -526,7 +529,8 @@
                                                     <span class="tag tagBlue">Penjual</span>
                                                     <span class="userPostDate">9 menit lalu</span>
                                                 </div>
-                                                <button class="button disDots" aria-label="Other menu"></button>
+                                                <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                                <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
                                             </div>
                                         </div>
                                         <div class="disItem">
@@ -558,7 +562,8 @@
                                                     <span class="tag tagBlue">Penjual</span>
                                                     <span class="userPostDate">9 menit lalu</span>
                                                 </div>
-                                                <button class="button disDots" aria-label="Other menu"></button>
+                                                <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                                <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
                                             </div>
                                         </div>
                                         <input type="text" class="formInput" name="" placeholder="Balas diskusi ini" aria-label="Balas diskusi ini">
@@ -578,7 +583,8 @@
                                             Fulan bin Fulan
                                             <span class="userPostDate">20 menit lalu</span>
                                         </div>
-                                        <button class="button disDots" aria-label="Other menu"></button>
+                                        <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                        <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
                                     </div>
                                 
                                     <div class="disItem">
@@ -594,7 +600,8 @@
                                                 kibo_byinu Shop
                                                 <span class="userPostDate">10 menit lalu</span>
                                             </div>
-                                            <button class="button disDots" aria-label="Other menu"></button>
+                                            <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                            <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
                                         </div>
                                     </div>
                                     <div class="disHide -jsShowTg">
@@ -611,7 +618,8 @@
                                                     <span class="tag tagBlue">Penjual</span>
                                                     <span class="userPostDate">9 menit lalu</span>
                                                 </div>
-                                                <button class="button disDots" aria-label="Other menu"></button>
+                                                <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                                <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
                                             </div>
                                         </div>
                                         <div class="disItem">
@@ -643,7 +651,8 @@
                                                     <span class="tag tagBlue">Penjual</span>
                                                     <span class="userPostDate">9 menit lalu</span>
                                                 </div>
-                                                <button class="button disDots" aria-label="Other menu"></button>
+                                                <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                                <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
                                             </div>
                                         </div>
                                         <input type="text" class="formInput" name="" placeholder="Balas diskusi ini" aria-label="Balas diskusi ini">
@@ -1142,6 +1151,45 @@
                             </button>
                             <!-- navigation review -->
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup -pReport">
+        <div class="popupWrap">
+            <div class="popupBox reportPopupbox col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="popupHead">
+                    <div class="popupTitle">Laporkan Komentar</div>
+                    <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
+                            class="icon iconClose"></span></button>
+                </div>
+                <div class="popupContent">
+                    <div class="reportContent">
+                        <label class="formRadioWrap formLabel spacing-xs">
+                            <input type="radio" class="formRadio" name="report" checked="">
+                            <span class="formRadiobox"></span>
+                            <span class="formRadioTitle">Spam</span>
+                        </label>
+                        <label class="formRadioWrap formLabel spacing-xs">
+                            <input type="radio" class="formRadio" name="report">
+                            <span class="formRadiobox"></span>
+                            <span class="formRadioTitle">Konten mengandung SARA, diskriminasi, vulgar, ancaman, dan
+                                pelanggaran nilai/norma sosial</span>
+                        </label>
+                        <label class="formRadioWrap formLabel spacing-xs">
+                            <input type="radio" class="formRadio" name="report">
+                            <span class="formRadiobox"></span>
+                            <span class="formRadioTitle">Lainnya</span>
+                        </label>
+                    </div>
+                    <div class="reportCta">
+                        <button class="button buttonRect buttonRectWhite">
+                            Batalkan
+                        </button>
+                        <button class="button buttonRect buttonRectGrad buttonRectSpan">
+                            <span>Kirim</span>
+                        </button>
                     </div>
                 </div>
             </div>
