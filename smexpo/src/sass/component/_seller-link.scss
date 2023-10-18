@@ -1,0 +1,45 @@
+.seller {
+    &Link {
+        &Wrap {
+            @extend %display-flex;
+        }
+
+        &Img {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            overflow: hidden;
+            flex-shrink: 0;
+
+            img {
+                @extend %image
+            }
+        }
+
+        &Origin {
+            @extend %title--small;
+            @include font-pack($family: $font-base, $weight: $font-weight-normal);
+            color: #525252;
+
+            @include min-responsive($w-xl) {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    &Name {
+        @extend %display-flex;
+        @extend %align-start;
+        @extend %flex-column;
+        flex-wrap: wrap;
+        text-align: left;
+        align-self: center;
+        margin-left: 12px;
+        @include font-pack($family: $font-xbold, $weight: $font-weight-xbold);
+
+        @include min-responsive($w-xl) {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+}

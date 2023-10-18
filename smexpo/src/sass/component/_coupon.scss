@@ -18,6 +18,7 @@
         @include range-responsive($w-md, $w-lg) {
             max-width: 334px;
         }
+
         @include range-responsive($w-lg, $w-xl) {
             max-width: 300px;
         }
@@ -52,8 +53,13 @@
     }
 
     &More {
-        margin-left: 12px;
+        display: block;
         color: #39AE36;
+
+        @include min-responsive($w-xl) {
+            display: inline-block;
+            margin-left: 12px;
+        }
     }
 
     &Cta {
@@ -121,5 +127,91 @@
 
     &Nom {
         @include font-pack($family: $font-xbold, $weight: $font-weight-xbold);
+    }
+
+    &Btn {
+        @extend %buttonRectWhite;
+        width: 100%;
+        margin-bottom: 24px;
+        padding: 15px;
+        border-width: 1px;
+
+        .iconChevron {
+            @extend %iconChevron;
+            @extend %filterGrey;
+            width: 20px;
+            height: 20px;
+            margin-left: 16px;
+            vertical-align: middle;
+            transform: rotate(270deg);
+        }
+    }
+
+    &Popupbox {
+        .buttonBack {
+            @extend %display-flex;
+            @extend %align-center;
+            @extend %buttonBack
+        }
+
+        .iconArrow {
+            @extend %iconArrow;
+            width: 24px;
+            height: 24px;
+            margin-right: 14px;
+        }
+
+        .coupon {
+            &Item {
+                margin-top: 12px;
+                max-width: 100%;
+            }
+        }
+    }
+
+    &Sign {
+        margin-right: 6px;
+        vertical-align: middle;
+    }
+
+    &Best {
+        position: relative;
+        padding: 19px 29px;
+        background-size: cover;
+        @include font-pack($family: $font-mbold, $size: 14px, $weight: $font-weight-mbold, $color: $cl-white);
+
+        span {
+            display: block;
+            margin-top: 8px;
+            @extend %title--small;
+            @include font-pack($family: $font-base, $weight: $font-weight-normal);
+        }
+
+        &Wrap {
+            position: relative;
+            z-index: 1;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 16px;
+            background-size: 20px 40px;
+            background-position: 0 10px;
+            z-index: 0;
+        }
+
+        &::before {
+            left: 0;
+            background-image: radial-gradient(circle at 4px 15px, #fff 11px, transparent 12px, transparent 0);
+        }
+
+        &::after {
+            right: 0;
+            background-image: radial-gradient(circle at 15px 15px, #fff 11px, transparent 12px, transparent 0);
+        }
     }
 }

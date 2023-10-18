@@ -3,9 +3,10 @@
 {{#gte @index compare=../index_end}}
 {{else}}
 <div class="productItem{{#if ../col}} {{../col}}{{/if}}">
+    {{#if ../cart}}<button class="button buttonRect buttonRectGrad buttonRectSpan"><span>+ Keranjang</span></button>{{/if}}
     <a href="{{link}}" class="productLink">
         <div class="productImg">
-            <img src="{{image}}" alt="{{title}}" width="180" height="180"{{#if ../lazy}} loading="lazy"{{/if}}>
+            <img src="{{image}}" alt="{{title}}" width="180" height="180" {{#if ../lazy}} loading="lazy" {{/if}}>
         </div>
         <h3 class="productTitle">{{title}}</h3>
         {{#if disc}}
@@ -33,3 +34,10 @@
 {{else}}
 {{/gte}}
 {{/each}}
+{{#if more}}
+<div class="productItem productMore{{#if col}} {{col}}{{/if}}">
+    <a href="product.html" class="productLink buttonRect buttonRectGrad buttonRectSpan">
+        <span>{{more}}</span>
+    </a>
+</div>
+{{/if}}

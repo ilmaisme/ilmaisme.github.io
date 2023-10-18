@@ -6,6 +6,10 @@
     z-index: 999; //above .header
     @extend %hidden;
 
+    &Child {
+        background: transparent;
+    }
+
     &.active {
         @extend %visible;
         height: var(--app-height);
@@ -62,7 +66,7 @@
         }
     }
 
-    &Content{
+    &Content {
         padding-left: 15px;
         padding-right: 15px;
         max-height: calc(var(--app-height) - 70px - 242px);

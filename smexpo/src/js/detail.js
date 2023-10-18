@@ -85,19 +85,3 @@ function slickPopupRev() {
 function navSlickPopupRev(idx) {
     $('.reviewPopupSlider').slick('slickGoTo', idx, true);
 }
-
-//cart position on device
-updateCartPos()
-$(window).on('resize', function () {
-    updateCartPos()
-});
-
-function updateCartPos() {
-    if (viewport().width >= 1230) {
-        /* move cta cart position in desktop */
-        $('.summaryCtaWrap').appendTo('#cartDesk');
-    } else {
-        /* move cta cart position in mobile */
-        $('.summaryCtaWrap').appendTo('#cartMob');
-    }
-}

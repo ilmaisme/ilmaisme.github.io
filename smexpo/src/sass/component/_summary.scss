@@ -2,12 +2,20 @@
     position: sticky;
     top: calc(121px + 20px);
 
+    &Box {
+        @extend .sortBox;
+    }
+
     &Item {
         @extend %display-flex;
         @extend %align-center;
         @extend %justify-between;
         margin-top: 12px;
         @extend %title--small;
+    }
+
+    &Label {
+        margin-right: 12px;
     }
 
     &Qty {
@@ -18,8 +26,7 @@
         }
     }
 
-    &Amount,
-    strong {
+    &Amount {
         @include font-pack($family:$font-bold, $weight: $font-weight-bold);
     }
 
@@ -84,5 +91,10 @@
             border: 2px solid;
             border-radius: 8px;
         }
+    }
+
+    hr {
+        margin-top: 12px;
+        margin-bottom: 18px;
     }
 }

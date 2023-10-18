@@ -13,9 +13,14 @@ function triggerPopup(el) {
 }
 
 //Close all popup
-function closePopup() {
+function closePopup(el) {
     let pop = document.querySelectorAll(".popup")
-    pop.forEach(popup => {
-        popup.classList.remove('active');
-    });
+    if (!!el) {
+        let dpop = document.querySelector(el)
+        dpop.classList.remove('active');
+    } else {
+        pop.forEach(popup => {
+            popup.classList.remove('active');
+        });
+    }
 }

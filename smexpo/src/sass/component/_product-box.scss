@@ -4,9 +4,9 @@
     @extend %justify-between;
     @extend %align-center;
     flex-wrap: wrap;
-    justify-content: flex-end;
 
-    @include min-responsive($w-xl) {
+    @include min-responsive($w-md) {
+        justify-content: flex-end;
         flex-wrap: nowrap;
     }
 
@@ -16,15 +16,23 @@
 
     &Content {
         margin-left: 10px;
-        margin-right: 16px;
         flex: 1;
+
+        @include min-responsive($w-md) {
+            margin-right: 16px;
+        }
     }
 
     .productImg {
-        width: 85px;
-        height: 85px;
+        width: 72px;
+        height: 72px;
         border-radius: 10px;
         overflow: hidden;
+
+        @include min-responsive($w-md) {
+            width: 85px;
+            height: 85px;
+        }
     }
 
     .productTitle {
@@ -32,12 +40,17 @@
         @include font-pack($family: $font-base);
     }
 
-    .productPrice {
-        @extend %title--small;
-        @include font-pack($family: $font-base, $weight: $font-weight-normal);
-    }
-
     .button {
         flex-shrink: 0;
+
+        &RectGrad {
+            width: 100%;
+            margin-top: 10px;
+
+            @include min-responsive($w-md) {
+                width: auto;
+                margin-top: 0;
+            }
+        }
     }
 }

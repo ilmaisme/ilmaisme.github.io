@@ -124,6 +124,10 @@
         &Icon {
             position: relative;
         }
+
+        &Other {
+            @extend %hidden;
+        }
     }
 
     &Area {
@@ -214,6 +218,14 @@
                 @extend %iconError;
                 @extend %filterRed;
             }
+        }
+    }
+
+    &Other{
+        display: block;
+
+        input:checked ~ .formInputOther {
+            @extend %visible;
         }
     }
 }

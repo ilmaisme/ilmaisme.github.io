@@ -1,0 +1,276 @@
+.cart {
+    &Wrap {
+        .col-left {
+            overflow: hidden;
+        }
+    }
+
+    &Cta {
+        @extend %display-flex;
+        @extend %align-center;
+        justify-content: space-between;
+    }
+
+    &Box {
+        position: relative;
+        margin-top: 12px;
+        padding: 8px 15px 15px 52px;
+    }
+
+    &Content {
+        @extend .productBox;
+        justify-content: space-between;
+
+        .productTitle {
+            margin-top: 0;
+
+            @include min-responsive($w-xl) {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    &Check {
+        @extend %display-flex;
+        @extend %align-center;
+        position: relative;
+
+        &Product {
+            position: absolute;
+            top: calc(50% - 24px/2);
+            left: 15px;
+        }
+
+        ~.cartDel {
+            position: absolute;
+            right: 15px;
+            top: 0;
+        }
+    }
+
+    &Msg {
+        &Trig {
+            @extend .titleMore;
+            color: #39AE36;
+            min-height: 38px;
+            overflow: hidden;
+
+            &.active {
+                @extend %hidden;
+                display: none;
+                width: 0;
+                min-height: 0;
+
+                ~.cartMsgWrap {
+                    @extend %visible
+                }
+            }
+        }
+
+        &Wrap {
+            @extend %hidden;
+            max-width: 437px;
+        }
+
+        &Input {
+            width: 100%;
+
+            @include range-responsive($w-md, $w-xl) {
+                width: 334px;
+            }
+
+            @include min-responsive($w-xl) {
+                width: 434px;
+            }
+
+        }
+
+        &Close {
+            display: inline-block;
+            width: 100%;
+            text-align: right;
+            margin-top: 4px;
+            margin-bottom: 8px;
+
+            @include min-responsive($w-md) {
+                margin-bottom: 0;
+            }
+        }
+
+        &Cta {
+            @extend %title--small;
+            color: #ED3D57;
+
+            span {
+                color: #676767;
+
+                &::before {
+                    content: '|';
+                    padding-left: 4px;
+                    padding-right: 8px;
+                    color: #ED3D57;
+                }
+            }
+        }
+    }
+
+    &Del {
+        @extend %title--small;
+        color: #BA313B;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        ~.qty {
+            margin-left: 15px;
+        }
+    }
+
+    &Variant {
+        display: block;
+
+        @include min-responsive($w-xl) {
+            margin-top: 12px;
+        }
+
+        &Wrap {
+            position: relative;
+            width: 100%;
+            padding-right: 24px;
+            @extend %display-flex;
+            @extend %flex-column;
+            @extend %align-end;
+            @extend %text-center;
+            margin-top: 7px;
+            font-size: 14px;
+            color: #525252;
+
+            @include min-responsive($w-md) {
+                width: auto;
+                margin-top: 0;
+                align-items: center;
+            }
+
+            @include min-responsive($w-xl) {
+                font-size: 16px;
+            }
+
+
+            .iconChevron {
+                position: absolute;
+                right: 0;
+                width: 20px;
+                height: 20px;
+                @extend %iconChevron;
+
+                @include min-responsive($w-xl) {
+                    top: 2px;
+                }
+            }
+        }
+    }
+
+    &Wish {
+        .slick-list {
+            padding-right: 136px;
+        }
+
+        .slick-track {
+            display: flex;
+        }
+
+        .slick-slide {
+            height: inherit;
+            flex: 1;
+        }
+
+        .slick-arrow {
+            top: calc(50% - 44px/2 + 15px);
+
+            @media (hover: none) {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            @include min-responsive($w-xl) {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            &.slick-disabled {
+                @media (hover: none) {
+                    opacity: 0;
+                }
+
+                @include min-responsive($w-xl) {
+                    opacity: .3;
+                }
+            }
+        }
+
+        .slick-prev {
+            left: 6px;
+        }
+
+        .product {
+            &Item {
+                button.buttonRect {
+                    position: absolute;
+                    left: 17px;
+                    bottom: 18px;
+                    width: calc(100% - 34px);
+
+                    ~.productLink {
+                        padding-bottom: 78px;
+                    }
+                }
+
+            }
+
+            &Link {
+                min-height: 394px;
+            }
+        }
+    }
+
+    .product {
+        &BoxWrap {
+            @include range-responsive($w-md, $w-xl) {
+                min-width: 417px;
+            }
+
+            @include min-responsive($w-xl) {
+                min-width: 517px;
+            }
+        }
+
+        &Img {
+            flex-shrink: 0;
+        }
+
+        &Price {
+            margin-left: 4px;
+            font-size: 14px;
+
+            @include min-responsive($w-xl) {
+                margin-left: 8px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .qty {
+        &Wrap {
+            width: 100%;
+            justify-content: end;
+            margin-top: 7px;
+
+            @include min-responsive($w-md) {
+                margin-top: 0;
+            }
+        }
+
+        &Input {
+            max-width: 50px;
+        }
+    }
+}

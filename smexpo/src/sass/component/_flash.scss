@@ -67,9 +67,18 @@
             }
         }
 
+        .slick-track{
+            display: flex;
+        }
+
+        .slick-slide{
+            height: inherit;
+            flex: 1;
+        }
+
         .slick-arrow {
             top: calc(50% - 44px/2 + 15px);
-            
+
             @media (hover: none) {
                 opacity: 0;
                 pointer-events: none;
@@ -88,6 +97,18 @@
                 @include min-responsive($w-xl) {
                     opacity: .3;
                 }
+            }
+        }
+
+        .slick-next {
+            @include min-responsive($w-xl) {
+                right: -17px;
+            }
+        }
+
+        .slick-prev {
+            @include min-responsive($w-xl) {
+                left: -11px;
             }
         }
     }
@@ -110,10 +131,6 @@
     }
 
     .product {
-        &Link {
-            min-height: 390px;
-        }
-
         &Title {
             -webkit-line-clamp: 2;
         }
