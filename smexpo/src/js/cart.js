@@ -37,7 +37,7 @@ function checkAllCart(el) {
 
 //cart position on device
 
-let popsheet = $('#sumMob');
+let popsheet = $('.popsheet');
 updateCartPos()
 $(window).on('resize', function () {
     updateCartPos()

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{> head page="cart"}}
+{{> head page="cart" countdown=true}}
 
 <body>
     {{> header/header}}
@@ -10,9 +10,42 @@
             <div class="breadcrumb">
                 {{>breadcrumb title="Keranjang Saya" link="cart.html" subtitle="Check Out"}}
             </div>
-        </div>
-    </main>
+            <div class="cartWrap row spacing-sm">
+                <div class="col-left col-12 col-xl-9">
+                    <h2 class="title">
+                        <span>Check Out</span>
+                    </h2>
 
+                    <h2 class="title spacing-xl">
+                        <span>Produk yang Dipesan</span>
+                    </h2>
+
+                    <h2 class="title spacing-xl">
+                        <span>Pilih Metode Pembayaran</span>
+                    </h2>
+                </div>
+                <div class="col-right col-12 col-xl-3">
+                    {{>cart/summary}}
+                </div>
+            </div>
+        </div>
+        <!-- cart cta mobile -->
+        <div id="cartMob" class="summaryMob">
+            {{>cart/cta}}
+        </div>
+        <div id="sumMob"></div>
+        <!-- cart cta mobile -->
+    </main>
+    <!-- popup -->
+    {{>cart/coupon-list-popup}}
+    {{>cart/coupon-popup}}
+    {{>cart/summary-popsheet}}
+    <!-- popup -->
+    {{>help}}
+    {{>footer}}
+
+    {{>js page="cart" popup=true countdown=true cart=true cta=true}}
+    {{>component/countdown}}
 </body>
 
 </html>

@@ -28,6 +28,7 @@
 
     <link rel="icon" type="image/x-icon" sizes="16x16" href="./asset/images/favicon.ico">
     <link rel="stylesheet" href="./asset/css/style-cart.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/countdown.min.css" type="text/css">
 
     <link rel="preload" href="./asset/images/logo-smexpo.svg" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -190,15 +191,494 @@
                     <a href="index.html" class="breadcrumbTitle">Home</a>
                 </div>
                 <div class="breadcrumbItem">
-                    <a href="cart.html" class="breadcrumbTitle active">Keranjang Saya</a>
+                    <a href="cart.html" class="breadcrumbTitle">Keranjang Saya</a>
                 </div>
                 <div class="breadcrumbItem">
                     <div class="breadcrumbTitle active">Check Out</div>
                 </div>
             </div>
-        </div>
-    </main>
+            <div class="cartWrap row spacing-sm">
+                <div class="col-left col-12 col-xl-9">
+                    <h2 class="title">
+                        <span>Check Out</span>
+                    </h2>
 
-</body>
+                    <h2 class="title spacing-xl">
+                        <span>Produk yang Dipesan</span>
+                    </h2>
+
+                    <h2 class="title spacing-xl">
+                        <span>Pilih Metode Pembayaran</span>
+                    </h2>
+                </div>
+                <div class="col-right col-12 col-xl-3">
+                    <div class="summary desktop-only">
+                        <div id="cartDesk" class="summaryDesk"></div>
+                    </div>                </div>
+            </div>
+        </div>
+        <!-- cart cta mobile -->
+        <div id="cartMob" class="summaryMob">
+            <div class="summaryBox -jsSummaryTg">
+                <button class="couponBtn button buttonRect" onclick="triggerPopup('.-pLCoupon')">
+                    <img src="./asset/images/icon-grad/disc.png" alt="" class="couponSign" width="20" height="20">
+                    Gunakan Voucher
+                    <span class="icon iconChevron"></span>
+                </button>
+                <div id="sumDesk"></div>
+                <div class="summaryItem">
+                    <div class="summaryLabel"><strong>Total Bayar</strong></div>
+                    <div class="summaryAmount">Rp168.500 <button class="button icon iconChevron" aria-label="Open detail summary"
+                            onclick="triggerPopup('.-pSummary')"></button></div>
+                </div>
+                <div class="summaryCtaWrap">
+                    <a href="cart-checkout.html" class="summaryCta button buttonRect buttonRectBlue">
+                        Beli Langsung
+                    </a>
+                </div>
+            </div>        </div>
+        <div id="sumMob"></div>
+        <!-- cart cta mobile -->
+    </main>
+    <!-- popup -->
+    <div class="popup -pLCoupon">
+        <div class="popupWrap">
+            <div class="popupBox couponPopupbox col-12 col-xl-5">
+                <div class="popupHead">
+                    <div class="popupTitle">Pakai Promo</div>
+                    <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
+                            class="icon iconClose"></span></button>
+                </div>
+                <div class="popupContent couponContent spacing-sm">
+                    <div class="couponBestWrap couponBestBg" style="background-image: url(./asset/images/bg-coupon.png);">
+                        <div class="couponBest">Gunakan Promo Terbaik
+                            <span>lebih hemat Rp 5000</span>
+                        </div>
+                        <button class="couponBestBtn button buttonRect" onclick="triggerActiveButton(this)">Pilih</button>
+                    </div>
+                    <div class="couponBestWrap spacing-sm">
+                        <div class="formWrap">
+                            <input class="formInput" type="text" placeholder="masukkan kupon" aria-label="Input coupon">
+                            <div class="formMsg -error">
+                                Kupon yang Anda masukkan salah
+                            </div>
+                        </div>
+                        <button class="button buttonRect buttonRectGrad buttonRectSpan"><span>Pakai Promo</span></button>
+                    </div>
+                    <div class="titleMedium spacing-sm">
+                        <img src="./asset/images/icon-grad/coupon.png" class="couponSign" alt="" width="20" height="20">
+                        Kupon Saya
+                    </div>
+                    <div class="couponItem">
+                        <div class="couponBox">
+                            <div class="couponTxt">Diskon 10% hingga Rp300.000</div>
+                            <div class="couponDate">s/d 10 Oktober 2023
+                                <button class="button couponMore" onclick="triggerPopup('.-pCoupon')">lihat detail</button>
+                            </div>
+                        </div>
+                        <button class="couponCta button buttonRect buttonRectBlue" onclick="triggerActiveButton(this)">Pilih</button>
+                    </div>                <div class="couponItem">
+                        <div class="couponBox">
+                            <div class="couponTxt">Diskon 10% hingga Rp300.000</div>
+                            <div class="couponDate">s/d 10 Oktober 2023
+                                <button class="button couponMore" onclick="triggerPopup('.-pCoupon')">lihat detail</button>
+                            </div>
+                        </div>
+                        <button class="couponCta button buttonRect buttonRectBlue" onclick="triggerActiveButton(this)">Pilih</button>
+                    </div>                <div class="couponItem">
+                        <div class="couponBox">
+                            <div class="couponTxt">Diskon 10% hingga Rp300.000</div>
+                            <div class="couponDate">s/d 10 Oktober 2023
+                                <button class="button couponMore" onclick="triggerPopup('.-pCoupon')">lihat detail</button>
+                            </div>
+                        </div>
+                        <button class="couponCta button buttonRect buttonRectBlue" onclick="triggerActiveButton(this)">Pilih</button>
+                    </div>                <div class="couponItem">
+                        <div class="couponBox">
+                            <div class="couponTxt">Diskon 10% hingga Rp300.000</div>
+                            <div class="couponDate">s/d 10 Oktober 2023
+                                <button class="button couponMore" onclick="triggerPopup('.-pCoupon')">lihat detail</button>
+                            </div>
+                        </div>
+                        <button class="couponCta button buttonRect buttonRectBlue" onclick="triggerActiveButton(this)">Pilih</button>
+                    </div>            </div>
+            </div>
+        </div>
+    </div>    <div class="popup popupChild -pCoupon">
+        <div class="popupWrap">
+            <div class="popupBox couponPopupbox col-12 col-xl-5">
+                <div class="popupHead">
+                    <button class="button buttonBack" aria-label="Back to previous popup"
+                            onclick="closePopup('.-pCoupon')"><span class="icon iconArrow"></span>Kembali</button>
+                    <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
+                            class="icon iconClose"></span></button>
+                </div>
+                <div class="popupContent couponContent spacing-sm">
+                    <div class="popupTitle">Promo Oktober</div>
+                    <div class="couponTnc spacing-xs">
+                        <div class="couponTncItem">
+                            <div class="couponTncTitle">
+                                <span class="icon iconClock"></span>Berlaku Hingga
+                            </div>
+                            <div class="countdown"></div>
+                        </div>
+                        <div class="couponTncItem">
+                            <div class="couponTncTitle">
+                                <span class="icon iconMinimum"></span>Minimum Transaksi
+                            </div>
+                            <div class="couponNom">
+                                Rp50.000
+                            </div>
+                        </div>
+                    </div>
+                    <div class="couponDesc static spacing-sm">
+                        <ol>
+                            <li>Kupon diskon dapat digunakan dengan membuka halaman promo di Keranjang.</li>
+                            <li>Kupon diskon hanya berlaku apabila pembelian Pengguna sudah memenuhi syarat dan
+                                ketentuan yang tertera pada voucher.</li>
+                            <li>Nominal diskon yang bisa didapatkan sebesar 10% hingga Rp 300.000.</li>
+                            <li>Kupon diskon ini berlaku untuk transaksi minimal Rp 100.000 (tidak termasuk ongkos kirim
+                                dan biaya tambahan lainnya).</li>
+                            <li>Kupon diskon ini hanya berlaku untuk pembelanjaan di Sido Muncul Store.</li>
+                            <li>1 (satu) Pengguna Smexpo hanya boleh menggunakan 1 (satu) akun Smexpo untuk
+                                menggunakan Kupon diskon ini.</li>
+                            <li>Diskon akan diberikan dalam bentuk potongan harga.</li>
+                            <li>Jika transaksi gagal, dana yang kembali ke Pembeli akan sesuai
+                                dengan nominal pembayaran yang dilakukan oleh Pembeli.</li>
+                            <li>Smexpo berhak melakukan tindakan yang diperlukan apabila diduga terjadi tindakan
+                                kecurangan yang dilakukan oleh Pengguna dan/atau yang melanggar Syarat dan Ketentuan Situs
+                                dan/atau merugikan pihak Smexpo.</li>
+                            <li>Dengan menggunakan Kupon diskon ini, pengguna dianggap telah memahami dan menyetujui
+                                semua Syarat &amp; Ketentuan yang berlaku.</li>
+                            <li>Kupon ini tidak dapat digunakan bersamaan dengan produk promosi kecuali diatur lain
+                                sebagaimana kebijakan Smexpo.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="popsheet mobile -pSummary" onclick="closePopup('.popsheet')">
+        <div class="popsheetWrap" onclick='event.stopPropagation()'>
+            <div class="titleMedium">
+                Ringkasan Harga
+            </div>
+            <div class="summaryItem">
+                <div class="summaryLabel">Total harga (2 barang)</div>
+                <div class="summaryAmount">Rp344.750</div>
+            </div>
+            <div class="summaryItem">
+                <div class="summaryLabel">Total diskon</div>
+                <div class="summaryAmount">-Rp176.250</div>
+            </div>
+            <hr>
+            <div class="mobile-only">
+                <div class="summaryItem">
+                    <div class="summaryLabel"><strong>Total Bayar</strong></div>
+                    <div class="summaryAmount">Rp168.500</div>
+                </div>
+            </div>
+        </div>
+    </div>    <!-- popup -->
+    <div class="help">
+        <a href="#" class="helpWrap">
+            <img src="./asset/images/chat-mina.png" alt="Help Chat MINA" width="91" height="91" loading="lazy">
+            <div class="helpTxt">Hai, saya MINA.. Silahkan chat jika ada yang ingin kamu tanyakan.</div>
+        </a>
+    </div>    <footer class="footer spacing-lg">
+        <div class="container container-xl">
+            <hr>
+            <div class="footerWrap">
+                <div class="footerNav">
+                    <div class="footerLabel">Tentang</div>
+                    <div class="footerMenu">
+                        <a href="about.html" class="footerLink">Tentang Pertamina SMEXPO
+                        </a>
+                        <a href="#" class="footerLink">Hak Kekayaan Intelektual
+                        </a>
+                        <a href="faq.html" class="footerLink">FAQ
+                        </a>
+                    </div>
+                </div>
+                <div class="footerNav">
+                    <div class="footerLabel">Tautan</div>
+                    <div class="footerMenu">
+                        <a href="#" class="footerLink">Pertamina
+                        </a>
+                        <a href="#" class="footerLink">MyPertamina
+                        </a>
+                        <a href="#" class="footerLink">Belajar UMKM Pertamina
+                        </a>
+                        <a href="#" class="footerLink">Formulir Mitra Binaan Pertamina
+                        </a>
+                    </div>
+                </div>
+                <div class="footerNav">
+                    <div class="footerLabel">Penjual</div>
+                    <div class="footerMenu">
+                        <a href="#" class="footerLink">Pusat Edukasi Penjual
+                        </a>
+                        <a href="#" class="footerLink">Keuntungan Jualan
+                        </a>
+                        <a href="#" class="footerLink">Daftar Toko Resmi
+                        </a>
+                    </div>
+                </div>
+                <div class="footerNav">
+                    <div class="footerLabel">Pembeli</div>
+                    <div class="footerMenu">
+                        <a href="#" class="footerLink">Cara Belanja
+                        </a>
+                        <a href="#" class="footerLink">Pembayaran
+                        </a>
+                        <a href="#" class="footerLink">Promo
+                        </a>
+                    </div>
+                </div>
+                <div class="footerNav">
+                    <div class="footerLabel">Bantuan dan Panduan</div>
+                    <div class="footerMenu">
+                        <a href="#" class="footerLink">Pertamina Care
+                        </a>
+                        <a href="#" class="footerLink">Syarat dan Ketentuan
+                        </a>
+                        <a href="#" class="footerLink">Kebijakan Privasi
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footerWrap">
+                <div class="footerPayment">
+                    <div class="footerLabel">Metode Pembayaran</div>
+                    <ul class="footerList">
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/saldo.png" alt="Saldo" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/visa.png" alt="Visa" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/mastercard.png" alt="Mastercard" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/JCB.png" alt="JCB" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/amex.png" alt="American Express" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/linkaja-syariah.png" alt="Linkaja Syariah" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/kredivo.png" alt="Kredivo" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/akulaku.png" alt="Akulaku" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/dana.png" alt="Dana" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/ceria.png" alt="Ceria" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/mandiri.png" alt="Mandiri Clickpay" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/linkaja.png" alt="Linkaja" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/cimb.png" alt="CIMB Niaga" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/indomaret.png" alt="Indomaret" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/alfamart.png" alt="Alfamart" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/alfamidi.png" alt="Alfamidi" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/pos.png" alt="Pos Indonesia" loading="lazy" width="76" height="35">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-payment/brimo.png" alt="Brimo" loading="lazy" width="76" height="35">
+                        </li>
+                    </ul>
+                </div>
+                <div class="footerBank">
+                    <div class="footerLabel">Bank Transfer</div>
+                    <ul class="footerList">
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-bank/bca.png" alt="BCA" loading="lazy" width="73" height="37">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-bank/mandiri.png" alt="Mandiri" loading="lazy" width="73" height="37">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-bank/bni.png" alt="BNI" loading="lazy" width="73" height="37">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-bank/briva.png" alt="BRIVA" loading="lazy" width="73" height="37">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-bank/permata.png" alt="Permata Bank" loading="lazy" width="73" height="37">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-bank/danamon.png" alt="Danamon" loading="lazy" width="73" height="37">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-bank/cimb.png" alt="CIMB Niaga" loading="lazy" width="73" height="37">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-bank/btn.png" alt="Bank BTN" loading="lazy" width="73" height="37">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-bank/ocbc.png" alt="OCBC NISP" loading="lazy" width="73" height="37">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-bank/bsi.png" alt="BSI" loading="lazy" width="73" height="37">
+                        </li>
+                    </ul>
+                </div>
+                <div class="footerDelivery">
+                    <div class="footerLabel">Jasa Pengiriman</div>
+                    <ul class="footerList">
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/ambil-sendiri.png" alt="Ambil sendiri" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/jne.png" alt="JNE Express" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/tiki.png" alt="TiKi" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/pos.png" alt="Pos Indonesia" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/wahana.png" alt="Wahana Express" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/gosend.png" alt="gosend" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/sicepat.png" alt="SICEPAT" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/ninja.png" alt="ninja xpress" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/j&amp;t.png" alt="J&amp;T Express" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/grabexpress.png" alt="Grab Express" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/paxel.png" alt="paxel" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/indah-cargo.png" alt="Indah Cargo" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/cod.png" alt="COD" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/anteraja.png" alt="anteraja" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/lion-parcel.png" alt="Lion parcel" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/rpx.png" alt="RPX" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/sap.png" alt="SAP Express" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/alfatrex.png" alt="Alfatrex" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/janio.png" alt="janio" loading="lazy" width="75" height="26">
+                        </li>
+                        <li class="footerItem">
+                            <img src="./asset/images/logo-delivery/rocket-delivery.png" alt="Rocket Delivery" loading="lazy" width="75" height="26">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footerWrap footerBottom">
+                <div class="footerCopy">
+                    <a href="index.html">
+                        <img src="./asset/images/logo-smexpo.svg" class="footerLogo" alt="Pertamina Smexpo" width="195"
+                            height="195"></a>
+                    <div class="footerCopyTxt">
+                        Situs jual beli online UMKM binaan Pertamina <span>mudah & terpercaya</span> <br>
+                        Copyright © 2023
+                    </div>
+                </div>
+                <div class="socmed">
+                    <div class="socmedWrap">
+                        <div class="footerLabel">Ikuti Kami</div>
+                        <div class="socmedItem">
+                            <a href="https://www.facebook.com/" class="socmedLink" aria-label="Facebook">
+                                <img src="./asset/images/icon-fb.svg" alt="" loading="lazy" width="34" height="34" class="icon iconFb"></img>
+                            </a>
+                        </div>
+                        <div class="socmedItem">
+                            <a href="https://twitter.com/" class="socmedLink" aria-label="Twitter X">
+                                <img src="./asset/images/icon-x.svg" alt="" loading="lazy" width="34" height="34" class="icon iconX"></img>
+                            </a>
+                        </div>
+                        <div class="socmedItem">
+                            <a href="https://www.instagram.com/" class="socmedLink" aria-label="Instagram">
+                                <img src="./asset/images/icon-ig.svg" alt="" loading="lazy" width="34" height="34" class="icon iconIg"></img>
+                            </a>
+                        </div>
+                        <div class="socmedItem">
+                            <a href="https://www.youtube.com/" class="socmedLink" aria-label="Youtube">
+                                <img src="./asset/images/icon-yt.svg" alt="" loading="lazy" width="34" height="34" class="icon iconYt"></img>
+                            </a>
+                        </div>
+                    </div>            </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="./asset/js/jquery-3.5.0.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.js"></script>
+    <!-- countdown JS -->
+    <script defer src="./asset/js/countDown.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/popup.js"></script>
+    <script defer src="./asset/js/cart.js"></script>
+    <script defer src="./asset/js/cta.js"></script>
+    <script>
+        $(document).ready(function () {
+            var cflash = new Countdown({
+                cont: document.querySelector('.countdown'),
+                date: {
+                    day: 28,
+                    month: 10,
+                    year: 2023,
+                    hour: 24,
+                    minute: 0,
+                    second: 0,
+                },
+                //date: "Saturday October 28 2023",
+                outputTranslation: {
+                    year: 'Years',
+                    week: 'custom_string_Weeks',
+                    day: 'Days',
+                    hour: 'Hours',
+                    minute: 'Minutes',
+                    second: 'Seconds',
+                },
+                endCallback: function () { },
+                //outputFormat: 'day|hour|minute|second',
+                outputFormat: 'hour|minute|second',
+            });
+            cflash.start();
+        })
+    </script></body>
 
 </html>
