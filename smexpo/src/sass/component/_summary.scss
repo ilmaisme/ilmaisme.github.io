@@ -28,6 +28,18 @@
 
     &Amount {
         @include font-pack($family:$font-bold, $weight: $font-weight-bold);
+
+        .iconChevron {
+            @extend %iconChevron;
+            width: 20px;
+            height: 20px;
+            transform: rotate(180deg) translateY(-4px);
+            display: inline-block;
+
+            @include min-responsive($w-xl) {
+                display: none;
+            }
+        }
     }
 
     &Cta {
@@ -91,10 +103,5 @@
             border: 2px solid;
             border-radius: 8px;
         }
-    }
-
-    hr {
-        margin-top: 12px;
-        margin-bottom: 18px;
     }
 }

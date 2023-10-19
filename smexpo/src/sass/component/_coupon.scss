@@ -63,6 +63,8 @@
     }
 
     &Cta {
+        min-width: 84px;
+
         &.active {
             background: #BDBDBD;
         }
@@ -131,6 +133,7 @@
 
     &Btn {
         @extend %buttonRectWhite;
+        position: relative;
         width: 100%;
         margin-bottom: 24px;
         padding: 15px;
@@ -175,10 +178,37 @@
     }
 
     &Best {
-        position: relative;
-        padding: 19px 29px;
-        background-size: cover;
-        @include font-pack($family: $font-mbold, $size: 14px, $weight: $font-weight-mbold, $color: $cl-white);
+        margin-right: 20px;
+
+        &Wrap {
+            @extend %display-flex;
+            @extend %align-start;
+            @extend %justify-between;
+            position: relative;
+
+            .buttonRectSpan {
+                min-width: 160px;
+                position: absolute;
+                top: 2px;
+                right: 0;
+
+                @include min-responsive($w-md) {
+                    position: relative;
+                }
+            }
+
+            .formWrap {
+                flex: 1;
+
+                @include min-responsive($w-md) {
+                    margin-right: 20px;
+                }
+            }
+
+            .formInput {
+                width: 100%;
+            }
+        }
 
         span {
             display: block;
@@ -187,31 +217,61 @@
             @include font-pack($family: $font-base, $weight: $font-weight-normal);
         }
 
-        &Wrap {
-            position: relative;
-            z-index: 1;
+        &Bg {
+            padding: 15px 16px;
+            background-size: cover;
+            @include font-pack($family: $font-mbold, $size: 14px, $weight: $font-weight-mbold, $color: $cl-white);
+
+            @include min-responsive($w-md) {
+                padding: 19px 29px;
+            }
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 12px;
+                background-size: 20px 28px;
+                background-position: 0 3px;
+                z-index: 0;
+
+                @include min-responsive($w-md) {
+                    width: 16px;
+                    background-size: 20px 40px;
+                    background-position: 0 10px;
+                }
+            }
+
+            &::before {
+                left: 0;
+                background-image: radial-gradient(circle at -5px 15px, #fff 11px, transparent 12px, transparent 0);
+
+                @include min-responsive($w-md) {
+                    background-image: radial-gradient(circle at 4px 15px, #fff 11px, transparent 12px, transparent 0);
+                }
+            }
+
+            &::after {
+                right: 0;
+                background-image: radial-gradient(circle at 18px 15px, #fff 11px, transparent 12px, transparent 0);
+
+                @include min-responsive($w-md) {
+                    background-image: radial-gradient(circle at 15px 15px, #fff 11px, transparent 12px, transparent 0);
+                }
+            }
         }
 
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 16px;
-            background-size: 20px 40px;
-            background-position: 0 10px;
-            z-index: 0;
-        }
+        &Btn {
+            min-width: 110px;
+            border: 1px solid $cl-white;
+            color: $cl-white;
 
-        &::before {
-            left: 0;
-            background-image: radial-gradient(circle at 4px 15px, #fff 11px, transparent 12px, transparent 0);
-        }
-
-        &::after {
-            right: 0;
-            background-image: radial-gradient(circle at 15px 15px, #fff 11px, transparent 12px, transparent 0);
+            &.active {
+                border-color: rgba(228, 235, 245, .5);
+                color: rgba(228, 235, 245, .5);
+            }
         }
     }
 }

@@ -36,6 +36,8 @@ function checkAllCart(el) {
 }
 
 //cart position on device
+
+let popsheet = $('#sumMob');
 updateCartPos()
 $(window).on('resize', function () {
     updateCartPos()
@@ -44,9 +46,17 @@ $(window).on('resize', function () {
 function updateCartPos() {
     if (viewport().width >= 1230) {
         /* move cta cart position in desktop */
-        $('.summaryCtaWrap').appendTo('#cartDesk');
+        $('.-jsSummaryTg').appendTo('#cartDesk');
+        if(!!popsheet){
+            popsheet.appendTo('#sumDesk');
+            popsheet.removeClass('mobile');
+        }
     } else {
         /* move cta cart position in mobile */
-        $('.summaryCtaWrap').appendTo('#cartMob');
+        $('.-jsSummaryTg').appendTo('#cartMob');
+        if(!!popsheet){
+            popsheet.appendTo('#sumMob');
+            popsheet.addClass('mobile');
+        }
     }
 }
