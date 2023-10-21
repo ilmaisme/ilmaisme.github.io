@@ -28,7 +28,7 @@
 
     <link rel="icon" type="image/x-icon" sizes="16x16" href="./asset/images/favicon.ico">
     <link rel="stylesheet" href="./asset/css/style-cart.css" type="text/css">
-    <link rel="stylesheet" href="./asset/css/countdown.min.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/countdown.css" type="text/css">
 
     <link rel="preload" href="./asset/images/logo-smexpo.svg" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -202,43 +202,219 @@
                     <h2 class="title">
                         <span>Check Out</span>
                     </h2>
-
+                    <div class="titleMedium spacing-sm">
+                        Alamat Pengiriman
+                    </div>
+                    <div class="address spacing-sm">
+                        <div class="addressItem">
+                            <div class="addressWrap">
+                                <div class="addressName"><strong>Abdul racing</strong></div>
+                                <div class="addressLabel">
+                                    (Rumah)<span class="tag tagBlue">Utama</span>
+                                </div>
+                            </div>
+                            <div class="addressTxt">
+                                Jl. Ninjaku no. 3 RT 01 RW 002, Kec. Konoha, Kel. Ichiraku, Kota Depok, 163221
+                                <span>(patokan ruko laundry warna ijo)</span>
+                            </div>
+                            <button class="button addressCta titleMore" onclick="triggerPopup('.-pCAddress')">Ubah</button>
+                        </div>
+                    </div>                    <button class="button buttonRect buttonRectGrad spacing-sm"
+                        onclick="triggerPopup('.-pAddress')">Tambah Alamat</button>
                     <h2 class="title spacing-xl">
                         <span>Produk yang Dipesan</span>
                     </h2>
-
+                    <!-- cart list -->
+                    <div class="cartList spacing-sm">
+                        <a href="seller.html" class="sellerLinkWrap">
+                            <div class="sellerLinkImg border-sm">
+                                <img src="./asset/images/dummy/seller/seller2.png" alt="" width="25" height="25">
+                            </div>
+                            <div class="sellerName">PT. GODHONG PITU SONGO
+                                <span class="sellerLinkOrigin">Kab. Mojokerto</span>
+                            </div>
+                        </a>
+                        <div class="cartBox --co">
+                            <div class="cartItem spacing-xs">
+                                <div class="cartContent">
+                                    <a href="detail.html" class="productBoxWrap">
+                                        <div class="productImg">
+                                            <img src="./asset/images/dummy/product/sambel-roajudes.png" alt="Sambel RoaJuDes" width="180" height="180">
+                                        </div>
+                                        <div class="productBoxContent">
+                                            <div class="productTitle">Sambel RoaJuDes
+                                            </div>
+                                            <div class="productTitle">
+                                                Pedas Lvl 5 <span>1 barang (250gr)</span>
+                                            </div>
+                                            <div class="productDisc spacing-xs">
+                                                <span class="priceDisc">-25%</span>
+                                                <span class="priceNet">Rp. 44.750</span>
+                                                <span class="productPrice">Rp 33.500</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cartItem spacing-xs">
+                                <div class="cartContent">
+                                    <a href="detail.html" class="productBoxWrap">
+                                        <div class="productImg">
+                                            <img src="./asset/images/dummy/product/tas.png" alt="Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah" width="180" height="180">
+                                        </div>
+                                        <div class="productBoxContent">
+                                            <div class="productTitle">Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah
+                                            </div>
+                                            <div class="productTitle">
+                                                Abu-abu <span>1 barang (250gr)</span>
+                                            </div>
+                                            <div class="productDisc spacing-xs">
+                                                <span class="priceDisc">-45%</span>
+                                                <span class="priceNet">Rp. 300.000</span>
+                                                <span class="productPrice">Rp 135.000</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="shipping">
+                                <div class="titleMore">Pilih Durasi Pengiriman</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cart list -->
                     <h2 class="title spacing-xl">
                         <span>Pilih Metode Pembayaran</span>
                     </h2>
+                    <div class="payment">
+                        <div class="spacing-sm">
+                            <strong>Dompet Digital</strong>
+                            <div class="spacing-xs">
+                                <div class="paymentList row">
+                                    <label class="paymentItem formRadioWrap formLabel col-6 col-md-4 col-lg-3">
+                                        <input type="radio" class="formRadio" name="category">
+                                        <span class="formRadiobox paymentRadio"></span>
+                                        <span class="formRadioTitle paymentTitle">
+                                            <img src="./asset/images/logo-payment/xl/gopay.png" alt="gopay" width="120" height="45" loading="lazy">
+                                        </span>
+                                    </label>                                    <label class="paymentItem formRadioWrap formLabel col-6 col-md-4 col-lg-3">
+                                        <input type="radio" class="formRadio" name="category">
+                                        <span class="formRadiobox paymentRadio"></span>
+                                        <span class="formRadioTitle paymentTitle">
+                                            <img src="./asset/images/logo-payment/xl/shopeepay.png" alt="shopeepay" width="120" height="45" loading="lazy">
+                                        </span>
+                                    </label>                                </div>
+                            </div>
+                        </div>
+                        <div class="spacing-sm">
+                            <strong>Transfer Virtual Account/Transfer Bank</strong>
+                            <div class="spacing-xs">
+                                <div class="paymentList row">
+                                    <label class="paymentItem formRadioWrap formLabel col-6 col-md-4 col-lg-3">
+                                        <input type="radio" class="formRadio" name="category" checked>
+                                        <span class="formRadiobox paymentRadio"></span>
+                                        <span class="formRadioTitle paymentTitle">
+                                            <img src="./asset/images/logo-bank/xl/mandiri.png" alt="mandiri" width="120" height="45" loading="lazy">
+                                        </span>
+                                    </label>                                    <label class="paymentItem formRadioWrap formLabel col-6 col-md-4 col-lg-3">
+                                        <input type="radio" class="formRadio" name="category">
+                                        <span class="formRadiobox paymentRadio"></span>
+                                        <span class="formRadioTitle paymentTitle">
+                                            <img src="./asset/images/logo-bank/xl/bca.png" alt="bca" width="120" height="45" loading="lazy">
+                                        </span>
+                                    </label>                                    <label class="paymentItem formRadioWrap formLabel col-6 col-md-4 col-lg-3">
+                                        <input type="radio" class="formRadio" name="category">
+                                        <span class="formRadiobox paymentRadio"></span>
+                                        <span class="formRadioTitle paymentTitle">
+                                            <img src="./asset/images/logo-bank/xl/bni.png" alt="bni" width="120" height="45" loading="lazy">
+                                        </span>
+                                    </label>                                    <label class="paymentItem formRadioWrap formLabel col-6 col-md-4 col-lg-3">
+                                        <input type="radio" class="formRadio" name="category">
+                                        <span class="formRadiobox paymentRadio"></span>
+                                        <span class="formRadioTitle paymentTitle">
+                                            <img src="./asset/images/logo-bank/xl/btn.png" alt="bank btn" width="120" height="45" loading="lazy">
+                                        </span>
+                                    </label>                                    <label class="paymentItem formRadioWrap formLabel col-6 col-md-4 col-lg-3">
+                                        <input type="radio" class="formRadio" name="category">
+                                        <span class="formRadiobox paymentRadio"></span>
+                                        <span class="formRadioTitle paymentTitle">
+                                            <img src="./asset/images/logo-bank/xl/cimb.png" alt="cimb niaga" width="120" height="45" loading="lazy">
+                                        </span>
+                                    </label>                                    <label class="paymentItem formRadioWrap formLabel col-6 col-md-4 col-lg-3">
+                                        <input type="radio" class="formRadio" name="category">
+                                        <span class="formRadiobox paymentRadio"></span>
+                                        <span class="formRadioTitle paymentTitle">
+                                            <img src="./asset/images/logo-bank/xl/danamon.png" alt="danamon" width="120" height="45" loading="lazy">
+                                        </span>
+                                    </label>                                    <label class="paymentItem formRadioWrap formLabel col-6 col-md-4 col-lg-3">
+                                        <input type="radio" class="formRadio" name="category">
+                                        <span class="formRadiobox paymentRadio"></span>
+                                        <span class="formRadioTitle paymentTitle">
+                                            <img src="./asset/images/logo-bank/xl/permata.png" alt="permata bank" width="120" height="45" loading="lazy">
+                                        </span>
+                                    </label>                                </div>
+                            </div>
+                        </div>
+                        <div class="spacing-sm">
+                            <strong>Tunai di Gerai Retail</strong>
+                            <div class="spacing-xs">
+                                <div class="paymentList row">
+                                    <label class="paymentItem formRadioWrap formLabel col-6 col-md-4 col-lg-3">
+                                        <input type="radio" class="formRadio" name="category">
+                                        <span class="formRadiobox paymentRadio"></span>
+                                        <span class="formRadioTitle paymentTitle">
+                                            <img src="./asset/images/logo-payment/xl/alfamart.png" alt="alfamart" width="120" height="45" loading="lazy">
+                                        </span>
+                                    </label>                                    <label class="paymentItem formRadioWrap formLabel col-6 col-md-4 col-lg-3">
+                                        <input type="radio" class="formRadio" name="category">
+                                        <span class="formRadiobox paymentRadio"></span>
+                                        <span class="formRadioTitle paymentTitle">
+                                            <img src="./asset/images/logo-payment/xl/indomaret.png" alt="indomaret" width="120" height="45" loading="lazy">
+                                        </span>
+                                    </label>                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-right col-12 col-xl-3">
-                    <div class="summary desktop-only">
-                        <div id="cartDesk" class="summaryDesk"></div>
+                    <div class="summaryBox">
+                        <button class="couponBtn button buttonRect" onclick="triggerPopup('.-pLCoupon')">
+                            <img src="./asset/images/icon-grad/disc.png" alt="" class="couponSign" width="20" height="20">
+                            Gunakan Voucher
+                            <span class="icon iconChevron"></span>
+                        </button>
+                        <div class="titleMedium">
+                            Ringkasan Harga
+                        </div>
+                        <div class="summaryItem">
+                            <div class="summaryLabel">Total harga (2 barang)</div>
+                            <div class="summaryAmount">Rp344.750</div>
+                        </div>
+                        <div class="summaryItem">
+                            <div class="summaryLabel">Total diskon</div>
+                            <div class="summaryAmount">-Rp176.250</div>
+                        </div>
+                        <hr>
+                        <div class="summaryItem">
+                            <div class="summaryLabel"><strong>Total Bayar</strong></div>
+                            <div class="summaryAmount">Rp168.500</div>
+                        </div>
+                        <div class="summaryItem summaryItemSdk spacing-sm">
+                            <div class="formInputIcon">
+                                <input type="checkbox" id="agree" name="genre" class="formCheck">
+                                <span class="formCheckbox"></span>
+                            </div>
+                            <label for="agree">Saya menyetujui <a href="tnc.html" class="accessLink">syarat dan
+                                    ketentuan</a> yang berlaku.</a></label>
+                        </div>
+                        <div class="summaryCtaWrap">
+                            <a href="notif.html" class="summaryCta button buttonRect buttonRectBlue">
+                                Check Out
+                            </a>
+                        </div>
                     </div>                </div>
             </div>
         </div>
-        <!-- cart cta mobile -->
-        <div id="cartMob" class="summaryMob">
-            <div class="summaryBox -jsSummaryTg">
-                <button class="couponBtn button buttonRect" onclick="triggerPopup('.-pLCoupon')">
-                    <img src="./asset/images/icon-grad/disc.png" alt="" class="couponSign" width="20" height="20">
-                    Gunakan Voucher
-                    <span class="icon iconChevron"></span>
-                </button>
-                <div id="sumDesk"></div>
-                <div class="summaryItem">
-                    <div class="summaryLabel"><strong>Total Bayar</strong></div>
-                    <div class="summaryAmount">Rp168.500 <button class="button icon iconChevron" aria-label="Open detail summary"
-                            onclick="triggerPopup('.-pSummary')"></button></div>
-                </div>
-                <div class="summaryCtaWrap">
-                    <a href="cart-checkout.html" class="summaryCta button buttonRect buttonRectBlue">
-                        Beli Langsung
-                    </a>
-                </div>
-            </div>        </div>
-        <div id="sumMob"></div>
-        <!-- cart cta mobile -->
     </main>
     <!-- popup -->
     <div class="popup -pLCoupon">
@@ -304,7 +480,7 @@
                     </div>            </div>
             </div>
         </div>
-    </div>    <div class="popup popupChild -pCoupon">
+    </div>    <div class="popup -pCoupon">
         <div class="popupWrap">
             <div class="popupBox couponPopupbox col-12 col-xl-5">
                 <div class="popupHead">
@@ -357,24 +533,177 @@
                 </div>
             </div>
         </div>
-    </div>    <div class="popsheet mobile -pSummary" onclick="closePopup('.popsheet')">
-        <div class="popsheetWrap" onclick='event.stopPropagation()'>
-            <div class="titleMedium">
-                Ringkasan Harga
+    </div>    <div class="popup -pCAddress">
+        <div class="popupWrap">
+            <div class="popupBox addressPopupbox col-12 col-xl-5">
+                <div class="popupHead">
+                    <div class="popupTitle">Pilih Alamat</div>
+                    <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
+                            class="icon iconClose"></span></button>
+                </div>
+                <div class="popupContent spacing-sm">
+                    <form action="#">
+                        <div class="search">
+                            <button class="button icon iconSearch" aria-label="search address"></button>
+                            <input type="text" value="" class="searchInput" aria-label="search address"
+                                placeholder="Cari Alamat" inputmode="search">
+                        </div>
+                        <button class="button buttonRect buttonRectGrad buttonRectSpan" type="button"
+                            onclick="triggerPopup('.-pAddress')">
+                            <span>Tambah Alamat</span>
+                        </button>
+                        <div class="address">
+                            <label class="addressItem --list">
+                                <input type="radio" class="formRadio addressRadio" name="address"
+                                    checked>
+                                <span class="addressRadioState"></span>
+                                <div class="addressRadioWrap">
+                                    <div class="addressWrap">
+                                        <div class="addressName"><strong>Abdul racing</strong></div>
+                                        <div class="addressLabel">
+                                            Rumah<span class="tag tagBlue">Utama</span>
+                                        </div>
+                                    </div>
+                                    <div class="addressPhone">086661313444</div>
+                                    <div class="addressTxt">
+                                        Jl. Ninjaku no. 3 RT 01 RW 002, Kec. Konoha, Kel. Ichiraku, Kota Depok, 163221
+                                        <span>(patokan ruko laundry warna ijo)</span>
+                                    </div>
+                                    <div class="addressCta spacing-sm">
+                                        <div class="addressPin">
+                                            <span class="icon iconLoc"></span>
+                                            Sudah Pin Point
+                                        </div>
+                                        <div class="addressCtaWrap">
+                                            <button class="button addressCtaShare" type="button">Share</button>
+                                            <button class="button" type="button" onclick="triggerPopup('.-pEAddress')">Ubah Alamat</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="addressPick">
+                                    <button class="button buttonRect buttonRectBlue" type="button">Pilih</button>
+                                    <img src="./asset/images/icon-grad/check.png" alt="Picked address" width="33" height="33" loading="lazy">
+                                </div>
+                            </label>
+                            <label class="addressItem --list">
+                                <input type="radio" class="formRadio addressRadio" name="address">
+                                <span class="addressRadioState"></span>
+                                <div class="addressRadioWrap">
+                                    <div class="addressWrap">
+                                        <div class="addressName"><strong>Fulan bin fulan</strong></div>
+                                        <div class="addressLabel">
+                                            Rumah
+                                        </div>
+                                    </div>
+                                    <div class="addressPhone">Jl. ninjaku 3 no. 56, Kec. Sunagakure, Kel. margahayu, Bandung</div>
+                                    <div class="addressTxt">
+                                        0878 1234 5678
+                                        <span>(Belakang mushola ke kanan)</span>
+                                    </div>
+                                    <div class="addressCta spacing-sm">
+                                        <div class="addressPin">
+                                            <span class="icon iconLoc --non"></span>
+                                            Belum Pin Point
+                                        </div>
+                                        <div class="addressCtaWrap">
+                                            <button class="button addressCtaShare" type="button">Share</button>
+                                            <button class="button" type="button" onclick="triggerPopup('.-pEAddress')">Ubah Alamat</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="addressPick">
+                                    <button class="button buttonRect buttonRectBlue" type="button">Pilih</button>
+                                    <img src="./asset/images/icon-grad/check.png" alt="Picked address" width="33" height="33" loading="lazy">
+                                </div>
+                            </label>
+                            <label class="addressItem --list">
+                                <input type="radio" class="formRadio addressRadio" name="address">
+                                <span class="addressRadioState"></span>
+                                <div class="addressRadioWrap">
+                                    <div class="addressWrap">
+                                        <div class="addressName"><strong>Fulan Barbershop</strong></div>
+                                        <div class="addressLabel">
+                                            Kantor
+                                        </div>
+                                    </div>
+                                    <div class="addressPhone">0896 1841 4346</div>
+                                    <div class="addressTxt">
+                                        Jl. Puspanjolo Barat Raya No.1, Cabean, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50141
+                                    </div>
+                                    <div class="addressCta spacing-sm">
+                                        <div class="addressPin">
+                                            <span class="icon iconLoc --non"></span>
+                                            Belum Pin Point
+                                        </div>
+                                        <div class="addressCtaWrap">
+                                            <button class="button addressCtaShare" type="button">Share</button>
+                                            <button class="button" type="button" onclick="triggerPopup('.-pEAddress')">Ubah Alamat</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="addressPick">
+                                    <button class="button buttonRect buttonRectBlue" type="button">Pilih</button>
+                                    <img src="./asset/images/icon-grad/check.png" alt="Picked address" width="33" height="33" loading="lazy">
+                                </div>
+                            </label>
+                            <label class="addressItem --list">
+                                <input type="radio" class="formRadio addressRadio" name="address">
+                                <span class="addressRadioState"></span>
+                                <div class="addressRadioWrap">
+                                    <div class="addressWrap">
+                                        <div class="addressName"><strong>Bapaknya Fulan bin Fulan</strong></div>
+                                        <div class="addressLabel">
+                                            Rumah ortu
+                                        </div>
+                                    </div>
+                                    <div class="addressPhone">0878 5510 0923</div>
+                                    <div class="addressTxt">
+                                        Pasar Surya Pasar Pucang Anom, Jl. Pucang Anom, Kertajaya, Kec. Gubeng, Surabaya, Jawa Timur 60283
+                                        <span>(Tanya tetangga rumah bapak haji)</span>
+                                    </div>
+                                    <div class="addressCta spacing-sm">
+                                        <div class="addressPin">
+                                            <span class="icon iconLoc"></span>
+                                            Sudah Pin Point
+                                        </div>
+                                        <div class="addressCtaWrap">
+                                            <button class="button addressCtaShare" type="button">Share</button>
+                                            <button class="button" type="button" onclick="triggerPopup('.-pEAddress')">Ubah Alamat</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="addressPick">
+                                    <button class="button buttonRect buttonRectBlue" type="button">Pilih</button>
+                                    <img src="./asset/images/icon-grad/check.png" alt="Picked address" width="33" height="33" loading="lazy">
+                                </div>
+                            </label>
+                        </div>                </form>
+                </div>
             </div>
-            <div class="summaryItem">
-                <div class="summaryLabel">Total harga (2 barang)</div>
-                <div class="summaryAmount">Rp344.750</div>
+        </div>
+    </div>    <div class="popup -pAddress">
+        <div class="popupWrap">
+            <div class="popupBox col-12 col-xl-5">
+                <div class="popupHead">
+                    <div class="popupTitle">Tambahkan Alamat</div>
+                    <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup('.-pAddress')"><span
+                            class="icon iconClose"></span></button>
+                </div>
+                <div class="popupContent spacing-sm">
+                    
+                </div>
             </div>
-            <div class="summaryItem">
-                <div class="summaryLabel">Total diskon</div>
-                <div class="summaryAmount">-Rp176.250</div>
-            </div>
-            <hr>
-            <div class="mobile-only">
-                <div class="summaryItem">
-                    <div class="summaryLabel"><strong>Total Bayar</strong></div>
-                    <div class="summaryAmount">Rp168.500</div>
+        </div>
+    </div>    <div class="popup -pEAddress">
+        <div class="popupWrap">
+            <div class="popupBox col-12 col-xl-5">
+                <div class="popupHead">
+                    <div class="popupTitle">Ubah Alamat</div>
+                    <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup('.-pEAddress')"><span
+                            class="icon iconClose"></span></button>
+                </div>
+                <div class="popupContent spacing-sm">
+                    
                 </div>
             </div>
         </div>

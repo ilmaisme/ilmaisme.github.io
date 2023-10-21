@@ -1,0 +1,57 @@
+{{#each address}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<label class="addressItem{{#if ../type}} --{{../type}}{{/if}}">
+    <input type="radio" class="formRadio addressRadio" name="address"{{#eq @index compare=0}}
+        checked{{/eq}}>
+    <span class="addressRadioState"></span>
+    <div class="addressRadioWrap">
+        <div class="addressWrap">
+            <div class="addressName"><strong>{{name}}</strong></div>
+            <div class="addressLabel">
+                {{#if ../type}}
+                {{label}}{{#eq @index compare=0}}<span class="tag tagBlue">Utama</span>{{/eq}}
+                {{else}}
+                ({{label}}){{#eq @index compare=0}}<span class="tag tagBlue">Utama</span>{{/eq}}
+                {{/if}}
+            </div>
+        </div>
+        {{#if ../phone}}
+        <div class="addressPhone">{{phone}}</div>
+        {{/if}}
+        <div class="addressTxt">
+            {{address}}
+            {{#if notes}}
+            <span>({{notes}})</span>
+            {{/if}}
+        </div>
+        {{#if ../cta}}
+        <div class="addressCta spacing-sm">
+            <div class="addressPin">
+                {{#if pin}}
+                <span class="icon iconLoc"></span>
+                Sudah Pin Point
+                {{else}}
+                <span class="icon iconLoc --non"></span>
+                Belum Pin Point
+                {{/if}}
+            </div>
+            <div class="addressCtaWrap">
+                <button class="button addressCtaShare" type="button">Share</button>
+                <button class="button" type="button" onclick="triggerPopup('.-pEAddress')">Ubah Alamat</button>
+            </div>
+        </div>
+        {{else}}
+        <button class="button addressCta titleMore" onclick="triggerPopup('.-pCAddress')">Ubah</button>
+        {{/if}}
+    </div>
+    <div class="addressPick">
+        <button class="button buttonRect buttonRectBlue" type="button">Pilih</button>
+        <img src="./asset/images/icon-grad/check.png" alt="Picked address" width="33" height="33" loading="lazy">
+    </div>
+</label>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

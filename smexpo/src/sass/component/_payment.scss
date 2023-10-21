@@ -1,0 +1,39 @@
+.payment {
+    &Item {
+        margin-bottom: 20px;
+
+        @include min-responsive($w-xl) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &Title {
+        @extend %center-flex;
+        min-height: 60px;
+        margin-left: 34px;
+        padding: 10px 20px;
+        border-radius: 7px;
+        border: 1px solid #BDBDBD;
+
+        @include min-responsive($w-xl) {
+            min-width: 160px;
+            min-height: 68px;
+        }
+    }
+
+    &Radio {
+        position: absolute;
+        top: calc(50% - 20px/2);
+    }
+
+    .formLabel {
+        cursor: pointer;
+    }
+
+    .formRadiobox::after {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+    }
+
+}

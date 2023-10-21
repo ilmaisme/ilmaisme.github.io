@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="dashboard" sort=true}}
+
+<body>
+    {{> header/header login=true}}
+    <main role="main" class="main dashboard">
+        <div class="container">
+            <div class="breadcrumb">
+                {{>breadcrumb title="Dashboard" subtitle="Akun Saya" subchildtitle="Ubah Password"}}
+            </div>
+            <div class="row dashboardRow">
+                <div class="col-xl-3 dashboardNav">
+                    {{>dashboard/nav page="Ubah password"}}
+                    <button class="button dashboardLogout spacing-sm">
+                        <span class="icon iconLogout"></span>
+                        Keluar
+                    </button>
+                </div>
+                <div class="col-xl-9 dashboardContent">
+                    <h2 class="title">
+                        <span>Ubah Password</span>
+                    </h2>
+                    <form action="#" class="dashboardSetting">
+                        <div class="dashboardWrap row">
+                            <div class="spacing-sm col-12 col-lg-6">
+                                <label class="formLabel" for="uname">Masukkan Password</label>
+                                <div class="formInputIcon">
+                                    <button class="button buttonPass" aria-label="show or hide password" toggle="#pass"
+                                        type="button" onclick="togglePassword(this)"><span
+                                            class="icon iconEye"></span></button>
+                                    <input type="password" class="formInput" name="pass" id="pass"
+                                        value="inipassworD123">
+                                    <div class="formMsg -error">
+                                        password harus terdapat 8 karakter. Gunakan huruf kapital dan angka agar
+                                        passwordmu
+                                        lebih kuat.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacing-sm col-12 col-lg-6">
+                                <label class="formLabel" for="name">Masukkan Ulang Password</label>
+                                <div class="formInputIcon">
+                                    <button class="button buttonPass" aria-label="show or hide password" toggle="#rpass"
+                                        type="button" onclick="togglePassword(this)"><span
+                                            class="icon iconEye"></span></button>
+                                    <input type="password" class="formInput" name="rpass" id="rpass">
+                                </div>
+                            </div>
+                            <div class="col-12 spacing-md">
+                                <button class="button buttonRect buttonRectBlue dashboardCta" type="submit">
+                                    Simpan
+                                </button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{>help}}
+    {{>footer}}
+
+    {{>js page="dashboard" sort=true}}
+    <script>
+        $(document).ready(function () {
+            setMaxheight()
+        })
+
+        function togglePassword(el) {
+            //show hide password
+            let input = el.getAttribute("toggle"),
+                pass = document.querySelector(input)
+            type = pass.getAttribute("type")
+            if (type == "password") {
+                pass.setAttribute("type", "text");
+                el.classList.add("show")
+            } else {
+                el.classList.remove("show")
+                pass.setAttribute("type", "password");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -2,7 +2,7 @@
 {{#gte @index compare=../index_start}}
 {{#gte @index compare=../index_end}}
 {{else}}
-<div class="cartBox productLink">
+<div class="cartBox">
     <div class="cartCheckProduct">
         <input type="checkbox" name="" class="formCheck" {{#if ../checked}} checked{{/if}} aria-label="{{title}}">
         <span class="formCheckbox"></span>
@@ -43,7 +43,7 @@
             <button class="button cartDel">Hapus</button>
             <div class="qty">
                 <button onclick="dec(this, '0')" class="button qtyBtn disable">-</button>
-                <input name="number" type="text" value="0" class="qtyInput" id="qty" aria-label="Atur Jumlah">
+                <input name="number" type="text" value="0" inputmode="numeric" class="qtyInput" id="qty" aria-label="Atur Jumlah">
                 <button onclick="inc(this, '8')" class="button qtyBtn">+</button>
             </div>
         </div>

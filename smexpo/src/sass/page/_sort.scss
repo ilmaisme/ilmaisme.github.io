@@ -7,7 +7,7 @@
     }
 
     &Title {
-        @include font-pack($color: $cl-primary-black);
+        @include font-pack($family: $font-bold, $size: 14px, $weight: $font-weight-bold, $color: $cl-primary-black);
     }
 
     &Icon {
@@ -115,33 +115,12 @@
     }
 
     &Popover {
-        width: 100%;
-
-        @include min-responsive($w-xl) {
-            width: 600px;
-            max-height: 400px;
-        }
-
-        &.visible {
-            @extend %visible;
-        }
-
         .popoverContent {
-            border-top: 1px solid #F0F3F7;
-            border-bottom: 1px solid #F0F3F7;
             height: 166px;
-            overflow: auto;
-            overscroll-behavior: none;
-
+    
             @include min-responsive($w-xl) {
                 height: 250px;
             }
-        }
-
-        .popoverClose {
-            position: absolute;
-            top: 12px;
-            right: 14px;
         }
 
         .sortItem {

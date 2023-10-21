@@ -1,5 +1,6 @@
 .popover {
     position: absolute;
+    width: 100%;
     padding: 12px 14px;
     border-radius: 7px;
     background: $cl-white;
@@ -7,13 +8,33 @@
     z-index: 999; //above .header
     @extend %hidden;
 
+    @include min-responsive($w-xl) {
+        width: 600px;
+        max-height: 400px;
+    }
+
+    &.visible {
+        @extend %visible;
+    }
+
+    &Close {
+        position: absolute;
+        top: 12px;
+        right: 14px;
+    }
+
     &Title {
         @extend .titleMedium
     }
 
     &Content {
         margin-top: 8px;
-        @extend %title--small
+        border-top: 1px solid #F0F3F7;
+        border-bottom: 1px solid #F0F3F7;
+        overflow: auto;
+        overscroll-behavior: none;
+        @extend %title--small;
+        @include scroll($width: 10px, $height: false, $active: #D9D9D9, $bg: #F0F0F0)
     }
 
     &Cta {
@@ -21,7 +42,7 @@
         @extend .buttonRectBlue;
         margin-top: 18px;
         width: 100%;
-        
+
         &Wrap {
             @extend %display-flex;
             margin-left: -5px;

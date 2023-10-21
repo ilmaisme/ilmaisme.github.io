@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="dashboard" sort=true}}
+
+<body>
+    {{> header/header login=true}}
+    <main role="main" class="main dashboard">
+        <div class="container">
+            <div class="breadcrumb">
+                {{>breadcrumb title="Dashboard" subtitle="Akun Saya" subchildtitle="Profil Saya"}}
+            </div>
+            <div class="row dashboardRow">
+                <div class="col-xl-3 dashboardNav">
+                    {{>dashboard/nav page="Profil saya"}}
+                    <button class="button dashboardLogout spacing-sm">
+                        <span class="icon iconLogout"></span>
+                        Keluar
+                    </button>
+                </div>
+                <div class="col-xl-9 dashboardContent">
+                    <h2 class="title">
+                        <span>Akun Saya</span>
+                    </h2>
+                    <form action="#" class="dashboardSetting spacing-sm">
+                        {{>dashboard/upload}}
+
+                        <div class="dashboardWrap row">
+                            <div class="dashboardSettingWrap col-12 col-lg-6">
+                                <label class="formLabel" for="uname">Username</label>
+                                <div class="formWrap">
+                                    <input type="text" class="formInput" name="uname" id="uname" value="user0123">
+                                    <div class="formMsg">
+                                        username hanya dapat diubah satu (1) kali.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboardSettingWrap col-12 col-lg-6">
+                                <label class="formLabel" for="name">Nama</label>
+                                <div class="formWrap">
+                                    <input type="text" class="formInput" name="name" id="name" value="abu Bakr">
+                                </div>
+                            </div>
+                            <div class="dashboardSettingWrap col-12 col-lg-6">
+                                <label class="formLabel" for="email">Email</label>
+                                <div class="formWrap">
+                                    <input type="email" class="formInput" name="email" id="email"
+                                        value="fulanbinfulan@gmail.com">
+                                    <div class="formMsg -error">
+                                        email sudah terpakai, gunakan email lain?
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboardSettingWrap col-12 col-lg-6">
+                                <label class="formLabel" for="phone">Nomor Telepon</label>
+                                <div class="formWrap">
+                                    <input type="text" name="phone" id="phone" class="formInput" value=""
+                                        placeholder="08" inputmode="numeric">
+                                </div>
+                            </div>
+                            <div class="dashboardSettingWrap col-12 col-lg-6">
+                                <label class="formLabel" for="sname">Nama Toko</label>
+                                <div class="formWrap">
+                                    <input type="text" class="formInput" name="sname" id="sname" value="">
+                                </div>
+                            </div>
+                            <div class="dashboardSettingWrap col-12 col-lg-6">
+                                <label class="formLabel" for="sex">Jenis Kelamin</label>
+                                <div class="formWrap">
+                                    <label class="formRadioWrap formLabel">
+                                        <input type="radio" class="formRadio" name="sex" checked>
+                                        <span class="formRadiobox"></span>
+                                        <span class="formRadioTitle">Laki - laki</span>
+                                    </label>
+                                    <label class="formRadioWrap formLabel">
+                                        <input type="radio" class="formRadio" name="sex">
+                                        <span class="formRadiobox"></span>
+                                        <span class="formRadioTitle">Perempuan</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="dashboardSettingWrap col-12 col-lg-6">
+                                <button class="button dashboardBirth"
+                                    onclick="triggerPopover(this); event.stopPropagation();" type="button">
+                                    <label class="formLabel" for="birth">Tanggal Lahir</label>
+                                    <div class="formWrap">
+                                        <span class="icon iconCal"></span>
+                                        <input type="text" class="formInput" name="birth" id="birth" value=""
+                                            placeholder="Pilih tanggal lahir">
+                                    </div>
+                                </button>
+                                {{>dashboard/birth-popup}}
+                            </div>
+                            <div class="dashboardSettingWrap col-12 spacing-md">
+                                <button class="button buttonRect buttonRectBlue dashboardCta" type="submit">
+                                    Simpan
+                                </button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{>help}}
+    {{>footer}}
+
+    {{>js page="dashboard" sort=true select=true upload=true}}
+    <script>
+        $(document).ready(function () {
+            setMaxheight()
+        })
+    </script>
+
+</body>
+
+</html>

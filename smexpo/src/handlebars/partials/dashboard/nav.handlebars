@@ -1,0 +1,20 @@
+{{#each dashboardMenu}}
+<div class="sortBox -jsTogglePar">
+    <button class="button sortTrig -jsToggle" onclick="toggleItem(this)">
+        <div class="sortIcon"><img src="./asset/images/icon-grad/{{icon}}" alt="" width="20" height="20"></div>
+        <div class="sortTitle">{{title}}</div>
+        <span class="icon iconChevron"></span>
+    </button>
+    {{#if menu}}
+    <div class="sortTarget -jsToggleTg">
+        {{#each menu}}
+        <div class="sortItem">
+            <a href="{{link}}" class="sortLink{{#eq ../../page compare = title}} active{{/eq}}">
+                {{title}}
+            </a>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</div>
+{{/each}}

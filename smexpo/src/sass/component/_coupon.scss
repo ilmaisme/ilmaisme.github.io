@@ -138,6 +138,13 @@
         margin-bottom: 24px;
         padding: 15px;
         border-width: 1px;
+        font-size: 14px;
+        text-align: left;
+
+        @include min-responsive($w-xl) {
+            font-size: 16px;
+            text-align: center;
+        }
 
         .iconChevron {
             @extend %iconChevron;
@@ -147,6 +154,15 @@
             margin-left: 16px;
             vertical-align: middle;
             transform: rotate(270deg);
+            position: absolute;
+            right: 20px;
+            bottom: 15px;
+
+            @include min-responsive($w-xl) {
+                position: relative;
+                right: unset;
+                bottom: unset
+            }
         }
     }
 
@@ -207,6 +223,11 @@
 
             .formInput {
                 width: 100%;
+                padding-right: 170px;
+
+                @include min-responsive($w-md) {
+                    padding-right: 20px;
+                }
             }
         }
 

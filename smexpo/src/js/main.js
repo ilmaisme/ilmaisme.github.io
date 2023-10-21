@@ -49,7 +49,8 @@ function viewport() {
 }
 
 //update mobile menu
-function updateMenu() {
+elObserve = '';
+function updateMenu(elem) {
     if (viewport().width >= 1230) {
         // console.log("desktop")
         $('.menuMob').removeClass('mobile');
@@ -59,6 +60,9 @@ function updateMenu() {
         $('.headerAccess').appendTo('#accessDesk');
         $('.searchbox').appendTo('.searchboxWrap');
         $('.buttonLang').insertAfter('#accessDesk');
+        //help observer
+        const elem = document.querySelector('.footerBottom')
+        return elem
     } else {
         // console.log("mobile")
         $('.menuMob').addClass('mobile');
@@ -68,6 +72,9 @@ function updateMenu() {
         $('.headerAccess').appendTo('#accessMob');
         $('.searchbox').insertBefore('#accessMob');
         $('.buttonLang').insertBefore('.searchbox');
+        //help observer
+        const elem = document.querySelector('footer')
+        return elem
     }
 }
 
@@ -81,7 +88,7 @@ function hideMenuMobile() {
 }
 
 // bilingual button
-function changeLanguage(el){
+function changeLanguage(el) {
     lang = el.getAttribute('value');
     if (lang == "id") {
         el.setAttribute('value', 'eng');
@@ -91,14 +98,22 @@ function changeLanguage(el){
 }
 
 //  deteksi viewport
+let settings = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0
+}
 const footer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-        if(entry.isIntersecting) {
+        if (entry.isIntersecting) {
             $('.help').addClass('hide')
         } else {
             $('.help').removeClass('hide')
         }
     });
-}, {});
+}, settings);
 
-footer.observe($("footer")[0]);
+//console.log(updateMenu(elObserve))
+if (!!updateMenu(elObserve)) {
+    footer.observe(updateMenu(elObserve));
+}
