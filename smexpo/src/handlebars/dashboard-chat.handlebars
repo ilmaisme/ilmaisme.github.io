@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="dashboard" sort=true}}
+
+<body>
+    {{> header/header login=true}}
+    <main role="main" class="main dashboard">
+        <div class="container">
+            <div class="breadcrumb">
+                {{>breadcrumb title="Dashboard" link="dashboard-menu.html" subtitle="Kotak Masuk" subchildtitle="Chat"}}
+            </div>
+            <div class="row dashboardRow">
+                <div class="col-xl-3 dashboardNav desktop-only">
+                    {{>dashboard/nav page="Chat"}}
+                    <button class="button dashboardLogout spacing-sm">
+                        <span class="icon iconLogout"></span>
+                        Keluar
+                    </button>
+                </div>
+                <div class="col-xl-9 dashboardContent">
+                    <h2 class="title">
+                        <span>Chat</span>
+                    </h2>
+                    <div class="spacing-sm text-center">
+                        <img src="./asset/images/notif/chat.png" alt="" width="150" height="150">
+                        <h2 class="title spacing-sm">Selamat Datang di Chat</h2>
+                        <div>
+                            Saat ini belum ada percakapan. Mulai percakapan dengan seller.
+                        </div>
+                        <div class="spacing-md">
+                            <a href="index.html" class="dashboardCta button buttonRect buttonRectBlue">Mulai Belanja Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{>help}}
+    {{>footer}}
+
+    {{>js page="dashboard" sort=true}}
+
+</body>
+
+</html>

@@ -53,7 +53,7 @@ function setMaxheight() {
     let maxHeight = 0;
 
     for (let i = 0; i < target.length; i++) {
-        maxHeight = target[i].offsetHeight;
+        maxHeight = target[i].scrollHeight;
         target[i].style = "max-height: " + maxHeight + "px";
     }
 }

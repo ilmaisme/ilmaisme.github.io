@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{> head page="cart" countdown=true}}
+{{> head page="cart" countdown=true select2=true}}
 
 <body>
     {{> header/header}}
@@ -37,7 +37,7 @@
                         <div class="cartBox --co">
                             {{>cart/item-co total=2 index_start=0 index_end=2}}
                             <div class="shipping">
-                                <div class="titleMore">Pilih Durasi Pengiriman</div>
+                                {{>cart/shipping}}
                             </div>
                         </div>
                     </div>
@@ -50,8 +50,10 @@
                             <strong>Dompet Digital</strong>
                             <div class="spacing-xs">
                                 <div class="paymentList row">
-                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="gopay" image="logo-payment/xl/gopay.png"}}
-                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="shopeepay" image="logo-payment/xl/shopeepay.png"}}
+                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="gopay"
+                                    image="logo-payment/xl/gopay.png"}}
+                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="shopeepay"
+                                    image="logo-payment/xl/shopeepay.png"}}
                                 </div>
                             </div>
                         </div>
@@ -59,13 +61,20 @@
                             <strong>Transfer Virtual Account/Transfer Bank</strong>
                             <div class="spacing-xs">
                                 <div class="paymentList row">
-                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="mandiri" image="logo-bank/xl/mandiri.png" checked=true}}
-                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="bca" image="logo-bank/xl/bca.png"}}
-                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="bni" image="logo-bank/xl/bni.png"}}
-                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="bank btn" image="logo-bank/xl/btn.png"}}
-                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="cimb niaga" image="logo-bank/xl/cimb.png"}}
-                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="danamon" image="logo-bank/xl/danamon.png"}}
-                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="permata bank" image="logo-bank/xl/permata.png"}}
+                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="mandiri"
+                                    image="logo-bank/xl/mandiri.png" checked=true}}
+                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="bca"
+                                    image="logo-bank/xl/bca.png"}}
+                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="bni"
+                                    image="logo-bank/xl/bni.png"}}
+                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="bank btn"
+                                    image="logo-bank/xl/btn.png"}}
+                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="cimb niaga"
+                                    image="logo-bank/xl/cimb.png"}}
+                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="danamon"
+                                    image="logo-bank/xl/danamon.png"}}
+                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="permata bank"
+                                    image="logo-bank/xl/permata.png"}}
                                 </div>
                             </div>
                         </div>
@@ -73,8 +82,10 @@
                             <strong>Tunai di Gerai Retail</strong>
                             <div class="spacing-xs">
                                 <div class="paymentList row">
-                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="alfamart" image="logo-payment/xl/alfamart.png"}}
-                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="indomaret" image="logo-payment/xl/indomaret.png"}}
+                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="alfamart"
+                                    image="logo-payment/xl/alfamart.png"}}
+                                    {{>component/payment-item col="col-6 col-md-4 col-lg-3" title="indomaret"
+                                    image="logo-payment/xl/indomaret.png"}}
                                 </div>
                             </div>
                         </div>
@@ -96,7 +107,8 @@
     {{>help}}
     {{>footer}}
 
-    {{>js page="cart" popup=true countdown=true cart=true cta=true}}
+    {{>js page="cart" popup=true countdown=true cart=true cta=true popaddress=true more=true select2=true
+    shipping=true}}
     {{>component/countdown}}
 </body>
 

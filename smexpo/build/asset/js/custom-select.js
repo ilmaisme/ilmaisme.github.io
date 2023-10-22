@@ -1,5 +1,5 @@
 // Iterate over each select element
-$('select').each(function () {
+$('select.formSelect').each(function () {
 
     // Cache the number of options
     var $this = $(this),

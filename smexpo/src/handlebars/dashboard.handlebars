@@ -8,10 +8,10 @@
     <main role="main" class="main dashboard">
         <div class="container">
             <div class="breadcrumb">
-                {{>breadcrumb title="Dashboard" subtitle="Akun Saya" subchildtitle="Profil Saya"}}
+                {{>breadcrumb title="Dashboard" link="dashboard-menu.html" subtitle="Akun Saya" subchildtitle="Profil Saya"}}
             </div>
             <div class="row dashboardRow">
-                <div class="col-xl-3 dashboardNav">
+                <div class="col-xl-3 dashboardNav desktop-only">
                     {{>dashboard/nav page="Profil saya"}}
                     <button class="button dashboardLogout spacing-sm">
                         <span class="icon iconLogout"></span>
@@ -89,7 +89,7 @@
                                             placeholder="Pilih tanggal lahir">
                                     </div>
                                 </button>
-                                {{>dashboard/birth-popup}}
+                                {{!>dashboard/birth-popup}}
                             </div>
                             <div class="dashboardSettingWrap col-12 spacing-md">
                                 <button class="button buttonRect buttonRectBlue dashboardCta" type="submit">
@@ -106,11 +106,6 @@
     {{>footer}}
 
     {{>js page="dashboard" sort=true select=true upload=true}}
-    <script>
-        $(document).ready(function () {
-            setMaxheight()
-        })
-    </script>
 
 </body>
 

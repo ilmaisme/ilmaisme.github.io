@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="dashboard" sort=true select2=true}}
+
+<body>
+    {{> header/header login=true}}
+    <main role="main" class="main dashboard">
+        <div class="container">
+            <div class="breadcrumb">
+                {{>breadcrumb title="Dashboard" link="dashboard-menu.html" subtitle="Akun Saya" subchildtitle="Daftar
+                Alamat"}}
+            </div>
+            <div class="row dashboardRow">
+                <div class="col-xl-3 dashboardNav desktop-only">
+                    {{>dashboard/nav page="Daftar alamat"}}
+                    <button class="button dashboardLogout spacing-sm">
+                        <span class="icon iconLogout"></span>
+                        Keluar
+                    </button>
+                </div>
+                <div class="col-xl-9 dashboardContent">
+                    <h2 class="title">
+                        <span>Daftar Alamat</span>
+                    </h2>
+                    <div class="spacing-sm text-center">
+                        <img src="./asset/images/notif/address.png" alt="" width="150" height="150">
+                        <h2 class="title spacing-sm">Belum Ada Alamat yang Ditambahkan</h2>
+                        <div>
+                            Yuk tambahkan alamatmu agar pesananmu sampai tujuanmu dengan selamat!
+                        </div>
+                        <div class="spacing-md">
+                            <button class="button buttonRect buttonRectBlue dashboardCta" type="button"
+                                onclick="triggerPopup('.-pAddress')">
+                                + Tambah Alamat
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- popup -->
+    {{>popup-address}}
+    {{>popup-address-edit}}
+    <!-- popup -->
+    {{>help}}
+    {{>footer}}
+
+    {{>js page="dashboard" sort=true popup=true popaddress=true more=true select2=true}}
+
+</body>
+
+</html>

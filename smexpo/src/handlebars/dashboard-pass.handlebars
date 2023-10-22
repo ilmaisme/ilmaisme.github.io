@@ -8,10 +8,10 @@
     <main role="main" class="main dashboard">
         <div class="container">
             <div class="breadcrumb">
-                {{>breadcrumb title="Dashboard" subtitle="Akun Saya" subchildtitle="Ubah Password"}}
+                {{>breadcrumb title="Dashboard" link="dashboard-menu.html" subtitle="Akun Saya" subchildtitle="Ubah Password"}}
             </div>
             <div class="row dashboardRow">
-                <div class="col-xl-3 dashboardNav">
+                <div class="col-xl-3 dashboardNav desktop-only">
                     {{>dashboard/nav page="Ubah password"}}
                     <button class="button dashboardLogout spacing-sm">
                         <span class="icon iconLogout"></span>
@@ -22,7 +22,7 @@
                     <h2 class="title">
                         <span>Ubah Password</span>
                     </h2>
-                    <form action="#" class="dashboardSetting">
+                    <form action="#">
                         <div class="dashboardWrap row">
                             <div class="spacing-sm col-12 col-lg-6">
                                 <label class="formLabel" for="uname">Masukkan Password</label>
@@ -64,10 +64,6 @@
 
     {{>js page="dashboard" sort=true}}
     <script>
-        $(document).ready(function () {
-            setMaxheight()
-        })
-
         function togglePassword(el) {
             //show hide password
             let input = el.getAttribute("toggle"),

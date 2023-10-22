@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="dashboard" sort=true select=true}}
+
+<body>
+    {{> header/header login=true}}
+    <main role="main" class="main dashboard">
+        <div class="container">
+            <div class="breadcrumb">
+                {{>breadcrumb title="Dashboard" link="dashboard-menu.html" subtitle="Akun Saya" subchildtitle="Rekening
+                Bank"}}
+            </div>
+            <div class="row dashboardRow">
+                <div class="col-xl-3 dashboardNav desktop-only">
+                    {{>dashboard/nav page="Rekening bank"}}
+                    <button class="button dashboardLogout spacing-sm">
+                        <span class="icon iconLogout"></span>
+                        Keluar
+                    </button>
+                </div>
+                <div class="col-xl-9 dashboardContent">
+                    <h2 class="title">
+                        <span>Rekening Bank</span>
+                    </h2>
+                    <div class="spacing-sm text-center">
+                        <img src="./asset/images/notif/bank-account.png" alt="" width="150" height="150">
+                        <h2 class="title spacing-sm">Belum Ada Rekening yang Ditambahkan</h2>
+                        <div>
+                            Yuk tambahkan rekeningmu, agar mudah bertransaksi di SMEXPO
+                        </div>
+                        <div class="spacing-md">
+                            <button class="button buttonRect buttonRectBlue dashboardCta" type="button"
+                                onclick="triggerPopup('.-pBank')">
+                                + Tambah Rekening
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- popup -->
+    {{>dashboard/bank-popup}}
+    <!-- popup -->
+    {{>help}}
+    {{>footer}}
+
+    {{>js page="dashboard" sort=true popup=true select=true}}
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="dashboard" sort=true}}
+
+<body>
+    {{> header/header login=true}}
+    <main role="main" class="main dashboard">
+        <div class="container">
+            <div class="breadcrumb">
+                {{>breadcrumb title="Dashboard" link="dashboard-menu.html" subtitle="Pesanan Saya" subchildtitle="Semua"}}
+            </div>
+            <div class="row dashboardRow">
+                <div class="col-xl-3 dashboardNav desktop-only">
+                    {{>dashboard/nav page="Semua"}}
+                    <button class="button dashboardLogout spacing-sm">
+                        <span class="icon iconLogout"></span>
+                        Keluar
+                    </button>
+                </div>
+                <div class="col-xl-9 dashboardContent">
+                    <h2 class="title">
+                        <span>Pesanan Saya</span>
+                    </h2>
+                    <div class="spacing-sm text-center">
+                        <img src="./asset/images/notif/order.png" alt="" width="150" height="150">
+                        <h2 class="title spacing-sm">Belum Ada Pesanan</h2>
+                        <div>
+                            Ups, kamu belum punya pesanan apapun. Yuk mulai belanja di SMEXPO
+                        </div>
+                        <div class="spacing-md">
+                            <a href="index.html" class="dashboardCta button buttonRect buttonRectBlue">Mulai Belanja</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{>help}}
+    {{>footer}}
+
+    {{>js page="dashboard" sort=true}}
+
+</body>
+
+</html>

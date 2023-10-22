@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="dashboard" sort=true select2=true}}
+
+<body>
+    {{> header/header login=true}}
+    <main role="main" class="main dashboard">
+        <div class="container">
+            <div class="breadcrumb">
+                {{>breadcrumb title="Dashboard" link="dashboard-menu.html" subtitle="Akun Saya" subchildtitle="Daftar
+                Alamat"}}
+            </div>
+            <div class="row dashboardRow">
+                <div class="col-xl-3 dashboardNav desktop-only">
+                    {{>dashboard/nav page="Daftar alamat"}}
+                    <button class="button dashboardLogout spacing-sm">
+                        <span class="icon iconLogout"></span>
+                        Keluar
+                    </button>
+                </div>
+                <div class="col-xl-9 dashboardContent">
+                    <h2 class="title">
+                        <span>Daftar Alamat</span>
+                    </h2>
+                    <form action="#" class="addressForm">
+                        <div class="dashboardHead spacing-sm">
+                            <div class="search">
+                                <button class="button icon iconSearch" aria-label="search address"></button>
+                                <input type="text" value="" class="searchInput" aria-label="search address"
+                                    placeholder="Cari Alamat" inputmode="search">
+                            </div>
+                            <button class="button buttonRect buttonRectBlue dashboardCta" type="button"
+                                onclick="triggerPopup('.-pAddress')">
+                                + Tambah Alamat
+                            </button>
+                        </div>
+                        {{>template/address-list total=4 index_start=0 index_end=4 type="list" cta=true
+                        phone=true radio=true}}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- popup -->
+    {{>popup-address}}
+    {{>popup-address-edit}}
+    <!-- popup -->
+    {{>help}}
+    {{>footer}}
+
+    {{>js page="dashboard" sort=true popup=true popaddress=true more=true select2=true}}
+
+</body>
+
+</html>
