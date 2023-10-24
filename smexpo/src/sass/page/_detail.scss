@@ -295,26 +295,12 @@
 
         &Love {
             text-align: left;
+            @extend %buttonLove;
 
             &::before {
-                content: '';
-                display: block;
-                @extend %iconLove;
-                width: 22px;
-                height: 22px;
-                background-size: contain;
-                @extend %filterGrey;
-
                 @include min-responsive($w-xl) {
                     position: absolute;
                     left: 25px;
-                }
-            }
-
-            &.active {
-                &::before {
-                    @extend %iconLoved;
-                    @extend %filterRed;
                 }
             }
         }

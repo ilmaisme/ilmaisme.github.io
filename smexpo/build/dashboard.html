@@ -202,22 +202,46 @@
         </div>
     </header>    <main role="main" class="main dashboard">
         <div class="container">
-            <div class="breadcrumb">
-                <div class="breadcrumbItem">
-                    <a href="index.html" class="breadcrumbTitle">Home</a>
+            <div class="desktop-only">
+                <div class="breadcrumb">
+                    <div class="breadcrumbItem">
+                        <a href="index.html" class="breadcrumbTitle">Home</a>
+                    </div>
+                    <div class="breadcrumbItem">
+                        <a href="dashboard.html" class="breadcrumbTitle">Dashboard</a>
+                    </div>
+                    <div class="breadcrumbItem">
+                        <div class="breadcrumbTitle active">Akun Saya</div>
+                    </div>
+                    <div class="breadcrumbItem">
+                        <div class="breadcrumbTitle active">Profil
+                                        Saya</div>  
+                    </div>
                 </div>
-                <div class="breadcrumbItem">
-                    <a href="dashboard-menu.html" class="breadcrumbTitle">Dashboard</a>
-                </div>
-                <div class="breadcrumbItem">
-                    <div class="breadcrumbTitle active">Akun Saya</div>
-                </div>
-                <div class="breadcrumbItem">
-                    <div class="breadcrumbTitle active">Profil Saya</div>  
+            </div>
+            <div class="mobile-only">
+                <div class="breadcrumb">
+                    <div class="breadcrumbItem">
+                        <a href="index.html" class="breadcrumbTitle">Home</a>
+                    </div>
+                    <div class="breadcrumbItem">
+                        <div class="breadcrumbTitle active">Dashboard</div>
+                    </div>
                 </div>
             </div>
             <div class="row dashboardRow">
-                <div class="col-xl-3 dashboardNav desktop-only">
+                <div class="col-12 mobile-only">
+                    <a href="dashboard-profile.html" class="dashboardUser">
+                        <div class="dashboardUserImg">
+                            <img src="./asset/images/user.png" alt="" width="165" height="165">
+                        </div>
+                        <div class="dashboardUserContent">
+                            <div class="title">abu Bakr</div>
+                            <div class="titleMore">086661313444</div>
+                            <div class="titleMore">fulanbinfulan@gmail.com</div>
+                        </div>
+                    </a>                </div>
+                <div class="col-xl-3 dashboardNav">
                     <div class="sortBox -jsTogglePar">
                         <button class="button sortTrig -jsToggle" onclick="toggleItem(this)">
                             <div class="sortIcon"><img src="./asset/images/icon-grad/user.png" alt="" width="20" height="20"></div>
@@ -225,8 +249,13 @@
                             <span class="icon iconChevron"></span>
                         </button>
                         <div class="sortTarget -jsToggleTg">
-                            <div class="sortItem">
+                            <div class="sortItem desktop-only">
                                 <a href="dashboard.html" class="sortLink active">
+                                    Profil saya
+                                </a>
+                            </div>
+                            <div class="sortItem mobile-only">
+                                <a href="dashboard-profile.html" class="sortLink">
                                     Profil saya
                                 </a>
                             </div>
@@ -252,7 +281,7 @@
                             </div>
                             <div class="sortItem">
                                 <a href="dashboard-notif.html" class="sortLink">
-                                    Pengaturan Notifikasi
+                                    Pengaturan notifikasi
                                 </a>
                             </div>
                         </div>
@@ -330,7 +359,7 @@
                         Keluar
                     </button>
                 </div>
-                <div class="col-xl-9 dashboardContent">
+                <div class="col-xl-9 dashboardContent desktop-only">
                     <h2 class="title">
                         <span>Akun Saya</span>
                     </h2>
@@ -381,8 +410,7 @@
                             <div class="dashboardSettingWrap col-12 col-lg-6">
                                 <label class="formLabel" for="email">Email</label>
                                 <div class="formWrap">
-                                    <input type="email" class="formInput" name="email" id="email"
-                                        value="fulanbinfulan@gmail.com">
+                                    <input type="email" class="formInput" name="email" id="email" value="fulanbinfulan@gmail.com">
                                     <div class="formMsg -error">
                                         email sudah terpakai, gunakan email lain?
                                     </div>
@@ -391,8 +419,7 @@
                             <div class="dashboardSettingWrap col-12 col-lg-6">
                                 <label class="formLabel" for="phone">Nomor Telepon</label>
                                 <div class="formWrap">
-                                    <input type="text" name="phone" id="phone" class="formInput" value=""
-                                        placeholder="08" inputmode="numeric">
+                                    <input type="text" name="phone" id="phone" class="formInput" value="" placeholder="08" inputmode="numeric">
                                 </div>
                             </div>
                             <div class="dashboardSettingWrap col-12 col-lg-6">
@@ -417,13 +444,11 @@
                                 </div>
                             </div>
                             <div class="dashboardSettingWrap col-12 col-lg-6">
-                                <button class="button dashboardBirth"
-                                    onclick="triggerPopover(this); event.stopPropagation();" type="button">
+                                <button class="button dashboardBirth" onclick="triggerPopover(this); event.stopPropagation();" type="button">
                                     <label class="formLabel" for="birth">Tanggal Lahir</label>
                                     <div class="formWrap">
                                         <span class="icon iconCal"></span>
-                                        <input type="text" class="formInput" name="birth" id="birth" value=""
-                                            placeholder="Pilih tanggal lahir">
+                                        <input type="text" class="formInput" name="birth" id="birth" value="" placeholder="Pilih tanggal lahir">
                                     </div>
                                 </button>
                             </div>
@@ -432,6 +457,7 @@
                                     Simpan
                                 </button>
                             </div>
+                        </div>                        
                     </form>
                 </div>
             </div>

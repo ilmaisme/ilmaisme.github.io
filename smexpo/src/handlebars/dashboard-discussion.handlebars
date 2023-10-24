@@ -8,7 +8,7 @@
     <main role="main" class="main dashboard">
         <div class="container">
             <div class="breadcrumb">
-                {{>breadcrumb title="Dashboard" link="dashboard-menu.html" subtitle="Kotak Masuk" subchildtitle="Diskusi"}}
+                {{>breadcrumb title="Dashboard" link="dashboard.html" subtitle="Kotak Masuk" subchildtitle="Diskusi"}}
             </div>
             <div class="row dashboardRow">
                 <div class="col-xl-3 dashboardNav desktop-only">
@@ -22,25 +22,25 @@
                     <h2 class="title">
                         <span>Diskusi</span>
                     </h2>
-                    <div class="spacing-sm text-center">
-                        <img src="./asset/images/notif/discussion.png" alt="" width="150" height="150">
-                        <h2 class="title spacing-sm">Selamat Datang di Diskusi</h2>
-                        <div>
-                            Saat ini belum ada diskusi apapun. Mulai diskusi produk sekarang.
+                    <div class="dashboardDis dis">
+                        <div class="dashboardBox">
+                            {{>dashboard/discussion-item love=true}}
                         </div>
-                        <div class="spacing-md">
-                            <a href="index.html" class="dashboardCta button buttonRect buttonRectBlue">Mulai Belanja Sekarang</a>
+                        <div class="dashboardBox">
+                            {{>dashboard/discussion-item}}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
+    <!-- popup -->
+    {{>detail/report-popup}}
+    <!-- popup -->
     {{>help}}
     {{>footer}}
 
-    {{>js page="dashboard" sort=true}}
+    {{>js page="dashboard" sort=true popup=true more=true cta=true}}
 
 </body>
 

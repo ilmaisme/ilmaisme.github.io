@@ -207,7 +207,7 @@
                     <a href="index.html" class="breadcrumbTitle">Home</a>
                 </div>
                 <div class="breadcrumbItem">
-                    <a href="dashboard-menu.html" class="breadcrumbTitle">Dashboard</a>
+                    <a href="dashboard.html" class="breadcrumbTitle">Dashboard</a>
                 </div>
                 <div class="breadcrumbItem">
                     <div class="breadcrumbTitle active">Kotak Masuk</div>
@@ -225,8 +225,13 @@
                             <span class="icon iconChevron"></span>
                         </button>
                         <div class="sortTarget -jsToggleTg">
-                            <div class="sortItem">
+                            <div class="sortItem desktop-only">
                                 <a href="dashboard.html" class="sortLink">
+                                    Profil saya
+                                </a>
+                            </div>
+                            <div class="sortItem mobile-only">
+                                <a href="dashboard-profile.html" class="sortLink">
                                     Profil saya
                                 </a>
                             </div>
@@ -252,7 +257,7 @@
                             </div>
                             <div class="sortItem">
                                 <a href="dashboard-notif.html" class="sortLink">
-                                    Pengaturan Notifikasi
+                                    Pengaturan notifikasi
                                 </a>
                             </div>
                         </div>
@@ -334,21 +339,280 @@
                     <h2 class="title">
                         <span>Diskusi</span>
                     </h2>
-                    <div class="spacing-sm text-center">
-                        <img src="./asset/images/notif/discussion.png" alt="" width="150" height="150">
-                        <h2 class="title spacing-sm">Selamat Datang di Diskusi</h2>
-                        <div>
-                            Saat ini belum ada diskusi apapun. Mulai diskusi produk sekarang.
-                        </div>
-                        <div class="spacing-md">
-                            <a href="index.html" class="dashboardCta button buttonRect buttonRectBlue">Mulai Belanja Sekarang</a>
-                        </div>
+                    <div class="dashboardDis dis">
+                        <div class="dashboardBox">
+                            <div class="dashboardBoxHead">
+                                <div class="productBox productLink col-12">
+                                    <a href="detail.html" class="productBoxWrap">
+                                        <div class="productImg">
+                                            <img src="./asset/images/dummy/product/tas.png"
+                                                alt="Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah" width="180" height="180"
+                                                loading="lazy">
+                                        </div>
+                                        <div class="productBoxContent">
+                                            <div class="productTitle">Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah
+                                            </div>
+                                            <div class="productPrice">135.000</div>
+                                        </div>
+                                    </a>
+                                    <div class="dashboardBoxCta">
+                                        <button class="button titleMore disLove active"
+                                            onclick="triggerActiveButton(this, 'Favorit', 'Favoritkan')">Favorit</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="disItem -jsShowPar">
+                                <div class="disUserImg">
+                                </div>
+                                <div class="disContent">
+                                    <div class="userPost">
+                                        bisa dipakai di pinggang ngga mas.
+                                    </div>
+                                    <div class="userWrap">
+                                        Fulan bin Fulan
+                                        <span class="userPostDate">20 menit lalu</span>
+                                    </div>
+                                    <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                    <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
+                                </div>
+                            
+                                <div class="disItem">
+                                    <div class="disUserImg --seller">
+                                        <img src="./asset/images/seller-sm.png" alt="kibo_byinu Shop" loading="lazy" width="34" height="34">
+                                    </div>
+                                    <div class="disContent">
+                                        <div class="userPost">
+                                            kalau untuk pemakaian dipinggang kami harus mengganti strap nya kak, karna strap bawaannya hanya cocok
+                                            untuk bahu dan selempang.
+                                        </div>
+                                        <div class="userWrap">
+                                            kibo_byinu Shop
+                                            <span class="userPostDate">10 menit lalu</span>
+                                        </div>
+                                        <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                        <button class="button disReport" onclick="triggerPopup('.-pReport')"
+                                            aria-label="Report Post">laporkan</button>
+                                    </div>
+                                </div>
+                                <div class="disHide -jsShowTg">
+                                    <div class="disItem">
+                                        <div class="disUserImg --seller">
+                                            <img src="./asset/images/seller-sm.png" alt="kibo_byinu Shop" loading="lazy" width="34" height="34">
+                                        </div>
+                                        <div class="disContent">
+                                            <div class="userPost">
+                                                kakak harus mengganti dengan prostrap
+                                            </div>
+                                            <div class="userWrap">
+                                                kibo_byinu Shop
+                                                <span class="tag tagBlue">Penjual</span>
+                                                <span class="userPostDate">9 menit lalu</span>
+                                            </div>
+                                            <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                            <button class="button disReport" onclick="triggerPopup('.-pReport')"
+                                                aria-label="Report Post">laporkan</button>
+                                        </div>
+                                    </div>
+                                    <div class="disItem">
+                                        <div class="disUserImg --seller">
+                                            <img src="./asset/images/seller-sm.png" alt="kibo_byinu Shop" loading="lazy" width="34" height="34">
+                                        </div>
+                                        <div class="disContent">
+                                            <div class="userPost">
+                                                link nya ini kak
+                                                <div class="productBox productLink col-12 col-xl-7">
+                                                    <a href="detail.html" class="productBoxWrap ">
+                                                        <div class="productImg">
+                                                            <img src="./asset/images/dummy/product/tas.png"
+                                                                alt="Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah" width="180"
+                                                                height="180" loading="lazy">
+                                                        </div>
+                                                        <div class="productBoxContent">
+                                                            <div class="productTitle">Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah
+                                                            </div>
+                                                            <div class="productPrice">135.000</div>
+                                                        </div>
+                                                    </a>
+                                                    <button class="button buttonRect buttonRectGrad buttonRectSpan"><span>+
+                                                            Keranjang</span></button>
+                                                </div>
+                                            </div>
+                                            <div class="userWrap">
+                                                kibo_byinu Shop
+                                                <span class="tag tagBlue">Penjual</span>
+                                                <span class="userPostDate">9 menit lalu</span>
+                                            </div>
+                                            <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                            <button class="button disReport" onclick="triggerPopup('.-pReport')"
+                                                aria-label="Report Post">laporkan</button>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="formInput" name="" placeholder="Balas diskusi ini" aria-label="Balas diskusi ini">
+                                </div>
+                                <button class="button titleMore -jsShowToggle"
+                                    onclick="showMore(this, 'Sembunyikan komentar', 'Lihat 3 komentar lainnya')">Lihat 3 komentar lainnya</button>
+                            </div>                        </div>
+                        <div class="dashboardBox">
+                            <div class="dashboardBoxHead">
+                                <div class="productBox productLink col-12">
+                                    <a href="detail.html" class="productBoxWrap">
+                                        <div class="productImg">
+                                            <img src="./asset/images/dummy/product/tas.png"
+                                                alt="Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah" width="180" height="180"
+                                                loading="lazy">
+                                        </div>
+                                        <div class="productBoxContent">
+                                            <div class="productTitle">Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah
+                                            </div>
+                                            <div class="productPrice">135.000</div>
+                                        </div>
+                                    </a>
+                                    <div class="dashboardBoxCta">
+                                        <button class="button titleMore disLove"
+                                            onclick="triggerActiveButton(this, 'Favorit', 'Favoritkan')">Favoritkan</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="disItem -jsShowPar">
+                                <div class="disUserImg">
+                                </div>
+                                <div class="disContent">
+                                    <div class="userPost">
+                                        bisa dipakai di pinggang ngga mas.
+                                    </div>
+                                    <div class="userWrap">
+                                        Fulan bin Fulan
+                                        <span class="userPostDate">20 menit lalu</span>
+                                    </div>
+                                    <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                    <button class="button disReport" onclick="triggerPopup('.-pReport')" aria-label="Report Post">laporkan</button>
+                                </div>
+                            
+                                <div class="disItem">
+                                    <div class="disUserImg --seller">
+                                        <img src="./asset/images/seller-sm.png" alt="kibo_byinu Shop" loading="lazy" width="34" height="34">
+                                    </div>
+                                    <div class="disContent">
+                                        <div class="userPost">
+                                            kalau untuk pemakaian dipinggang kami harus mengganti strap nya kak, karna strap bawaannya hanya cocok
+                                            untuk bahu dan selempang.
+                                        </div>
+                                        <div class="userWrap">
+                                            kibo_byinu Shop
+                                            <span class="userPostDate">10 menit lalu</span>
+                                        </div>
+                                        <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                        <button class="button disReport" onclick="triggerPopup('.-pReport')"
+                                            aria-label="Report Post">laporkan</button>
+                                    </div>
+                                </div>
+                                <div class="disHide -jsShowTg">
+                                    <div class="disItem">
+                                        <div class="disUserImg --seller">
+                                            <img src="./asset/images/seller-sm.png" alt="kibo_byinu Shop" loading="lazy" width="34" height="34">
+                                        </div>
+                                        <div class="disContent">
+                                            <div class="userPost">
+                                                kakak harus mengganti dengan prostrap
+                                            </div>
+                                            <div class="userWrap">
+                                                kibo_byinu Shop
+                                                <span class="tag tagBlue">Penjual</span>
+                                                <span class="userPostDate">9 menit lalu</span>
+                                            </div>
+                                            <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                            <button class="button disReport" onclick="triggerPopup('.-pReport')"
+                                                aria-label="Report Post">laporkan</button>
+                                        </div>
+                                    </div>
+                                    <div class="disItem">
+                                        <div class="disUserImg --seller">
+                                            <img src="./asset/images/seller-sm.png" alt="kibo_byinu Shop" loading="lazy" width="34" height="34">
+                                        </div>
+                                        <div class="disContent">
+                                            <div class="userPost">
+                                                link nya ini kak
+                                                <div class="productBox productLink col-12 col-xl-7">
+                                                    <a href="detail.html" class="productBoxWrap ">
+                                                        <div class="productImg">
+                                                            <img src="./asset/images/dummy/product/tas.png"
+                                                                alt="Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah" width="180"
+                                                                height="180" loading="lazy">
+                                                        </div>
+                                                        <div class="productBoxContent">
+                                                            <div class="productTitle">Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah
+                                                            </div>
+                                                            <div class="productPrice">135.000</div>
+                                                        </div>
+                                                    </a>
+                                                    <button class="button buttonRect buttonRectGrad buttonRectSpan"><span>+
+                                                            Keranjang</span></button>
+                                                </div>
+                                            </div>
+                                            <div class="userWrap">
+                                                kibo_byinu Shop
+                                                <span class="tag tagBlue">Penjual</span>
+                                                <span class="userPostDate">9 menit lalu</span>
+                                            </div>
+                                            <button class="button disDots" onclick="triggerActiveButton(this)" aria-label="Other menu"></button>
+                                            <button class="button disReport" onclick="triggerPopup('.-pReport')"
+                                                aria-label="Report Post">laporkan</button>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="formInput" name="" placeholder="Balas diskusi ini" aria-label="Balas diskusi ini">
+                                </div>
+                                <button class="button titleMore -jsShowToggle"
+                                    onclick="showMore(this, 'Sembunyikan komentar', 'Lihat 3 komentar lainnya')">Lihat 3 komentar lainnya</button>
+                            </div>                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
+    <!-- popup -->
+    <div class="popup -pReport">
+        <div class="popupWrap">
+            <div class="popupBox reportPopupbox col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="popupHead">
+                    <div class="popupTitle">Laporkan Komentar</div>
+                    <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
+                            class="icon iconClose"></span></button>
+                </div>
+                <div class="popupContent">
+                    <div class="reportContent">
+                        <label class="formRadioWrap formLabel spacing-xs">
+                            <input type="radio" class="formRadio" name="report" checked="">
+                            <span class="formRadiobox"></span>
+                            <span class="formRadioTitle">Spam</span>
+                        </label>
+                        <label class="formRadioWrap formLabel spacing-xs">
+                            <input type="radio" class="formRadio" name="report">
+                            <span class="formRadiobox"></span>
+                            <span class="formRadioTitle">Konten mengandung SARA, diskriminasi, vulgar, ancaman, dan
+                                pelanggaran nilai/norma sosial</span>
+                        </label>
+                        <label class="formRadioWrap formLabel formOther spacing-xs" onclick="triggerActiveButton(this)">
+                            <input type="radio" class="formRadio" name="report">
+                            <span class="formRadiobox"></span>
+                            <span class="formRadioTitle">Lainnya</span>
+                            <div class="formInputOther">
+                                <input type="text" class="formInput spacing-xs" name="" placeholder="isi alasan di sini"
+                                    aria-label="isi alasan di sini">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="reportCta">
+                        <button class="button buttonRect buttonRectWhite">
+                            Batalkan
+                        </button>
+                        <button class="button buttonRect buttonRectGrad buttonRectSpan">
+                            <span>Kirim</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    <!-- popup -->
     <div class="help">
         <a href="#" class="helpWrap">
             <img src="./asset/images/chat-mina.png" alt="Help Chat MINA" width="91" height="91" loading="lazy">
@@ -618,6 +882,9 @@
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/main.js"></script>
     <script defer src="./asset/js/sort.js"></script>
+    <script defer type="text/javascript" src="./asset/js/popup.js"></script>
+    <script defer src="./asset/js/more.js"></script>
+    <script defer src="./asset/js/cta.js"></script>
     <script defer src="./asset/js/dashboard.js"></script>
 
 </body>

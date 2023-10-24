@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{> head page="dashboard" sort=true select=true}}
+{{> head page="dashboard" sort=true}}
 
 <body>
     {{> header/header login=true}}
     <main role="main" class="main dashboard">
         <div class="container">
             <div class="breadcrumb">
-                {{>breadcrumb title="Dashboard" link="dashboard.html" subtitle="Akun Saya" subchildtitle="Rekening
-                Bank"}}
+                {{>breadcrumb title="Dashboard" link="dashboard.html" subtitle="Kotak Masuk" subchildtitle="Diskusi"}}
             </div>
             <div class="row dashboardRow">
                 <div class="col-xl-3 dashboardNav desktop-only">
-                    {{>dashboard/nav page="Rekening bank"}}
+                    {{>dashboard/nav page="Diskusi"}}
                     <button class="button dashboardLogout spacing-sm">
                         <span class="icon iconLogout"></span>
                         Keluar
@@ -21,32 +20,27 @@
                 </div>
                 <div class="col-xl-9 dashboardContent">
                     <h2 class="title">
-                        <span>Rekening Bank</span>
+                        <span>Diskusi</span>
                     </h2>
                     <div class="spacing-sm text-center">
-                        <img src="./asset/images/notif/bank-account.png" alt="" width="150" height="150">
-                        <h2 class="titleBold spacing-sm">Belum Ada Rekening yang Ditambahkan</h2>
+                        <img src="./asset/images/notif/discussion.png" alt="" width="150" height="150">
+                        <h2 class="titleBold spacing-sm">Selamat Datang di Diskusi</h2>
                         <div>
-                            Yuk tambahkan rekeningmu, agar mudah bertransaksi di SMEXPO
+                            Saat ini belum ada diskusi apapun. Mulai diskusi produk sekarang.
                         </div>
                         <div class="spacing-md">
-                            <button class="button buttonRect buttonRectBlue dashboardCta" type="button"
-                                onclick="triggerPopup('.-pBank')">
-                                + Tambah Rekening
-                            </button>
+                            <a href="index.html" class="dashboardCta button buttonRect buttonRectBlue">Mulai Belanja Sekarang</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <!-- popup -->
-    {{>dashboard/bank-popup}}
-    <!-- popup -->
+
     {{>help}}
     {{>footer}}
 
-    {{>js page="dashboard" sort=true popup=true select=true}}
+    {{>js page="dashboard" sort=true}}
 
 </body>
 

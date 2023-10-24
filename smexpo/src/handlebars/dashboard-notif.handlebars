@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="dashboard" sort=true}}
+
+<body>
+    {{> header/header login=true}}
+    <main role="main" class="main dashboard">
+        <div class="container">
+            <div class="breadcrumb">
+                {{>breadcrumb title="Dashboard" link="dashboard.html" subtitle="Akun Saya" subchildtitle="Pengaturan
+                Notifikasi"}}
+            </div>
+            <div class="row dashboardRow">
+                <div class="col-xl-3 dashboardNav desktop-only">
+                    {{>dashboard/nav page="Pengaturan notifikasi"}}
+                    <button class="button dashboardLogout spacing-sm">
+                        <span class="icon iconLogout"></span>
+                        Keluar
+                    </button>
+                </div>
+                <div class="col-xl-9 dashboardContent dashboardNotif">
+                    <h2 class="title">
+                        <span>Pengaturan Notifikasi</span>
+                    </h2>
+                    <div class="dashboardHead spacing-sm">
+                        <div class="notifBox col-xl-9">
+                            <img src="./asset/images/icon-grad/info.png" class="icon" alt="information" width="20"
+                                height="20">
+                            Notifikasi SMS sifatnya penting karena memberimu kabar soal keamanan akun dan status
+                            transaksi. <br> Hati-hati saat terima SMS spam yang mengatasnamakan Tokopedia, ya. Jika kamu
+                            menerima SMS tersebut, <a href="#">Pelajari Selengkapnya Disini</a>.
+                        </div>
+                    </div>
+                    <div class="dashboardNotifItem spacing-sm">
+                        <label class="titleBold" for="mail">Notifikasi Email</label>
+                        <div class="formInputIcon">
+                            <input type="checkbox" id="mail" name="mail" class="formCheck">
+                            <span class="formCheckbox"></span>
+                        </div>
+                    </div>
+                    <div class="dashboardNotifItem spacing-sm">
+                        <label class="titleBold" for="order">Status Pesanan
+                            <div class="dashboardNotifDesc">Beritahu saya bila ada update mengenai pesanan saya,
+                                termasuk semua informasi mengenai pembayarannya.</div>
+                        </label>
+                        <div class="formInputIcon">
+                            <input type="checkbox" id="order" name="order" class="formCheck">
+                            <span class="formCheckbox"></span>
+                        </div>
+                    </div>
+                    <div class="dashboardNotifItem spacing-sm">
+                        <label class="titleBold" for="product">Status Produk
+                            <div class="dashboardNotifDesc">Beritahu saya ketika produk saya habis terjual, terhapus, ataupun terblokir.</div>
+                        </label>
+                        <div class="formInputIcon">
+                            <input type="checkbox" id="product" name="product" class="formCheck">
+                            <span class="formCheckbox"></span>
+                        </div>
+                    </div>
+                    <div class="dashboardNotifItem spacing-sm">
+                        <label class="titleBold" for="news">Email Berlangganan
+                            <div class="dashboardNotifDesc">Kirimkan ke saya notifikasi mengenai update produk, trend dan produk-produk dengan tawaran terbaik.</div>
+                        </label>
+                        <div class="formInputIcon">
+                            <input type="checkbox" id="news" name="news" class="formCheck">
+                            <span class="formCheckbox"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{>help}}
+    {{>footer}}
+
+    {{>js page="dashboard" sort=true}}
+
+</body>
+
+</html>

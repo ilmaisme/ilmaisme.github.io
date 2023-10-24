@@ -8,11 +8,24 @@
     {{#if menu}}
     <div class="sortTarget -jsToggleTg">
         {{#each menu}}
+        {{#if link2}}
+        <div class="sortItem desktop-only">
+            <a href="{{link}}" class="sortLink{{#eq ../../page compare = title}} active{{/eq}}">
+                {{title}}
+            </a>
+        </div>
+        <div class="sortItem mobile-only">
+            <a href="{{link2}}" class="sortLink">
+                {{title}}
+            </a>
+        </div>
+        {{else}}
         <div class="sortItem">
             <a href="{{link}}" class="sortLink{{#eq ../../page compare = title}} active{{/eq}}">
                 {{title}}
             </a>
         </div>
+        {{/if}}
         {{/each}}
     </div>
     {{/if}}

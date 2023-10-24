@@ -7,29 +7,18 @@
     {{> header/header login=true}}
     <main role="main" class="main dashboard">
         <div class="container">
-            <div class="desktop-only">
-                <div class="breadcrumb">
-                    {{>breadcrumb title="Dashboard" link="dashboard.html" subtitle="Akun Saya" subchildtitle="Profil
-                    Saya"}}
-                </div>
-            </div>
-            <div class="mobile-only">
-                <div class="breadcrumb">
-                    {{>breadcrumb title="Dashboard"}}
-                </div>
+            <div class="breadcrumb">
+                {{>breadcrumb title="Dashboard" link="dashboard.html" subtitle="Akun Saya" subchildtitle="Profil Saya"}}
             </div>
             <div class="row dashboardRow">
-                <div class="col-12 mobile-only">
-                    {{>dashboard/user}}
-                </div>
-                <div class="col-xl-3 dashboardNav">
+                <div class="col-xl-3 dashboardNav desktop-only">
                     {{>dashboard/nav page="Profil saya"}}
                     <button class="button dashboardLogout spacing-sm">
                         <span class="icon iconLogout"></span>
                         Keluar
                     </button>
                 </div>
-                <div class="col-xl-9 dashboardContent desktop-only">
+                <div class="col-xl-9 dashboardContent">
                     <h2 class="title">
                         <span>Akun Saya</span>
                     </h2>

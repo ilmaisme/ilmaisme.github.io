@@ -20,15 +20,31 @@
             margin-bottom: 12px;
 
             @include min-responsive($w-md) {
-                margin-right: 20px;
                 margin-bottom: 0;
                 width: 386px;
+            }
+        }
+
+        .sortFilter {
+            @include font-pack($size: 16px);
+            border-top: 0;
+            padding-top: 0;
+            align-self: flex-end;
+            order: 1;
+
+            @include min-responsive($w-md) {
+                order: unset;
+                margin-bottom: 0;
             }
         }
     }
 
     &Content {
         @include font-pack($size: 14px, $color: #676767);
+
+        .title {
+            color: $cl-primary-black;
+        }
     }
 
     &Logout {
@@ -43,6 +59,53 @@
             height: 20px;
             margin-right: 6px;
             vertical-align: middle;
+        }
+    }
+
+    &Nav {
+        .sortBox {
+            border: 0;
+            margin-top: 0;
+            margin-left: -15px;
+            margin-right: -15px;
+            border-radius: 0;
+            border-bottom: 8px solid #F2F2F2;
+
+            @include min-responsive($w-xl) {
+                margin-top: 24px;
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid #BDBDBD;
+                border-radius: 10px;
+            }
+
+            &:first-child {
+                margin-top: 24px;
+            }
+        }
+
+        .sortLink:hover,
+        .sortLink.active {
+            padding-left: 5px;
+            background-image: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+
+            @include min-responsive($w-xl) {
+                padding-left: 12px;
+                background-image: var(--grad-blugreen);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            &::before {
+                content: none;
+
+                @include min-responsive($w-xl) {
+                    content: '';
+                }
+            }
+
         }
     }
 
@@ -130,18 +193,112 @@
     &Wishlist {
         .dashboardHead {
             margin-bottom: 0;
-            @include font-pack($family: $font-sbold, $size: 16px, $weight: $font-weight-sbold, $color: #175CC3);
+            @include font-pack($family: $font-sbold, $weight: $font-weight-sbold, $color: #175CC3);
         }
 
         .sortFilter {
-            border-top: 0;
-            padding-top: 0;
             margin-bottom: 12px;
-            align-self: flex-end;
             order: -1;
-            
+
             @include min-responsive($w-md) {
                 order: unset;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &User {
+        @extend .dashboardUploadWrap;
+
+        &Img {
+            @extend .uploadBtn;
+            margin-right: 24px;
+        }
+    }
+
+    &Notif {
+        &Item {
+            @extend %display-flex;
+            @extend %align-center;
+            @extend %justify-between;
+        }
+
+        &Desc {
+            margin-top: 8px;
+            @include font-pack($family: $font-sbold, $weight: $font-weight-sbold, $size: 14px, $color: #676767);
+        }
+
+        .titleBold {
+            padding-right: 12px;
+            @include font-pack($color: $cl-primary-black, $size: 16px);
+        }
+    }
+
+    &Dis {
+        margin-top: 30px;
+        color: $cl-primary-black;
+
+        .dis {
+            &Love {
+                @extend %center-flex;
+                @extend %buttonLove;
+
+                &::before {
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+
+    &Review {
+        color: $cl-primary-black;
+    }
+
+    &Box {
+        @extend .disBox;
+        margin-top: 24px;
+
+        &Head {
+            @extend .dashboardNotifItem;
+            flex-direction: column;
+            margin-bottom: 14px;
+            padding-top: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #BDBDBD;
+
+            @include min-responsive($w-xl) {
+                flex-direction: row;
+            }
+
+            .productBox,
+            ~.productBox {
+                padding: 0;
+                margin-top: 0;
+                border: 0;
+                @extend %justify-between;
+            }
+        }
+
+        &Left {
+            @include min-responsive($w-xl) {
+                padding-right: 12px;
+            }
+        }
+
+        &Cta {
+            position: relative;
+            margin-top: 12px;
+
+            @include min-responsive($w-xl) {
+                margin-top: 0;
+            }
+        }
+
+        .reviewItem {
+            margin-top: 12px;
+            margin-bottom: 24px;
+
+            &:last-child {
                 margin-bottom: 0;
             }
         }
