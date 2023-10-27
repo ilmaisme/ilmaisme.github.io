@@ -4,9 +4,10 @@
         @extend %title--small;
         color: #525252;
 
-        .tag ~.userPostDate{
+        .tag~.userPostDate {
             display: block;
             margin-left: 0;
+
             @include min-responsive($w-xl) {
                 display: inline-block;
                 margin-left: 8px;
@@ -19,6 +20,50 @@
 
         &Date {
             margin-left: 8px;
+        }
+    }
+
+    &Img {
+        position: relative;
+        display: block;
+        width: 34px;
+        height: 34px;
+        border-radius: 34px;
+        overflow: hidden;
+        flex-shrink: 0;
+        background: var(--grad-blugreen);
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            @extend .icon;
+            @extend %iconUser;
+            @extend %filterWhite;
+            z-index: 0;
+        }
+
+        img {
+            width: 100%;
+            object-fit: contain;
+            position: relative;
+        }
+
+        &.--seller {
+            border-radius: 7px;
+            background: #F2F2F2;
+        }
+    }
+
+    &Wrap {
+        @extend %display-flex;
+        @extend %align-center;
+
+        .titleBold {
+            margin-left: 10px;
+            @include font-pack(false, false, false, normal, $cl-primary-black);
+            letter-spacing: 0;
         }
     }
 }

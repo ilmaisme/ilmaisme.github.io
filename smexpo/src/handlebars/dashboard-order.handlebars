@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{> head page="dashboard" sort=true}}
+{{> head page="dashboard" sort=true select=true}}
 
 <body>
     {{> header/header login=true}}
@@ -22,25 +22,61 @@
                     <h2 class="title">
                         <span>Pesanan Saya</span>
                     </h2>
-                    <div class="spacing-sm text-center">
-                        <img src="./asset/images/notif/order.png" alt="" width="150" height="150">
-                        <h2 class="titleBold spacing-sm">Belum Ada Pesanan</h2>
-                        <div>
-                            Ups, kamu belum punya pesanan apapun. Yuk mulai belanja di SMEXPO
+                    <div class="dashboardHead dashboardOrderHead spacing-sm row">
+                        <div class="dashboardOrderSearch col-md-4">
+                            <div class="search">
+                                <button class="button icon iconSearch" aria-label="search transaction"></button>
+                                <input type="text" value="" class="searchInput" aria-label="search order"
+                                    placeholder="Cari Transaksimu di Sini" inputmode="search">
+                            </div>
                         </div>
-                        <div class="spacing-md">
-                            <a href="index.html" class="dashboardCta button buttonRect buttonRectBlue">Mulai Belanja</a>
+                        <div class="sortFilter col-md-4">
+                            {{>dashboard/sort type="product"}}
+                        </div>
+                        <div class="dashboardDate col-md-4">
+                            <label class="formLabel sr-only" for="transdate">Pick transaction date</label>
+                            <div class="formWrap">
+                                <span class="icon iconCal"></span>
+                                <input type="text" class="formInput" name="transdate" id="transdate" value=""
+                                    placeholder="Pilih tanggal transaksi">
+                            </div>
                         </div>
                     </div>
+                    <div class="dashboardOrder">
+                        {{>dashboard/order-nav page="Semua"}}
+
+                        <div class="orderList">
+                            <div class="dashboardBox orderItem">
+                                {{>dashboard/order-item state="Selesai" color="Green"}}
+                            </div>
+                            <div class="dashboardBox orderItem">
+                                {{>dashboard/order-item state="Belum bayar" color="Grey"}}
+                            </div>
+                            <div class="dashboardBox orderItem">
+                                {{>dashboard/order-item state="Dibatalkan" color="Red"}}
+                            </div>
+                            <div class="dashboardBox orderItem">
+                                {{>dashboard/order-item state="Sedang dikemas" color="Blue"}}
+                            </div>
+                            <div class="dashboardBox orderItem">
+                                {{>dashboard/order-item state="Dikirim" color="Blue"}}
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="paging">
+                        {{>paging}}
+                    </ul>
                 </div>
             </div>
         </div>
     </main>
-
+    <!-- popup -->
+    {{>dashboard/order-popup}}
+    <!-- popup -->
     {{>help}}
     {{>footer}}
 
-    {{>js page="dashboard" sort=true}}
+    {{>js page="dashboard" sort=true select=true popup=true cta=true more=true}}
 
 </body>
 

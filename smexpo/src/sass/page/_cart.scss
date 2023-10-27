@@ -119,10 +119,7 @@
         }
 
         &Close {
-            display: inline-block;
-            width: 100%;
-            text-align: right;
-            margin-top: 4px;
+            @extend %buttonClose;
             margin-bottom: 8px;
 
             @include min-responsive($w-md) {
@@ -131,19 +128,7 @@
         }
 
         &Cta {
-            @extend %title--small;
-            color: #ED3D57;
-
-            span {
-                color: #676767;
-
-                &::before {
-                    content: '|';
-                    padding-left: 4px;
-                    padding-right: 8px;
-                    color: #ED3D57;
-                }
-            }
+            @extend %buttonCloseCta;
         }
     }
 

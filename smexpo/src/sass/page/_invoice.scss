@@ -1,0 +1,206 @@
+.invoice {
+    &Grid {
+        @extend %center-flex;
+        width: 940px;
+        padding: 20px;
+        min-height: calc(100vh - 75px);
+        margin: auto;
+        @extend %title--small;
+    }
+
+    &Wrap {
+        width: 100%;
+    }
+
+    &Header {
+        width: 940px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #BDBDBD;
+
+        @include min-responsive($w-lg) {
+            width: 100%;
+        }
+
+        .container {
+            @include min-responsive($w-md) {
+                max-width: 100%;
+            }
+
+            @include min-responsive($w-xl) {
+                max-width: 1230px;
+            }
+        }
+
+        .buttonBack {
+            @extend %display-flex;
+            @extend %align-center;
+            @extend %buttonBack;
+        }
+
+        .iconArrow {
+            @extend %iconArrow;
+            width: 24px;
+            height: 24px;
+            margin-right: 14px;
+            background-size: contain;
+        }
+    }
+
+    &Head {
+        @extend %display-flex;
+        @extend %align-center;
+        @extend %justify-between;
+    }
+
+    &Title {
+        text-transform: uppercase;
+    }
+
+    &Item {
+        margin-top: 12px;
+
+        a {
+            color: #175CC3;
+        }
+    }
+
+    &Col {
+        &Wrap {
+            @extend %display-flex;
+            @extend %justify-between;
+        }
+
+        &Left {
+            width: 355px;
+        }
+
+        &Right {
+            width: 450px;
+        }
+    }
+
+    &Table {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        border-collapse: collapse;
+        table-layout: fixed;
+
+        td {
+            padding-top: 12px;
+
+            &:first-child {
+                white-space: nowrap;
+            }
+
+            &:nth-child(2) {
+                padding-left: 20px;
+                padding-right: 45px;
+            }
+        }
+    }
+
+    &Product {
+        margin-top: 24px;
+        margin-bottom: 24px;
+
+        &Table {
+            width: 100%;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            border-collapse: collapse;
+            table-layout: fixed;
+
+            tbody {
+                background: #F2F2F2;
+            }
+
+            th {
+                padding-left: 40px;
+                padding-right: 40px;
+                padding-bottom: 8px;
+                text-align: center;
+                @include font-pack($family: $font-base, $weight: $font-weight-normal);
+
+                &:first-child {
+                    width: 371px;
+                    padding-left: 0;
+                    text-align: left;
+                }
+
+                &:last-child {
+                    padding-right: 52px;
+                }
+            }
+
+            tr {
+                &:first-child {
+                    td {
+                        &:first-child {
+                            border-top-left-radius: 7px;
+                        }
+
+                        &:last-child {
+                            border-top-right-radius: 7px;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    td {
+                        padding-bottom: 8px;
+
+                        &:first-child {
+                            border-bottom-left-radius: 7px;
+                        }
+
+                        &:last-child {
+                            border-bottom-right-radius: 7px;
+                        }
+                    }
+                }
+            }
+
+            td {
+                text-align: center;
+                padding-top: 8px;
+
+                &:first-child {
+                    width: 371px;
+                    text-align: left;
+                    padding-left: 12px;
+                }
+
+                &:last-child {
+                    padding-right: 12px;
+                }
+            }
+        }
+    }
+
+    &Address {
+        margin-top: 5px;
+    }
+
+    .title,
+    .titleBold {
+        letter-spacing: 0;
+    }
+
+    .titleBold {
+        line-height: normal;
+    }
+
+    .buttonRectBlue {
+        min-width: 135px;
+        font-size: 16px;
+    }
+}
+
+@media print {
+    .invoiceHeader {
+        visibility: hidden !important; // to hide 
+    }
+}

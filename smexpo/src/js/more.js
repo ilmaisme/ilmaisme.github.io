@@ -1,17 +1,27 @@
 //show more content
-function showMore(el, txt, txtrev) {
-    let target = el.parentNode.getElementsByClassName('-jsShowTg')[0];
-        elActive = el.classList.contains('active');
-    tgHeight = target.scrollHeight;
+function showMore(el, txt, txtrev, parentTg) {
+    if (!!parentTg) {
+        let par = document.querySelector(parentTg),
+            target = par.querySelector('.-jsShowTg');
+        triggerTarget(el, txt, txtrev, target)
+    } else {
+        let target = el.parentNode.getElementsByClassName('-jsShowTg')[0];
+        triggerTarget(el, txt, txtrev, target)
+    }
+}
 
-    el.classList.toggle('active');
-    target.style.maxHeight = target.style.maxHeight ? null : tgHeight + 'px';
+function triggerTarget(elem, elemtxt, elemtxtrev, elemtarget) {
+    let elActive = elem.classList.contains('active');
+    tgHeight = elemtarget.scrollHeight;
 
-    if (!!txt) {
+    elem.classList.toggle('active');
+    elemtarget.style.maxHeight = elemtarget.style.maxHeight ? null : tgHeight + 'px';
+
+    if (!!elemtxt) {
         if (elActive == false) {
-            el.innerHTML = txt;
+            elem.innerHTML = elemtxt;
         } else {
-            el.innerHTML = txtrev;
+            elem.innerHTML = elemtxtrev;
         }
     }
 }

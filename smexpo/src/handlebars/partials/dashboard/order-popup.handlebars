@@ -1,0 +1,146 @@
+<div class="popup -pOrder">
+    <div class="popupWrap">
+        <div class="popupBox orderPopupbox col-12">
+            <div class="popupHead">
+                <div class="popupTitle">Detail Transaksi</div>
+                <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
+                        class="icon iconClose"></span></button>
+            </div>
+            <div class="popupContent orderPopup">
+                <div class="col-12 col-lg-8 spacing-sm">
+                    <div class="dashboardBox">
+                        <div class="dashboardWrap orderShippingHead dashboardBoxHead">
+                            <div class="dashboardBoxLeft titleBold">
+                                Selesai
+                            </div>
+                            <div class="dashboardBoxCta orderMisc">
+                                <button class="button orderShippingMore cl-green"
+                                    onclick="showMore(this, false, false, '.-pOrder')">Lihat Detail
+                                    <span class="icon iconChevron"></span></button>
+                            </div>
+                        </div>
+                        <div class="orderShippingDetail orderMisc -jsShowTg">
+                            {{>dashboard/order-shipping}}
+                        </div>
+                        <div class="orderMisc">
+                            <div class="summaryItem">
+                                No. Invoice
+                                <a href="invoice.html" class="invoiceBtn cl-green">INV/20190001/XXV111/X/212304930</a>
+                            </div>
+                            <div class="summaryItem">
+                                Tanggal Pembelian
+                                <span>
+                                    25 September 2023, 15:43
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboardBox orderBox">
+                        <div class="dashboardWrap orderBoxHead dashboardBoxHead">
+                            <div class="titleBold">Detail Produk</div>
+                            <a href="seller.html" class="userWrap">
+                                <div class="userImg --seller">
+                                    <img src="./asset/images/seller-sm.png" alt="kibo_byinu Shop" width="34" height="34"
+                                        loading="lazy">
+                                </div>
+                                <span class="titleBold">Ini Store<span class="icon iconChevron"></span></span>
+                            </a>
+                        </div>
+                        <div class="productBox productLink col-12">
+                            <a href="detail.html" class="productBoxWrap col-md-9">
+                                <div class="productImg">
+                                    <img src="./asset/images/dummy/product/tas.png"
+                                        alt="Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah" width="180"
+                                        height="180" loading="lazy">
+                                </div>
+                                <div class="productBoxContent">
+                                    <div class="productTitle">Kimmy Backpack Tas Punggung Anak sekolah /
+                                        Tas Ransel Sekolah
+                                    </div>
+                                    <div class="orderMisc">2x 40.000</div>
+                                </div>
+                            </a>
+                            <div class="orderTotal">
+                                <div class="orderMisc">Total Belanja</div>
+                                <div class="productPrice">135.000</div>
+                            </div>
+                        </div>
+                        <div class="spacing-xs">
+                            <button class="button buttonRect buttonRectGrad buttonRectSpan"
+                                onclick="window.location.href = 'cart.html'"><span>Beli
+                                    Lagi</span></button>
+                        </div>
+                    </div>
+                    <div class="dashboardBox">
+                        <div class="titleBold spacing-xs">
+                            Info Pengiriman
+                        </div>
+                        <table class="orderShipping orderMisc">
+                            <tbody>
+                                <tr>
+                                    <td>Kurir</td>
+                                    <td>:</td>
+                                    <td>JNE Reguler</td>
+                                </tr>
+                                <tr>
+                                    <td>No resi</td>
+                                    <td>:</td>
+                                    <td>
+                                        <input type="text" disabled class="sr-only" id="copyNum" value="ASD0212-KFN14">
+                                        <span>ASD0212-KFN14</span>
+                                        <button class="button orderCopy" aria-label="Copy receipt number"
+                                            onclick="copyLink('copyNum')">
+                                            <img src="./asset/images/notif/copy.png" alt="" width="21" height="21"
+                                                loading="lazy">
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">Alamat</td>
+                                    <td valign="top">:</td>
+                                    <td class="orderAddress">
+                                        <div class="orderName">
+                                            Abdul racing
+                                        </div>
+                                        Jl. Ninjaku no. 3 RT 01 RW 002, Kec. Konoha, Kel. Ichiraku, Kota Depok, 163221
+                                        (patokan ruko laundry warna ijo)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="dashboardBox">
+                        <div class="titleBold spacing-xs">
+                            Rincian Pembayaran
+                        </div>
+                        <div class="summaryItem spacing-xs">
+                            <div class="summaryLabel">Total harga (2 barang)</div>
+                            <div class="summaryAmount">Rp344.750</div>
+                        </div>
+                        <div class="summaryItem">
+                            <div class="summaryLabel">Total ongkos kirim (1,5 kg)</div>
+                            <div class="summaryAmount">Rp18.000</div>
+                        </div>
+                        <div class="summaryItem">
+                            <div class="summaryLabel">Total diskon</div>
+                            <div class="summaryAmount">-Rp176.250</div>
+                        </div>
+                        <hr>
+                        <div class="summaryItem">
+                            <div class="summaryLabel"><strong>Total Bayar</strong></div>
+                            <div class="summaryAmount">Rp168.500</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 spacing-sm">
+                    <a href="style-dashboard-chat.html" class="buttonRect buttonRectGrad buttonRectSpan text-center">
+                        <span>Hubungi Penjual</span>
+                    </a>
+                    <a href="#" class="buttonRect buttonRectGrad buttonRectSpan text-center spacing-sm">
+                        <span>Bantuan</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

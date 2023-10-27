@@ -70,6 +70,22 @@
     &Content {
         padding-left: 44px;
         padding-right: 24px;
+
+        .button {    
+            &RectGrad {
+                width: 100%;
+                margin-top: 10px;
+    
+                @include min-responsive($w-md) {
+                    width: auto;
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .userWrap{
+            display: block;
+        }
     }
 
     &User {
@@ -77,34 +93,6 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 34px;
-            height: 34px;
-            border-radius: 34px;
-            overflow: hidden;
-            flex-shrink: 0;
-            background: var(--grad-blugreen);
-
-            &::before {
-                content: '';
-                position: absolute;
-                width: 34px;
-                height: 34px;
-                @extend .icon;
-                @extend %iconUser;
-                @extend %filterWhite;
-                z-index: 0;
-            }
-
-            img {
-                width: 100%;
-                object-fit: contain;
-                position: relative;
-            }
-
-            &.--seller {
-                border-radius: 7px;
-                background: #F2F2F2;
-            }
         }
     }
 

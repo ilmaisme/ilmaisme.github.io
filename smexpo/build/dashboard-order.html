@@ -339,21 +339,529 @@
                     <h2 class="title">
                         <span>Pesanan Saya</span>
                     </h2>
-                    <div class="spacing-sm text-center">
-                        <img src="./asset/images/notif/order.png" alt="" width="150" height="150">
-                        <h2 class="titleBold spacing-sm">Belum Ada Pesanan</h2>
-                        <div>
-                            Ups, kamu belum punya pesanan apapun. Yuk mulai belanja di SMEXPO
+                    <div class="dashboardHead dashboardOrderHead spacing-sm row">
+                        <div class="dashboardOrderSearch col-md-4">
+                            <div class="search">
+                                <button class="button icon iconSearch" aria-label="search transaction"></button>
+                                <input type="text" value="" class="searchInput" aria-label="search order"
+                                    placeholder="Cari Transaksimu di Sini" inputmode="search">
+                            </div>
                         </div>
-                        <div class="spacing-md">
-                            <a href="index.html" class="dashboardCta button buttonRect buttonRectBlue">Mulai Belanja</a>
+                        <div class="sortFilter col-md-4">
+                            <div class="formSelectWrap custom-select">
+                                <select name="sort" id="sort" class="formSelect" aria-label="Filter by catalog product">
+                                    <option value="all">Semua Produk</option>
+                                    <option value="0">Agrobisnis</option>
+                                    <option value="1">Craft</option>
+                                    <option value="2">Fashion</option>
+                                    <option value="3">Food &amp; Beverages</option>
+                                    <option value="4">Furniture</option>
+                                    <option value="5">Souvenirs</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="dashboardDate col-md-4">
+                            <label class="formLabel sr-only" for="transdate">Pick transaction date</label>
+                            <div class="formWrap">
+                                <span class="icon iconCal"></span>
+                                <input type="text" class="formInput" name="transdate" id="transdate" value=""
+                                    placeholder="Pilih tanggal transaksi">
+                            </div>
                         </div>
                     </div>
+                    <div class="dashboardOrder">
+                        <ul class="tabItemWrap orderNav">
+                            <li class="tabItem orderNavItem active">
+                                <a href="dashboard-order.html" class="button tabLink orderNavLink">
+                                    Semua
+                                </a>
+                            </li>
+                            <li class="tabItem orderNavItem">
+                                <a href="dashboard-order.html" class="button tabLink orderNavLink">
+                                    Belum bayar
+                                </a>
+                            </li>
+                            <li class="tabItem orderNavItem">
+                                <a href="dashboard-order.html" class="button tabLink orderNavLink">
+                                    Sedang dikemas
+                                </a>
+                            </li>
+                            <li class="tabItem orderNavItem">
+                                <a href="dashboard-order.html" class="button tabLink orderNavLink">
+                                    Dikirim
+                                </a>
+                            </li>
+                            <li class="tabItem orderNavItem">
+                                <a href="dashboard-order.html" class="button tabLink orderNavLink">
+                                    Selesai
+                                </a>
+                            </li>
+                            <li class="tabItem orderNavItem">
+                                <a href="dashboard-order.html" class="button tabLink orderNavLink">
+                                    Dibatalkan
+                                </a>
+                            </li>
+                            <li class="tabItem orderNavItem">
+                                <a href="dashboard-order.html" class="button tabLink orderNavLink">
+                                    Pengembalian barang
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="orderList">
+                            <div class="dashboardBox orderItem">
+                                <div class="dashboardWrap dashboardBoxHead">
+                                    <div class="dashboardBoxLeft orderMisc">
+                                        14 agustus 2023
+                                        <span class="tag tagGreen">Selesai</span>
+                                    </div>
+                                    <div class="dashboardBoxCta desktop-only">
+                                        <a href="invoice.html" class="invoiceBtn">INV/20190001/XXV111/X/212304930</a>
+                                    </div>
+                                </div>
+                                <a href="seller.html" class="userWrap">
+                                    <div class="userImg --seller">
+                                        <img src="./asset/images/seller-sm.png" alt="kibo_byinu Shop" width="34" height="34">
+                                    </div>
+                                    <span class="titleBold">Ini Store</span>
+                                </a>
+                                <div class="productBox productLink col-12">
+                                    <div class="productBoxWrap">
+                                        <a href="detail.html" class="productImg">
+                                            <img src="./asset/images/dummy/product/tas.png"
+                                                alt="Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah" width="180" height="180"
+                                                loading="lazy">
+                                        </a>
+                                        <div class="productBoxContent">
+                                            <a href="detail.html" class="productTitle">Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah
+                                            </a>
+                                            <div class="orderMisc">2x 40.000</div>
+                                            <button class="button orderMisc orderDetail" onclick="triggerPopup('.-pOrder')">Lihat Detail Belanja</button>
+                                        </div>
+                                    </div>
+                                    <div class="orderTotal">
+                                        <div class="orderMisc">Total Belanja</div>
+                                        <div class="productPrice">135.000</div>
+                                    </div>
+                                    <div class="dashboardBoxCta">
+                                        <button class="button buttonRect buttonRectBlue orderBtn" onclick="window.location.href = 'cart.html'">Beli
+                                            Lagi</button>
+                                    </div>
+                                </div>                            </div>
+                            <div class="dashboardBox orderItem">
+                                <div class="dashboardWrap dashboardBoxHead">
+                                    <div class="dashboardBoxLeft orderMisc">
+                                        14 agustus 2023
+                                        <span class="tag tagGrey">Belum bayar</span>
+                                    </div>
+                                    <div class="dashboardBoxCta desktop-only">
+                                        <a href="invoice.html" class="invoiceBtn">INV/20190001/XXV111/X/212304930</a>
+                                    </div>
+                                </div>
+                                <a href="seller.html" class="userWrap">
+                                    <div class="userImg --seller">
+                                        <img src="./asset/images/seller-sm.png" alt="kibo_byinu Shop" width="34" height="34">
+                                    </div>
+                                    <span class="titleBold">Ini Store</span>
+                                </a>
+                                <div class="productBox productLink col-12">
+                                    <div class="productBoxWrap">
+                                        <a href="detail.html" class="productImg">
+                                            <img src="./asset/images/dummy/product/tas.png"
+                                                alt="Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah" width="180" height="180"
+                                                loading="lazy">
+                                        </a>
+                                        <div class="productBoxContent">
+                                            <a href="detail.html" class="productTitle">Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah
+                                            </a>
+                                            <div class="orderMisc">2x 40.000</div>
+                                            <button class="button orderMisc orderDetail" onclick="triggerPopup('.-pOrder')">Lihat Detail Belanja</button>
+                                        </div>
+                                    </div>
+                                    <div class="orderTotal">
+                                        <div class="orderMisc">Total Belanja</div>
+                                        <div class="productPrice">135.000</div>
+                                    </div>
+                                    <div class="dashboardBoxCta">
+                                        <button class="button buttonRect buttonRectBlue orderBtn" onclick="window.location.href = 'cart.html'">Beli
+                                            Lagi</button>
+                                    </div>
+                                </div>                            </div>
+                            <div class="dashboardBox orderItem">
+                                <div class="dashboardWrap dashboardBoxHead">
+                                    <div class="dashboardBoxLeft orderMisc">
+                                        14 agustus 2023
+                                        <span class="tag tagRed">Dibatalkan</span>
+                                    </div>
+                                    <div class="dashboardBoxCta desktop-only">
+                                        <a href="invoice.html" class="invoiceBtn">INV/20190001/XXV111/X/212304930</a>
+                                    </div>
+                                </div>
+                                <a href="seller.html" class="userWrap">
+                                    <div class="userImg --seller">
+                                        <img src="./asset/images/seller-sm.png" alt="kibo_byinu Shop" width="34" height="34">
+                                    </div>
+                                    <span class="titleBold">Ini Store</span>
+                                </a>
+                                <div class="productBox productLink col-12">
+                                    <div class="productBoxWrap">
+                                        <a href="detail.html" class="productImg">
+                                            <img src="./asset/images/dummy/product/tas.png"
+                                                alt="Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah" width="180" height="180"
+                                                loading="lazy">
+                                        </a>
+                                        <div class="productBoxContent">
+                                            <a href="detail.html" class="productTitle">Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah
+                                            </a>
+                                            <div class="orderMisc">2x 40.000</div>
+                                            <button class="button orderMisc orderDetail" onclick="triggerPopup('.-pOrder')">Lihat Detail Belanja</button>
+                                        </div>
+                                    </div>
+                                    <div class="orderTotal">
+                                        <div class="orderMisc">Total Belanja</div>
+                                        <div class="productPrice">135.000</div>
+                                    </div>
+                                    <div class="dashboardBoxCta">
+                                        <button class="button buttonRect buttonRectBlue orderBtn" onclick="window.location.href = 'cart.html'">Beli
+                                            Lagi</button>
+                                    </div>
+                                </div>                            </div>
+                            <div class="dashboardBox orderItem">
+                                <div class="dashboardWrap dashboardBoxHead">
+                                    <div class="dashboardBoxLeft orderMisc">
+                                        14 agustus 2023
+                                        <span class="tag tagBlue">Sedang dikemas</span>
+                                    </div>
+                                    <div class="dashboardBoxCta desktop-only">
+                                        <a href="invoice.html" class="invoiceBtn">INV/20190001/XXV111/X/212304930</a>
+                                    </div>
+                                </div>
+                                <a href="seller.html" class="userWrap">
+                                    <div class="userImg --seller">
+                                        <img src="./asset/images/seller-sm.png" alt="kibo_byinu Shop" width="34" height="34">
+                                    </div>
+                                    <span class="titleBold">Ini Store</span>
+                                </a>
+                                <div class="productBox productLink col-12">
+                                    <div class="productBoxWrap">
+                                        <a href="detail.html" class="productImg">
+                                            <img src="./asset/images/dummy/product/tas.png"
+                                                alt="Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah" width="180" height="180"
+                                                loading="lazy">
+                                        </a>
+                                        <div class="productBoxContent">
+                                            <a href="detail.html" class="productTitle">Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah
+                                            </a>
+                                            <div class="orderMisc">2x 40.000</div>
+                                            <button class="button orderMisc orderDetail" onclick="triggerPopup('.-pOrder')">Lihat Detail Belanja</button>
+                                        </div>
+                                    </div>
+                                    <div class="orderTotal">
+                                        <div class="orderMisc">Total Belanja</div>
+                                        <div class="productPrice">135.000</div>
+                                    </div>
+                                    <div class="dashboardBoxCta">
+                                        <button class="button buttonRect buttonRectBlue orderBtn" onclick="window.location.href = 'cart.html'">Beli
+                                            Lagi</button>
+                                    </div>
+                                </div>                            </div>
+                            <div class="dashboardBox orderItem">
+                                <div class="dashboardWrap dashboardBoxHead">
+                                    <div class="dashboardBoxLeft orderMisc">
+                                        14 agustus 2023
+                                        <span class="tag tagBlue">Dikirim</span>
+                                    </div>
+                                    <div class="dashboardBoxCta desktop-only">
+                                        <a href="invoice.html" class="invoiceBtn">INV/20190001/XXV111/X/212304930</a>
+                                    </div>
+                                </div>
+                                <a href="seller.html" class="userWrap">
+                                    <div class="userImg --seller">
+                                        <img src="./asset/images/seller-sm.png" alt="kibo_byinu Shop" width="34" height="34">
+                                    </div>
+                                    <span class="titleBold">Ini Store</span>
+                                </a>
+                                <div class="productBox productLink col-12">
+                                    <div class="productBoxWrap">
+                                        <a href="detail.html" class="productImg">
+                                            <img src="./asset/images/dummy/product/tas.png"
+                                                alt="Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah" width="180" height="180"
+                                                loading="lazy">
+                                        </a>
+                                        <div class="productBoxContent">
+                                            <a href="detail.html" class="productTitle">Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah
+                                            </a>
+                                            <div class="orderMisc">2x 40.000</div>
+                                            <button class="button orderMisc orderDetail" onclick="triggerPopup('.-pOrder')">Lihat Detail Belanja</button>
+                                        </div>
+                                    </div>
+                                    <div class="orderTotal">
+                                        <div class="orderMisc">Total Belanja</div>
+                                        <div class="productPrice">135.000</div>
+                                    </div>
+                                    <div class="dashboardBoxCta">
+                                        <button class="button buttonRect buttonRectBlue orderBtn" onclick="window.location.href = 'cart.html'">Beli
+                                            Lagi</button>
+                                    </div>
+                                </div>                            </div>
+                        </div>
+                    </div>
+                    <ul class="paging">
+                        <li>
+                            <a href="#" class="pagingLink pagingArrow disable" aria-label="Go to Previous Page">
+                                <span class="icon iconChevron --left"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pagingLink active">
+                                1
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pagingLink">
+                                2
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pagingLink">
+                                3
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pagingLink">
+                                4
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pagingLink">
+                                5
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pagingLink pagingArrow" aria-label="Go to Next Page">
+                                <span class="icon iconChevron"></span>
+                            </a>
+                        </li>                    </ul>
                 </div>
             </div>
         </div>
     </main>
-
+    <!-- popup -->
+    <div class="popup -pOrder">
+        <div class="popupWrap">
+            <div class="popupBox orderPopupbox col-12">
+                <div class="popupHead">
+                    <div class="popupTitle">Detail Transaksi</div>
+                    <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
+                            class="icon iconClose"></span></button>
+                </div>
+                <div class="popupContent orderPopup">
+                    <div class="col-12 col-lg-8 spacing-sm">
+                        <div class="dashboardBox">
+                            <div class="dashboardWrap orderShippingHead dashboardBoxHead">
+                                <div class="dashboardBoxLeft titleBold">
+                                    Selesai
+                                </div>
+                                <div class="dashboardBoxCta orderMisc">
+                                    <button class="button orderShippingMore cl-green"
+                                        onclick="showMore(this, false, false, '.-pOrder')">Lihat Detail
+                                        <span class="icon iconChevron"></span></button>
+                                </div>
+                            </div>
+                            <div class="orderShippingDetail orderMisc -jsShowTg">
+                                <div class="orderShippingItem row">
+                                    <div class="col-md-4 col-lg-5 orderShippingDate">22 September 2023, 12:03</div>
+                                    <div class="col-md-1 orderShippingState active"><span></span></div>
+                                    <div class="col-md-7 col-lg-6 orderShippingDesc">
+                                        <strong>Transaksi selesai</strong>
+                                        <span>
+                                            Dana akan diteruskan ke penjual.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="orderShippingItem row">
+                                    <div class="col-md-4 col-lg-5 orderShippingDate">22 September 2023, 12:03</div>
+                                    <div class="col-md-1 orderShippingState"><span></span></div>
+                                    <div class="col-md-7 col-lg-6 orderShippingDesc">
+                                        <strong>Transaksi dikonfirmasi</strong>
+                                        <span>
+                                            Transaksi telah dikonfirmasi pembeli dan menunggu review Tokopedia.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="orderShippingItem row">
+                                    <div class="col-md-4 col-lg-5 orderShippingDate">22 September 2023, 10:03</div>
+                                    <div class="col-md-1 orderShippingState"><span></span></div>
+                                    <div class="col-md-7 col-lg-6 orderShippingDesc">
+                                        <strong>Pesanan telah tiba di tujuan.</strong>
+                                        <span>
+                                            Diterima oleh Abdul Racing
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="orderShippingItem row">
+                                    <div class="col-md-4 col-lg-5 orderShippingDate">20 September 2023, 10:03</div>
+                                    <div class="col-md-1 orderShippingState"><span></span></div>
+                                    <div class="col-md-7 col-lg-6 orderShippingDesc">
+                                        <strong>Pesanan telah dikirim</strong>
+                                        <span>
+                                            Pesanan Anda dalam proses pengiriman oleh kurir.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="orderShippingItem row">
+                                    <div class="col-md-4 col-lg-5 orderShippingDate">20 September 2023, 08:03</div>
+                                    <div class="col-md-1 orderShippingState"><span></span></div>
+                                    <div class="col-md-7 col-lg-6 orderShippingDesc">
+                                        <strong>Menunggu Pick Up</strong>
+                                        <span>
+                                            
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="orderShippingItem row">
+                                    <div class="col-md-4 col-lg-5 orderShippingDate">19 September 2023, 15:03</div>
+                                    <div class="col-md-1 orderShippingState"><span></span></div>
+                                    <div class="col-md-7 col-lg-6 orderShippingDesc">
+                                        <strong>Pemesanan sedang diproses oleh penjual.</strong>
+                                        <span>
+                                            
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="orderShippingItem row">
+                                    <div class="col-md-4 col-lg-5 orderShippingDate">19 September 2023, 12:03</div>
+                                    <div class="col-md-1 orderShippingState"><span></span></div>
+                                    <div class="col-md-7 col-lg-6 orderShippingDesc">
+                                        <strong>Pembayaran sudah diverifikasi.</strong>
+                                        <span>
+                                            Pembayaran telah diterima Tokopedia dan pesanan Anda sudah diteruskan ke penjual.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="orderMisc">
+                                <div class="summaryItem">
+                                    No. Invoice
+                                    <a href="invoice.html" class="invoiceBtn cl-green">INV/20190001/XXV111/X/212304930</a>
+                                </div>
+                                <div class="summaryItem">
+                                    Tanggal Pembelian
+                                    <span>
+                                        25 September 2023, 15:43
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboardBox orderBox">
+                            <div class="dashboardWrap orderBoxHead dashboardBoxHead">
+                                <div class="titleBold">Detail Produk</div>
+                                <a href="seller.html" class="userWrap">
+                                    <div class="userImg --seller">
+                                        <img src="./asset/images/seller-sm.png" alt="kibo_byinu Shop" width="34" height="34"
+                                            loading="lazy">
+                                    </div>
+                                    <span class="titleBold">Ini Store<span class="icon iconChevron"></span></span>
+                                </a>
+                            </div>
+                            <div class="productBox productLink col-12">
+                                <a href="detail.html" class="productBoxWrap col-md-9">
+                                    <div class="productImg">
+                                        <img src="./asset/images/dummy/product/tas.png"
+                                            alt="Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah" width="180"
+                                            height="180" loading="lazy">
+                                    </div>
+                                    <div class="productBoxContent">
+                                        <div class="productTitle">Kimmy Backpack Tas Punggung Anak sekolah /
+                                            Tas Ransel Sekolah
+                                        </div>
+                                        <div class="orderMisc">2x 40.000</div>
+                                    </div>
+                                </a>
+                                <div class="orderTotal">
+                                    <div class="orderMisc">Total Belanja</div>
+                                    <div class="productPrice">135.000</div>
+                                </div>
+                            </div>
+                            <div class="spacing-xs">
+                                <button class="button buttonRect buttonRectGrad buttonRectSpan"
+                                    onclick="window.location.href = 'cart.html'"><span>Beli
+                                        Lagi</span></button>
+                            </div>
+                        </div>
+                        <div class="dashboardBox">
+                            <div class="titleBold spacing-xs">
+                                Info Pengiriman
+                            </div>
+                            <table class="orderShipping orderMisc">
+                                <tbody>
+                                    <tr>
+                                        <td>Kurir</td>
+                                        <td>:</td>
+                                        <td>JNE Reguler</td>
+                                    </tr>
+                                    <tr>
+                                        <td>No resi</td>
+                                        <td>:</td>
+                                        <td>
+                                            <input type="text" disabled class="sr-only" id="copyNum" value="ASD0212-KFN14">
+                                            <span>ASD0212-KFN14</span>
+                                            <button class="button orderCopy" aria-label="Copy receipt number"
+                                                onclick="copyLink('copyNum')">
+                                                <img src="./asset/images/notif/copy.png" alt="" width="21" height="21"
+                                                    loading="lazy">
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">Alamat</td>
+                                        <td valign="top">:</td>
+                                        <td class="orderAddress">
+                                            <div class="orderName">
+                                                Abdul racing
+                                            </div>
+                                            Jl. Ninjaku no. 3 RT 01 RW 002, Kec. Konoha, Kel. Ichiraku, Kota Depok, 163221
+                                            (patokan ruko laundry warna ijo)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="dashboardBox">
+                            <div class="titleBold spacing-xs">
+                                Rincian Pembayaran
+                            </div>
+                            <div class="summaryItem spacing-xs">
+                                <div class="summaryLabel">Total harga (2 barang)</div>
+                                <div class="summaryAmount">Rp344.750</div>
+                            </div>
+                            <div class="summaryItem">
+                                <div class="summaryLabel">Total ongkos kirim (1,5 kg)</div>
+                                <div class="summaryAmount">Rp18.000</div>
+                            </div>
+                            <div class="summaryItem">
+                                <div class="summaryLabel">Total diskon</div>
+                                <div class="summaryAmount">-Rp176.250</div>
+                            </div>
+                            <hr>
+                            <div class="summaryItem">
+                                <div class="summaryLabel"><strong>Total Bayar</strong></div>
+                                <div class="summaryAmount">Rp168.500</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 spacing-sm">
+                        <a href="style-dashboard-chat.html" class="buttonRect buttonRectGrad buttonRectSpan text-center">
+                            <span>Hubungi Penjual</span>
+                        </a>
+                        <a href="#" class="buttonRect buttonRectGrad buttonRectSpan text-center spacing-sm">
+                            <span>Bantuan</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    <!-- popup -->
     <div class="help">
         <a href="#" class="helpWrap">
             <img src="./asset/images/chat-mina.png" alt="Help Chat MINA" width="91" height="91" loading="lazy">
@@ -623,6 +1131,10 @@
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/main.js"></script>
     <script defer src="./asset/js/sort.js"></script>
+    <script defer type="text/javascript" src="./asset/js/custom-select.js"></script>
+    <script defer type="text/javascript" src="./asset/js/popup.js"></script>
+    <script defer src="./asset/js/more.js"></script>
+    <script defer src="./asset/js/cta.js"></script>
     <script defer src="./asset/js/dashboard.js"></script>
 
 </body>

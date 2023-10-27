@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="invoice"}}
+
+<body>
+    <main role="main" class="invoice">
+        <div class="invoiceHeader">
+            <div class="container">
+                <div class="invoiceHead">
+                    <button class="button buttonBack" aria-label="Back to previous page"
+                        onclick="window.history.back()"><span class="icon iconArrow"></span>Kembali</button>
+                    <button class="button buttonRect buttonRectBlue" onclick="window.print()">Cetak</button>
+                </div>
+            </div>
+        </div>
+        <div class="invoiceGrid">
+            <div class="invoiceWrap">
+                <div class="invoiceHead">
+                    <h1>
+                        <img src="./asset/images/logo-smexpo.svg" alt="Pertamina Smexpo" width="195" height="54">
+                    </h1>
+                    <div class="invoiceTitle">
+                        <h2 class="title">Invoice</h2>
+                        <div class="invoiceBtn cl-green">INV/20190001/XXV111/X/212304930</div>
+                    </div>
+                </div>
+                <div class="invoiceColWrap spacing-md">
+                    <div class="invoiceCol invoiceColLeft">
+                        <div class="titleBold">Diterbitkan Atas Nama</div>
+                        <table class="invoiceTable">
+                            <tr>
+                                <td valign="top">Penjual</td>
+                                <td valign="top">:</td>
+                                <td valign="top">Ini Shop</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="invoiceCol invoiceColRight">
+                        <div class="titleBold">Untuk</div>
+                        <table class="invoiceTable">
+                            <tr>
+                                <td valign="top">Pembeli</td>
+                                <td valign="top">:</td>
+                                <td valign="top"><strong>Abdul Racing</strong></td>
+                            </tr>
+                            <tr>
+                                <td valign="top">Tanggal Pembelian</td>
+                                <td valign="top">:</td>
+                                <td valign="top"><strong>20 September 2023</strong></td>
+                            </tr>
+                            <tr>
+                                <td valign="top">Alamat Pengiriman</td>
+                                <td valign="top">:</td>
+                                <td valign="top">
+                                    <strong>Abdul Racing</strong> (0812 3456 7890)
+                                    <div class="invoiceAddress">Jl. Ninjaku no. 3 RT 01 RW 002, Kec. Konoha, Kel.
+                                        Ichiraku, Kota Depok, 163221 (patokan ruko laundry warna ijo)</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="invoiceProduct">
+                    <table class="invoiceProductTable">
+                        <thead>
+                            <tr>
+                                <th>Info Produk</th>
+                                <th>Jumlah</th>
+                                <th>Harga Satuan</th>
+                                <th>Total Harga</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Pupuk Organik RAYA - Paten Tumbuh Subur Sentosa
+                                    <div class="invoiceProductWeight">Berat: 1,2 kg</div>
+                                </td>
+                                <td>2</td>
+                                <td>Rp 80.000</td>
+                                <td>Rp 160.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="invoiceColWrap">
+                    <div class="summary invoiceCol invoiceColLeft">
+                        <div class="summaryItem">
+                            <div class="summaryLabel"><strong>Total Harga (2 Barang)</strong></div>
+                            <div class="summaryAmount">Rp 160.000</div>
+                        </div>
+                        <div class="summaryItem">
+                            <div class="summaryLabel">Total ongkos kirim (1,5 kg)</div>
+                            <div class="summaryAmount">Rp 18.000</div>
+                        </div>
+                        <div class="summaryItem">
+                            <div class="summaryLabel">Total diskon</div>
+                            <div class="summaryAmount">-Rp 20.000</div>
+                        </div>
+                        <div class="summaryTotal summaryItem">
+                            <div class="summaryLabel">Total Belanja</div>
+                            <div class="summaryAmount">Rp 158.000</div>
+                        </div>
+                        <div class="summaryItem">
+                            <div class="summaryLabel">Biaya layanan</div>
+                            <div class="summaryAmount">Rp 1.000</div>
+                        </div>
+                        <div class="summaryItem">
+                            <div class="summaryLabel">Biaya jasa aplikasi</div>
+                            <div class="summaryAmount">Rp 2.000</div>
+                        </div>
+                        <div class="summaryTotal summaryItem">
+                            <div class="summaryLabel">Total Tagihan</div>
+                            <div class="summaryAmount">Rp 161.000</div>
+                        </div>
+                    </div>
+                    <div class="invoiceCol invoiceColRight">
+                        <div class="titleBold">Metode Pembayaran</div>
+                        <div class="invoiceItem">Mandiri Virtual Account</div>
+
+                        <div class="titleBold spacing-sm">Kurir</div>
+                        <div class="invoiceItem">JNE Reguler</div>
+
+                        <div class="invoiceItem spacing-sm">
+                            Invoice ini sah dan diproses oleh komputer. Silakan hubungi <a href="#"
+                                target="_blank">MINA</a> apabila kamu membutuhkan bantuan.
+                        </div>
+                        <div class="spacing-sm">
+                            Terakhir diupdate: 04 Agustus 2023 15:26 WIB
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{>js jquery=false page="invoice" template=false}}
+
+</body>
+
+</html>

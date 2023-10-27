@@ -3,6 +3,16 @@
         margin-top: 30px;
     }
 
+    &Wrap {
+        @extend %display-flex;
+        @extend %align-start;
+        @extend %justify-between;
+
+        &Center {
+            @extend %align-center;
+        }
+    }
+
     &Head {
         @extend %display-flex;
         @extend %align-start;
@@ -26,7 +36,6 @@
         }
 
         .sortFilter {
-            @include font-pack($size: 16px);
             border-top: 0;
             padding-top: 0;
             align-self: flex-end;
@@ -39,7 +48,7 @@
         }
     }
 
-    &Content {
+    &Bank {
         @include font-pack($size: 14px, $color: #676767);
 
         .title {
@@ -81,6 +90,10 @@
 
             &:first-child {
                 margin-top: 24px;
+
+                @include min-responsive($w-xl) {
+                    margin-top: 0;
+                }
             }
         }
 
@@ -115,7 +128,7 @@
         }
     }
 
-    &Birth {
+    &Date {
         width: 100%;
         text-align: left;
 
@@ -217,12 +230,6 @@
     }
 
     &Notif {
-        &Item {
-            @extend %display-flex;
-            @extend %align-center;
-            @extend %justify-between;
-        }
-
         &Desc {
             margin-top: 8px;
             @include font-pack($family: $font-sbold, $weight: $font-weight-sbold, $size: 14px, $color: #676767);
@@ -230,7 +237,6 @@
 
         .titleBold {
             padding-right: 12px;
-            @include font-pack($color: $cl-primary-black, $size: 16px);
         }
     }
 
@@ -250,23 +256,19 @@
         }
     }
 
-    &Review {
-        color: $cl-primary-black;
-    }
-
     &Box {
         @extend .disBox;
         margin-top: 24px;
 
         &Head {
-            @extend .dashboardNotifItem;
+            @extend %align-center;
             flex-direction: column;
             margin-bottom: 14px;
             padding-top: 14px;
             padding-bottom: 10px;
             border-bottom: 1px solid #BDBDBD;
 
-            @include min-responsive($w-xl) {
+            @include min-responsive($w-md) {
                 flex-direction: row;
             }
 
@@ -289,19 +291,96 @@
             position: relative;
             margin-top: 12px;
 
-            @include min-responsive($w-xl) {
+            @include min-responsive($w-md) {
                 margin-top: 0;
             }
         }
 
-        .reviewItem {
-            margin-top: 12px;
-            margin-bottom: 24px;
+        .iconChevron {
+            @extend %iconChevron;
+            width: 14px;
+            height: 14px;
+            margin-left: 6px;
+            vertical-align: sub;
+            transform: rotate(270deg);
+            background-size: contain;
 
-            &:last-child {
-                margin-bottom: 0;
+            @include min-responsive($w-md) {
+                width: 20px;
+                height: 20px;
             }
         }
+    }
+
+    &Review {
+        color: $cl-primary-black;
+
+        .review {
+            &Item {
+                margin-top: 12px;
+                margin-bottom: 24px;
+                align-items: flex-start;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &Box {
+                @extend %hidden;
+                text-align: left;
+
+                &Trig {
+                    &.active {
+                        @extend %hidden;
+                        display: none;
+                        width: 0;
+                        min-height: 0;
+
+                        ~.reviewBox {
+                            @extend %visible
+                        }
+                    }
+                }
+
+                &Close {
+                    @extend %buttonClose;
+                    margin-bottom: 4px
+                }
+
+                &Cta {
+                    @extend %buttonCloseCta;
+                }
+            }
+        }
+
+        .product {
+            &BoxWrap {
+                width: 100%;
+
+                @include range-responsive($w-md, $w-xl) {
+                    width: 400px;
+                }
+
+                @include min-responsive($w-xl) {
+                    width: 430px;
+                }
+            }
+
+            &Title {
+                -webkit-line-clamp: 1;
+            }
+        }
+
+        .dashboardBoxCta {
+            flex: 1;
+            text-align: right;
+        }
+    }
+
+    &Empty {
+        @extend %title--small;
+        color: #676767;
     }
 
     &Table {
@@ -431,13 +510,13 @@
         }
     }
 
-    .popover {
-        width: calc(100% - 30px);
+    // .popover {
+    //     width: calc(100% - 30px);
 
-        @include min-responsive($w-xl) {
-            width: 600px;
-        }
-    }
+    //     @include min-responsive($w-xl) {
+    //         width: 600px;
+    //     }
+    // }
 
     .buttonPass {
         position: absolute;
@@ -492,7 +571,7 @@
     }
 
     .buttonRect {
-        @include font-pack($family: $font-sbold, $size: 16px, $weight: $font-weight-sbold);
+        @include font-pack($family: $font-sbold, $weight: $font-weight-sbold);
 
         &White {
             color: $cl-primary-black;
@@ -501,5 +580,58 @@
 
     .sortCta {
         margin-top: 30px;
+    }
+
+    .search {
+        @extend %search;
+
+        &Input {
+            @extend %searchInput;
+        }
+    }
+
+    &Order {
+        &Head {
+            .formSelectWrap {
+                width: 100%;
+            }
+
+            .formInput {
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            .dashboardDate {
+                margin-bottom: 12px;
+
+                @include min-responsive($w-md) {
+                    margin-bottom: 0;
+                }
+
+                .formInput {
+                    padding-left: 40px;
+                }
+
+                .iconCal {
+                    left: 12px;
+                }
+            }
+
+            .custom-select .styledSelect {
+                padding: 11px 40px 11px 15px;
+            }
+        }
+
+        &Search {
+            .search {
+                width: 100%;
+                padding-top: 12px;
+                padding-bottom: 12px;
+
+                .iconSearch {
+                    top: 16px;
+                }
+            }
+        }
     }
 }
