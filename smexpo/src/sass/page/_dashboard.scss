@@ -56,21 +56,6 @@
         }
     }
 
-    &Logout {
-        padding: 5px;
-        @extend %title--small;
-        @include font-pack($family: $font-bold, $weight: $font-weight-bold, $color: #ED3D57);
-
-        .iconLogout {
-            @extend %iconLogout;
-            @extend %filterRed;
-            width: 20px;
-            height: 20px;
-            margin-right: 6px;
-            vertical-align: middle;
-        }
-    }
-
     &Nav {
         .sortBox {
             border: 0;
@@ -122,19 +107,23 @@
         }
     }
 
-    &Setting {
-        &Wrap {
-            margin-top: 30px;
-        }
-    }
-
     &Date {
-        width: 100%;
-        text-align: left;
+        &Btn {
+            @extend .button;
+            @extend .buttonRect;
+            @include font-pack($family: $font-sbold, $weight: $font-weight-sbold);
+        }
+
+        &Cancel {
+            @extend .buttonRectWhite;
+        }
+
+        &Apply {
+            @extend .buttonRectBlue;
+        }
 
         .form {
             &Input {
-                pointer-events: none;
                 padding-left: 52px;
             }
         }
@@ -147,20 +136,6 @@
             height: 20px;
             @extend %iconCal;
             @extend %filterGrey
-        }
-
-        &Wrap {
-            @extend %display-flex;
-
-            .custom-select {
-                .select {
-                    min-height: 43px;
-                }
-
-                .styledSelect:after {
-                    top: 10px;
-                }
-            }
         }
     }
 
@@ -241,9 +216,6 @@
     }
 
     &Dis {
-        margin-top: 30px;
-        color: $cl-primary-black;
-
         .dis {
             &Love {
                 @extend %center-flex;
@@ -258,6 +230,7 @@
 
     &Box {
         @extend .disBox;
+        background: $cl-white;
         margin-top: 24px;
 
         &Head {
@@ -313,8 +286,6 @@
     }
 
     &Review {
-        color: $cl-primary-black;
-
         .review {
             &Item {
                 margin-top: 12px;
@@ -510,14 +481,6 @@
         }
     }
 
-    // .popover {
-    //     width: calc(100% - 30px);
-
-    //     @include min-responsive($w-xl) {
-    //         width: 600px;
-    //     }
-    // }
-
     .buttonPass {
         position: absolute;
         width: 20px;
@@ -572,10 +535,6 @@
 
     .buttonRect {
         @include font-pack($family: $font-sbold, $weight: $font-weight-sbold);
-
-        &White {
-            color: $cl-primary-black;
-        }
     }
 
     .sortCta {

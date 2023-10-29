@@ -117,3 +117,16 @@ const footer = new IntersectionObserver((entries, observer) => {
 if (!!updateMenu(elObserve)) {
     footer.observe(updateMenu(elObserve));
 }
+
+//cta trigger active
+function triggerActiveButton(el, txt, txtrev) {
+    elActive = el.classList.contains('active');
+    el.classList.toggle('active');
+    if (!!txt) {
+        if (elActive == false) {
+            el.innerHTML = txt;
+        } else {
+            el.innerHTML = txtrev;
+        }
+    }
+}

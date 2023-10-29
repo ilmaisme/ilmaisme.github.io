@@ -28,7 +28,7 @@
 
     <link rel="icon" type="image/x-icon" sizes="16x16" href="./asset/images/favicon.ico">
     <link rel="stylesheet" href="./asset/css/style-dashboard.css" type="text/css">
-    <link rel="stylesheet" href="./asset/css/style-sort.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style-sort.min.css" type="text/css">
 
     <link rel="preload" href="./asset/images/logo-smexpo.svg" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,7 +107,7 @@
                     <span class="icon iconCart"></span>
                     <div class="badge">17</div>
                 </a>
-                <a href="inbox.html" class="headerInbox" aria-label="Inbox">
+                <a href="dashboard-chat.html" class="headerInbox" aria-label="Inbox">
                     <span class="icon iconInbox"></span>
                 </a>
                 <a href="notif.html" class="headerNotif" aria-label="Notification">
@@ -130,8 +130,7 @@
                         </div>
                         <!-- s: navigation -->
                         <div class="menuMob mobile">
-                            <button class="button buttonLang" aria-label="Translate website" value="id"
-                                onclick="changeLanguage(this)">
+                            <button class="button buttonLang" aria-label="Translate website" value="id" onclick="changeLanguage(this)">
                             </button>
                             <form action="search.html" class="searchbox">
                                 <button class="button icon iconSearch" aria-label="search"></button>
@@ -149,9 +148,23 @@
                                         <a href="dashboard.html" class="headerUsername" aria-label="abu Bakr">
                                             abu Bakr
                                         </a>
-                                        <a href="dashboard.html" class="headerUser" aria-label="Dashboard Profile">
+                                        <a href="dashboard.html" class="headerUser mobile-only" aria-label="Dashboard Profile">
                                             AB
                                         </a>
+                                        <div class="desktop-only headerDashboardWrap">
+                                            <button class="button headerUser" aria-label="Dashboard Profile"
+                                                onclick="triggerActiveButton(this)">
+                                                AB
+                                            </button>
+                                            <div class="headerDashboard">
+                                                <a href="dashboard.html" class="headerDashboardLink">Akun Saya</a>
+                                                <a href="dashboard-chat.html" class="headerDashboardLink">Kotak Masuk</a>
+                                                <a href="dashboard-order.html" class="headerDashboardLink">Pesanan Saya</a>
+                                                <button class="button headerDashboardLink buttonLogout">
+                                                    <span class="icon iconLogout"></span>
+                                                    Keluar</button>
+                                            </div>
+                                        </div>
                                     </div>
                                     <span class="header--dash desktop-only"></span>
                                 </div>
@@ -330,7 +343,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="button dashboardLogout spacing-sm">
+                    <button class="button buttonLogout spacing-sm">
                         <span class="icon iconLogout"></span>
                         Keluar
                     </button>
@@ -643,9 +656,9 @@
     </footer>
     
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/main.js"></script>
-    <script defer src="./asset/js/sort.js"></script>
-    <script defer src="./asset/js/dashboard.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script defer src="./asset/js/sort.min.js"></script>
+    <script defer src="./asset/js/dashboard.min.js"></script>
     <script>
         function togglePassword(el) {
             //show hide password

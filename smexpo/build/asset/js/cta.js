@@ -1,15 +1,3 @@
-function triggerActiveButton(el, txt, txtrev) {
-    elActive = el.classList.contains('active');
-    el.classList.toggle('active');
-    if (!!txt) {
-        if (elActive == false) {
-            el.innerHTML = txt;
-        } else {
-            el.innerHTML = txtrev;
-        }
-    }
-}
-
 //trigger close component
 function triggerClose(el, parent, target) {
     let compo = el.closest(parent).querySelector(target);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{> head page="dashboard" sort=true select=true}}
+{{> head page="dashboard" sort=true select=true datepicker=true}}
 
 <body>
     {{> header/header login=true}}
@@ -13,7 +13,7 @@
             <div class="row dashboardRow">
                 <div class="col-xl-3 dashboardNav desktop-only">
                     {{>dashboard/nav page="Semua"}}
-                    <button class="button dashboardLogout spacing-sm">
+                    <button class="button buttonLogout spacing-sm">
                         <span class="icon iconLogout"></span>
                         Keluar
                     </button>
@@ -34,10 +34,10 @@
                             {{>dashboard/sort type="product"}}
                         </div>
                         <div class="dashboardDate col-md-4">
-                            <label class="formLabel sr-only" for="transdate">Pick transaction date</label>
+                            <label class="formLabel sr-only" for="orderdate">Pick transaction date</label>
                             <div class="formWrap">
                                 <span class="icon iconCal"></span>
-                                <input type="text" class="formInput" name="transdate" id="transdate" value=""
+                                <input type="text" class="formInput" name="orderdate" id="orderdate" value=""
                                     placeholder="Pilih tanggal transaksi">
                             </div>
                         </div>
@@ -76,7 +76,32 @@
     {{>help}}
     {{>footer}}
 
-    {{>js page="dashboard" sort=true select=true popup=true cta=true more=true}}
+    {{>js page="dashboard" sort=true select=true popup=true cta=true more=true datepicker=true}}
+    <script>
+        $(function () {
+            $('input[name="orderdate"]').daterangepicker({
+                showDropdowns: true,
+                minYear: 1901,
+                maxDate: moment(),
+                opens: "left",
+                showCustomRangeLabel: false,
+                applyButtonClasses: 'dashboardDateBtn dashboardDateApply',
+                cancelButtonClasses: 'dashboardDateBtn dashboardDateCancel',
+                locale: {
+                    cancelLabel: 'Batalkan',
+                    applyLabel: 'Simpan',
+                    format: 'DD/MM/YYYY'
+                },
+                ranges: {
+                    'Hari ini': [moment(), moment()],
+                    '30 Hari Terakhir': [moment().subtract(29, 'days'), moment()],
+                    '90 Hari Terakhir': [moment().subtract(87, 'days'), moment()],                    
+                }
+            }).on('show.daterangepicker', function (e, picker) {
+                picker.container.addClass('dashboardDateRange');
+            });
+        });
+    </script>
 
 </body>
 

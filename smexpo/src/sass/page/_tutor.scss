@@ -1,0 +1,228 @@
+.tutor {
+    overflow: hidden;
+
+    &Popup {
+        background: rgba(255, 255, 255, 0.85);
+    }
+
+    &Wrap {
+        @extend %center-flex;
+        height: var(--app-height);
+    }
+
+    &Img {
+        @extend %hidden;
+        display: none;
+
+        &.active {
+            @extend %visible;
+            display: block;
+            width: 160px;
+            object-fit: contain;
+
+            @include min-responsive($w-md) {
+                width: 288px;
+                height: 400px;
+            }
+        }
+
+        &:nth-child(2) {
+            width: 182px;
+
+            @include min-responsive($w-md) {
+                width: 288px;
+            }
+        }
+    }
+
+    &Content {
+        position: relative;
+    }
+
+    &Help {
+        @extend %center-flex;
+        position: fixed;
+        top: calc(50% - 130px/2 - 160px - 30px);
+        right: 15px;
+        width: calc(100% - 30px);
+        height: 130px;
+        padding: 25px 24px;
+        border-radius: 14px;
+        background: #2866C3;
+
+        @include min-responsive($w-md) {
+            position: absolute;
+            top: calc(-50% + 130px/2);
+            right: calc(50% - 460px/2);
+            width: 460px;
+        }
+
+        @include min-responsive($w-lg) {
+            right: calc(-50% - 460px/2 + 47px);
+            border-radius: 14px 14px 14px 0px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            top: calc(-50% + 130px/2 + 60px);
+            right: calc(-50% - 460px/2 + 47px - 60px);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 40px/2);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 20px 20px 0 20px;
+            border-bottom-left-radius: 14px;
+            border-color: #2866C3 transparent transparent transparent;
+            margin-bottom: -18px;
+
+            @include min-responsive($w-lg) {
+                left: 0;
+                border-width: 40px 40px 0 0;
+                margin-bottom: -38px;
+            }
+        }
+    }
+
+    &Txt {
+        @extend %hidden;
+        position: absolute;
+        width: calc(100% - 48px);
+        left: 24px;
+        flex-shrink: 0;
+        @include font-pack($family: $font-sbold, $size: 16px, $weight: $font-weight-sbold, $color: $cl-white);
+
+        @include min-responsive($w-md) {
+            font-size: 20px;
+        }
+
+        &.active {
+            @extend %visible;
+        }
+    }
+
+    &Cta {
+        @extend %display-flex;
+        @extend %flex-column;
+        position: absolute;
+        top: calc(50% - 85px/2);
+        right: 40px;
+
+        &Btn {
+            @extend %center-flex;
+            padding: 4px;
+
+            .iconArrow {
+                @extend %iconArrow;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &Prev {
+            transform: rotate(90deg);
+        }
+
+        &Next {
+            transform: rotate(270deg);
+        }
+    }
+
+    &End {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+
+        @include min-responsive($w-lg) {
+            bottom: 50px;
+            right: 30px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            bottom: 20px;
+        }
+
+        &Skip {
+            text-align: right;
+            text-transform: uppercase;
+            @include font-pack($family: $font-sbold, $weight: $font-weight-sbold);
+
+            span {
+                margin-left: 8px;
+            }
+        }
+
+        .buttonRect {
+            @extend %hidden;
+        }
+    }
+
+    &Click {
+        @extend %center-flex;
+        @extend %title--small;
+        position: absolute;
+        right: 100px;        
+        bottom: 91px;
+        
+        @include min-responsive($w-md) {
+            right: 140px;
+            top: calc(50% - 85px/2 + 68px + 91px + 51px/2);
+            bottom: unset;
+        }
+
+        img {
+            width: 24px;
+            margin-left: 8px;
+            margin-right: 16px;
+            animation: scrollright 2s infinite;
+
+            @include min-responsive($w-md) {
+                width: 50px;
+            }
+        }
+    }
+
+    .help {
+
+        // opacity: 0;
+        &Wrap {
+            height: 60px;
+            bottom: 80px;
+            right: 30px;
+            
+            @include min-responsive($w-md) {
+                height: 91px;
+                top: calc(50% - 85px/2 + 68px + 91px);
+                bottom: unset;
+            }
+        }
+
+        &Txt {
+            display: none;
+        }
+    }
+}
+
+@keyframes scrollright {
+    0% {
+        transform: translate(0);
+        opacity: .8
+    }
+
+    40% {
+        opacity: 1
+    }
+
+    80% {
+        transform: translate(20px);
+        opacity: .8
+    }
+
+    to {
+        opacity: .8
+    }
+}

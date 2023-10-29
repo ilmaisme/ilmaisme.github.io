@@ -28,7 +28,8 @@
 
     <link rel="icon" type="image/x-icon" sizes="16x16" href="./asset/images/favicon.ico">
     <link rel="stylesheet" href="./asset/css/style-dashboard.css" type="text/css">
-    <link rel="stylesheet" href="./asset/css/style-sort.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style-sort.min.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/daterangepicker.min.css" type="text/css">
 
     <link rel="preload" href="./asset/images/logo-smexpo.svg" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,7 +108,7 @@
                     <span class="icon iconCart"></span>
                     <div class="badge">17</div>
                 </a>
-                <a href="inbox.html" class="headerInbox" aria-label="Inbox">
+                <a href="dashboard-chat.html" class="headerInbox" aria-label="Inbox">
                     <span class="icon iconInbox"></span>
                 </a>
                 <a href="notif.html" class="headerNotif" aria-label="Notification">
@@ -130,8 +131,7 @@
                         </div>
                         <!-- s: navigation -->
                         <div class="menuMob mobile">
-                            <button class="button buttonLang" aria-label="Translate website" value="id"
-                                onclick="changeLanguage(this)">
+                            <button class="button buttonLang" aria-label="Translate website" value="id" onclick="changeLanguage(this)">
                             </button>
                             <form action="search.html" class="searchbox">
                                 <button class="button icon iconSearch" aria-label="search"></button>
@@ -149,9 +149,23 @@
                                         <a href="dashboard.html" class="headerUsername" aria-label="abu Bakr">
                                             abu Bakr
                                         </a>
-                                        <a href="dashboard.html" class="headerUser" aria-label="Dashboard Profile">
+                                        <a href="dashboard.html" class="headerUser mobile-only" aria-label="Dashboard Profile">
                                             AB
                                         </a>
+                                        <div class="desktop-only headerDashboardWrap">
+                                            <button class="button headerUser" aria-label="Dashboard Profile"
+                                                onclick="triggerActiveButton(this)">
+                                                AB
+                                            </button>
+                                            <div class="headerDashboard">
+                                                <a href="dashboard.html" class="headerDashboardLink">Akun Saya</a>
+                                                <a href="dashboard-chat.html" class="headerDashboardLink">Kotak Masuk</a>
+                                                <a href="dashboard-order.html" class="headerDashboardLink">Pesanan Saya</a>
+                                                <button class="button headerDashboardLink buttonLogout">
+                                                    <span class="icon iconLogout"></span>
+                                                    Keluar</button>
+                                            </div>
+                                        </div>
                                     </div>
                                     <span class="header--dash desktop-only"></span>
                                 </div>
@@ -330,7 +344,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="button dashboardLogout spacing-sm">
+                    <button class="button buttonLogout spacing-sm">
                         <span class="icon iconLogout"></span>
                         Keluar
                     </button>
@@ -368,7 +382,7 @@
                             <div class="uploadImgWrap dashboardUploadPic -uploadedImage"></div>
                         </div>
                         <div class="dashboardWrap row">
-                            <div class="dashboardSettingWrap col-12 col-md-6">
+                            <div class="dashboardRow col-12 col-md-6">
                                 <label class="formLabel" for="uname">Username</label>
                                 <div class="formWrap">
                                     <input type="text" class="formInput" name="uname" id="uname" value="user0123">
@@ -377,13 +391,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="dashboardSettingWrap col-12 col-md-6">
+                            <div class="dashboardRow col-12 col-md-6">
                                 <label class="formLabel" for="name">Nama</label>
                                 <div class="formWrap">
                                     <input type="text" class="formInput" name="name" id="name" value="abu Bakr">
                                 </div>
                             </div>
-                            <div class="dashboardSettingWrap col-12 col-md-6">
+                            <div class="dashboardRow col-12 col-md-6">
                                 <label class="formLabel" for="email">Email</label>
                                 <div class="formWrap">
                                     <input type="email" class="formInput" name="email" id="email" value="fulanbinfulan@gmail.com">
@@ -392,19 +406,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="dashboardSettingWrap col-12 col-md-6">
+                            <div class="dashboardRow col-12 col-md-6">
                                 <label class="formLabel" for="phone">Nomor Telepon</label>
                                 <div class="formWrap">
                                     <input type="text" name="phone" id="phone" class="formInput" value="" placeholder="08" inputmode="numeric">
                                 </div>
                             </div>
-                            <div class="dashboardSettingWrap col-12 col-md-6">
+                            <div class="dashboardRow col-12 col-md-6">
                                 <label class="formLabel" for="sname">Nama Toko</label>
                                 <div class="formWrap">
                                     <input type="text" class="formInput" name="sname" id="sname" value="">
                                 </div>
                             </div>
-                            <div class="dashboardSettingWrap col-12 col-md-6">
+                            <div class="dashboardRow col-12 col-md-6">
                                 <label class="formLabel" for="sex">Jenis Kelamin</label>
                                 <div class="formWrap">
                                     <label class="formRadioWrap formLabel">
@@ -419,21 +433,19 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="dashboardSettingWrap col-12 col-md-6">
-                                <button class="button dashboardDate" onclick="triggerPopover(this); event.stopPropagation();" type="button">
-                                    <label class="formLabel" for="birth">Tanggal Lahir</label>
-                                    <div class="formWrap">
-                                        <span class="icon iconCal"></span>
-                                        <input type="text" class="formInput" name="birth" id="birth" value="" placeholder="Pilih tanggal lahir">
-                                    </div>
-                                </button>
+                            <div class="dashboardRow dashboardDate col-12 col-md-6">
+                                <label class="formLabel" for="birth">Tanggal Lahir</label>
+                                <div class="formWrap">
+                                    <span class="icon iconCal"></span>
+                                    <input type="text" class="formInput" name="birth" id="birth" value="" placeholder="Pilih tanggal lahir">
+                                </div>
                             </div>
-                            <div class="dashboardSettingWrap col-12 spacing-md">
+                            <div class="dashboardRow col-12 spacing-md">
                                 <button class="button buttonRect buttonRectBlue dashboardCta" type="submit">
                                     Simpan
                                 </button>
                             </div>
-                        </div>                        
+                        </div>
                     </form>
                 </div>
             </div>
@@ -707,11 +719,37 @@
     </footer>
     
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/main.js"></script>
-    <script defer src="./asset/js/sort.js"></script>
-    <script defer type="text/javascript" src="./asset/js/custom-select.js"></script>
-    <script defer src="./asset/js/img-upload.js"></script>
-    <script defer src="./asset/js/dashboard.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script defer src="./asset/js/sort.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/custom-select.min.js"></script>
+    <script defer src="./asset/js/img-upload.min.js"></script>
+    <!-- datepicker JS -->
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script defer src="./asset/js/dashboard.min.js"></script>
+    <script>
+        $(function () {
+            $('input[name="birth"]').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 1901,
+                maxDate: moment(),
+                autoUpdateInput: false,
+                showCustomRangeLabel: false,
+                applyButtonClasses: 'dashboardDateBtn dashboardDateApply',
+                cancelButtonClasses: 'dashboardDateBtn dashboardDateCancel',
+                locale: {
+                    cancelLabel: 'Batalkan',
+                    applyLabel: 'Simpan',
+                    format: 'DD/MM/YYYY'
+                }
+            }).on("apply.daterangepicker", function (e, picker) {
+                picker.element.val(picker.startDate.format(picker.locale.format));
+            }).on('show.daterangepicker', function (e, picker) {
+                picker.container.addClass('dashboardDatePick');
+            });
+        });
+    </script>
 
 </body>
 

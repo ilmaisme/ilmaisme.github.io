@@ -28,7 +28,7 @@
 
     <link rel="icon" type="image/x-icon" sizes="16x16" href="./asset/images/favicon.ico">
     <link rel="stylesheet" href="./asset/css/style-dashboard.css" type="text/css">
-    <link rel="stylesheet" href="./asset/css/style-sort.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style-sort.min.css" type="text/css">
 
     <link rel="preload" href="./asset/images/logo-smexpo.svg" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,7 +107,7 @@
                     <span class="icon iconCart"></span>
                     <div class="badge">17</div>
                 </a>
-                <a href="inbox.html" class="headerInbox" aria-label="Inbox">
+                <a href="dashboard-chat.html" class="headerInbox" aria-label="Inbox">
                     <span class="icon iconInbox"></span>
                 </a>
                 <a href="notif.html" class="headerNotif" aria-label="Notification">
@@ -130,8 +130,7 @@
                         </div>
                         <!-- s: navigation -->
                         <div class="menuMob mobile">
-                            <button class="button buttonLang" aria-label="Translate website" value="id"
-                                onclick="changeLanguage(this)">
+                            <button class="button buttonLang" aria-label="Translate website" value="id" onclick="changeLanguage(this)">
                             </button>
                             <form action="search.html" class="searchbox">
                                 <button class="button icon iconSearch" aria-label="search"></button>
@@ -149,9 +148,23 @@
                                         <a href="dashboard.html" class="headerUsername" aria-label="abu Bakr">
                                             abu Bakr
                                         </a>
-                                        <a href="dashboard.html" class="headerUser" aria-label="Dashboard Profile">
+                                        <a href="dashboard.html" class="headerUser mobile-only" aria-label="Dashboard Profile">
                                             AB
                                         </a>
+                                        <div class="desktop-only headerDashboardWrap">
+                                            <button class="button headerUser" aria-label="Dashboard Profile"
+                                                onclick="triggerActiveButton(this)">
+                                                AB
+                                            </button>
+                                            <div class="headerDashboard">
+                                                <a href="dashboard.html" class="headerDashboardLink">Akun Saya</a>
+                                                <a href="dashboard-chat.html" class="headerDashboardLink">Kotak Masuk</a>
+                                                <a href="dashboard-order.html" class="headerDashboardLink">Pesanan Saya</a>
+                                                <button class="button headerDashboardLink buttonLogout">
+                                                    <span class="icon iconLogout"></span>
+                                                    Keluar</button>
+                                            </div>
+                                        </div>
                                     </div>
                                     <span class="header--dash desktop-only"></span>
                                 </div>
@@ -200,7 +213,7 @@
         </div>
         <div class="navDesk desktop-only" id="navDesk">
         </div>
-    </header>    <main role="main" class="main dashboard">
+    </header>    <main role="main" class="main dashboard chat">
         <div class="container">
             <div class="breadcrumb">
                 <div class="breadcrumbItem">
@@ -330,7 +343,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="button dashboardLogout spacing-sm">
+                    <button class="button buttonLogout spacing-sm">
                         <span class="icon iconLogout"></span>
                         Keluar
                     </button>
@@ -339,21 +352,238 @@
                     <h2 class="title">
                         <span>Chat</span>
                     </h2>
-                    <div class="dashboardEmpty spacing-sm text-center">
-                        <img src="./asset/images/notif/chat.png" alt="" width="150" height="150">
-                        <h2 class="titleBold spacing-sm">Selamat Datang di Chat</h2>
-                        <div>
-                            Saat ini belum ada percakapan. Mulai percakapan dengan seller.
+                    <div class="row">
+                        <div class="col-12 col-xl-4 chatCol chatLeft">
+                            <div class="dashboardBox">
+                                <div class="chatSetting chatWrap">
+                                    <div class="chatSearch search">
+                                        <button class="button icon iconSearch" aria-label="trigger search seller"
+                                            onclick="triggerClose(this, '.chatSetting', '.chatSearch')"></button>
+                                        <input type="text" value="" class="searchInput" aria-label="search seller"
+                                            placeholder="Cari Penjual" inputmode="search">
+                                    </div>
+                                    <div class="chatFilter">
+                                        <button class="button chatFilterBtn" aria-label="trigger filter"
+                                            onclick="triggerClose(this, '.chatSetting', '.chatSearch')">
+                                            <img src="./asset/images/dashboard/filter.png" alt="" width="36" height="36"
+                                                loading="lazy">
+                                        </button>
+                                        <div class="formSelectWrap custom-select">
+                                            <select name="sort" id="sort" class="formSelect" aria-label="Chat filter">
+                                                <option value="0" selected>Semua</option>
+                                                <option value="1">Sudah dibaca</option>
+                                                <option value="2">Belum dibaca</option>
+                                                <option value="3">Belum dibalas</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chatList">
+                                    <button class="button chatWrap chatTrig spacing-sm active" onclick="triggerPopup('.-pChat')">
+                                        <div class="chatUser">
+                                            <div class="userImg --seller">
+                                                <img src="./asset/images/seller.png" alt="Ini Store" loading="lazy" width="34" height="34">
+                                            </div>
+                                            <div class="badge"></div>
+                                        </div>
+                                        <div class="chatContent">
+                                            <div class="titleBold">
+                                                Ini Store
+                                                <span class="tag tagBlue">Penjual</span>
+                                            </div>
+                                            <div class="chatTeaser">
+                                                Halo Fulan terima kasih sudah belanja di toko kami.
+                                            </div>
+                                        </div>
+                                    </button>                                    <button class="button chatWrap chatTrig spacing-sm" onclick="triggerPopup('.-pChat')">
+                                        <div class="chatUser">
+                                            <div class="userImg --seller">
+                                                <img src="./asset/images/seller.png" alt="Ini Store" loading="lazy" width="34" height="34">
+                                            </div>
+                                            <div class="badge"></div>
+                                        </div>
+                                        <div class="chatContent">
+                                            <div class="titleBold">
+                                                Ini Store
+                                                <span class="tag tagBlue">Penjual</span>
+                                            </div>
+                                            <div class="chatTeaser">
+                                                Halo Fulan terima kasih sudah belanja di toko kami.
+                                            </div>
+                                        </div>
+                                    </button>                                    <button class="button chatWrap chatTrig spacing-sm" onclick="triggerPopup('.-pChat')">
+                                        <div class="chatUser">
+                                            <div class="userImg --seller">
+                                                <img src="./asset/images/seller.png" alt="Ini Store" loading="lazy" width="34" height="34">
+                                            </div>
+                                            <div class="badge"></div>
+                                        </div>
+                                        <div class="chatContent">
+                                            <div class="titleBold">
+                                                Ini Store
+                                                <span class="tag tagBlue">Penjual</span>
+                                            </div>
+                                            <div class="chatTeaser">
+                                                Halo Fulan terima kasih sudah belanja di toko kami.
+                                            </div>
+                                        </div>
+                                    </button>                                </div>
+                            </div>
                         </div>
-                        <div class="spacing-md">
-                            <a href="index.html" class="dashboardCta button buttonRect buttonRectBlue">Mulai Belanja Sekarang</a>
+                        <div class="col-xl-8 chatCol chatRight desktop-only">
+                            <div id="chatDesk">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- chat on mobile -->
+            <div id="chatMob">
+                <div class="popsheet mobile -pChat">
+                    <div class="dashboardBox popsheetWrap">
+                        <div class="chatHead">
+                            <div class="chatWrap">
+                                <button class="button buttonBack mobile-only" aria-label="Back to previous page"
+                                    onclick="closePopup('.popsheet')"><span class="icon iconArrow"></span></button>
+                                <a href="seller.html" class="chatUser">
+                                    <div class="userImg --seller">
+                                        <img src="./asset/images/seller.png" alt="Ini Store" loading="lazy" width="34"
+                                            height="34">
+                                    </div>
+                                    <div class="badge"></div>
+                                </a>
+                                <div class="chatContent">
+                                    <a href="seller.html" class="titleBold">
+                                        Ini Store
+                                        <span class="tag tagBlue">Penjual</span>
+                                    </a>
+                                    <div class="chatTeaser">
+                                        Terakhir aktif 11 menit yang lalu
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button chatMenu disDots" onclick="triggerActiveButton(this)"
+                                aria-label="Other menu"></button>
+                            <div class="popover chatMenuPop">
+                                <ul class="popoverContent">
+                                    <li>
+                                        <button class="button chatMenuItem"
+                                            onclick="triggerActiveButton(this, 'Diikuti', '+ Ikuti Toko')">Ikuti
+                                            Toko</button>
+                                    </li>
+                                    <li>
+                                        <button class="button chatMenuItem" onclick="triggerPopup('.-pReport')"
+                                            aria-label="Report user">Laporkan Pengguna</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chatBoard">
+                            <div class="chatItem">
+                                <div class="chatItemBox">
+                                    <div class="productBox">
+                                        <a href="detail.html" class="productBoxWrap">
+                                            <div class="productImg">
+                                                <img src="./asset/images/dummy/product/tas.png"
+                                                    alt="Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah" width="180" height="180"
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="productBoxContent">
+                                                <div class="productTitle">Kimmy Backpack Tas Punggung Anak sekolah / Tas Ransel Sekolah
+                                                </div>
+                                                <div class="productDisc">
+                                                    <span class="priceDisc">-25%</span>
+                                                    <span class="priceNet">Rp. 44.750</span>
+                                                </div>
+                                                <div class="productPrice">Rp 33.500</div>
+                                                <div class="productAttr">
+                                                    <div class="productRating">
+                                                        <span class="icon iconStar"></span>
+                                                        4.5
+                                                    </div>
+                                                    <span class="product--dash">|</span>
+                                                    <div class="productSold">Terjual 14</div>
+                                                </div>
+                                                <div class="productOrigin">Kab. Bogor</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chatItem">
+                                <div class="chatItemBox">
+                                    halo apakah produk ini ready?
+                                </div>
+                            </div>
+                            <div class="chatItem --seller">
+                                <div class="chatItemBox">
+                                    Ready kak!
+                                </div>
+                            </div>                        </div>
+                        <div class="chatPanel">
+                            <form action="#" class="chatWrap">
+                                <textarea class="formArea formInput" name="" cols="45" rows="1" inputmode="text"
+                                    placeholder="Tulis pesan" aria-label="Type a message"></textarea>
+                                <button class="button chatBtn" aria-label="Send chat" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true" data-reactid="1036">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
+    <!-- popup -->
+    <div class="popup -pReport">
+        <div class="popupWrap">
+            <div class="popupBox reportPopupbox col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="popupHead">
+                    <div class="popupTitle">Laporkan Komentar</div>
+                    <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
+                            class="icon iconClose"></span></button>
+                </div>
+                <div class="popupContent">
+                    <div class="reportContent">
+                        <label class="formRadioWrap formLabel spacing-xs">
+                            <input type="radio" class="formRadio" name="report" checked="">
+                            <span class="formRadiobox"></span>
+                            <span class="formRadioTitle">Spam</span>
+                        </label>
+                        <label class="formRadioWrap formLabel spacing-xs">
+                            <input type="radio" class="formRadio" name="report">
+                            <span class="formRadiobox"></span>
+                            <span class="formRadioTitle">Konten mengandung SARA, diskriminasi, vulgar, ancaman, dan
+                                pelanggaran nilai/norma sosial</span>
+                        </label>
+                        <label class="formRadioWrap formLabel formOther spacing-xs" onclick="triggerActiveButton(this)">
+                            <input type="radio" class="formRadio" name="report">
+                            <span class="formRadiobox"></span>
+                            <span class="formRadioTitle">Lainnya</span>
+                            <div class="formInputOther">
+                                <input type="text" class="formInput spacing-xs" name="" placeholder="isi alasan di sini"
+                                    aria-label="isi alasan di sini">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="reportCta">
+                        <button class="button buttonRect buttonRectWhite">
+                            Batalkan
+                        </button>
+                        <button class="button buttonRect buttonRectGrad buttonRectSpan">
+                            <span>Kirim</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    <!-- popup -->
     <div class="help">
         <a href="#" class="helpWrap">
             <img src="./asset/images/chat-mina.png" alt="Help Chat MINA" width="91" height="91" loading="lazy">
@@ -621,9 +851,13 @@
     </footer>
     
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/main.js"></script>
-    <script defer src="./asset/js/sort.js"></script>
-    <script defer src="./asset/js/dashboard.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script defer src="./asset/js/sort.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/custom-select.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/popup.min.js"></script>
+    <script defer src="./asset/js/cta.min.js"></script>
+    <script defer src="./asset/js/chat.min.js"></script>
+    <script defer src="./asset/js/dashboard.min.js"></script>
 
 </body>
 

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="tutor" slick=true countdown=true}}
+
+<body class="tutor">
+    {{> header/header page="Home"}}
+    {{!> header/header page="Home" login=true}}
+    {{!> header/header page="Home" login="seller"}}
+    <main role="main" class="main">
+        <div class="row no-gutters">
+            {{>stream}}
+
+            {{>component/headline}}
+        </div>
+        <div class="container">
+            <h2 class="title text-center spacing-lg">
+                <span>Katalog Pilihan</span>
+            </h2>
+            {{>template/catalog}}
+        </div>
+        <div class="row no-gutters flash spacing-xl">
+            <div class="container">
+                <div class="titleWrap flashTitleWrap">
+                    <h2 class="flashTitle">
+                        <img src="./asset/images/icon-flash.png" alt="" width="31" height="31">
+                        Flash Sale
+                    </h2>
+                    <div class="flashCounter">
+                        Berakhir Dalam
+                        <div class="countdown"></div>
+                    </div>
+                    <a href="#" class="titleLink">Lihat semua</a>
+                </div>
+                {{>template/flash-sale total=10 index_start=0 index_end=10 remain=true col="col-12 col-md-3 col-xl-2"
+                lazy=true}}
+            </div>
+        </div>
+        <div class="container">
+            <div class="titleWrap spacing-xl">
+                <h2 class="title">
+                    <span>Produk Terkini</span>
+                </h2>
+                <a href="product.html" class="titleLink">Lihat Semua Produk</a>
+            </div>
+            {{>template/product-list total=12 index_start=0 index_end=12 col="col-6 col-md-3 col-xl-2" lazy=true}}
+
+            <div class="banner spacing-md">
+                {{>template/banner spacing="xs" col="col-12 col-md-6" lazy=true}}
+            </div>
+        </div>
+    </main>
+    <!-- popup -->
+    {{>popup-tutor}}
+    <!-- popup -->
+    {{!>footer}}
+
+    {{>js slick=true countdown=true popup=true}}
+    {{>component/countdown}}
+    <script>
+        $(document).ready(function () {
+
+            /* slider banner */
+            function createSlick() {
+                $('#sbanner').slick({
+                    dots: true,
+                    arrows: false,
+                    infinite: true,
+                    speed: 1500,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: false,
+                    autoplaySpeed: 2000,
+                    appendDots: $('#dtbanner'),
+                    mobileFirst: true,
+                    responsive: [
+                        {
+                            breakpoint: 1440,
+                            settings: {
+                                centerPadding: '520px',
+                            }
+                        },
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                centerPadding: '281px',
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                centerPadding: '90px',
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                centerPadding: '40px',
+                            }
+                        }
+                    ]
+                });
+            }
+            createSlick();
+        });
+    </script>
+
+</body>
+
+</html>

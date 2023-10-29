@@ -1,0 +1,99 @@
+/**
+* ? daterangepicker for dashboard
+* ! https://www.daterangepicker.com
+**/
+
+.daterangepicker {
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    @extend %title--small;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1;
+
+    &.dashboardDatePick {
+        width: 345px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    &.dashboardDateRange {
+        @extend %display-flex;
+        @extend %flex-column;
+        flex-wrap: wrap;
+        width: calc(100% - 30px);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+
+        @include range-responsive($w-md, $w-xl) {
+            width: 345px;
+        }
+
+        @include min-responsive($w-xl) {
+            width: 800px;
+            flex-direction: row;
+        }
+
+        .ranges {
+            @include range-responsive($w-md, $w-xl) {
+                align-self: flex-start;
+            }
+        }
+
+        .drp-selected {
+            display: none;
+        }
+
+        .drp-buttons {
+            align-self: flex-end;
+        }
+    }
+
+    .drp-selected {
+        opacity: 0;
+    }
+
+    .drp-calendar {
+        flex: 1;
+
+        thead tr:nth-child(2) {
+            @include font-pack($family: $font-bold, $weight: $font-weight-bold);
+
+            th {
+                padding-top: 8px
+            }
+        }
+
+        select {
+            border-radius: 4px;
+        }
+    }
+
+    .prev,
+    .next {
+        span {
+            @extend .icon;
+            @extend %iconChevron;
+            @extend %filterGrey;
+            position: relative;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+    }
+
+    .prev {
+        span {
+            transform: rotate(90deg);
+            top: 2px;
+        }
+    }
+
+    .next {
+        span {
+            transform: rotate(270deg);
+        }
+    }
+}

@@ -195,7 +195,8 @@
     }
 
     &User {
-        @extend %center-flex;
+        @extend %align-center;
+        @extend %justify-center;
         margin-left: 7.5px;
         margin-right: 7.5px;
         width: 34px;
@@ -229,6 +230,20 @@
 
             &::after {
                 top: 3px;
+            }
+        }
+
+        &.mobile-only {
+            @extend %display-flex;
+
+            @include min-responsive($w-xl) {
+                display: none;
+            }
+        }
+
+        &.active {
+            ~.headerDashboard {
+                @extend %visible;
             }
         }
     }
@@ -278,6 +293,45 @@
             width: 347px;
             top: 40px;
             right: 0;
+        }
+    }
+
+    &Dashboard {
+        @extend %display-flex;
+        @extend %flex-column;
+        width: 190px;
+        position: absolute;
+        margin-top: 2px;
+        right: calc(50% - 190px/2 + 16px);
+        z-index: 2;
+        @extend %hidden;
+
+        &Link {
+            display: block;
+            padding: 13px 20px;
+            border-top: 1px solid #BDBDBD;
+            border-left: 1px solid #BDBDBD;
+            border-right: 1px solid #BDBDBD;
+            background: $cl-white;
+            text-align: left;
+            @extend .titleMore;
+            color: $cl-primary-black;
+
+            &:last-child {
+                border-bottom: 1px solid #BDBDBD;
+            }
+
+            &:hover{
+                color: #175CC3;
+            }
+        }
+
+        &Wrap {
+            position: relative;
+        }
+
+        .buttonLogout {
+            color: #ED3D57;
         }
     }
 
