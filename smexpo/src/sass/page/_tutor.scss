@@ -105,21 +105,40 @@
         }
     }
 
+    &Link {
+        @extend %hidden;
+
+        &.active {
+            @extend %visible;
+        }
+    }
+
     &Cta {
         @extend %display-flex;
         @extend %flex-column;
         position: absolute;
         top: calc(50% - 85px/2);
-        right: 40px;
+        right: 20px;
+
+        @include min-responsive($w-lg) {
+            right: 40px;
+        }
 
         &Btn {
+            @extend %hidden;
             @extend %center-flex;
             padding: 4px;
+            height: 29px;
 
             .iconArrow {
                 @extend %iconArrow;
                 width: 20px;
                 height: 20px;
+            }
+
+            &.active {
+                @extend %visible;
+                height: 29px;
             }
         }
 
@@ -147,6 +166,7 @@
         }
 
         &Skip {
+            @extend %hidden;
             text-align: right;
             text-transform: uppercase;
             @include font-pack($family: $font-sbold, $weight: $font-weight-sbold);
@@ -154,10 +174,18 @@
             span {
                 margin-left: 8px;
             }
+
+            &.active {
+                @extend %visible;
+            }
         }
 
         .buttonRect {
             @extend %hidden;
+
+            &.active {
+                @extend %visible;
+            }
         }
     }
 
@@ -165,9 +193,9 @@
         @extend %center-flex;
         @extend %title--small;
         position: absolute;
-        right: 100px;        
+        right: 100px;
         bottom: 91px;
-        
+
         @include min-responsive($w-md) {
             right: 140px;
             top: calc(50% - 85px/2 + 68px + 91px + 51px/2);
@@ -187,17 +215,20 @@
     }
 
     .help {
-
-        // opacity: 0;
         &Wrap {
             height: 60px;
             bottom: 80px;
-            right: 30px;
-            
+            right: 20px;
+
             @include min-responsive($w-md) {
                 height: 91px;
                 top: calc(50% - 85px/2 + 68px + 91px);
                 bottom: unset;
+            }
+
+
+            @include min-responsive($w-lg) {
+                right: 30px;
             }
         }
 

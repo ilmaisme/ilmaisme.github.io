@@ -278,7 +278,7 @@
             }
         }
 
-        .sortCta{
+        .sortCta {
             margin-top: 30px;
         }
     }
@@ -292,7 +292,8 @@
             @extend %title--small;
             color: #175CC3;
 
-            .iconTarget {
+            &::before {
+                content: '';
                 @extend %iconTarget;
                 @extend %filterBlue;
                 position: absolute;
@@ -323,6 +324,18 @@
             overflow: hidden;
             transition: max-height .4s linear;
             will-change: max-height;
+        }
+    }
+
+    &Select {
+        position: relative;
+
+        &Drop {
+            position: absolute;
+            width: calc(480px);
+            height: 200px;
+            padding: 10px;
+            z-index: 1;
         }
     }
 }

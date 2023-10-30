@@ -1,15 +1,24 @@
-<div class="formWrap select2">
-    {{!-- <input type="text" class="formInput" name="pAddress" id="pAddress" value=""
-        placeholder="Provinsi, kota, kecamatan, kode pos"> --}}
+<div class="addressSelect">
+    <div class="formWrap select2">
+        {{!-- <input type="text" class="formInput" name="pAddress" id="pAddress" value=""
+            placeholder="Provinsi, kota, kecamatan, kode pos"> --}}
+        {{#if edit}}
+        <select id="eAddress" name="eAddress">
+            <option></option>
+            <option value="AL">Alabama</option>
+            <option value="WY">Wyoming</option>
+        </select>
+        {{else}}
+        <select id="pAddress" name="pAddress">
+            <option></option>
+            <option value="AL">Alabama</option>
+            <option value="WY">Wyoming</option>
+        </select>
+        {{/if}}
+    </div>
     {{#if edit}}
-    <select id="eAddress" name="eAddress">
-        <option value="AL">Alabama</option>
-        <option value="WY">Wyoming</option>
-    </select>
+    <div class="addressSelectDrop" id="eaddressDrop"></div>
     {{else}}
-    <select id="pAddress" name="pAddress">
-        <option value="AL">Alabama</option>
-        <option value="WY">Wyoming</option>
-    </select>
+    <div class="addressSelectDrop" id="paddressDrop"></div>
     {{/if}}
 </div>

@@ -497,7 +497,7 @@
         </div>
     </main>
     <!-- popup -->
-    <div class="popup -pAddress">
+    <div class="popup -pAddress active">
         <div class="popupWrap">
             <div class="popupBox col-12 col-xl-5">
                 <div class="popupHead">
@@ -542,16 +542,19 @@
                             </div>
                         </div>
                         <button class="button formInput addressMapTrig spacing-sm" type="button">
-                            <span class="icon iconTarget"></span>
                             Gunakan Alamat Saat Ini
                         </button>
                         <div class="spacing-sm">
                             <label class="formLabel" for="pAddress">Alamat Lengkap</label>
-                            <div class="formWrap select2">
-                                <select id="eAddress" name="eAddress">
-                                    <option value="AL">Alabama</option>
-                                    <option value="WY">Wyoming</option>
-                                </select>
+                            <div class="addressSelect">
+                                <div class="formWrap select2">
+                                    <select id="pAddress" name="pAddress">
+                                        <option></option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                                <div class="addressSelectDrop" id="paddressDrop"></div>
                             </div>                    </div>
                         <div class="spacing-sm">
                             <label class="formLabel sr-only" for="detail">Other details. eg: block/unit/pole</label>
@@ -605,34 +608,37 @@
                             </div>
                         </div>
                         <div class="spacing-sm">
-                            <label class="formLabel" for="label">Label Alamat</label>
+                            <label class="formLabel" for="elabel">Label Alamat</label>
                             <div class="formWrap">
-                                <input type="text" class="formInput" name="label" id="label" value="Rumah"
+                                <input type="text" class="formInput" name="elabel" id="elabel" value="Rumah"
                                     placeholder="Label Alamat" onclick="showMore(this)">
                                 <div class="addressLabelList -jsShowTg">
                                     <button class="button tag addressLabelBtn active" type="button"
-                                        onclick="getValue(this,'.addressLabelBtn', '#label')" value="Rumah">Rumah</button>
+                                        onclick="getValue(this,'.addressLabelBtn', '#elabel')" value="Rumah">Rumah</button>
                                     <button class="button tag addressLabelBtn" type="button"
-                                        onclick="getValue(this,'.addressLabelBtn', '#label')"
+                                        onclick="getValue(this,'.addressLabelBtn', '#elabel')"
                                         value="Apartemen">Apartemen</button>
                                     <button class="button tag addressLabelBtn" type="button"
-                                        onclick="getValue(this,'.addressLabelBtn', '#label')" value="Kantor">Kantor</button>
+                                        onclick="getValue(this,'.addressLabelBtn', '#elabel')" value="Kantor">Kantor</button>
                                     <button class="button tag addressLabelBtn" type="button"
-                                        onclick="getValue(this,'.addressLabelBtn', '#label')" value="Kos">Kos</button>
+                                        onclick="getValue(this,'.addressLabelBtn', '#elabel')" value="Kos">Kos</button>
                                 </div>
                             </div>
                         </div>
                         <button class="button formInput addressMapTrig spacing-sm" type="button">
-                            <span class="icon iconTarget"></span>
                             Gunakan Alamat Saat Ini
                         </button>
                         <div class="spacing-sm">
                             <label class="formLabel" for="eAddress">Alamat Lengkap</label>
-                            <div class="formWrap select2">
-                                <select id="pAddress" name="pAddress">
-                                    <option value="AL">Alabama</option>
-                                    <option value="WY">Wyoming</option>
-                                </select>
+                            <div class="addressSelect">
+                                <div class="formWrap select2">
+                                    <select id="eAddress" name="eAddress">
+                                        <option></option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                                <div class="addressSelectDrop" id="eaddressDrop"></div>
                             </div>                    </div>
                         <div class="spacing-sm">
                             <label class="formLabel sr-only" for="detail">Other details. eg: block/unit/pole</label>

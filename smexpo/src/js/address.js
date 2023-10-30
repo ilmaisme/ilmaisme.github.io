@@ -1,3 +1,4 @@
+//address pick label
 function getValue(el, elclass, tg) {
     content = el.getAttribute('value');
     target = document.querySelector(tg)
@@ -12,6 +13,7 @@ function getValue(el, elclass, tg) {
     el.classList.add('active')
 }
 
+//address select2
 $(document).ready(function () {
     let tgSelect = $('#pAddress');
     if (tgSelect.is(':visible')) {
@@ -19,7 +21,39 @@ $(document).ready(function () {
             placeholder: "Provinsi, Kota, Kecamatan, Kode Pos",
             selectionCssClass: "formSelect",
             dropdownCssClass: "formDropdown",
-            //allowClear: true
+            dropdownParent: $('#paddressDrop'),
+            ajax: {
+                url: 'asset/json/province.json',
+                dataType: 'json',
+                type: "GET",
+                delay: 250,
+                // data: function (params) {
+                //     return {
+                //         search: params.term
+                //     }
+                // },
+                processResults: function (data) {
+                    return {
+                        results: $.map(data, function (item) {
+                            return {
+                                text: item.province_name,
+                                id: item.province_code
+                            }
+                        })
+                    };
+                },
+                cache: true
+            }
+            //closeOnSelect: false
+        })
+        tgSelect.on('select2:select', function (e) {
+            var data = e.params.data;
+            console.log(data);
+        });
+        tgSelect.on('select2:open', function () {
+            setTimeout(function () {
+                $(":focus").blur();
+            }, 50);
         });
     }
 
@@ -29,6 +63,7 @@ $(document).ready(function () {
             placeholder: "Provinsi, Kota, Kecamatan, Kode Pos",
             selectionCssClass: "formSelect",
             dropdownCssClass: "formDropdown",
+            dropdownParent: $('#eaddressDrop')
             //allowClear: true
         });
     }

@@ -105,6 +105,48 @@
             }
             createSlick();
         });
+
+        //MINA screen
+        var num = $('.tutorTxt').length;
+        $("[data-num='1']").addClass('active');
+        $("[data-img='1']").addClass('active');
+        $("[data-btn='2']").addClass('active');
+        $("[data-end='1']").addClass('active');
+        var x = 1;
+        function nextTutor() {
+            if (x < num) {
+                x++
+                triggerTutor(x)
+            }
+        }
+        function prevTutor() {
+            if (x > 1 && x <= num) {
+                x--
+                triggerTutor(x)
+            }
+        }
+
+        function triggerTutor(num) {
+            $('.tutorTxt.active').removeClass('active');
+            $('[data-num="' + num + '"]').addClass('active');
+            //console.log(num)
+            if (num == 1) {
+                $("[data-btn='1']").removeClass('active');
+            }
+            if (num == 2) {
+                $("[data-btn='1']").addClass('active');
+                $("[data-num='3']").removeClass('active');
+            } else if (num == 3) {
+                $("[data-img='1']").removeClass('active');
+                $('[data-img="' + num + '"]').addClass('active');
+                $("[data-btn='2']").addClass('active');
+            } else if (num == 4) {
+                $("[data-num='3']").removeClass('active');
+                $("[data-end='1']").removeClass('active');
+                $("[data-end='2']").addClass('active');
+                $("[data-btn='2']").removeClass('active');
+            }
+        }
     </script>
 
 </body>
