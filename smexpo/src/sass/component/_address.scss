@@ -332,10 +332,33 @@
 
         &Drop {
             position: absolute;
-            width: calc(480px);
+            width: 100%;
             height: 200px;
             padding: 10px;
             z-index: 1;
+
+            @include min-responsive($w-xl) {
+                width: calc(480px);
+            }
+        }
+    }
+
+    &Del {
+        @extend %hidden;
+        position: absolute;
+        top: 17px;
+        right: 16px;
+        @include font-pack(false, 11px, false, 1.45, #BA313B);
+        letter-spacing: 0.26px;
+        
+        @include min-responsive($w-md) {
+            top: 16px;
+            right: 20px;
+            font-size: 13px;
+        }
+
+        &.active {
+            @extend %visible;
         }
     }
 }

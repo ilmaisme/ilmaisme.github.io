@@ -1,24 +1,48 @@
 <div class="addressSelect">
-    <div class="formWrap select2">
+    <div class="formWrap select2 -formAdd">
         {{!-- <input type="text" class="formInput" name="pAddress" id="pAddress" value=""
             placeholder="Provinsi, kota, kecamatan, kode pos"> --}}
-        {{#if edit}}
-        <select id="eAddress" name="eAddress">
-            <option></option>
-            <option value="AL">Alabama</option>
-            <option value="WY">Wyoming</option>
-        </select>
-        {{else}}
-        <select id="pAddress" name="pAddress">
-            <option></option>
-            <option value="AL">Alabama</option>
-            <option value="WY">Wyoming</option>
-        </select>
-        {{/if}}
+        <!-- province -->
+        <div class="selectWrap -province">
+            <select id="pAddress" name="pAddress" aria-label="select province">
+                <option></option>
+                {{#each province}}
+                <option value="{{id}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="selectWrap -city">
+            <!-- city -->
+            <select id="pCAddress" name="pCAddress" aria-label="select city">
+                <option></option>
+                {{#each cities}}
+                <option value="{{name}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="selectWrap -district">
+            <!-- city -->
+            <select id="pDAddress" name="pDAddress" aria-label="select district">
+                <option></option>
+                {{#each subdistrict}}
+                <option value="{{name}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="selectWrap -zip">
+            <!-- city -->
+            <select id="pZAddress" name="pZAddress" aria-label="select zip code">
+                <option></option>
+                {{#each zip}}
+                <option value="{{code}}">{{code}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <input type="text" class="formInput" name="inputpAddress" id="inputpAddress" value=""
+            placeholder="Provinsi, kota, kecamatan, kode pos">
+        <button class="button addressDel" aria-label="Delete address" type="button">
+            Hapus
+        </button>
     </div>
-    {{#if edit}}
-    <div class="addressSelectDrop" id="eaddressDrop"></div>
-    {{else}}
     <div class="addressSelectDrop" id="paddressDrop"></div>
-    {{/if}}
 </div>
