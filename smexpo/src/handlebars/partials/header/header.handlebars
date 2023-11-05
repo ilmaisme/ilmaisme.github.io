@@ -18,10 +18,12 @@
             <a href="dashboard-chat.html" class="headerInbox" aria-label="Inbox">
                 <span class="icon iconInbox"></span>
             </a>
-            <a href="notif.html" class="headerNotif" aria-label="Notification">
+            <button class="button headerNotif" aria-label="Notification"
+                onclick="triggerPopover(this);event.stopPropagation();">
                 <span class="icon iconNotif"></span>
                 <div class="badge"></div>
-            </a>
+            </button>
+            {{>popup-notif}}
             {{else}}
             <a href="cart.html" class="headerCart" aria-label="Shopping cart">
                 <span class="icon iconCart"></span>

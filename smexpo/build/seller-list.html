@@ -27,7 +27,7 @@
     <!-- e:twitter card -->
 
     <link rel="icon" type="image/x-icon" sizes="16x16" href="./asset/images/favicon.ico">
-    <link rel="stylesheet" href="./asset/css/style-dashboard.min.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style-catalog.min.css" type="text/css">
     <link rel="stylesheet" href="./asset/css/style-sort.min.css" type="text/css">
 
     <link rel="preload" href="./asset/images/logo-smexpo.svg" as="image" />
@@ -205,7 +205,7 @@
                                         Home
                                     </a>
                                 </li>
-                                <li class="navItem">
+                                <li class="navItem active">
                                     <a href="product.html" class="navLink">
                                         Agrobisnis
                                     </a>
@@ -243,245 +243,445 @@
         </div>
         <div class="navDesk desktop-only" id="navDesk">
         </div>
-    </header>    <main role="main" class="main dashboard">
+    </header>    <main role="main" class="main">
         <div class="container">
             <div class="breadcrumb">
                 <div class="breadcrumbItem">
                     <a href="index.html" class="breadcrumbTitle">Home</a>
                 </div>
                 <div class="breadcrumbItem">
-                    <a href="dashboard.html" class="breadcrumbTitle">Dashboard</a>
-                </div>
-                <div class="breadcrumbItem">
-                    <div class="breadcrumbTitle active">Akun Saya</div>
-                </div>
-                <div class="breadcrumbItem">
-                    <div class="breadcrumbTitle active">Rekening
-                                Bank</div>  
+                    <div class="breadcrumbTitle active">Agrobisnis</div>
                 </div>
             </div>
-            <div class="row dashboardRow">
-                <div class="col-xl-3 dashboardNav desktop-only">
-                    <div class="sortBox -jsTogglePar">
-                        <button class="button sortTrig -jsToggle" onclick="toggleItem(this)">
-                            <div class="sortIcon"><img src="./asset/images/icon-grad/user.png" alt="" width="20" height="20"></div>
-                            <div class="sortTitle">Akun Saya</div>
-                            <span class="icon iconChevron"></span>
-                        </button>
-                        <div class="sortTarget -jsToggleTg">
-                            <div class="sortItem desktop-only">
-                                <a href="dashboard.html" class="sortLink">
-                                    Profil saya
-                                </a>
-                            </div>
-                            <div class="sortItem mobile-only">
-                                <a href="dashboard-profile.html" class="sortLink">
-                                    Profil saya
-                                </a>
-                            </div>
-                            <div class="sortItem">
-                                <a href="dashboard-pass.html" class="sortLink">
-                                    Ubah password
-                                </a>
-                            </div>
-                            <div class="sortItem">
-                                <a href="dashboard-bank.html" class="sortLink active">
-                                    Rekening bank
-                                </a>
-                            </div>
-                            <div class="sortItem">
-                                <a href="dashboard-address.html" class="sortLink">
-                                    Daftar alamat
-                                </a>
-                            </div>
-                            <div class="sortItem">
-                                <a href="dashboard-wishlist.html" class="sortLink">
-                                    Wishlist
-                                </a>
-                            </div>
-                            <div class="sortItem">
-                                <a href="dashboard-notif.html" class="sortLink">
-                                    Pengaturan notifikasi
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sortBox -jsTogglePar">
-                        <button class="button sortTrig -jsToggle" onclick="toggleItem(this)">
-                            <div class="sortIcon"><img src="./asset/images/icon-grad/chat.png" alt="" width="20" height="20"></div>
-                            <div class="sortTitle">Kotak Masuk</div>
-                            <span class="icon iconChevron"></span>
-                        </button>
-                        <div class="sortTarget -jsToggleTg">
-                            <div class="sortItem">
-                                <a href="dashboard-chat.html" class="sortLink">
-                                    Chat
-                                </a>
-                            </div>
-                            <div class="sortItem">
-                                <a href="dashboard-review.html" class="sortLink">
-                                    Ulasan
-                                </a>
-                            </div>
-                            <div class="sortItem">
-                                <a href="dashboard-discussion.html" class="sortLink">
-                                    Diskusi
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sortBox -jsTogglePar">
-                        <button class="button sortTrig -jsToggle" onclick="toggleItem(this)">
-                            <div class="sortIcon"><img src="./asset/images/icon-grad/order.png" alt="" width="20" height="20"></div>
-                            <div class="sortTitle">Pesanan Saya</div>
-                            <span class="icon iconChevron"></span>
-                        </button>
-                        <div class="sortTarget -jsToggleTg">
-                            <div class="sortItem">
-                                <a href="dashboard-order.html" class="sortLink">
-                                    Semua
-                                </a>
-                            </div>
-                            <div class="sortItem">
-                                <a href="dashboard-order.html" class="sortLink">
-                                    Belum bayar
-                                </a>
-                            </div>
-                            <div class="sortItem">
-                                <a href="dashboard-order.html" class="sortLink">
-                                    Sedang dikemas
-                                </a>
-                            </div>
-                            <div class="sortItem">
-                                <a href="dashboard-order.html" class="sortLink">
-                                    Dikirim
-                                </a>
-                            </div>
-                            <div class="sortItem">
-                                <a href="dashboard-order.html" class="sortLink">
-                                    Selesai
-                                </a>
-                            </div>
-                            <div class="sortItem">
-                                <a href="dashboard-order.html" class="sortLink">
-                                    Dibatalkan
-                                </a>
-                            </div>
-                            <div class="sortItem">
-                                <a href="dashboard-order.html" class="sortLink">
-                                    Pengembalian barang
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="button buttonLogout spacing-sm">
-                        <span class="icon iconLogout"></span>
-                        Keluar
-                    </button>
+            <div class="row catalog">
+                <div class="catalogFilterWrap container mobile-only">
+                    <button class="button catalogFilter" aria-label="Filter Catalog" onclick="showFilter()">
+                        <span class="sortFilterTitle">Filter</span><img src="./asset/images/icon-filter.png" alt=""
+                            width="16" height="16"></button>
                 </div>
-                <div class="col-xl-9 dashboardContent dashboardBank">
-                    <h2 class="title">
-                        <span>Rekening Bank</span>
-                    </h2>
-                    <div class="dashboardHead spacing-sm">
-                        <p>Anda hanya dapat mendaftarkan maksimal 3 nomor rekening </p>
-                        <button class="button buttonRect buttonRectBlue dashboardCta" type="button"
-                            onclick="triggerPopup('.-pBank')">
-                            + Tambah Rekening
+                <div class="col-xl-3 catalogSort mobile" id="sortmob">
+                    <div class="mobile-only">
+                        <div class="titleWrap">
+                            <div class="title">Filter</div>
+                            <button class="button catalogClose" aria-label="Close filter" onclick="hideFilter()">
+                                <span class="icon iconClose"></span>
+                            </button>
+                        </div>
+                        <ul class="sortFilter">
+                            <li>
+                                <input type="radio" id="sortmob0" name="sortmob" class="formPill" >
+                                <label for="sortmob0" class="formPillLabel">
+                                    Semua
+                                </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="sortmob1" name="sortmob" class="formPill" 
+                                    checked="checked" >
+                                <label for="sortmob1" class="formPillLabel">
+                                    Terbaru
+                                </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="sortmob2" name="sortmob" class="formPill" >
+                                <label for="sortmob2" class="formPillLabel">
+                                    Terlama
+                                </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="sortmob3" name="sortmob" class="formPill" >
+                                <label for="sortmob3" class="formPillLabel">
+                                    Harga Tertinggi
+                                </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="sortmob4" name="sortmob" class="formPill" >
+                                <label for="sortmob4" class="formPillLabel">
+                                    Harga Terendah
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sortBox sortCategBox -jsTogglePar">
+                        <button class="button sortTrig -jsToggle" onclick="toggleItem(this)">
+                            <div class="sortIcon"><img src="./asset/images/icon-grad/categ.png" alt="" width="20" height="20"></div>
+                            <div class="sortTitle">Kategori</div>
+                            <span class="icon iconChevron"></span>
+                        </button>
+                        <div class="sortTarget -jsToggleTg">
+                            <div class="sortItem">
+                                <a href="" class="sortLink active">
+                                    Semua Kategori
+                                </a>
+                            </div>
+                            <div class="sortItem">
+                                <a href="product.html" class="sortLink">
+                                    Agrobisnis
+                                </a>
+                            </div>
+                            <div class="sortItem">
+                                <a href="product.html" class="sortLink">
+                                    Craft
+                                </a>
+                            </div>
+                            <div class="sortItem">
+                                <a href="product.html" class="sortLink">
+                                    Fashion
+                                </a>
+                            </div>
+                            <div class="sortItem">
+                                <a href="product.html" class="sortLink">
+                                    Food &amp; Beverages
+                                </a>
+                            </div>
+                            <div class="sortItem">
+                                <a href="product.html" class="sortLink">
+                                    Furniture
+                                </a>
+                            </div>
+                            <div class="sortItem">
+                                <a href="product.html" class="sortLink">
+                                    Souvenirs
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sortBox sortLocBox -jsTogglePar">
+                        <button class="button sortTrig -jsToggle" onclick="toggleItem(this)">
+                            <div class="sortIcon"><img src="./asset/images/icon-grad/loc.png" alt="" width="20" height="20"></div>
+                            <div class="sortTitle">Lokasi</div>
+                            <span class="icon iconChevron"></span>
+                        </button>
+                        <div class="sortTarget -jsToggleTg">
+                            <div class="sortItem sortLoc">
+                                <input type="checkbox" name="loc0" class="formCheck" aria-label="Depok">
+                                <span class="formCheckbox"></span>
+                                <label class="sortLabel">Depok</label>
+                            </div>
+                            <div class="sortItem sortLoc">
+                                <input type="checkbox" name="loc1" class="formCheck" aria-label="DKI Jakarta">
+                                <span class="formCheckbox"></span>
+                                <label class="sortLabel">DKI Jakarta</label>
+                            </div>
+                            <div class="sortItem sortLoc">
+                                <input type="checkbox" name="loc2" class="formCheck" aria-label="Jakarta Selatan">
+                                <span class="formCheckbox"></span>
+                                <label class="sortLabel">Jakarta Selatan</label>
+                            </div>
+                            <div class="sortItem sortLoc">
+                                <input type="checkbox" name="loc3" class="formCheck" aria-label="Tangerang">
+                                <span class="formCheckbox"></span>
+                                <label class="sortLabel">Tangerang</label>
+                            </div>
+                            <div class="sortItem sortLoc">
+                                <input type="checkbox" name="loc4" class="formCheck" aria-label="Bekasi">
+                                <span class="formCheckbox"></span>
+                                <label class="sortLabel">Bekasi</label>
+                            </div>
+                    
+                            <button class="button sortMore" onclick="triggerPopover(this);event.stopPropagation();">Lihat Lainnya</button>
+                            <div class="sortPopover popover">
+                                <div class="popoverTitle">
+                                    Lokasi
+                                </div>
+                                <button class="button popoverClose" aria-label="Close popup" onclick="closePopover(this);">
+                                    <span class="icon iconClose"></span>
+                                </button>
+                                <div class="popoverContent">
+                                    <div class="spacing-sm">
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc0" class="formCheck" aria-label="Depok">
+                                            <span class="formCheckbox"></span>
+                                            <label class="sortLabel">Depok</label>
+                                        </div>
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc1" class="formCheck" aria-label="DKI Jakarta">
+                                            <span class="formCheckbox"></span>
+                                            <label class="sortLabel">DKI Jakarta</label>
+                                        </div>
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc2" class="formCheck" aria-label="Jakarta Selatan">
+                                            <span class="formCheckbox"></span>
+                                            <label class="sortLabel">Jakarta Selatan</label>
+                                        </div>
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc3" class="formCheck" aria-label="Tangerang">
+                                            <span class="formCheckbox"></span>
+                                            <label class="sortLabel">Tangerang</label>
+                                        </div>
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc4" class="formCheck" aria-label="Bekasi">
+                                            <span class="formCheckbox"></span>
+                                            <label class="sortLabel">Bekasi</label>
+                                        </div>
+                                    </div>
+                                    <div class="spacing-sm"><strong>A</strong></div>
+                                    <div class="spacing-xs">
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc6" class="formCheck" aria-label="Ambon">
+                                            <span class="formCheckbox"></span>
+                                            <label class="sortLabel">Ambon</label>
+                                        </div>
+                                    </div>
+                                    <div class="spacing-sm"><strong>B</strong></div>
+                                    <div class="spacing-xs">
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc7" class="formCheck" aria-label="Bali">
+                                            <span class="formCheckbox"></span>
+                                            <label class="sortLabel">Bali</label>
+                                        </div>
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc8" class="formCheck" aria-label="Banten">
+                                            <span class="formCheckbox"></span>
+                                            <label class="sortLabel">Banten</label>
+                                        </div>
+                                        <div class="sortItem sortLoc">
+                                            <input type="checkbox" name="loc9" class="formCheck" aria-label="Bengkulu">
+                                            <span class="formCheckbox"></span>
+                                            <label class="sortLabel">Bengkulu</label>
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                </div>
+                                <div class="popoverCtaWrap">
+                                    <button class="button popoverReset" onclick="resetLocationOption()">
+                                        Reset
+                                    </button>
+                                    <button class="button popoverCta">
+                                        Terapkan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sortCta">
+                        <button class="button buttonRect buttonRectWhite">
+                            Reset
+                        </button>
+                        <button class="button buttonRect buttonRectBlue">
+                            Terapkan
                         </button>
                     </div>
-                    <table class="dashboardTable">
-                        <thead>
-                            <tr>
-                                <th scope="col"><span>Nama Bank</span></th>
-                                <th scope="col">Nomor Rekening</th>
-                                <th scope="col">Atas Nama</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-label="Nama Bank">Bank Mandiri</td>
-                                <td data-label="Nomor Rekening">4780 2239 5450</td>
-                                <td data-label="Atas Nama">Fulan bin Fulan</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Nama Bank">Bank BCA <br>
-                                    (Bank Central Asia)</td>
-                                <td data-label="Nomor Rekening">4780 2239 5450</td>
-                                <td data-label="Atas Nama">Fulan bin Fulan</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                </div>
+                <div class="col-xl-9">
+                    <div class="catalogTitleWrap">
+                        <h2 class="catalogTitle">
+                        </h2>
+                        <div class="desktop-only">
+                            <div class="sortFilter ">
+                                <span class="sortFilterTitle">Filter</span>
+                                <div class="formSelectWrap custom-select">
+                                    <select name="sort" id="sort" class="formSelect" aria-label="Filter">
+                                        <option value="0">Semua</option>
+                                        <option value="1" selected>Terbaru</option>
+                                        <option value="2">Terlama</option>
+                                        <option value="3">Harga Tertinggi</option>
+                                        <option value="4">Harga Terendah</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalogList">
+                        <div class="sellerWrap row">
+                            <div class="sellerItem col-6 col-md-4 col-xl-3">
+                                <div class="sellerImg">
+                                    <img src="./asset/images/seller.png" alt="kibo_byinu" width="180" height="180"  loading="lazy" >
+                                </div>
+                                <h3 class="sellerTitle">kibo_byinu</h3>
+                                <div class="sellerOrigin">Depok</div>
+                                <div class="sellerCtaWrap">
+                                    <a href="seller.html" class="sellerCta">
+                                        <span class="icon iconSeller"></span>
+                                        <span class="sellerCtaTxt">Kunjungi Toko</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sellerItem col-6 col-md-4 col-xl-3">
+                                <div class="sellerImg">
+                                    <img src="./asset/images/dummy/seller/seller0.png" alt="Dontel Mangat" width="180" height="180"  loading="lazy" >
+                                </div>
+                                <h3 class="sellerTitle">Dontel Mangat</h3>
+                                <div class="sellerOrigin">Balikpapan</div>
+                                <div class="sellerCtaWrap">
+                                    <a href="seller.html" class="sellerCta">
+                                        <span class="icon iconSeller"></span>
+                                        <span class="sellerCtaTxt">Kunjungi Toko</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sellerItem col-6 col-md-4 col-xl-3">
+                                <div class="sellerImg">
+                                    <img src="./asset/images/dummy/seller/seller1.jpg" alt="Ayam Penyet Bandung" width="180" height="180"  loading="lazy" >
+                                </div>
+                                <h3 class="sellerTitle">Ayam Penyet Bandung</h3>
+                                <div class="sellerOrigin">Jakarta Barat</div>
+                                <div class="sellerCtaWrap">
+                                    <a href="seller.html" class="sellerCta">
+                                        <span class="icon iconSeller"></span>
+                                        <span class="sellerCtaTxt">Kunjungi Toko</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sellerItem col-6 col-md-4 col-xl-3">
+                                <div class="sellerImg">
+                                    <img src="./asset/images/dummy/seller/seller2.png" alt="PT. GODHONG PITU SONGO" width="180" height="180"  loading="lazy" >
+                                </div>
+                                <h3 class="sellerTitle">PT. GODHONG PITU SONGO</h3>
+                                <div class="sellerOrigin">Kab. Mojokerto</div>
+                                <div class="sellerCtaWrap">
+                                    <a href="seller.html" class="sellerCta">
+                                        <span class="icon iconSeller"></span>
+                                        <span class="sellerCtaTxt">Kunjungi Toko</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sellerItem col-6 col-md-4 col-xl-3">
+                                <div class="sellerImg">
+                                    <img src="./asset/images/dummy/seller/seller3.png" alt="Roemah Kebaya Vielga" width="180" height="180"  loading="lazy" >
+                                </div>
+                                <h3 class="sellerTitle">Roemah Kebaya Vielga</h3>
+                                <div class="sellerOrigin">Jakarta Pusat</div>
+                                <div class="sellerCtaWrap">
+                                    <a href="seller.html" class="sellerCta">
+                                        <span class="icon iconSeller"></span>
+                                        <span class="sellerCtaTxt">Kunjungi Toko</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sellerItem col-6 col-md-4 col-xl-3">
+                                <div class="sellerImg">
+                                    <img src="./asset/images/dummy/seller/seller4.png" alt="Mustika Indah Ceramik" width="180" height="180"  loading="lazy" >
+                                </div>
+                                <h3 class="sellerTitle">Mustika Indah Ceramik</h3>
+                                <div class="sellerOrigin">Kab. Bantul</div>
+                                <div class="sellerCtaWrap">
+                                    <a href="seller.html" class="sellerCta">
+                                        <span class="icon iconSeller"></span>
+                                        <span class="sellerCtaTxt">Kunjungi Toko</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sellerItem col-6 col-md-4 col-xl-3">
+                                <div class="sellerImg">
+                                    <img src="./asset/images/seller.png" alt="kibo_byinu" width="180" height="180"  loading="lazy" >
+                                </div>
+                                <h3 class="sellerTitle">kibo_byinu</h3>
+                                <div class="sellerOrigin">Depok</div>
+                                <div class="sellerCtaWrap">
+                                    <a href="seller.html" class="sellerCta">
+                                        <span class="icon iconSeller"></span>
+                                        <span class="sellerCtaTxt">Kunjungi Toko</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sellerItem col-6 col-md-4 col-xl-3">
+                                <div class="sellerImg">
+                                    <img src="./asset/images/dummy/seller/seller0.png" alt="Dontel Mangat" width="180" height="180"  loading="lazy" >
+                                </div>
+                                <h3 class="sellerTitle">Dontel Mangat</h3>
+                                <div class="sellerOrigin">Balikpapan</div>
+                                <div class="sellerCtaWrap">
+                                    <a href="seller.html" class="sellerCta">
+                                        <span class="icon iconSeller"></span>
+                                        <span class="sellerCtaTxt">Kunjungi Toko</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sellerItem col-6 col-md-4 col-xl-3">
+                                <div class="sellerImg">
+                                    <img src="./asset/images/dummy/seller/seller1.jpg" alt="Ayam Penyet Bandung" width="180" height="180"  loading="lazy" >
+                                </div>
+                                <h3 class="sellerTitle">Ayam Penyet Bandung</h3>
+                                <div class="sellerOrigin">Jakarta Barat</div>
+                                <div class="sellerCtaWrap">
+                                    <a href="seller.html" class="sellerCta">
+                                        <span class="icon iconSeller"></span>
+                                        <span class="sellerCtaTxt">Kunjungi Toko</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sellerItem col-6 col-md-4 col-xl-3">
+                                <div class="sellerImg">
+                                    <img src="./asset/images/dummy/seller/seller2.png" alt="PT. GODHONG PITU SONGO" width="180" height="180"  loading="lazy" >
+                                </div>
+                                <h3 class="sellerTitle">PT. GODHONG PITU SONGO</h3>
+                                <div class="sellerOrigin">Kab. Mojokerto</div>
+                                <div class="sellerCtaWrap">
+                                    <a href="seller.html" class="sellerCta">
+                                        <span class="icon iconSeller"></span>
+                                        <span class="sellerCtaTxt">Kunjungi Toko</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sellerItem col-6 col-md-4 col-xl-3">
+                                <div class="sellerImg">
+                                    <img src="./asset/images/dummy/seller/seller3.png" alt="Roemah Kebaya Vielga" width="180" height="180"  loading="lazy" >
+                                </div>
+                                <h3 class="sellerTitle">Roemah Kebaya Vielga</h3>
+                                <div class="sellerOrigin">Jakarta Pusat</div>
+                                <div class="sellerCtaWrap">
+                                    <a href="seller.html" class="sellerCta">
+                                        <span class="icon iconSeller"></span>
+                                        <span class="sellerCtaTxt">Kunjungi Toko</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sellerItem col-6 col-md-4 col-xl-3">
+                                <div class="sellerImg">
+                                    <img src="./asset/images/dummy/seller/seller4.png" alt="Mustika Indah Ceramik" width="180" height="180"  loading="lazy" >
+                                </div>
+                                <h3 class="sellerTitle">Mustika Indah Ceramik</h3>
+                                <div class="sellerOrigin">Kab. Bantul</div>
+                                <div class="sellerCtaWrap">
+                                    <a href="seller.html" class="sellerCta">
+                                        <span class="icon iconSeller"></span>
+                                        <span class="sellerCtaTxt">Kunjungi Toko</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="paging">
+                            <li>
+                                <a href="#" class="pagingLink pagingArrow disable" aria-label="Go to Previous Page">
+                                    <span class="icon iconChevron --left"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="pagingLink active">
+                                    1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="pagingLink">
+                                    2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="pagingLink">
+                                    3
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="pagingLink">
+                                    4
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="pagingLink">
+                                    5
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="pagingLink pagingArrow" aria-label="Go to Next Page">
+                                    <span class="icon iconChevron"></span>
+                                </a>
+                            </li>                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-    <!-- popup -->
-    <div class="popup dashboard -pBank">
-        <div class="popupWrap">
-            <div class="popupBox col-12 col-xl-5">
-                <div class="popupHead">
-                    <div class="popupTitle">Tambahkan Rekening Bank</div>
-                    <button class="button buttonClose" aria-label="Close Popup" onclick="closePopup()"><span
-                            class="icon iconClose"></span></button>
-                </div>
-                <div class="popupContent">
-                    <form action="#">
-                        <div class="spacing-sm">
-                            <label class="formLabel" for="bankname">Nama Bank</label>
-                            <div class="formSelectWrap custom-select">
-                                <select name="bankname" id="bankname" class="formSelect">
-                                    <option value="" selected disabled="disabled">Pilih Bank</option>
-                                    <option value="0">
-                                        BCA</option>
-                                    <option value="1">
-                                        Mandiri</option>
-                                    <option value="2">
-                                        BNI</option>
-                                    <option value="3">
-                                        BRIVA</option>
-                                    <option value="4">
-                                        Permata Bank</option>
-                                    <option value="5">
-                                        Danamon</option>
-                                    <option value="6">
-                                        CIMB Niaga</option>
-                                    <option value="7">
-                                        Bank BTN</option>
-                                    <option value="8">
-                                        OCBC NISP</option>
-                                    <option value="9">
-                                        BSI</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="spacing-sm">
-                            <label class="formLabel" for="banknote">Nomor Rekening</label>
-                            <div class="formWrap">
-                                <input type="text" name="banknote" id="banknote" class="formInput" value=""
-                                    placeholder="Nomor Rekening" inputmode="numeric">
-                            </div>
-                        </div>
-                        <div class="spacing-sm">
-                            <label class="formLabel" for="bankacc">Nama Akun</label>
-                            <div class="formWrap">
-                                <input type="text" class="formInput" name="bankacc" id="bankacc" value=""
-                                    placeholder="Nama Akun">
-                            </div>
-                        </div>
-                        <div class="sortCta">
-                            <button class="button buttonRect buttonRectBlue" type="submit">
-                                Simpan
-                            </button>
-                            <button class="button buttonRect buttonRectWhite" type="button">
-                                Batalkan
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>    <!-- popup -->
+
     <div class="help">
         <a href="#" class="helpWrap">
             <img src="./asset/images/chat-mina.png" alt="Help Chat MINA" width="91" height="91" loading="lazy">
@@ -752,8 +952,11 @@
     <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
     <script defer src="./asset/js/sort.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/custom-select.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/popup.min.js"></script>
-    <script defer src="./asset/js/dashboard.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            setMaxheight()
+        })
+    </script>
 
 </body>
 

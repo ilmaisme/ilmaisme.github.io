@@ -50,6 +50,7 @@ function viewport() {
 
 //update mobile menu
 elObserve = '';
+
 function updateMenu(elem) {
     if (viewport().width >= 1230) {
         // console.log("desktop")
@@ -129,4 +130,34 @@ function triggerActiveButton(el, txt, txtrev) {
             el.innerHTML = txtrev;
         }
     }
+}
+
+//popover
+let popover = document.querySelector('.popover'),
+    popovers = document.querySelectorAll('.popover');
+
+function triggerPopover(el) {
+    target = el.parentNode.getElementsByClassName('popover')[0];
+    target.classList.add('visible')
+}
+
+function hidePopover() {
+    popovers.forEach((item) => {
+        item.classList.remove('visible')
+    })
+}
+
+document.getElementsByTagName("body")[0].addEventListener("click", function (event) {
+    if (!!popover) {
+        //hide all popover
+        hidePopover()
+    }
+}, false);
+
+if (!!popover) {
+    popovers.forEach(function(elem) {
+        elem.addEventListener("click", function(e) {
+            e.stopPropagation()
+        });
+    })
 }

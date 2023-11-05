@@ -111,11 +111,41 @@
                 <a href="dashboard-chat.html" class="headerInbox" aria-label="Inbox">
                     <span class="icon iconInbox"></span>
                 </a>
-                <a href="notif.html" class="headerNotif" aria-label="Notification">
+                <button class="button headerNotif" aria-label="Notification"
+                    onclick="triggerPopover(this);event.stopPropagation();">
                     <span class="icon iconNotif"></span>
                     <div class="badge"></div>
-                </a>
-                <div class="headerAccessWrap desktop-only" id="accessDesk"></div>
+                </button>
+                <!-- notif popup -->
+                <div class="notifPop popover">
+                    <a href="dashboard-order.html" class="notifPopItem">
+                        <div class="notifPopTitle">
+                            <span class="notifPopIcon"><img src="./asset/images/icon-grad/shipping.png" alt="" loading="lazy" width="20"
+                                    height="20"></span>
+                            Pesananmu sedang diantar
+                        </div>
+                        <div class="notifPopDesc">Pesanan Anda dalam proses pengiriman oleh kurir.</div>
+                        <div class="notifPopDate">22 September 2023, 12:03</div>
+                    </a>
+                    <a href="seller.html" class="notifPopItem">
+                        <div class="notifPopTitle">
+                            <span class="notifPopIcon"><img src="./asset/images/icon-grad/disc.png" alt="" loading="lazy" width="20"
+                                    height="20"></span>
+                            Promo Batik Tulis
+                        </div>
+                        <div class="notifPopDesc">Lorem ipsum dolor sit amet consectetur. Diam odio urna eu at ipsum. Eget tempus cras vitae.</div>
+                        <div class="notifPopDate">22 September 2023, 12:03</div>
+                    </a>
+                    <a href="#" class="notifPopItem">
+                        <div class="notifPopTitle">
+                            <span class="notifPopIcon"><img src="./asset/images/seller-sm.png" alt="" loading="lazy" width="20"
+                                    height="20"></span>
+                            1 Pesanan Produk Toko Mustika Sari Dewi
+                        </div>
+                        <div class="notifPopDesc">Lorem ipsum dolor sit amet consectetur. Diam odio urna eu at ipsum. Eget tempus cras vitae.</div>
+                        <div class="notifPopDate">22 September 2023, 12:03</div>
+                    </a>
+                </div>            <div class="headerAccessWrap desktop-only" id="accessDesk"></div>
                 <div class="navMob mobile-only" id="navMob">
                     <nav class="nav">
                         <div class="menu mobile-only" id="menu">
@@ -924,7 +954,7 @@
                     </div>
                     <div class="sellerItem col-6 col-md-3 col-xl-2">
                         <div class="sellerImg">
-                            <img src="./asset/images/dummy/seller/seller/seller2.png" alt="PT. GODHONG PITU SONGO" width="180" height="180"  loading="lazy" >
+                            <img src="./asset/images/dummy/seller/seller2.png" alt="PT. GODHONG PITU SONGO" width="180" height="180"  loading="lazy" >
                         </div>
                         <h3 class="sellerTitle">PT. GODHONG PITU SONGO</h3>
                         <div class="sellerOrigin">Kab. Mojokerto</div>
@@ -937,7 +967,7 @@
                     </div>
                     <div class="sellerItem col-6 col-md-3 col-xl-2">
                         <div class="sellerImg">
-                            <img src="./asset/images/dummy/seller/seller/seller3.png" alt="Roemah Kebaya Vielga" width="180" height="180"  loading="lazy" >
+                            <img src="./asset/images/dummy/seller/seller3.png" alt="Roemah Kebaya Vielga" width="180" height="180"  loading="lazy" >
                         </div>
                         <h3 class="sellerTitle">Roemah Kebaya Vielga</h3>
                         <div class="sellerOrigin">Jakarta Pusat</div>

@@ -114,10 +114,6 @@
         }
     }
 
-    &Wrap {
-        position: relative;
-    }
-
     &Input {
         border-radius: 10px;
         padding: 13px 20px;
@@ -216,6 +212,7 @@
                 content: '';
                 position: absolute;
                 display: block;
+                top: 8px;
                 left: 12px;
                 width: 24px;
                 height: 24px;
@@ -223,13 +220,62 @@
                 @extend %filterRed;
             }
         }
+
+        &.-success {
+            color: #39AE36;
+        }
+
+        &.-successbox {
+            margin-top: 24px;
+            padding: 10px 12px 10px 48px;
+            border-radius: 10px;
+            background: #E0FFDF;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                top: 8px;
+                left: 12px;
+                width: 24px;
+                height: 24px;
+                @extend %iconSuccess;
+                @extend %filterGreen;
+            }
+        }
     }
 
-    &Other{
+    &Other {
         display: block;
 
-        input:checked ~ .formInputOther {
+        input:checked~.formInputOther {
             @extend %visible;
+        }
+    }
+
+    &Wrap {
+        position: relative;
+
+        .titleLink {
+            top: 15px;
+            right: 20px;
+
+            @include min-responsive($w-md) {
+                top: 12px;
+            }
+
+            ~.formInput {
+                padding-right: 68px;
+
+                @include min-responsive($w-md) {
+                    padding-right: 78px;
+                }
+            }
+        }
+
+        .formMsg {
+            margin-top: 12px;
         }
     }
 }

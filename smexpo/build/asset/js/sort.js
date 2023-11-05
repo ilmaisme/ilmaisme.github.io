@@ -58,20 +58,6 @@ function setMaxheight() {
     }
 }
 
-let popover = document.querySelector('.popover'),
-    popovers = document.querySelectorAll('.popover');
-
-function triggerPopover(el) {
-    target = el.parentNode.getElementsByClassName('popover')[0];
-    target.classList.add('visible')
-}
-
-function hidePopover() {
-    popovers.forEach((item) => {
-        item.classList.remove('visible')
-    })
-}
-
 function closePopover() {
     popovers.forEach((item) => {
         item.classList.remove('visible')
@@ -83,18 +69,5 @@ function resetLocationOption() {
 
     target.forEach((item) => {
         item.checked = false;
-    })
-}
-
-document.getElementsByTagName("body")[0].addEventListener("click", function (event) {
-    if (!!popover) {
-        //hide all popover
-        hidePopover()
-    }
-}, false);
-
-if (!!popover) {
-    popover.addEventListener("click", function (e) {
-        e.stopPropagation()
     })
 }

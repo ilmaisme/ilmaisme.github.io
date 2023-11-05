@@ -1,0 +1,24 @@
+<!-- notif popup -->
+<div class="notifPop popover">
+    {{#each notif}}
+    <a href="{{#eq type compare="order"}}dashboard-order.html{{else}}{{#eq type compare="promo"}}seller.html{{else}}#{{/eq}}{{/eq}}" class="notifPopItem">
+        <div class="notifPopTitle">
+            {{#eq type compare="order"}}
+            <span class="notifPopIcon"><img src="./asset/images/icon-grad/shipping.png" alt="" loading="lazy" width="20"
+                    height="20"></span>
+            {{/eq}}
+            {{#eq type compare="promo"}}
+            <span class="notifPopIcon"><img src="./asset/images/icon-grad/disc.png" alt="" loading="lazy" width="20"
+                    height="20"></span>
+            {{/eq}}
+            {{#eq type compare="seller"}}
+            <span class="notifPopIcon"><img src="./asset/images/seller-sm.png" alt="" loading="lazy" width="20"
+                    height="20"></span>
+            {{/eq}}
+            {{title}}
+        </div>
+        <div class="notifPopDesc">{{desc}}</div>
+        <div class="notifPopDate">{{dates}}</div>
+    </a>
+    {{/each}}
+</div>
