@@ -66,6 +66,18 @@ $(document).ready(function () {
     var playGrafik2;
     playGrafik2 = bodymovin.loadAnimation(paramGrafik2);
 
+    // 6. Animation SphereBI
+    var paramSphereBI = {
+        container: document.getElementById('animationSphereBI'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: '../asset/json/preload.json',
+        name: 'myAnimation',
+    };
+    var playSphereBI;
+    playSphereBI = bodymovin.loadAnimation(paramSphereBI);
+
     new fullpage('#fullpage', {
         //options here
         autoScrolling: true,
@@ -104,6 +116,12 @@ $(document).ready(function () {
                         $(".prospekBg").addClass("active")
                     }
                 });
+                $(".coverAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                })
             }
             if (origin.index == 1 && direction == 'up') {
                 $(".coverImg").velocity({
@@ -121,6 +139,12 @@ $(document).ready(function () {
                         $(".prospekBg").removeClass("active")
                     }
                 });
+                $(".coverAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                })
                 $(".sphere").velocity({
                     opacity: "0"
                 }, {
@@ -364,9 +388,44 @@ $(document).ready(function () {
             }
             if (origin.index == 8 && direction == 'down') {
                 $(".grafikImg").addClass("opac0")
+                //sphere BI in
+                $(".sphereBI").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        playSphereBI.play();
+                        $(".sphereBIAnim").addClass("left")
+                    },
+                    complete: function () {}
+                });
+                $(".stability").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 300
+                });
             }
             if (origin.index == 9 && direction == 'up') {
                 $(".grafikImg").removeClass("opac0")
+                //sphere BI out
+                $(".sphereBI").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {},
+                    complete: function () {
+                        $(".sphereBIAnim").removeClass("left")
+                    }
+                });
+                $(".stability").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
             }
             if (origin.index == 9 && direction == 'down') {
                 $(".artBox__bauran1").velocity({
@@ -457,6 +516,78 @@ $(document).ready(function () {
                     },
                     complete: function () {}
                 });
+            }
+            if (origin.index == 12 && direction == 'down') {
+                $(".sphereBIAnim").addClass("bottom")
+            }
+            if (origin.index == 13 && direction == 'up') {
+                $(".sphereBIAnim").removeClass("bottom")
+            }
+            if (origin.index == 13 && direction == 'down') {
+                $(".sphereBI").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".sektorTxt1").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 300,
+                    duration: 300
+                });
+                $(".sektorTxt2").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 600,
+                    duration: 300
+                });
+                $(".sektorTxt3").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 900,
+                    duration: 300
+                });
+                $(".sektorTxt4").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 1200,
+                    duration: 300
+                });
+                $(".sektorTxt5").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 1500,
+                    duration: 300
+                });
+            }
+            if (origin.index == 14 && direction == 'up') {
+                $(".sphereBI").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".sektorTxt").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {},
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 14 && direction == 'down') {
+                $('.creditTitle').addClass('active');
+                $('.creditName').addClass('active');
+            }
+            if (origin.index == 15 && direction == 'up') {
+                $('.creditTitle').removeClass('active');
+                $('.creditName').removeClass('active');
             }
         }
     })
