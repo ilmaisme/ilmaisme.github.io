@@ -14,7 +14,7 @@ $(document).ready(function () {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: '../asset/json/preload.json',
+        path: 'asset/json/preload.json',
         name: 'myAnimation',
     });
     // 2. Animation sphere
@@ -23,7 +23,7 @@ $(document).ready(function () {
         renderer: 'svg',
         loop: true,
         autoplay: false,
-        path: '../asset/json/sphere.json',
+        path: 'asset/json/sphere.json',
         name: 'myAnimation',
     };
     var playSphere;
@@ -36,7 +36,7 @@ $(document).ready(function () {
         renderer: 'svg',
         loop: true,
         autoplay: false,
-        path: '../asset/json/sphere.json',
+        path: 'asset/json/sphere.json',
         name: 'myAnimation',
     };
     var playSphere2;
@@ -48,7 +48,7 @@ $(document).ready(function () {
         renderer: 'svg',
         loop: false,
         autoplay: false,
-        path: '../asset/json/grafik-1.json',
+        path: 'asset/json/grafik-1.json',
         name: 'myAnimation',
     };
     var playGrafik1;
@@ -60,7 +60,7 @@ $(document).ready(function () {
         renderer: 'svg',
         loop: false,
         autoplay: false,
-        path: '../asset/json/grafik-2.json',
+        path: 'asset/json/grafik-2.json',
         name: 'myAnimation',
     };
     var playGrafik2;
@@ -72,7 +72,7 @@ $(document).ready(function () {
         renderer: 'svg',
         loop: true,
         autoplay: false,
-        path: '../asset/json/preload.json',
+        path: 'asset/json/preload.json',
         name: 'myAnimation',
     };
     var playSphereBI;
