@@ -532,34 +532,64 @@ $(document).ready(function () {
                     begin: function () {},
                     complete: function () {}
                 });
+                $(".sektorBg1").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 300
+                });
+                $(".sektorBg2").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 300
+                });
+                $(".sektorBg3").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 1000,
+                    duration: 300
+                });
+                $(".sektorBg4").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 1300,
+                    duration: 300
+                });
+                $(".sektorBg5").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 1600,
+                    duration: 300
+                });
                 $(".sektorTxt1").velocity({
                     opacity: "1"
                 }, {
-                    delay: 300,
+                    delay: 700,
                     duration: 300
                 });
                 $(".sektorTxt2").velocity({
                     opacity: "1"
                 }, {
-                    delay: 600,
+                    delay: 1000,
                     duration: 300
                 });
                 $(".sektorTxt3").velocity({
                     opacity: "1"
                 }, {
-                    delay: 900,
+                    delay: 1300,
                     duration: 300
                 });
                 $(".sektorTxt4").velocity({
                     opacity: "1"
                 }, {
-                    delay: 1200,
+                    delay: 1600,
                     duration: 300
                 });
                 $(".sektorTxt5").velocity({
                     opacity: "1"
                 }, {
-                    delay: 1500,
+                    delay: 1900,
                     duration: 300
                 });
             }
@@ -573,6 +603,14 @@ $(document).ready(function () {
                     complete: function () {}
                 });
                 $(".sektorTxt").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".sektorBg").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
