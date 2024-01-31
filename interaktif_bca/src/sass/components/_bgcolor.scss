@@ -1,0 +1,106 @@
+.bgColor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include display_full;
+
+    &__cloud {
+        background-image: url(../images/cover-cloud-mob.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: opacity .3s ease-in-out;
+
+        @include min-responsive($w-vlg) {
+            background-image: url(../images/cover-cloud.jpg);
+        }
+    }
+
+    &__white {
+        background-image: url(../images/white-bg-mob.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        transition: opacity .3s ease-in-out;
+
+        @include min-responsive($w-vlg) {
+            background-image: url(../images/white-bg.jpg);
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+        }
+
+        &::before {
+            width: 45px;
+            height: 47px;
+            bottom: 15px;
+            left: 15px;
+            background: url(../images/bg-attr.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                width: 420px;
+                height: 70px;
+                bottom: 40px;
+                left: 0;
+            }
+
+            @include min-responsive($w-xxl) {
+                width: 461px;
+                height: 90px;
+                bottom: 80px;
+            }
+
+            @media only screen and(max-height: 768px) and(orientation: landscape) {
+                width: 400px;
+                height: 60px;
+                bottom: 20px;
+            }
+        }
+
+        &::after {
+            width: 45px;
+            height: 47px;
+            top: 15px;
+            right: 15px;
+            background: url(../images/bg-attr-right.png);
+            background-position: right;
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                width: 420px;
+                height: 70px;
+                top: 42px;
+                right: 0;
+            }
+
+            @include min-responsive($w-xxl) {
+                width: 468px;
+                height: 90px;
+                top: 62px;
+            }
+
+            @media only screen and(max-height: 768px) and(orientation: landscape) {
+                width: 400px;
+                height: 60px;
+                top: 22px;
+            }
+        }
+    }
+
+    &__community {
+        background-image: url(../images/business-bg-mob.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        transition: opacity .3s ease-in-out;
+
+        @include min-responsive($w-vlg) {
+            background-image: url(../images/business-bg.jpg);
+        }
+    }
+}

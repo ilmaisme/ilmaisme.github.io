@@ -1,0 +1,136 @@
+.partnership {
+    &Content {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &Caption {
+        margin-top: 42px;
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            margin-top: 22px;
+        }
+    }
+
+    &List {
+        justify-content: center;
+
+        @include min-responsive($w-vlg) {
+            margin-top: 210px;
+        }
+
+        @include min-responsive($w-xxxl) {
+            margin-top: 300px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            margin-top: 150px;
+        }
+    }
+
+    &Item {
+        position: relative;
+        max-width: 380px;
+
+        @include min-responsive($w-vlg) {
+            margin-left: 34px;
+            margin-right: 34px;
+        }
+
+        @include min-responsive($w-xxxl) {
+            margin-left: 54px;
+            margin-right: 54px;
+        }
+
+        &1 {
+            left: -100vw;
+        }
+
+        &2 {
+            top: 100vh;
+        }
+
+        &3 {
+            right: -100vw;
+        }
+    }
+
+    &Img {
+        display: block;
+        text-align: center;
+
+        img {
+            @media only screen and(max-height: 768px) and(orientation: landscape) {
+                max-width: 75%;
+            }
+        }
+    }
+
+    &Title {
+        position: relative;
+        margin-top: 17px;
+        background: var(--black, linear-gradient(180deg, #575757 0%, #333 100%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include font-pack($font-bold, 18px, $font-weight-bold, false, $cl-primary);
+
+        @include min-responsive($w-vlg) {
+            padding-left: 30px;
+        }
+
+        @include min-responsive($w-xxl) {
+            padding-left: 54px;
+        }
+        
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            padding-left: 44px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(../images/ico-check.png);
+            background-size: contain;
+            
+            @include min-responsive($w-vlg) {
+                width: 24px;
+                height: 24px;
+            }
+            
+            @include min-responsive($w-xxl) {
+                top: -8px;
+                width: 44px;
+                height: 44px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                top: -4px;
+                width: 34px;
+                height: 34px;
+            }
+        }
+
+        @include min-responsive($w-vlg) {
+            font-size: 21px;
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 24px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            font-size: 20px;
+        }
+    }
+
+    &Txt {
+        margin-top: 17px;
+    }
+
+    .articleContent{
+        transition: opacity .4s ease;
+    }
+}

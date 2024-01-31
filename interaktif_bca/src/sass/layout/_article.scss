@@ -1,0 +1,25 @@
+.article {
+    &Content {
+        @include font-pack($colour: $cl-black);
+    }
+
+    &Title {
+        background: var(--gold_dark, linear-gradient(180deg, #CAB67B 0%, #95734C 100%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include font-pack($font-bold, 26px, $font-weight-bold, false, $cl-primary);
+
+        @include min-responsive($w-vlg) {
+            font-size: 45px;
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 60px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            font-size: 35px;
+        }
+    }
+}

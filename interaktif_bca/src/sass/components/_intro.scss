@@ -1,0 +1,44 @@
+.intro {
+    &Content {
+        flex-direction: column;
+        align-items: center
+    }
+
+    &Img {
+        display: block;
+        position: relative;
+        text-align: center;
+        top: calc(var(--app-height) - var(--app-height)*2);
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            margin-top: -40px;
+        }
+
+        img {
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                width: 80%;
+            }
+        }
+    }
+
+    &Txt {
+        position: relative;
+        max-width: 943px;
+        top: var(--app-height);
+        transition: opacity .4s ease;
+
+        &1 {
+            @include min-responsive($w-vlg) {
+                margin-top: 65px;
+            }
+
+            @include min-responsive($w-xxl) {
+                margin-top: 115px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                margin-top: 45px;
+            }
+        }
+    }
+}

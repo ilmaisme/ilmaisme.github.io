@@ -1,0 +1,38 @@
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include min-responsive($w-xl) {
+        width: $width-container;
+
+        @include max-height($w-hmd) {
+            width: $w-vlg;
+        }
+    }
+
+    @include min-responsive($w-xxl) {
+        width: 1280px;
+    }
+
+    &--small {
+        @include min-responsive($w-xl) {
+            max-width: 680px;
+        }
+    }
+
+    &--full {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: auto;
+
+        @include min-responsive($w-xxl) {
+            width: $w-xxl;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+}

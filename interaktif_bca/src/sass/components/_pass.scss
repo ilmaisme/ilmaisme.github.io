@@ -1,0 +1,115 @@
+.pass {
+    background: rgba(0, 0, 0, 0.75);
+
+    &.disable {
+
+        .passSubmit,
+        .passForm {
+            pointer-events: none;
+        }
+    }
+
+    &Wrap {
+        width: 100%;
+        max-width: 400px;
+        margin-left: 24px;
+        margin-right: 24px;
+        padding: 20px 24px;
+        border-radius: 15px;
+        background: $cl-white;
+
+        @include min-responsive($w-vlg) {
+            margin-left: 0;
+            margin-right: 0;
+            padding: 20px 30px;
+        }
+    }
+
+    &Logo {
+        svg {
+            width: 45px;
+            height: 65px;
+
+            @include min-responsive($w-vlg) {
+                width: 50px;
+                height: 75px;
+            }
+        }
+
+        &.active {
+            .passUnlock {
+                opacity: 1;
+            }
+
+            .passLock {
+                opacity: 0;
+            }
+        }
+    }
+
+    &Unlock {
+        opacity: 0;
+        @include base_transition(all, .2s);
+    }
+
+    &Lock {
+        opacity: 1;
+        @include base_transition(all, .2s);
+    }
+
+    &Form {
+        margin-top: 18px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        border: 4px solid #B39151;
+        pointer-events: all;
+
+        @include min-responsive($w-vlg) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 32px 20px 46px;
+        }
+    }
+
+    &Label {
+        @include font-pack(false, 14px, false, false, false);
+
+        @include min-responsive($w-vlg) {
+            font-size: 18px;
+        }
+
+        @media only screen and(max-height: 768px) and(orientation: landscape) {
+            font-size: 16px;
+        }
+
+        &.active {
+            color: $cl-red;
+        }
+    }
+
+    &Input {
+        width: 30px;
+        margin: 15px 8px 18px;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        outline: 0;
+        border-bottom: 2px solid #B39151;
+        background: transparent;
+        text-transform: uppercase;
+        text-align: center;
+        -webkit-appearance: none;
+        @include font-pack($font-base, 34px, $font-weight-normal, 1, #363636);
+
+        @include min-responsive($w-vlg) {
+            width: 60px;
+            margin: 0 8px 0;
+            font-size: 42px;
+        }
+    }
+
+    &Submit {
+        margin: 20px auto 0;
+        pointer-events: all;
+    }
+}
