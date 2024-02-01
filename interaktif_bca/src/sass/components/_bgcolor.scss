@@ -26,9 +26,19 @@
             background-image: url(../images/white-bg.jpg);
         }
 
+        &.full {
+
+            &::before,
+            &::after {
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+            }
+        }
+
         &::before,
         &::after {
             content: '';
+            opacity: 1;
             position: absolute;
         }
 
@@ -93,14 +103,79 @@
     }
 
     &__community {
-        background-image: url(../images/business-bg-mob.jpg);
+        background-image: url(../images/business-bg-mob.png);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: bottom center;
         transition: opacity .3s ease-in-out;
 
         @include min-responsive($w-vlg) {
-            background-image: url(../images/business-bg.jpg);
+            background-image: url(../images/business-bg.png);
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+        }
+
+        &::before {
+            width: 45px;
+            height: 47px;
+            bottom: 15px;
+            left: 15px;
+            background: url(../images/bg-attr.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                width: 420px;
+                height: 70px;
+                bottom: 40px;
+                left: 0;
+            }
+
+            @include min-responsive($w-xxl) {
+                width: 461px;
+                height: 90px;
+                bottom: 80px;
+            }
+
+            @media only screen and(max-height: 768px) and(orientation: landscape) {
+                width: 400px;
+                height: 60px;
+                bottom: 20px;
+            }
+        }
+
+        &::after {
+            width: 45px;
+            height: 47px;
+            top: 15px;
+            right: 15px;
+            background: url(../images/bg-attr-right.png);
+            background-position: right;
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include min-responsive($w-vlg) {
+                width: 420px;
+                height: 70px;
+                top: 42px;
+                right: 0;
+            }
+
+            @include min-responsive($w-xxl) {
+                width: 468px;
+                height: 90px;
+                top: 62px;
+            }
+
+            @media only screen and(max-height: 768px) and(orientation: landscape) {
+                width: 400px;
+                height: 60px;
+                top: 22px;
+            }
         }
     }
 }

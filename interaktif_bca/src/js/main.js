@@ -95,7 +95,7 @@ $(document).ready(function () {
         autoScrolling: true,
         scrollHorizontally: true,
         // navigation: true,
-        anchors: ['cover', 'intro', 'partnership'],
+        anchors: ['cover', 'intro', 'partnership', 'business', 'community', 'step'],
         lockAnchors: true,
         //scrollOverflow: true,
 
@@ -283,6 +283,87 @@ $(document).ready(function () {
                     duration: 700
                 });
             }
+            if (origin.index == 3 && direction == 'down') {
+                $(".business").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".community").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".bgColor__community").removeClass("opac0");
+                        $(".community").addClass("active");
+                    }
+                });
+                $(".communityItem1").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700,
+                    complete: function () {
+                        $(".communityItem1 .articleContent").removeClass("opac0");
+                    }
+                });
+                $(".communityItem2").velocity({
+                    top: "0"
+                }, {
+                    delay: 800,
+                    duration: 700,
+                    complete: function () {
+                        $(".communityItem2 .articleContent").removeClass("opac0");
+                    }
+                });
+                $(".communityItem3").velocity({
+                    top: "0"
+                }, {
+                    delay: 1200,
+                    duration: 700,
+                    complete: function () {
+                        $(".communityItem3 .articleContent").removeClass("opac0");
+                    }
+                });
+                $(".communityItem4").velocity({
+                    top: "0"
+                }, {
+                    delay: 1600,
+                    duration: 700,
+                    complete: function () {
+                        $(".communityItem4 .articleContent").removeClass("opac0");
+                    }
+                });
+            }
+            if (origin.index == 4 && direction == 'up') {
+                $(".business").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".community").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".bgColor__community").addClass("opac0");
+                        $(".community").removeClass("active");
+                    }
+                });
+                $(".communityItem").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        $(".communityItem .articleContent").addClass("opac0");
+                    }
+                });
+            }
         }
     })
 
@@ -293,8 +374,10 @@ $(document).ready(function () {
 
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         // mobile
+        console.log('mobile')
     } else {
         // desktop
+        console.log('desktop')
     }
 });
 
