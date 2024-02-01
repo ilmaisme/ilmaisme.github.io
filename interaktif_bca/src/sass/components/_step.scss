@@ -1,0 +1,220 @@
+.step {
+    position: relative;
+
+    &Content {
+        flex-direction: column;
+        margin: auto;
+
+        @include min-responsive($w-xl) {
+            width: $width-container;
+        }
+    }
+
+    &Back {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        border-radius: 30px;
+        padding: 10px 20px;
+        background: #DBBC74;
+        @include font-pack($font-bold, 13px, $font-weight-bold, false, #2D2311);
+
+        @include min-responsive($w-vlg) {
+            font-size: 14px;
+            top: 30px;
+            left: 30px;
+        }
+
+        @include min-responsive($w-xxl) {
+            top: 50px;
+            left: 50px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            top: 25px;
+            left: 25px;
+        }
+
+        span {
+            background: var(--black, linear-gradient(180deg, #5C4F34 0%, #2D2311 100%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        img {
+            margin-right: 10px;
+        }
+    }
+
+    &List {
+        position: relative;
+        flex-wrap: wrap;
+        align-items: center;
+
+        @include min-responsive($w-xxl) {
+            margin-top: 10px;
+        }
+
+        @include min-responsive($w-xxxl) {
+            margin-top: 40px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            margin-top: 0;
+        }
+    }
+
+    &Item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+
+        @include min-responsive($w-vlg) {
+            flex-basis: 25%;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        @include min-responsive($w-xxl) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: underline;
+            background: linear-gradient(180deg, #CAB67B 0%, #95734C 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            @include font-pack($font-bold, false, $font-weight-bold, false, false);
+        }
+    }
+
+    &Arrow {
+        &3 {
+            position: absolute;
+
+            @include min-responsive($w-xl) {
+                width: $width-container;
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: calc(var(--app-height) - (var(--app-height) + 180px));
+                right: 0;
+            }
+
+            &::before {
+                width: 2px;
+                height: 170px;
+                background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23BEC5C3FF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='2' stroke-linecap='square'/%3e%3c/svg%3e");
+            }
+
+            &::after {
+                width: 50px;
+                height: 2px;
+                background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23BEC5C3FF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='2' stroke-linecap='square'/%3e%3c/svg%3e");
+            }
+        }
+
+        &--corn {
+            position: absolute;
+            top: 50%;
+            left: 130px;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: -9px;
+                left: 10px;
+                // border: 2px dashed #BEC5C3;
+            }
+
+            &::before {
+                width: 2px;
+                height: 20px;
+                background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23BEC5C3FF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='2' stroke-linecap='square'/%3e%3c/svg%3e");
+            }
+
+            &::after {
+                width: 960px;
+                height: 2px;
+                background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23BEC5C3FF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='2' stroke-linecap='square'/%3e%3c/svg%3e");
+            }
+        }
+    }
+
+    &Num {
+        width: 22px;
+        height: 22px;
+        margin-bottom: 5px;
+        border-radius: 50%;
+        @extend .center-flex;
+        background: linear-gradient(180deg, #E2BE53 0%, #B58927 100%);
+        @include font-pack($font-bold, 13px, $font-weight-bold, false, $cl-white);
+
+        @include min-responsive($w-vlg) {
+            width: 25px;
+            height: 25px;
+            font-size: 14.5px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            position: absolute;
+            left: 35px;
+        }
+    }
+
+    &Txt {
+        margin-top: 18px;
+        font-size: 14px;
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            margin-top: 4px;
+        }
+    }
+
+    &Img {
+        img {
+            @media only screen and(max-height: 768px) and(orientation: landscape) {
+                max-width: 80%;
+            }
+        }
+    }
+
+    &Caption {
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            margin-top: 20px;
+        }
+    }
+
+    &.active {
+
+        .stepBack,
+        .stepItem a {
+            pointer-events: all;
+        }
+    }
+
+    .articleContent {
+        transition: opacity .4s ease;
+    }
+}

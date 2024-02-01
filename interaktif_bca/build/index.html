@@ -29,7 +29,6 @@
 
     <link rel="stylesheet" href="./asset/css/style.css" type="text/css">
     <style>
-
         @font-face {
             font-family: 'BCA';
             font-style: normal;
@@ -67,13 +66,27 @@
         .preloader{top:0;background:#3e3e3e;background:radial-gradient(157.88% 76.84% at 50% 50%,#3e3e3e 0,#1e1e1e 100%);background-size:cover;background-position:50%;background-repeat:no-repeat;transition:opacity .4s ease-in-out;z-index:1001;position:fixed;overflow:hidden}.preloader,.preloaderWrap{height:100%;width:100%;display:flex;justify-content:center}.preloaderWrap{align-items:center;flex-direction:column;position:relative;font-family:BCA,sans-serif;font-size:14px;font-weight:400;line-height:1.24;color:#fff}.preloaderMeter{background:#b7b7b7;width:282px;height:20px;margin:24px auto 18px;box-sizing:content-box}.preloaderMeter,.preloaderMeter>span{position:relative;border-radius:17px;overflow:hidden}.preloaderMeter>span{display:block;height:100%;background-color:#cfac68;box-shadow:inset 0 2px 9px hsla(0,0%,100%,.3),inset 0 -2px 6px rgba(0,0,0,.4)}.preloaderMeter .anim>span>span,.preloaderMeter>span:after{content:"";position:absolute;top:0;left:0;bottom:0;right:0;background-image:linear-gradient(-45deg,hsla(0,0%,100%,.2) 25%,transparent 0,transparent 50%,hsla(0,0%,100%,.2) 0,hsla(0,0%,100%,.2) 75%,transparent 0,transparent);z-index:1;background-size:50px 50px;animation:moveloading 2s linear infinite;border-radius:17px;overflow:hidden}.preloaderBar{width:0}.preloaderTxt{min-width:81px}.preloaderLogo{-moz-animation:fliploading 3s infinite;-o-animation:fliploading 3s infinite;-ms-animation:fliploading 3s infinite;-webkit-animation:fliploading 3s infinite;animation:fliploading 3s infinite}
         /*preloader*/
     </style>
-    
+
 
 </head>
 <body>
 
     <!-- preloader -->
-    <!-- preloader -->
+    <div class="preloader">
+    	<div class="preloaderWrap">
+    		<picture class="preloaderLogo">
+    			<source srcset="./asset/images/loading-bca-logo-mob.png" media="(max-width: 768px)" alt="" width="30" height="29">
+    			<img srcset="./asset/images/loading-bca-logo.png" alt="" class="" width="66" height="64">
+    		</picture>
+            <div class="preloaderMeter anim">
+                <span class="preloaderBar" id="bar" value="0"><span></span></span>
+            </div>
+    		<input type="hidden" id="progress_width" value="0">
+    		<div class="preloaderTxt">
+    			Please Wait
+    		</div>
+    	</div>
+    </div>    <!-- preloader -->
 
     <!-- main -->
     <main role="main">
@@ -89,6 +102,7 @@
             <div class="bgColor bgColor__cloud"></div>
             <div class="bgColor bgColor__white opac0"></div>
             <div class="bgColor bgColor__community opac0"></div>
+            <div class="bgColor bgColor__credit opac0"></div>
         </div>
         <!-- Template Background Color -->
 
@@ -326,21 +340,207 @@
                         </div>
                         <div class="communityJoin center-flex">
                             <div class="communityJoin__wrap">
-                                <img src="./asset/images/bca-join-QR.svg" class="communityJoin__qr" alt="QR Code" width="88" height="88"
-                                    loading="lazy">
+                                <img src="./asset/images/bca-join-QR.svg" class="communityJoin__qr" alt="QR Code"
+                                    width="88" height="88" loading="lazy">
                                 <div class="communityJoin__content">
                                     Gabung Sekarang :
                                     <a href="https://prioritas.bca.co.id/en/Business-Community" target="_blank"
                                         rel="noopener noreferrer" class="communityJoin__link">bca.id/createbc</a>
                                 </div>
                                 <picture class="communityCursor">
-                                    <source srcset="./asset/images/ico-click-mob.png" media="(max-width: 767px)"
-                                        alt="" width="1112" height="316">
-                                    <img srcset="./asset/images/ico-click.png" alt="" class="" width="45"
-                                        height="51" loading="lazy">
+                                    <source srcset="./asset/images/ico-click-mob.png" media="(max-width: 767px)" alt=""
+                                        width="1112" height="316">
+                                    <img srcset="./asset/images/ico-click.png" alt="" class="" width="45" height="51"
+                                        loading="lazy">
                                 </picture>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="step center-flex heightFull opac0">
+                    <div class="stepContent display-flex">
+                        <h2 class="stepCaption text-center">
+                            <span class="articleTitle articleTitle--med">6 Langkah Mudah</span>
+                            <span class="articleChild">Bergabung di Business Community</span>
+                        </h2>
+                        <button class="button stepBack">
+                            <img src="./asset/images/ico-back.png" alt="Back" width="25" height="25" loading="lazy">
+                            <span>Lihat keuntungan <br> Business Community</span>
+                        </button>
+                        <div class="stepList display-flex">
+                            <div class="stepItem stepItem1">
+                                <div class="stepNum">1</div>
+                                <picture class="stepImg">
+                                    <source srcset="./asset/images/join-1-mob.png" media="(max-width: 767px)" alt=""
+                                        width="1112" height="316">
+                                    <img srcset="./asset/images/join-1.png" alt="" class="" width="182" height="217"
+                                        loading="lazy">
+                                </picture>
+                                <div class="articleContent opac0">
+                                    <p class="stepTxt">
+                                        Masuk ke website <br> <a href="https://prioritas.bca.co.id" target="_blank"
+                                            rel="noopener noreferrer">prioritas.bca.co.id</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="stepArrow stepArrow1">
+                                <svg width="128" height="23" viewBox="0 0 128 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M127.387 12.3666C127.956 11.7982 127.956 10.8766 127.387 10.3082L118.125 1.0458C117.556 0.477413 116.635 0.477413 116.067 1.0458C115.498 1.61419 115.498 2.53573 116.067 3.10412L124.3 11.3374L116.067 19.5707C115.498 20.1391 115.498 21.0606 116.067 21.629C116.635 22.1974 117.556 22.1974 118.125 21.629L127.387 12.3666ZM0.218994 12.7929H2.18992V9.88195H0.218994V12.7929ZM6.13177 12.7929H10.0736V9.88195H6.13177V12.7929ZM14.0155 12.7929H17.9573V9.88195H14.0155V12.7929ZM21.8992 12.7929H25.841V9.88195H21.8992V12.7929ZM29.7829 12.7929H33.7247V9.88195H29.7829V12.7929ZM37.6666 12.7929H41.6084V9.88195H37.6666V12.7929ZM45.5503 12.7929H49.4921V9.88195H45.5503V12.7929ZM53.434 12.7929H57.3758V9.88195H53.434V12.7929ZM61.3176 12.7929H65.2595V9.88195H61.3176V12.7929ZM69.2013 12.7929H73.1432V9.88195H69.2013V12.7929ZM77.085 12.7929H81.0269V9.88195H77.085V12.7929ZM84.9687 12.7929H88.9106V9.88195H84.9687V12.7929ZM92.8524 12.7929H96.7943V9.88195H92.8524V12.7929ZM100.736 12.7929H104.678V9.88195H100.736V12.7929ZM108.62 12.7929H112.562V9.88195H108.62V12.7929ZM116.504 12.7929H120.445V9.88195H116.504V12.7929ZM124.387 12.7929H126.358V9.88195H124.387V12.7929Z"
+                                        fill="#BEC5C3" />
+                                </svg>                            </div>
+                            <div class="stepItem stepItem2">
+                                <div class="stepNum">2</div>
+                                <picture class="stepImg">
+                                    <source srcset="./asset/images/join-2-mob.png" media="(max-width: 767px)" alt=""
+                                        width="1112" height="316">
+                                    <img srcset="./asset/images/join-2.png" alt="" class="" width="182" height="217"
+                                        loading="lazy">
+                                </picture>
+                                <div class="articleContent opac0">
+                                    <p class="stepTxt">
+                                        Pilih menu Business Community
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="stepArrow stepArrow2">
+                                <picture>
+                                    <source srcset="./asset/images/step-line-mob.png" media="(max-width: 767px)" alt=""
+                                        width="1112" height="316">
+                                    <img srcset="./asset/images/step-line.png" alt="" class="" width="128" height="23"
+                                        loading="lazy">
+                                </picture>
+                            </div>
+                            <div class="stepItem stepItem3">
+                                <div class="stepNum">3</div>
+                                <picture class="stepImg">
+                                    <source srcset="./asset/images/join-3-mob.png" media="(max-width: 767px)" alt=""
+                                        width="1112" height="316">
+                                    <img srcset="./asset/images/join-3.png" alt="" class="" width="182" height="217"
+                                        loading="lazy">
+                                </picture>
+                                <div class="articleContent opac0">
+                                    <p class="stepTxt">
+                                        Klik Tambah Profil Bisnis
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="stepArrow stepArrow3">
+                                <div class="stepArrow--corn">
+                                    <picture>
+                                        <source srcset="./asset/images/step-line-corn-mob.png"
+                                            media="(max-width: 767px)" alt="" width="1112" height="316">
+                                        <img srcset="./asset/images/step-line-corn.png" alt="" class="" width="24"
+                                            height="20" loading="lazy">
+                                    </picture>
+                                </div>
+                            </div>
+                            <div class="stepItem stepItem4">
+                                <div class="stepNum">4</div>
+                                <picture class="stepImg">
+                                    <source srcset="./asset/images/join-4-mob.png" media="(max-width: 767px)" alt=""
+                                        width="1112" height="316">
+                                    <img srcset="./asset/images/join-4.png" alt="" class="" width="182" height="217"
+                                        loading="lazy">
+                                </picture>
+                                <div class="articleContent opac0">
+                                    <p class="stepTxt">
+                                        Isi lengkap informasi yang diminta
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="stepArrow stepArrow4">
+                                <picture>
+                                    <source srcset="./asset/images/step-line-mob.png" media="(max-width: 767px)" alt=""
+                                        width="1112" height="316">
+                                    <img srcset="./asset/images/step-line.png" alt="" class="" width="128" height="23"
+                                        loading="lazy">
+                                </picture>
+                            </div>
+                            <div class="stepItem stepItem5">
+                                <div class="stepNum">5</div>
+                                <picture class="stepImg">
+                                    <source srcset="./asset/images/join-5-mob.png" media="(max-width: 767px)" alt=""
+                                        width="1112" height="316">
+                                    <img srcset="./asset/images/join-5.png" alt="" class="" width="182" height="217"
+                                        loading="lazy">
+                                </picture>
+                                <div class="articleContent opac0">
+                                    <p class="stepTxt">
+                                        Klik Kirim dan selesai.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="stepArrow stepArrow5">
+                                <picture>
+                                    <source srcset="./asset/images/step-line-mob.png" media="(max-width: 767px)" alt=""
+                                        width="1112" height="316">
+                                    <img srcset="./asset/images/step-line.png" alt="" class="" width="128" height="23"
+                                        loading="lazy">
+                                </picture>
+                            </div>
+                            <div class="stepItem stepItem6">
+                                <div class="stepNum">6</div>
+                                <picture class="stepImg">
+                                    <source srcset="./asset/images/join-6-mob.png" media="(max-width: 767px)" alt=""
+                                        width="1112" height="316">
+                                    <img srcset="./asset/images/join-6.png" alt="" class="" width="182" height="217"
+                                        loading="lazy">
+                                </picture>
+                                <div class="articleContent opac0">
+                                    <p class="stepTxt">
+                                        Data bisnis Anda akan diverifikasi dalam waktu 1 hari kerja
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="soon center-flex heightFull opac0">
+                    <div class="soonContent display-flex text-center">
+                        <picture class="soonImg">
+                            <source srcset="./asset/images/soon-mob.png" media="(max-width: 767px)" alt="" width="1112"
+                                height="316">
+                            <img srcset="./asset/images/soon.png" alt="" class="" width="251" height="229"
+                                loading="lazy">
+                        </picture>
+                        <h3 class="soonCaption articleTitle text-center">
+                            Segera Bergabung
+                        </h3>
+                        <div class="articleContent">
+                            <p class="soonTxt soonTxt1">
+                                Kembangkan Bisnis dan Networking Anda dengan <strong>Business Community</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="credit heightFull opac0">
+                    <div class="creditWrap center-flex heightFull container">
+                        <picture class="creditImg">
+                            <source srcset="./asset/images/logo-bca-soliprio-mob.svg" media="(max-width: 768px)" alt=""
+                                width="310" height="50">
+                            <img srcset="./asset/images/logo-bca-soliprio.svg" alt="Solitaire BCA Prioritas" class=""
+                                width="350" height="56">
+                        </picture>
+                        <div class="creditCaption center-flex">
+                            <div class="creditItem">
+                                BCA berizin dan diawasi oleh Otoritas Jasa Keuangan
+                            </div>
+                            <div class="creditItem">
+                                BCA merupakan peserta penjaminan LPS
+                            </div>
+                        </div>
+                    </div>
+                    <div class="creditBottom display-flex">
+                        <button class="button creditButton" onclick="refreshPage()" aria-label="Restart Page">
+                            <span class="creditButton--restart"></span>Restart
+                        </button>
                     </div>
                 </div>
             </div>
@@ -353,19 +553,21 @@
             <section class="section"></section>
             <section class="section"></section>
             <section class="section"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section"></section>
         </div>
         <!-- Fullpage Content -->
         <div id="some-element"></div>
     </main>
     <!-- main -->
 
-    <!-- footer -->
-
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
     <script type="text/javascript" src="./asset/js/fullpage.min.js"></script>
     <script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
     <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/main.js"></script>
+    <script type="text/javascript" src="./asset/js/main-preloader.js"></script>
 </body>
 
 </html>

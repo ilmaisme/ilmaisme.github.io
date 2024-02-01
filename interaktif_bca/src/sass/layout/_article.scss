@@ -21,5 +21,42 @@
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             font-size: 35px;
         }
+
+        &--med {
+            font-size: 22px;
+
+            @include min-responsive($w-vlg) {
+                font-size: 36px;
+            }
+
+            @include min-responsive($w-xxl) {
+                font-size: 44px;
+            }
+
+            @include min-responsive($w-xxxl) {
+                font-size: 48px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                font-size: 30px;
+            }
+        }
+    }
+
+    &Child {
+        display: block;
+        @include font-pack($font-bold, 20px, $font-weight-bold, 1.2, #2067A4);
+
+        @include min-responsive($w-vlg) {
+            font-size: 24px;
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 36px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            font-size: 24px;
+        }
     }
 }

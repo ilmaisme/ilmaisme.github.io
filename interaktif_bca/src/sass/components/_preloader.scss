@@ -1,10 +1,10 @@
 .preloader {
     top: 0;
-    background: rgb(62, 62, 62);
-    background: radial-gradient(157.88% 76.84% at 50.00% 50.00%, #3E3E3E 0%, #1E1E1E 100%);
+    background-image: url(../images/white-bg-mob.jpg);
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: bottom center;
+    transition: opacity .3s ease-in-out;
     transition: opacity .4s ease-in-out;
     height: 100%;
     width: 100%;
@@ -14,6 +14,10 @@
     justify-content: center;
     overflow: hidden;
 
+    @include min-responsive($w-vlg) {
+        background-image: url(../images/white-bg.jpg);
+    }
+
     &Wrap {
         @include display_full;
         display: flex;
@@ -21,7 +25,7 @@
         justify-content: center;
         flex-direction: column;
         position: relative;
-        @include font-pack($font-base, 14px, $font-weight-normal, 1.24, $cl-white);
+        @include font-pack($font-base, 14px, $font-weight-normal, 1.24, #333333);
     }
 
     &Meter {
