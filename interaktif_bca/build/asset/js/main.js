@@ -74,6 +74,7 @@ $('#passSubmit').on('click', function () {
         });
         $('.pass').addClass('disable');
         $('.passLabel').removeClass('active');
+        $('.scroll-guide').removeClass('opac0');
         fullpage_api.setAllowScrolling(true);
         fullpage_api.setKeyboardScrolling(true);
     } else {
@@ -133,6 +134,7 @@ $(document).ready(function () {
                         begin: function () {},
                         complete: function () {}
                     });
+                    $('.scroll-guide').removeClass('opac0');
                     //console.log("going through pass")
                 } else {
                     fullpage_api.setAllowScrolling(false);
@@ -158,6 +160,7 @@ $(document).ready(function () {
                     begin: function () {},
                     complete: function () {}
                 });
+                $('.scroll-guide').addClass('opac0');
                 //console.log('up cover');
             }
             if (origin.index == 1 && direction == 'down') {
@@ -706,6 +709,7 @@ $(document).ready(function () {
                         $(".credit").addClass("active");
                     }
                 });
+                $('.scroll-guide').addClass('opac0');
             }
             if (origin.index == 7 && direction == 'up') {
                 $(".soon").velocity({
@@ -736,6 +740,7 @@ $(document).ready(function () {
                         $(".credit").removeClass("active");
                     }
                 });
+                $('.scroll-guide').removeClass('opac0');
             }
         }
     })
