@@ -54,7 +54,9 @@ $('#passSubmit').on('click', function () {
         }, {
             delay: 700,
             duration: 700,
-            complete: function () {}
+            complete: function () {
+                $('.scroll-guide').removeClass('opac0');
+            }
         });
         $(".introTxt1").velocity({
             top: "0"
@@ -74,7 +76,6 @@ $('#passSubmit').on('click', function () {
         });
         $('.pass').addClass('disable');
         $('.passLabel').removeClass('active');
-        $('.scroll-guide').removeClass('opac0');
         fullpage_api.setAllowScrolling(true);
         fullpage_api.setKeyboardScrolling(true);
     } else {
@@ -745,10 +746,10 @@ $(document).ready(function () {
         }
     })
 
-    fullpage_api.setAllowScrolling(false);
-    fullpage_api.setKeyboardScrolling(false);
-    // fullpage_api.setAllowScrolling(true);
-    // fullpage_api.setKeyboardScrolling(true);
+    // fullpage_api.setAllowScrolling(false);
+    // fullpage_api.setKeyboardScrolling(false);
+    fullpage_api.setAllowScrolling(true);
+    fullpage_api.setKeyboardScrolling(true);
 
     /* s: event button Back */
     $('.stepBack').on('click', function () {

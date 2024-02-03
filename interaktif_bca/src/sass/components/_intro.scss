@@ -1,14 +1,25 @@
 .intro {
     &Content {
         flex-direction: column;
-        align-items: center
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        @include min-responsive($w-md) {
+            justify-content: flex-start;
+            height: auto;
+        }
     }
 
     &Img {
         display: block;
-        position: relative;
+        position: absolute;
         text-align: center;
         top: calc(var(--app-height) - var(--app-height)*2);
+
+        @include min-responsive($w-md) {
+            position: relative;
+        }
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             margin-top: -40px;
@@ -38,6 +49,14 @@
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 margin-top: 45px;
+            }
+        }
+
+        br {
+            display: block;
+
+            @include min-responsive($w-md) {
+                display: none;
             }
         }
     }

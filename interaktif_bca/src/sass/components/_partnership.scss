@@ -1,11 +1,25 @@
 .partnership {
     &Content {
-        justify-content: center;
+        justify-content: flex-start;
         flex-direction: column;
+        height: 100%;
+
+        @include min-responsive($w-md) {
+            justify-content: center;
+            height: auto;
+        }
     }
 
     &Caption {
-        margin-top: 42px;
+        margin-top: 6px;
+
+        @include max-responsive($w-xm) {
+            margin-top: 2px;
+        }
+
+        @include min-responsive($w-md) {
+            margin-top: 42px;
+        }
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             margin-top: 22px;
@@ -14,6 +28,22 @@
 
     &List {
         justify-content: center;
+        flex-direction: column;
+        margin-top: 10vh;
+
+        @include max-responsive($w-xm) {
+            margin-top: 11vh;
+        }
+
+        @media only screen and(min-height: 800px) and(orientation: portrait) {
+            margin-top: 12vh;
+        }
+
+        @include min-responsive($w-md) {
+            flex-direction: row;
+            margin-top: 110px;
+            height: auto;
+        }
 
         @include min-responsive($w-vlg) {
             margin-top: 210px;
@@ -30,11 +60,24 @@
 
     &Item {
         position: relative;
-        max-width: 380px;
+        flex: 1;
+
+        @media only screen and(min-height: 800px) and(orientation: portrait) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        @include min-responsive($w-md) {
+            max-width: 380px;
+        }
 
         @include min-responsive($w-vlg) {
             margin-left: 34px;
             margin-right: 34px;
+        }
+
+        @include min-responsive($w-xxl) {
+            max-width: 410px;
         }
 
         @include min-responsive($w-xxxl) {
@@ -58,6 +101,16 @@
     &Img {
         display: block;
         text-align: center;
+        position: relative;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+
+        @include min-responsive($w-md) {
+            float: none;
+            margin-right: 0;
+            margin-bottom: 0;
+        }
 
         img {
             @media only screen and(max-height: 768px) and(orientation: landscape) {
@@ -75,6 +128,11 @@
         -webkit-text-fill-color: transparent;
         @include font-pack($font-bold, 18px, $font-weight-bold, false, $cl-primary);
 
+        @include max-responsive($w-xm) {
+            margin-top: 8px;
+            font-size: 15px;
+        }
+
         @include min-responsive($w-vlg) {
             padding-left: 30px;
             font-size: 21px;
@@ -82,9 +140,9 @@
 
         @include min-responsive($w-xxl) {
             padding-left: 54px;
-            font-size: 24px;
+            font-size: 22px;
         }
-        
+
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             padding-left: 44px;
             font-size: 20px;
@@ -97,12 +155,12 @@
             left: 0;
             background: url(../images/ico-check.png);
             background-size: contain;
-            
+
             @include min-responsive($w-vlg) {
                 width: 24px;
                 height: 24px;
             }
-            
+
             @include min-responsive($w-xxl) {
                 top: -8px;
                 width: 44px;
@@ -111,17 +169,37 @@
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 top: -4px;
-                width: 34px;
-                height: 34px;
+                width: 30px;
+                height: 30px;
             }
         }
     }
 
     &Txt {
-        margin-top: 17px;
+        margin-top: 8px;
+        font-size: 14px;
+
+        @include max-responsive($w-xm) {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        @include min-responsive($w-md) {
+            margin-top: 17px;
+            font-size: 16px;
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 18px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            margin-top: 8px;
+            font-size: 16px;
+        }
     }
 
-    .articleContent{
+    .articleContent {
         transition: opacity .4s ease;
     }
 }
