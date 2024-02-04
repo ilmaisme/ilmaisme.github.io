@@ -18,20 +18,51 @@
         }
     }
 
+    &Caption {
+        @include max-responsive($w-xm) {
+            margin-top: -30px;
+        }
+    }
+
     &Content {
         justify-content: center;
         flex-direction: column;
     }
 
     &List {
-        margin-top: 50px;
+        margin-top: 24px;
         margin-bottom: 24px;
+        position: relative;
+        flex-wrap: wrap;
+        width: 100%;
+        min-height: 274px;
+
+        @include max-responsive($w-xm) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            min-height: 270px;
+        }
+
+        @include min-responsive($w-md) {
+            flex-wrap: nowrap;
+            width: auto;
+            margin-top: 50px;
+            min-height: unset;
+        }
     }
 
     &Item {
-        position: relative;
         top: 100vh;
         text-align: center;
+        position: absolute;
+        flex-basis: 100%;
+        width: 100%;
+
+        @include min-responsive($w-md) {
+            position: relative;
+            width: auto;
+            flex-basis: auto;
+        }
 
         @include min-responsive($w-vlg) {
             margin-left: 30px;
@@ -44,7 +75,9 @@
         }
 
         &:first-child {
-            max-width: 223px;
+            @include min-responsive($w-md) {
+                max-width: 223px;
+            }
         }
     }
 
@@ -70,17 +103,32 @@
             border-radius: 14px;
             background: rgb(249, 238, 180);
             background: radial-gradient(circle, rgba(249, 238, 180, 1) 0%, rgba(238, 213, 121, 1) 54%, rgba(221, 173, 26, 1) 100%);
+
+            @include max-responsive($w-xm) {
+                padding: 4px;
+            }
         }
 
         &__qr {
             padding: 4px;
             border-radius: 10px;
             border: 1px solid #755928;
+
+            @include max-responsive($w-xm) {
+                padding: 0;
+                border-radius: 10px;
+                border: 0;
+                max-width: 74px;
+            }
         }
 
         &__content {
             margin-left: 7px;
             margin-right: 16px;
+
+            @include max-responsive($w-xm) {
+                font-size: 13px;
+            }
         }
 
         &__link {
@@ -88,6 +136,10 @@
             margin-top: 3px;
             text-decoration: underline;
             @include font-pack($font-bold, 18px, $font-weight-bold, false, #022E5B);
+
+            @include max-responsive($w-xm) {
+                font-size: 16px;
+            }
 
             @include min-responsive($w-vlg) {
                 font-size: 22px;
@@ -140,12 +192,25 @@
 
     &Cursor {
         position: absolute;
-        right: 0;
-        bottom: -25px;
+        right: 14px;
+        bottom: 0;
+
+        @include max-responsive($w-xm) {
+            bottom: -10px;
+        }
+
+        @include min-responsive($w-md) {
+            right: 0;
+            bottom: -25px;
+        }
     }
 
     &Img {
         img {
+            @include max-responsive($w-xm) {
+                max-width: 78%;
+            }
+
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 max-height: 120px;
             }
