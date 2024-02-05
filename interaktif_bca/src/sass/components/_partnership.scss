@@ -29,7 +29,7 @@
     &List {
         justify-content: center;
         flex-direction: column;
-        margin-top: 10vh;
+        margin-top: 12vh;
 
         @include max-responsive($w-xm) {
             margin-top: 11vh;
@@ -39,7 +39,11 @@
             margin-top: 12vh;
         }
 
-        @include min-responsive($w-md) {
+        @include range-responsive($w-md, $w-xl) {
+            margin-top: 20vh;
+        }
+
+        @include min-responsive($w-xl) {
             flex-direction: row;
             margin-top: 110px;
             height: auto;
@@ -67,7 +71,12 @@
             margin-bottom: 20px;
         }
 
-        @include min-responsive($w-md) {
+        @include range-responsive($w-md, $w-xl) {
+            display: flex;
+        }
+
+        @include min-responsive($w-xl) {
+            display: block;
             max-width: 380px;
         }
 
@@ -106,10 +115,18 @@
         margin-right: 10px;
         margin-bottom: 10px;
 
+        @include range-responsive($w-md, $w-xl) {
+            width: 205px;
+        }
+
         @include min-responsive($w-md) {
             float: none;
             margin-right: 0;
             margin-bottom: 0;
+        }
+
+        @include min-responsive($w-xl) {
+            width: auto;
         }
 
         img {
@@ -130,14 +147,14 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        @include font-pack($font-bold, 18px, $font-weight-bold, false, $cl-primary);
+        @include font-pack($font-bold, 16px, $font-weight-bold, false, $cl-primary);
 
-        @include max-responsive($w-xm) {
+        @include max-responsive(375px) {
             margin-top: 8px;
             font-size: 15px;
         }
 
-        @include min-responsive($w-vlg) {
+        @include min-responsive($w-md) {
             padding-left: 30px;
             font-size: 21px;
         }
@@ -160,7 +177,7 @@
             background: url(../images/ico-check.png);
             background-size: contain;
 
-            @include min-responsive($w-vlg) {
+            @include min-responsive($w-md) {
                 width: 24px;
                 height: 24px;
             }
@@ -205,5 +222,6 @@
 
     .articleContent {
         transition: opacity .4s ease;
+        flex: 1;
     }
 }

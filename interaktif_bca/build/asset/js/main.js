@@ -90,17 +90,14 @@ $('#passSubmit').on('click', function () {
 $(document).ready(function () {
     if ($('#some-element').css('display') == 'none') {
         is_mobile = true;
-    }
-
-    /* s: event button Back */
-    $('.stepBack').on('click', function () {
-        fullpage_api.moveTo('community', 4);
-    })
-    /* e: event button Back */
-
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         // mobile
-        console.log('mobile')
+        //console.log('mobile')
+
+        /* s: event button Back
+        $('.stepBack').on('click', function () {
+            fullpage_api.moveTo('community1', 4);
+        })
+        /* e: event button Back */
 
         /* s: append section for more scroll */
         var n = 8;
@@ -112,7 +109,7 @@ $(document).ready(function () {
             autoScrolling: true,
             scrollHorizontally: true,
             // navigation: true,
-            anchors: ['cover', 'intro', 'partnership', 'business', 'community', 'step'],
+            anchors: ['cover', 'intro', 'partnership', 'business', 'community1', 'community2', 'community3', 'community4', 'step1', 'step2', 'step3', 'step4', 'step5', 'step6'],
             lockAnchors: true,
             //scrollOverflow: true,
 
@@ -1054,13 +1051,19 @@ $(document).ready(function () {
             }
         })
 
-        // fullpage_api.setAllowScrolling(false);
-        // fullpage_api.setKeyboardScrolling(false);
-        fullpage_api.setAllowScrolling(true);
-        fullpage_api.setKeyboardScrolling(true);
+        fullpage_api.setAllowScrolling(false);
+        fullpage_api.setKeyboardScrolling(false);
+        // fullpage_api.setAllowScrolling(true);
+        // fullpage_api.setKeyboardScrolling(true);
     } else {
         // desktop
-        console.log('desktop')
+        //console.log('desktop')
+
+        /* s: event button Back */
+        $('.stepBack').on('click', function () {
+            fullpage_api.moveTo('community', 4);
+        })
+        /* e: event button Back */
 
         new fullpage('#fullpage', {
             //options here
@@ -1716,11 +1719,15 @@ $(document).ready(function () {
             }
         })
 
-        // fullpage_api.setAllowScrolling(false);
-        // fullpage_api.setKeyboardScrolling(false);
-        fullpage_api.setAllowScrolling(true);
-        fullpage_api.setKeyboardScrolling(true);
+        fullpage_api.setAllowScrolling(false);
+        fullpage_api.setKeyboardScrolling(false);
+        // fullpage_api.setAllowScrolling(true);
+        // fullpage_api.setKeyboardScrolling(true);
     }
+
+    /*if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    } else {
+    }*/
 });
 
 /* s: Get HEIGHT Device */

@@ -43,11 +43,19 @@
             min-height: 270px;
         }
 
+        @include range-responsive($w-md, $w-xl) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         @include min-responsive($w-md) {
-            flex-wrap: nowrap;
             width: auto;
             margin-top: 50px;
             min-height: unset;
+        }
+
+        @include min-responsive($w-xl) {
+            flex-wrap: nowrap;
         }
     }
 
@@ -62,9 +70,6 @@
             position: relative;
             width: auto;
             flex-basis: auto;
-        }
-
-        @include min-responsive($w-vlg) {
             margin-left: 30px;
             margin-right: 30px;
         }
@@ -77,6 +82,12 @@
         &:first-child {
             @include min-responsive($w-md) {
                 max-width: 223px;
+            }
+        }
+
+        &:last-child{
+            @include range-responsive($w-md, $w-xl) {
+                max-width: 233px;
             }
         }
     }
@@ -169,9 +180,9 @@
         position: relative;
         margin-top: 11px;
 
-        @include min-responsive($w-vlg) {
-            left: calc(50% - 415px/2);
-            max-width: 415px;
+        @include min-responsive($w-md) {
+            left: calc(50% - 450px/2);
+            max-width: 450px;
         }
 
         @include min-responsive($w-xxl) {
@@ -188,6 +199,12 @@
     &Txt {
         margin-top: 3px;
         font-size: 14px;
+
+        br {
+            @include range-responsive($w-md, $w-xl) {
+                display: none;
+            }
+        }
     }
 
     &Cursor {
