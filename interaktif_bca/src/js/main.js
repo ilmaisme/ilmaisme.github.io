@@ -94,6 +94,7 @@ $(document).ready(function () {
         //console.log('mobile')
 
         /* s: event button Back */
+        var commpercent = ($(".communityList").width()) * (58 / 100);
         $('.stepBack').on('click', function () {
             fullpage_api.moveTo('community1', 4);
             $(".community").velocity({
@@ -106,50 +107,51 @@ $(document).ready(function () {
                     $(".community").addClass("active");
                 }
             });
-            $(".communityItem2").velocity({
-                top: "100vh"
-            }, {
-                delay: 0,
-                duration: 0,
-                begin: function () {
-                    $(".communityItem").addClass("disable");
-                    $(".communityItem2").velocity("stop", true);
-                }
-            });
-            $(".communityItem3").velocity({
-                top: "100vh"
-            }, {
-                delay: 0,
-                duration: 0,
-                begin: function () {
-                    $(".communityItem3").velocity("stop", true);
-                }
-            });
-            $(".communityItem4").velocity({
-                top: "100vh"
-            }, {
-                delay: 0,
-                duration: 0,
-                begin: function () {
-                    $(".communityItem4").velocity("stop", true);
-                }
-            });
-            $(".communityItem1").velocity({
-                top: "0"
-            }, {
-                delay: 400,
-                duration: 700,
-                begin: function () {
-                    $(".communityItem").velocity("stop", false);
-                    $(".communityItem1").removeClass("disable");
-                },
-                complete: function () {
-                    $(".communityItem1 .articleContent").removeClass("opac0");
-                    $(".communityItem2").removeClass("disable");
-                    $(".communityItem3").removeClass("disable");
-                    $(".communityItem4").removeClass("disable");
-                }
-            });
+            $(".communityList").animate( { scrollLeft: 0 }, 1000);
+            // $(".communityItem2").velocity({
+            //     top: "100vh"
+            // }, {
+            //     delay: 0,
+            //     duration: 0,
+            //     begin: function () {
+            //         $(".communityItem").addClass("disable");
+            //         $(".communityItem2").velocity("stop", true);
+            //     }
+            // });
+            // $(".communityItem3").velocity({
+            //     top: "100vh"
+            // }, {
+            //     delay: 0,
+            //     duration: 0,
+            //     begin: function () {
+            //         $(".communityItem3").velocity("stop", true);
+            //     }
+            // });
+            // $(".communityItem4").velocity({
+            //     top: "100vh"
+            // }, {
+            //     delay: 0,
+            //     duration: 0,
+            //     begin: function () {
+            //         $(".communityItem4").velocity("stop", true);
+            //     }
+            // });
+            // $(".communityItem1").velocity({
+            //     top: "0"
+            // }, {
+            //     delay: 400,
+            //     duration: 700,
+            //     begin: function () {
+            //         $(".communityItem").velocity("stop", false);
+            //         $(".communityItem1").removeClass("disable");
+            //     },
+            //     complete: function () {
+            //         $(".communityItem1 .articleContent").removeClass("opac0");
+            //         $(".communityItem2").removeClass("disable");
+            //         $(".communityItem3").removeClass("disable");
+            //         $(".communityItem4").removeClass("disable");
+            //     }
+            // });
             $(".step").velocity({
                 opacity: "0"
             }, {
@@ -161,7 +163,7 @@ $(document).ready(function () {
                 }
             });
             $(".stepItem").velocity({
-                opacity: "0"
+                top: "100vh"
             }, {
                 delay: 0,
                 duration: 700,
@@ -394,38 +396,26 @@ $(document).ready(function () {
                         top: "0"
                     }, {
                         delay: 400,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem1 .articleContent").removeClass("opac0");
-                        }
+                        duration: 700
                     });
-                    // $(".communityItem2").velocity({
-                    //     top: "0"
-                    // }, {
-                    //     delay: 800,
-                    //     duration: 700,
-                    //     complete: function () {
-                    //         $(".communityItem2 .articleContent").removeClass("opac0");
-                    //     }
-                    // });
-                    // $(".communityItem3").velocity({
-                    //     top: "0"
-                    // }, {
-                    //     delay: 1200,
-                    //     duration: 700,
-                    //     complete: function () {
-                    //         $(".communityItem3 .articleContent").removeClass("opac0");
-                    //     }
-                    // });
-                    // $(".communityItem4").velocity({
-                    //     top: "0"
-                    // }, {
-                    //     delay: 1600,
-                    //     duration: 700,
-                    //     complete: function () {
-                    //         $(".communityItem4 .articleContent").removeClass("opac0");
-                    //     }
-                    // });
+                    $(".communityItem2").velocity({
+                        top: "0"
+                    }, {
+                        delay: 800,
+                        duration: 700
+                    });
+                    $(".communityItem3").velocity({
+                        top: "0"
+                    }, {
+                        delay: 1200,
+                        duration: 700
+                    });
+                    $(".communityItem4").velocity({
+                        top: "0"
+                    }, {
+                        delay: 1600,
+                        duration: 700
+                    });
                 }
                 if (origin.index == 4 && direction == 'up') {
                     $(".business").velocity({
@@ -448,131 +438,144 @@ $(document).ready(function () {
                         top: "100vh"
                     }, {
                         delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem .articleContent").addClass("opac0");
-                        }
+                        duration: 700
                     });
+                    // $(".communityItem").velocity({
+                    //     top: "100vh"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem .articleContent").addClass("opac0");
+                    //     }
+                    // });                    
+                    $(".communityList").animate( { scrollLeft: 0 }, 1000);
                 }
                 if (origin.index == 4 && direction == 'down') {
-                    $(".communityItem1").velocity({
-                        top: "100vh"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem1 .articleContent").addClass("opac0");
-                        }
-                    });
-                    $(".communityItem2").velocity({
-                        top: "0"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem2 .articleContent").removeClass("opac0");
-                        }
-                    });
+                    // $(".communityItem1").velocity({
+                    //     top: "100vh"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem1 .articleContent").addClass("opac0");
+                    //     }
+                    // });                    
+                    $(".communityList").animate( { scrollLeft: commpercent }, 1000);
+                    // $(".communityItem2").velocity({
+                    //     top: "0"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem2 .articleContent").removeClass("opac0");
+                    //     }
+                    // });
                 }
                 if (origin.index == 5 && direction == 'up') {
-                    $(".communityItem1").velocity({
-                        top: "0"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem1 .articleContent").removeClass("opac0");
-                        }
-                    });
-                    $(".communityItem2").velocity({
-                        top: "100vh"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem2 .articleContent").addClass("opac0");
-                        }
-                    });
+                    // $(".communityItem1").velocity({
+                    //     top: "0"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem1 .articleContent").removeClass("opac0");
+                    //     }
+                    // });
+                    $(".communityList").animate( { scrollLeft: 0 }, 1000);
+                    // $(".communityItem2").velocity({
+                    //     top: "100vh"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem2 .articleContent").addClass("opac0");
+                    //     }
+                    // });
                 }
                 if (origin.index == 5 && direction == 'down') {
-                    $(".communityItem2").velocity({
-                        top: "100vh"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem2 .articleContent").addClass("opac0");
-                        }
-                    });
-                    $(".communityItem3").velocity({
-                        top: "0"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem3 .articleContent").removeClass("opac0");
-                        }
-                    });
+                    // $(".communityItem2").velocity({
+                    //     top: "100vh"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem2 .articleContent").addClass("opac0");
+                    //     }
+                    // });
+                    $(".communityList").animate( { scrollLeft: commpercent*2 }, 1000);
+                    // $(".communityItem3").velocity({
+                    //     top: "0"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem3 .articleContent").removeClass("opac0");
+                    //     }
+                    // });
                 }
                 if (origin.index == 6 && direction == 'up') {
-                    $(".communityItem2").velocity({
-                        top: "0"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem2 .articleContent").removeClass("opac0");
-                        }
-                    });
-                    $(".communityItem3").velocity({
-                        top: "100vh"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem3 .articleContent").addClass("opac0");
-                        }
-                    });
+                    // $(".communityItem2").velocity({
+                    //     top: "0"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem2 .articleContent").removeClass("opac0");
+                    //     }
+                    // });
+                    $(".communityList").animate( { scrollLeft: commpercent }, 1000);
+                    // $(".communityItem3").velocity({
+                    //     top: "100vh"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem3 .articleContent").addClass("opac0");
+                    //     }
+                    // });
                 }
                 if (origin.index == 6 && direction == 'down') {
-                    $(".communityItem3").velocity({
-                        top: "100vh"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem3 .articleContent").addClass("opac0");
-                        }
-                    });
-                    $(".communityItem4").velocity({
-                        top: "0"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem4 .articleContent").removeClass("opac0");
-                        }
-                    });
+                    // $(".communityItem3").velocity({
+                    //     top: "100vh"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem3 .articleContent").addClass("opac0");
+                    //     }
+                    // });
+                    $(".communityList").animate( { scrollLeft: commpercent*3 }, 1000);
+                    // $(".communityItem4").velocity({
+                    //     top: "0"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem4 .articleContent").removeClass("opac0");
+                    //     }
+                    // });
                 }
                 if (origin.index == 7 && direction == 'up') {
-                    $(".communityItem3").velocity({
-                        top: "0"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem3 .articleContent").removeClass("opac0");
-                        }
-                    });
-                    $(".communityItem4").velocity({
-                        top: "100vh"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem4 .articleContent").addClass("opac0");
-                        }
-                    });
+                    // $(".communityItem3").velocity({
+                    //     top: "0"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem3 .articleContent").removeClass("opac0");
+                    //     }
+                    // });
+                    $(".communityList").animate( { scrollLeft: commpercent*2 }, 1000);
+                    // $(".communityItem4").velocity({
+                    //     top: "100vh"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem4 .articleContent").addClass("opac0");
+                    //     }
+                    // });
                 }
                 if (origin.index == 7 && direction == 'down') {
                     $(".community").velocity({
@@ -585,15 +588,15 @@ $(document).ready(function () {
                             $(".community").removeClass("active");
                         }
                     });
-                    $(".communityItem").velocity({
-                        top: "100vh"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem .articleContent").addClass("opac0");
-                        }
-                    });
+                    // $(".communityItem").velocity({
+                    //     top: "100vh"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem .articleContent").addClass("opac0");
+                    //     }
+                    // });
                     $(".step").velocity({
                         opacity: "1"
                     }, {
@@ -605,7 +608,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem1").velocity({
-                        opacity: "1"
+                        top: "0"
                     }, {
                         delay: 400,
                         duration: 700,
@@ -688,15 +691,16 @@ $(document).ready(function () {
                             $(".community").addClass("active");
                         }
                     });
-                    $(".communityItem4").velocity({
-                        top: "0"
-                    }, {
-                        delay: 0,
-                        duration: 700,
-                        complete: function () {
-                            $(".communityItem4 .articleContent").removeClass("opac0");
-                        }
-                    });
+                    // $(".communityItem4").velocity({
+                    //     top: "0"
+                    // }, {
+                    //     delay: 0,
+                    //     duration: 700,
+                    //     complete: function () {
+                    //         $(".communityItem4 .articleContent").removeClass("opac0");
+                    //     }
+                    // });
+                    $(".communityList").animate( { scrollLeft: commpercent*3 }, 1000);
                     $(".step").velocity({
                         opacity: "0"
                     }, {
@@ -708,7 +712,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem").velocity({
-                        opacity: "0"
+                        top: "100vh"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -720,7 +724,7 @@ $(document).ready(function () {
                 }
                 if (origin.index == 8 && direction == 'down') {
                     $(".stepItem1").velocity({
-                        opacity: "0"
+                        top: "100vh"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -732,7 +736,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem2").velocity({
-                        opacity: "1"
+                        top: "0"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -746,7 +750,7 @@ $(document).ready(function () {
                 }
                 if (origin.index == 9 && direction == 'up') {
                     $(".stepItem1").velocity({
-                        opacity: "1"
+                        top: "0"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -758,7 +762,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem2").velocity({
-                        opacity: "0"
+                        top: "100vh"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -772,7 +776,7 @@ $(document).ready(function () {
                 }
                 if (origin.index == 9 && direction == 'down') {
                     $(".stepItem2").velocity({
-                        opacity: "0"
+                        top: "100vh"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -784,7 +788,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem3").velocity({
-                        opacity: "1"
+                        top: "0"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -798,7 +802,7 @@ $(document).ready(function () {
                 }
                 if (origin.index == 10 && direction == 'up') {
                     $(".stepItem2").velocity({
-                        opacity: "1"
+                        top: "0"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -810,7 +814,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem3").velocity({
-                        opacity: "0"
+                        top: "100vh"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -824,7 +828,7 @@ $(document).ready(function () {
                 }
                 if (origin.index == 10 && direction == 'down') {
                     $(".stepItem3").velocity({
-                        opacity: "0"
+                        top: "100vh"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -836,7 +840,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem4").velocity({
-                        opacity: "1"
+                        top: "0"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -850,7 +854,7 @@ $(document).ready(function () {
                 }
                 if (origin.index == 11 && direction == 'up') {
                     $(".stepItem3").velocity({
-                        opacity: "1"
+                        top: "0"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -862,7 +866,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem4").velocity({
-                        opacity: "0"
+                        top: "100vh"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -876,7 +880,7 @@ $(document).ready(function () {
                 }
                 if (origin.index == 11 && direction == 'down') {
                     $(".stepItem4").velocity({
-                        opacity: "0"
+                        top: "100vh"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -888,7 +892,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem5").velocity({
-                        opacity: "1"
+                        top: "0"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -902,7 +906,7 @@ $(document).ready(function () {
                 }
                 if (origin.index == 12 && direction == 'up') {
                     $(".stepItem4").velocity({
-                        opacity: "1"
+                        top: "0"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -914,7 +918,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem5").velocity({
-                        opacity: "0"
+                        top: "100vh"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -928,7 +932,7 @@ $(document).ready(function () {
                 }
                 if (origin.index == 12 && direction == 'down') {
                     $(".stepItem5").velocity({
-                        opacity: "0"
+                        top: "100vh"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -940,7 +944,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem6").velocity({
-                        opacity: "1"
+                        top: "0"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -954,7 +958,7 @@ $(document).ready(function () {
                 }
                 if (origin.index == 13 && direction == 'up') {
                     $(".stepItem5").velocity({
-                        opacity: "1"
+                        top: "0"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -966,7 +970,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem6").velocity({
-                        opacity: "0"
+                        top: "100vh"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -990,7 +994,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem").velocity({
-                        opacity: "0"
+                        top: "100vh"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -1030,7 +1034,7 @@ $(document).ready(function () {
                         }
                     });
                     $(".stepItem6").velocity({
-                        opacity: "1"
+                        top: "0"
                     }, {
                         delay: 0,
                         duration: 700,
@@ -1357,7 +1361,7 @@ $(document).ready(function () {
                         delay: 400,
                         duration: 700,
                         complete: function () {
-                            $(".communityItem1 .articleContent").removeClass("opac0");
+                            $(".communityItem1 .articleContent").addClass("opac1");
                         }
                     });
                     $(".communityItem2").velocity({
@@ -1366,7 +1370,7 @@ $(document).ready(function () {
                         delay: 800,
                         duration: 700,
                         complete: function () {
-                            $(".communityItem2 .articleContent").removeClass("opac0");
+                            $(".communityItem2 .articleContent").addClass("opac1");
                         }
                     });
                     $(".communityItem3").velocity({
@@ -1375,7 +1379,7 @@ $(document).ready(function () {
                         delay: 1200,
                         duration: 700,
                         complete: function () {
-                            $(".communityItem3 .articleContent").removeClass("opac0");
+                            $(".communityItem3 .articleContent").addClass("opac1");
                         }
                     });
                     $(".communityItem4").velocity({
@@ -1384,7 +1388,7 @@ $(document).ready(function () {
                         delay: 1600,
                         duration: 700,
                         complete: function () {
-                            $(".communityItem4 .articleContent").removeClass("opac0");
+                            $(".communityItem4 .articleContent").addClass("opac1");
                         }
                     });
                 }
@@ -1411,7 +1415,7 @@ $(document).ready(function () {
                         delay: 0,
                         duration: 700,
                         complete: function () {
-                            $(".communityItem .articleContent").addClass("opac0");
+                            $(".communityItem .articleContent").removeClass("opac1");
                         }
                     });
                 }
@@ -1432,7 +1436,7 @@ $(document).ready(function () {
                         delay: 0,
                         duration: 700,
                         complete: function () {
-                            $(".communityItem .articleContent").addClass("opac0");
+                            $(".communityItem .articleContent").removeClass("opac1");
                         }
                     });
                     $(".step").velocity({
@@ -1535,7 +1539,7 @@ $(document).ready(function () {
                         delay: 400,
                         duration: 700,
                         complete: function () {
-                            $(".communityItem1 .articleContent").removeClass("opac0");
+                            $(".communityItem1 .articleContent").addClass("opac1");
                         }
                     });
                     $(".communityItem2").velocity({
@@ -1544,7 +1548,7 @@ $(document).ready(function () {
                         delay: 800,
                         duration: 700,
                         complete: function () {
-                            $(".communityItem2 .articleContent").removeClass("opac0");
+                            $(".communityItem2 .articleContent").addClass("opac1");
                         }
                     });
                     $(".communityItem3").velocity({
@@ -1553,7 +1557,7 @@ $(document).ready(function () {
                         delay: 1200,
                         duration: 700,
                         complete: function () {
-                            $(".communityItem3 .articleContent").removeClass("opac0");
+                            $(".communityItem3 .articleContent").addClass("opac1");
                         }
                     });
                     $(".communityItem4").velocity({
@@ -1562,7 +1566,7 @@ $(document).ready(function () {
                         delay: 1600,
                         duration: 700,
                         complete: function () {
-                            $(".communityItem4 .articleContent").removeClass("opac0");
+                            $(".communityItem4 .articleContent").addClass("opac1");
                         }
                     });
                     $(".step").velocity({
