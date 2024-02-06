@@ -93,9 +93,83 @@ $(document).ready(function () {
         // mobile
         //console.log('mobile')
 
-        /* s: event button Back
+        /* s: event button Back */
         $('.stepBack').on('click', function () {
             fullpage_api.moveTo('community1', 4);
+            $(".community").velocity({
+                opacity: "1"
+            }, {
+                delay: 0,
+                duration: 700,
+                begin: function () {
+                    $(".bgColor__community").removeClass("opac0");
+                    $(".community").addClass("active");
+                }
+            });
+            $(".communityItem2").velocity({
+                top: "100vh"
+            }, {
+                delay: 0,
+                duration: 0,
+                begin: function () {
+                    $(".communityItem").addClass("disable");
+                    $(".communityItem2").velocity("stop", true);
+                }
+            });
+            $(".communityItem3").velocity({
+                top: "100vh"
+            }, {
+                delay: 0,
+                duration: 0,
+                begin: function () {
+                    $(".communityItem3").velocity("stop", true);
+                }
+            });
+            $(".communityItem4").velocity({
+                top: "100vh"
+            }, {
+                delay: 0,
+                duration: 0,
+                begin: function () {
+                    $(".communityItem4").velocity("stop", true);
+                }
+            });
+            $(".communityItem1").velocity({
+                top: "0"
+            }, {
+                delay: 400,
+                duration: 700,
+                begin: function () {
+                    $(".communityItem").velocity("stop", false);
+                    $(".communityItem1").removeClass("disable");
+                },
+                complete: function () {
+                    $(".communityItem1 .articleContent").removeClass("opac0");
+                    $(".communityItem2").removeClass("disable");
+                    $(".communityItem3").removeClass("disable");
+                    $(".communityItem4").removeClass("disable");
+                }
+            });
+            $(".step").velocity({
+                opacity: "0"
+            }, {
+                delay: 0,
+                duration: 700,
+                begin: function () {
+                    $(".bgColor__white").removeClass("full");
+                    $(".step").removeClass("active");
+                }
+            });
+            $(".stepItem").velocity({
+                opacity: "0"
+            }, {
+                delay: 0,
+                duration: 700,
+                begin: function () {
+                    $(".stepItem .articleContent").removeClass("opac0");
+                    $(".stepArrow").removeClass("active");
+                }
+            });
         })
         /* e: event button Back */
 
