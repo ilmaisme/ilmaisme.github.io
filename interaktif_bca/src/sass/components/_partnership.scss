@@ -63,16 +63,17 @@
     }
 
     &Item {
+        display: flex;
         position: relative;
         flex: 1;
+
+        @include max-responsive($w-xm) {
+            display: block;
+        }
 
         @media only screen and(min-height: 800px) and(orientation: portrait) {
             margin-top: 20px;
             margin-bottom: 20px;
-        }
-
-        @include range-responsive($w-md, $w-xl) {
-            display: flex;
         }
 
         @include min-responsive($w-xl) {
@@ -111,16 +112,18 @@
         display: block;
         text-align: center;
         position: relative;
-        float: left;
         margin-right: 10px;
         margin-bottom: 10px;
+
+        @include max-responsive($w-xm) {
+            float: left;
+        }
 
         @include range-responsive($w-md, $w-xl) {
             width: 205px;
         }
 
         @include min-responsive($w-md) {
-            float: none;
             margin-right: 0;
             margin-bottom: 0;
         }
