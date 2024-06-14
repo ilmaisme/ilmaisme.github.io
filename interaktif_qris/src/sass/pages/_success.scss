@@ -1,0 +1,59 @@
+.success {
+    &Title {
+        text-transform: uppercase;
+        @include font-pack($font-caption, 74px, $font-weight-normal, $line-base, $cl-white);
+
+        @include min-responsive($w-md) {
+            margin-left: -80px;
+        }
+
+        span{
+            display: block;
+        }
+    }
+
+    &Img {
+        position: relative;
+        height: calc(var(--app-height)*(70 / 100));
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &Shine {
+        position: absolute;
+
+        &1 {
+            top: -60px;
+            right: 50px;
+            animation: glow 5s ease infinite;
+
+            @include min-responsive($w-xxxl) {
+                right: 120px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                right: -20px;
+            }
+        }
+
+        &2 {
+            left: -100px;
+            top: 200px;
+            animation: glow2 6s ease infinite;
+
+            @include min-responsive($w-xxxl) {
+                left: -150px;
+            }
+        }
+
+        img {
+            max-width: 70%;
+
+            @include min-responsive($w-xxxl) {
+                max-width: unset;
+            }
+        }
+    }
+}

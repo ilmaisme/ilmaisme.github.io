@@ -1,0 +1,136 @@
+.people {
+    flex-direction: column;
+
+    &Wrap {
+        flex-direction: column;
+        position: relative;
+        height: 100%;
+        max-height: 1080px;
+    }
+
+    &Title {
+        position: absolute;
+        top: 4vh;
+        margin-top: 15px;
+        margin-bottom: 25px;
+        text-align: center;
+
+        @include min-responsive($w-lg) {
+            width: 817px;
+        }
+
+        .articleTitle {
+            padding: 19px 22px 19px;
+            border-radius: 30px;
+            background: $cl-white;
+            @include font-pack($size: 14px, $weight: $font-weight-light);
+
+            @include min-responsive($w-md) {
+                @include font-pack($size: 22px)
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                @include font-pack($size: 20px)
+            }
+
+            strong {
+                @include font-pack($weight: $font-weight-normal);
+            }
+        }
+    }
+
+    &Img {
+        &__wrap {
+            width: 100%;
+            position: relative;
+            transform: translate(0, -60px);
+        }
+
+        &2,
+        &3,
+        &4,
+        &5,
+        &6,
+        &7,
+        &8 {
+            position: absolute;
+        }
+
+        &2 {
+            left: 0;
+            top: -105px;
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                top: -55px;
+            }
+        }
+
+        &3 {
+            left: 110px;
+            top: 73px;
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                transform: scale(.8);
+                left: 145px;
+                top: 94px;
+            }
+        }
+
+        &4 {
+            left: -25px;
+            top: 305px;
+        }
+
+        &5 {
+            left: 250px;
+            top: 365px;
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                top: 340px;
+            }
+        }
+
+        &6 {
+            right: 175px;
+            top: -125px;
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                right: 235px;
+                top: -55px;
+            }
+        }
+
+        &7 {
+            right: 0;
+            top: 55px;
+        }
+
+        &8 {
+            right: 50px;
+            top: 288px;
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                transform: scale(.7);
+                right: 90px;
+                top: 255px;
+            }
+        }
+    }
+
+    &.--text {
+        .peopleImg__wrap {
+            transform: translate(0, 40px) scale(.7);
+
+            @include min-responsive($w-xxxl) {
+                transform: translate(0, 40px) scale(1);
+            }
+        }
+    }
+}
+
+.value {
+    &Title {
+        top: 0;
+        position: absolute;
+    }
+}
