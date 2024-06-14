@@ -14,7 +14,7 @@ $(document).ready(function () {
         autoScrolling: true,
         scrollHorizontally: true,
         //navigation: true,
-        anchors: ['intro', 'cart', 'cashier', 'scan', 'success'],
+        anchors: ['intro', 'cart', 'cashier', 'scan', 'success', 'journey', 'people'],
         lockAnchors: true,
         //scrollOverflow: true,
 
@@ -195,6 +195,182 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700,
                     begin: function () {},
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 6 && direction == 'up') {
+                fullpage_api.setAllowScrolling(false, 'down');
+                fullpage_api.setKeyboardScrolling(false, 'down');
+                $(".journeyTitle").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.journey').addClass('active')
+                    },
+                    complete: function () {}
+                });
+                $(".journeyButton").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 300,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".peopleImg__wrap").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 6 && direction == 'down') {
+                $('.people').addClass('--text')
+                $(".reachTitle").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {
+                        $('.reachLine').addClass('active')
+                    }
+                });
+            }
+            if (origin.index == 7 && direction == 'up') {
+                $('.people').removeClass('--text')
+                $(".reachTitle").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.reachLine').removeClass('active')
+                    },
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 7 && direction == 'down') {
+                $(".reachTitle").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.reachLine').removeClass('active')
+                    },
+                    complete: function () {}
+                });
+                $(".valueTitle").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {
+                        $('.valueLine').addClass('active')
+                    }
+                });
+            }
+            if (origin.index == 8 && direction == 'up') {
+                $(".reachTitle").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.reachLine').addClass('active')
+                    },
+                    complete: function () {}
+                });
+                $(".valueTitle").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.valueLine').removeClass('active')
+                    },
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 8 && direction == 'down') {
+                $(".valueTitle").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".peopleImg__wrap").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".charTitle").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 9 && direction == 'up') {
+                $(".valueTitle").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".peopleImg__wrap").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+                $(".charTitle").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {},
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 9 && direction == 'down') {
+                $(".charTitle").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.charUnggul').addClass('active')
+                    },
+                    complete: function () {}
+                });
+            }
+            if (origin.index == 10 && direction == 'up') {
+                $(".charTitle").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.charUnggul').removeClass('active')
+                    },
                     complete: function () {}
                 });
             }
@@ -401,6 +577,40 @@ $('.-js-trig-scan').on('click', function () {
     $('.cashierButton').addClass('drop-scan')
     $('.cashierButton').attr('id', 'yes-drop');
     $('.cashierDropzone').attr('id', 'inner-dropzone');
+})
+
+$('.-js-trig-people').on('click', function () {
+    fullpage_api.setAllowScrolling(true, 'down');
+    fullpage_api.setKeyboardScrolling(true, 'down');
+    fullpage_api.moveTo('people', 6);
+    $(".peopleImg__wrap").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 700,
+        begin: function () {
+            $('.peopleImg').removeClass('top100')
+        },
+        complete: function () {}
+    });
+    $(".journeyTitle").velocity({
+        top: "-100vh"
+    }, {
+        delay: 0,
+        duration: 700,
+        begin: function () {
+            $('.journey').removeClass('active')
+        },
+        complete: function () {}
+    });
+    $(".journeyButton").velocity({
+        opacity: "0"
+    }, {
+        delay: 0,
+        duration: 700,
+        begin: function () {},
+        complete: function () {}
+    });
 })
 
 /* s: Get HEIGHT Device */

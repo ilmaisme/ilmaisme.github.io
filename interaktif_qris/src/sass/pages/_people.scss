@@ -14,6 +14,7 @@
         margin-top: 15px;
         margin-bottom: 25px;
         text-align: center;
+        z-index: 1;
 
         @include min-responsive($w-lg) {
             width: 817px;
@@ -40,10 +41,23 @@
     }
 
     &Img {
+        animation: translate-3D linear infinite;
+        animation-duration: var(--time-bubble);
+        transition: top .7s ease-in;
+
         &__wrap {
             width: 100%;
             position: relative;
             transform: translate(0, -60px);
+            transition: transform .7s ease, scale .7s ease;
+        }
+
+        &1 {
+            position: relative;
+            top: 0;
+            transition-delay: 0s;
+            --t-y: -10;
+            --time-bubble: 7s;
         }
 
         &2,
@@ -59,6 +73,9 @@
         &2 {
             left: 0;
             top: -105px;
+            transition-delay: .3s;
+            --t-y: 19;
+            --time-bubble: 10s;
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 top: -55px;
@@ -68,6 +85,9 @@
         &3 {
             left: 110px;
             top: 73px;
+            transition-delay: .6s;
+            --t-y: 28;
+            --time-bubble: 8s;
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 transform: scale(.8);
@@ -79,11 +99,17 @@
         &4 {
             left: -25px;
             top: 305px;
+            transition-delay: .8s;
+            --t-y: 24;
+            --time-bubble: 9s;
         }
 
         &5 {
             left: 250px;
             top: 365px;
+            transition-delay: .3s;
+            --t-y: -30;
+            --time-bubble: 8s;
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 top: 340px;
@@ -93,6 +119,9 @@
         &6 {
             right: 175px;
             top: -125px;
+            transition-delay: .3s;
+            --t-y: 13;
+            --time-bubble: 6s;
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 right: 235px;
@@ -103,17 +132,43 @@
         &7 {
             right: 0;
             top: 55px;
+            transition-delay: .8s;
+            --t-y: 20;
+            --time-bubble: 7s;
         }
 
         &8 {
             right: 50px;
             top: 288px;
+            transition-delay: .6s;
+            --t-y: -15;
+            --time-bubble: 9s;
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 transform: scale(.7);
                 right: 90px;
                 top: 255px;
             }
+        }
+    }
+
+    &Line {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: calc(50% - 4px/2);
+        opacity: 0;
+        height: 0;
+        border-left: 4px dashed $cl-white;
+        transition: height .7s ease-in;
+
+        @include min-responsive($w-xxxl) {
+            width: 120px;
+            border-top: 4px dashed $cl-white;
+        }
+
+        &.active{
+            opacity: 1;
         }
     }
 
@@ -132,5 +187,37 @@
     &Title {
         top: 0;
         position: absolute;
+    }
+
+    &Line {
+        top: -165px;
+
+        &.active {
+            height: 140px;
+        }
+    }
+}
+
+.reach {
+    &Line {
+        top: -315px;
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            top: -225px;
+        }
+
+        @include min-responsive($w-xxxl) {
+            left: unset;
+            right: calc(50% - 4px / 2);
+            transform: scaleX(-1);
+        }
+
+        &.active {
+            height: 290px;
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                height: 200px;
+            }
+        }
     }
 }

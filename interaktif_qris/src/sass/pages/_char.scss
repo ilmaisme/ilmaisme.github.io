@@ -1,0 +1,53 @@
+.char {
+    &Title {
+        @extend .cartTitle;
+        max-width: 817px;
+        padding: 14px 22px 14px;
+        text-align: center;
+        @include font-pack($weight: $font-weight-light);
+
+        strong {
+            @include font-pack($weight: $font-weight-normal);
+        }
+    }
+
+    &Unggul {
+        &__title {
+            display: flex;
+            flex-direction: row;
+            @include font-pack($font-caption, 190px, $font-weight-normal, false, $cl-white);
+
+            span {
+                display: inline-block;
+                transform: scale(0);
+                transition: transform .7s ease;
+            }
+        }
+
+        &.active{
+            .charUnggul__title span{
+                transform: scale(1);
+
+                &:nth-child(2) {
+                    transition-delay: .2s;
+                }
+
+                &:nth-child(3) {
+                    transition-delay: .4s;
+                }
+
+                &:nth-child(4) {
+                    transition-delay: .6s;
+                }
+
+                &:nth-child(5) {
+                    transition-delay: .8s;
+                }
+
+                &:nth-child(6) {
+                    transition-delay: 1s;
+                }
+            }
+        }
+    }
+}
