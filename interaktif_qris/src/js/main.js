@@ -26,9 +26,7 @@ $(document).ready(function () {
                     top: "-100vh"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".cartTitle").velocity({
                     top: "0"
@@ -37,24 +35,19 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.cart').addClass('active')
-                    },
-                    complete: function () {}
+                    }
                 });
                 $(".cartCompo").velocity({
                     opacity: "1"
                 }, {
                     delay: 300,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".storeCompo").velocity({
                     opacity: "1"
                 }, {
                     delay: 300,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 fullpage_api.setAllowScrolling(false, 'down');
                 fullpage_api.setKeyboardScrolling(false, 'down');
@@ -64,9 +57,7 @@ $(document).ready(function () {
                     top: "0"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".cartTitle").velocity({
                     top: "100vh"
@@ -75,24 +66,19 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.cart').removeClass('active')
-                    },
-                    complete: function () {}
+                    }
                 });
                 $(".cartCompo").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".storeCompo").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 fullpage_api.setAllowScrolling(true, 'down');
                 fullpage_api.setKeyboardScrolling(true, 'down');
@@ -102,17 +88,13 @@ $(document).ready(function () {
                     opacity: "1"
                 }, {
                     delay: 300,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".cartTitle").velocity({
                     top: "0"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".cashierImg").velocity({
                     opacity: "0"
@@ -122,16 +104,13 @@ $(document).ready(function () {
                     begin: function () {
                         $('.cart').addClass('active')
                         $('.cashier').removeClass('active')
-                    },
-                    complete: function () {}
+                    }
                 });
                 $(".cashierCompo").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
             }
             if (origin.index == 4 && direction == 'down') {
@@ -146,24 +125,19 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.journey').addClass('active')
-                    },
-                    complete: function () {}
+                    }
                 });
                 $(".journeyButton").velocity({
                     opacity: "1"
                 }, {
                     delay: 300,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".success").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
             }
             if (origin.index == 5 && direction == 'up') {
@@ -178,24 +152,19 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.journey').removeClass('active')
-                    },
-                    complete: function () {}
+                    }
                 });
                 $(".journeyButton").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".success").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
             }
             if (origin.index == 6 && direction == 'up') {
@@ -208,24 +177,19 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.journey').addClass('active')
-                    },
-                    complete: function () {}
+                    }
                 });
                 $(".journeyButton").velocity({
                     opacity: "1"
                 }, {
                     delay: 300,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".peopleImg__wrap").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
             }
             if (origin.index == 6 && direction == 'down') {
@@ -235,7 +199,6 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 700,
-                    begin: function () {},
                     complete: function () {
                         $('.reachLine').addClass('active')
                     }
@@ -250,8 +213,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.reachLine').removeClass('active')
-                    },
-                    complete: function () {}
+                    }
                 });
             }
             if (origin.index == 7 && direction == 'down') {
@@ -262,15 +224,13 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.reachLine').removeClass('active')
-                    },
-                    complete: function () {}
+                    }
                 });
                 $(".valueTitle").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
                     duration: 700,
-                    begin: function () {},
                     complete: function () {
                         $('.valueLine').addClass('active')
                     }
@@ -284,8 +244,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.reachLine').addClass('active')
-                    },
-                    complete: function () {}
+                    }
                 });
                 $(".valueTitle").velocity({
                     opacity: "0"
@@ -294,8 +253,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.valueLine').removeClass('active')
-                    },
-                    complete: function () {}
+                    }
                 });
             }
             if (origin.index == 8 && direction == 'down') {
@@ -303,25 +261,19 @@ $(document).ready(function () {
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".peopleImg__wrap").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".charTitle").velocity({
                     top: "0"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
             }
             if (origin.index == 9 && direction == 'up') {
@@ -329,25 +281,19 @@ $(document).ready(function () {
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".peopleImg__wrap").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
                 $(".charTitle").velocity({
                     top: "100vh"
                 }, {
                     delay: 0,
-                    duration: 700,
-                    begin: function () {},
-                    complete: function () {}
+                    duration: 700
                 });
             }
             if (origin.index == 9 && direction == 'down') {
@@ -358,8 +304,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.charUnggul').addClass('active')
-                    },
-                    complete: function () {}
+                    }
                 });
             }
             if (origin.index == 10 && direction == 'up') {
@@ -370,8 +315,435 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.charUnggul').removeClass('active')
-                    },
-                    complete: function () {}
+                    }
+                });
+            }
+            if (origin.index == 10 && direction == 'down') {
+                $(".charUnggul__caption").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.charUnggul__caption').addClass('breadcrumb')
+                    }
+                });
+                $(".charBreadcrumb").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 700,
+                    complete: function () {
+                        $('.char1__bread').addClass('active')
+                    }
+                });
+                $(".char1__img").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+                $(".char1__title").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+                $(".char1__txt").velocity({
+                    top: "0"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+            }
+            if (origin.index == 11 && direction == 'up') {
+                $(".charUnggul__caption").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.charUnggul__caption').removeClass('breadcrumb')
+                    }
+                });
+                $(".charBreadcrumb").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.char1__bread').removeClass('active')
+                    }
+                });
+                $(".char1__img").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char1__title").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char1__txt").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 11 && direction == 'down') {
+                $(".char1__img").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        $('.char1__bread').removeClass('active')
+                    }
+                });
+                $(".char1__title").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char1__txt").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char2__img").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        $('.char2__bread').addClass('active')
+                    }
+                });
+                $(".char2__title").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char2__txt").velocity({
+                    top: "0"
+                }, {
+                    delay: 300,
+                    duration: 700
+                });
+            }
+            if (origin.index == 12 && direction == 'up') {
+                $(".char1__img").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".char1__title").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        $('.char1__bread').addClass('active')
+                    }
+                });
+                $(".char1__txt").velocity({
+                    top: "0"
+                }, {
+                    delay: 300,
+                    duration: 700
+                });
+                $(".char2__img").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.char2__bread').removeClass('active')
+                    }
+                });
+                $(".char2__title").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char2__txt").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 12 && direction == 'down') {
+                $(".char2__img").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.char2__bread').removeClass('active')
+                    }
+                });
+                $(".char2__title").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char2__txt").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char3__img").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        $('.char3__bread').addClass('active')
+                    }
+                });
+                $(".char3__title").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char3__txt").velocity({
+                    top: "0"
+                }, {
+                    delay: 300,
+                    duration: 700
+                });
+            }
+            if (origin.index == 13 && direction == 'up') {
+                $(".char2__img").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        $('.char2__bread').addClass('active')
+                    }
+                });
+                $(".char2__title").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char2__txt").velocity({
+                    top: "0"
+                }, {
+                    delay: 300,
+                    duration: 700
+                });
+                $(".char3__img").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.char3__bread').removeClass('active')
+                    }
+                });
+                $(".char3__title").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char3__txt").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 13 && direction == 'down') {
+                $(".char3__img").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.char3__bread').removeClass('active')
+                    }
+                });
+                $(".char3__title").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char3__txt").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char4__img").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".char4__title").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        $('.char4__bread').addClass('active')
+                    }
+                });
+                $(".char4__txt").velocity({
+                    top: "0"
+                }, {
+                    delay: 300,
+                    duration: 700
+                });
+            }
+            if (origin.index == 14 && direction == 'up') {
+                $(".char3__img").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 400
+                });
+                $(".char3__title").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        $('.char3__bread').addClass('active')
+                    }
+                });
+                $(".char3__txt").velocity({
+                    top: "0"
+                }, {
+                    delay: 300,
+                    duration: 700
+                });
+                $(".char4__img").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400
+                });
+                $(".char4__title").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.char4__bread').removeClass('active')
+                    }
+                });
+                $(".char4__txt").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 14 && direction == 'down') {
+                $(".char4__img").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400
+                });
+                $(".char4__title").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.char4__bread').removeClass('active')
+                    }
+                });
+                $(".char4__txt").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".charBreadcrumb").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".benefitTitle").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.benefitButton').addClass('active')
+                    }
+                });
+                $(".benefit").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 15 && direction == 'up') {
+                $(".char4__img").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".char4__title").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".char4__txt").velocity({
+                    top: "0"
+                }, {
+                    delay: 300,
+                    duration: 700
+                });
+                $(".charBreadcrumb").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 700,
+                    complete: function () {
+                        $('.char4__bread').addClass('active')
+                    }
+                });
+                $(".benefitTitle").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.benefitButton').removeClass('active')
+                    }
+                });
+                $(".benefit").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
                 });
             }
         }
@@ -499,32 +871,25 @@ function scanSuccess() {
             $('.cashierButton').removeClass('drop-scan')
             $('.cashierButton').attr('id', '');
             $('.cashierDropzone').attr('id', '');
-        },
-        complete: function () {}
+        }
     });
     $(".cashierCompo").velocity({
         opacity: "0"
     }, {
         delay: 0,
-        duration: 700,
-        begin: function () {},
-        complete: function () {}
+        duration: 700
     });
     $(".storeCompo").velocity({
         opacity: "0"
     }, {
         delay: 0,
-        duration: 700,
-        begin: function () {},
-        complete: function () {}
+        duration: 700
     });
     $(".cashierInfo").velocity({
         opacity: "0"
     }, {
         delay: 0,
-        duration: 700,
-        begin: function () {},
-        complete: function () {}
+        duration: 300
     });
 }
 
@@ -534,17 +899,13 @@ $('.-js-trig-cashier').on('click', function () {
         opacity: "0"
     }, {
         delay: 0,
-        duration: 700,
-        begin: function () {},
-        complete: function () {}
+        duration: 700
     });
     $(".cartTitle").velocity({
         top: "-100vh"
     }, {
         delay: 0,
-        duration: 700,
-        begin: function () {},
-        complete: function () {}
+        duration: 700
     });
     $(".cashierImg").velocity({
         opacity: "1"
@@ -554,16 +915,13 @@ $('.-js-trig-cashier').on('click', function () {
         begin: function () {
             $('.cart').removeClass('active')
             $('.cashier').addClass('active')
-        },
-        complete: function () {}
+        }
     });
     $(".cashierCompo").velocity({
         opacity: "1"
     }, {
         delay: 300,
-        duration: 700,
-        begin: function () {},
-        complete: function () {}
+        duration: 700
     });
 })
 
@@ -590,8 +948,7 @@ $('.-js-trig-people').on('click', function () {
         duration: 700,
         begin: function () {
             $('.peopleImg').removeClass('top100')
-        },
-        complete: function () {}
+        }
     });
     $(".journeyTitle").velocity({
         top: "-100vh"
@@ -600,18 +957,359 @@ $('.-js-trig-people').on('click', function () {
         duration: 700,
         begin: function () {
             $('.journey').removeClass('active')
-        },
-        complete: function () {}
+        }
     });
     $(".journeyButton").velocity({
         opacity: "0"
     }, {
         delay: 0,
-        duration: 700,
-        begin: function () {},
-        complete: function () {}
+        duration: 700
     });
 })
+
+$('.-js-trig-merchant').on('click', function () {
+    if ($(".merchantTrigger__caption").css('opacity') == 1) {
+        closeMerchant()
+        showBenefitBg()
+    } else {
+        showMerchant()
+        hideBenefitBg()
+        closeConsumer()
+        $(".merchantClose").velocity({
+            opacity: "1"
+        }, {
+            delay: 0,
+            duration: 300,
+            begin: function () {
+                $('.merchantClose').addClass('active')
+            },
+            complete: function () {}
+        });
+        $(".merchantTrigger__caption").velocity({
+            opacity: "1"
+        }, {
+            delay: 0,
+            duration: 300
+        });
+        $(".merchantTriangle").velocity({
+            opacity: "0"
+        }, {
+            delay: 0,
+            duration: 300
+        });
+    }
+})
+
+$('.-js-close-merchant').on('click', function () {
+    closeMerchant()
+    showBenefitBg()
+})
+
+function closeMerchant() {
+    $(".merchantClose").velocity({
+        opacity: "0"
+    }, {
+        delay: 0,
+        duration: 300,
+        begin: function () {
+            $('.merchantClose').removeClass('active')
+        }
+    });
+    $(".merchantTrigger__caption").velocity({
+        opacity: "0"
+    }, {
+        delay: 0,
+        duration: 300
+    });
+    $(".merchantTriangle").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 300
+    });
+}
+
+$('.-js-trig-consumer').on('click', function () {
+    if ($(".consumerTrigger__caption").css('opacity') == 1) {
+        closeConsumer()
+        showBenefitBg()
+    } else {
+        showConsumer()
+        hideBenefitBg()
+        closeMerchant()
+        $(".consumerClose").velocity({
+            opacity: "1"
+        }, {
+            delay: 0,
+            duration: 300,
+            begin: function () {
+                $('.consumerClose').addClass('active')
+            },
+            complete: function () {}
+        });
+        $(".consumerTrigger__caption").velocity({
+            opacity: "1"
+        }, {
+            delay: 0,
+            duration: 300
+        });
+        $(".consumerTriangle").velocity({
+            opacity: "0"
+        }, {
+            delay: 0,
+            duration: 300
+        });
+    }
+})
+
+$('.-js-close-consumer').on('click', function () {
+    closeConsumer()
+    showBenefitBg()
+})
+
+function closeConsumer() {
+    $(".consumerClose").velocity({
+        opacity: "0"
+    }, {
+        delay: 0,
+        duration: 300,
+        begin: function () {
+            $('.consumerClose').removeClass('active')
+        }
+    });
+    $(".consumerTrigger__caption").velocity({
+        opacity: "0"
+    }, {
+        delay: 0,
+        duration: 300
+    });
+    $(".consumerTriangle").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 300
+    });
+}
+
+function hideBenefitBg() {
+    $(".benefitTitle").velocity({
+        top: "-100vh"
+    }, {
+        delay: 0,
+        duration: 700,
+        begin: function () {
+            $('.benefitImg__bg').addClass('hide')
+        }
+    });
+    $(".benefitImg__coffee").velocity({
+        opacity: "0"
+    }, {
+        delay: 0,
+        duration: 300
+    });
+    $(".benefitLamp").velocity({
+        opacity: "0"
+    }, {
+        delay: 0,
+        duration: 300
+    });
+}
+
+function showBenefitBg() {
+    $(".benefitTitle").velocity({
+        top: "0"
+    }, {
+        delay: 0,
+        duration: 700,
+        begin: function () {
+            $('.benefitImg__bg').removeClass('hide')
+            $('.benefitButton').addClass('active')
+        }
+    });
+    $(".benefitImg__coffee").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 700
+    });
+    $(".benefitLamp").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 700
+    });
+    $(".consumerTrigger").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 700
+    });
+    $(".merchantTrigger").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 700
+    });
+    $(".merchant").velocity({
+        opacity: "0"
+    }, {
+        delay: 0,
+        duration: 400,
+        begin: function () {
+            $('.merchant').removeClass('active')
+        }
+    });
+    $(".consumer").velocity({
+        opacity: "0"
+    }, {
+        delay: 0,
+        duration: 400,
+        begin: function () {
+            $('.consumer').removeClass('active')
+        }
+    });
+    $(".benefitList__item").velocity({
+        top: "100vh"
+    }, {
+        delay: 0,
+        duration: 700,
+        begin: function () {
+            $('.benefitList__img').removeClass('active')
+        }
+    });
+}
+
+function showMerchant() {
+    $(".consumerTrigger").velocity({
+        opacity: "0"
+    }, {
+        delay: 0,
+        duration: 300,
+        begin: function () {
+            $('.consumerTrig').removeClass('active')
+        }
+    });
+    $(".merchant").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 700,
+        begin: function () {
+            $('.merchant').addClass('active')
+        }
+    });
+    $(".merchantItem1").velocity({
+        top: "0"
+    }, {
+        delay: 400,
+        duration: 700,
+        complete: function () {
+            $('.merchantItem1__img').addClass('active')
+        }
+    });
+    $(".merchantItem2").velocity({
+        top: "0"
+    }, {
+        delay: 700,
+        duration: 700,
+        complete: function () {
+            $('.merchantItem2__img').addClass('active')
+        }
+    });
+    $(".merchantItem3").velocity({
+        top: "0"
+    }, {
+        delay: 1000,
+        duration: 700,
+        complete: function () {
+            $('.merchantItem3__img').addClass('active')
+        }
+    });
+    $(".merchantItem4").velocity({
+        top: "0"
+    }, {
+        delay: 1300,
+        duration: 700,
+        complete: function () {
+            $('.merchantItem4__img').addClass('active')
+        }
+    });
+    $(".merchantItem5").velocity({
+        top: "0"
+    }, {
+        delay: 1600,
+        duration: 700,
+        complete: function () {
+            $('.merchantItem5__img').addClass('active')
+        }
+    });
+}
+
+function showConsumer() {
+    $(".merchantTrigger").velocity({
+        opacity: "0"
+    }, {
+        delay: 0,
+        duration: 300,
+        begin: function () {
+            $('.merchantTrig').removeClass('active')
+        }
+    });
+    $(".consumer").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 700,
+        begin: function () {
+            $('.consumer').addClass('active')
+        }
+    });
+    $(".consumerItem1").velocity({
+        top: "0"
+    }, {
+        delay: 400,
+        duration: 700,
+        complete: function () {
+            $('.consumerItem1__img').addClass('active')
+        }
+    });
+    $(".consumerItem2").velocity({
+        top: "0"
+    }, {
+        delay: 700,
+        duration: 700,
+        complete: function () {
+            $('.consumerItem2__img').addClass('active')
+        }
+    });
+    $(".consumerItem3").velocity({
+        top: "0"
+    }, {
+        delay: 1000,
+        duration: 700,
+        complete: function () {
+            $('.consumerItem3__img').addClass('active')
+        }
+    });
+    $(".consumerItem4").velocity({
+        top: "0"
+    }, {
+        delay: 1300,
+        duration: 700,
+        complete: function () {
+            $('.consumerItem4__img').addClass('active')
+        }
+    });
+    $(".consumerItem5").velocity({
+        top: "0"
+    }, {
+        delay: 1600,
+        duration: 700,
+        complete: function () {
+            $('.consumerItem5__img').addClass('active')
+        }
+    });
+}
 
 /* s: Get HEIGHT Device */
 const appHeight = () => {

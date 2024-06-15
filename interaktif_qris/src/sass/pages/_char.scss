@@ -13,19 +13,31 @@
 
     &Unggul {
         &__title {
+            position: relative;
             display: flex;
             flex-direction: row;
+            text-transform: uppercase;
             @include font-pack($font-caption, 190px, $font-weight-normal, false, $cl-white);
+            transform: scale(1) translate(0, 0);
+            transition: transform .7s ease-out;
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                font-size: 140px;
+            }
 
             span {
                 display: inline-block;
                 transform: scale(0);
                 transition: transform .7s ease;
             }
+
+            &.breadcrumb{
+                transform: scale(.28) translate(-152vw, -143vh);
+            }
         }
 
-        &.active{
-            .charUnggul__title span{
+        &.active {
+            .charUnggul__title span {
                 transform: scale(1);
 
                 &:nth-child(2) {
@@ -47,6 +59,124 @@
                 &:nth-child(6) {
                     transition-delay: 1s;
                 }
+            }
+        }
+    }
+
+    &Breadcrumb {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 36px;
+        left: 50px;
+        @include font-pack($font-caption, 40px, $font-weight-normal, false, $cl-white);
+
+        span {
+            transition: color .5s;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                border-bottom: 1px solid $cl-white;
+                transition: width .5s;
+            }
+
+            &.active {
+                @include font-pack($colour: #FFED50);
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &1 {
+        flex-direction: column;
+
+        &__txt {
+            max-width: 775px;
+            text-align: center;
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                max-width: 535px;
+            }
+        }
+
+        &__img {
+
+            img {
+                max-height: calc(var(--app-height) * (35/100));
+            }
+        }
+    }
+
+    &2 {
+        flex-direction: column;
+
+        &__wrap {
+            margin-left: -28vw;
+        }
+
+        &__txt {
+            max-width: 402px;
+        }
+
+        &__img {
+            position: absolute;
+            right: 0;
+            bottom: 5px;
+
+            img {
+                max-height: calc(var(--app-height) * (58/100));
+            }
+        }
+    }
+
+    &3 {
+        flex-direction: row;
+
+        &__title {
+            margin-left: -80px;
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                margin-left: -20px;
+            }
+        }
+
+        &__txt {
+            max-width: 520px;
+        }
+
+        &__img {
+            position: relative;
+            align-self: flex-end;
+            bottom: 40px;
+
+            img {
+                max-height: calc(var(--app-height) * (54/100));
+            }
+        }
+    }
+
+    &4 {
+        flex-direction: column;
+
+        &__txt {
+            max-width: 775px;
+            text-align: center;
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                max-width: 535px;
+            }
+        }
+
+        &__img {
+            margin-top: 40px;
+
+            img {
+                max-height: calc(var(--app-height) * (46/100));
             }
         }
     }
