@@ -39,7 +39,9 @@
         touch-action: none;
         transform: translate(0px, 0px);
 
-        transition: background-color 0.3s;
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            max-height: calc(var(--app-height)*(64 / 100));
+        }
 
         &.active {
             .cashierTrigger {
@@ -65,7 +67,7 @@
         }
     }
 
-    &Dropzone{
+    &Dropzone {
         position: absolute;
         width: calc(var(--app-height)*(11 / 100));
         height: calc(var(--app-height)*(14 / 100));
@@ -73,10 +75,10 @@
         right: calc(var(--app-height)*(5 / 100));
     }
 
-    &Scan{
+    &Scan {
         position: absolute;
-        width:72px;
-        height:72px;
+        width: 72px;
+        height: 72px;
         top: 94px;
         left: 58px;
     }

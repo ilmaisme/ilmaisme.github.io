@@ -1,0 +1,66 @@
+.vision {
+    &Title {
+        @extend .cartTitle;
+        max-width: 576px;
+        padding: 22px 35px 22px;
+        margin-top: 22px;
+        margin-bottom: 0;
+        @include font-pack($weight: $font-weight-light);
+
+        strong {
+            @include font-pack($weight: $font-weight-normal);
+        }
+    }
+
+    &Wrap {
+        position: relative;
+        padding-right: 99px;
+        height: calc(var(--app-height)*(61 / 100));
+        min-height: 532px;
+        max-height: 717px;
+
+        @include min-responsive($w-xxxxl) {
+            height: calc(var(--app-height)*(37 / 100));
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            height: calc(var(--app-height)*(54 / 100));
+        }
+    }
+
+    &Img {
+        img {
+            height: calc(var(--app-height)*(61 / 100));
+            min-height: 532px;
+            max-height: 717px;
+
+            @include min-responsive($w-xxxxl) {
+                height: calc(var(--app-height)*(37 / 100));
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                height: calc(var(--app-height)*(54 / 100));
+            }
+        }
+    }
+
+    &Line {
+        display: block;
+        position: absolute;
+        top: 42px;
+        right: 0;
+        height: 4px;
+        opacity: 0;
+        width: 0;
+        border-top: 4px dashed $cl-white;
+        transition: width .7s ease-in;
+
+        @include min-responsive($w-xxxl) {
+            border-top: 4px dashed $cl-white;
+        }
+
+        &.active{
+            width: 95px;
+        }
+    }
+}

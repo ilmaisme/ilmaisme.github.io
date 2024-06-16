@@ -746,6 +746,402 @@ $(document).ready(function () {
                     duration: 700
                 });
             }
+            if (origin.index == 15 && direction == 'down') {
+                $(".benefitTitle").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.benefitButton').removeClass('active')
+                    }
+                });
+                $(".benefit").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".overseasGlobe").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 1000,
+                    begin: function () {
+                        $('.overseas').addClass('active')
+                    }
+                });
+                $(".overseasTitle").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 16 && direction == 'up') {
+                $(".benefitTitle").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.benefitButton').addClass('active')
+                    }
+                });
+                $(".benefit").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".overseasGlobe").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.overseas').removeClass('active')
+                    }
+                });
+                $(".overseasTitle").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 16 && direction == 'down') {
+                $(".overseasGlobe").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.overseas').removeClass('active')
+                    }
+                });
+                $(".overseasTitle").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".tipsImg").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.tips').addClass('active')
+                    }
+                });
+                $(".tipsTitle").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700,
+                    begin: function () {
+                        $('.tipsTitle').addClass('active')
+                    }
+                });
+                $(".tipsContent__img0").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 1000,
+                    begin: function () {
+                        $('.tipsContent__img0').addClass('active')
+                    }
+                });
+            }
+            if (origin.index == 17 && direction == 'up') {
+                $(".overseasGlobe").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 1000,
+                    begin: function () {
+                        $('.overseas').addClass('active')
+                    }
+                });
+                $(".overseasTitle").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".tipsImg").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.tips').removeClass('active')
+                    }
+                });
+                $(".tipsTitle").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.tipsTitle').removeClass('active')
+                    }
+                });
+                $(".tipsContent__img0").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.tipsContent__img0').removeClass('active')
+                    }
+                });
+            }
+            if (origin.index == 17 && direction == 'down') {
+                $(".tipsContent__img0").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.tipsContent__img0').addClass('hide')
+                    }
+                });
+                $(".tipsContent__img1").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 1000,
+                    begin: function () {
+                        $('.tipsContent__img1').addClass('active')
+                    }
+                });
+                $(".tipsList li:nth-child(1)").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+            }
+            if (origin.index == 18 && direction == 'up') {
+                $(".tipsContent__img1").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.tipsContent__img0').removeClass('hide')
+                        $('.tipsContent__img1').removeClass('active')
+                    }
+                });
+                $(".tipsContent__img0").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 1000
+                });
+                $(".tipsList li:nth-child(1)").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 18 && direction == 'down') {
+                $(".tipsContent__img1").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.tipsContent__img1').addClass('hide')
+                    }
+                });
+                $(".tipsContent__img2").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 1000,
+                    begin: function () {
+                        $('.tipsContent__img2').addClass('active')
+                    }
+                });
+                $(".tipsList li:nth-child(2)").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+            }
+            if (origin.index == 19 && direction == 'up') {
+                $(".tipsContent__img2").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.tipsContent__img1').removeClass('hide')
+                        $('.tipsContent__img2').removeClass('active')
+                    }
+                });
+                $(".tipsContent__img1").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 1000
+                });
+                $(".tipsList li:nth-child(2)").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 19 && direction == 'down') {
+                $(".tipsContent__img2").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.tipsContent__img2').addClass('hide')
+                    }
+                });
+                $(".tipsContent__img3").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 1000,
+                    begin: function () {
+                        $('.tipsContent__img3').addClass('active')
+                    }
+                });
+                $(".tipsList li:nth-child(3)").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+            }
+            if (origin.index == 20 && direction == 'up') {
+                $(".tipsContent__img3").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 400,
+                    begin: function () {
+                        $('.tipsContent__img2').removeClass('hide')
+                        $('.tipsContent__img3').removeClass('active')
+                    }
+                });
+                $(".tipsContent__img2").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 1000
+                });
+                $(".tipsList li:nth-child(3)").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 20 && direction == 'down') {
+                $(".tipsImg").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.tips').removeClass('active')
+                    }
+                });
+                $(".tipsTitle").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.tipsTitle').removeClass('active')
+                    }
+                });
+                $(".tipsList").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+                $(".visionImg").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".visionLine").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 700,
+                    begin: function () {
+                        $('.visionLine').addClass('active')
+                    }
+                });
+                $(".visionTitle").velocity({
+                    top: "0"
+                }, {
+                    delay: 1100,
+                    duration: 700
+                });
+            }
+            if (origin.index == 21 && direction == 'up') {
+                $(".tipsImg").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.tips').addClass('active')
+                    }
+                });
+                $(".tipsTitle").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700,
+                    begin: function () {
+                        $('.tipsTitle').addClass('active')
+                    }
+                });
+                $(".tipsList").velocity({
+                    top: "0"
+                }, {
+                    delay: 400,
+                    duration: 700
+                });
+                $(".visionImg").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".visionLine").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.visionLine').removeClass('active')
+                    }
+                });
+                $(".visionTitle").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
         }
     })
 
@@ -1116,6 +1512,8 @@ function hideBenefitBg() {
 }
 
 function showBenefitBg() {
+    fullpage_api.setAllowScrolling(true);
+    fullpage_api.setKeyboardScrolling(true);
     $(".benefitTitle").velocity({
         top: "0"
     }, {
@@ -1179,7 +1577,9 @@ function showBenefitBg() {
     });
 }
 
-function showMerchant() {
+function showMerchant() {    
+    fullpage_api.setAllowScrolling(false);
+    fullpage_api.setKeyboardScrolling(false);
     $(".consumerTrigger").velocity({
         opacity: "0"
     }, {
@@ -1246,6 +1646,8 @@ function showMerchant() {
 }
 
 function showConsumer() {
+    fullpage_api.setAllowScrolling(false);
+    fullpage_api.setKeyboardScrolling(false);
     $(".merchantTrigger").velocity({
         opacity: "0"
     }, {
