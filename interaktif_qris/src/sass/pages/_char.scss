@@ -17,9 +17,17 @@
             display: flex;
             flex-direction: row;
             text-transform: uppercase;
-            @include font-pack($font-caption, 190px, $font-weight-normal, false, $cl-white);
+            @include font-pack($font-caption, 80px, $font-weight-normal, false, $cl-white);
             transform: scale(1) translate(0, 0);
             transition: transform .7s ease-out;
+
+            @include max-responsive($w-xm) {
+                font-size: 70px;
+            }
+
+            @include min-responsive($w-md) {
+                font-size: 190px;
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 font-size: 140px;
@@ -31,8 +39,22 @@
                 transition: transform .7s ease;
             }
 
-            &.breadcrumb{
-                transform: scale(.28) translate(-152vw, -143vh);
+            &.breadcrumb {
+                transform: scale(0.4) translate(-86vw, -92vh);
+
+                @include min-responsive($w-md) {
+                    transform: scale(.28) translate(-152vw, -128vh);
+                }
+            }
+
+            ~.articleTxt {
+                margin-left: 15px;
+                margin-right: 15px;
+
+                @include max-responsive($w-xm) {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
             }
         }
 
@@ -67,9 +89,20 @@
         display: flex;
         flex-direction: row;
         position: absolute;
-        top: 36px;
-        left: 50px;
-        @include font-pack($font-caption, 40px, $font-weight-normal, false, $cl-white);
+        top: 70px;
+        left: 15px;
+        @include font-pack($font-caption, 30px, $font-weight-normal, false, $cl-white);
+        transition: top 0.5s;
+
+        @include min-responsive($w-md) {
+            top: 90px;
+            left: 30px;
+            font-size: 40px;
+        }
+
+        @include min-responsive($w-xxxl) {
+            top: 125px;
+        }
 
         span {
             transition: color .5s;
@@ -89,6 +122,13 @@
                     width: 100%;
                 }
             }
+        }
+    }
+
+    &Img {
+        img {
+            padding-left: 10px;
+            padding-right: 10px;
         }
     }
 
@@ -116,7 +156,25 @@
         flex-direction: column;
 
         &__wrap {
-            margin-left: -28vw;
+            @include min-responsive($w-md) {
+                margin-left: -28vw;
+            }
+        }
+
+        &__title {
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-top: -6vh;
+
+            @include max-responsive($w-xm) {
+                margin-top: -14vh;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            @include min-responsive($w-md) {
+                margin: 0;
+            }
         }
 
         &__txt {
@@ -127,9 +185,19 @@
             position: absolute;
             right: 0;
             bottom: 5px;
+            max-width: 70%;
+
+            @include min-responsive($w-md) {
+                max-width: unset;
+            }
 
             img {
-                max-height: calc(var(--app-height) * (58/100));
+                max-height: calc(var(--app-height)*(40 / 100));
+                padding-right: 0;
+
+                @include min-responsive($w-md) {
+                    max-height: calc(var(--app-height) * (58/100));
+                }
             }
         }
     }
@@ -138,7 +206,18 @@
         flex-direction: row;
 
         &__title {
-            margin-left: -80px;
+            margin-left: 15px;
+            margin-top: -6vh;
+
+            @include max-responsive($w-xm) {
+                margin-top: -14vh;
+                margin-left: 10px;
+            }
+
+            @include min-responsive($w-md) {
+                margin-top: 0;
+                margin-left: -80px;
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 margin-left: -20px;
@@ -150,9 +229,15 @@
         }
 
         &__img {
-            position: relative;
-            align-self: flex-end;
-            bottom: 40px;
+            position: absolute;
+            left: 0;
+            bottom: 20px;
+
+            @include min-responsive($w-md) {
+                position: relative;
+                align-self: flex-end;
+                bottom: 40px;
+            }
 
             img {
                 max-height: calc(var(--app-height) * (54/100));
@@ -173,11 +258,20 @@
         }
 
         &__img {
+            max-width: 75%;
             margin-top: 40px;
+
+            @include min-responsive($w-md) {
+                max-width: unset;
+            }
 
             img {
                 max-height: calc(var(--app-height) * (46/100));
             }
+        }
+
+        &__title {
+            margin-top: 40px;
         }
     }
 }

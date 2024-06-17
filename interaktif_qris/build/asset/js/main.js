@@ -1067,10 +1067,10 @@ $(document).ready(function () {
                         $('.tipsTitle').removeClass('active')
                     }
                 });
-                $(".tipsList").velocity({
+                $(".tipsList li").velocity({
                     top: "-100vh"
                 }, {
-                    delay: 400,
+                    delay: 0,
                     duration: 700
                 });
                 $(".visionImg").velocity({
@@ -1114,7 +1114,7 @@ $(document).ready(function () {
                         $('.tipsTitle').addClass('active')
                     }
                 });
-                $(".tipsList").velocity({
+                $(".tipsList li").velocity({
                     top: "0"
                 }, {
                     delay: 400,
@@ -1141,6 +1141,56 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
+            }
+            if (origin.index == 21 && direction == 'down') {
+                $(".visionImg").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".visionLine").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.visionLine').removeClass('active')
+                    }
+                });
+                $(".visionTitle").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $('.creditTitle').addClass('active');
+                $('.creditName').addClass('active');
+            }
+            if (origin.index == 22 && direction == 'up') {
+                $(".visionImg").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".visionLine").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 400,
+                    duration: 700,
+                    begin: function () {
+                        $('.visionLine').addClass('active')
+                    }
+                });
+                $(".visionTitle").velocity({
+                    top: "0"
+                }, {
+                    delay: 1100,
+                    duration: 700
+                });
+                $('.creditTitle').removeClass('active');
+                $('.creditName').removeClass('active');
             }
         }
     })
@@ -1721,9 +1771,3 @@ const appHeight = () => {
 window.addEventListener("resize", appHeight)
 appHeight()
 /* e: Get HEIGHT Device */
-
-/* s: Refresh Page */
-function refreshPage() {
-    window.location.reload(false);
-}
-/* e: Refresh Page */

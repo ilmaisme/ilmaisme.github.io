@@ -5,28 +5,43 @@
         flex-direction: column;
         position: relative;
         height: 100%;
-        max-height: 1080px;
+        max-height: 680px;
+
+        @include min-responsive($w-md) {
+            max-height: 1080px;
+        }
     }
 
     &Title {
         position: absolute;
-        top: 4vh;
+        top: 10vh;
         margin-top: 15px;
         margin-bottom: 25px;
         text-align: center;
         z-index: 1;
+        max-width: calc(100% - 10px);
+
+        @include max-responsive($w-xm) {
+            max-width: calc(100% - 50px);
+        }
+
+        @include min-responsive($w-md) {
+            top: 4vh;
+        }
 
         @include min-responsive($w-lg) {
             width: 817px;
         }
 
         .articleTitle {
-            padding: 19px 22px 19px;
-            border-radius: 30px;
+            padding: 16px 15px 17px;
+            border-radius: 20px;
             background: $cl-white;
-            @include font-pack($size: 14px, $weight: $font-weight-light);
+            @include font-pack($size: 16px, $weight: $font-weight-light);
 
             @include min-responsive($w-md) {
+                border-radius: 30px;
+                padding: 19px 22px 19px;
                 @include font-pack($size: 22px)
             }
 
@@ -48,8 +63,12 @@
         &__wrap {
             width: 100%;
             position: relative;
-            transform: translate(0, -60px);
+            transform: translate(0, -30px);
             transition: transform .7s ease, scale .7s ease;
+
+            @include min-responsive($w-md) {
+                transform: translate(0, -60px);
+            }
         }
 
         &1 {
@@ -71,11 +90,16 @@
         }
 
         &2 {
-            left: 0;
+            left: 25px;
             top: -105px;
             transition-delay: .3s;
             --t-y: 19;
             --time-bubble: 10s;
+
+            @include min-responsive($w-md) {
+                left: 0;
+                top: -105px;
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 top: -55px;
@@ -83,11 +107,16 @@
         }
 
         &3 {
-            left: 110px;
-            top: 73px;
+            left: 0;
+            top: 38px;
             transition-delay: .6s;
             --t-y: 28;
             --time-bubble: 8s;
+
+            @include min-responsive($w-md) {
+                left: 110px;
+                top: 73px;
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 transform: scale(.8);
@@ -97,19 +126,29 @@
         }
 
         &4 {
-            left: -25px;
-            top: 305px;
+            left: 5px;
+            top: 170px;
             transition-delay: .8s;
             --t-y: 24;
             --time-bubble: 9s;
+
+            @include min-responsive($w-md) {
+                left: -25px;
+                top: 305px;
+            }
         }
 
         &5 {
-            left: 250px;
-            top: 365px;
+            left: 125px;
+            top: 234px;
             transition-delay: .3s;
             --t-y: -30;
             --time-bubble: 8s;
+
+            @include min-responsive($w-md) {
+                left: 250px;
+                top: 365px;
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 top: 340px;
@@ -117,11 +156,16 @@
         }
 
         &6 {
-            right: 175px;
-            top: -125px;
+            right: 40px;
+            top: -110px;
             transition-delay: .3s;
             --t-y: 13;
             --time-bubble: 6s;
+
+            @include min-responsive($w-md) {
+                right: 175px;
+                top: -125px;
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 right: 235px;
@@ -131,18 +175,28 @@
 
         &7 {
             right: 0;
-            top: 55px;
+            top: 0;
             transition-delay: .8s;
             --t-y: 20;
             --time-bubble: 7s;
+
+            @include min-responsive($w-md) {
+                right: 0;
+                top: 55px;
+            }
         }
 
         &8 {
-            right: 50px;
-            top: 288px;
+            right: -5px;
+            top: 165px;
             transition-delay: .6s;
             --t-y: -15;
             --time-bubble: 9s;
+
+            @include min-responsive($w-md) {
+                right: 50px;
+                top: 288px;
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 transform: scale(.7);
@@ -156,29 +210,58 @@
         display: block;
         position: absolute;
         top: 0;
-        left: calc(50% - 4px/2);
+        left: calc(50% - 2px/2);
         opacity: 0;
         height: 0;
-        border-left: 4px dashed $cl-white;
+        border-left: 2px dashed $cl-white;
         transition: height .7s ease-in;
+
+        @include min-responsive($w-md) {
+            left: calc(50% - 4px/2);
+            border-left: 4px dashed $cl-white;
+        }
 
         @include min-responsive($w-xxxl) {
             width: 120px;
             border-top: 4px dashed $cl-white;
         }
 
-        &.active{
+        &.active {
             opacity: 1;
         }
     }
 
     &.--text {
         .peopleImg__wrap {
-            transform: translate(0, 40px) scale(.7);
+            transform: translate(0, 100px) scale(.9);
+
+            @include max-responsive($w-xm) {
+                transform: translate(0, 95px) scale(0.7);
+            }
+
+            @include min-responsive($w-md) {
+                transform: translate(0, 40px) scale(.7);
+            }
 
             @include min-responsive($w-xxxl) {
                 transform: translate(0, 40px) scale(1);
             }
+        }
+    }
+
+    &Container {
+        width: 360px;
+
+        @include min-responsive($w-xl) {
+            width: $width-container;
+
+            @include max-height($w-hmd) {
+                width: $w-vlg;
+            }
+        }
+
+        @include min-responsive($w-xxl) {
+            width: 1280px;
         }
     }
 }
@@ -190,17 +273,31 @@
     }
 
     &Line {
-        top: -165px;
+        top: -95px;
+
+        @include min-responsive($w-md) {
+            top: -165px;
+        }
 
         &.active {
-            height: 140px;
+            height: 86px;
+
+            @include min-responsive($w-md) {
+                height: 140px;
+            }
         }
     }
 }
 
 .reach {
     &Line {
-        top: -315px;
+        top: -160px;
+        left: calc(50% + 35px / 2);
+
+        @include min-responsive($w-md) {
+            left: calc(50% - 4px/2);
+            top: -315px;
+        }
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             top: -225px;
@@ -213,7 +310,11 @@
         }
 
         &.active {
-            height: 290px;
+            height: 150px;
+
+            @include min-responsive($w-md) {
+                height: 290px;
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 height: 200px;

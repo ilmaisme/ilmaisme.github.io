@@ -11,10 +11,17 @@
         &__bg {
             width: 100%;
             height: 100%;
-            background: url(../images/benefit-bg.png);
-            background-size: contain;
+            background: url(../images/benefit-bg-mob.png);
+            background-size: calc(var(--app-height) - (40%));
             background-position: bottom center;
             background-repeat: no-repeat;
+
+            @include min-responsive($w-md) {
+                background: url(../images/benefit-bg.png);
+                background-size: contain;
+                background-position: bottom center;
+                background-repeat: no-repeat;
+            }
 
             @include range-responsive($w-md, $w-xxl) {
                 background-position: bottom left;
@@ -31,11 +38,18 @@
                 bottom: 0;
                 width: 100%;
                 height: calc(100% - (var(--app-height) - (9.3%)));
-                background: url(../images/benefit-bg-base.png);
+                background: url(../images/benefit-bg-base-mob.png);
                 background-size: contain;
                 background-position: bottom left;
                 background-repeat: repeat-x;
                 z-index: -1;
+
+                @include min-responsive($w-md) {
+                    background: url(../images/benefit-bg-base.png);
+                    background-size: contain;
+                    background-position: bottom left;
+                    background-repeat: repeat-x;
+                }
             }
 
             &::after {
@@ -44,12 +58,16 @@
                 right: 0;
                 bottom: 0;
                 width: 100%;
-                height: calc(100% - (var(--app-height) - (14%)));
+                height: calc(100% - (var(--app-height) - (10%)));
                 background: #005596;
                 background-size: contain;
                 background-position: bottom left;
                 background-repeat: repeat-x;
                 z-index: -2;
+
+                @include min-responsive($w-md) {
+                    height: calc(100% - (var(--app-height) - (14%)));
+                }
             }
 
             &.hide {
@@ -59,10 +77,17 @@
 
         &__coffee {
             position: absolute;
-            left: calc(50% - 222px/2 - 26vw);
-            height: calc(var(--app-height) - (78%));
-            bottom: calc(var(--app-height) - (45%));
-            max-height: 261px;
+            left: 10px;
+            bottom: calc(var(--app-height) - (62%));
+            height: calc(var(--app-height) - (90%));
+            max-height: 105px;
+
+            @include min-responsive($w-md) {
+                height: calc(var(--app-height) - (78%));
+                bottom: calc(var(--app-height) - (45%));
+                left: calc(50% - 222px/2 - 26vw);
+                max-height: 261px;
+            }
 
             @include range-responsive($w-md, $w-xxl) {
                 left: 85px;
@@ -89,6 +114,11 @@
         width: 100%;
         max-height: 440px;
         top: 0;
+        display: none;
+
+        @include min-responsive($w-md) {
+            display: block;
+        }
 
         &__img {
             position: absolute;
@@ -113,14 +143,26 @@
         @extend .cartTitle;
         align-self: center;
         max-width: 529px;
-        margin-top: calc(var(--app-height) - (90vh));
+        margin-top: calc(var(--app-height) - (86vh));
         padding: 14px 22px;
         text-align: center;
+
+        @include min-responsive($w-md) {
+            margin-top: calc(var(--app-height) - (90vh));
+        }
     }
 
     &Trigger {
         position: absolute;
-        top: 217px;
+        top: calc(var(--app-height) - (68vh));
+
+        @include max-responsive($w-xm) {
+            top: calc(var(--app-height) - (64vh));
+        }
+
+        @include min-responsive($w-md) {
+            top: 217px;
+        }
 
         @include min-responsive($w-xxxl) {
             top: 292px;
@@ -131,7 +173,11 @@
         }
 
         &.--merchant {
-            left: 160px;
+            left: 15px;
+
+            @include min-responsive($w-md) {
+                left: 160px;
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 left: 138px;
@@ -143,7 +189,11 @@
         }
 
         &.--consumer {
-            right: 160px;
+            right: 15px;
+
+            @include min-responsive($w-md) {
+                right: 160px;
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 right: 138px;
@@ -158,17 +208,34 @@
             text-align: center;
             margin-top: -2px;
             text-transform: uppercase;
-            @include font-pack($font-caption, 28px, $font-weight-light, $line-base, $cl-white);
+            @include font-pack($font-caption, 24px, $font-weight-light, $line-base, $cl-white);
+
+            @include max-responsive($w-xm) {
+                font-size: 20px;
+            }
+
+            @include min-responsive($w-md) {
+                font-size: 28px;
+            }
         }
     }
 
     &Button {
         position: relative;
         top: 0;
-        min-width: 168px;
-        max-width: 228px;
+        min-width: 157px;
+        max-width: 174px;
         width: calc(var(--app-height)*(21 / 100));
         cursor: pointer;
+
+        @include max-responsive($w-xm) {
+            min-width: 138px;
+        }
+
+        @include min-responsive($w-md) {
+            min-width: 168px;
+            max-width: 228px;
+        }
 
         &__wrap {
             padding: 7px 30px;
@@ -176,7 +243,15 @@
             border-radius: 15px;
             background: rgb(5, 52, 74);
             background: linear-gradient(95deg, rgba(5, 52, 74, 1) 0%, rgba(6, 83, 103, 1) 100%);
-            @include font-pack($font-caption, 28px, $font-weight-light, $line-base, $cl-white);
+            @include font-pack($font-caption, 24px, $font-weight-light, $line-base, $cl-white);
+
+            @include max-responsive($w-xm) {
+                font-size: 20px;
+            }
+
+            @include min-responsive($w-md) {
+                font-size: 28px;
+            }
         }
 
         &__triangle {
@@ -197,13 +272,17 @@
 
     &Close {
         position: absolute;
-        top: 36px;
+        top: 26px;
         display: block;
         width: 26px;
         height: 26px;
         border: 2px solid #065367;
         border-radius: 40px;
         background: $cl-white;
+
+        @include min-responsive($w-md) {
+            top: 36px;
+        }
 
         &::after,
         &::before {
@@ -238,12 +317,17 @@
         &__item {
             position: relative;
             top: 100vh;
-            padding: 17px 5px 50px 160px;
+            padding: 17px 22px;
             margin-top: 25px;
             max-width: 665px;
             background: $cl-white;
-            border-radius: 30px;
+            border-radius: 25px;
             @include font-pack($colour: $cl-primary);
+
+            @include min-responsive($w-md) {
+                padding: 17px 5px 50px 160px;
+                border-radius: 30px;
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 padding: 17px 17px 17px 125px;
@@ -256,9 +340,14 @@
         }
 
         &__img {
+            display: none;
             position: absolute;
             opacity: 0;
             transition: opacity .7s ease;
+
+            @include min-responsive($w-md) {
+                display: block;
+            }
 
             &.active {
                 opacity: 1;
@@ -271,7 +360,11 @@
     justify-content: center;
 
     &Close {
-        left: -38px;
+        left: -4px;
+
+        @include min-responsive($w-md) {
+            left: -38px;
+        }
     }
 
     &Img {
@@ -292,6 +385,7 @@
         img {
             height: calc(var(--app-height)*(65 / 100));
             max-height: 769px;
+            object-fit: contain;
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 height: calc(var(--app-height)*(60 / 100));
@@ -351,7 +445,11 @@
     justify-content: center;
 
     &Close {
-        right: -38px;
+        right: -4px;
+
+        @include min-responsive($w-md) {
+            right: -38px;
+        }
     }
 
     &Img {
@@ -373,6 +471,7 @@
         img {
             height: calc(var(--app-height)*(61 / 100));
             max-height: 708px;
+            object-fit: contain;
 
             @include min-responsive($w-xxxxl) {
                 height: calc(var(--app-height)*(37 / 100));
@@ -386,7 +485,11 @@
 
     &Item {
         text-align: right;
-        padding: 17px 150px 30px 5px;
+        padding: 17px 22px;
+
+        @include min-responsive($w-md) {
+            padding: 17px 150px 30px 5px;
+        }
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             padding: 17px 120px 17px 17px;

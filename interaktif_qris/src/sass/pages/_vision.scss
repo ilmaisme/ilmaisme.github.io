@@ -1,11 +1,28 @@
 .vision {
+    flex-direction: column;
+
+    @include min-responsive($w-md) {
+        flex-direction: row;
+    }
+
     &Title {
         @extend .cartTitle;
         max-width: 576px;
-        padding: 22px 35px 22px;
-        margin-top: 22px;
+        padding: 18px 15px 22px;
+        margin-top: 0;
         margin-bottom: 0;
-        @include font-pack($weight: $font-weight-light);
+        @include font-pack($size: 19px, $weight: $font-weight-light);
+
+        @include min-responsive($w-md) {
+            padding: 22px 35px 22px;
+            margin-top: 22px;
+            font-size: 32px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            font-size: 28px;
+            margin-top: 45px;
+        }
 
         strong {
             @include font-pack($weight: $font-weight-normal);
@@ -14,10 +31,17 @@
 
     &Wrap {
         position: relative;
-        padding-right: 99px;
-        height: calc(var(--app-height)*(61 / 100));
-        min-height: 532px;
-        max-height: 717px;
+        margin-top: 65px;
+        margin-bottom: 15px;
+
+        @include min-responsive($w-md) {
+            margin-top: 0;
+            margin-bottom: 0;
+            height: calc(var(--app-height)*(61 / 100));
+            min-height: 532px;
+            max-height: 717px;
+            padding-right: 99px;
+        }
 
         @include min-responsive($w-xxxxl) {
             height: calc(var(--app-height)*(37 / 100));
@@ -30,9 +54,13 @@
 
     &Img {
         img {
-            height: calc(var(--app-height)*(61 / 100));
-            min-height: 532px;
-            max-height: 717px;
+            height: calc(var(--app-height)*(40 / 100));
+
+            @include min-responsive($w-md) {
+                height: calc(var(--app-height)*(61 / 100));
+                min-height: 532px;
+                max-height: 717px;
+            }
 
             @include min-responsive($w-xxxxl) {
                 height: calc(var(--app-height)*(37 / 100));
@@ -47,20 +75,36 @@
     &Line {
         display: block;
         position: absolute;
-        top: 42px;
-        right: 0;
-        height: 4px;
+        bottom: -30px;
+        right: calc(50% + 100px/2);
         opacity: 0;
         width: 0;
-        border-top: 4px dashed $cl-white;
-        transition: width .7s ease-in;
+        height: 0;
+        border-left: 2px dashed $cl-white;
+        transition: height .7s ease-in;
+        
 
-        @include min-responsive($w-xxxl) {
+        @include min-responsive($w-md) {
+            transition: width .7s ease-in;
+            top: 42px;
+            bottom: unset;
+            height: 4px;
             border-top: 4px dashed $cl-white;
+            border-left: 0;
+            right: 0;
         }
 
-        &.active{
-            width: 95px;
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            top: 50px;
+        }
+
+        &.active {
+            height: 33px;
+
+            @include min-responsive($w-md) {
+                width: 95px;
+                height: 4px;
+            }
         }
     }
 }

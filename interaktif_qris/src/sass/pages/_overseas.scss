@@ -5,10 +5,20 @@
     &Title {
         @extend .cartTitle;
         max-width: 763px;
-        margin-top: 50px;
-        padding: 20px 22px 35px;
+        margin-top: 14vh;
+        padding: 16px 15px 20px;
         text-align: center;
-        @include font-pack($weight: $font-weight-light);
+        @include font-pack($size: 20px, $weight: $font-weight-light);
+        
+        @include max-responsive($w-xm) {
+            font-size: 18px;
+        }
+        
+        @include min-responsive($w-md) {
+            padding: 20px 22px 35px;
+            margin-top: 50px;
+            font-size: 32px;
+        }
 
         @include min-responsive($w-xxxxl) {
             margin-top: 10vh;
@@ -51,8 +61,8 @@
         }
     }
 
-    &.active{
-        .overseasGlobe{
+    &.active {
+        .overseasGlobe {
             transform: rotate(0);
         }
     }

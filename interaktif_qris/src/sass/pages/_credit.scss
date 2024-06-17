@@ -1,0 +1,153 @@
+.credit {
+    flex-direction: column;
+
+    &Wrap {
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        padding-top: 20vh;
+
+        @include min-responsive($w-md) {
+            padding-top: 10vh;
+        }
+
+        @include max-responsive($w-xm) {
+            padding-top: 14vh;
+        }
+    }
+
+    &Caption {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        @include font-pack($font-caption, 26px, $font-weight-normal, $line-base, $cl-white);
+
+        @include min-responsive($w-md) {
+            @include font-pack($size: 40px)
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            @include font-pack($size: 34px)
+        }
+    }
+
+    &Title {
+        transform: translateX(-100vw);
+        transition: all .4s ease-in;
+        @include font-pack($font-base, false, $font-weight-light, false, false);
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
+
+    &Name {
+        position: relative;
+        margin-top: 10px;
+        transform: translateX(100vw);
+        transition: all .4s ease-in;
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
+
+    &Content {
+        margin-top: 20px;
+
+        @include min-responsive($w-md) {
+            margin-top: 40px;
+
+            @include max-height($w-hmd) {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &Col {
+        margin-top: 30px;
+        letter-spacing: 3px;
+        @include font-pack($font-caption, 16px, $font-weight-normal, 1, $cl-white);
+
+        @include min-responsive($w-md) {
+            @include font-pack($size: 20px)
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            @include font-pack($size: 18px)
+        }
+    }
+
+    &Bottom {
+        position: relative;
+        width: 100%;
+        padding-top: 100px;
+        margin-bottom: 20px;
+
+        @include min-responsive($w-md) {
+            margin-bottom: 60px;
+
+            @include max-height($w-hmd) {
+                padding-top: 40px;
+                margin-bottom: 40px;
+            }
+        }
+
+        &__logo {
+            img {
+                max-width: 90px;
+
+                @include min-responsive($w-md) {
+                    max-width: 170px;
+                }
+            }
+        }
+    }
+
+    &Sp {
+        align-self: flex-end;
+        flex: 1;
+        margin-left: 8px;
+        margin-right: 0;
+        border-bottom: 2px solid $cl-white;
+        border-radius: 2px;
+
+        @include min-responsive($w-md) {
+            margin-left: 20px;
+            margin-right: 10px;
+        }
+    }
+
+    &Back {
+        margin-left: 8px;
+
+        @include min-responsive($w-md) {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            -moz-animation: bounce 1.2s infinite;
+            -webkit-animation: bounce 1.2s infinite;
+            animation: bounce 1.2s infinite;
+        }
+    }
+
+    &Soc {
+        &__item {
+            margin-left: 8px;
+            margin-right: 8px;
+            max-width: 28px;
+
+            @include min-responsive($w-md) {
+                max-width: unset;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &Section {
+        height: 100%;
+        overflow: hidden;
+    }
+}

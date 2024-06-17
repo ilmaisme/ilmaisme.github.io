@@ -12,11 +12,16 @@
 
     &Info {
         position: absolute;
-        right: 40px;
-        bottom: 80px;
+        right: 80px;
+        bottom: 20px;
         opacity: 0;
         transition: opacity .3s ease-in;
         z-index: 0;
+
+        @include min-responsive($w-md) {
+            right: 40px;
+            bottom: 80px;
+        }
 
         &__wrap {
             @extend .cartButton__wrap;
@@ -30,11 +35,21 @@
 
     &Button {
         position: absolute;
-        right: 180px;
-        bottom: 10px;
-        max-height: calc(var(--app-height) * (80/100));
+        right: -10px;
+        bottom: 150px;
+        max-height: calc(var(--app-height) * (17/100));
         cursor: pointer;
         z-index: 1;
+
+        @include max-responsive($w-xm) {
+            right: -40px;
+        }
+        
+        @include min-responsive($w-md) {
+            max-height: calc(var(--app-height) * (80/100));
+            right: 180px;
+            bottom: 10px;
+        }
 
         touch-action: none;
         transform: translate(0px, 0px);
@@ -57,13 +72,24 @@
 
     &Img {
         position: absolute;
-        left: 50px;
-        bottom: 20px;
+        left: -12px;
+        bottom: 18vh;
         z-index: 0;
 
+        @include min-responsive($w-md) {
+            left: 50px;
+            bottom: 20px;
+        }
+
         img {
-            height: calc(var(--app-height) * (80/100));
-            max-height: 779px;
+            height: calc(var(--app-height)*(50 / 100));
+            max-height: 333px;
+            object-fit: contain;
+
+            @include min-responsive($w-md) {
+                height: calc(var(--app-height) * (80/100));
+                max-height: 779px;
+            }
         }
     }
 
@@ -85,8 +111,13 @@
 
     &Trigger {
         position: absolute;
-        top: 6px;
-        left: 34px;
+        top: 5px;
+        left: 21px;
+
+        @include min-responsive($w-md) {
+            top: 6px;
+            left: 34px;
+        }
     }
 
     &.active {

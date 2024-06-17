@@ -1,42 +1,74 @@
 .cart {
     flex-direction: column;
-    
+
     &Title {
         position: relative;
         top: 100vh;
-        margin-top: 15px;
+        margin-top: 65px;
         margin-bottom: 50px;
-        padding: 16px 72px 17px;
-        border-radius: 30px;
+        padding: 16px 20px 17px;
+        border-radius: 25px;
         background: $cl-white;
+        text-align: center;
+        margin-left: 15px;
+        margin-right: 15px;
+        
+        @include max-responsive($w-xm) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        
+        @include min-responsive($w-md) {
+            border-radius: 30px;
+            padding: 16px 45px 17px;
+            margin-top: 15px;
+        }
     }
 
-    &Compo{
+    &Compo {
         opacity: 0;
     }
 
     &Img {
         position: absolute;
-        left: 14px;
-        bottom: 0;
+        left: -10px;
+        bottom: 10vh;
+        
+        @include min-responsive($w-md) {
+            left: 14px;
+            bottom: 0;
+        }
 
         img {
-            max-height: calc(var(--app-height) * (34/100));
+            max-height: calc(var(--app-height)*(16 / 100));
+
+            @include min-responsive($w-md) {
+                max-height: calc(var(--app-height) * (34/100));
+            }
         }
     }
 
     &Button {
         position: absolute;
-        right: 40px;
-        bottom: 80px;
+        right: 15px;
+        bottom: 15px;
         cursor: pointer;
+
+        @include min-responsive($w-md) {
+            right: 40px;
+            bottom: 80px;
+        }
 
         &__wrap {
             background: $cl-white;
             padding: 12px 43px 12px 34px;
             clip-path: polygon(0 19%, 100% 0, 94% 100%, 3% 84%);
             text-align: left;
-            @include font-pack($font-caption, 24px, false, $line-base, $cl-blue);
+            @include font-pack($font-caption, 20px, false, $line-base, $cl-blue);
+
+            @include min-responsive($w-md) {
+                font-size: 24px;
+            }
         }
 
         &__shadow {
@@ -55,7 +87,7 @@
             bottom: 24px;
             width: 29px;
             height: 35px;
-            margin-left: 4px;            
+            margin-left: 4px;
             background: url(../images/icon-click.png) no-repeat;
             background-size: cover;
         }

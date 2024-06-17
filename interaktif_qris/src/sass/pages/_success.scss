@@ -1,10 +1,17 @@
 .success {
+    flex-direction: column;
+
+    @include min-responsive($w-md) {
+        flex-direction: row;
+    }
+
     &Title {
         text-transform: uppercase;
-        @include font-pack($font-caption, 74px, $font-weight-normal, $line-base, $cl-white);
+        @include font-pack($font-caption, 50px, $font-weight-normal, $line-base, $cl-white);
 
         @include min-responsive($w-md) {
             margin-left: -80px;
+            font-size: 74px;
         }
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {
@@ -18,10 +25,15 @@
 
     &Img {
         position: relative;
-        height: calc(var(--app-height)*(70 / 100));
+        height: calc(var(--app-height)*(50 / 100));
+
+        @include min-responsive($w-md) {
+            height: calc(var(--app-height)*(70 / 100));
+        }
 
         img {
             height: 100%;
+            object-fit: contain;
         }
     }
 
@@ -29,9 +41,14 @@
         position: absolute;
 
         &1 {
-            top: -60px;
-            right: 50px;
+            top: -25px;
+            right: 20vw;
             animation: glow 5s ease infinite;
+
+            @include min-responsive($w-md) {
+                top: -60px;
+                right: 50px;
+            }
 
             @include min-responsive($w-xxxl) {
                 right: 120px;
@@ -43,9 +60,14 @@
         }
 
         &2 {
-            left: -100px;
-            top: 200px;
+            left: -35px;
+            top: 130px;
             animation: glow2 6s ease infinite;
+
+            @include min-responsive($w-md) {
+                left: -100px;
+                top: 200px;
+            }
 
             @include min-responsive($w-xxxl) {
                 left: -150px;
@@ -53,7 +75,9 @@
         }
 
         img {
-            max-width: 70%;
+            @include min-responsive($w-md) {
+                max-width: 70%;
+            }
 
             @include min-responsive($w-xxxl) {
                 max-width: unset;
