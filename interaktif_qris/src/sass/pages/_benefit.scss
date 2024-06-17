@@ -93,6 +93,11 @@
                 left: 85px;
             }
 
+            @include range-responsive($w-md, $w-xl) {
+                height: calc(var(--app-height)*(14 / 100));
+                bottom: calc(var(--app-height)*(32 / 100));
+            }
+
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 left: calc(50% - 222px/2 - 20vw);
                 bottom: calc(var(--app-height) - (54%));
@@ -132,10 +137,18 @@
 
         .--merchant {
             left: 160px;
+
+            @include range-responsive($w-md, $w-xl) {
+                left: 40px;
+            }
         }
 
         .--consumer {
             right: 160px;
+
+            @include range-responsive($w-md, $w-xl) {
+                right: 40px;
+            }
         }
     }
 
@@ -143,21 +156,46 @@
         @extend .cartTitle;
         align-self: center;
         max-width: 529px;
-        margin-top: calc(var(--app-height) - (86vh));
+        margin-top: 135px;
         padding: 14px 22px;
         text-align: center;
 
+        @include max-responsive($w-xm) {
+            margin-top: 105px;
+        }
+
         @include min-responsive($w-md) {
             margin-top: calc(var(--app-height) - (90vh));
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            margin-top: calc(var(--app-height) * 33/100);
         }
     }
 
     &Trigger {
         position: absolute;
-        top: calc(var(--app-height) - (68vh));
+        top: 230px;
+        transition: top .4s ease;
+
+        &:has(.benefitClose.active) {
+            top: 82px;
+
+            @include min-responsive($w-md) {
+                top: 217px;
+            }
+
+            @include min-responsive($w-xxxl) {
+                top: 292px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                top: 157px;
+            }
+        }
 
         @include max-responsive($w-xm) {
-            top: calc(var(--app-height) - (64vh));
+            top: 200px;
         }
 
         @include min-responsive($w-md) {
@@ -179,6 +217,10 @@
                 left: 160px;
             }
 
+            @include range-responsive($w-md, $w-xl) {
+                left: 40px;
+            }
+
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 left: 138px;
             }
@@ -193,6 +235,10 @@
 
             @include min-responsive($w-md) {
                 right: 160px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                right: 40px;
             }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
@@ -310,28 +356,57 @@
     }
 
     &List {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+        margin-top: 167px;
+
+        @include max-responsive($w-xm) {
+            margin-top: 163px;
+        }
+
+        @include min-responsive($w-md) {
+            margin-top: 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
 
         &__item {
+            display: flex;
+            align-items: center;
             position: relative;
             top: 100vh;
-            padding: 17px 22px;
-            margin-top: 25px;
+            padding: 10px 15px 10px 70px;
+            margin-top: 15px;
+            margin-left: 10px;
+            margin-right: 10px;
             max-width: 665px;
+            min-height: 58px;
             background: $cl-white;
-            border-radius: 25px;
-            @include font-pack($colour: $cl-primary);
+            border-radius: 20px;
+            @include font-pack($size: 16px, $colour: $cl-primary);
+
+            @include max-responsive($w-xm) {
+                margin-top: 10px;
+                min-height: unset;
+            }
 
             @include min-responsive($w-md) {
+                display: block;
+                margin-top: 25px;
                 padding: 17px 5px 50px 160px;
                 border-radius: 30px;
+                font-size: 24px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                min-height: 92px;
             }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
+                margin-top: 18px;
                 padding: 17px 17px 17px 125px;
                 max-width: 516px;
+                min-height: unset;
+                font-size: 22px;
             }
 
             &:first-child {
@@ -340,14 +415,9 @@
         }
 
         &__img {
-            display: none;
             position: absolute;
             opacity: 0;
             transition: opacity .7s ease;
-
-            @include min-responsive($w-md) {
-                display: block;
-            }
 
             &.active {
                 opacity: 1;
@@ -365,14 +435,30 @@
         @include min-responsive($w-md) {
             left: -38px;
         }
+
+        @include range-responsive($w-md, $w-xl) {
+            left: -15px;
+        }
     }
 
     &Img {
-        position: relative;
+        display: none;
         bottom: calc(var(--app-height)*(6 / 100));
         align-self: flex-end;
         transform: translate(47px, 0);
         transition: transform .7s ease-in-out;
+
+        @media only screen and(max-width: $w-sm) and(min-height: 844px) {
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        @include min-responsive($w-md) {
+            position: relative;
+            display: block;
+        }
 
         @include min-responsive($w-xxxxl) {
             bottom: calc(var(--app-height)*(1 / 100));
@@ -383,9 +469,17 @@
         }
 
         img {
-            height: calc(var(--app-height)*(65 / 100));
-            max-height: 769px;
+            height: calc(var(--app-height)*(40 / 100));
             object-fit: contain;
+
+            @include min-responsive($w-md) {
+                height: calc(var(--app-height)*(65 / 100));
+                max-height: 769px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                height: calc(var(--app-height)*(40 / 100));
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 height: calc(var(--app-height)*(60 / 100));
@@ -394,12 +488,29 @@
     }
 
     &Item {
+        @include range-responsive($w-md, $w-xl) {
+            padding: 17px 17px 17px 124px;
+            margin-right: 26px;
+        }
+
         &__img {
             left: 0;
-            bottom: 0;
+            bottom: 15px;
+
+            @include min-responsive($w-md) {
+                bottom: -20px;
+            }
 
             img {
-                max-width: 80%;
+                max-width: 60px;
+
+                @include min-responsive($w-md) {
+                    max-width: 80%;
+                }
+
+                @include range-responsive($w-md, $w-xl) {
+                    max-width: 70%;
+                }
 
                 @media only screen and(max-height: 700px) and(orientation: landscape) {
                     max-width: 60%;
@@ -407,32 +518,67 @@
             }
         }
 
+        &1 {
+            &__img {
+                @include min-responsive($w-md) {
+                    bottom: 0;
+                }
+            }
+        }
+
+        &2 {
+            &__img {
+                @include max-responsive($w-xm) {
+                    bottom: -5px;
+                }
+            }
+        }
+
         &3 {
             &__img {
-                left: 20px;
-                bottom: 10px;
+                bottom: 0;
 
-                img {
-                    max-width: 70%;
+                @include max-responsive($w-xm) {
+                    bottom: -10px;
+                }
 
-                    @media only screen and(max-height: 700px) and(orientation: landscape) {
-                        max-width: 60%;
-                    }
+                @include min-responsive($w-md) {
+                    bottom: -20px;
                 }
             }
         }
 
         &4 {
             &__img {
-                left: 20px;
-                bottom: 10px;
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    bottom: 0;
+                }
             }
+        }
+
+        &5 {
+            &__img {
+                @include min-responsive($w-md) {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    &List {
+        @include range-responsive($w-md, $w-xl) {
+            padding-left: 100px;
+            flex: 1;
         }
     }
 
     &.active {
         .merchantImg {
             transform: translate(0, 0);
+
+            @include range-responsive($w-md, $w-xl) {
+                transform: translate(0, 10px);
+            }
         }
 
         .merchantTrig {
@@ -450,15 +596,31 @@
         @include min-responsive($w-md) {
             right: -38px;
         }
+
+        @include range-responsive($w-md, $w-xl) {
+            right: -15px;
+        }
     }
 
     &Img {
+        display: none;
         position: relative;
         bottom: calc(var(--app-height)*(5 / 100));
         align-self: flex-end;
         margin-left: 30px;
         transform: translate(-72px, 0);
         transition: transform .7s ease-in-out;
+
+        @media only screen and(max-width: $w-sm) and(min-height: 844px) {
+            display: block;
+            position: absolute;
+            right: 10px;
+            bottom: 0;
+        }
+
+        @include min-responsive($w-md) {
+            display: block;
+        }
 
         @include min-responsive($w-xxxxl) {
             bottom: calc(var(--app-height)*(3 / 100));
@@ -469,12 +631,20 @@
         }
 
         img {
-            height: calc(var(--app-height)*(61 / 100));
-            max-height: 708px;
+            height: calc(var(--app-height)*(33 / 100));
             object-fit: contain;
+
+            @include min-responsive($w-md) {
+                height: calc(var(--app-height)*(61 / 100));
+                max-height: 708px;
+            }
 
             @include min-responsive($w-xxxxl) {
                 height: calc(var(--app-height)*(37 / 100));
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                height: calc(var(--app-height)*(38 / 100));
             }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
@@ -483,12 +653,30 @@
         }
     }
 
+    &List {
+        @include range-responsive($w-md, $w-xl) {
+            padding-right: 100px;
+            flex: 1;
+        }
+    }
+
     &Item {
+        justify-content: flex-end;
         text-align: right;
-        padding: 17px 22px;
+        padding: 10px 70px 10px 15px;
+
+        @include max-responsive($w-xm) {
+            padding: 10px 58px 10px 15px;
+        }
+
 
         @include min-responsive($w-md) {
             padding: 17px 150px 30px 5px;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            padding: 17px 124px 17px 17px;
+            margin-left: 26px;
         }
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {
@@ -497,10 +685,27 @@
 
         &__img {
             right: 0;
-            bottom: 25px;
+            bottom: 0;
+
+            @include max-responsive($w-xm) {
+                right: -8px;
+                bottom: 15px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                right: -10px;
+            }
 
             img {
-                max-width: 80%;
+                max-width: 70px;
+
+                @include min-responsive($w-md) {
+                    max-width: 80%;
+                }
+
+                @include range-responsive($w-md, $w-xl) {
+                    max-width: 70%;
+                }
 
                 @media only screen and(max-height: 700px) and(orientation: landscape) {
                     max-width: 60%;
@@ -510,41 +715,37 @@
 
         &1 {
             &__img {
-                right: 15px;
-                bottom: 45px;
-
-                @media only screen and(max-height: 700px) and(orientation: landscape) {
-                    bottom: 25px;
-                }
-            }
-        }
-
-        &3 {
-            &__img {
-                right: 35px;
-                bottom: 14px;
-
-                img {
-                    max-width: 70%;
-
-                    @media only screen and(max-height: 700px) and(orientation: landscape) {
-                        max-width: 60%;
-                    }
-                }
+                bottom: 35px;
             }
         }
 
         &4 {
             &__img {
-                right: 0;
-                bottom: 10px;
+                bottom: 0;
+                right: -10px;
+
+                @include min-responsive($w-md) {
+                    bottom: -10px;
+                }
             }
         }
 
         &5 {
             &__img {
-                right: -20px;
                 bottom: 0;
+                right: -7px;
+
+                @include max-responsive($w-xm) {
+                    right: -10px;
+                }
+
+                @include min-responsive($w-md) {
+                    bottom: -10px;
+                }
+
+                @include range-responsive($w-md, $w-xl) {
+                    right: -30px;
+                }
             }
         }
     }
@@ -552,6 +753,10 @@
     &.active {
         .consumerImg {
             transform: translate(0, 0);
+
+            @include range-responsive($w-md, $w-xl) {
+                transform: translate(-10px, 0);
+            }
         }
 
         .consumerTrig {

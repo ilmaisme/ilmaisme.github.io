@@ -29,6 +29,10 @@
                 font-size: 190px;
             }
 
+            @include range-responsive($w-md, $w-xl) {
+                font-size: 140px;
+            }
+
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 font-size: 140px;
             }
@@ -159,6 +163,10 @@
             @include min-responsive($w-md) {
                 margin-left: -28vw;
             }
+
+            @include range-responsive($w-md, $w-xl) {
+                margin-top: calc(var(--app-height)*(-42 / 100));
+            }
         }
 
         &__title {
@@ -219,6 +227,11 @@
                 margin-left: -80px;
             }
 
+            @include range-responsive($w-md, $w-xl) {
+                margin-top: -30vh;
+                margin-left: 0;
+            }
+
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 margin-left: -20px;
             }
@@ -237,6 +250,10 @@
                 position: relative;
                 align-self: flex-end;
                 bottom: 40px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                margin-right: -470px;
             }
 
             img {

@@ -10,6 +10,7 @@
 
         img {
             object-fit: contain;
+            object-position: top;
 
             @include min-responsive($w-md) {
                 height: calc(var(--app-height)*(65 / 100));
@@ -56,6 +57,12 @@
             border-top-right-radius: 30px;
             border-bottom-right-radius: 30px;
             font-size: 48px;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            padding: 22px 43px 22px 65px;
+            margin-bottom: 20px;
+            font-size: 35px;
         }
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {
@@ -125,7 +132,12 @@
             left: unset;
             top: unset;
             padding-left: 105px;
-            font-size: 32px;
+            font-size: 31px;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            padding-left: 65px;
+            padding-right: 25px;
         }
 
         li {
@@ -141,6 +153,10 @@
 
             @include min-responsive($w-md) {
                 left: 0;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                left: 22px;
             }
         }
     }
