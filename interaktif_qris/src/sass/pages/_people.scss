@@ -26,7 +26,7 @@
         }
 
         @include min-responsive($w-md) {
-            top: 4vh;
+            top: 22vh;
         }
 
         @include min-responsive($w-lg) {
@@ -36,6 +36,10 @@
         @include range-responsive($w-md, $w-xl) {
             top: 10vh;
             max-width: 600px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            top: 15vh;
         }
 
         .articleTitle {
@@ -63,7 +67,8 @@
     &Img {
         animation: translate-3D linear infinite;
         animation-duration: var(--time-bubble);
-        transition: top .7s ease-in;
+        transition: all .7s ease-in;
+        opacity: 0;
 
         &__wrap {
             width: 100%;
@@ -237,6 +242,10 @@
                 right: 90px;
                 top: 255px;
             }
+
+            img {
+                transition: transform .3s ease;
+            }
         }
     }
 
@@ -274,15 +283,94 @@
             }
 
             @include min-responsive($w-md) {
-                transform: translate(0, 40px) scale(.7);
+                transform: translate(0, 106px) scale(.7);
             }
 
             @include min-responsive($w-xxxl) {
-                transform: translate(0, 40px) scale(1);
+                transform: translate(0, 80px) scale(1);
             }
 
             @include range-responsive($w-md, $w-xl) {
                 transform: translate(0, 80px) scale(0.8);
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                transform: translate(0, 65px) scale(0.7);
+            }
+        }
+
+        .peopleImg {
+            animation-play-state: paused;
+
+            &2 {
+                @include min-responsive($w-md) {
+                    left: -85px;
+                    top: 0;
+                }
+            }
+
+            &3 {
+                @include min-responsive($w-md) {
+                    top: 30px;
+                    left: 120px;
+                }
+
+                @include range-responsive($w-md, $w-xl) {
+                    top: -180px;
+                }
+            }
+
+            &4 {
+                @include min-responsive($w-md) {
+                    left: -98px;
+                    top: 225px;
+                }
+            }
+
+            &5 {
+                @include min-responsive($w-md) {
+                    left: 160px;
+                    top: 280px;
+                }
+
+                @include range-responsive($w-md, $w-xl) {
+                    top: 400px
+                }
+            }
+
+            &6 {
+                @include min-responsive($w-md) {
+                    right: 185px;
+                    top: 55px;
+                }
+
+                @include range-responsive($w-md, $w-xl) {
+                    right: 160px;
+                    top: -180px;
+                }
+            }
+
+            &7 {
+                @include min-responsive($w-md) {
+                    right: -60px;
+                    top: 25px;
+                }
+            }
+
+            &8 {
+                @include min-responsive($w-md) {
+                    right: 40px;
+                    top: 200px;
+
+                    img {
+                        transform: scale(.8);
+                    }
+                }
+
+                @include range-responsive($w-md, $w-xl) {
+                    right: -80px;
+                    top: 280px;
+                }
             }
         }
     }
@@ -297,14 +385,14 @@
         @include min-responsive($w-xl) {
             width: $width-container;
 
-            @include max-height($w-hmd) {
-                width: $w-vlg;
-            }
+            // @include max-height($w-hmd) {
+            //     width: $w-vlg;
+            // }
         }
 
-        @include min-responsive($w-xxl) {
-            width: 1280px;
-        }
+        // @include min-responsive($w-xxl) {
+        //     width: 1280px;
+        // }
     }
 }
 
@@ -318,7 +406,12 @@
         top: -95px;
 
         @include min-responsive($w-md) {
-            top: -165px;
+            top: -154px;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            top: -270px;
+            left: calc(50% + 36px / 2);
         }
 
         &.active {
@@ -326,6 +419,10 @@
 
             @include min-responsive($w-md) {
                 height: 140px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                height: 250px;
             }
         }
     }
@@ -338,12 +435,16 @@
 
         @include min-responsive($w-md) {
             left: calc(50% - 4px/2);
-            top: -315px;
+            // top: -315px;
         }
 
-        @media only screen and(max-height: 700px) and(orientation: landscape) {
-            top: -225px;
+        @include range-responsive($w-md, $w-xl) {
+            top: -270px;
         }
+
+        // @media only screen and(max-height: 700px) and(orientation: landscape) {
+        //     top: -225px;
+        // }
 
         @include min-responsive($w-xxxl) {
             left: unset;
@@ -354,13 +455,17 @@
         &.active {
             height: 150px;
 
-            @include min-responsive($w-md) {
-                height: 290px;
+            @include range-responsive($w-md, $w-xl) {
+                height: 250px;
             }
 
-            @media only screen and(max-height: 700px) and(orientation: landscape) {
-                height: 200px;
-            }
+            // @include min-responsive($w-md) {
+            //     height: 290px;
+            // }
+
+            // @media only screen and(max-height: 700px) and(orientation: landscape) {
+            //     height: 200px;
+            // }
         }
     }
 }

@@ -12,12 +12,12 @@
         text-align: center;
         margin-left: 15px;
         margin-right: 15px;
-        
+
         @include max-responsive($w-xm) {
             margin-left: 10px;
             margin-right: 10px;
         }
-        
+
         @include min-responsive($w-md) {
             border-radius: 30px;
             padding: 16px 45px 17px;
@@ -33,7 +33,8 @@
         position: absolute;
         left: -10px;
         bottom: 10vh;
-        
+        z-index: 2;
+
         @include min-responsive($w-md) {
             left: 14px;
             bottom: 0;
@@ -45,6 +46,10 @@
             @include min-responsive($w-md) {
                 max-height: calc(var(--app-height) * (34/100));
             }
+        }
+
+        &.shake {
+            animation: shakeCart .4s ease-in-out forwards;
         }
     }
 
@@ -93,9 +98,337 @@
         }
     }
 
+    &Display {
+        position: absolute;
+        width: 360px;
+        max-height: 703px;
+        margin: -70px auto 0;
+
+        @include min-responsive($w-md) {
+            transform: scale(.9);
+        }
+
+        @include min-responsive($w-md) {
+            margin: auto;
+            width: calc(var(--app-height)*(96 / 100));
+        }
+
+        @include min-responsive($w-xxxl) {
+            max-width: 921px;
+        }        
+
+        @include range-responsive($w-md, $w-xl) {
+            max-width: 786.43px;
+        }
+
+        &__rack {
+            display: block;
+            position: relative;
+            pointer-events: none;
+            object-fit: contain;
+
+            @include min-responsive($w-xxxl) {
+                margin-top: 20px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                max-height: 703px;
+            }
+        }
+
+        &__list {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;      
+
+            @include range-responsive($w-md, $w-xl) {
+                max-width: 786.43px;
+            }
+        }
+
+        &__item {
+            position: relative;
+            width: calc(100%/5);
+
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
+                top: 45px;
+                width: calc(100%/6);
+
+                @include min-responsive($w-md) {
+                    left: 10px;
+                    top: 12vh;
+                }
+
+                @include min-responsive($w-xxxl) {
+                    top: 126px;
+                }
+
+                @include range-responsive($w-md, $w-xl) {
+                    top: 97px;
+                }
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    left: 0;
+                }
+
+                .cartDisplay__rack {
+                    margin-left: -5px;
+                    margin-right: -5px;
+
+                    @include min-responsive($w-md) {
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            &:nth-child(7),
+            &:nth-child(8),
+            &:nth-child(9),
+            &:nth-child(10),
+            &:nth-child(11) {
+                top: 14px;
+                padding-left: 7px;
+                padding-right: 7px;
+
+                @include min-responsive($w-md) {
+                    padding-left: 0;
+                    padding-right: 0;
+                    margin-left: -10px;
+                    margin-right: -10px;
+                    left: 50px;
+                    top: 2.4vh;
+                }
+
+                @include min-responsive($w-xxxl) {
+                    top: 34px;
+                }
+
+                @include range-responsive($w-md, $w-xl) {
+                    top: 18px;
+                }
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    left: 16px;
+                    top: 1.4vh;
+                    margin-left: -5px;
+                    margin-right: -5px;
+                }
+            }
+
+            &:nth-child(12),
+            &:nth-child(13),
+            &:nth-child(14),
+            &:nth-child(15),
+            &:nth-child(16) {
+                top: -23px;
+                padding-left: 7px;
+                padding-right: 7px;
+
+                @include min-responsive($w-md) {
+                    padding-left: 0;
+                    padding-right: 0;
+                    margin-left: -10px;
+                    margin-right: -10px;
+                    left: 50px;
+                    top: -7.7vh;
+                }
+
+                @include min-responsive($w-xxxl) {
+                    top: -63px;
+                }
+
+                @include range-responsive($w-md, $w-xl) {
+                    top: -62px;
+                }
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    margin-left: 0;
+                    margin-right: 0;
+                    left: 0;
+                    top: -5.7vh;
+                }
+            }
+
+            &:nth-child(4) {
+                .cartDisplay__title {
+                    font-size: 9px;
+
+                    @include min-responsive($w-md) {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            img {
+                pointer-events: none;
+            }
+
+            &.sendtocart {
+                .cartDisplay__rack {
+                    display: block;
+                    animation: xAxisMob 1s forwards cubic-bezier(1.000, 0.440, 0.840, 0.165);
+                    z-index: 2;
+
+                    @include min-responsive($w-xl) {
+                        animation: xAxis 1s forwards cubic-bezier(1.000, 0.440, 0.840, 0.165);
+                    }
+
+                    img {
+                        animation: yAxisMob 1s alternate forwards cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+                        @include min-responsive($w-xl) {
+                            animation: yAxis 1s alternate forwards cubic-bezier(0.165, 0.840, 0.440, 1.000);
+                        }
+                    }
+
+                }
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6) {
+                    img {
+                        animation: yAxis0Mob 1s alternate forwards cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+                        @include min-responsive($w-xl) {
+                            animation: yAxis0 1s alternate forwards cubic-bezier(0.165, 0.840, 0.440, 1.000);
+                        }
+                    }
+                }
+
+                &:nth-child(12),
+                &:nth-child(13),
+                &:nth-child(14),
+                &:nth-child(15),
+                &:nth-child(16) {
+                    img {
+                        animation: yAxis2Mob 1s alternate forwards cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+                        @include min-responsive($w-xl) {
+                            animation: yAxis2 1s alternate forwards cubic-bezier(0.165, 0.840, 0.440, 1.000);
+                        }
+                    }
+                }
+            }
+        }
+
+        &__title {
+            width: 58px;
+            min-height: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2px auto 0;
+            padding: 3px 6px;
+            background: $cl-white;
+            border-radius: 30px;
+            text-align: center;
+            @include font-pack(false, 12px, $font-weight-normal, $line-base, #000);
+
+            @include min-responsive($w-md) {
+                width: 96px;
+                margin: 10px auto 0;
+                padding: 4px 7px;
+                font-size: 16px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                margin: 0 auto;
+            }
+        }
+    }
+
     &.active {
-        .cartButton {
+
+        .cartButton,
+        .cartDisplay__item {
             pointer-events: all;
         }
+    }
+}
+
+@keyframes yAxis0 {
+    100% {
+        transform: translateY(calc(var(--app-height) - 50vh));
+    }
+}
+
+@keyframes yAxis0Mob {
+    100% {
+        transform: translateY(calc(var(--app-height) - 64vh));
+    }
+}
+
+@keyframes xAxis {
+    100% {
+        transform: translateX(calc(var(--app-height) - 112vw));
+        opacity: 0;
+    }
+}
+
+@keyframes xAxisMob {
+    100% {
+        transform: translateX(- 30vw);
+        opacity: 0;
+    }
+}
+
+@keyframes yAxis {
+    100% {
+        transform: translateY(calc(var(--app-height) - 66vh));
+    }
+}
+
+@keyframes yAxisMob {
+    100% {
+        transform: translateY(calc(var(--app-height) - 73vh));
+    }
+}
+
+@keyframes yAxis2 {
+    100% {
+        transform: translateY(calc(var(--app-height) - 80vh));
+    }
+}
+
+@keyframes yAxis2Mob {
+    100% {
+        transform: translateY(calc(var(--app-height) - 79vh));
+    }
+}
+
+@keyframes shakeCart {
+    25% {
+        transform: translateX(6px)
+    }
+
+    50% {
+        transform: translateX(-4px);
+    }
+
+    75% {
+        transform: translateX(2px);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }

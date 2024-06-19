@@ -43,9 +43,28 @@
             <div class="bgStatic">
                 <div class="cart center-flex heightFull">
                     <div class="cartTitle articleTitle">Silakan pilih barang kebutuhanmu.</div>
-                    <div class="storeImg center-flex storeCompo opac0">
+                    <div class="storeImg opac0 center-flex storeCompo">
                         <picture class="storeImg__bg heightFull center-flex">
                         </picture>
+                        <div class="cartDisplay opac0 cartCompo">
+                            <picture class="cartDisplay__rack">
+                                <source srcset="./asset/images/cart-display.png" media="(max-width: 700px)" alt=""
+                                    width="273" height="333">
+                                <img srcset="./asset/images/cart-display.png" alt="" class="" width="921" height="703"
+                                    loading="lazy">
+                            </picture>
+                            <div class="cartDisplay__list">
+                                {{#each cart}}
+                                <button class="button cartDisplay__item cartDisplay__item{{add @index 1}}">
+                                    <div class="cartDisplay__rack">
+                                        <img srcset="./asset/images/cart-item{{add @index 1}}.png" alt="" class="" width="183"
+                                            height="109" loading="lazy">
+                                    </div>
+                                    <div class="cartDisplay__title">{{name}}</div>
+                                </button>
+                                {{/each}}
+                            </div>
+                        </div>
                     </div>
                     <button class="button cartButton cartCompo -js-trig-cashier">
                         <div class="cartButton__shadow"></div>
@@ -67,11 +86,13 @@
                             <img srcset="./asset/images/store-cashier.png" alt="" class="" width="810" height="779"
                                 loading="lazy">
                         </picture>
+                        {{!-- <div class="cashierImg__anim" id="animationCashier"></div> --}}
                         <div class="cashierDropzone"></div>
                     </div>
-                    <div class="cartImg storeCompo opac0">
+                    <div class="cartImg opac0 storeCompo">
                         <picture>
-                            {{!-- <source srcset="./asset/images/cart-trolley.png" media="(max-width: 700px)" alt=""
+                            {{!--
+                            <source srcset="./asset/images/cart-trolley.png" media="(max-width: 700px)" alt=""
                                 width="563" height="633"> --}}
                             <img srcset="./asset/images/cart-trolley.png" alt="" class="" width="298" height="324"
                                 loading="lazy">
@@ -79,10 +100,16 @@
                     </div>
                     <button class="button cashierButton cashierCompo opac0 -js-trig-scan"
                         aria-label="Click to trigger scanning">
-                        <picture>
+                        <picture class="scanning">
                             <source srcset="./asset/images/scanning-mob.png" media="(max-width: 700px)"
-                                alt="shift to scanning" width="200" height="275">
+                                alt="shift to scanning" width="179" height="251">
                             <img srcset="./asset/images/scanning.png" alt="" class="" width="338" height="464"
+                                loading="lazy">
+                        </picture>
+                        <picture class="scanningSuccess">
+                            <source srcset="./asset/images/scanning-success-mob.png" media="(max-width: 700px)" alt=""
+                                width="179" height="251">
+                            <img srcset="./asset/images/scanning-success.png" alt="" class="" width="338" height="464"
                                 loading="lazy">
                         </picture>
                         <picture class="cashierTrigger">
@@ -167,7 +194,7 @@
                             </div>
                         </div>
                         <div class="peopleContainer container">
-                            <div class="peopleImg__wrap center-flex opac0">
+                            <div class="peopleImg__wrap center-flex">
                                 <picture class="peopleImg peopleImg1 top100">
                                     <source srcset="./asset/images/people-perry-warjiyo-mob.png"
                                         media="(max-width: 700px)" alt="" width="140" height="141">
@@ -254,6 +281,7 @@
                             height="633">
                         <img srcset="./asset/images/char-1.png" alt="" class="" width="430" height="156" loading="lazy">
                     </picture>
+                    {{!-- <div class="charImg char1__img" id="animationUniversal"></div> --}}
                     <div class="char1__title charUnggul__title top100">
                         Universal</div>
                     <div class="char1__txt articleTxt top100">
@@ -265,7 +293,8 @@
             <div class="bgStatic">
                 <div class="char2 center-flex heightFull">
                     <picture class="charImg char2__img opac0">
-                        {{!-- <source srcset="./asset/images/char-2-mob.png" media="(max-width: 700px)" alt="" width="563"
+                        {{!--
+                        <source srcset="./asset/images/char-2-mob.png" media="(max-width: 700px)" alt="" width="563"
                             height="633"> --}}
                         <img srcset="./asset/images/char-2.png" alt="" class="" width="593" height="558" loading="lazy">
                     </picture>
@@ -361,7 +390,8 @@
                 <div class="merchant display-flex heightFull opac0">
                     <div class="merchantImg">
                         <picture>
-                            {{!-- <source srcset="./asset/images/merchant-img-mob.png" media="(max-width: 700px)" alt=""
+                            {{!--
+                            <source srcset="./asset/images/merchant-img-mob.png" media="(max-width: 700px)" alt=""
                                 width="563" height="633"> --}}
                             <img srcset="./asset/images/merchant-img.png" alt="" class="" width="322" height="769"
                                 loading="lazy">
@@ -370,7 +400,8 @@
                     <div class="merchantList benefitList articleTxt">
                         <div class="benefitList__item merchantItem merchantItem1">
                             <picture class="benefitList__img merchantItem__img merchantItem1__img">
-                                {{!-- <source srcset="./asset/images/benefit-merchant-1-mob.png" media="(max-width: 700px)"
+                                {{!--
+                                <source srcset="./asset/images/benefit-merchant-1-mob.png" media="(max-width: 700px)"
                                     alt="" width="563" height="633"> --}}
                                 <img srcset="./asset/images/benefit-merchant-1.png" alt="" class="" width="159"
                                     height="173" loading="lazy">
@@ -380,9 +411,10 @@
                         </div>
                         <div class="benefitList__item merchantItem merchantItem2">
                             <picture class="benefitList__img merchantItem__img merchantItem2__img">
-                                {{!-- <source srcset="./asset/images/benefit-merchant-2-mob.png" media="(max-width: 700px)"
+                                {{!--
+                                <source srcset="./asset/images/benefit-merchant-2-mob.png" media="(max-width: 700px)"
                                     alt="" width="563" height="633"> --}}
-                                <img srcset="./asset/images/benefit-merchant-2.png" alt="" class=""  width="159"
+                                <img srcset="./asset/images/benefit-merchant-2.png" alt="" class="" width="159"
                                     height="173" loading="lazy">
                             </picture>
                             <div class="benefitList__txt merchantTxt merchantTxt2">Mengurangi biaya pengelolaan kas.
@@ -390,18 +422,20 @@
                         </div>
                         <div class="benefitList__item merchantItem merchantItem3">
                             <picture class="benefitList__img merchantItem__img merchantItem3__img">
-                                {{!-- <source srcset="./asset/images/benefit-merchant-3-mob.png" media="(max-width: 700px)"
+                                {{!--
+                                <source srcset="./asset/images/benefit-merchant-3-mob.png" media="(max-width: 700px)"
                                     alt="" width="563" height="633"> --}}
-                                <img srcset="./asset/images/benefit-merchant-3.png" alt="" class=""  width="159"
+                                <img srcset="./asset/images/benefit-merchant-3.png" alt="" class="" width="159"
                                     height="173" loading="lazy">
                             </picture>
                             <div class="benefitList__txt merchantTxt merchantTxt3">Terhindar dari uang palsu.</div>
                         </div>
                         <div class="benefitList__item merchantItem merchantItem4">
                             <picture class="benefitList__img merchantItem__img merchantItem4__img">
-                                {{!-- <source srcset="./asset/images/benefit-merchant-4-mob.png" media="(max-width: 700px)"
+                                {{!--
+                                <source srcset="./asset/images/benefit-merchant-4-mob.png" media="(max-width: 700px)"
                                     alt="" width="563" height="633"> --}}
-                                <img srcset="./asset/images/benefit-merchant-4.png" alt="" class=""  width="159"
+                                <img srcset="./asset/images/benefit-merchant-4.png" alt="" class="" width="159"
                                     height="173" loading="lazy">
                             </picture>
                             <div class="benefitList__txt merchantTxt merchantTxt4">Memudahkan rekonsiliasi dan
@@ -409,9 +443,10 @@
                         </div>
                         <div class="benefitList__item merchantItem merchantItem5">
                             <picture class="benefitList__img merchantItem__img merchantItem5__img">
-                                {{!-- <source srcset="./asset/images/benefit-merchant-5-mob.png" media="(max-width: 700px)"
+                                {{!--
+                                <source srcset="./asset/images/benefit-merchant-5-mob.png" media="(max-width: 700px)"
                                     alt="" width="563" height="633"> --}}
-                                <img srcset="./asset/images/benefit-merchant-5.png" alt="" class=""  width="159"
+                                <img srcset="./asset/images/benefit-merchant-5.png" alt="" class="" width="159"
                                     height="173" loading="lazy">
                             </picture>
                             <div class="benefitList__txt merchantTxt merchantTxt5">Membangun informasi credit profile
@@ -429,7 +464,8 @@
                                 dan Non Bank) penyelenggara QRIS sudah pasti memiliki izin dan diawasi oleh Bank
                                 Indonesia.</div>
                             <picture class="benefitList__img consumerItem__img consumerItem1__img">
-                                {{!-- <source srcset="./asset/images/benefit-consumer-1-mob.png" media="(max-width: 700px)"
+                                {{!--
+                                <source srcset="./asset/images/benefit-consumer-1-mob.png" media="(max-width: 700px)"
                                     alt="" width="563" height="633"> --}}
                                 <img srcset="./asset/images/benefit-consumer-1.png" alt="" class="" width="208"
                                     height="158" loading="lazy">
@@ -439,10 +475,11 @@
                             <div class="benefitList__txt consumerTxt consumerTxt2">Konsumen bisa lebih fleksibel dalam
                                 memilih aplikasi pembayaran dengan QRIS ketika melakukan transaksi.
                                 <picture class="benefitList__img consumerItem__img consumerItem2__img">
-                                    {{!-- <source srcset="./asset/images/benefit-consumer-2-mob.png"
+                                    {{!--
+                                    <source srcset="./asset/images/benefit-consumer-2-mob.png"
                                         media="(max-width: 700px)" alt="" width="563" height="633"> --}}
                                     <img srcset="./asset/images/benefit-consumer-2.png" alt="" class="" wwidth="208"
-                                    height="158" loading="lazy">
+                                        height="158" loading="lazy">
                                 </picture>
                             </div>
                         </div>
@@ -450,7 +487,8 @@
                             <div class="benefitList__txt consumerTxt consumerTxt3"> Kemudahan bertransaksi – Cepat dan
                                 tercatat (tidak perlu uang kembalian)</div>
                             <picture class="benefitList__img consumerItem__img consumerItem3__img">
-                                {{!-- <source srcset="./asset/images/benefit-consumer-3-mob.png" media="(max-width: 700px)"
+                                {{!--
+                                <source srcset="./asset/images/benefit-consumer-3-mob.png" media="(max-width: 700px)"
                                     alt="" width="563" height="633"> --}}
                                 <img srcset="./asset/images/benefit-consumer-3.png" alt="" class="" width="208"
                                     height="158" loading="lazy">
@@ -460,7 +498,8 @@
                             <div class="benefitList__txt consumerTxt consumerTxt4">Pencatatan riwayat transaksi yang
                                 lebih baik</div>
                             <picture class="benefitList__img consumerItem__img consumerItem4__img">
-                                {{!-- <source srcset="./asset/images/benefit-consumer-4-mob.png" media="(max-width: 700px)"
+                                {{!--
+                                <source srcset="./asset/images/benefit-consumer-4-mob.png" media="(max-width: 700px)"
                                     alt="" width="563" height="633"> --}}
                                 <img srcset="./asset/images/benefit-consumer-4.png" alt="" class="" width="208"
                                     height="158" loading="lazy">
@@ -470,17 +509,19 @@
                             <div class="benefitList__txt consumerTxt consumerTxt5">Alternatif transaksi selain uang
                                 tunai
                                 <picture class="benefitList__img consumerItem__img consumerItem5__img">
-                                    {{!-- <source srcset="./asset/images/benefit-consumer-5-mob.png"
+                                    {{!--
+                                    <source srcset="./asset/images/benefit-consumer-5-mob.png"
                                         media="(max-width: 700px)" alt="" width="563" height="633"> --}}
                                     <img srcset="./asset/images/benefit-consumer-5.png" alt="" class="" width="208"
-                                    height="158" loading="lazy">
+                                        height="158" loading="lazy">
                                 </picture>
                             </div>
                         </div>
                     </div>
                     <div class="consumerImg">
                         <picture>
-                            {{!-- <source srcset="./asset/images/consumer-img-mob.png" media="(max-width: 700px)" alt=""
+                            {{!--
+                            <source srcset="./asset/images/consumer-img-mob.png" media="(max-width: 700px)" alt=""
                                 width="563" height="633"> --}}
                             <img srcset="./asset/images/consumer-img.png" alt="" class="" width="255" height="708"
                                 loading="lazy">

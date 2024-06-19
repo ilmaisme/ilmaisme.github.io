@@ -136,18 +136,34 @@
         }
 
         .--merchant {
-            left: 160px;
+            left: 200px;
 
             @include range-responsive($w-md, $w-xl) {
                 left: 40px;
             }
+
+            @include min-responsive($w-xxxl) {
+                left: 450px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                left: 220px;
+            }
         }
 
         .--consumer {
-            right: 160px;
+            right: 200px;
 
             @include range-responsive($w-md, $w-xl) {
                 right: 40px;
+            }
+
+            @include min-responsive($w-xxxl) {
+                right: 450px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                right: 220px;
             }
         }
     }
@@ -214,15 +230,15 @@
             left: 15px;
 
             @include min-responsive($w-md) {
-                left: 160px;
+                left: 200px;
+            }
+
+            @include min-responsive($w-xxxl) {
+                left: 450px;
             }
 
             @include range-responsive($w-md, $w-xl) {
                 left: 40px;
-            }
-
-            @media only screen and(max-height: 700px) and(orientation: landscape) {
-                left: 138px;
             }
 
             .benefitButton {
@@ -234,15 +250,15 @@
             right: 15px;
 
             @include min-responsive($w-md) {
-                right: 160px;
+                right: 200px;
+            }
+
+            @include min-responsive($w-xxxl) {
+                right: 450px;
             }
 
             @include range-responsive($w-md, $w-xl) {
                 right: 40px;
-            }
-
-            @media only screen and(max-height: 700px) and(orientation: landscape) {
-                right: 138px;
             }
 
             .benefitButton {
@@ -357,6 +373,7 @@
 
     &List {
         margin-top: 167px;
+        z-index: 1;
 
         @include max-responsive($w-xm) {
             margin-top: 163px;
@@ -442,22 +459,16 @@
     }
 
     &Img {
-        display: none;
-        bottom: calc(var(--app-height)*(6 / 100));
+        position: absolute;
+        left: 0;
+        bottom: 0;
         align-self: flex-end;
         transform: translate(47px, 0);
         transition: transform .7s ease-in-out;
 
-        @media only screen and(max-width: $w-sm) and(min-height: 844px) {
-            display: block;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-        }
-
         @include min-responsive($w-md) {
             position: relative;
-            display: block;
+            bottom: calc(var(--app-height)*(6 / 100));
         }
 
         @include min-responsive($w-xxxxl) {
@@ -603,23 +614,17 @@
     }
 
     &Img {
-        display: none;
-        position: relative;
-        bottom: calc(var(--app-height)*(5 / 100));
+        position: absolute;
+        right: 10px;
+        bottom: 0;
         align-self: flex-end;
         margin-left: 30px;
         transform: translate(-72px, 0);
         transition: transform .7s ease-in-out;
 
-        @media only screen and(max-width: $w-sm) and(min-height: 844px) {
-            display: block;
-            position: absolute;
-            right: 10px;
-            bottom: 0;
-        }
-
         @include min-responsive($w-md) {
-            display: block;
+            position: relative;
+            bottom: calc(var(--app-height)*(5 / 100));
         }
 
         @include min-responsive($w-xxxxl) {

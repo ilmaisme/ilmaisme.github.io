@@ -9,6 +9,26 @@ $(window).on('load', function () {
 })
 
 $(document).ready(function () {
+    // 1. Animation cashier
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationCashier'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/cashier.json',
+        name: 'myAnimation',
+    });
+    // 2. Animation universal
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationUniversal'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/deptstore.json',
+        name: 'myAnimation',
+    });
+
+
     new fullpage('#fullpage', {
         //options here
         autoScrolling: true,
@@ -185,7 +205,7 @@ $(document).ready(function () {
                     delay: 300,
                     duration: 700
                 });
-                $(".peopleImg__wrap").velocity({
+                $(".peopleImg").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
@@ -263,7 +283,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
-                $(".peopleImg__wrap").velocity({
+                $(".peopleImg").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
@@ -283,7 +303,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
-                $(".peopleImg__wrap").velocity({
+                $(".peopleImg").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
@@ -1281,7 +1301,7 @@ $(document).ready(function () {
                     //     movePixel + 'px')
                     console.log(movePixel + 'px')
 
-                    if (movePixel <= 20) {
+                    if (movePixel <= 30) {
                         //SCAN SUCCESS
                         console.log('scan success center')
                         scanSuccess()
@@ -1293,10 +1313,20 @@ $(document).ready(function () {
 })
 
 function scanSuccess() {
+    $(".scanning").velocity({
+        opacity: "0"
+    }, {
+        delay: 0
+    });
+    $(".scanningSuccess").velocity({
+        opacity: "1"
+    }, {
+        delay: 0
+    });
     $(".success").velocity({
         opacity: "1"
     }, {
-        delay: 0,
+        delay: 1000,
         duration: 700,
         begin: function () {
             fullpage_api.moveTo('success', 4);
@@ -1310,7 +1340,7 @@ function scanSuccess() {
     $(".cashierImg").velocity({
         opacity: "0"
     }, {
-        delay: 0,
+        delay: 1000,
         duration: 700,
         begin: function () {
             $('.cashier').removeClass('active')
@@ -1322,19 +1352,19 @@ function scanSuccess() {
     $(".cashierCompo").velocity({
         opacity: "0"
     }, {
-        delay: 0,
+        delay: 1000,
         duration: 700
     });
     $(".storeCompo").velocity({
         opacity: "0"
     }, {
-        delay: 0,
+        delay: 1000,
         duration: 700
     });
     $(".cashierInfo").velocity({
         opacity: "0"
     }, {
-        delay: 0,
+        delay: 1000,
         duration: 300
     });
 }
@@ -1387,7 +1417,7 @@ $('.-js-trig-people').on('click', function () {
     fullpage_api.setAllowScrolling(true, 'down');
     fullpage_api.setKeyboardScrolling(true, 'down');
     fullpage_api.moveTo('people', 6);
-    $(".peopleImg__wrap").velocity({
+    $(".peopleImg").velocity({
         opacity: "1"
     }, {
         delay: 0,
@@ -1627,7 +1657,7 @@ function showBenefitBg() {
     });
 }
 
-function showMerchant() {    
+function showMerchant() {
     fullpage_api.setAllowScrolling(false);
     fullpage_api.setKeyboardScrolling(false);
     $(".consumerTrigger").velocity({
@@ -1760,8 +1790,28 @@ function showConsumer() {
         complete: function () {
             $('.consumerItem5__img').addClass('active')
         }
-    });
+    });    
 }
+
+/* s: add to cart item */
+$('.cartDisplay__item').on('click', function () {
+    console.log('send to cart')
+    var button = $(this);
+    var cart = $('.cartImg');
+    // var cartTotal = cart.attr('data-totalitems');
+    // var newCartTotal = parseInt(cartTotal) + 1;
+
+    button.addClass('sendtocart');
+    setTimeout(function () {
+        button.removeClass('sendtocart');
+        //cart.addClass('shake').attr('data-totalitems', newCartTotal);
+        cart.addClass('shake');
+        setTimeout(function () {
+            cart.removeClass('shake');
+        }, 500)
+    }, 1000)
+})
+/* e: add to cart item */
 
 /* s: Get HEIGHT Device */
 const appHeight = () => {
