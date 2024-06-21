@@ -27,6 +27,10 @@
             bottom: 80px;
         }
 
+        @include range-responsive($w-md, $w-xl) {
+            bottom: 140px;
+        }
+
         &__wrap {
             @extend .cartButton__wrap;
             padding: 12px 31px 12px 34px;
@@ -40,11 +44,15 @@
     &Button {
         position: absolute;
         right: 0;
-        bottom: 75px;
-        max-height: calc(var(--app-height) * (17/100));
+        bottom: 0;
+        // bottom: 75px;
+        // max-height: calc(var(--app-height) * (17/100));
         overflow: visible;
         cursor: pointer;
         z-index: 3;
+
+        touch-action: none;
+        transform: translate(0px, 0px);
 
         @include max-responsive($w-xm) {
             right: -40px;
@@ -56,8 +64,10 @@
             bottom: 10px;
         }
 
-        touch-action: none;
-        transform: translate(0px, 0px);
+        @include range-responsive($w-md, $w-xl) {
+            right: 125px;
+            bottom: 0;
+        }
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             max-height: calc(var(--app-height)*(64 / 100));
@@ -77,34 +87,65 @@
 
     &Img {
         position: absolute;
-        left: -12px;
-        bottom: 18vh;
+        left: -40vw;
+        bottom: 14vh;
         z-index: 0;
 
         @include min-responsive($w-md) {
             left: 50px;
-            bottom: 20px;
+            bottom: -40px;
         }
 
-        img {
-            // &__anim {
-            height: calc(var(--app-height)*(50 / 100));
-            max-height: 333px;
+        @include range-responsive($w-md, $w-xl) {
+            left: -150px;
+            bottom: 140px;
+        }
+
+        // img {
+        &__anim {
+            // height: calc(var(--app-height)*(50 / 100));
+            // max-height: 333px;
+            height: calc(var(--app-height)*(60 / 100));
+            max-height: 444px;
             object-fit: contain;
 
             @include min-responsive($w-md) {
-                height: calc(var(--app-height) * (80/100));
-                max-height: 779px;
+                // height: calc(var(--app-height) * (80/100));
+                // max-height: 779px;
+                height: calc(var(--app-height) * (95/100));
+                max-height: 940px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                height: calc(var(--app-height)*(66 / 100));
+                max-height: 900px;
             }
         }
     }
 
     &Dropzone {
         position: absolute;
+        bottom: 175px;
+        right: 40px;
         width: calc(var(--app-height)*(11 / 100));
         height: calc(var(--app-height)*(14 / 100));
-        bottom: calc(var(--app-height)*(37 / 100));
-        right: calc(var(--app-height)*(5 / 100));
+
+        @include min-responsive($w-md) {
+            bottom: calc(var(--app-height)*(44 / 100));
+            right: calc(var(--app-height)*(13 / 100));
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            bottom: calc(var(--app-height)*(28 / 100));
+            right: calc(var(--app-height)*(8 / 100));
+        }
+
+        @include min-responsive($w-xxxl) {
+            width: 120px;
+            height: 152px;
+            bottom: 428px;
+            right: 130px;
+        }
     }
 
     &Scan {

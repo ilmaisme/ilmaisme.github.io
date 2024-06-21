@@ -9,16 +9,25 @@
     }
 
     &Title {
+        position: relative;
         padding: 16px 20px 17px;
         border-radius: 25px;
         background: $cl-white;
         text-align: center;
         width: 100%;
-        
+
         @include min-responsive($w-md) {
             border-radius: 30px;
             width: auto;
             padding: 16px 45px 17px;
+        }
+
+        br {
+            display: block;
+
+            @include min-responsive($w-md) {
+                display: none;
+            }
         }
     }
 }

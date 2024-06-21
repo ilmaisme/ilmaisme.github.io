@@ -1,9 +1,14 @@
 $(window).on('load', function () {
     setTimeout(function () {
         $('.preloader').addClass("done");
-        $(".buttonCover").addClass("enable");
-        // fullpage_api.setAllowScrolling(true);
-        // fullpage_api.setKeyboardScrolling(true);
+        $(".introTitle").velocity({
+            top: "0"
+        }, {
+            delay: 0,
+            duration: 700
+        });
+        fullpage_api.setAllowScrolling(true);
+        fullpage_api.setKeyboardScrolling(true);
     }, 3000);
     //console.log('loaded');
 })
@@ -25,6 +30,44 @@ $(document).ready(function () {
         loop: true,
         autoplay: true,
         path: 'asset/json/deptstore.json',
+        name: 'myAnimation',
+    });
+    // 3. Animation consumer
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationConsumer'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/consumer.json',
+        name: 'myAnimation',
+    });
+    // 4. Animation merchant
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationMerchant'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/merchant.json',
+        name: 'myAnimation',
+    });
+    // 5. Animation overseas
+    var paramOverseas = {
+        container: document.getElementById('animationOverseas'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: 'asset/json/overseas.json',
+        name: 'myAnimation',
+    };
+    var playOverseas;
+    playOverseas = bodymovin.loadAnimation(paramOverseas);
+    // 6. Animation perry
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationPerry'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/perry.json',
         name: 'myAnimation',
     });
 
@@ -55,6 +98,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.cart').addClass('active')
+                        $('body').addClass('cursor')
                     }
                 });
                 $(".cartCompo").velocity({
@@ -86,6 +130,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.cart').removeClass('active')
+                        $('body').removeClass('cursor')
                     }
                 });
                 $(".cartCompo").velocity({
@@ -124,6 +169,7 @@ $(document).ready(function () {
                     begin: function () {
                         $('.cart').addClass('active')
                         $('.cashier').removeClass('active')
+                        $('body').addClass('cursor')
                     }
                 });
                 $(".cashierCompo").velocity({
@@ -281,7 +327,10 @@ $(document).ready(function () {
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $('.valueLine').removeClass('active')
+                    }
                 });
                 $(".peopleImg").velocity({
                     opacity: "0"
@@ -301,7 +350,10 @@ $(document).ready(function () {
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    complete: function () {
+                        $('.valueLine').addClass('active')
+                    }
                 });
                 $(".peopleImg").velocity({
                     opacity: "1"
@@ -782,13 +834,16 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
-                $(".overseasGlobe").velocity({
+                $(".overseasImg").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
                     duration: 1000,
                     begin: function () {
-                        $('.overseas').addClass('active')
+                        $('.overseas').addClass('active');
+                    },
+                    complete: function () {
+                        playOverseas.play();
                     }
                 });
                 $(".overseasTitle").velocity({
@@ -814,7 +869,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
-                $(".overseasGlobe").velocity({
+                $(".overseasImg").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
@@ -831,7 +886,7 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 16 && direction == 'down') {
-                $(".overseasGlobe").velocity({
+                $(".overseasImg").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
@@ -875,13 +930,16 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 17 && direction == 'up') {
-                $(".overseasGlobe").velocity({
+                $(".overseasImg").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
                     duration: 1000,
                     begin: function () {
-                        $('.overseas').addClass('active')
+                        $('.overseas').addClass('active');
+                    },
+                    complete: function () {
+                        playOverseas.play();
                     }
                 });
                 $(".overseasTitle").velocity({
@@ -1215,8 +1273,8 @@ $(document).ready(function () {
         }
     })
 
-    // fullpage_api.setAllowScrolling(false);
-    // fullpage_api.setKeyboardScrolling(false);
+    fullpage_api.setAllowScrolling(false);
+    fullpage_api.setKeyboardScrolling(false);
 
     /* s: Drag and drop SCAN QR */
     /* The dragging code for '.draggable' from the demo above
@@ -1326,7 +1384,7 @@ function scanSuccess() {
     $(".success").velocity({
         opacity: "1"
     }, {
-        delay: 1000,
+        delay: 1400,
         duration: 700,
         begin: function () {
             fullpage_api.moveTo('success', 4);
@@ -1340,31 +1398,34 @@ function scanSuccess() {
     $(".cashierImg").velocity({
         opacity: "0"
     }, {
-        delay: 1000,
+        delay: 1400,
         duration: 700,
         begin: function () {
             $('.cashier').removeClass('active')
             $('.cashierButton').removeClass('drop-scan')
             $('.cashierButton').attr('id', '');
             $('.cashierDropzone').attr('id', '');
+        },
+        complete: function () {
+            $('.cashierButton').removeClass('active')
         }
     });
     $(".cashierCompo").velocity({
         opacity: "0"
     }, {
-        delay: 1000,
+        delay: 1400,
         duration: 700
     });
     $(".storeCompo").velocity({
         opacity: "0"
     }, {
-        delay: 1000,
+        delay: 1400,
         duration: 700
     });
     $(".cashierInfo").velocity({
         opacity: "0"
     }, {
-        delay: 1000,
+        delay: 1400,
         duration: 300
     });
 }
@@ -1391,6 +1452,7 @@ $('.-js-trig-cashier').on('click', function () {
         begin: function () {
             $('.cart').removeClass('active')
             $('.cashier').addClass('active')
+            $('body').removeClass('cursor')
         }
     });
     $(".cashierCompo").velocity({
@@ -1790,7 +1852,7 @@ function showConsumer() {
         complete: function () {
             $('.consumerItem5__img').addClass('active')
         }
-    });    
+    });
 }
 
 /* s: add to cart item */

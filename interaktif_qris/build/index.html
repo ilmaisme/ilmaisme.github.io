@@ -27,7 +27,7 @@
 
     <link rel=icon type=image/png sizes=16x16 href="https://static.bisnis-cdn.com/interaktif/assets/images/favicon.png">
 
-    <link rel="stylesheet" href="./asset/css/style.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style.min.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/londrinasolid/v17/flUhRq6sw40kQEJxWNgkLuudGfNeKBM.woff2"
@@ -62,12 +62,12 @@
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
 
-        /*preloader
-        .preloader{top:0;background:#3e3e3e;background:radial-gradient(157.88% 76.84% at 50% 50%,#3e3e3e 0,#1e1e1e 100%);background-size:cover;background-position:50%;background-repeat:no-repeat;transition:opacity .4s ease-in-out;z-index:1001;position:fixed;overflow:hidden}.preloader,.preloaderWrap{height:100%;width:100%;display:flex;justify-content:center}.preloaderWrap{align-items:center;flex-direction:column;position:relative;font-family:BCA,sans-serif;font-size:14px;font-weight:400;line-height:1.24;color:#fff}.preloaderMeter{background:#b7b7b7;width:282px;height:20px;margin:24px auto 18px;box-sizing:content-box}.preloaderMeter,.preloaderMeter>span{position:relative;border-radius:17px;overflow:hidden}.preloaderMeter>span{display:block;height:100%;background-color:#cfac68;box-shadow:inset 0 2px 9px hsla(0,0%,100%,.3),inset 0 -2px 6px rgba(0,0,0,.4)}.preloaderMeter .anim>span>span,.preloaderMeter>span:after{content:"";position:absolute;top:0;left:0;bottom:0;right:0;background-image:linear-gradient(-45deg,hsla(0,0%,100%,.2) 25%,transparent 0,transparent 50%,hsla(0,0%,100%,.2) 0,hsla(0,0%,100%,.2) 75%,transparent 0,transparent);z-index:1;background-size:50px 50px;animation:moveloading 2s linear infinite;border-radius:17px;overflow:hidden}.preloaderBar{width:0}.preloaderTxt{min-width:81px}.preloaderLogo{-moz-animation:fliploading 3s infinite;-o-animation:fliploading 3s infinite;-ms-animation:fliploading 3s infinite;-webkit-animation:fliploading 3s infinite;animation:fliploading 3s infinite}
+        /*preloader */
+        .preloader{--t-y:19;--time-bubble:10s;top:0;height:100%;width:100%;z-index:1001;position:fixed;display:flex;justify-content:center;overflow:hidden;transition-property:opacity;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.7s;background:#51b3ff;background:linear-gradient(180deg,#51b3ff,#005596)}.preloader.done{opacity:0;pointer-events:none}.preloaderWrap{display:flex;align-items:center;justify-content:center;flex-direction:column;position:relative;background-size:cover;background-position:50%;background-repeat:no-repeat;font-family:Londrina Solid,sans-serif;font-size:18px;font-weight:400;line-height:normal;color:#fff}.preloaderImg{max-width:140px;animation:translate-3D linear infinite;animation-duration:var(--time-bubble)}@media (min-width:768px){.preloaderImg{max-width:unset}}.preloaderTxt{margin-top:60px}.bubbleContainer{width:100%;height:300px;left:-20px;bottom:40vh;position:absolute;animation-name:bubblesIn;animation-duration:5s;animation-iteration-count:infinite;animation-timing-function:linear}@media (min-width:768px){.bubbleContainer{left:0;bottom:20vh;height:500px}}@keyframes bubblesIn{0%{opacity:0;transform:translateY(40vh)}50%,80%{opacity:.5}to{opacity:0;transform:translateY(0)}}.bubbleX1{width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX1;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleX1,.bubbleY1{display:inline-block}.bubbleY1{position:absolute;z-index:5000;top:72px;left:132px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:3s}@keyframes bubbleX1{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(10px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(10px)}to{transform:translateX(-random(15)px)}}.bubbleX2{width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX2;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleX2,.bubbleY2{display:inline-block}.bubbleY2{position:absolute;z-index:5000;top:76px;left:78px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:2s}@keyframes bubbleX2{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(13px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(13px)}to{transform:translateX(-random(15)px)}}.bubbleX3{width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX3;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleX3,.bubbleY3{display:inline-block}.bubbleY3{position:absolute;z-index:5000;top:85px;left:146px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:3s}@keyframes bubbleX3{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(2px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(8px)}to{transform:translateX(-random(15)px)}}.bubbleX4{width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX4;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleX4,.bubbleY4{display:inline-block}.bubbleY4{position:absolute;z-index:5000;top:52px;left:96px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:1s}@keyframes bubbleX4{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(2px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(6px)}to{transform:translateX(-random(15)px)}}.bubbleX5{width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX5;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleX5,.bubbleY5{display:inline-block}.bubbleY5{position:absolute;z-index:5000;top:77px;left:87px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:2s}@keyframes bubbleX5{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(8px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(12px)}to{transform:translateX(-random(15)px)}}.bubbleX6{width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX6;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleX6,.bubbleY6{display:inline-block}.bubbleY6{position:absolute;z-index:5000;top:65px;left:24px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:1s}@keyframes bubbleX6{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(9px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(7px)}to{transform:translateX(-random(15)px)}}.bubbleX7{width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX7;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleX7,.bubbleY7{display:inline-block}.bubbleY7{position:absolute;z-index:5000;top:75px;left:52px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:3s}@keyframes bubbleX7{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(12px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(5px)}to{transform:translateX(-random(15)px)}}.bubbleX8{width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX8;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleX8,.bubbleY8{display:inline-block}.bubbleY8{position:absolute;z-index:5000;top:79px;left:45px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:2s}@keyframes bubbleX8{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(1px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(8px)}to{transform:translateX(-random(15)px)}}.bubbleX9{width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX9;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleX9,.bubbleY9{display:inline-block}.bubbleY9{position:absolute;z-index:5000;top:63px;left:35px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:3s}@keyframes bubbleX9{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(9px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(6px)}to{transform:translateX(-random(15)px)}}.bubbleX10{display:inline-block;width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX10;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleY10{display:inline-block;position:absolute;z-index:5000;top:91px;left:135px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:3s}@keyframes bubbleX10{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(2px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(10px)}to{transform:translateX(-random(15)px)}}.bubbleX11{display:inline-block;width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX11;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleY11{display:inline-block;position:absolute;right:55px;z-index:5000;top:31px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:4s}@keyframes bubbleX11{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(4px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(4px)}to{transform:translateX(-random(15)px)}}.bubbleX12{display:inline-block;width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX12;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleY12{display:inline-block;position:absolute;right:26px;z-index:5000;top:53px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:3s}@keyframes bubbleX12{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(11px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(5px)}to{transform:translateX(-random(15)px)}}.bubbleX13{display:inline-block;width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX13;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleY13{display:inline-block;position:absolute;right:128px;z-index:5000;top:16px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:6s}@keyframes bubbleX13{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(14px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(13px)}to{transform:translateX(-random(15)px)}}.bubbleX14{display:inline-block;width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX14;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleY14{display:inline-block;position:absolute;right:48px;z-index:5000;top:33px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:1s}@keyframes bubbleX14{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(5px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(5px)}to{transform:translateX(-random(15)px)}}.bubbleX15{display:inline-block;width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX15;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleY15{display:inline-block;position:absolute;right:21px;z-index:5000;top:53px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:5s}@keyframes bubbleX15{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(4px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(6px)}to{transform:translateX(-random(15)px)}}.bubbleX16{display:inline-block;width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX16;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleY16{display:inline-block;position:absolute;right:5px;z-index:5000;top:39px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:6s}@keyframes bubbleX16{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(11px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(13px)}to{transform:translateX(-random(15)px)}}.bubbleX17{display:inline-block;width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX17;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleY17{display:inline-block;position:absolute;right:14px;z-index:5000;top:64px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:4s}@keyframes bubbleX17{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(7px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(5px)}to{transform:translateX(-random(15)px)}}.bubbleX18{display:inline-block;width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX18;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleY18{display:inline-block;position:absolute;right:5px;z-index:5000;top:47px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:3s}@keyframes bubbleX18{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(8px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(10px)}to{transform:translateX(-random(15)px)}}.bubbleX19{display:inline-block;width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX19;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleY19{display:inline-block;position:absolute;right:54px;z-index:5000;top:44px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:4s}@keyframes bubbleX19{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(10px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(5px)}to{transform:translateX(-random(15)px)}}.bubbleX20{display:inline-block;width:17px;height:17px;border-radius:50%;background:#fff;transform:translateX(0);animation-name:bubbleX20;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:linear}.bubbleY20{display:inline-block;position:absolute;right:34px;z-index:5000;top:18px;animation-name:bubbleY;animation-duration:1.25s;animation-iteration-count:infinite;animation-timing-function:linear;transform:translateY(0);opacity:.6;animation-delay:1s}@keyframes bubbleX20{0%{transform:translateX(0)}20%{transform:translateX(-random(15)px)}40%{transform:translateX(10px)}60%{transform:translateX(-random(15)px)}80%{transform:translateX(13px)}to{transform:translateX(-random(15)px)}}@keyframes bubbleY{0%{transform:translateY(0)}50%{transform:translateY(-30px)}to{transform:translateY(-60px);opacity:0}}.bubbleY6,.bubbleY7,.bubbleY8,.bubbleY9,.bubbleY10,.bubbleY11,.bubbleY12,.bubbleY13,.bubbleY14,.bubbleY15{display:none}@media (min-width:768px){.bubbleY6,.bubbleY7,.bubbleY8,.bubbleY9,.bubbleY10,.bubbleY11,.bubbleY12,.bubbleY13,.bubbleY14,.bubbleY15{display:block}}
         /*preloader*/
     </style>
 
-
+    <link rel="preload" as="image" href="./asset/images/preload-img.png">
 </head>
 <body>
     <!-- header -->
@@ -97,13 +97,35 @@
     </header>    <!-- header -->
 
     <!-- preloader -->
-    <!-- preloader -->
+    <div class="preloader" id="preloader">
+    	<div class="preloaderWrap">
+    		<img src="./asset/images/preload-img.png" class="preloaderImg" alt="loading" width="233" height="245">
+    		<div class="preloaderTxt">
+    			Loading...
+    		</div>
+    		<div class="bubbleContainer"><span class="bubbleY1"><span class="bubbleX1"></span></span><span
+    				class="bubbleY2"><span class="bubbleX2"></span></span><span class="bubbleY3"><span
+    					class="bubbleX3"></span></span><span class="bubbleY4"><span class="bubbleX4"></span></span><span
+    				class="bubbleY5"><span class="bubbleX5"></span></span><span class="bubbleY6"><span
+    					class="bubbleX6"></span></span><span class="bubbleY7"><span class="bubbleX7"></span></span><span
+    				class="bubbleY8"><span class="bubbleX8"></span></span><span class="bubbleY9"><span
+    					class="bubbleX9"></span></span><span class="bubbleY10"><span class="bubbleX10"></span></span><span
+    				class="bubbleY11"><span class="bubbleX11"></span></span><span class="bubbleY12"><span
+    					class="bubbleX12"></span></span><span class="bubbleY13"><span class="bubbleX13"></span></span><span
+    				class="bubbleY14"><span class="bubbleX14"></span></span><span class="bubbleY15"><span
+    					class="bubbleX15"></span></span><span class="bubbleY16"><span class="bubbleX16"></span></span><span
+    				class="bubbleY17"><span class="bubbleX17"></span></span><span class="bubbleY18"><span
+    					class="bubbleX18"></span></span><span class="bubbleY19"><span class="bubbleX19"></span></span><span
+    				class="bubbleY20"><span class="bubbleX20"></span></span>
+    		</div>
+    	</div>
+    </div>    <!-- preloader -->
 
     <!-- main -->
     <main role="main">
 
         <div class="bgStatic bgStatic--warn">
-            <div class="articleContent text-center">
+            <div class="articleTitle text-center">
                 For better experience, rotate your screen or switch to bigger screen.
             </div>
         </div>
@@ -118,7 +140,7 @@
         <div class="bgStatic__wrap active">
             <div class="bgStatic">
                 <div class="intro center-flex heightFull">
-                    <div class="introTitle articleTitle">Selamat datang di Toko Satu Qris Untuk Semua</div>
+                    <div class="introTitle articleTitle top100">Selamat datang <br> di Toko Satu Qris Untuk Semua</div>
                 </div>
             </div>
             <div class="bgStatic">
@@ -137,113 +159,113 @@
                             <div class="cartDisplay__list">
                                 <button class="button cartDisplay__item cartDisplay__item1">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item1.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item1.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Telur</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item2">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item2.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item2.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Susu</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item3">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item3.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item3.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Puding</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item4">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item4.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item4.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Air Mineral</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item5">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item5.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item5.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Kecap</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item6">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item6.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item6.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Jus</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item7">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item7.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item7.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Sosis</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item8">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item8.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item8.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Roti</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item9">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item9.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item9.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Ayam</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item10">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item10.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item10.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Daging</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item11">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item11.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item11.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Keju</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item12">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item12.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item12.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Timun</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item13">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item13.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item13.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Sawi</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item14">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item14.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item14.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Tomat</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item15">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item15.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item15.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Pisang</div>
                                 </button>
                                 <button class="button cartDisplay__item cartDisplay__item16">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item16.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item16.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">Terong</div>
                                 </button>
@@ -264,12 +286,7 @@
                 <div class="cashier center-flex heightFull">
                     <div class="cashierTitle articleTitle">Bayar menggunakan QRIS</div>
                     <div class="cashierImg opac0">
-                        <picture>
-                            <source srcset="./asset/images/store-cashier-mob.png" media="(max-width: 700px)" alt=""
-                                width="273" height="333">
-                            <img srcset="./asset/images/store-cashier.png" alt="" class="" width="810" height="779"
-                                loading="lazy">
-                        </picture>
+                        <div class="cashierImg__anim" id="animationCashier"></div>
                         <div class="cashierDropzone"></div>
                     </div>
                     <div class="cartImg opac0 storeCompo">
@@ -449,18 +466,8 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="charBreadcrumb opac0">
-                    <span class="char1__bread">UN</span>
-                    <span class="char2__bread">GG</span>
-                    <span class="char3__bread">U</span>
-                    <span class="char4__bread">L</span>
-                </div>
                 <div class="char1 center-flex heightFull">
-                    <picture class="charImg char1__img opac0">
-                        <source srcset="./asset/images/char-1-mob.png" media="(max-width: 700px)" alt="" width="563"
-                            height="633">
-                        <img srcset="./asset/images/char-1.png" alt="" class="" width="430" height="156" loading="lazy">
-                    </picture>
+                    <div class="charImg char1__img opac0" id="animationUniversal"></div>
                     <div class="char1__title charUnggul__title top100">
                         Universal</div>
                     <div class="char1__txt articleTxt top100">
@@ -565,10 +572,7 @@
             <div class="bgStatic">
                 <div class="merchant display-flex heightFull opac0">
                     <div class="merchantImg">
-                        <picture>
-                            <img srcset="./asset/images/merchant-img.png" alt="" class="" width="322" height="769"
-                                loading="lazy">
-                        </picture>
+                        <div class="merchantImg__anim" id="animationMerchant"></div>
                     </div>
                     <div class="merchantList benefitList articleTxt">
                         <div class="benefitList__item merchantItem merchantItem1">
@@ -662,10 +666,7 @@
                         </div>
                     </div>
                     <div class="consumerImg">
-                        <picture>
-                            <img srcset="./asset/images/consumer-img.png" alt="" class="" width="255" height="708"
-                                loading="lazy">
-                        </picture>
+                        <div class="consumerImg__anim" id="animationConsumer"></div>
                     </div>
                 </div>
             </div>
@@ -677,12 +678,13 @@
                         Selanjutnya, fitur QRIS juga telah dikembangkan dari hanya menerima pembayaran, kemudian dapat
                         juga melayani kegiatan tarik tunai, transfer dan setor tunai sejak 17 Agustus
                         2023.</div>
-                    <div class="overseasImg">
-                        <picture class="overseasGlobe opac0">
+                    <div class="overseasImg opac0">
+                        <picture class="overseasGlobe">
                             <source srcset="./asset/images/overseas-globe-full-mob.png" media="(max-width: 700px)"
                                 alt="" width="563" height="633">
                             <img srcset="./asset/images/overseas-globe-full.png" alt="" class="" width="1555"
                                 height="1482" loading="lazy">
+                            <div class="overseasPeople" id="animationOverseas"></div>
                         </picture>
                     </div>
                 </div>
@@ -748,12 +750,7 @@
                         <span class="visionLine"></span>
                     </div>
                     <div class="visionImg opac0">
-                        <picture>
-                            <source srcset="./asset/images/vision-perry-warjiyo-mob.png" media="(max-width: 700px)"
-                                alt="" width="250" height="553">
-                            <img srcset="./asset/images/vision-perry-warjiyo.png" alt="" class="" width="324"
-                                height="717" loading="lazy">
-                        </picture>
+                        <div class="visionImg__anim" id="animationPerry"></div>
                     </div>
                 </div>
             </div>
@@ -854,7 +851,7 @@
     
     <script defer type="text/javascript" src="./asset/js/interact-1.10.27.js"></script>
     <script defer type="text/javascript" src="./asset/js/lottie.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/main.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
 </body>
 
 </html>

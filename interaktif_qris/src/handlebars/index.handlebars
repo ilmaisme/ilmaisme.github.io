@@ -8,14 +8,14 @@
     <!-- header -->
 
     <!-- preloader -->
-    {{!> preloader}}
+    {{> preloader}}
     <!-- preloader -->
 
     <!-- main -->
     <main role="main">
 
         <div class="bgStatic bgStatic--warn">
-            <div class="articleContent text-center">
+            <div class="articleTitle text-center">
                 For better experience, rotate your screen or switch to bigger screen.
             </div>
         </div>
@@ -30,7 +30,7 @@
         <div class="bgStatic__wrap active">
             <div class="bgStatic">
                 <div class="intro center-flex heightFull">
-                    <div class="introTitle articleTitle">Selamat datang di Toko Satu Qris Untuk Semua</div>
+                    <div class="introTitle articleTitle top100">Selamat datang <br> di Toko Satu Qris Untuk Semua</div>
                     {{!-- <div class="introCta center-flex">
                         <button class="button buttonScroll center-flex">
                             <span class="icon-scroll"></span>
@@ -57,8 +57,8 @@
                                 {{#each cart}}
                                 <button class="button cartDisplay__item cartDisplay__item{{add @index 1}}">
                                     <div class="cartDisplay__rack">
-                                        <img srcset="./asset/images/cart-item{{add @index 1}}.png" alt="" class="" width="183"
-                                            height="109" loading="lazy">
+                                        <img srcset="./asset/images/cart-item{{add @index 1}}.png" alt="" class=""
+                                            width="183" height="109" loading="lazy">
                                     </div>
                                     <div class="cartDisplay__title">{{name}}</div>
                                 </button>
@@ -80,13 +80,13 @@
                 <div class="cashier center-flex heightFull">
                     <div class="cashierTitle articleTitle">Bayar menggunakan QRIS</div>
                     <div class="cashierImg opac0">
-                        <picture>
+                        {{!-- <picture>
                             <source srcset="./asset/images/store-cashier-mob.png" media="(max-width: 700px)" alt=""
                                 width="273" height="333">
                             <img srcset="./asset/images/store-cashier.png" alt="" class="" width="810" height="779"
                                 loading="lazy">
-                        </picture>
-                        {{!-- <div class="cashierImg__anim" id="animationCashier"></div> --}}
+                        </picture> --}}
+                        <div class="cashierImg__anim" id="animationCashier"></div>
                         <div class="cashierDropzone"></div>
                     </div>
                     <div class="cartImg opac0 storeCompo">
@@ -269,19 +269,19 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="charBreadcrumb opac0">
+                {{!-- <div class="charBreadcrumb opac0">
                     <span class="char1__bread">UN</span>
                     <span class="char2__bread">GG</span>
                     <span class="char3__bread">U</span>
                     <span class="char4__bread">L</span>
-                </div>
+                </div> --}}
                 <div class="char1 center-flex heightFull">
-                    <picture class="charImg char1__img opac0">
+                    {{!-- <picture class="charImg char1__img opac0">
                         <source srcset="./asset/images/char-1-mob.png" media="(max-width: 700px)" alt="" width="563"
                             height="633">
                         <img srcset="./asset/images/char-1.png" alt="" class="" width="430" height="156" loading="lazy">
-                    </picture>
-                    {{!-- <div class="charImg char1__img" id="animationUniversal"></div> --}}
+                    </picture> --}}
+                    <div class="charImg char1__img opac0" id="animationUniversal"></div>
                     <div class="char1__title charUnggul__title top100">
                         Universal</div>
                     <div class="char1__txt articleTxt top100">
@@ -389,13 +389,13 @@
             <div class="bgStatic">
                 <div class="merchant display-flex heightFull opac0">
                     <div class="merchantImg">
-                        <picture>
-                            {{!--
+                        {{!-- <picture>
                             <source srcset="./asset/images/merchant-img-mob.png" media="(max-width: 700px)" alt=""
-                                width="563" height="633"> --}}
+                                width="563" height="633">
                             <img srcset="./asset/images/merchant-img.png" alt="" class="" width="322" height="769"
                                 loading="lazy">
-                        </picture>
+                        </picture> --}}
+                        <div class="merchantImg__anim" id="animationMerchant"></div>
                     </div>
                     <div class="merchantList benefitList articleTxt">
                         <div class="benefitList__item merchantItem merchantItem1">
@@ -519,13 +519,13 @@
                         </div>
                     </div>
                     <div class="consumerImg">
-                        <picture>
-                            {{!--
+                        {{!-- <picture>
                             <source srcset="./asset/images/consumer-img-mob.png" media="(max-width: 700px)" alt=""
-                                width="563" height="633"> --}}
+                                width="563" height="633">
                             <img srcset="./asset/images/consumer-img.png" alt="" class="" width="255" height="708"
                                 loading="lazy">
-                        </picture>
+                        </picture> --}}
+                        <div class="consumerImg__anim" id="animationConsumer"></div>
                     </div>
                 </div>
             </div>
@@ -537,12 +537,13 @@
                         Selanjutnya, fitur QRIS juga telah dikembangkan dari hanya menerima pembayaran, kemudian dapat
                         juga melayani kegiatan tarik tunai, transfer dan setor tunai sejak 17 Agustus
                         2023.</div>
-                    <div class="overseasImg">
-                        <picture class="overseasGlobe opac0">
+                    <div class="overseasImg opac0">
+                        <picture class="overseasGlobe">
                             <source srcset="./asset/images/overseas-globe-full-mob.png" media="(max-width: 700px)"
                                 alt="" width="563" height="633">
                             <img srcset="./asset/images/overseas-globe-full.png" alt="" class="" width="1555"
                                 height="1482" loading="lazy">
+                            <div class="overseasPeople" id="animationOverseas"></div>
                         </picture>
                     </div>
                 </div>
@@ -608,12 +609,13 @@
                         <span class="visionLine"></span>
                     </div>
                     <div class="visionImg opac0">
-                        <picture>
+                        {{!-- <picture>
                             <source srcset="./asset/images/vision-perry-warjiyo-mob.png" media="(max-width: 700px)"
                                 alt="" width="250" height="553">
                             <img srcset="./asset/images/vision-perry-warjiyo.png" alt="" class="" width="324"
                                 height="717" loading="lazy">
-                        </picture>
+                        </picture> --}}
+                        <div class="visionImg__anim" id="animationPerry"></div>
                     </div>
                 </div>
             </div>

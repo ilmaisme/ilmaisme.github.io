@@ -13,6 +13,11 @@
         margin-bottom: 0;
         @include font-pack($size: 19px, $weight: $font-weight-light);
 
+        @include max-responsive($w-xm) {
+            padding: 8px 15px 12px;
+            font-size: 18px;
+        }
+
         @include min-responsive($w-md) {
             padding: 22px 35px 22px;
             margin-top: 22px;
@@ -62,14 +67,23 @@
     }
 
     &Img {
-        img {
+
+        // img {
+        &__anim {
+            margin-top: -20px;
             object-fit: contain;
             height: calc(var(--app-height)*(40 / 100));
 
+            @include max-responsive($w-xm) {
+                margin-top: -30px;
+            }
+
             @include min-responsive($w-md) {
-                height: calc(var(--app-height)*(61 / 100));
+                height: calc(var(--app-height)*(65 / 100));
                 min-height: 532px;
-                max-height: 717px;
+                max-height: 600px;
+                margin-left: -35px;
+                margin-top: -85px;
             }
 
             @include range-responsive($w-md, $w-xl) {
@@ -77,8 +91,8 @@
                 right: 50px;
             }
 
-            @include min-responsive($w-xxxxl) {
-                height: calc(var(--app-height)*(37 / 100));
+            @include min-responsive($w-xxxl) {
+                margin-top: -155px;
             }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
