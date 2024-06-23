@@ -1,6 +1,6 @@
 .preloader {
-    --t-y: 19;
-    --time-bubble: 10s;
+    // --t-y: 19;
+    // --time-bubble: 10s;
     top: 0;
     height: 100%;
     width: 100%;
@@ -26,223 +26,220 @@
         justify-content: center;
         flex-direction: column;
         position: relative;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        @include font-pack($font-caption, 18px, $font-weight-normal, $line-base, $cl-white);
+        // @include font-pack($font-caption, 18px, $font-weight-normal, $line-base, $cl-white);
     }
 
     &Img {
-        max-width: 140px;
-        animation: translate-3D linear infinite;
-        animation-duration: var(--time-bubble);
+        max-width: 340px;
+        // animation: translate-3D linear infinite;
+        // animation-duration: var(--time-bubble);
 
         @include min-responsive($w-md) {
-            max-width: unset;
+            max-width: 568px;
         }
     }
 
-    &Txt {
-        margin-top: 60px;
-    }
+    //     &Txt {
+    //         margin-top: 60px;
+    //     }
 }
 
-.bubbleContainer {
-    width: 100%;
-    height: 300px;
-    left: -20px;
-    bottom: 40vh;
-    position: absolute;
-    animation-name: bubblesIn;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+// .bubbleContainer {
+//     width: 100%;
+//     height: 300px;
+//     left: -20px;
+//     bottom: 40vh;
+//     position: absolute;
+//     animation-name: bubblesIn;
+//     animation-duration: 5s;
+//     animation-iteration-count: infinite;
+//     animation-timing-function: linear;
 
-    @include min-responsive($w-md) {
-        left: 0;
-        bottom: 20vh;
-        height: 500px;
-    }
-}
+//     @include min-responsive($w-md) {
+//         left: 0;
+//         bottom: 20vh;
+//         height: 500px;
+//     }
+// }
 
-$size: random(5)+15+px;
+// $size: random(5)+15+px;
 
-@keyframes bubblesIn {
-    0% {
-        opacity: 0;
-        transform: translateY(40vh);
-    }
+// @keyframes bubblesIn {
+//     0% {
+//         opacity: 0;
+//         transform: translateY(40vh);
+//     }
 
-    50%,
-    80% {
-        opacity: .5;
-    }
+//     50%,
+//     80% {
+//         opacity: .5;
+//     }
 
-    100% {
-        opacity: 0;
-        transform: translateY(0);
-    }
-}
+//     100% {
+//         opacity: 0;
+//         transform: translateY(0);
+//     }
+// }
 
-@for $i from 1 through 10 {
-    .bubbleX#{$i} {
-        display: inline-block;
-        width: $size;
-        height: $size;
-        border-radius: 50%;
-        background: #FFF;
-        transform: translateX(0);
-        animation-name: bubbleX#{$i};
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-    }
+// @for $i from 1 through 10 {
+//     .bubbleX#{$i} {
+//         display: inline-block;
+//         width: $size;
+//         height: $size;
+//         border-radius: 50%;
+//         background: #FFF;
+//         transform: translateX(0);
+//         animation-name: bubbleX#{$i};
+//         animation-duration: 4s;
+//         animation-iteration-count: infinite;
+//         animation-timing-function: linear;
+//     }
 
-    .bubbleY#{$i} {
-        display: inline-block;
-        position: absolute;
-        z-index: 5000;
-        top: random(100) + px;
-        left: random(156) + px;
-        animation-name: bubbleY;
-        animation-duration: 1.25s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        transform: translateY(0);
-        opacity: .6;
-        animation-delay: random(3) + s;
-    }
+//     .bubbleY#{$i} {
+//         display: inline-block;
+//         position: absolute;
+//         z-index: 5000;
+//         top: random(100) + px;
+//         left: random(156) + px;
+//         animation-name: bubbleY;
+//         animation-duration: 1.25s;
+//         animation-iteration-count: infinite;
+//         animation-timing-function: linear;
+//         transform: translateY(0);
+//         opacity: .6;
+//         animation-delay: random(3) + s;
+//     }
 
-    @keyframes bubbleX#{$i} {
-        0% {
-            transform: translateX(0);
-        }
+//     @keyframes bubbleX#{$i} {
+//         0% {
+//             transform: translateX(0);
+//         }
 
-        20% {
-            transform: translateX(-random(15) + px)
-        }
+//         20% {
+//             transform: translateX(-random(15) + px)
+//         }
 
-        40% {
-            transform: translateX(random(15) + px)
-        }
+//         40% {
+//             transform: translateX(random(15) + px)
+//         }
 
-        60% {
-            transform: translateX(-random(15) + px)
-        }
+//         60% {
+//             transform: translateX(-random(15) + px)
+//         }
 
-        80% {
-            transform: translateX(random(15) + px)
-        }
+//         80% {
+//             transform: translateX(random(15) + px)
+//         }
 
-        100% {
-            transform: translateX(-random(15) + px);
-        }
-    }
+//         100% {
+//             transform: translateX(-random(15) + px);
+//         }
+//     }
 
-    @keyframes bubbleY {
-        0% {
-            transform: translateY(0);
-        }
+//     @keyframes bubbleY {
+//         0% {
+//             transform: translateY(0);
+//         }
 
-        50% {
-            transform: translateY(-30px);
-        }
+//         50% {
+//             transform: translateY(-30px);
+//         }
 
-        100% {
-            transform: translateY(-60px);
-            opacity: 0;
-        }
-    }
-}
+//         100% {
+//             transform: translateY(-60px);
+//             opacity: 0;
+//         }
+//     }
+// }
 
-@for $i from 11 through 20 {
+// @for $i from 11 through 20 {
 
-    .bubbleX#{$i} {
-        display: inline-block;
-        width: $size;
-        height: $size;
-        border-radius: 50%;
-        background: #FFF;
-        transform: translateX(0);
-        animation-name: bubbleX#{$i};
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-    }
+//     .bubbleX#{$i} {
+//         display: inline-block;
+//         width: $size;
+//         height: $size;
+//         border-radius: 50%;
+//         background: #FFF;
+//         transform: translateX(0);
+//         animation-name: bubbleX#{$i};
+//         animation-duration: 4s;
+//         animation-iteration-count: infinite;
+//         animation-timing-function: linear;
+//     }
 
-    .bubbleY#{$i} {
-        display: inline-block;
-        position: absolute;
-        right: random(156) + px;
-        z-index: 5000;
-        top: random(100) + px;
-        // left: random(156) + px;
-        animation-name: bubbleY;
-        animation-duration: 1.25s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        transform: translateY(0);
-        opacity: .6;
-        animation-delay: random(6) + s;
-    }
+//     .bubbleY#{$i} {
+//         display: inline-block;
+//         position: absolute;
+//         right: random(156) + px;
+//         z-index: 5000;
+//         top: random(100) + px;
+//         // left: random(156) + px;
+//         animation-name: bubbleY;
+//         animation-duration: 1.25s;
+//         animation-iteration-count: infinite;
+//         animation-timing-function: linear;
+//         transform: translateY(0);
+//         opacity: .6;
+//         animation-delay: random(6) + s;
+//     }
 
-    @keyframes bubbleX#{$i} {
-        0% {
-            transform: translateX(0);
-        }
+//     @keyframes bubbleX#{$i} {
+//         0% {
+//             transform: translateX(0);
+//         }
 
-        20% {
-            transform: translateX(-random(15) + px)
-        }
+//         20% {
+//             transform: translateX(-random(15) + px)
+//         }
 
-        40% {
-            transform: translateX(random(15) + px)
-        }
+//         40% {
+//             transform: translateX(random(15) + px)
+//         }
 
-        60% {
-            transform: translateX(-random(15) + px)
-        }
+//         60% {
+//             transform: translateX(-random(15) + px)
+//         }
 
-        80% {
-            transform: translateX(random(15) + px)
-        }
+//         80% {
+//             transform: translateX(random(15) + px)
+//         }
 
-        100% {
-            transform: translateX(-random(15) + px);
-        }
-    }
+//         100% {
+//             transform: translateX(-random(15) + px);
+//         }
+//     }
 
-    @keyframes bubbleY {
-        0% {
-            transform: translateY(0);
-        }
+//     @keyframes bubbleY {
+//         0% {
+//             transform: translateY(0);
+//         }
 
-        50% {
-            transform: translateY(-30px);
-        }
+//         50% {
+//             transform: translateY(-30px);
+//         }
 
-        100% {
-            transform: translateY(-60px);
-            opacity: 0;
-        }
-    }
-}
+//         100% {
+//             transform: translateY(-60px);
+//             opacity: 0;
+//         }
+//     }
+// }
 
-.bubbleY6,
-.bubbleY7,
-.bubbleY11,
-.bubbleY12,
-.bubbleY13,
-.bubbleY14,
-.bubbleY15,
-.bubbleY6,
-.bubbleY7,
-.bubbleY8,
-.bubbleY9,
-.bubbleY10 {
-    display: none;
+// .bubbleY6,
+// .bubbleY7,
+// .bubbleY11,
+// .bubbleY12,
+// .bubbleY13,
+// .bubbleY14,
+// .bubbleY15,
+// .bubbleY6,
+// .bubbleY7,
+// .bubbleY8,
+// .bubbleY9,
+// .bubbleY10 {
+//     display: none;
 
-    @include min-responsive($w-md) {
-        display: block;
-    }
-}
+//     @include min-responsive($w-md) {
+//         display: block;
+//     }
+// }

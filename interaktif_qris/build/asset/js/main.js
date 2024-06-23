@@ -70,6 +70,137 @@ $(document).ready(function () {
         path: 'asset/json/perry.json',
         name: 'myAnimation',
     });
+    // 7. Animation COD
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationCOD'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/cod.json',
+        name: 'myAnimation',
+    });
+    // 8. Animation People
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationPeople_1'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/people_1.json',
+        name: 'myAnimation',
+    });
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationPeople_2'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/people_2.json',
+        name: 'myAnimation',
+    });
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationPeople_2_act'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/people_2_act.json',
+        name: 'myAnimation',
+    });
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationPeople_3'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/people_3.json',
+        name: 'myAnimation',
+    });
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationPeople_4'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/people_4.json',
+        name: 'myAnimation',
+    });
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationPeople_5'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/people_5.json',
+        name: 'myAnimation',
+    });
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationPeople_6'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/people_6.json',
+        name: 'myAnimation',
+    });
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationPeople_7'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/people_7.json',
+        name: 'myAnimation',
+    });
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationPeople_7_act'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/people_7_act.json',
+        name: 'myAnimation',
+    });
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationPeople_8'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/people_8.json',
+        name: 'myAnimation',
+    });
+    // Animation Buah
+    // var animation = bodymovin.loadAnimation({
+    //     container: document.getElementById('animationBuah'),
+    //     renderer: 'svg',
+    //     loop: true,
+    //     autoplay: true,
+    //     path: 'asset/json/dagingbuah.json',
+    //     name: 'myAnimation',
+    // });
+    // Animation CHAR
+    // var paramUntung = {
+    //     container: document.getElementById('animationUntung'),
+    //     renderer: 'svg',
+    //     loop: true,
+    //     autoplay: false,
+    //     path: 'asset/json/char3.json',
+    //     name: 'myAnimation',
+    // };
+    // var playUntung;
+    // playUntung = bodymovin.loadAnimation(paramUntung);
+    // var paramGampang = {
+    //     container: document.getElementById('animationGampang'),
+    //     renderer: 'svg',
+    //     loop: true,
+    //     autoplay: false,
+    //     path: 'asset/json/char2.json',
+    //     name: 'myAnimation',
+    // };
+    // var playGampang;
+    // playGampang = bodymovin.loadAnimation(paramGampang);
+    // var paramUnggul = {
+    //     container: document.getElementById('animationUnggul'),
+    //     renderer: 'svg',
+    //     loop: true,
+    //     autoplay: false,
+    //     path: 'asset/json/char.json',
+    //     name: 'myAnimation',
+    // };
+    // var playUnggul;
+    // playUnggul = bodymovin.loadAnimation(paramUnggul);
+    // playUnggul.play()
 
 
     new fullpage('#fullpage', {
@@ -180,8 +311,6 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 4 && direction == 'down') {
-                fullpage_api.setAllowScrolling(true, 'up');
-                fullpage_api.setKeyboardScrolling(true, 'up');
                 fullpage_api.setAllowScrolling(false, 'down');
                 fullpage_api.setKeyboardScrolling(false, 'down');
                 $(".journeyTitle").velocity({
@@ -197,7 +326,11 @@ $(document).ready(function () {
                     opacity: "1"
                 }, {
                     delay: 300,
-                    duration: 700
+                    duration: 700,
+                    complete: function () {
+                        fullpage_api.setAllowScrolling(true, 'up');
+                        fullpage_api.setKeyboardScrolling(true, 'up');
+                    }
                 });
                 $(".success").velocity({
                     opacity: "0"
@@ -269,6 +402,15 @@ $(document).ready(function () {
                         $('.reachLine').addClass('active')
                     }
                 });
+                $(".peopleImg7_act").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 200,
+                    complete: function () {
+                        $('.peopleImg7_act').addClass('active')
+                    }
+                });
             }
             if (origin.index == 7 && direction == 'up') {
                 $('.people').removeClass('--text')
@@ -279,6 +421,15 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.reachLine').removeClass('active')
+                    }
+                });
+                $(".peopleImg7_act").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 200,
+                    complete: function () {
+                        $('.peopleImg7_act').removeClass('active')
                     }
                 });
             }
@@ -292,6 +443,15 @@ $(document).ready(function () {
                         $('.reachLine').removeClass('active')
                     }
                 });
+                $(".peopleImg7_act").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 200,
+                    complete: function () {
+                        $('.peopleImg7_act').removeClass('active')
+                    }
+                });
                 $(".valueTitle").velocity({
                     opacity: "1"
                 }, {
@@ -299,6 +459,15 @@ $(document).ready(function () {
                     duration: 700,
                     complete: function () {
                         $('.valueLine').addClass('active')
+                    }
+                });
+                $(".peopleImg2_act").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 200,
+                    complete: function () {
+                        $('.peopleImg2_act').addClass('active')
                     }
                 });
             }
@@ -312,6 +481,15 @@ $(document).ready(function () {
                         $('.reachLine').addClass('active')
                     }
                 });
+                $(".peopleImg7_act").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 200,
+                    complete: function () {
+                        $('.peopleImg7_act').addClass('active')
+                    }
+                });
                 $(".valueTitle").velocity({
                     opacity: "0"
                 }, {
@@ -319,6 +497,15 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.valueLine').removeClass('active')
+                    }
+                });
+                $(".peopleImg2_act").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 200,
+                    complete: function () {
+                        $('.peopleImg2_act').removeClass('active')
                     }
                 });
             }
@@ -330,6 +517,15 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.valueLine').removeClass('active')
+                    }
+                });
+                $(".peopleImg2_act").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 200,
+                    complete: function () {
+                        $('.peopleImg2_act').removeClass('active')
                     }
                 });
                 $(".peopleImg").velocity({
@@ -355,7 +551,22 @@ $(document).ready(function () {
                         $('.valueLine').addClass('active')
                     }
                 });
+                $(".peopleImg2_act").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 200,
+                    complete: function () {
+                        $('.peopleImg2_act').addClass('active')
+                    }
+                });
                 $(".peopleImg").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".peopleImg svg").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
@@ -376,6 +587,9 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.charUnggul').addClass('active')
+                    },
+                    complete: function () {
+                        $('.charUnggul__caption').addClass('charAnim')
                     }
                 });
             }
@@ -387,6 +601,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.charUnggul').removeClass('active')
+                        $('.charUnggul__caption').removeClass('charAnim')
                     }
                 });
             }
@@ -398,6 +613,7 @@ $(document).ready(function () {
                     duration: 400,
                     begin: function () {
                         $('.charUnggul__caption').addClass('breadcrumb')
+                        $('.charUnggul__caption').removeClass('charAnim')
                     }
                 });
                 $(".charBreadcrumb").velocity({
@@ -419,7 +635,10 @@ $(document).ready(function () {
                     top: "0"
                 }, {
                     delay: 400,
-                    duration: 700
+                    duration: 700,
+                    complete: function () {
+                        $('.char1__title').addClass('charAnim')
+                    }
                 });
                 $(".char1__txt").velocity({
                     top: "0"
@@ -436,6 +655,9 @@ $(document).ready(function () {
                     duration: 400,
                     begin: function () {
                         $('.charUnggul__caption').removeClass('breadcrumb')
+                    },
+                    complete: function () {
+                        $('.charUnggul__caption').addClass('charAnim')
                     }
                 });
                 $(".charBreadcrumb").velocity({
@@ -457,7 +679,10 @@ $(document).ready(function () {
                     top: "100vh"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $('.char1__title').removeClass('charAnim')
+                    }
                 });
                 $(".char1__txt").velocity({
                     top: "100vh"
@@ -480,7 +705,10 @@ $(document).ready(function () {
                     top: "-100vh"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $('.char1__title').removeClass('charAnim')
+                    }
                 });
                 $(".char1__txt").velocity({
                     top: "-100vh"
@@ -501,7 +729,10 @@ $(document).ready(function () {
                     top: "0"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    complete: function () {
+                        $('.char2__title').addClass('charAnim')
+                    }
                 });
                 $(".char2__txt").velocity({
                     top: "0"
@@ -524,6 +755,7 @@ $(document).ready(function () {
                     duration: 700,
                     complete: function () {
                         $('.char1__bread').addClass('active')
+                        $('.char1__title').addClass('charAnim')
                     }
                 });
                 $(".char1__txt").velocity({
@@ -545,7 +777,10 @@ $(document).ready(function () {
                     top: "100vh"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $('.char2__title').removeClass('charAnim')
+                    }
                 });
                 $(".char2__txt").velocity({
                     top: "100vh"
@@ -568,7 +803,10 @@ $(document).ready(function () {
                     top: "-100vh"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $('.char2__title').removeClass('charAnim')
+                    }
                 });
                 $(".char2__txt").velocity({
                     top: "-100vh"
@@ -589,7 +827,10 @@ $(document).ready(function () {
                     top: "0"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    complete: function () {
+                        $('.char3__title').addClass('charAnim')
+                    }
                 });
                 $(".char3__txt").velocity({
                     top: "0"
@@ -612,7 +853,10 @@ $(document).ready(function () {
                     top: "0"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    complete: function () {
+                        $('.char2__title').addClass('charAnim')
+                    }
                 });
                 $(".char2__txt").velocity({
                     top: "0"
@@ -633,7 +877,10 @@ $(document).ready(function () {
                     top: "100vh"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $('.char3__title').removeClass('charAnim')
+                    }
                 });
                 $(".char3__txt").velocity({
                     top: "100vh"
@@ -656,7 +903,10 @@ $(document).ready(function () {
                     top: "-100vh"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $('.char3__title').removeClass('charAnim')
+                    }
                 });
                 $(".char3__txt").velocity({
                     top: "-100vh"
@@ -677,6 +927,7 @@ $(document).ready(function () {
                     duration: 700,
                     complete: function () {
                         $('.char4__bread').addClass('active')
+                        $('.char4__title').addClass('charAnim')
                     }
                 });
                 $(".char4__txt").velocity({
@@ -700,6 +951,7 @@ $(document).ready(function () {
                     duration: 700,
                     complete: function () {
                         $('.char3__bread').addClass('active')
+                        $('.char3__title').addClass('charAnim')
                     }
                 });
                 $(".char3__txt").velocity({
@@ -721,6 +973,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.char4__bread').removeClass('active')
+                        $('.char4__title').removeClass('charAnim')
                     }
                 });
                 $(".char4__txt").velocity({
@@ -744,6 +997,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.char4__bread').removeClass('active')
+                        $('.char4__title').removeClass('charAnim')
                     }
                 });
                 $(".char4__txt").velocity({
@@ -785,7 +1039,10 @@ $(document).ready(function () {
                     top: "0"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    complete: function () {
+                        $('.char4__title').addClass('charAnim')
+                    }
                 });
                 $(".char4__txt").velocity({
                     top: "0"
@@ -1487,6 +1744,12 @@ $('.-js-trig-people').on('click', function () {
         begin: function () {
             $('.peopleImg').removeClass('top100')
         }
+    });
+    $(".peopleImg svg").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 700
     });
     $(".journeyTitle").velocity({
         top: "-100vh"

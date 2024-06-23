@@ -38,6 +38,10 @@
             max-width: 600px;
         }
 
+        @include min-responsive($w-xxxl) {
+            top: 225px;
+        }
+
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             top: 15vh;
         }
@@ -67,26 +71,41 @@
     &Img {
         animation: translate-3D linear infinite;
         animation-duration: var(--time-bubble);
-        transition: all .7s ease-in;
-        opacity: 0;
+        transition: top .7s ease-in, right .7s ease-in, left .7s ease-in;
+
+        svg {
+            transition: all .7s ease-in;
+            opacity: 0;
+        }
 
         &__wrap {
             width: 100%;
             position: relative;
-            transform: translate(0, -30px);
+            transform: translate(0, -30px) scale(0.6);
             transition: transform .7s ease, scale .7s ease;
 
+            @include max-responsive($w-xm) {
+                transform: translate(0, -30px) scale(0.5);
+            }
+
             @include min-responsive($w-md) {
-                transform: translate(0, -60px);
+                transform: translate(0, 0);
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                transform: translate(0, 0) scale(0.8);
             }
         }
 
         &1 {
             position: relative;
             top: 0;
-            transition-delay: 0s;
             --t-y: -10;
             --time-bubble: 7s;
+
+            svg {
+                transition-delay: 0s;
+            }
         }
 
         &2,
@@ -100,80 +119,103 @@
         }
 
         &2 {
-            left: 25px;
-            top: -105px;
-            transition-delay: .3s;
+            left: -150px;
             --t-y: 19;
             --time-bubble: 10s;
+            top: -125px;
+
+            svg {
+                transition-delay: .2s;
+            }
 
             @include min-responsive($w-md) {
                 left: 0;
-                top: -105px;
+                top: -95px;
             }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 top: -55px;
+                left: -60px;
             }
         }
 
         &3 {
-            left: 0;
-            top: 38px;
-            transition-delay: .6s;
+            left: -115px;
+            top: 95px;
+            max-width: 165px;
             --t-y: 28;
             --time-bubble: 8s;
 
+            svg {
+                transition-delay: .6s;
+            }
+
             @include min-responsive($w-md) {
+                max-width: unset;
                 left: 110px;
-                top: 73px;
+                top: 90px;
             }
 
             @include range-responsive($w-md, $w-xl) {
-                left: 26px;
+                left: -20px;
 
-                img {
-                    width: 74%;
-                }
+                // img {
+                // svg {
+                //     width: 74%;
+                // }
             }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
-                transform: scale(.8);
-                left: 145px;
+                left: 125px;
                 top: 94px;
             }
         }
 
         &4 {
-            left: 5px;
-            top: 170px;
-            transition-delay: .8s;
-            --t-y: 24;
-            --time-bubble: 9s;
+            left: -125px;
+            top: 310px;
+            --t-y: 20;
+            --time-bubble: 7s;
+
+            svg {
+                transition-delay: .8s;
+            }
 
             @include min-responsive($w-md) {
                 left: -25px;
-                top: 305px;
+                top: 345px;
             }
 
             @include range-responsive($w-md, $w-xl) {
-                left: 33px;
+                left: -5px;
 
-                img {
-                    width: 90%;
-                }
+                // img {
+                // svg {
+                //     width: 90%;
+                // }
             }
         }
 
         &5 {
-            left: 125px;
-            top: 234px;
-            transition-delay: .3s;
-            --t-y: -30;
-            --time-bubble: 8s;
+            max-width: 140px;
+            left: 85px;
+            top: 300px;
+            --t-y: -20;
+            --time-bubble: 7s;
+
+            svg {
+                transition-delay: .8s;
+            }
 
             @include min-responsive($w-md) {
-                left: 250px;
+                max-width: unset;
+                left: 185px;
                 top: 365px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                left: 210px;
+                top: 440px;
             }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
@@ -183,10 +225,13 @@
 
         &6 {
             right: 40px;
-            top: -110px;
-            transition-delay: .3s;
+            top: -155px;
             --t-y: 13;
             --time-bubble: 6s;
+
+            svg {
+                transition-delay: .3s;
+            }
 
             @include min-responsive($w-md) {
                 right: 175px;
@@ -194,56 +239,70 @@
             }
 
             @include range-responsive($w-md, $w-xl) {
-                top: -180px;
+                top: -140px;
             }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
-                right: 235px;
+                right: 180px;
                 top: -55px;
             }
         }
 
         &7 {
-            right: 0;
-            top: 0;
-            transition-delay: .8s;
+            right: -145px;
+            max-width: 210px;
+            top: -50px;
             --t-y: 20;
             --time-bubble: 7s;
 
+            svg {
+                transition-delay: .2s;
+            }
+
             @include min-responsive($w-md) {
+                max-width: unset;
                 right: 0;
-                top: 55px;
+                top: 35px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                right: -35px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                right: -50px;
             }
         }
 
         &8 {
-            right: -5px;
-            top: 165px;
-            transition-delay: .6s;
+            max-width: 260px;
+            right: -140px;
+            top: 275px;
             --t-y: -15;
             --time-bubble: 9s;
 
+            svg {
+                transition-delay: .6s;
+            }
+
             @include min-responsive($w-md) {
-                right: 50px;
-                top: 288px;
+                max-width: unset;
+                right: 0;
+                top: 260px;
             }
 
             @include range-responsive($w-md, $w-xl) {
                 right: -30px;
-                top: 355px;
-
-                img {
-                    width: 90%;
-                }
+                top: 385px;
             }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
-                transform: scale(.7);
-                right: 90px;
-                top: 255px;
+                right: 10px;
+                top: 245px;
             }
 
-            img {
+            // img {
+            svg {
                 transition: transform .3s ease;
             }
         }
@@ -276,26 +335,26 @@
 
     &.--text {
         .peopleImg__wrap {
-            transform: translate(0, 100px) scale(.9);
+            transform: translate(0, 100px) scale(.6);
 
             @include max-responsive($w-xm) {
-                transform: translate(0, 95px) scale(0.7);
+                transform: translate(0, 105px) scale(0.45);
             }
 
             @include min-responsive($w-md) {
-                transform: translate(0, 106px) scale(.7);
+                transform: translate(0, 140px) scale(.7);
             }
 
             @include min-responsive($w-xxxl) {
-                transform: translate(0, 80px) scale(1);
+                transform: translate(0, 155px) scale(1);
             }
 
             @include range-responsive($w-md, $w-xl) {
-                transform: translate(0, 80px) scale(0.8);
+                transform: translate(0, 150px) scale(0.8);
             }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
-                transform: translate(0, 65px) scale(0.7);
+                transform: translate(0, 100px) scale(0.6);
             }
         }
 
@@ -311,7 +370,7 @@
 
             &3 {
                 @include min-responsive($w-md) {
-                    top: 30px;
+                    top: -20px;
                     left: 120px;
                 }
 
@@ -334,14 +393,14 @@
                 }
 
                 @include range-responsive($w-md, $w-xl) {
-                    top: 400px
+                    top: 440px
                 }
             }
 
             &6 {
                 @include min-responsive($w-md) {
-                    right: 185px;
-                    top: 55px;
+                    right: 168px;
+                    top: 30px;
                 }
 
                 @include range-responsive($w-md, $w-xl) {
@@ -352,25 +411,36 @@
 
             &7 {
                 @include min-responsive($w-md) {
-                    right: -60px;
-                    top: 0;
+                    right: -78px;
+                    top: -20px;
                 }
             }
 
             &8 {
                 @include min-responsive($w-md) {
-                    right: 40px;
+                    right: -20px;
                     top: 200px;
 
-                    img {
-                        transform: scale(.8);
-                    }
+                    // img {
+                    // svg {
+                    //     transform: scale(.8);
+                    // }
                 }
 
                 @include range-responsive($w-md, $w-xl) {
-                    right: -80px;
+                    right: -150px;
                     top: 280px;
                 }
+            }
+        }
+    }
+
+    &Act {
+        position: absolute;
+
+        &.active {
+            ~svg {
+                opacity: 0 !important;
             }
         }
     }
@@ -403,19 +473,19 @@
     }
 
     &Line {
-        top: -95px;
+        top: -85px;
 
         @include min-responsive($w-md) {
-            top: -154px;
+            top: -132px;
         }
 
         @include range-responsive($w-md, $w-xl) {
-            top: -270px;
+            top: -252px;
             left: calc(50% + 36px / 2);
         }
 
         &.active {
-            height: 86px;
+            height: 100px;
 
             @include min-responsive($w-md) {
                 height: 140px;
@@ -430,7 +500,7 @@
 
 .reach {
     &Line {
-        top: -160px;
+        top: -126px;
         left: calc(50% + 35px / 2);
 
         @include min-responsive($w-md) {
@@ -439,7 +509,7 @@
         }
 
         @include range-responsive($w-md, $w-xl) {
-            top: -270px;
+            top: -235px;
         }
 
         // @media only screen and(max-height: 700px) and(orientation: landscape) {
