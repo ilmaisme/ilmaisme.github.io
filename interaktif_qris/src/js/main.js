@@ -160,15 +160,24 @@ $(document).ready(function () {
         path: 'asset/json/people_8.json',
         name: 'myAnimation',
     });
-    // Animation Buah
-    // var animation = bodymovin.loadAnimation({
-    //     container: document.getElementById('animationBuah'),
-    //     renderer: 'svg',
-    //     loop: true,
-    //     autoplay: true,
-    //     path: 'asset/json/dagingbuah.json',
-    //     name: 'myAnimation',
-    // });
+    //Animation Buah
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationBuah'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/dagingbuah.json',
+        name: 'myAnimation',
+    });
+    //Animation Soto
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationSoto'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/soto.json',
+        name: 'myAnimation',
+    });
     // Animation CHAR
     // var paramUntung = {
     //     container: document.getElementById('animationUntung'),

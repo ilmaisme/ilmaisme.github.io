@@ -1,5 +1,6 @@
 .cashier {
     flex-direction: column;
+    height: var(--app-height) !important;
 
     &Title {
         @extend .cartTitle;
@@ -87,8 +88,8 @@
 
     &Img {
         position: absolute;
-        left: -40vw;
-        bottom: 14vh;
+        left: -104px;
+        bottom: calc(var(--app-height)*(10 / 100));
         z-index: 0;
 
         @include min-responsive($w-md) {
@@ -105,9 +106,13 @@
         &__anim {
             // height: calc(var(--app-height)*(50 / 100));
             // max-height: 333px;
-            height: calc(var(--app-height)*(60 / 100));
-            max-height: 444px;
+            height: 400px;
+            // max-height: 444px;
             object-fit: contain;
+
+            @include max-responsive($w-xm) {
+                height: 360px;
+            }
 
             @include min-responsive($w-md) {
                 // height: calc(var(--app-height) * (80/100));
