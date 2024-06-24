@@ -13,38 +13,55 @@
 
     &Info {
         position: absolute;
-        right: 160px;
-        bottom: 15px;
+        right: -25px;
+        top: 30px;
         opacity: 0;
         transition: opacity .3s ease-in;
-        z-index: 2;
+        z-index: 3;
 
         @include max-responsive($w-xm) {
-            right: 125px;
+            right: 86px;
+            top: unset;
+            bottom: 12px;
         }
 
         @include min-responsive($w-md) {
-            right: 40px;
-            bottom: 80px;
-        }
-
-        @include range-responsive($w-md, $w-xl) {
-            bottom: 140px;
+            right: 45px;
+            top: 80px;
         }
 
         &__wrap {
-            @extend .cartButton__wrap;
-            padding: 12px 31px 12px 34px;
+            @extend .cashierTooltip;
         }
 
-        &__shadow {
-            @extend .cartButton__shadow;
+        &.opac0 {
+            opacity: 0 !important;
+        }
+    }
+
+    &Click {
+        position: absolute;
+        right: 10px;
+        top: 30px;
+        opacity: 0;
+        transition: opacity .3s ease-in;
+        z-index: 3;
+
+        @include max-responsive($w-xm) {
+            right: 100px;
+            top: unset;
+            bottom: 24px;
+        }
+
+        @include min-responsive($w-md) {
+            right: 80px;
+            top: 80px;
         }
     }
 
     &Button {
         position: absolute;
-        right: 0;
+        right: 30px;
         bottom: 0;
         // bottom: 75px;
         // max-height: calc(var(--app-height) * (17/100));
@@ -157,8 +174,13 @@
         position: absolute;
         width: 72px;
         height: 72px;
-        top: 94px;
-        left: 58px;
+        top: 40px;
+        left: 20px;
+
+        @include min-responsive($w-md) {
+            top: 94px;
+            left: 58px;
+        }
     }
 
     &Trigger {
@@ -169,6 +191,36 @@
         @include min-responsive($w-md) {
             top: 6px;
             left: 34px;
+        }
+    }
+
+    &Tooltip {
+        position: relative;
+        width: auto;
+        height: auto;
+        padding: 7px;
+        background: #3D3BB9;
+        border-radius: 7px;
+        text-align: center;
+        @include font-pack(false, 12px, $font-weight-normal, $line-base, $cl-white);
+
+        &:after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 9px 10px 9px 0;
+            border-color: transparent #3D3BB9;
+            display: block;
+            width: 0;
+            z-index: 1;
+            left: -10px;
+            top: 10px;
+
+            @include max-responsive($w-xm) {
+                left: calc(50% - 18px / 2);
+                top: -14px;
+                transform: rotate(90deg);
+            }
         }
     }
 

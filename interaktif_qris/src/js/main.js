@@ -239,6 +239,7 @@ $(document).ready(function () {
                     begin: function () {
                         $('.cart').addClass('active')
                         $('body').addClass('cursor')
+                        $(".scroll-guide").addClass('opac0')
                     }
                 });
                 $(".cartCompo").velocity({
@@ -271,6 +272,7 @@ $(document).ready(function () {
                     begin: function () {
                         $('.cart').removeClass('active')
                         $('body').removeClass('cursor')
+                        $(".scroll-guide").removeClass('opac0')
                     }
                 });
                 $(".cartCompo").velocity({
@@ -329,6 +331,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.journey').addClass('active')
+                        $(".scroll-guide").addClass('opac0')
                     }
                 });
                 $(".journeyButton").velocity({
@@ -360,6 +363,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.journey').removeClass('active')
+                        $(".scroll-guide").removeClass('opac0')
                     }
                 });
                 $(".journeyButton").velocity({
@@ -385,6 +389,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.journey').addClass('active')
+                        $(".scroll-guide").addClass('opac0')
                     }
                 });
                 $(".journeyButton").velocity({
@@ -405,11 +410,8 @@ $(document).ready(function () {
                 $(".reachTitle").velocity({
                     opacity: "1"
                 }, {
-                    delay: 0,
-                    duration: 700,
-                    complete: function () {
-                        $('.reachLine').addClass('active')
-                    }
+                    delay: 700,
+                    duration: 700
                 });
                 $(".peopleImg7_act").velocity({
                     opacity: "1"
@@ -418,6 +420,7 @@ $(document).ready(function () {
                     duration: 200,
                     complete: function () {
                         $('.peopleImg7_act').addClass('active')
+                        $('.reachLine').addClass('active')
                     }
                 });
             }
@@ -464,11 +467,8 @@ $(document).ready(function () {
                 $(".valueTitle").velocity({
                     opacity: "1"
                 }, {
-                    delay: 0,
-                    duration: 700,
-                    complete: function () {
-                        $('.valueLine').addClass('active')
-                    }
+                    delay: 700,
+                    duration: 700
                 });
                 $(".peopleImg2_act").velocity({
                     opacity: "1"
@@ -477,6 +477,7 @@ $(document).ready(function () {
                     duration: 200,
                     complete: function () {
                         $('.peopleImg2_act').addClass('active')
+                        $('.valueLine').addClass('active')
                     }
                 });
             }
@@ -484,11 +485,8 @@ $(document).ready(function () {
                 $(".reachTitle").velocity({
                     opacity: "1"
                 }, {
-                    delay: 0,
-                    duration: 700,
-                    begin: function () {
-                        $('.reachLine').addClass('active')
-                    }
+                    delay: 700,
+                    duration: 700
                 });
                 $(".peopleImg7_act").velocity({
                     opacity: "1"
@@ -497,6 +495,7 @@ $(document).ready(function () {
                     duration: 200,
                     complete: function () {
                         $('.peopleImg7_act').addClass('active')
+                        $('.reachLine').addClass('active')
                     }
                 });
                 $(".valueTitle").velocity({
@@ -554,11 +553,8 @@ $(document).ready(function () {
                 $(".valueTitle").velocity({
                     opacity: "1"
                 }, {
-                    delay: 0,
-                    duration: 700,
-                    complete: function () {
-                        $('.valueLine').addClass('active')
-                    }
+                    delay: 700,
+                    duration: 700
                 });
                 $(".peopleImg2_act").velocity({
                     opacity: "1"
@@ -567,6 +563,7 @@ $(document).ready(function () {
                     duration: 200,
                     complete: function () {
                         $('.peopleImg2_act').addClass('active')
+                        $('.valueLine').addClass('active')
                     }
                 });
                 $(".peopleImg").velocity({
@@ -1028,6 +1025,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.benefitButton').addClass('active')
+                        $(".scroll-guide").addClass('opac0')
                     }
                 });
                 $(".benefit").velocity({
@@ -1075,6 +1073,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.benefitButton').removeClass('active')
+                        $(".scroll-guide").removeClass('opac0')
                     }
                 });
                 $(".benefit").velocity({
@@ -1500,6 +1499,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.visionLine').removeClass('active')
+                        $(".scroll-guide").addClass('opac0')
                     }
                 });
                 $(".visionTitle").velocity({
@@ -1525,6 +1525,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.visionLine').addClass('active')
+                        $(".scroll-guide").removeClass('opac0')
                     }
                 });
                 $(".visionTitle").velocity({
@@ -1573,7 +1574,8 @@ $(document).ready(function () {
 
         ondropactivate: function (event) {
             // add active dropzone feedback
-            event.target.classList.add('drop-active')
+            event.target.classList.add('drop-active');
+            $(".cashierInfo").addClass('opac0')
         },
         ondragenter: function (event) {
             var draggableElement = event.relatedTarget
@@ -1658,6 +1660,7 @@ function scanSuccess() {
         complete: function () {
             fullpage_api.setAllowScrolling(true, 'down');
             fullpage_api.setKeyboardScrolling(true, 'down');
+            $(".scroll-guide").removeClass('opac0')
         }
     });
 
@@ -1687,12 +1690,6 @@ function scanSuccess() {
     }, {
         delay: 1400,
         duration: 700
-    });
-    $(".cashierInfo").velocity({
-        opacity: "0"
-    }, {
-        delay: 1400,
-        duration: 300
     });
 }
 
@@ -1727,6 +1724,12 @@ $('.-js-trig-cashier').on('click', function () {
         delay: 300,
         duration: 700
     });
+    $(".cashierClick").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 300
+    });
 })
 
 $('.-js-trig-scan').on('click', function () {
@@ -1739,6 +1742,18 @@ $('.-js-trig-scan').on('click', function () {
     $('.cashierButton').addClass('drop-scan')
     $('.cashierButton').attr('id', 'yes-drop');
     $('.cashierDropzone').attr('id', 'inner-dropzone');
+    $(".cashierClick").velocity({
+        opacity: "0"
+    }, {
+        delay: 0,
+        duration: 300
+    });
+    $(".cashierInfo").velocity({
+        opacity: "1"
+    }, {
+        delay: 0,
+        duration: 300
+    });
 })
 
 $('.-js-trig-people').on('click', function () {
@@ -1752,6 +1767,7 @@ $('.-js-trig-people').on('click', function () {
         duration: 700,
         begin: function () {
             $('.peopleImg').removeClass('top100')
+            $(".scroll-guide").removeClass('opac0')
         }
     });
     $(".peopleImg svg").velocity({
@@ -1923,6 +1939,7 @@ function hideBenefitBg() {
         delay: 0,
         duration: 300
     });
+    $(".scroll-guide").addClass('opac0')
 }
 
 function showBenefitBg() {
@@ -1969,6 +1986,7 @@ function showBenefitBg() {
         duration: 400,
         begin: function () {
             $('.merchant').removeClass('active')
+            $(".scroll-guide").removeClass('opac0')
         }
     });
     $(".consumer").velocity({
@@ -2128,7 +2146,7 @@ function showConsumer() {
 }
 
 /* s: add to cart item */
-$('.cartDisplay__item').on('click', function () {
+$('.cartDisplay__item').on('click', function (e) {
     console.log('send to cart')
     var button = $(this);
     var cart = $('.cartImg');
@@ -2143,6 +2161,7 @@ $('.cartDisplay__item').on('click', function () {
         setTimeout(function () {
             cart.removeClass('shake');
         }, 500)
+        button.addClass('disabled')
     }, 1000)
 })
 /* e: add to cart item */
@@ -2155,3 +2174,25 @@ const appHeight = () => {
 window.addEventListener("resize", appHeight)
 appHeight()
 /* e: Get HEIGHT Device */
+
+// function getMobileOperatingSystem() {
+var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+// Windows Phone must come first because its UA also contains "Android"
+// if (/windows phone/i.test(userAgent)) {
+//     return "Windows Phone";
+// }    
+
+if (/android/i.test(userAgent)) {
+    $('.overseasPeople').addClass('andro')
+} else{
+    $('.overseasPeople').removeClass('andro')
+}
+
+// iOS detection from: http://stackoverflow.com/a/9039885/177710
+// if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+//     return "iOS";
+// }
+
+//     return "unknown";
+// }
