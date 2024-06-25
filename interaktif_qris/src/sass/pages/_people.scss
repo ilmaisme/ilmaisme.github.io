@@ -14,19 +14,22 @@
 
     &Title {
         position: absolute;
-        top: 10vh;
+        top: -90px;
         margin-top: 15px;
         margin-bottom: 25px;
         text-align: center;
         z-index: 1;
-        max-width: calc(100% - 10px);
+        width: calc(100% - 10px);
+        left: 50%;
+        transform: translateX(-50%);
 
         @include max-responsive($w-xm) {
             max-width: calc(100% - 50px);
+            top: -50px;
         }
 
         @include min-responsive($w-md) {
-            top: 22vh;
+            top: 0;
         }
 
         @include min-responsive($w-lg) {
@@ -34,16 +37,12 @@
         }
 
         @include range-responsive($w-md, $w-xl) {
-            top: 10vh;
-            max-width: 600px;
+            top: -135px;
+            width: 600px;
         }
 
         @include min-responsive($w-xxxl) {
-            top: 225px;
-        }
-
-        @media only screen and(max-height: 700px) and(orientation: landscape) {
-            top: 15vh;
+            top: -60px;
         }
 
         .articleTitle {
@@ -450,6 +449,7 @@
     }
 
     &Container {
+        position: relative;
         width: 360px;
 
         @include range-responsive($w-md, $w-xl) {
