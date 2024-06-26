@@ -1566,10 +1566,11 @@ $(document).ready(function () {
     // enable draggables to be dropped into this
     interact('.cashierDropzone').dropzone({
         // only accept elements matching this CSS selector
+        //accept: '#yes-drop, .cashierScan',
         accept: '#yes-drop',
         // Require a 75% element overlap for a drop to be possible
-        //overlap: 0.05,
-        overlap: 'pointer',
+        overlap: 0.05,
+        // overlap: 'pointer',
 
         // listen for drop related events:
 
@@ -1581,13 +1582,13 @@ $(document).ready(function () {
         ondragenter: function (event) {
             var draggableElement = event.relatedTarget
             var dropzoneElement = event.target
-            var textEl = $('.cashierScan');
+            // var textEl = $('.cashierScan');
 
             // feedback the possibility of a drop
             dropzoneElement.classList.add('drop-target')
             draggableElement.classList.add('can-drop')
             //draggableElement.textContent = 'Dragged in'
-            //textEl.html('Dragged in')
+            // textEl.html('Dragged in')
 
             //SCAN SUCCESS
             console.log('scan success center')
