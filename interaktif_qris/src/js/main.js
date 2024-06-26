@@ -1566,9 +1566,10 @@ $(document).ready(function () {
     // enable draggables to be dropped into this
     interact('.cashierDropzone').dropzone({
         // only accept elements matching this CSS selector
-        accept: '#yes-drop',
+        accept: '#yes-drop, .cashierScan',
         // Require a 75% element overlap for a drop to be possible
-        overlap: 0.05,
+        //overlap: 0.05,
+        overlap: 'pointer',
 
         // listen for drop related events:
 
@@ -1580,20 +1581,40 @@ $(document).ready(function () {
         ondragenter: function (event) {
             var draggableElement = event.relatedTarget
             var dropzoneElement = event.target
+            var textEl = $('.cashierScan');
 
             // feedback the possibility of a drop
             dropzoneElement.classList.add('drop-target')
             draggableElement.classList.add('can-drop')
             //draggableElement.textContent = 'Dragged in'
+            //textEl.html('Dragged in')
+
+            //SCAN SUCCESS
+            console.log('scan success center')
+            scanSuccess()
+
+            // movePixel = (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
+            //         Math.pow(event.pageY - event.y0, 2) | 0))
+            //     .toFixed(2)
+
+            // textEl && (textEl.textContent =
+            //     'moved a distance of ' +
+            //     movePixel + 'px')
+            // console.log(movePixel + 'px')
+            //textEl.html(movePixel + 'px')
         },
         ondragleave: function (event) {
             // remove the drop feedback style
+            // var textEl = $('.cashierScan');
             event.target.classList.remove('drop-target')
             event.relatedTarget.classList.remove('can-drop')
             //event.relatedTarget.textContent = 'Dragged out'
+            // textEl.html('Dragged out')
         },
         ondrop: function (event) {
+            // var textEl = $('.cashierScan');
             //event.relatedTarget.textContent = 'Dropped'
+            // textEl.html('Dropped')
         },
         ondropdeactivate: function (event) {
             // remove active dropzone feedback
@@ -1617,21 +1638,21 @@ $(document).ready(function () {
                 move: dragMoveListener,
                 // call this function on every dragend event
                 end(event) {
-                    var textEl = event.target.querySelector('.cashierScan'),
-                        movePixel = (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
-                            Math.pow(event.pageY - event.y0, 2) | 0))
-                        .toFixed(2)
+                    // var textEl = event.target.querySelector('.cashierScan'),
+                    //     movePixel = (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
+                    //         Math.pow(event.pageY - event.y0, 2) | 0))
+                    //     .toFixed(2)
 
                     // textEl && (textEl.textContent =
                     //     'moved a distance of ' +
                     //     movePixel + 'px')
-                    console.log(movePixel + 'px')
+                    //console.log(movePixel + 'px')
 
-                    if (movePixel <= 30) {
+                    // if (movePixel <= 30) {
                         //SCAN SUCCESS
-                        console.log('scan success center')
-                        scanSuccess()
-                    }
+                        // console.log('scan success center')
+                        //scanSuccess()
+                    // }
                 }
             }
         })
@@ -2185,7 +2206,7 @@ var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
 if (/android/i.test(userAgent)) {
     $('.overseasPeople').addClass('andro')
-} else{
+} else {
     $('.overseasPeople').removeClass('andro')
 }
 
