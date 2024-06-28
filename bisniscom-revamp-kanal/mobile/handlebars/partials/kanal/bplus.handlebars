@@ -1,0 +1,28 @@
+<div class="bplus">
+    {{#each channel}}
+    {{#gte @index compare=../index_start}}
+    {{#gte @index compare=../index_end}}
+    {{else}}
+    <div class="bplusItem">
+        <a href="{{link}}" class="bplusLink artLink">
+            {{#eq @index compare=0}}
+            <img src="{{img}}" alt="{{title}}" class="bplusImg" loading="lazy" width="300" height="170">
+            {{/eq}}
+            <div class="bplusContent">
+                <h4 class="bplusTitle artTitle">
+                    {{title}}
+                </h4>
+                <div class="artDate">
+                    9 menit yang lalu
+                </div>
+            </div>
+        </a>
+    </div>
+    {{/gte}}
+    {{else}}
+    {{/gte}}
+    {{/each}}
+    <div class="center-flex">
+        <a href="#" class="bplusOthers">Artikel Lainnya</a>
+    </div>
+</div>

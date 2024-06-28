@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Lifestyle" slick=true hl=true channel=site.Lifestyle}}
+
+<body class="theme--lifestyle">
+
+    <!-- s: pushdown billboard -->
+    {{>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{>header/header kanal="Lifestyle"}}
+
+        <main role="main" class="main">
+            <div class="nav">
+
+                {{>header/nav channel=mainMenu.Lifestyle active="Home"}}
+
+            </div>
+
+            <!-- s: menu panel -->
+            {{!>header/menu login=true}}
+            {{>header/menu}}
+            <!-- e: menu panel -->
+
+            <!-- s: headline-->
+            {{>kanal/headline channel=kanal.Lifestyle.hL total=5 index_start=0 index_end=4}}
+
+            <!-- e: headline-->
+
+            <!-- s: stream -->
+            {{>stream channel=stream kanal="Lifestyle" pos="top" mt="30" width="345" height="191" total=2 index_start=0
+            index_end=1}}
+
+            <!-- e: stream -->
+
+            <div class="container">
+                <!-- s: topic -->
+                <h3 class="titleCaption mt30"><span class="clKanal">Hot</span> Topic</h3>
+                {{>topic channel=topic total=9 index_start=0 index_end=9}}
+
+                <!-- e: topic -->
+
+                <!-- s: stream -->
+                {{>stream channel=stream kanal="Lifestyle" pos="bottom" mt="30" total=2 index_start=1 index_end=2}}
+
+                <!-- e: stream -->
+
+                <!-- s: latest -->
+                <h3 class="titleCaption mt30">Berita Terbaru</h3>
+                {{>kanal/article channel=kanal.Lifestyle.latest pos="top" type="row" widthtop="340" heighttop="255"
+                width="145" height="109" total=10 index_start=0
+                index_end=5}}
+
+                <!-- e: latest -->
+
+                <!-- s: rec -->
+                <div class="kanalBox mt30">
+                    <div class="titleCaptionWrap">
+                        <h3 class="titleCaptionBox">
+                            Rekomendasi Film Terbaru
+                        </h3>
+                        <a href="#" class="titleOthers" aria-label="See other articles"><span
+                                class="icoInline icoArrow"></span></a>
+                    </div>
+                    {{>kanal/article channel=kanal.Lifestyle.Entertainment.latest type="col" width="145" height="109"
+                    total=3 index_start=0 index_end=3}}
+
+                </div>
+
+                <!-- e: rec -->
+
+                <!-- s: travel -->
+                <div class="titleCaptionWrap mt30">
+                    <h3 class="titleCaption">
+                        Travel
+                    </h3>
+                    <a href="#" class="titleOthers" aria-label="See other articles"><span
+                            class="icoInline icoArrow"></span></a>
+                </div>
+                {{>kanal/article channel=kanal.Lifestyle.Travel.latest pos="top" type="row" widthtop="340"
+                heighttop="255" width="145" height="109" total=5 index_start=0
+                index_end=5}}
+
+                <!-- e: travel -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                <!-- s: terpopuler -->
+                <h3 class="titleCaption mt30">Terpopuler</h3>
+                {{>kanal/most channel=kanal.Lifestyle.most total=4 index_start=0 index_end=4}}
+
+                <!-- e: terpopuler -->
+
+                <!-- s: rec -->
+                <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
+                {{>kanal/article channel=kanal.Lifestyle.latest pos="top" type="row" small=true widthtop="340"
+                heighttop="255" width="94" height="94" total=10 index_start=0
+                index_end=4}}
+
+                <!-- e: rec -->
+
+            </div>
+
+            <!-- s: video -->
+            <div class="kanalVid mt30">
+                <div class="container">
+                    <div class="titleCaptionWrap">
+                        <h3 class="titleCaption">
+                            Video Pilihan
+                        </h3>
+                        <a href="#" class="titleOthers" aria-label="See other articles"><span
+                                class="icoInline icoArrow"></span></a>
+                    </div>
+                    {{>kanal/article channel=kanal.Lifestyle.Video.latest video=true center=true width="335"
+                    height="185" type="col"
+                    total=4 index_start=0
+                    index_end=1}}
+
+                </div>
+            </div>
+
+            <!-- e: video -->
+            <div class="container">
+
+                <!-- s: infotainment -->
+                <div class="titleCaptionWrap mt30">
+                    <h3 class="titleCaption">
+                        Infotainment
+                    </h3>
+                    <a href="#" class="titleOthers" aria-label="See other articles"><span
+                            class="icoInline icoArrow"></span></a>
+                </div>
+                {{>kanal/article channel=kanal.Lifestyle.Infotainment.latest pos="top" type="row" widthtop="340"
+                heighttop="255" width="145" height="109" total=5 index_start=0
+                index_end=5}}
+
+                <!-- e: infotainment -->
+
+                <!-- s: premium -->
+                {{>premium/article mt="30" channel=kanal.Lifestyle.Premium.latest width="210" height="158"}}
+
+                <!-- e: premium -->
+
+                <!-- s: rectangle billboard -->
+                {{>ads/middle}}
+                <!-- e: rectangle billboard -->
+
+                <!-- s: bplus -->
+                <h3 class="titleCaption mt30">
+                    <div class="bplusCaption">
+                        <img src="./asset/images/logo/logo-bisnis-plus.png" alt="Bisnis Plus logo" loading="lazy"
+                            width="162" height="23">
+                    </div>
+                </h3>
+                {{>kanal/bplus channel=kanal.Lifestyle.BisnisPlus.latest total=4 index_start=0 index_end=4}}
+
+                <!-- e: bplus -->
+
+                <!-- s: foto -->
+                <div class="kanalPhoto mt30">
+                    <div class="titleCaptionWrap">
+                        <h3 class="titleCaption">
+                            Foto Pilihan
+                        </h3>
+                        <a href="#" class="titleOthers" aria-label="See other articles"><span
+                                class="icoInline icoArrow"></span></a>
+                    </div>
+                    {{>kanal/photo channel=kanal.Lifestyle.Foto.latest mt="16" total=5 index_start=0 index_end=1}}
+
+                </div>
+                <!-- e: foto -->
+
+                <!-- s: QR Bisnis Indonesia -->
+                <div class="mt30 text-center">
+                    <img src="./asset/images/QR-bisnis-indonesia.jpg" alt="Scan QR Code Bisnis Indonesia e-paper"
+                        loading="lazy" width="328" height="441">
+                </div>
+                <!-- e: QR Bisnis Indonesia -->
+
+                <!-- s: bisnistv -->
+                <div class="kanalBisnistv mt30">
+                    <h3 class="titleCaption">
+                        <img src="./asset/images/logo/bisnistv-logo.png" alt="Bisnistv logo" loading="lazy" width="119"
+                            height="31">
+                    </h3>
+                    {{>kanal/article channel=kanal.Lifestyle.Video.latest video=true btv=true center=true width="335"
+                    height="170" type="col" total=4
+                    index_start=3 index_end=4}}
+
+                </div>
+
+                <!-- e: bisnistv -->
+
+                <!-- s: kuliner -->
+                <div class="titleCaptionWrap mt30">
+                    <h3 class="titleCaption">
+                        Kuliner
+                    </h3>
+                    <a href="#" class="titleOthers" aria-label="See other articles"><span
+                            class="icoInline icoArrow"></span></a>
+                </div>
+                {{>kanal/article channel=kanal.Lifestyle.Kuliner.latest pos="top" type="row" widthtop="340"
+                heighttop="255" total=5 index_start=0
+                index_end=1}}
+
+                <!-- e: kuliner -->
+
+                <!-- s: latest -->
+                {{>kanal/article channel=kanal.Lifestyle.latest type="row" width="145" height="109" total=10
+                index_start=4
+                index_end=8}}
+
+                <!-- e: latest -->
+
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary">Indeks</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- s: bottom billboard -->
+    {{>ads/bottom}}
+    <!-- e: bottom billboard -->
+
+    {{>footer/footer}}
+
+    {{>footer/script page="lifestyle" slick=true}}
+
+</body>
+
+</html>

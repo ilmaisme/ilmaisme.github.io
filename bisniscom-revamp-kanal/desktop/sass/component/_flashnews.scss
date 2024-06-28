@@ -1,0 +1,63 @@
+.flashnews {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    @include display_flex;
+    align-items: center;
+    height: 30px;
+    overflow: hidden;
+    transform: translateY(0);
+    z-index: 5;
+
+    &Row {
+        display: flex;
+        align-items: center;
+    }
+
+    &Caption {
+        padding: 8px 14px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        @include font-pack($font-body, 14px, $font-weight-sbold, 1, $cl-white);
+    }
+
+    &Wrap {
+        @include display_flex;
+        align-items: center;
+        flex: 1;
+        height: 100%;
+        background: $cl-black;
+    }
+
+    &Item {
+        position: relative;
+        display: inline-block;
+        padding: 1px 10px;
+    }
+
+    &Link {
+        display: inline-block;
+        padding: 8px;
+        @include font-pack($font-body, 12px, $font-weight-sbold, 1, $cl-white);
+
+        &:hover {
+            color: #ffce21;
+        }
+    }
+
+    &Icon {
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    &Live {
+        text-transform: uppercase;
+        color: #ffce21;
+    }
+
+    ~.main {
+        .network--campaign {
+            transform: translateY(36px);
+        }
+    }
+}

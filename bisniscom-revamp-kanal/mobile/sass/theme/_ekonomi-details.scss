@@ -1,0 +1,634 @@
+.theme {
+    &--ekonomi {
+        .breadcrumb {
+            padding: 6px 2px;
+
+            &Item {
+                &.-active {
+                    .breadcrumbLink {
+                        color: var(--cl-ekonomi);
+                    }
+                }
+            }
+
+            &Link {
+                @include font-pack($font-manrope, 13px, $font-weight-med, false, #3D3D3D);
+            }
+        }
+
+        .flashnews {
+            z-index: 4;
+        }
+
+        .details {
+            font-size: 17px;
+
+            &Title {
+                &Caption {
+                    @include font-pack($font-manrope, 30px, $font-weight-sbold, 1.2, #222);
+                }
+            }
+
+            &Lead {
+                margin-top: 15px;
+                letter-spacing: 0.2px;
+                @include font-pack(false, 15px, $font-weight-med, 1.5, #585858);
+            }
+
+            &Attribute {
+                &Author {
+                    display: flex;
+                    margin-top: 12px;
+                    font-size: 14px;
+
+                    .profileImg {
+                        width: 36px;
+                        height: 36px;
+                        margin-right: 8px;
+
+                        &Default {
+                            filter: var(--filter-ekonomi);
+                        }
+                    }
+                }
+
+                &Dates {
+                    margin-top: 4px;
+                    letter-spacing: 0.8px;
+                    @include font-pack(false, 10px, $font-weight-med, false, #585858);
+                }
+
+                &Item {
+                    flex-direction: column;
+                    max-width: 250px;
+                }
+            }
+
+            &Img {
+                img {
+                    border-radius: 12px;
+                    overflow: hidden;
+                    object-position: top center;
+                    width: auto;
+                    height: auto;
+                    margin: auto;
+                    position: unset;
+                    object-fit: contain;
+                }
+
+                &Wrap {
+                    clear: both;
+                    width: fit-content;
+                    margin: auto;
+
+                    &.-center {
+                        .detailsImg {
+                            padding-top: 0;
+                            width: fit-content;
+                            margin: auto;
+                            text-align: center;
+
+                            img {
+                                border-radius: 12px;
+                                overflow: hidden;
+                                object-position: top center;
+                                width: auto;
+                                height: auto;
+                                margin: auto;
+                                position: unset;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+
+                &Caption {
+                    letter-spacing: 0.3px;
+                    @include font-pack(false, 13px, $font-weight-med, 1.5, #585858);
+                }
+            }
+
+            &Zoom {
+                padding: 8px 10px;
+                border-radius: 12px;
+                @include font-pack($font-manrope, 14px, $font-weight-sbold, false, false);
+
+                .icoZoom {
+                    width: 22px;
+                    height: 22px;
+                    margin-right: 10px;
+                }
+            }
+
+            &Cover {
+                &Img {
+                    background: transparent;
+                    padding-top: 0;
+                    height: auto;
+
+                    a {
+                        display: block;
+                        position: relative;
+                        padding-top: calc(2/4 * 100% + 12px);
+                        background: #C4C4C4;
+                    }
+                }
+            }
+
+            &Font {
+                &Cta {
+                    letter-spacing: 0.39px;
+                    @include font-pack($font-manrope, 13px, $font-weight-med, false, false);
+
+                    br {
+                        display: none;
+                    }
+                }
+            }
+
+            &Content {
+                letter-spacing: 0.2px;
+                @include font-pack($font-manrope, 17px, $font-weight-med, 1.6, #3D3D3D);
+
+                a {
+                    color: #D11616;
+                }
+
+                h2 {
+                    line-height: 1.2;
+                }
+
+            }
+
+            &Author {
+                margin-top: 14px;
+                letter-spacing: 0.39px;
+                @include font-pack(false, 13px, false, false, #222);
+
+                a {
+                    font-weight: $font-weight-med;
+                }
+            }
+
+            &Tag {
+                margin-top: 10px;
+
+                &Link {
+                    padding: 2px 8px;
+                    border-radius: 7px;
+                    letter-spacing: 0.6px;
+                    border: 1px solid #D11616;
+                    @include font-pack(false, 14px, $font-weight-sbold, false, #222);
+
+                    &:hover {
+                        background: #D11616;
+                        color: $cl-white;
+                    }
+                }
+
+                &Caption {
+                    margin-top: 16px;
+                    letter-spacing: 0.39px;
+                    @include font-pack(false, 13px, false, false, #222);
+                }
+            }
+
+            &Paging {
+                @include display_flex;
+                flex-direction: column;
+                margin-top: 0;
+                margin-bottom: 40px;
+
+                &Wrap {
+                    flex-direction: column;
+                    margin-top: 30px;
+                    width: 100%;
+                }
+
+                &Item {
+                    max-width: unset;
+                    margin-top: 14px;
+                    margin-left: 0;
+                    margin-right: 0;
+                    padding: 14px 0;
+                    border-radius: 0;
+                    border-left: 0;
+                    border-right: 0;
+                    border-top: 1px solid #3D3D3D;
+                    border-bottom: 1px solid #3D3D3D;
+                    // height: 75px;
+
+                    &:hover {
+                        .detailsPagingContent {
+                            color: var(--cl-ekonomi);
+
+                            .icoArrow {
+                                filter: var(--filter-ekonomi);
+                            }
+                        }
+                    }
+                }
+
+                &Content {
+                    @include display_flex;
+                    align-items: center;
+                    @include font-pack($font-manrope, 14px, $font-weight-sbold, false, #222);
+
+                    .icoArrow {
+                        width: 30px;
+                        height: 30px;
+                        flex-shrink: 0;
+                        margin-left: 30px;
+                    }
+
+                    &.-prev {
+                        .icoArrow {
+                            transform: rotate(180deg);
+                            margin-right: 30px;
+                            margin-left: 0;
+                            order: -1;
+                        }
+                    }
+                }
+
+                &Title {
+                    margin-top: 0;
+                }
+            }
+
+            &Break {
+                border-bottom: 1px solid var(--cl-ekonomi);
+
+                &Caption {
+                    letter-spacing: 0.39px;
+                    @include font-pack(false, 13px, $font-weight-med, 1.69, var(--cl-ekonomi));
+                }
+            }
+
+            &Live {
+                margin-bottom: -20px;
+                padding-bottom: 50px;
+
+                &Wrap {
+                    top: 92px; //header height
+                    position: sticky;
+                    margin-bottom: 0;
+                    margin-left: -15px;
+                    margin-right: -15px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    padding-bottom: 10px;
+                    background: $cl-white;
+                    z-index: 4;
+                }
+
+                &Caption {
+                    display: inline-block;
+                    padding: 3px 8px 3px 18px;
+                    border-radius: 5px;
+                    background: #D11616;
+                    text-transform: uppercase;
+                    letter-spacing: 0.6px;
+                    @include font-pack($font-manrope, 12px, false, 1.334, $cl-white);
+
+                    span {
+                        font-weight: $font-weight-sbold;
+                        color: $cl-white;
+
+                        &::before {
+                            top: 5px;
+                            left: -10px;
+                            width: 6px;
+                            height: 6px;
+                            border-radius: 6px;
+                            background: #EC8A8A;
+                            animation: blink 1s infinite;
+                        }
+                    }
+                }
+
+                &Anchor {
+                    padding: 5px 8px;
+                    border-radius: 7px;
+                    letter-spacing: 0.6px;
+                    @include font-pack($font-manrope, 12px, false, 1.5, false);
+
+                    &.-active,
+                    &:hover {
+                        background: $cl-white;
+                        color: #D11616;
+                        border-color: #D11616;
+                    }
+                }
+
+                &Slider {
+                    max-height: 30px;
+
+                    .slick-list {
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        padding-left: 0;
+                        padding-right: 65px;
+                    }
+
+                    .slick-arrow {
+                        top: 0;
+                        width: 30px;
+                        height: 30px;
+
+                        &::after {
+                            top: 0;
+                            left: -2px;
+                        }
+                    }
+
+                    .slick-prev,
+                    .slick-next {
+                        background: #D11616;
+
+                        &.slick-disabled {
+                            opacity: 1;
+                            background: #BDBDBD;
+                        }
+
+                        &::after {
+                            background-image: none;
+                            @extend %icoChevron;
+                            filter: none;
+                            width: 14px;
+                            height: 14px;
+                            border-bottom: 2px solid $cl-white;
+                            border-right: 2px solid $cl-white;
+                            transform: rotate(315deg);
+                        }
+                    }
+
+                    .slick-prev {
+                        right: 35px;
+                        left: unset;
+                    }
+
+                    &Wrap {
+                        padding-left: 0;
+
+                        &::after {
+                            width: 125px
+                        }
+                    }
+                }
+
+                &TL::before {
+                    border: 1px solid rgba(215, 215, 215, 0.5);
+                }
+
+                &Item {
+                    &.-active {
+                        .detailsLiveTime {
+                            color: #D11616;
+
+                            &::after {
+                                background: #D11616;
+                            }
+                        }
+                    }
+                }
+
+                &Time {
+                    padding-top: 14px;
+                    padding-bottom: 14px;
+                    letter-spacing: 0.6px;
+                    @include font-pack($font-manrope, 12px, $font-weight-sbold, false, #585858);
+
+                    &::after {
+                        opacity: 1;
+                        background: #585858;
+                        border-radius: 0;
+                        width: 3px;
+                        height: 37px;
+                    }
+                }
+
+                &Title {
+                    @include font-pack($font-manrope, 1.57em, false, 1.45, false);
+                }
+            }
+
+            &Wrap {
+                &.-left {
+                    align-items: flex-start;
+                }
+            }
+
+            .baca-juga {
+                &-box {
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    padding: 10px 15px;
+                    border-top: 1px solid #3D3D3D;
+                    border-bottom: 1px solid #3D3D3D;
+
+                    ul {
+                        list-style-type: none;
+                        padding: 0;
+                        margin-top: 6px;
+                        margin-bottom: 0;
+                    }
+
+                    li {
+                        padding: 2px 0;
+
+                        a {
+                            display: block;
+                            position: relative;
+                            padding-top: 4px;
+                            padding-bottom: 4px;
+                            padding-left: 18px;
+                            @include font-pack(false, 18px, $font-weight-sbold, false, #222);
+
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                display: block;
+                                top: 14px;
+                                left: 0;
+                                width: 8px;
+                                height: 8px;
+                                background: #D11616;
+                            }
+                        }
+                    }
+                }
+
+                &-title {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    @include font-pack(false, 16px, $font-weight-med, false, #222);
+                    text-transform: uppercase;
+                }
+            }
+
+            .paging {
+                position: relative;
+
+                &Wrap {
+                    padding-top: 14px;
+                    padding-bottom: 14px;
+                    position: relative;
+                    justify-content: flex-end;
+                    border-top: 1px solid #3D3D3D;
+                    border-bottom: 1px solid #3D3D3D;
+                }
+
+                &List {
+                    margin-right: 0;
+                    flex-wrap: wrap;
+                }
+
+                &Item {
+                    margin-top: 10px;
+                }
+
+                &Caption {
+                    position: absolute;
+                    left: 0;
+                    @include font-pack($font-manrope, 14px, false, 1.57, #222);
+                }
+
+                &Link,
+                &Show {
+                    @include font-pack($font-manrope, 14px, false, false, #222);
+
+                    &.-active,
+                    &:hover {
+                        color: $cl-white;
+                        background: #222;
+                        border: 1px solid #222;
+                    }
+                }
+
+                &Show {
+                    margin-top: 20px;
+                }
+            }
+
+            hr {
+                margin-top: 36px;
+            }
+
+            .premiumBox {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                background: transparent;
+                border-top: 1px solid #3D3D3D;
+                border-bottom: 1px solid #3D3D3D;
+
+                &Caption {
+                    margin-top: 15px;
+                    @include font-pack($font-manrope, 13px, $font-weight-med, 1.69, #222);
+                    letter-spacing: 0.39px;
+
+                    a {
+                        @include font-pack(false, 14px, $font-weight-bold, false, var(--cl-premium, #803C00));
+                        letter-spacing: 0.42px;
+                        text-decoration: underline;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .art {
+                    margin-bottom: 0;
+                }
+
+                .artWrap.row .artTitle {
+                    margin-top: 4px;
+                }
+
+                .artContent {
+                    margin-top: 6px;
+                }
+
+                .artDate {
+                    font-size: 9px;
+                    color: #585858;
+                }
+
+                .artTitle {
+                    color: #222222;
+                }
+
+                .artChannel {
+                    margin-right: 6px;
+                    letter-spacing: 0.6px;
+                    @include font-pack($font-manrope, 11px, $font-weight-med, false, var(--cl-premium, #803C00));
+
+                    &.-premium {
+                        .icoPremium {
+                            filter: invert(22%) sepia(95%) saturate(1798%) hue-rotate(25deg) brightness(99%) contrast(101%);
+                        }
+                    }
+                }
+            }
+        }
+
+        .shareSocmed {
+            &Item {
+                margin-left: 4px;
+                margin-right: 4px;
+
+                .shareSocmedCta {
+                    width: 40px;
+                    height: 40px;
+                    background: $cl-white;
+                }
+
+                .icoInline {
+                    filter: none;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            &Wrap {
+                letter-spacing: 0.39px;
+                @include font-pack($font-manrope, 13px, $font-weight-bold, false, #222);
+            }
+        }
+
+        .titleCaptionMed {
+            text-transform: none;
+            @include font-pack(false, 16px, $font-weight-sbold, false, false);
+        }
+
+        .newsletter {
+            &Caption {
+                @include font-pack($font-manrope, 16px, $font-weight-sbold, false, false);
+            }
+
+            &Lead {
+                margin-top: 12px;
+                letter-spacing: 0.39px;
+                @include font-pack($font-manrope, 13px, $font-weight-med, false, false);
+            }
+
+            &Cta {
+                min-width: 142px;
+                background: var(--cl-ekonomi);
+                letter-spacing: 1px;
+                font-family: $font-manrope;
+                font-size: 20px;
+            }
+
+            &Form {
+                .formInput {
+                    font-family: $font-manrope;
+                    @include placeholder(false, false, false, #3D3D3D)
+                }
+            }
+        }
+
+        .pswp__custom-caption {
+            padding: 20px 10px;
+            font-size: 14px;
+        }
+    }
+}

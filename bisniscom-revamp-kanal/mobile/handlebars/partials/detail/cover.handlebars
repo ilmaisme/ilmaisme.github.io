@@ -1,0 +1,43 @@
+{{#if pos}}
+<div class="detailsCover{{#if pos}} -{{pos}}{{/if}}">
+    {{#each channel}}
+    {{#gte @index compare=../index_start}}
+    {{#gte @index compare=../index_end}}
+    {{else}}
+    <figure class="detailsCoverImg artImg">
+        <a href="https://images.bisnis.com/posts/{{img}}" data-pswp-width="1000" data-pswp-height="667"
+            data-cropped="true">
+            <img src="https://images.bisnis.com/posts/{{img}}" alt="{{imgcap}}" width="600" height="400" />
+        </a>
+        <figcaption class="detailsImgCaption">{{imgcap}}</figcaption>
+        <button class="button detailsZoom" onclick="openModalImage('detail-modal-image', this)" aria-label="Zoom image">
+            <span class="icoInline icoZoom"></span>{{#eq zoomtxt compare=false}}{{else}}Perbesar{{/eq}}
+        </button>
+    </figure>
+    {{/gte}}
+    {{else}}
+    {{/gte}}
+    {{/each}}
+</div>
+{{else}}
+<div class="detailsCover{{#if mt}} mt{{mt}}{{/if}}">
+    {{#each channel}}
+    {{#gte @index compare=../index_start}}
+    {{#gte @index compare=../index_end}}
+    {{else}}
+    <figure class="detailsCoverImg artImg">
+        <a href="https://images.bisnis.com/posts/{{img}}" data-pswp-width="1000" data-pswp-height="667"
+            data-cropped="true">
+            <img src="https://images.bisnis.com/posts/{{img}}" alt="Felis eget egestas sapien netus." width="600"
+                height="400" />
+        </a>
+        <button class="button detailsZoom" onclick="openModalImage('detail-modal-image', this)" aria-label="Zoom image">
+            <span class="icoInline icoZoom"></span>{{#eq zoomtxt compare=false}}{{else}}Perbesar{{/eq}}
+        </button>
+    </figure>
+    {{/gte}}
+    {{else}}
+    {{/gte}}
+    {{/each}}
+</div>
+{{/if}}

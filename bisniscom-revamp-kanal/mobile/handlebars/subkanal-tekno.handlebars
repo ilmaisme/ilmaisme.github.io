@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Tekno" channel=site.Tekno}}
+
+<body class="theme--tekno">
+
+    <!-- s: pushdown billboard -->
+    {{>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{>header/header kanal="Tekno" width=100 height=32}}
+
+        <main role="main" class="main">
+            <div class="nav">
+
+                {{>header/nav channel=mainMenu.Tekno active="Gadget"}}
+
+            </div>
+
+            <!-- s: menu panel -->
+            {{>header/menu login=true}}
+            {{!>header/menu}}
+            <!-- e: menu panel -->
+
+            <div class="container mt30">
+
+                <!-- s: latest -->
+                <h3 class="titleCaption mt30">Berita Terbaru</h3>
+                {{>tekno/article channel=kanal.Tekno.latest subkanal=true dates=true pos="top" col="three" type="col" widthtop="330"
+                heighttop="182"
+                width="157" height="103" total=8 index_start=0
+                index_end=3}}
+
+                <!-- e: latest -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                {{>tekno/article channel=kanal.Tekno.latest mt="30" type="row" width="124" height="70" total=8
+                index_start=3
+                index_end=8}}
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                {{>tekno/article channel=kanal.Tekno.latest mt="30" type="row" width="124" height="70" total=8
+                index_start=0
+                index_end=5}}
+
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary mt30">Index</a>
+                </div>
+                <!-- s: terpopuler -->
+                <h3 class="titleCaption mt30">Terpopuler</h3>
+                {{>kanal/most dates=true channel=kanal.Tekno.most total=5 index_start=0 index_end=5}}
+
+                <!-- e: terpopuler -->
+
+                <!-- s: topic -->
+                <h3 class="titleCaption mt30">Topik-Topik Pilihan</h3>
+                {{>topic channel=topic total=9 index_start=3 index_end=9}}
+
+                <!-- e: topic -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                <!-- s: bplus -->
+                <h3 class="titleCaption mt30">
+                    <div class="bplusCaption">
+                        <img src="./asset/images/logo/logo-bisnis-plus.png" alt="Bisnis Plus logo" loading="lazy"
+                            width="162" height="23">
+                    </div>
+                </h3>
+                {{>kanal/bplus channel=kanal.Tekno.BisnisPlus.latest total=4 index_start=0 index_end=4}}
+
+                <!-- e: bplus -->
+
+                <h3 class="titleCaption mt30">Subscribe Newsletter Bisnis Indonesia</h3>
+                {{>newsletter pos="sidebar"}}
+
+                <!-- s: bisnistv -->
+                <div class="kanalBisnistv mt30">
+                    <h3 class="titleCaption">
+                        <img src="./asset/images/logo/bisnistv-logo.png" alt="Bisnistv logo" loading="lazy" width="119"
+                            height="31">
+                    </h3>
+                    {{>tekno/article channel=kanal.Tekno.Video.latest video=true btv=true center=true width="335"
+                    height="170" type="col" total=1
+                    index_start=0 index_end=1}}
+
+                </div>
+
+                <!-- e: bisnistv -->
+            </div>
+        </main>
+    </div>
+
+    <!-- s: bottom billboard -->
+    {{>ads/bottom}}
+    <!-- e: bottom billboard -->
+
+    {{>footer/footer}}
+
+    {{>footer/script page="tekno"}}
+
+</body>
+
+</html>

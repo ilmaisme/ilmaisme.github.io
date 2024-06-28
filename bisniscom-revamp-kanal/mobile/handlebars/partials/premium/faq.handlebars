@@ -1,0 +1,23 @@
+<div class="faqList">
+    {{#each channel}}
+    {{#gte @index compare=../index_start}}
+    {{#gte @index compare=../index_end}}
+    {{else}}
+    <div class="faqBox{{#eq @index compare=0}} open active{{else}} close{{/eq}}">
+        <div class="faqTrig -js-show display-flex">
+            <button class="button faqShow" aria-label="Show hide content">
+                <span class="icoAdd"></span>
+            </button>
+            <div class="faqBoxTitle">
+                {{title}}
+            </div>
+        </div>
+        <div class="faqContent">
+            {{{content}}}
+        </div>
+    </div>
+    {{/gte}}
+    {{else}}
+    {{/gte}}
+    {{/each}}
+</div>

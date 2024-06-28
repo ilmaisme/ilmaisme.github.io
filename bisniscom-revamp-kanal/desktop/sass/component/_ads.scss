@@ -1,0 +1,224 @@
+.skyscrapper--left,
+.skyscrapper--right,
+.billboardTop,
+.billboardRectangle,
+.billboardBottom,
+.billboardBig,
+.billboardLeaderboard,
+.billboardFlyingBanner,
+.billboardCustom {
+    &::before {
+        content: '';
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        left: 0;
+        top: -14px;
+        width: 100%;
+        height: 100%;
+        background: url(../images/icon/icon-bisniscom-circle.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &::after {
+        background-color: #F4F4F4;
+        content: "Advertisement";
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding-top: 36px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        @include font-pack($font-manrope, 11px, $font-weight-med, 1.6, #939393);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.skyscrapper {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transform: translateY(130px);
+    z-index: 1;
+    transition: transform .5s ease;
+
+    &.-top {
+        transform: translateY(70px);
+    }
+
+    &Fluid {
+        position: absolute;
+        width: calc((100% - 1120px)/2);
+        display: block;
+        top: 0;
+
+        img {
+            max-width: none
+        }
+
+        &--left {
+            left: 0
+        }
+
+        &--right {
+            right: 0
+        }
+    }
+
+    &--left {
+        right: 0;
+        position: absolute
+    }
+
+    &--right {
+        left: 0;
+        position: absolute
+    }
+
+    &--left,
+    &--right {
+        min-width: 160px;
+        min-height: 600px;
+    }
+
+    .billboardCta{
+        padding: 6px 15px;
+        text-align: center;
+        max-width: 160px;
+        bottom: -38px;
+        position: absolute;
+    }
+}
+
+.billboard {
+    position: relative;
+    margin: auto;
+
+    // &Top {
+    //     width: 970px;
+    //     min-height: 250px;
+    //     text-align: center;
+
+    //     &~.header~.root {
+    //         top: 60px;
+    //     }
+    // }
+
+    // &Sticky {
+    //     position: sticky;
+    //     text-align: center;
+    //     top: 0;
+    // }
+
+    &Rectangle {
+        width: 300px;
+        min-height: 250px;
+    }
+
+    &Bottom {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        min-height: 90px;
+        background: rgba(244, 244, 244, .5);
+        z-index: 1;
+
+        &:after {
+            background-color: transparent;
+        }
+    }
+
+    &Big {
+        width: 300px;
+        min-height: 600px;
+    }
+
+    &Leaderboard {
+        width: 728px;
+        min-height: 90px;
+    }
+
+    &Parallax {
+        width: 100%
+    }
+
+    &Flying {
+        width: 100%;
+        position: relative;
+        overflow: visible;
+        height: 300px;
+
+        &Fix,
+        &Inner {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0
+        }
+
+        &Inner {
+            position: absolute;
+            clip: rect(auto, auto, auto, auto)
+        }
+
+        &Fix {
+            position: fixed;
+            margin: 0 auto
+        }
+
+        &Banner {
+            min-width: 300px;
+            min-height: 600px;
+            position: absolute;
+            top: 100px;
+            left: calc(((100% - 1110px)/2) + 150px + 75px)
+        }
+
+        &Wrap {
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    &Custom {
+        width: 100%;
+        min-height: 90px;
+    }
+
+    &Cta{
+        min-height: 28px;
+        background: #EFEFEF;
+        @include font-pack($font-manrope, 10px, $font-weight-normal, 1.3, #585858);
+        letter-spacing: 0.03em;
+
+        span{
+            @include font-pack(false, false, $font-weight-sbold, false, #803C00);
+        }
+
+        p{
+            margin: auto
+        }
+    }
+
+    &Close {
+        @extend .icoClose;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        border: 0;
+        color: $cl-white;
+        background: #BCBCBC;
+        cursor: pointer;
+        z-index: 99;
+    }
+}

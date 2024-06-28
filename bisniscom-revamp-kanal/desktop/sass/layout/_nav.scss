@@ -1,0 +1,73 @@
+.nav {
+    --hg-hmenu: 60px;
+    position: relative;
+    top: 0;
+    background: #FAFAFA;
+    z-index: 4;
+
+    &Menu {
+        min-width: 1080px;
+        height: var(--hg-hmenu);
+        overflow: hidden;
+    }
+
+    &Item {
+        margin-left: 10px;
+        margin-right: 10px;
+        min-width: 65px;
+        min-height: 60px;
+
+        &.-b {
+            min-width: unset;
+            min-height: unset;
+        }
+
+        &.-hijau {
+            position: relative;
+            top: 6px;
+
+            .icoHijau {
+                margin-right: 3px;
+            }
+
+            .navLink {
+                padding: 7px;
+                border: 0;
+                color: $cl-white;
+                border-radius: 25px;
+                background: #0F5D1B;
+
+                &:hover {
+                    color: $cl-white;
+                    border: 0;
+                }
+            }
+        }
+
+        &.-premium {
+            .navLink {
+                padding: 10px;
+                min-height: 46.8px;
+            }
+
+            img {
+                vertical-align: middle;
+            }
+
+            .icoPremium {
+                width: 13px;
+                height: 13px;
+                vertical-align: middle;
+                filter: invert(70%) sepia(32%) saturate(899%) hue-rotate(348deg) brightness(101%) contrast(98%);
+            }
+        }
+    }
+
+    &Link {
+        display: block;
+        padding: 20px 10px 17px;
+        border-bottom: 3px solid transparent;
+        text-transform: uppercase;
+        @include font-pack($font-body, 15px, $font-weight-bold, 1.37, $cl-black);
+    }
+}

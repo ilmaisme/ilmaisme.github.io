@@ -1,0 +1,167 @@
+.billboard {
+    &Pushdown {
+        &Wrap {
+            top: 0;
+            width: 100%;
+            position: relative;
+            z-index: 0;
+            background: #fff;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        &Big {
+            position: relative;
+            width: 970px;
+            height: 250px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        &Inner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 970px;
+            height: 250px;
+            transform: translateY(0);
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: -1;
+                left: 0;
+                top: -14px;
+                width: 100%;
+                height: 100%;
+                background: url(../images/icon/icon-bisniscom-circle.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            &::after {
+                background-color: #F4F4F4;
+                content: "Advertisement";
+                position: absolute;
+                z-index: -2;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                padding-top: 36px;
+                letter-spacing: 0.03em;
+                text-transform: uppercase;
+                font: 500 11px/1.6 "Manrope", sans-serif;
+                color: #939393;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        // &Promo {
+        //     opacity: 0;
+        //     pointer-events: none;
+
+        //     &.-show {
+        //         opacity: 1;
+        //         pointer-events: all;
+        //     }
+        // }
+
+        &Close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border: 0;
+            background: #BCBCBC;
+            cursor: pointer;
+            z-index: 99;
+
+            &::after,
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 17px;
+                height: 2px;
+                background: #fff;
+                transform: rotate(45deg);
+                border-radius: 5px;
+                top: 10px;
+                left: 4px;
+            }
+
+            &::after {
+                transform: rotate(-45deg)
+            }
+        }
+
+        /* bisniscom rewrite */
+        &~.root {
+            padding-bottom: 120px;
+
+            header {
+                .headerTop {
+                    position: absolute;
+                }
+            }
+
+            .skyscrapper {
+                transform: translateY(380px);
+            }
+
+            .flashnews {
+                position: absolute;
+
+                &~.skyscrapper {
+                    transform: translateY(410px);
+                }
+            }
+
+            .main{
+                .menuPanel{
+                    position: absolute;
+                }
+            }
+
+        }
+
+        &~.footer {
+            margin-top: 0;
+        }
+    }
+}
+
+.bp_scroll {
+
+    &>.preloader-d-none .billboardPushdown~.root .flashnews {
+        position: fixed;
+
+        ~.skyscrapper {
+            transform: translateY(100px);
+        }
+    }
+
+    &>.preloader-d-none .billboardPushdown~.root .skyscrapper {
+        transform: translateY(70px);
+    }
+
+    &>.preloader-d-none .billboardPushdown~.root header .headerTop {
+        position: fixed;
+    }
+
+    &>.preloader-d-none .billboardPushdown~.root .main .menuPanel {
+        position: fixed;
+    }
+}

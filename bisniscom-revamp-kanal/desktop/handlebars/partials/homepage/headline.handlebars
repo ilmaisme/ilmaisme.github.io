@@ -1,0 +1,72 @@
+<div class="hL">
+    <div class="hLBig  -js-hl-big">
+        {{#each channel}}
+        {{#gte @index compare=../index_big_start}}
+        {{#gte @index compare=../index_big_end}}
+        {{else}}
+        <div class="hLBigItem">
+            <a href="{{link}}" class="hLLink artLink">
+                <div class="hLBigImg artImg">
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=728&amp;h=406" alt="{{title}}" width="728" height="406">
+                </div>
+            </a>
+            <div class="hLBigContent">
+                <div class="artContentWrap">
+                    <div class="artChannel{{#if premium}} -premium{{/if}}">
+                        <a href="#">
+                            {{#if premium}}
+                            <span class="icoInline icoPremium"></span>Premium
+                            {{else}}
+                            {{channel}}
+                            {{/if}}
+                        </a>
+                    </div>
+                </div>
+                <a href="{{link}}" class="hLLink artLink">
+                    <h1 class="hLBigTitle artTitle">
+                        {{title}}
+                    </h1>
+                </a>
+            </div>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+    <div class="hLSmall row">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="hLSmallItem col-3half">
+            <a href="{{link}}" class="hLLink artLink">
+                <div class="hLSmallImg artImg">
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=236&amp;h=133" alt="{{title}}" width="236" height="133">
+                </div>
+            </a>
+            <div class="hLContent artContent">
+                <div class="artContentWrap">
+                    <div class="artChannel{{#if premium}} -premium{{/if}}">
+                        <a href="#">
+                            {{#if premium}}
+                            <span class="icoInline icoPremium"></span>Premium
+                            {{else}}
+                            {{channel}}
+                            {{/if}}
+                        </a>
+                    </div>
+                </div>
+                <a href="{{link}}" class="hLLink artLink">
+                    <h2 class="artTitle">
+                        {{title}}
+                    </h2>
+                </a>
+            </div>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+</div>

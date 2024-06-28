@@ -1,0 +1,30 @@
+<nav class="navMenu" aria-label="primarynavigation">
+    <ul class="navList center-flex">
+        {{#if icon}}
+        {{else}}
+        <li class="navItem -b">
+            <a href="https://www.bisnis.com/">
+                <img src="./asset/images/icon/icon-bisniscom.svg" alt="Bisniscom icon" width="36" height="36">
+            </a>
+        </li>
+        {{/if}}
+        {{#each channel}}
+        <li
+            class="navItem{{#eq ../active compare=title}} -active{{/eq}}{{#if type}} -{{replace (lowercase type)}}{{/if}}">
+            <a href="{{link}}" class="navLink">
+                {{#compare type "==" "Premium"}}<span class="icoInline icoPremium"></span>{{/compare}}
+                {{#if icon}}
+                <span class="icoInline ico{{type}}">
+                    <img src="./asset/images/icon/{{icon}}" alt="{{type}}" width="{{icon-w}}" height="{{icon-h}}">
+                </span>
+                {{/if}}
+                {{#if logo}}
+                <img src="./asset/images/logo/{{logo}}" alt="{{title}}" width="{{logo-w}}" height="{{logo-h}}">
+                {{else}}
+                {{title}}
+                {{/if}}
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</nav>

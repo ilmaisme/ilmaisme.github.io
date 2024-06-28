@@ -1,0 +1,81 @@
+<div class="stream{{#if pos}} -{{pos}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}">
+    {{#eq pos compare="top"}}
+    <img src="./asset/images/{{replace (lowercase kanal)}}/stream-bg-m.jpg" alt="" class="streamBg" loading="lazy"
+        width="320" height="475">
+    <div class="streamWrap">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="streamVidWrap">
+            <h3 class="streamCaption">
+                <img src="./asset/images/icon/icon-live.svg" class="streamIcon" alt="" loading="lazy" width="24"
+                    height="24">
+                <strong>Live</strong>
+                Streaming
+            </h3>
+            <div class="streamVid">
+                <iframe width="{{#if ../width}}{{../width}}{{/if}}" height="{{#if ../height}}{{../height}}{{/if}}"
+                    src="{{vid}}" title="{{title}}" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                {{!-- <!-- s: lazyloaded youtube-->
+                <iframe id="video{{@index}}" width="{{#if ../width}}{{../width}}{{/if}}"
+                    height="{{#if ../height}}{{../height}}{{/if}}" allowscriptaccess="always"
+                    src="{{vid}}?enablejsapi=1&version=3&playerapiid=ytplayer&controls=0"
+                    srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href={{vid}}?enablejsapi=1&version=3&playerapiid=ytplayer&controls=0><img src='https://images.bisnis.com/thumb/posts/{{img}}?w={{#if ../width}}{{../width}}{{/if}}&h={{#if ../height}}{{../height}}{{/if}}' width='{{#if ../width}}{{../width}}{{/if}}' height='{{#if ../height}}{{../height}}{{/if}}'><span>▶</span></a>"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen title="{{title}}"></iframe>
+                <!-- e: lazyloaded youtube--> --}}
+            </div>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+        <div class="streamBanner">
+            <img src="./asset/images/{{replace (lowercase kanal)}}/stream-banner-m.png" alt="" loading="lazy"
+                width="540" height="271">
+        </div>
+    </div>
+    {{/eq}}
+    {{#eq pos compare="bottom"}}
+    <img src="./asset/images/{{replace (lowercase kanal)}}/stream-bg-left-m.jpg" alt="" class="streamBg" loading="lazy"
+        width="341" height="436">
+    <div class="streamWrap">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <h3 class="streamCaption">
+            <img src="./asset/images/icon/icon-live.svg" class="streamIcon" alt="" loading="lazy" width="24"
+                height="24">
+            <strong>Live</strong>
+            Streaming
+        </h3>
+        <div class="streamVid">
+            <iframe width="{{#if ../width}}{{../width}}{{/if}}" height="{{#if ../height}}{{../height}}{{/if}}"
+                src="{{vid}}" title="{{title}}" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            {{!-- <!-- s: lazyloaded youtube-->
+            <iframe id="video{{@index}}" width="{{#if ../width}}{{../width}}{{/if}}"
+                height="{{#if ../height}}{{../height}}{{/if}}" allowscriptaccess="always"
+                src="{{vid}}?enablejsapi=1&version=3&playerapiid=ytplayer&controls=0"
+                srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href={{vid}}?enablejsapi=1&version=3&playerapiid=ytplayer&controls=0><img src='https://images.bisnis.com/thumb/posts/{{img}}?w={{#if ../width}}{{../width}}{{/if}}&h={{#if ../height}}{{../height}}{{/if}}' width='{{#if ../width}}{{../width}}{{/if}}' height='{{#if ../height}}{{../height}}{{/if}}'><span>▶</span></a>"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen title="{{title}}"></iframe>
+            <!-- e: lazyloaded youtube--> --}}
+        </div>
+        <div class="streamContent">
+            <div class="streamBreaking">Breaking<span>News</span></div>
+            <h4 class="streamTitle">{{title}}</h4>
+            <a href="{{link}}" class="streamLink"><span class="icoInline icoPlay"></span>Klik Di Sini</a>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </div>
+    {{/eq}}
+</div>

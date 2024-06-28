@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Lifestyle" channel=site.Lifestyle type="details" photozoom=true}}
+
+<body class="theme--lifestyle">
+
+    <!-- s: pushdown billboard -->
+    {{>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{>header/header kanal="Lifestyle"}}
+
+        <main role="main" class="main details" id="pswp-gallery">
+            <div class="nav">
+
+                {{>header/nav channel=mainMenu.Lifestyle}}
+
+            </div>
+
+            <!-- s: menu panel -->
+            {{>header/menu login=true}}
+            {{!>header/menu}}
+            <!-- e: menu panel -->
+
+            <div class="container">
+
+                {{>breadcrumb kanal="Lifestyle" subkanal="Entertainment"}}
+
+                {{>detail/cover channel=kanal.Lifestyle.details.content mt="16" total=6 index_start=1 index_end=2}}
+                {{>detail/title default=true channel=kanal.Lifestyle.details.content total=6 index_start=1 index_end=2}}
+
+                {{>detail/share channel=kanal.Lifestyle.details.content pos="top" total=6 index_start=1 index_end=2}}
+
+                <article class="detailsContent mt40">
+                    {{>detail/content-series}}
+
+                    <!-- s: details break -->
+                    {{>detail/break page=1}}
+                    <!-- e: details break -->
+
+                    {{>detail/content-series-2}}
+
+                    <!-- s: details break -->
+                    {{>detail/break page=2}}
+                    <!-- e: details break -->
+
+                    {{>detail/content-series-3}}
+
+                    <!-- s: details break -->
+                    {{>detail/break page=3}}
+                    <!-- e: details break -->
+
+                </article>
+
+                <h2 class="titleCaption mt40">
+                    Simak video di bawah ini:
+                </h2>
+                {{>detail/video}}
+
+                {{>detail/author channel=kanal.Lifestyle.details.content total=6 index_start=1 index_end=2}}
+
+                {{>detail/share channel=kanal.Lifestyle.details.content mt="40" total=6 index_start=1 index_end=2}}
+
+                {{>detail/tag mt="16" channel=kanal.Lifestyle.details}}
+
+                <!-- s: premium -->
+                {{>premium/article mt="30" channel=kanal.Lifestyle.Premium.latest width="210" height="158"}}
+
+                <!-- e: premium -->
+
+                {{>newsletter mt="30"}}
+
+                <h3 class="titleCaption mt30">Artikel Terkait</h3>
+                {{>kanal/article channel=kanal.Lifestyle.Entertainment.latest type="col" col="two" mt="16" width="145"
+                height="109"
+                total=3 index_start=0 index_end=2}}
+
+                <h3 class="titleCaption mt30">Berita Lainnya</h3>
+                {{>detail/article-other channel=kanal.Lifestyle.hL mt="16" total=5 index_start=2 index_end=5}}
+
+                <h3 class="titleCaption mt30">Berita Terkini</h3>
+                {{>kanal/article channel=kanal.Lifestyle.latest type="row" width="145" height="109" total=10
+                index_start=4
+                index_end=7}}
+
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary">Berita Lainnya</a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    {{>footer/footer}}
+
+    {{>footer/script page="lifestyle" type="details" photozoom=true}}
+
+</body>
+
+</html>

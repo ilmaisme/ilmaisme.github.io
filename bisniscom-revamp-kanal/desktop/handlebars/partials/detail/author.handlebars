@@ -1,0 +1,12 @@
+<div class="detailsAuthor{{#if premium}} text-center mt50{{/if}}">
+    {{#each channel}}
+    {{#gte @index compare=../index_start}}
+    {{#gte @index compare=../index_end}}
+    {{else}}
+    <div class="detailsAuthorItem">Penulis : <a href="#">{{author}}</a></div>
+    <div class="detailsAuthorItem">Editor : <a href="#">{{editor}}</a></div>
+    {{/gte}}
+    {{else}}
+    {{/gte}}
+    {{/each}}
+</div>

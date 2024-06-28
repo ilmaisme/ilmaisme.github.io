@@ -1,0 +1,17 @@
+<div class="breadcrumb">
+    <ul class="breadcrumbList">
+        <li class="breadcrumbItem">
+            <a href="https://www.bisnis.com/" class="breadcrumbLink">Home</a>
+        </li>
+        {{#if kanal}}
+        <li class="breadcrumbItem">
+            <a href="index-{{replace (lowercase kanal)}}.html" class="breadcrumbLink">{{kanal}}</a>
+        </li>
+        {{/if}}
+        {{#if subkanal}}
+        <li class="breadcrumbItem{{#if active}} -active{{/if}}">
+            <a href="#" class="breadcrumbLink">{{subkanal}}</a>
+        </li>
+        {{/if}}
+    </ul>
+</div>

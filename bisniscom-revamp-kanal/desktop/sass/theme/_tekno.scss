@@ -1,0 +1,653 @@
+.theme {
+    &--tekno {
+        --cl-tekno: #0845DD;
+        --filter-tekno: invert(16%) sepia(94%) saturate(6479%) hue-rotate(227deg) brightness(91%) contrast(94%);
+        font-family: $font-body2;
+
+        .button {
+            &Primary {
+                min-width: 250px;
+                padding: 14px;
+                border-radius: 0;
+                border: 1px solid var(--cl-tekno);
+                @include font-pack($font-body2, false, $font-weight-normal, 1.315, var(--cl-tekno));
+
+                &:hover {
+                    background: var(--cl-tekno);
+                    color: $cl-white;
+                }
+            }
+        }
+
+        .flashnews {
+            &Wrap {
+                background: #052981;
+            }
+
+            &Caption {
+                background: $cl-white;
+                @include font-pack($font-body2, false, false, false, #052981);
+            }
+
+            &Link {
+                @include font-pack($font-body2, false, false, false, false);
+            }
+        }
+
+        .nav {
+            background: $cl-white;
+
+            &Menu {
+                height: 70px;
+            }
+
+            &Item {
+                margin-left: 7px;
+                margin-right: 7px;
+                min-width: 60px;
+                min-height: 70px;
+
+                &.-active {
+                    .navLink {
+                        color: var(--cl-tekno);
+                        border-bottom: 5px solid var(--cl-tekno);
+                    }
+                }
+
+                &.-b {
+                    min-width: unset;
+                    min-height: unset;
+                }
+            }
+
+            &Link {
+                @include font-pack($font-body2, 14px, $font-weight-sbold, 1.729, false);
+                border-bottom: 5px solid transparent;
+                padding-top: 23px;
+                padding-bottom: 18px;
+
+                &:hover {
+                    color: var(--cl-tekno);
+                    border-bottom: 5px solid var(--cl-tekno);
+                }
+            }
+        }
+
+        .header {
+            &Top {
+                border-bottom: 1px solid #EAEAEA;
+            }
+
+            &Logo {
+                min-width: 190px;
+
+                img {
+                    max-width: 130px;
+                }
+            }
+
+            .icoLogin {
+                filter: var(--filter-tekno);
+                -webkit-filter: var(--filter-tekno);
+            }
+        }
+
+        .headerSearch {
+            .icoSearch {
+                width: 26px;
+                height: 26px;
+                @extend %icoSearch-tekno;
+                filter: invert(0%) sepia(88%) saturate(738%) hue-rotate(348deg) brightness(101%) contrast(80%);
+            }
+
+            .buttonSearch {
+                padding: 0;
+                border: 0;
+            }
+        }
+
+        .hL {
+            &Wrap {
+                height: 680px;
+            }
+
+            &Big {
+                &Title {
+                    @include font-pack($font-body2, 36px, $font-weight-sbold, false, false);
+                }
+
+                &Lead {
+                    margin-top: 12px;
+                    @include font-pack($font-body2, 14px, false, 1.572, #DCDCDC);
+                }
+
+                &Img {
+                    img {
+                        height: 680px;
+                    }
+                }
+            }
+
+            &Nav {
+                &Title {
+                    margin-top: 0;
+                    @include font-pack($font-body2, false, $font-weight-sbold, 1.4, false);
+                }
+            }
+
+            &Link {
+                &:hover {
+                    .hLTitle {
+                        color: #f9bc73;
+                    }
+                }
+            }
+
+            .artDate {
+                color: #DCDCDC;
+            }
+
+            .titleOthers {
+                display: block;
+                margin-top: 18px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                font-size: 14px;
+                color: $cl-white;
+
+                .icoArrow {
+                    @extend %filter-white;
+                }
+            }
+        }
+
+        .stream {
+            &Caption {
+                text-transform: uppercase
+            }
+
+            &Title {
+                @include font-pack(false, 15px, $font-weight-sbold, 1.47, false);
+            }
+
+            &Content {
+                @include font-pack($font-body2, 16px, $font-weight-med, false, false);
+            }
+
+            &Link {
+                @include font-pack($font-body2, false, $font-weight-med, false, #F4B334);
+            }
+
+            &.-center {
+                .streamCaption {
+                    @include font-pack($font-body2, 18px, $font-weight-normal, $line-base, $cl-white);
+
+                    strong {
+                        color: #FF3838;
+                        font-weight: $font-weight-med;
+                    }
+                }
+            }
+
+            &.-left {
+                .streamWrap {
+                    padding: 34px 36px;
+                }
+
+                .streamVid {
+                    width: 383px;
+                    height: 215px;
+                }
+
+                .streamCaption {
+                    @include font-pack($font-body2, 15px, $font-weight-normal, $line-base, $cl-white);
+
+                    strong {
+                        font-weight: $font-weight-med;
+                    }
+                }
+            }
+        }
+
+        .kanal {
+            &Box {
+                border-radius: 0;
+
+                .art {
+                    padding-top: 30px;
+                    padding-left: 22px;
+                    padding-right: 22px;
+                }
+            }
+
+            &Vid {
+                background: #090E3C;
+                padding-bottom: 34px;
+
+                .artWrap.-col .artImg {
+                    height: 185px;
+                    padding-top: calc(3/4 * 100% - 111px);
+                }
+
+                .artLink:hover {
+                    .artTitle {
+                        color: #1C92FF;
+                        text-decoration: none;
+                    }
+
+                    .icoPlay {
+                        filter: invert(48%) sepia(86%) saturate(3121%) hue-rotate(190deg) brightness(101%) contrast(101%);
+                    }
+                }
+            }
+
+            &Bisnistv {
+                .artTitle {
+                    font-size: 15px;
+                    line-height: 1.47;
+                }
+
+                .artDuration {
+                    .icoPlay {
+                        width: 18px;
+                        height: 20px;
+                        color: var(--cl-tekno);
+
+                        &::before {
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .title {
+            &Caption {
+                text-transform: none;
+                @include font-pack($font-body2, 18px, $font-weight-sbold, 1.44, false);
+
+                &Med {
+                    font-size: 22px;
+                }
+
+                &Box {
+                    border-top-left-radius: 0;
+                    background: var(--cl-tekno);
+                    @include font-pack($font-body2, 16px, $font-weight-sbold, 1, false);
+                }
+            }
+
+            &Others {
+                @include font-pack($font-body2, 12px, $font-weight-normal, 1.67, var(--cl-tekno));
+                letter-spacing: 1px;
+            }
+        }
+
+        .art {
+            &Wrap {
+                &.-col {
+                    .artImg {
+                        padding-top: calc(2/4 * 100% + 12px);
+                    }
+
+                    &-top {
+                        .artItem:first-child {
+                            margin-top: 24px;
+
+                            .art--col-top {
+                                padding-bottom: 0;
+                                border-bottom: 0;
+                            }
+
+                            .artDate {
+                                margin-top: 0;
+                            }
+
+                            .artImg {
+                                padding-top: calc(3/4 * 100% - 64px);
+                            }
+
+                            .artTitle {
+                                font-size: 18px;
+                            }
+                        }
+
+                        .artItem,
+                        .artItem:nth-child(2) {
+                            margin-top: 24px;
+                        }
+
+                        .artImg {
+                            flex-basis: 96px;
+                            height: 96px;
+                        }
+
+                        .artTitle {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+
+            &--row {
+
+                // gap: 14px;
+                // margin-left: -8px;
+                // margin-right: -8px;
+                .artContent {
+                    margin-left: 14px;
+                }
+            }
+
+            &--col {
+
+                // gap: 14px;
+                // margin-bottom: -7px;
+                // margin-top: -7px;
+                .artImg {
+                    margin-bottom: 14px;
+                }
+            }
+
+            &Img {
+                border-radius: 0;
+            }
+
+            &Link {
+                &:hover .artTitle {
+                    color: var(--cl-tekno);
+                }
+            }
+
+            &Title {
+                @include font-pack($font-body2, 18px, $font-weight-sbold, 1.44, false);
+            }
+
+            &Channel {
+                padding: 0;
+                letter-spacing: 0.03em;
+                @include font-pack($font-body2, false, $font-weight-med, 1.637, var(--cl-tekno));
+            }
+
+            &Date {
+                margin-top: 0;
+                letter-spacing: 0.03em;
+                @include font-pack($font-body2, false, $font-weight-light, 1.637, #545454);
+            }
+
+            &Live {
+                position: absolute;
+                border-radius: 4px;
+                background: $cl-white;
+                top: 2px;
+                left: 10px;
+                padding-left: 20px;
+                padding-right: 10px;
+                z-index: 1;
+                letter-spacing: 0.03em;
+                @include font-pack($font-body2, false, $font-weight-normal, 1.637, false);
+
+                &::before {
+                    top: 8px;
+                    left: 8px;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 6px;
+                }
+            }
+
+            &Duration {
+                width: 65px;
+                height: 48px;
+                background: #090e3c;
+                border-top-right-radius: 12px;
+                align-items: center;
+                justify-content: center;
+
+                .icoPlay {
+                    width: 24px;
+                    height: 27px;
+                    margin-left: 0;
+                    margin-right: 0;
+
+                    &::before {
+                        height: 27px;
+                        border-top: 14px solid transparent;
+                        border-bottom: 12px solid transparent;
+                        border-left: 24px solid;
+                    }
+                }
+            }
+        }
+
+        .latest {
+            &Wrap {
+                &.-three {
+                    .artLive {
+                        top: 12px;
+                        left: 20px;
+                    }
+                }
+            }
+
+            &Img {
+                flex-basis: 213px;
+                height: 120px;
+            }
+
+            &Item {
+                margin-top: 24px;
+            }
+        }
+
+        .premiumBox {
+            background: #1D1D1D;
+            padding-top: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+
+            &Caption {
+                margin-top: 0;
+                @include font-pack($font-body2, 12px, false, 1.667, #F9BC73);
+            }
+
+            &Login {
+                padding: 8px 12px;
+                border: 1px solid #F9BC73;
+                border-radius: 50px;
+                @include font-pack($font-body2, 14px, false, 1.315, #EDA73F);
+
+                &:hover {
+                    background: $cl-white;
+                    color: $cl-black;
+                    border: 1px solid $cl-black;
+                }
+            }
+
+            .art {
+                margin-top: 24px;
+                margin-bottom: 24px;
+
+                &Wrap.-col {
+                    .artImg {
+                        padding-top: calc(3/4 * 100%);
+                    }
+                }
+
+                &Channel {
+                    letter-spacing: 0.03em;
+                    @include font-pack($font-body2, 11px, $font-weight-med, 1.637, false);
+                }
+
+                &Title {
+                    -webkit-line-clamp: 2;
+                    @include font-pack(false, 15px, false, 1.47, false);
+                }
+            }
+
+            .titleOthers {
+                margin-left: -30px;
+                margin-right: -30px;
+                padding: 14px;
+                background: #303030;
+                @include font-pack($font-body2, 14px, $font-weight-med, 1.5, false);
+            }
+        }
+
+        .most {
+            &Item {
+                margin-top: 14px;
+                padding-bottom: 17px;
+                border-bottom: 1px solid #DCDCDC;
+
+                .mostLink {
+                    display: block;
+                    padding-left: 52px;
+                }
+
+                &:first-child {
+                    margin-top: 20px;
+                }
+            }
+
+            &Num {
+                min-width: 35px;
+                text-align: center;
+                bottom: 40px;
+                left: 0;
+                right: unset;
+                @include font-pack($font-body2, 45px, $font-weight-normal, .5335, var(--cl-tekno));
+            }
+
+            .artTitle {
+                font-size: 17px;
+            }
+        }
+
+        .topic {
+            &List {
+                margin-top: 5px;
+            }
+
+            &Link {
+                padding: 10px;
+                border: 0;
+                background: #F8FCFF;
+
+                &:hover {
+                    color: #F8FCFF;
+                    background: var(--cl-tekno)
+                }
+            }
+
+            &Title {
+                @include font-pack($font-body2, false, $font-weight-med, 1.38, var(--cl-tekno));
+            }
+        }
+
+        .bplus {
+            &Item {
+                padding: 12px 14px;
+            }
+
+            &Others {
+                @include font-pack($font-body2, 16px, false, 2, false);
+            }
+
+            &Link:hover {
+                .bplusTitle {
+                    color: $cl-white;
+                }
+            }
+        }
+
+        .newsletter {
+            border: 1px solid #D8D8D8;
+            border-radius: 0;
+            padding: 18px 20px;
+
+            &Caption {
+                @include font-pack($font-body2, 18px, $font-weight-sbold, 1.44, false);
+            }
+
+            &Lead {
+                margin-top: 12px;
+                @include font-pack($font-body2, 14px, $font-weight-normal, 1.57, false);
+            }
+
+            &Cta {
+                padding: 14px;
+                border-radius: 0;
+                background: var(--cl-tekno);
+                font-family: $font-body2
+            }
+
+            .formInput {
+                flex: 1;
+                border: 0;
+                border-radius: 0;
+                padding: 14px;
+                background: #EDEDED;
+                @include font-pack($font-body2, false, false, 1, $cl-black);
+                @include placeholder(false, false, 1, #434343)
+            }
+        }
+
+        .sidebar {
+            .artWrap.-col-top {
+                .artItem {
+                    margin-top: 20px;
+                }
+
+                .artItem:first-child .art--col-top,
+                .art--col-top {
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid #DCDCDC;
+                }
+
+                .artTitle {
+                    font-size: 18px;
+                }
+            }
+
+            .-photo {
+                position: relative;
+                margin-top: 20px;
+
+                .artPhotoCount {
+                    position: absolute;
+                    padding: 7px 12px;
+                    top: 0;
+                    left: 0;
+                    border-bottom-right-radius: 12px;
+                    @include font-pack($font-body2, 11px, $font-weight-med, 1, $cl-black);
+                    z-index: 1;
+
+                    .icoPhoto {
+                        margin-right: 3px;
+                        filter: invert(0%) sepia(10%) saturate(461%) hue-rotate(349deg) brightness(86%) contrast(80%);
+                    }
+                }
+
+                .artImg {
+                    position: relative;
+                    padding-top: calc(3/4 * 100%);
+
+                    img {
+                        @extend %template-img
+                    }
+                }
+            }
+
+            .newsletterCta {
+                margin-top: 12px;
+            }
+        }
+
+        .profileImgDefault,
+        .icoArrow {
+            filter: var(--filter-tekno);
+            -webkit-filter: var(--filter-tekno);
+        }
+    }
+}

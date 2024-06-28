@@ -1,0 +1,27 @@
+<div class="topic">
+    <ul class="topicList">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <li class="topicItem">
+            <a href="{{link}}" class="topicLink">
+                {{#if ../images}}
+                <div class="topicImg">
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../w}}&h={{../h}}" width="{{../w}}"
+                            height="{{../h}}" alt="{{title}}" {{#if ../lcp}}{{else}}loading="lazy" {{/if}}>
+                </div>
+                {{/if}}
+                {{#if ../heading}}
+                <{{.. /heading}} class="topicTitle">{{title}}</{{.. /heading}}>
+                {{else}}
+                <h4 class="topicTitle">{{title}}</h4>
+                {{/if}}
+            </a>
+        </li>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </ul>
+</div>

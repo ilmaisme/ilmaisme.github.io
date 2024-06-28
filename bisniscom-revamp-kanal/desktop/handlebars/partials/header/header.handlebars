@@ -1,0 +1,74 @@
+<header class="header">
+    <div class="headerTop">
+        <div class="headerWrap container">
+            <div class="menu">
+                <button class="button menuBar" aria-label="Navigation menu" onclick="toggleMenu(this)">
+                    <span><i></i></span>
+                </button>
+                {{#if icon}}
+                <a href="https://www.bisnis.com/" class="headerIcon">
+                    <img src="./asset/images/icon/icon-bisniscom.svg" alt="Bisniscom icon" width="36" height="36">
+                </a>
+                {{/if}}
+            </div>
+            <div class="headerLogoWrap">
+                <div class="headerLogo headerLogo--kanal">
+                    {{#if font}}
+                    <a href="index-{{replace (lowercase kanal)}}.html">
+                        {{kanal}}
+                    </a>
+                    {{else}}
+                    {{#compare kanal "==" "Homepage"}}
+                    <a href="index.html" aria-label="homepage Bisnis.com">
+                        <img src="./asset/images/logo/bisniscom-logo.svg" alt="Bisnis.com logo"
+                            width="{{#if width}}{{width}}{{else}}180{{/if}}"
+                            height="{{#if height}}{{height}}{{else}}49{{/if}}">
+                    </a>
+                    {{else}}
+                    <a href="index-{{replace (lowercase kanal)}}.html" aria-label="kanal {{kanal}}">
+                        <img src="./asset/images/logo/{{replace (lowercase kanal)}}-logo.svg" alt=""
+                            width="{{#if width}}{{width}}{{else}}180{{/if}}"
+                            height="{{#if height}}{{height}}{{else}}49{{/if}}">
+                    </a>
+                    {{/compare}}
+                    {{/if}}
+                </div>
+            </div>
+            {{#if nav}}
+            <div class="nav">
+
+                {{>header/nav channel=mainMenu.Tekno active=active icon=icon}}
+
+            </div>
+            {{/if}}
+            <div class="headerCta">
+                <div class="headerSearch">
+                    <a href="#" class="buttonSearch center-flex" aria-label="Cari berita terkini" title="Cari di sini">
+                        <span class="icoInline icoSearch"></span>
+                    </a>
+                </div>
+                <div class="headerLogin">
+                    {{#if login}}
+                    <a href="https://id.bisnis.com/user" class="buttonProfile" aria-label="Profile"
+                        title="Profil Bisnis ID">
+                        <div class="profileImg profileImgDefault{{#if premium}} -premium{{/if}}">
+                            <img src="./asset/images/icon/icon-profile.png" alt="" width="37" height="37">
+                        </div>
+                    </a>
+                    {{else}}
+                    <a href="#" aria-label="Login" title="Login Bisnis ID">
+                        <span class="icoInline icoLogin"></span>
+                        {{#if label}}
+                        <span class="headerLoginLabel">{{label}}</span>
+                        {{/if}}
+                    </a>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        {{#if detailtitle}}
+        <!-- detail title on fixed -->
+        {{>header/detail-title kanal=kanal channel=channel}}
+        {{/if}}
+    </div>
+</header>

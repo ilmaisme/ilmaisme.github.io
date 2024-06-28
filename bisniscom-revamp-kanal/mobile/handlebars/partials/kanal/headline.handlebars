@@ -1,0 +1,54 @@
+<div class="hL">
+    <div class="hLWrap{{#if pos}} -{{pos}}{{/if}}">
+        <div class="hLBig">
+            <div class="hLSlide -js-hL-slider-for">
+                {{#each channel}}
+                {{#gte @index compare=../index_start}}
+                {{#gte @index compare=../index_end}}
+                {{else}}
+                <div class="hLBigItem">
+                    <div class="hLBigImg">
+                        <img src="https://images.bisnis.com/posts/{{img}}" alt="{{title}}" width="1080" height="610">
+                    </div>
+                    <div class="hLBigContent{{#if premium}} -premium{{/if}}">
+                        {{#if ../dates}}
+                        <div class="artContentWrap">
+                            <div class="artChannel">
+                                {{#if premium}}
+                                Premium<span class="icoInline icoPremium"></span>
+                                {{else}}
+                                {{channel}}
+                                {{/if}}
+                            </div>
+                            <div class="artDate">
+                                22 November 2022
+                            </div>
+                        </div>
+                        {{else}}
+                        <div class="artChannel">
+                            {{#if premium}}
+                            Premium<span class="icoInline icoPremium"></span>
+                            {{else}}
+                            {{channel}}
+                            {{/if}}
+                        </div>
+                        {{/if}}
+                        <a href="{{link}}" class="hLLink">
+                            <h1 class="hLBigTitle hLTitle">
+                                {{title}}
+                            </h1>
+                        </a>
+                        {{#if ../others}}
+                        <a href="{{link}}" class="titleOthers">Baca selengkapnya<span
+                                class="icoInline icoArrow"></span></a>
+                        {{/if}}
+                    </div>
+                </div>
+                {{/gte}}
+                {{else}}
+                {{/gte}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

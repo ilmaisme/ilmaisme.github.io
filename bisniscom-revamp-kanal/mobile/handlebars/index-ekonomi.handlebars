@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Ekonomi" hl=true channel=site.Ekonomi font=true}}
+
+<body class="theme--ekonomi">
+
+    <!-- s: pushdown billboard -->
+    {{>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{>header/header kanal="Ekonomi" font=true nav=true active="Home"}}
+
+        <main role="main" class="main">
+
+            <!-- s: menu panel -->
+            {{>header/menu login=true}}
+            {{!>header/menu}}
+            <!-- e: menu panel -->
+
+            <div class="container mt20">
+
+                <!-- s: headline -->
+                {{>ekonomi/headline channel=kanal.Ekonomi.hL total=5 index_start=0 index_end=4 index_big_start=4
+                index_big_end=5}}
+
+                <!-- e: headline -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                <!-- s: topic -->
+                <h3 class="titleCaption mt30"><span class="topicCaption">#</span> Hot Topic</h3>
+                {{>topic channel=topic total=9 index_start=3 index_end=9}}
+
+                <!-- e: topic -->
+
+                <!-- s: live -->
+                {{>live channel=kanal.Ekonomi.live.latest mt="30" total=4 index_start=0 index_end=4}}
+                <!-- e: live -->
+
+                <!-- s: rec -->
+                <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
+                {{>ekonomi/article channel=kanal.Ekonomi.recommend.latest grid="row" column="col-5" mt="16" width="145"
+                height="109"
+                total=4 index_start=0 index_end=4 dates=false}}
+
+                <!-- e: rec -->
+
+                <!-- s: latest -->
+                <h3 class="titleCaption mt10">Berita Terbaru</h3>
+                {{>ekonomi/article channel=kanal.Ekonomi.latest pos="top" type="row" widthtop="384" heighttop="216"
+                width="127" height="72" total=5 index_start=0
+                index_end=5}}
+
+                <!-- e: latest -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                {{>ekonomi/article channel=kanal.Ekonomi.latest mt="30" pos="top" type="row" widthtop="384"
+                heighttop="216"
+                width="127" height="72" total=5 index_start=0
+                index_end=5}}
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                {{>ekonomi/article channel=kanal.Ekonomi.latest mt="30" pos="top" type="row" widthtop="384"
+                heighttop="216"
+                width="127" height="72" total=5 index_start=0
+                index_end=5}}
+
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary mt30">Indeks Berita</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- s: bottom billboard -->
+    {{>ads/bottom}}
+    <!-- e: bottom billboard -->
+
+    {{>footer/footer}}
+
+    {{>footer/script page="ekonomi"}}
+    <script>
+        var imgLCP = document.getElementById("imgLCP");
+        const preloadImage = src =>
+            new Promise(resolve => {
+                const image = new Image();
+                const onLoad = () => {
+                    resolve(image);
+                };
+                image.addEventListener('load', onLoad, { once: true });
+                image.src = src;
+            });
+        const src = 'https://images.bisnis.com/thumb/posts/2023/06/19/1666608/mpv-shot0004-1-1.jpg?w=384&h=216';
+        preloadImage(src).then(image => {
+            // Here the image has been loaded and is available to be appended, or otherwise.
+            imgLCP.firstElementChild.style.display = 'none';
+            imgLCP.append(image);
+        });
+    </script>
+
+</body>
+
+</html>

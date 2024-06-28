@@ -1,0 +1,47 @@
+<div class="detailsTitle{{#if pos}} -{{pos}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}{{#if parallax}} -parallax{{/if}}">
+    {{#each channel}}
+    {{#gte @index compare=../index_start}}
+    {{#gte @index compare=../index_end}}
+    {{else}}
+    <div class="artChannel -premium">
+        <span class="icoInline icoPremium"></span>Premium
+    </div>
+    <h1 class="detailsTitleCaption">{{title}}</h1>
+    {{#if ../lead}}
+    <div class="detailsLead">{{lead}}</div>
+    {{/if}}
+    {{#if ../photo}}
+    <a href="#" class="detailsAttributeAuthor">
+        <div class="profileImg{{#if ../default}} profileImgDefault{{/if}}">
+            <img src="{{authorphoto}}" alt="{{author}}" loading="lazy" width="36" height="36">
+        </div>
+        <span class="detailsAttributeItem">
+            <div class="authorName"><strong>{{author}}</strong> - Bisnis.com</div>
+            <div class="detailsAttributeDates">
+                {{dates}}
+            </div>
+        </span>
+    </a>
+    {{else}}
+    <a href="#" class="detailsAttribute">
+        <span class="detailsAttributeItem detailsAttributeAuthor">
+            <span class="icoInline icoProfile"></span>
+            <div class="authorName">{{author}}</div>
+        </span>
+    </a>
+    <div class="detailsAttribute">
+        <span class="detailsAttributeItem">
+            <span class="icoInline icoCal"></span>
+            {{dates}}
+        </span>
+        <span class="detailsAttributeItem">
+            <span class="icoInline icoEye"></span>
+            5 menit baca
+        </span>
+    </div>
+    {{/if}}
+    {{/gte}}
+    {{else}}
+    {{/gte}}
+    {{/each}}
+</div>

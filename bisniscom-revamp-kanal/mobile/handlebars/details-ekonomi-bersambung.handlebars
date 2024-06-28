@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Ekonomi" channel=site.Ekonomi font=true type="details" photozoom=true}}
+
+<body class="theme--ekonomi">
+
+    <!-- s: pushdown billboard -->
+    {{>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{>header/header kanal="Ekonomi" font=true nav=true}}
+
+        <main role="main" class="main details" id="pswp-gallery">
+
+            <!-- s: menu panel -->
+            {{!>header/menu login=true}}
+            {{>header/menu}}
+            <!-- e: menu panel -->
+
+            <div class="container mt20">
+                {{>breadcrumb kanal="Ekonomi" subkanal="Ekonomi Global"}}
+
+                {{>detail/title pos="left" channel=kanal.Ekonomi.details.content total=6
+                index_start=0
+                index_end=1 mt="16" lead=true photo=true}}
+                {{>detail/cover pos="top" channel=kanal.Ekonomi.details.content mt="40" total=6 index_start=0
+                index_end=1}}
+
+                {{>detail/share channel=kanal.Ekonomi.details.content mt="16" pos="top" total=6 index_start=0
+                index_end=1 caption="Share" min="1" max="2" value="1"}}
+
+                <article class="detailsContent mt30">
+                    {{>ekonomi/detail-content bacatype="box" quoteau=true channel=kanal.Ekonomi.recommend.latest
+                    index_start=0 index_end=3}}
+
+                </article>
+
+                <!-- s: detail pagination -->
+                {{>detail/paging caption="Halaman"}}
+                <!-- e: detail pagination -->
+
+                {{>detail/author channel=kanal.Ekonomi.details.content total=6 index_start=0 index_end=1}}
+
+                {{>detail/tag channel=kanal.Ekonomi.details caption="Tag"}}
+
+                {{>detail/share channel=kanal.Ekonomi.details.content pos="left" mt="16" caption="Share" total=6
+                index_start=0 index_end=1}}
+
+                <h2 class="titleCaption titleCaptionMed mt30">
+                    Simak video di bawah ini:
+                </h2>
+                {{>detail/video}}
+
+                {{>newsletter mt="30"}}
+
+                    <div class="premiumBox mt30">
+                        <div class="premiumBoxBtn"><span class="icoInline icoPremium"></span>Konten Premium</div>
+                        <h3 class="premiumBoxCaption">Dapatkan informasi komprehensif di Bisnis.com yang diolah secara
+                            mendalam untuk menavigasi bisnis
+                            Anda. Silakan <a href="#">login</a> untuk menikmati artikel Konten Premium.</h3>
+
+                        {{>ekonomi/article channel=kanal.Ekonomi.latest grid="row" column="col-5" mt="16" width="145"
+                        height="109" total=2
+                        index_start=1
+                        index_end=3}}
+
+                        <div class="center-flex">
+                            <a href="#" class="buttonPrimary mt16">Artikel Premium Lainnya</a>
+                        </div>
+                    </div>
+
+                <h3 class="titleCaption mt30">Artikel Terkait</h3>
+                {{>ekonomi/article channel=kanal.Ekonomi.recommend.latest grid="row" column="col-5" mt="16" width="145"
+                height="109"
+                total=4 index_start=0 index_end=2 dates=false}}
+
+                <h3 class="titleCaption mt30">Berita Terbaru</h3>
+                {{>detail/article-other channel=kanal.Ekonomi.hL mt="16" total=5 index_start=0 index_end=5}}
+
+                    <!-- s: topic -->
+                    <h3 class="titleCaption mt30"><span class="topicCaption">#</span> Hot Topic</h3>
+                    {{>topic channel=topic total=9 index_start=3 index_end=9}}
+
+                    <!-- e: topic -->
+
+                <h3 class="titleCaption mt30">Berita Lainnya</h3>
+                {{>ekonomi/article channel=kanal.Ekonomi.latest type="row" width="127" height="72" total=5 index_start=0
+                index_end=3}}
+
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary">Berita Lainnya</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- s: bottom billboard -->
+    {{>ads/bottom}}
+    <!-- e: bottom billboard -->
+
+    {{>footer/footer}}
+
+    {{>footer/script page="ekonomi" type="details" photozoom=true}}
+
+</body>
+
+</html>

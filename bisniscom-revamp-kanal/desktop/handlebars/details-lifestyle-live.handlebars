@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Lifestyle" channel=site.Lifestyle type="details" slick=true}}
+
+<body class="theme--lifestyle">
+
+    <!-- s: pushdown billboard -->
+    {{>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{>header/header login=true kanal="Lifestyle"}}
+        {{!>header/header kanal="Lifestyle"}}
+
+        <!-- s: skyscrapper billboard -->
+        {{>ads/skyscrapper}}
+        <!-- e: skyscrapper billboard -->
+
+        <main role="main" class="main details" id="pswp-gallery">
+            <div class="nav">
+
+                {{>header/nav channel=mainMenu.Lifestyle}}
+
+            </div>
+
+            <!-- s: menu panel -->
+            {{>header/menu}}
+            <!-- e: menu panel -->
+
+            <div class="container mt16">
+
+                {{>breadcrumb kanal="Lifestyle" subkanal="Inspirasi"}}
+
+                {{>detail/cover channel=kanal.Lifestyle.details.content mt="16" total=6 index_start=3 index_end=4}}
+                {{>detail/title default=true channel=kanal.Lifestyle.details.content total=6 index_start=3 index_end=4}}
+
+                <div class="row">
+                    <div class="col-7 col-left">
+
+                        {{>detail/share channel=kanal.Lifestyle.details.content pos="top" total=6 index_start=3
+                        index_end=4}}
+
+                        <article class="detailsContent detailsLive mt40">
+                            {{>detail/content-live channel=kanal.Lifestyle.details.live index_start=0 index_end=3}}
+
+                        </article>
+
+                        <!-- s: detail pagination -->
+                        {{>detail/paging}}
+                        <!-- e: detail pagination -->
+
+                        <h2 class="titleCaption mt40">
+                            Simak video di bawah ini:
+                        </h2>
+                        {{>detail/video}}
+
+                        {{>detail/author channel=kanal.Lifestyle.details.content total=6 index_start=3 index_end=4}}
+
+                        {{>detail/share channel=kanal.Lifestyle.details.content mt="40" total=6 index_start=3
+                        index_end=4}}
+
+                        {{>detail/tag channel=kanal.Lifestyle.details}}
+
+                        <hr>
+
+                        <!-- s: premium -->
+                        {{>premium/article channel=kanal.Lifestyle.Premium.latest mt="40"}}
+
+                        <!-- e: premium -->
+
+                        {{>newsletter mt="40"}}
+
+                        <h3 class="titleCaption mt40">Artikel Terkait</h3>
+                        {{>kanal/article channel=kanal.Lifestyle.Entertainment.latest type="col" details=true mt="16"
+                        total=3 index_start=0
+                        index_end=3}}
+
+                        <h3 class="titleCaption mt40">Berita Lainnya</h3>
+                        {{>detail/article-other channel=kanal.Lifestyle.hL mt="16" total=5 index_start=2 index_end=5}}
+
+                        <h3 class="titleCaption mt40">Berita Terkini</h3>
+                        {{>kanal/latest channel=kanal.Lifestyle.latest type="row" total=10 index_start=4
+                        index_end=7}}
+
+                        <div class="center-flex">
+                            <a href="#" class="buttonPrimary">Berita Lainnya</a>
+                        </div>
+
+                    </div>
+                    <sidebar class="sidebar col-3 col-right">
+                        <!-- s: rectangle billboard -->
+                        {{>ads/middle}}
+                        <!-- e: rectangle billboard -->
+
+                        <!-- s: terpopuler -->
+                        <h3 class="titleCaption mt40">Terpopuler</h3>
+                        {{>kanal/most channel=kanal.Lifestyle.most total=4 index_start=0 index_end=4}}
+
+                        <!-- e: terpopuler -->
+
+                        <!-- s: rec -->
+                        <h3 class="titleCaption mt40">Rekomendasi Kami</h3>
+                        {{>kanal/article channel=kanal.Lifestyle.latest type="col-top" total=10 index_start=6
+                        index_end=10}}
+
+                        <!-- e: rec -->
+                    </sidebar>
+                </div>
+            </div>
+        </main>
+    </div>
+ 
+    {{>footer/footer}}
+
+    {{>footer/script page="lifestyle" type="details" slick=true}}
+    <script>
+        function openModalImage(el, e) {
+            var image = e.parentNode.getElementsByClassName('image')[0].getAttribute("url"),
+                wcaption = e.parentNode.parentNode.getElementsByClassName('caption')[0];
+            if (!!wcaption) {
+                var caption = wcaption.innerHTML;
+                openModal(el, image, caption)
+            }
+            else {
+                openModal(el, image)
+            }
+        }
+
+        $(document).ready(function () {
+            //live details slider anchor
+            if ($('.-js-slider-live').length > 0) {
+                $('.-js-slider-live').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    fade: false,
+                    swipe: false,
+                });
+            }
+
+            //live anchor trigger
+            $('.detailsLiveAnchor').on("click", function () {
+                var a = $(this).attr("anchor"),
+                    b = $('.detailsLive').find("[content='" + a + "']"),
+                    pg = $('.paging');
+                //console.log(b)
+                $('.detailsLiveAnchor').removeClass("-active");
+                $('.detailsLiveItem').removeClass("-active");
+                $(this).addClass("-active");
+                if (b.length > 0) {
+                    var scroll = b.offset().top;
+                    b.addClass("-active");
+
+                    if ($('.flashnews').length > 0) {
+                        $("html, body").animate({
+                            scrollTop: scroll - 120
+                        }, 500);
+                    } else {
+                        $("html, body").animate({
+                            scrollTop: scroll - 90
+                        }, 500);
+                    }
+                } else {
+                    var scrollpg = pg.offset().top;
+                    if ($('.flashnews').length > 0) {
+                        $("html, body").animate({
+                            scrollTop: scrollpg - 120
+                        }, 500);
+                    } else {
+                        $("html, body").animate({
+                            scrollTop: scrollpg - 90
+                        }, 500);
+                    }
+                }
+                return false;
+            });
+        })
+    </script>
+
+</body>
+
+</html>

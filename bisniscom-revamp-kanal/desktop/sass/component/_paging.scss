@@ -1,0 +1,50 @@
+.paging {
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+    &Wrap {
+        @include display_flex;
+        align-items: center;
+    }
+
+    &List {
+        padding: 0;
+        list-style-type: none;
+        @include display_flex;
+    }
+
+    &Item {
+        margin-left: 5px;
+        margin-right: 5px;
+
+        &:first-child {
+            margin-left: 12px;
+        }
+    }
+
+    &Link,
+    &Show {
+        @extend .center-flex;
+        padding: 5px 11px;
+        min-width: 34px;
+        height: 34px;
+        background: $cl-white;
+        border: 1px solid #555555;
+        border-radius: 25px;
+        @include font-pack($font-body, 15px, $font-weight-sbold, 1.4, #434343);
+
+        &.-active,
+        &:hover {
+            color: $cl-white;
+        }
+    }
+
+    &Caption {
+        @include font-pack($font-body, 16px, $font-weight-bold, 1.4, #434343);
+    }
+
+    &Show {
+        margin-left: 5px;
+        padding: 5px 12px;
+    }
+}

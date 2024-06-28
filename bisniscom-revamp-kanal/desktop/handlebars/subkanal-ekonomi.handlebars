@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Ekonomi" slick=true latest=true channel=site.Ekonomi font=true}}
+
+<body class="theme--ekonomi">
+
+    <div class="root">
+
+        <!-- s: network -->
+        {{>network channel=networkNav}}
+        <!-- e: network -->
+
+        <!-- s: flashnews -->
+        {{>flashnews type="slider" channel=flashnews}}
+        <!-- e: flashnews -->
+
+        {{!>header/header login=true kanal="Ekonomi" font=true label="Login" icon=true premium=true}}
+        {{>header/header kanal="Ekonomi" font=true label="Login" icon=true premium=true}}
+
+        <!-- s: skyscrapper billboard -->
+        {{>ads/skyscrapper}}
+        <!-- e: skyscrapper billboard -->
+
+        <main role="main" class="main">
+            <div class="nav">
+
+                {{>header/nav channel=mainMenu.Ekonomi active="Infrastruktur" icon=true}}
+
+            </div>
+
+            <!-- s: menu panel -->
+            {{>header/menu}}
+            <!-- e: menu panel -->
+
+            <div class="container mt50">
+                <div class="row">
+                    
+                    <!-- s: pushdown billboard -->
+                    {{>ads/pushdown}}
+                    <!-- e: pushdown billboard -->
+                    
+                    <div class="col-7 col-left">
+
+                        <!-- s: latest -->
+                        <h3 class="titleCaption">Berita Terbaru</h3>
+                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="col" total=10 index_start=0
+                        index_end=2 w=348 h=196 mt="16" lcp=true}}
+
+                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="row" pos="center" total=10 index_start=2
+                        index_end=6 w=184 h=104 mt="30"}}
+
+                        <!-- e: latest -->
+
+                        <!-- s: leaderboard billboard -->
+                        <div class="mt30">
+                            {{>ads/leaderboard}}
+                        </div>
+                        <!-- e: leaderboard billboard -->
+
+                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="col" total=10 index_start=6
+                        index_end=8 w=348 h=196 mt="50"}}
+
+                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="row" pos="center" total=10 index_start=0
+                        index_end=4 w=184 h=104 mt="30"}}
+
+                        <!-- s: leaderboard billboard -->
+                        <div class="mt30">
+                            {{>ads/leaderboard}}
+                        </div>
+                        <!-- e: leaderboard billboard -->
+
+                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="col" total=10 index_start=8
+                        index_end=10 w=348 h=196 mt="50"}}
+
+                        {{>ekonomi/article channel=kanal.Ekonomi.latest type="row" pos="center" total=10 index_start=4
+                        index_end=8 w=184 h=104 mt="30"}}
+
+                        <div class="center-flex">
+                            <a href="#" class="buttonPrimary">Indeks Berita</a>
+                        </div>
+
+                    </div>
+                    <sidebar class="sidebar col-3 col-right">
+                        <!-- s: rectangle billboard -->
+                        {{>ads/middle}}
+                        <!-- e: rectangle billboard -->
+                        
+                        <!-- s: rec -->
+                        <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
+                        {{>ekonomi/article channel=kanal.Ekonomi.recommend.latest type="row" mt="16" total=4
+                        index_start=0
+                        index_end=4 w=80 h=80 dates=false}}
+
+                        <!-- e: rec -->
+
+                        <!-- s: bisnistv -->
+                        <div class="kanalBisnistv mt50">
+                            <h3 class="titleCaption">
+                                <img src="./asset/images/logo/bisnistv-logo.png" alt="Bisnistv logo" loading="lazy"
+                                    width="119" height="31">
+                            </h3>
+                            {{>kanal/article channel=kanal.Ekonomi.Video.latest video=true btv=true type="col" total=1
+                            index_start=0 index_end=1}}
+
+                        </div>
+
+                        <!-- e: bisnistv -->
+
+                        <!-- s: terpopuler -->
+                        <h3 class="titleCaption mt50">Terpopuler</h3>
+                        {{>kanal/most channel=kanal.Ekonomi.most total=5 index_start=0 index_end=5 countdates=true}}
+
+                        <!-- e: terpopuler -->
+
+                        <!-- s: topic -->
+                        <h2 class="titleCaption mt50"><span class="topicCaption">#</span> Hot Topic</h2>
+                        {{>topic channel=topic total=9 index_start=0 index_end=7 heading="h3"}}
+
+                        <!-- e: topic -->
+
+                        <!-- s: foto -->
+                        <div class="titleCaptionWrap mt50">
+                            <h3 class="titleCaption">
+                                Foto
+                            </h3>
+                        </div>
+                        {{>tekno/photo channel=kanal.Tekno.Foto.latest total=1 index_start=0 index_end=1}}
+
+                        <!-- e: foto -->
+
+                        <!-- s: QR Bisnis Indonesia -->
+                        <div class="kanalQr mt50">
+                            <img src="./asset/images/QR-bisnis-indonesia.jpg"
+                                alt="Scan QR Code Bisnis Indonesia e-paper" loading="lazy" width="301" height="412">
+                        </div>
+                        <!-- e: QR Bisnis Indonesia -->
+                    </sidebar>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- s: bottom billboard -->
+    {{>ads/bottom}}
+    <!-- e: bottom billboard -->
+
+    {{>footer/footer}}
+
+    {{>footer/script page="ekonomi" slick=true}}
+
+</body>
+
+</html>

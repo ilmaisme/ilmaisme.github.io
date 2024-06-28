@@ -1,0 +1,82 @@
+<script type="text/javascript" src="./asset/js/jquery-3.5.0.min.js"></script>
+{{#if slick}}
+<script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
+{{/if}}
+<script defer type="text/javascript" src="./asset/js/script-main.js"></script>
+{{#eq type compare="details"}}
+<script defer type="text/javascript" src="./asset/js/script-details.min.js"></script>
+{{/eq}}
+{{#eq page compare="homepage"}}
+<script type="text/javascript" src="./asset/js/script-home.js"></script>
+{{/eq}}
+{{#eq page compare="lifestyle"}}
+{{#eq type compare="details"}}
+<script defer type="text/javascript" src="./asset/js/script-lifestyle-details.min.js"></script>
+{{else}}
+<script type="text/javascript" src="./asset/js/script-lifestyle.min.js"></script>
+{{/eq}}
+{{/eq}}
+
+{{#eq page compare="tekno"}}
+{{#eq type compare="details"}}
+<script defer type="text/javascript" src="./asset/js/script-tekno-details.min.js"></script>
+{{else}}
+<script type="text/javascript" src="./asset/js/script-tekno.min.js"></script>
+{{/eq}}
+{{/eq}}
+{{#eq page compare="ekonomi"}}
+{{#eq type compare="details"}}
+<script defer type="text/javascript" src="./asset/js/script-ekonomi-details.min.js"></script>
+{{#if premium}}
+<script defer type="text/javascript" src="./asset/js/script-ekonomi-details-premium.min.js"></script>
+{{/if}}
+{{/eq}}
+<script defer type="text/javascript" src="./asset/js/script-ekonomi.min.js"></script>
+{{/eq}}
+{{#if photozoom}}
+<!-- initial script for image photo zoom -->
+<script type="module">
+    import PhotoSwipeLightbox from './asset/js/photoswipe/photoswipe-lightbox.esm.min.js';
+    const leftArrowSVGString = '';
+    const options = {
+        arrowPrevSVG: leftArrowSVGString,
+        arrowNextSVG: leftArrowSVGString,
+        gallery: '#pswp-gallery',
+        children: 'figure a',
+        showHideAnimationType: 'zoom',
+        initialZoomLevel: .7,
+        pswpModule: () => import('./asset/js/photoswipe/photoswipe.esm.min.js')
+    };
+    const lightbox = new PhotoSwipeLightbox(options);
+    lightbox.on('uiRegister', function () {
+        lightbox.pswp.ui.registerElement({
+            name: 'custom-caption',
+            order: 9,
+            isButton: false,
+            appendTo: 'root',
+            html: 'Caption text',
+            onInit: (el, pswp) => {
+                lightbox.pswp.on('change', () => {
+                    const currSlideElement = lightbox.pswp.currSlide.data.element;
+                    let captionHTML = '';
+                    if (currSlideElement) {
+                        const hiddenCaption = currSlideElement.querySelector('.detailsImgCaption');
+                        if (hiddenCaption) {
+                            // get caption from element with class hidden-caption-content
+                            captionHTML = hiddenCaption.innerHTML;
+                        } else {
+                            // get caption from alt attribute
+                            captionHTML = currSlideElement.querySelector('img').getAttribute('alt');
+                        }
+                    }
+                    el.innerHTML = captionHTML || '';
+                });
+            }
+        });
+    });
+    lightbox.init();
+</script>
+{{/if}}
+{{#if player}}
+<script type="text/javascript" src="https://cdn.bisnis.com/bisnis/assets/jwplayer/jwplayer.js"></script>
+{{/if}}

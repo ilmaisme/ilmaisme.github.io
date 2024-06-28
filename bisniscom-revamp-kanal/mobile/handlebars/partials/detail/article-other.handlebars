@@ -1,0 +1,17 @@
+<ul class="artOther{{#if mt}} mt{{mt}}{{/if}}">
+    {{#each channel}}
+    {{#gte @index compare=../index_start}}
+    {{#gte @index compare=../index_end}}
+    {{else}}
+    <li class="artOtherItem">
+        <a class="artOtherLink artLink" href="{{link}}">
+            <h4 class="artTitle">
+                {{title}}
+            </h4>
+        </a>
+    </li>
+    {{/gte}}
+    {{else}}
+    {{/gte}}
+    {{/each}}
+</ul>
