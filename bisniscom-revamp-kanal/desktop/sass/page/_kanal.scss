@@ -225,4 +225,49 @@
             }
         }
     }
+
+    &Network {
+        padding: 5px 20px 29px;
+        border-radius: 7px;
+        background: #F5F5F5;
+
+        &Item {
+            margin-top: 24px;
+        }
+
+        &Icon {
+            display: inline-block;
+            position: relative;
+            width: 24px;
+            padding-top: 24px;
+            margin-right: 6px;
+
+            img {
+                @extend %template-img
+            }
+        }
+
+        .artWrap.-row {
+            .artItem {
+                margin-top: 12px;
+            }
+
+            .artImg {
+                width: 75px;
+                padding-top: 75px;
+                border-radius: 0;
+                
+                img{
+                    border-radius: 0;
+                }
+            }
+        }
+
+        .artTitle {
+            margin-top: 0;
+            letter-spacing: 0;
+            -webkit-line-clamp: 3;
+            @include font-pack(false, 14px, false, 1.4, false);
+        }
+    }
 }

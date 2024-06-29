@@ -494,6 +494,24 @@
                 letter-spacing: 0.08em;
                 @include font-pack($font-manrope, 12px, $font-weight-med, normal, #585858);
             }
+
+            &Live {
+                padding-left: 17px;
+                padding-right: 7px;
+                align-self: flex-start;
+                margin-top: 0;
+                margin-bottom: 5px;
+                border-radius: 5px;
+                @include font-pack(false, 12px, $font-weight-sbold, false, $cl-white);
+                background: #D11616;
+
+                &::before {
+                    top: 8px;
+                    left: 8px;
+                    background: $cl-white;
+                    animation: blink 1s infinite;
+                }
+            }
         }
 
         .hL {
@@ -538,12 +556,7 @@
 
                 .slick-next,
                 .slick-prev {
-                    background: $cl-white;
                     opacity: .5;
-
-                    &::after {
-                        filter: none;
-                    }
                 }
 
                 .slick-prev {
@@ -733,56 +746,19 @@
                 background: var(--cl-brown);
             }
         }
-    }
 
-    &--ekonomi {
+        .slick-next,
+        .slick-prev {
+            width: 36px;
+            height: 36px;
+            background: $cl-white;
 
-        .art {
-
-            &Wrap.-col {
-
-                &.-col-4 {
-                    flex-wrap: wrap;
-
-                    .artItem {
-                        width: calc(100%/4 - 20px);
-                        margin-bottom: 20px;
-                        flex: unset;
-                    }
-                }
-            }
-
-            &Item {
-                &.-photo {
-                    position: relative;
-                    margin-top: 24px;
-                }
-            }
-
-            &PhotoCount {
-                position: absolute;
-                top: 0;
-                right: 0;
-                padding: 8px 12px;
-                border-bottom-left-radius: 7px;
-            }
-
-            &Live {
-                padding-left: 17px;
-                padding-right: 7px;
-                align-self: flex-start;
-                margin-top: 0;
-                margin-bottom: 5px;
-                border-radius: 5px;
-                @include font-pack(false, 12px, $font-weight-sbold, false, $cl-white);
-                background: #D11616;
-
-                &::before {
-                    top: 8px;
-                    left: 8px;
-                    background: $cl-white;
-                    animation: blink 1s infinite;
-                }
+            &::after {
+                filter: none;
+                width: 28px;
+                height: 28px;
+                top: 3px;
+                left: 4px;
             }
         }
     }

@@ -31,12 +31,24 @@ $(document).ready(function () {
     }
 
     if ($('.-js-hl-big').length > 0) {
-        // slider photo
+        // slider headline
         $('.-js-hl-big').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
             fade: true,
+            swipe: false,
+            infinite: true,
+            // autoplay: 1,
+        });
+    }
+
+    if ($('.-js-igrafis').length > 0) {
+        // slider infografis
+        $('.-js-igrafis').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
             swipe: false,
             infinite: true,
             // autoplay: 1,
