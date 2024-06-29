@@ -142,41 +142,44 @@
                         </div>
                         <!-- e: leaderboard billboard -->
 
-                        <div class="row mt50">
+                        <div class="row artRow3half mt50">
                             <div class="col-3half">
                                 <div class="titleCaptionWrap">
-                                    <h3 class="titleCaption">
-                                        Startup
+                                    <h3 class="titleCaption--small">
+                                        Market
                                     </h3>
-                                    <a href="#" class="titleOthers">Lihat Lainnya<span
+                                    <a href="#" class="titleOthers" aria-label="See others"><span
                                             class="icoInline icoArrow"></span></a>
                                 </div>
-                                {{>tekno/article channel=kanal.Tekno.Startup.latest type="col-top" total=4 index_start=0
-                                index_end=4}}
+                                {{>homepage/article channel=kanal.Homepage.Market.latest type="col-top" total=4
+                                index_start=0
+                                index_end=4 w="228" h="133" channels=false images_top=true}}
 
                             </div>
                             <div class="col-3half">
                                 <div class="titleCaptionWrap">
-                                    <h3 class="titleCaption">
-                                        Gadget
+                                    <h3 class="titleCaption--small">
+                                        Finansial
                                     </h3>
-                                    <a href="#" class="titleOthers">Lihat Lainnya<span
+                                    <a href="#" class="titleOthers" aria-label="See others"><span
                                             class="icoInline icoArrow"></span></a>
                                 </div>
-                                {{>tekno/article channel=kanal.Tekno.Gadget.latest type="col-top" total=4 index_start=0
-                                index_end=4}}
+                                {{>homepage/article channel=kanal.Homepage.Finansial.latest type="col-top" total=4
+                                index_start=0
+                                index_end=4 w="228" h="133" channels=false images_top=true}}
 
                             </div>
                             <div class="col-3half">
                                 <div class="titleCaptionWrap">
-                                    <h3 class="titleCaption">
-                                        Startup
+                                    <h3 class="titleCaption--small">
+                                        Ekonomi & Bisnis
                                     </h3>
-                                    <a href="#" class="titleOthers">Lihat Lainnya<span
+                                    <a href="#" class="titleOthers" aria-label="See others"><span
                                             class="icoInline icoArrow"></span></a>
                                 </div>
-                                {{>tekno/article channel=kanal.Tekno.Startup.latest type="col-top" total=4 index_start=0
-                                index_end=4}}
+                                {{>homepage/article channel=kanal.Homepage.Ekonomi.latest type="col-top" total=4
+                                index_start=0
+                                index_end=4 w="228" h="133" channels=false images_top=true}}
 
                             </div>
                         </div>
@@ -191,12 +194,33 @@
                         {{>ads/middle}}
                         <!-- e: rectangle billboard -->
 
+                        <!-- s: topik khusus : laporan keuangan -->
+                        <div class="keuangan mt30">
+                            <h3 class="titleCaption center-flex">
+                                <a href="https://www.bisnis.com/topic/3394/laporan-keuangan" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img src="./asset/images/logo/topik-keuangan.svg" alt="Laporan Keuangan logo"
+                                        loading="lazy" width="224" height="29">
+                                </a>
+                            </h3>
+                            {{>homepage/article channel=kanal.Homepage.Finansial.latest type="col-top" total=4
+                            index_start=0
+                            index_end=3 w="300" h="160" channels=false images_top=true}}
+
+                            <div class="center-flex">
+                                <a href="#" class="keuanganOthers">Artikel Lainnya</a>
+                            </div>
+                        </div>
+
+                        <!-- e: topik khusus : laporan keuangan -->
+
                         <!-- s: bplus -->
                         <h3 class="titleCaption mt30">
-                            <div class="bplusCaption">
+                            <a href="https://plus.bisnis.com" target="_blank" rel="noopener noreferrer"
+                                class="bplusCaption">
                                 <img src="./asset/images/logo/logo-bisnis-plus.png" alt="Bisnis Plus logo"
                                     loading="lazy" width="162" height="23">
-                            </div>
+                            </a>
                         </h3>
                         {{>kanal/bplus channel=kanal.Tekno.BisnisPlus.latest total=4 index_start=0 index_end=4}}
 
@@ -205,8 +229,10 @@
                         <!-- s: bisnistv -->
                         <div class="kanalBisnistv mt30">
                             <h3 class="titleCaption">
-                                <img src="./asset/images/logo/bisnistv-logo.png" alt="Bisnistv logo" loading="lazy"
-                                    width="119" height="31">
+                                <a href="https://tv.bisnis.com/" target="_blank" rel="noopener noreferrer">
+                                    <img src="./asset/images/logo/bisnistv-logo.png" alt="Bisnistv logo" loading="lazy"
+                                        width="119" height="31">
+                                </a>
                             </h3>
                             {{>kanal/article channel=kanal.Ekonomi.Video.latest video=true btv=true type="col" total=1
                             index_start=0 index_end=1}}
@@ -225,15 +251,15 @@
                         <!-- e: podcast -->
 
                         <!-- s: QR Bisnis Indonesia -->
-                        <div class="kanalQr mt30">
+                        {{!-- <div class="kanalQr mt30">
                             <img src="./asset/images/QR-bisnis-indonesia.jpg"
                                 alt="Scan QR Code Bisnis Indonesia e-paper" loading="lazy" width="301" height="412">
-                        </div>
+                        </div> --}}
                         <!-- e: QR Bisnis Indonesia -->
 
                         <!-- s: terpopuler -->
-                        <h3 class="titleCaption mt50">Terpopuler</h3>
-                        {{>kanal/most channel=kanal.Tekno.most total=5 index_start=0 index_end=5}}
+                        {{!-- <h3 class="titleCaption mt50">Terpopuler</h3>
+                        {{>kanal/most channel=kanal.Ekonomi.most total=5 index_start=0 index_end=5}} --}}
 
                         <!-- e: terpopuler -->
                     </sidebar>

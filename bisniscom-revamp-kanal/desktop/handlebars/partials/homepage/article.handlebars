@@ -6,6 +6,8 @@
         {{else}}
         <div class="artItem">
             <div class="{{#if ../type}}art--{{../type}}{{/if}}">
+                {{#if ../images_top}}
+                {{#compare @index "==" "0"}}
                 <a href="{{link}}" class="artLink artLinkImg">
                     <div class="artImg">
                         <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../w}}&h={{../h}}" width="{{../w}}"
@@ -17,6 +19,20 @@
                         {{/if}}
                     </div>
                 </a>
+                {{/compare}}
+                {{else}}
+                <a href="{{link}}" class="artLink artLinkImg">
+                    <div class="artImg">
+                        <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../w}}&h={{../h}}" width="{{../w}}"
+                            height="{{../h}}" alt="{{title}}" {{#if ../lcp}}{{else}}loading="lazy" {{/if}}>
+                        {{#if ../video}}
+                        <div class="artDuration">
+                            <span class="icoInline icoPlay"></span>
+                        </div>
+                        {{/if}}
+                    </div>
+                </a>
+                {{/if}}
                 <div class="artContent">
                     {{#compare ../dates "==" false}}
                     <a href="{{link}}" class="artLink">

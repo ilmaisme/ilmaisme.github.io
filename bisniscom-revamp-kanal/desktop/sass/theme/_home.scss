@@ -261,7 +261,8 @@
 
             .artTitle {
                 -webkit-line-clamp: 3;
-                font-size: 15px;
+                letter-spacing: 0;
+                @include font-pack(false, 14px, false, 1.4, false);
             }
         }
 
@@ -311,6 +312,12 @@
                 }
             }
 
+            &Content:has(.artChannel) {
+                .artTitle {
+                    margin-top: 5px;
+                }
+            }
+
             &Wrap.-col {
                 .artImg {
                     padding-top: 58.04%;
@@ -356,9 +363,75 @@
                 }
             }
 
-            &Content:has(.artChannel) {
+            &Wrap.-center {
+                .art--row {
+                    align-items: center;
+                }
+
+                .artContent {
+                    flex-direction: row;
+                    justify-content: flex-start;
+
+                    &Wrap {
+                        align-items: flex-start;
+                    }
+                }
+
+                .artLink {
+                    display: flex;
+                    flex-direction: column;
+                }
+
                 .artTitle {
-                    margin-top: 5px;
+                    margin-top: 0;
+                    margin-bottom: 6px;
+                    @include font-pack(false, 20px, $font-weight-med, 1.3, false);
+                }
+
+                .artChannel {
+                    width: 100px;
+                    padding: 4px 10px;
+                    margin-right: 20px;
+                    text-align: center;
+                }
+            }
+
+            &Row3half {
+                --spacing-row3half: 11px;
+                margin-right: calc(var(--spacing-row3half) - var(--spacing-row3half)* 2);
+                margin-left: calc(var(--spacing-row3half) - var(--spacing-row3half)* 2);
+
+                .col-3half {
+                    padding-left: var(--spacing-row3half);
+                    padding-right: var(--spacing-row3half);
+                }
+
+                .artContent {
+                    min-height: 94px;
+                }
+
+                .artWrap.-col-top .artItem {
+                    margin-top: 8px;
+                    padding-bottom: 18px;
+                    border-bottom: 1px solid #BDBDBD;
+
+                    &:last-child {
+                        border-bottom: 0;
+                        padding-bottom: 0;
+                    }
+                }
+
+                .artWrap.-col-top .artItem:first-child .artImg {
+                    padding-top: 58.04%;
+                }
+
+                .artWrap.-col-top .artItem:first-child {
+                    margin-top: 12px;
+
+                    .art--col-top {
+                        border-bottom: 0;
+                        padding-bottom: 0;
+                    }
                 }
             }
 
@@ -414,6 +487,12 @@
                         filter: invert(70%) sepia(32%) saturate(899%) hue-rotate(348deg) brightness(101%) contrast(98%);
                     }
                 }
+            }
+
+            &Date {
+                margin-top: 0;
+                letter-spacing: 0.08em;
+                @include font-pack($font-manrope, 12px, $font-weight-med, normal, #585858);
             }
         }
 
@@ -537,7 +616,7 @@
                 &:hover {
                     background: linear-gradient(180deg, #ECECEC 0%, #CFCFCF 50.72%, #B2B2B2 100%);
 
-                    .topicTitle{
+                    .topicTitle {
                         color: #323232;
                     }
                 }
@@ -552,6 +631,106 @@
 
             &Img {
                 margin-right: 15px;
+            }
+        }
+
+        .bplus {
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+
+            &Caption {
+                padding: 14px 10px;
+                border-top-left-radius: 7px;
+                border-top-right-radius: 7px;
+            }
+
+            &Item {
+                padding: 15px 20px 0;
+
+                &:first-child {
+                    height: 160px;
+
+                    .bplusContent {
+                        bottom: 0;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        border-bottom: 0;
+                    }
+                }
+
+                &:last-child {
+                    .bplusContent {
+                        border-bottom: 0;
+                    }
+                }
+            }
+
+            &Content {
+                width: 100%;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #585858;
+            }
+
+            &Link:hover {
+                .bplusTitle {
+                    color: #FFAB2E;
+                }
+            }
+
+            &Title {
+                margin-top: 0;
+                letter-spacing: 0;
+                @include font-pack(false, 14px, false, 1.4, $cl-white);
+            }
+            
+            &Others{
+                padding-top: 13px;
+                padding-bottom: 13px;
+                text-transform: none;
+                @include font-pack($font-manrope, 14px, false, false, #222222);
+            }
+
+            .artDate {
+                margin-top: 8px;
+            }
+        }
+
+        .kanal {
+            &Bisnistv {
+                border-radius: 7px;
+
+                .artWrap.-col .artImg {
+                    border-radius: 7px;
+                    margin-bottom: 14px;
+                }
+
+                .artTitle {
+                    order: 0;
+                    margin-top: 0;
+                    margin-bottom: 8px;
+                    font-size: 15px;
+                    color: #000;
+                }
+
+                .artDuration .icoPlay {
+                    &::before {
+                        left: 5px;
+                        border-left: 19px solid var(--cl-brown);
+                    }
+                }
+            }
+        }
+
+        .buttonPrimary {
+            min-width: 160px;
+            border: 1px solid var(--cl-brown);
+            border-radius: 7px;
+            text-transform: none;
+            @include font-pack($font-manrope, false, false, false, var(--cl-brown));
+
+            &:hover {
+                color: $cl-white;
+                background: var(--cl-brown);
             }
         }
     }
@@ -573,38 +752,6 @@
                 }
             }
 
-            &Wrap.-center {
-                .art--row {
-                    align-items: center;
-                }
-
-                .artContent {
-                    flex-direction: row;
-                    justify-content: flex-start;
-
-                    &Wrap {
-                        align-items: flex-start;
-                    }
-                }
-
-                .artLink {
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .artTitle {
-                    margin-top: 0;
-                    margin-bottom: 6px;
-                }
-
-                .artChannel {
-                    width: 100px;
-                    padding: 4px 10px;
-                    margin-right: 20px;
-                    text-align: center;
-                }
-            }
-
             &Item {
                 &.-photo {
                     position: relative;
@@ -618,12 +765,6 @@
                 right: 0;
                 padding: 8px 12px;
                 border-bottom-left-radius: 7px;
-            }
-
-            &Date {
-                margin-top: 0;
-                letter-spacing: 0.08em;
-                @include font-pack($font-manrope, 10px, $font-weight-med, $line-base, #585858);
             }
 
             &Live {
@@ -642,70 +783,6 @@
                     background: $cl-white;
                     animation: blink 1s infinite;
                 }
-            }
-        }
-
-        .kanal {
-
-            &Bisnistv {
-                border-radius: 12px;
-
-                .artWrap.-col .artImg {
-                    border-radius: 7px;
-                }
-
-                .artTitle {
-                    order: 0;
-                    margin-top: 0;
-                    margin-bottom: 8px;
-                    font-size: 15px;
-                    color: #000;
-                }
-
-                .artDuration .icoPlay {
-                    &::before {
-                        left: 5px;
-                        border-left: 19px solid var(--cl-brown);
-                    }
-                }
-            }
-        }
-
-        .sidebar {
-            .artWrap.-row {
-                .artContent {
-                    justify-content: flex-start;
-                    margin-left: 20px;
-                    margin-right: 0;
-                }
-
-                .artLinkImg {
-                    order: 0;
-                }
-
-                .artImg {
-                    width: 80px;
-                    padding-top: calc(2/2*100%);
-                }
-
-                .artTitle {
-                    margin-top: 0;
-                    -webkit-line-clamp: 3;
-                    font-size: 15px;
-                }
-            }
-        }
-
-        .buttonPrimary {
-            min-width: 160px;
-            border: 1px solid var(--cl-brown);
-            border-radius: 7px;
-            text-transform: none;
-            @include font-pack($font-manrope, false, false, false, var(--cl-brown));
-
-            &:hover {
-                color: $cl-white;
-                background: var(--cl-brown);
             }
         }
     }
