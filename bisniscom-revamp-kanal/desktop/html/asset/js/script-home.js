@@ -54,4 +54,35 @@ $(document).ready(function () {
             // autoplay: 1,
         });
     }
+
+    if ($('.-js-slider-premium').length > 0) {
+        // slider infografis
+        $('.-js-slider-premium').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            swipe: false,
+            infinite: false,
+            // autoplay: 1,
+        });
+    }
 })
+
+//cta trigger active
+function triggerActiveButton(el, txt, txtrev, target) {
+    elActive = el.classList.contains('-active');
+    el.classList.toggle('-active');
+    if (!!txt) {
+        if (elActive == false) {
+            el.innerHTML = txt;
+        } else {
+            el.innerHTML = txtrev;
+        }
+    }
+    if (!!target) {
+        let elemtarget = el.parentNode.parentNode.getElementsByClassName(target)[0];
+        tgHeight = elemtarget.scrollHeight;
+        console.log(tgHeight)
+        elemtarget.style.maxHeight = elemtarget.style.maxHeight ? null : tgHeight + 'px';
+    }
+}

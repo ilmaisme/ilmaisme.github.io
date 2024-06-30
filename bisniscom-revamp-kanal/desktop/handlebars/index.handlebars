@@ -43,6 +43,13 @@
 
             <div class="container mt50">
                 <div class="row">
+                    <div class="col-10">
+                        <!-- s: stream -->
+                        {{>stream channel=stream kanal="dummy" pos="center" total=2 index_start=0
+                        index_end=1 bg="#FBFF32" cta=true w="497" h="250" lcp=true}}
+
+                        <!-- e: stream -->
+                    </div>
                     <div class="col-7 col-left">
                         <!-- s: headline -->
                         {{>homepage/headline channel=kanal.Homepage.hL total=8 index_start=5 index_end=8
@@ -65,7 +72,7 @@
                                         class="icoInline icoArrow"></span></a>
                             </div>
                             {{>homepage/article channel=kanal.Homepage.recommend.hot mod="rec" type="col" mt="20"
-                            total=34
+                            total=3
                             index_start=0
                             index_end=3 w=224 h=130 dates=true channels=false}}
                         </div>
@@ -110,7 +117,22 @@
                         <!-- e: topic -->
 
                         <!-- s: premium -->
-                        {{!>premium/article channel=kanal.Lifestyle.Premium.latest}}
+                        <div class="artBorder artPremium premium mt30">
+                            <div class="titleCaptionWrap">
+                                <h3 class="titleCaption titleCaptionWrap">
+                                    <span class="icoInline icoPremium"></span>
+                                    <img src="./asset/images/logo/premium-logo-big.svg" alt="Konten Premium" width="189"
+                                        height="30" loading="lazy">
+                                </h3>
+                                <a href="#" class="titleOthers" aria-label="See others">Lihat berita premium lainnya
+                                    <span class="icoInline icoArrow"></span></a>
+                            </div>
+                            {{>homepage/article channel=kanal.Homepage.Premium.latest type="col" pos="js-slider-premium"
+                            total=6
+                            index_start=0
+                            index_end=6 w=305 h=172}}
+
+                        </div>
 
                         <!-- e: premium -->
                     </div>
@@ -295,7 +317,7 @@
                             <a href="https://open.spotify.com/show/6C5e0qIqWQNqVmSAhZ9CsX" target="_blank"
                                 rel="noreferrer">
                                 <img src="https://cdn.bisnis.com/bisnis/assets/images/Cover_Podcast_Texture_new.png"
-                                    width="300" height="300" loading="lazy">
+                                    width="300" height="300" loading="lazy" alt="Broad Cast">
                             </a>
                         </div>
                         <!-- e: podcast -->
@@ -341,17 +363,54 @@
                         </div>
                         <!-- e: infografis -->
 
+                        <!-- s: regional -->
+                        <div class="artBorder mt30">
+                            <h3 class="titleCaption--small">
+                                Regional Hari Ini
+                            </h3>
+                            {{>homepage/article channel=kanal.Homepage.Regional mod="reg" type="col"
+                            total=3 index_start=0 index_end=3 images=false}}
+
+                        </div>
+                        <!-- e: regional -->
+
                         <!-- s: latest -->
                         {{>homepage/article channel=kanal.Ekonomi.latest type="row" pos="center" total=10 index_start=0
                         index_end=5 w=184 h=104 mt="30"}}
 
                         <!-- e: latest -->
 
+                        <!-- s: editorial -->
+                        <div class="artBorder mt30">
+                            <div class="titleCaptionWrap">
+                                <h3 class="titleCaption--small titleCaptionWrap">
+                                    <div class="kanalNetworkIcon">
+                                        <img src="./asset/images/icon/icon-editorial.svg" alt="" loading="lazy"
+                                            width="24" height="24">
+                                    </div>
+                                    Dari Redaksi
+                                </h3>
+                                <span></span>
+                            </div>
+                            <div class="editorialList row">
+                                {{>kanal/editorial channel=editorial type="col" total=4 index_start=0
+                                index_end=4 w="85" h="85" col="col-5" mt="20"}}
+
+                            </div>
+                        </div>
+                        <!-- e: editorial -->
+
                         <!-- s: latest -->
                         {{>homepage/article channel=kanal.Ekonomi.latest type="row" pos="center" total=10 index_start=0
                         index_end=5 w=184 h=104 mt="30"}}
 
                         <!-- e: latest -->
+
+                        <!-- s: leaderboard billboard -->
+                        <div class="mt30">
+                            {{>ads/leaderboard}}
+                        </div>
+                        <!-- e: leaderboard billboard -->
 
                         <div class="center-flex">
                             <a href="#" class="buttonPrimary">Indeks Berita</a>
@@ -362,6 +421,26 @@
                         {{>ads/middle}}
                         <!-- e: rectangle billboard -->
 
+                        <!-- s: opinion -->
+                        <div class="opinion mt30">
+                            <div class="titleCaptionWrap">
+                                <h3 class="titleCaption--small titleCaptionWrap">
+                                    <div class="kanalNetworkIcon">
+                                        <img src="./asset/images/icon/icon-opinion.svg" alt="" loading="lazy" width="24"
+                                            height="24">
+                                    </div>
+                                    Opini Bisnis
+                                </h3>
+                                <span></span>
+                            </div>
+                            <div class="opinionList">
+                                {{>kanal/opinion channel=opinion total=3 index_start=0
+                                index_end=3 w="60" h="60" mt="20"}}
+
+                            </div>
+                        </div>
+                        <!-- e: opinion -->
+
                         <!-- s: QR Bisnis Indonesia -->
                         <div class="kanalQr mt30">
                             <img src="./asset/images/QR-bisnis-indonesia.jpg"
@@ -369,11 +448,13 @@
                         </div>
                         <!-- e: QR Bisnis Indonesia -->
 
-                        <!-- s: terpopuler -->
-                        <h3 class="titleCaption mt30">Terpopuler</h3>
-                        {{>kanal/most channel=kanal.Ekonomi.most total=5 index_start=0 index_end=5}}
+                        <div class="-sticky">
+                            <!-- s: terpopuler -->
+                            <h3 class="titleCaption mt30">Terpopuler</h3>
+                            {{>kanal/most channel=kanal.Ekonomi.most total=5 index_start=0 index_end=5}}
 
-                        <!-- e: terpopuler -->
+                            <!-- e: terpopuler -->
+                        </div>
 
                     </sidebar>
                 </div>

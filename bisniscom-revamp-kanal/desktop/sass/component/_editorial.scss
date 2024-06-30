@@ -1,0 +1,43 @@
+.editorial {
+    &Item {
+        margin-bottom: 10px;
+
+        &:nth-last-of-type(-n+2) {
+            margin-bottom: 0;
+        }
+    }
+
+    &Link {
+        display: flex;
+        align-items: center;
+    }
+
+    &Img {
+        position: relative;
+        width: 87px;
+        padding-top: 85px;
+        margin-right: 16px;
+        border-radius: 50%;
+        border: 1px solid #BDBDBD;
+        overflow: hidden;
+
+        img {
+            @extend %template-img
+        }
+    }
+
+    &Content {
+        flex: 1;
+        @include font-pack(false, 14px, $font-weight-sbold, 1.4, #000);
+    }
+
+    &Title {
+        @include title_clamp(3);
+    }
+
+    &Author {
+        @include title_clamp(2);
+        margin-top: 8px;
+        @include font-pack($colour: #D11616);
+    }
+}

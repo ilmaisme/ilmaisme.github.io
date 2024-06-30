@@ -1,23 +1,37 @@
-<div class="stream{{#if pos}} -{{pos}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}">
+<div class="stream{{#if pos}} -{{pos}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}" {{#if bg}} style="background: {{bg}}" {{/if}}>
     {{#eq pos compare="center"}}
+    {{#if bg}}
+    {{else}}
     <img src="./asset/images/{{replace (lowercase kanal)}}/stream-bg.jpg" alt="" class="streamBg" loading="lazy"
         width="1082" height="400">
+    {{/if}}
+    {{#if cta}}
+    <div class="titleCaptionWrap">
+        <div class="artLive"><span>Live</span></div>
+        <button class="button streamCollapse -active"
+            onclick="triggerActiveButton(this, 'Collapse', 'Expand', 'streamBlock')">Collapse</button>
+    </div>
+    <div class="streamBlock" style="max-height: 275px;">
+    {{/if}}
     <div class="streamWrap">
         <div class="streamBanner">
-            <img src="./asset/images/{{replace (lowercase kanal)}}/stream-banner.png" alt="" loading="lazy" width="540"
-                height="271">
+            <img src="./asset/images/{{replace (lowercase kanal)}}/stream-banner.png" alt=""{{#if lcp}}{{else}} loading="lazy"{{/if}}
+                width="{{#if w}}{{w}}{{else}}540{{/if}}" height="{{#if h}}{{h}}{{else}}271{{/if}}">
         </div>
         {{#each channel}}
         {{#gte @index compare=../index_start}}
         {{#gte @index compare=../index_end}}
         {{else}}
         <div class="streamVidWrap">
+            {{#compare ../cta "==" true}}
+            {{else}}
             <h3 class="streamCaption">
                 <img src="./asset/images/icon/icon-live.svg" class="streamIcon" alt="" loading="lazy" width="24"
                     height="24">
                 <strong>Live</strong>
                 Streaming
             </h3>
+            {{/compare}}
             <div class="streamVid">
                 <!--<div class="streamImg">
                     <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=460&h=260" alt="" loading="lazy"
@@ -37,6 +51,7 @@
         {{/gte}}
         {{/each}}
     </div>
+    {{#if cta}}</div>{{/if}}
     {{/eq}}
     {{#eq pos compare="left"}}
     <img src="./asset/images/{{replace (lowercase kanal)}}/stream-bg-left.jpg" alt="" class="streamBg" loading="lazy"

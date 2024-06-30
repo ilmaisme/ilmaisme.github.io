@@ -6,6 +6,8 @@
         {{else}}
         <div class="artItem">
             <div class="{{#if ../type}}art--{{../type}}{{/if}}">
+                {{#eq ../images compare = false}}
+                {{else}}
                 {{#if ../images_top}}
                 {{#compare @index "==" "0"}}
                 <a href="{{link}}" class="artLink artLinkImg">
@@ -33,6 +35,7 @@
                     </div>
                 </a>
                 {{/if}}
+                {{/eq}}
                 <div class="artContent">
                     {{#compare ../dates "==" false}}
                     <a href="{{link}}" class="artLink">

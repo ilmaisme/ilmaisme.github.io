@@ -1,0 +1,20 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="editorialItem{{#if ../col}} {{../col}}{{/if}}{{#if ../mt}} mt{{../mt}}{{/if}}">
+    <a href="{{link}}" class="editorialLink">
+        <div class="editorialImg">
+            <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../w}}&h={{../h}}" width="{{../w}}"
+                height="{{../h}}" alt="{{author}}" loading="lazy">
+        </div>
+        <div class="editorialContent">
+            <h4 class="editorialTitle">{{title}}</h4>
+            <div class="editorialAuthor">{{author}}</div>
+        </div>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

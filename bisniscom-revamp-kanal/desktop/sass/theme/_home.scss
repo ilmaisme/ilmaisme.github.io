@@ -29,7 +29,7 @@
         }
 
         &:has(.billboardPushdown) .root:has(.network--campaign) .flashnews~.skyscrapper {
-            transform: translateY(476px);
+            transform: translateY(504px);
         }
 
         &:has(.billboardPushdown).bp_scroll .root:has(.network--campaign) .flashnews~.skyscrapper {
@@ -214,6 +214,7 @@
             width: 14px;
             height: 14px;
             vertical-align: top;
+            filter: invert(70%) sepia(32%) saturate(899%) hue-rotate(348deg) brightness(101%) contrast(98%);
         }
 
         .title {
@@ -309,6 +310,28 @@
                 .artItem {
                     margin-left: var(--spacing-rec);
                     margin-right: var(--spacing-rec);
+                }
+            }
+
+            &Border {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border-top: 1px solid #3D3D3D;
+                border-bottom: 1px solid #3D3D3D;
+            }
+
+            &.-reg {
+                --spacing-reg: 14px;
+
+                .artWrap {
+                    margin-right: calc(var(--spacing-reg) - var(--spacing-reg)* 2);
+                    margin-left: calc(var(--spacing-reg) - var(--spacing-reg)* 2);
+                }
+
+                .artItem {
+                    margin-top: var(--spacing-reg);
+                    margin-left: var(--spacing-reg);
+                    margin-right: var(--spacing-reg);
                 }
             }
 
@@ -512,6 +535,61 @@
                     animation: blink 1s infinite;
                 }
             }
+
+            &Premium {
+                --spacing-premium: 13px;
+
+                .art {
+                    &Wrap {
+                        overflow: hidden;
+                        max-height: 305px;
+
+                        margin-right: calc(var(--spacing-premium) - var(--spacing-premium)* 2);
+                        margin-left: calc(var(--spacing-premium) - var(--spacing-premium)* 2);
+                        padding-right: var(--spacing-premium);
+
+                        .artItem {
+                            margin-left: var(--spacing-premium);
+                            margin-right: var(--spacing-premium);
+                        }
+
+                        &.slick-initialized {
+                            max-height: unset;
+                        }
+                    }
+
+                    &Item {
+                        margin-top: 24px;
+                    }
+                }
+
+                .titleOthers {
+                    color: #585858;
+
+                    .icoArrow {
+                        filter: invert(35%) sepia(0%) saturate(1411%) hue-rotate(145deg) brightness(91%) contrast(84%);
+                    }
+                }
+
+                .slick {
+                    &-list {
+                        padding-right: 100px;
+                    }
+
+                    &-next,
+                    &-prev {
+                        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+                    }
+
+                    &-next {
+                        right: 0;
+                    }
+
+                    &-prev {
+                        left: 0;
+                    }
+                }
+            }
         }
 
         .hL {
@@ -522,6 +600,13 @@
             }
 
             &Big {
+                overflow: hidden;
+                max-height: 406px;
+
+                &.slick-initialized {
+                    max-height: unset;
+                }
+
                 &Title {
                     @include font-pack(false, 24px, false, 1.2, $cl-white);
                 }
@@ -695,8 +780,8 @@
                 letter-spacing: 0;
                 @include font-pack(false, 14px, false, 1.4, $cl-white);
             }
-            
-            &Others{
+
+            &Others {
                 padding-top: 13px;
                 padding-bottom: 13px;
                 text-transform: none;
@@ -759,6 +844,23 @@
                 height: 28px;
                 top: 3px;
                 left: 4px;
+            }
+        }
+
+        .stream {
+            border-radius: 0;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+
+            &.-center {
+                .streamVid {
+                    margin-top: 0;
+                }
+
+                .streamWrap {
+                    padding: 0;
+                    margin-top: 15px;
+                }
             }
         }
     }
