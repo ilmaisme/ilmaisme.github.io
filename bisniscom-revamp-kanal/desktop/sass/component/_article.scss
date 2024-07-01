@@ -336,6 +336,71 @@
             text-transform: uppercase;
             @include font-pack($font-body, 14px, $font-weight-sbold, $line-base, #6A4B37);
         }
+
+        &Nav {
+            @extend .container;
+            display: flex;
+            position: absolute;
+            bottom: 54px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+
+            &Wrap {
+                display: flex;
+                position: relative;
+                padding-top: 12px;
+                border-top: 1px solid #585858;
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: -1px;
+                    width: 0;
+                    border-top: 3px solid #FDB043;
+                }
+
+                .artPhotoNavContent .artTitle {
+                    margin-top: 8px;
+                    text-align: left;
+                    @include font-pack(false, 14px, false, false, false);
+                }
+            }
+
+            &Img {
+                position: relative;
+                width: 75px;
+                height: 75px;
+                background: #C4C4C4;
+                border-radius: 7px;
+                margin-right: 13px;
+                overflow: hidden;
+
+                img {
+                    border-radius: 7px;
+                    @extend %template-img;
+                }
+            }
+
+            &Content {
+                flex: 1;
+                margin-right: 13px;
+            }
+
+            .slick-track {
+                transform: none !important
+            }
+
+            .slick-current {
+                .artPhotoNavWrap {
+                    &::before{
+                        width: 100%;
+                        transition: width 3s linear;
+                    }
+                }
+            }
+        }
     }
 
     &Other {
