@@ -931,23 +931,34 @@
         }
 
         .stream {
-            border-radius: 0;
-            padding: 15px 20px;
+            border-radius: 20px;
             margin-bottom: 20px;
 
             &.-center {
                 .streamVid {
                     margin-top: 0;
+                    width: 533px;
+                    height: 300px;
                 }
 
                 .streamWrap {
-                    padding: 0;
-                    margin-top: 15px;
+                    padding: 0 20px 15px;
+                }
+
+                .streamCaption{        
+                    @include font-pack($font-manrope, 15px, $font-weight-sbold, normal, $cl-white);
                 }
             }
 
             .artLive {
                 margin-bottom: 0;
+                margin-right: 10px
+            }
+
+            .streamCaptionWrap{
+                @extend .titleCaptionWrap;
+                padding: 15px 20px;
+                position: relative;
             }
         }
     }

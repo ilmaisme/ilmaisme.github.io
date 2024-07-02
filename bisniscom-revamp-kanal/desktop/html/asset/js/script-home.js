@@ -96,9 +96,10 @@ $(document).ready(function () {
 })
 
 //cta trigger active
-function triggerActiveButton(el, txt, txtrev, target) {
+function triggerActiveButton(el, txt, txtrev, target, parent) {
     elActive = el.classList.contains('-active');
     el.classList.toggle('-active');
+    let elemparent = el.parentNode.parentNode;
     if (!!txt) {
         if (elActive == false) {
             el.innerHTML = txt;
@@ -106,8 +107,11 @@ function triggerActiveButton(el, txt, txtrev, target) {
             el.innerHTML = txtrev;
         }
     }
+    if (!!parent) {
+        elemparent.classList.toggle('-active');
+    }
     if (!!target) {
-        let elemtarget = el.parentNode.parentNode.getElementsByClassName(target)[0];
+        let elemtarget = document.getElementsByClassName(target)[0];
         tgHeight = elemtarget.scrollHeight;
         console.log(tgHeight)
         elemtarget.style.maxHeight = elemtarget.style.maxHeight ? null : tgHeight + 'px';
