@@ -1,7 +1,7 @@
 .theme {
     &--home {
         font-family: $font-manrope;
-        --hg-htop: 60px;
+        --hg-htop: calc(60px + 32px);
         --cl-brown: #803C00;
         --filter-brown: invert(24%) sepia(95%) saturate(982%) hue-rotate(5deg) brightness(91%) contrast(103%);
 
@@ -18,7 +18,7 @@
                 transform: translateY(176px);
 
                 &.-top {
-                    transform: translateY(100px);
+                    transform: translateY(120px);
                 }
             }
 
@@ -31,18 +31,6 @@
         .billboardPushdown~.root .flashnews~.skyscrapper {
             transform: translateY(454px);
         }
-
-        /*&:has(.billboardPushdown) .root:has(.network--campaign) .flashnews~.skyscrapper {
-            transform: translateY(504px);
-        }
-
-        &:has(.billboardPushdown).bp_scroll .root:has(.network--campaign) .flashnews~.skyscrapper {
-            transform: translateY(100px);
-        }
-
-        &:has(.network--campaign) .flashnews~.skyscrapper {
-            transform: translateY(226px);
-        }*/
 
         .col-left {
             padding-right: 34px;
@@ -57,6 +45,11 @@
             }
 
             &Logo {
+                &Wrap {
+                    transform: translateX(0);
+                    transition: transform .5s ease-out;
+                }
+
                 img {
                     width: auto;
                     height: 36px;
@@ -142,7 +135,7 @@
         }
 
         .navLink {
-            padding: 13px 10px;
+            padding: 16px 10px 10px;
             @include font-pack($font-manrope, 13px, $font-weight-bold, false, #545454);
             letter-spacing: 0.02em;
             text-transform: uppercase;
@@ -188,26 +181,240 @@
         }
 
         .network {
+            position: fixed;
+            transition: transform .5s ease;
+            z-index: 6; //above .headerTop
+
             ~.flashnews {
                 transform: translateY(140px);
             }
         }
 
+        &:has(.billboardPushdown) {
+            .main {
+                padding-top: calc(60px);
+            }
+
+            &.-scroll {
+                .header {
+                    &Logo {
+                        img {
+                            height: 36px;
+                        }
+
+                        &Wrap {
+                            transform: none;
+                        }
+                    }
+                }
+
+                .flashnews {
+                    transform: translateY(140px);
+                }
+
+                &.-nav {
+                    .nav {
+                        position: relative;
+                        left: 0;
+                        transform: none;
+                        background: $cl-white;
+                    }
+
+                    .headerWrap {
+                        width: 1110px;
+                        min-width: unset;
+                        height: var(--hg-htop);
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+
+                    .main {
+                        padding-top: calc(60px);
+                    }
+                }
+            }
+
+            .network {
+                position: relative;
+            }
+
+            &.bp_scroll {
+                .network {
+                    position: fixed;
+                }
+
+                &.-scroll {
+                    .network {
+                        transform: translateY(0);
+                    }
+
+                    .header {
+                        &Logo {
+                            img {
+                                height: 20px;
+                            }
+
+                            &Wrap {
+                                transform: translateX(-470px);
+
+                                @include min-responsive($mgtablet) {
+                                    transform: translateX(-525px);
+                                }
+                            }
+                        }
+
+                        /*&LoginLabel {
+                            opacity: 0;
+                            visibility: hidden;
+                            width: 0;
+                            margin-left: 0;
+                        }*/
+                    }
+
+                    .flashnews {
+                        transform: translateY(80px);
+                    }
+
+                    &.-nav {
+                        .nav {
+                            width: auto;
+                            background: transparent;
+                            position: fixed;
+                            left: 50%;
+                            transform: translateX(-50%) translateY(32px);
+                            z-index: 6; //above .headerTop
+
+                            &Menu {
+                                background: $cl-white;
+                                min-width: unset;
+                                width: 940px;
+                                padding-right: 0;
+                                padding-left: 0;
+                                margin-right: auto;
+                                margin-left: auto;
+
+                                @include min-responsive($mgtablet) {
+                                    width: $mxtablet;
+                                }
+                            }
+
+                            &Item {
+                                margin-left: 2px;
+                                margin-right: 2px;
+
+                                @include min-responsive($mgtablet) {
+                                    margin-left: 6px;
+                                    margin-right: 6px;
+                                }
+                            }
+                        }
+
+                        .headerWrap {
+                            // width: 100%;
+                            // max-width: $mgtablet;
+                            width: 100%;
+                            min-width: 1230px;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            height: 48px;
+
+                            @include min-responsive($mgtablet) {
+                                width: 1375px;
+                            }
+                        }
+
+                        .main {
+                            padding-top: calc(var(--hg-htop) + 40px);
+
+                            .menuPanel {
+                                top: 80px;
+                                height: calc(100vh - 80px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.bp_scroll>.billboardPushdown~.root .flashnews~.skyscrapper {
+            transform: translateY(120px);
+        }
+
         &.-scroll {
             .header {
-                .headerTop {
-                    transform: translateY(0);
+                &Logo {
+                    img {
+                        height: 20px;
+                    }
+
+                    &Wrap {
+                        transform: translateX(-470px);
+
+                        @include min-responsive($mgtablet) {
+                            transform: translateX(-525px);
+                        }
+                    }
                 }
             }
 
             .flashnews {
-                transform: translateY(60px);
+                transform: translateY(80px);
+            }
 
-                /*~.main {
-                    .network--campaign {
-                        transform: translateY(0);
+            &.-nav {
+                .nav {
+                    width: auto;
+                    background: transparent;
+                    position: fixed;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(32px);
+                    z-index: 6; //above .headerTop
+
+                    &Menu {
+                        background: $cl-white;
+                        min-width: unset;
+                        width: 940px;
+                        padding-right: 0;
+                        padding-left: 0;
+                        margin-right: auto;
+                        margin-left: auto;
+
+                        @include min-responsive($mgtablet) {
+                            width: $mxtablet;
+                        }
                     }
-                }*/
+
+                    &Item {
+                        margin-left: 2px;
+                        margin-right: 2px;
+
+                        @include min-responsive($mgtablet) {
+                            margin-left: 6px;
+                            margin-right: 6px;
+                        }
+                    }
+                }
+
+                .headerWrap {
+                    width: 100%;
+                    min-width: 1230px;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    height: 48px;
+
+                    @include min-responsive($mgtablet) {
+                        width: 1375px;
+                    }
+                }
+
+                .main {
+                    padding-top: calc(var(--hg-htop) + 40px);
+
+                    .menuPanel {
+                        top: 80px;
+                        height: calc(100vh - 80px);
+                    }
+                }
             }
 
         }
@@ -219,6 +426,45 @@
             height: 14px;
             vertical-align: top;
             filter: invert(70%) sepia(32%) saturate(899%) hue-rotate(348deg) brightness(101%) contrast(98%);
+        }
+
+        .premiumBox {
+            position: relative;
+            background: #F6CB69;
+            padding: 14px;
+            height: 282px;
+            margin-bottom: 0;
+            border-radius: 7px;
+            flex-direction: column;
+            overflow: hidden;
+
+            &Caption {
+                position: relative;
+                margin-top: 0;
+                @include font-pack($font-manrope, 16px, $font-weight-sbold, 1.3, #000000);
+            }
+
+            &Login {
+                position: relative;
+                display: inline-flex;
+                margin-top: 20px;
+                padding: 12px 26px;
+                background: #222222;
+                border-radius: 50px;
+                @include font-pack($font-manrope, 12px, $font-weight-bold, 1, $cl-white);
+
+                .icoLoginPremium {
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 5px;
+                    filter: invert(100%) sepia(2%) saturate(113%) hue-rotate(16deg) brightness(112%) contrast(101%);
+                }
+            }
+
+            &Bg {
+                position: absolute;
+                left: -50px;
+            }
         }
 
         .title {
@@ -559,6 +805,16 @@
 
                         &.slick-initialized {
                             max-height: unset;
+
+                            .slick-list.lastItem {
+                                padding-left: 100px;
+                                padding-right: 0;
+                                transform: translateX(var(--spacing-premium));
+
+                                .artItem {
+                                    width: 305px !important;
+                                }
+                            }
                         }
                     }
 
@@ -939,13 +1195,17 @@
                     margin-top: 0;
                     width: 533px;
                     height: 300px;
+
+                    &Wrap {
+                        box-shadow: 0px 0px 30px 0px #597BEE;
+                    }
                 }
 
                 .streamWrap {
-                    padding: 0 20px 15px;
+                    padding: 0 20px 25px;
                 }
 
-                .streamCaption{        
+                .streamCaption {
                     @include font-pack($font-manrope, 15px, $font-weight-sbold, normal, $cl-white);
                 }
             }
@@ -955,7 +1215,7 @@
                 margin-right: 10px
             }
 
-            .streamCaptionWrap{
+            .streamCaptionWrap {
                 @extend .titleCaptionWrap;
                 padding: 15px 20px;
                 position: relative;

@@ -64,6 +64,12 @@ $(document).ready(function () {
             swipe: false,
             infinite: false,
             // autoplay: 1,
+        }).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            if (nextSlide == slick.slideCount - 3) {
+                $('.slick-list').addClass('lastItem');
+            } else {
+                $('.slick-list').removeClass('lastItem');
+            }
         });
     }
 
@@ -79,7 +85,7 @@ $(document).ready(function () {
             autoplay: true,
             speed: 1000,
             autoplaySpeed: 2000,
-            accessibility: false,
+            // accessibility: false,
             asNavFor: '.-js-photo-slider-nav',
         });
         $('.-js-photo-slider-nav').slick({
@@ -91,7 +97,7 @@ $(document).ready(function () {
             focusOnSelect: true,
             centerMode: false,
             speed: 1000,
-            accessibility: false,
+            // accessibility: false,
             asNavFor: '.-js-photo-slider',
         });
     }

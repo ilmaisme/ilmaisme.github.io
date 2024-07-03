@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head page="Homepage" hl=true font=true channel=site.Homepage}}
+
+<body class="theme--home">
+
+    <!-- s: pushdown billboard -->
+    {{>ads/pushdown}}
+    <!-- e: pushdown billboard -->
+
+    <div class="root">
+        <!-- s: flashnews -->
+        {{>flashnews channel=flashnews span=true}}
+        <!-- e: flashnews -->
+
+        {{>header/header kanal="Homepage" channel=mainMenu.Homepage nav=true active="Home" icon=false}}
+
+        <main role="main" class="main">
+
+            <!-- s: menu panel -->
+            {{>header/menu login=true}}
+            {{!>header/menu}}
+            <!-- e: menu panel -->
+
+            <div class="container mt20">
+
+                <!-- s: headline -->
+                {{>ekonomi/headline channel=kanal.Ekonomi.hL total=5 index_start=0 index_end=4 index_big_start=4
+                index_big_end=5}}
+
+                <!-- e: headline -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                <!-- s: topic -->
+                <h3 class="titleCaption mt30"><span class="topicCaption">#</span> Hot Topic</h3>
+                {{>topic channel=topic total=9 index_start=3 index_end=9}}
+
+                <!-- e: topic -->
+
+                <!-- s: live -->
+                {{>live channel=kanal.Ekonomi.live.latest mt="30" total=4 index_start=0 index_end=4}}
+                <!-- e: live -->
+
+                <!-- s: rec -->
+                <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
+                {{>ekonomi/article channel=kanal.Ekonomi.recommend.latest grid="row" column="col-5" mt="16" width="145"
+                height="109"
+                total=4 index_start=0 index_end=4 dates=false}}
+
+                <!-- e: rec -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                <!-- s: terpopuler -->
+                <h3 class="titleCaption mt30">Terpopuler</h3>
+                {{>kanal/most channel=kanal.Ekonomi.most total=4 index_start=0 index_end=4}}
+
+                <!-- e: terpopuler -->
+
+                <!-- s: latest -->
+                <h3 class="titleCaption mt30">Berita Terbaru</h3>
+                {{>ekonomi/article channel=kanal.Ekonomi.latest type="row"
+                width="127" height="72" index_start=0
+                index_end=6}}
+
+                <!-- e: latest -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                {{>ekonomi/article channel=kanal.Ekonomi.latest mt="30" type="row"
+                width="127" height="72" total=5 index_start=4
+                index_end=10}}
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                <!-- s: bplus -->
+                <h3 class="titleCaption mt30">
+                    <div class="bplusCaption">
+                        <img src="./asset/images/logo/logo-bisnis-plus.png" alt="Bisnis Plus logo" loading="lazy"
+                            width="162" height="23">
+                    </div>
+                </h3>
+                {{>kanal/bplus channel=kanal.Lifestyle.BisnisPlus.latest total=4 index_start=0 index_end=4}}
+
+                <!-- e: bplus -->
+
+                <!-- s: bisnistv -->
+                <div class="kanalBisnistv mt30">
+                    <h3 class="titleCaption">
+                        <img src="./asset/images/logo/bisnistv-logo.png" alt="Bisnistv logo" loading="lazy" width="119"
+                            height="31">
+                    </h3>
+                    {{>kanal/article channel=kanal.Lifestyle.Video.latest video=true btv=true center=true width="335"
+                    height="170" type="col" total=4
+                    index_start=3 index_end=4}}
+
+                </div>
+
+                <!-- e: bisnistv -->
+
+                <!-- s: podcast -->
+                <div class="podcast mt30">
+                    <a href="https://open.spotify.com/show/6C5e0qIqWQNqVmSAhZ9CsX" target="_blank" rel="noreferrer">
+                        <img src="https://cdn.bisnis.com/bisnis/assets/images/Cover_Podcast_Texture_new.png" width="300"
+                            height="300" loading="lazy" alt="Broad Cast">
+                    </a>
+                </div>
+                <!-- e: podcast -->
+
+                <!-- s: foto -->
+                <!-- e: foto -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                <!-- s: infografis -->
+                <!-- e: infografis -->
+
+                <!-- s: regional -->
+                <!-- e: regional -->
+
+                <!-- s: opinion -->
+                <!-- e: opinion -->
+
+                <!-- s: QR Bisnis Indonesia -->
+                <div class="mt30 text-center">
+                    <img src="./asset/images/QR-bisnis-indonesia.jpg" alt="Scan QR Code Bisnis Indonesia e-paper"
+                        loading="lazy" width="328" height="441">
+                </div>
+                <!-- e: QR Bisnis Indonesia -->
+
+                {{>ekonomi/article channel=kanal.Ekonomi.latest mt="30" type="row"
+                width="127" height="72" total=5 index_start=4
+                index_end=10}}
+
+                <!-- s: editorial -->
+                <!-- e: editorial -->
+
+                {{>ekonomi/article channel=kanal.Ekonomi.latest mt="30" type="row"
+                width="127" height="72" total=5 index_start=3
+                index_end=9}}
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
+
+                <div class="center-flex">
+                    <a href="#" class="buttonPrimary mt30">Indeks Berita</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- s: bottom billboard -->
+    {{>ads/bottom}}
+    <!-- e: bottom billboard -->
+
+    {{>footer/footer}}
+
+    {{>footer/script page="ekonomi"}}
+    <script>
+        var imgLCP = document.getElementById("imgLCP");
+        const preloadImage = src =>
+            new Promise(resolve => {
+                const image = new Image();
+                const onLoad = () => {
+                    resolve(image);
+                };
+                image.addEventListener('load', onLoad, { once: true });
+                image.src = src;
+            });
+        const src = 'https://images.bisnis.com/thumb/posts/2023/06/19/1666608/mpv-shot0004-1-1.jpg?w=384&h=216';
+        preloadImage(src).then(image => {
+            // Here the image has been loaded and is available to be appended, or otherwise.
+            imgLCP.firstElementChild.style.display = 'none';
+            imgLCP.append(image);
+        });
+    </script>
+
+</body>
+
+</html>
