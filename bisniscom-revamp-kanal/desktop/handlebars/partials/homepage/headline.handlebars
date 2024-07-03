@@ -5,10 +5,17 @@
         {{#gte @index compare=../index_big_end}}
         {{else}}
         <div class="hLBigItem">
-            <a href="{{link}}" class="hLLink artLink">
+            <a href="{{link}}" class="hLLink artLink" aria-label="{{title}}">
+                {{#compare @index "==" 0}}
+                <div class="hLBigImg artImg" id="imgLCP">
+                    {{!-- <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=728&amp;h=406" alt="{{title}}" width="728" height="406"> --}}
+                    <img src="./asset/images/thumb.jpg" alt="{{title}}" width="150" height="125">
+                </div>
+                {{else}}
                 <div class="hLBigImg artImg">
                     <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=728&amp;h=406" alt="{{title}}" width="728" height="406">
                 </div>
+                {{/compare}}
             </a>
             <div class="hLBigContent">
                 <div class="artContentWrap">

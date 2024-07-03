@@ -128,9 +128,9 @@
                                     <span class="icoInline icoArrow"></span></a>
                             </div>
                             {{>homepage/article channel=kanal.Homepage.Premium.latest type="col" pos="js-slider-premium"
-                            total=6
+                            total=8
                             index_start=0
-                            index_end=6 w=305 h=172}}
+                            index_end=8 w=305 h=172}}
 
                         </div>
 
@@ -335,7 +335,8 @@
                     <a href="#" class="titleOthers" aria-label="See others">Lihat lainnya<span
                             class="icoInline icoArrow"></span></a>
                 </div>
-                {{>homepage/photo channel=kanal.Homepage.Foto.latest total=5 index_start=0 index_end=4 w="1080" h="550"}}
+                {{>homepage/photo channel=kanal.Homepage.Foto.latest total=5 index_start=0 index_end=4 w="1080"
+                h="550"}}
 
             </div>
             <!-- e: foto -->
@@ -470,6 +471,26 @@
     {{>footer/footer}}
 
     {{>footer/script page="homepage" slick=true}}
+    <script>
+        var imgLCP = document.getElementById("imgLCP");
+        const preloadImage = src =>
+            new Promise(resolve => {
+                const image = new Image();
+                const onLoad = () => {
+                    resolve(image);
+                };
+                image.addEventListener('load', onLoad, { once: true });
+                image.src = src;
+                image.alt = alt;
+            });
+        const src = 'https://images.bisnis.com/thumb/posts/2024/06/28/1777779/peluncuran_logo_baru_bank_tabungan_negara_bbtn_1709462290.jpg?w=728&h=406',
+            alt = '';
+        preloadImage(src).then(image => {
+            // Here the image has been loaded and is available to be appended, or otherwise.
+            imgLCP.firstElementChild.style.display = 'none';
+            imgLCP.append(image);
+        });
+    </script>
 
 </body>
 
