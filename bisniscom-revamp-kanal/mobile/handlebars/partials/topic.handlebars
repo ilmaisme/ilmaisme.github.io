@@ -6,6 +6,12 @@
         {{else}}
         <li class="topicItem">
             <a href="{{link}}" class="topicLink">
+                {{#if ../images}}
+                <div class="topicImg">
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../w}}&h={{../h}}" width="{{../w}}"
+                            height="{{../h}}" alt="" {{#if ../lcp}}{{else}}loading="lazy" {{/if}}>
+                </div>
+                {{/if}}
                 <h4 class="topicTitle">{{title}}</h4>
             </a>
         </li>

@@ -47,22 +47,25 @@
                 <!-- e: rectangle billboard -->
 
                 <!-- s: topic -->
-                <h3 class="titleCaption mt30"><span class="topicCaption">#</span> Hot Topic</h3>
-                {{>topic channel=topic total=9 index_start=3 index_end=9}}
+                <h3 class="titleCaption text-center mt30"><span class="topicCaption">#</span> Hot Topic</h3>
+                {{>topic channel=topic total=9 index_start=4 index_end=9 images=true w="55"
+                h="55"}}
 
                 <!-- e: topic -->
 
-                <!-- s: live -->
-                {{>live channel=kanal.Ekonomi.live.latest mt="30" total=4 index_start=0 index_end=4}}
-                <!-- e: live -->
+                <!-- s: hot topic -->
+                <div class="artRec mt30">
+                    <div class="titleCaptionWrap">
+                        <h3 class="titleCaption--small">Uang Kuliah Tunggal (UKT)</h3>
+                        <a href="#" class="titleOthers">Lihat Lainnya<span class="icoInline icoArrow"></span></a>
+                    </div>
+                    {{>homepage/article channel=kanal.Homepage.recommend.hot mod="rec" type="col" mt="20"
+                    total=3
+                    index_start=0
+                    index_end=3 width=200 height=112 channels=false}}
+                </div>
 
-                <!-- s: rec -->
-                <h3 class="titleCaption mt30">Rekomendasi Kami</h3>
-                {{>ekonomi/article channel=kanal.Ekonomi.recommend.latest grid="row" column="col-5" mt="16" width="145"
-                height="109"
-                total=4 index_start=0 index_end=4 dates=false}}
-
-                <!-- e: rec -->
+                <!-- e: hot topic -->
 
                 <!-- s: rectangle billboard -->
                 <div class="mt30">
@@ -70,11 +73,31 @@
                 </div>
                 <!-- e: rectangle billboard -->
 
-                <!-- s: terpopuler -->
-                <h3 class="titleCaption mt30">Terpopuler</h3>
-                {{>kanal/most channel=kanal.Ekonomi.most total=4 index_start=0 index_end=4}}
+                <!-- s: premium -->
+                <div class="artBorder artPremium premium mt30">
+                    <div class="titleCaptionWrap">
+                        <h3 class="titleCaption titleCaptionWrap">
+                            <span class="icoInline icoPremium"></span>
+                            <img src="./asset/images/logo/premium-logo-big.svg" alt="Konten Premium" width="145"
+                                height="23" loading="lazy">
+                        </h3>
+                        <a href="#" class="titleOthers" aria-label="See others">Lihat lainnya
+                            <span class="icoInline icoArrow"></span></a>
+                    </div>
+                    {{>homepage/article channel=kanal.Homepage.Premium.latest type="col" grid="-premium"
+                    total=8
+                    index_start=0
+                    index_end=8 width=200 height=112 mt="20"}}
 
-                <!-- e: terpopuler -->
+                </div>
+
+                <!-- e: premium -->
+
+                <!-- s: rectangle billboard -->
+                <div class="mt30">
+                    {{>ads/middle}}
+                </div>
+                <!-- e: rectangle billboard -->
 
                 <!-- s: latest -->
                 <h3 class="titleCaption mt30">Berita Terbaru</h3>
@@ -99,6 +122,12 @@
                     {{>ads/middle}}
                 </div>
                 <!-- e: rectangle billboard -->
+
+                <!-- s: terpopuler -->
+                <h3 class="titleCaption mt30">Terpopuler</h3>
+                {{>kanal/most channel=kanal.Ekonomi.most total=4 index_start=0 index_end=4}}
+
+                <!-- e: terpopuler -->
 
                 <!-- s: bplus -->
                 <h3 class="titleCaption mt30">

@@ -1,0 +1,76 @@
+<div class="art{{#if mt}} mt{{mt}}{{/if}}">
+    <div
+        class="artWrap{{#if type}} -{{type}}{{/if}}{{#if pos}}-{{pos}}{{/if}}{{#if small}} -small{{/if}}{{#if center}} -center{{/if}}{{#if grid}} {{grid}}{{/if}}">
+        {{#each channel}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <div class="artItem{{#if ../column}} {{../column}}{{/if}}">
+            <a href="{{link}}" class="artLink artLinkImg">
+                <div class="artImg">
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../width}}&h={{../height}}"
+                        width="{{../width}}" height="{{../height}}" alt="{{title}}" {{#if ../lcp}}{{else}}loading="lazy"
+                        {{/if}}>
+                    {{#if ../video}}
+                    <div class="artDuration">
+                        <span class="icoInline icoPlay"></span>
+                        {{#if ../btv}}{{else}}04.22{{/if}}
+                    </div>
+                    {{/if}}
+                </div>
+            </a>
+            <div class="artContent">
+                {{#compare ../dates "==" false}}
+                {{else}}
+                <div class="artContentWrap">
+                    {{#compare ../channels "==" false}}
+                    {{else}}
+                    {{#compare ../pos "==" "center"}}
+                    {{else}}
+                    {{#if premium}}
+                    <div class="artChannel -premium">
+                        <a href="subkanal-ekonomi.html">
+                            <span class="icoInline icoPremium"></span>Premium
+                        </a>
+                    </div>
+                    {{else}}
+                    <div class="artChannel">
+                        <a href="subkanal-ekonomi.html">
+                            {{channel}}
+                        </a>
+                    </div>
+                    {{/if}}
+                    {{/compare}}
+                    {{/compare}}
+                    <div class="artDate">
+                        9 menit yang lalu
+                    </div>
+                </div>
+                {{/compare}}
+                <a href="{{link}}" class="artLink">
+                    {{#if live}}
+                    <div class="artLive"><span>Live</span></div>
+                    {{/if}}
+                    <h4 class="artTitle">
+                        {{title}}
+                    </h4>
+                </a>
+            </div>
+        </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+        {{#compare grid "==" "-premium"}}
+        <div class="artItem">
+            <div class="premiumBox center-flex">
+                <img src="./asset/images/logo/bisniscom-icon-premium.png" class="premiumBoxBg" alt="" width="255" height="332" loading="lazy">
+                <div class="premiumBoxCaption">
+                    Dapatkan konten-konten eksklusif dari Bisnis.com dengan cara bergabung di BisnisID.
+                </div>
+                <a href="#" class="premiumBoxLogin"><span class="icoInline icoLoginPremium"></span>Login BisnisID</a>
+            </div>
+        </div>
+        {{/compare}}
+    </div>
+</div>

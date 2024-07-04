@@ -171,15 +171,54 @@
             }
         }
 
+        .title {
+            &Caption {
+                letter-spacing: .22px;
+                @include font-pack($font-manrope, 22px, false, false, #222222);
+
+                &--small {
+                    @include title_clamp(1);
+                    flex: 1;
+                    padding-right: 5px;
+                    color: #222222;
+                    letter-spacing: .15px;
+                }
+            }
+
+            &Others {
+                @include font-pack($font-manrope, 11px, false, normal, #585858);
+                letter-spacing: .44px;
+
+                .icoArrow {
+                    width: 12px;
+                    height: 12px;
+                    filter: invert(35%) sepia(0) saturate(1411%) hue-rotate(145deg) brightness(91%) contrast(84%);
+                }
+            }
+        }
+
         .art {
             &Wrap {
                 &.-col {
+                    width: calc(100% + 30px);
+                    margin-left: -15px;
+                    margin-right: -15px;
+                    padding-left: 8px;
+                    padding-right: 8px;
+
+                    .artItem {
+                        flex-basis: 200px;
+                        margin-left: 7px;
+                        margin-right: 7px;
+                    }
+
                     .artImg {
                         padding-top: 56.173%;
                     }
 
                     .artTitle {
                         -webkit-line-clamp: 2;
+                        font-size: 17px;
                     }
                 }
 
@@ -206,6 +245,7 @@
                 &.-row {
                     .artItem {
                         display: flex;
+                        margin-top: 18px;
                     }
 
                     .artLinkImg {
@@ -226,66 +266,81 @@
                         max-width: 89px;
                     }
                 }
-
-                &.-row-top {
-
-                    .artItem {
-                        &:not(:first-child) {
-                            display: flex;
-
-                            .artLinkImg {
-                                order: 1;
-                                margin-left: 14px;
-                                flex-basis: 127px;
-                                flex-shrink: 0;
-                            }
-
-                            .artImg {
-                                height: unset;
-                                padding-top: calc(3/4 * 100%);
-                            }
-
-                            .artChannel {
-                                white-space: nowrap;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                                max-width: 89px;
-                            }
-                        }
-
-                        &:first-child {
-                            .artTitle {
-                                font-size: 20px;
-                            }
-
-                            .artDate {
-                                margin-top: 0;
-                            }
-
-                            .artImg {
-                                margin-top: 14px;
-                                margin-bottom: 11px;
-                                padding-top: 56.173%;
-                            }
-                        }
-                    }
-                }
             }
 
             &Content {
                 &Wrap {
-                    margin-top: 5px;
+                    margin-top: 8px;
+                    margin-bottom: 8px;
+
+                    &:has(.artChannel) {
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+
+            &Rec {
+                margin-left: -15px;
+                margin-right: -15px;
+                padding: 16px 15px 4px;
+                background: #222;
+
+                .artDate {
+                    color: #BDBDBD;
+                }
+
+                .artTitle {
+                    color: $cl-white;
+                }
+
+                .titleCaption--small,
+                .titleOthers {
+                    color: #FDB043;
+                }
+
+                .icoArrow {
+                    filter: invert(72%) sepia(63%) saturate(604%) hue-rotate(331deg) brightness(104%) contrast(98%);
+                }
+            }
+
+            &Border {
+                position: relative;
+                padding-top: 18px;
+                padding-bottom: 18px;
+                
+                &:has(.artWrap.-col){
+                    padding-bottom: 4px;
+                }
+
+                &::before,
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: calc(100% + 30px);
+                    left: -15px;
+                }
+
+                &::before {
+                    top: 0;
+                    border-top: 1px solid #3D3D3D;
+                }
+
+                &::after {
+                    bottom: 0;
+                    border-bottom: 1px solid #3D3D3D;
                 }
             }
 
             &Img {
                 position: relative;
                 padding-top: 56.173%;
+                border-radius: 7px;
 
                 img {
                     @extend %template-img;
                     border-radius: 7px;
-                    height: 100%;
                 }
             }
 
@@ -304,7 +359,7 @@
                     color: #3D3D3D;
 
                     .icoPremium {
-                        filter: invert(70%) sepia(32%) saturate(899%) hue-rotate(348deg) brightness(101%) contrast(98%);
+                        filter: invert(62%) sepia(80%) saturate(361%) hue-rotate(354deg) brightness(101%) contrast(98%);
                     }
                 }
             }
@@ -312,7 +367,7 @@
             &Date {
                 margin-top: 0;
                 letter-spacing: 0.8px;
-                @include font-pack($font-manrope, 10px, $font-weight-med, $line-base, #585858);
+                @include font-pack($font-manrope, 10px, $font-weight-med, false, #585858);
             }
 
             &Live {
@@ -353,10 +408,6 @@
                         margin-right: 7px;
                     }
                 }
-
-                &Title {
-                    @include font-pack(false, 17px, false, false, false);
-                }
             }
 
             &Big {
@@ -383,8 +434,6 @@
                 }
 
                 &Img {
-                    background: #c4c4c4;
-                    position: relative;
                     padding-top: 62.5%;
                     border-radius: 7px;
 
@@ -427,45 +476,68 @@
 
         }
 
-        .titleCaption {
-            @include font-pack($font-manrope, 22px, $font-weight-bold, false, #222222);
-        }
-
         .topic {
+            --spacing-topic: 9px;
+
             &Caption {
-                color: #D11616;
+                color: #F00;
             }
 
             &List {
-                margin-top: 4px;
-                margin-left: -4px;
-                margin-right: -4px;
+                flex-direction: row;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                margin-top: 6px;
+                margin-bottom: 0;
+                width: calc(100% + 30px);
+                margin-left: -15px;
+                margin-right: -15px;
+                padding-left: 6px;
+                padding-right: 6px;
+                padding-bottom: 14px;
             }
 
             &Item {
-                margin-top: 10px;
-                margin-left: 4px;
-                margin-right: 4px;
+                flex-basis: 240px;
+                flex-shrink: 0;
+                margin-top: var(--spacing-topic);
+                margin-bottom: 0;
+                margin-left: var(--spacing-topic);
+                margin-right: var(--spacing-topic);
             }
 
             &Link {
-                padding: 7px 8px;
-                border: 1px solid #D11616;
-                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                padding: 7px 20px 7px 7px;
+                border: 0;
+                border-radius: 10px;
+                background: linear-gradient(180deg, #FC4242 0%, #962727 100%);
 
                 &:hover {
-                    background: #D11616
+                    background: linear-gradient(180deg, #ECECEC 0%, #CFCFCF 50.72%, #B2B2B2 100%);
+
+                    .topicTitle {
+                        color: #323232;
+                    }
                 }
             }
 
             &Title {
-                letter-spacing: 0.05em;
-                @include font-pack($font-manrope, 16px, $font-weight-sbold, $line-base, #222222);
+                @include title_clamp(2);
+                flex: 1;
+                letter-spacing: .75px;
+                @include font-pack($font-manrope, false, $font-weight-med, normal, $cl-white);
+            }
+
+            &Img {
+                margin-right: 15px;
             }
         }
 
         .most {
             &Item {
+                margin-top: 14px;
 
                 .mostLink {
                     display: block;
@@ -493,10 +565,11 @@
         }
 
         .buttonPrimary {
-            min-width: 160px;
+            min-width: unset;
             border: 1px solid var(--cl-brown);
             border-radius: 7px;
             text-transform: none;
+            letter-spacing: .42px;
             @include font-pack($font-manrope, false, false, false, var(--cl-brown));
 
             &:hover {
@@ -508,6 +581,8 @@
         .icoPremium {
             margin-left: 0;
             margin-right: 4px;
+            vertical-align: baseline;
+            filter: invert(62%) sepia(80%) saturate(361%) hue-rotate(354deg) brightness(101%) contrast(98%);
         }
     }
 }
