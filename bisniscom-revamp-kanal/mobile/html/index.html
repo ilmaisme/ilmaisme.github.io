@@ -30,6 +30,8 @@
     <link rel="preload" as="image" href="./asset/images/icon/icon-bisniscom-circle.svg">
     <link rel="preload" as="image" href="./asset/images/icon/icon-bisniscom.svg">
     <link rel=icon type=image/png sizes=16x16 href="https://cdn.bisnis.com/bisnis/assets/images/favicon.png">
+    <!-- slick CSS -->
+    <link rel="stylesheet" href="./asset/css/slick.min.css" type="text/css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -149,8 +151,8 @@
                         <div class="headerLogo headerLogo--kanal">
                             <a href="index.html" aria-label="homepage Bisnis.com">
                                 <img src="./asset/images/logo/bisniscom-logo-m.svg" alt="Bisnis.com logo"
-                                    width="180"
-                                    height="49">
+                                    width="123"
+                                    height="28">
                             </a>
                         </div>
                     </div>
@@ -168,51 +170,71 @@
                         <ul class="navList display-flex" data-active="scroll">
                             <li class="navItem -active">
                                 <a href="index.html" class="navLink">
+                                    
                                     Home
+                                </a>
+                            </li>
+                            <li class="navItem -premium">
+                                <a href="https://www.bisnis.com/premium" class="navLink">
+                                    <span class="icoInline icoPremium"></span>
+                                    <img src="./asset/images/logo/premium-logo.svg" alt="Konten Premium" width="126" height="20">
                                 </a>
                             </li>
                             <li class="navItem">
                                 <a href="#" class="navLink">
+                                    
                                     Market
                                 </a>
                             </li>
                             <li class="navItem">
                                 <a href="#" class="navLink">
+                                    
                                     Finansial
                                 </a>
                             </li>
                             <li class="navItem">
                                 <a href="index-ekonomi.html" class="navLink">
+                                    
                                     Ekonomi
                                 </a>
                             </li>
                             <li class="navItem">
                                 <a href="index-tekno.html" class="navLink">
+                                    
                                     Tekno
                                 </a>
                             </li>
                             <li class="navItem">
                                 <a href="index-lifestyle.html" class="navLink">
+                                    
                                     Style
                                 </a>
                             </li>
                             <li class="navItem">
                                 <a href="#" class="navLink">
+                                    
                                     Kabar24
                                 </a>
                             </li>
-                            <li class="navItem">
+                            <li class="navItem -hijau">
                                 <a href="#" class="navLink">
+                                    
+                                    <span class="icoInline icoHijau">
+                                        <img src="./asset/images/icon/icon-kanal-hijau.svg" alt="" width="14" height="14">
+                                    </span>
                                     Hijau
+                                    <span class="-new"></span>
                                 </a>
                             </li>
                             <li class="navItem">
                                 <a href="#" class="navLink">
+                                    
                                     Bola
                                 </a>
                             </li>
                             <li class="navItem">
                                 <a href="#" class="navLink">
+                                    
                                     Indeks
                                 </a>
                             </li>
@@ -343,111 +365,215 @@
                         </a>
                     </div>
                 </div>
-            </div>            <!-- e: menu panel -->
+            </div>
+            <!-- e: menu panel -->
+
+            <!-- s: stream -->
+            <div class="stream -top -active">
+                <img src="./asset/images/dummy/stream-bg-m.jpg" alt="" class="streamBg"  width="320" height="475">
+                <div class="streamCaptionWrap">
+                    <div class="titleCaptionWrap">
+                        <div class="artLive"><span>Live</span></div>
+                        <div class="streamCaption">Bisnis Indonesia Awards 2023 “Bertumbuh di Era Baru”</div>
+                        <button class="button streamCollapse -active" onclick="triggerActiveButton(this, 'streamBlock', true)"
+                            aria-label="Collapse/expand live stream"></button>
+                    </div>
+                </div>
+                <div class="streamBlock">
+                    <div class="streamWrap">
+                        <div class="streamVidWrap">
+                            <div class="streamVid">
+                                <!-- s: lazyloaded youtube-->
+                                <iframe id="video0" width="320"
+                                    height="180" allowscriptaccess="always"
+                                    src="https://www.youtube.com/embed/avDRlDPMnVw?enablejsapi=1&version=3&playerapiid=ytplayer&controls=0"
+                                    srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/avDRlDPMnVw?enablejsapi=1&version=3&playerapiid=ytplayer&controls=0><img src='https://images.bisnis.com/thumb/posts/2022/06/08/1541475/avDRlDPMnVw.jpg?w=320&h=180' width='320' height='180' style='object-fit: contain'><span>▶</span></a>"
+                                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen title="Jepretan Fotografer Jalanan, Manjakan Para Sport Enthusiast"></iframe>
+                                <!-- e: lazyloaded youtube-->
+                            </div>
+                        </div>
+                        <div class="streamBanner">
+                            <img src="./asset/images/dummy/stream-banner-m.png" alt="" loading="lazy"
+                                width="540"
+                                height="271">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- e: stream -->
 
             <div class="container mt20">
 
                 <!-- s: headline -->
                 <div class="hL">
-                    <div class="hLBig">
+                    <div class="hLBig -js-hl-big">
                         <div class="hLBigItem">
-                            <a href="details-ekonomi-premium.html" class="hLLink artLink" aria-label="Jalan Berliku Pengembangan Pembangkit EBT, Siapa Biang Keroknya?">
-                                <div class="hLBigImg" id="imgLCP">
-                                    <img src="./asset/images/thumb.jpg" alt="Jalan Berliku Pengembangan Pembangkit EBT, Siapa Biang Keroknya?" width="150" height="125">
+                            <a href="#" class="hLLink artLink" aria-label="Sinyal BTN Tinggalkan Bank Muamalat, Berlabuh ke Victoria Syariah?">
+                                <div class="hLBigImg artImg" id="imgLCP">
+                                    <img src="./asset/images/thumb.jpg" alt="Sinyal BTN Tinggalkan Bank Muamalat, Berlabuh ke Victoria Syariah?" width="150" height="125">
+                                </div>
+                            </a>
+                            <div class="hLBigContent">
+                                <div class="artContentWrap">
+                                    <div class="artChannel">
+                                        <a href="#">
+                                            Finansial
+                                        </a>
+                                    </div>
+                                </div>
+                                <a href="#" class="hLLink artLink">
+                                    <h1 class="hLBigTitle artTitle">
+                                        Sinyal BTN Tinggalkan Bank Muamalat, Berlabuh ke Victoria Syariah?
+                                    </h1>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hLBigItem">
+                            <a href="#" class="hLLink artLink" aria-label="Bandar Tak Terungkap, Judi Online Jadi Candu Anggota Dewan dan Kepala Daerah">
+                                <div class="hLBigImg artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2024/06/28/1777784/antarafoto-rapat-ruu-provinsi-daerah-khusus-jakarta-130324-app-1_1710314180.jpg?w=384&h=216" alt="Bandar Tak Terungkap, Judi Online Jadi Candu Anggota Dewan dan Kepala Daerah" width="384" height="216">
+                                </div>
+                            </a>
+                            <div class="hLBigContent">
+                                <div class="artContentWrap">
+                                    <div class="artChannel">
+                                        <a href="#">
+                                            Kabar24
+                                        </a>
+                                    </div>
+                                </div>
+                                <a href="#" class="hLLink artLink">
+                                    <h1 class="hLBigTitle artTitle">
+                                        Bandar Tak Terungkap, Judi Online Jadi Candu Anggota Dewan dan Kepala Daerah
+                                    </h1>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hLBigItem">
+                            <a href="#" class="hLLink artLink" aria-label="Historia Bisnis: Aliansi ala Raja Kretek Sampoerna dan Raja Mie Indofood">
+                                <div class="hLBigImg artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2024/06/28/1777726/putera-sampoerna_1719529995.jpg?w=384&h=216" alt="Historia Bisnis: Aliansi ala Raja Kretek Sampoerna dan Raja Mie Indofood" width="384" height="216">
                                 </div>
                             </a>
                             <div class="hLBigContent">
                                 <div class="artContentWrap">
                                     <div class="artChannel -premium">
-                                        <a href="subkanal-ekonomi.html">
+                                        <a href="#">
                                             <span class="icoInline icoPremium"></span>Premium
                                         </a>
                                     </div>
-                                    <div class="artDate">
-                                        9 menit yang lalu
+                                </div>
+                                <a href="#" class="hLLink artLink">
+                                    <h1 class="hLBigTitle artTitle">
+                                        Historia Bisnis: Aliansi ala Raja Kretek Sampoerna dan Raja Mie Indofood
+                                    </h1>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hLBigItem">
+                            <a href="#" class="hLLink artLink" aria-label="Isyarat JP Morgan yang Lawan Arus di Saham Semen Indonesia (SMGR)">
+                                <div class="hLBigImg artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2024/06/28/1777686/2052024-bi-ptb-01-semen-4_1_1719499325.jpg?w=384&h=216" alt="Isyarat JP Morgan yang Lawan Arus di Saham Semen Indonesia (SMGR)" width="384" height="216">
+                                </div>
+                            </a>
+                            <div class="hLBigContent">
+                                <div class="artContentWrap">
+                                    <div class="artChannel -premium">
+                                        <a href="#">
+                                            <span class="icoInline icoPremium"></span>Premium
+                                        </a>
                                     </div>
                                 </div>
-                                <a href="details-ekonomi-premium.html" class="hLLink artLink">
+                                <a href="#" class="hLLink artLink">
                                     <h1 class="hLBigTitle artTitle">
-                                        Jalan Berliku Pengembangan Pembangkit EBT, Siapa Biang Keroknya?
+                                        Isyarat JP Morgan yang Lawan Arus di Saham Semen Indonesia (SMGR)
+                                    </h1>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hLBigItem">
+                            <a href="#" class="hLLink artLink" aria-label="Bisikan Terbaru Saham Astra (ASII) Siap Tancap Gas">
+                                <div class="hLBigImg artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2024/06/28/1777789/astra_asii_toyota_mobil_1717810820.jpg?w=384&h=216" alt="Bisikan Terbaru Saham Astra (ASII) Siap Tancap Gas" width="384" height="216">
+                                </div>
+                            </a>
+                            <div class="hLBigContent">
+                                <div class="artContentWrap">
+                                    <div class="artChannel -premium">
+                                        <a href="#">
+                                            <span class="icoInline icoPremium"></span>Premium
+                                        </a>
+                                    </div>
+                                </div>
+                                <a href="#" class="hLLink artLink">
+                                    <h1 class="hLBigTitle artTitle">
+                                        Bisikan Terbaru Saham Astra (ASII) Siap Tancap Gas
                                     </h1>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="hLSmall artWrap -col">
+                    <div class="hLSmall artWrap -col mt30">
                         <div class="hLSmallItem artItem">
+                            <a href="#" class="hLLink artLink">
+                                <div class="hLSmallImg artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2024/06/28/1777773/buruh_tekstil_1718344166.jpg?w=200&h=112" alt="Bisnis Tekstil Lecek, Rugi Sritex (SRIL) Bengkak Bersiap Badai PHK" width="200" height="112">
+                                </div>
+                            </a>
                             <div class="hLContent">
                                 <div class="artContentWrap">
                                     <div class="artChannel -premium">
-                                        <a href="subkanal-ekonomi.html">
+                                        <a href="#">
                                             <span class="icoInline icoPremium"></span>Premium
                                         </a>
                                     </div>
-                                    <div class="artDate">
-                                        9 menit yang lalu
-                                    </div>
                                 </div>
-                                <a href="details-ekonomi.html" class="hLLink artLink">
+                                <a href="#" class="hLLink artLink">
                                     <h2 class="hLSmallTitle artTitle">
-                                        Ramai-ramai Ekonom Pangkas Proyeksi Ekonomi China, dari Goldman Sachs Hingga Standard Chartered
+                                        Bisnis Tekstil Lecek, Rugi Sritex (SRIL) Bengkak Bersiap Badai PHK
                                     </h2>
                                 </a>
                             </div>
                         </div>
                         <div class="hLSmallItem artItem">
+                            <a href="#" class="hLLink artLink">
+                                <div class="hLSmallImg artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2024/06/28/1777729/jokowi_dan_kader_psi_1707023747.jpg?w=200&h=112" alt="PKS Vs PSI Soal Tudingan Jokowi Cawe-cawe Kaesang Cawagub DKI" width="200" height="112">
+                                </div>
+                            </a>
                             <div class="hLContent">
                                 <div class="artContentWrap">
                                     <div class="artChannel">
-                                        <a href="subkanal-ekonomi.html">
-                                            Ekonomi Global
+                                        <a href="#">
+                                            Kabar24
                                         </a>
                                     </div>
-                                    <div class="artDate">
-                                        9 menit yang lalu
-                                    </div>
                                 </div>
-                                <a href="details-ekonomi.html" class="hLLink artLink">
+                                <a href="#" class="hLLink artLink">
                                     <h2 class="hLSmallTitle artTitle">
-                                        Senat AS Loloskan RUU Pagu Utang, Selangkah Lagi AS Selamat dari Gagal Bayar!
+                                        PKS Vs PSI Soal Tudingan Jokowi Cawe-cawe Kaesang Cawagub DKI
                                     </h2>
                                 </a>
                             </div>
                         </div>
                         <div class="hLSmallItem artItem">
-                            <div class="hLContent">
-                                <div class="artContentWrap">
-                                    <div class="artChannel">
-                                        <a href="subkanal-ekonomi.html">
-                                            Trade
-                                        </a>
-                                    </div>
-                                    <div class="artDate">
-                                        9 menit yang lalu
-                                    </div>
+                            <a href="#" class="hLLink artLink">
+                                <div class="hLSmallImg artImg">
+                                    <img src="https://images.bisnis.com/thumb/posts/2024/06/28/1777781/prajogo_pangestu_1705533650.jpg?w=200&h=112" alt="Rp31,7 Miliar Dividen BREN untuk Publik, Prajogo Dapat Berapa?" width="200" height="112">
                                 </div>
-                                <a href="details-ekonomi.html" class="hLLink artLink">
-                                    <h2 class="hLSmallTitle artTitle">
-                                        Tinggal 10 Negara Bebas Visa Masuk Indonesia, Tersengat Aspek Kehidupan Bernegara
-                                    </h2>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="hLSmallItem artItem">
+                            </a>
                             <div class="hLContent">
                                 <div class="artContentWrap">
                                     <div class="artChannel -premium">
-                                        <a href="subkanal-ekonomi.html">
+                                        <a href="#">
                                             <span class="icoInline icoPremium"></span>Premium
                                         </a>
                                     </div>
-                                    <div class="artDate">
-                                        9 menit yang lalu
-                                    </div>
                                 </div>
-                                <a href="details-ekonomi-premium.html" class="hLLink artLink">
+                                <a href="#" class="hLLink artLink">
                                     <h2 class="hLSmallTitle artTitle">
-                                        Usai Nikel, China Bakal Sesaki Industri Aluminium Indonesia?
+                                        Rp31,7 Miliar Dividen BREN untuk Publik, Prajogo Dapat Berapa?
                                     </h2>
                                 </a>
                             </div>
@@ -1039,7 +1165,7 @@
                 <div class="bplus">
                     <div class="bplusItem">
                         <a href="details-lifestyle.html" class="bplusLink artLink">
-                            <img src="https://images.bisnis.com/plus/39/ilustrasi_bisnis_plus_2.jpg" alt="Net Zero Emission: Intip Strategi Transisi dan Ketahanan Energi Pertamina" class="bplusImg" loading="lazy" width="300" height="170">
+                            <img src="https://images.bisnis.com/plus/39/ilustrasi_bisnis_plus_2.jpg?w&#x3D;184&amp;h&#x3D;104" alt="Net Zero Emission: Intip Strategi Transisi dan Ketahanan Energi Pertamina" class="bplusImg" loading="lazy" width="300" height="170">
                             <div class="bplusContent">
                                 <h4 class="bplusTitle artTitle">
                                     Net Zero Emission: Intip Strategi Transisi dan Ketahanan Energi Pertamina
@@ -1627,7 +1753,10 @@
         <span class="icoArrow"></span>
         To top
     </button>
+    <script type="text/javascript" src="./asset/js/jquery-3.5.0.min.js"></script>
+    <script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/script-main.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/script-home.js"></script>
     <script>
         var imgLCP = document.getElementById("imgLCP");
         const preloadImage = src =>
@@ -1639,7 +1768,7 @@
                 image.addEventListener('load', onLoad, { once: true });
                 image.src = src;
             });
-        const src = 'https://images.bisnis.com/thumb/posts/2023/06/19/1666608/mpv-shot0004-1-1.jpg?w=384&h=216';
+        const src = 'https://images.bisnis.com/thumb/posts/2024/06/28/1777779/peluncuran_logo_baru_bank_tabungan_negara_bbtn_1709462290.jpg?w=384&h=216';
         preloadImage(src).then(image => {
             // Here the image has been loaded and is available to be appended, or otherwise.
             imgLCP.firstElementChild.style.display = 'none';

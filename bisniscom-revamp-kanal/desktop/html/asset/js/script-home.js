@@ -121,7 +121,7 @@ function triggerActiveButton(el, txt, txtrev, target, parent) {
     if (!!target) {
         let elemtarget = document.getElementsByClassName(target)[0];
         tgHeight = elemtarget.scrollHeight;
-        console.log(tgHeight)
+        // console.log(tgHeight)
         elemtarget.style.maxHeight = elemtarget.style.maxHeight ? null : tgHeight + 'px';
     }
 }

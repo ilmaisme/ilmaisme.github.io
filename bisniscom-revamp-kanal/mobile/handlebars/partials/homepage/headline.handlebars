@@ -8,12 +8,12 @@
             <a href="{{link}}" class="hLLink artLink" aria-label="{{title}}">
                 {{#compare @index "==" 0}}
                 <div class="hLBigImg artImg" id="imgLCP">
-                    {{!-- <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=728&amp;h=406" alt="{{title}}" width="728" height="406"> --}}
+                    {{!-- <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=384&h=216" alt="{{title}}" width="384" height="216"> --}}
                     <img src="./asset/images/thumb.jpg" alt="{{title}}" width="150" height="125">
                 </div>
                 {{else}}
                 <div class="hLBigImg artImg">
-                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=728&amp;h=406" alt="{{title}}" width="728" height="406">
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=384&h=216" alt="{{title}}" width="384" height="216">
                 </div>
                 {{/compare}}
             </a>
@@ -41,18 +41,18 @@
         {{/gte}}
         {{/each}}
     </div>
-    <div class="hLSmall row">
+    <div class="hLSmall artWrap -col mt30">
         {{#each channel}}
         {{#gte @index compare=../index_start}}
         {{#gte @index compare=../index_end}}
         {{else}}
-        <div class="hLSmallItem col-3half">
+        <div class="hLSmallItem artItem">
             <a href="{{link}}" class="hLLink artLink">
                 <div class="hLSmallImg artImg">
-                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=236&amp;h=133" alt="{{title}}" width="236" height="133">
+                    <img src="https://images.bisnis.com/thumb/posts/{{img}}?w=200&h=112" alt="{{title}}" width="200" height="112">
                 </div>
             </a>
-            <div class="hLContent artContent">
+            <div class="hLContent">
                 <div class="artContentWrap">
                     <div class="artChannel{{#if premium}} -premium{{/if}}">
                         <a href="#">
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <a href="{{link}}" class="hLLink artLink">
-                    <h2 class="artTitle">
+                    <h2 class="hLSmallTitle artTitle">
                         {{title}}
                     </h2>
                 </a>

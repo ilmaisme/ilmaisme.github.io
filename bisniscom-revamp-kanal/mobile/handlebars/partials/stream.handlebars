@@ -1,43 +1,60 @@
-<div class="stream{{#if pos}} -{{pos}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}">
+<div class="stream{{#if pos}} -{{pos}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}{{#if state}} -{{state}}{{/if}}">
     {{#eq pos compare="top"}}
-    <img src="./asset/images/{{replace (lowercase kanal)}}/stream-bg-m.jpg" alt="" class="streamBg" loading="lazy"
-        width="320" height="475">
-    <div class="streamWrap">
-        {{#each channel}}
-        {{#gte @index compare=../index_start}}
-        {{#gte @index compare=../index_end}}
-        {{else}}
-        <div class="streamVidWrap">
-            <h3 class="streamCaption">
-                <img src="./asset/images/icon/icon-live.svg" class="streamIcon" alt="" loading="lazy" width="24"
-                    height="24">
-                <strong>Live</strong>
-                Streaming
-            </h3>
-            <div class="streamVid">
-                <iframe width="{{#if ../width}}{{../width}}{{/if}}" height="{{#if ../height}}{{../height}}{{/if}}"
-                    src="{{vid}}" title="{{title}}" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                {{!-- <!-- s: lazyloaded youtube-->
-                <iframe id="video{{@index}}" width="{{#if ../width}}{{../width}}{{/if}}"
-                    height="{{#if ../height}}{{../height}}{{/if}}" allowscriptaccess="always"
-                    src="{{vid}}?enablejsapi=1&version=3&playerapiid=ytplayer&controls=0"
-                    srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href={{vid}}?enablejsapi=1&version=3&playerapiid=ytplayer&controls=0><img src='https://images.bisnis.com/thumb/posts/{{img}}?w={{#if ../width}}{{../width}}{{/if}}&h={{#if ../height}}{{../height}}{{/if}}' width='{{#if ../width}}{{../width}}{{/if}}' height='{{#if ../height}}{{../height}}{{/if}}'><span>▶</span></a>"
-                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen title="{{title}}"></iframe>
-                <!-- e: lazyloaded youtube--> --}}
-            </div>
-        </div>
-        {{/gte}}
-        {{else}}
-        {{/gte}}
-        {{/each}}
-        <div class="streamBanner">
-            <img src="./asset/images/{{replace (lowercase kanal)}}/stream-banner-m.png" alt="" loading="lazy"
-                width="540" height="271">
+    <img src="./asset/images/{{replace (lowercase kanal)}}/stream-bg-m.jpg" alt="" class="streamBg" {{#if lcp}}{{else}}
+        loading="lazy" {{/if}} width="320" height="475">
+    {{#if cta}}
+    <div class="streamCaptionWrap">
+        <div class="titleCaptionWrap">
+            <div class="artLive"><span>Live</span></div>
+            <div class="streamCaption">Bisnis Indonesia Awards 2023 “Bertumbuh di Era Baru”</div>
+            <button class="button streamCollapse -active" onclick="triggerActiveButton(this, 'streamBlock', true)"
+                aria-label="Collapse/expand live stream"></button>
         </div>
     </div>
+    <div class="streamBlock">
+        {{/if}}
+        <div class="streamWrap">
+            {{#each channel}}
+            {{#gte @index compare=../index_start}}
+            {{#gte @index compare=../index_end}}
+            {{else}}
+            <div class="streamVidWrap">
+                {{#compare ../cta "==" true}}
+                {{else}}
+                <h3 class="streamCaption">
+                    <img src="./asset/images/icon/icon-live.svg" class="streamIcon" alt="" loading="lazy" width="24"
+                        height="24">
+                    <strong>Live</strong>
+                    Streaming
+                </h3>
+                {{/compare}}
+                <div class="streamVid">
+                    {{!-- <iframe width="{{#if ../width}}{{../width}}{{/if}}"
+                        height="{{#if ../height}}{{../height}}{{/if}}" src="{{vid}}" title="{{title}}" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe> --}}
+                    <!-- s: lazyloaded youtube-->
+                    <iframe id="video{{@index}}" width="{{#if ../width}}{{../width}}{{/if}}"
+                        height="{{#if ../height}}{{../height}}{{/if}}" allowscriptaccess="always"
+                        src="{{vid}}?enablejsapi=1&version=3&playerapiid=ytplayer&controls=0"
+                        srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href={{vid}}?enablejsapi=1&version=3&playerapiid=ytplayer&controls=0><img src='https://images.bisnis.com/thumb/posts/{{img}}?w={{#if ../width}}{{../width}}{{/if}}&h={{#if ../height}}{{../height}}{{/if}}' width='{{#if ../width}}{{../width}}{{/if}}' height='{{#if ../height}}{{../height}}{{/if}}' style='object-fit: contain'><span>▶</span></a>"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen title="{{title}}"></iframe>
+                    <!-- e: lazyloaded youtube-->
+                </div>
+            </div>
+            {{/gte}}
+            {{else}}
+            {{/gte}}
+            {{/each}}
+            <div class="streamBanner">
+                <img src="./asset/images/{{replace (lowercase kanal)}}/stream-banner-m.png" alt="" loading="lazy"
+                    width="{{#if ../width}}{{../width}}{{else}}540{{/if}}"
+                    height="{{#if ../height}}{{../height}}{{else}}271{{/if}}">
+            </div>
+        </div>
+        {{#if cta}}
+    </div>{{/if}}
     {{/eq}}
     {{#eq pos compare="bottom"}}
     <img src="./asset/images/{{replace (lowercase kanal)}}/stream-bg-left-m.jpg" alt="" class="streamBg" loading="lazy"

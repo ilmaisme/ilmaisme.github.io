@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{>head page="Homepage" hl=true font=true channel=site.Homepage}}
+{{>head page="Homepage" slick=true hl=true font=true channel=site.Homepage}}
 
 <body class="theme--home">
 
@@ -14,19 +14,28 @@
         {{>flashnews channel=flashnews span=true}}
         <!-- e: flashnews -->
 
-        {{>header/header kanal="Homepage" channel=mainMenu.Homepage nav=true active="Home" icon=false}}
+        {{>header/header kanal="Homepage" channel=mainMenu.Homepage_mobile nav=true active="Home" icon=false width="123"
+        height="28"}}
 
         <main role="main" class="main">
 
             <!-- s: menu panel -->
             {{>header/menu login=true}}
             {{!>header/menu}}
+
             <!-- e: menu panel -->
+
+            <!-- s: stream -->
+            {{>stream channel=stream kanal="dummy" pos="top" state="active" total=2 index_start=0
+            index_end=1 cta=true width="320" height="180" wvid="533" hvid="300" lcp=true}}
+
+            <!-- e: stream -->
 
             <div class="container mt20">
 
                 <!-- s: headline -->
-                {{>ekonomi/headline channel=kanal.Ekonomi.hL total=5 index_start=0 index_end=4 index_big_start=4
+                {{>homepage/headline channel=kanal.Homepage.hL total=8 index_start=5 index_end=8
+                index_big_start=0
                 index_big_end=5}}
 
                 <!-- e: headline -->
@@ -180,7 +189,7 @@
 
     {{>footer/footer}}
 
-    {{>footer/script page="ekonomi"}}
+    {{>footer/script page="homepage" slick=true}}
     <script>
         var imgLCP = document.getElementById("imgLCP");
         const preloadImage = src =>
@@ -192,7 +201,7 @@
                 image.addEventListener('load', onLoad, { once: true });
                 image.src = src;
             });
-        const src = 'https://images.bisnis.com/thumb/posts/2023/06/19/1666608/mpv-shot0004-1-1.jpg?w=384&h=216';
+        const src = 'https://images.bisnis.com/thumb/posts/2024/06/28/1777779/peluncuran_logo_baru_bank_tabungan_negara_bbtn_1709462290.jpg?w=384&h=216';
         preloadImage(src).then(image => {
             // Here the image has been loaded and is available to be appended, or otherwise.
             imgLCP.firstElementChild.style.display = 'none';

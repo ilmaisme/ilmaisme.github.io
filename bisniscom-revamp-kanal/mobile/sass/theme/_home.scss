@@ -108,7 +108,7 @@
             &Link {
                 padding: 10px;
                 letter-spacing: 0.28px;
-                @include font-pack($font-manrope, 14px, $font-weight-sbold, false, #222);
+                @include font-pack($font-manrope, 14px, $font-weight-sbold, false, #545454);
 
                 &:hover {
                     color: #222222;
@@ -128,7 +128,7 @@
                 letter-spacing: -0.2px;
                 @include font-pack($font-manrope, 11px, $font-weight-bold, false, false);
 
-                span{
+                span {
                     font-weight: $font-weight-normal;
                 }
             }
@@ -148,8 +148,41 @@
             }
         }
 
+        .stream {
+            &Wrap {
+                padding-top: 0;
+            }
+
+            &Vid {
+                margin-top: 0;
+                padding-top: calc(2 / 4* 100% + 20px);
+                box-shadow: 0px 0px 18.008px 0px #597BEE;
+            }
+
+            &Caption {
+                margin-left: 10px;
+                margin-right: 8px;
+                @include title_clamp(1);
+                @include font-pack($font-manrope, 15px, $font-weight-sbold, normal, false);
+            }
+
+            &.-top .streamCaption {
+                color: $cl-white;
+            }
+        }
+
         .art {
             &Wrap {
+                &.-col {
+                    .artImg {
+                        padding-top: 56.173%;
+                    }
+
+                    .artTitle {
+                        -webkit-line-clamp: 2;
+                    }
+                }
+
                 .artContent {
                     flex: 1;
                 }
@@ -239,6 +272,12 @@
                 }
             }
 
+            &Content {
+                &Wrap {
+                    margin-top: 5px;
+                }
+            }
+
             &Img {
                 position: relative;
                 padding-top: 56.173%;
@@ -251,13 +290,23 @@
             }
 
             &Title {
-                @include font-pack($font-manrope, 18px, $font-weight-sbold, 1.38, #222222);
+                -webkit-line-clamp: 2;
+                margin-top: 5px;
+                @include font-pack($font-manrope, 18px, $font-weight-sbold, 1.33, #222222);
             }
 
             &Channel {
                 text-transform: none;
                 letter-spacing: 0.6px;
                 @include font-pack($font-manrope, 12px, $font-weight-med, $line-base, #3D3D3D);
+
+                &.-premium {
+                    color: #3D3D3D;
+
+                    .icoPremium {
+                        filter: invert(70%) sepia(32%) saturate(899%) hue-rotate(348deg) brightness(101%) contrast(98%);
+                    }
+                }
             }
 
             &Date {
@@ -284,6 +333,9 @@
         }
 
         .hL {
+            .artChannel {
+                color: #3D3D3D;
+            }
 
             &Small {
                 width: 100%;
@@ -308,33 +360,32 @@
             }
 
             &Big {
-
                 &Title {
-                    -webkit-line-clamp: unset;
-                    @include font-pack(false, 22px, false, false, #000000);
+                    @include font-pack(false, false, false, false, $cl-white);
                 }
 
                 &Item {
-                    margin-bottom: 30px;
+                    border-radius: 7px;
+                    overflow: hidden;
 
                     &::before {
-                        content: none;
+                        background: linear-gradient(180deg, transparent 53.55%, #000 95.59%), linear-gradient(180deg, transparent 7.72%, #000);
+                        z-index: 2;
+                        pointer-events: none;
                     }
                 }
 
                 &Content {
-                    width: 100%;
-                    padding-left: 0;
-                    padding-right: 0;
-                    margin-top: 17px;
-                    position: relative;
-                    bottom: unset;
+                    padding-left: 14px;
+                    padding-right: 14px;
+                    bottom: 14px;
+                    z-index: 2;
                 }
 
                 &Img {
                     background: #c4c4c4;
                     position: relative;
-                    padding-top: 56.173%;
+                    padding-top: 62.5%;
                     border-radius: 7px;
 
                     img {
@@ -344,16 +395,33 @@
                     }
                 }
 
-                .artDate {
-                    margin-top: 0;
+                .artChannel {
+                    color: $cl-white;
                 }
-            }
 
-            .artChannel {
-                color: #3D3D3D;
+                .slick-next,
+                .slick-prev {
+                    top: 50%;
+                    width: 30px;
+                    height: 30px;
+                    background: #000;
+                    opacity: .5;
 
-                &.-premium {
-                    color: #803C00;
+                    &::after {
+                        width: 30px;
+                        height: 30px;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+
+                .slick-prev {
+                    left: -12px;
+                    transform: scale(.8) translateY(-50%) rotate(180deg);
+                }
+
+                .slick-next {
+                    right: -12px;
                 }
             }
 
