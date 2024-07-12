@@ -57,7 +57,8 @@
                 <div class="artRec mt30">
                     <div class="titleCaptionWrap">
                         <h3 class="titleCaption--small">Uang Kuliah Tunggal (UKT)</h3>
-                        <a href="#" class="titleOthers">Lihat Lainnya<span class="icoInline icoArrow"></span></a>
+                        <a href="#" class="titleOthers"><span>Lihat Lainnya</span><span
+                                class="icoInline icoArrow"></span></a>
                     </div>
                     {{>homepage/article channel=kanal.Homepage.recommend.hot mod="rec" type="col" mt="20"
                     total=3
@@ -81,7 +82,7 @@
                             <img src="./asset/images/logo/premium-logo-big.svg" alt="Konten Premium" width="145"
                                 height="23" loading="lazy">
                         </h3>
-                        <a href="#" class="titleOthers" aria-label="See others">Lihat lainnya
+                        <a href="#" class="titleOthers" aria-label="See others"><span>Lihat lainnya</span>
                             <span class="icoInline icoArrow"></span></a>
                     </div>
                     {{>homepage/article channel=kanal.Homepage.Premium.latest type="col" grid="-premium"
@@ -101,8 +102,8 @@
 
                 <!-- s: latest -->
                 <h3 class="titleCaption mt30">Berita Terbaru</h3>
-                {{>ekonomi/article channel=kanal.Ekonomi.latest type="row"
-                width="127" height="72" index_start=0
+
+                {{>homepage/article channel=kanal.Ekonomi.latest type="row" width="127" height="95" index_start=0
                 index_end=6}}
 
                 <!-- e: latest -->
@@ -113,9 +114,8 @@
                 </div>
                 <!-- e: rectangle billboard -->
 
-                {{>ekonomi/article channel=kanal.Ekonomi.latest mt="30" type="row"
-                width="127" height="72" total=5 index_start=4
-                index_end=10}}
+                {{>homepage/article channel=kanal.Ekonomi.latest type="row" width="127" height="95" index_start=4
+                index_end=10 mt="30"}}
 
                 <!-- s: rectangle billboard -->
                 <div class="mt30">
@@ -125,9 +125,65 @@
 
                 <!-- s: terpopuler -->
                 <h3 class="titleCaption mt30">Terpopuler</h3>
-                {{>kanal/most channel=kanal.Ekonomi.most total=4 index_start=0 index_end=4}}
+                {{>kanal/most channel=kanal.Ekonomi.most index_start=0 index_end=5}}
 
                 <!-- e: terpopuler -->
+
+                <!-- s: kanal network -->
+                <div class="kanalNetwork mt30">
+                    <div class="kanalNetworkItem">
+                        <div class="titleCaptionWrap">
+                            <h3 class="titleCaption--small titleCaptionWrap">
+                                <div class="kanalNetworkIcon">
+                                    <img src="./asset/images/icon/icon-kanal-interaktif.svg" alt="" loading="lazy"
+                                        width="24" height="24">
+                                </div>Konten Interaktif
+                            </h3>
+                            <a href="#" class="titleOthers" aria-label="See others"><span
+                                    class="icoInline icoArrow"></span></a>
+                        </div>
+
+                        {{>homepage/article channel=kanal.Homepage.Interaktif.latest type="row" total=1
+                        index_start=0
+                        index_end=1 width="75" height="75" channels=false dates=false}}
+
+                    </div>
+                    <div class="kanalNetworkItem">
+                        <div class="titleCaptionWrap">
+                            <h3 class="titleCaption--small titleCaptionWrap">
+                                <div class="kanalNetworkIcon">
+                                    <img src="./asset/images/icon/icon-network-bplus.svg" alt="" loading="lazy"
+                                        width="24" height="24">
+                                </div>Bisnis Plus
+                            </h3>
+                            <a href="#" class="titleOthers" aria-label="See others"><span
+                                    class="icoInline icoArrow"></span></a>
+                        </div>
+
+                        {{>homepage/article channel=kanal.Homepage.BisnisPlus.latest type="row" total=1
+                        index_start=0
+                        index_end=1 width="75" height="75" channels=false dates=false}}
+
+                    </div>
+                    <div class="kanalNetworkItem">
+                        <div class="titleCaptionWrap">
+                            <h3 class="titleCaption--small titleCaptionWrap">
+                                <div class="kanalNetworkIcon">
+                                    <img src="./asset/images/icon/icon-network-bmuda.svg" alt="" loading="lazy"
+                                        width="24" height="24">
+                                </div>Bisnis Muda
+                            </h3>
+                            <a href="#" class="titleOthers" aria-label="See others"><span
+                                    class="icoInline icoArrow"></span></a>
+                        </div>
+
+                        {{>homepage/article channel=kanal.Homepage.BisnisMuda.latest type="row" total=1
+                        index_start=0
+                        index_end=1 width="75" height="75" channels=false dates=false}}
+
+                    </div>
+                </div>
+                <!-- e: kanal network -->
 
                 <!-- s: bplus -->
                 <h3 class="titleCaption mt30">
@@ -155,9 +211,10 @@
                 <!-- e: bisnistv -->
 
                 <!-- s: podcast -->
-                <div class="podcast mt30">
+                <div class="podcast center-flex mt30">
                     <a href="https://open.spotify.com/show/6C5e0qIqWQNqVmSAhZ9CsX" target="_blank" rel="noreferrer">
-                        <img src="https://cdn.bisnis.com/bisnis/assets/images/Cover_Podcast_Texture_new.png" width="300"
+                        <img class="podcastImg"
+                            src="https://cdn.bisnis.com/bisnis/assets/images/Cover_Podcast_Texture_new.png" width="300"
                             height="300" loading="lazy" alt="Broad Cast">
                     </a>
                 </div>
@@ -188,16 +245,14 @@
                 </div>
                 <!-- e: QR Bisnis Indonesia -->
 
-                {{>ekonomi/article channel=kanal.Ekonomi.latest mt="30" type="row"
-                width="127" height="72" total=5 index_start=4
-                index_end=10}}
+                {{>homepage/article channel=kanal.Ekonomi.latest type="row" width="127" height="95" index_start=2
+                index_end=8 mt="30"}}
 
                 <!-- s: editorial -->
                 <!-- e: editorial -->
 
-                {{>ekonomi/article channel=kanal.Ekonomi.latest mt="30" type="row"
-                width="127" height="72" total=5 index_start=3
-                index_end=9}}
+                {{>homepage/article channel=kanal.Ekonomi.latest type="row" width="127" height="95" index_start=3
+                index_end=9 mt="30"}}
 
                 <!-- s: rectangle billboard -->
                 <div class="mt30">

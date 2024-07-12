@@ -171,28 +171,67 @@
             }
         }
 
+        .premiumBox {
+            position: relative;
+            background: #F6CB69;
+            padding: 10px;
+            min-width: 225px;
+            min-height: 208px;
+            margin: 0;
+            border-radius: 5px;
+            flex-direction: column;
+            overflow: hidden;
+
+            &Caption {
+                position: relative;
+                margin-top: 0;
+                @include font-pack($font-manrope, 14px, $font-weight-sbold, false, #000000);
+            }
+
+            &Login {
+                position: relative;
+                display: inline-flex;
+                margin-top: 15px;
+                padding: 12px 26px;
+                background: #222222;
+                border-radius: 37px;
+                @include font-pack($font-manrope, 12px, $font-weight-bold, 1, $cl-white);
+
+                .icoLoginPremium {
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 5px;
+                    filter: invert(100%) sepia(2%) saturate(113%) hue-rotate(16deg) brightness(112%) contrast(101%);
+                }
+            }
+
+            &Bg {
+                position: absolute;
+                left: -50px;
+            }
+        }
+
         .title {
             &Caption {
                 letter-spacing: .22px;
                 @include font-pack($font-manrope, 22px, false, false, #222222);
-
-                &--small {
-                    @include title_clamp(1);
-                    flex: 1;
-                    padding-right: 5px;
-                    color: #222222;
-                    letter-spacing: .15px;
-                }
             }
 
             &Others {
+                display: flex;
+                align-items: center;
                 @include font-pack($font-manrope, 11px, false, normal, #585858);
                 letter-spacing: .44px;
 
                 .icoArrow {
+                    vertical-align: unset;
                     width: 12px;
-                    height: 12px;
+                    flex-basis: 12px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
                     filter: invert(35%) sepia(0) saturate(1411%) hue-rotate(145deg) brightness(91%) contrast(84%);
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' style='enable-background:new 0 0 28 28' viewBox='0 0 28 28'%3E%3Cpath d='M15.5 20.2c-.2-.2-.3-.5-.3-.8 0-.3.1-.6.4-.8l3.3-3.3h-13c-.3 0-.6-.1-.8-.3-.2-.2-.3-.5-.3-.8s.1-.6.3-.8c.2-.2.5-.3.8-.3h13l-3.3-3.3c-.2-.2-.3-.5-.3-.8 0-.3.1-.6.3-.8.2-.2.5-.3.8-.3.3 0 .6.1.8.3l5.3 5.3c.1.1.2.2.2.4 0 .1.1.3.1.4s0 .3-.1.4c0 .1-.1.3-.2.4l-5.4 5.4c-.2.2-.5.3-.8.3-.3-.3-.5-.4-.8-.6z'/%3E%3C/svg%3E");
                 }
             }
         }
@@ -200,16 +239,21 @@
         .art {
             &Wrap {
                 &.-col {
-                    width: calc(100% + 30px);
-                    margin-left: -15px;
-                    margin-right: -15px;
-                    padding-left: 8px;
-                    padding-right: 8px;
+                    margin-left: -7px;
+                    margin-right: -14px;
+                    padding-left: 7px;
+                    padding-right: 7px;
+                    scroll-snap-type: x mandatory;
 
                     .artItem {
+                        flex-shrink: 0;
                         flex-basis: 200px;
-                        margin-left: 7px;
-                        margin-right: 7px;
+                        scroll-snap-align: start;
+                        scroll-snap-stop: always;
+                        padding-left: 7px;
+                        padding-right: 7px;
+                        margin-left: 0;
+                        margin-right: 0;
                     }
 
                     .artImg {
@@ -226,22 +270,6 @@
                     flex: 1;
                 }
 
-                &.row {
-                    margin-right: -10px;
-                    margin-left: -10px;
-
-                    .artItem {
-                        padding-right: 10px;
-                        padding-left: 10px;
-                        margin-bottom: 20px;
-                    }
-
-                    .artTitle {
-                        margin-top: 14px;
-                        -webkit-line-clamp: 3;
-                    }
-                }
-
                 &.-row {
                     .artItem {
                         display: flex;
@@ -250,20 +278,30 @@
 
                     .artLinkImg {
                         order: 1;
-                        margin-left: 14px;
+                        margin-left: 10px;
                         flex-basis: 127px;
                         flex-shrink: 0;
                     }
 
                     .artImg {
                         height: unset;
+                        padding-top: 75%;
+                        border-radius: 5px;
+
+                        .img {
+                            border-radius: 5px;
+                        }
                     }
 
                     .artChannel {
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
-                        max-width: 89px;
+                        max-width: calc(100% - 60px);
+                    }
+
+                    .artDate {
+                        margin-top: 2px;
                     }
                 }
             }
@@ -294,6 +332,14 @@
                     color: $cl-white;
                 }
 
+                .titleCaption--small {
+                    @include title_clamp(1);
+                    flex: 1;
+                    padding-right: 5px;
+                    color: #222222;
+                    letter-spacing: .15px;
+                }
+
                 .titleCaption--small,
                 .titleOthers {
                     color: #FDB043;
@@ -308,8 +354,8 @@
                 position: relative;
                 padding-top: 18px;
                 padding-bottom: 18px;
-                
-                &:has(.artWrap.-col){
+
+                &:has(.artWrap.-col) {
                     padding-bottom: 4px;
                 }
 
@@ -392,24 +438,6 @@
                 color: #3D3D3D;
             }
 
-            &Small {
-                width: 100%;
-
-                &.-col {
-                    width: calc(100% + 30px);
-                    margin-left: -15px;
-                    margin-right: -15px;
-                    padding-left: 8px;
-                    padding-right: 8px;
-
-                    .hLSmallItem {
-                        flex-basis: 200px;
-                        margin-left: 7px;
-                        margin-right: 7px;
-                    }
-                }
-            }
-
             &Big {
                 &Title {
                     @include font-pack(false, false, false, false, $cl-white);
@@ -487,23 +515,25 @@
                 flex-direction: row;
                 overflow-x: auto;
                 flex-wrap: nowrap;
+                scroll-snap-type: x mandatory;
+
                 margin-top: 6px;
                 margin-bottom: 0;
-                width: calc(100% + 30px);
-                margin-left: -15px;
-                margin-right: -15px;
-                padding-left: 6px;
-                padding-right: 6px;
+                margin-left: -9px;
+                margin-right: -18px;
+                padding-left: var(--spacing-topic);
+                padding-right: var(--spacing-topic);
                 padding-bottom: 14px;
             }
 
             &Item {
                 flex-basis: 240px;
                 flex-shrink: 0;
-                margin-top: var(--spacing-topic);
-                margin-bottom: 0;
-                margin-left: var(--spacing-topic);
-                margin-right: var(--spacing-topic);
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+                margin: var(--spacing-topic) 0 0;
+                padding-left: var(--spacing-topic);
+                padding-right: var(--spacing-topic);
             }
 
             &Link {
@@ -557,10 +587,100 @@
             }
 
             .artTitle {
-                margin-top: 0;
-                margin-bottom: 10px;
                 -webkit-line-clamp: 3;
-                font-size: 18px;
+            }
+        }
+
+        .bplus {
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+
+            &Caption {
+                padding: 14px 10px;
+                border-top-left-radius: 7px;
+                border-top-right-radius: 7px;
+            }
+
+            &Item {
+                padding: 14px 14px 0;
+
+                &:first-child {
+                    height: 160px;
+
+                    .bplusContent {
+                        bottom: 0;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        border-bottom: 0;
+                    }
+                }
+
+                &:last-child {
+                    .bplusContent {
+                        border-bottom: 0;
+                    }
+                }
+            }
+
+            &Content {
+                width: 100%;
+                padding-bottom: 14px;
+                border-bottom: 1px solid #585858;
+            }
+
+            &Link:hover {
+                .bplusTitle {
+                    color: #FFAB2E;
+                }
+            }
+
+            &Title {
+                margin-top: 0;
+                letter-spacing: 0;
+                @include font-pack(false, 14px, false, 1.4, $cl-white);
+            }
+
+            &Others {
+                padding-top: 13px;
+                padding-bottom: 13px;
+                text-transform: none;
+                @include font-pack($font-manrope, 14px, false, false, #222222);
+            }
+
+            .artDate {
+                margin-top: 5px;
+            }
+        }
+
+        .kanal {
+            &Bisnistv {
+                border-radius: 7px;
+
+                .artWrap.-col .artImg {
+                    border-radius: 7px;
+                    margin-bottom: 14px;
+                }
+
+                .artTitle {
+                    order: 0;
+                    margin-top: 0;
+                    margin-bottom: 8px;
+                    font-size: 15px;
+                    color: #000;
+                }
+
+                .artDuration .icoPlay {
+                    &::before {
+                        left: 5px;
+                        border-left: 19px solid var(--cl-brown);
+                    }
+                }
+            }
+
+            &Network {
+                .artWrap.-row .artLinkImg {
+                    flex-basis: 75px;
+                }
             }
         }
 

@@ -40,20 +40,40 @@
                         </a>
                     </div>
                     {{/if}}
+                    {{#compare ../type "==" "row"}}
+                    {{#if live}}
+                    <div class="artLive"><span>Live</span></div>
+                    {{/if}}
                     {{/compare}}
                     {{/compare}}
+                    {{/compare}}
+                    {{#compare ../type "==" "row"}}
+                    {{else}}
                     <div class="artDate">
                         9 menit yang lalu
                     </div>
+                    {{/compare}}
                 </div>
                 {{/compare}}
-                <a href="{{link}}" class="artLink">
+                <a href="{{link}}" class="artLink">                    
+                    {{#compare ../type "==" "row"}}
+                    <h4 class="artTitle">
+                        {{title}}
+                    </h4>
+                    {{#compare ../dates "==" false}}
+                    {{else}}
+                    <div class="artDate">
+                        9 menit yang lalu
+                    </div>
+                    {{/compare}}
+                    {{else}}
                     {{#if live}}
                     <div class="artLive"><span>Live</span></div>
                     {{/if}}
                     <h4 class="artTitle">
                         {{title}}
                     </h4>
+                    {{/compare}}
                 </a>
             </div>
         </div>
@@ -65,7 +85,7 @@
         <div class="artItem">
             <div class="premiumBox center-flex">
                 <img src="./asset/images/logo/bisniscom-icon-premium.png" class="premiumBoxBg" alt="" width="255" height="332" loading="lazy">
-                <div class="premiumBoxCaption">
+                <div class="premiumBoxCaption text-center">
                     Dapatkan konten-konten eksklusif dari Bisnis.com dengan cara bergabung di BisnisID.
                 </div>
                 <a href="#" class="premiumBoxLogin"><span class="icoInline icoLoginPremium"></span>Login BisnisID</a>
