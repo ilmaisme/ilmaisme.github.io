@@ -1,0 +1,38 @@
+.infografis {
+    --spacing-igrafis: 7px;
+
+    &Wrap {
+        overflow: hidden;
+        max-height: 300px;
+        margin-left: -7px;
+        margin-right: -14px;
+
+
+        &.slick-initialized {
+            max-height: unset;
+        }
+
+        .slick {
+            &-list {
+                padding-right: 140px;
+            }
+        }
+    }
+
+    &Item {
+        padding-left: var(--spacing-igrafis);
+        padding-right: var(--spacing-igrafis);
+    }
+
+    &Img {
+        border-radius: 7px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        padding-top: 169%;
+
+        img {
+            @extend %template-img
+        }
+    }
+}

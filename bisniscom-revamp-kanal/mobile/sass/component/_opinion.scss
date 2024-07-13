@@ -1,0 +1,53 @@
+.opinion {
+    &LinkAuthor {
+        margin-top: 7px;
+        display: flex;
+        align-items: center;
+    }
+
+    &Img {
+        position: relative;
+        width: 62px;
+        padding-top: 60px;
+        margin-right: 12px;
+        border-radius: 50%;
+        border: 1px solid #D9D9D9;
+        overflow: hidden;
+
+        img {
+            @extend %template-img
+        }
+    }
+
+    &Content {
+        flex: 1;
+        position: relative;
+        padding-right: 42px;
+    }
+
+    &Title {
+        @include title_clamp(3);
+        @include font-pack(false, 17px, $font-weight-sbold, false, #3D3D3D);
+    }
+
+    &Author {
+        @include title_clamp(2);
+        @include font-pack(false, 14px, $font-weight-sbold, 1.4, #D11616);
+
+        &Title {
+            margin-top: 2px;
+            @include title_clamp(3);
+            @include font-pack(false, 12px, $font-weight-med, 1.5, #585858);
+            letter-spacing: .36px;
+        }
+    }
+
+    .icoList {
+        position: absolute;
+        top: calc(50% - 28px/2);
+        right: 0;
+        width: 28px;
+        height: 28px;
+        @extend %icoList
+    }
+}

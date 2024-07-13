@@ -682,6 +682,128 @@
                     flex-basis: 75px;
                 }
             }
+
+            &Photo {
+
+                .artWrap {
+                    overflow: hidden;
+                    max-height: 202px;
+
+                    &.slick-initialized {
+                        max-height: unset;
+                    }
+                }
+
+                .artItem {
+                    height: 202px;
+                }
+
+                .artImg img {
+                    border-radius: 0;
+                }
+
+                .artPhotoCount {
+                    padding-top: 6px;
+                    padding-bottom: 6px;
+                    margin-bottom: 3px;
+                    border-radius: 4px;
+                    @include font-pack($font-manrope, false, $font-weight-med, false, false);
+                    letter-spacing: .44px;
+                }
+
+                .artTitle {
+                    -webkit-line-clamp: 2;
+                    margin-top: 0;
+                    @include font-pack($font-manrope, 16px, false, false, false);
+                }
+
+                .artLink {
+                    min-height: 42px;
+                }
+
+                .artDate,
+                .artChannel {
+                    margin-top: 0;
+                    padding: 0;
+                    color: #BDBDBD;
+                }
+
+                .artPhotoMore {
+                    margin-top: 16px;
+                    background: transparent;
+                    border-radius: 7px;
+                    border: 1px solid $cl-white;
+                    text-transform: none;
+                    letter-spacing: .42px;
+                    @include font-pack($font-manrope, false, false, normal, $cl-white);
+
+                    &:hover {
+                        background: $cl-white;
+                        color: #222222;
+                    }
+                }
+
+                .artPhotoNav {
+                    --spacing-photo: 7.5px;
+                    margin-left: -7.5px;
+
+                    &Wrap {
+                        display: flex;
+                    }
+
+                    &Item {
+                        padding-left: var(--spacing-photo);
+                        padding-right: var(--spacing-photo);
+                    }
+
+                    &Content {
+                        flex: 1;
+                    }
+
+                    &Img {
+                        position: relative;
+                        flex-basis: 75px;
+                        padding-top: 75px;
+                        border-radius: 7px;
+                        margin-right: 13px;
+                        background: #C4C4C4;
+                        overflow: hidden;
+
+                        img {
+                            border-radius: 7px;
+                            @extend %template-img;
+                        }
+                    }
+
+                    .artTitle {
+                        text-align: left;
+                        @include font-pack($font-manrope, 16px, false, false, #222);
+                    }
+
+                    .artDate,
+                    .artChannel {
+                        color: #585858;
+                    }
+
+                    .slick-list {
+                        padding-left: 15px;
+                        padding-right: 45px;
+                    }
+                }
+            }
+        }
+
+        .col-border {
+            .artItem {
+                margin-top: 14px;
+                padding-bottom: 14px;
+                border-bottom: 1px solid #BDBDBD;
+
+                &:last-child {
+                    border-bottom: 0;
+                    padding-bottom: 0;
+                }
+            }
         }
 
         .buttonPrimary {

@@ -1,0 +1,16 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="infografisItem">
+    <a href="{{link}}" class="infografisLink artLink">
+        <div class="infografisImg">
+            <img src="https://images.bisnis.com/thumb/posts/{{img}}?w={{../w}}&h={{../h}}" width="{{../w}}"
+                height="{{../h}}" alt="{{title}}" loading="lazy">
+        </div>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}
