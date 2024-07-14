@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{>head page="Homepage" slick=true hl=true font=true channel=site.Homepage}}
+{{>head page="Homepage" slick=true hl=true font=true icon=false channel=site.Homepage}}
 
 <body class="theme--home">
 
@@ -20,8 +20,8 @@
         <main role="main" class="main">
 
             <!-- s: menu panel -->
-            {{>header/menu login=true}}
-            {{!>header/menu}}
+            {{!>header/menu login=true}}
+            {{>header/menu}}
 
             <!-- e: menu panel -->
 
@@ -78,9 +78,8 @@
                 <div class="artBorder artPremium premium mt30">
                     <div class="titleCaptionWrap">
                         <h3 class="titleCaption titleCaptionWrap">
-                            <span class="icoInline icoPremium"></span>
-                            <img src="./asset/images/logo/premium-logo-big.svg" alt="Konten Premium" width="145"
-                                height="23" loading="lazy">
+                            <img src="./asset/images/logo/premium-logo-big.svg" alt="Konten Premium" width="175"
+                                height="24" loading="lazy">
                         </h3>
                         <a href="#" class="titleOthers" aria-label="See others"><span>Lihat lainnya</span>
                             <span class="icoInline icoArrow"></span></a>
@@ -408,8 +407,10 @@
                 };
                 image.addEventListener('load', onLoad, { once: true });
                 image.src = src;
+                image.alt = alt;
             });
-        const src = 'https://images.bisnis.com/thumb/posts/2024/06/28/1777779/peluncuran_logo_baru_bank_tabungan_negara_bbtn_1709462290.jpg?w=384&h=216';
+        const src = 'https://images.bisnis.com/thumb/posts/2024/06/28/1777779/peluncuran_logo_baru_bank_tabungan_negara_bbtn_1709462290.jpg?w=384&h=216',
+            alt = '';
         preloadImage(src).then(image => {
             // Here the image has been loaded and is available to be appended, or otherwise.
             imgLCP.firstElementChild.style.display = 'none';
