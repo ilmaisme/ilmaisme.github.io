@@ -55,21 +55,21 @@ $(document).ready(function () {
 })
 
 //cta trigger active
-let elemtarget = document.getElementsByClassName('streamBlock')[0],
-    tgHeight = elemtarget.scrollHeight;
-if (!!elemtarget) {
-    elemtarget.style.maxHeight = tgHeight + 'px';
-}
-
 function triggerActiveButton(el, target, parent) {
+    let elemtarget = document.getElementsByClassName(target)[0],
+        elemparent = document.getElementsByClassName(parent)[0],
+        tgHeight = elemtarget.scrollHeight;
+
     elActive = el.classList.contains('-active');
     el.classList.toggle('-active');
-    let elemparent = el.parentNode.parentNode.parentNode;
+
     if (!!parent) {
         elemparent.classList.toggle('-active');
     }
-    if (!!target) {
-        // console.log(tgHeight)
-        elemtarget.style.maxHeight = elemtarget.style.maxHeight ? null : tgHeight + 'px';
+
+    if (!!elActive) {
+        elemtarget.style.maxHeight = 0;
+    } else {
+        elemtarget.style.maxHeight = tgHeight + 'px';
     }
 }
