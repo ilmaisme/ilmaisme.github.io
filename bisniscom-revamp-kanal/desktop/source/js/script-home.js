@@ -107,7 +107,10 @@ $(document).ready(function () {
 function triggerActiveButton(el, txt, txtrev, target, parent) {
     elActive = el.classList.contains('-active');
     el.classList.toggle('-active');
-    let elemparent = el.parentNode.parentNode;
+    let elemparent = document.getElementsByClassName(parent)[0],
+        elemtarget = document.getElementsByClassName(target)[0],
+        tgHeight = elemtarget.scrollHeight;
+
     if (!!txt) {
         if (elActive == false) {
             el.innerHTML = txt;
@@ -118,10 +121,9 @@ function triggerActiveButton(el, txt, txtrev, target, parent) {
     if (!!parent) {
         elemparent.classList.toggle('-active');
     }
-    if (!!target) {
-        let elemtarget = document.getElementsByClassName(target)[0];
-        tgHeight = elemtarget.scrollHeight;
-        // console.log(tgHeight)
-        elemtarget.style.maxHeight = elemtarget.style.maxHeight ? null : tgHeight + 'px';
+    if (!!elActive) {
+        elemtarget.style.maxHeight = 0;
+    } else {
+        elemtarget.style.maxHeight = tgHeight + 'px';
     }
 }
