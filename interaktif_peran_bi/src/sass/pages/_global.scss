@@ -1,0 +1,259 @@
+.global {
+    justify-content: center;
+
+    &Article {
+        position: relative;
+        z-index: 1;
+        top: calc(var(--app-height) - 100vh - 44px);
+
+        @include max-responsive($w-xm) {
+            top: calc(var(--app-height) - 100vh - 25px);
+        }
+
+        @include min-responsive($w-md) {
+            top: calc(var(--app-height) - 100vh + 45px);
+        }
+
+        @include min-responsive($w-xxxl) {
+            top: calc(var(--app-height) - 100vh - 31px);
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            top: calc(var(--app-height) - 100vh - 19px);
+        }
+    }
+
+    &Way {
+        position: absolute;
+        bottom: 58px;
+        right: 46px;
+
+        // opacity: 0;
+        @include min-responsive($w-md) {
+            bottom: 120px;
+            right: 165px;
+        }
+    }
+
+    &Img {
+        position: relative;
+        margin-top: 68px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 433px;
+        height: 252px;
+
+        @include min-responsive($w-md) {
+            width: 1440px;
+            height: 848px;
+            margin-top: -125px;
+            margin-bottom: -115px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            transform: scale(.6) translate(-1200px, 10px);
+            margin-top: -230px;
+            margin-bottom: -195px;
+        }
+    }
+
+    &Map {
+        display: block;
+        position: relative;
+        width: 433px;
+        height: 252px;
+        transition: transform .7s ease-in;
+
+        @include min-responsive($w-md) {
+            width: 1440px;
+            height: 848px;
+        }
+
+        img {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 433px;
+
+            @include min-responsive($w-md) {
+                max-width: 1440px;
+            }
+        }
+
+        &.zoom {
+            transform: scale(3.2) translate(-120px, -60px);
+
+            @include min-responsive($w-md) {
+                transform: scale(4) translate(-400px, -100px);
+            }
+        }
+    }
+
+    &List {
+        position: absolute;
+        top: 0;
+        width: 433px;
+        height: 252px;
+
+        @include min-responsive($w-md) {
+            width: 1440px;
+            height: 848px;
+        }
+    }
+
+    &Country {
+        position: absolute;
+
+        &.--us {
+            width: 63px;
+            height: 71px;
+            top: 32px;
+            left: 70px;
+
+            @include min-responsive($w-md) {
+                width: 230px;
+                height: 260px;
+                top: 124px;
+                left: 196px;
+            }
+
+            .globalPlane {
+                transform: translate(205px, 53px);
+
+                @include min-responsive($w-md) {
+                    transform: translate(685px, 154px);
+                }
+            }
+
+            picture {
+                top: -14px;
+                left: 44px;
+                transform: rotate(338deg);
+
+                @include min-responsive($w-md) {
+                    top: -60px;
+                    left: 188px;
+                }
+            }
+        }
+
+        &.--holland {
+            width: 63px;
+            height: 75px;
+            top: 30px;
+            right: 176px;
+
+            @include min-responsive($w-md) {
+                width: 230px;
+                height: 271px;
+                top: 124px;
+                right: 570px;
+            }
+
+            .globalPlane {
+                transform: translate(74px, 51px);
+
+                @include min-responsive($w-md) {
+                    transform: translate(258px, 123px);
+                }
+            }
+
+            picture {
+                top: -7px;
+                left: 51px;
+
+                @include min-responsive($w-md) {
+                    top: -28px;
+                    left: 174px;
+                    transform: rotate(349deg);
+                }
+            }
+        }
+
+        &.--japan {
+            width: 68px;
+            height: 71px;
+            top: 32px;
+            right: 38px;
+
+            @include min-responsive($w-md) {
+                width: 248px;
+                height: 260px;
+                top: 110px;
+                right: 110px;
+            }
+
+            .globalPlane {
+                transform: translate(-24px, 43px);
+
+                @include min-responsive($w-md) {
+                    transform: translate(-75px, 134px);
+                }
+            }
+
+            picture {
+                top: 20px;
+                left: -2px;
+                transform: rotate(79deg);
+
+                @include min-responsive($w-md) {
+                    top: 86px;
+                    left: -5px;
+                }
+            }
+        }
+
+        &.--aussy {
+            width: 63px;
+            height: 71px;
+            bottom: 33px;
+            right: 30px;
+
+            @include min-responsive($w-md) {
+                width: 230px;
+                height: 260px;
+                bottom: 100px;
+                right: 86px;
+            }
+
+            .globalPlane {
+                transform: translate(-42px, -23px);
+
+                @include min-responsive($w-md) {
+                    transform: translate(-84px, -90px);
+                }
+            }
+
+            picture {
+                top: -49px;
+                left: -15px;
+                transform: rotate(173deg);
+
+                @include min-responsive($w-md) {
+                    top: -163px;
+                    left: -111px;
+                    transform: rotate(190deg);
+                }
+            }
+        }
+    }
+
+    &Plane {
+        // opacity: 0;
+
+        picture {
+            display: block;
+            position: relative;
+        }
+    }
+
+    &.fly {
+        .globalCountry {
+            animation: pointzoom 1.5s ease-in-out forwards;
+        }
+
+        .globalPlane {
+            animation: flying 3s linear forwards;
+        }
+    }
+}

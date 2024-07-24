@@ -1,0 +1,33 @@
+.preloader {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1001;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .7s;
+    background: linear-gradient(135deg, #195A8E 0%, #0D2E5E 100%);
+    // background: #183C6E;
+
+    &.done {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &Wrap {
+        @include display_full;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include font-pack($font-base, 20px, $font-weight-bold, 1.24, #EACC8F);
+    }
+}

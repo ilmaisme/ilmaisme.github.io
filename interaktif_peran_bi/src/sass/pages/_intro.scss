@@ -1,0 +1,45 @@
+.intro {
+    justify-content: center;
+
+    &Img {
+        position: absolute;
+        bottom: calc(var(--app-height) - 100vh + 185px);
+
+        @include max-responsive($w-xm) {
+            bottom: calc(var(--app-height) - 100vh + 116px);
+        }
+
+        @include min-responsive($w-md) {
+            bottom: calc(var(--app-height) - 100vh + 124px);
+        }
+
+        @include min-responsive($w-xxxl) {
+            bottom: calc(var(--app-height) - 100vh + 166px);
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            bottom: calc(var(--app-height) - 100vh + 56px);
+        }
+    }
+
+    .articleBox {
+        position: relative;
+        @extend %articlePos
+    }
+
+    &.active {
+        ~.coverImg {
+            left: -100vw;
+        }
+    }
+
+    &.fly {
+        .introImg {
+            animation: flymob 3s linear forwards;
+
+            @include min-responsive($w-md) {
+                animation: fly 6s linear forwards;
+            }
+        }
+    }
+}
