@@ -4,4 +4,26 @@
     background: transparent;
     border: 0;
     cursor: pointer;
+
+    &Click {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10px;
+
+        span {
+            display: block;
+            text-align: center;
+            margin-top: 12px;
+            @include font-pack($font_caption_black, 22px, $font-weight-black, 1, $cl-white);
+            letter-spacing: 1px;
+        }
+
+        &.--up {
+            .buttonClick__img {
+                display: block;
+                transform: rotate(270deg);
+            }
+        }
+    }
 }

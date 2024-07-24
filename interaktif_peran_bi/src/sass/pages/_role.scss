@@ -1,0 +1,104 @@
+.role {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include min-responsive($w-md) {
+        flex-direction: row;
+    }
+
+    &Wrap {
+        @include min-responsive($w-md) {
+            width: 657px;
+        }
+    }
+
+    &Bg {
+        position: absolute;
+        bottom: 0;
+
+        @include min-responsive($w-md) {
+            width: 100%;
+        }
+
+        img {
+            max-width: unset;
+            object-position: center;
+            position: relative;
+            left: -50%;
+            transform: scale(.8) translate(30px, 30px);
+
+            @include min-responsive($w-md) {
+                width: 100%;
+                left: unset;
+                transform: none;
+            }
+        }
+    }
+
+    &Img {
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+
+        @include min-responsive($w-md) {
+            margin-bottom: 0;
+            margin-right: 30px;
+        }
+
+        img {
+            @include max-responsive($w-xm) {
+                max-width: 65%;
+            }
+        }
+    }
+
+    &Item {
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        text-align: left;
+        max-width: 290px;
+        background: $cl-white;
+        box-shadow: 2px 2px 0px #3B3B3B;
+
+        @include max-responsive($w-xm) {
+            margin-top: 10px;
+        }
+
+        @include min-responsive($w-md) {
+            margin-top: 28px;
+            max-width: unset;
+            margin-left: 0;
+            margin-right: 0;
+            padding: 20px;
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 23px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 20px;
+        }
+    }
+
+    .articleCaption {
+        text-align: center;
+        max-width: 290px;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        @include min-responsive($w-md) {
+            max-width: unset;
+            text-align: left;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

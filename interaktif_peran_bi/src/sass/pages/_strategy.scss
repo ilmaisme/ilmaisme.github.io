@@ -1,0 +1,103 @@
+.strategy {
+    justify-content: center;
+
+    &Txt {
+        &2 {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+
+            @include min-responsive($w-md) {
+                left: calc(50% - 700px/2);
+            }
+        }
+
+        &__wrap {
+            position: relative;
+            min-height: 63px;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include min-responsive($w-md) {
+                max-width: unset;
+                min-height: 104px;
+            }
+
+            @include min-responsive($w-xxl) {
+                min-height: 117px;
+            }
+        }
+    }
+
+    &Title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        @include font-pack($font_base_bold, 18px, $font-weight-bold, 1, #354283);
+
+        @include max-responsive($w-xm) {
+            font-size: 16px;
+        }
+
+        @include min-responsive($w-md) {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            font-size: 30px;
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 33px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            font-size: 30px;
+        }
+    }
+
+    &List {
+        list-style-type: disc;
+        padding-left: 15px;
+    }
+
+    &Box {
+        padding: 12px 12px 20px;
+        background: #D4E3F2;
+        border-radius: 29px;
+        border: 2px solid $cl-white;
+        margin-top: 23px;
+        margin-left: 15px;
+        margin-right: 15px;
+
+        @include max-responsive($w-xm) {
+            font-size: 12px;
+        }
+
+        @include min-responsive($w-md) {
+            margin-top: 30px;
+            max-width: 383px;
+            padding: 20px 38px 38px;
+            font-size: 18px;
+            border-radius: 47px;
+            border: 4px solid $cl-white;
+        }
+    }
+
+    &Row {
+        flex-direction: column;
+        justify-content: center;
+
+        @include min-responsive($w-md) {
+            flex-direction: row;
+        }
+    }
+
+    .articleCaption {
+        margin-bottom: 23px;
+
+        @include min-responsive($w-md) {
+            margin-bottom: 30px;
+        }
+    }
+}

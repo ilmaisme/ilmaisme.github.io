@@ -25,11 +25,50 @@
             font-family: $font_base_bold;
         }
     }
+
+    &Caption {
+        text-align: center;
+        @include font-pack($font_caption_black, 22px, $font-weight-black, 1.1, false);
+
+        @include max-responsive($w-xm) {
+            font-size: 18px;
+        }
+
+        @include min-responsive($w-md) {
+            font-size: 34px;
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 40px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            font-size: 34px;
+        }
+    }
+
+    &Txt{
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 700px;
+
+        @include min-responsive($w-md) {
+            font-size: 23px;
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 26px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            font-size: 23px;
+        }
+    }
 }
 
 
-%article{
-    &Pos{
+%article {
+    &Pos {
         top: calc(var(--app-height) - 100vh - 215px);
 
         @include max-responsive($w-xm) {

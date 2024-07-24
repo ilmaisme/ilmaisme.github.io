@@ -1,0 +1,61 @@
+.cup {
+    position: relative;
+    justify-content: center;
+
+    &Article {
+        position: relative;
+        @extend %articlePos;
+        margin-top: -21px;
+
+        @include min-responsive($w-md) {
+            margin-top: -63px;
+        }
+    }
+
+    &Img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -80px;
+
+        @include min-responsive($w-md) {
+            bottom: -150px;
+        }
+
+        @include min-responsive($w-xxl) {
+            bottom: -85px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            bottom: -250px;
+        }
+
+        &__coffee {
+            display: block;
+            position: relative;
+        }
+
+        img {
+            position: relative;
+            max-width: unset;
+        }
+
+        &__logo {
+            position: absolute;
+            top: 110px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: .3;
+
+            @include min-responsive($w-md) {
+                top: 164px;
+            }
+        }
+    }
+
+    &.active {
+        .cupImg {
+            pointer-events: all;
+        }
+    }
+}

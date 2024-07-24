@@ -4,7 +4,7 @@
 
 <body>
     <!-- header -->
-    {{> header}}
+    {{!> header}}
     <!-- header -->
 
     <!-- preloader -->
@@ -22,7 +22,49 @@
 
         <!-- Template Background Color -->
         <div class="bgColor__wrap">
-            <div class="bgColor bgColor__blue"></div>
+            <div class="bgColor bgColor__blue opac0"></div>
+            <div class="bgColor bgColor__green opac0">
+                <picture class="accelBg">
+                    <source srcset="./asset/images/accel-bg-mob.png" media="(max-width: 767px)" alt="" width="562"
+                        height="237">
+                    <img srcset="./asset/images/accel-bg.png" alt="" class="" width="1440" height="365" loading="lazy">
+                </picture>
+            </div>
+            <div class="bgColor bgColor__quote opac0"></div>
+            <div class="bgColor">
+                <picture class="roleBg">
+                    <img srcset="./asset/images/role-bg.png" alt="" class="" width="1440" height="237" loading="lazy">
+                </picture>
+                <div class="bgColor bgColor__role"></div>
+            </div>
+            <div class="bgColor bgColor__cloud">
+                <picture class="accelCloud accelCloud--1">
+                    <source srcset="./asset/images/accel-cloud-1-mob.png" media="(max-width: 767px)" alt="" width="178"
+                        height="40">
+                    <img srcset="./asset/images/accel-cloud-1.png" alt="" class="" width="403" height="90"
+                        loading="lazy">
+                </picture>
+                <picture class="accelCloud accelCloud--2">
+                    <source srcset="./asset/images/accel-cloud-2-mob.png" media="(max-width: 767px)" alt="" width="130"
+                        height="48">
+                    <img srcset="./asset/images/accel-cloud-2.png" alt="" class="" width="292" height="107"
+                        loading="lazy">
+                </picture>
+                <picture class="accelCloud accelCloud--3">
+                    <source srcset="./asset/images/accel-cloud-3-mob.png" media="(max-width: 767px)" alt="" width="141"
+                        height="54">
+                    <img srcset="./asset/images/accel-cloud-3.png" alt="" class="" width="317" height="120"
+                        loading="lazy">
+                </picture>
+                <picture class="accelBranch accelBranch--1 mobile-hide opac0">
+                    <img srcset="./asset/images/accel-branch.png" alt="" class="" width="198" height="562"
+                        loading="lazy">
+                </picture>
+                <picture class="accelBranch accelBranch--2 mobile-hide opac0">
+                    <img srcset="./asset/images/accel-branch.png" alt="" class="" width="198" height="562"
+                        loading="lazy">
+                </picture>
+            </div>
         </div>
         <!-- Template Background Color -->
 
@@ -37,18 +79,22 @@
                     </div>
                     <div class="coverCloud coverCloud2"></div>
                     <div class="coverTitle center-flex flex-column heightFull">
-                        <picture class="coverTitle__top center-flex">
-                            <source srcset="./asset/images/UMKM-naik-kelas-mob.png" media="(max-width: 767px)" alt=""
-                                width="193" height="39">
-                            <img srcset="./asset/images/UMKM-naik-kelas.png" alt="UMKM Naik Kelas" class="" width="635"
-                                height="131">
-                        </picture>
-                        <picture class="coverTitle__bottom center-flex">
-                            <source srcset="./asset/images/Ekonomi-digdaya-mob.png" media="(max-width: 767px)" alt=""
-                                width="292" height="47">
-                            <img srcset="./asset/images/Ekonomi-digdaya.png" alt="Ekonomi Digdaya" class="" width="963"
-                                height="153">
-                        </picture>
+                        <h1>
+                            <picture class="coverTitle__top center-flex">
+                                <source srcset="./asset/images/UMKM-naik-kelas-mob.png" media="(max-width: 767px)"
+                                    alt="" width="193" height="39">
+                                <img srcset="./asset/images/UMKM-naik-kelas.png" alt="UMKM Naik Kelas" class=""
+                                    width="635" height="131">
+                            </picture>
+                        </h1>
+                        <h2>
+                            <picture class="coverTitle__bottom center-flex">
+                                <source srcset="./asset/images/Ekonomi-digdaya-mob.png" media="(max-width: 767px)"
+                                    alt="" width="292" height="47">
+                                <img srcset="./asset/images/Ekonomi-digdaya.png" alt="Ekonomi Digdaya" class=""
+                                    width="963" height="153">
+                            </picture>
+                        </h2>
                         <button class="button coverCta" onclick="startIntro()">
                             Mulai
                         </button>
@@ -95,16 +141,17 @@
                         </picture>
                     </div>
                 </div>
-                <div class="coverPlant coverImg">
+                <div class="coverPlant coverImg opac0">
                     {{!-- <picture>
                         <source srcset="./asset/images/cover-plant-mob.png" media="(max-width: 767px)" alt=""
                             width="292" height="47">
-                        <img srcset="./asset/images/cover-plant.png" alt="" class="" width="913" height="195">
+                        <img srcset="./asset/images/cover-plant.png" alt="" class="" width="913" height="195"
+                            loading="lazy">
                     </picture> --}}
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="global heightFull display-flex flex-column">
+                <div class="global heightFull display-flex flex-column opac0">
                     <div class="globalArticle articleBox">
                         Kopi dari Koperasi Baitul Qiradh Baburrayan binaan <strong>Bank Indonesia</strong> juga sudah
                         dipesan oleh <strong>5 perusahaan global</strong> yang tersebar di <strong>4 negara.</strong>
@@ -192,11 +239,216 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="export heightFull display-flex flex-column">
+                <div class="export heightFull display-flex flex-column opac0">
                     <div class="exportArticle articleBox">
-                        Keberhasilan kopi produksi KBQ Baburrayan menembus pasar ekspor menghasilkan omzet <big><strong>Rp93,8</strong></big> miliar sepanjang <strong>2022-2023.</strong>
+                        Keberhasilan kopi produksi KBQ Baburrayan menembus pasar ekspor menghasilkan omzet
+                        <big><strong>Rp93,8</strong></big> miliar sepanjang <strong>2022-2023.</strong>
                     </div>
                     <div class="exportImg" id="animationExport">
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="cup heightFull display-flex flex-column opac0">
+                    <div class="cupArticle articleBox">
+                        Mau tahu perjalanan <strong>GO GLOBAL</strong> KBQ Baburrayyan hingga mendulang omzet miliaran
+                        rupiah?
+                    </div>
+                    <button class="button cupImg" aria-label="Go Global KBQ Baburrayyan's journey">
+                        <picture class="cupImg__coffee">
+                            <source srcset="./asset/images/cup-img-mob.png" media="(max-width: 767px)" alt=""
+                                width="563" height="524">
+                            <img srcset="./asset/images/cup-img.png" alt="" class="" width="857" height="766"
+                                loading="lazy">
+                        </picture>
+                        <picture class="cupImg__logo">
+                            <source srcset="./asset/images/cup-img-logo-mob.png" media="(max-width: 767px)" alt=""
+                                width="189" height="189">
+                            <img srcset="./asset/images/cup-img-logo.png" alt="" class="" width="286" height="288"
+                                loading="lazy">
+                        </picture>
+                    </button>
+                    <div class="cupClick buttonClick --up">
+                        <picture class="buttonClick__img">
+                            <img srcset="./asset/images/cursor-click.png" alt="" class="" width="52" height="33"
+                                loading="lazy">
+                        </picture>
+                        <span>Klik</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="accel heightFull display-flex flex-column opac0">
+                    <div class="accelArticle__wrap">
+                        <div class="accelArticle accelArticle1 articleBox">
+                            Akselerasi pengembangan UMKM terus didorong demi memperkuat perekonomian nasional dan
+                            inklusivitas pertumbuhan ekonomi
+                        </div>
+                        <div class="accelArticle accelArticle2 articleBox">
+                            Bank Indonesia, Pemerintah, otoritas terkait, dan industri pun bersinergi agar jutaan UMKM
+                            di
+                            Indonesia bisa <strong>NAIK KELAS</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="quote quote1 heightFull display-flex flex-column opac0">
+                    <div class="quoteWrap">
+                        <div class="quoteTxt quoteTxt1">
+                            Program-program pengembangan ekonomi-keuangan inklusif pada UMKM termasuk pelaku usaha
+                            syariah
+                            terus diperluas dengan digitalisasi serta perluasan akses pasar domestik dan ekspor.
+                        </div>
+                        <div class="quoteDsc">
+                            <div class="quoteName">Perry Warjiyo</div>
+                            <div class="quoteTitle">Gubernur Bank Indonesia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="quote quote2 heightFull display-flex flex-column opac0">
+                    <div class="quoteWrap">
+                        <div class="quoteTxt quoteTxt1">
+                            Langkah go global diawali dari sertifikasi kopi organik yang kami peroleh berkat bantuan
+                            dari PUSKOKA Jember. Selanjutnya, kami menerapkan standar mutu internasional dengan mendapat
+                            binaan dan pendampingan dari Bank Indonesia di Lhoksumawe.
+                        </div>
+                        <div class="quoteDsc">
+                            <div class="quoteName">Tarmizi Karim</div>
+                            <div class="quoteTitle">Pendiri dan Ketua KBQ Baburrayyan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="role heightFull display-flex opac0">
+                    <picture class="roleImg">
+                        <source srcset="./asset/images/role-img-mob.png" media="(max-width: 767px)" alt="" width="262"
+                            height="208">
+                        <img srcset="./asset/images/role-img.png" alt="" class="" width="447" height="354"
+                            loading="lazy">
+                    </picture>
+                    <div class="roleWrap">
+                        <div class="articleCaption">
+                            Apa saja peran Bank Indonesia dalam pengembangan UMKM?
+                        </div>
+                        <div class="roleList">
+                            <div class="roleItem roleItem1">Melakukan pengembangan <strong>Klaster
+                                    Pangan</strong></div>
+                            <div class="roleItem roleItem2"><strong>Mengakselerasi</strong> perluasan akses
+                                pasar UMKM baik domestik maupun global</div>
+                            <div class="roleItem roleItem3">Mendorong <strong>UMKM Go Digital</strong></div>
+                            <div class="roleItem roleItem4">Mendorong terhubung dengan <strong>akses
+                                    pembiayaan</strong> bagi UMKM</div>
+                            <div class="roleItem roleItem5">Mempersiapkan UMKM Bertransformasi Menuju Hijau
+                                untuk Mendukung <strong>Pertumbuhan Ekonomi yang Berkelanjutan</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="strategy heightFull display-flex flex-column opac0">
+                    <div class="strategyWrap">
+                        <div class="articleCaption">
+                            Mengakselerasi UMKM GO GLOBAL
+                        </div>
+                        <div class="strategyTxt__wrap text-center">
+                            <div class="articleTxt strategyTxt1">
+                                Bank Indonesia punya <strong>2</strong> strategi besar berorientasi untuk mengembangkan
+                                UMKM berorientasi
+                                ekspor dari hulu ke hilir.
+                            </div>
+                            <div class="articleTxt strategyTxt2">
+                                Dua strategi itu ditempuh untuk memenuhi aspek <strong>5K</strong> (Kuantitas, Kualitas,
+                                Kapasitas, Kontinuitas, dan Kemasan) & <strong>2S</strong> (Standardisasi dan
+                                Sertifikasi). </div>
+                        </div>
+                        <div class="strategyRow display-flex">
+                            <div class="strategyBox strategyBox1">
+                                <div class="strategyTitle">Pull Strategy</div>
+                                <ul class="strategyList">
+                                    <li class="strategyItem">Market intelligence</li>
+                                    <li class="strategyItem">Kurasi dan keikutsertaan pada promosi perdagangan</li>
+                                    <li class="strategyItem">Sinergi dengan stakeholder</li>
+                                    <li class="strategyItem">Business matching</li>
+                                </ul>
+                            </div>
+                            <div class="strategyBox strategyBox2">
+                                <div class="strategyTitle">Push Strategy</div>
+                                <ul class="strategyList">
+                                    <li class="strategyItem">Standardisasi sertifikasi UMKM binaan dan mitra BI</li>
+                                    <li class="strategyItem">Digitalisasi</li>
+                                    <li class="strategyItem">Memfasilitasi akses pembiayaan </li>
+                                    <li class="strategyItem">Capacity building dan pendampingan</li>
+                                    <li class="strategyItem">Sinergi dengan kementerian dan lembaga terkait</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="goglobal heightFull display-flex flex-column opac0">
+                    <div class="articleCaption">
+                        UMKM di Indonesia didorong untuk semakin Go Digital
+                    </div>
+                    <div class="goglobalArticle goglobalArticle1 articleBox">
+                        <strong>Bank Indonesia</strong> mendorong pertumbuhan UMKM melalui 5 strategi akselerasi yaitu
+                        produksi, promosi dan penjualan, akses keuangan, edukasi keuangan dan pembayaran digital.
+                    </div>
+                    <div class="goglobalArticle goglobalArticle2 articleBox">
+                        <strong>Bank Indonesia</strong> meningkatkan kompetensi digital UMKM dari hulu ke hilir.
+                    </div>
+                </div>
+            </div>
+            <div class="bgStatic">
+                <div class="ecosystem heightFull display-flex flex-column active">
+                    <div class="articleCaption">
+                        Ekosistem Digital
+                    </div>
+                    <div class="articleTxt text-center">
+                        Bank Indonesia berperan untuk mendorong <br> UMKM <strong>GO DIGITAL,</strong> antara lain
+                        melaui
+                        tiga program:
+                    </div>
+                    <div class="ecosystemList">
+                        <button class="button ecosystemItem ecosystemItem2">
+                            <div class="ecosystemItem__txt">E-FINANCING
+                                SUPPORT</div>
+                            <picture class="ecosystemImg">
+                                <img srcset="./asset/images/ecosystem-financing.png" alt="" class="" width="90"
+                                    height="93" loading="lazy">
+                            </picture>
+                            <div class="ecosystemClick buttonClick">
+                                <picture class="buttonClick__img">
+                                    <img srcset="./asset/images/cursor-click.png" alt="" class="" width="52" height="33"
+                                        loading="lazy">
+                                </picture>
+                                <span>Klik</span>
+                            </div>
+                        </button>
+                        <div class="ecosystemItem ecosystemItem1">
+                            <picture class="ecosystemImg">
+                                <img srcset="./asset/images/ecosystem-digital.png" alt="" class="" width="168"
+                                    height="182" loading="lazy">
+                            </picture>
+                        </div>
+                        <button class="button ecosystemItem ecosystemItem3">
+                            <div class="ecosystemItem__txt">E-FARMING</div>
+                            <picture class="ecosystemImg">
+                                <img srcset="./asset/images/ecosystem-farming.png" alt="" class="" width="90"
+                                    height="94" loading="lazy">
+                            </picture>
+                        </button>
+                        <button class="button ecosystemItem ecosystemItem4">
+                            <div class="ecosystemItem__txt">E-COMMERCE</div>
+                            <picture class="ecosystemImg">
+                                <img srcset="./asset/images/ecosystem-ecomm.png" alt="" class="" width="90" height="95"
+                                    loading="lazy">
+                            </picture>
+                        </button>
                     </div>
                 </div>
             </div>
