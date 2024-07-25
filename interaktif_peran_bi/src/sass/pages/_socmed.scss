@@ -1,0 +1,39 @@
+.socmed {
+    text-align: center;
+    color: $cl-white;
+
+    &Img {
+        display: block;
+        margin-top: 20px;
+    }
+
+    &Link {
+        letter-spacing: .5px;
+        text-decoration: underline;
+        @include font-pack($font_caption_light, $font-size-normal, $font-weight-light, 3.33, false)
+    }
+
+    &Title {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        @include font-pack($font_caption_black, 20px, $font-weight-black, 2.5, false);
+
+        @include min-responsive($w-md) {
+            font-size: 34px;
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 40px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            font-size: 34px;
+        }
+    }
+
+    &Icon{
+        display: inline-block;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}

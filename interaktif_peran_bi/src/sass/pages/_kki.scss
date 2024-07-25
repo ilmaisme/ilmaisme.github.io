@@ -1,0 +1,387 @@
+.kki {
+    &Goal {
+        color: $cl-white;
+
+        &__list {
+            margin-top: 17px;
+            text-align: center;
+            width: 270px;
+
+            @include min-responsive($w-md) {
+                width: 580px;
+            }
+        }
+
+        &__item {
+            margin-top: 8px;
+            padding: 17px;
+            border-radius: 20px;
+            border: 3px solid $cl-white;
+
+            @include min-responsive($w-md) {
+                margin-top: 10px;
+                padding: 18px;
+                border-radius: 34px;
+                border: 6px solid $cl-white;
+                font-size: 20px;
+            }
+
+            @include min-responsive($w-xxl) {
+                font-size: 23px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                font-size: 18px;
+                padding: 10px;
+                border: 4px solid $cl-white;
+            }
+        }
+
+        .articleCaption {
+            padding-top: 105px;
+        }
+    }
+
+    &Timeline {
+        position: relative;
+        width: 100%;
+        color: $cl-white;
+
+        &__wrap {
+            position: relative;
+            width: 100%;
+            padding-left: 40px !important;
+            padding-right: 40px !important;
+
+            @include min-responsive($w-md) {
+                padding-left: 95px !important;
+                padding-right: 95px !important;
+            }
+        }
+
+        &__list {
+            margin-top: 65px;
+
+            @include min-responsive($w-md) {
+                margin-top: 100px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                margin-top: 65px;
+            }
+        }
+
+        &__item:nth-last-child(2) {
+            .kkiTimeline__year::after {
+                width: calc(100% + 64px - 9px + 74px);
+
+                @include min-responsive($w-md) {
+                    width: calc(100% + 103px - 14px + 115px);
+                }
+            }
+        }
+
+        &__year {
+            position: relative;
+            margin-bottom: 15px;
+            @include font-pack($font_caption_black, 25px, $font-weight-black, .56, $cl-white);
+
+            @include min-responsive($w-md) {
+                font-size: 30px;
+            }
+
+            @include min-responsive($w-xxl) {
+                font-size: 40px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                font-size: 26px;
+            }
+
+            &::before {
+                content: '';
+                width: 9px;
+                height: 9px;
+                border-radius: 9px;
+                background: #FF9900;
+                display: block;
+                position: absolute;
+                top: -25px;
+                left: 0;
+
+                @include min-responsive($w-md) {
+                    width: 14px;
+                    height: 14px;
+                    top: -35px;
+                }
+            }
+
+            &::after {
+                content: '';
+                width: calc(100% + 64px - 9px);
+                border-top: 1px solid $cl-white;
+                display: block;
+                position: absolute;
+                top: -21px;
+                left: 9px;
+
+                @include min-responsive($w-md) {
+                    width: calc(100% + 103px - 14px);
+                    top: -29px;
+                    left: 14px;
+                }
+            }
+        }
+
+        &__attr {
+            margin-top: 9px;
+            margin-bottom: 9px;
+            @include font-pack($font_base, 11px, $font-weight-normal, 1.4, $cl-white);
+
+            @include min-responsive($w-md) {
+                margin-top: 15px;
+                font-size: 14px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                margin-top: 8px;
+            }
+
+            &bt {
+                margin-top: 9px;
+                font-size: 12px;
+
+                @include min-responsive($w-md) {
+                    margin-top: 15px;
+                    font-size: 16px;
+                }
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    font-size: 14px;
+                }
+
+                strong {
+                    font-family: $font_base_bold;
+                    font-weight: $font-weight-bold;
+                }
+            }
+        }
+
+        &__media {
+            margin-top: 15px;
+            @include font-pack($font_caption_black, 12px, $font-weight-black, 1, $cl-white);
+            letter-spacing: 1px;
+
+            @include min-responsive($w-md) {
+                font-size: 20px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                font-size: 16px;
+            }
+        }
+
+        &__info {
+            width: 100%;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include min-responsive($w-md) {
+                margin-top: 15px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                margin-top: 8px;
+            }
+        }
+
+        &__txt {
+            @include min-responsive($w-md) {
+                font-size: 20px;
+            }
+
+            @include min-responsive($w-xxl) {
+                font-size: 22px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                font-size: 18px;
+            }
+        }
+
+        &__title {
+            margin-right: 6px;
+            font-size: 12px;
+
+            @include min-responsive($w-md) {
+                font-size: 18px;
+            }
+
+            @include min-responsive($w-xxl) {
+                font-size: 20px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                font-size: 16px;
+            }
+        }
+
+        &__num {
+            justify-self: flex-end;
+            @include font-pack($font_base_bold, 14px, $font-weight-bold, 1, $cl-white);
+
+            @include min-responsive($w-md) {
+                font-size: 20px;
+            }
+
+            @include min-responsive($w-xxl) {
+                font-size: 24px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                font-size: 18px;
+            }
+        }
+
+        &__trig {
+            margin-top: 40px;
+            padding: 20px;
+            width: 144px;
+            height: 144px;
+            border: 5px solid $cl-white;
+            border-radius: 50%;
+            background: #FF9900;
+            letter-spacing: .5px;
+            box-shadow: 0 0 34px $cl-white;
+            @include font-pack($font_caption_black, 18px, $font-weight-black, 1.1, $cl-white);
+
+            @include min-responsive($w-md) {
+                width: 230px;
+                height: 230px;
+                border: 8px solid $cl-white;
+                font-size: 25px;
+                letter-spacing: 1px;
+            }
+
+            &::before {
+                content: '';
+                width: 1px;
+                height: 65px;
+                border-left: 1px solid $cl-white;
+                display: block;
+                position: absolute;
+                top: -21px;
+                left: 74px;
+                z-index: 0;
+
+                @include min-responsive($w-md) {
+                    height: 70px;
+                    top: -29px;
+                    left: 114px;
+                }
+            }
+        }
+
+        &Click {
+            position: relative;
+            left: unset;
+            transform: none;
+            transition: opacity .3s ease-out;
+
+            @include min-responsive($w-md) {
+                bottom: -10px;
+            }
+
+            @include min-responsive($w-xxl) {
+                bottom: -20px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                bottom: 80px;
+                position: absolute;
+            }
+
+            img {
+                @include min-responsive($w-md) {
+                    max-width: 20px;
+                }
+
+                @include min-responsive($w-xxl) {
+                    max-width: unset;
+                }
+            }
+
+            span {
+                margin-top: 4px;
+
+                @include min-responsive($w-md) {
+                    font-size: 16px;
+                }
+
+                @include min-responsive($w-xxl) {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .icon {
+            display: inline-block;
+            margin-right: 6px;
+            width: 14px;
+            height: 15px;
+            background-size: contain;
+            background-position: center;
+            vertical-align: middle;
+            filter: invert(57%) sepia(66%) saturate(1298%) hue-rotate(360deg) brightness(101%) contrast(107%);
+
+            @include min-responsive($w-md) {
+                width: 23px;
+                height: 24px;
+            }
+        }
+
+        .articleCaption {
+            max-width: 284px;
+
+            @include min-responsive($w-md) {
+                max-width: unset;
+            }
+        }
+
+        &.active {
+            .kkiTimeline__wrap {
+                pointer-events: all;
+            }
+        }
+    }
+
+    .articleTxt {
+        margin-bottom: 50px;
+        color: $cl-white;
+        max-width: 320px;
+
+        @include min-responsive($w-md) {
+            max-width: 633px;
+        }
+    }
+
+    &.goal {
+        .kkiLogo {
+            transform: scale(.75) translateY(calc(var(--app-height) - (var(--app-height)) - 382px));
+
+            @include min-responsive($w-md) {
+                transform: scale(0.3) translateY(calc(var(--app-height) - (var(--app-height)) - 1260px));
+            }
+
+            @include min-responsive($w-xxl) {
+                transform: scale(0.3) translateY(calc(var(--app-height) - (var(--app-height)) - 1360px));
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                transform: scale(0.3) translateY(calc(var(--app-height) - (var(--app-height)) - 1060px));
+            }
+        }
+    }
+}

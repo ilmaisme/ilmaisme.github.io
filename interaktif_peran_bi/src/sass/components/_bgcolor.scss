@@ -9,23 +9,70 @@
         background: linear-gradient(180deg, rgba(140, 202, 237, 1) 0%, rgba(100, 167, 216, 1) 100%);
     }
 
-    &__green{
+    &__green {
         background: #E2F6F7;
     }
 
-    &__quote{
+    &__quote {
         background: rgba(50, 71, 102, .9);
     }
 
-    &__role{
+    &__role {
         background: rgb(140, 202, 237);
         background: linear-gradient(180deg, rgba(140, 202, 237, 1) 0%, rgba(100, 167, 216, 1) 100%);
         opacity: .8;
     }
 
-    &__cloud{
-        &.opac{
+    &__cloud {
+        &.opac {
             opacity: .3;
+        }
+    }
+
+    &__kki {
+        background: #024C7D url(../images/kki-bg-mob.png) no-repeat;
+        background-position: bottom right;
+
+        @include min-responsive($w-md) {
+            background: #024C7D url(../images/kki-bg.png) no-repeat;
+            background-position: bottom right;
+            background-size: 100%;
+        }
+    }
+
+    &__fekdi {
+        background: rgb(13, 102, 153);
+        background: linear-gradient(60deg, rgba(13, 102, 153, 1) 0%, rgba(30, 152, 208, 1) 100%);
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            bottom: 100px;
+            left: 0;
+            height: 153px;
+            background: url(../images/fekdi-bg-mob.png) repeat;
+            background-position: -6px top;
+
+            @include min-responsive($w-md) {
+                bottom: 130px;
+                height: 188px;
+                background: url(../images/fekdi-bg.png) repeat;
+                background-position: -44px top;
+            }
+        }
+
+        &::after {
+            bottom: 0;
+            height: 100px;
+            background-position: -57px top;
+            
+            @include min-responsive($w-md) {
+                height: 130px;
+                background-position: -152px top;
+            }
         }
     }
 }

@@ -91,6 +91,58 @@ function startIntro() {
     });
 }
 
+//close modal popup 
+let mdl = $('.popup');
+$('.buttonClose').on('click', function (e) {
+    if (mdl.length) {
+        fullpage_api.setAllowScrolling(true);
+        fullpage_api.setKeyboardScrolling(true);
+
+        mdl.removeClass('active')
+    }
+})
+
+//open modal popup
+function openPopup(type) {
+    let popupnum = type;
+    if (mdl.length) {
+        fullpage_api.setAllowScrolling(false);
+        fullpage_api.setKeyboardScrolling(false);
+        $('.ecosystemClick').addClass('opac0')
+
+        $('#popup' + popupnum).addClass('active')
+        console.log()
+    }
+}
+
+//slider journey
+var boxMd = new Swiper(".boxSwiper", {
+    effect: 'slide',
+    slidesPerView: 1.1,
+    // autoplay: {                         
+    //     delay: 2000,  
+    // },  
+    spaceBetween: 0,
+    grabCursor: true,
+    loop: false,
+    breakpoints: {
+        // 768: {
+        //     slidesPerView: 3.5
+        // },
+        1270: {
+            slidesPerView: 2.6,
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+                // dragSize: dragSize
+            },
+        },
+    }
+});
+boxMd.on('slideChange', function () {
+    $('.kkiTimelineClick').addClass('opac0')
+});
+
 /* s: Get HEIGHT Device */
 const appHeight = () => {
     const doc = document.documentElement

@@ -1,0 +1,49 @@
+.boxSwiper {
+    position: relative;
+
+    .swiper {
+        &-wrapper {
+            padding-bottom: 40px;
+            // margin-left: 0;
+            // margin-right: 0;
+            // flex-wrap: nowrap;
+            // box-sizing: border-box;
+        }
+
+        &-container {
+            max-height: 100%;
+        }
+
+        &-slide {
+            padding-right: 64px;
+
+            @include min-responsive($w-md) {
+                padding-right: 103px;
+            }
+        }
+
+        &-scrollbar.swiper-scrollbar-horizontal {
+            background: #203B72;
+            border-radius: 15px;
+            height: 9px;
+            width: calc(100% - (95px*2));
+            margin-left: 95px;
+            margin-right: 95px;
+            bottom: 0;
+            left: 0;
+            display: none;
+
+            @include min-responsive($w-md) {
+                display: block;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                height: 4px;
+            }
+        }
+
+        &-scrollbar-drag {
+            background: #D9D9D9;
+        }
+    }
+}
