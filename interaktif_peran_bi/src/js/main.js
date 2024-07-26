@@ -61,6 +61,51 @@ $(document).ready(function () {
         path: 'asset/json/push-anim.json',
         name: 'myAnimation',
     });
+    // 7. Animation bifast
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('bifastAnim'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/bi-fast.json',
+        name: 'myAnimation',
+    });
+    // 8. Animation qris
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('qrisAnim'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/qris-anim.json',
+        name: 'myAnimation',
+    });
+    // 9. Animation ecom
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('ecomAnim'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/ecom-anim.json',
+        name: 'myAnimation',
+    });
+    // 10. Animation efin
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('efinAnim'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/efin-anim.json',
+        name: 'myAnimation',
+    });
+    // 11. Animation efarm
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('efarmAnim'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/efarm-anim.json',
+        name: 'myAnimation',
+    });
 
     // var animation = bodymovin.loadAnimation({
     //     container: document.getElementById('globalImg'),

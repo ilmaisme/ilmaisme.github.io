@@ -1,0 +1,36 @@
+.fekdi {
+    &.web {
+        .fekdiLogo {
+            position: absolute;
+            top: calc(var(--app-height) - var(--app-height) + 155px);
+
+            @include min-responsive($w-md) {
+                transform: scale(.6);
+                left: 0;
+                top: calc(var(--app-height) - var(--app-height) + 135px);
+            }
+
+            @include min-responsive($w-xxl) {
+                transform: scale(.8);
+                top: calc(var(--app-height) - var(--app-height) + 155px);
+            }
+
+            @include min-responsive($w-xxxl) {
+                left: 11vw;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                top: calc(var(--app-height) - var(--app-height) + 96px);
+                transform: scale(0.45);
+            }
+        }
+    }
+
+    &.collab {
+        transform: translateY(calc(var(--app-height) - var(--app-height) - 90px));
+
+        @include min-responsive($w-md) {
+            transform: scale(.6) translateY(calc(var(--app-height) - var(--app-height) - 220px));
+        }
+    }
+}
