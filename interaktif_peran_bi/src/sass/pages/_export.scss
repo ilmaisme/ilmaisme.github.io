@@ -1,12 +1,27 @@
 .export {
     justify-content: center;
 
+    &Img {
+        position: relative;
+        width: 200px;
+        left: calc(50% - 200px/2);
+        margin-top: -156px;
+
+        @include min-responsive($w-md) {
+            width: 378px;
+            left: calc(50% - 378px/2);
+            margin-top: 0;
+        }
+    }
+
     &Article {
-        position: relative;        
+        position: relative;
         @extend %articlePos;
 
         @include min-responsive($w-md) {
             font-size: 26px;
+            margin-bottom: -140px;
+            margin-top: 186px;
         }
 
         @include min-responsive($w-xxl) {

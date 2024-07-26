@@ -21,6 +21,8 @@
 
     &Wrap {
         position: relative;
+        flex: 1;
+        align-self: center;
 
         &::before {
             content: '';
@@ -59,15 +61,22 @@
         @include font-pack($font_base_black, false, $font-weight-black, false, false);
     }
 
-    &1 {
-        .quoteWrap {
-            margin-left: 10px;
+    &Img {
+        width: 115px;
+
+        @include min-responsive($w-md) {
+            width: 230px;
+            margin-top: -80px;
+        }
+
+        &1 {
+            .quoteWrap {
+                margin-left: 10px;
+            }
         }
     }
 
-    &2 {
-        .quoteWrap {
-            margin-right: 10px;
-        }
+    &2{
+        text-align: right;
     }
 }

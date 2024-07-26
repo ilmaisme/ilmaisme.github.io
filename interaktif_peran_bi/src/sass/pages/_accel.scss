@@ -5,7 +5,7 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        max-height: 486px;
+        max-height: 365px;
 
         img {
             width: 100%;
@@ -29,18 +29,14 @@
     &Article {
         margin-top: 12px;
         position: relative;
-        
+
         @include min-responsive($w-md) {
             font-size: 23px;
-            margin-top: 42px;
-        }
-
-        @include min-responsive($w-xxl) {
-            font-size: 26px;
+            margin-top: 26px;
         }
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {
-            font-size: 23px;
+            font-size: 20px;
         }
 
         &__wrap {
@@ -54,7 +50,7 @@
             }
 
             @include min-responsive($w-xxl) {
-                margin-top: 147px;
+                margin-top: 88px;
             }
         }
     }
@@ -87,6 +83,26 @@
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 display: none;
             }
+        }
+    }
+
+    &Anim {
+        width: 500px;
+        position: absolute;
+        bottom: -11px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include min-responsive($w-md) {
+            width: 878px;
+        }
+
+        @include min-responsive($w-xxxl) {
+            width: auto;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            width: 768px;
         }
     }
 }

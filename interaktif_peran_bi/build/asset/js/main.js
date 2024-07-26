@@ -7,6 +7,70 @@ $(window).on('load', function () {
 })
 
 $(document).ready(function () {
+    // 1. Animation Ekspor
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animationExport'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/koperasi-anim.json',
+        name: 'myAnimation',
+    });
+    // 2. Animation Acceleration
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('accelAnim'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/accel-anim.json',
+        name: 'myAnimation',
+    });
+    // 3. Animation Quote 1
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('quote1'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/perry-anim.json',
+        name: 'myAnimation',
+    });
+    // 4. Animation Quote 2
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('quote2'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/tarmizi-anim.json',
+        name: 'myAnimation',
+    });
+    // 5. Animation Pull
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('pullAnim'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/pull-anim.json',
+        name: 'myAnimation',
+    });
+    // 6. Animation Push
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('pushAnim'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/push-anim.json',
+        name: 'myAnimation',
+    });
+
+    // var animation = bodymovin.loadAnimation({
+    //     container: document.getElementById('globalImg'),
+    //     renderer: 'svg',
+    //     loop: true,
+    //     autoplay: true,
+    //     path: 'asset/json/ekspor.json',
+    //     name: 'myAnimation',
+    // });
+
     new fullpage('#fullpage', {
         //options here
         autoScrolling: true,
