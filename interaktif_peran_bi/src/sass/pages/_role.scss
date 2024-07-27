@@ -8,8 +8,13 @@
     }
 
     &Wrap {
-        @include min-responsive($w-md) {
+        @include min-responsive($w-xl) {
             width: 657px;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            width: 70%;
+            padding-right: 15px;
         }
     }
 
@@ -54,6 +59,8 @@
     }
 
     &Item {
+        position: relative;
+        top: 100vh;
         margin-top: 15px;
         margin-left: auto;
         margin-right: auto;

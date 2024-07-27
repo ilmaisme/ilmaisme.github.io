@@ -31,7 +31,6 @@
                 </picture>
                 <div class="accelAnim" id="accelAnim"></div>
             </div>
-            <div class="bgColor bgColor__quote opac0"></div>
             <div class="bgColor bgColor__roleWrap opac0">
                 <picture class="roleBg">
                     <img srcset="./asset/images/role-bg.png" alt="" class="" width="1440" height="237" loading="lazy">
@@ -57,15 +56,16 @@
                     <img srcset="./asset/images/accel-cloud-3.png" alt="" class="" width="317" height="120"
                         loading="lazy">
                 </picture>
-                <picture class="accelBranch accelBranch--1 mobile-hide opac0">
+                <picture class="accelBranch accelBranch--1 mobile-hide">
                     <img srcset="./asset/images/accel-branch.png" alt="" class="" width="198" height="562"
                         loading="lazy">
                 </picture>
-                <picture class="accelBranch accelBranch--2 mobile-hide opac0">
+                <picture class="accelBranch accelBranch--2 mobile-hide">
                     <img srcset="./asset/images/accel-branch.png" alt="" class="" width="198" height="562"
                         loading="lazy">
                 </picture>
             </div>
+            <div class="bgColor bgColor__quote opac0"></div>
             <div class="bgColor bgColor__kki opac0"></div>
             <div class="bgColor bgColor__fekdi opac0"></div>
             <div class="bgColor bgColor__socmed opac0">
@@ -272,7 +272,8 @@
                         Mau tahu perjalanan <strong>GO GLOBAL</strong> KBQ Baburrayyan hingga mendulang omzet miliaran
                         rupiah?
                     </div>
-                    <button class="button cupImg" aria-label="Go Global KBQ Baburrayyan's journey">
+                    <button class="button cupImg" aria-label="Go Global KBQ Baburrayyan's journey"
+                        onclick="startAccel()">
                         <picture class="cupImg__coffee">
                             <source srcset="./asset/images/cup-img-mob.png" media="(max-width: 767px)" alt=""
                                 width="563" height="524">
@@ -296,7 +297,7 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="accel heightFull display-flex flex-column opac0">
+                <div class="accel heightFull display-flex flex-column">
                     <div class="accelArticle__wrap">
                         <div class="accelArticle accelArticle1 articleBox">
                             Akselerasi pengembangan UMKM terus didorong demi memperkuat perekonomian nasional dan
@@ -312,14 +313,16 @@
             </div>
             <div class="bgStatic">
                 <div class="quote quote1 heightFull display-flex opac0">
-                    <div id="quote1" class="quoteImg quoteImg1"></div>
+                    <div id="quoteAnim1" class="quoteImg quoteImg1"></div>
                     <div class="quoteWrap">
                         <div class="quoteTxt quoteTxt1">
-                            Program-program pengembangan ekonomi-keuangan inklusif pada UMKM termasuk pelaku usaha
-                            syariah
-                            terus diperluas dengan digitalisasi serta perluasan akses pasar domestik dan ekspor.
+                            <span>
+                                Program-program pengembangan ekonomi-keuangan inklusif pada UMKM termasuk pelaku usaha
+                                syariah
+                                terus diperluas dengan digitalisasi serta perluasan akses pasar domestik dan ekspor.
+                            </span>
                         </div>
-                        <div class="quoteDsc">
+                        <div class="quoteDsc quoteDsc1">
                             <div class="quoteName">Perry Warjiyo</div>
                             <div class="quoteTitle">Gubernur Bank Indonesia</div>
                         </div>
@@ -330,16 +333,19 @@
                 <div class="quote quote2 heightFull display-flex opac0">
                     <div class="quoteWrap">
                         <div class="quoteTxt quoteTxt2">
-                            Langkah go global diawali dari sertifikasi kopi organik yang kami peroleh berkat bantuan
-                            dari PUSKOKA Jember. Selanjutnya, kami menerapkan standar mutu internasional dengan mendapat
-                            binaan dan pendampingan dari Bank Indonesia di Lhoksumawe.
+                            <span>
+                                Langkah go global diawali dari sertifikasi kopi organik yang kami peroleh berkat bantuan
+                                dari PUSKOKA Jember. Selanjutnya, kami menerapkan standar mutu internasional dengan
+                                mendapat
+                                binaan dan pendampingan dari Bank Indonesia di Lhoksumawe.
+                            </span>
                         </div>
-                        <div class="quoteDsc">
+                        <div class="quoteDsc quoteDsc2">
                             <div class="quoteName">Tarmizi Karim</div>
                             <div class="quoteTitle">Pendiri dan Ketua KBQ Baburrayyan</div>
                         </div>
                     </div>
-                    <div id="quote2" class="quoteImg quoteImg2"></div>
+                    <div id="quoteAnim2" class="quoteImg quoteImg2"></div>
                 </div>
             </div>
             <div class="bgStatic">
@@ -375,12 +381,12 @@
                             Mengakselerasi UMKM GO GLOBAL
                         </div>
                         <div class="strategyTxt__wrap text-center">
-                            <div class="articleTxt strategyTxt1">
+                            <div class="articleTxt strategyTxt strategyTxt1">
                                 Bank Indonesia punya <strong>2</strong> strategi besar berorientasi untuk mengembangkan
                                 UMKM berorientasi
                                 ekspor dari hulu ke hilir.
                             </div>
-                            <div class="articleTxt strategyTxt2">
+                            <div class="articleTxt strategyTxt strategyTxt2 opac0">
                                 Dua strategi itu ditempuh untuk memenuhi aspek <strong>5K</strong> (Kuantitas, Kualitas,
                                 Kapasitas, Kontinuitas, dan Kemasan) & <strong>2S</strong> (Standardisasi dan
                                 Sertifikasi). </div>
@@ -486,8 +492,8 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="kki center-flex flex-column heightFull goal opac0">
-                    <div class="articleTxt text-center">
+                <div class="kki center-flex flex-column heightFull opac0">
+                    <div class="articleTxt kkiArticle text-center">
                         <strong>Bank Indonesia</strong> juga menggelar selebrasi keberhasilan pengembangan UMKM binaan
                         dan
                         mitra Bank Indonesia di seluruh Indonesia melalui ajang <br> <strong>Karya Kreatif Indonesia
@@ -509,11 +515,11 @@
                         Tujuan KKI
                     </div>
                     <ul class="kkiGoal__list">
-                        <li class="kkiGoal__item">Inovasi secara kontinu</li>
-                        <li class="kkiGoal__item">Meningkatkan kualitas produk <br> sesuai selera pasar</li>
-                        <li class="kkiGoal__item">Berorientasi ekspor</li>
-                        <li class="kkiGoal__item">Memanfaatkan platform digital</li>
-                        <li class="kkiGoal__item">Memperluas akses pasar hingga <br>
+                        <li class="kkiGoal__item kkiGoal__item1">Inovasi secara kontinu</li>
+                        <li class="kkiGoal__item kkiGoal__item2">Meningkatkan kualitas produk <br> sesuai selera pasar</li>
+                        <li class="kkiGoal__item kkiGoal__item3">Berorientasi ekspor</li>
+                        <li class="kkiGoal__item kkiGoal__item4">Memanfaatkan platform digital</li>
+                        <li class="kkiGoal__item kkiGoal__item5">Memperluas akses pasar hingga <br>
                             ke internasional</li>
                     </ul>
                 </div>
@@ -588,7 +594,7 @@
                         </picture>
                     </div>
                     <a href="https://www.karyakreatifindonesia.co.id" target="_blank" rel="noopener noreferrer"
-                        class="socmedLink">
+                        class="socmedLink" aria-label="Karya Kreatif Indonesia">
                         <picture>
                             <source srcset="./asset/images/fekdi-link-mob.png" media="(max-width: 767px)" alt=""
                                 width="174" height="28">
@@ -706,8 +712,24 @@
             <section class="section"></section>
             <section class="section"></section>
             <section class="section"></section>
+            <section class="section cupSection"></section>
             <section class="section"></section>
-            <section class="section sectionCredit opac0">
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section roleSection"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section ecosystemSection"></section>
+            <section class="section"></section>
+            <section class="section kkiSection"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section fekdiSection"></section>
+            <section class="section"></section>
+            <section class="section"></section>
+            <section class="section socmedSection"></section>
+            <section class="section creditSection opac0">
                 {{> credit}}
             </section>
         </div>

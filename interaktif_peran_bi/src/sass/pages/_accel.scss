@@ -27,6 +27,7 @@
     }
 
     &Article {
+        top: 100vh;
         margin-top: 12px;
         position: relative;
 
@@ -79,6 +80,10 @@
             top: calc(var(--app-height) - 100vh + 286px);
             right: -20px;
             animation: cloud-move 16s ease-in-out infinite alternate both;
+
+            @include max-responsive($w-xm) {
+                top: calc(var(--app-height) - 100vh + 255px);
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 display: none;

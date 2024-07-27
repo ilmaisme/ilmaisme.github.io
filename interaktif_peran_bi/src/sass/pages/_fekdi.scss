@@ -1,6 +1,9 @@
 .fekdi {
-    &.web {
-        .fekdiLogo {
+    &Logo {
+        opacity: 1 !important;
+        transition: all .7s ease;
+
+        &.web {
             position: absolute;
             top: calc(var(--app-height) - var(--app-height) + 155px);
 
@@ -24,13 +27,18 @@
                 transform: scale(0.45);
             }
         }
-    }
 
-    &.collab {
-        transform: translateY(calc(var(--app-height) - var(--app-height) - 90px));
+        &.collab {
+            transform: translateY(calc(var(--app-height) - var(--app-height) - 90px));
 
-        @include min-responsive($w-md) {
-            transform: scale(.6) translateY(calc(var(--app-height) - var(--app-height) - 220px));
+            @include min-responsive($w-md) {
+                transform: scale(.6) translateY(calc(var(--app-height) - var(--app-height) - 220px));
+            }
+        }
+
+        &.credit{
+            opacity: 0 !important;
         }
     }
+
 }

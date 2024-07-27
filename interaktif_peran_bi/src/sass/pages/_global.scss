@@ -54,6 +54,10 @@
             margin-left: 0;
         }
 
+        @include range-responsive($w-md, $w-xl) {
+            transform: scale(0.7) translateX(-75.2%);
+        }
+
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             transform: scale(.6) translate(-1200px, 10px);
             margin-top: -230px;
@@ -259,8 +263,7 @@
         }
 
         .globalPlane {
-            animation-delay: .7s;
-            animation: flying 3s linear forwards;
+            animation: flying 3s linear .7s forwards;
         }
     }
 }

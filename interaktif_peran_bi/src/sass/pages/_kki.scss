@@ -1,4 +1,9 @@
 .kki {
+    &Logo {
+        transform: scale(0);
+        transition: transform .7s ease;
+    }
+
     &Goal {
         color: $cl-white;
 
@@ -13,6 +18,8 @@
         }
 
         &__item {
+            position: relative;
+            top: 100vh;
             margin-top: 8px;
             padding: 17px;
             border-radius: 20px;
@@ -62,6 +69,10 @@
         &__list {
             margin-top: 65px;
 
+            @include max-responsive($w-xm) {
+                margin-top: 50px;
+            }
+
             @include min-responsive($w-md) {
                 margin-top: 100px;
             }
@@ -85,6 +96,10 @@
             position: relative;
             margin-bottom: 15px;
             @include font-pack($font_caption_black, 25px, $font-weight-black, .56, $cl-white);
+
+            @include max-responsive($w-xm) {
+                font-size: 22px;
+            }
 
             @include min-responsive($w-md) {
                 font-size: 30px;
@@ -285,12 +300,14 @@
         }
 
         &Click {
-            position: relative;
+            position: absolute;
             left: unset;
             transform: none;
             transition: opacity .3s ease-out;
+            animation: wobble 2s ease infinite;
 
             @include min-responsive($w-md) {
+                position: relative;
                 bottom: -10px;
             }
 
@@ -304,9 +321,7 @@
             }
 
             img {
-                @include min-responsive($w-md) {
-                    max-width: 20px;
-                }
+                max-width: 20px;
 
                 @include min-responsive($w-xxl) {
                     max-width: unset;
@@ -315,10 +330,7 @@
 
             span {
                 margin-top: 4px;
-
-                @include min-responsive($w-md) {
-                    font-size: 16px;
-                }
+                font-size: 16px;
 
                 @include min-responsive($w-xxl) {
                     font-size: 20px;
@@ -362,14 +374,29 @@
         color: $cl-white;
         max-width: 320px;
 
+        @include max-responsive($w-xm) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
         @include min-responsive($w-md) {
             max-width: 633px;
+        }
+    }
+
+    &.active {
+        .kkiLogo {
+            transform: scale(1)
         }
     }
 
     &.goal {
         .kkiLogo {
             transform: scale(.75) translateY(calc(var(--app-height) - (var(--app-height)) - 382px));
+
+            @include max-responsive($w-xm) {
+                transform: scale(.6) translateY(calc(var(--app-height) - (var(--app-height)) - 480px));
+            }
 
             @include min-responsive($w-md) {
                 transform: scale(0.3) translateY(calc(var(--app-height) - (var(--app-height)) - 1260px));

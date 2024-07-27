@@ -2,6 +2,7 @@
     &Article {
         margin-top: 23px;
         position: relative;
+        top: 100vh;
 
         @include min-responsive($w-md) {
             margin-top: 43px;
@@ -13,6 +14,7 @@
 
         &1 {
             width: 214px;
+            height: 219px;
             right: 0;
             bottom: -30px;
 
@@ -23,6 +25,7 @@
 
             @include min-responsive($w-md) {
                 width: 400px;
+                height: 411px;
                 bottom: unset;
                 top: 26px;
                 right: 20px;
@@ -32,14 +35,20 @@
                 right: 90px;
             }
 
+            @include range-responsive($w-md, $w-xl) {
+                top: -30px;
+            }
+
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 width: 300px;
+                height: 311px;
                 right: 40px;
             }
         }
 
         &2 {
             width: 234px;
+            height: 108px;
             left: 0;
             bottom: 175px;
 
@@ -50,12 +59,14 @@
 
             @include min-responsive($w-md) {
                 width: 595px;
+                height: 275px;
                 bottom: 0;
                 left: -20px;
             }
+
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 width: 495px;
-                bottom: -50px;
+                height: 175px;
             }
         }
     }

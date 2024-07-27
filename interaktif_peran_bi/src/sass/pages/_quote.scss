@@ -6,9 +6,12 @@
     @include font-pack($font_caption_light, 15px, $font-weight-light, 1.6, $cl-white);
 
     @include min-responsive($w-md) {
-        width: 900px;
         margin: auto;
         font-size: 23px;
+    }
+
+    @include min-responsive($w-lg) {
+        width: 900px;
     }
 
     @include min-responsive($w-xxl) {
@@ -20,9 +23,12 @@
     }
 
     &Wrap {
-        position: relative;
         flex: 1;
         align-self: center;
+    }
+
+    &Txt {
+        position: relative;
 
         &::before {
             content: '';
@@ -42,18 +48,35 @@
                 background: url(../images/quote-bg.png);
             }
         }
-    }
 
-    &Txt {
-        position: relative;
+        span {
+            position: relative;
+        }
+
+        &1 {
+            left: -100vw;
+        }
+
+        &2 {
+            left: 100vw;
+        }
     }
 
     &Dsc {
+        position: relative;
         margin-top: 40px;
         @include font-pack($font_base, false, $font-weight-normal, false, false);
 
         @include min-responsive($w-md) {
             margin-top: 200px;
+        }
+
+        &1 {
+            left: -100vw;
+        }
+
+        &2 {
+            left: 100vw;
         }
     }
 
@@ -63,6 +86,8 @@
 
     &Img {
         width: 115px;
+        position: relative;
+        z-index: 1;
 
         @include min-responsive($w-md) {
             width: 230px;
@@ -76,7 +101,7 @@
         }
     }
 
-    &2{
+    &2 {
         text-align: right;
     }
 }

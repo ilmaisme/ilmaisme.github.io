@@ -37,6 +37,8 @@
         border-radius: 50%;
         background: rgba(212, 212, 217, 1);
         background: linear-gradient(90deg, rgba(212, 212, 217, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        transform: scale(0);
+        transition: transform .7s ease;
 
         @include min-responsive($w-md) {
             width: 130px;
@@ -51,6 +53,10 @@
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             width: 108px;
             height: 108px;
+        }
+
+        &.active {
+            transform: scale(1);
         }
 
         &__txt {
@@ -106,6 +112,7 @@
             margin-top: 15px;
             background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(212, 212, 217, 1) 100%);
             box-shadow: 4.14px 5.79px 9.93px rgba(0, 0, 0, .45);
+            transform: scale(1);
 
             @include min-responsive($w-md) {
                 margin-top: 40px;
@@ -149,6 +156,7 @@
 
         &2 {
             border: 5px solid #BB7409;
+            transition-delay: 0;
 
             @include min-responsive($w-md) {
                 border: 6px solid #BB7409;
@@ -162,6 +170,7 @@
         &3 {
             border: 5px solid #148E0A;
             align-self: flex-start;
+            transition-delay: .3s;
 
             @include min-responsive($w-md) {
                 border: 6px solid #148E0A
@@ -177,6 +186,7 @@
             bottom: 0;
             border: 5px solid #04698E;
             align-self: flex-end;
+            transition-delay: .6s;
 
             @include min-responsive($w-md) {
                 border: 6px solid #04698E
@@ -193,6 +203,7 @@
         top: 15px;
         left: -50px;
         transform: none;
+        animation: wobble 2s ease infinite;
 
         span {
             position: relative;
@@ -281,9 +292,16 @@
 .stop {
     height: var(--app-height);
     background: rgba(2, 76, 125, .7);
+    padding-left: 15px;
+    padding-right: 15px;
 
     &Title {
-        @include font-pack($font_base_black, 80px, $font-weight-black, false, $cl-white);
+        text-align: center;
+        @include font-pack($font_base_black, 40px, $font-weight-black, false, $cl-white);
         letter-spacing: 1.4px;
+
+        @include min-responsive($w-md) {
+            font-size: 80px;
+        }
     }
 }

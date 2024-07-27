@@ -2,6 +2,13 @@
     justify-content: center;
 
     &Txt {
+        transform: scale(.8);
+        transition: transform .7s ease;
+
+        &1 {
+            position: relative;
+        }
+
         &2 {
             position: absolute;
             width: 100%;
@@ -11,6 +18,10 @@
             @include min-responsive($w-md) {
                 left: calc(50% - 700px/2);
             }
+        }
+
+        &.active {
+            transform: scale(1);
         }
 
         &__wrap {
@@ -62,6 +73,8 @@
     }
 
     &Box {
+        position: relative;
+        top: 100vh;
         padding: 12px 12px 20px;
         background: #D4E3F2;
         border-radius: 29px;
@@ -73,6 +86,7 @@
 
         @include max-responsive($w-xm) {
             margin-top: 5px;
+            padding: 5px 12px 16px;
         }
 
         @include min-responsive($w-md) {
@@ -87,6 +101,7 @@
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             font-size: 16px;
             padding: 0 30px 20px;
+            margin-top: 10px;
         }
     }
 
