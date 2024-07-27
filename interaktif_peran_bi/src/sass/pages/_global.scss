@@ -1,5 +1,7 @@
 .global {
     justify-content: center;
+    background: rgb(140, 202, 237);
+    background: linear-gradient(180deg, rgba(140, 202, 237, 1) 0%, rgba(100, 167, 216, 1) 100%);
 
     &Article {
         position: relative;
@@ -42,12 +44,14 @@
         transform: translateX(-50%);
         width: 433px;
         height: 252px;
+        margin-left: -20px;
 
         @include min-responsive($w-md) {
             width: 1440px;
             height: 848px;
             margin-top: -125px;
             margin-bottom: -115px;
+            margin-left: 0;
         }
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {
@@ -103,6 +107,8 @@
 
     &Country {
         position: absolute;
+        transform: scale(0);
+        transition: transform .7s ease-in;
 
         &.--us {
             width: 63px;
@@ -239,7 +245,7 @@
     }
 
     &Plane {
-        // opacity: 0;
+        opacity: 0;
 
         picture {
             display: block;
@@ -249,10 +255,11 @@
 
     &.fly {
         .globalCountry {
-            animation: pointzoom 1.5s ease-in-out forwards;
+            transform: scale(1);
         }
 
         .globalPlane {
+            animation-delay: .7s;
             animation: flying 3s linear forwards;
         }
     }

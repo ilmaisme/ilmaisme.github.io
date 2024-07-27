@@ -128,7 +128,9 @@ $(document).ready(function () {
         onLeave: function (origin, destination, direction) {
             var leavingSection = this;
 
-            if (origin.index == 0 && direction == 'down') {}
+            if (origin.index == 0 && direction == 'down') {
+                $('.cover').removeClass('active')
+            }
             if (origin.index == 1 && direction == 'up') {
                 fullpage_api.setAllowScrolling(false);
                 fullpage_api.setKeyboardScrolling(false);
@@ -141,6 +143,9 @@ $(document).ready(function () {
                     begin: function () {
                         $('.intro').removeClass('active')
                         $('.cover').removeClass('left')
+                    },
+                    complete: function () {
+                        $('.intro').removeClass('fly')
                     }
                 });
                 $(".intro").velocity({
@@ -149,8 +154,11 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 300
                 });
+                $('.cover').addClass('active')
             }
             if (origin.index == 1 && direction == 'down') {
+                fullpage_api.setAllowScrolling(false);
+                fullpage_api.setKeyboardScrolling(false);
                 $(".introArticle").velocity({
                     opacity: "0"
                 }, {
@@ -160,6 +168,47 @@ $(document).ready(function () {
                         $('.intro').addClass('fly')
                     }
                 });
+                if ($('.intro').hasClass('fly')) {
+                    $(".global").velocity({
+                        opacity: "1"
+                    }, {
+                        delay: 0,
+                        duration: 700,
+                        begin: function () {
+                            $('.global').addClass('fly')
+                        }
+                    });
+                    $(".globalPlane").velocity({
+                        opacity: "1"
+                    }, {
+                        delay: 700,
+                        duration: 700,
+                        complete: function () {
+                            fullpage_api.setAllowScrolling(true);
+                            fullpage_api.setKeyboardScrolling(true);
+                        }
+                    });
+                } else {
+                    $(".global").velocity({
+                        opacity: "1"
+                    }, {
+                        delay: 3000,
+                        duration: 700,
+                        begin: function () {
+                            $('.global').addClass('fly')
+                        }
+                    });
+                    $(".globalPlane").velocity({
+                        opacity: "1"
+                    }, {
+                        delay: 3700,
+                        duration: 700,
+                        complete: function () {
+                            fullpage_api.setAllowScrolling(true);
+                            fullpage_api.setKeyboardScrolling(true);
+                        }
+                    });
+                }
             }
             if (origin.index == 2 && direction == 'up') {
                 $(".introArticle").velocity({
@@ -168,8 +217,170 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 300
                 });
+                $(".global").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    complete: function () {
+                        $('.global').removeClass('fly')
+                    }
+                });
+                $(".globalPlane").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
             }
-            if (origin.index == 2 && direction == 'down') {}
+            if (origin.index == 2 && direction == 'down') {
+                $('.globalMap').addClass('zoom')
+                $(".globalWay").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    complete: function () {
+                        $('.global').removeClass('fly')
+                    }
+                });
+                $(".globalPlane").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".globalArticle").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".globalList").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".export").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".cover").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".coverPlant").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+            }
+            if (origin.index == 3 && direction == 'up') {
+                $('.globalMap').removeClass('zoom')
+                $(".globalWay").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".globalList").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.global').addClass('fly')
+                    }
+                });
+                $(".globalPlane").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".globalArticle").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".export").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".cover").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".coverPlant").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 3 && direction == 'down') {
+                $(".cup").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {                        
+                        fullpage_api.setAllowScrolling(false, 'down');
+                        fullpage_api.setKeyboardScrolling(false, 'down');
+                    },
+                    complete: function () {
+                        $('.cup').addClass('active')
+                    }
+                });
+                $(".export").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".global").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+            }
+            if (origin.index == 4 && direction == 'up') {
+                $(".cup").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        $('.cup').removeClass('active')
+                        fullpage_api.setAllowScrolling(true, 'down');
+                        fullpage_api.setKeyboardScrolling(true, 'down');
+                    }
+                });
+                $(".export").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".global").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
         }
     })
 
