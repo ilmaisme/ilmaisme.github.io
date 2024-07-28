@@ -9,7 +9,7 @@
         background: $cl-white;
         border: 1px solid #2D5788;
         position: absolute;
-        bottom: calc(var(--app-height) - 100vh + -28px);
+        bottom: calc(var(--app-height) - var(--app-height) + -28px);
         @include font-pack($font_base_black, 22px, $font-weight-black, normal, #2D5788);
 
         @include min-responsive($w-md) {
@@ -23,14 +23,14 @@
     &Title {
         position: relative;
         z-index: 1;
-        top: calc(var(--app-height) - 100vh - 186px);
+        top: calc(var(--app-height) - var(--app-height) - 186px);
 
         @include min-responsive($w-md) {
-            top: calc(var(--app-height) - 100vh - 216px);
+            top: calc(var(--app-height) - var(--app-height) - 216px);
         }
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {
-            top: calc(var(--app-height) - 100vh - 175px);
+            top: calc(var(--app-height) - var(--app-height) - 175px);
         }
 
         &__top {
@@ -72,13 +72,19 @@
         height: 213px;
         background: url(../images/cover-cloud-small.png);
         transform: scale(80%);
-        animation: cloud-move 12s ease-in-out infinite alternate both;
+
+        &.move {
+            animation: cloud-move 12s ease-in-out infinite alternate both;
+        }
 
         &2 {
             left: 0;
             top: -134px;
             transform: rotate(180deg);
-            animation: cloud-move2 16s ease-in-out infinite alternate both;
+
+            &.move {
+                animation: cloud-move2 16s ease-in-out infinite alternate both;
+            }
 
             @include min-responsive($w-md) {
                 left: unset;

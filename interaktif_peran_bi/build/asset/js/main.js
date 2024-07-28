@@ -306,8 +306,11 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 300
                 });
+                
+                $('.coverCloud').removeClass('move')
             }
             if (origin.index == 3 && direction == 'up') {
+                $('.coverCloud').addClass('move')
                 $('.globalMap').removeClass('zoom')
                 $(".globalWay").velocity({
                     opacity: "1"
@@ -1554,13 +1557,25 @@ function startFekdi() {
 //close modal popup 
 let mdl = $('.popup');
 $('.buttonClose').on('click', function (e) {
+    closePopup()
+})
+
+$('.popup').on("click", function () {
+    closePopup()
+})
+
+$('.ecosystemPop__wrap').on('click', function (e) {
+    e.stopPropagation();
+})
+
+function closePopup() {
     if (mdl.length) {
         fullpage_api.setAllowScrolling(true);
         fullpage_api.setKeyboardScrolling(true);
 
         mdl.removeClass('active')
     }
-})
+}
 
 //open modal popup
 function openPopup(type) {
