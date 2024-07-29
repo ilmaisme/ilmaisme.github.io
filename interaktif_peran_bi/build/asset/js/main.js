@@ -1,9 +1,23 @@
 $(window).on('load', function () {
-    // setTimeout(function () {
-    //     $('.preloader').addClass("done");
-    //     $(".cover").addClass("active");
-    // }, 3000);
-    console.log('loaded');
+    setTimeout(function () {
+        $('.preloader').addClass("done");
+        $(".cover").addClass("active");
+        $(".coverTitle__top").velocity({
+            top: "0"
+        }, {
+            delay: 0,
+            duration: 300
+        });
+        $(".coverTitle__bottom").velocity({
+            top: "0"
+        }, {
+            delay: 300,
+            duration: 300
+        });
+        fullpage_api.setAllowScrolling(true);
+        fullpage_api.setKeyboardScrolling(true);
+    }, 3000);
+    //console.log('loaded');
 })
 
 $(document).ready(function () {
@@ -134,6 +148,7 @@ $(document).ready(function () {
 
             if (origin.index == 0 && direction == 'down') {
                 $('.cover').removeClass('active')
+                $('.scroll-guide').removeClass('opac0')
             }
             if (origin.index == 1 && direction == 'up') {
                 fullpage_api.setAllowScrolling(false);
@@ -147,6 +162,7 @@ $(document).ready(function () {
                     begin: function () {
                         $('.intro').removeClass('active')
                         $('.cover').removeClass('left')
+                        $('.scroll-guide').addClass('opac0')
                     },
                     complete: function () {
                         $('.intro').removeClass('fly')
@@ -170,6 +186,7 @@ $(document).ready(function () {
                     duration: 300,
                     begin: function () {
                         $('.intro').addClass('fly')
+                        $('.scroll-guide').addClass('opac0')
                     }
                 });
                 if ($('.intro').hasClass('fly')) {
@@ -189,7 +206,8 @@ $(document).ready(function () {
                         duration: 700,
                         complete: function () {
                             fullpage_api.setAllowScrolling(true);
-                            fullpage_api.setKeyboardScrolling(true);
+                            fullpage_api.setKeyboardScrolling(true)
+                            $('.scroll-guide').removeClass('opac0')
                         }
                     });
                 } else {
@@ -211,6 +229,7 @@ $(document).ready(function () {
                             complete: function () {
                                 fullpage_api.setAllowScrolling(true);
                                 fullpage_api.setKeyboardScrolling(true);
+                                $('.scroll-guide').removeClass('opac0')
                             }
                         });
                     } else {
@@ -231,12 +250,14 @@ $(document).ready(function () {
                             complete: function () {
                                 fullpage_api.setAllowScrolling(true);
                                 fullpage_api.setKeyboardScrolling(true);
+                                $('.scroll-guide').removeClass('opac0')
                             }
                         });
                     }
                 }
             }
             if (origin.index == 2 && direction == 'up') {
+                $('.scroll-guide').addClass('opac0')
                 $(".introArticle").velocity({
                     opacity: "1"
                 }, {
@@ -306,7 +327,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 300
                 });
-                
+
                 $('.coverCloud').removeClass('move')
             }
             if (origin.index == 3 && direction == 'up') {
@@ -367,6 +388,7 @@ $(document).ready(function () {
                     begin: function () {
                         fullpage_api.setAllowScrolling(false, 'down');
                         fullpage_api.setKeyboardScrolling(false, 'down');
+                        $('.scroll-guide').addClass('opac0')
                     },
                     complete: function () {
                         $('.cup').addClass('active')
@@ -395,6 +417,7 @@ $(document).ready(function () {
                         $('.cup').removeClass('active')
                         fullpage_api.setAllowScrolling(true, 'down');
                         fullpage_api.setKeyboardScrolling(true, 'down');
+                        $('.scroll-guide').removeClass('opac0')
                     }
                 });
                 $(".export").velocity({
@@ -412,6 +435,7 @@ $(document).ready(function () {
             }
             if (origin.index == 4 && direction == 'down') {
                 //cup click
+                $('.scroll-guide').removeClass('opac0')
             }
             if (origin.index == 5 && direction == 'up') {
                 $(".accelArticle").velocity({
@@ -423,6 +447,7 @@ $(document).ready(function () {
                         fullpage_api.setAllowScrolling(false, 'down');
                         fullpage_api.setKeyboardScrolling(false, 'down');
                         $('.cup').addClass('active')
+                        $('.scroll-guide').addClass('opac0')
                     }
                 });
                 $(".accel").velocity({
@@ -597,6 +622,9 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 7 && direction == 'down') {
+                if (viewport().height <= 784 && viewport().width <= 768) {
+                    $(".scroll-guide").addClass('-black')
+                }
                 $(".quote2").velocity({
                     opacity: "0"
                 }, {
@@ -680,6 +708,7 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 8 && direction == 'up') {
+                $(".scroll-guide").removeClass('-black')
                 $(".bgColor__roleWrap").velocity({
                     opacity: "0"
                 }, {
@@ -929,6 +958,7 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 11 && direction == 'down') {
+                $(".scroll-guide").removeClass('-black')
                 $(".goglobal").velocity({
                     opacity: "0"
                 }, {
@@ -953,6 +983,9 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 12 && direction == 'up') {
+                if (viewport().height <= 784 && viewport().width <= 768) {
+                    $(".scroll-guide").addClass('-black')
+                }
                 $(".ecosystem").velocity({
                     opacity: "0"
                 }, {
@@ -1149,6 +1182,7 @@ $(document).ready(function () {
                         $('.kkiTimeline').addClass('active')
                         fullpage_api.setAllowScrolling(false, 'down');
                         fullpage_api.setKeyboardScrolling(false, 'down');
+                        $('.scroll-guide').addClass('opac0')
                     }
                 });
                 $(".kkiGoal").velocity({
@@ -1223,12 +1257,14 @@ $(document).ready(function () {
                         $('.kkiTimeline').removeClass('active')
                         fullpage_api.setAllowScrolling(true, 'down');
                         fullpage_api.setKeyboardScrolling(true, 'down');
+                        $('.scroll-guide').removeClass('opac0')
                     }
                 });
                 // console.log('16 up')
             }
             if (origin.index == 16 && direction == 'down') {
                 //start fekdi
+                $('.scroll-guide').removeClass('opac0')
                 // console.log('16 down')
             }
             if (origin.index == 17 && direction == 'up') {
@@ -1253,6 +1289,7 @@ $(document).ready(function () {
                         $('.kkiTimeline').addClass('active')
                         fullpage_api.setAllowScrolling(false, 'down');
                         fullpage_api.setKeyboardScrolling(false, 'down');
+                        $('.scroll-guide').addClass('opac0')
                     }
                 });
                 // console.log('17 up')
@@ -1331,6 +1368,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.socmed').addClass('active')
+                        $(".scroll-guide").addClass('opac0')
                     }
                 })
                 $(".bgColor__fekdi").velocity({
@@ -1366,6 +1404,7 @@ $(document).ready(function () {
                     duration: 300,
                     begin: function () {
                         $('.socmed').removeClass('active')
+                        $(".scroll-guide").removeClass('opac0')
                     }
                 })
                 $(".collab").velocity({

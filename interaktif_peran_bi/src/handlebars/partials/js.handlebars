@@ -2,7 +2,21 @@
 <script type="text/javascript" src="./asset/js/fullpage.min.js"></script>
 <script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
 <script type="text/javascript" src="./asset/js/velocity.min.js"></script>
-<script defer type="text/javascript" src="./asset/js/lottie.min.js"></script>
-<script type="text/javascript" src="./asset/js/swiper/swiper-bundle.min.js"></script>
-{{!-- <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> --}}
+<script type="text/javascript" src="./asset/js/lottie.min.js"></script>
+<script defer type="text/javascript" src="./asset/js/swiper/swiper-bundle.min.js"></script>
+{{!--
+<script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> --}}
 <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // 0. Loading
+        var animation = bodymovin.loadAnimation({
+            container: document.getElementById('animationLoading'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'asset/json/preloader.json',
+            name: 'myAnimation',
+        });
+    });
+</script>
