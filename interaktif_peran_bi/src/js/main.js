@@ -14,8 +14,6 @@ $(window).on('load', function () {
             delay: 300,
             duration: 300
         });
-        fullpage_api.setAllowScrolling(true);
-        fullpage_api.setKeyboardScrolling(true);
     }, 3000);
     //console.log('loaded');
 })
