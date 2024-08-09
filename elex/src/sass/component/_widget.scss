@@ -1,0 +1,62 @@
+.widget {
+    --gap-widget: 14px;
+    margin-left: calc(var(--gap-widget) - var(--gap-widget)*2);
+    margin-right: calc(var(--gap-widget) - var(--gap-widget)*2);
+
+    &Col {
+        padding-left: var(--gap-widget);
+        padding-right: var(--gap-widget);
+    }
+
+    &Box {
+        position: relative;
+        padding: 30px 60px;
+        border-radius: 13px;
+        overflow: hidden;
+
+        &.--new {
+            background: #D8F2D4;
+
+            .titleLink {
+                color: #07A017;
+            }
+
+            .widgetBg {
+                filter: invert(94%) sepia(8%) saturate(1605%) hue-rotate(53deg) brightness(94%) contrast(80%);
+            }
+        }
+
+        &.--popular {
+            background: #E9EFFF;
+
+            .titleLink {
+                color: #365AB9;
+            }
+
+            .widgetBg {
+                filter: invert(89%) sepia(3%) saturate(2378%) hue-rotate(191deg) brightness(99%) contrast(87%);
+            }
+        }
+
+        .titleWrap{
+            position: relative;
+        }
+    }
+
+    &Bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    &Title {
+        .titleLead {
+            margin-top: 12px;
+        }
+
+        ~.titleLink {
+            margin-left: 53px;
+        }
+    }
+}

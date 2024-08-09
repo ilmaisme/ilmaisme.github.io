@@ -1,0 +1,43 @@
+.updates {
+    --gap-updates: 18px;
+    @include font-pack(false, 15px, false, false, false);
+
+    &List {
+        margin-left: calc(var(--gap-updates) - var(--gap-updates)*2);
+        margin-right: calc(var(--gap-updates) - var(--gap-updates)*2);
+    }
+
+    &Item {
+        margin-top: 24px;
+        padding-left: var(--gap-updates);
+        padding-right: var(--gap-updates);
+    }
+
+    &Img {
+        position: relative;
+        width: 100%;
+        padding-top: 59.71%;
+
+        img {
+            @extend %template-img;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+    }
+
+    &Title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        @include font-pack($font-mbold, 18px, $font-weight-mbold, false, false);
+    }
+
+    &Dates {
+        @include font-pack(false, false, false, false, #838383);
+        letter-spacing: 0.28px;
+    }
+
+    &Lead {
+        margin-top: 10px;
+        @include title_clamp(4)
+    }
+}

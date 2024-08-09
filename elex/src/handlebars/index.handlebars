@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="home" swiper=true}}
+
+<body>
+    {{!> header/header login=true}}
+    {{!> header/header}}
+    <main role="main">
+        <div class="container">
+            <div class="hlWrap">
+                <div class="hl">
+                    <div class="hlSlide swiper">
+                        <div class="swiper-wrapper">
+
+                            {{>headline}}
+
+                        </div>
+                    </div>
+                    <div class="hlNav center-flex swiper-pagination">
+                    </div>
+                    <div class="swiper-button-next swiper-button-hidden"></div>
+                    <div class="swiper-button-prev swiper-button-hidden"></div>
+
+                </div>
+                <div class="publish">
+
+                    <div class="publishSlide swipper" id="publishSlide">
+                        <div class="swipper-wrapper">
+
+                            {{>publish}}
+
+                        </div>
+                    </div>
+                    <div class="swiper-pagination2">
+                    </div>
+                    <div class="swipper-button-next swipper-button-hidden"></div>
+                    <div class="swipper-button-prev swipper-button-hidden"></div>
+
+                </div>
+            </div>
+
+            <div class="services mt40">
+                <div class="servicesList">
+
+                    {{>services}}
+
+                </div>
+
+                <div class="hlEllipse"></div>
+            </div>
+
+            <h2 class="title mt40">Latest <span class="cl-red">Updates</span></h2>
+            <div class="updates">
+                <div class="updatesList row">
+
+                    {{>updates tag="h3" col="col-3" lazy=true}}
+
+                </div>
+            </div>
+
+            <div class="widget row mt40">
+                <div class="widgetCol col-md-6">
+                    <div class="widgetBox --new">
+                        <div class="widgetBg">
+                            <img src="./asset/images/bg-wave.png" width="567" height="406" alt="" loading="lazy">
+                        </div>
+                        <div class="titleWrap">
+                            <div class="widgetTitle">
+                                <h2 class="title">New Release</h2>
+                                <div class="titleLead">Prey men quarterdeck belaying guns rat pinnace fluke main. Roger
+                                    chain piracy her hogshead avast dock.</div>
+                            </div>
+                            <div class="titleLink">See all</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widgetCol col-md-6">
+                    <div class="widgetBox --popular">
+                        <div class="widgetBg">
+                            <img src="./asset/images/bg-wave.png" width="567" height="406" alt="" loading="lazy">
+                        </div>
+                        <div class="titleWrap">
+                            <div class="widgetTitle">
+                                <h2 class="title">Popular</h2>
+                                <div class="titleLead">Prey men quarterdeck belaying guns rat pinnace fluke main. Roger
+                                    chain piracy her hogshead avast dock.</div>
+                            </div>
+                            <div class="titleLink">See all</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    {{> footer/footer}}
+
+    {{> js page="home" swiper=true}}
+
+</body>
+
+</html>

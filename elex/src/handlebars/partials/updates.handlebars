@@ -1,0 +1,16 @@
+{{#each updates}}
+<div class="updatesItem{{#if ../col}} {{../col}}{{/if}}">
+    <a href="{{link}}" class="updatesLink">
+        <div class="updatesImg">
+            <img src="{{images}}" alt="{{title}}" width="611" height="368"{{#if ../lazy}} loading="lazy"{{/if}}>
+        </div>
+        {{#if ../tag}}
+        <{{.. /tag}} class="updatesTitle">{{title}}</{{.. /tag}}>
+        {{else}}
+        <div class="updatesTitle">{{title}}</div>
+        {{/if}}
+        <div class="updatesDates">{{publish}}</div>
+        <div class="updatesLead">{{lead}}</div>
+    </a>
+</div>
+{{/each}}
