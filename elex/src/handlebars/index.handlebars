@@ -17,10 +17,10 @@
 
                         </div>
                     </div>
-                    <div class="hlNav center-flex swiper-pagination">
+                    <div class="hlNav hl-pagination swiper-pagination">
                     </div>
-                    <div class="swiper-button-next swiper-button-hidden"></div>
-                    <div class="swiper-button-prev swiper-button-hidden"></div>
+                    <div class="swiper-button-next hl-next swiper-button-hidden"></div>
+                    <div class="swiper-button-prev hl-prev swiper-button-hidden"></div>
 
                 </div>
                 <div class="publish">
@@ -54,9 +54,27 @@
             <div class="updates">
                 <div class="updatesList row">
 
-                    {{>updates tag="h3" col="col-3" lazy=true}}
+                    {{>updates type="updatesItem" tag="h3" col="col-3" lazy=true}}
 
                 </div>
+            </div>
+
+            <div class="best">
+                <h2 class="title bestTitle">
+                    <div class="bestTitle__wrap">
+                        Bestseller<span>of the week</span>
+                    </div>
+                    <div class="bestTitle__bg"><img src="./asset/images/logo-symbol.svg" alt="" loading="lazy"></div>
+                </h2>
+                <div class="bestList bestSlide swiper">
+                    <div class="swiper-wrapper">
+
+                        {{>best channel=product.Best index_start=0 index_end=8 tag="h3" lazy=true}}
+
+                    </div>
+                </div>
+                <div class="bestArrow --next swiper-button-next best-next"></div>
+                <div class="bestArrow --prev swiper-button-prev best-prev"></div>
             </div>
 
             <div class="widget row mt40">
@@ -71,7 +89,13 @@
                                 <div class="titleLead">Prey men quarterdeck belaying guns rat pinnace fluke main. Roger
                                     chain piracy her hogshead avast dock.</div>
                             </div>
-                            <div class="titleLink">See all</div>
+                            <a href="landing-new.html" class="titleLink">See all</a>
+                        </div>
+                        <div class="widgetList row">
+
+                            {{>product channel=product.New index_start=0 index_end=4 lazy=true tag="h3" col="col-md-3"
+                            type="widgetItem" width="102" height="152"}}
+
                         </div>
                     </div>
                 </div>
@@ -86,8 +110,134 @@
                                 <div class="titleLead">Prey men quarterdeck belaying guns rat pinnace fluke main. Roger
                                     chain piracy her hogshead avast dock.</div>
                             </div>
-                            <div class="titleLink">See all</div>
+                            <a href="landing-popular.html" class="titleLink">See all</a>
                         </div>
+                        <div class="widgetList row">
+
+                            {{>product channel=product.Popular index_start=0 index_end=4 lazy=true tag="h3"
+                            col="col-md-3" type="widgetItem" width="102" height="152"}}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="special mt40">
+            <div class="specialTitle__wrap">
+                <h2 class="specialTitle title">Special Offer</h2>
+                <div class="titleLead">Prey men quarterdeck belaying guns rat pinnace fluke main. Roger chain piracy
+                    her hogshead avast dock.</div>
+            </div>
+            <div class="specialList specialSlide swiper">
+                <div class="swiper-wrapper">
+
+                    {{>special channel=product.Special index_start=0 index_end=5 tag="h3" lazy=true type="specialItem"}}
+
+                </div>
+                <div class="specialArrow --next swiper-button-next special-next"></div>
+                <div class="specialArrow --prev swiper-button-prev special-prev"></div>
+            </div>
+        </div>
+
+        <div class="art --komik mt40">
+            <div class="container">
+                <div class="titleWrap">
+                    <div class="artCaption">
+                        <h2 class="title">Komik</h2>
+                        <div class="titleLead">Prey men quarterdeck belaying guns rat pinnace fluke main. Roger
+                            chain piracy her hogshead avast dock.</div>
+                    </div>
+                    <a href="landing-komik.html" class="titleLink">All Comics</a>
+                </div>
+                <div class="artWrap row">
+                    <div class="artList --col-left">
+
+                        {{>article channel=article.Komik index_start=0 index_end=4 lazy=true tag="h3"}}
+
+                    </div>
+                    <div class="artSlide__wrap col-md-3">
+                        <div class="artSlide__bg">
+                            <img src="./asset/images/bg-art-komik.png" alt="" width="287" height="204" loading="lazy">
+                        </div>
+                        <div class="artSlide swiper">
+                            <div class="swiper-wrapper">
+
+                                {{>product-hot channel=product.Komik index_start=0 index_end=4 lazy=true tag="h3"
+                                width="172" height="258"}}
+
+                            </div>
+                        </div>
+                        <div class="productArrow --next swiper-button-next product-next"></div>
+                        <div class="productArrow --prev swiper-button-prev product-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="art --quanta">
+            <div class="container">
+                <div class="titleWrap">
+                    <div class="artCaption">
+                        <h2 class="title">Quanta</h2>
+                        <div class="titleLead">Prey men quarterdeck belaying guns rat pinnace fluke main. Roger
+                            chain piracy her hogshead avast dock.</div>
+                    </div>
+                    <a href="landing-quanta.html" class="titleLink">All Quanta</a>
+                </div>
+                <div class="artWrap row">
+                    <div class="artList --col-left">
+
+                        {{>article channel=article.Quanta index_start=0 index_end=4 lazy=true tag="h3"}}
+
+                    </div>
+                    <div class="artSlide__wrap col-md-3">
+                        <div class="artSlide__bg">
+                            <img src="./asset/images/bg-art-quanta.png" alt="" width="287" height="204" loading="lazy">
+                        </div>
+                        <div class="artSlide swiper">
+                            <div class="swiper-wrapper">
+
+                                {{>product-hot channel=product.Quanta index_start=0 index_end=4 lazy=true tag="h3"
+                                width="172" height="258"}}
+
+                            </div>
+                        </div>
+                        <div class="productArrow --next swiper-button-next product-next"></div>
+                        <div class="productArrow --prev swiper-button-prev product-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="art --kids">
+            <div class="container">
+                <div class="titleWrap">
+                    <div class="artCaption">
+                        <h2 class="title">Elex Kids</h2>
+                        <div class="titleLead">Prey men quarterdeck belaying guns rat pinnace fluke main. Roger
+                            chain piracy her hogshead avast dock.</div>
+                    </div>
+                    <a href="landing-Kids.html" class="titleLink">All Elex Kids</a>
+                </div>
+                <div class="artWrap row">
+                    <div class="artList --col-left">
+
+                        {{>article channel=article.Kids index_start=0 index_end=4 lazy=true tag="h3"}}
+
+                    </div>
+                    <div class="artSlide__wrap col-md-3">
+                        <div class="artSlide__bg">
+                            <img src="./asset/images/bg-art-kids.png" alt="" width="287" height="204" loading="lazy">
+                        </div>
+                        <div class="artSlide swiper">
+                            <div class="swiper-wrapper">
+
+                                {{>product-hot channel=product.Kids index_start=0 index_end=4 lazy=true tag="h3"
+                                width="172" height="258"}}
+
+                            </div>
+                        </div>
+                        <div class="productArrow --next swiper-button-next product-next"></div>
+                        <div class="productArrow --prev swiper-button-prev product-prev"></div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,128 @@
+.product {
+    &Link {
+        display: block;
+        width: 100%;
+    }
+
+    &Wrap {
+        position: relative;
+    }
+
+    &Img {
+        position: relative;
+        width: 100%;
+        padding-top: 149.76%;
+
+        img {
+            @extend %template-img;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+    }
+
+    &Title {
+        margin-top: 10px;
+        @include title_clamp(2);
+        @include font-pack($font-mbold, 16px, $font-weight-mbold, false, #454545);
+        letter-spacing: 0.32px;
+    }
+
+    &Author {
+        margin-top: 5px;
+        @include title_clamp(2);
+        @include font-pack(false, 14px, false, 1.21, #838383);
+        letter-spacing: 0.28px;
+    }
+
+    &Lead {
+        margin-top: 18px;
+        @include title_clamp(2);
+        @include font-pack(false, false, false, 1.21, #616161);
+        letter-spacing: 0.28px;
+    }
+
+    &More {
+        @include display-flex;
+        align-items: center;
+        margin-top: 9px;
+        margin-bottom: 9px;
+        padding-bottom: 4px;
+        color: $cl-red;
+        letter-spacing: 0.7px;
+
+        .icoArrow {
+            @extend %icoArrow;
+            display: inline-block;
+            margin-left: 8px;
+        }
+    }
+
+    &Buy {
+        position: relative;
+        padding: 9px 32px 9px 20px;
+
+        .icoMore {
+            @extend %icoMore;
+            position: absolute;
+            top: calc(50% - 8px/2);
+            right: 20px;
+        }
+    }
+
+    &Disc {
+        position: absolute;
+        top: 10px;
+        left: -14px;
+        @include font-pack($font-sbold, 15px, $font-weight-sbold, false, $cl-white);
+        letter-spacing: 0.3px;
+        z-index: 1;
+
+        span {
+            display: block;
+            position: relative;
+            padding: 8px 17px;
+            background: $cl-red;
+            border-bottom-right-radius: 25px;
+            z-index: 1;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: -14px;
+            bottom: -15px;
+            z-index: 0;
+            border: 15px solid transparent;
+            border-right-color: #741114;
+        }
+    }
+
+    &Label {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+
+    &Cta {
+        @include display-flex;
+        margin-top: 20px;
+
+        .button {
+            &:first-child {
+                margin-right: 10px
+            }
+
+            &:last-child {
+                flex: 1
+            }
+        }
+    }
+
+    &Wish {
+        .icoWishlist {
+            @extend %icoWishlist;
+            display: block;
+            filter: invert(40%) sepia(0%) saturate(0%) hue-rotate(334deg) brightness(90%) contrast(84%);
+        }
+    }
+}

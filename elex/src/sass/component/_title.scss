@@ -1,14 +1,18 @@
 .title {
-    @include font-pack($font-sbold, 32px, $font-weight-sbold, 1.11, false);
+    @include font-pack($font-sbold, 32px, $font-weight-sbold, false, false);
     letter-spacing: 0.64px;
 
     &Wrap{
         @include display-flex
     }
 
+    &Lead{
+        margin-top: 5px;
+    }
+
     &Link{
         flex-shrink: 0;
-        @include font-pack($font-mbold, false, $font-weight-mbold, 1.11, false);
+        @include font-pack($font-mbold, false, $font-weight-mbold, false, false);
         letter-spacing: 0.14px;
     }
 }

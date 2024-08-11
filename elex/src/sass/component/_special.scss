@@ -1,0 +1,89 @@
+.special {
+    &Title {
+        text-transform: uppercase;
+        color: $cl-red;
+
+        &__wrap {
+            text-align: center;
+        }
+    }
+
+    &List {
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 192px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        &::before {
+            left: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 34%, rgba(255, 255, 255, 0.00) 100%);
+        }
+
+        &::after {
+            right: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 34%, #FFF 100%);
+        }
+    }
+
+    &Item {
+        margin-top: 20px;
+
+        .product {
+            &Wrap {
+                @include display-flex;
+                margin-bottom: 50px;
+
+                &::before {
+                    content: '';
+                    width: calc(100% - 37px);
+                    height: 100%;
+                    position: absolute;
+                    background: #F8F8F8;
+                    border-radius: 13px;
+                    top: 21px;
+                    left: 37px;
+                    box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.10);
+                }
+            }
+
+            &Content {
+                align-self: flex-end;
+                margin-left: 20px;
+                padding-right: 18px;
+                position: relative;
+                flex: 1;
+            }
+
+            &Title {
+                font-size: 20px;
+            }
+
+            &Img {
+                width: 100%;
+
+                &__wrap {
+                    width: 42%;
+                    max-width: 162px;
+                }
+            }
+        }
+    }
+
+    .titleLead {
+        margin-top: 7px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include min-responsive($w-md) {
+            max-width: 479px;
+        }
+    }
+}

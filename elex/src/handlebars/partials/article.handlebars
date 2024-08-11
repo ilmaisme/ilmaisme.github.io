@@ -1,0 +1,36 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="artItem">
+    <a href="{{link}}" class="artLink">
+        {{#eq @index compare=../index_start}}
+        <div class="artImg">
+            <img src="{{image}}" alt="{{title}}" width="360" height="215" {{#if ../lazy}} loading="lazy" {{/if}}>
+        </div>
+        {{else}}
+        <div class="artImg">
+            <img src="{{image}}" alt="{{title}}" width="223" height="133" {{#if ../lazy}} loading="lazy" {{/if}}>
+        </div>
+        {{/eq}}
+        <div class="artContent">
+            {{#if ../tag}}
+            <{{.. /tag}} class="artTitle">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="artTitle">{{title}}</div>
+            {{/if}}
+            <div class="artDates"><span class="icoCal"></span>{{publish}}</div>
+            {{#eq @index compare=../index_start}}
+            <div class="artLead">{{lead}}</div>
+            <div class="artMore">
+                Baca Selengkapnya
+                <span class="icoArrow"></span>
+            </div>
+            {{/eq}}
+        </div>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

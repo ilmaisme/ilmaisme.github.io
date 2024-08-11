@@ -1,0 +1,29 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="productItem swiper-slide">
+    <a href="{{link}}" class="productLink">
+        <div class="productImg">
+            <img src="{{image}}" alt="{{title}}" width="{{../width}}" height="{{../height}}" {{#if ../lazy}}
+                loading="lazy" {{/if}}>
+            {{#if label}}
+            <div class="productLabel">Hot</div>
+            {{/if}}
+        </div>
+        {{#if ../tag}}
+        <{{.. /tag}} class="productTitle">{{title}}</{{.. /tag}}>
+        {{else}}
+        <div class="productTitle">{{title}}</div>
+        {{/if}}
+        <div class="productAuthor">{{author}}</div>
+        <div class="productCta">
+            <button class="button productWish" aria-label="favorite this product"><span class="icoWishlist"></span></button>
+            <button class="button buttonPrimary productBuy">Buy From <span class="icoMore"></span></button>
+        </div>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

@@ -5,7 +5,25 @@
         justify-content: center;
     }
 
-    &-wrapper {
-        align-items: center;
+    &-button-next,
+    &-button-prev {
+        width: 34px;
+        height: 34px;
+        background: $cl-red;
+        border-radius: 50%;
+
+        &::after{
+            @extend %icoChevron;
+            color: $cl-white;
+            top: 12px;
+            left: 12px;
+        }
+    }
+
+    &-button-prev{
+        &::after{
+            transform: rotate(45deg) scaleY(1);
+            left: 15px;
+        }
     }
 }

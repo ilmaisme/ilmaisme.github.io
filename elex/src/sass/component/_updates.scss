@@ -1,6 +1,6 @@
 .updates {
     --gap-updates: 18px;
-    @include font-pack(false, 15px, false, false, false);
+    @include font-pack(false, 15px, false, 1.21, false);
 
     &List {
         margin-left: calc(var(--gap-updates) - var(--gap-updates)*2);
@@ -8,36 +8,28 @@
     }
 
     &Item {
-        margin-top: 24px;
         padding-left: var(--gap-updates);
         padding-right: var(--gap-updates);
     }
 
-    &Img {
-        position: relative;
-        width: 100%;
-        padding-top: 59.71%;
-
-        img {
-            @extend %template-img;
-            border-radius: 7px;
-            overflow: hidden;
+    .art {
+        &Item {
+            margin-top: 24px;
         }
-    }
 
-    &Title {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        @include font-pack($font-mbold, 18px, $font-weight-mbold, false, false);
-    }
+        &Link {
+            flex-direction: column;
+        }
 
-    &Dates {
-        @include font-pack(false, false, false, false, #838383);
-        letter-spacing: 0.28px;
-    }
+        &Img {
+            width: 100%;
+            padding-top: 59.71%;
+            margin-right: 0;
+        }
 
-    &Lead {
-        margin-top: 10px;
-        @include title_clamp(4)
+        &Title {
+            -webkit-line-clamp: 2;
+            @include font-pack(false, 18px, false, 1.21, false);
+        }
     }
 }

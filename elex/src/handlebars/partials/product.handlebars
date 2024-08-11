@@ -1,0 +1,24 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="productItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
+    <a href="{{link}}" class="productLink">
+        <div class="productImg">
+            <img src="{{image}}" alt="{{title}}" width="{{../width}}" height="{{../height}}"{{#if ../lazy}} loading="lazy"{{/if}}>
+            {{#if label}}
+            <div class="productLabel">{{label}}</div>
+            {{/if}}
+        </div>
+        {{#if ../tag}}
+        <{{.. /tag}} class="productTitle">{{title}}</{{.. /tag}}>
+        {{else}}
+        <div class="productTitle">{{title}}</div>
+        {{/if}}
+        <div class="productAuthor">{{author}}</div>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}
