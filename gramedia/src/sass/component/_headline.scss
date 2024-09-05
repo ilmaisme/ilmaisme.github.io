@@ -1,0 +1,30 @@
+.hl {
+    @include display-flex;
+    align-items: center;
+
+    &Title {
+        margin-top: 10px;
+        @include font-pack($font-bold, 48px, $font-weight-bold, 1.25, $cl-text1);
+    }
+
+    &Img {
+        position: relative;
+        flex-shrink: 0;
+        width: 536px;
+        height: 499px;
+    }
+
+    &Item {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        clip-path: circle(280px at 280px 250px);
+        -webkit-clip-path: circle(280px at 280px 250px);
+    }
+
+    &Cta{
+        margin-top: 40px
+    }
+}
