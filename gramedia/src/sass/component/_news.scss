@@ -1,0 +1,125 @@
+.news {
+    &Widget {
+        @include display-flex;
+        align-items: center;
+        margin-top: 57px;
+        padding-bottom: 16px;
+
+        &Container {
+            margin-right: 0;
+            padding-right: 0;
+
+            @include media-breakpoint-up(xl) {
+                max-width: 1335px;
+            }
+
+            @include min-responsive(1441px) {
+                max-width: 100%;
+            }
+        }
+    }
+
+    &Caption {
+        &--widget {
+            width: 165px;
+            flex-shrink: 0;
+
+            .titleH2 {
+                position: relative;
+                padding-bottom: 12.5px;
+                margin-bottom: 12.5px;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    width: 45px;
+                    border-top: 5px solid $cl-primary2;
+                }
+            }
+        }
+    }
+
+    &List {
+        position: relative;
+        --gap-news: 10px;
+        margin-left: calc(var(--gap-news) - var(--gap-news)*2);
+        margin-right: calc(var(--gap-news) - var(--gap-news)*2);
+
+        &--widget {
+            --gap-news: 0;
+            width: calc(100% - 165px);
+
+            .newsItem {
+                padding-top: 24px;
+            }
+
+            .newsLink {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .newsImg {
+                box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.09);
+            }
+
+            .slick {
+                &-list {
+                    padding-right: 80px;
+                }
+            }
+        }
+    }
+
+    &Item {
+        margin-top: calc(var(--gap-news)*2);
+        padding-left: var(--gap-news);
+        padding-right: var(--gap-news);
+    }
+
+    &Link {
+        display: block;
+
+        &:hover {
+            .newsTitle {
+                color: $cl-primary1;
+            }
+        }
+    }
+
+    &Img {
+        width: 100%;
+        padding-top: 190px;
+        position: relative;
+        border-radius: 20px;
+        border: 1px solid #FFF;
+        background: linear-gradient(180deg, #FCFCFC 0%, rgba(252, 252, 252, 0.00) 100%);
+        box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.09);
+
+        img {
+            @extend %template-img;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+    }
+
+    &Dates {
+        @include font-pack($font-normal, 13px, $font-weight-normal, 1.23, $cl-text2);
+    }
+
+    &Content {
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    &Title {
+        margin-top: 15px;
+    }
+
+    &Lead {
+        margin-top: 10px;
+        @include title_clamp(4);
+    }
+}

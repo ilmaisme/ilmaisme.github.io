@@ -1,0 +1,24 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="eventItem{{#if ../col}} {{../col}}{{/if}}">
+    <a href="{{link}}" class="eventLink">
+        <div class="eventImg">
+            <img src="{{images}}" alt="{{title}}" width="337" height="190" {{#if ../lazy}} loading="lazy" {{/if}}>
+        </div>
+        <div class="eventContent">
+            <div class="eventTag">Events & Promo</div>
+            {{#if ../tag}}
+            <{{.. /tag}} class="eventTitle titleH5">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="eventTitle titleH5">{{title}}</div>
+            {{/if}}
+        </div>
+        <span class="ico icoLink eventLinkIco"></span>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

@@ -1,0 +1,51 @@
+.testi {
+    margin-top: 52px;
+
+    &Txt {
+        margin-top: 15px;
+    }
+
+    &List {
+        margin-top: 26px;
+        margin-left: -10px;
+        margin-right: -10px;
+        cursor: pointer;
+
+        .slick{
+            &-track{
+                display: flex;
+            }
+        }
+    }
+
+    &Item {
+        margin-top: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        height: inherit !important;
+    }
+
+    &Wrap {
+        @include flex(center);
+        flex-direction: column;
+        height: 100%;
+        padding: 20px;
+        background: $cl-accent1;
+        border-radius: 20px;
+        border: 1px solid $cl-accent4;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.09);
+    }
+
+    &Img {
+        position: relative;
+        width: 80px;
+        padding-top: 80px;
+
+        img {
+            @extend %template-img;
+            border-radius: 100%;
+            overflow: hidden;
+        }
+    }
+}

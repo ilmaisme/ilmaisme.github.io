@@ -1,3 +1,27 @@
-<footer>
-    <div class="share"></div>
+{{>footer/contact type="fixed"}}
+
+<footer class="footer">
+    <div class="share">
+        <div class="shareCaption">Share this page</div>
+        <div class="shareList">
+
+            {{>footer/share}}
+
+        </div>
+    </div>
+
+    {{>footer/contact}}
+
+    <div class="footerMenu">
+        <ul class="footerList">
+
+            {{#each footerMenu}}
+            <li class="footerItem">
+                <a href="{{link}}" class="footerLink">{{title}}</a>
+            </li>
+            {{/each}}
+
+        </ul>
+    </div>
+    <div class="footerCopy">&copy; Gramedia 2024</div>
 </footer>

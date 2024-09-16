@@ -1,0 +1,31 @@
+.contact {
+    max-width: 1020px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include display-flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &Txt {
+        margin-top: 15px;
+    }
+
+    &Cta {
+        position: fixed;
+        bottom: 40px;
+        right: 11px;
+        @include flex(center);
+        padding: 10px;
+        border-radius: 50px;
+        background: $cl-secondary1;
+        @include font-pack(false, 13px, false, 1.23, $cl-text1);
+        z-index: 1;
+
+        .ico {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            filter: invert(16%) sepia(4%) saturate(996%) hue-rotate(191deg) brightness(92%) contrast(85%);
+        }
+    }
+}

@@ -1,0 +1,63 @@
+.nav {
+    &List {
+        @include flex(center);
+    }
+
+    &Item {
+        position: relative;
+
+        &:not(:hover)>.navSub {
+            border: 1px solid transparent;
+            background: transparent;
+
+            &>* {
+                visibility: hidden;
+                height: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+                margin: 0;
+                transition: 0.5s 0.1s height, 0.5s 0.1s padding, 0.5s 0.1s margin, 0.3s color, 0.6s visibility;
+            }
+        }
+    }
+
+    &Link {
+        position: relative;
+        display: inline-block;
+        padding: 10px 15px;
+        border-radius: 50px;
+        background: transparent;
+        @include font-pack($font-bold, 14px, $font-weight-bold, 1.28, $cl-text2);
+        transition: all .3s ease-in-out;
+
+        &:has(~.navSub) {
+            padding-right: 35px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                border-style: solid;
+                border-width: 6px 4px 0 4px;
+                border-color: #1373E3 transparent transparent transparent;
+                transform: rotate(0deg);
+            }
+        }
+
+        &:hover {
+            color: $cl-primary1;
+            background: $cl-accent4;
+        }
+    }
+
+    :is(.navSub) .navLink {
+        @extend .headerDropdownLink;
+    }
+
+    &Sub {
+        &Item {
+            @extend .headerDropdownItem;
+        }
+    }
+}

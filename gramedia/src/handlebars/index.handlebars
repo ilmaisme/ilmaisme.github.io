@@ -4,9 +4,10 @@
 {{> head page="home"}}
 
 <body>
-    {{!> header/header login=true}}
-    {{!> header/header}}
-    <main role="main">
+
+    {{> header/header}}
+    
+    <main role="main" class="main">
         <div class="container">
             <div class="hl">
                 <div class="hlText">
@@ -22,8 +23,9 @@
                 </div>
             </div>
             <div class="intro text-center">
-                <div class="introTitle titleH2">Who we are</div>
-                <div class="introTxt">Mus felis justo velit viverra nullaaucibus consequat cursus condimentum sed cras
+                <h2 class="titleH2">Who we are</h2>
+                <div class="titleLead introTxt">Mus felis justo velit viverra nullaaucibus consequat cursus condimentum
+                    sed cras
                     <br> fermentum penatibus tortor rhoncus.
                 </div>
                 <div class="introList">
@@ -33,13 +35,76 @@
                 </div>
                 <a href="#" class="introCta buttonTxt">Find out more our company <span class="ico icoArrow"></span></a>
             </div>
-            <div class="brands"></div>
-            <div class="testi"></div>
-            <div class="news newsWidget"></div>
-            <div class="event eventWidget"></div>
+            <div class="brands">
+                <div class="brandsSlider -sbrands">
+                    <div class="brandsList">
+
+                        {{>brands channel=brands index_start=0 index_end=10 lazy=true}}
+
+                    </div>
+                    <div class="brandsList">
+
+                        {{>brands channel=brands index_start=10 index_end=20 lazy=true}}
+
+                    </div>
+                    <div class="brandsList">
+
+                        {{>brands channel=brands index_start=20 index_end=30 lazy=true}}
+
+                    </div>
+                </div>
+                <div class="brandsCaption">
+                    <h2 class="titleH2">Through transformation, it’s inevitable to go beyond.</h2>
+                    <div class="titleLead">Mus felis justo velit viverra nullaaucibus consequat cursus
+                        condimentum sed cras
+                        <br> fermentum penatibus tortor rhoncus.
+                    </div>
+                    <a href="#" class="brandsCta buttonTxt">More our brands<span class="ico icoArrow"></span></a>
+                </div>
+            </div>
+            <div class="testi text-center">
+                <h2 class="titleH2">Testimonials</h2>
+                <div class="titleLead testiTxt">Mus felis justo velit viverra nullaaucibus consequat cursus condimentum
+                </div>
+                <div class="testiList -stesti">
+
+                    {{>testi channel=testi index_start=0 index_end=9 tag="h3" lazy=true}}
+
+                </div>
+            </div>
+        </div>
+        <div class="container newsWidgetContainer">
+            <div class="news newsWidget">
+                <div class="newsCaption--widget">
+                    <h2 class="titleH2">Latest <br> updates</h2>
+                    <a href="news.html" class="newsWidgetCta buttonTxt">See all <span class="ico icoArrow"></span></a>
+                </div>
+                <div class="newsList newsList--widget -supdates">
+
+                    {{>news channel=news index_start=0 index_end=5 tag="h3" lazy=true}}
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="event eventWidget">
+                <div class="eventList eventWidgetList -sEventWid">
+
+                    {{>event channel=event index_start=0 index_end=3 tag="h3" lazy=true}}
+
+                </div>
+                <div class="eventCaption--widget">
+                    <h2 class="titleH2">What’s on going</h2>
+                    <div class="titleLead">Mus felis justo velit viverra nullaaucibus consequat cursus
+                        condimentum sed cras
+                        <br> fermentum penatibus tortor rhoncus.
+                    </div>
+                    <a href="#" class="eventWidgetCta buttonTxt">Watch our agenda<span class="ico icoArrow"></span></a>
+                </div>
+            </div>
             <div class="widget row">
 
-                {{>widget}}
+                {{>widget col="col-4"}}
 
             </div>
         </div>
@@ -47,7 +112,7 @@
 
     {{> footer/footer}}
 
-    {{> js page="home"}}
+    {{> js page="home" slick=true}}
 
 </body>
 
