@@ -1,17 +1,44 @@
 .hl {
     @include display-flex;
     align-items: center;
+    flex-direction: column;
+
+    @include min-responsive($w-md) {
+        flex-direction: row;
+    }
+
+    &Text {
+        flex: 1;
+    }
 
     &Title {
         margin-top: 10px;
-        @include font-pack($font-bold, 48px, $font-weight-bold, 1.25, $cl-text1);
+        @include font-pack($font-bold, 30px, $font-weight-bold, 1.25, $cl-text1);
+
+        @include min-responsive($w-xl) {
+            font-size: 48px;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            font-size: 32px;
+        }
     }
 
     &Img {
         position: relative;
         flex-shrink: 0;
-        width: 536px;
-        height: 499px;
+        width: 300px;
+        height: 280px;
+        margin-top: 40px;
+
+        @include min-responsive($w-md) {
+            margin-top: 0;
+        }
+
+        @include min-responsive($w-xl) {
+            width: 536px;
+            height: 499px;
+        }
     }
 
     &Item {
@@ -24,7 +51,7 @@
         -webkit-clip-path: circle(280px at 280px 250px);
     }
 
-    &Cta{
+    &Cta {
         margin-top: 40px
     }
 }

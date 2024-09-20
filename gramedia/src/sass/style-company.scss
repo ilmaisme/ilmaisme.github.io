@@ -1,9 +1,9 @@
 /**
 * Gramedia
-* TODO : styling for *page
+* TODO : styling for company page
 * --
-* * for *page : index.html
-* ? style.min.css
+* * for company page : company.html
+* ? style-company.min.css
 * ! important to minify
 */
 
@@ -12,6 +12,7 @@
 */
 @import 'base/vars';
 @import 'base/mixin';
+@import 'base/icon';
 /**required bootstrap*/
 @import 'base/mixins-bootstrap/functions';
 @import 'base/mixins-bootstrap/variables';
@@ -30,29 +31,34 @@
 /**
 * * header
 */
-// @import 'layout/header';
-// @import 'layout/nav';
-// @import 'component/badge';
-// @import 'component/searchbox';
-// @import 'component/icon';
-// @import 'component/toplist';
-// @import 'component/burger';
-// @import 'component/menu';
-// @import 'component/share';
+@import 'component/button';
+@import 'layout/header';
+@import 'layout/nav';
 
 /**
 * * content
 */
+@import 'component/title';
+@import 'component/headline';
+@import 'component/intro';
+
+/**
+* * page
+*/
+@import 'page/company';
 
 /**
 * * footer
 */
 // @import 'module/popup';
-// @import 'layout/footer';
+@import 'component/share';
+@import 'component/contact';
+@import 'layout/footer';
 
 /**
 * * plugin
 */
 @import 'module/animation';
 @import 'plugin/slick';
+@import 'plugin/custom-select';
 @import 'module/override';

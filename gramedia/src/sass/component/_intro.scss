@@ -8,16 +8,45 @@
     &List {
         @include display-flex;
         justify-content: center;
-        margin-top: 30px;
+        margin-top: 10px;
         margin-bottom: 30px;
+        flex-wrap: wrap;
     }
 
     &Item {
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 20px;
+
+        @include max-responsive($w-xm) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        @include min-responsive($w-md) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @include range-responsive($w-md, $w-lg) {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
 
         &Title {
-            @include font-pack($font-bold, 55px, $font-weight-bold, normal, $cl-primary1);
+            @include font-pack($font-bold, 40px, $font-weight-bold, normal, $cl-primary1);
+
+            @include max-responsive($w-xm) {
+                font-size: 38px;
+            }
+
+            @include min-responsive($w-xl) {
+                font-size: 55px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                font-size: 35px;
+            }
         }
 
         span {
@@ -32,7 +61,7 @@
         }
     }
 
-    &Cta{
+    &Cta {
         justify-content: center;
     }
 }

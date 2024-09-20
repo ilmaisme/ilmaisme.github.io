@@ -24,18 +24,12 @@
     <!-- e:twitter card -->
 
     <link rel=icon type=image/png sizes=1x16 href="{{site.logo}}">
-    {{#eq page compare="home"}}
-    <link rel="stylesheet" href="./asset/css/style-home.css" type="text/css">
-
-    {{!--
-    <link rel="preload" href="./asset/images/logo-elex" as="image" /> --}}
-    {{!--
-    <link rel="preload" as="image" href="./asset/images/loader-mob.gif"
-        imagesrcset="./asset/images/loader.gif 800w, ./asset/images/loader.gif 1600w" imagesizes="50vw">
-    <link rel="preload" as="image" href="./asset/images/loader-vid.gif"> --}}
+    {{#if page}}
+    <link rel="stylesheet" href="./asset/css/style-{{page}}.css" type="text/css">
+    <link rel="preload" href="./asset/images/gramedia-logo.svg" as="image" />
     {{else}}
     <link type="text/css" rel="stylesheet" href="./asset/css/style.css">
-    {{/eq}}
+    {{/if}}
     <style>
         @font-face {
             font-family: 'Gotham-Bold';

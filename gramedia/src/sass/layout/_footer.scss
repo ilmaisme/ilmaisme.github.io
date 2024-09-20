@@ -6,9 +6,16 @@
     z-index: 2;
 
     &List{
-        padding-top: 20px;
         padding-bottom: 20px;
-        @include flex(center);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
+        @include min-responsive($w-md) {
+            padding-top: 20px;
+            flex-direction: row;
+            align-items: center;
+        }
     }
 
     &Link{

@@ -1,24 +1,40 @@
-.share{
+.share {
     @include flex(center);
-    padding: 20px;
+    padding: 20px 15px;
     background: #FFF;
 
-    &Caption{
+    &Caption {
+        font-size: 12px;
         margin-right: 18px;
+
+        @include min-responsive($w-md) {
+            font-size: 15px;
+        }
     }
 
-    &Item{        
+    &Item {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         padding: 6px;
-        margin-left: 6px;
-        margin-right: 6px;
+        margin-left: 3px;
+        margin-right: 3px;
+
+        @include min-responsive($w-md) {
+            margin-left: 6px;
+            margin-right: 6px;
+        }
     }
 
-    .ico{
-        width: 24px;
-        height: 24px;
+    .ico {
+        width: 23px;
+        height: 23px;
+        background-size: contain;
         filter: invert(36%) sepia(0%) saturate(1037%) hue-rotate(183deg) brightness(100%) contrast(90%);
+
+        @include min-responsive($w-md) {
+            width: 24px;
+            height: 24px;
+        }
     }
 }
