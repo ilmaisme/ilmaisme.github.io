@@ -1,0 +1,243 @@
+.partner {
+    &Gap {
+        margin-top: 100px
+    }
+
+    &Title {
+        @include font-pack($font-bold, 26px, $font-weight-bold, 1.25, $cl-text1);
+
+        @include max-responsive($w-xm) {
+            font-size: 22px;
+        }
+
+        @include min-responsive($w-md) {
+            font-size: 48px
+        }
+
+        span {
+            padding-bottom: 20px;
+            border-bottom: 2px solid $cl-primary3;
+
+            @include min-responsive($w-md) {
+                border-bottom: 3px solid $cl-primary3;
+            }
+        }
+    }
+
+    &Lead {
+        margin-top: 20px;
+    }
+
+    &Intro {
+        @include display-flex;
+        padding: 0;
+        flex-direction: column;
+
+        @include min-responsive($w-md) {
+            flex-direction: row;
+        }
+    }
+
+    &Img {
+        flex-shrink: 0;
+        margin-top: 20px;
+
+        @include min-responsive($w-md) {
+            margin-top: 0;
+            margin-left: 40px;
+        }
+    }
+
+    &Benefit {
+        padding-left: 0;
+        padding-right: 0;
+
+        @include min-responsive($w-md) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        &List {
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        &Item {
+            width: 50%;
+            margin-top: 20px;
+
+            @include min-responsive($w-md) {
+                width: 176px;
+                margin-left: 7px;
+                margin-right: 7px;
+            }
+        }
+
+        &Title {
+            margin-top: 10px;
+            @extend %titleBody500;
+
+            @include max-responsive($w-xm) {
+                font-size: 13px;
+            }
+        }
+    }
+
+    &Program {
+        padding: 0;
+    }
+
+    &Reseller {
+        margin-top: 30px;
+
+        &Cta {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        &Link {
+            @include font-pack($font-bold, false, $font-weight-bold, false, $cl-primary1);
+        }
+    }
+
+    &Sdk {
+
+        @include min-responsive($w-md) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &List {
+            margin-top: 20px
+        }
+
+        &Item {
+            @include display-flex;
+            align-items: center;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid $cl-accent1;
+        }
+
+        &Title {
+            margin-left: 15px;
+            font-size: 17px
+        }
+    }
+
+    &Join {
+        max-width: 757px;
+
+        @include min-responsive($w-md) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &Cta {
+            padding: 20px;
+
+            .buttonPrimary {
+                margin-top: 10px
+            }
+
+            .icoPdf {
+                @extend %icoPdf;
+                margin-left: 10px;
+                filter: invert(100%) sepia(0%) saturate(7435%) hue-rotate(160deg) brightness(114%) contrast(98%);
+            }
+        }
+    }
+
+    &Store {
+        &Cta {
+            margin-top: 10px;
+            margin-bottom: 38px;
+        }
+
+        &Caption {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        &Search {
+            margin-top: 50px;
+            margin-bottom: 40px;
+        }
+
+        &List {
+            --gap-store: 12px;
+            margin-left: calc(var(--gap-store) - var(--gap-store)*2);
+            margin-right: calc(var(--gap-store) - var(--gap-store)*2);
+        }
+
+        &Item {
+            margin-top: 12px;
+            margin-bottom: 12px;
+            padding-left: var(--gap-store);
+            padding-right: var(--gap-store);
+        }
+
+        &Wrap {
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid $cl-accent1;
+            background: linear-gradient(180deg, $cl-accent1 0%, rgba(252, 252, 252, 0.00) 100%);
+            box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.09);
+        }
+
+        &Img {
+            position: relative;
+            width: 100%;
+            padding-top: 61.56%;
+            margin-bottom: 15px;
+
+            img {
+                @extend %template-img;
+                border-radius: 20px;
+                border: 1px solid #FFF;
+                overflow: hidden;
+                background: linear-gradient(180deg, $cl-accent1 0%, rgba(252, 252, 252, 0.00) 100%);
+                box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.09);
+            }
+        }
+
+        &Loc {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            min-height: 66px;
+            @include title_clamp(3);
+        }
+
+        &Search {
+            padding-left: 0;
+            padding-right: 0;
+
+            .formInput {
+                position: relative;
+                border-radius: 50px;
+                padding: 12px 20px 12px 54px;
+
+                &Icon::before {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+                    top: 10px;
+                    left: 20px;
+                    @extend .ico;
+                    @extend .icoSearch;
+                    filter: invert(36%) sepia(0%) saturate(1037%) hue-rotate(183deg) brightness(100%) contrast(90%);
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+
+body:has(.main.--child) {
+    background: $cl-accent2 url(../images/bg-child.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

@@ -1,5 +1,4 @@
 .share {
-    @include flex(center);
     padding: 20px 15px;
     background: #FFF;
 
@@ -19,6 +18,11 @@
         padding: 6px;
         margin-left: 3px;
         margin-right: 3px;
+
+        @include max-responsive($w-xm) {
+            margin-left: 0;
+            margin-right: 0;
+        }
 
         @include min-responsive($w-md) {
             margin-left: 6px;

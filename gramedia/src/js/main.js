@@ -10,6 +10,29 @@ $(document).ready(function () {
     })
 });
 
+//trigger active button
+function triggerActive(item) {
+    let target = document.querySelector(item),
+        targetActive = target.classList.contains('active');
+    if (!!target) {
+        if (targetActive == false) {
+            target.classList.add('active');
+        } else {
+            target.classList.remove('active');
+        }
+    }
+}
+
+//pause video
+function toggleVideo(video, state) {
+    var div = document.querySelector(video);
+    if (!!div) {
+        var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
+        func = state == 'hide' ? 'pauseVideo' : 'playVideo';
+        iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+    }
+}
+
 /* s: Get HEIGHT Device */
 const appHeight = () => {
     const doc = document.documentElement

@@ -1,0 +1,23 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="partnerStoreItem{{#if ../col}} {{../col}}{{/if}}">
+    <div class="partnerStoreWrap">
+        <div class="partnerStoreImg">
+            <img src="./asset/images/store/location/{{photo}}" alt="{{title}}" {{#if ../lazy}}loading="lazy"
+                {{/if}}width="189" height="64">
+        </div>
+        {{#if ../tag}}
+        <{{.. /tag}} class="partnerStoreName titleH5">{{name}}</{{.. /tag}}>
+        {{else}}
+        <div class="partnerStoreName titleH5">{{name}}</div>
+        {{/if}}
+        <div class="partnerStoreLoc titleBody400">{{loc}}</div>
+        <a href="{{link}}" class="buttonTxt">Lihat Lokasi<span class="ico icoArrow"></span></a>
+    </div>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

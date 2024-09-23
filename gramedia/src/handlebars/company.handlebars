@@ -5,7 +5,7 @@
 
 <body>
 
-    {{!> header/header}}
+    {{> header/header}}
 
     <main role="main" class="main company">
         <div class="companyContainer container col-md-8">
@@ -13,9 +13,9 @@
                 <div class="hlText">
                     <h1 class="titleH4">Welcome to Gramedia</h1>
                     <h2 class="hlTitle">Striving at utmost capacity to <br> live up our revolution.</h2>
-                    <div class="flex-center">
-                        <button class="hlCta button buttonPrimary buttonPrimary--icon">Watch Video <span
-                                class="ico icoArrow"></span></button>
+                    <div class="center-flex">
+                        <button class="hlCta button buttonPrimary buttonPrimary--icon"
+                            onclick="triggerActive('.-pVideo')">Watch Video <span class="ico icoArrow"></span></button>
                     </div>
                 </div>
                 <div class="hlImg">
@@ -62,7 +62,7 @@
             </div>
             <div class="companyGap companyCeo">
                 <div class="companyCeoImg">
-                    <img src="./asset/images/bod/0.png" alt="Y. Priyo Utomo" width="" height="" loading="lazy">
+                    <img src="./asset/images/bod/0.png" alt="Y. Priyo Utomo" width="468" height="403" loading="lazy">
                 </div>
                 <div class="companyCeoWrap">
                     <div class="companyCeoTitle titleH5">CEO Message</div>
@@ -71,15 +71,16 @@
                         Gramedia Bookstores, 12 course outlets (ELTI), 3 distribution center and 6 publishers in
                         nation wide.
                     </div>
-                    <button class="button buttonTxt">Watch Video <span class="ico icoArrow"></span></button>
+                    <button class="button buttonTxt" onclick="triggerActive('.-pVideo')">Watch Video <span
+                            class="ico icoArrow"></span></button>
                 </div>
             </div>
-            <div class="companyJourney text-center">
-                <div class="titleH5">Like a human who redefines his journey,</div>
-                <div class="companyJourneyTitle titleH2">So does Gramedia with its transformation</div>
-                <div class="titleLead">Mus felis justo velit viverra nullaaucibus consequat cursus condimentum sed cras
-                    fermentum <br> penatibus tortor rhoncus.</div>
-            </div>
+        </div>
+        <div class="companyJourney text-center mx-auto col-md-6">
+            <div class="titleH5">Like a human who redefines his journey,</div>
+            <div class="companyJourneyTitle titleH2">So does Gramedia with its transformation</div>
+            <div class="titleLead">Mus felis justo velit viverra nullaaucibus consequat cursus condimentum sed cras
+                fermentum penatibus tortor rhoncus.</div>
         </div>
         <div class="companyJourneyTL">
         </div>
@@ -127,6 +128,10 @@
             {{/each}}
         </ul>
     </main>
+
+    <!-- s: popup video -->
+    {{>popup-video}}
+    <!-- e: popup video -->
 
     {{> footer/footer}}
 

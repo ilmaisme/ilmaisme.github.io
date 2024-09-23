@@ -7,6 +7,10 @@
         @include font-pack($font-bold, 24px, $font-weight-bold, 1.2, $cl-text1);
         letter-spacing: -0.6px;
 
+        @include max-responsive($w-xm) {
+            font-size: 22px;
+        }
+
         @include min-responsive($w-md) {
             font-size: 30px
         }
@@ -34,14 +38,20 @@
         @include font-pack($font-normal, 15px, $font-weight-normal, 1.46, $cl-text1);
     }
 
+    &Lead {
+        @include font-pack($font-normal, 13px, $font-weight-normal, 1.53, $cl-text2);
+    }
+}
+
+%title{    
     // &Body400i {
     //     @include font-pack($font-normal, 15px, $font-weight-normal, 1.06, $cl-text2);
     //     font-style: italic
     // }
 
-    // &Body500 {
-    //     @include font-pack($font-mbold, 15px, $font-weight-mbold, 1.33, $cl-text2);
-    // }
+    &Body500 {
+        @include font-pack($font-mbold, 15px, $font-weight-mbold, 1.33, $cl-text1);
+    }
 
     // &Body500i {
     //     @include font-pack($font-mbold, 15px, $font-weight-mbold, 1.06, $cl-text2);
@@ -56,8 +66,4 @@
     //     @include font-pack($font-bold, 15px, $font-weight-bold, 1.06, $cl-text2);
     //     font-style: italic
     // }
-
-    &Lead {
-        @include font-pack($font-normal, 13px, $font-weight-normal, 1.53, $cl-text2);
-    }
 }

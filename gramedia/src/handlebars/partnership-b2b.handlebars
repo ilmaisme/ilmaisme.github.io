@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="partner"}}
+
+<body>
+
+    {{> header/header}}
+
+    <main role="main" class="main partner">
+        <div class="container">
+
+            {{>breadcrumb parent="Partnership" child="B2B Gramedia"}}
+
+            {{!>partner/headline}}
+
+            <h1 class="partnerTitle partnerGap text-center"><span>Mitra B2B Gramedia</span></h1>
+            <div class="partnerIntro partnerGap col-md-7 mx-auto">
+                <div class="partnerWrap">
+                    <h2 class="partnerCaption titleH2">Apa itu?</h2>
+                    <div class="partnerLead titleBody400">B2B Kemitraan Gramedia merupakan salah satu program kemitraan
+                        Gramedia yang memiliki tujuan untuk melakukan kerjasama antar instansi pemerintahan, swasta,
+                        ataupun pihak lainnya untuk pengadaan berbagai keperluan kantor, mulai dari buku, non buku,
+                        edukasi, pengadakan peralatan kantor, elektronik kantor, hobby audiovisual, dan lain-lainnya.
+                    </div>
+                </div>
+                <div class="partnerImg">
+                    <img src="./asset/images/b2b/caption-img.png" alt="" width="331" height="330" loading="lazy">
+                </div>
+            </div>
+            <div class="partnerBenefit partnerGap col-md-10 mx-auto">
+                <h2 class="partnerCaption titleH2 text-center">Benefit Kolaborasi dengan B2B Gramedia</h2>
+                <ul class="partnerBenefitList center-flex">
+                    {{#each partner.b2bBenefit}}
+                    <li class="partnerBenefitItem text-center">
+                        <img src="./asset/images/b2b/benefit/{{@index}}.png" alt="" width="70" height="70"
+                            loading="lazy">
+                        <h3 class="partnerBenefitTitle">{{{title}}}</h3>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="partnerGap">
+                <h2 class="partnerCaption titleH2 text-center">Produk B2B Gramedia</h2>
+
+                {{!>partner/b2b-produk}}
+
+            </div>
+        </div>
+        <div class="partnerGap">
+            <h2 class="partnerCaption titleH2 text-center">Klien B2B Gramedia</h2>
+
+            {{!>partner/b2b-klien}}
+
+        </div>
+        <div class="container">
+            <h2 class="partnerCaption partnerGap titleH2 text-center">
+                Formulir Pendaftaran B2B Gramedia
+            </h2>
+
+            {{>partner/b2b-form}}
+        </div>
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js slick=true validate=true}}
+    <script>
+        $(document).ready(function () {
+            //form validation
+            $('#formb2b input').bind('keyup blur click', function () {
+                if ($('#formb2b').valid()) {
+                    $('#submit').removeClass('disabled').attr('disabled', false);
+                } else {
+                    $('#submit').addClass('disabled').attr('disabled', true);
+                }
+            });
+
+            $('#formb2b').validate({
+                rules: {
+                    uname: {
+                        required: true,
+                    },
+                    oname: {
+                        required: true,
+                    },
+                    phone: {
+                        required: true,
+                    },
+                    mail: {
+                        required: true,
+                    },
+                },
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element)
+                }
+            })
+
+            jQuery.extend(jQuery.validator.messages, {
+                required: "*This field is required."
+            });
+        });
+    </script>
+
+</body>
+
+</html>

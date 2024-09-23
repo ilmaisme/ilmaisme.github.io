@@ -1,5 +1,9 @@
 {{#each headline}}
 <div class="hlItem g-{{add @index 1}}">
+    {{#eq @index compare=0}}
     <img src="{{images}}" alt="{{title}}" width="536" height="499">
+    {{else}}
+    <img src="{{images}}" alt="{{title}}" width="536" height="499" loading="lazy">
+    {{/eq}}
 </div>
 {{/each}}

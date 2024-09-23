@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="partner"}}
+
+<body>
+
+    {{> header/header}}
+
+    <main role="main" class="main partner --child">
+        <div class="container">
+
+            {{>breadcrumb parent="Partnership" child="Store Gramedia" childlink="partnership-store.html" child2="Lokasi
+            Toko Gramedia"}}
+
+            <h1 class="partnerStoreCaption titleH2 text-center"><span>Lokasi Toko Mitra Gramedia</span></h1>
+            <div class="partnerStoreSearch mx-auto col-md-6">
+                <form action="#">
+                    <div class="formInputIcon">
+                        <input type="search" class="formInput" name="sstore" id="sstore"
+                            aria-label="Find Gramedia store" placeholder="Temukan lokasi toko">
+                    </div>
+                </form>
+            </div>
+            <div class="mx-auto col-md-11">
+                <div class="partnerStoreList row">
+
+                    {{>partner/store channel=partner.storeLoc index_start=0 index_end=9 col="col-md-5 col-lg-4"
+                    tag="h2"}}
+
+                </div>
+
+                {{>paging}}
+                
+            </div>
+
+            {{!>paging}}
+        </div>
+
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js}}
+
+</body>
+
+</html>

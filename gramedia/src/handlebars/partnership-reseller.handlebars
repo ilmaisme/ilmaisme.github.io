@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="partner"}}
+
+<body>
+
+    {{> header/header}}
+
+    <main role="main" class="main partner">
+        <div class="container">
+
+            {{>breadcrumb parent="Partnership" child="Reseller Gramedia"}}
+
+            {{!>partner/headline}}
+
+            <h1 class="partnerTitle partnerGap text-center"><span>Mitra Reseller Gramedia</span></h1>
+            <div class="partnerIntro partnerGap col-md-7 mx-auto">
+                <div class="partnerWrap">
+                    <h2 class="partnerCaption titleH2">Apa itu?</h2>
+                    <div class="partnerLead titleBody400">Mitra Reseller Gramedia merupakan salah satu program kemitraan
+                        dari Gramedia untuk pelaku usaha yang ingin berjualan produk-produk Gramedia. Kemitraan ini
+                        mempermudah pihak toko dengan memberikan pihak toko untuk memperoleh berbagai macam benefit,
+                        program diskon terintegrasi, dan memberikan pihak toko akses ke layanan yang dimiliki oleh pihak
+                        Gramedia.
+                    </div>
+                </div>
+                <div class="partnerImg">
+                    <img src="./asset/images/reseller/caption-img.png" alt="" width="331" height="312" loading="lazy">
+                </div>
+            </div>
+            <div class="partnerBenefit partnerGap col-md-10 mx-auto">
+                <h2 class="partnerCaption titleH2 text-center">Benefit Menjadi Mitra Reseller Gramedia</h2>
+                <ul class="partnerBenefitList center-flex">
+                    {{#each partner.resellerBenefit}}
+                    <li class="partnerBenefitItem text-center">
+                        <img src="./asset/images/reseller/benefit/{{@index}}.png" alt="" width="70" height="70"
+                            loading="lazy">
+                        <h3 class="partnerBenefitTitle">{{{title}}}</h3>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="partnerGap col-md-11">
+                <h2 class="partnerCaption titleH2 text-center">Shipper Produk Gramedia</h2>
+
+                {{!>partner/reseller-shipper}}
+
+            </div>
+            <div class="partnerProgram partnerGap col-md-6 text-center mx-auto">
+                <h2 class="partnerCaption titleH2">Program Unggulan</h2>
+                <div class="partnerLead titleBody400">Program ini merupakan sebuah benefit yang akan diterima
+                    oleh para reseller Gramedia saat melakukan pembelian produk-produk Gramedia</div>
+            </div>
+        </div>
+
+        {{!>partner/reseller-program}}
+
+        <div class="container">
+            <div class="partnerReseller text-center">
+                <div class="titleBody400">Tertarik ingin menjadi Reseller Gramedia?</div>
+                <div class="center-flex">
+                    <a href="#" class="partnerResellerCta button buttonPrimary buttonPrimary--icon">
+                        Daftar Sekarang
+                        <span class="ico icoArrow"></span>
+                    </a>
+                </div>
+                <div class="titleBody400">Klik <a href="#" class="partnerResellerLink">disini</a> untuk melihat tutorial
+                    penggunaan Aplikasi Mitra Gramedia.</div>
+            </div>
+        </div>
+
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js slick=true}}
+
+</body>
+
+</html>

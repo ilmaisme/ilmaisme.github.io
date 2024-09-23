@@ -1,13 +1,15 @@
 .button {
     padding: 0;
     border: 0;
+    background: transparent;
     cursor: pointer;
 
     &Primary {
         min-width: 230px;
+        min-height: 48px;
         border-radius: 7px;
         border: 2px solid $cl-primary1;
-        padding: 17px 60px;
+        padding: 14px 60px;
         background: $cl-primary1;
         @include flex(center);
         flex-shrink: 0;
@@ -23,8 +25,16 @@
             box-shadow: 0 0 0 0;
         }
 
+        &.disabled {
+            color: $cl-text3;
+            background: $cl-accent2;
+            border: 2px solid $cl-accent2;
+            box-shadow: 0 0;
+        }
+
         &--icon {
-            padding: 10px 56px;
+            max-width: 230px;
+            padding: 10px;
 
             .icoArrow {
                 @extend %icoArrow;
@@ -62,6 +72,26 @@
             @extend %icoArrow;
             margin-left: 10px;
             filter: invert(55%) sepia(78%) saturate(5574%) hue-rotate(198deg) brightness(89%) contrast(101%);
+        }
+    }
+}
+
+%button {
+    &Close {
+        position: absolute;
+        line-height: 0;
+        z-index: 1;
+
+        &:hover {
+
+            .icoClose::before,
+            .icoClose::after {
+                background: $cl-accent1;
+            }
+        }
+
+        .icoClose {
+            @extend %icoClose
         }
     }
 }

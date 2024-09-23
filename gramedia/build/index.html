@@ -26,9 +26,11 @@
     <meta name="twitter:image" content="" />
     <!-- e:twitter card -->
 
-    <link rel=icon type=image/png sizes=1x16 href="http://www.gramedia.id/img/og_img.jpg">
-    <link rel="stylesheet" href="./asset/css/style-home.css" type="text/css">
+    <link rel=icon type=image/png sizes=1x16 href="./asset/images/favicon.ico">
+    <link rel="stylesheet" href="./asset/css/style-home.min.css" type="text/css">
     <link rel="preload" href="./asset/images/gramedia-logo.svg" as="image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
         @font-face {
             font-family: 'Gotham-Bold';
@@ -77,15 +79,117 @@
 </head>
 <body>
 
+    <header class="header">
+        <div class="headerWrap container">
+            <div class="headerLogo">
+                <a href="index.html">
+                    <img src="./asset/images/gramedia-logo.svg" alt="Gramedia" width="134" height="25">
+                </a>
+            </div>
+            <div class="headerContent">
     
+                <nav class="nav">
+                    <div class="navList center-flex">
+                        <div class="navItem">
+                            <a href="company.html" class="navLink">Our Company</a>
+                        </div>
+                        <div class="navItem">
+                            <a href="#" class="navLink">Brands</a>
+                        </div>
+                        <div class="navItem">
+                            <a href="#" class="navLink">News</a>
+                            <ul class="navSub headerDropdown">
+                                <li class="navSubItem">
+                                    <a href="#" class="navLink">Press Release</a>
+                                </li>
+                                <li class="navSubItem">
+                                    <a href="#" class="navLink">Article</a>
+                                </li>
+                                <li class="navSubItem">
+                                    <a href="#" class="navLink">Photo</a>
+                                </li>
+                                <li class="navSubItem">
+                                    <a href="#" class="navLink">Video</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="navItem">
+                            <a href="#" class="navLink">Partnership</a>
+                            <ul class="navSub headerDropdown">
+                                <li class="navSubItem">
+                                    <a href="partnership-b2b.html" class="navLink">B2B Gramedia</a>
+                                </li>
+                                <li class="navSubItem">
+                                    <a href="partnership-reseller.html" class="navLink">Reseller Gramedia</a>
+                                </li>
+                                <li class="navSubItem">
+                                    <a href="partnership-store.html" class="navLink">Store Gramedia</a>
+                                </li>
+                                <li class="navSubItem">
+                                    <a href="partnership-exhibition.html" class="navLink">Exhibition</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="navItem">
+                            <a href="#" class="navLink">Events</a>
+                        </div>
+                        <div class="navItem">
+                            <a href="#" class="navLink">Services</a>
+                        </div>
+                        <div class="navItem">
+                            <a href="#" class="navLink">Careers</a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="headerCta center-flex">
+                    <a href="#" class="headerIcon headerShop center-flex" aria-label="Shop with us!">
+                        <span class="ico icoShop"></span>
+                    </a>
+                    <a href="#" class="headerIcon headerSearch center-flex" aria-label="Search anything in Gramedia!">
+                        <span class="ico icoSearch"></span>
+                    </a>
+                    <div class="headerBil center-flex">
+    
+                        <div class="custom-select">
+                            <button class="select-button button" role="combobox" aria-label="Bilingual options" aria-haspopup="listbox"
+                                aria-expanded="false" aria-controls="select-dropdown">
+                                <span class="ico icoBil"></span>
+                                <span class="selected-value">ENG</span>
+                                <span class="arrow"></span>
+                            </button>
+                            <ul class="select-dropdown" role="listbox" id="select-dropdown">
+                                <li role="option">
+                                    <input type="radio" id="choose" name="bilingual" disabled />
+                                    <label for="choose">Pilihan bahasa</label>
+                                </li>
+                                <li role="option">
+                                    <input type="radio" id="INA" name="bilingual" value="INA" />
+                                    <label for="INA"><img src="./asset/images/icon/ico-flag-ina.png" alt="" width="23px" height="23px"
+                                            loading="lazy">Indonesia</label>
+                                </li>
+                                <li role="option">
+                                    <input type="radio" id="ENG" name="bilingual" value="ENG" checked />
+                                    <label for="ENG"><img src="./asset/images/icon/ico-flag-eng.png" alt="" width="23px" height="23px"
+                                            loading="lazy">English</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </header>
+    <div class="header-offset"></div>
     <main role="main" class="main">
         <div class="container">
             <div class="hl">
                 <div class="hlText">
                     <h1 class="titleH4">Welcome to Gramedia</h1>
                     <h2 class="hlTitle">Enabling ideas to evolve into creativity.</h2>
-                    <button class="hlCta button buttonPrimary buttonPrimary--icon">Watch Video <span
-                            class="ico icoArrow"></span></button>
+                    <button class="hlCta button buttonPrimary buttonPrimary--icon"
+                        onclick="triggerActive('.-pVideo')">Watch
+                        Video <span class="ico icoArrow"></span></button>
                 </div>
                 <div class="hlImg">
 
@@ -93,28 +197,28 @@
                         <img src="./asset/images/g_combines/G_rainbow.png" alt="G_rainbow" width="536" height="499">
                     </div>
                     <div class="hlItem g-2">
-                        <img src="./asset/images/g_combines/G_bees.png" alt="G_bees" width="536" height="499">
+                        <img src="./asset/images/g_combines/G_bees.png" alt="G_bees" width="536" height="499" loading="lazy">
                     </div>
                     <div class="hlItem g-3">
-                        <img src="./asset/images/g_combines/G_fox.png" alt="G_fox" width="536" height="499">
+                        <img src="./asset/images/g_combines/G_fox.png" alt="G_fox" width="536" height="499" loading="lazy">
                     </div>
                     <div class="hlItem g-4">
-                        <img src="./asset/images/g_combines/G_kids.png" alt="G_kids" width="536" height="499">
+                        <img src="./asset/images/g_combines/G_kids.png" alt="G_kids" width="536" height="499" loading="lazy">
                     </div>
                     <div class="hlItem g-5">
-                        <img src="./asset/images/g_combines/G_music.png" alt="G_music" width="536" height="499">
+                        <img src="./asset/images/g_combines/G_music.png" alt="G_music" width="536" height="499" loading="lazy">
                     </div>
                     <div class="hlItem g-6">
-                        <img src="./asset/images/g_combines/G_pink.png" alt="G_pink" width="536" height="499">
+                        <img src="./asset/images/g_combines/G_pink.png" alt="G_pink" width="536" height="499" loading="lazy">
                     </div>
                     <div class="hlItem g-7">
-                        <img src="./asset/images/g_combines/G_planet.png" alt="G_planet" width="536" height="499">
+                        <img src="./asset/images/g_combines/G_planet.png" alt="G_planet" width="536" height="499" loading="lazy">
                     </div>
                     <div class="hlItem g-8">
-                        <img src="./asset/images/g_combines/G_hola.png" alt="G_hola" width="536" height="499">
+                        <img src="./asset/images/g_combines/G_hola.png" alt="G_hola" width="536" height="499" loading="lazy">
                     </div>
                     <div class="hlItem g-9">
-                        <img src="./asset/images/g_combines/G_stationery.png" alt="G_stationery" width="536" height="499">
+                        <img src="./asset/images/g_combines/G_stationery.png" alt="G_stationery" width="536" height="499" loading="lazy">
                     </div>
 
                 </div>
@@ -159,75 +263,75 @@
                 </div>
                 <a href="#" class="introCta buttonTxt">Find out more our company <span class="ico icoArrow"></span></a>
             </div>
-            <div class="brands">
+            <div class="brands center-flex">
                 <div class="brandsSlider -sbrands">
                     <div class="brandsList">
 
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Rekata.png" alt="Rekata" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Pay&amp;Go.png" alt="Pay&amp;Go" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/KPG.png" alt="KPG" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/ePerpus.png" alt="ePerpus" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Grasindo.png" alt="Grasindo" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/m&amp;c.png" alt="m&amp;c" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Gramedia.png" alt="Gramedia" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Gramediacom.png" alt="Gramediacom" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Gramedia-academy.png" alt="Gramedia-academy" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/eversac.png" alt="eversac" loading="lazy" width="189" height="64">
                                 </div>
@@ -238,70 +342,70 @@
                     <div class="brandsList">
 
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/ePerpus.png" alt="ePerpus" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Grasindo.png" alt="Grasindo" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Pay&amp;Go.png" alt="Pay&amp;Go" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Gramedia-academy.png" alt="Gramedia-academy" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/eversac.png" alt="eversac" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/KPG.png" alt="KPG" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Rekata.png" alt="Rekata" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/m&amp;c.png" alt="m&amp;c" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Gramediacom.png" alt="Gramediacom" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Gramedia.png" alt="Gramedia" loading="lazy" width="189" height="64">
                                 </div>
@@ -312,70 +416,70 @@
                     <div class="brandsList">
 
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Gramedia.png" alt="Gramedia" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Pay&amp;Go.png" alt="Pay&amp;Go" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/ePerpus.png" alt="ePerpus" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Grasindo.png" alt="Grasindo" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Gramedia-academy.png" alt="Gramedia-academy" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/eversac.png" alt="eversac" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/KPG.png" alt="KPG" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/m&amp;c.png" alt="m&amp;c" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Gramediacom.png" alt="Gramediacom" loading="lazy" width="189" height="64">
                                 </div>
                             </div>
                         </div>
                         <div class="brandsItem">
-                            <div class="brandsWrap">
+                            <div class="brandsWrap center-flex">
                                 <div class="brandsImg">
                                     <img src="./asset/images/brands/Rekata.png" alt="Rekata" loading="lazy" width="189" height="64">
                                 </div>
@@ -400,81 +504,81 @@
                 <div class="testiList -stesti">
 
                     <div class="testiItem">
-                        <div class="testiWrap">
+                        <div class="testiWrap center-flex">
                             <div class="testiImg">
-                                <img src="./asset/images/testi/0.jpg" alt="" loading="lazy" width="80" height="80">
+                                <img src="./asset/images/dummy/testi/0.jpg" alt="" loading="lazy" width="80" height="80">
                             </div>
                             <div class="testiTxt">“Gentrify palo trade affogato before cardigan. Waistcoat actually pack austin sartorial helvetica actually pabst pinterest plant. Sustainable mukbang.”</div>
                             <div class="testiAuthor">Guy Hawkins, Designer &amp; Author</div>
                         </div>
                     </div>
                     <div class="testiItem">
-                        <div class="testiWrap">
+                        <div class="testiWrap center-flex">
                             <div class="testiImg">
-                                <img src="./asset/images/testi/1.jpg" alt="" loading="lazy" width="80" height="80">
+                                <img src="./asset/images/dummy/testi/1.jpg" alt="" loading="lazy" width="80" height="80">
                             </div>
                             <div class="testiTxt">“Williamsburg vibecession vinyl tattooed park live-edge sold put. Charcoal heard baby quinoa dreamcatcher ennui selfies literally kinfolk.”</div>
                             <div class="testiAuthor">Jacob Jones, Marketing Coordinator</div>
                         </div>
                     </div>
                     <div class="testiItem">
-                        <div class="testiWrap">
+                        <div class="testiWrap center-flex">
                             <div class="testiImg">
-                                <img src="./asset/images/testi/2.jpg" alt="" loading="lazy" width="80" height="80">
+                                <img src="./asset/images/dummy/testi/2.jpg" alt="" loading="lazy" width="80" height="80">
                             </div>
                             <div class="testiTxt">“Bottle haven&#x27;t shorts microdosing single-origin fund toast you gluten-free flexitarian. Portland banjo tote fund 90&#x27;s messenger shabby sustainable plz shoreditch. “</div>
                             <div class="testiAuthor">Brooklyn Simmons, Dog Trainer</div>
                         </div>
                     </div>
                     <div class="testiItem">
-                        <div class="testiWrap">
+                        <div class="testiWrap center-flex">
                             <div class="testiImg">
-                                <img src="./asset/images/testi/3.jpg" alt="" loading="lazy" width="80" height="80">
+                                <img src="./asset/images/dummy/testi/3.jpg" alt="" loading="lazy" width="80" height="80">
                             </div>
                             <div class="testiTxt">“Biodiesel put before raclette vape shoreditch try-hard poke fund lyft. Tumblr xoxo yr vinyl they. Big helvetica post-ironic kickstarter swag sus beard. Pinterest forage thundercats.</div>
                             <div class="testiAuthor">Kristin Watson, Medical Assistant</div>
                         </div>
                     </div>
                     <div class="testiItem">
-                        <div class="testiWrap">
+                        <div class="testiWrap center-flex">
                             <div class="testiImg">
-                                <img src="./asset/images/testi/4.jpg" alt="" loading="lazy" width="80" height="80">
+                                <img src="./asset/images/dummy/testi/4.jpg" alt="" loading="lazy" width="80" height="80">
                             </div>
                             <div class="testiTxt">“Small meggings adaptogen typewriter coffee they truffaut probably on. Everyday braid lumbersexual portland dollar. Yolo tile art tattooed put drinking chartreuse green.”</div>
                             <div class="testiAuthor">Robert Fox, President of Sales</div>
                         </div>
                     </div>
                     <div class="testiItem">
-                        <div class="testiWrap">
+                        <div class="testiWrap center-flex">
                             <div class="testiImg">
-                                <img src="./asset/images/testi/5.jpg" alt="" loading="lazy" width="80" height="80">
+                                <img src="./asset/images/dummy/testi/5.jpg" alt="" loading="lazy" width="80" height="80">
                             </div>
                             <div class="testiTxt">“Mug leggings knausgaard pop-up irony yolo synth distillery chips scenester. Activated boys trade farm-to-table bushwick vaporware tile probably. Mi fashion leggings them air “</div>
                             <div class="testiAuthor">Darrell Steward, Nursing Assistant</div>
                         </div>
                     </div>
                     <div class="testiItem">
-                        <div class="testiWrap">
+                        <div class="testiWrap center-flex">
                             <div class="testiImg">
-                                <img src="./asset/images/testi/6.jpg" alt="" loading="lazy" width="80" height="80">
+                                <img src="./asset/images/dummy/testi/6.jpg" alt="" loading="lazy" width="80" height="80">
                             </div>
                             <div class="testiTxt">“Biodiesel put before raclette vape shoreditch try-hard poke fund lyft. Tumblr xoxo yr vinyl they. Big helvetica post-ironic kickstarter swag sus beard. Pinterest forage thundercats.”</div>
                             <div class="testiAuthor">Wade Warren, Web Designer</div>
                         </div>
                     </div>
                     <div class="testiItem">
-                        <div class="testiWrap">
+                        <div class="testiWrap center-flex">
                             <div class="testiImg">
-                                <img src="./asset/images/testi/7.jpg" alt="" loading="lazy" width="80" height="80">
+                                <img src="./asset/images/dummy/testi/7.jpg" alt="" loading="lazy" width="80" height="80">
                             </div>
                             <div class="testiTxt">“Small meggings adaptogen typewriter coffee they truffaut probably on. Everyday braid lumbersexual portland dollar. Yolo tile art tattooed put drinking chartreuse green.”</div>
                             <div class="testiAuthor">Leslie Alexander, Nursing Assistant</div>
                         </div>
                     </div>
                     <div class="testiItem">
-                        <div class="testiWrap">
+                        <div class="testiWrap center-flex">
                             <div class="testiImg">
-                                <img src="./asset/images/testi/8.jpg" alt="" loading="lazy" width="80" height="80">
+                                <img src="./asset/images/dummy/testi/8.jpg" alt="" loading="lazy" width="80" height="80">
                             </div>
                             <div class="testiTxt">“Mug leggings knausgaard pop-up irony yolo synth distillery chips scenester. Activated boys trade farm-to-table bushwick vaporware tile probably. Mi fashion leggings them air “</div>
                             <div class="testiAuthor">Jerome Bell, Web Designer</div>
@@ -656,13 +760,30 @@
         </div>
     </main>
 
-    <a href="contact.html" class="contactCta">
+    <!-- s: popup video -->
+    <div class="popup popup--hidden center-flex -pVideo">
+        <div class="popupBox readPopup">
+            <button class="button buttonClose" aria-label="Close Popup"
+                onclick="triggerActive('.-pVideo'), toggleVideo('#video', 'hide')"><span
+                    class="ico icoClose center-flex"></span></button>
+            <div class="popupContent">
+                <div class="video" id="video">
+                    <iframe width="950" height="534"
+                        src="http://www.youtube.com/embed/ULmziqi21Ak?enablejsapi=1&version=3&playerapiid=ytplayer&controls=1"
+                        loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+                        allowfullscreen title="Di Balik Pena Sapardi D. Damono"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>    <!-- e: popup video -->
+
+    <a href="contact.html" class="contactCta center-flex">
         <span class="ico icoSend"></span>
         Contact Us
     </a>
     
     <footer class="footer">
-        <div class="share">
+        <div class="share center-flex">
             <div class="shareCaption">Share this page</div>
             <div class="shareList">
     
@@ -721,12 +842,11 @@
         <div class="footerCopy">&copy; Gramedia 2024</div>
     </footer>
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/main.js"></script>
-    <script defer type="text/javascript" src="./asset/js/custom-select.js"></script>
-    <script defer type="text/javascript" src="./asset/js/home.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/home.min.js"></script>
     <!-- slick JS -->
     <script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/logo-transition.js"></script>
+    <script defer type="text/javascript" src="./asset/js/logo-transition.min.js"></script>
 
 </body>
 

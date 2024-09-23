@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="partner"}}
+
+<body>
+
+    {{> header/header}}
+
+    <main role="main" class="main partner">
+        <div class="container">
+
+            {{>breadcrumb parent="Partnership" child="Store Gramedia"}}
+
+            {{!>partner/headline}}
+
+            <h1 class="partnerTitle partnerGap text-center"><span>Mitra Store Gramedia</span></h1>
+            <div class="partnerIntro partnerGap col-md-7 mx-auto">
+                <div class="partnerWrap">
+                    <h2 class="partnerCaption titleH2">Apa itu?</h2>
+                    <div class="partnerLead titleBody400">Mitra Store Gramedia adalah salah satu program kemitraan
+                        dengan tujuan untuk melakukan kerjasama antara pinak Gramedia dengan perorangan/perusahaan yang
+                        memiliki lokasi yang cocok untuk dijadikan store Gramedia tanpa adanya royalti atau deposit
+                        store gramedia ranna acanva rovair aran genosit</div>
+                </div>
+                <div class="partnerImg">
+                    <img src="./asset/images/reseller/caption-img.png" alt="" width="331" height="288" loading="lazy">
+                </div>
+            </div>
+            <div class="partnerBenefit partnerGap col-md-10 mx-auto">
+                <h2 class="partnerCaption titleH2 text-center">Benefit Menjadi Mitra Reseller Gramedia</h2>
+                <ul class="partnerBenefitList center-flex">
+                    {{#each partner.storeBenefit}}
+                    <li class="partnerBenefitItem text-center">
+                        <img src="./asset/images/store/benefit/{{@index}}.png" alt="" width="70" height="70"
+                            loading="lazy">
+                        <h3 class="partnerBenefitTitle">{{{title}}}</h3>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="partnerSdk partnerGap col-md-5 mx-auto">
+                <h2 class="partnerCaption titleH2 text-center">Syarat Menjadi Mitra Gramedia</h2>
+                <ul class="partnerSdkList">
+                    {{#each partner.storeSdk}}
+                    <li class="partnerSdkItem">
+                        <img src="./asset/images/store/sdk/{{@index}}.png" alt="" width="40" height="40" loading="lazy">
+                        <div class="partnerSdkTitle titleBody400">{{title}}</div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="partnerJoin partnerGap col-md-7 mx-auto">
+                <h2 class="partnerCaption titleH2 text-center">Cara Bergabung Menjadi Mitra Store</h2>
+
+
+                <div class="partnerJoinCta text-center">
+                    <div class="titleBody400">Download Cara Bergabung Menjadi Mitra Store dalam File PDF</div>
+                    <div class="center-flex">
+                        <button class="button buttonPrimary buttonPrimary--icon">
+                            Download
+                            <span class="ico icoPdf"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="partnerStore partnerGap">
+                <h2 class="partnerCaption titleH2 text-center">Lokasi Toko Mitra Gramedia</h2>
+                <a href="partnership-store-loc.html" class="partnerStoreCta buttonTxt center-flex">Lihat Semua<span
+                        class="ico icoArrow"></span></a>
+                <div class="partnerStoreList row">
+
+                    {{>partner/store channel=partner.storeLoc index_start=0 index_end=6 lazy=true}}
+
+                </div>
+            </div>
+            <h2 class="partnerCaption partnerGap titleH2 text-center">
+                Formulir Pendaftaran Mitra
+            </h2>
+
+            {{!>partner/b2b-form}}
+        </div>
+
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js slick=true validate=true}}
+
+</body>
+
+</html>
