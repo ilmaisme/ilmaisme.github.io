@@ -1,4 +1,34 @@
-.paging{
-    &Input{padding: 10px;
-    width: auto;}
+.paging {
+    margin-top: 52px;
+
+    &Input {
+        padding: 10px;
+        width: 54px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    &Page {
+        margin-left: 5px;
+        margin-right: 5px;
+        color: $cl-text1;
+    }
+
+    &Cta {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 10px;
+        border-radius: 7px;
+        background: $cl-primary1;
+        color: #FFFFFF;
+
+        .icoChevron {
+            @extend %icoChevron;
+        }
+
+        &.disabled {
+            background: $cl-text3;
+            pointer-events: none;
+        }
+    }
 }

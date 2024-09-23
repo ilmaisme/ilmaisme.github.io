@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //slider awards
     $('.-sawards').slick({
         dots: false,
         arrows: false,

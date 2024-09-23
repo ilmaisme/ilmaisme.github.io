@@ -8,6 +8,13 @@ $(document).ready(function () {
         a > b + 0 ? (hd.addClass("fixed")) :
             (hd.removeClass("fixed"))
     })
+
+    if (viewport().width >= 1180) {
+        // console.log("desktop")
+    } else {
+        // console.log("mobile")
+        hd.remove();
+    }
 });
 
 //trigger active button
@@ -33,11 +40,16 @@ function toggleVideo(video, state) {
     }
 }
 
-/* s: Get HEIGHT Device */
-const appHeight = () => {
-    const doc = document.documentElement
-    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+//calc width window
+function viewport() {
+    var e = window,
+        a = 'inner';
+    if (!('innerWidth' in window)) {
+        a = 'client';
+        e = document.documentElement || document.body;
+    }
+    return {
+        width: e[a + 'Width'],
+        height: e[a + 'Height']
+    };
 }
-window.addEventListener("resize", appHeight)
-appHeight()
-/* e: Get HEIGHT Device */

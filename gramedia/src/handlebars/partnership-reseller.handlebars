@@ -12,10 +12,10 @@
 
             {{>breadcrumb parent="Partnership" child="Reseller Gramedia"}}
 
-            {{!>partner/headline}}
+            {{>partner/headline}}
 
             <h1 class="partnerTitle partnerGap text-center"><span>Mitra Reseller Gramedia</span></h1>
-            <div class="partnerIntro partnerGap col-md-7 mx-auto">
+            <div class="partnerIntro partnerGap col-lg-9 col-xl-7 mx-auto">
                 <div class="partnerWrap">
                     <h2 class="partnerCaption titleH2">Apa itu?</h2>
                     <div class="partnerLead titleBody400">Mitra Reseller Gramedia merupakan salah satu program kemitraan
@@ -41,21 +41,23 @@
                     {{/each}}
                 </ul>
             </div>
-            <div class="partnerGap col-md-11">
+            <div class="partnerShipper partnerGap col-xl-11 mx-auto">
                 <h2 class="partnerCaption titleH2 text-center">Shipper Produk Gramedia</h2>
 
                 {{!>partner/reseller-shipper}}
 
             </div>
-            <div class="partnerProgram partnerGap col-md-6 text-center mx-auto">
+            <div class="partnerProgram partnerGap col-md-10 col-lg-8 col-xl-6 text-center mx-auto">
                 <h2 class="partnerCaption titleH2">Program Unggulan</h2>
                 <div class="partnerLead titleBody400">Program ini merupakan sebuah benefit yang akan diterima
                     oleh para reseller Gramedia saat melakukan pembelian produk-produk Gramedia</div>
             </div>
         </div>
+        <div class="partnerProgramSlide -sprogram" data-number="7">
 
-        {{!>partner/reseller-program}}
+            {{>partner/reseller-program}}
 
+        </div>
         <div class="container">
             <div class="partnerReseller text-center">
                 <div class="titleBody400">Tertarik ingin menjadi Reseller Gramedia?</div>
@@ -74,7 +76,27 @@
 
     {{> footer/footer}}
 
-    {{> js slick=true}}
+    {{> js page="partner" slick=true}}
+    <script>
+        $(document).ready(function () {
+            //slider program
+            var totalprogram = $('.-sprogram').attr("data-number") / 2;
+            $('.-sprogram').slick({
+                dots: true,
+                arrows: false,
+                infinite: true,
+                speed: 700,
+                mobileFirst: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                // autoplay: true,
+                autoplaySpeed: 2000,
+                centerMode: true,
+                centerPadding: 0,
+                initialSlide: parseInt(totalprogram)
+            });
+        });
+    </script>
 
 </body>
 

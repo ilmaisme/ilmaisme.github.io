@@ -1,4 +1,24 @@
 .partner {
+    overflow: hidden;
+
+    &Hl {
+        border-radius: 20px;
+        @extend %slick-load;
+        max-height: 412px;
+
+        &.slick-initialized {
+            @extend %slick-loaded;
+        }
+
+        &Img {
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20px;
+            box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.09);
+            overflow: hidden;
+        }
+    }
+
     &Gap {
         margin-top: 100px
     }
@@ -83,8 +103,185 @@
         }
     }
 
+    &Product {
+        margin-bottom: -30px;
+
+        &Wrap {
+            padding-right: 0;
+            padding-left: 0;
+
+            @include min-responsive($w-md) {
+                padding-right: 15px;
+                padding-left: 15px;
+            }
+        }
+
+        &Item {
+            margin-top: 30px;
+            margin-left: 8px;
+            margin-right: 8px;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #FFF;
+            background: linear-gradient(180deg, $cl-accent1 0%, rgba(252, 252, 252, 0.00) 58%);
+            box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.09);
+
+            @include min-responsive($w-md) {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        }
+
+        &Title {
+            margin-bottom: 20px;
+            @include font-pack($font-bold, 15px, $font-weight-bold, 1.06, $cl-text1);
+        }
+
+        &Img {
+            min-height: 100px;
+        }
+
+        .slick {
+            &-list {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+
+                @include min-responsive($w-md) {
+                    padding-left: 150px !important;
+                    padding-right: 150px !important;
+                }
+            }
+
+            &-track {
+                display: flex;
+                padding-bottom: 30px;
+            }
+
+            &-slide {
+                height: inherit;
+            }
+        }
+    }
+
+    &Client {
+        &Item {
+            margin-top: 30px;
+            margin-left: 15px;
+            margin-right: 15px;
+
+            @include min-responsive($w-md) {
+                margin-left: 40px;
+                margin-right: 40px;
+            }
+        }
+
+        &Img {
+            min-height: 100px;
+        }
+
+        .slick {
+            &-list {
+                padding-left: 60px !important;
+                padding-right: 60px !important;
+
+                @include min-responsive($w-md) {
+                    padding-left: 120px !important;
+                    padding-right: 120px !important;
+                }
+            }
+        }
+    }
+
+    &Shipper {
+        padding: 0;
+
+        @include min-responsive($w-md) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
     &Program {
         padding: 0;
+
+        &Item {
+            margin-top: 30px;
+            margin-left: 8px;
+            margin-right: 8px;
+
+            @include min-responsive($w-md) {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        }
+
+        &Wrap {
+            @include display-flex;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+
+            @include min-responsive($w-xl) {
+                flex-direction: row;
+            }
+        }
+
+        &Content {
+            flex: 1;
+            margin-top: -40px;
+            padding: 60px 20px 20px 20px;
+            border-radius: 20px;
+            background: linear-gradient(180deg, $cl-accent1 0%, rgba(252, 252, 252, 0.00) 58%);
+            box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.05);
+
+            @include min-responsive($w-xl) {
+                margin-top: 0;
+                margin-left: -40px;
+                padding: 20px 20px 20px 60px;
+            }
+        }
+
+        &Img {
+            position: relative;
+            z-index: 1;
+
+            img {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        &Lead {
+            margin-bottom: 10px;
+        }
+
+        &List {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+
+        &Slide {
+            .slick {
+                &-list {
+                    padding-left: 30px !important;
+                    padding-right: 30px !important;
+
+                    @include min-responsive($w-md) {
+                        padding-left: 27% !important;
+                        padding-right: 27% !important;
+                    }
+                }
+
+                &-track {
+                    display: flex;
+                    padding-bottom: 30px;
+                }
+    
+                &-slide {
+                    height: inherit;
+                }
+            }
+        }
     }
 
     &Reseller {
@@ -101,11 +298,8 @@
     }
 
     &Sdk {
-
-        @include min-responsive($w-md) {
-            padding-left: 0;
-            padding-right: 0;
-        }
+        padding-left: 0;
+        padding-right: 0;
 
         &List {
             margin-top: 20px
@@ -128,11 +322,8 @@
 
     &Join {
         max-width: 757px;
-
-        @include min-responsive($w-md) {
-            padding-left: 0;
-            padding-right: 0;
-        }
+        padding-left: 0;
+        padding-right: 0;
 
         &Cta {
             padding: 20px;
@@ -150,6 +341,37 @@
     }
 
     &Store {
+        &--widget {
+            margin-left: -15px;
+            overflow: hidden;
+
+            .partnerStoreWrap {
+                box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.09);
+            }
+
+            .slick {
+                &-list {
+                    padding-left: 15px;
+                    padding-right: 60px;
+
+                    @include min-responsive($w-md) {
+                        padding-left: 12px;
+                        padding-right: 80px;
+                    }
+                }
+            }
+        }
+
+        &Row {
+            padding-left: 0;
+            padding-right: 0;
+
+            @include min-responsive($w-md) {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
         &Cta {
             margin-top: 10px;
             margin-bottom: 38px;

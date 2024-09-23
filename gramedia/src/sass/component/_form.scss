@@ -24,11 +24,28 @@
                 margin-top: 0;
             }
         }
+
+        &>.formRow,
+        &>.formRow .formCol {
+            margin-top: 0;
+        }
+
+        &.formCol {
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 
     &Col {
         padding-left: var(--gap-form);
         padding-right: var(--gap-form);
+    }
+
+    &Wrap {
+        @include display-flex;
+        align-items: center;
     }
 
     &Input {
@@ -129,6 +146,44 @@
             left: 0;
             @extend %icoInfo;
             filter: invert(71%) sepia(13%) saturate(437%) hue-rotate(197deg) brightness(101%) contrast(85%);
+        }
+    }
+
+    &Txt {
+        margin-left: 10px;
+
+        small {
+            position: relative;
+            top: -6px;
+            font-size: x-small;
+        }
+    }
+
+    &File {
+        position: relative;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+
+        &Title {
+            padding: 27px 10px 27px 150px;
+            @include title_clamp(1);
+            pointer-events: none;
+        }
+
+        &Cta {
+            position: absolute;
+            width: 130px;
+            min-width: unset;
+            padding: 15px 30px;
+            top: 10px;
+            left: 10px;
+            box-shadow: 0 0;
+            z-index: 1;
+        }
+
+        &Input {
+            display: none;
         }
     }
 

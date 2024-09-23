@@ -25,21 +25,37 @@
     }
 
     &.fixed {
-        @include min-responsive($w-xl) {
-            position: fixed;
-            top: 25px;
+        position: fixed;
+        top: 25px;
 
-            .headerWrap {
-                background: #FFF;
-                padding-top: 10px;
-                padding-bottom: 15px;
-                box-shadow: 0px 2px 27px 0px rgba(19, 115, 227, 0.13);
-                transition: 0.5s 0.1s height, 0.3s background;
+        .headerWrap {
+            background: #FFF;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            padding-left: 40px;
+            padding-right: 40px;
+            box-shadow: 0px 2px 27px 0px rgba(19, 115, 227, 0.13);
+            transition: 0.5s 0.1s height, 0.3s background;
+
+            @include media-breakpoint-up(sm) {
+                // max-width: calc(540px + 50px);
             }
 
-            &~.header-offset {
-                padding-top: 90px
+            @include media-breakpoint-up(md) {
+                // max-width: calc(720px + 50px);
             }
+
+            @include media-breakpoint-up(lg) {
+                // max-width: calc(960px + 50px);
+            }
+
+            @include min-responsive($w-xxl) {
+                max-width: calc(1230px + 50px);
+            }
+        }
+
+        &~.header-offset {
+            padding-top: 90px
         }
     }
 
@@ -49,26 +65,8 @@
         justify-content: space-between;
         padding-top: 25px;
         padding-bottom: 25px;
-        padding-right: 40px;
-        padding-left: 40px;
         transition: 0.5s height cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.2s background;
         border-radius: 19px;
-
-        @include media-breakpoint-up(sm) {
-            // max-width: calc(540px + 50px);
-        }
-
-        @include media-breakpoint-up(md) {
-            // max-width: calc(720px + 50px);
-        }
-
-        @include media-breakpoint-up(lg) {
-            max-width: calc(960px + 50px);
-        }
-
-        @include media-breakpoint-up(xl) {
-            max-width: calc(1230px + 50px);
-        }
     }
 
     &Content {
@@ -84,6 +82,7 @@
         border-radius: 7px;
         transition: .5s border, .5s background;
         box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.09);
+        z-index: 9;
 
         &Link {
             margin-top: 10px;

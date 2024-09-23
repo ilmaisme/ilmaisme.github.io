@@ -12,10 +12,10 @@
 
             {{>breadcrumb parent="Partnership" child="Store Gramedia"}}
 
-            {{!>partner/headline}}
+            {{>partner/headline}}
 
             <h1 class="partnerTitle partnerGap text-center"><span>Mitra Store Gramedia</span></h1>
-            <div class="partnerIntro partnerGap col-md-7 mx-auto">
+            <div class="partnerIntro partnerGap col-lg-9 col-xl-7 mx-auto">
                 <div class="partnerWrap">
                     <h2 class="partnerCaption titleH2">Apa itu?</h2>
                     <div class="partnerLead titleBody400">Mitra Store Gramedia adalah salah satu program kemitraan
@@ -24,11 +24,11 @@
                         store gramedia ranna acanva rovair aran genosit</div>
                 </div>
                 <div class="partnerImg">
-                    <img src="./asset/images/reseller/caption-img.png" alt="" width="331" height="288" loading="lazy">
+                    <img src="./asset/images/store/caption-img.png" alt="" width="331" height="288" loading="lazy">
                 </div>
             </div>
             <div class="partnerBenefit partnerGap col-md-10 mx-auto">
-                <h2 class="partnerCaption titleH2 text-center">Benefit Menjadi Mitra Reseller Gramedia</h2>
+                <h2 class="partnerCaption titleH2 text-center">Benefit Mitra Store Gramedia</h2>
                 <ul class="partnerBenefitList center-flex">
                     {{#each partner.storeBenefit}}
                     <li class="partnerBenefitItem text-center">
@@ -39,7 +39,7 @@
                     {{/each}}
                 </ul>
             </div>
-            <div class="partnerSdk partnerGap col-md-5 mx-auto">
+            <div class="partnerSdk partnerGap col-lg-6 col-xl-5 mx-auto">
                 <h2 class="partnerCaption titleH2 text-center">Syarat Menjadi Mitra Gramedia</h2>
                 <ul class="partnerSdkList">
                     {{#each partner.storeSdk}}
@@ -64,28 +64,82 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="offsetContainer offset-xl-1">
             <div class="partnerStore partnerGap">
                 <h2 class="partnerCaption titleH2 text-center">Lokasi Toko Mitra Gramedia</h2>
                 <a href="partnership-store-loc.html" class="partnerStoreCta buttonTxt center-flex">Lihat Semua<span
                         class="ico icoArrow"></span></a>
-                <div class="partnerStoreList row">
+                <div class="partnerStore--widget">
+                    <div class="partnerStoreList row -sstore">
 
-                    {{>partner/store channel=partner.storeLoc index_start=0 index_end=6 lazy=true}}
+                        {{>partner/store channel=partner.storeLoc index_start=0 index_end=6 col="col-md-6 col-lg-4"
+                        tag="h3" lazy=true}}
 
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="container">
             <h2 class="partnerCaption partnerGap titleH2 text-center">
                 Formulir Pendaftaran Mitra
             </h2>
 
-            {{!>partner/b2b-form}}
-        </div>
+            {{>partner/mitra-form}}
 
+        </div>
     </main>
 
     {{> footer/footer}}
 
-    {{> js slick=true validate=true}}
+    {{> js page="partner" slick=true validate=true}}
+    <script>
+        function onFileChange(el) {
+            let parent = el.parentNode,
+                title = parent.querySelector('.formFileTitle')
+            title.setAttribute('placeholder', el.value);
+        }
+
+        $(document).ready(function () {
+            //slider store
+            $('.-sstore').slick({
+                dots: false,
+                arrows: false,
+                infinite: true,
+                speed: 500,
+                mobileFirst: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                responsive: [{
+                    breakpoint: 1700,
+                    settings: {
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 700,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+                ]
+            });
+        });
+    </script>
 
 </body>
 

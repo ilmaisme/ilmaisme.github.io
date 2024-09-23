@@ -159,6 +159,30 @@ button:-moz-focusring,
     margin-right: auto;
 }
 
+.offsetContainer {
+    padding-left: 15px;
+    padding-right: 0;
+
+    @include media-breakpoint-up(md) {
+        margin-left: auto;
+        padding-left: 0;
+        max-width: 720px;
+    }
+    @include media-breakpoint-up(lg) {
+        max-width: 960px;
+    }
+
+    @include min-responsive($w-xl) {
+        max-width: 1230px;
+    }
+
+    @include min-responsive($w-xxl) {
+        margin-left: 8.33333%;
+        padding-left: 0;
+        max-width: unset;
+    }
+}
+
 .hidden {
     opacity: 0;
     visibility: hidden;

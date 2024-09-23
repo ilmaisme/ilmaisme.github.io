@@ -12,10 +12,10 @@
 
             {{>breadcrumb parent="Partnership" child="B2B Gramedia"}}
 
-            {{!>partner/headline}}
+            {{>partner/headline}}
 
             <h1 class="partnerTitle partnerGap text-center"><span>Mitra B2B Gramedia</span></h1>
-            <div class="partnerIntro partnerGap col-md-7 mx-auto">
+            <div class="partnerIntro partnerGap col-lg-9 col-xl-7 mx-auto">
                 <div class="partnerWrap">
                     <h2 class="partnerCaption titleH2">Apa itu?</h2>
                     <div class="partnerLead titleBody400">B2B Kemitraan Gramedia merupakan salah satu program kemitraan
@@ -43,16 +43,22 @@
 
             <div class="partnerGap">
                 <h2 class="partnerCaption titleH2 text-center">Produk B2B Gramedia</h2>
+                <div class="partnerProductWrap col-xl-11 mx-auto">
+                    <div class="partnerProduct -sproduct">
 
-                {{!>partner/b2b-produk}}
+                        {{>partner/b2b-produk}}
 
+                    </div>
+                </div>
             </div>
         </div>
         <div class="partnerGap">
             <h2 class="partnerCaption titleH2 text-center">Klien B2B Gramedia</h2>
+            <div class="partnerClient -sclient">
 
-            {{!>partner/b2b-klien}}
+                {{>partner/b2b-klien}}
 
+            </div>
         </div>
         <div class="container">
             <h2 class="partnerCaption partnerGap titleH2 text-center">
@@ -60,14 +66,96 @@
             </h2>
 
             {{>partner/b2b-form}}
+            
         </div>
     </main>
 
     {{> footer/footer}}
 
-    {{> js slick=true validate=true}}
+    {{> js page="partner" slick=true validate=true}}
     <script>
         $(document).ready(function () {
+            //slider product
+            $('.-sproduct').slick({
+                dots: false,
+                arrows: false,
+                infinite: true,
+                speed: 700,
+                mobileFirst: true,
+                centerMode: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                swipeToSlide: true,
+                responsive: [
+                    {
+                        breakpoint: 1100,
+                        settings: {
+                            slidesToShow: 2,
+                            initialSlide: length + 1,
+                        }
+                    }, {
+                        breakpoint: 1020,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 700,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    }
+                ]
+            });
+
+            //slider klien
+            $('.-sclient').slick({
+                dots: false,
+                arrows: false,
+                infinite: true,
+                speed: 700,
+                mobileFirst: true,
+                centerMode: true,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                swipeToSlide: true,
+                initialSlide: length + 2,
+                responsive: [
+                    {
+                        breakpoint: 1800,
+                        settings: {
+                            slidesToShow: 6,
+                        }
+                    },
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 5,
+                            slidesToScroll: 3,
+                            initialSlide: length + 3,
+                        }
+                    },
+                    {
+                        breakpoint: 700,
+                        settings: {
+                            slidesToShow: 3,
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    }
+                ]
+            });
+
             //form validation
             $('#formb2b input').bind('keyup blur click', function () {
                 if ($('#formb2b').valid()) {
