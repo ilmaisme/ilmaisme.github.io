@@ -11,19 +11,21 @@
     }
 
     &.fixed {
-        position: fixed;
-        top: 25px;
+        @include min-responsive($w-xl) {
+            position: fixed;
+            top: 25px;
 
-        .headerWrap {
-            background: #FFF;
-            padding-top: 10px;
-            padding-bottom: 15px;
-            box-shadow: 0px 2px 27px 0px rgba(19, 115, 227, 0.13);
-            transition: 0.5s 0.1s height, 0.3s background;
-        }
+            .headerWrap {
+                background: #FFF;
+                padding-top: 10px;
+                padding-bottom: 15px;
+                box-shadow: 0px 2px 27px 0px rgba(19, 115, 227, 0.13);
+                transition: 0.5s 0.1s height, 0.3s background;
+            }
 
-        &~.header-offset {
-            padding-top: 90px
+            &~.header-offset {
+                padding-top: 90px
+            }
         }
     }
 
