@@ -10,12 +10,29 @@
             @extend %slick-loaded;
         }
 
+        .slick {
+            &-track {
+                display: flex;
+                padding-bottom: 10px;
+            }
+
+            &-slide {
+                display: flex !important;
+                align-items: center;
+                height: inherit;
+            }
+        }
+
         &Img {
             margin-left: auto;
             margin-right: auto;
-            border-radius: 20px;
-            box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.09);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.09);
             overflow: hidden;
+
+            @include min-responsive($w-md) {
+                border-radius: 20px;
+            }
         }
     }
 
@@ -276,7 +293,7 @@
                     display: flex;
                     padding-bottom: 30px;
                 }
-    
+
                 &-slide {
                     height: inherit;
                 }
@@ -338,12 +355,367 @@
                 filter: invert(100%) sepia(0%) saturate(7435%) hue-rotate(160deg) brightness(114%) contrast(98%);
             }
         }
+
+        &Step {
+            max-width: 330px;
+            margin: 50px auto 30px;
+            @include display-flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include min-responsive($w-md) {
+                max-width: unset;
+                margin-bottom: 20px;
+            }
+
+            .partnerJoinTxt {
+                display: none;
+
+                @include min-responsive($w-md) {
+                    display: block;
+                }
+            }
+        }
+
+        &Item {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            position: relative;
+
+            @include min-responsive($w-md) {
+                padding-top: 130px;
+                padding-bottom: 130px;
+            }
+
+            &:nth-child(odd) {
+
+                .partnerJoinTxt,
+                .partnerJoinNum {
+                    @include display-flex;
+                    align-items: flex-end;
+                }
+
+                .partnerJoinTxt {
+                    min-height: 66px;
+                    display: none;
+
+                    @include min-responsive($w-md) {
+                        display: flex;
+                    }
+                }
+            }
+
+            &:nth-child(even) {
+                .partnerJoinTxt {
+                    top: unset;
+                    bottom: 22px;
+                }
+
+                .partnerJoinNum {
+                    top: unset;
+                    bottom: calc(50% - 30px - 30px);
+                }
+            }
+
+            &:last-child {
+
+                &::before,
+                &::after {
+                    content: none;
+                }
+
+                .partnerJoinDot::after {
+                    content: none;
+                }
+
+                .partnerJoinTxt {
+                    left: -40px;
+                    text-align: right;
+
+                    @include min-responsive($w-lg) {
+                        left: unset;
+                        text-align: left;
+                    }
+                }
+            }
+
+            &::before {
+                content: '';
+                top: 50%;
+                position: absolute;
+                left: 14px;
+                border-bottom: 1px solid $cl-text3;
+                width: 42px;
+
+                @include min-responsive($w-md) {
+                    width: 120px;
+                }
+            }
+
+            &::after {
+                content: '';
+                top: 50%;
+                position: absolute;
+                width: 0;
+                border-bottom: 1px solid $cl-primary1;
+                transition: 0.5s 0.1s width;
+
+                @include min-responsive($w-md) {
+                    border-bottom: 2px solid $cl-primary1;
+                }
+            }
+
+            &.active {
+                &::after {
+                    width: 42px;
+
+                    @include min-responsive($w-md) {
+                        width: 120px;
+                    }
+                }
+
+                .partnerJoinDot::before {
+                    background: $cl-primary1;
+                    transform: scale(1);
+                }
+
+                .partnerJoinDot::after,
+                .partnerJoinTxt,
+                .partnerJoinNum {
+                    color: $cl-primary1;
+                }
+
+                .partnerJoinNum {
+                    @include min-responsive($w-md) {
+                        font-size: 23px;
+                    }
+                }
+
+                &:nth-child(2) {
+
+                    &::after,
+                    .partnerJoinDot::before,
+                    .partnerJoinDot::after,
+                    .partnerJoinTxt,
+                    .partnerJoinNum {
+                        transition-delay: 1000ms;
+                    }
+                }
+
+                &:nth-child(3) {
+
+                    &::after,
+                    .partnerJoinDot::before,
+                    .partnerJoinDot::after,
+                    .partnerJoinTxt,
+                    .partnerJoinNum {
+                        transition-delay: 2000ms;
+                    }
+                }
+
+                &:nth-child(4) {
+
+                    &::after,
+                    .partnerJoinDot::before,
+                    .partnerJoinDot::after,
+                    .partnerJoinTxt,
+                    .partnerJoinNum {
+                        transition-delay: 3000ms;
+                    }
+                }
+
+                &:nth-child(5) {
+
+                    &::after,
+                    .partnerJoinDot::before,
+                    .partnerJoinDot::after,
+                    .partnerJoinTxt,
+                    .partnerJoinNum {
+                        transition-delay: 4000ms;
+                    }
+                }
+
+                &:nth-child(6) {
+
+                    &::after,
+                    .partnerJoinDot::before,
+                    .partnerJoinDot::after,
+                    .partnerJoinTxt,
+                    .partnerJoinNum {
+                        transition-delay: 5000ms;
+                    }
+                }
+
+                &:nth-child(7) {
+
+                    &::after,
+                    .partnerJoinDot::before,
+                    .partnerJoinDot::after,
+                    .partnerJoinTxt,
+                    .partnerJoinNum {
+                        transition-delay: 6000ms;
+                    }
+                }
+            }
+        }
+
+        &Dot {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 3px;
+            border-radius: 50%;
+            background: $cl-text3;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background: transparent;
+                transform: scale(0);
+                transition: 0.5s transform cubic-bezier(0.73, 0.32, 0.34, 1.5);
+
+                @include min-responsive($w-md) {
+                    width: 24px;
+                    height: 24px;
+                    top: -5px;
+                    left: -5px;
+                }
+            }
+
+            &::after {
+                content: '';
+                @extend .ico;
+                @extend %icoChevron;
+                position: absolute;
+                right: unset;
+                left: 30px;
+                top: 5px;
+                color: $cl-text3;
+                transition: 0.5s color cubic-bezier(0.73, 0.32, 0.34, 1.5);
+                width: 6px;
+                height: 6px;
+                border-bottom: 1px solid;
+                border-right: 1px solid;
+
+                @include min-responsive($w-md) {
+                    top: 3px;
+                    left: 60px;
+                    width: 10px;
+                    height: 10px;
+                    border-bottom: 2px solid;
+                    border-right: 2px solid;
+                }
+            }
+        }
+
+        &Txt {
+            position: absolute;
+            top: 0;
+            transition: 0.5s color cubic-bezier(0.73, 0.32, 0.34, 1.5);
+            font-size: 13px;
+
+            @include min-responsive($w-md) {
+                width: 130px;
+                font-size: 12px;
+            }
+
+            @include min-responsive($w-lg) {
+                width: 171px;
+                font-size: 15px;
+            }
+
+            br {
+                display: inline-block;
+
+                @include min-responsive($w-lg) {
+                    display: none;
+                }
+            }
+        }
+
+        &Num {
+            position: absolute;
+            min-height: 32px;
+            top: calc(50% - 30px - 30px);
+            color: $cl-text3;
+            transition: 0.5s color cubic-bezier(0.73, 0.32, 0.34, 1.5), .2s font-size linear;
+        }
+
+        &Desc {
+            @extend %desktop-hide;
+
+            &Item {
+                @include display-flex;
+
+                &.active {
+                    .partnerJoinTxt {
+                        color: $cl-primary1;
+                    }
+
+                    &:nth-child(2) {
+                        .partnerJoinTxt {
+                            transition-delay: 1000ms;
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        .partnerJoinTxt {
+                            transition-delay: 2000ms;
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        .partnerJoinTxt {
+                            transition-delay: 3000ms;
+                        }
+                    }
+
+                    &:nth-child(5) {
+                        .partnerJoinTxt {
+                            transition-delay: 4000ms;
+                        }
+                    }
+
+                    &:nth-child(6) {
+                        .partnerJoinTxt {
+                            transition-delay: 5000ms;
+                        }
+                    }
+
+                    &:nth-child(7) {
+                        .partnerJoinTxt {
+                            transition-delay: 6000ms;
+                        }
+                    }
+                }
+            }
+
+            .partnerJoinNum {
+                min-width: 17px;
+                margin-right: 10px;
+                @include font-pack($font-normal, 13px, $font-weight-normal, false, $cl-text1);
+            }
+
+            .partnerJoinTxt {
+                flex: 1;
+            }
+
+            .partnerJoinNum,
+            .partnerJoinTxt {
+                position: relative;
+                min-height: unset;
+            }
+        }
     }
 
     &Store {
         &--widget {
             margin-left: -15px;
-            overflow: hidden;
 
             .partnerStoreWrap {
                 box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.09);
@@ -370,6 +742,10 @@
                 padding-left: 15px;
                 padding-right: 15px;
             }
+        }
+
+        &Container {
+            overflow: hidden;
         }
 
         &Cta {
