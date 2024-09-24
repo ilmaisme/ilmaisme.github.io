@@ -50,9 +50,10 @@
                     {{/each}}
                 </ul>
             </div>
-            <div class="partnerJoin partnerGap col-md-7 mx-auto">
+            <div class="partnerJoin partnerGap col-lg-9 col-xl-7 mx-auto">
                 <h2 class="partnerCaption titleH2 text-center">Cara Bergabung Menjadi Mitra Store</h2>
 
+                {{>partner/join}}
 
                 <div class="partnerJoinCta text-center">
                     <div class="titleBody400">Download Cara Bergabung Menjadi Mitra Store dalam File PDF</div>
@@ -64,12 +65,14 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="offsetContainer offset-xl-1">
             <div class="partnerStore partnerGap">
                 <h2 class="partnerCaption titleH2 text-center">Lokasi Toko Mitra Gramedia</h2>
                 <a href="partnership-store-loc.html" class="partnerStoreCta buttonTxt center-flex">Lihat Semua<span
                         class="ico icoArrow"></span></a>
+            </div>
+        </div>
+        <div class="offsetContainer offset-xl-1">
+            <div class="partnerStoreContainer">
                 <div class="partnerStore--widget">
                     <div class="partnerStoreList row -sstore">
 
@@ -137,6 +140,17 @@
                     }
                 }
                 ]
+            });
+
+            //step join anim
+            $(window).scroll(function () {
+                if ($(this).scrollTop() >= $(".partnerJoin").offset().top - 150) {
+                    $(".partnerJoinItem").addClass('active')
+                    $(".partnerJoinDescItem").addClass('active')
+                } else {
+                    $(".partnerJoinItem").removeClass('active')
+                    $(".partnerJoinDescItem").removeClass('active')
+                }
             });
         });
     </script>
