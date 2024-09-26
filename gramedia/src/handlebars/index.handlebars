@@ -14,7 +14,7 @@
                     <h1 class="titleH4">Welcome to Gramedia</h1>
                     <h2 class="hlTitle">Enabling ideas to evolve into creativity.</h2>
                     <button class="hlCta button buttonPrimary buttonPrimary--icon"
-                        onclick="triggerActive('.-pVideo')">Watch
+                        onclick="event.stopPropagation(); triggerActive('.-pVideo')">Watch
                         Video <span class="ico icoArrow"></span></button>
                 </div>
                 <div class="hlImg">
@@ -34,7 +34,7 @@
                     {{>intro}}
 
                 </div>
-                <a href="#" class="introCta buttonTxt">Find out more our company <span class="ico icoArrow"></span></a>
+                <a href="company.html" class="introCta buttonTxt">Find out more our company <span class="ico icoArrow"></span></a>
             </div>
             <div class="brands center-flex">
                 <div class="brandsSlider -sbrands">
@@ -78,11 +78,11 @@
             <div class="news newsWidget">
                 <div class="newsCaption--widget">
                     <h2 class="titleH2">Latest <br> updates</h2>
-                    <a href="news.html" class="newsWidgetCta buttonTxt">See all <span class="ico icoArrow"></span></a>
+                    <a href="update-news.html" class="newsWidgetCta buttonTxt">See all <span class="ico icoArrow"></span></a>
                 </div>
                 <div class="newsList newsList--widget -supdates">
 
-                    {{>news channel=news index_start=0 index_end=5 tag="h3" lazy=true}}
+                    {{>news channel=news index_start=0 index_end=5 tag="h3" lazy=true lead=true}}
 
                 </div>
             </div>

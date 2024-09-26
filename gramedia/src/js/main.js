@@ -15,6 +15,15 @@ $(document).ready(function () {
         // console.log("mobile")
         hd.remove();
     }
+
+    $(document).on("click", function () {
+        //hide video
+        var popupvideo = document.querySelector('.-pVideo');
+        if (!!popupvideo) {
+            popupvideo.classList.remove('active')
+            toggleVideo('#video', 'hide')
+        }
+    });
 });
 
 //trigger active button

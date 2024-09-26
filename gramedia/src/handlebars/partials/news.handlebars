@@ -5,7 +5,7 @@
 <div class="newsItem{{#if ../col}} {{../col}}{{/if}}">
     <a href="{{link}}" class="newsLink">
         <div class="newsImg">
-            <img src="{{images}}" alt="{{title}}" width="337" height="190"{{#if ../lazy}} loading="lazy"{{/if}}>
+            <img src="{{images}}" alt="{{title}}" width="337" height="190" {{#if ../lazy}}loading="lazy" {{/if}}>
         </div>
         <div class="newsContent">
             <div class="newsDates">{{publish}}</div>
@@ -14,7 +14,12 @@
             {{else}}
             <div class="newsTitle titleH5">{{title}}</div>
             {{/if}}
+            {{#if ../lead}}
             <div class="newsLead">{{lead}}</div>
+            {{/if}}
+            {{#if ../more}}
+            <div class="buttonTxt">Read more <span class="ico icoArrow"></span></div>
+            {{/if}}
         </div>
     </a>
 </div>

@@ -1,0 +1,23 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="mediaItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
+    <a href="{{link}}" class="mediaLink">
+        <div class="mediaImg">
+            <img src="{{images}}" alt="{{title}}" width="355" height="200" {{#if ../lazy}}loading="lazy" {{/if}}>
+        </div>
+        <div class="mediaContent center-flex">
+            <div class="mediaDates">{{publish}}</div>
+            {{#if ../tag}}
+            <{{.. /tag}} class="mediaTitle titleH5 text-center">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="mediaTitle titleH5 text-center">{{title}}</div>
+            {{/if}}
+        </div>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

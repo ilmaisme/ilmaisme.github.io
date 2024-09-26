@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="media"}}
+
+<body>
+
+    {{> header/header}}
+
+    <main role="main" class="main media --bg-green">
+        <div class="container">
+
+            {{>breadcrumb parent="News" child="Video"}}
+
+            <div class="mediaContainer col-xl-11 mx-auto">
+                <div class="mediaCaption text-center">
+                    <h1 class="titleH2">Video</h1>
+                </div>
+
+                <div class="mediaList row">
+
+                    {{>media channel=news index_start=0 index_end=9 tag="h2" col="col-md-6 col-lg-4" type="--video"}}
+
+                </div>
+
+                {{>paging}}
+
+            </div>
+        </div>
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js}}
+
+</body>
+
+</html>
