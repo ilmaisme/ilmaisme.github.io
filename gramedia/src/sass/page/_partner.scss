@@ -829,4 +829,116 @@
             }
         }
     }
+
+    &Map {
+        svg {
+            width: 100%;
+        }
+
+        &Area {
+            cursor: pointer;
+
+            &:hover {
+                fill: $cl-primary2
+            }
+
+            &:active,
+            &.active {
+                fill: $cl-primary1
+            }
+        }
+
+        &Bottom {
+            @include display-flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-direction: column;
+
+            @include min-responsive($w-md) {
+                margin-top: 30px;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            .formInfo {
+                color: $cl-primary2;
+
+                .ico {
+                    filter: invert(56%) sepia(26%) saturate(1234%) hue-rotate(176deg) brightness(97%) contrast(92%);
+                }
+            }
+        }
+
+        &.--margin {
+            margin-top: -80px;
+            margin-bottom: -100px;
+            margin-left: -10px;
+            margin-right: -10px;
+
+            @include min-responsive($w-md) {
+                margin: 0;
+            }
+        }
+    }
+
+    &Province {
+        order: 1;
+        margin-top: 10px;
+
+        @include min-responsive($w-md) {
+            margin-top: 0;
+            order: unset;
+        }
+
+        &Item {
+            display: none;
+            height: inherit;
+            margin-top: 10px;
+
+            @include min-responsive($w-md) {
+                margin-top: 30px;
+            }
+        }
+
+        &Wrap {
+            height: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            color: $cl-accent1;
+            background: $cl-primary1;
+        }
+
+        &Title {
+            margin-bottom: 10px;
+            color: $cl-accent1;
+        }
+
+        .selectDrop {
+            min-width: 282px;
+
+            .styledSelect {
+                &.open::after {
+                    top: 15px;
+                    transform: rotate(180deg);
+                }
+
+                &::after {
+                    top: 18px;
+                    transform: rotate(0);
+                    border-style: solid;
+                    border-width: 8px 6px 0 6px;
+                    border-color: $cl-primary1 transparent transparent transparent;
+                }
+            }
+        }
+
+        .icoShip {
+            display: none;
+            @extend %icoShip;
+            width: 28px;
+            height: 28px;
+            margin-left: 10px;
+            filter: invert(100%) sepia(0%) saturate(7435%) hue-rotate(160deg) brightness(114%) contrast(98%);
+        }
+    }
 }

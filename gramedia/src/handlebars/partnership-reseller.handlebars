@@ -44,7 +44,7 @@
             <div class="partnerShipper partnerGap col-xl-11 mx-auto">
                 <h2 class="partnerCaption titleH2 text-center">Shipper Produk Gramedia</h2>
 
-                {{!>partner/reseller-shipper}}
+                {{>partner/reseller-shipper}}
 
             </div>
             <div class="partnerProgram partnerGap col-md-10 col-lg-8 col-xl-6 text-center mx-auto">
@@ -76,7 +76,7 @@
 
     {{> footer/footer}}
 
-    {{> js page="partner" slick=true}}
+    {{> js page="partner" slick=true selected=true}}
     <script>
         $(document).ready(function () {
             //slider program
@@ -95,7 +95,46 @@
                 centerPadding: 0,
                 initialSlide: parseInt(totalprogram)
             });
+
+            //map on click
+            $('.partnerMapArea').each(function () {
+                $(this).click(function () {
+                    //add active on map
+                    $('.partnerMapArea').removeClass('active')
+                    $(this).addClass('active')
+
+                    //change selection value
+                    value = $(this).attr('value'),
+                        prov = $('#province'),
+                        disabled = prov.children('option:disabled')
+                    prov.val(value).change();
+                    $('#province option[value="' + value + '"]').prop("selected", true);
+                    //console.log(prov.find('option:selected').val())
+
+                    //change selection text
+                    $('.styledSelect').text(prov.children('option').eq(value).text())
+
+                    //remove disabled selected class
+                    if (!!disabled) {
+                        disabled.removeAttr('selected')
+                    }
+
+                    displayProvince(value)
+                })
+            });
         });
+
+        function displayProvince(getvalue) {
+            var items = $('.partnerProvinceItem');
+            //display province item
+            var itemprovince = getvalue;
+            items
+                .fadeOut()
+                .filter(function () {
+                    return $(this).data('value') == itemprovince;
+                })
+                .fadeIn(200);
+        }
     </script>
 
 </body>
