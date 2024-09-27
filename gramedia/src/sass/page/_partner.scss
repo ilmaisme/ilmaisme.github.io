@@ -828,6 +828,43 @@
                 }
             }
         }
+
+        &Clear {
+            @extend %buttonClose;
+            width: 24px;
+            height: 24px;
+            right: 20px;
+            top: 12px;
+            display: none;
+
+            &:hover {
+                .icoClose {
+
+                    &::before,
+                    &::after {
+                        background: $cl-notif2;
+                    }
+                }
+            }
+
+            &.active {
+                display: block;
+            }
+
+            .icoClose {
+                width: 24px;
+                height: 24px;
+
+                &::before,
+                &::after {
+                    width: 16px;
+                    height: 2px;
+                    background: $cl-text3;
+                    top: 10px;
+                    left: 4px;
+                }
+            }
+        }
     }
 
     &Map {
@@ -917,6 +954,8 @@
             min-width: 282px;
 
             .styledSelect {
+                padding: 10px 52px 10px 15px;
+
                 &.open::after {
                     top: 15px;
                     transform: rotate(180deg);
@@ -929,6 +968,10 @@
                     border-width: 8px 6px 0 6px;
                     border-color: $cl-primary1 transparent transparent transparent;
                 }
+            }
+
+            .select {
+                border: 1.5px solid $cl-primary1;
             }
         }
 

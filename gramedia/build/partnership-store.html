@@ -445,7 +445,7 @@
                 Formulir Pendaftaran Mitra
             </h2>
 
-            <form action="#" class="form col-lg-6" id="formb2b">
+            <form action="#" class="form col-lg-6" id="formmitra">
                 <div class="formRow row">
                     <div class="formCol col-lg-6">
                         <label class="formLabel titleLead" for="uname">Nama Calon Mitra<span class="required">*</span></label>
@@ -481,16 +481,59 @@
                         </div>
                     </div>
                     <div class="formCol col-lg-6">
-                        <label class="formLabel titleLead" for="mail">Email<span class="required">*</span></label>
-                        <input type="email" class="formInput" name="mail" id="mail" placeholder="me@company.com" required>
-                        <div class="formInfo titleLead"><span class="ico icoInfo"></span>Pastikan email penanggung jawab aktif</div>
+                        <label class="formLabel titleLead" for="province">Provinsi<span class="required">*</span></label>
+                        <div class="selectDrop">
+                            <select name="province" id="province" class="formSelect required" required>
+                                <option value="" selected disabled>Pilih Provinsi</option>
+                                <option value="1">Jawa Barat</option>
+                                <option value="2">Jawa Tengah</option>
+                                <option value="3">Jawa Timur</option>
+                                <option value="4">Banten</option>
+                                <option value="5">Bali</option>
+                                <option value="5">Sumatera Utara</option>
+                                <option value="6">Sumatera Selatan</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="formRow row">
                     <div class="formCol col-lg-6">
-                        <label class="formLabel titleLead" for="uname">Nama Calon Mitra<span class="required">*</span></label>
-                        <input type="text" class="formInput" name="uname" id="uname" placeholder="Nama lengkap" required>
-                        <div class="formInfo titleLead"><span class="ico icoInfo"></span>Nama sesuai KTP calon mitra</div>
+                        <label class="formLabel titleLead" for="city">Kabupaten/Kota<span class="required">*</span></label>
+                        <div class="selectDrop">
+                            <select name="city" id="city" class="formSelect" required>
+                                <option value="" selected disabled>Pilih Kabupaten/Kota</option>
+                                <option value="1">Kab. Bandung</option>
+                                <option value="2">Kab. Bandung Barat</option>
+                                <option value="3">Kab. Bekasi</option>
+                                <option value="4">Kab. Bogor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="formCol col-lg-6">
+                        <label class="formLabel titleLead" for="subdistrict">Kecamatan<span class="required">*</span></label>
+                        <div class="selectDrop">
+                            <select name="subdistrict" id="subdistrict" class="formSelect" required>
+                                <option value="" selected disabled>Pilih Kecamatan</option>
+                                <option value="1">Arjasari</option>
+                                <option value="2">Baleendah</option>
+                                <option value="4">Banjaran</option>
+                                <option value="3">Bojongsoang</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="formRow row">
+                    <div class="formCol col-lg-6">
+                        <label class="formLabel titleLead" for="ward">Kelurahan<span class="required">*</span></label>
+                        <div class="selectDrop">
+                            <select name="ward" id="ward" class="formSelect" required>
+                                <option value="" selected disabled>Pilih Kelurahan</option>
+                                <option value="1">Bojongsari</option>
+                                <option value="2">Bojongsoang</option>
+                                <option value="3">Buahbatu</option>
+                                <option value="4">Cipagalo</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="formCol col-lg-6">
                         <label class="formLabel titleLead" for="zipcode">Kode Pos<span class="required">*</span></label>
@@ -508,6 +551,8 @@
                         </div>
                     </div>
                 </div>
+                <div id="msgArea"></div>
+            
                 <div class="formRow row">
                     <div class="formCol col">
                         <label class="formLabel titleLead" for="gmaps">Link Google Map Ruko<span class="required">*</span></label>
@@ -518,11 +563,13 @@
                     <div class="formCol col">
                         <div class="formLabel titleLead">Denah Bangunan<span class="required">*</span></div>
                         <label class="formFile" for="blueprint">
-                            <input type="text" placeholder="Tidak ada file yang dipilih" class="formInput formFileTitle">
+                            <input type="text" placeholder="Tidak ada file yang dipilih" class="formInput formFileTitle"
+                                aria-label="area" id="blueprinttxt" readonly>
                             <div class="formFileCta button buttonPrimary"><span>Pilih File</span></div>
-                            <input type="file" name="blueprint" id="blueprint" accept="image/*" class="formFileInput"
-                                onchange="onFileChange(this)" ref="inputFile">
+                            <input type="file" name="blueprint" id="blueprint" accept="pdf" class="formFileInput"
+                                onchange="onFileChange(this)" ref="inputFile" required>
                         </label>
+                        <div class="error" id="msgFile"></div>
                         <div class="formInfo titleLead"><span class="ico icoInfo"></span>File format: PDF, maksimal 5 mb</div>
                     </div>
                 </div>
@@ -607,11 +654,25 @@
     <!-- slick JS -->
     <script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/jquery.validate.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/custom-select-form.min.js"></script>
     <script>
         function onFileChange(el) {
             let parent = el.parentNode,
-                title = parent.querySelector('.formFileTitle')
-            title.setAttribute('placeholder', el.value);
+                title = parent.querySelector('.formFileTitle'),
+                msg = el.parentNode.parentNode.querySelector('#msgFile')
+            Object.values(el.files).forEach(function (file) {
+                //console.log(`Type: ${file.type}`);
+                if (file.type == 'application/pdf') {
+                    title.setAttribute('placeholder', el.value)
+                    title.classList.add('valid')
+                    msg.innerHTML = ''
+                } else {
+                    title.setAttribute('placeholder', 'Tidak ada file yang dipilih');
+                    title.classList.remove('valid')
+                    msg.innerHTML = '*File must be PDF'
+                    el.value = null;
+                }
+            })
         }
 
         $(document).ready(function () {
@@ -662,6 +723,64 @@
                     $(".partnerJoinItem").removeClass('active')
                     $(".partnerJoinDescItem").removeClass('active')
                 }
+            });
+
+            //form validation
+            $('#formmitra input').bind('keyup blur click', function () {
+                if ($('#formmitra').valid()) {
+                    $('#submit').removeClass('disabled').attr('disabled', false);
+                } else {
+                    $('#submit').addClass('disabled').attr('disabled', true);
+                }
+            });
+
+            $('#formmitra').validate({
+                rules: {
+                    uname: {
+                        required: true,
+                    },
+                    oname: {
+                        address: true,
+                    },
+                    phone: {
+                        required: true,
+                    },
+                    RT: {
+                        required: true,
+                    },
+                    RW: {
+                        required: true,
+                    },
+                    zipcode: {
+                        required: true,
+                    },
+                    area: {
+                        required: true,
+                    },
+                    gmaps: {
+                        required: true,
+                    },
+                    zipcode: {
+                        required: true,
+                    },
+                    province: {
+                        required: true,
+                        min: 1
+                    },
+                },
+                errorPlacement: function (error, element) {
+                    if (element.attr("name") == "area") {
+                        error.appendTo("#msgArea");
+                    } else if (element.attr("name") == "blueprint") {
+                        error.appendTo("#msgFile");
+                    } else {
+                        error.insertAfter(element)
+                    }
+                }
+            })
+
+            jQuery.extend(jQuery.validator.messages, {
+                required: "*This field is required."
             });
         });
     </script>

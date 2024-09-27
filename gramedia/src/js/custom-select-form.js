@@ -6,6 +6,7 @@ $('.selectDrop select').each(function () {
         $selected = $(this).children('option:selected'),
         numberOfOptions = $(this).children('option').length,
         disabled = $(this).children('option:disabled'),
+        required = $(this).hasClass('required'),
         map = $('.partnerMap');
 
     // Hides the select element
@@ -54,6 +55,13 @@ $('.selectDrop select').each(function () {
         } else {
             $(this).addClass("open");
         }
+
+        //add error validation
+        if (required) {
+            if ($this.parent().siblings('label.required').length == 0) {
+                $('<label class="required">*This field is required.</label>').insertAfter($(this).parent('.select'));
+            }
+        }
     });
 
     // Hides the unordered list when a list item is clicked and updates the styled div to show the selected list item
@@ -68,12 +76,17 @@ $('.selectDrop select').each(function () {
         if (!!disabled) {
             disabled.removeAttr('selected')
         }
-        if (!!map) {
+        if (map.is(':visible')) {
             map.find('.partnerMapArea').removeClass('active')
             //add active on map
             map.find("[value='" + $this.val() + "']").addClass('active')
             //display province item
             displayProvince($this.val())
+        }
+
+        //remove error validation
+        if ((required) && ($this.val() != null)) {
+            $this.parent().siblings('label.required').hide()
         }
         //console.log($this.val()); /*Uncomment this for demonstration! */
     });
@@ -83,5 +96,4 @@ $('.selectDrop select').each(function () {
         $styledSelect.removeClass('active open');
         $list.addClass('hidden');
     });
-
 });

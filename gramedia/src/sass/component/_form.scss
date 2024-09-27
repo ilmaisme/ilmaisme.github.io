@@ -50,6 +50,7 @@
 
     &Input {
         width: 100%;
+        max-height: 51px;
         appearance: none;
         border-radius: 7px;
         padding: 17px 10px;
@@ -167,9 +168,14 @@
         cursor: pointer;
 
         &Title {
+            max-height: unset;
             padding: 27px 10px 27px 150px;
             @include title_clamp(1);
             pointer-events: none;
+
+            &.valid {
+                @include placeholder($size: 16px, $color: $cl-text1)
+            }
         }
 
         &Cta {
@@ -192,21 +198,21 @@
         @extend .titleBody400;
     }
 
-    .required {
-        color: $cl-notif2;
-    }
-
+    .required,
     .error {
-        @extend .titleLead;
         color: $cl-notif2;
+        font-size: 12px;
     }
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-
     select,
     textarea,
     input {
         font-size: 16px;
     }
+}
+
+input[type="search"i]::-webkit-search-cancel-button {
+    display: none;
 }

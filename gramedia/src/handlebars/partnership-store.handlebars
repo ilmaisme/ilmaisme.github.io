@@ -93,12 +93,25 @@
 
     {{> footer/footer}}
 
-    {{> js page="partner" slick=true validate=true}}
+    {{> js page="partner" slick=true validate=true selected=true}}
     <script>
         function onFileChange(el) {
             let parent = el.parentNode,
-                title = parent.querySelector('.formFileTitle')
-            title.setAttribute('placeholder', el.value);
+                title = parent.querySelector('.formFileTitle'),
+                msg = el.parentNode.parentNode.querySelector('#msgFile')
+            Object.values(el.files).forEach(function (file) {
+                //console.log(`Type: ${file.type}`);
+                if (file.type == 'application/pdf') {
+                    title.setAttribute('placeholder', el.value)
+                    title.classList.add('valid')
+                    msg.innerHTML = ''
+                } else {
+                    title.setAttribute('placeholder', 'Tidak ada file yang dipilih');
+                    title.classList.remove('valid')
+                    msg.innerHTML = '*File must be PDF'
+                    el.value = null;
+                }
+            })
         }
 
         $(document).ready(function () {
@@ -149,6 +162,64 @@
                     $(".partnerJoinItem").removeClass('active')
                     $(".partnerJoinDescItem").removeClass('active')
                 }
+            });
+
+            //form validation
+            $('#formmitra input').bind('keyup blur click', function () {
+                if ($('#formmitra').valid()) {
+                    $('#submit').removeClass('disabled').attr('disabled', false);
+                } else {
+                    $('#submit').addClass('disabled').attr('disabled', true);
+                }
+            });
+
+            $('#formmitra').validate({
+                rules: {
+                    uname: {
+                        required: true,
+                    },
+                    oname: {
+                        address: true,
+                    },
+                    phone: {
+                        required: true,
+                    },
+                    RT: {
+                        required: true,
+                    },
+                    RW: {
+                        required: true,
+                    },
+                    zipcode: {
+                        required: true,
+                    },
+                    area: {
+                        required: true,
+                    },
+                    gmaps: {
+                        required: true,
+                    },
+                    zipcode: {
+                        required: true,
+                    },
+                    province: {
+                        required: true,
+                        min: 1
+                    },
+                },
+                errorPlacement: function (error, element) {
+                    if (element.attr("name") == "area") {
+                        error.appendTo("#msgArea");
+                    } else if (element.attr("name") == "blueprint") {
+                        error.appendTo("#msgFile");
+                    } else {
+                        error.insertAfter(element)
+                    }
+                }
+            })
+
+            jQuery.extend(jQuery.validator.messages, {
+                required: "*This field is required."
             });
         });
     </script>

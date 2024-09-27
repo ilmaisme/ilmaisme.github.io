@@ -205,6 +205,8 @@
                     <div class="formInputIcon">
                         <input type="search" class="formInput" name="sstore" id="sstore"
                             aria-label="Find Gramedia store" placeholder="Temukan lokasi toko">
+                        <button class="button partnerStoreClear" aria-label="clear search"><span
+                                class="ico icoClose"></span></button>
                     </div>
                 </form>
             </div>
@@ -315,7 +317,7 @@
                             <span class="ico icoChevron --next"></span>
                         </button>
                     </form>
-                </div>                
+                </div>
             </div>
         </div>
 
@@ -389,6 +391,16 @@
     <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
     
     <script defer type="text/javascript" src="./asset/js/custom-select.min.js"></script>
+    <script>
+        $('#sstore').on('input', function (e) {
+            $('.partnerStoreClear').addClass('active')
+        });
+        //Clear search value
+        $('.partnerStoreClear').click(function () {
+            $(this).removeClass('active')
+            $('input[name = sstore]').val('');
+        });
+    </script>
 
 </body>
 

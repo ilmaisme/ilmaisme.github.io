@@ -19,6 +19,8 @@
                     <div class="formInputIcon">
                         <input type="search" class="formInput" name="sstore" id="sstore"
                             aria-label="Find Gramedia store" placeholder="Temukan lokasi toko">
+                        <button class="button partnerStoreClear" aria-label="clear search"><span
+                                class="ico icoClose"></span></button>
                     </div>
                 </form>
             </div>
@@ -31,7 +33,7 @@
                 </div>
 
                 {{>paging}}
-                
+
             </div>
         </div>
 
@@ -40,6 +42,16 @@
     {{> footer/footer}}
 
     {{> js}}
+    <script>
+        $('#sstore').on('input', function (e) {
+            $('.partnerStoreClear').addClass('active')
+        });
+        //Clear search value
+        $('.partnerStoreClear').click(function () {
+            $(this).removeClass('active')
+            $('input[name = sstore]').val('');
+        });
+    </script>
 
 </body>
 
