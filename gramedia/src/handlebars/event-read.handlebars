@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="event"}}
+
+<body>
+
+    {{> header/header}}
+
+    <main role="main" class="main event --bg-green">
+        <div class="container">
+
+            {{>breadcrumb parent="Event"}}
+
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="eventCaption titleH4">Upcoming Event</div>
+                <h1 class="readTitle titleH1">Promo Khusus MyValue “Sahabat Awal Bulan” Penuh Diskon Seru!</h1>
+                <div class="titleLead">30 September 2019</div>
+            </div>
+            <div class="readContainer col-xl-10 mx-auto">
+                <div class="readBox">
+                    <div class="readTop text-center">
+                        <div class="readImg">
+                            <img src="./asset/images/dummy/read-event-img.jpg" alt="" width="800" height="800">
+                        </div>
+                    </div>
+                    <div class="share --read center-flex">
+                        <div class="shareCaption">Share</div>
+                        <div class="shareList">
+
+                            {{>share channel=shareRead}}
+
+                        </div>
+                    </div>
+                    <article class="readArticle titleBody400">
+                        <p><strong><i>JAKARTA, 24 Maret 2022</i></strong> Gramedia kembali menghadirkan Online Book Fair
+                            Gramedia.com dan Gramedia
+                            Digital, yang akan berlangsung pada 25 s.d. 31 Maret 2022. Online Book Fair kali ini
+                            mengusung
+                            tema
+                            #SahabatTanpaBatas, dengan menyediakan lebih dari seribu judul buku dari buku fiksi, non
+                            fiksi,
+                            maupun buku anak, untuk menjadi sahabat para pelanggan ketika di rumah. Online Book Fair ini
+                            akan
+                            diselenggarakan secara serentak di seluruh toko Gramedia se-Indonesia.</p>
+                        <p>Pada Online Book Fair ini,
+                            pelanggan Gramedia dapat menikmati berbagai macam penawaran menarik, seperti harga spesial
+                            untuk
+                            pembelian masker dan hand sanitizer, diskon hingga 90% untuk pembelian buku-buku terbaik
+                            pilihan,
+                            diskon 20% untuk buku terbitan Gramedia, diskon 15% untuk terbitan eksternal, dan Flash Sale
+                            buku
+                            bacaan mulai dari Rp 5.000. Selain itu, terdapat diskon 30% untuk pembelian semua produk
+                            buku
+                            dan
+                            diskon 50% khusus produk e-book terbitan Andi Publisher yang bisa dinikmati pada periode 25
+                            s.d.
+                            31
+                            Maret 2022.</p>
+                        <p><a href="event.html" class="buttonTxt">Lihat Event <span class="ico icoArrow"></span></a></p>
+                    </article>
+                </div>
+            </div>
+            <div class="readOther eventContainer col-xl-11 mx-auto">
+                <h2 class="titleH2 text-center">Other Event</h2>
+                <a href="event.html" class="buttonTxt center-flex">See all <span class="ico icoArrow"></span></a>
+                <div class="eventList row">
+
+                    {{>event channel=event index_start=1 index_end=3 tag="h3" col="col-lg-6"}}
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js}}
+
+</body>
+
+</html>

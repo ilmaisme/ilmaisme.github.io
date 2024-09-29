@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page=false}}
+
+<body>
+
+    {{> header/header}}
+
+    <main role="main" class="main company --bg-blue">
+        <div class="container">
+
+            {{>breadcrumb parent="Brands" parentlink="brands.html" child="Publisher"}}
+
+        </div>
+        <div class="container col-lg-9 col-xl-7">
+            <div class="boxCaption text-center">
+                <div class="boxIconCaption">
+                    <img src="./asset/images/brands/icon/publisher.png" alt="" width="71" height="71">
+                </div>
+                <h1 class="titleH3 boxTitle">Publisher</h1>
+                <div class="boxLead titleLead col-md-8 col-lg-7 col-xl-6 mx-auto">Mus felis justo velit viverra
+                    nullaaucibus consequat
+                    cursus condimentum sed cras
+                    fermentum penatibus tortor rhoncus.
+                </div>
+            </div>
+            <div class="boxList --logo">
+
+                {{>box channel=page.Publisher index_start=0 index_end=8 imgclass="boxLogo text-center"
+                titleclass="boxLogoTitle titleBody400" button="Visit website" tag="h2"
+                width="183" height="94"}}
+
+            </div>
+        </div>
+        <div class="container col-lg-11 col-xl-8 mx-auto">
+            <h2 class="titleH2 text-center">More Brands</h2>
+            <div class="boxList row">
+
+                {{>box channel=page.Brands index_start=1 index_end=7 imgclass="boxIcon" link=true
+                titleclass="boxIconTitle" col="col-6 col-md-4" tag="h3" lazy=true width="71" height="71"}}
+
+            </div>
+        </div>
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js page=false}}
+
+</body>
+
+</html>

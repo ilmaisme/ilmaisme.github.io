@@ -75,6 +75,7 @@
         padding: 6px;
         margin-left: 3px;
         margin-right: 3px;
+        transition: .5s scale cubic-bezier(0.73, 0.32, 0.34, 1.5);
 
         @include max-responsive($w-xm) {
             margin-left: 0;
@@ -84,6 +85,10 @@
         @include min-responsive($w-md) {
             margin-left: 6px;
             margin-right: 6px;
+        }
+
+        &:hover{
+            transform: scale(1.2);
         }
     }
 
