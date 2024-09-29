@@ -70,6 +70,10 @@
             text-align: center;
             @extend %titleBody500;
 
+            @include max-responsive($w-xm) {
+                font-size: 12px;
+            }
+
             @include range-responsive($w-md, $w-xl) {
                 text-align: left;
             }
@@ -99,6 +103,7 @@
     }
 
     &Logo {
+        flex-shrink: 0;
         margin-bottom: 15px;
 
         @include min-responsive($w-md) {
@@ -116,5 +121,24 @@
         margin-top: 15px;
         padding-left: 0;
         padding-right: 0;
+    }
+
+    &Article {
+        margin-top: 50px;
+
+        .titleH5 {
+            margin-top: 30px;
+        }
+
+        ol>li {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            @include font-pack($font-bold, 15px, $font-weight-bold, 1.06, $cl-text1);
+
+            div {
+                margin-top: 5px;
+                @extend .titleBody400
+            }
+        }
     }
 }
