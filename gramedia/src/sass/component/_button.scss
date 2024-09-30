@@ -95,4 +95,41 @@
             @extend %icoClose
         }
     }
+
+    &Clear {
+        @extend %buttonClose;
+        width: 24px;
+        height: 24px;
+        right: 20px;
+        top: 12px;
+        display: none;
+
+        &:hover {
+            .icoClose {
+
+                &::before,
+                &::after {
+                    background: $cl-notif2;
+                }
+            }
+        }
+
+        &.active {
+            display: block;
+        }
+
+        .icoClose {
+            width: 24px;
+            height: 24px;
+
+            &::before,
+            &::after {
+                width: 16px;
+                height: 2px;
+                background: $cl-text3;
+                top: 10px;
+                left: 4px;
+            }
+        }
+    }
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page=false}}
+
+<body>
+
+    {{> header/header}}
+
+    <main role="main" class="main --bg-blue">
+        <div class="container">
+            <div class="searchContainer col-lg-9 col-xl-8 mx-auto">
+                <div class="boxCaption text-center">
+                    <h1 class="titleH2">Cari apapun disini!</h1>
+                    <div class="boxLead titleBody400">Ketik kata kunci yang ingin kamu cari disini!
+                    </div>
+                </div>
+                <form action="#" id="formsearch">
+                    <div class="searchForm formInputIcon">
+                        <input type="search" class="formInput" name="search" id="search"
+                            aria-label="Search anything in Gramedia!" placeholder="Buku terbaru">
+                        <button class="button searchClear" type="button" aria-label="clear search"><span
+                                class="ico icoClose"></span></button>
+                        <button class="button searchCta" type="submit" aria-label="search"><span
+                                class="ico icoSearch"></span></button>
+                    </div>
+                    <div class="searchFormCaption titleLead"><span>20</span> results for Buku terbaru</div>
+                    <div class="formCombo center-flex">
+
+                        {{>combo channel=form.comboSearch index_start=0 index_end=13}}
+
+                    </div>
+                </form>
+                <div class="boxList --art">
+
+                    {{>box channel=page.Search index_start=0 index_end=10 link=true imgclass="boxArt center-flex"
+                    titleclass="boxArtTitle titleH5" tag="h2" width="100" height="100"}}
+
+                </div>
+
+                {{>paging}}
+
+            </div>
+        </div>
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js}}
+    <script>
+        $('#search').on('input', function (e) {
+            $('.searchClear').addClass('active')
+        });
+        //Clear search value
+        $('.searchClear').click(function () {
+            $(this).removeClass('active')
+            $('input[name = search]').val('');
+        });
+    </script>
+
+</body>
+
+</html>

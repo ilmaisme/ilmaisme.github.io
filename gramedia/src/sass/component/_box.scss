@@ -1,4 +1,9 @@
 .box {
+    &Container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     &Caption {
         margin-top: 50px;
 
@@ -14,7 +19,24 @@
         margin-right: calc(var(--gap-box) - var(--gap-box)*2);
         justify-content: center;
 
-        &.--search {}
+        &.--art {
+            margin-top: 45px;
+
+            .boxItem {
+                margin-top: 10px;
+            }
+
+            .boxWrap {
+                padding: 10px 15px;
+                border-radius: 15px;
+                flex-direction: row;
+                justify-content: flex-start;
+
+                @include min-responsive($w-md) {
+                    padding: 20px;
+                }
+            }
+        }
 
         &.--logo {
             margin-top: 50px;
@@ -114,6 +136,27 @@
 
         &Title {
             margin-bottom: 10px
+        }
+    }
+
+    &Art {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+        margin-right: 15px;
+
+        @include min-responsive($w-md) {
+            width: 100px;
+            height: 100px;
+        }
+
+        &Title {
+            @include title_clamp(2);
+            font-size: 15px;
+
+            @include min-responsive($w-md) {
+                font-size: 17px;
+            }
         }
     }
 

@@ -1,0 +1,12 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<label for="combo{{@index}}" class="formComboLabel center-flex">
+    <input type="checkbox" class="formComboInput" id="combo{{@index}}" name="combo{{@index}}" />
+    {{title}}
+</label>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}
