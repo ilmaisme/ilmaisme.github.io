@@ -3,41 +3,29 @@
     width: 100%;
     top: 0;
     transition: 0.5s top cubic-bezier(0.73, 0.32, 0.34, 1.5);
-    z-index: 1;
-
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-
-    @include min-responsive($w-xl) {
-        all: unset;
-        display: block;
-
-        width: 100%;
-        top: 0;
-        transition: 0.5s top cubic-bezier(0.73, 0.32, 0.34, 1.5);
-        z-index: 1;
-    }
+    z-index: 3; //above .footer
 
     &.fixed {
         position: fixed;
-        top: 25px;
+        width: calc(100% - 30px);
+        left: 15px;
+        top: 15px;
+
+        @include min-responsive($w-xl) {
+            width: 100%;
+            left: unset;
+            top: 25px;
+        }
 
         .headerWrap {
             background: #FFF;
             padding-top: 10px;
             padding-bottom: 15px;
-            padding-left: 40px;
-            padding-right: 40px;
+            padding-right: 8px;
             box-shadow: 0px 2px 27px 0px rgba(19, 115, 227, 0.13);
             transition: 0.5s 0.1s height, 0.3s background;
 
-            @include media-breakpoint-up(sm) {
+            /*@include media-breakpoint-up(sm) {
                 // max-width: calc(540px + 50px);
             }
 
@@ -47,6 +35,11 @@
 
             @include media-breakpoint-up(lg) {
                 // max-width: calc(960px + 50px);
+            }*/
+
+            @include min-responsive($w-xl) {
+                padding-left: 40px;
+                padding-right: 40px;
             }
 
             @include min-responsive($w-xxl) {
@@ -55,7 +48,11 @@
         }
 
         &~.header-offset {
-            padding-top: 90px
+            padding-top: 74px;
+
+            @include min-responsive($w-xl) {
+                padding-top: 90px
+            }
         }
     }
 
@@ -63,10 +60,15 @@
         @include display-flex;
         align-items: center;
         justify-content: space-between;
-        padding-top: 25px;
-        padding-bottom: 25px;
+        padding-top: 15px;
+        padding-bottom: 15px;
         transition: 0.5s height cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.2s background;
         border-radius: 19px;
+
+        @include min-responsive($w-xl) {
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
     }
 
     &Content {
@@ -117,8 +119,15 @@
     }
 
     &Cta {
-        margin-left: 45px;
-        margin-right: 5px;
+        margin-left: 30px;
+
+        @include max-responsive($w-xm) {
+            margin-left: 12px;
+        }
+
+        @include min-responsive($w-xl) {
+            margin-left: 45px;
+        }
 
         .ico {
             width: 24px;
@@ -128,16 +137,34 @@
     }
 
     &Icon {
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 12px;
+        padding-right: 12px;
+
+        @include max-responsive($w-xm) {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        @include min-responsive($w-xl) {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
     }
 
     &Bil {
-        min-width: 80px;
+        position: relative;
+        right: 15px;
+        width: 80px;
         padding: 10px 5px;
-        margin-left: 5px;
         border-radius: 50px;
         background: $cl-accent2;
+        float: right;
+
+        @include min-responsive($w-xl) {
+            margin-left: 5px;
+            right: unset;
+            float: none;
+        }
 
         .ico {
             width: 20px;

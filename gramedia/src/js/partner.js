@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    //slider headline partner
-    var totalslides = $('.-sheadline').attr("data-number") / 2;
-    $('.-sheadline').slick({
+    //slider promo
+    var totalslides = $('.-spromo').attr("data-number") / 2;
+    $('.-spromo').slick({
         dots: true,
         arrows: false,
         infinite: true,

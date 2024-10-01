@@ -1,0 +1,49 @@
+.promo {
+    border-radius: 20px;
+
+    &Slide {
+        @extend %slick-load;
+        max-height: 412px;
+
+        &.slick-initialized {
+            @extend %slick-loaded;
+        }
+
+        .slick {
+            &-track {
+                display: flex;
+                padding-bottom: 10px;
+            }
+
+            &-slide {
+                display: flex !important;
+                align-items: center;
+                height: inherit;
+            }
+        }
+    }
+
+    &.--middle {
+        --gap-promo: 10px;
+        margin-top: 50px;
+        margin-left: calc(var(--gap-promo) - var(--gap-promo) * 2);
+        margin-right: calc(var(--gap-promo) - var(--gap-promo) * 2);
+
+        .promoItem {
+            padding-left: var(--gap-promo);
+            padding-right: var(--gap-promo);
+        }
+    }
+
+    &Img {
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.09);
+        overflow: hidden;
+
+        @include min-responsive($w-md) {
+            border-radius: 20px;
+        }
+    }
+}

@@ -1,9 +1,9 @@
-<nav class="nav">
+<nav class="nav" aria-label="primarynavigation">
     <div class="navList center-flex">
         {{#each mainMenu}}
         <div class="navItem">
-            <a href="{{link}}" class="navLink">{{title}}</a>
             {{#if submenu}}
+            <div class="navLink">{{title}}</div>
             <ul class="navSub headerDropdown">
                 {{#each submenu}}
                 <li class="navSubItem">
@@ -11,6 +11,8 @@
                 </li>
                 {{/each}}
             </ul>
+            {{else}}
+            <a href="{{link}}" class="navLink">{{title}}</a>
             {{/if}}
         </div>
         {{/each}}

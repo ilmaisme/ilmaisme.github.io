@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="catalogue"}}
+
+<body>
+
+    {{> header/header}}
+
+    <main role="main" class="main catalogue">
+        <div class="container">
+
+            {{>breadcrumb parent="Catalogue"}}
+
+            {{>promo}}
+
+            <div class="catalogueCaption">
+                <h1 class="titleH2">Promo</h1>
+                <a href="#" class="buttonTxt">Lihat Semua <span class="ico icoArrow"></span></a>
+            </div>
+            <div class="productWrap">
+                <div class="productBanner">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <picture>
+                            <source srcset="./asset/images/dummy/promo-banner-m.png" media="(max-width: 540px)" alt="">
+                            <img srcset="./asset/images/dummy/promo-banner.png" alt="Diskon Kilat s.d. 90%" width="242" height="364"
+                                pinger-seen="true">
+                        </picture>
+                    </a>
+                </div>
+                <div class="productList productSlide --banner -sproduct">
+
+                    {{>product channel=page.Catalogue index_start=0 index_end=10 tag="h3"}}
+
+                </div>
+            </div>
+
+            {{>promo cols="col-md-6"}}
+
+            <div class="catalogueCaption">
+                <h2 class="titleH2">Sedang Trending</h2>
+                <a href="#" class="buttonTxt">Lihat Semua <span class="ico icoArrow"></span></a>
+            </div>
+            <div class="productList productSlide --right -sproduct">
+
+                {{>product channel=page.Catalogue index_start=2 index_end=12 lazy=true tag="h3"}}
+
+            </div>
+            <div class="catalogueCaption">
+                <h2 class="titleH2">Rekomendasi</h2>
+                <a href="#" class="buttonTxt">Lihat Semua <span class="ico icoArrow"></span></a>
+            </div>
+            <div class="productList productSlide --center -sproduct">
+
+                {{>product channel=page.Catalogue index_start=1 index_end=11 lazy=true tag="h3"}}
+
+            </div>
+
+        </div>
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js slick=true pages="catalogue"}}
+    <script>
+        $(document).ready(function () {
+            //slider promo
+            var totalslides = $('.-spromo').attr("data-number") / 2;
+            $('.-spromo').slick({
+                dots: true,
+                arrows: false,
+                infinite: true,
+                speed: 700,
+                mobileFirst: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                // autoplay: true,
+                autoplaySpeed: 2000,
+                centerMode: true,
+                centerPadding: 0,
+                fade: true,
+                cssEase: 'linear',
+                initialSlide: parseInt(totalslides),
+            });
+        });
+    </script>
+
+</body>
+
+</html>
