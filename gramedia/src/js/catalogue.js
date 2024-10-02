@@ -19,7 +19,7 @@ $(document).ready(function () {
         initialSlide: length + 1,
         accessibility: false,
         responsive: [{
-                breakpoint: 1024,
+                breakpoint: 1140,
                 settings: {
                     slidesToShow: 3,
                 }

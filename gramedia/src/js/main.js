@@ -10,21 +10,6 @@ $(document).ready(function () {
             (hd.removeClass("fixed"))
     })
 
-    //toggle mobile menu
-    mTg.on('click', function () {
-        isChecked = $(this).is(':checked')
-
-        if (isChecked) {
-            $('.menuWrap').addClass('active');
-            $('.menu').addClass('active');
-            $('html, body').css({
-                overflow: 'hidden'
-            });
-        } else {
-            hideMenuMobile()
-        }
-    })
-
     $(document).on("click", function () {
         //hide video
         var popupvideo = document.querySelector('.-pVideo');
@@ -36,27 +21,17 @@ $(document).ready(function () {
 });
 
 //update mobile menu
-uncheckedMenu()
-hideMenuMobile()
 updateMenu()
-if (window.history && window.history.pushState) {
-    window.history.pushState('forward', null, '');
-    $(window).on('popstate', function () {
-        uncheckedMenu()
-        hideMenuMobile()
-    });
-}
+window.addEventListener('unload', function (event) {
+    document.getElementById('menuToggle').reset();
+}, false);
 
 $(window).on('resize', function () {
     updateMenu()
-    if (viewport().width >= 1280) {
-        uncheckedMenu()
-        hideMenuMobile()
-    }
 });
 
 function updateMenu() {
-    if (viewport().width >= 1280) {
+    if (viewport().width >= 1140) {
         // console.log("desktop")
         $('.menuWrap').removeClass('mobile');
         hd.removeClass('mobile');
@@ -71,18 +46,6 @@ function updateMenu() {
         $('.nav').appendTo('#navMob .menuWrap');
         $('.headerBil').appendTo('#navMob .menuWrap');
     }
-}
-
-function uncheckedMenu() {
-    mTg.prop('checked', false);
-}
-
-function hideMenuMobile() {
-    $('.menuWrap').removeClass('active');
-    $('.menu').removeClass('active');
-    $('html, body').css({
-        overflow: 'auto'
-    });
 }
 
 //trigger active button

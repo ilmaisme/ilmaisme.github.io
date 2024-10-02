@@ -25,6 +25,11 @@
         background: transparent;
         @include font-pack($font-bold, 14px, $font-weight-bold, 1.28, $cl-text2);
         transition: all .3s ease-in-out;
+        cursor: pointer;
+
+        @include range-responsive($w-lg, $w-xl) {
+            font-size: 12px;
+        }
 
         &:has(~.navSub) {
             padding-right: 35px;
@@ -49,11 +54,29 @@
 
     :is(.navSub) .navLink {
         @extend .headerDropdownLink;
+
+        &.active {
+            border-bottom: 1px solid $cl-primary2;
+        }
+    }
+
+    :not(.navSubItem)>.navLink {
+        &.active {
+            color: $cl-primary1;
+            background: $cl-accent4;
+        }
     }
 
     &Sub {
         &Item {
             @extend .headerDropdownItem;
+        }
+    }
+
+    &Mob:has(.menuToggle:checked) {
+        .menuWrap.mobile {
+            visibility: visible;
+            opacity: 1;
         }
     }
 }

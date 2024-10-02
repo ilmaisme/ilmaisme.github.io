@@ -1,0 +1,85 @@
+.careers {
+    &Caption {
+        margin-top: 50px;
+        margin-bottom: 15px;
+    }
+
+    &Sort {
+        @include display-flex;
+        align-items: center;
+        margin-top: 50px;
+        margin-left: -5px;
+        margin-right: -5px;
+
+        &Cta {
+            margin-left: 5px;
+            margin-right: 5px;
+            padding: 10px 15px;
+            border-radius: 50px;
+            background: transparent;
+            @include font-pack($font-bold, 14px, $font-weight-bold, 1.28, $cl-text2);
+
+            &:hover {
+                color: $cl-primary1;
+                background: $cl-accent4;
+            }
+
+            &.active {
+                color: $cl-accent1;
+                background: $cl-primary1;
+            }
+        }
+    }
+
+    &Posting {
+        margin-top: 20px;
+    }
+
+    &Card {
+        @include display-flex;
+        align-items: center;
+        width: 100%;
+        margin-top: 15px;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: left;
+        background: rgba(252, 252, 252, .8);
+        box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.09);
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        &.active {
+            background: rgba(235, 245, 255, .8);
+        }
+
+        &Logo {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid $cl-text3;
+            background: #FFF;
+        }
+
+        &Content {
+            flex: 1;
+        }
+
+        &Info {
+            @include font-pack($font-normal, 15px, $font-weight-normal, 1.46, $cl-text2);
+
+            .ico {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        &Company {
+            margin-top: 5px;
+            @include font-pack($font-mbold, 15px, $font-weight-mbold, 1.33, $cl-text2);
+        }
+    }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="careers"}}
+
+<body>
+
+    {{> header/header page="Careers"}}
+
+    <main role="main" class="main careers --bg-blue">
+        <div class="container">
+
+            {{>breadcrumb parent="Careers"}}
+
+            <h1 class="careersCaption titleH2 text-center">Let’s grow with us</h1>
+            <div class="careersLead titleLead text-center">Supported by a strong
+                foundation, Gramedia is ready to transform your ideas for years to come. <br> So why not be a part
+                of
+                the life-changing transformation? Take the leap and embrace the change!
+            </div>
+            <div class="careersSort">
+                <button class="careersSortCta button active" id="sortAll">All</button>
+                <button class="careersSortCta button" data-filter="fulltime">Fulltime</button>
+                <button class="careersSortCta button" data-filter="internship">Internship</button>
+            </div>
+            <div class="careersPosting">
+                {{#each page.Career}}
+                <button class="button careersCard{{#eq @index compare=0}} active{{/eq}}">
+                    <div class="careersCardLogo center-flex">
+                        <img src="{{logo}}" alt="{{company}} Logo" width="80" height="80">
+                    </div>
+                    <div class="careersCardContent">
+                        <div class="careersCardRole titleH5">{{role}}</div>
+                        <div class="careersCardCompany">{{company}}</div>
+                        <div class="careersCardInfo">
+                            <div class="careersCardLoc">{{loc}}</div>
+                            <div class="careersCardType">{{type}}</div>
+                        </div>
+                    </div>
+                </button>
+                {{/each}}
+            </div>
+            <div class="careersDetail"></div>
+        </div>
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js}}
+
+</body>
+
+</html>

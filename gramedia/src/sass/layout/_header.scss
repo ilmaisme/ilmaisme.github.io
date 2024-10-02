@@ -42,6 +42,11 @@
                 padding-right: 40px;
             }
 
+            @include range-responsive($w-lg, $w-xl) {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
             @include min-responsive($w-xxl) {
                 max-width: calc(1230px + 50px);
             }
@@ -94,6 +99,10 @@
             border-radius: 0;
             @include font-pack($font-normal, 15px, $font-weight-normal, 1.46, $cl-text1);
 
+            @include range-responsive($w-lg, $w-xl) {
+                font-size: 12px;
+            }
+
             &:hover {
                 color: inherit;
                 border-bottom: 1px solid $cl-primary2;
@@ -107,6 +116,10 @@
             height: 53px;
             overflow: hidden;
             transition: 0.5s height cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s padding cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s margin cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s 0.2s color, 0.2s background-color;
+
+            @include range-responsive($w-lg, $w-xl) {
+                height: 48px;
+            }
 
             &:first-child {
                 margin-top: 10px;
@@ -129,10 +142,14 @@
             margin-left: 45px;
         }
 
+        @include range-responsive($w-lg, $w-xl) {
+            margin-left: 12px;
+        }
+
         .ico {
             width: 24px;
             height: 24px;
-            filter: invert(55%) sepia(78%) saturate(5574%) hue-rotate(198deg) brightness(89%) contrast(101%);
+            filter: invert(38%) sepia(60%) saturate(4104%) hue-rotate(200deg) brightness(91%) contrast(94%);
         }
     }
 

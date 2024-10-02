@@ -78,6 +78,19 @@
         @include min-responsive($w-md) {
             flex-direction: row;
         }
+
+        &:has(.boxIcon):hover {
+            border: 1px solid $cl-primary1;
+            background: $cl-primary1;
+
+            .boxIcon {
+                filter: contrast(0%) brightness(2);
+            }
+
+            .boxIconTitle {
+                color: $cl-accent1;
+            }
+        }
     }
 
     &Icon {

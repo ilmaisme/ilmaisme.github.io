@@ -120,6 +120,8 @@ $(document).ready(function () {
         verticalSwiping: true,
         arrows: false,
         swipeToSlide: true,
-        // autoplay: true
+        speed: 2000,
+        autoplay: true,
+        autoplaySpeed: 2000,
     });
 });

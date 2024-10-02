@@ -3,7 +3,11 @@
 
     &Slide {
         @extend %slick-load;
-        max-height: 412px;
+        max-height: 185px;
+
+        @include min-responsive($w-md) {
+            max-height: 422px;
+        }
 
         &.slick-initialized {
             @extend %slick-loaded;
