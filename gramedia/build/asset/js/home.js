@@ -40,6 +40,8 @@ $(document).ready(function () {
 
     //slider brands
     $('.-sbrands').slick({
+        focusOnSelect: true,
+        pauseOnHover: false,
         dots: false,
         arrows: false,
         infinite: true,
@@ -92,36 +94,50 @@ $(document).ready(function () {
     });
 
     //slider widget event
-    $('.-sEventWid').on('afterChange init', function (event, slick, direction) {
-            // console.log('afterChange/init', event, slick, slick.$slides);
-            // remove all prev/next
-            slick.$slides.removeClass('prevSlide').removeClass('nextSlide');
-
-            // find current slide
-            for (var i = 0; i < slick.$slides.length; i++) {
-                var $slide = $(slick.$slides[i]);
-                if ($slide.hasClass('slick-current')) {
-                    // update DOM siblings
-                    $slide.prev().addClass('prevSlide');
-                    $slide.next().addClass('nextSlide');
-                    break;
+    var swiper = new Swiper(".-sEventWid", {
+        direction: 'vertical',
+        effect: "coverflow",
+        grabCursor: false,
+        loop: true,
+        speed: 1000,
+        centeredSlides: true,
+        slidesPerView: 1,
+        coverflowEffect: {
+            rotate: 1, // Slide rotate in degrees
+            stretch: 193, // Stretch space between slides (in px)
+            depth: 60, // Depth offset in px (slides translate in Z axis)
+            modifier: 1.5, // Effect multipler
+            scale: .95,
+            slideShadows: false, // Enables slides shadows
+        },
+        autoplay: false,
+        parallax: true,
+        breakpoints: {
+            640: {
+                coverflowEffect: {
+                    rotate: 1,
+                    modifier: 1.5,
+                    stretch: 196
                 }
             }
-        })
-        .on('beforeChange', function (event, slick) {
-            // remove all prev/next
-            slick.$slides.removeClass('prevSlide').removeClass('nextSlide');
-        })
-    $('.-sEventWid').slick({
-        // centerMode: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        vertical: true,
-        verticalSwiping: true,
-        arrows: false,
-        swipeToSlide: true,
-        speed: 2000,
-        autoplay: true,
-        autoplaySpeed: 2000,
+        }
     });
+
+    if (!!window.IntersectionObserver) {
+        let observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        //console.log(entry);
+                        swiper.autoplay.start()
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: "0px 0px -200px 0px"
+            }
+        );
+
+        observer.observe(document.querySelector(".-sEventWid"));
+    }
 });

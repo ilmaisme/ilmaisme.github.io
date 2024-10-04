@@ -20,33 +20,25 @@
             </div>
             <div class="careersSort">
                 <button class="careersSortCta button active" id="sortAll">All</button>
-                <button class="careersSortCta button" data-filter="fulltime">Fulltime</button>
-                <button class="careersSortCta button" data-filter="internship">Internship</button>
+                <button class="careersSortCta button" data-filter="Full Time">Fulltime</button>
+                <button class="careersSortCta button" data-filter="Internship">Internship</button>
             </div>
-            <div class="careersPosting">
-                {{#each page.Career}}
-                <button class="button careersCard{{#eq @index compare=0}} active{{/eq}}">
-                    <div class="careersCardLogo center-flex">
-                        <img src="{{logo}}" alt="{{company}} Logo" width="80" height="80">
+            <div class="careersWrap">
+                <div class="careersPostingWrap">
+                    <div class="careersPosting">
+                        {{>career/card channel=page.Career index_start=0 index_end=10}}
                     </div>
-                    <div class="careersCardContent">
-                        <div class="careersCardRole titleH5">{{role}}</div>
-                        <div class="careersCardCompany">{{company}}</div>
-                        <div class="careersCardInfo">
-                            <div class="careersCardLoc">{{loc}}</div>
-                            <div class="careersCardType">{{type}}</div>
-                        </div>
-                    </div>
-                </button>
-                {{/each}}
+                </div>
+                <div class="careersDetailWrap">
+                    <div class="careersDetail"></div>
+                </div>
             </div>
-            <div class="careersDetail"></div>
         </div>
     </main>
 
     {{> footer/footer}}
 
-    {{> js}}
+    {{> js pages="careers"}}
 
 </body>
 

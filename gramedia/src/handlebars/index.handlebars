@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{> head page="home"}}
+{{> head page="home" swiper=true}}
 
 <body>
 
@@ -78,11 +78,13 @@
             </div>
         </div>
         <div class="container">
-            <div class="event eventWidget">
-                <div class="eventList eventWidgetList -sEventWid">
+            <div class="event eventWidgetWrap">
+                <div class="eventWidget swiper -sEventWid">
+                    <div class="eventList eventWidgetList swiper-wrapper">
 
-                    {{>event channel=event index_start=0 index_end=3 tag="h3" lazy=true}}
+                        {{>event channel=event index_start=0 index_end=3 tag="h3" lazy=true type="swiper-slide"}}
 
+                    </div>
                 </div>
                 <div class="eventCaption--widget">
                     <h2 class="titleH2">What’s on going</h2>
@@ -107,7 +109,7 @@
 
     {{> footer/footer}}
 
-    {{> js pages="home" slick=true logo=true}}
+    {{> js pages="home" slick=true logo=true swiper=true}}
 
 </body>
 

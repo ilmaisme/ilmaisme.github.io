@@ -2,7 +2,7 @@
 {{#gte @index compare=../index_start}}
 {{#gte @index compare=../index_end}}
 {{else}}
-<div class="eventItem{{#if ../col}} {{../col}}{{/if}}">
+<div class="eventItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
     <a href="{{link}}" class="eventLink">
         <div class="eventImg">
             <img src="{{images}}" alt="{{title}}" width="337" height="190" {{#if ../lazy}}loading="lazy" {{/if}}>

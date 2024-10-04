@@ -1,13 +1,32 @@
 .event {
     &Widget {
-        display: flex;
-        justify-content: center;
-        margin-top: 84px;
-        flex-direction: column;
+        width: 100%;
+        height: 261px;
+        margin-left: unset;
+        margin-right: unset;
+        overflow: visible;
+        order: 1;
+
+        @include min-responsive($w-md) {
+            width: 540px;
+        }
 
         @include min-responsive($w-lg) {
-            flex-direction: row;
-            align-items: center;
+            order: unset;
+        }
+
+        &Wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: 64px;
+            margin-bottom: 64px;
+            flex-direction: column;
+            overflow: hidden;
+
+            @include min-responsive($w-lg) {
+                flex-direction: row;
+                align-items: center;
+            }
         }
 
         &Cta,
@@ -16,65 +35,14 @@
         }
 
         &List {
-            order: 1;
-            margin-top: 15px;
-            margin-left: -15px;
-            margin-right: -15px;
-
-            @include min-responsive($w-md) {
-                width: 540px;
-            }
-
-            @include min-responsive($w-lg) {
-                margin-top: 0;
-                margin-left: 0;
-                margin-right: 0;
-                order: unset;
-            }
-
-            .slick {
-                &-list {
-                    padding: 15px 0;
-
-                    @include min-responsive($w-md) {
-                        padding: 29px 0;
-                    }
-                }
-
-                &-slide {
-                    transition: all .2s ease;
-                    transition-delay: 0s;
-
-                    &.prevSlide {
-                        transform: scale(.9) translate(0, 174px);
-
-                        @include min-responsive($w-md) {
-                            transform: scale(.9) translate(0, 234px);
-                        }
-                    }
-
-                    &.nextSlide {
-                        transform: scale(.9) translate(0, -174px);
-
-                        @include min-responsive($w-md) {
-                            transform: scale(.9) translate(0, -234px);
-                        }
-                    }
-                }
-
-                &-current {
-                    transform: scale(1) translate(0, 0);
-                    transition-delay: .5s;
-                    z-index: 1;
-                }
-            }
-
+            position: relative;
 
         }
 
         .eventItem {
-            padding-left: 15px;
-            padding-right: 15px;
+            max-width: 520px;
+            padding-left: 0;
+            padding-right: 0;
 
             @include min-responsive($w-md) {
                 padding-left: 29px;

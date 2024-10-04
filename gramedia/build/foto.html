@@ -27,7 +27,7 @@
     <!-- e:twitter card -->
 
     <link rel=icon type=image/png sizes=1x16 href="./asset/images/favicon.ico">
-    <link rel="stylesheet" href="./asset/css/style-media.min.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style-media.css" type="text/css">
     <link rel="preload" href="./asset/images/gramedia-logo.svg" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -219,11 +219,11 @@
                 <div class="mediaCaption text-center">
                     <h1 class="titleH2">Foto</h1>
                 </div>
-                <div class="photoswipe-wrapper">
+                <div class="photoswipe-wrapper" id="my-gallery">
                     <div class="mediaList --photo row">
 
                         <div class="mediaItem photoswipe-item">
-                            <a href="./asset/images/dummy/news/0.jpg" class="mediaLink">
+                            <a href="./asset/images/dummy/read-img.jpg" class="mediaLink">
                                 <div class="mediaImg">
                                     <img src="./asset/images/dummy/news/0.jpg" alt="Gerai Gramedia Pertama di Karawang Resmi Dibuka" width="355" height="200" >
                                 </div>
@@ -278,7 +278,7 @@
                             </a>
                         </div>
                         <div class="mediaItem photoswipe-item">
-                            <a href="./asset/images/dummy/news/0.jpg" class="mediaLink">
+                            <a href="./asset/images/dummy/read-img.jpg" class="mediaLink">
                                 <div class="mediaImg">
                                     <img src="./asset/images/dummy/news/0.jpg" alt="Gerai Gramedia Pertama di Karawang Resmi Dibuka" width="355" height="200" >
                                 </div>
@@ -366,7 +366,7 @@
                             </a>
                         </div>
                         <div class="mediaItem photoswipe-item">
-                            <a href="./asset/images/dummy/news/0.jpg" class="mediaLink">
+                            <a href="./asset/images/dummy/read-img.jpg" class="mediaLink">
                                 <div class="mediaImg">
                                     <img src="./asset/images/dummy/news/0.jpg" alt="Gerai Gramedia Pertama di Karawang Resmi Dibuka" width="355" height="200" >
                                 </div>
@@ -528,7 +528,16 @@
     <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
     
     <script defer type="text/javascript" src="./asset/js/custom-select.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/media.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/media.js"></script>
+    <script type="module">
+        import PhotoSwipeLightbox from './asset/css/photoswipe/dist/photoswipe-lightbox.esm.js';
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '#my-gallery',
+            children: 'a',
+            pswpModule: () => import('photoswipe/dist/photoswipe.esm.js')
+        });
+        lightbox.init();
+    </script>
     <script defer type="text/javascript" src="./asset/js/photoswipe4.1.1/photoswipe.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/photoswipe4.1.1/photoswipe-ui-default.min.js"></script>
     <link type="text/css" rel="stylesheet" href="./asset/css/photoswipe/photoswipe.min.css">
