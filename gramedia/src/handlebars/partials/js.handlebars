@@ -3,7 +3,7 @@
 
 <script defer type="text/javascript" src="./asset/js/custom-select.min.js"></script>
 {{#if pages}}
-<script defer type="text/javascript" src="./asset/js/{{pages}}.js"></script>
+<script defer type="text/javascript" src="./asset/js/{{pages}}.min.js"></script>
 {{/if}}
 {{#if swiper}}
 <script defer type="text/javascript" src="./asset/js/swiper-bundle.min.js"></script>
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="./asset/js/slick/slick.min.js"></script>
 {{/if}}
 {{#if logo}}
-<script defer type="text/javascript" src="./asset/js/logo-transition.js"></script>
+<script defer type="text/javascript" src="./asset/js/logo-transition.min.js"></script>
 {{/if}}
 {{#if validate}}
 <script defer type="text/javascript" src="./asset/js/jquery.validate.min.js"></script>
@@ -21,21 +21,8 @@
 {{#if selected}}
 <script defer type="text/javascript" src="./asset/js/custom-select-form.min.js"></script>
 {{/if}}
-{{#if simplebar}}
-<script defer type="text/javascript" src="./asset/js/simplebar.js"></script>
-{{/if}}
-{{#if swipes}}
-<script type="module">
-    import PhotoSwipeLightbox from './asset/css/photoswipe/dist/photoswipe-lightbox.esm.js';
-    const lightbox = new PhotoSwipeLightbox({
-        gallery: '#my-gallery',
-        children: 'a',
-        pswpModule: () => import('photoswipe/dist/photoswipe.esm.js')
-    });
-    lightbox.init();
-</script>
+{{#if photoswipes}}
 <script defer type="text/javascript" src="./asset/js/photoswipe4.1.1/photoswipe.min.js"></script>
 <script defer type="text/javascript" src="./asset/js/photoswipe4.1.1/photoswipe-ui-default.min.js"></script>
-<link type="text/css" rel="stylesheet" href="./asset/css/photoswipe/photoswipe.min.css">
-<link type="text/css" rel="stylesheet" href="./asset/css/photoswipe/default-skin.min.css">
+{{!-- <script defer type="text/javascript" src="./asset/js/photoswipe4.1.1/photoswipe-dynamic-caption-plugin.esm.js"></script> --}}
 {{/if}}

@@ -26,15 +26,24 @@
             <div class="careersWrap">
                 <div class="careersPostingWrap">
                     <div class="careersPosting">
+
                         {{>career/card channel=page.Career index_start=0 index_end=10}}
+
+                        {{>paging}}
                     </div>
                 </div>
-                <div class="careersDetailWrap">
-                    <div class="careersDetail"></div>
+                <div class="careersDetWrap">
+
+                    {{>career/detail channel=page.Career index_start=0 index_end=1}}
+
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- s: popup career -->
+    {{>career/popup}}
+    <!-- e: popup career -->
 
     {{> footer/footer}}
 

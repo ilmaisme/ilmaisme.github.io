@@ -1,4 +1,6 @@
 .company {
+    overflow-x: hidden;
+
     &Container {
         padding-left: 0;
         padding-right: 0;
@@ -106,7 +108,9 @@
         }
 
         &TL {
-            margin-top: 65px;
+            position: relative;
+            top: 12px;
+            margin-top: 53px;
             border-top: 1px solid #DFDFDF;
         }
 
@@ -114,6 +118,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            .slick-list {
+                overflow: visible;
+            }
         }
 
         &Item {
@@ -135,18 +143,20 @@
                 content: '';
                 position: absolute;
                 display: block;
-                top: -14px;
-                width: 14px;
-                height: 14px;
+                top: 5px;
+                width: 11px;
+                height: 11px;
                 border-radius: 50%;
                 background: $cl-text3;
 
                 @include min-responsive($w-md) {
-                    top: -7px;
+                    top: 5px;
+                    width: 14px;
+                    height: 14px;
                 }
             }
 
-            &:first-child {
+            &.active {
                 font-size: 20px;
 
                 @include min-responsive($w-md) {
@@ -154,10 +164,15 @@
                 }
 
                 &::before {
-                    width: 24px;
-                    height: 24px;
-                    top: -12px;
+                    width: 18px;
+                    height: 18px;
+                    top: 0;
                     background: $cl-primary1;
+
+                    @include min-responsive($w-md) {
+                        width: 24px;
+                        height: 24px;
+                    }
                 }
 
                 .companyJourneyCta {

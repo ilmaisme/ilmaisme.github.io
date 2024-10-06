@@ -48,6 +48,14 @@
         align-items: center;
     }
 
+    &Rel {
+        position: relative;
+
+        &:has(.formLink) {
+            margin-top: 5px;
+        }
+    }
+
     &Input {
         width: 100%;
         max-height: 51px;
@@ -167,9 +175,13 @@
         width: 100%;
         cursor: pointer;
 
+        &.disabled {
+            pointer-events: none;
+        }
+
         &Title {
             max-height: unset;
-            padding: 27px 10px 27px 150px;
+            padding: 27px 45px 27px 150px;
             @include title_clamp(1);
             pointer-events: none;
 
@@ -191,6 +203,11 @@
 
         &Input {
             display: none;
+        }
+
+        ~.formClear {
+            top: 48px;
+            right: 26px;
         }
     }
 
@@ -244,6 +261,15 @@
         &Input {
             display: none;
         }
+    }
+
+    &Link {
+        padding: 17px 45px 17px 10px
+    }
+
+    &Clear {
+        @extend %buttonClear;
+        top: 15px;
     }
 
     .required,
