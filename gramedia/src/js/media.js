@@ -55,7 +55,9 @@ $(document).ready(function () {
 
                 if (figureEl.children.length > 1) {
                     // <figcaption> content
-                    item.title = figureEl.children[1].innerHTML;
+                    item.title = figureEl.children[0].querySelector('.mediaTitle').innerHTML;
+                    item.dates = figureEl.children[0].querySelector('.mediaDates').innerHTML;
+                    item.lead = figureEl.children[1].innerHTML;
                 }
 
                 if (linkEl.children.length > 0) {
@@ -168,7 +170,7 @@ $(document).ready(function () {
                 fullscreenEl: false,
                 zoomEl: false,
                 indexIndicator: false,
-                // initialZoomLevel: 'fit',
+                initialZoomLevel: 1,
                 // secondaryZoomLevel: 1.5,
                 // maxZoomLevel: 1,
                 history: false,
@@ -179,12 +181,16 @@ $(document).ready(function () {
                     }
                     let _1vh = $(window).height();
                     captionEl.children[0].innerHTML = item.title;
-                    //captionEl.children[0].style.width = (item.w) + 'px';
+                    //captionEl.children[0].style.minWidth = (item.w) - 180 + 'px';
                     //captionEl.style.bottom = _1vh - _1vh + (item.h) + 'px';
-                    // if (item.title) {
-                    //     var captionDiv = createElement('div', 'captionCustom', item.title)
-                    //     var captioncontent = captionEl.children[0].appendChild(captionDiv)
-                    // }
+                    if (item.dates) {
+                        var captionDiv = createElement('div', 'pswp__dates', item.dates)
+                        var captioncontent = captionEl.children[0].appendChild(captionDiv)
+                    }
+                    if (item.lead) {
+                        var captionDiv = createElement('div', 'pswp__lead', item.lead)
+                        var captioncontent = captionEl.children[0].appendChild(captionDiv)
+                    }
                     return true;
                 },
 

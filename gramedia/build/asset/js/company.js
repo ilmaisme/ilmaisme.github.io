@@ -94,13 +94,13 @@ $(document).ready(function () {
         infinite: false,
         speed: 2000,
         mobileFirst: true,
-        variableWidth: false,
+        // variableWidth: false,
         // centerMode: true,
         slidesToShow: 4,
         slidesToScroll: 1,
         swipeToSlide: true,
         asNavFor: ".-sJourney",
-        // initialSlide: length + 1,
+        initialSlide: 0,
         responsive: [
             {
                 breakpoint: 1800,
@@ -111,7 +111,7 @@ $(document).ready(function () {
             {
                 breakpoint: 1024,
                 settings: {
-                    initialSlide: 6,
+                    slidesToShow: 5,
                 }
             },
             {

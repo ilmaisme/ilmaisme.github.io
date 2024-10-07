@@ -1,11 +1,13 @@
+{{#eq type compare="--video"}}
 {{#each channel}}
 {{#gte @index compare=../index_start}}
 {{#gte @index compare=../index_end}}
 {{else}}
-<div class="mediaItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
-    <a href="{{#if images_big}}{{images_big}}{{else}}{{images}}{{/if}}" class="mediaLink">
+<div class="mediaItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}{{#if ../class}} {{../class}}{{/if}}">
+    <a href="#" class="mediaLink" data-type="video" data-video='<div class="wrapper"><div class="video-wrapper"><iframe class="pswp__video" width="960" height="640" src="https://www.youtube.com/embed/ULmziqi21Ak?enablejsapi=1&version=3&playerapiid=ytplayer&controls=1></iframe></div></div>'>
         <div class="mediaImg">
-            <img src="{{images}}" alt="{{title}}" width="355" height="200" {{#if ../lazy}}loading="lazy" {{/if}}>
+            <img src="{{#if images_big}}{{images_big}}{{else}}{{images}}{{/if}}" alt="{{title}}" width="355"
+                height="200" {{#if ../lazy}}loading="lazy" {{/if}}>
         </div>
         <div class="mediaContent center-flex">
             <div class="mediaDates">{{publish}}</div>
@@ -16,10 +18,40 @@
             {{/if}}
         </div>
     </a>
-    <figcaption itemprop="caption description" class="sr-only">
-        {{title}}</figcaption>
+    <figcaption itemprop="caption description" class="mediaLead sr-only">
+        {{lead}}
+    </figcaption>
 </div>
 {{/gte}}
 {{else}}
 {{/gte}}
 {{/each}}
+{{else}}
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="mediaItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}{{#if ../class}} {{../class}}{{/if}}">
+    <a href="{{#if images_big}}{{images_big}}{{else}}{{images}}{{/if}}" class="mediaLink">
+        <div class="mediaImg">
+            <img src="{{#if images_big}}{{images_big}}{{else}}{{images}}{{/if}}" alt="{{title}}" width="355"
+                height="200" {{#if ../lazy}}loading="lazy" {{/if}}>
+        </div>
+        <div class="mediaContent center-flex">
+            <div class="mediaDates">{{publish}}</div>
+            {{#if ../tag}}
+            <{{.. /tag}} class="mediaTitle titleH5 text-center">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="mediaTitle titleH5 text-center">{{title}}</div>
+            {{/if}}
+        </div>
+    </a>
+    <figcaption itemprop="caption description" class="mediaLead sr-only">
+        {{lead}}
+    </figcaption>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}
+{{/eq}}

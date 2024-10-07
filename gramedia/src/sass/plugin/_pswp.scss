@@ -1,17 +1,47 @@
 .pswp {
     &__caption {
-        @extend .center-flex;
+        position: unset;
 
         &__center {
-            width: 100%;
-            margin: auto;
-            text-align: center;
-            @extend .titleLead;
+            width: calc(100% - 30px);
+            margin: 8px auto -25px;
+            padding: 15px;
+            @extend .titleH4;
             color: $cl-accent1;
+            background-color: rgba(0, 0, 0, .58);
+
+            @include min-responsive($w-lg) {
+                width: 830px;
+            }
         }
+    }
+
+    &__lead {
+        min-width: 100%;
+        position: absolute;
+        padding: 15px;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        @include font-pack($font-normal, 13px, $font-weight-normal, 1.53, $cl-accent1);
+        background-color: rgba(0, 0, 0, .58);
+
+        @include min-responsive($w-lg) {
+            min-width: 830px;
+        }
+    }
+
+    &__dates {
+        margin-top: 3px;
+        @include font-pack($font-normal, 13px, $font-weight-normal, 1.23, $cl-text3);
     }
 
     &__counter {
         @extend .sr-only
+    }
+
+    &__ui--fit .pswp__caption{
+        background: transparent;
     }
 }

@@ -101,23 +101,27 @@ $(document).ready(function () {
         loop: true,
         speed: 1000,
         centeredSlides: true,
-        slidesPerView: 1,
+        centeredSlidesBounds : true,
+        slidesPerView: "auto",
+        loopFillGroupWithBlank: true,
         coverflowEffect: {
             rotate: 1, // Slide rotate in degrees
-            stretch: 193, // Stretch space between slides (in px)
-            depth: 60, // Depth offset in px (slides translate in Z axis)
-            modifier: 1.5, // Effect multipler
+            stretch: 283, // Stretch space between slides (in px)
+            depth: 40, // Depth offset in px (slides translate in Z axis)
+            modifier: 1, // Effect multipler
             scale: .95,
             slideShadows: false, // Enables slides shadows
         },
         autoplay: false,
         parallax: true,
+        reverseDirection: true,
         breakpoints: {
             640: {
                 coverflowEffect: {
                     rotate: 1,
-                    modifier: 1.5,
-                    stretch: 196
+                    modifier: 1,
+                    stretch: 280,
+                    depth: 40,
                 }
             }
         }
