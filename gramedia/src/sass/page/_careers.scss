@@ -1,4 +1,10 @@
 .careers {
+    &Container {
+        padding-left: 0;
+        padding-right: 0;
+        position: unset;
+    }
+
     &Wrap {
         @include display-flex;
         flex-direction: column;
@@ -45,10 +51,10 @@
         padding-right: 15px;
         padding-left: 15px;
         overflow-x: hidden;
-        @include scroll(10px, $cl-text3, transparent);
+        @include scroll(4px, $cl-text3, transparent);
 
         @include min-responsive($w-md) {
-            width: 480px;
+            width: 440px;
             max-height: 75vh;
             overflow-y: auto;
         }
@@ -125,7 +131,7 @@
             margin-top: 5px;
             @include display-flex;
             align-items: center;
-            @include font-pack($font-normal, 15px, $font-weight-normal, 1.46, $cl-text2);
+            @include font-pack($font-normal, 13px, $font-weight-normal, 1.46, $cl-text2);
 
             .ico {
                 margin-right: 10px;
@@ -137,7 +143,11 @@
 
         &Company {
             margin-top: 5px;
-            @include font-pack($font-mbold, 15px, $font-weight-mbold, 1.33, $cl-text2);
+            @include font-pack($font-mbold, 14px, $font-weight-mbold, 1.33, $cl-text2);
+        }
+
+        &Role {
+            @include font-pack($font-bold, 15px, $font-weight-bold, 1.33, $cl-text2);
         }
 
         &Data {
@@ -162,7 +172,7 @@
             display: none;
             flex: 1;
             height: 100%;
-            @include scroll(10px, $cl-text3, transparent);
+            @include scroll(4px, $cl-text3, transparent);
 
             @include min-responsive($w-lg) {
                 position: relative;
@@ -218,6 +228,7 @@
         &Loc,
         &Type {
             @extend .careersCardInfo;
+            font-size: 15px;
         }
 
         &Loc {

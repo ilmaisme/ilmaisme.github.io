@@ -40,4 +40,44 @@
             }
         }
     }
+
+    &--gallery {
+        background: #000;
+
+        .popupCaption {
+            position: fixed;
+            top: 30px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .popupLead {
+            position: fixed;
+        }
+
+        .video iframe {
+            border-radius: 0;
+        }
+
+        .buttonClose {
+            top: 16px;
+            right: 15px;
+            position: fixed;
+            z-index: 2;
+
+            @include min-responsive($w-md) {
+                right: 30px;
+            }
+
+            .icoClose,
+            .icoClose::before,
+            .icoClose::after {
+                width: 26px;
+
+                @include min-responsive($w-md) {
+                    width: 32px;
+                }
+            }
+        }
+    }
 }

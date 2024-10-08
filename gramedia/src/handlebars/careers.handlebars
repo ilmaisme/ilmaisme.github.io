@@ -12,30 +12,32 @@
 
             {{>breadcrumb parent="Careers"}}
 
-            <h1 class="careersCaption titleH2 text-center">Let’s grow with us</h1>
-            <div class="careersLead titleLead text-center">Supported by a strong
-                foundation, Gramedia is ready to transform your ideas for years to come. <br> So why not be a part
-                of
-                the life-changing transformation? Take the leap and embrace the change!
-            </div>
-            <div class="careersSort">
-                <button class="careersSortCta button active" id="sortAll">All</button>
-                <button class="careersSortCta button" data-filter="Full Time">Fulltime</button>
-                <button class="careersSortCta button" data-filter="Internship">Internship</button>
-            </div>
-            <div class="careersWrap">
-                <div class="careersPostingWrap">
-                    <div class="careersPosting">
-
-                        {{>career/card channel=page.Career index_start=0 index_end=10}}
-
-                        {{>paging}}
-                    </div>
+            <div class="careersContainer col-xl-11 mx-auto">
+                <h1 class="careersCaption titleH2 text-center">Let’s grow with us</h1>
+                <div class="careersLead titleLead text-center">Supported by a strong
+                    foundation, Gramedia is ready to transform your ideas for years to come. <br> So why not be a part
+                    of
+                    the life-changing transformation? Take the leap and embrace the change!
                 </div>
-                <div class="careersDetWrap">
+                <div class="careersSort">
+                    <button class="careersSortCta button active" id="sortAll">All</button>
+                    <button class="careersSortCta button" data-filter="Full Time">Fulltime</button>
+                    <button class="careersSortCta button" data-filter="Internship">Internship</button>
+                </div>
+                <div class="careersWrap">
+                    <div class="careersPostingWrap">
+                        <div class="careersPosting">
 
-                    {{>career/detail channel=page.Career index_start=0 index_end=1}}
+                            {{>career/card channel=page.Career index_start=0 index_end=10}}
 
+                            {{>paging}}
+                        </div>
+                    </div>
+                    <div class="careersDetWrap">
+
+                        {{>career/detail channel=page.Career index_start=0 index_end=1}}
+
+                    </div>
                 </div>
             </div>
         </div>

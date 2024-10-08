@@ -19,7 +19,7 @@
 
                 <div class="mediaList row">
 
-                    {{>media channel=news index_start=0 index_end=9 tag="h2" col="col-md-6 col-lg-4" type="--video" class="photoswipe-item"}}
+                    {{>media channel=news index_start=0 index_end=9 tag="h2" col="col-md-6 col-lg-4" type="--video"}}
 
                 </div>
 
@@ -28,6 +28,34 @@
             </div>
         </div>
     </main>
+
+    <!-- s: popup video-->
+    <div class="popup popup--hidden popup--gallery center-flex -gVideo">
+        <div class="popupBox">
+            <button class="button buttonClose" aria-label="Close Popup"
+                onclick="triggerActive('.-gVideo'), toggleVideo('#video', 'hide')"><span
+                    class="ico icoClose center-flex"></span></button>
+            <div class="popupContent">
+                <div class="video" id="video">
+                    <iframe width="950" height="534"
+                        src="https://www.youtube.com/embed/ULmziqi21Ak?enablejsapi=1&version=3&playerapiid=ytplayer&controls=1"
+                        loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+                        allowfullscreen title="Di Balik Pena Sapardi D. Damono"></iframe>
+                </div>
+                <div class="popupCaption pswp__caption">
+                    <div class="pswp__caption__center">Gerai Gramedia Pertama di Karawang Resmi Dibuka<div
+                            class="pswp__dates">25 Januari 2024</div>
+                        <div class="pswp__lead popupLead">PT Gramedia Asri Media meresmikan gerai terbaru di Kota
+                            Karawang pada
+                            Sabtu (15/10/2016). Gramedia yang berlokasi di Kavling Komersil Blok V Jalan Galuh Mas Raya
+                            Teluk Jambe, Karawang, ini mengusung transformasi terbaru. Konsep dan suasana yang nyaman,
+                            playful adventurous, serta memorable mengisi atmosfer toko ketika pengunjung hadir.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- s: popup video-->
 
     {{> footer/footer}}
 

@@ -8,278 +8,93 @@ $(document).ready(function () {
         return element
     }
 
-    $('.photoswipe-wrapper').each(function () {
-        $(this).find('a').each(function () {
-            $(this).attr('data-size', $(this).find('img').get(0).naturalWidth + 'x' + $(this).find('img').get(0).naturalHeight);
-        });
-    });
+    var openPhotoSwipe = function () {
+        var pswpElement = document.querySelectorAll('.pswp')[0];
 
-    var initPhotoSwipeFromDOM = function (gallerySelector) {
-
-        // parse slide data (url, title, size ...) from DOM elements
-        // (children of gallerySelector)
-        var parseThumbnailElements = function (el) {
-            var thumbElements = $(el).find('.photoswipe-item:not(.isotope-hidden)').get(),
-                numNodes = thumbElements.length,
-                items = [],
-                figureEl,
-                linkEl,
-                size,
-                item;
-
-            for (var i = 0; i < numNodes; i++) {
-
-                figureEl = thumbElements[i]; // <figure> element
-
-                // include only element nodes
-                if (figureEl.nodeType !== 1) {
-                    continue;
-                }
-
-                linkEl = figureEl.children[0]; // <a> element
-
-                size = linkEl.getAttribute('data-size').split('x');
-
-                // create slide object
-                if ($(linkEl).data('type') == 'video') {
-                    item = {
-                        html: $(linkEl).data('video')
-                    };
-                } else {
-                    item = {
-                        src: linkEl.getAttribute('href'),
-                        w: parseInt(size[0], 10),
-                        h: parseInt(size[1], 10)
-                    };
-                }
-
-                if (figureEl.children.length > 1) {
-                    // <figcaption> content
-                    item.title = figureEl.children[0].querySelector('.mediaTitle').innerHTML;
-                    item.dates = figureEl.children[0].querySelector('.mediaDates').innerHTML;
-                    item.lead = figureEl.children[1].innerHTML;
-                }
-
-                if (linkEl.children.length > 0) {
-                    // <img> thumbnail element, retrieving thumbnail url
-                    item.msrc = linkEl.children[0].getAttribute('src');
-                }
-
-                item.el = figureEl; // save link to element for getThumbBoundsFn
-                items.push(item);
+        // build items array
+        var items = [{
+                src: 'https://ilmaisme.github.io/gramedia/build/asset/images/dummy/read-img.jpg',
+                w: 980,
+                h: 550,
+                title: 'Gerai Gramedia Pertama di Karawang Resmi Dibuka',
+                dates: '25 Januari 2024',
+                lead: 'PT Gramedia Asri Media meresmikan gerai terbaru di Kota Karawang pada Sabtu (15/10/2016). Gramedia yang berlokasi di Kavling Komersil Blok V Jalan Galuh Mas Raya Teluk Jambe, Karawang, ini mengusung transformasi terbaru. Konsep dan suasana yang nyaman, playful adventurous, serta memorable mengisi atmosfer toko ketika pengunjung hadir.'
+            },
+            {
+                src: 'https://picsum.photos/id/192/980/550',
+                w: 980,
+                h: 550,
+                title: 'Gerai Gramedia Pertama di Karawang Resmi Dibuka',
+                dates: '25 Januari 2024',
+                lead: 'Gramedia sebagai perusahaan yang bergerak di bidang retail ini berusaha untuk tetap relevan dengan perubahan gaya hidup masyarakat. Untuk menjawab tantangan itu, Gramedia terus berbenah diri demi kepuasan pelanggan dan turut serta dalam upaya mencerdaskan masyarakat Indonesia.'
+            },
+            {
+                src: 'https://picsum.photos/id/163/980/550',
+                w: 980,
+                h: 550,
+                title: 'Gerai Gramedia Pertama di Karawang Resmi Dibuka',
+                dates: '25 Januari 2024',
+                lead: 'Acara opening seperti dilaporkan kompas.com, dikemas dengan konsep santai dan hangat itu berhasil menarik perhatian warga Karawang. Penampilan seperti musik angklung, tari-tarian, dan pentas yang dipersembahkan oleh siswa-siswi SD di Karawang memberikan warna menarik selama acara.'
+            },
+            {
+                src: 'https://picsum.photos/id/180/980/550',
+                w: 980,
+                h: 550,
+                title: 'Gerai Gramedia Pertama di Karawang Resmi Dibuka',
+                dates: '25 Januari 2024',
+                lead: 'Simbolisasi penyerahan buku kepada perwakilan sekolah penerima "Gramedia Berbagi Buku" diserahkan langsung oleh General Manager Gramedia Jakarta 3, Lilis Suryaningsih.'
+            },
+            {
+                src: 'https://picsum.photos/id/119/980/550',
+                w: 980,
+                h: 550,
+                title: 'Gerai Gramedia Pertama di Karawang Resmi Dibuka',
+                dates: '25 Januari 2024',
+                lead: 'Selain itu, CEO PT Gramedia Asri Media, Priyo Utomo secara langsung hadir untuk meresmikan Gramedia pertama di Karawang tersebut.'
             }
+        ];
 
-            return items;
-        };
+        // define options (if needed)
+        options = {
 
-        // find nearest parent element
-        var closest = function closest(el, fn) {
-            return el && (fn(el) ? el : closest(el.parentNode, fn));
-        };
-
-        function hasClass(element, cls) {
-            return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-        }
-
-        // triggers when user clicks on thumbnail
-        var onThumbnailsClick = function (e) {
-            e = e || window.event;
-            e.preventDefault ? e.preventDefault() : e.returnValue = false;
-
-            var eTarget = e.target || e.srcElement;
-
-            // find root element of slide
-            var clickedListItem = closest(eTarget, function (el) {
-                return (hasClass(el, 'photoswipe-item'));
-            });
-
-            if (!clickedListItem) {
-                return;
-            }
-
-            // find index of clicked item by looping through all child nodes
-            // alternatively, you may define index via data- attribute
-            var clickedGallery = clickedListItem.closest('.photoswipe-wrapper'),
-                childNodes = $(clickedListItem.closest('.photoswipe-wrapper')).find('.photoswipe-item:not(.isotope-hidden)').get(),
-                numChildNodes = childNodes.length,
-                nodeIndex = 0,
-                index;
-
-            for (var i = 0; i < numChildNodes; i++) {
-                if (childNodes[i].nodeType !== 1) {
-                    continue;
+            closeOnScroll: false,
+            fullscreenEl: false,
+            shareEl: false,
+            minZoom: 3,
+            fullscreenEl: false,
+            zoomEl: false,
+            indexIndicator: false,
+            initialZoomLevel: 1,
+            // secondaryZoomLevel: 1.5,
+            // maxZoomLevel: 1,
+            history: false,
+            addCaptionHTMLFn: function (item, captionEl /*, isFake */ ) {
+                if (!item.title) {
+                    captionEl.children[0].innerHTML = '';
+                    return false;
                 }
-
-                if (childNodes[i] === clickedListItem) {
-                    index = nodeIndex;
-                    break;
+                let _1vh = $(window).height();
+                captionEl.children[0].innerHTML = item.title;
+                //captionEl.children[0].style.minWidth = (item.w) - 180 + 'px';
+                //captionEl.style.bottom = _1vh + (item.h) + 'px';
+                if (item.dates) {
+                    var captionDiv = createElement('div', 'pswp__dates', item.dates)
+                    var captioncontent = captionEl.children[0].appendChild(captionDiv)
                 }
-                nodeIndex++;
-            }
-
-            if (index >= 0) {
-                // open PhotoSwipe if valid index found
-                openPhotoSwipe(index, clickedGallery);
-            }
-            return false;
-        };
-
-        // parse picture index and gallery index from URL (#&pid=1&gid=2)
-        var photoswipeParseHash = function () {
-            var hash = window.location.hash.substring(1),
-                params = {};
-
-            if (hash.length < 5) {
-                return params;
-            }
-
-            var vars = hash.split('&');
-            for (var i = 0; i < vars.length; i++) {
-                if (!vars[i]) {
-                    continue;
+                if (item.lead) {
+                    var captionDiv = createElement('div', 'pswp__lead', item.lead)
+                    var captioncontent = captionEl.children[0].appendChild(captionDiv)
                 }
-                var pair = vars[i].split('=');
-                if (pair.length < 2) {
-                    continue;
-                }
-                params[pair[0]] = pair[1];
+                return true;
             }
-
-            if (params.gid) {
-                params.gid = parseInt(params.gid, 10);
-            }
-
-            return params;
-        };
-
-        var openPhotoSwipe = function (index, galleryElement, disableAnimation, fromURL) {
-            var pswpElement = document.querySelectorAll('.pswp')[0],
-                gallery,
-                options,
-                items;
-
-            items = parseThumbnailElements(galleryElement);
-
-            // define options (if needed)
-            options = {
-
-                closeOnScroll: false,
-                fullscreenEl: false,
-                shareEl: false,
-                minZoom: 3,
-                fullscreenEl: false,
-                zoomEl: false,
-                indexIndicator: false,
-                initialZoomLevel: 1,
-                // secondaryZoomLevel: 1.5,
-                // maxZoomLevel: 1,
-                history: false,
-                addCaptionHTMLFn: function (item, captionEl /*, isFake */ ) {
-                    if (!item.title) {
-                        captionEl.children[0].innerHTML = '';
-                        return false;
-                    }
-                    let _1vh = $(window).height();
-                    captionEl.children[0].innerHTML = item.title;
-                    //captionEl.children[0].style.minWidth = (item.w) - 180 + 'px';
-                    //captionEl.style.bottom = _1vh - _1vh + (item.h) + 'px';
-                    if (item.dates) {
-                        var captionDiv = createElement('div', 'pswp__dates', item.dates)
-                        var captioncontent = captionEl.children[0].appendChild(captionDiv)
-                    }
-                    if (item.lead) {
-                        var captionDiv = createElement('div', 'pswp__lead', item.lead)
-                        var captioncontent = captionEl.children[0].appendChild(captionDiv)
-                    }
-                    return true;
-                },
-
-                // define gallery index (for URL)
-                galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-
-                getThumbBoundsFn: function (index) {
-                    // See Options -> getThumbBoundsFn section of documentation for more info
-                    var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
-                        pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                        rect = thumbnail.getBoundingClientRect();
-
-                    return {
-                        x: rect.left,
-                        y: rect.top + pageYScroll,
-                        w: rect.width
-                    };
-                }
-
-            };
-
-            // PhotoSwipe opened from URL
-            if (fromURL) {
-                if (options.galleryPIDs) {
-                    // parse real index when custom PIDs are used
-                    // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-                    for (var j = 0; j < items.length; j++) {
-                        if (items[j].pid == index) {
-                            options.index = j;
-                            break;
-                        }
-                    }
-                } else {
-                    // in URL indexes start from 1
-                    options.index = parseInt(index, 10) - 1;
-                }
-            } else {
-                options.index = parseInt(index, 10);
-            }
-
-            // exit if index not found
-            if (isNaN(options.index)) {
-                return;
-            }
-
-            if (disableAnimation) {
-                options.showAnimationDuration = 0;
-            }
-
-            // Pass data to PhotoSwipe and initialize it
-            gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-            gallery.init();
-
-            gallery.listen('beforeChange', function () {
-                var currItem = $(gallery.currItem.container);
-                $('.pswp__video').removeClass('active');
-                var currItemIframe = currItem.find('.pswp__video').addClass('active');
-                $('.pswp__video').each(function () {
-                    if (!$(this).hasClass('active')) {
-                        $(this).attr('src', $(this).attr('src'));
-                    }
-                });
-            });
-
-            gallery.listen('close', function () {
-                $('.pswp__video').each(function () {
-                    $(this).attr('src', $(this).attr('src'));
-                });
-            });
 
         };
 
-        // loop through all gallery elements and bind events
-        var galleryElements = document.querySelectorAll(gallerySelector);
-
-        for (var i = 0, l = galleryElements.length; i < l; i++) {
-            galleryElements[i].setAttribute('data-pswp-uid', i + 1);
-            galleryElements[i].onclick = onThumbnailsClick;
-        }
-
-        // Parse URL and open gallery if it contains #&pid=3&gid=1
-        var hashData = photoswipeParseHash();
-        if (hashData.pid && hashData.gid) {
-            openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
-        }
-
+        var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.init();
     };
 
-    // execute above function
-
-    initPhotoSwipeFromDOM('.photoswipe-wrapper');
+    $('.-photoswipeTrig').click(function () {
+        openPhotoSwipe()
+    });
 });
