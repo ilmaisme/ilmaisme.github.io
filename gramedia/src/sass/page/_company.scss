@@ -178,11 +178,35 @@
                 .companyJourneyCta {
                     color: $cl-primary1;
                 }
+
+                .slick-slide {
+                    @include min-responsive($w-xl) {
+                        opacity: 1 !important;
+                    }
+                }
             }
         }
 
         &Cta {
             color: $cl-text3;
+        }
+
+        &Content {
+            @include min-responsive($w-xl) {
+                min-width: 350px;
+            }
+
+            .slick-slide {
+                @include min-responsive($w-xl) {
+                    opacity: 0 !important;
+                    transition: 0.5s opacity cubic-bezier(0.73, 0.32, 0.34, 1.5);
+                    min-width: 350px;
+                }
+            }
+
+            [aria-hidden="true"] {
+                display: none;
+            }
         }
 
         &Img {
@@ -191,6 +215,8 @@
             padding-top: 79.312%;
             margin-top: 20px;
             margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
 
             @include min-responsive($w-md) {
                 width: 350px;
@@ -206,6 +232,9 @@
         }
 
         &Txt {
+            margin-left: auto;
+            margin-right: auto;
+
             @include min-responsive($w-md) {
                 width: 350px;
             }

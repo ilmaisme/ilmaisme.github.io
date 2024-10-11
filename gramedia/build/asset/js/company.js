@@ -40,7 +40,9 @@ $(document).ready(function () {
     });
 
     //slider journey
+
     let sJour = $('.-sJourney')
+
     sJour.slick({
         focusOnSelect: true,
         pauseOnHover: false,
@@ -55,36 +57,9 @@ $(document).ready(function () {
         autoplay: false,
         fade: true,
         cssEase: 'linear',
+        accessibility: false,
         // draggable: false,
         asNavFor: ".-syears"
-    });
-
-    //button year
-    $('.companyJourneyCta').click(function (e) {
-        e.preventDefault();
-        years = $(this).html()
-        currValue = parseInt(years, 10)
-        item = sJour.find('.companyJourneySlide')
-        active = item.filter(function () {
-            return $(this).data('years') === currValue;
-        })
-        slideActive = active.data('slick-index')
-        //console.log(active)
-
-        sJour.slick('slickGoTo', slideActive, true);
-        $('.companyJourneyCta').parent().removeClass('active');
-        $(this).parent().addClass('active');
-    });
-
-    sJour.on("afterChange", function () {
-        var currentIndex = $('.-sJourney .slick-current').attr('data-years');
-
-        yearsActive = $('.companyJourneyList').find('button').filter(function () {
-            return $(this).html() === currentIndex;
-        })
-        //console.log(yearsActive)
-        $('.companyJourneyCta').parent().removeClass('active');
-        yearsActive.parent().addClass('active');
     });
 
     //slider year
@@ -99,6 +74,7 @@ $(document).ready(function () {
         slidesToShow: 4,
         slidesToScroll: 1,
         swipeToSlide: true,
+        accessibility: false,
         asNavFor: ".-sJourney",
         initialSlide: 0,
         responsive: [
@@ -129,4 +105,48 @@ $(document).ready(function () {
         ]
     });
 
+    //button year
+    $('.companyJourneyCta').click(function (e) {
+        e.preventDefault();
+        years = $(this).html()
+        currValue = parseInt(years, 10)
+        item = sJour.find('.companyJourneySlide')
+        active = item.filter(function () {
+            return $(this).data('years') === currValue;
+        })
+        slideActive = active.data('slick-index')
+        sJour.slick('slickGoTo', slideActive, true);
+        $('.companyJourneyCta').parent().removeClass('active');
+        $(this).parent().addClass('active');
+        
+        
+        itemyear = $('.-syears').find('.companyJourneyCta:contains('+years+')')
+        activeyear = itemyear.parent().data('slick-index')
+        //console.log(itemyear.parent().data('slick-index'))
+        $('.-syears').slick('slickGoTo', activeyear, true);
+    });
+
+    sJour.on("afterChange", function () {
+        var currentIndex = $('.-sJourney .slick-current').attr('data-years');
+
+        yearsActive = $('.companyJourneyList').find('button').filter(function () {
+            return $(this).html() === currentIndex;
+        })
+        //console.log(yearsActive)
+        $('.companyJourneyCta').parent().removeClass('active');
+        yearsActive.parent().addClass('active');
+    });
+    
+    updateJourney()
+    function updateJourney() {
+        if (viewport().width >= 1140) {
+            // console.log("desktop")
+            /* delete journey content in mobile */
+            $('#journeyMob').remove();
+        } else {
+            // console.log("mobile")
+            /* delete journey content in desktop */
+            $('.journeyDesk').remove();
+        }
+    }
 });

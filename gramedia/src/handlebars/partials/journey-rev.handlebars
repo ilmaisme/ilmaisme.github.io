@@ -1,0 +1,34 @@
+<ul class="companyJourneyList -syears">
+    {{#each page.Company}}
+    <li class="companyJourneyItem titleH5{{#eq @index compare = 0}} active{{/eq}}">
+        <button class="button companyJourneyCta">{{years}}</button>
+        <div class="journeyDesk desktop-only" id="journeyDesk">
+            <div class="companyJourneyContent -sJourney">
+                <div class="companyJourneySlide" data-years="{{years}}">
+                    <div class="companyJourneyImg">
+                        <img src="./asset/images/dummy/journey/{{images}}" alt="" width="350" height="230"
+                            loading="lazy">
+                    </div>
+                    <div class="companyJourneyTxt titleBody400">
+                        {{txt}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</ul>
+<div class="journeyMob mobile-only" id="journeyMob">
+    <div class="companyJourneyContent -sJourney">
+        {{#each page.Company}}
+        <div class="companyJourneySlide" data-years="{{years}}">
+            <div class="companyJourneyImg">
+                <img src="./asset/images/dummy/journey/{{images}}" alt="" width="350" height="230" loading="lazy">
+            </div>
+            <div class="companyJourneyTxt titleBody400">
+                {{txt}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
