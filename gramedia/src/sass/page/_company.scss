@@ -157,6 +157,32 @@
             }
 
             &.active {
+                @include max-responsive(1139px) {
+                    font-size: 20px;
+                }
+
+                &::before {
+                    @include max-responsive(1139px) {
+                        width: 18px;
+                        height: 18px;
+                        top: 0;
+                        background: $cl-primary1;
+                    }
+
+                    @include range-responsive($w-md, 1139px) {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+
+                .companyJourneyCta {
+                    @include max-responsive(1139px) {
+                        color: $cl-primary1;
+                    }
+                }
+            }
+
+            &.slick-current {
                 font-size: 20px;
 
                 @include min-responsive($w-md) {

@@ -136,6 +136,10 @@ $(document).ready(function () {
         $('.companyJourneyCta').parent().removeClass('active');
         yearsActive.parent().addClass('active');
     });
+
+    $('.-syears').on("beforeChange", function () {
+        $('.companyJourneyItem').removeClass('active');
+    });
     
     updateJourney()
     function updateJourney() {
