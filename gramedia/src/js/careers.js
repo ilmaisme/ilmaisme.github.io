@@ -88,10 +88,6 @@ $(document).ready(function () {
     });
 });
 
-$(window).on('resize', function () {
-    updateActiveCareer()
-})
-
 //remove initial active career on mobile
 updateActiveCareer()
 
@@ -101,11 +97,11 @@ function updateActiveCareer() {
         $('.careersCard:first-of-type').addClass('active');
     } else {
         // console.log("mobile")    
-        removeActiveCareer()    
+        removeActiveCareer()
     }
 }
 
-function removeActiveCareer(){
+function removeActiveCareer() {
     $('.careersCard').removeClass('active');
     $('.careersDetWrap').removeClass('active');
     $('.careersPostingWrap').removeAttr('style')
