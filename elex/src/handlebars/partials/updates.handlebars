@@ -2,15 +2,17 @@
 <div class="artItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
     <a href="{{link}}" class="artLink">
         <div class="artImg">
-            <img src="{{images}}" alt="{{title}}" width="273" height="163"{{#if ../lazy}} loading="lazy"{{/if}}>
+            <img src="{{images}}" alt="" width="273" height="163" {{#if ../lazy}} loading="lazy" {{/if}}>
         </div>
-        {{#if ../tag}}
-        <{{.. /tag}} class="artTitle">{{title}}</{{.. /tag}}>
-        {{else}}
-        <div class="artTitle">{{title}}</div>
-        {{/if}}
-        <div class="artDates"><span class="icoCal"></span>{{publish}}</div>
-        <div class="artLead">{{lead}}</div>
+        <div class="artContent">
+            <div class="artLabel">{{label}}</div>
+            {{#if ../tag}}
+            <{{.. /tag}} class="artTitle">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="artTitle">{{title}}</div>
+            {{/if}}
+            <div class="artDates"><span class="ico icoCal"></span>{{publish}}</div>
+        </div>
     </a>
 </div>
 {{/each}}

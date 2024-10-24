@@ -1,14 +1,40 @@
-.button{
+.button {
     padding: 0;
     border: 0;
     cursor: pointer;
 
-    &Primary{
+    &Primary {
         border-radius: 7px;
         border: 1px solid $cl-red;
         padding: 9px 20px;
         background: $cl-red;
         @include font-pack($font-mbold, 16px, $font-weight-mbold, false, $cl-white);
         letter-spacing: 0.32px;
+
+        &.-icon {
+            position: relative;
+            padding: 9px 32px 9px 20px;
+        }
+    }
+
+    &Arrow {
+        @include display-flex;
+        align-items: center;
+        padding-bottom: 4px;
+        color: $cl-red;
+        letter-spacing: 0.7px;
+
+        .icoArrow {
+            @extend %icoArrow;
+            display: inline-block;
+            margin-left: 8px;
+        }
+    }
+
+    .icoMore {
+        @extend %icoMore;
+        position: absolute;
+        top: calc(50% - 8px/2);
+        right: 20px;
     }
 }

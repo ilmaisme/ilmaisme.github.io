@@ -3,23 +3,24 @@
 {{#gte @index compare=../index_end}}
 {{else}}
 <div class="productItem swiper-slide">
-    <a href="{{link}}" class="productLink">
+    <a href="{{link}}" class="productLink --row">
         <div class="productImg">
-            <img src="{{image}}" alt="{{title}}" width="{{../width}}" height="{{../height}}" {{#if ../lazy}}
+            <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}}
                 loading="lazy" {{/if}}>
-            {{#if label}}
-            <div class="productLabel">Hot</div>
-            {{/if}}
         </div>
-        {{#if ../tag}}
-        <{{.. /tag}} class="productTitle">{{title}}</{{.. /tag}}>
-        {{else}}
-        <div class="productTitle">{{title}}</div>
-        {{/if}}
-        <div class="productAuthor">{{author}}</div>
-        <div class="productCta">
-            <button class="button productWish" aria-label="favorite this product"><span class="icoWishlist"></span></button>
-            <button class="button buttonPrimary productBuy">Buy From <span class="icoMore"></span></button>
+        <div class="productContent">
+            {{#if ../label}}
+            <div class="productLabel"> {{../label}}</div>
+            {{/if}}
+            {{#if ../tag}}
+            <{{.. /tag}} class="productTitle">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="productTitle">{{title}}</div>
+            {{/if}}
+            <div class="productAuthor">{{author}}</div>
+            <div class="productCta">
+                <button class="button buttonPrimary -icon">View Detail <span class="ico icoMore"></span></button>
+            </div>
         </div>
     </a>
 </div>

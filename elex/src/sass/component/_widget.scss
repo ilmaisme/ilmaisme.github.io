@@ -6,40 +6,60 @@
     &Col {
         padding-left: var(--gap-widget);
         padding-right: var(--gap-widget);
+        height: inherit;
+
+        ~.widgetCol {
+            margin-top: 20px;
+
+            @include min-responsive($w-md) {
+                margin-top: 0;
+            }
+        }
     }
 
     &Box {
         position: relative;
-        padding: 30px 60px;
+        padding: 13px 20px;
         border-radius: 13px;
         overflow: hidden;
+        height: 100%;
+
+        @include min-responsive($w-md) {
+            padding: 30px 60px;
+        }
 
         &.--new {
-            background: #D8F2D4;
+            background: #FEFFBF;
 
             .titleLink {
-                color: #07A017;
+                color: #9B9D1A;
             }
 
             .widgetBg {
-                filter: invert(94%) sepia(8%) saturate(1605%) hue-rotate(53deg) brightness(94%) contrast(80%);
+                filter: invert(86%) sepia(26%) saturate(390%) hue-rotate(6deg) brightness(105%) contrast(87%);
             }
         }
 
         &.--popular {
-            background: #E9EFFF;
+            background: #FFDFE0;
 
             .titleLink {
-                color: #365AB9;
+                color: #CF6467;
             }
 
             .widgetBg {
-                filter: invert(89%) sepia(3%) saturate(2378%) hue-rotate(191deg) brightness(99%) contrast(87%);
+                filter: invert(78%) sepia(10%) saturate(497%) hue-rotate(309deg) brightness(103%) contrast(110%);
             }
         }
 
         .titleWrap {
             position: relative;
+            align-items: flex-start;
+            flex-direction: column;
+
+            @include min-responsive($w-md) {
+                flex-direction: row;
+            }
         }
     }
 
@@ -51,12 +71,19 @@
     }
 
     &Title {
+
         .titleLead {
             margin-top: 12px;
         }
 
         ~.titleLink {
             margin-left: 53px;
+            position: absolute;
+            right: 0;
+
+            @include min-responsive($w-md) {
+                position: relative;
+            }
         }
     }
 
@@ -74,7 +101,6 @@
 
         .product {
             &Title {
-                margin-top: 5px;
                 font-size: 15px;
             }
 

@@ -1,18 +1,49 @@
 .title {
-    @include font-pack($font-sbold, 32px, $font-weight-sbold, false, false);
+    @include font-pack($font-sbold, 24px, $font-weight-sbold, false, false);
     letter-spacing: 0.64px;
 
-    &Wrap{
-        @include display-flex
+    @include min-responsive($w-md) {
+        font-size: 32px
     }
 
-    &Lead{
-        margin-top: 5px;
+    &Wrap {
+        @include display-flex;
+        align-items: flex-end;
+        justify-content: space-between;
     }
 
-    &Link{
+    &Lead {
+        color: #616161;
+        letter-spacing: 0.28px;
+    }
+
+    &Link {
         flex-shrink: 0;
-        @include font-pack($font-mbold, false, $font-weight-mbold, false, false);
+        @include font-pack($font-mbold, false, $font-weight-mbold, false, #838383);
         letter-spacing: 0.14px;
+    }
+
+    &H3 {
+        @include font-pack($font-mbold, 20px, $font-weight-mbold, false, false);
+
+        @include min-responsive($w-md) {
+            font-size: 24px
+        }
+    }
+
+    &H4 {
+        @include font-pack($font-mbold, 18px, $font-weight-mbold, 1.2, false);
+
+        @include min-responsive($w-md) {
+            font-size: 20px
+        }
+    }
+
+    &H5 {
+        @include font-pack($font-mbold, 16px, $font-weight-mbold, 1.22, false);
+
+        @include min-responsive($w-md) {
+            font-size: 18px
+        }
     }
 }

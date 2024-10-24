@@ -1,0 +1,96 @@
+.event {
+    &Item {
+        margin-top: 13px;
+
+        @include min-responsive($w-md) {
+            margin-top: 10px;
+        }
+    }
+
+    &Link {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        @include min-responsive($w-md) {
+            padding: 20px;
+        }
+    }
+
+    &Content {
+        flex: 1;
+        padding-bottom: 20px;
+
+        @include min-responsive($w-md) {
+            padding-top: 20px;
+        }
+    }
+
+    &Img {
+        position: relative;
+        width: 128px;
+        padding-top: 128px;
+        aspect-ratio: 1/1;
+        margin-right: 15px;
+        align-self: flex-start;
+
+        @include min-responsive($w-md) {
+            width: 240px;
+            padding-top: 240px;
+        }
+
+        img {
+            @extend %template-img;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+
+        img {
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.14);
+        }
+    }
+
+    &Title {
+        @include title_clamp(2);
+    }
+
+    &Lead {
+        margin-top: 12px;
+        @include title_clamp(4);
+        @include font-pack(false, 15px, false, 1.33, #454545);
+    }
+
+    &Label {
+        margin-top: 5px;
+        @include font-pack($font-mbold, false, $font-weight-mbold, false, #ED1C24);
+        letter-spacing: 0.28px;
+
+        &.-past {
+            color: #07A017;
+        }
+
+        &.-going {
+            color: #00B3BF;
+        }
+    }
+
+    &Attr {
+        margin-top: 12px;
+        @include font-pack(false, 15px, false, 1.33, #454545);
+        letter-spacing: 0.28px;
+
+        .ico {
+            display: inline-block;
+            vertical-align: sub;
+            margin-right: 5px;
+
+            &Cal {
+                @extend %icoCal;
+            }
+
+            &Loc {
+                @extend %icoLoc;
+            }
+        }
+    }
+}

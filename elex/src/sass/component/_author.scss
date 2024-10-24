@@ -1,0 +1,124 @@
+.author {
+    &Title {
+        position: relative;
+        background: #F24971;
+        color: $cl-white;
+        overflow: hidden;
+
+        span {
+            display: block;
+            @include font-pack($font-mbold, 17px, $font-weight-mbold, false, false);
+            letter-spacing: 0.34px;
+        }
+
+        &__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            filter: invert(49%) sepia(33%) saturate(2713%) hue-rotate(314deg) brightness(99%) contrast(106%);
+        }
+
+        &__wrap {
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    &Widget {
+        position: relative;
+        @include flex(center);
+        flex-direction: column;
+
+        @include min-responsive($w-md) {
+            flex-direction: row;
+        }
+
+        .authorTitle {
+            width: 100%;
+            padding: 20px;
+            border-radius: 7px;
+            flex-shrink: 0;
+
+            @include min-responsive($w-md) {
+                width: 225px;
+                border-radius: 13px;
+                padding: 50px 55px 50px 40px;
+                margin-right: -16px;
+            }
+        }
+
+        .authorDesc {
+            margin-top: 13px;
+            margin-bottom: 13px;
+
+            @include min-responsive($w-md) {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .authorImg {
+            width: 128px;
+            padding-top: 128px;
+            position: absolute;
+            top: -20px;
+            right: 0;
+
+            @include min-responsive($w-md) {
+                width: 211px;
+                padding-top: 265px;
+                position: relative;
+            }
+
+            img {
+                box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 0.05);
+            }
+        }
+
+        .authorBest {
+            margin-bottom: 13px;
+
+            @include min-responsive($w-md) {
+                @include flex(center);
+                flex-direction: row;
+                margin-right: 34px;
+                margin-bottom: 0;
+            }
+
+            &__content {
+                padding-top: 33px;
+
+                @include min-responsive($w-md) {
+                    padding-top: 0;
+                    padding-left: 32px;
+                }
+
+                @include min-responsive($w-md) {
+                    width: 432px;
+                }
+            }
+        }
+
+        .productLink.--row .productImg {
+            width: 133px;
+            padding-top: 200px;
+        }
+
+        .productTitle {
+            -webkit-line-clamp: 3;
+        }
+    }
+
+    &Img {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1/1;
+
+        img {
+            @extend %template-img;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+    }
+}

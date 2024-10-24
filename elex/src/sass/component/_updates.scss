@@ -1,8 +1,9 @@
 .updates {
-    --gap-updates: 18px;
+    --gap-updates: 14px;
     @include font-pack(false, 15px, false, 1.21, false);
 
     &List {
+        align-items: center;
         margin-left: calc(var(--gap-updates) - var(--gap-updates)*2);
         margin-right: calc(var(--gap-updates) - var(--gap-updates)*2);
     }
@@ -10,26 +11,118 @@
     &Item {
         padding-left: var(--gap-updates);
         padding-right: var(--gap-updates);
+
+        @include min-responsive($w-md) {
+            min-height: 233px;
+        }
     }
 
     .art {
-        &Item {
-            margin-top: 24px;
-        }
 
         &Link {
             flex-direction: column;
         }
 
-        &Img {
-            width: 100%;
-            padding-top: 59.71%;
-            margin-right: 0;
+        &Item {
+            flex-basis: 100%;
+
+            @include min-responsive($w-md) {
+                flex-basis: calc((100% - 496px)/3);
+            }
+
+            &:first-child {
+                @include min-responsive($w-md) {
+                    flex-basis: 496px;
+                }
+
+                .artLink::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 155px;
+                    border-bottom-left-radius: 7px;
+                    border-bottom-right-radius: 7px;
+                    background: linear-gradient(180deg, rgba(255, 43, 48, 0.00) 0%, #1C1717 100%);
+                    z-index: 1;
+                }
+
+                .artContent {
+                    position: absolute;
+                    bottom: 0;
+                    padding: 16px 20px;
+                    z-index: 2;
+
+                    @include min-responsive($w-md) {
+                        padding-left: 27px;
+                        padding-right: 27px;
+                    }
+                }
+
+                .artTitle,
+                .artLabel,
+                .artDates {
+                    color: $cl-white;
+                }
+
+                .artTitle {
+                    margin-top: 6px;
+                    font-size: 18px;
+
+                    @include min-responsive($w-md) {
+                        font-size: 22px;
+                    }
+                }
+
+                .artDates {
+                    margin-top: 6px;
+                }
+
+                .icoCal {
+                    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(102%) contrast(101%);
+                }
+
+                .artImg {
+                    width: 100%;
+                }
+            }
+
+            &:not(:first-child) {
+
+                .artLink {
+                    flex-direction: row;
+
+                    @include min-responsive($w-md) {
+                        flex-direction: column;
+                    }
+                }
+
+                .artImg {
+                    width: 128px;
+                    padding-top: 128px;
+                    margin-right: 15px;
+
+                    @include min-responsive($w-md) {
+                        width: 100%;
+                        padding-top: 60%;
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .artLabel {
+                margin-top: 10px;
+            }
         }
 
         &Title {
+            margin-top: 3px;
             -webkit-line-clamp: 2;
-            @include font-pack(false, 18px, false, 1.21, false);
+            @extend .titleH5
+        }
+
+        &Dates {
+            margin-top: 10px;
         }
     }
 }

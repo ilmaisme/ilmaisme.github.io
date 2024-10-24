@@ -2,6 +2,24 @@
     &Link {
         display: block;
         width: 100%;
+
+        &.--row {
+            @include flex(center);
+    
+            .productTitle {
+                font-size: 17px;
+            }
+    
+            .productLabel {
+                margin-top: 0;
+            }
+    
+            .productImg {
+                width: 113px;
+                padding-top: 170px;
+                margin-right: 10px;
+            }
+        }
     }
 
     &Wrap {
@@ -20,8 +38,12 @@
         }
     }
 
+    &Content {
+        flex: 1;
+    }
+
     &Title {
-        margin-top: 10px;
+        margin-top: 2px;
         @include title_clamp(2);
         @include font-pack($font-mbold, 16px, $font-weight-mbold, false, #454545);
         letter-spacing: 0.32px;
@@ -41,32 +63,8 @@
         letter-spacing: 0.28px;
     }
 
-    &More {
-        @include display-flex;
-        align-items: center;
-        margin-top: 9px;
-        margin-bottom: 9px;
-        padding-bottom: 4px;
-        color: $cl-red;
-        letter-spacing: 0.7px;
-
-        .icoArrow {
-            @extend %icoArrow;
-            display: inline-block;
-            margin-left: 8px;
-        }
-    }
-
-    &Buy {
-        position: relative;
-        padding: 9px 32px 9px 20px;
-
-        .icoMore {
-            @extend %icoMore;
-            position: absolute;
-            top: calc(50% - 8px/2);
-            right: 20px;
-        }
+    &Arrow {
+        top: 65%;
     }
 
     &Disc {
@@ -98,9 +96,27 @@
     }
 
     &Label {
+        margin-top: 10px;
+        @include font-pack($font-mbold, false, $font-weight-mbold, false, #ED1C24);
+        letter-spacing: 0.28px;
+    }
+
+    &Tag {
+        @include flex(center);
         position: absolute;
         top: 0;
         z-index: 1;
+        background: #F8861E;
+        @include font-pack($font-bold, 13px, $font-weight-bold, false, $cl-white);
+        letter-spacing: 0.391px;
+        text-transform: uppercase;
+
+        --s: 60px;
+
+        width: var(--s);
+        aspect-ratio: 1;
+        --g: /calc(var(--s)*0.112) calc(var(--s)*0.112) radial-gradient(50% 50%, #000 99%, #0000 101%) no-repeat;
+        mask: calc(50% + var(--s)*0.425) calc(50% + var(--s)*0) var(--g), calc(50% + var(--s)*0.388) calc(50% + var(--s)*0.173) var(--g), calc(50% + var(--s)*0.284) calc(50% + var(--s)*0.316) var(--g), calc(50% + var(--s)*0.131) calc(50% + var(--s)*0.404) var(--g), calc(50% + var(--s)*-0.044) calc(50% + var(--s)*0.423) var(--g), calc(50% + var(--s)*-0.212) calc(50% + var(--s)*0.368) var(--g), calc(50% + var(--s)*-0.344) calc(50% + var(--s)*0.25) var(--g), calc(50% + var(--s)*-0.416) calc(50% + var(--s)*0.088) var(--g), calc(50% + var(--s)*-0.416) calc(50% + var(--s)*-0.088) var(--g), calc(50% + var(--s)*-0.344) calc(50% + var(--s)*-0.25) var(--g), calc(50% + var(--s)*-0.212) calc(50% + var(--s)*-0.368) var(--g), calc(50% + var(--s)*-0.044) calc(50% + var(--s)*-0.423) var(--g), calc(50% + var(--s)*0.131) calc(50% + var(--s)*-0.404) var(--g), calc(50% + var(--s)*0.284) calc(50% + var(--s)*-0.316) var(--g), calc(50% + var(--s)*0.388) calc(50% + var(--s)*-0.173) var(--g), radial-gradient(calc(var(--s)*0.452), #000 99%, #0000 101%) intersect, radial-gradient(#000 0 0) exclude, calc(50% + var(--s)*0.474) calc(50% + var(--s)*0.101) var(--g), calc(50% + var(--s)*0.392) calc(50% + var(--s)*0.285) var(--g), calc(50% + var(--s)*0.242) calc(50% + var(--s)*0.419) var(--g), calc(50% + var(--s)*0.051) calc(50% + var(--s)*0.482) var(--g), calc(50% + var(--s)*-0.15) calc(50% + var(--s)*0.461) var(--g), calc(50% + var(--s)*-0.324) calc(50% + var(--s)*0.36) var(--g), calc(50% + var(--s)*-0.442) calc(50% + var(--s)*0.197) var(--g), calc(50% + var(--s)*-0.484) calc(50% + var(--s)*0) var(--g), calc(50% + var(--s)*-0.442) calc(50% + var(--s)*-0.197) var(--g), calc(50% + var(--s)*-0.324) calc(50% + var(--s)*-0.36) var(--g), calc(50% + var(--s)*-0.15) calc(50% + var(--s)*-0.461) var(--g), calc(50% + var(--s)*0.051) calc(50% + var(--s)*-0.482) var(--g), calc(50% + var(--s)*0.242) calc(50% + var(--s)*-0.419) var(--g), calc(50% + var(--s)*0.392) calc(50% + var(--s)*-0.285) var(--g), calc(50% + var(--s)*0.474) calc(50% + var(--s)*-0.101) var(--g);
     }
 
     &Cta {
@@ -108,12 +124,9 @@
         margin-top: 20px;
 
         .button {
-            &:first-child {
-                margin-right: 10px
-            }
-
-            &:last-child {
-                flex: 1
+            ~.button {
+                flex: 1;
+                margin-left: 10px
             }
         }
     }

@@ -5,17 +5,31 @@
 <div class="productItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
     <a href="{{link}}" class="productLink">
         <div class="productImg">
-            <img src="{{image}}" alt="{{title}}" width="{{../width}}" height="{{../height}}"{{#if ../lazy}} loading="lazy"{{/if}}>
-            {{#if label}}
-            <div class="productLabel">{{label}}</div>
+            <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}} loading="lazy"
+                {{/if}}>
+            {{#if tag}}
+            <div class="productTag">{{tag}}</div>
             {{/if}}
         </div>
-        {{#if ../tag}}
-        <{{.. /tag}} class="productTitle">{{title}}</{{.. /tag}}>
-        {{else}}
-        <div class="productTitle">{{title}}</div>
-        {{/if}}
-        <div class="productAuthor">{{author}}</div>
+        <div class="productContent">
+            {{#if label}}
+            <div class="productLabel"> {{label}}</div>
+            {{/if}}
+            {{#if ../tag}}
+            <{{.. /tag}} class="productTitle">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="productTitle">{{title}}</div>
+            {{/if}}
+            <div class="productAuthor">{{author}}</div>
+            {{#if ../cta}}
+            <div class="productCta">
+                <button class="button productWish" aria-label="favorite this product"><span
+                        class="icoWishlist"></span></button>
+                <button class="button buttonPrimary productBuy -icon">Buy From <span
+                        class="ico icoMore"></span></button>
+            </div>
+            {{/if}}
+        </div>
     </a>
 </div>
 {{/gte}}
