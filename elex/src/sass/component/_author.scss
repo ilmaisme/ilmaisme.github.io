@@ -29,9 +29,19 @@
         position: relative;
         @include flex(center);
         flex-direction: column;
+        flex-wrap: wrap;
+
+        @include range-responsive($w-md, $w-xl) {
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
 
         @include min-responsive($w-md) {
             flex-direction: row;
+        }
+
+        @include min-responsive($w-lg) {
+            flex-wrap: nowrap;
         }
 
         .authorTitle {
@@ -40,11 +50,19 @@
             border-radius: 7px;
             flex-shrink: 0;
 
+            @include range-responsive($w-md, $w-xl) {
+                align-self: flex-start;
+            }
+
             @include min-responsive($w-md) {
-                width: 225px;
+                width: 175px;
                 border-radius: 13px;
-                padding: 50px 55px 50px 40px;
                 margin-right: -16px;
+            }
+
+            @include min-responsive($w-xl) {
+                width: 225px;
+                padding: 50px 55px 50px 40px;
             }
         }
 
@@ -65,10 +83,20 @@
             top: -20px;
             right: 0;
 
+            @include range-responsive($w-md, $w-xl) {
+                align-self: flex-start;
+            }
+
             @include min-responsive($w-md) {
+                position: relative;
+                width: 140px;
+                padding-top: 140px;
+            }
+
+            @include min-responsive($w-xl) {
+                top: unset;
                 width: 211px;
                 padding-top: 265px;
-                position: relative;
             }
 
             img {
@@ -82,6 +110,13 @@
             @include min-responsive($w-md) {
                 @include flex(center);
                 flex-direction: row;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                width: calc(100% - (175px - 16px));
+            }
+
+            @include min-responsive($w-lg) {
                 margin-right: 34px;
                 margin-bottom: 0;
             }
@@ -93,16 +128,22 @@
                     padding-top: 0;
                     padding-left: 32px;
                 }
-
-                @include min-responsive($w-md) {
+                @include min-responsive($w-xl) {
                     width: 432px;
                 }
             }
         }
 
-        .productLink.--row .productImg {
-            width: 133px;
-            padding-top: 200px;
+        .productLink {
+
+            @include range-responsive($w-md, $w-xl) {
+                max-width: 315px;
+            }
+
+            &.--row .productImg {
+                width: 133px;
+                padding-top: 200px;
+            }
         }
 
         .productTitle {
