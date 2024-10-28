@@ -1,0 +1,240 @@
+<div class="menuBlock{{#if active}} active{{/if}}">
+    <div class="menuWrap container row no-gutters">
+        <ul class="menuList">
+            {{#each categMenu}}
+            <li class="menuItem{{#eq @index compare=0}} active{{/eq}}" data-menu={{@index}}>
+                <a href="{{link}}" class="menuLink">{{title}}</a>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="menuContent">
+            <div class="menuTitle">Terbaru</div>
+            <!-- s: new product -->
+            <div class="menuProduct active" data-categ="0">
+                {{#each product.New}}
+                {{#gte @index compare=../index_start}}
+                {{#gte @index compare=../index_end}}
+                {{else}}
+                <div class="productItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
+                    <a href="{{link}}" class="productLink">
+                        <div class="productImg">
+                            {{#eq @index compare=../index_start}}
+                            <img src="{{image}}" alt="" width="192" height="288" {{#if ../lazy}} loading="lazy" {{/if}}>
+                            {{else}}
+                            <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}}
+                                loading="lazy" {{/if}}>
+                            {{/eq}}
+                        </div>
+                        {{#eq @index compare=../index_start}}
+                        <div class="productContent menuProduct__content">
+                            <div class="productTitle">{{title}}</div>
+                            <div class="menuProduct__caption">Sinopsis</div>
+                            <div class="menuProduct__lead">{{lead}}</div>
+                            <div class="menuProduct__cta">
+                                Lihat detail <span class="ico icoChevron"></span>
+                            </div>
+                        </div>
+                        {{/eq}}
+                    </a>
+                </div>
+                {{/gte}}
+                {{else}}
+                {{/gte}}
+                {{/each}}
+            </div>
+            <div class="menuProduct" data-categ="1">
+                {{#each product.Best}}
+                {{#gte @index compare=../index_start}}
+                {{#gte @index compare=../index_end}}
+                {{else}}
+                <div class="productItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
+                    <a href="{{link}}" class="productLink">
+                        <div class="productImg">
+                            {{#eq @index compare=../index_start}}
+                            <img src="{{image}}" alt="" width="192" height="288" {{#if ../lazy}} loading="lazy" {{/if}}>
+                            {{else}}
+                            <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}}
+                                loading="lazy" {{/if}}>
+                            {{/eq}}
+                        </div>
+                        {{#eq @index compare=../index_start}}
+                        <div class="productContent menuProduct__content">
+                            <div class="productTitle">{{title}}</div>
+                            <div class="menuProduct__caption">Sinopsis</div>
+                            <div class="menuProduct__lead">{{lead}}</div>
+                            <div class="menuProduct__cta">
+                                Lihat detail <span class="ico icoChevron"></span>
+                            </div>
+                        </div>
+                        {{/eq}}
+                    </a>
+                </div>
+                {{/gte}}
+                {{else}}
+                {{/gte}}
+                {{/each}}
+            </div>
+            <div class="menuProduct" data-categ="2">
+                {{#each product.Special}}
+                {{#gte @index compare=../index_start}}
+                {{#gte @index compare=../index_end}}
+                {{else}}
+                <div class="productItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
+                    <a href="{{link}}" class="productLink">
+                        <div class="productImg">
+                            {{#eq @index compare=../index_start}}
+                            <img src="{{image}}" alt="" width="192" height="288" {{#if ../lazy}} loading="lazy" {{/if}}>
+                            {{else}}
+                            <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}}
+                                loading="lazy" {{/if}}>
+                            {{/eq}}
+                        </div>
+                        {{#eq @index compare=../index_start}}
+                        <div class="productContent menuProduct__content">
+                            <div class="productTitle">{{title}}</div>
+                            <div class="menuProduct__caption">Sinopsis</div>
+                            <div class="menuProduct__lead">{{lead}}</div>
+                            <div class="menuProduct__cta">
+                                Lihat detail <span class="ico icoChevron"></span>
+                            </div>
+                        </div>
+                        {{/eq}}
+                    </a>
+                </div>
+                {{/gte}}
+                {{else}}
+                {{/gte}}
+                {{/each}}
+            </div>
+            <div class="menuProduct" data-categ="3">
+                {{#each product.Komik}}
+                {{#gte @index compare=../index_start}}
+                {{#gte @index compare=../index_end}}
+                {{else}}
+                <div class="productItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
+                    <a href="{{link}}" class="productLink">
+                        <div class="productImg">
+                            {{#eq @index compare=../index_start}}
+                            <img src="{{image}}" alt="" width="192" height="288" {{#if ../lazy}} loading="lazy" {{/if}}>
+                            {{else}}
+                            <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}}
+                                loading="lazy" {{/if}}>
+                            {{/eq}}
+                        </div>
+                        {{#eq @index compare=../index_start}}
+                        <div class="productContent menuProduct__content">
+                            <div class="productTitle">{{title}}</div>
+                            <div class="menuProduct__caption">Sinopsis</div>
+                            <div class="menuProduct__lead">{{lead}}</div>
+                            <div class="menuProduct__cta">
+                                Lihat detail <span class="ico icoChevron"></span>
+                            </div>
+                        </div>
+                        {{/eq}}
+                    </a>
+                </div>
+                {{/gte}}
+                {{else}}
+                {{/gte}}
+                {{/each}}
+            </div>
+            <div class="menuProduct" data-categ="4">
+                {{#each product.Quanta}}
+                {{#gte @index compare=../index_start}}
+                {{#gte @index compare=../index_end}}
+                {{else}}
+                <div class="productItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
+                    <a href="{{link}}" class="productLink">
+                        <div class="productImg">
+                            {{#eq @index compare=../index_start}}
+                            <img src="{{image}}" alt="" width="192" height="288" {{#if ../lazy}} loading="lazy" {{/if}}>
+                            {{else}}
+                            <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}}
+                                loading="lazy" {{/if}}>
+                            {{/eq}}
+                        </div>
+                        {{#eq @index compare=../index_start}}
+                        <div class="productContent menuProduct__content">
+                            <div class="productTitle">{{title}}</div>
+                            <div class="menuProduct__caption">Sinopsis</div>
+                            <div class="menuProduct__lead">{{lead}}</div>
+                            <div class="menuProduct__cta">
+                                Lihat detail <span class="ico icoChevron"></span>
+                            </div>
+                        </div>
+                        {{/eq}}
+                    </a>
+                </div>
+                {{/gte}}
+                {{else}}
+                {{/gte}}
+                {{/each}}
+            </div>
+            <div class="menuProduct" data-categ="5">
+                {{#each product.Popular}}
+                {{#gte @index compare=../index_start}}
+                {{#gte @index compare=../index_end}}
+                {{else}}
+                <div class="productItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
+                    <a href="{{link}}" class="productLink">
+                        <div class="productImg">
+                            {{#eq @index compare=../index_start}}
+                            <img src="{{image}}" alt="" width="192" height="288" {{#if ../lazy}} loading="lazy" {{/if}}>
+                            {{else}}
+                            <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}}
+                                loading="lazy" {{/if}}>
+                            {{/eq}}
+                        </div>
+                        {{#eq @index compare=../index_start}}
+                        <div class="productContent menuProduct__content">
+                            <div class="productTitle">{{title}}</div>
+                            <div class="menuProduct__caption">Sinopsis</div>
+                            <div class="menuProduct__lead">{{lead}}</div>
+                            <div class="menuProduct__cta">
+                                Lihat detail <span class="ico icoChevron"></span>
+                            </div>
+                        </div>
+                        {{/eq}}
+                    </a>
+                </div>
+                {{/gte}}
+                {{else}}
+                {{/gte}}
+                {{/each}}
+            </div>
+            <div class="menuProduct" data-categ="6">
+                {{#each product.Kids}}
+                {{#gte @index compare=../index_start}}
+                {{#gte @index compare=../index_end}}
+                {{else}}
+                <div class="productItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
+                    <a href="{{link}}" class="productLink">
+                        <div class="productImg">
+                            {{#eq @index compare=../index_start}}
+                            <img src="{{image}}" alt="" width="192" height="288" {{#if ../lazy}} loading="lazy" {{/if}}>
+                            {{else}}
+                            <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}}
+                                loading="lazy" {{/if}}>
+                            {{/eq}}
+                        </div>
+                        {{#eq @index compare=../index_start}}
+                        <div class="productContent menuProduct__content">
+                            <div class="productTitle">{{title}}</div>
+                            <div class="menuProduct__caption">Sinopsis</div>
+                            <div class="menuProduct__lead">{{lead}}</div>
+                            <div class="menuProduct__cta">
+                                Lihat detail <span class="ico icoChevron"></span>
+                            </div>
+                        </div>
+                        {{/eq}}
+                    </a>
+                </div>
+                {{/gte}}
+                {{else}}
+                {{/gte}}
+                {{/each}}
+            </div>
+            <!-- e: new product -->
+        </div>
+    </div>
+</div>

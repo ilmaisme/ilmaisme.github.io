@@ -1,0 +1,79 @@
+.ham {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 1;
+
+    &Line {
+        fill: none;
+        transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+        stroke: #616161;
+        stroke-width: 5.5;
+        stroke-linecap: round;
+    }
+
+    .top {
+        stroke-dasharray: 40 161;
+    }
+
+    .middle {
+        stroke-dasharray: 30 111;
+    }
+
+    .bottom {
+        stroke-dasharray: 40 161;
+    }
+
+    &burg {
+        position: relative;
+        top: 0;
+        width: 44px;
+        height: 44px;
+        opacity: 1;
+        z-index: 4;
+        overflow: hidden;
+
+        &.hide {
+            opacity: 0;
+        }
+
+        &Toggle {
+            width: 44px;
+            height: 44px;
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 2;
+
+            &:checked {
+
+                ~.ham {
+                    transform: rotate(45deg);
+
+                    .top {
+                        stroke-dasharray: 17 82;
+                        stroke-dashoffset: -62px;
+                    }
+
+                    .middle {
+                        stroke-dashoffset: 23px;
+                        stroke-dasharray: 40 111;
+                    }
+
+                    .bottom {
+                        stroke-dashoffset: -83px;
+                    }
+                }
+            }
+        }
+    }
+}

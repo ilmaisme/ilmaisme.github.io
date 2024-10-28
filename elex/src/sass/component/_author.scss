@@ -27,11 +27,10 @@
 
     &Widget {
         position: relative;
-        @include flex(center);
         flex-direction: column;
         flex-wrap: wrap;
 
-        @include range-responsive($w-md, $w-xl) {
+        @include range-responsive($w-md, $w-vxl) {
             justify-content: flex-start;
             align-items: flex-start;
         }
@@ -50,7 +49,7 @@
             border-radius: 7px;
             flex-shrink: 0;
 
-            @include range-responsive($w-md, $w-xl) {
+            @include range-responsive($w-md, $w-vxl) {
                 align-self: flex-start;
             }
 
@@ -60,7 +59,7 @@
                 margin-right: -16px;
             }
 
-            @include min-responsive($w-xl) {
+            @include min-responsive($w-vxl) {
                 width: 225px;
                 padding: 50px 55px 50px 40px;
             }
@@ -80,10 +79,10 @@
             width: 128px;
             padding-top: 128px;
             position: absolute;
-            top: -20px;
+            top: 0;
             right: 0;
 
-            @include range-responsive($w-md, $w-xl) {
+            @include range-responsive($w-md, $w-vxl) {
                 align-self: flex-start;
             }
 
@@ -93,7 +92,7 @@
                 padding-top: 140px;
             }
 
-            @include min-responsive($w-xl) {
+            @include min-responsive($w-vxl) {
                 top: unset;
                 width: 211px;
                 padding-top: 265px;
@@ -114,29 +113,41 @@
 
             @include range-responsive($w-md, $w-xl) {
                 width: calc(100% - (175px - 16px));
+                flex-direction: column;
             }
 
             @include min-responsive($w-lg) {
-                margin-right: 34px;
+                margin-right: 20px;
                 margin-bottom: 0;
             }
 
+            @include min-responsive($w-xl) {
+                margin-right: 34px;
+            }
+
             &__content {
-                padding-top: 33px;
+                padding-top: 43px;
 
                 @include min-responsive($w-md) {
+                    padding-top: 20px;
+                    padding-left: 0;
+                }
+
+                @include min-responsive($w-xl) {
+                    padding-left: 20px;
+                }
+
+                @include min-responsive($w-vxl) {
+                    width: 432px;
                     padding-top: 0;
                     padding-left: 32px;
-                }
-                @include min-responsive($w-xl) {
-                    width: 432px;
                 }
             }
         }
 
         .productLink {
 
-            @include range-responsive($w-md, $w-xl) {
+            @include range-responsive($w-md, $w-vxl) {
                 max-width: 315px;
             }
 

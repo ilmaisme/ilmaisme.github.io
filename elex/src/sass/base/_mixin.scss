@@ -171,3 +171,23 @@
 	justify-content: $position;
 	align-items: $position;
 }
+
+//scroll
+@mixin scroll($width: false, $active:false, $bg:false) {
+	&::-webkit-scrollbar {
+		width: $width;
+		border-radius: 5px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $bg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		width: $width;
+		background-color: $active;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border: transparent;
+	}
+}

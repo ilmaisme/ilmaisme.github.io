@@ -1,0 +1,9 @@
+{{#each channel}}
+<a href="{{link}}" class="socmedItem center-flex" aria-label="{{title}}">
+    {{#if images}}
+    <img src="./asset/images/icon/{{images}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}} loading="lazy" {{/if}}>
+    {{else}}
+    <span class="ico ico{{replace (capitalize icon)}}"></span>
+    {{/if}}
+</a>
+{{/each}}

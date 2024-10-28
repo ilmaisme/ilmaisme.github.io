@@ -1,0 +1,86 @@
+<header class="header">
+    <div class="headerWrap">
+        <div class="headerLeft">
+            <div class="headerLogo">
+                <a href="index.html">
+                    <img src="./asset/images/logo-elex-sm.svg" alt="Elex Media Komputindo" width="92" height="56">
+                </a>
+            </div>
+            <div class="headerCateg">
+                <button class="headerCateg__btn button desktop-only"
+                    onclick="event.stopPropagation(); triggerActiveButton('.menuBlock',body,'overlay')">
+                    Categories
+                </button>
+                <a href="categories.html" class="headerCateg__btn mobile-only">
+                    Categories
+                </a>
+            </div>
+        </div>
+        <div class="headerContent center-flex">
+            <div class="headerCta center-flex">
+                <div class="headerProfile desktop-only">
+                    {{#if login}}
+                    <a href="profile.html" class="headerProfile__link center-flex">
+                        <span>Hi, Fulan</span>
+                        <div class="headerProfile__img center-flex">
+                            F
+                            <!--<img src="./asset/images/user-thumb.jpg" alt="" width="36" height="36">-->
+                        </div>
+                    </a>
+                    {{else}}
+                    <a href="register.html" class="headerProfile__button buttonPrimary">Login/Register</a>
+                    {{/if}}
+                </div>
+                <a href="wishlist.html" class="headerIcon headerWish" aria-label="Wishlist">
+                    <span class="ico icoWishlist"></span>
+                    {{#if login}}
+                    <span class="headerNode center-flex">15</span>
+                    {{/if}}
+                </a>
+            </div>
+            <div class="navMob mobile-only" id="navMob">
+                <div class="hamburg" id="hamburg">
+                    <label class="sr-only" for="hamburgToggle">Open navigation</label>
+                    <input type="checkbox" class="hamburgToggle" name="check" id="hamburgToggle" aria-haspopup="true"
+                        autocomplete="off">
+                    <svg class="ham" viewBox="0 0 100 100" width="80">
+                        <path class="line top hamLine"
+                            d="m 70,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013"></path>
+                        <path class="line middle hamLine" d="m 70,50 h -40"></path>
+                        <path class="line bottom hamLine"
+                            d="m 69.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40">
+                        </path>
+                    </svg>
+                </div>
+                <!-- s: navigation -->
+                <div class="navWrap mobile">
+
+                    {{>header/nav}}
+
+                    <div class="navMob__bottom">
+
+                        {{>header/bilingual}}
+
+                        <div class="headerSearch">
+
+                            {{>header/search}}
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- e: navigation -->
+            </div>
+        </div>
+    </div>
+    <div class="navDesk desktop-only" id="navDesk">
+
+        {{!>header/nav}}
+
+    </div>
+</header>
+<div class="menu desktop-only">
+
+    {{>header/menu index_start=0 index_end=5 lazy=true type="menuProduct__item" width="94" height="145"}}
+
+</div>

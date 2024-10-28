@@ -1,35 +1,60 @@
 .hl {
+    position: relative;
     padding-top: 18px;
     padding-bottom: 28px;
+    margin-bottom: 18px;
     flex: 1;
     overflow: hidden;
+    max-width: 345px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    @include min-responsive($w-md) {
+        max-width: unset;
+        left: unset;
+        transform: none;
+    }
+
+    @include min-responsive($w-xl) {
+        margin-bottom: 0;
+    }
 
     &Wrap {
         margin-top: 18px;
-        padding-left: 42px;
-        padding-right: 15px;
         position: relative;
         display: flex;
+        flex-direction: column;
+
+        @include min-responsive($w-vxl) {
+            flex-direction: row;
+            padding-left: 42px;
+            padding-right: 15px;
+        }
     }
 
     &Slide {
         --heightdesk: 369px;
-        --heightmob: 250px;
+        --heightipd: 217px;
+        --heightmob: 187px;
         --widthdesk: 611px;
-        --widthmob: 164px;
+        --widthipd: 394px;
+        --widthmob: 310px;
 
         width: var(--widthmob);
         height: var(--heightmob);
 
-        @include range-responsive($w-md, $w-xl) {
-            height: auto;
+        @include max-responsive($w-xm) {
+            width: 290px;
         }
 
         @include min-responsive($w-md) {
-            width: var(--widthdesk);
+            width: var(--widthipd);
+            height: var(--heightipd);
         }
 
-        @include min-responsive($w-xl) {
+        @include min-responsive($w-lg) {
+            width: var(--widthdesk);
             height: var(--heightdesk);
         }
 
@@ -47,8 +72,17 @@
     &Img {
         padding: 17px;
         overflow: hidden;
+        width: calc(var(--widthmob) + 17px *2);
 
-        @include min-responsive($w-xl) {
+        @include max-responsive($w-xm) {
+            width: 300px;
+        }
+
+        @include min-responsive($w-md) {
+            width: var(--widthipd);
+        }
+
+        @include min-responsive($w-lg) {
             width: calc(var(--widthdesk) + 17px *2);
         }
 
@@ -56,8 +90,9 @@
             width: 100%;
             border-radius: 9px;
             object-fit: cover;
+            height: var(--heightmob);
 
-            @include min-responsive($w-xl) {
+            @include min-responsive($w-lg) {
                 height: var(--heightdesk);
             }
         }
@@ -69,7 +104,7 @@
             transition: padding .4s ease;
 
             &-active {
-                background: #E12025;
+                background: $cl-red;
                 border-radius: 10px;
                 padding-right: 42px;
             }
@@ -87,21 +122,36 @@
         z-index: -1;
         pointer-events: none;
 
-        &Wrap{
-            position: relative;
+        &Wrap {
+            position: absolute;
+            top: 64px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            z-index: -1;
+
+            @include min-responsive($w-lg) {
+                position: relative;
+                top: 103px;
+            }
         }
 
         &::before,
         &::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            filter: blur(150px);
+            filter: blur(50px);
             border-radius: 687px;
+            width: 220px;
+            height: 375px;
+            top: 0;
 
-            @include min-responsive($w-md) {
+            @include min-responsive($w-lg) {
                 width: 687px;
                 height: 552px;
+                filter: blur(150px);
+                top: unset;
+                bottom: 0;
             }
         }
 

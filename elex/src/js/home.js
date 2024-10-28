@@ -5,37 +5,51 @@ $(document).ready(function () {
         effect: "coverflow",
         grabCursor: false,
         loop: false,
-        speed: 300,
+        speed: 1000,
+        // autoplay: {
+        //     delay: 2000,
+        //     disableOnInteraction: true,
+        // },
         centeredSlides: true,
         centeredSlidesBounds: true,
         slidesPerView: "auto",
         loopFillGroupWithBlank: true,
         coverflowEffect: {
             rotate: 0, // Slide rotate in degrees
-            stretch: 490, // Stretch space between slides (in px)
-            depth: 490, // Depth offset in px (slides translate in Z axis)
+            stretch: 344, // Stretch space between slides (in px)
+            depth: 480, // Depth offset in px (slides translate in Z axis)
             modifier: 1, // Effect multipler
             scale: 1.28,
             slideShadows: false, // Enables slides shadows
         },
         parallax: true,
-        reverseDirection: true,
+        reverseDirection: false,
         navigation: {
             nextEl: ".hl-next",
             prevEl: ".hl-prev",
         },
         pagination: {
-            el: ".hl-pagination",
+            el: ".hl-pagination"
         },
         initialSlide: parseInt(totalHl),
-        // breakpoints: {
-        //     640: {
-        //         coverflowEffect: {
-        //             rotate: 1,
-        //             modifier: 1.5,
-        //         }
-        //     }
-        // }
+        breakpoints: {
+            370: {
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    stretch: 354,
+                }
+            },
+            640: {
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    stretch: 490,
+                    depth: 490,
+                },
+                pagination: {
+                    clickable: true
+                },
+            }
+        }
     });
 
     //slider published product
@@ -52,15 +66,26 @@ $(document).ready(function () {
         centeredSlides: true,
         centeredSlidesBounds: true,
         slidesPerView: "auto",
+        loopFillGroupWithBlank: true,
+        reverseDirection: true,
         coverflowEffect: {
             rotate: 0,
-            stretch: 342,
+            stretch: 310,
             depth: 40,
             modifier: 1,
             scale: .92,
             slideShadows: false,
         },
-        parallax: true
+        parallax: true,
+        breakpoints: {
+            360: {
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    stretch: 342,
+                    depth: 40,
+                }
+            }
+        }
     });
 
     //slider widget article

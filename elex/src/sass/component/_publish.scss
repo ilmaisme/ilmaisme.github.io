@@ -1,17 +1,28 @@
 .publish {
     position: relative;
-    margin-left: 22px;
     z-index: 1;
+
+    @include min-responsive($w-xl) {
+        margin-left: 22px;
+    }
 
     &Slide {
         width: 330px;
         max-height: 396px;
         overflow: hidden;
+
+        @include max-responsive($w-xm) {
+            width: 100%;
+        }
     }
 
     &Item {
         padding-left: 15px;
         padding-right: 15px;
+
+        @include max-responsive($w-xm) {
+            width: 290px;
+        }
     }
 
     &Img {

@@ -1,1 +1,42 @@
-<footer></footer>
+<footer class="footer">
+    <a href="index.html" class="center-flex">
+        <img src="./asset/images/logo-elex.svg" alt="Elex Media Komputindo" loading="lazy" width="92" height="56">
+    </a>
+    <div class="footerSocmed center-flex">
+        <div class="socmedList">
+
+            {{>socmed channel=socmed.Footer width="32" height="32" images=true lazy=true}}
+
+        </div>
+    </div>
+
+    {{>footer/contact}}
+
+    <div class="footerMenu">
+        <ul class="footerList center-flex">
+
+            {{#each footerMenu}}
+            <li class="footerItem">
+                <a href="{{link}}" class="footerLink">:: {{title}}</a>
+            </li>
+            {{/each}}
+
+        </ul>
+    </div>
+    <div class="footerBottom">
+        <div class="footerCopy">&copy; 2024 Elex Media Komputindo</div>
+
+        <div class="footerMenu">
+            <ul class="footerList center-flex --copy">
+
+                {{#each copyrightMenu}}
+                <li class="footerItem">
+                    <a href="{{link}}" class="footerLink">{{title}}</a>
+                </li>
+                {{/each}}
+
+            </ul>
+        </div>
+
+    </div>
+</footer>
