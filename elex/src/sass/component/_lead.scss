@@ -1,0 +1,70 @@
+.lead {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #F2F2F2;
+    height: 250px;
+
+    &.--small {
+        height: 150px;
+    }
+
+    &Content {
+        position: relative;
+        padding-left: 0;
+        padding-right: 0;
+        z-index: 1;
+
+        @include min-responsive($w-xl) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    &Caption {
+        @include font-pack($font-mbold, 26px, $font-weight-mbold, false, false);
+        letter-spacing: 0.84px;
+
+        @include min-responsive($w-md) {
+            font-size: 42px
+        }
+    }
+
+    &Text {
+        @include font-pack(false, 14px, false, 1.21, #616161);
+        letter-spacing: 0.28px;
+    }
+
+    &Bg {
+        img {
+            object-fit: cover;
+        }
+
+        .--left {
+            width: 210px;
+            height: 200px;
+            object-position: top right;
+            filter: invert(98%) sepia(0%) saturate(6251%) hue-rotate(172deg) brightness(123%) contrast(96%);
+
+            @include min-responsive($w-lg) {
+                top: -17px;
+                bottom: unset;
+                width: 536px;
+                height: 367px;
+            }
+        }
+
+        .--right {
+            width: 60px;
+            height: 250px;
+            object-position: left top;
+            filter: invert(86%) sepia(96%) saturate(3647%) hue-rotate(184deg) brightness(134%) contrast(81%);
+
+            @include min-responsive($w-lg) {
+                width: 365px;
+                right: -125px;
+            }
+        }
+    }
+}

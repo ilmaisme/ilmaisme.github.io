@@ -1,0 +1,64 @@
+.faq {
+    .lead {
+        &Caption {
+            color: #563D18;
+        }
+    }
+
+    &List {
+        margin-top: 45px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &Item{
+        margin-top: 20px
+    }
+
+    &Trig {
+        @include display-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        text-align: left;
+        letter-spacing: 0.36px;
+
+        .icoChevron {
+            @extend %icoChevron;
+            width: 24px;
+            height: 24px;
+            transition: transform 0.4s ease;
+            margin-left: 10px;
+            flex-shrink: 0;
+            transform: rotate(90deg);
+
+            &::before {
+                content: none;
+            }
+
+            &::after {
+                color: #838383;
+                top: 8px;
+            }
+        }
+
+        &.active {
+            .icoChevron {
+                transform: rotate(270deg);
+            }
+        }
+    }
+
+    &Wrap {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .4s linear;
+        will-change: max-height;
+    }
+
+    &Content {
+        margin-top: 11px;
+        @include font-pack(false, 16px, false, 1.43, false);
+        letter-spacing: 0.32px;
+    }
+}

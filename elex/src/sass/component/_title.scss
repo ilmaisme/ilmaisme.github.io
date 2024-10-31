@@ -1,5 +1,5 @@
 .title {
-    @include font-pack($font-sbold, 24px, $font-weight-sbold, false, false);
+    @include font-pack($font-mbold, 24px, $font-weight-mbold, false, false);
     letter-spacing: 0.64px;
 
     @include min-responsive($w-md) {
@@ -23,8 +23,12 @@
 
     &Link {
         flex-shrink: 0;
-        @include font-pack($font-mbold, false, $font-weight-mbold, false, #838383);
+        @include font-pack(false, false, false, false, #838383);
         letter-spacing: 0.14px;
+
+        &:hover {
+            color: $cl-red
+        }
     }
 
     &H3 {

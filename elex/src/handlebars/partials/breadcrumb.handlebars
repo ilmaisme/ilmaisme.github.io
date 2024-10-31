@@ -1,0 +1,34 @@
+<ul class="breadcrumb">
+    <li class="breadcrumbItem">
+        <a href="index.html" class="breadcrumbLink">
+            <img class="breadcrumbIcon" src="./asset/images/icon/ico-home.png" alt="" width="18" height="18">Beranda
+        </a>
+    </li>
+    {{#if parent}}
+    <li class="breadcrumbItem">
+        {{#if parentlink}}
+        <a href="{{parentlink}}" class="breadcrumbLink">{{parent}}</a>
+        {{else}}
+        <div class="breadcrumbLink">{{parent}}</div>
+        {{/if}}
+    </li>
+    {{/if}}
+    {{#if child}}
+    <li class="breadcrumbItem">
+        {{#if childlink}}
+        <a href="{{childlink}}" class="breadcrumbLink">{{child}}</a>
+        {{else}}
+        <div class="breadcrumbLink">{{child}}</div>
+        {{/if}}
+    </li>
+    {{/if}}
+    {{#if child2}}
+    <li class="breadcrumbItem">
+        {{#if childlink2}}
+        <a href="{{childlink2}}" class="breadcrumbLink">{{child2}}</a>
+        {{else}}
+        <div class="breadcrumbLink">{{child2}}</div>
+        {{/if}}
+    </li>
+    {{/if}}
+</ul>

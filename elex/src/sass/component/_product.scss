@@ -1,4 +1,75 @@
 .product {
+    &Card {
+        width: calc(100%/2);
+        flex-grow: 0;
+        margin-top: 16px;
+        height: inherit;
+        padding-left: var(--gap-product);
+        padding-right: var(--gap-product);
+
+        @include min-responsive($w-md) {
+            margin-top: 29px;
+        }
+
+        &__wrap {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &__list {
+            --gap-product: 8px;
+            margin-left: calc(var(--gap-product) - var(--gap-product)*2);
+            margin-right: calc(var(--gap-product) - var(--gap-product)*2);
+            justify-content: center;
+
+            @include max-responsive($w-xm) {
+                --gap-product: 4px;
+            }
+
+            @include min-responsive($w-md) {
+                --gap-product: 12px;
+            }
+
+            .buttonPrimary {
+                @include max-responsive($w-xm) {
+                    padding: 9px 14px 9px 6px;
+                }
+
+                .icoMore {
+                    @include max-responsive($w-xm) {
+                        right: 12px;
+                    }
+                }
+            }
+        }
+
+        .productLink {
+            position: relative;
+            width: 160px;
+            margin: auto;
+            padding: 9px 7px 55px;
+            border-radius: 7px;
+            background: $cl-white;
+            box-shadow: 0px 0px 18.619px 0px rgba(0, 0, 0, 0.11);
+            height: 100%;
+
+            @include max-responsive($w-xm) {
+                width: 140px;
+            }
+
+            @include min-responsive($w-md) {
+                width: 174px;
+            }
+        }
+
+        .productCta {
+            position: absolute;
+            width: calc(100% - 14px);
+            bottom: 9px;
+            left: 7px;
+        }
+    }
+
     &Link {
         display: block;
         width: 100%;
@@ -56,48 +127,13 @@
         letter-spacing: 0.28px;
     }
 
-    &Lead {
-        margin-top: 18px;
-        @include title_clamp(2);
-        @include font-pack(false, false, false, 1.21, #616161);
-        letter-spacing: 0.28px;
-    }
-
     &Arrow {
         top: 65%;
     }
 
-    &Disc {
-        position: absolute;
-        top: 10px;
-        left: -14px;
-        @include font-pack($font-sbold, 15px, $font-weight-sbold, false, $cl-white);
-        letter-spacing: 0.3px;
-        z-index: 1;
-
-        span {
-            display: block;
-            position: relative;
-            padding: 8px 17px;
-            background: $cl-red;
-            border-bottom-right-radius: 25px;
-            z-index: 1;
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            left: -14px;
-            bottom: -15px;
-            z-index: 0;
-            border: 15px solid transparent;
-            border-right-color: #741114;
-        }
-    }
-
     &Label {
         margin-top: 10px;
-        @include font-pack($font-mbold, false, $font-weight-mbold, false, #ED1C24);
+        @include font-pack($font-mbold, false, $font-weight-mbold, false, $cl-red);
         letter-spacing: 0.28px;
     }
 
@@ -107,7 +143,7 @@
         top: 0;
         z-index: 1;
         background: #F8861E;
-        @include font-pack($font-bold, 13px, $font-weight-bold, false, $cl-white);
+        // @include font-pack($font-bold, 13px, $font-weight-bold, false, $cl-white);
         letter-spacing: 0.391px;
         text-transform: uppercase;
 
@@ -126,7 +162,7 @@
         .button {
             ~.button {
                 flex: 1;
-                margin-left: 10px
+                margin-left: 5px
             }
         }
     }
@@ -134,8 +170,17 @@
     &Wish {
         .icoWishlist {
             @extend .icoWishlist;
+            width: 23px;
+            height: 23px;
             display: block;
+            background-size: 30px;
             filter: invert(40%) sepia(0%) saturate(0%) hue-rotate(334deg) brightness(90%) contrast(84%);
+
+            @include min-responsive($w-md) {
+                width: 37px;
+                height: 37px;
+                background-size: 37px;
+            }
         }
     }
 }

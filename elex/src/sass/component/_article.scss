@@ -205,6 +205,7 @@
         }
 
         .artItem {
+            margin-top: 13px;
             padding-left: var(--widget-gap);
             padding-right: var(--widget-gap);
         }
@@ -221,6 +222,25 @@
             width: 100%;
             padding-top: 60%;
             margin-right: 0;
+            min-height: unset;
+        }
+    }
+
+    &Row {
+        .artTitle {
+            -webkit-line-clamp: 2;
+
+            @include min-responsive($w-md) {
+                -webkit-line-clamp: 3;
+            }
+        }
+
+        .artImg {
+            width: 110px;
+
+            @include min-responsive($w-md) {
+                width: 184px;
+            }
         }
     }
 
@@ -277,7 +297,7 @@
     }
 
     &Item {
-        margin-top: 13px
+        margin-top: 15px
     }
 
     &Link {
@@ -294,7 +314,8 @@
         position: relative;
         margin-right: 10px;
         width: 184px;
-        padding-top: 54.321%;
+        min-height: 110px;
+        padding-top: 13.096%;
         flex-shrink: 0;
         align-self: flex-start;
 
@@ -330,7 +351,7 @@
 
     &Label {
         margin-top: 4px;
-        @include font-pack($font-mbold, false, $font-weight-mbold, false, #ED1C24);
+        @include font-pack($font-mbold, false, $font-weight-mbold, false, $cl-red);
         letter-spacing: 0.28px;
     }
 
@@ -342,8 +363,11 @@
             margin-right: 20px;
         }
 
-        .titleLink {
-            align-self: flex-end;
+        ~.titleLink {
+
+            &:hover {
+                color: $cl-red
+            }
         }
 
         .titleLead {
@@ -359,6 +383,32 @@
 
         @include min-responsive($w-md) {
             flex-direction: row;
+        }
+    }
+
+    &icle {
+        p {
+            margin-top: 11px;
+            margin-bottom: 11px;
+        }
+
+        ul,
+        ol {
+            padding-left: 20px;
+            margin-top: 11px;
+            margin-bottom: 11px;
+        }
+
+        ul {
+            list-style-type: disc;
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+
+        a {
+            color: $cl-red;
         }
     }
 }

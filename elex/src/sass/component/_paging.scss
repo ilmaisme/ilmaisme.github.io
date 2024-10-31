@@ -1,0 +1,76 @@
+.paging {
+    margin-top: 30px;
+    @include font-pack(false, 13px, false, 1.23, #222);
+
+    &Input {
+        padding: 8px 10px 9px;
+        width: 54px;
+        margin-left: 5px;
+        margin-right: 5px;
+        appearance: none;
+        border-radius: 7px;
+        border: 1px solid #D4D3D3;
+        background: #FCFCFC;
+        overflow: hidden;
+        font-size: 16px;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &Page {
+        margin-left: 5px;
+        margin-right: 5px;
+
+        @include max-responsive($w-xm) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    &Cta {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 10px;
+        border-radius: 7px;
+        background: $cl-red;
+        color: $cl-white;
+
+        .icoChevron {
+            @extend %icoChevron;
+            width: 16px;
+            height: 16px;
+        }
+
+        &.--prev {
+            .icoChevron {
+
+                &::before {
+                    top: 4px;
+                    left: 4px;
+                }
+                &::after {
+                    content: none;
+                }
+            }
+        }
+
+        &.--next {
+            .icoChevron {
+                &::before {
+                    content: none;
+                }
+
+                &::after {
+                    top: 4px;
+                    left: 2px;
+                }
+            }
+        }
+
+        &.disabled {
+            background: #C5C8E4;
+            pointer-events: none;
+        }
+    }
+}

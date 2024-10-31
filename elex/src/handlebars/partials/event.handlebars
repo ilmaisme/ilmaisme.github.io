@@ -14,9 +14,11 @@
             <div class="eventTitle titleH4">{{title}}</div>
             {{/if}}
             {{#if label}}
-            <div
-                class="eventLabel{{#eq label compare='Past Event'}} -past{{/eq}}{{#eq label compare='On Going'}} -going{{/eq}}">
-                {{label}}</div>
+            <div class="eventLabel">
+                {{label}}
+                <span
+                    class="eventTag{{#eq tag compare='Past Event'}} -past{{/eq}}{{#eq tag compare='On Going'}} -going{{/eq}}">{{tag}}</span>
+            </div>
             {{/if}}
             <div class="eventLead">{{lead}}</div>
             <div class="eventAttr eventDates"><span class="ico icoCal"></span>{{dates}}</div>

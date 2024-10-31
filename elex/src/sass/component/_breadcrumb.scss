@@ -1,0 +1,47 @@
+.breadcrumb {
+    @include display-flex;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+
+    &Item {
+        position: relative;
+        margin-top: 10px;
+        padding-right: 13px;
+        margin-right: 8px;
+        line-height: 0;
+
+        &::after {
+            content: '/';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            color: #838383;
+            line-height: 1;
+        }
+
+        &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+
+            &::after {
+                content: none;
+            }
+
+            .breadcrumbLink {
+                color: #838383
+            }
+        }
+    }
+
+    &Link {
+        @include font-pack(false, 13px, false, 1.23, $cl-red);
+    }
+
+    &Icon{
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+}

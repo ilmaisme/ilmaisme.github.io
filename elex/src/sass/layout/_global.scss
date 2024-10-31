@@ -158,6 +158,10 @@ hr {
     margin-bottom: 10px;
 }
 
+strong{
+    @include font-pack($font-mbold, false, $font-weight-mbold, false, false);
+}
+
 .hidden {
     opacity: 0;
     visibility: hidden;
@@ -193,4 +197,22 @@ hr {
 .home~.footer {
     margin-top: 0;
     border-top: 0;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leftbar {
+    @include min-responsive($w-xl) {
+        flex: 0 0 870px;
+    }
+}
+
+.sidebar {
+    @include min-responsive($w-xl) {
+        flex: 0 0 360px;
+        max-width: 360px;
+    }
 }
