@@ -11,6 +11,12 @@
             position: relative;
             padding: 9px 32px 9px 20px;
         }
+
+        &.disabled {
+            border: 1px solid #C5C8E4;
+            background: #C5C8E4;
+            pointer-events: none;
+        }
     }
 
     &Arrow {
@@ -31,5 +37,53 @@
         position: absolute;
         top: calc(50% - 8px/2);
         right: 20px;
+    }
+}
+
+%button {
+    &Close {
+        position: absolute;
+        line-height: 0;
+        z-index: 1;
+
+        .icoClose {
+            @extend %icoClose
+        }
+    }
+
+    &Clear {
+        @extend %buttonClose;
+        width: 24px;
+        height: 24px;
+        right: 20px;
+        top: 12px;
+        display: none;
+
+        &:hover {
+            .icoClose {
+
+                &::before,
+                &::after {
+                    background: $cl-red;
+                }
+            }
+        }
+
+        &.active {
+            display: block;
+        }
+
+        .icoClose {
+            width: 24px;
+            height: 24px;
+
+            &::before,
+            &::after {
+                width: 16px;
+                height: 2px;
+                top: 10px;
+                left: 4px;
+            }
+        }
     }
 }

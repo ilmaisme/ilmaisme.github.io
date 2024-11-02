@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page=""}}
+
+<body>
+    {{!> header/header login=true}}
+    {{> header/header}}
+    <main class="main contact" role="main">
+
+        <div class="container">
+
+            {{>breadcrumb parent="Kontak Kami"}}
+
+        </div>
+        <div class="lead">
+            <div class="leadBg artBg">
+                <img class="--left" src="./asset/images/logo-symbol.svg" alt="" width="225" height="155">
+                <img class="--right" src="./asset/images/logo-symbol.svg" alt="" width="225" height="155">
+            </div>
+            <div class="container">
+                <div class="leadContent col-xl-10 mx-auto">
+                    <h1 class="leadCaption">Contact Us</h1>
+                    <h2 class="leadText">Tell me what you need by fill the form below here</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container mt40">
+            <div class="row">
+                <div class="contactForm col-md-8 col-lg-6 col-xl-7">
+                    <form action="#" class="form">
+                        <div class="formRow row">
+                            <div class="formCol col">
+                                <label class="formLabel" for="uname">Full Name</label>
+                                <input type="text" class="formInput" name="uname" id="uname" placeholder="Your name">
+                            </div>
+                        </div>
+                        <div class="formRow row">
+                            <div class="formCol col">
+                                <label class="formLabel" for="mail">Email Address</label>
+                                <input type="email" class="formInput" name="mail" id="mail"
+                                    placeholder="me@awesome.com">
+                            </div>
+                        </div>
+                        <div class="formRow row">
+                            <div class="formCol col">
+                                <label class="formLabel" for="phone">Phone Number</label>
+                                <input type="text" class="formInput" name="phone" id="phone" placeholder="+62"
+                                    inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="formRow row">
+                            <div class="formCol col">
+                                <label class="formLabel" for="division">Division</label>
+                                <div class="formSelect selectDrop">
+                                    <select name="division" id="division">
+                                        <option value="" disabled selected>Choose division</option>
+                                        {{#each contactDivision}}
+                                        <option value="{{@index}}">{{title}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formRow row">
+                            <div class="formCol col">
+                                <label class="formLabel" for="issue">Tell me your issue</label>
+                                <textarea class="formInput formArea" placeholder="Input text here" name="issue"
+                                    id="issue" rows="6"></textarea>
+                            </div>
+                        </div>
+                        <div class="formRow">
+                            <div class="formCol">
+                                <button type="submit" class="button buttonPrimary -icon">Submit Message<span
+                                        class="ico icoMore"></span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="contactMap col-lg-6 col-xl-5">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3975286773266!2d106.79277591151916!3d-6.211185960815537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6bbe22382cd%3A0x77db1a891225d451!2sKompas%20Gramedia%20Palmerah!5e0!3m2!1sen!2sid!4v1727637008021!5m2!1sen!2sid"
+                        width="500" height="500" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js}}
+
+</body>
+
+</html>

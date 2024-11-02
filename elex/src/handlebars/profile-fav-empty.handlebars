@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="profile"}}
+
+<body>
+    {{!> header/header login=true}}
+    {{> header/header}}
+    <main class="main profile" role="main">
+
+        <div class="container">
+
+            {{>breadcrumb parent="Profile"}}
+
+        </div>
+        <div class="lead">
+            <div class="leadBg artBg">
+                <img class="--left" src="./asset/images/logo-symbol.svg" alt="" width="225" height="155">
+                <img class="--right" src="./asset/images/logo-symbol.svg" alt="" width="225" height="155">
+            </div>
+            <div class="container">
+                <div class="leadContent profileUser center-flex col-xl-10 mx-auto">
+                    <form action="#">
+                        <div class="profileUpload center-flex upload-box">
+                            <button class="button profileUpload__btn" aria-label="Upload Image">
+                                <img src="./asset/images/user.jpg" alt="" width="100" height="100">
+                            </button>
+                            <img src="./asset/images/user-upload.png" alt="" width="30" height="30"
+                                class="profileUpload__icon">
+                            <input type="file" class="profileUpload__input image-upload" id="uploadImg" name="uploadImg"
+                                accept="image/*">
+                            <div class="profileUpload__img image-preview">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="profileUser__misc">Welcome,</div>
+                    <h1 class="profileUser__name">Fulan bin fulan</h1>
+                    <button class="button profileLogout">Logout</button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            {{>profile/menu fav=true}}
+
+            <div class="profileEmpty mt40">
+                <img src="./asset/images/empty-favorite.png" alt="" width="262" height="190">
+                <h3 class="titleH4">Wah, kamu belum punya buku favorit ya?</h3>
+                <div class="center-flex">
+                    <a href="#" class="button buttonPrimary -icon">Lihat Buku Disini Yuk <span class="ico icoMore"></span></a>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{> footer/footer}}
+
+    {{> js page="profile"}}
+
+</body>
+
+</html>

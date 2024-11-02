@@ -1,0 +1,365 @@
+.careers {
+
+    &Wrap {
+        @include display-flex;
+        flex-direction: column;
+
+        @include min-responsive($w-md) {
+            flex-direction: row;
+        }
+    }
+
+    &Posting {
+        padding: 20px;
+        border-radius: 7px;
+        border: 1px solid #ACACAC;
+        background: $cl-white;
+
+        &Wrap {
+            width: 100%;
+            margin-top: 34px;
+            padding-right: 10px;
+            padding-bottom: 5px;
+            overflow-x: hidden;
+            @include scroll(4px, #D6D6D6, transparent);
+
+            @include min-responsive($w-md) {
+                width: 314px;
+                max-height: 75vh;
+                overflow-y: auto;
+            }
+        }
+    }
+
+    &Card {
+        @include display-flex;
+        width: 100%;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        text-align: left;
+        border-bottom: 1px solid #E7E7E7;
+
+        @include min-responsive($w-lg) {
+            align-items: center;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &.active {
+            .careersCardContent {
+                padding-left: 15px;
+                border-left: 2px solid $cl-red;
+            }
+        }
+
+        &Content {
+            flex: 1;
+            transition: padding .2s ease;
+        }
+
+        &Info {
+            margin-top: 5px;
+            @include display-flex;
+            align-items: center;
+            @include font-pack($font-base, 14px, $font-weight-normal, false, false);
+            letter-spacing: 0.7px;
+
+            .ico {
+                margin-right: 10px;
+                width: 18px;
+                height: 18px;
+                filter: invert(17%) sepia(7%) saturate(464%) hue-rotate(191deg) brightness(97%) contrast(89%);
+            }
+        }
+
+        &Company {
+            margin-top: 5px;
+            @include font-pack($font-mbold, 16px, $font-weight-mbold, 1.33, #616161);
+        }
+
+        &Role {
+            @include font-pack($font-mbold, 18px, $font-weight-mbold, 1, #202020);
+            letter-spacing: 0.44px;
+        }
+
+        &Data {
+            display: none;
+        }
+    }
+
+    &Det {
+        padding-top: 14px;
+        padding-bottom: 14px;
+        border-radius: 15px;
+        min-height: 100%;
+
+        &Wrap {
+            position: absolute;
+            padding-left: 15px;
+            padding-right: 15px;
+            left: 0;
+            top: 74px;
+            display: none;
+            flex: 1;
+            height: 100%;
+            @include scroll(4px, #D6D6D6, transparent);
+            background: $cl-white;
+            z-index: 1;
+
+            @include min-responsive($w-md) {
+                position: relative;
+                top: unset;
+                margin-top: 34px;
+                margin-left: 30px;
+                max-height: 75vh;
+                overflow-y: auto;
+                overflow-x: hidden;
+                padding-left: 0;
+                padding-right: 10px;
+                display: block;
+                height: inherit;
+            }
+
+            &.active {
+                display: block;
+            }
+        }
+
+        &Info {
+            margin-top: 10px;
+            @include display-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            @include font-pack(false, 15px, false, 1.46, #606060);
+
+            .ico {
+                vertical-align: middle;
+                margin-right: 10px;
+                width: 24px;
+                height: 24px;
+                filter: invert(21%) sepia(10%) saturate(300%) hue-rotate(190deg) brightness(88%) contrast(94%);
+            }
+        }
+
+        &Role {
+            @include font-pack($font-mbold, 24px, $font-weight-mbold, 1.23, #333438);
+
+            @include min-responsive($w-md) {
+                font-size: 26px
+            }
+        }
+
+        &Loc {
+            margin-right: 30px;
+        }
+    }
+
+    &Deadline {
+        margin-top: 10px;
+        color: #1373E3;
+
+        .icoInfo {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            vertical-align: middle;
+            @extend .ico;
+            @extend %icoInfo;
+            filter: invert(38%) sepia(60%) saturate(4104%) hue-rotate(200deg) brightness(91%) contrast(94%);
+        }
+    }
+
+    &Cta {
+        display: inline-block;
+        margin-top: 18px;
+
+        &Txt {
+            margin-left: 5px;
+            position: relative;
+
+            &::after {
+                position: relative;
+                display: inline-block;
+                margin-left: 10px;
+                width: 16px;
+                height: 16px;
+                content: '';
+                @extend .ico;
+                @extend %icoLink;
+                background-size: contain;
+                filter: invert(100%) sepia(0%) saturate(7435%) hue-rotate(160deg) brightness(114%) contrast(98%);
+            }
+        }
+    }
+
+    &Content {
+        word-wrap: break-word;
+        margin-top: 20px;
+        @include font-pack($font-base, 15px, $font-weight-normal, 1.43, #616161);
+        letter-spacing: 0.32px;
+
+
+        h3 {
+            margin-top: 20px;
+            @include font-pack($font-mbold, 16px, $font-weight-mbold, false, false);
+        }
+
+        h4 {
+            margin-top: 10px;
+        }
+
+        hr {
+            margin-top: 20px;
+            border: 1px solid #D6D6D6;
+        }
+
+        ul {
+            margin-top: 5px;
+            list-style-type: disc;
+            padding-left: 18px;
+
+            &:has(li img) {
+                list-style-type: none;
+                padding-left: 0;
+
+                li {
+                    @include display-flex;
+                    align-items: center;
+                    gap: 6px;
+                }
+            }
+        }
+    }
+
+    &Sort {
+        margin-top: 20px;
+        @include font-pack(false, 15px, false, false, #202020);
+        letter-spacing: 0.75px;
+
+        &__item {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+
+            label {
+                min-width: 60px;
+
+                @include min-responsive($w-md) {
+                    min-width: unset;
+                }
+            }
+        }
+
+        .selectDrop {
+            flex: 1;
+            margin-left: 12px;
+            font-size: 15px;
+
+            .styledSelect {
+                padding: 10px 38px 10px 10px;
+
+                &:after {
+                    width: 7px;
+                    height: 7px;
+                    right: 18px;
+                    top: 12px;
+                }
+            }
+        }
+    }
+
+    &Popup {
+        --gap-form: 10px;
+        width: calc(100% - 30px);
+        max-height: calc(100vh - 60px);
+        padding: 30px 20px;
+        border-radius: 7px;
+        background: #fcfcfc;
+        overflow: auto;
+
+        @include min-responsive($w-md) {
+            width: 688px;
+            padding: 30px 40px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .required,
+        .error {
+            color: $cl-red;
+            font-size: 12px;
+        }
+
+        .buttonClose {
+            top: 30px;
+            right: 20px;
+
+            @include min-responsive($w-md) {
+                right: 40px;
+            }
+
+            &:hover {
+
+                .icoClose::before,
+                .icoClose::after {
+                    background: false;
+                }
+            }
+
+            .icoClose {
+                width: 22px;
+                height: 22px;
+
+                &::before,
+                &::after {
+                    width: 22px;
+                    height: 2px;
+                    top: 10px;
+                    left: 0;
+                }
+            }
+        }
+
+        .formCol:has([type=submit]) {
+            @include display-flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &Back {
+        @include display-flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        @include min-responsive($w-md) {
+            display: none;
+        }
+
+        .icoArrow {
+            flex-shrink: 0;
+            margin-right: 5px;
+            width: 24px;
+            height: 24px;
+            transform: rotate(180deg);
+            @extend %icoArrow
+        }
+    }
+
+    .icoJob {
+        &-loc {
+            background-size: contain;
+            background-position: center;
+            @extend %icoJob-loc
+        }
+
+        &-type {
+            background-size: contain;
+            background-position: center;
+            @extend %icoJob-type
+        }
+    }
+}

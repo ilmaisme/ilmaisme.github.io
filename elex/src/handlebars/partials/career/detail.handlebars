@@ -1,0 +1,41 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="careersDet">
+    <button class="button careersBack titleLead" onclick="removeActiveCareer()" aria-label="Back to Career List">
+        <span class="ico icoArrow"></span>Kembali</button>
+    <h2 class="careersDetRole">{{role}}</h2>
+    <div class="careersDetInfo">
+        <div class="careersDetLoc">
+            <span class="ico icoJob-loc"></span>
+            <span class="careersDetLocTxt">{{loc}}</span>
+        </div>
+        <div class="careersDetType">
+            <span class="ico icoJob-type"></span>
+            <span class="careersDetLocType">{{type}}</span>
+        </div>
+    </div>
+    <div class="careersDeadline">
+        <span class="ico icoInfo"></span>
+        Apply before <span class="careersDeadlineDate">31 Februari</span>
+    </div>
+    <div class="careersCtaWrap">
+        {{#if link}}
+        <a href="#" target="_blank" rel="noopener noreferrer" class="careersCta buttonPrimary buttonPrimary--icon">
+            Apply<span class="careersCtaTxt">in Kalibrr</span>
+        </a>
+        {{else}}
+        <button class="careersCta button buttonPrimary disabled" onclick="triggerActiveButton('.-pCareer')">Applied</button>
+        {{/if}}
+    </div>
+    <div class="careersContent careersDetContent">
+
+        {{{content}}}
+
+    </div>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

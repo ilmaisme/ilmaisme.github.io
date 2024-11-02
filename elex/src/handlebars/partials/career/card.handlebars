@@ -1,0 +1,29 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<button class="button careersCard{{#eq @index compare=0}} active{{/eq}} -careersTrig" data-cat="{{type}}">
+    <div class="careersCardContent">
+        <div class="careersCardRole">{{role}}</div>
+        <div class="careersCardCompany">{{company}}</div>
+        <div class="careersCardInfo careersCardLoc"><span class="ico icoJob-loc"></span>{{loc}}
+        </div>
+        <div class="careersCardInfo careersCardType"><span class="ico icoJob-type"></span>{{type}}
+        </div>
+    </div>
+    <div class="careersCardData">
+        <div class="careersDeadline">31 Februari</div>
+        {{#if link}}
+        <div class="careersLink" data-link="in Kalibrr">{{link}}</div>
+        {{/if}}
+        <div class="careersContent">
+            
+            {{{content}}}
+            
+        </div>
+    </div>
+</button>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

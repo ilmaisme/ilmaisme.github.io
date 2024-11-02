@@ -1,0 +1,190 @@
+.profile {
+    &User {
+        flex-direction: column;
+
+        &__misc {
+            margin-top: 12px;
+            text-transform: uppercase;
+            @include font-pack($font-mbold, 18px, $font-weight-mbold, false, #333333);
+
+            @include min-responsive($w-xl) {
+                font-size: 20px;
+            }
+        }
+
+        &__name {
+            @include title_clamp(1);
+            text-align: center;
+            margin-top: 7px;
+            margin-bottom: 7px;
+            @include font-pack($font-base, 24px, $font-weight-normal, false, #333333);
+
+            @include min-responsive($w-xl) {
+                font-size: 40px;
+            }
+        }
+    }
+
+    &Upload {
+        position: relative;
+        flex-direction: column;
+        z-index: 0;
+
+        &__icon {
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 2;
+            box-shadow: 2px 2px 3px rgba(159, 159, 159, 0.20);
+        }
+
+        &__img {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            background-size: cover;
+            background-position: 50%;
+            border-radius: 7px;
+        }
+
+        &__btn {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border: 0;
+            border-radius: 7px;
+            overflow: hidden;
+
+            img {
+                @extend %template-img;
+                border-radius: 7px;
+                overflow: hidden;
+                z-index: unset;
+            }
+        }
+
+        &__input {
+            opacity: 0;
+            top: 0;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            z-index: 1;
+            cursor: pointer;
+        }
+    }
+
+    &Logout {
+        @include font-pack(false, 16px, false, false, $cl-red);
+
+        @include min-responsive($w-xl) {
+            font-size: 18px;
+        }
+    }
+
+    &Menu {
+        margin-top: 25px;
+
+        &__item {
+            margin-left: 5px;
+            margin-right: 5px;
+
+            @include min-responsive($w-xl) {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &Link {
+        display: inline-block;
+        padding: 10px 14px;
+        background: $cl-white;
+        border: 1px solid #ACACAC;
+        border-radius: 7px;
+        letter-spacing: 0.32px;
+        text-align: center;
+        @include font-pack($font-base, 16px, $font-weight-normal, false, #838383);
+
+        @include min-responsive($w-xl) {
+            padding: 10px 20px;
+        }
+
+        &.active,
+        &:hover {
+            border: 1px solid $cl-red;
+            background: $cl-red;
+            color: $cl-white;
+        }
+    }
+
+    &Empty {
+        text-align: center;
+
+        .titleH4 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &Setting {
+        flex-direction: column;
+
+        &__title {
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            @include font-pack($font-mbold, 16px, $font-weight-mbold, false, #000000);
+        }
+
+        &__label {
+            @include font-pack($font-mbold, false, $font-weight-mbold, false, #333333);
+        }
+
+    }
+
+    &Form {
+        max-width: 360px;
+
+        &__wrap {
+            position: relative;
+        }
+
+        &__pass {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 22px;
+            right: 10px;
+            padding: 0;
+            background: url(../images/icon/ico-pass.png) no-repeat;
+            background-size: contain;
+
+            &::after {
+                content: "";
+                position: absolute;
+                border-top: 2px solid #676767;
+                top: 19px;
+                right: 9px;
+                filter: none;
+            }
+
+            &.show {
+                &::after {
+                    content: none;
+                }
+            }
+
+            &.disabled {
+                pointer-events: none;
+                filter: invert(56%) sepia(67%) saturate(0%) hue-rotate(224deg) brightness(85%) contrast(75%);
+            }
+
+            &~.formInput {
+                padding-right: 46px;
+            }
+        }
+    }
+}
