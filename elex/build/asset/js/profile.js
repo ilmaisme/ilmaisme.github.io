@@ -43,7 +43,7 @@ $(document).ready(function () {
     }
 
     //show hide password
-    $("#btnpass").click(function () {
+    $(".buttonPass").click(function () {
         let input = $($(this).attr("toggle"));
         if (input.attr("type") == "password") {
             input.attr("type", "text");
@@ -53,18 +53,4 @@ $(document).ready(function () {
             input.attr("type", "password");
         }
     });
-
-    //edit profile onclick enable form
-    $("#btnedit").click(function () {
-        $(this).html("Save")
-        $(".formInput").removeClass("disabled")
-        $("#btnpass").removeClass("disabled")
-        $("#btncancel").removeClass("hide")
-    })
-    $("#btncancel").click(function () {
-        $(this).addClass("hide")
-        $(".formInput").addClass("disabled")
-        $("#btnpass").addClass("disabled")
-        $("#btnedit").html("Edit Profile")
-    })
 })

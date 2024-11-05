@@ -12,15 +12,17 @@
             {{/if}}
         </div>
         <div class="productContent">
-            {{#if label}}
-            <div class="productLabel"> {{label}}</div>
-            {{/if}}
             {{#if ../tag}}
             <{{.. /tag}} class="productTitle">{{title}}</{{.. /tag}}>
             {{else}}
             <div class="productTitle">{{title}}</div>
             {{/if}}
-            <div class="productAuthor">{{author}}</div>
+            {{#if ../review}}
+            <div class="productTimestamp">2 jam lalu</div>
+            <div class="productLead">Tellus vitae blandit quam urna urna. Tempor pellentesque nec a, scelerisque. Elit
+                in lorem eget vitae. Ullamcorper faucibus urna ipsum ipsum nisi, malesuada. Vel eget placerat quis enim
+                fames.</div>
+            {{/if}}
             {{#if ../cta}}
             <div class="productCta">
                 <button class="button productWish" aria-label="favorite this product"
@@ -34,20 +36,6 @@
             {{/if}}
         </div>
     </a>
-    <div class="productCommerce">
-        <a href="#" class="productCommerce__link" target="_blank" rel="noopener noreferrer">
-            <img src="./asset/images/icon/ico-gramedia.png" alt="" width="20" height="20" loading="lazy">
-            <span>Gramedia.com</span>
-        </a>
-        <a href="#" class="productCommerce__link" target="_blank" rel="noopener noreferrer">
-            <img src="./asset/images/icon/ico-tokped.png" alt="" width="20" height="20" loading="lazy">
-            <span>Tokopedia.com</span>
-        </a>
-        <a href="#" class="productCommerce__link" target="_blank" rel="noopener noreferrer">
-            <img src="./asset/images/icon/ico-shopee.png" alt="" width="20" height="20" loading="lazy">
-            <span>Shopee.com</span>
-        </a>
-    </div>
 </div>
 {{/gte}}
 {{else}}

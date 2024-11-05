@@ -1,4 +1,6 @@
 .button {
+    color: $cl-primary-black;
+
     &Primary {
         border-radius: 7px;
         border: 1px solid $cl-red;
@@ -84,6 +86,70 @@
                 top: 10px;
                 left: 4px;
             }
+        }
+    }
+
+    &Full {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
+    &Secondary {
+        @extend %buttonFull;
+        border-radius: 7px;
+        border: 1px solid $cl-red;
+        padding: 9px 20px;
+        background: $cl-white;
+        @include font-pack($font-mbold, 18px, $font-weight-mbold, false, $cl-red);
+    }
+
+    &Submit {
+        @extend %buttonFull;
+        border-radius: 7px;
+        border: 1px solid #07A017;
+        padding: 9px 20px;
+        background: #07A017;
+        @include font-pack($font-mbold, 18px, $font-weight-mbold, false, $cl-white);
+    }
+
+    &Cancel {
+        @extend %buttonFull;
+        border-radius: 7px;
+        border: 1px solid #E7E7E7;
+        padding: 9px 20px;
+        background: #E7E7E7;
+        @include font-pack($font-mbold, 18px, $font-weight-mbold, false, #838383);
+    }
+
+    &Pass {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 36px;
+        right: 12px;
+        background: url(../images/icon/ico-pass.png) no-repeat;
+        background-size: contain;
+        z-index: 1;
+
+        &::after {
+            content: "";
+            position: absolute;
+            border-top: 2px solid #333333;
+            top: 12px;
+            right: 2px;
+            width: 22px;
+            transform: rotate(45deg);
+        }
+
+        &.show {
+            &::after {
+                content: none;
+            }
+        }
+
+        &~.formInput {
+            padding-right: 46px;
         }
     }
 }

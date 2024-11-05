@@ -27,7 +27,7 @@
     <!-- e:twitter card -->
 
     <link rel=icon type=image/png sizes=1x16 href="https://elexmedia.id/assets/img/favicon.png">
-    <link type="text/css" rel="stylesheet" href="./asset/css/style.min.css">
+    <link rel="stylesheet" href="./asset/css/style-profile.min.css" type="text/css">
     <link rel="preload" href="./asset/images/logo-elex-sm.svg" as="image" />
     <style>
         /*@font-face {
@@ -581,7 +581,7 @@
                 </div>
             </div>
         </div>
-    </div>    <main class="main search" role="main">
+    </div>    <main class="main profile" role="main">
 
         <div class="container">
 
@@ -592,7 +592,7 @@
                     </a>
                 </li>
                 <li class="breadcrumbItem">
-                    <div class="breadcrumbLink">Hasil Pencarian</div>
+                    <div class="breadcrumbLink">Profile</div>
                 </li>
             </ul>
         </div>
@@ -602,29 +602,126 @@
                 <img class="--right" src="./asset/images/logo-symbol.svg" alt="" width="225" height="155">
             </div>
             <div class="container">
-                <div class="leadContent col-xl-10 mx-auto">
-                    <h1 class="searchCaption titleH4">Hasil pencarian</h1>
+                <div class="leadContent profileUser center-flex col-xl-10 mx-auto">
                     <form action="#">
-                        <h2 class="searchForm">
-                            <input type="search" class="searchInput searchForm__result leadCaption" value="cara menjadi ninja"
-                                name="search" id="searchresult" aria-label="Search result"
-                                placeholder="Cari berdasarkan judul buku, penulis atau penerbit...">
-                            <button class="button searchForm__cta searchCta center-flex" type="submit"
-                                aria-label="search"><span class="ico icoSearch"></span></button>
-                        </h2>
+                        <div class="profileUpload center-flex upload-box">
+                            <button class="button profileUpload__btn" aria-label="Upload Image">
+                                <img src="./asset/images/user.jpg" alt="" width="100" height="100">
+                            </button>
+                            <img src="./asset/images/user-upload.png" alt="" width="30" height="30"
+                                class="profileUpload__icon">
+                            <input type="file" class="profileUpload__input image-upload" id="uploadImg" name="uploadImg"
+                                accept="image/*">
+                            <div class="profileUpload__img image-preview">
+                            </div>
+                        </div>
                     </form>
-                    <div class="leadTxt">Terdapat <span class="cl-red"><strong>0</strong></span> daftar produk yang
-                        mengandung frasa
-                        'cara menjadi ninja'</div>
+                    <div class="profileUser__misc">Welcome,</div>
+                    <h1 class="profileUser__name">Fulan bin fulan</h1>
+                    <button class="button profileLogout">Logout</button>
                 </div>
             </div>
         </div>
-        <div class="container mt40">
-            <div class="searchEmpty mx-auto">
-                <img src="./asset/images/empty-search.png" alt="" width="246" height="203">
-                <h3 class="titleH4">Maaf yah, kami tidak menemukan apa yang kamu cari.</h3>
-                <div class="center-flex">
-                    <a href="#" class="button buttonPrimary -icon">Lihat Buku Disini Yuk <span class="ico icoMore"></span></a>
+        <div class="container">
+
+            <ul class="profileMenu center-flex">
+                <li class="profileMenu__item">
+                    <a href="profile-fav.html" class="profileLink">My Favorites</a>
+                </li>
+                <li class="profileMenu__item">
+                    <a href="profile-review.html" class="profileLink active">My Reviews</a>
+                </li>
+                <li class="profileMenu__item">
+                    <a href="profile.html" class="profileLink">My Profile</a>
+                </li>
+            </ul>
+            <div class="profileReview productCard__wrap col-lg-9 col-xl-8 mx-auto mt40">
+                <div class="productCard__list row">
+                    <div class="productItem col">
+                        <a href="produk-detail.html" class="productLink --row">
+                            <div class="productImg">
+                                <img src="./asset/images/dummy/book/best/4.png" alt="" width="160" height="240" >
+                                <div class="productTag">New</div>
+                            </div>
+                            <div class="productContent">
+                                <h2 class="productTitle">07 Ghost #10</h2>
+                                <div class="productTimestamp">2 jam lalu</div>
+                                <div class="productLead">Tellus vitae blandit quam urna urna. Tempor pellentesque nec a, scelerisque. Elit
+                                    in lorem eget vitae. Ullamcorper faucibus urna ipsum ipsum nisi, malesuada. Vel eget placerat quis enim
+                                    fames.</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="productItem col">
+                        <a href="produk-detail.html" class="productLink --row">
+                            <div class="productImg">
+                                <img src="./asset/images/dummy/book/best/2.jpg" alt="" width="160" height="240" >
+                            </div>
+                            <div class="productContent">
+                                <h2 class="productTitle">100 Days Left!! 01</h2>
+                                <div class="productTimestamp">2 jam lalu</div>
+                                <div class="productLead">Tellus vitae blandit quam urna urna. Tempor pellentesque nec a, scelerisque. Elit
+                                    in lorem eget vitae. Ullamcorper faucibus urna ipsum ipsum nisi, malesuada. Vel eget placerat quis enim
+                                    fames.</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="productItem col">
+                        <a href="produk-detail.html" class="productLink --row">
+                            <div class="productImg">
+                                <img src="./asset/images/dummy/book/comic/0.jpg" alt="" width="160" height="240" >
+                            </div>
+                            <div class="productContent">
+                                <h2 class="productTitle">6 Trigger #2</h2>
+                                <div class="productTimestamp">2 jam lalu</div>
+                                <div class="productLead">Tellus vitae blandit quam urna urna. Tempor pellentesque nec a, scelerisque. Elit
+                                    in lorem eget vitae. Ullamcorper faucibus urna ipsum ipsum nisi, malesuada. Vel eget placerat quis enim
+                                    fames.</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="productItem col">
+                        <a href="produk-detail.html" class="productLink --row">
+                            <div class="productImg">
+                                <img src="./asset/images/dummy/book/comic/1.jpg" alt="" width="160" height="240" >
+                            </div>
+                            <div class="productContent">
+                                <h2 class="productTitle">7 Seeds #21</h2>
+                                <div class="productTimestamp">2 jam lalu</div>
+                                <div class="productLead">Tellus vitae blandit quam urna urna. Tempor pellentesque nec a, scelerisque. Elit
+                                    in lorem eget vitae. Ullamcorper faucibus urna ipsum ipsum nisi, malesuada. Vel eget placerat quis enim
+                                    fames.</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="productItem col">
+                        <a href="produk-detail.html" class="productLink --row">
+                            <div class="productImg">
+                                <img src="./asset/images/dummy/book/comic/2.jpg" alt="" width="160" height="240" >
+                                <div class="productTag">Hot Komik</div>
+                            </div>
+                            <div class="productContent">
+                                <h2 class="productTitle">A Couple of Cuckoos 01</h2>
+                                <div class="productTimestamp">2 jam lalu</div>
+                                <div class="productLead">Tellus vitae blandit quam urna urna. Tempor pellentesque nec a, scelerisque. Elit
+                                    in lorem eget vitae. Ullamcorper faucibus urna ipsum ipsum nisi, malesuada. Vel eget placerat quis enim
+                                    fames.</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="paging">
+                    <form action="#" class="center-flex">
+                        <input type="text" class="pagingInput text-center" name="paging" id="paging" inputmode="numeric" value="1">
+                        <div class="pagingPage">dari 20 halaman</div>
+                        <button class="button pagingCta --prev disabled" type="button" aria-label="Previous page">
+                            <span class="ico icoChevron --prev"></span>
+                        </button>
+                        <button class="button pagingCta --next" type="button" aria-label="Next page">
+                            <span class="ico icoChevron --next"></span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -716,6 +813,7 @@
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/custom-select.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/profile.min.js"></script>
 
 </body>
 

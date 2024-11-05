@@ -28,13 +28,26 @@ $(document).ready(function () {
             .addClass('active')
     });
 
-    //close menu
     $('body').click(function () {
+        //close menu
         $(this).removeClass('overlay');
         $('.menuBlock.desktop').removeClass('active');
+        $('.headerCateg__btn').removeClass('active');
+
+        //close product commerce        
+        $('.productCommerce').removeClass('active');
     });
     $('.menuBlock').click(function (e) {
         e.stopPropagation();
+    })
+    $('.headerCateg__btn').click(function (e) {
+        e.stopPropagation();
+        $(this).toggleClass("active")
+        if ($(this).hasClass("active")) {
+            $('body').addClass('overlay');
+        } else {
+            $('body').removeClass('overlay');
+        }
     })
 });
 
@@ -71,16 +84,37 @@ function updateMenu() {
 }
 
 //cta trigger active
-function triggerActiveButton(el, parent, classActive) {
-    elem = document.querySelector(el)
-    elActive = elem.classList.contains('active');
-    elem.classList.toggle('active');
-    if (!!parent) {
+function triggerActiveButton(el, parent, classActive, btn, target) {
+    if (!!el) {
+        //activated element
+        elem = document.querySelector(el)
+        elem.classList.toggle('active');
+    } else {
+        //activated this button
+        btn.classList.toggle('active');
+        //activated target based on parent
+        if (!!target) {
+            tg = btn.closest(parent).querySelector(target)
+            tg.classList.toggle('active');
+        }
+    }
+    if (!!classActive) {
+        //activated parent with class
+        elActive = elem.classList.contains('active');
         if (elActive == false) {
             parent.classList.add(classActive);
         } else {
             parent.classList.remove(classActive);
         }
+    }
+}
+//cta product
+function triggerCtaProduct(btn, parent, target) {
+    btn.classList.toggle('active');
+    if (!!target) {
+        tg = btn.closest(parent).querySelector(target)
+        tg.classList.toggle('active');
+        console.log(tg)
     }
 }
 

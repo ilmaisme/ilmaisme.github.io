@@ -27,7 +27,7 @@
     <!-- e:twitter card -->
 
     <link rel=icon type=image/png sizes=1x16 href="https://elexmedia.id/assets/img/favicon.png">
-    <link type="text/css" rel="stylesheet" href="./asset/css/style.min.css">
+    <link rel="stylesheet" href="./asset/css/style-profile.min.css" type="text/css">
     <link rel="preload" href="./asset/images/logo-elex-sm.svg" as="image" />
     <style>
         /*@font-face {
@@ -581,7 +581,7 @@
                 </div>
             </div>
         </div>
-    </div>    <main class="main search" role="main">
+    </div>    <main class="main profile" role="main">
 
         <div class="container">
 
@@ -592,7 +592,7 @@
                     </a>
                 </li>
                 <li class="breadcrumbItem">
-                    <div class="breadcrumbLink">Hasil Pencarian</div>
+                    <div class="breadcrumbLink">Profile</div>
                 </li>
             </ul>
         </div>
@@ -602,30 +602,82 @@
                 <img class="--right" src="./asset/images/logo-symbol.svg" alt="" width="225" height="155">
             </div>
             <div class="container">
-                <div class="leadContent col-xl-10 mx-auto">
-                    <h1 class="searchCaption titleH4">Hasil pencarian</h1>
+                <div class="leadContent profileUser center-flex col-xl-10 mx-auto">
                     <form action="#">
-                        <h2 class="searchForm">
-                            <input type="search" class="searchInput searchForm__result leadCaption" value="cara menjadi ninja"
-                                name="search" id="searchresult" aria-label="Search result"
-                                placeholder="Cari berdasarkan judul buku, penulis atau penerbit...">
-                            <button class="button searchForm__cta searchCta center-flex" type="submit"
-                                aria-label="search"><span class="ico icoSearch"></span></button>
-                        </h2>
+                        <div class="profileUpload center-flex upload-box">
+                            <button class="button profileUpload__btn" aria-label="Upload Image">
+                                <img src="./asset/images/user.jpg" alt="" width="100" height="100">
+                            </button>
+                            <img src="./asset/images/user-upload.png" alt="" width="30" height="30"
+                                class="profileUpload__icon">
+                            <input type="file" class="profileUpload__input image-upload" id="uploadImg" name="uploadImg"
+                                accept="image/*">
+                            <div class="profileUpload__img image-preview">
+                            </div>
+                        </div>
                     </form>
-                    <div class="leadTxt">Terdapat <span class="cl-red"><strong>0</strong></span> daftar produk yang
-                        mengandung frasa
-                        'cara menjadi ninja'</div>
+                    <div class="profileUser__misc">Welcome,</div>
+                    <h1 class="profileUser__name">Fulan bin fulan</h1>
+                    <button class="button profileLogout">Logout</button>
                 </div>
             </div>
         </div>
-        <div class="container mt40">
-            <div class="searchEmpty mx-auto">
-                <img src="./asset/images/empty-search.png" alt="" width="246" height="203">
-                <h3 class="titleH4">Maaf yah, kami tidak menemukan apa yang kamu cari.</h3>
-                <div class="center-flex">
-                    <a href="#" class="button buttonPrimary -icon">Lihat Buku Disini Yuk <span class="ico icoMore"></span></a>
-                </div>
+        <div class="container">
+
+            <ul class="profileMenu center-flex">
+                <li class="profileMenu__item">
+                    <a href="profile-fav.html" class="profileLink">My Favorites</a>
+                </li>
+                <li class="profileMenu__item">
+                    <a href="profile-review.html" class="profileLink">My Reviews</a>
+                </li>
+                <li class="profileMenu__item">
+                    <a href="profile.html" class="profileLink active">My Profile</a>
+                </li>
+            </ul>
+            <div class="profileSetting mx-auto mt40">
+                <h2 class="profileSetting__title">Edit Detail</h2>
+                <form action="#" class="form">
+                    <div class="formRow row">
+                        <div class="formCol col">
+                            <label class="formLabel" for="fname">First Name</label>
+                            <input type="text" class="formInput" value="Fulan" name="fname" id="fname" placeholder="Your first name">
+                        </div>
+                    </div>
+                    <div class="formRow row">
+                        <div class="formCol col">
+                            <label class="formLabel" for="lname">Last Name</label>
+                            <input type="text" class="formInput" value="Bin Fulan" name="lname" id="lname" placeholder="Your last name">
+                        </div>
+                    </div>
+                    <div class="formRow row">
+                        <div class="formCol col">
+                            <label class="formLabel" for="uname">Username</label>
+                            <input type="text" class="formInput" value="Fulanafulan" name="uname" id="uname" placeholder="Pick username">
+                        </div>
+                    </div>
+                    <div class="formRow row">
+                        <div class="formCol col">
+                            <label class="formLabel" for="mail">Email</label>
+                            <input type="email" class="formInput" value="Fulan@isawesome.com" name="mail" id="mail" placeholder="me@awesome.com">
+                        </div>
+                    </div>
+                    <div class="formRow">
+                        <div class="formCol">
+                            <a href="profile-pass.html" class="buttonSecondary">Change Password</a>
+                        </div>
+                    </div>
+                    <div class="formRow">
+                        <div class="formCol">
+                            <button type="submit" class="button buttonSubmit">Save Profile</a>
+                        </div>
+                    </div>
+                    <div class="formRow">
+                        <div class="formCol">
+                            <a href="profile.html" class="buttonCancel">Cancel</a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
@@ -716,6 +768,7 @@
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/custom-select.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/profile.min.js"></script>
 
 </body>
 

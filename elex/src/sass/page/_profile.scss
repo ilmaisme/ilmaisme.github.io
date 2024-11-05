@@ -130,8 +130,43 @@
         }
     }
 
+    &Review {
+        .productItem {
+            margin-top: 16px;
+            width: 100%;
+            flex-basis: 100%;
+
+            @include min-responsive($w-md) {
+                margin-top: 30px;
+            }
+
+            &:first-child {
+                margin-top: 16px;
+            }
+        }
+
+        .productLink.--row {
+            align-items: flex-start;
+
+            .productImg {
+                @include min-responsive($w-md) {
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        .productImg {
+            border-radius: 4px;
+            border: 1px solid rgba(172, 172, 172, .3);
+
+            img {
+                padding: 6px;
+            }
+        }
+    }
+
     &Setting {
-        flex-direction: column;
+        max-width: 360px;
 
         &__title {
             margin-bottom: 30px;
@@ -139,52 +174,31 @@
             @include font-pack($font-mbold, 16px, $font-weight-mbold, false, #000000);
         }
 
-        &__label {
-            @include font-pack($font-mbold, false, $font-weight-mbold, false, #333333);
+        .formLabel {
+            color: #333;
+        }
+
+        .formInput {
+            color: #222;
         }
 
     }
 
-    &Form {
-        max-width: 360px;
-
-        &__wrap {
-            position: relative;
+    .button {
+        &Secondary {
+            @extend %buttonSecondary
         }
 
-        &__pass {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            top: 22px;
-            right: 10px;
-            padding: 0;
-            background: url(../images/icon/ico-pass.png) no-repeat;
-            background-size: contain;
+        &Submit {
+            @extend %buttonSubmit
+        }
 
-            &::after {
-                content: "";
-                position: absolute;
-                border-top: 2px solid #676767;
-                top: 19px;
-                right: 9px;
-                filter: none;
-            }
+        &Cancel {
+            @extend %buttonCancel
+        }
 
-            &.show {
-                &::after {
-                    content: none;
-                }
-            }
-
-            &.disabled {
-                pointer-events: none;
-                filter: invert(56%) sepia(67%) saturate(0%) hue-rotate(224deg) brightness(85%) contrast(75%);
-            }
-
-            &~.formInput {
-                padding-right: 46px;
-            }
+        &Pass {
+            @extend %buttonPass
         }
     }
 }
