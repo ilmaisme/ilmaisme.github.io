@@ -58,8 +58,12 @@ $(document).ready(function () {
         //give exact height on details and its parent
         crHeight = details[0].scrollHeight;
         details.css("height", crHeight);
-        if (viewport().width < 960) {
-            $('.careersPostingWrap').css("min-height", crHeight);
+        if (viewport().width < 768) {
+            $('.careersPostingWrap').css({
+                "min-height": crHeight,
+                "opacity": "0",
+                "pointer-events": "none"
+            });
         }
         //scrolltop
         $('html,body,.careersDetWrap').animate({
@@ -92,7 +96,7 @@ $(document).ready(function () {
 updateActiveCareer()
 
 function updateActiveCareer() {
-    if (viewport().width >= 960) {
+    if (viewport().width >= 768) {
         // console.log("desktop")
         $('.careersCard:first-of-type').addClass('active');
     } else {
@@ -142,6 +146,7 @@ function removeFile(el) {
     title.setAttribute('placeholder', 'Tidak ada file yang dipilih');
     title.classList.remove('valid')
     parent.querySelector('.buttonPrimary').classList.remove('disabled')
+    parent.querySelector('.formFile').classList.remove('disabled')
     parent.classList.remove('disabled')
     el.classList.remove('active')
 }

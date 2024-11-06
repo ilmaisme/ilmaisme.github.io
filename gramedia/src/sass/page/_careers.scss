@@ -55,12 +55,13 @@
         @include scroll(4px, $cl-text3, transparent);
 
         @include min-responsive($w-md) {
-            width: 440px;
+            width: 314px;
             max-height: 75vh;
             overflow-y: auto;
         }
 
         @include min-responsive($w-lg) {
+            width: 440px;
             padding-right: 20px;
             padding-left: 20px;
         }
@@ -87,7 +88,12 @@
         background: rgba(252, 252, 252, .8);
         box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.09);
 
+        @include min-responsive($w-md) {
+            padding: 16px 14px;
+        }
+
         @include min-responsive($w-lg) {
+            padding: 20px;
             align-items: center;
             box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.09);
         }
@@ -114,9 +120,14 @@
             border: 1px solid $cl-text3;
             background: #FFF;
 
+            @include min-responsive($w-md) {
+                margin-right: 12px;
+            }
+
             @include min-responsive($w-lg) {
                 width: 80px;
                 height: 80px;
+                margin-right: 20px;
             }
 
             img {
@@ -163,6 +174,10 @@
         min-height: 100%;
 
         @include min-responsive($w-md) {
+            padding: 16px 20px;
+        }
+
+        @include min-responsive($w-lg) {
             padding: 20px 40px;
         }
 
@@ -175,16 +190,13 @@
             height: 100%;
             @include scroll(4px, $cl-text3, transparent);
 
-            @include min-responsive($w-lg) {
+            @include min-responsive($w-md) {
                 position: relative;
                 top: unset;
                 margin-top: 20px;
                 padding-right: 20px;
                 display: block;
                 height: inherit;
-            }
-
-            @include min-responsive($w-md) {
                 max-height: 75vh;
                 margin-left: 20px;
                 overflow-y: auto;
