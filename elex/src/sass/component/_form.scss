@@ -5,19 +5,26 @@
 
     &Row {
         margin-top: 20px;
-        margin-left: calc(var(--gap-form) - var(--gap-form)*2);
-        margin-right: calc(var(--gap-form) - var(--gap-form)*2);
 
-        &:first-of-type {
+        &.row {
+            margin-left: calc(var(--gap-form) - var(--gap-form)*2);
+            margin-right: calc(var(--gap-form) - var(--gap-form)*2);
+        }
+
+        &:first-child {
             margin-top: 0;
         }
 
         .formCol~.formCol {
             margin-top: 20px;
 
-            @include min-responsive($w-md) {
+            @include min-responsive($w-lg) {
                 margin-top: 0;
             }
+        }
+
+        .buttonPass {
+            @extend %buttonPass
         }
     }
 
@@ -58,6 +65,10 @@
         display: block;
         margin-bottom: 5px;
         @include font-pack($font-mbold, 14px, $font-weight-mbold, false, #616161);
+
+        ~.buttonPass {
+            top: 30px;
+        }
     }
 
     &Area {
@@ -129,7 +140,7 @@
         color: $cl-red;
     }
 
-    .success{    
+    .success {
         display: block;
         color: #07A017;
     }

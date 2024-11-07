@@ -27,7 +27,7 @@
     <!-- e:twitter card -->
 
     <link rel=icon type=image/png sizes=1x16 href="https://elexmedia.id/assets/img/favicon.png">
-    <link rel="stylesheet" href="./asset/css/style-profile.min.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style-profile.css" type="text/css">
     <link rel="preload" href="./asset/images/logo-elex-sm.svg" as="image" />
     <style>
         /*@font-face {
@@ -643,7 +643,7 @@
                             <div class="formRel">
                                 <label class="formLabel" for="pass">Current Password</label>
                                 <button class="button buttonPass" aria-label="show hide password"
-                                    toggle="#pass" type="button"></button>
+                                    onclick="showPassword(this)" toggle="#pass" type="button"></button>
                                 <input type="password" class="formInput" value="bagusnya4p4yah?" name="pass" id="pass">
                             </div>
                         </div>
@@ -653,7 +653,7 @@
                             <div class="formRel">
                                 <label class="formLabel" for="npass">New Password</label>
                                 <button class="button buttonPass" aria-label="show hide password"
-                                    toggle="#npass" type="button"></button>
+                                    onclick="showPassword(this)" toggle="#npass" type="button"></button>
                                 <input type="password" class="formInput" value="duh4p4dong?" name="npass" id="npass">
                             </div>
                         </div>
@@ -663,22 +663,18 @@
                             <div class="formRel">
                                 <label class="formLabel" for="cpass">Retype New Password</label>
                                 <button class="button buttonPass" aria-label="show hide password"
-                                    toggle="#cpass" type="button"></button>
+                                    onclick="showPassword(this)" toggle="#cpass" type="button"></button>
                                 <input type="password" class="formInput" value="duhap4dong?" name="cpass" id="cpass">
                             </div>
                             <label class="formInfo error">Passwords do not match!</label>
                         </div>
                     </div>
                     <div class="formRow">
-                        <div class="formCol">
-                            <button type="submit" class="button buttonSubmit">Save Password</button>
-                            <label class="formInfo success">Passwords saved!</label>
-                        </div>
+                        <button type="submit" class="button buttonSubmit">Save Password</button>
+                        <label class="formInfo success">Passwords saved!</label>
                     </div>
                     <div class="formRow">
-                        <div class="formCol">
-                            <a href="profile.html" class="buttonCancel">Cancel</a>
-                        </div>
+                        <a href="profile.html" class="buttonCancel">Cancel</a>
                     </div>
                 </form>
             </div>
@@ -736,7 +732,7 @@
             <ul class="footerList center-flex">
     
                 <li class="footerItem">
-                    <a href="#" class="footerLink">:: About</a>
+                    <a href="about.html" class="footerLink">:: About</a>
                 </li>
                 <li class="footerItem">
                     <a href="career.html" class="footerLink">:: Karir</a>

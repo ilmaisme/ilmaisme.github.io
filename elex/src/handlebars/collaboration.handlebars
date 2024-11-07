@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="collab"}}
+
+<body>
+    {{!> header/header login=true}}
+    {{> header/header page="Collaboration"}}
+    <main class="main collab" role="main">
+
+        <div class="container">
+
+            {{>breadcrumb parent="Kolaborasi"}}
+
+        </div>
+        <div class="collabLead">
+            <div class="collabLead__bg">
+                <img src="./asset/images/collab/bg.jpg" alt="" width="1440" height="490">
+            </div>
+            <div class="container collabLead__wrap">
+                <div class="collabLead__content">
+                    <div class="collabLead__caption aboutLead">Let's make the best investment</div>
+                    <h1 class="collabLead__title aboutTitle">There Is No Friend As Loyal As A Book</h1>
+                    <a href="#" class="buttonArrow">
+                        Learn more
+                        <span class="ico icoArrow"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container mt40">
+            <div class="row">
+                <div class="col-xl-9 aboutContent mx-auto">
+                    <div class="text-center">
+                        <div class="aboutLead cl-red">We are</div>
+                        <h2 class="title aboutTitle">Project Development Team</h2>
+                        <div class="aboutTitle --small">We will be happy to help handle and manage your needs</div>
+                    </div>
+                    <div class="row">
+                        <div class="col collabServices__col">
+                            <div class="collabServices row">
+                                {{#each collab.Services}}
+                                <div class="col-6 collabServices__card">
+                                    <div class="collabServices__item">
+                                        <div class="collabServices__icon">
+                                            <img src="./asset/images/collab/icon/icon-{{replace title " " "-"}}.png"
+                                                alt="" width="64" height="64" loading="lazy">
+                                        </div>
+                                        <div class="collabServices__title">{{title}}</div>
+                                        <div class="collabServices__content">{{content}}</div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                        <div class="col-md-5 collabServices__col aboutImg">
+                            <img src="./asset/images/collab/team.jpg" alt="" width="360" height="513" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-9 aboutContent mt40 mx-auto">
+                    <div class="text-center">
+                        <div class="aboutLead cl-red">How</div>
+                        <h2 class="title aboutTitle">The Process On</h2>
+                    </div>
+                    <div class="collabProcess center-flex">
+                        {{#each collab.Process}}
+                        <div class="collabProcess__item">
+                            <div class="collabServices__icon">
+                                <img src="./asset/images/collab/icon/process/{{add @index 1}}.png" alt="" width="131"
+                                    height="132" loading="lazy">
+                            </div>
+                            <div class="collabServices__title">{{title}}</div>
+                        </div>
+                        {{#eq @index compare=3}}{{else}}
+                        <span class="ico icoArrow"></span>
+                        {{/eq}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{> footer/footer}}
+
+    {{> js page="collab"}}
+
+</body>
+
+</html>

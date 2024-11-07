@@ -1,0 +1,149 @@
+.collab {
+    &Lead {
+        position: relative;
+
+        &__bg {
+            position: absolute;
+            width: 100%;
+            height: 490px;
+
+            img {
+                @extend %template-img
+            }
+        }
+
+        &__wrap {
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: 490px;
+            z-index: 1;
+        }
+
+        &__title {
+            margin-top: 14px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &Services {
+        --gap-services: 7px;
+
+        @include min-responsive($w-md) {
+            --gap-services: 12px;
+        }
+
+        row-gap: 19px;
+        margin-left: calc(var(--gap-services) - var(--gap-services)*2);
+        margin-right: calc(var(--gap-services) - var(--gap-services)*2);
+
+        &__col {
+            margin-top: 19px;
+            height: inherit;
+
+            @include min-responsive($w-md) {
+                margin-top: 30px;
+            }
+        }
+
+        &__card {
+            padding-left: var(--gap-services);
+            padding-right: var(--gap-services);
+            height: inherit;
+        }
+
+        &__item {
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 1px solid #E7E7E7;
+            height: 100%;
+
+            @include min-responsive($w-md) {
+                padding: 14px 24px;
+            }
+        }
+
+        &__title {
+            margin-top: 10px;
+            @include font-pack($font-mbold, 17px, $font-weight-mbold, false, #202020);
+            letter-spacing: 0.34px;
+        }
+
+        &__content {
+            margin-top: 7px;
+            @include font-pack(false, false, false, 1.2, #838383);
+            letter-spacing: 0.28px;
+        }
+    }
+
+    &Process {
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        @include min-responsive($w-md) {
+            flex-wrap: nowrap;
+        }
+
+        &__item {
+            position: relative;
+            text-align: center;
+            width: 124px;
+            flex-basis: 124px;
+            margin-top: 15px;
+            margin-left: 14px;
+            margin-right: 14px;
+            margin-bottom: 48px;
+
+            @include min-responsive($w-md) {
+                margin-bottom: 0;
+                width: 131px;
+                flex-basis: 131px;
+            }
+
+            &:nth-child(3) {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -34px;
+                    left: 50%;
+                    width: 20px;
+                    height: 20px;
+                    @extend %icoArrow;
+                    transform: translateX(-50%) rotate(90deg);
+                    filter: invert(94%) sepia(0%) saturate(223%) hue-rotate(185deg) brightness(73%) contrast(95%);
+
+                    @include min-responsive($w-md) {
+                        content: none
+                    }
+                }
+            }
+        }
+
+        .icoArrow {
+            @extend %icoArrow;
+            align-self: center;
+            margin-top: -80px;
+            filter: invert(94%) sepia(0%) saturate(223%) hue-rotate(185deg) brightness(73%) contrast(95%);
+
+            @include min-responsive($w-md) {
+                margin-top: -50px;
+            }
+
+            &:nth-child(4) {
+                display: none;@include min-responsive($w-md) {display: block;}
+            }
+
+            &:nth-child(6) {
+                transform: rotate(180deg);
+
+                @include min-responsive($w-md) {
+                    transform: none;
+                }
+            }
+        }
+
+        .collabServices__title {
+            color: #616161;
+        }
+    }
+}

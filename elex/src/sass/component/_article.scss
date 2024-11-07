@@ -72,6 +72,31 @@
     &.--quanta {
         background: #E8FFE2;
 
+        .artBg {
+            opacity: .5;
+
+            .--left {
+                @include min-responsive($w-xl) {
+                    bottom: unset;
+                    top: 0;
+                }
+            }
+
+            .--right {
+                bottom: 0;
+                top: unset;
+
+                @include min-responsive($w-md) {
+                    bottom: unset;
+                    top: 0;
+                }
+            }
+        }
+
+        .artSlide__bg {
+            top: 8px;
+        }
+
         .title,
         .titleLink {
             color: #256959;

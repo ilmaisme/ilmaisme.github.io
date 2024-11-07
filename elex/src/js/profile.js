@@ -43,14 +43,16 @@ $(document).ready(function () {
     }
 
     //show hide password
-    $(".buttonPass").click(function () {
-        let input = $($(this).attr("toggle"));
-        if (input.attr("type") == "password") {
-            input.attr("type", "text");
-            $(this).addClass("show")
+    function showPassword(btn) {
+        let input = btn.getAttribute('toggle'),
+            elInput = document.querySelector(input),
+            type = elInput.getAttribute('type')
+        if (type == "password") {
+            elInput.setAttribute("type", "text");
+            btn.classList.add('show');
         } else {
-            $(this).removeClass("show")
-            input.attr("type", "password");
+            elInput.setAttribute("type", "password");
+            btn.classList.remove('show');
         }
-    });
+    }
 })

@@ -124,32 +124,39 @@
 
     &Pass {
         position: absolute;
-        width: 24px;
-        height: 24px;
-        top: 36px;
-        right: 12px;
-        background: url(../images/icon/ico-pass.png) no-repeat;
-        background-size: contain;
+        width: 36px;
+        height: 36px;
+        top: 10px;
+        right: 10px;
+        background: url(../images/icon/ico-pass-hide.png) no-repeat;
+        background-size: 24px;
+        background-position: center;
         z-index: 1;
-
-        &::after {
-            content: "";
-            position: absolute;
-            border-top: 2px solid #333333;
-            top: 12px;
-            right: 2px;
-            width: 22px;
-            transform: rotate(45deg);
-        }
+        transition: background .2s ease;
+        filter: invert(13%) sepia(0%) saturate(1282%) hue-rotate(211deg) brightness(93%) contrast(79%);
 
         &.show {
-            &::after {
-                content: none;
-            }
+            background: url(../images/icon/ico-pass.png) no-repeat;
+            background-size: 24px;
+            background-position: center;
         }
 
         &~.formInput {
             padding-right: 46px;
+        }
+    }
+
+    &White {
+        width: 100%;
+        text-align: center;
+        border-radius: 7px;
+        border: 1px solid #D6D6D6;
+        padding: 13px 20px;
+        background: $cl-white;
+        @include font-pack($font-mbold, 15px, $font-weight-mbold, false, #333333);
+
+        img {
+            margin-right: 8px;
         }
     }
 }
