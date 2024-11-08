@@ -1,0 +1,45 @@
+<div class="formRow">
+    <label class="formLabel" for="uname">Full Name</label>
+    <input type="text" class="formInput" name="uname" id="uname" placeholder="Your name">
+</div>
+<div class="formRow">
+    <label class="formLabel" for="company">Institution Name (optional)</label>
+    <input type="text" class="formInput" name="company" id="company" placeholder="Your company">
+</div>
+<div class="formRow">
+    <label class="formLabel" for="phone">Contact Number (optional)</label>
+    <input type="text" class="formInput" name="phone" id="phone" placeholder="+62" inputmode="numeric">
+</div>
+<div class="formRow">
+    <label class="formLabel" for="type">Partnership Type</label>
+    <div class="formSelect selectDrop">
+        <select name="type" id="type" class="hidden">
+            <option value="" disabled="" selected="">Choose one</option>
+            {{#each collab.Services}}
+            <option value="{{@index}}">{{title}}</option>
+            {{/each}}
+        </select>
+    </div>
+</div>
+<div class="formRow">
+    <label class="formLabel" for="goal">Partnership Goals</label>
+    <textarea class="formInput formArea" placeholder="Type here..." name="goal" id="goal" rows="6"></textarea>
+</div>
+<div class="formRow">
+    <label class="formLabel" for="hope">Hope of Partnership </label>
+    <textarea class="formInput formArea" placeholder="Type here..." name="hope" id="goal" rows="6"></textarea>
+</div>
+<div class="formRow">
+    <label class="formLabel">Proposal Document (optional)</label>
+    <label class="formFile" for="docu">
+        <input type="text" placeholder="Choose file (Pdf, Docx, Ppt)" class="formInput formFileTitle" aria-label="area"
+            id="docutxt" readonly="">
+        <input type="file" name="docu" id="docu" accept="pdf" class="formFileInput" onchange="onFileChange(this)"
+            ref="inputFile" required="">
+        <div class="formFileCta"><img src="./asset/images/icon/ico-file.png" alt="" width="24" height="24"
+                loading="lazy"></div>
+    </label>
+</div>
+<div class="formRow text-center">
+    <button type="submit" class="button buttonPrimary -icon">Submit Request<span class="ico icoMore"></span></button>
+</div>

@@ -10,9 +10,14 @@
         @include display-flex;
         align-items: flex-end;
         justify-content: space-between;
+        gap: 10px;
 
         @include range-responsive($w-md, $w-xl) {
             align-items: flex-start;
+        }
+
+        .title {
+            @include title_clamp(1);
         }
     }
 

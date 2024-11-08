@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="author"}}
+
+<body>
+    {{!> header/header page="Author" login=true}}
+    {{> header/header page="Author"}}
+    <main class="main author" role="main">
+
+        <div class="container">
+
+            {{>breadcrumb parent="Author"}}
+
+        </div>
+        <div class="authorLead lead --small">
+            <div class="leadBg artBg">
+                <img class="--left" src="./asset/images/logo-symbol.svg" alt="" width="225" height="155">
+                <img class="--right" src="./asset/images/logo-symbol.svg" alt="" width="225" height="155">
+            </div>
+            <div class="container leadContent">
+                <h1 class="leadCaption">Author</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-xl-9">
+                    <div class="authorPage authorWrap">
+                        <div class="authorImg">
+                            <img src="./asset/images/dummy/author/0-grey.jpg" alt="" width="{{width}}"
+                                height="{{height}}" {{#if lazy}} loading="lazy" {{/if}}>
+                        </div>
+                        <div class="authorContent">
+                            <h2 class="title"><span><img src="./asset/images/icon/author-best.png" alt="" width="35"
+                                        height="35"></span> Author
+                                <span class="cl-red"> of the week</span>
+                            </h2>
+                            <h3 class="titleH3">Puti Karina (Puty) Puar</h3>
+                            <div class="authorDesc titleLead">
+                                <p>Puty Puar is an illustrator, content creator, book author, and community leader. She
+                                    is also known as 'byputy' on social media for her heartwarming artworks, with a
+                                    100,000+ audience across platforms, and has worked with various brands and
+                                    organizations. Puty founded and manages ‘Buibu Baca Buku’, a non-profit community
+                                    aiming to empower Indonesian women, especially mothers, through literacy. She
+                                    believes in the collective power of women to create, not only massive impacts but
+                                    also long-lasting ones.</p>
+                                <p>Venmo adaptogen pabst kinfolk enamel banjo dsa. Cliche pork you live-edge before
+                                    cliche viral yr deep. Truck you copper chillwave pop-up iceland deep you carry.
+                                    Party try-hard booth retro you wolf axe leggings photo kitsch. Narwhal brooklyn
+                                    occupy craft probably yolo literally squid microdosing. Polaroid copper meditation
+                                    mood gentrify wolf pour-over hot. Gochujang gluten-free taiyaki tonx juice
+                                    typewriter lyft. Pin vegan tile tumeric affogato denim. Bodega franzen shoreditch
+                                    tousled truffaut hipster. Neutra tote sold viral cold-pressed jomo pabst meggings
+                                    migas deep. Seitan bottle cloud 90's mi diy pickled. Of pop-up charcoal bulb
+                                    shoreditch gentrify cred single-origin chips. Etsy batch affogato banjo hexagon
+                                    venmo pickled ipsum level. Hella shaman heard vinegar green bread fixie yolo hell
+                                    af. Four food chicken dollar ascot big godard green bitters portland.</p>
+                            </div>
+                            <div class="authorAttr authorWrap">
+                                <div class="authorBook">20 Books</div>
+                                <div class="authorSocmed socmedList">
+                                    <a href="#" class="socmedItem center-flex" aria-label="Instagram">
+                                        <span class="ico icoInstagram"></span>
+                                    </a>
+                                    <a href="#" class="socmedItem center-flex" aria-label="Facebook">
+                                        <span class="ico icoFacebook"></span>
+                                    </a>
+                                    <a href="#" class="socmedItem center-flex" aria-label="X">
+                                        <span class="ico icoX"></span>
+                                    </a>
+                                    <a href="#" class="socmedItem center-flex" aria-label="Linkedin">
+                                        <span class="ico icoLinkedin"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 mt40">
+                    <h2 class="title">Other <span class="cl-red">Authors</span></h2>
+                    <div class="authorList">
+
+                        {{>author-list channel=author.List index_start=0 index_end=4 tag="h3" type="--row"
+                        width="80" height="80"}}
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="titleWrap mt40">
+                <h2 class="title">Book from <span class="cl-red">Puti Karina (Puty) Puar</span></h2>
+                <a href="catalogue.html" class="titleLink">See All</a>
+            </div>
+            <div class="productCard__list productScroll">
+                {{>product channel=product.Komik index_start=0 index_end=6 col="col col-xl-2" tag="h3"
+                width="160" height="240" cta=true type="productCard" lazy=true}}
+            </div>
+            <div class="titleWrap mt40">
+                <h2 class="title">Latest <span class="cl-red">Updates</span></h2>
+                <a href="article.html" class="titleLink">All Updates</a>
+            </div>
+            <div class="artWidget">
+                <div class="artList row">
+
+                    {{>article channel=updates index_start=0 index_end=4 width="214" height="128"
+                    lazy=true
+                    tag="h3" col="col-6 col-md-3" widget=true}}
+
+                </div>
+            </div>
+        </div>
+    </main>
+    {{> footer/footer}}
+
+    {{> js}}
+
+</body>
+
+</html>

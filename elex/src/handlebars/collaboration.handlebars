@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{> head page="collab"}}
+{{> head page="collab" swiper=true}}
 
 <body>
     {{!> header/header login=true}}
@@ -39,21 +39,12 @@
                     <div class="row">
                         <div class="col collabServices__col">
                             <div class="collabServices row">
-                                {{#each collab.Services}}
-                                <div class="col-6 collabServices__card">
-                                    <div class="collabServices__item">
-                                        <div class="collabServices__icon">
-                                            <img src="./asset/images/collab/icon/icon-{{replace title " " "-"}}.png"
-                                                alt="" width="64" height="64" loading="lazy">
-                                        </div>
-                                        <div class="collabServices__title">{{title}}</div>
-                                        <div class="collabServices__content">{{content}}</div>
-                                    </div>
-                                </div>
-                                {{/each}}
+
+                                {{>collab/services}}
+
                             </div>
                         </div>
-                        <div class="col-md-5 collabServices__col aboutImg">
+                        <div class="col-md-4 col-xl-5 collabServices__col aboutImg">
                             <img src="./asset/images/collab/team.jpg" alt="" width="360" height="513" loading="lazy">
                         </div>
                     </div>
@@ -72,7 +63,7 @@
                                 <img src="./asset/images/collab/icon/process/{{add @index 1}}.png" alt="" width="131"
                                     height="132" loading="lazy">
                             </div>
-                            <div class="collabServices__title">{{title}}</div>
+                            <h3 class="collabServices__title">{{title}}</h3>
                         </div>
                         {{#eq @index compare=3}}{{else}}
                         <span class="ico icoArrow"></span>
@@ -82,10 +73,61 @@
                 </div>
             </div>
         </div>
+        <div class="text-center mt40">
+            <div class="aboutLead cl-red">What we’ve done</div>
+            <h2 class="title aboutTitle">Our Projects</h2>
+            <div class="aboutTitle --small">And we are still growing</div>
+        </div>
+        <div class="collabProject swiper">
+            <div class="swiper-wrapper">
+
+                {{>collab/projects}}
+
+            </div>
+        </div>
+        <div class="container mt40">
+            <div class="row">
+                <div class="col-xl-9 aboutContent mx-auto">
+                    <div class="text-center">
+                        <div class="aboutLead cl-red">Meet</div>
+                        <h2 class="title aboutTitle">Our Team</h2>
+                    </div>
+                    <div class="collabTeam row">
+
+                        {{>collab/team}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt40">
+            <h2 class="title aboutTitle">Our Partners</h2>
+        </div>
+        <div class="collabPartner swiper">
+            <div class="swiper-wrapper">
+
+                {{>collab/partner}}
+
+            </div>
+        </div>
+        <form action="" class="collabForm mt40">
+            <div class="collabForm__bg">
+                <img src="./asset/images/collab/bg-form.jpg" alt="" width="1440" height="920" loading="lazy">
+            </div>
+            <h2 class="title aboutTitle text-center">Let’s Collaborate with us</h2>
+            <div class="aboutLead text-center">Please fill form below</div>
+            <div class="container mt40">
+                <div class="row">
+                    <div class="col-md-5 col-lg-4 col-xl-4 mx-auto">
+                        {{>collab/form}}
+                    </div>
+                </div>
+            </div>
+        </form>
     </main>
     {{> footer/footer}}
 
-    {{> js page="collab"}}
+    {{> js page="collab" swiper=true}}
 
 </body>
 

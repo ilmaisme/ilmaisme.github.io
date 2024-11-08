@@ -1,0 +1,31 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="authorItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
+    <a href="author-details" class="authorLink">
+        <div class="authorImg">
+            <img src="https://i.pravatar.cc/155?{{id}}" alt="" width="155" height="155">
+        </div>
+        <h3 class="titleH5">{{name}}</h3>
+        <div class="authorBook">20 Books</div>
+    </a>
+    <div class="authorSocmed socmedList">
+        <a href="#" class="socmedItem center-flex" aria-label="Instagram">
+            <span class="ico icoInstagram"></span>
+        </a>
+        <a href="#" class="socmedItem center-flex" aria-label="Facebook">
+            <span class="ico icoFacebook"></span>
+        </a>
+        <a href="#" class="socmedItem center-flex" aria-label="X">
+            <span class="ico icoX"></span>
+        </a>
+        <a href="#" class="socmedItem center-flex" aria-label="Linkedin">
+            <span class="ico icoLinkedin"></span>
+        </a>
+    </div>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

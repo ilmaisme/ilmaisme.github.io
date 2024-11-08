@@ -68,4 +68,48 @@
             }
         }
     }
+
+    &Sort {
+        margin-top: 20px;
+        @include font-pack(false, 15px, false, false, #202020);
+        letter-spacing: 0.75px;
+
+        &__item {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+
+            label {
+                min-width: 60px;
+
+                @include min-responsive($w-md) {
+                    min-width: unset;
+                }
+            }
+        }
+
+        .selectDrop {
+            flex: 1;
+            margin-left: 12px;
+            border-radius: 7px;
+            border: 1px solid #B0B3D0;
+
+            .styledSelect {
+                padding: 10px 38px 10px 10px;
+                border-radius: 7px;
+                background: #F3F3F3;
+
+                &:after {
+                    width: 7px;
+                    height: 7px;
+                    right: 18px;
+                    top: 12px;
+                }
+
+                &.open:after {
+                    top: 16px;
+                }
+            }
+        }
+    }
 }

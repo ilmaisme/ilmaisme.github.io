@@ -144,7 +144,7 @@
         height: 45px;
         position: absolute;
         top: -19px;
-        left: -17px;
+        left: -15px;
         z-index: 1;
         background: url(../images/icon/ico-tag.png) no-repeat;
         background-size: contain;
@@ -262,5 +262,44 @@
 
     &Lead {
         @include font-pack(false, 16px, false, 1.37, #444);
+    }
+
+    &Scroll {
+        display: flex;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: visible;
+        flex-wrap: nowrap;
+        padding-bottom: 20px;
+        margin-bottom: -20px;
+
+        @include min-responsive($w-vxl) {
+            flex-wrap: wrap;
+            overflow: visible;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .productItem {
+            position: relative;
+        }
+
+        .productCommerce {
+            bottom: 50px;
+
+            @include range-responsive($w-xl, $w-lxl) {
+                left: 10px;
+            }
+
+            @include min-responsive($w-vxl) {
+                bottom: -115px;
+            }
+        }
+
+        .productTag {
+            @include range-responsive($w-md, $w-lxl) {
+                left: -19px;
+            }
+        }
     }
 }

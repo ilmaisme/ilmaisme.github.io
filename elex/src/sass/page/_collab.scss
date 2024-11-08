@@ -38,7 +38,7 @@
         margin-right: calc(var(--gap-services) - var(--gap-services)*2);
 
         &__col {
-            margin-top: 19px;
+            margin-top: 20px;
             height: inherit;
 
             @include min-responsive($w-md) {
@@ -70,7 +70,7 @@
         }
 
         &__content {
-            margin-top: 7px;
+            margin-top: 5px;
             @include font-pack(false, false, false, 1.2, #838383);
             letter-spacing: 0.28px;
         }
@@ -94,6 +94,11 @@
             margin-right: 14px;
             margin-bottom: 48px;
 
+            @include max-responsive($w-xm) {
+                width: 100px;
+                flex-basis: 100px;
+            }
+
             @include min-responsive($w-md) {
                 margin-bottom: 0;
                 width: 131px;
@@ -104,7 +109,7 @@
                 &::after {
                     content: '';
                     position: absolute;
-                    bottom: -34px;
+                    bottom: -54px;
                     left: 50%;
                     width: 20px;
                     height: 20px;
@@ -116,6 +121,10 @@
                         content: none
                     }
                 }
+            }
+
+            &:nth-last-child(-n+3) {
+                margin-bottom: 0;
             }
         }
 
@@ -130,14 +139,20 @@
             }
 
             &:nth-child(4) {
-                display: none;@include min-responsive($w-md) {display: block;}
+                display: none;
+
+                @include min-responsive($w-md) {
+                    display: block;
+                }
             }
 
             &:nth-child(6) {
                 transform: rotate(180deg);
+                margin-top: -64px;
 
                 @include min-responsive($w-md) {
                     transform: none;
+                    margin-top: -50px;
                 }
             }
         }
@@ -145,5 +160,172 @@
         .collabServices__title {
             color: #616161;
         }
+    }
+
+    &Project {
+        position: relative;
+        margin-top: 20px;
+
+        @include min-responsive($w-md) {
+            margin-top: 30px;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            pointer-events: none;
+            top: 0;
+            width: 60px;
+            height: 28vh;
+            z-index: 2;
+
+            @include min-responsive($w-md) {
+                top: -30px;
+                height: 42vh;
+                width: 114px;
+            }
+        }
+
+        &::before {
+            left: 0;
+            background: linear-gradient(90deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+        }
+
+        &::after {
+            right: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+        }
+
+        &__title {
+            margin-top: 10px;
+            @include font-pack($font-base, 16px, $font-weight-normal, false, #000);
+            letter-spacing: 0.38px;
+            text-align: center;
+
+            @include min-responsive($w-md) {
+                font-size: 19px;
+            }
+        }
+    }
+
+    &Team {
+        --gap-team: 5px;
+
+        @include min-responsive($w-md) {
+            --gap-team: 10px;
+        }
+
+        justify-content: center;
+        margin-left: calc(var(--gap-team) - var(--gap-team)*2);
+        margin-right: calc(var(--gap-team) - var(--gap-team)*2);
+
+        &__item {
+            margin-top: 20px;
+            padding-left: var(--gap-team);
+            padding-right: var(--gap-team);
+            flex-basis: 170px;
+            max-width: calc(100%/3);
+            height: inherit;
+
+            @include min-responsive($w-md) {
+                max-width: calc(100%/4);
+            }
+
+            @include min-responsive($w-lg) {
+                max-width: calc(100%/5);
+            }
+        }
+
+        &__title{
+            @include title_clamp(1)
+        }
+    }
+
+    &Partner {
+        &__item {
+            height: auto;
+            margin-top: 20px;
+        }
+
+        &__img {
+            height: 100%;
+        }
+    }
+
+    &Form {
+        position: relative;
+        overflow: hidden;
+        padding-top: 44px;
+        padding-bottom: 44px;
+
+        &__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-position: center;
+                object-fit: cover;
+            }
+        }
+
+        .aboutTitle,
+        .aboutLead,
+        .formLabel {
+            color: $cl-white;
+        }
+
+        .formSelect {
+            border: 1px solid #DFDFDF;
+            background: $cl-white;
+        }
+
+        .formInput {
+            border: 1px solid #DFDFDF;
+        }
+
+        .formFileTitle {
+            padding: 17px 44px 17px 10px;
+        }
+
+        .formFileCta {
+            padding: 15px 12px;
+            top: 0;
+            left: unset;
+            right: 0;
+        }
+
+        .buttonPrimary {
+            color: $cl-red;
+            background: $cl-white;
+        }
+    }
+
+    &Call {
+        margin-top: 5px;
+        border-radius: 50px;
+        background: #29B937;
+        padding: 5px 10px;
+        @include font-pack($font-mbold, false, $font-weight-mbold, false, $cl-white);
+        letter-spacing: 0.28px;
+
+        .icoWhatsapp {
+            @extend %icoWhatsapp;
+            margin-right: 4px;
+            width: 24px;
+            height: 24px;
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(31deg) brightness(104%) contrast(102%);
+        }
+    }
+
+    ~.footer {
+        margin-top: 0;
     }
 }

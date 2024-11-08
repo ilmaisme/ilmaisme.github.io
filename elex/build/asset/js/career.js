@@ -107,7 +107,7 @@ function removeActiveCareer() {
     $('.careersPostingWrap').removeAttr('style')
 }
 
-//form apply
+//form file
 function onFileChange(el) {
     let parent = el.parentNode,
         title = parent.querySelector('.formFileTitle'),
