@@ -6,41 +6,28 @@
 <body>
     {{!> header/header login=true}}
     {{> header/header}}
-    <main class="main category --komik" role="main">
+    <main class="main category --quanta" role="main">
 
         <div class="container">
-        
-            {{>breadcrumb parent="Komik"}}
-        
+
+            {{>breadcrumb parent="Quanta"}}
+
         </div>
-        <div class="lead --small art --komik">
+        <div class="lead --small art --quanta">
             <div class="artBg">
+                {{!-- <img class="--left" src="./asset/images/widget/bg-art-techno-left.png" alt="" width="283" height="235">
+                <img class="--right" src="./asset/images/widget/bg-art-techno-left.png" alt="" width="283" height="235"> --}}
             </div>
             <div class="container leadContent">
-                <h1 class="leadCaption"><img src="./asset/images/logo-comic.svg" alt="Comic" width="234" height="81"></h1>
+                <h1 class="leadCaption">
+                    <img src="./asset/images/logo-quanta.svg" alt="Quanta" width="132" height="65">
+                </h1>
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="leftbar col-xl-9">
-                    <div class="categoryWrap">
-                        <div class="categoryHl__big categorySwiper swiper">
-                            <div class="swiper-wrapper">
-
-                                {{>category/headline channel=category.Headline tag="h2" label="Petualangan" index_start=0
-                                index_end=5 width="840" height="470"}}
-
-                            </div>
-                        </div>
-                        <div class="categoryHl__nav categorySwiper swiper">
-                            <div class="swiper-wrapper">
-
-                                {{>category/headline channel=category.Headline tag="h3" label="Petualangan" index_start=0
-                                index_end=5 width="100" height="100" nav=true}}
-
-                            </div>
-                        </div>
-                    </div>
+                    
                     <h2 class="title">Latest <span class="cl-red">News</span></h2>
                     <div class="artList artRow">
 
@@ -80,23 +67,11 @@
                 </div>
                 <div class="sidebar col-xl-3">
                     <div class="artSlide__bg">
-                        <img src="./asset/images/widget/bg-art-komik.png" alt="" width="234" height="166">
+                        <img src="./asset/images/widget/bg-art-quanta.png" alt="" width="151" height="124">
                     </div>
                     <div class="catalogWidget" data-widget="5">
 
                         {{>catalog index_start=0 index_end=5 link=true}}
-
-                    </div>
-                    <div class="titleWrap">
-                        <h2 class="title">All <span class="cl-red">News</span></h2>
-                        <a href="#" class="titleLink">All News</a>
-                    </div>
-                    <div class="artList artRow">
-
-                        {{>article channel=article.Kids index_start=0 index_end=2 tag="h3" width="184"
-                        height="110"}}
-                        {{>article channel=article.Komik index_start=2 index_end=5 lazy=true tag="h3" width="184"
-                        height="110"}}
 
                     </div>
                     <div class="titleWrap">

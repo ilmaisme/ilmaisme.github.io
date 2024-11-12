@@ -1,11 +1,7 @@
 .category {
     &.--health {
-        .lead {
-            background: #F6F6F6;
-
-            &Caption {
-                color: #5B2E70;
-            }
+        .leadCaption {
+            color: #5B2E70;
         }
 
         .art {
@@ -19,28 +15,142 @@
         }
     }
 
+    &.--kids {
+        .catalogWidget {
+            background: #F5A30A;
+        }
+    }
+
+    &.--komik {
+        .artSlide__bg {
+            top: 0;
+
+            @include min-responsive($w-xl) {
+                top: -150px;
+            }
+        }
+
+        .artBg {
+            &::before {
+                width: 240px;
+                height: 240px;
+                top: -120px;
+                right: -120px;
+            }
+
+            &::after {
+                width: 300px;
+                height: 300px;
+                top: 0;
+                bottom: unset;
+                left: -150px;
+            }
+        }
+    }
+
+    &.--techno {
+        .catalogWidget {
+            background: #1B6BB5;
+        }
+    }
+
+    &.--fiction {
+        .leadCaption {
+            color: #8D4586;
+        }
+
+        .catalogWidget {
+            background: #996D5F;
+        }
+    }
+
+    &.--history {
+        .leadCaption {
+            color: #8D4586;
+        }
+
+        .catalogWidget {
+            background: #E37552;
+        }
+
+        .artBg {
+            &::before {
+                width: 240px;
+                height: 240px;
+                top: -120px;
+                right: -120px;
+            }
+
+            &::after {
+                width: 300px;
+                height: 300px;
+                top: 0;
+                bottom: unset;
+                left: -150px;
+            }
+        }
+    }
+
+    &.--self {
+        .leadCaption {
+            color: #455A8D;
+        }
+
+        .catalogWidget {
+            background: #5E6E98;
+        }
+    }
+
+    &.--quanta {
+        .catalogWidget {
+            background: #07A017;
+        }
+    }
+
+    .leftbar {
+        top: -30px;
+        overflow: hidden;
+    }
+
     &Wrap {
         position: relative;
         margin-bottom: 24px;
-
-        @include min-responsive($w-xl) {
-            margin-top: -30px;
-        }
     }
 
     &Hl {
         &__nav {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 303px;
-            height: 450px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
             padding: 10px;
-            border-radius: 5px;
-            background: $cl-white;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            background: rgba(255, 255, 255, .8);
+
+            @include min-responsive($w-md) {
+                height: 100px;
+            }
+
+            @include min-responsive($w-bxl) {
+                background: $cl-white;
+                bottom: unset;
+                top: 10px;
+                left: unset;
+                right: 10px;
+                width: 303px;
+                height: 450px;
+                border-radius: 5px;
+            }
 
             .categoryHl__item {
+
                 align-items: flex-start;
+
+                @include min-responsive($w-bxl) {
+                    justify-content: flex-start;
+                }
 
                 &:last-child {
                     .artLink {
@@ -50,15 +160,44 @@
             }
 
             .artLink {
-                padding-left: 0;
-                margin-bottom: 10px;
                 transition: padding .2s ease-in-out, border .2s ease;
+
+                @include min-responsive($w-bxl) {
+                    margin-bottom: 10px;
+                }
             }
 
             .artImg {
-                width: 100px;
+                width: 70px;
                 min-height: unset;
-                padding-top: 100px;
+                padding-top: 70px;
+                margin-right: 0;
+
+                @include max-responsive($w-xm) {
+                    margin-top: 5px;
+                    width: 60px;
+                    padding-top: 60px;
+                }
+
+                @include min-responsive($w-md) {
+                    width: 80px;
+                    padding-top: 80px;
+                }
+
+                @include min-responsive($w-bxl) {
+                    width: 100px;
+                    margin-right: 10px;
+                    padding-top: 100px;
+                }
+            }
+
+            .artContent {
+                display: none;
+                max-width: 160px;
+
+                @include min-responsive($w-bxl) {
+                    display: block;
+                }
             }
 
             .artTitle {
@@ -67,17 +206,24 @@
 
             .swiper-slide-thumb-active {
                 .artLink {
-                    padding-left: 10px;
-                    border-left: 3px solid $cl-red;
+                    @include min-responsive($w-bxl) {
+                        padding-left: 10px;
+                        border-left: 3px solid $cl-red;
+                    }
                 }
             }
         }
 
         &__big {
-            width: 840px;
-            height: 470px;
+            width: 100%;
+            height: 300px;
+            margin: 0;
             border-radius: 7px;
             overflow: hidden;
+
+            @include min-responsive($w-md) {
+                height: 470px;
+            }
 
             .artLink {
                 width: 100%;
@@ -91,17 +237,59 @@
                     bottom: 0;
                     left: 0;
                     width: 100%;
-                    height: 280px;
+                    height: 400px;
                     background: linear-gradient(180deg, rgba(107, 29, 31, 0.00) 0%, #210708 100%);
+
+                    @include min-responsive($w-bxl) {
+                        height: 280px;
+                    }
+                }
+            }
+
+            .artTitle {
+                @include font-pack($font-mbold, 24px, $font-weight-mbold, 1.05, $cl-white);
+                letter-spacing: 0.72px;
+
+                @include min-responsive($w-md) {
+                    font-size: 32px
                 }
             }
 
             .artContent {
+                width: 100%;
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                width: 100%;
-                padding: 20px;
+                padding: 10px 10px 100px;
+
+                @include min-responsive($w-md) {
+                    padding: 20px 20px 110px;
+                }
+
+                @include min-responsive($w-bxl) {
+                    max-width: 500px;
+                    padding: 20px;
+                }
+            }
+        }
+
+        &__wrap {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+
+            .artLabel,
+            .artDates {
+                margin-top: 0;
+                color: $cl-white;
+            }
+
+            .artLabel {
+                margin-right: 20px;
+            }
+
+            .ico {
+                filter: invert(100%) sepia(1%) saturate(3091%) hue-rotate(332deg) brightness(118%) contrast(100%);
             }
         }
     }
