@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="catalog" swiper=true}}
+
+<body>
+    {{!> header/header page="Catalog" login=true}}
+    {{> header/header page="Catalog"}}
+    <main class="main catalog" role="main">
+
+        <div class="container">
+
+            {{>breadcrumb parent="Katalog"}}
+
+        </div>
+        <div class="lead">
+            <div class="leadBg artBg">
+                <img class="--left" src="./asset/images/logo-symbol.svg" alt="" width="225" height="155">
+                <img class="--right" src="./asset/images/logo-symbol.svg" alt="" width="225" height="155">
+            </div>
+            <div class="container">
+                <div class="leadContent">
+                    <h1 class="leadCaption">Katalog</h1>
+                    <h2 class="leadText">Prey men quarterdeck belaying guns rat pinnace fluke main. Roger chain piracy
+                        her
+                        hogshead avast dock.</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="catalogWidget">
+
+                {{>catalog index_start=0 index_end=15}}
+
+            </div>
+            <h2 class="title mt40">Semua Kategori</h2>
+            <form action="#" class="leadSort row">
+                <div class="col-md-6 col-lg-4 col-xl-3 leadSort__item">
+                    <label for="categ">Category</label>
+                    <div class="formSelect selectDrop">
+                        <select name="categ" id="categ">
+                            <option value="all" selected>
+                                Semua Kategori
+                            </option>
+                            {{#each categMenu}}
+                            <option value="{{title}}">
+                                {{title}}
+                            </option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-xl-3 leadSort__item">
+                    <label for="sort">Sort by</label>
+                    <div class="formSelect selectDrop">
+                        <select name="sort" id="sort">
+                            <option value="0" selected>Newest</option>
+                            <option value="1">Popular</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+            <div class="productCard__list row">
+                {{>product channel=product.Komik index_start=0 index_end=6 col="col" tag="h3"
+                width="160" height="240" cta=true type="productCard"}}
+                {{>product channel=product.Best index_start=2 index_end=8 col="col" tag="h3"
+                width="160" height="240" cta=true type="productCard" lazy=true}}
+                {{>product channel=product.Quanta index_start=2 index_end=8 col="col" tag="h3"
+                width="160" height="240" cta=true type="productCard" lazy=true}}
+                {{>product channel=product.Kids index_start=2 index_end=8 col="col" tag="h3"
+                width="160" height="240" cta=true type="productCard" lazy=true}}
+            </div>
+
+            {{>paging}}
+
+        </div>
+    </main>
+    {{> footer/footer}}
+
+    {{> js catalog=true swiper=true}}
+
+</body>
+
+</html>

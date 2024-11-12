@@ -8,9 +8,100 @@
             }
         }
 
-        .art{
-            &Bg .--right{
+        .art {
+            &Bg .--right {
                 transform: rotate(180deg);
+            }
+        }
+
+        .catalogWidget {
+            background: #A4499B;
+        }
+    }
+
+    &Wrap {
+        position: relative;
+        margin-bottom: 24px;
+
+        @include min-responsive($w-xl) {
+            margin-top: -30px;
+        }
+    }
+
+    &Hl {
+        &__nav {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 303px;
+            height: 450px;
+            padding: 10px;
+            border-radius: 5px;
+            background: $cl-white;
+
+            .categoryHl__item {
+                align-items: flex-start;
+
+                &:last-child {
+                    .artLink {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .artLink {
+                padding-left: 0;
+                margin-bottom: 10px;
+                transition: padding .2s ease-in-out, border .2s ease;
+            }
+
+            .artImg {
+                width: 100px;
+                min-height: unset;
+                padding-top: 100px;
+            }
+
+            .artTitle {
+                -webkit-line-clamp: 2;
+            }
+
+            .swiper-slide-thumb-active {
+                .artLink {
+                    padding-left: 10px;
+                    border-left: 3px solid $cl-red;
+                }
+            }
+        }
+
+        &__big {
+            width: 840px;
+            height: 470px;
+            border-radius: 7px;
+            overflow: hidden;
+
+            .artLink {
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 280px;
+                    background: linear-gradient(180deg, rgba(107, 29, 31, 0.00) 0%, #210708 100%);
+                }
+            }
+
+            .artContent {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 20px;
             }
         }
     }

@@ -1,0 +1,38 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="categoryHl__item swiper-slide">
+    {{#if ../nav}}
+    <div class="artLink">
+        <div class="artImg">
+            <img src="{{image}}" alt="{{title}}" width="{{../width}}" height="{{../height}}">
+        </div>
+        <a href="{{link}}" class="artContent">
+            <div class="artLabel">{{../label}}</div>
+            {{#if ../tag}}
+            <{{.. /tag}} class="artTitle titleH5">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="artTitle titleH5">{{title}}</div>
+            {{/if}}
+            <div class="artDates"><span class="icoCal"></span>{{publish}}</div>
+        </a>
+    </div>
+    {{else}}
+    <a href="{{link}}" class="artLink" style="background-image: url({{image}})";>
+        <div class="artContent">
+            <div class="artLabel">{{../label}}</div>
+            {{#if ../tag}}
+            <{{.. /tag}} class="artTitle titleH5">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="artTitle titleH5">{{title}}</div>
+            {{/if}}
+            <div class="artDates"><span class="icoCal"></span>{{publish}}</div>
+        </div>
+    </a>
+    {{/if}}
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

@@ -20,9 +20,13 @@
                     class="eventTag{{#eq tag compare='Past Event'}} -past{{/eq}}{{#eq tag compare='On Going'}} -going{{/eq}}">{{tag}}</span>
             </div>
             {{/if}}
+            {{#if ../lead}}
             <div class="eventLead">{{lead}}</div>
             <div class="eventAttr eventDates"><span class="ico icoCal"></span>{{dates}}</div>
             <div class="eventAttr eventLoc"><span class="ico icoLoc"></span>{{loc}}</div>
+            {{else}}
+            <div class="eventAttr eventDates"><span class="ico icoCal"></span>{{dates}}</div>
+            {{/if}}
         </div>
     </a>
 </div>

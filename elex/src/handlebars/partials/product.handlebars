@@ -12,8 +12,11 @@
             {{/if}}
         </div>
         <div class="productContent">
+            {{#eq ../label compare=false}}{{else}}
             {{#if label}}
             <div class="productLabel"> {{label}}</div>
+            {{/if}}{{/eq}}
+            {{#if label}}
             {{/if}}
             {{#if ../tag}}
             <{{.. /tag}} class="productTitle">{{title}}</{{.. /tag}}>
@@ -34,6 +37,7 @@
             {{/if}}
         </div>
     </a>
+    {{#if widget}}{{else}}
     <div class="productCommerce">
         <a href="#" class="productCommerce__link" target="_blank" rel="noopener noreferrer">
             <img src="./asset/images/icon/ico-gramedia.png" alt="" width="20" height="20" loading="lazy">
@@ -48,6 +52,7 @@
             <span>Shopee.com</span>
         </a>
     </div>
+    {{/if}}
 </div>
 {{/gte}}
 {{else}}

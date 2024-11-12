@@ -31,8 +31,11 @@
                             <label for="categ">Author Category</label>
                             <div class="formSelect selectDrop">
                                 <select name="categ" id="categ">
+                                    <option value="all" selected>
+                                        Semua Kategori
+                                    </option>
                                     {{#each categMenu}}
-                                    <option value="{{title}}" {{#eq @index compare=0}}selected{{/eq}}>
+                                    <option value="{{title}}">
                                         {{title}}
                                     </option>
                                     {{/each}}
@@ -69,7 +72,7 @@
 
             <div class="titleWrap mt40">
                 <h2 class="title">Other <span class="cl-red">Recommendations</span></h2>
-                <a href="catalogue.html" class="titleLink">See All</a>
+                <a href="catalog.html" class="titleLink">See All</a>
             </div>
             <div class="productCard__list productScroll">
                 {{>product channel=product.Komik index_start=0 index_end=6 col="col col-xl-2" tag="h3"
