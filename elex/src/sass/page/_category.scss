@@ -105,6 +105,46 @@
         .catalogWidget {
             background: #07A017;
         }
+
+        .artBg .--left {
+            top: 0;
+            bottom: unset;
+
+            @include min-responsive($w-xl) {
+                bottom: 0;
+                top: unset;
+            }
+
+            &:nth-child(1) {
+                display: none;
+
+                @include min-responsive($w-xxl) {
+                    display: block;
+                }
+            }
+
+            &.mobile-only {
+                display: block;
+
+                @include min-responsive($w-xl) {
+                    display: none;
+                }
+            }
+
+            &:nth-child(2) {
+                left: calc(50% - 283px);
+                transform: translateX(-50%);
+            }
+        }
+
+        .artBg .--right {
+            &:nth-child(4) {
+                @include min-responsive($w-xl) {
+                    right: calc(50% - 440px);
+                    transform: translateX(-50%);
+                }
+            }
+        }
     }
 
     .leftbar {
