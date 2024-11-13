@@ -1,0 +1,26 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="mediaItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
+    <button class="button mediaLink videoTrig" data-link="{{link}}">
+        <div class="mediaImg">
+            <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}} loading="lazy"
+                {{/if}}>
+            <div class="mediaDuration">{{duration}}</div>
+        </div>
+        <div class="mediaContent">
+            <span class="ico icoPlay"></span>
+            <div class="mediaLabel artLabel">{{label}}</div>
+            {{#if ../tag}}
+            <{{.. /tag}} class="mediaTitle titleH4">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="mediaTitle titleH4">{{title}}</div>
+            {{/if}}
+        </div>
+    </button>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

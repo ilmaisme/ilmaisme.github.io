@@ -53,7 +53,7 @@
                     </div>
                     <div class="titleWrap mt40">
                         <h2 class="title">Photo</h2>
-                        <a href="#" class="titleLink">All Photos</a>
+                        <a href="photo.html" class="titleLink">All Photos</a>
                     </div>
 
                     {{!>media/photo-widget}}
@@ -66,10 +66,10 @@
                     </div>
                     <div class="titleWrap mt40">
                         <h2 class="title">Video</h2>
-                        <a href="#" class="titleLink">All Videos</a>
+                        <a href="video.html" class="titleLink">All Videos</a>
                     </div>
 
-                    {{!>media/video-widget}}
+                    {{>media/video-widget}}
 
                     <div class="artList artRow mt40">
 
@@ -115,9 +115,13 @@
             </div>
         </div>
     </main>
+    <!-- s: popup video -->
+    {{>media/video-popup}}
+    <!-- e: popup video -->
+
     {{> footer/footer}}
 
-    {{> js page="category" catalog=true swiper=true}}
+    {{> js page="category" catalog=true swiper=true medias=true}}
 
 </body>
 
