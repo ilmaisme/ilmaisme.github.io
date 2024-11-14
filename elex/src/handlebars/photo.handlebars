@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{> head page="media"}}
+{{> head page="media" photoswipes=true}}
 
 <body>
     {{!> header/header login=true}}
@@ -41,14 +41,16 @@
         <div class="container">
             <div class="mediaList row">
 
-                {{!-- {{>media/video-item channel=media.Video col="col-md-4 col-lg-3" tag="h3"
-                width="257" height="145" type="--video" index_start=0 index_end=4}}
-                {{>media/video-item channel=media.Video col="col-md-4 col-lg-3" tag="h3"
-                width="257" height="145" type="--video" index_start=0 index_end=4}}
-                {{>media/video-item channel=media.Video col="col-md-4 col-lg-3" tag="h3"
-                width="257" height="145" type="--video" index_start=0 index_end=4 lazy=true}}
-                {{>media/video-item channel=media.Video col="col-md-4 col-lg-3" tag="h3"
-                width="257" height="145" type="--video" index_start=0 index_end=4 lazy=true}} --}}
+                {{>media/photo-item channel=article.Komik col="col-md-4" tag="h3"
+                width="390" height="290" type="--photo" index_start=0 index_end=3}}
+                {{>media/photo-item channel=article.Komik col="col-md-4" tag="h3"
+                width="390" height="290" type="--photo" index_start=2 index_end=5}}
+                {{>media/photo-item channel=article.Quanta col="col-md-4" tag="h3"
+                width="390" height="290" type="--photo" index_start=0 index_end=3 lazy=true}}
+                {{>media/photo-item channel=article.Quanta col="col-md-4" tag="h3"
+                width="390" height="290" type="--photo" index_start=2 index_end=5 lazy=true}}
+                {{>media/photo-item channel=article.Kids col="col-md-4" tag="h3"
+                width="390" height="290" type="--photo" index_start=0 index_end=3 lazy=true}}
 
             </div>
 
@@ -56,13 +58,14 @@
 
         </div>
     </main>
-    <!-- s: popup video -->
-    {{!>media/video-popup}}
-    <!-- e: popup video -->
+
+    <!-- s: popup pswp template -->
+    {{>media/pswp}}
+    <!-- e popup pswp template -->
 
     {{> footer/footer}}
 
-    {{> js medias=true}}
+    {{> js medias=true photoswipes=true}}
 
 </body>
 

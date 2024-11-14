@@ -1,0 +1,116 @@
+.pswp {
+    opacity: 0;
+    will-change: opacity;
+    transition: 0.5s opacity cubic-bezier(0.73, 0.32, 0.34, 1.5);
+
+    &__top-bar {
+        position: unset;
+    }
+
+    &__caption {
+
+        &__center {
+            @include title_clamp(3);
+            text-align: center;
+            width: 100%;
+            margin: 0 auto 20px;
+            padding: 10px 15px 0;
+            color: $cl-white;
+            line-height: 1.1;
+            font-size: 14px;
+
+            @include min-responsive($w-lg) {
+                width: 830px;
+                font-size: 15px;
+            }
+        }
+    }
+
+    &__counter {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 75px;
+        top: unset;
+        height: auto;
+        font-size: 14px;
+        opacity: 1;
+
+        @include min-responsive($w-lg) {
+            font-size: 15px;
+        }
+    }
+
+    &__ui--fit .pswp__caption,
+    &__ui--fit .pswp__top-bar {
+        background-color: rgba(85, 85, 85, .68);
+    }
+
+    &__bg {
+        background: #555555
+    }
+
+    &__button {
+        &--close {
+            background: transparent;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            top: 0;
+            right: 0;
+
+            @include min-responsive($w-bxl) {
+                @include min-height($w-md) {
+                    top: 50px;
+                    right: 50px;
+                }
+            }
+
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                box-sizing: border-box;
+                position: absolute;
+                width: 26px;
+                height: 3px;
+                background: #FFA9AB;
+                transform: rotate(45deg);
+                border-radius: 5px;
+                top: 22px;
+                right: 10px;
+                transition: background .3s ease-in-out;
+
+                @include min-responsive($w-bxl) {
+                    @include min-height($w-md) {
+                        width: 32px;
+                        top: 20px;
+                        right: 7px;
+                    }
+                }
+            }
+
+            &:after {
+                transform: rotate(-45deg);
+            }
+        }
+
+        &.pswp__button--close {
+
+            @media (-webkit-min-device-pixel-ratio: 1.1),
+            (-webkit-min-device-pixel-ratio: 1.09375),
+            (min-resolution: 1.1dppx),
+            (min-resolution: 105dpi) {
+                background-image: none;
+            }
+        }
+
+        &--arrow--left,
+        &--arrow--right {
+
+            // background: url(./asset/i);
+            &::before {
+                border-radius: 50%;
+                background-color: rgba(85, 85, 85, .68);
+            }
+        }
+    }
+}
