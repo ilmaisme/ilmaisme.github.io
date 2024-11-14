@@ -29,6 +29,8 @@
     <link rel=icon type=image/png sizes=1x16 href="https://elexmedia.id/assets/img/favicon.png">
     <!-- swiper CSS -->
     <link rel="stylesheet" href="./asset/css/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="./asset/css/photoswipe/photoswipe.min.css">
+    <link type="text/css" rel="stylesheet" href="./asset/css/photoswipe/default-skin.min.css">
     <link rel="stylesheet" href="./asset/css/style-category.css" type="text/css">
     <link rel="preload" href="./asset/images/logo-elex-sm.svg" as="image" />
     <style>
@@ -788,7 +790,63 @@
                         <a href="photo.html" class="titleLink">All Photos</a>
                     </div>
 
-
+                    <div class="mediaList mediaWidget --photo">
+                        <div class="mediaItem --photo">
+                            <button class="button mediaLink -photoswipeTrig">
+                                <div class="mediaImg">
+                                    <img src="https://ilmaisme.github.io/elex/build/asset/images/dummy/article/kids/0.png" alt="Serunya Bermain Warna-warni Sambil Belajar" width="257" height="145" loading="lazy" >
+                                </div>
+                                <div class="mediaContent center-flex">
+                                    <div class="mediaCount"><span class="ico icoThumb"></span>23 Photo</div>
+                                    <h3 class="mediaTitle titleH4 sr-only">Serunya Bermain Warna-warni Sambil Belajar</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mediaItem --photo">
+                            <button class="button mediaLink -photoswipeTrig">
+                                <div class="mediaImg">
+                                    <img src="https://ilmaisme.github.io/elex/build/asset/images/dummy/article/kids/1.png" alt="Umur Berapa Sebaiknya Buah Hati Mulai Mengenal Angka dan Huruf?" width="257" height="145" loading="lazy" >
+                                </div>
+                                <div class="mediaContent center-flex">
+                                    <div class="mediaCount"><span class="ico icoThumb"></span>23 Photo</div>
+                                    <h3 class="mediaTitle titleH4 sr-only">Umur Berapa Sebaiknya Buah Hati Mulai Mengenal Angka dan Huruf?</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mediaItem --photo">
+                            <button class="button mediaLink -photoswipeTrig">
+                                <div class="mediaImg">
+                                    <img src="https://ilmaisme.github.io/elex/build/asset/images/dummy/article/kids/2.png" alt="Kenali Ciri Anak Yang Punya Bakat Menjadi Programmer" width="257" height="145" loading="lazy" >
+                                </div>
+                                <div class="mediaContent center-flex">
+                                    <div class="mediaCount"><span class="ico icoThumb"></span>23 Photo</div>
+                                    <h3 class="mediaTitle titleH4 sr-only">Kenali Ciri Anak Yang Punya Bakat Menjadi Programmer</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mediaItem --photo">
+                            <button class="button mediaLink -photoswipeTrig">
+                                <div class="mediaImg">
+                                    <img src="https://ilmaisme.github.io/elex/build/asset/images/dummy/article/kids/3.png" alt="Kenapa Anak-anak Lebih Senang Bermain Air?" width="257" height="145" loading="lazy" >
+                                </div>
+                                <div class="mediaContent center-flex">
+                                    <div class="mediaCount"><span class="ico icoThumb"></span>23 Photo</div>
+                                    <h3 class="mediaTitle titleH4 sr-only">Kenapa Anak-anak Lebih Senang Bermain Air?</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mediaItem --photo">
+                            <button class="button mediaLink -photoswipeTrig">
+                                <div class="mediaImg">
+                                    <img src="https://ilmaisme.github.io/elex/build/asset/images/dummy/article/kids/1.png" alt="Umur Berapa Sebaiknya Buah Hati Mulai Mengenal Angka dan Huruf?" width="257" height="145" loading="lazy" >
+                                </div>
+                                <div class="mediaContent center-flex">
+                                    <div class="mediaCount"><span class="ico icoThumb"></span>23 Photo</div>
+                                    <h3 class="mediaTitle titleH4 sr-only">Umur Berapa Sebaiknya Buah Hati Mulai Mengenal Angka dan Huruf?</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                     <div class="artList artRow mt40">
 
                         <div class="artItem">
@@ -1421,6 +1479,59 @@
         </div>
     </div>    <!-- e: popup video -->
 
+    <!-- s: popup pswp template -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    
+        <!-- Background of PhotoSwipe.
+                 It's a separate element as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+    
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+    
+            <!-- Container that holds slides.
+                    PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                    Don't modify these 3 pswp__item elements, data is added later on. -->
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+    
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <!--  Controls are self-explanatory. Order can be changed. -->
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+    
+                    <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                    <!-- element will get class pswp__preloader--active when preloader is running -->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>    <!-- e popup pswp template -->
+
     <footer class="footer">
         <div class="center-flex">
             <a href="index.html">
@@ -1513,6 +1624,8 @@
     <script defer type="text/javascript" src="./asset/js/catalog-widget.js"></script>
     <!-- swiper JS -->
     <script src="./asset/js/swiper-bundle.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/photoswipe4.1.1/photoswipe.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/photoswipe4.1.1/photoswipe-ui-default.min.js"></script>
 
 </body>
 

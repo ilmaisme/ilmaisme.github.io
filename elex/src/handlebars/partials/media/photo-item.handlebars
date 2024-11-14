@@ -5,14 +5,14 @@
 <div class="mediaItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}{{#if ../class}} {{../class}}{{/if}}">
     <button class="button mediaLink -photoswipeTrig">
         <div class="mediaImg">
-            <img src="{{replace image "./asset" "https://ilmaisme.github.io/elex/build/asset"}}" alt="{{title}}" width="{{width}}" height="{{height}}" {{#if ../lazy}}loading="lazy" {{/if}}>
+            <img src="{{replace image "./asset" "https://ilmaisme.github.io/elex/build/asset"}}" alt="{{title}}" width="{{../width}}" height="{{../height}}" {{#if ../lazy}}loading="lazy" {{/if}}>
         </div>
         <div class="mediaContent center-flex">
-            <div class="mediaCount">23 Photo</div>
+            <div class="mediaCount"><span class="ico icoThumb"></span>23 Photo</div>
             {{#if ../tag}}
-            <{{.. /tag}} class="mediaTitle titleH4">{{title}}</{{.. /tag}}>
+            <{{.. /tag}} class="mediaTitle titleH4 sr-only">{{title}}</{{.. /tag}}>
             {{else}}
-            <div class="mediaTitle titleH4">{{title}}</div>
+            <div class="mediaTitle titleH4 sr-only">{{title}}</div>
             {{/if}}
         </div>
     </a>

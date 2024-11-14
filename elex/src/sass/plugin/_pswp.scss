@@ -22,6 +22,7 @@
             @include min-responsive($w-lg) {
                 width: 830px;
                 font-size: 15px;
+                -webkit-line-clamp: 2;
             }
         }
     }
@@ -36,12 +37,13 @@
         opacity: 1;
 
         @include min-responsive($w-lg) {
+            bottom: 55px;
             font-size: 15px;
         }
     }
 
-    &__ui--fit .pswp__caption,
-    &__ui--fit .pswp__top-bar {
+    .pswp__caption,
+    .pswp__top-bar {
         background-color: rgba(85, 85, 85, .68);
     }
 
@@ -106,11 +108,61 @@
         &--arrow--left,
         &--arrow--right {
 
-            // background: url(./asset/i);
             &::before {
+                top: 30px;
+                height: 38px;
+                width: 38px;
                 border-radius: 50%;
-                background-color: rgba(85, 85, 85, .68);
+                background-image: none;
+                background: rgba(85, 85, 85, .68);
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                border-bottom: 3px solid $cl-white;
+                border-right: 3px solid $cl-white;
+                border-radius: 2px;
+                transform: rotate(315deg);
+                right: 32px;
+                top: 40px;
             }
         }
+
+        &--arrow--right::before {
+            right: 18px;
+        }
+
+        &--arrow--left {
+            transform: rotate(180deg);
+
+            &::before {
+                left: 18px;
+            }
+
+            &::after {
+                transform: rotate(315deg) translate(2px, 2px);
+            }
+        }
+    }
+
+    &--svg .pswp__button,
+    &--svg .pswp__button--arrow--left:before,
+    &--svg .pswp__button--arrow--right:before {
+
+        @media (-webkit-min-device-pixel-ratio: 1.1),
+        (-webkit-min-device-pixel-ratio: 1.09375),
+        (min-resolution: 1.1dppx),
+        (min-resolution: 105dpi) {
+            background-image: none;
+        }
+    }
+
+    &--touch .pswp__button--arrow--left,
+    &--touch .pswp__button--arrow--right {
+        visibility: visible;
     }
 }

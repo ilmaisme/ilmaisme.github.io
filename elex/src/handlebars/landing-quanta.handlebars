@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{> head page="category" swiper=true}}
+{{> head page="category" swiper=true photoswipes=true}}
 
 <body>
     {{!> header/header login=true}}
@@ -47,7 +47,7 @@
                         <a href="photo.html" class="titleLink">All Photos</a>
                     </div>
 
-                    {{!>media/photo-widget}}
+                    {{>media/photo-widget}}
 
                     <div class="artList artRow mt40">
 
@@ -102,9 +102,13 @@
     {{>media/video-popup}}
     <!-- e: popup video -->
 
+    <!-- s: popup pswp template -->
+    {{>media/pswp}}
+    <!-- e popup pswp template -->
+
     {{> footer/footer}}
 
-    {{> js page="category" catalog=true swiper=true medias=true}}
+    {{> js page="category" catalog=true swiper=true medias=true photoswipes=true}}
 
 </body>
 
