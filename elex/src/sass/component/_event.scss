@@ -101,4 +101,43 @@
             }
         }
     }
+
+    &Slider {
+        .eventTag {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 6px 12px 6px 10px;
+            background: $cl-red;
+            border-top-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+            text-transform: uppercase;
+            @include font-pack(false, 14px, false, false, $cl-white);
+            z-index: 1;
+
+            @include min-responsive($w-md) {
+                font-size: 16px
+            }
+
+            &.-past {
+                background: #07A017;
+            }
+
+            &.-going {
+                background: #00B3BF;
+            }
+        }
+
+        .eventLink {
+            padding: 0;
+        }
+
+        .eventItem {
+            margin-top: 0;
+        }
+
+        .eventImg {
+            margin-right: 0;
+        }
+    }
 }

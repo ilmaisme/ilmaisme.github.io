@@ -1,0 +1,122 @@
+.news {
+    .category {
+        &Wrap {
+            display: flex;
+            flex-direction: column;
+
+            @include min-responsive($w-md) {
+                flex-direction: row;
+            }
+        }
+
+        &Hl__nav {
+            position: relative;
+            top: unset;
+            left: unset;
+            right: unset;
+            padding: 0;
+            flex-shrink: 0;
+            height: auto;
+
+            @include min-responsive($w-md) {
+                background: transparent;
+                width: 330px;
+                height: 540px;
+                border-radius: 0;
+                margin-left: 20px;
+            }
+
+            @include min-responsive($w-xl) {
+                margin-left: 30px;
+            }
+
+            .artLink {
+                width: 100%;
+            }
+
+            .artContent {
+                display: none;
+
+                @include min-responsive($w-md) {
+                    display: block;
+                }
+            }
+
+            .artImg {
+                width: 100%;
+                padding-top: 100%;
+                aspect-ratio: 1/1;
+
+                @include min-responsive($w-md) {
+                    width: 100px;
+                    padding-top: 100px;
+                    margin-right: 10px;
+                }
+            }
+
+            .swiper-slide-thumb-active {
+                .artLink {
+                    @include min-responsive($w-md) {
+                        padding-left: 10px;
+                        border-left: 3px solid $cl-red;
+                    }
+                }
+            }
+        }
+
+        &Hl__big {
+            height: auto;
+
+            @include range-responsive($w-md, $w-xl) {
+                height: 540px;
+            }
+
+            .categoryHl__item {
+                height: auto;
+                margin-bottom: 20px;
+
+                @include min-responsive($w-md) {
+                    margin-bottom: 0;
+                }
+            }
+
+            .artLink {
+                flex-direction: column;
+
+                &::before {
+                    content: none;
+                }
+            }
+
+            .artImg {
+                width: 100%;
+                padding-top: 60%;
+                flex: unset;
+
+                @include min-responsive($w-md) {
+                    padding-top: calc(100% - 420px);
+                    flex: 1;
+                }
+
+                @include min-responsive($w-bxl) {
+                    padding-top: 500px;
+                    flex: unset;
+                }
+            }
+
+            .artContent {
+                position: relative;
+                max-width: unset;
+                padding: 8px 0 0;
+                bottom: unset;
+                left: unset;
+                background: $cl-white;
+            }
+
+            .artTitle {
+                color: $cl-primary-black;
+                -webkit-line-clamp: 2;
+            }
+        }
+    }
+}

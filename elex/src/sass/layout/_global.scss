@@ -87,7 +87,9 @@ iframe {
 
 iframe,
 video {
-    vertical-align: top
+    vertical-align: top;
+    max-width: 100%;
+    aspect-ratio: 16/9;
 }
 
 ol,
@@ -208,6 +210,7 @@ strong {
 
     @include min-responsive($w-xl) {
         flex: 1;
+        overflow: hidden;
     }
 
     @include min-responsive($w-vxl) {

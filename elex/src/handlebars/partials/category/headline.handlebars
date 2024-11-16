@@ -9,15 +9,47 @@
             <img src="{{image}}" alt="{{title}}" width="{{../width}}" height="{{../height}}">
         </div>
         <a href="{{link}}" class="artContent">
-            <div class="artLabel">{{../label}}</div>
+            {{#if ../label}}<div class="artLabel">{{../label}}</div>{{/if}}
             {{#if ../tag}}
             <{{.. /tag}} class="artTitle titleH5">{{title}}</{{.. /tag}}>
             {{else}}
             <div class="artTitle titleH5">{{title}}</div>
             {{/if}}
             <div class="artDates"><span class="ico icoCal"></span>{{publish}}</div>
+            {{#if ../lead}}
+            <div class="artLead">
+                Salvia of organic pbr&b gastropub. Cred forage vinyl iceland selfies dreamcatcher. Franzen kitsch tile
+                austin before. Out out portland migas ethical locavore man. Braid out meh paleo yolo tumeric put
+                activated. It bag mi marfa schlitz. Baby pop-up it prism trust cold-pressed chic flannel yolo bun. Blog
+                thundercats hexagon chia.
+            </div>
+            {{/if}}
         </a>
     </div>
+    {{else}}
+    {{#if ../artikel}}
+    <a href="{{link}}" class="artLink">
+        <div class="artImg">
+            <img src="{{image}}" alt="{{title}}" width="{{../width}}" height="{{../height}}">
+        </div>
+        <div class="artContent">
+            {{#if ../label}}<div class="artLabel">{{../label}}</div>{{/if}}
+            {{#if ../tag}}
+            <{{.. /tag}} class="artTitle titleH5">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="artTitle titleH5">{{title}}</div>
+            {{/if}}
+            <div class="artDates"><span class="ico icoCal"></span>{{publish}}</div>
+            {{#if ../lead}}
+            <div class="artLead">
+                Salvia of organic pbr&b gastropub. Cred forage vinyl iceland selfies dreamcatcher. Franzen kitsch tile
+                austin before. Out out portland migas ethical locavore man. Braid out meh paleo yolo tumeric put
+                activated. It bag mi marfa schlitz. Baby pop-up it prism trust cold-pressed chic flannel yolo bun. Blog
+                thundercats hexagon chia.
+            </div>
+            {{/if}}
+        </div>
+    </a>
     {{else}}
     <a href="{{link}}" class="artLink" style="background-image: url({{image}})" ;>
         <div class="artContent">
@@ -32,6 +64,7 @@
             </div>
         </div>
     </a>
+    {{/if}}
     {{/if}}
 </div>
 {{/gte}}

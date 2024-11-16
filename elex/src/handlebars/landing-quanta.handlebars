@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{> head page="category" swiper=true photoswipes=true}}
+{{> head page="category" swiper=true photoswipes=true 400i=true}}
 
 <body>
     {{!> header/header login=true}}
@@ -34,11 +34,71 @@
         <div class="container">
             <div class="row">
                 <div class="leftbar col-xl-9">
+                    <div class="quantaSlider__wrap">
+                        <div class="quantaSlider eventSlider swiper" data-number="5">
+                            <div class="swiper-wrapper">
 
+                                {{>event-slider channel=article.Event index_start=0 index_end=5 tag="h3"
+                                type="swiper-slide"}}
+
+                            </div>
+                        </div>
+                        <div class="swiperNav quanta-pagination swiper-pagination">
+                        </div>
+                    </div>
+                    <div class="quantaVerses">
+                        <h2 class="title text-center">Bacaan <span class="cl-red">Dzikir Pagi</span></h2>
+                        <div class="quantaVerses__wrap">
+                            <div class="quantaVerses__ar">
+                                اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ، لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ،
+                                لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ، مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ
+                                إِلاَّ
+                                بِإِذْنِهِ، يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ، وَلَا يُحِيطُونَ بِشَيْءٍ
+                                مِنْ
+                                عِلْمِهِ إِلاَّ بِمَا شَاءَ، وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ، وَلَا
+                                يَئُودُهُ
+                                حِفْظُهُمَا، وَهُوَ الْعَلِيُّ الْعَظِيمُ
+                            </div>
+                            <div class="quantaVerses__id">
+                                “Allah, tidak ada ilah (yang berhak disembah) melainkan Dia, yang hidup kekal lagi terus
+                                menerus mengurus (makhluk-Nya). Dia tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa
+                                yang
+                                di langit dan di bumi. Tiada yang dapat memberi syafa’at di sisi-Nya tanpa seizin-Nya.
+                                Dia
+                                mengetahui apa-apa yang di hadapan mereka dan di belakang mereka. Mereka tidak
+                                mengetahui
+                                apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit
+                                dan
+                                bumi. Dia tidak merasa berat memelihara keduanya. Dan Dia Maha Tinggi lagi Maha besar.”
+                                <span>(QS. Al Baqarah: 255) (Dibaca 1 x)</span>
+                            </div>
+                        </div>
+                    </div>
                     <h2 class="title">Latest <span class="cl-red">News</span></h2>
                     <div class="artList artRow">
 
                         {{>article channel=article.Komik index_start=0 index_end=5 lazy=true tag="h3" width="184"
+                        height="110"}}
+
+                    </div>
+
+                    <div class="quantaAuthor mt40">
+                        <div class="titleWrap">
+                            <h2 class="title">Quanta’s Authors</h2>
+                            <a href="author.html" class="titleLink">All Authors</a>
+                        </div>
+                        <div class="authorList row">
+
+                            {{>author-list channel=author.List index_start=0 index_end=6 col="col-6 col-md-3 col-xl-2"
+                            tag="h3" width="80" height="80"
+                            lazy=true}}
+
+                        </div>
+                    </div>
+
+                    <div class="artList artRow mt40">
+
+                        {{>article channel=article.Quanta index_start=0 index_end=5 lazy=true tag="h3" width="184"
                         height="110"}}
 
                     </div>
@@ -48,19 +108,6 @@
                     </div>
 
                     {{>media/photo-widget}}
-
-                    <div class="artList artRow mt40">
-
-                        {{>article channel=article.Quanta index_start=0 index_end=5 lazy=true tag="h3" width="184"
-                        height="110"}}
-
-                    </div>
-                    <div class="titleWrap mt40">
-                        <h2 class="title">Video</h2>
-                        <a href="video.html" class="titleLink">All Videos</a>
-                    </div>
-
-                    {{>media/video-widget}}
 
                     <div class="artList artRow mt40">
 
@@ -86,6 +133,19 @@
 
                     </div>
                     <div class="titleWrap">
+                        <h2 class="title">Quotes<span class="cl-red"> of The Day</span></h2>
+                        <div class="quantaQuote__wrap">
+                            <div class="quantaQuote__pagin"></div>
+                        </div>
+                    </div>
+                    <div class="quantaQuote swiper">
+                        <div class="swiper-wrapper">
+
+                            {{>category/quanta-quote}}
+
+                        </div>
+                    </div>
+                    <div class="titleWrap">
                         <h2 class="title"><span class="cl-red">Events</span></h2>
                         <a href="#" class="titleLink">All Events</a>
                     </div>
@@ -94,13 +154,18 @@
                         {{>event channel=article.Event index_start=0 index_end=5 lazy=true tag="h3"}}
 
                     </div>
+                    <div class="titleWrap">
+                        <h2 class="title">Connect <span class="cl-red">with Us</span></h2>
+                    </div>
+                    <div class="quantaSocmed">
+
+                        {{>socmed channel=socmed.Quanta width="40" height="40" images=true lazy=true}}
+
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-    <!-- s: popup video -->
-    {{>media/video-popup}}
-    <!-- e: popup video -->
 
     <!-- s: popup pswp template -->
     {{>media/pswp}}
@@ -109,6 +174,72 @@
     {{> footer/footer}}
 
     {{> js page="category" catalog=true swiper=true medias=true photoswipes=true}}
+    <script>
+        $(document).ready(function () {
+            //slider event
+            var totalEvent = $('.eventSlider').attr("data-number") / 2;
+            var swiperE = new Swiper(".eventSlider", {
+                effect: 'slide',
+                slidesPerView: 1.5,
+                slidesOffsetAfter: 10,
+                slidesOffsetBefore: 10,
+                loop: false,
+                loopedSlides: 5,
+
+                centeredSlides: true,
+                initialSlide: parseInt(totalEvent),
+
+                spaceBetween: 12,
+                grabCursor: true,
+                //autoplay: {
+                //    delay: 1000,
+                //    disableOnInteraction: false,
+                //},
+                speed: 1200,
+                pagination: {
+                    el: ".swiper-pagination"
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2.8,
+                        spaceBetween: 20,
+                        slidesOffsetAfter: 20,
+                        slidesOffsetBefore: 20
+                    },
+                    991: {
+                        slidesPerView: 3.6,
+                        spaceBetween: 20,
+                        slidesOffsetAfter: 10,
+                        slidesOffsetBefore: 10
+                    },
+                    1102: {
+                        slidesPerView: 2.3,
+                        spaceBetween: 20,
+                        slidesOffsetAfter: 10,
+                        slidesOffsetBefore: 10
+                    },
+                    1230: {
+                        slidesPerView: 3.3,
+                        spaceBetween: 20,
+                        slidesOffsetAfter: 200,
+                        slidesOffsetBefore: 200
+                    }
+                }
+            });
+            //slider quote
+            var swiperQ = new Swiper(".quantaQuote", {
+                effect: 'slide',
+                slidesPerView: 1,
+                spaceBetween: 10,
+                grabCursor: true,
+                pagination: {
+                    el: ".quantaQuote__pagin"
+                },
+                //loop: false,
+                speed: 800
+            });
+        });
+    </script>
 
 </body>
 

@@ -12,6 +12,7 @@
         left: 0;
         z-index: 0;
         overflow: hidden;
+        pointer-events: none;
 
         .--left,
         .--right {
@@ -372,7 +373,7 @@
 
     &Lead {
         margin-top: 10px;
-        @include title_clamp(4)
+        @include title_clamp(3)
     }
 
     &Label {
@@ -414,15 +415,15 @@
 
     &icle {
         p {
-            margin-top: 11px;
-            margin-bottom: 11px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         ul,
         ol {
             padding-left: 20px;
-            margin-top: 11px;
-            margin-bottom: 11px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         ul {
@@ -435,6 +436,53 @@
 
         a {
             color: $cl-red;
+        }
+
+        h1 {
+            margin-top: .67em;
+            margin-bottom: .67em;
+            @include font-pack($font-mbold, 2em, $font-weight-mbold, false, $cl-primary-black);
+        }
+
+        h2 {
+            margin-top: .83em;
+            margin-bottom: .83em;
+            @include font-pack($font-mbold, 1.5em, $font-weight-mbold, false, $cl-primary-black);
+        }
+
+        h3 {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            @include font-pack($font-mbold, 1.17em, $font-weight-mbold, false, $cl-primary-black);
+        }
+
+        h4,
+        pre {
+            margin-top: 1.33em;
+            margin-bottom: 1.33em;
+            @include font-pack($font-mbold, 1em, $font-weight-mbold, false, $cl-primary-black);
+        }
+
+        blockquote {
+            position: relative;
+            margin: 20px 10px;
+            padding-left: 20px;
+            border-left: 2px solid $cl-red;
+            @include font-pack($font-sbold, 24px, $font-weight-sbold, normal, $cl-primary-black);
+            
+            @include min-responsive($w-bxl) {
+                font-size: 32px;
+                margin: 20px 50px;
+                border-left: 4px solid $cl-red;
+            }
+            &::before{
+                content: '';
+                width: 32px;
+                height: 21px;
+                display: block;
+                margin-bottom: 7px;
+                background: url(../images/icon/ico-quote.png) center no-repeat;
+            }
         }
     }
 }

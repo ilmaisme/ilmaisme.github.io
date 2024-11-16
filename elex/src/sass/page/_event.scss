@@ -1,0 +1,69 @@
+.event {
+    overflow: hidden;
+
+    &List {
+        margin-top: 30px;
+    }
+
+    &Content {
+        padding-top: 0;
+
+        @include min-responsive($w-vxl) {
+            padding-top: 20px;
+        }
+    }
+
+    &Slider__wrap {
+        position: relative;
+        padding-bottom: 50px;
+
+        .eventLink {
+            width: auto;
+        }
+
+        .eventImg {
+            width: 240px;
+            padding-top: 240px;
+
+            @include min-responsive($w-lg) {
+                width: 480px;
+                padding-top: 480px;
+            }
+        }
+
+        .swiperNav.swiper-pagination-bullets.swiper-pagination-horizontal {
+            bottom: 20px;
+        }
+    }
+
+    .lead {
+        &Search {
+            position: relative;
+            width: 100%;
+            border-radius: 7px;
+            margin-left: 12px;
+            background: #F3F3F3;
+
+            &__cta {
+                top: 10px;
+                right: 14px;
+            }
+
+            &__input {
+                width: calc(100% - 32px);
+                padding: 11px 14px;
+            }
+        }
+
+        &Sort__item {
+
+            label {
+                min-width: 82px;
+
+                @include min-responsive($w-md) {
+                    min-width: unset;
+                }
+            }
+        }
+    }
+}

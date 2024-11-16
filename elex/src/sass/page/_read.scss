@@ -1,0 +1,82 @@
+.read {
+    &Title {
+        @include font-pack($font-mbold, 24px, $font-weight-mbold, 1.05, false);
+        letter-spacing: 0.72px;
+
+        @include min-responsive($w-md) {
+            font-size: 36px
+        }
+    }
+
+    &Att {
+        display: flex;
+        align-items: center;
+
+        &__item {
+            margin-top: 10px;
+            margin-right: 20px;
+            @include font-pack(false, false, false, 1.21, $cl-primary-black);
+            letter-spacing: 0.28px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &Img {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        letter-spacing: 0.28px;
+
+        span {
+            display: block;
+            text-align: center;
+            margin-top: 7px;
+        }
+    }
+
+    &Article {
+        margin-top: 20px;
+        @include font-pack(false, 16px, false, 1.43, #202020);
+        letter-spacing: 0.32px;
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    &More {
+        @extend .titleH5;
+        text-align: center;
+        border-left: 2px solid $cl-red;
+        background: #F9F4F4;
+        padding: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        @include min-responsive($w-md) {
+            padding: 20px;
+        }
+    }
+
+    &Tag {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        &__link {
+            display: block;
+            margin-right: 10px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .catalogWidget {
+        margin-top: 10px;
+    }
+}
