@@ -47,16 +47,24 @@
                     flex-basis: 496px;
                 }
 
-                .artLink::after {
-                    content: '';
-                    position: absolute;
-                    bottom: 0;
-                    width: 100%;
-                    height: 155px;
-                    border-bottom-left-radius: 7px;
-                    border-bottom-right-radius: 7px;
-                    background: linear-gradient(180deg, rgba(255, 43, 48, 0.00) 0%, #1C1717 100%);
-                    z-index: 1;
+                .artLink {
+                    &:hover {
+                        .artTitle {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        height: 155px;
+                        border-bottom-left-radius: 7px;
+                        border-bottom-right-radius: 7px;
+                        background: linear-gradient(180deg, rgba(255, 43, 48, 0.00) 0%, #1C1717 100%);
+                        z-index: 1;
+                    }
                 }
 
                 .artContent {

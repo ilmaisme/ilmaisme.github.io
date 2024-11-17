@@ -15,6 +15,16 @@
         @include min-responsive($w-lg) {
             padding: 20px;
         }
+
+        &:hover {
+            .eventTitle {
+                color: $cl-red;
+            }
+
+            .eventCat {
+                text-decoration: underline;
+            }
+        }
     }
 
     &Content {
@@ -76,6 +86,31 @@
         &.-going {
             color: #00B3BF;
         }
+
+        &.-stamp {
+            display: inline-flex;
+            border-radius: 7px 0 13px 0;
+            padding: 6px 12px 6px 10px;
+            background: $cl-red;
+            text-transform: uppercase;
+            @include font-pack(false, 14px, false, false, $cl-white);
+
+            @include min-responsive($w-md) {
+                font-size: 16px
+            }
+
+            &.-past {
+                background: #07A017;
+            }
+
+            &.-going {
+                background: #00B3BF;
+            }
+
+            ~.readTitle {
+                margin-top: 10px;
+            }
+        }
     }
 
     &Attr {
@@ -107,25 +142,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            padding: 6px 12px 6px 10px;
-            background: $cl-red;
-            border-top-left-radius: 7px;
-            border-bottom-right-radius: 7px;
-            text-transform: uppercase;
-            @include font-pack(false, 14px, false, false, $cl-white);
             z-index: 1;
-
-            @include min-responsive($w-md) {
-                font-size: 16px
-            }
-
-            &.-past {
-                background: #07A017;
-            }
-
-            &.-going {
-                background: #00B3BF;
-            }
         }
 
         .eventLink {

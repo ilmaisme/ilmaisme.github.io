@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="read" swiper=true 400i=true}}
+
+<body>
+    {{> header/header login=true}}
+    {{!> header/header}}
+    <main class="main read" role="main">
+
+        <div class="container">
+
+            {{>breadcrumb parent="Events" parentlink="events.html" child="Ngomik Detektif Conan"}}
+
+            <div class="row">
+                <div class="leftbar col-xl-9">
+                    <div class="eventTag -stamp -past">
+                        Past Event
+                    </div>
+                    <h1 class="readTitle">Ngomik Detektif Conan
+                    </h1>
+                    <div class="readAtt">
+                        <div class="readAtt__item readAuthor">Oleh: John Doe</div>
+                        <div class="readAtt__item artDates"><span class="ico icoCal"></span>19 Oktober 2023</div>
+                    </div>
+                    <div class="readAlbum">
+
+                        {{>read/album}}
+
+                    </div>
+
+                    <div class="readSocmed">
+                        <span class="readSocmed__caption">Share to:</span>
+
+                        {{>socmed channel=socmed.Read}}
+
+                    </div>
+
+                    {{>read/read-article-event}}
+
+                    <div class="tagList">
+                        <a href="tag.html" class="tagLink">Komik Lelaki</a>
+                        <a href="tag.html" class="tagLink">Comics</a>
+                        <a href="tag.html" class="tagLink">Komik Petualangan</a>
+                    </div>
+
+                </div>
+                <div class="sidebar col-xl-3">
+                    <div class="titleWrap">
+                        <h2 class="title">All <span class="cl-red">News</span></h2>
+                        <a href="artikel.html" class="titleLink">All News</a>
+                    </div>
+                    <div class="artList artRow">
+
+                        {{>article channel=article.Kids index_start=0 index_end=2 tag="h3" width="184"
+                        height="110"}}
+                        {{>article channel=article.Komik index_start=2 index_end=5 lazy=true tag="h3" width="184"
+                        height="110"}}
+
+                    </div>
+                    <div class="titleWrap">
+                        <h2 class="title"><span class="cl-red">Katalog</span></h2>
+                    </div>
+                    <div class="catalogWidget" data-widget="5">
+
+                        {{>catalog index_start=0 index_end=5 link=true}}
+
+                    </div>
+                    <div class="titleWrap">
+                        <h2 class="title">Other <span class="cl-red">Events</span></h2>
+                        <a href="events.html" class="titleLink">All Events</a>
+                    </div>
+                    <div class="eventList row">
+
+                        {{>event channel=article.Event index_start=0 index_end=4 lazy=true tag="h3"}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js catalog=true swiper=true}}
+
+</body>
+
+</html>

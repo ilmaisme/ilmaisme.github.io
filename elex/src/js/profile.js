@@ -41,18 +41,18 @@ $(document).ready(function () {
         let box = boxes[i];
         initImageUpload(box);
     }
-
-    //show hide password
-    function showPassword(btn) {
-        let input = btn.getAttribute('toggle'),
-            elInput = document.querySelector(input),
-            type = elInput.getAttribute('type')
-        if (type == "password") {
-            elInput.setAttribute("type", "text");
-            btn.classList.add('show');
-        } else {
-            elInput.setAttribute("type", "password");
-            btn.classList.remove('show');
-        }
-    }
 })
+
+//show hide password
+function showPassword(btn) {
+    let input = btn.getAttribute('toggle'),
+        elInput = document.querySelector(input),
+        type = elInput.getAttribute('type')
+    if (type == "password") {
+        elInput.setAttribute("type", "text");
+        btn.classList.add('show');
+    } else {
+        elInput.setAttribute("type", "password");
+        btn.classList.remove('show');
+    }
+}

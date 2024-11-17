@@ -24,13 +24,22 @@
     &Arrow {
         @include display-flex;
         align-items: center;
+        width: fit-content;
+        overflow: hidden;
         padding-bottom: 4px;
         color: $cl-red;
         letter-spacing: 0.7px;
 
+        &:hover {
+            .icoArrow {
+                transform: translateX(20px);
+            }
+        }
+
         .icoArrow {
             @extend %icoArrow;
             margin-left: 8px;
+            transition: transform .2s ease-out;
         }
     }
 

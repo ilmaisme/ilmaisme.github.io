@@ -55,6 +55,17 @@
 
     &Item {
         .product {
+            &Link {
+                &:hover {
+                    .productTitle,
+                    .productAuthor,
+                    .productLabel {
+                        color: $cl-white;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
             &Title {
                 margin-top: 5px;
                 @include font-pack(false, 15px, false, 1.13, $cl-white);

@@ -29,6 +29,11 @@
         margin-bottom: 20px;
         letter-spacing: 0.28px;
 
+        img{
+            border-radius: 7px;
+            overflow: hidden;
+        }
+
         span {
             display: block;
             text-align: center;
@@ -72,6 +77,74 @@
 
             &:last-of-type {
                 margin-right: 0;
+            }
+        }
+    }
+
+    &Socmed {
+        display: flex;
+        align-items: center;
+
+        &__caption {
+            margin-right: 9px;
+            @include font-pack(false, 13px, false, 1.23, #222);
+
+            @include min-responsive($w-md) {
+                margin-right: 13px;
+            }
+        }
+
+        .socmedItem {
+            margin: 4px;
+            border: 1px solid #E7E7E7;
+            border-radius: 50%;
+            background: $cl-white;
+            transition: background .2s ease;
+            transition: transform .5s ease;
+
+            @include max-responsive($w-xm) {
+                margin: 3px;
+            }
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .ico {
+            width: 36px;
+            height: 36px;
+            filter: invert(37%) sepia(4%) saturate(0%) hue-rotate(287deg) brightness(98%) contrast(87%);
+
+            @include max-responsive($w-xm) {
+                width: 30px;
+                height: 30px;
+            }
+
+            &Share {
+                &-fb {
+                    @extend %icoShare-fb
+                }
+
+                &-x {
+                    @extend %icoShare-x
+                }
+
+                &-wa {
+                    @extend %icoShare-wa
+                }
+
+                &-ln {
+                    @extend %icoShare-ln
+                }
+
+                &-tg {
+                    @extend %icoShare-tg
+                }
+
+                &-lnk {
+                    @extend %icoShare-lnk
+                }
             }
         }
     }
