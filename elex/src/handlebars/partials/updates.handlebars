@@ -1,4 +1,7 @@
-{{#each updates}}
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
 <div class="artItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
     <a href="{{link}}" class="artLink">
         <div class="artImg">
@@ -15,4 +18,7 @@
         </div>
     </a>
 </div>
+{{/gte}}
+{{else}}
+{{/gte}}
 {{/each}}

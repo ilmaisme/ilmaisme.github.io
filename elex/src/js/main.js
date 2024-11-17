@@ -108,15 +108,6 @@ function triggerActiveButton(el, parent, classActive, btn, target) {
         }
     }
 }
-//cta product
-function triggerCtaProduct(btn, parent, target) {
-    btn.classList.toggle('active');
-    if (!!target) {
-        tg = btn.closest(parent).querySelector(target)
-        tg.classList.toggle('active');
-        console.log(tg)
-    }
-}
 
 //calc width window
 function viewport() {
