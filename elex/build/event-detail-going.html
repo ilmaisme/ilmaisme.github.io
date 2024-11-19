@@ -664,24 +664,39 @@
                     <div class="readSocmed">
                         <span class="readSocmed__caption">Share to:</span>
 
-                        <a href="#" class="socmedItem center-flex" aria-label="Share Facebook">
+                        <button class="button socmedItem center-flex" aria-label="Share Facebook">
                             <span class="ico icoShare-fb"></span>
-                        </a>
-                        <a href="#" class="socmedItem center-flex" aria-label="Share Twitter X">
+                        </button>
+                        <button class="button socmedItem center-flex" aria-label="Share Twitter X">
                             <span class="ico icoShare-x"></span>
-                        </a>
-                        <a href="#" class="socmedItem center-flex" aria-label="Share Whatsapp">
+                        </button>
+                        <button class="button socmedItem center-flex" aria-label="Share Whatsapp">
                             <span class="ico icoShare-wa"></span>
-                        </a>
-                        <a href="#" class="socmedItem center-flex" aria-label="Share Linkedin">
+                        </button>
+                        <button class="button socmedItem center-flex" aria-label="Share Linkedin">
                             <span class="ico icoShare-ln"></span>
-                        </a>
-                        <a href="#" class="socmedItem center-flex" aria-label="Share Telegram">
+                        </button>
+                        <button class="button socmedItem center-flex" aria-label="Share Telegram">
                             <span class="ico icoShare-tg"></span>
-                        </a>
-                        <a href="#" class="socmedItem center-flex" aria-label="Share Link">
+                        </button>
+                        <button class="button socmedItem center-flex" aria-label="Share Link" data-form="copyLinkUrl" data-copy="copy-url" data-title="URL copied" onclick="copyLink('copyLinkUrl', this)">
                             <span class="ico icoShare-lnk"></span>
-                        </a>
+                        </button>
+                        <input type="text" style="display: none;" id="copyLinkUrl" value="https://ilmaisme.github.io/elex/build/">
+                        
+                        <script>
+                            function copyLink(id, el) {
+                            let cTxt = document.getElementById(id);
+                        
+                            cTxt.select();
+                            cTxt.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(cTxt.value);
+                            el.classList.add('-tooltip');
+                            setTimeout(function () {
+                                el.classList.remove('-tooltip');
+                            }, 1500);
+                        }
+                        </script>
 
                     </div>
 

@@ -1,5 +1,6 @@
 .breadcrumb {
     @include display-flex;
+    align-items: center;
     margin-top: 20px;
     margin-bottom: 30px;
     flex-wrap: wrap;
@@ -34,13 +35,19 @@
                 color: #838383
             }
         }
+
+        a:hover {
+            text-decoration: underline
+        }
     }
 
     &Link {
         @include font-pack(false, 13px, false, 1.23, $cl-red);
     }
 
-    &Icon{
+    &Icon {
+        position: relative;
+        bottom: 3px;
         margin-right: 8px;
         vertical-align: middle;
     }

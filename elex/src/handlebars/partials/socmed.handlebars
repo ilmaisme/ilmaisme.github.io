@@ -1,3 +1,31 @@
+{{#if share}}
+{{#each channel}}
+{{#eq title compare="Share Link"}}
+<button class="button socmedItem center-flex" aria-label="{{title}}" data-form="copyLinkUrl" data-copy="copy-url" data-title="URL copied" onclick="copyLink('copyLinkUrl', this)">
+    <span class="ico ico{{replace (capitalize icon)}}"></span>
+</button>
+<input type="text" style="display: none;" id="copyLinkUrl" value="https://ilmaisme.github.io/elex/build/">
+{{else}}
+<button class="button socmedItem center-flex" aria-label="{{title}}">
+    <span class="ico ico{{replace (capitalize icon)}}"></span>
+</button>
+{{/eq}}
+{{/each}}
+
+<script>
+    function copyLink(id, el) {
+    let cTxt = document.getElementById(id);
+
+    cTxt.select();
+    cTxt.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(cTxt.value);
+    el.classList.add('-tooltip');
+    setTimeout(function () {
+        el.classList.remove('-tooltip');
+    }, 1500);
+}
+</script>
+{{else}}
 {{#each channel}}
 <a href="{{link}}" class="socmedItem center-flex" aria-label="{{title}}">
     {{#if images}}
@@ -10,3 +38,4 @@
     {{/if}}
 </a>
 {{/each}}
+{{/if}}

@@ -26,7 +26,7 @@
             <div class="productAuthor">{{author}}</div>
             {{#if ../cta}}
             <div class="productCta">
-                <button class="button productWish" aria-label="favorite this product"
+                <button class="button productWish{{#if ../wish}} {{../wish}}{{/if}}" aria-label="favorite this product"
                     onclick="event.preventDefault(); triggerActiveButton(false,false,false,this)"><span
                         class="icoWishlist"></span></button>
                 <button class="button buttonPrimary productBuy -icon"

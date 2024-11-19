@@ -228,15 +228,20 @@
             });
             //slider quote
             var swiperQ = new Swiper(".quantaQuote", {
-                effect: 'slide',
+                effect: 'fade',
                 slidesPerView: 1,
                 spaceBetween: 10,
                 grabCursor: true,
                 pagination: {
-                    el: ".quantaQuote__pagin"
+                    el: ".quantaQuote__pagin",
+                    clickable: true
                 },
                 //loop: false,
-                speed: 800
+                speed: 1000,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: true,
+                },
             });
         });
     </script>

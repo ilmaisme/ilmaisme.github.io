@@ -188,6 +188,10 @@
         margin-right: 7px;
 
         &__link {
+            &:hover {
+                color: $cl-red
+            }
+
             span {
                 @include title_clamp(1);
                 max-width: 170px;
@@ -238,6 +242,12 @@
 
         .icoWishlist {
             filter: invert(42%) sepia(17%) saturate(0%) hue-rotate(153deg) brightness(83%) contrast(88%);
+            transition: background .5s ease;
+
+            &:hover {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='38' fill='none'%3E%3Cpath fill='black' d='M12.8 9.31c-2.955 0-5.352 2.313-5.352 5.167 0 2.305.937 7.773 10.158 13.302a1.075 1.075 0 0 0 1.096 0c9.22-5.529 10.158-10.997 10.158-13.302 0-2.854-2.397-5.167-5.353-5.167s-5.353 3.132-5.353 3.132S15.757 9.31 12.8 9.31Z'/%3E%3C/svg%3E");
+                filter: invert(59%) sepia(46%) saturate(290%) hue-rotate(309deg) brightness(112%) contrast(107%);
+            }
         }
 
         &:has(.headerNode) {

@@ -1,0 +1,103 @@
+.rating {
+    margin-top: 20px;
+
+    @include min-responsive($w-md) {
+        margin-top: 50px;
+        width: 350px;
+    }
+
+    &Caption {
+        @include font-pack($font-mbold, 20px, $font-weight-mbold, false, false);
+        letter-spacing: 0.52px;
+
+        @include min-responsive($w-md) {
+            font-size: 26px
+        }
+    }
+
+    &Num {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        @include font-pack($font-mbold, 34px, $font-weight-mbold, false, #202020);
+        letter-spacing: 1.28px;
+
+        @include min-responsive($w-md) {
+            font-size: 64px
+        }
+    }
+
+    &Attr {
+        margin-top: 10px;
+        @include font-pack(false, 16px, false, false, #000);
+
+        @include min-responsive($w-md) {
+            font-size: 18px
+        }
+    }
+
+    &List {
+        margin-top: 20px;
+
+        @include min-responsive($w-md) {
+            margin-top: 30px;
+        }
+    }
+
+    &Item {
+        position: relative;
+        color: #525252;
+
+        &__num {
+            width: 8px
+        }
+    }
+
+    &Prog {
+        position: absolute;
+        width: 0;
+        background: #FFAA04
+    }
+
+    &Prog,
+    &Prog__wrap {
+        height: 7px;
+        border-radius: 10px
+    }
+
+    &Prog__wrap {
+        position: relative;
+        width: 78%;
+        background: #D9D9D9;
+
+        span {
+            position: absolute;
+            top: -7px;
+            right: -45px
+        }
+    }
+
+    &Stars {
+        .ico {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .icoStar {
+        width: 24px;
+        height: 24px;
+        @extend %icoStar
+    }
+
+    .icoStar-half {
+        width: 24px;
+        height: 24px;
+        @extend %icoStar-half
+    }
+
+    .icoStar-empty {
+        width: 24px;
+        height: 24px;
+        @extend %icoStar-empty
+    }
+}
