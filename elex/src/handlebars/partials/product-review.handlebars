@@ -3,19 +3,19 @@
 {{#gte @index compare=../index_end}}
 {{else}}
 <div class="productItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
-    <a href="{{link}}" class="productLink{{#if ../direction}} {{../direction}}{{/if}}">
-        <div class="productImg">
+    <div class="productLink{{#if ../direction}} {{../direction}}{{/if}}">
+        <a href="{{link}}" class="productImg">
             <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}} loading="lazy"
                 {{/if}}>
             {{#if tag}}
             <div class="productTag">{{tag}}</div>
             {{/if}}
-        </div>
+        </a>
         <div class="productContent">
             {{#if ../tag}}
-            <{{.. /tag}} class="productTitle">{{title}}</{{.. /tag}}>
+            <{{.. /tag}} class="productTitle"><a href="{{link}}">{{title}}</a></{{.. /tag}}>
             {{else}}
-            <div class="productTitle">{{title}}</div>
+            <a href="{{link}}" class="productTitle">{{title}}</a>
             {{/if}}
             {{#if ../review}}
             <div class="productTimestamp">2 jam lalu</div>
@@ -35,7 +35,7 @@
             </div>
             {{/if}}
         </div>
-    </a>
+    </div>
 </div>
 {{/gte}}
 {{else}}

@@ -331,16 +331,6 @@
         position: relative;
         @include display-flex;
         flex-direction: row;
-
-        &:hover {
-            .artTitle {
-                color: $cl-red;
-            }
-
-            .artLabel {
-                text-decoration: underline;
-            }
-        }
     }
 
     &Content {
@@ -356,6 +346,12 @@
         flex-shrink: 0;
         align-self: flex-start;
 
+        &:hover {
+            ~.artContent .artTitle {
+                color: $cl-red;
+            }
+        }
+
         img {
             @extend %template-img;
             border-radius: 7px;
@@ -366,6 +362,10 @@
     &Title {
         @include title_clamp(3);
         margin-top: 7px;
+
+        &:hover {
+            color: $cl-red;
+        }
     }
 
     &Dates {
@@ -387,9 +387,14 @@
     }
 
     &Label {
+        display: inline-block;
         margin-top: 4px;
         @include font-pack($font-mbold, false, $font-weight-mbold, false, $cl-red);
         letter-spacing: 0.28px;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     &Caption {
@@ -425,7 +430,7 @@
 
     &icle {
         word-wrap: break-word;
-        
+
         p {
             margin-top: 20px;
             margin-bottom: 20px;

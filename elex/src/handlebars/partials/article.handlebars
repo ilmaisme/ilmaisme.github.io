@@ -3,22 +3,22 @@
 {{#gte @index compare=../index_end}}
 {{else}}
 <div class="artItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
-    <a href="{{link}}" class="artLink">
-        <div class="artImg">
+    <div class="artLink">
+        <a href="{{link}}" class="artImg">
             <img src="{{image}}" alt="{{title}}" width="{{../width}}" height="{{../height}}" {{#if ../lazy}} loading="lazy" {{/if}}>
-        </div>
+        </a>
         <div class="artContent">
             {{#if label}}
-            <div class="artLabel"> {{label}}</div>
+            <a href="{{linklanding}}" class="artLabel"> {{label}}</a>
             {{/if}}
             {{#if ../tag}}
-            <{{.. /tag}} class="artTitle {{#if ../widget}}titleH4{{else}}titleH3{{/if}}">{{title}}</{{.. /tag}}>
+            <{{.. /tag}} class="artTitle {{#if ../widget}}titleH4{{else}}titleH3{{/if}}"><a href="{{link}}">{{title}}</a></{{.. /tag}}>
             {{else}}
-            <div class="artTitle {{#if ../widget}}titleH4{{else}}titleH3{{/if}}">{{title}}</div>
+            <a href="{{link}}" class="artTitle {{#if ../widget}}titleH4{{else}}titleH3{{/if}}">{{title}}</a>
             {{/if}}
             <div class="artDates"><span class="ico icoCal"></span>{{publish}}</div>
         </div>
-    </a>
+    </div>
 </div>
 {{/gte}}
 {{else}}

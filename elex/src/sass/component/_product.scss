@@ -74,21 +74,6 @@
         display: block;
         width: 100%;
 
-        &:hover {
-            .productTitle {
-                color: $cl-red;
-            }
-
-            .productLabel,
-            .productAuthor {
-                text-decoration: underline;
-            }
-
-            .productAuthor {
-                color: $cl-primary-black
-            }
-        }
-
         &.--row {
             @include flex(center);
 
@@ -113,9 +98,16 @@
     }
 
     &Img {
+        display: block;
         position: relative;
         width: 100%;
         padding-top: 149.76%;
+
+        &:hover {
+            ~.productContent .productTitle {
+                color: $cl-red;
+            }
+        }
 
         img {
             @extend %template-img;
@@ -129,10 +121,15 @@
     }
 
     &Title {
+        display: inline-block;
         margin-top: 2px;
         @include title_clamp(2);
         @include font-pack($font-mbold, 16px, $font-weight-mbold, false, #454545);
         letter-spacing: 0.32px;
+
+        &:hover {
+            color: $cl-red;
+        }
     }
 
     &Author {
@@ -140,6 +137,11 @@
         @include title_clamp(2);
         @include font-pack(false, 14px, false, 1.21, #838383);
         letter-spacing: 0.28px;
+
+        &:hover {
+            text-decoration: underline;
+            color: $cl-primary-black
+        }
     }
 
     &Arrow {
@@ -147,9 +149,14 @@
     }
 
     &Label {
+        display: inline-block;
         margin-top: 10px;
         @include font-pack($font-mbold, false, $font-weight-mbold, false, $cl-red);
         letter-spacing: 0.28px;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     &Tag {
@@ -182,6 +189,8 @@
         margin-top: 20px;
 
         .button {
+            display: inline-block;
+
             ~.button {
                 flex: 1;
                 margin-left: 5px

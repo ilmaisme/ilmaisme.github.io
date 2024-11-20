@@ -15,16 +15,6 @@
         @include min-responsive($w-lg) {
             padding: 20px;
         }
-
-        &:hover {
-            .eventTitle {
-                color: $cl-red;
-            }
-
-            .eventCat {
-                text-decoration: underline;
-            }
-        }
     }
 
     &Content {
@@ -37,6 +27,7 @@
     }
 
     &Img {
+        display: block;
         position: relative;
         width: 128px;
         padding-top: 128px;
@@ -47,6 +38,12 @@
         @include min-responsive($w-vxl) {
             width: 240px;
             padding-top: 240px;
+        }
+
+        &:hover {
+            ~.eventContent .eventTitle {
+                color: $cl-red;
+            }
         }
 
         img {
@@ -62,6 +59,10 @@
 
     &Title {
         @include title_clamp(2);
+
+        &:hover {
+            color: $cl-red;
+        }
     }
 
     &Lead {
@@ -71,9 +72,18 @@
     }
 
     &Label {
+        display: block;
         margin-top: 5px;
         @include font-pack($font-mbold, false, $font-weight-mbold, false, #616161);
         letter-spacing: 0.28px;
+    }
+
+    &Cat {
+        display: inline-block;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     &Tag {

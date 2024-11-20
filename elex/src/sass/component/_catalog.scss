@@ -55,20 +55,23 @@
 
     &Item {
         .product {
-            &Link {
+            &Title {
+                margin-top: 5px;
+                @include font-pack(false, 15px, false, 1.13, $cl-white);
+
                 &:hover {
-                    .productTitle,
-                    .productAuthor,
-                    .productLabel {
+                    color: $cl-white;
+                    text-decoration: underline;
+                }
+            }
+
+            &Img {
+                &:hover {
+                    ~.productContent .productTitle {
                         color: $cl-white;
                         text-decoration: underline;
                     }
                 }
-            }
-
-            &Title {
-                margin-top: 5px;
-                @include font-pack(false, 15px, false, 1.13, $cl-white);
             }
 
             &Author {

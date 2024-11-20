@@ -3,19 +3,19 @@
 {{#gte @index compare=../index_end}}
 {{else}}
 <div class="eventItem{{#if ../col}} {{../col}}{{/if}}">
-    <a href="{{link}}" class="eventLink">
-        <div class="eventImg">
+    <div class="eventLink">
+        <a href="{{link}}" class="eventImg">
             <img src="{{image}}" alt="" width="240" height="240" {{#if ../lazy}} loading="lazy" {{/if}}>
-        </div>
+        </a>
         <div class="eventContent">
             {{#if ../tag}}
-            <{{.. /tag}} class="eventTitle titleH4">{{title}}</{{.. /tag}}>
+            <{{.. /tag}} class="eventTitle titleH4"><a href="{{link}}">{{title}}</a></{{.. /tag}}>
             {{else}}
-            <div class="eventTitle titleH4">{{title}}</div>
+            <a href="{{link}}" class="eventTitle titleH4">{{title}}</a>
             {{/if}}
             {{#if label}}
             <div class="eventLabel">
-                <span class="eventCat">{{label}}</span>
+                <span class="eventCat"><a href="{{linklanding}}">{{label}}</a></span>
                 <span
                     class="eventTag{{#eq tag compare='Past Event'}} -past{{/eq}}{{#eq tag compare='On Going'}} -going{{/eq}}">{{tag}}</span>
             </div>
@@ -28,7 +28,7 @@
             <div class="eventAttr eventDates"><span class="ico icoCal"></span>{{dates}}</div>
             {{/if}}
         </div>
-    </a>
+    </div>
 </div>
 {{/gte}}
 {{else}}

@@ -48,12 +48,6 @@
                 }
 
                 .artLink {
-                    &:hover {
-                        .artTitle {
-                            text-decoration: underline;
-                        }
-                    }
-
                     &::after {
                         content: '';
                         position: absolute;
@@ -70,7 +64,9 @@
                 .artContent {
                     position: absolute;
                     bottom: 0;
-                    padding: 16px 20px;
+                    padding-bottom: 16px;
+                    padding-left: 20px;
+                    padding-right: 20px;
                     z-index: 2;
 
                     @include min-responsive($w-lg) {
@@ -92,10 +88,18 @@
                     @include min-responsive($w-md) {
                         font-size: 22px;
                     }
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
 
                 .artDates {
                     margin-top: 6px;
+                }
+
+                .artLabel {
+                    margin-top: 0;
                 }
 
                 .icoCal {
@@ -105,6 +109,13 @@
                 .artImg {
                     width: 100%;
                     padding-top: 54.321%;
+
+                    &:hover {
+                        ~.artContent .artTitle {
+                            text-decoration: underline;
+                            color: $cl-white;
+                        }
+                    }
                 }
             }
 

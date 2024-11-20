@@ -1,0 +1,37 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="reviewItem">
+    <div class="reviewItem__wrap">
+        <div class="reviewImg">
+            {{#eq @index compare = 0}}
+            <img src="./asset/images/user.jpg" alt="" width="75" height="75" loading="lazy">
+            {{else}}
+            <img src="https://i.pravatar.cc/75?{{id}}" alt="" width="75" height="75" loading="lazy">
+            {{/eq}}
+        </div>
+        <div class="reviewContent productContent">
+            <div class="reviewContent__wrap">
+                <div class="rating ratingReview">
+                    <span class="ico icoStar"></span>
+                    <span class="ico icoStar"></span>
+                    <span class="ico icoStar"></span>
+                    <span class="ico icoStar"></span>
+                    <span class="ico icoStar-half"></span>
+                </div>
+                <div class="reviewTimestamp productTimestamp">2 jam lalu</div>
+            </div>
+            <div class="reviewTitle productTitle">{{name}}</div>
+            <div class="reviewLead productLead">Tellus vitae blandit quam urna urna. Tempor pellentesque nec a,
+                scelerisque. Elit
+                in lorem eget vitae. Ullamcorper faucibus urna ipsum ipsum nisi, malesuada. Vel eget placerat
+                quis enim
+                fames.</div>
+        </div>
+    </div>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

@@ -3,26 +3,26 @@
 {{#gte @index compare=../index_end}}
 {{else}}
 <div class="productItem swiper-slide">
-    <a href="{{link}}" class="productLink --row">
-        <div class="productImg">
+    <div class="productLink --row">
+        <a href="{{link}}" class="productImg">
             <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}}
                 loading="lazy" {{/if}}>
-        </div>
+        </a>
         <div class="productContent">
             {{#if ../label}}
-            <div class="productLabel"> {{../label}}</div>
+            <a href="#" class="productLabel"> {{../label}}</a>
             {{/if}}
             {{#if ../tag}}
-            <{{.. /tag}} class="productTitle">{{title}}</{{.. /tag}}>
+            <{{.. /tag}} class="productTitle"><a href="{{link}}">{{title}}</a></{{.. /tag}}>
             {{else}}
-            <div class="productTitle">{{title}}</div>
+            <a href="{{link}}" class="productTitle">{{title}}</a>
             {{/if}}
-            <div class="productAuthor">{{author}}</div>
+            <a href="author-detail.html" class="productAuthor">{{author}}</a>
             <div class="productCta">
-                <button class="button buttonPrimary -icon">View Detail <span class="ico icoMore"></span></button>
+                <a href="{{link}}" class="button buttonPrimary -icon">View Detail <span class="ico icoMore"></span></a>
             </div>
         </div>
-    </a>
+    </div>
 </div>
 {{/gte}}
 {{else}}
