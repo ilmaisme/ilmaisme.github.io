@@ -66,6 +66,28 @@
     {{> footer/footer}}
 
     {{> js page="read"}}
+    <script>
+        $(document).ready(function () {
+            $(".reviewForm__add").click(function () {
+                $('.reviewForm__comm').addClass('active')
+                $(this).addClass('hide');
+            })
+            $(".reviewForm__submit").click(function () {
+                hideForm()
+                $('.reviewForm__success').addClass('active')
+                $('.reviewForm__rate').addClass('hide')                
+            })
+
+            $(".reviewForm__reset").click(function () {
+                hideForm()
+                $('.reviewForm__add').removeClass('hide')
+            })
+
+            function hideForm() {
+                $('.reviewForm__comm').removeClass('active')
+            }
+        });
+    </script>
 
 </body>
 
