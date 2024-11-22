@@ -3,9 +3,20 @@
 {{#gte @index compare=../index_end}}
 {{else}}
 <div class="albumItem swiper-slide">
-    <div class="albumImg albumWrap">
+    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        {{#if ../expand}}
+        <div class="albumExpand center-flex">
+            <span class="ico icoExpand"></span>
+            Full Image
+        </div>
+        <a class="albumSource" href="{{image}}" data-caption="{{title}}" data-width="{{width}}" data-height="{{height}}"
+            itemprop="contentUrl">
+            <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}">
+        </a>
+        {{else}}
         <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}">
-    </div>
+        {{/if}}
+    </figure>
 </div>
 {{/gte}}
 {{else}}

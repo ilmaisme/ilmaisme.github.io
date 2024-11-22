@@ -2,8 +2,8 @@ $(document).ready(function () {
     //slider projects
     var totalWd = $('.catalogWidget').attr("data-widget");
     document.querySelectorAll(".catalogList").forEach(function (c) {
-        let next = c.parentNode.querySelector(".swiper-button-next");
-        let prev = c.parentNode.querySelector(".swiper-button-prev");
+        let next = c.parentNode.querySelector(".productArrow.--next");
+        let prev = c.parentNode.querySelector(".productArrow.--prev");
         if (totalWd == 5) {
             new Swiper(c, {
                 effect: 'slide',

@@ -29,7 +29,9 @@
     <link rel=icon type=image/png sizes=1x16 href="https://elexmedia.id/assets/img/favicon.png">
     <!-- swiper CSS -->
     <link rel="stylesheet" href="./asset/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./asset/css/style-read.css" type="text/css">
+    <link type="text/css" rel="stylesheet" href="./asset/css/photoswipe/photoswipe.min.css">
+    <link type="text/css" rel="stylesheet" href="./asset/css/photoswipe/default-skin.min.css">
+    <link rel="stylesheet" href="./asset/css/style-read.min.css" type="text/css">
     <style>
         @font-face {
             font-family: 'Author-Semibold';
@@ -197,29 +199,14 @@
                         </nav>
                         <div class="navMob__bottom">
     
-                            <div class="headerBil custom-select">
-                                <button class="select-button button headerBil__btn" role="combobox" aria-label="Bilingual options" aria-haspopup="listbox"
-                                    aria-expanded="false" aria-controls="select-dropdown">
-                                    <span class="ico icoBil"></span>
-                                    <span class="selected-value">EN</span>
-                                    <span class="arrow"></span>
-                                </button>
-                                <ul class="select-dropdown" role="listbox" id="select-dropdown">
-                                    <li role="option">
-                                        <input type="radio" id="choose" name="bilingual" disabled />
-                                        <label for="choose">Pilihan bahasa</label>
-                                    </li>
-                                    <li role="option">
-                                        <input type="radio" id="ID" name="bilingual" value="ID" />
-                                        <label for="ID"><img src="./asset/images/icon/ico-flag-ina.png" alt="" width="23px" height="23px"
-                                                loading="lazy">Indonesia</label>
-                                    </li>
-                                    <li role="option">
-                                        <input type="radio" id="EN" name="bilingual" value="EN" checked />
-                                        <label for="EN"><img src="./asset/images/icon/ico-flag-eng.png" alt="" width="23px" height="23px"
-                                                loading="lazy">English</label>
-                                    </li>
-                                </ul>
+                            <div class="headerBil">
+                                <div class="headerBil__btn selectDrop">
+                                    <select name="biling" id="biling" aria-label="Bilingual options">
+                                        <option value="1" disabled>Choose Language</option>
+                                        <option value="2">ID</option>
+                                        <option value="3" selected>EN</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="headerSearch">
     
@@ -653,84 +640,135 @@
                         <div class="readAtt__item artDates"><span class="ico icoCal"></span>19 Oktober 2023</div>
                     </div>
                     <div class="album readAlbum">
-                        <div class="albumBig albumWrap swiper">
+                        <div class="albumBig albumWrap swiper" id="album" itemscope itemtype="http://schema.org/ImageGallery">
                             <div class="swiper-wrapper">
 
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
-                                        <img src="./asset/images/dummy/article/event/event-0.jpg" alt="" width="840" height="560">
-                                    </div>
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                        <div class="albumExpand center-flex">
+                                            <span class="ico icoExpand"></span>
+                                            Full Image
+                                        </div>
+                                        <a class="albumSource" href="./asset/images/dummy/article/event/event-0.jpg" data-caption="Diy goth heirloom butcher chips pinterest bun. Freegan vaporware offal it readymade godard hammock lo-fi xoxo. Bushwick belly intelligentsia mood retro. Actually tilde they distillery pop-up mlkshk taiyaki hot vhs big. Yr chillwave plz xoxo retro." data-width="840" data-height="841"
+                                            itemprop="contentUrl">
+                                            <img src="./asset/images/dummy/article/event/event-0.jpg" alt="" width="840" height="560">
+                                        </a>
+                                    </figure>
                                 </div>
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
-                                        <img src="./asset/images/dummy/article/event/event-1.jpg" alt="" width="840" height="560">
-                                    </div>
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                        <div class="albumExpand center-flex">
+                                            <span class="ico icoExpand"></span>
+                                            Full Image
+                                        </div>
+                                        <a class="albumSource" href="./asset/images/dummy/article/event/event-1.jpg" data-caption="Para pemenang kuis interaktif merchandise Detektif Conan" data-width="268" data-height="201"
+                                            itemprop="contentUrl">
+                                            <img src="./asset/images/dummy/article/event/event-1.jpg" alt="" width="840" height="560">
+                                        </a>
+                                    </figure>
                                 </div>
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
-                                        <img src="./asset/images/dummy/article/event/event-2.png" alt="" width="840" height="560">
-                                    </div>
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                        <div class="albumExpand center-flex">
+                                            <span class="ico icoExpand"></span>
+                                            Full Image
+                                        </div>
+                                        <a class="albumSource" href="./asset/images/dummy/article/event/event-2.png" data-caption="Penulis Komi" data-width="660" data-height="375"
+                                            itemprop="contentUrl">
+                                            <img src="./asset/images/dummy/article/event/event-2.png" alt="" width="840" height="560">
+                                        </a>
+                                    </figure>
                                 </div>
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
-                                        <img src="./asset/images/dummy/article/event/event-3.jpg" alt="" width="840" height="560">
-                                    </div>
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                        <div class="albumExpand center-flex">
+                                            <span class="ico icoExpand"></span>
+                                            Full Image
+                                        </div>
+                                        <a class="albumSource" href="./asset/images/dummy/article/event/event-3.jpg" data-caption="Talkshow bersama guest star" data-width="2809" data-height="1864"
+                                            itemprop="contentUrl">
+                                            <img src="./asset/images/dummy/article/event/event-3.jpg" alt="" width="840" height="560">
+                                        </a>
+                                    </figure>
                                 </div>
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
-                                        <img src="./asset/images/dummy/article/event/event-4.jpg" alt="" width="840" height="560">
-                                    </div>
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                        <div class="albumExpand center-flex">
+                                            <span class="ico icoExpand"></span>
+                                            Full Image
+                                        </div>
+                                        <a class="albumSource" href="./asset/images/dummy/article/event/event-4.jpg" data-caption="Para penggemar Detektif Conan yang datang ke acara Ngomik Bareng" data-width="800" data-height="450"
+                                            itemprop="contentUrl">
+                                            <img src="./asset/images/dummy/article/event/event-4.jpg" alt="" width="840" height="560">
+                                        </a>
+                                    </figure>
                                 </div>
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
-                                        <img src="./asset/images/dummy/article/event/event-5.jpg" alt="" width="840" height="560">
-                                    </div>
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                        <div class="albumExpand center-flex">
+                                            <span class="ico icoExpand"></span>
+                                            Full Image
+                                        </div>
+                                        <a class="albumSource" href="./asset/images/dummy/article/event/event-5.jpg" data-caption="Para pemenang treasure hunt merchandise Detektif Conan" data-width="2229" data-height="2560"
+                                            itemprop="contentUrl">
+                                            <img src="./asset/images/dummy/article/event/event-5.jpg" alt="" width="840" height="560">
+                                        </a>
+                                    </figure>
                                 </div>
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
-                                        <img src="./asset/images/dummy/article/event/event-6.jpg" alt="" width="840" height="560">
-                                    </div>
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                        <div class="albumExpand center-flex">
+                                            <span class="ico icoExpand"></span>
+                                            Full Image
+                                        </div>
+                                        <a class="albumSource" href="./asset/images/dummy/article/event/event-6.jpg" data-caption="Para penggemar Detektif Conan berfoto bersama di akhir acara" data-width="3060" data-height="1989"
+                                            itemprop="contentUrl">
+                                            <img src="./asset/images/dummy/article/event/event-6.jpg" alt="" width="840" height="560">
+                                        </a>
+                                    </figure>
                                 </div>
 
                             </div>
+                            <div class="productArrow albumArrow__next swiper-button-next"></div>
+                            <div class="productArrow albumArrow__prev swiper-button-prev"></div>
                         </div>
                         <div class="albumNav albumWrap swiper">
                             <div class="swiper-wrapper">
 
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                                         <img src="./asset/images/dummy/article/event/event-0.jpg" alt="" width="267" height="200">
-                                    </div>
+                                    </figure>
                                 </div>
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                                         <img src="./asset/images/dummy/article/event/event-1.jpg" alt="" width="267" height="200">
-                                    </div>
+                                    </figure>
                                 </div>
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                                         <img src="./asset/images/dummy/article/event/event-2.png" alt="" width="267" height="200">
-                                    </div>
+                                    </figure>
                                 </div>
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                                         <img src="./asset/images/dummy/article/event/event-3.jpg" alt="" width="267" height="200">
-                                    </div>
+                                    </figure>
                                 </div>
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                                         <img src="./asset/images/dummy/article/event/event-4.jpg" alt="" width="267" height="200">
-                                    </div>
+                                    </figure>
                                 </div>
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                                         <img src="./asset/images/dummy/article/event/event-5.jpg" alt="" width="267" height="200">
-                                    </div>
+                                    </figure>
                                 </div>
                                 <div class="albumItem swiper-slide">
-                                    <div class="albumImg albumWrap">
+                                    <figure class="albumImg albumWrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                                         <img src="./asset/images/dummy/article/event/event-6.jpg" alt="" width="267" height="200">
-                                    </div>
+                                    </figure>
                                 </div>
 
                             </div>
@@ -1283,6 +1321,59 @@
         </div>
     </main>
 
+    <!-- s: popup pswp template -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    
+        <!-- Background of PhotoSwipe.
+                 It's a separate element as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+    
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+    
+            <!-- Container that holds slides.
+                    PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                    Don't modify these 3 pswp__item elements, data is added later on. -->
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+    
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <!--  Controls are self-explanatory. Order can be changed. -->
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+    
+                    <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                    <!-- element will get class pswp__preloader--active when preloader is running -->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>    <!-- e popup pswp template -->
+
     <footer class="footer">
         <div class="center-flex">
             <a href="index.html">
@@ -1370,29 +1461,12 @@
     <script src="./asset/js/jquery-3.5.0.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/custom-select.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/catalog-widget.js"></script>
+    <script defer type="text/javascript" src="./asset/js/catalog-widget.min.js"></script>
     <!-- swiper JS -->
     <script src="./asset/js/swiper-bundle.min.js"></script>
-    <script>
-        //album slider
-        $(document).ready(function () {
-            var swiper = new Swiper(".albumNav", {
-                loop: true,
-                speed: 1000,
-                slidesPerView: 3,
-                spaceBetween: 20,
-                watchSlidesProgress: true,
-            });
-            var swiper2 = new Swiper(".albumBig", {
-                loop: true,
-                effect: "fade",
-                thumbs: {
-                    swiper: swiper,
-                },
-                speed: 1000,
-            });
-        });
-    </script>
+    <script defer type="text/javascript" src="./asset/js/photoswipe4.1.1/photoswipe.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/photoswipe4.1.1/photoswipe-ui-default.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/album.min.js"></script>
 
 </body>
 

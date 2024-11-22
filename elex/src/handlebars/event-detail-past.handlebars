@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{> head page="read" swiper=true 400i=true}}
+{{> head page="read" swiper=true 400i=true photoswipes=true}}
 
 <body>
     {{> header/header login=true}}
@@ -24,17 +24,20 @@
                         <div class="readAtt__item artDates"><span class="ico icoCal"></span>19 Oktober 2023</div>
                     </div>
                     <div class="album readAlbum">
-                        <div class="albumBig albumWrap swiper">
+                        <div class="albumBig albumWrap swiper" id="album" itemscope itemtype="http://schema.org/ImageGallery">
                             <div class="swiper-wrapper">
 
-                                {{>read/album channel=album.Event index_start=0 index_end=7 width="840" height="560"}}
+                                {{>read/album channel=album.Event index_start=0 index_end=7 expand=true width="840" height="560"}}
 
                             </div>
+                            <div class="productArrow albumArrow__next swiper-button-next"></div>
+                            <div class="productArrow albumArrow__prev swiper-button-prev"></div>
                         </div>
                         <div class="albumNav albumWrap swiper">
                             <div class="swiper-wrapper">
 
-                                {{>read/album channel=album.Event index_start=0 index_end=7 nav=true width="267" height="200"}}
+                                {{>read/album channel=album.Event index_start=0 index_end=7 nav=true width="267"
+                                height="200"}}
 
                             </div>
                         </div>
@@ -91,29 +94,13 @@
         </div>
     </main>
 
+    <!-- s: popup pswp template -->
+    {{>media/pswp}}
+    <!-- e popup pswp template -->
+
     {{> footer/footer}}
 
-    {{> js catalog=true swiper=true}}
-    <script>
-        //album slider
-        $(document).ready(function () {
-            var swiper = new Swiper(".albumNav", {
-                loop: true,
-                speed: 1000,
-                slidesPerView: 3,
-                spaceBetween: 20,
-                watchSlidesProgress: true,
-            });
-            var swiper2 = new Swiper(".albumBig", {
-                loop: true,
-                effect: "fade",
-                thumbs: {
-                    swiper: swiper,
-                },
-                speed: 1000,
-            });
-        });
-    </script>
+    {{> js catalog=true swiper=true photoswipes=true albums=true}}
 
 </body>
 

@@ -139,10 +139,11 @@
                 &::after {
                     content: none;
                 }
-            }
 
-            .options {
-                min-width: 135px;
+                ~.options {
+                    min-width: 135px;
+                    left: -4px;
+                }
             }
         }
 
@@ -230,6 +231,7 @@
     &Bil {
         float: right;
         margin-right: 11px;
+        @include font-pack($size: 13px, $colour: #616161);
 
         @include min-responsive($w-xl) {
             margin-left: 7px;
@@ -237,13 +239,76 @@
             margin-right: 0;
         }
 
-        &__btn {
-            padding: 7px;
-            border-radius: 50px;
-            background: #F3F3F3;
+        .selectDrop {
+            .styledSelect {
+                padding: 7px 17px 7px 30px;
+                border-radius: 50px;
+                background: #F3F3F3;
 
-            &:hover {
-                background: #E4E4E4;
+                &:hover {
+                    background: #E4E4E4;
+                }
+
+                &::before {
+                    content: '';
+                    @extend .ico;
+                    @extend .icoBil;
+                    position: absolute;
+                    left: 7px;
+                    top: 4px;
+                }
+
+                &::after {
+                    width: 6px;
+                    height: 4px;
+                    right: 7px;
+                    top: 13px;
+                    border-style: solid;
+                    border-width: 4px 3px 0 3px;
+                    border-color: #838383 transparent transparent transparent;
+                    transform: rotate(0deg);
+                }
+
+                &.open:after {
+                    top: 13px;
+                    transform: rotate(0deg);
+                }
+            }
+
+            .options {
+                min-width: 115px;
+                left: unset;
+                right: 0;
+
+                li {
+                    position: relative;
+
+                    &:nth-child(2) {
+                        &::before {
+                            background: url(../images/icon/ico-flag-ina.png);
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        &::before {
+                            background: url(../images/icon/ico-flag-eng.png);
+                        }
+                    }
+
+                    &:not(:first-child) {
+                        padding-left: 42px;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 4px;
+                            left: 12px;
+                            width: 23px;
+                            height: 23px;
+                            display: block;
+                        }
+                    }
+                }
             }
         }
     }
