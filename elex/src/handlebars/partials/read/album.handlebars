@@ -1,1 +1,13 @@
-{{!-- <img src="./asset/images/dummy/article/event/0-big.jpg" alt="" width="840" height="840"> --}}
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="albumItem swiper-slide">
+    <div class="albumImg albumWrap">
+        <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}">
+    </div>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

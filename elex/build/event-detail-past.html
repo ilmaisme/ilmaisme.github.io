@@ -652,9 +652,89 @@
                         <div class="readAtt__item readAuthor">Oleh: John Doe</div>
                         <div class="readAtt__item artDates"><span class="ico icoCal"></span>19 Oktober 2023</div>
                     </div>
-                    <div class="readAlbum">
+                    <div class="album readAlbum">
+                        <div class="albumBig albumWrap swiper">
+                            <div class="swiper-wrapper">
 
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-0.jpg" alt="" width="840" height="560">
+                                    </div>
+                                </div>
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-1.jpg" alt="" width="840" height="560">
+                                    </div>
+                                </div>
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-2.png" alt="" width="840" height="560">
+                                    </div>
+                                </div>
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-3.jpg" alt="" width="840" height="560">
+                                    </div>
+                                </div>
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-4.jpg" alt="" width="840" height="560">
+                                    </div>
+                                </div>
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-5.jpg" alt="" width="840" height="560">
+                                    </div>
+                                </div>
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-6.jpg" alt="" width="840" height="560">
+                                    </div>
+                                </div>
 
+                            </div>
+                        </div>
+                        <div class="albumNav albumWrap swiper">
+                            <div class="swiper-wrapper">
+
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-0.jpg" alt="" width="267" height="200">
+                                    </div>
+                                </div>
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-1.jpg" alt="" width="267" height="200">
+                                    </div>
+                                </div>
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-2.png" alt="" width="267" height="200">
+                                    </div>
+                                </div>
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-3.jpg" alt="" width="267" height="200">
+                                    </div>
+                                </div>
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-4.jpg" alt="" width="267" height="200">
+                                    </div>
+                                </div>
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-5.jpg" alt="" width="267" height="200">
+                                    </div>
+                                </div>
+                                <div class="albumItem swiper-slide">
+                                    <div class="albumImg albumWrap">
+                                        <img src="./asset/images/dummy/article/event/event-6.jpg" alt="" width="267" height="200">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
 
                     <div class="readSocmed">
@@ -1293,6 +1373,26 @@
     <script defer type="text/javascript" src="./asset/js/catalog-widget.js"></script>
     <!-- swiper JS -->
     <script src="./asset/js/swiper-bundle.min.js"></script>
+    <script>
+        //album slider
+        $(document).ready(function () {
+            var swiper = new Swiper(".albumNav", {
+                loop: true,
+                speed: 1000,
+                slidesPerView: 3,
+                spaceBetween: 20,
+                watchSlidesProgress: true,
+            });
+            var swiper2 = new Swiper(".albumBig", {
+                loop: true,
+                effect: "fade",
+                thumbs: {
+                    swiper: swiper,
+                },
+                speed: 1000,
+            });
+        });
+    </script>
 
 </body>
 
