@@ -29,16 +29,17 @@
                 <button class="button productWish{{#if ../wish}} {{../wish}}{{/if}}" aria-label="favorite this product"
                     onclick="event.preventDefault(); triggerActiveButton(false,false,false,this)"><span
                         class="icoWishlist"></span></button>
-                <button class="button buttonPrimary productBuy -icon"
+                <a href="{{link}}" class="button buttonPrimary -icon">View Detail <span class="ico icoMore"></span></a>
+                {{!-- <button class="button buttonPrimary productBuy -icon"
                     onclick="event.preventDefault(); event.stopPropagation(); triggerActiveButton(false,'.productCard',false,this, '.productCommerce')">Buy
                     From
-                    <span class="ico icoMore"></span></button>
+                    <span class="ico icoMore"></span></button> --}}
             </div>
             {{/if}}
         </div>
     </div>
     {{#if widget}}{{else}}
-    <div class="productCommerce">
+    {{!-- <div class="productCommerce">
         <a href="#" class="productCommerce__link" target="_blank" rel="noopener noreferrer">
             <img src="./asset/images/icon/ico-gramedia.png" alt="" width="20" height="20" loading="lazy">
             <span>Gramedia.com</span>
@@ -51,7 +52,7 @@
             <img src="./asset/images/icon/ico-shopee.png" alt="" width="20" height="20" loading="lazy">
             <span>Shopee.com</span>
         </a>
-    </div>
+    </div> --}}
     {{/if}}
 </div>
 {{/gte}}

@@ -53,9 +53,6 @@ $(document).ready(function () {
 
 //update mobile menu
 updateMenu()
-window.addEventListener('unload', function (event) {
-    document.getElementById('hamburgToggle').reset();
-}, false);
 
 $(window).on('resize', function () {
     updateMenu()
@@ -80,6 +77,9 @@ function updateMenu() {
         $('.headerBil').appendTo('#navMob .navMob__bottom');
         $('.menuItem').addClass('mobile');
         $('.menuBlock').removeClass('desktop');
+        window.addEventListener('unload', function (event) {
+            document.getElementById('hamburgToggle').reset();
+        }, false);
     }
 }
 
