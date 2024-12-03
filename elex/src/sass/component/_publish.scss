@@ -1,18 +1,22 @@
 .publish {
     position: relative;
-    z-index: 1;
 
     @include min-responsive($w-xl) {
         margin-left: 22px;
     }
 
     &Slide {
-        width: 330px;
-        max-height: 396px;
+        width: 250px;
+        max-height: 325px;
         overflow: hidden;
-
+        
         @include max-responsive($w-xm) {
             width: 100%;
+        }
+
+        @include min-responsive($w-md) {
+            width: 330px;
+            max-height: 396px;
         }
     }
 
@@ -26,8 +30,13 @@
     }
 
     &Img {
+        width: 220px;
         border-radius: 10px;
         overflow: hidden;
+
+        @include min-responsive($w-md) {
+            width: auto;
+        }
     }
 
     .swiper-slide-active {

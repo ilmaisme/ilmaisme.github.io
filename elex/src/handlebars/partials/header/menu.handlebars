@@ -8,7 +8,10 @@
             {{/each}}
         </ul>
         <div class="menuContent">
-            <div class="menuTitle">Terbaru</div>
+            <div class="menuTitle">
+                Terbaru
+                <div class="menuTitle__cat">dari <span class="-cat">Komik</span></div>
+            </div>
             <!-- s: new product -->
             <div class="menuProduct active" data-categ="0">
                 {{#each product.New}}
@@ -41,6 +44,7 @@
                 {{else}}
                 {{/gte}}
                 {{/each}}
+                <a href="landing-komik.html" class="button buttonPrimary -icon">More about Komik <span class="ico icoMore"></span></a>
             </div>
             <div class="menuProduct" data-categ="1">
                 {{#each product.Best}}
@@ -73,6 +77,7 @@
                 {{else}}
                 {{/gte}}
                 {{/each}}
+                <a href="landing-techno.html" class="button buttonPrimary -icon">More about Bisnis & Tekno <span class="ico icoMore"></span></a>
             </div>
             <div class="menuProduct" data-categ="2">
                 {{#each product.Special}}
@@ -105,6 +110,7 @@
                 {{else}}
                 {{/gte}}
                 {{/each}}
+                <a href="landing-health.html" class="button buttonPrimary -icon">More about Parenting & Kesehatan <span class="ico icoMore"></span></a>
             </div>
             <div class="menuProduct" data-categ="3">
                 {{#each product.Komik}}
@@ -137,6 +143,7 @@
                 {{else}}
                 {{/gte}}
                 {{/each}}
+                <a href="landing-fiction.html" class="button buttonPrimary -icon">More about Fiksi <span class="ico icoMore"></span></a>
             </div>
             <div class="menuProduct" data-categ="4">
                 {{#each product.Quanta}}
@@ -169,6 +176,7 @@
                 {{else}}
                 {{/gte}}
                 {{/each}}
+                <a href="landing-quanta.html" class="button buttonPrimary -icon">More about Quanta <span class="ico icoMore"></span></a>
             </div>
             <div class="menuProduct" data-categ="5">
                 {{#each product.Popular}}
@@ -201,6 +209,7 @@
                 {{else}}
                 {{/gte}}
                 {{/each}}
+                <a href="landing-history.html" class="button buttonPrimary -icon">More about Sejarah & Sosial <span class="ico icoMore"></span></a>
             </div>
             <div class="menuProduct" data-categ="6">
                 {{#each product.Kids}}
@@ -233,6 +242,40 @@
                 {{else}}
                 {{/gte}}
                 {{/each}}
+                <a href="landing-kids.html" class="button buttonPrimary -icon">More about Elex Kids <span class="ico icoMore"></span></a>
+            </div>
+            <div class="menuProduct" data-categ="7">
+                {{#each product.Kids}}
+                {{#gte @index compare=../index_start}}
+                {{#gte @index compare=../index_end}}
+                {{else}}
+                <div class="productItem{{#if ../col}} {{../col}}{{/if}}{{#if ../type}} {{../type}}{{/if}}">
+                    <a href="{{link}}" class="productLink">
+                        <div class="productImg">
+                            {{#eq @index compare=../index_start}}
+                            <img src="{{image}}" alt="" width="192" height="288" {{#if ../lazy}} loading="lazy" {{/if}}>
+                            {{else}}
+                            <img src="{{image}}" alt="" width="{{../width}}" height="{{../height}}" {{#if ../lazy}}
+                                loading="lazy" {{/if}}>
+                            {{/eq}}
+                        </div>
+                        {{#eq @index compare=../index_start}}
+                        <div class="productContent menuProduct__content">
+                            <div class="productTitle">{{title}}</div>
+                            <div class="menuProduct__caption">Sinopsis</div>
+                            <div class="menuProduct__lead">{{lead}}</div>
+                            <div class="menuProduct__cta">
+                                Lihat detail <span class="ico icoChevron"></span>
+                            </div>
+                        </div>
+                        {{/eq}}
+                    </a>
+                </div>
+                {{/gte}}
+                {{else}}
+                {{/gte}}
+                {{/each}}
+                <a href="landing-self.html" class="button buttonPrimary -icon">More about Pengembangan Diri <span class="ico icoMore"></span></a>
             </div>
             <!-- e: new product -->
         </div>

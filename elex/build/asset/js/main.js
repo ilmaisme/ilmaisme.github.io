@@ -3,8 +3,10 @@ $(document).ready(function () {
     var content = $('.menuProduct');
 
     $(".menuItem").hover(function () {
-        var customType = $(this).data('menu'); // category
+        var customType = $(this).data('menu'), // category
+            customTxt = $(this).children().html();
         $(".menuItem").removeClass('active')
+        $(".-cat").html(customTxt)
         $(this).addClass('active')
 
         content
@@ -15,9 +17,12 @@ $(document).ready(function () {
             .addClass('active')
     });
 
-    $(".menuItem.mobile").click(function () {
-        var customType = $(this).data('menu'); // category
+    $(".menuItem.mobile .menuLink").click(function (e) {
+        e.preventDefault()
+        var customType = $(this).parent().data('menu'), // category
+            customTxt = $(this).html();
         $(".menuItem").removeClass('active')
+        $(".-cat").html(customTxt)
         $(this).addClass('active')
 
         content

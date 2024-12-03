@@ -70,8 +70,8 @@ $(document).ready(function () {
         reverseDirection: true,
         coverflowEffect: {
             rotate: 0,
-            stretch: 310,
-            depth: 40,
+            stretch: 180,
+            depth: 20,
             modifier: 1,
             scale: .92,
             slideShadows: false,
@@ -80,6 +80,12 @@ $(document).ready(function () {
         breakpoints: {
             360: {
                 slidesPerView: "auto",
+                coverflowEffect: {
+                    stretch: 178,
+                    depth: 40,
+                }
+            },
+            768: {
                 coverflowEffect: {
                     stretch: 342,
                     depth: 40,
