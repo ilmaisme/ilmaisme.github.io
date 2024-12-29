@@ -1,0 +1,138 @@
+.cover {
+    position: fixed;
+    height: var(--app-height);
+    @extend .bgColor__blue;
+
+    &Wrap{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    &Content {
+        width: 100%;
+        padding-top: 46px;
+        padding-bottom: 46px;
+        position: absolute;
+        bottom: calc(var(--app-height) - 45vh);
+    }
+
+    &Caption {
+        text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    }
+
+    &Title {
+        position: relative;
+        // top: calc(var(--app-height) - var(--app-height) - 186px);
+        z-index: 0;
+        -webkit-text-stroke: 3px;
+        -webkit-text-stroke-color: $cl-white;
+        @include font-pack($font_caption_xbold, 22px, $font-weight-xbold, $line-base, #0368AC);
+
+        @include min-responsive($w-md) {
+            font-size: 64px;
+            // top: calc(var(--app-height) - var(--app-height) - 216px);
+        }
+
+        @media only screen and(max-height: $w-md) and(orientation: landscape) {
+            // top: calc(var(--app-height) - var(--app-height) - 175px);
+        }
+
+        &Sub {
+            position: relative;
+            @include font-pack($font_caption_sbold, 16px, $font-weight-sbold, $line-base, #FFFE32);
+
+            @include min-responsive($w-md) {
+                font-size: 36px;
+            }
+        }
+    }
+
+    &Bg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 0;
+        width: 100%;
+
+        &Building {
+            position: relative;
+            display: block;
+            bottom: 10vh;
+
+            &::before {
+                content: '';
+                background: #8ecb8f;
+                width: 100%;
+                display: block;
+                bottom: 0;
+                position: absolute;
+                height: 10.4vh;
+            }
+
+            img {
+                width: 100%;
+                position: relative;
+                object-fit: contain;
+                max-height: calc(var(--app-height) - 46px - 197px - 46px - 10vh);
+            }
+        }
+
+        &Road {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 10vh;
+            background: url(../images/cover-road.png);
+            background-size: contain;
+            background-repeat: repeat-x;
+        }
+    }
+
+    &Cloud {
+        position: absolute;
+        width: 100vw;
+
+        &Img {
+            width: 50vw;
+            position: absolute;
+            top: 0;
+            height: 184px;
+            background: url(../images/cover-cloud.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &--2 {
+            right: 0;
+        }
+
+        &--3 {
+            top: 170px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &Car {
+        position: absolute;
+
+        img {
+            width: calc(100% - 5vh);
+        }
+
+        &--1 {
+            bottom: 44px;
+        }
+
+        &--2 {
+            left: 53vw;
+            bottom: 4px;
+        }
+
+        &--3 {
+            right: 5vw;
+            bottom: 44px;
+        }
+    }
+}
