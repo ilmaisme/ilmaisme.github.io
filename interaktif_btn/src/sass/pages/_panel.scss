@@ -22,13 +22,14 @@
       }
     }
 
-    &-2{
-      .panel-bg-detail img{
+    &-2 {
+      .panel-bg-detail img {
         max-width: 300vw;
       }
     }
 
-    &-5 {
+    &-5,
+    &-6 {
       display: flex;
       align-items: flex-end;
     }
@@ -91,6 +92,11 @@
     }
   }
 
+  &-txt {
+    position: relative;
+    z-index: 1;
+  }
+
   &-txt-3 {
     max-width: 577px;
     left: 10vw;
@@ -134,9 +140,6 @@
       }
     }
 
-    &-num {
-    }
-
     &-wrap {
       align-items: flex-start;
       justify-content: center;
@@ -145,6 +148,72 @@
         max-height: 24vh;
       }
     }
+  }
+
+  &-txt-6 {
+    bottom: 10px;
+
+    &-title {
+      max-width: 312px;
+      margin: auto;
+    }
+
+    &-btn {
+      margin-top: 40px;
+      margin-bottom: 73px;
+      margin-left: 200px;
+
+      .button {
+        position: relative;
+        background: #FFC761;
+        padding: 8px 26px 10px 22px;
+        border-left: 3px solid #AE9493;
+        border-right: 3px solid #AE9493;
+        margin: 0 100px;
+
+        strong {
+          color: #744A5A;
+        }
+
+        &-wrap {
+          &::before {
+            content: '';
+            position: absolute;
+            background: url(../images/kinerja-btn-bg.png) no-repeat;
+            background-size: contain;
+            width: 46px;
+            height: 139px;
+            left: -50px;
+            top: 0;
+          }
+        }
+
+        &:last-of-type {
+          background: #125EFA;
+
+          strong {
+            color: $cl-white;
+          }
+        }
+
+        .cursor {
+          position: absolute;
+          font-size: .56em;
+          min-width: 105px;
+          top: 24px;
+          margin-left: 10px;
+
+          img {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  &-bar {
+    position: relative;
+    z-index: 1;
   }
 
   &-pie {
@@ -216,6 +285,13 @@
         bottom: 10px;
         position: relative;
       }
+    }
+  }
+
+  &-6 {
+    .panel-bg .panel-bg-detail {
+      bottom: 35px;
+      left: 10vw;
     }
   }
 }

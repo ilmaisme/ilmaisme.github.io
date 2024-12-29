@@ -82,6 +82,24 @@ $(document).ready(function () {
         path: 'asset/json/strategi-4.json',
         name: 'myAnimation',
     });
+    // 10. Animation Bar Chart 1
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('bar-anim1'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/grafik-perkembangan-aset.json',
+        name: 'myAnimation',
+    });
+    // 11. Animation Bar Chart 2
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('bar-anim2'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/grafik-perkembangan-laba.json',
+        name: 'myAnimation',
+    });
     /*
     // 7. Animation bifast
     var paramBifast = {
