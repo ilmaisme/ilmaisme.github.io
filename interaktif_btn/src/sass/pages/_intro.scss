@@ -5,10 +5,12 @@
     align-items: flex-end;
     padding-top: 5vh;
     margin: auto;
-    max-width: 980px;
-    position: relative;
+    width: 980px;
     height: var(--app-height);
     z-index: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 
     @media only screen and(max-height: $w-md) and(orientation: landscape) {
         justify-content: flex-start;
@@ -80,7 +82,7 @@
         bottom: -10px;
         right: -3vw;
 
-        @media only screen and(max-height: $w-md) and(orientation: landscape) {
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
             position: absolute;
         }
     }
@@ -90,7 +92,7 @@
         right: -120px;
         bottom: -10px;
 
-        @media only screen and(max-height: $w-md) and(orientation: landscape) {
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
             display: none;
         }
     }
@@ -109,5 +111,20 @@
         bottom: 0;
         right: 0;
         @include font-pack($font_base, 16px, $font-weight-normal, $line-base, $cl-primary);
+    }
+
+    ~.panel-road {
+        @extend .coverBgRoad;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 15000px;
+            bottom: 10vh;
+            height: 35px;
+            background: #E7D4CC;
+            z-index: -1;
+        }
     }
 }

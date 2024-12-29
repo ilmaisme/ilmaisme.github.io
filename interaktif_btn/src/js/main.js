@@ -1,23 +1,3 @@
-$(window).on('load', function () {
-    /*setTimeout(function () {
-        $('.preloader').addClass("done");
-        $(".cover").addClass("active");
-        $(".coverTitle__top").velocity({
-            top: "0"
-        }, {
-            delay: 0,
-            duration: 300
-        });
-        $(".coverTitle__bottom").velocity({
-            top: "0"
-        }, {
-            delay: 300,
-            duration: 300
-        });
-    }, 3000);*/
-    //console.log('loaded');
-})
-
 $(document).ready(function () {
     $('.base-layer').addClass('active');
     
@@ -28,6 +8,78 @@ $(document).ready(function () {
         loop: true,
         autoplay: true,
         path: 'asset/json/husni-ismail.json',
+        name: 'myAnimation',
+    });
+    // 2. Animation Pie 1
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('panel-anim1'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/kpr-subsidi-2020.json',
+        name: 'myAnimation',
+    });
+    // 3. Animation Pie 2
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('panel-anim2'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/kpr-subsidi-2021.json',
+        name: 'myAnimation',
+    });
+    // 4. Animation Pie 3
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('panel-anim3'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/kpr-subsidi-2022.json',
+        name: 'myAnimation',
+    });
+    // 5. Animation Pie 4
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('panel-anim4'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/kpr-subsidi-2023.json',
+        name: 'myAnimation',
+    });
+    // 6. Animation Strategy 0
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('panel-strat-anim0'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/strategi-0.json',
+        name: 'myAnimation',
+    });
+    // 7. Animation Strategy 2
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('panel-strat-anim2'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/strategi-2.json',
+        name: 'myAnimation',
+    });
+    // 8. Animation Strategy 3
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('panel-strat-anim3'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/strategi-3.json',
+        name: 'myAnimation',
+    });
+    // 9. Animation Strategy 4
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('panel-strat-anim4'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/strategi-4.json',
         name: 'myAnimation',
     });
     /*

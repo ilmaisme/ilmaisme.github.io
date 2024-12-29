@@ -3,7 +3,7 @@
     height: var(--app-height);
     @extend .bgColor__blue;
 
-    &Wrap{
+    &Wrap {
         position: relative;
         width: 100vw;
         height: 100vh;
@@ -15,6 +15,11 @@
         padding-bottom: 46px;
         position: absolute;
         bottom: calc(var(--app-height) - 45vh);
+
+        @media only screen and(max-height: $w-md) and(orientation: landscape) {
+            bottom: unset;
+            padding-top: 30px;
+        }
     }
 
     &Caption {
@@ -30,7 +35,7 @@
         @include font-pack($font_caption_xbold, 22px, $font-weight-xbold, $line-base, #0368AC);
 
         @include min-responsive($w-md) {
-            font-size: 64px;
+            font-size: 60px;
             // top: calc(var(--app-height) - var(--app-height) - 216px);
         }
 
@@ -67,21 +72,25 @@
                 display: block;
                 bottom: 0;
                 position: absolute;
-                height: 10.4vh;
+                height: 11vh;
             }
 
             img {
                 width: 100%;
                 position: relative;
                 object-fit: contain;
-                max-height: calc(var(--app-height) - 46px - 197px - 46px - 10vh);
+                max-height: 45vh;
+
+                @include min-height($w-md) {
+                    max-height: unset;
+                }
             }
         }
 
         &Road {
             position: absolute;
             bottom: 0;
-            width: 100%;
+            width: 101%;
             height: 10vh;
             background: url(../images/cover-road.png);
             background-size: contain;
@@ -101,6 +110,7 @@
             background: url(../images/cover-cloud.png);
             background-size: contain;
             background-repeat: no-repeat;
+            background-position: center;
         }
 
         &--2 {
@@ -119,6 +129,10 @@
 
         img {
             width: calc(100% - 5vh);
+
+            @include min-height($w-md) {
+                width: auto;
+            }
         }
 
         &--1 {
