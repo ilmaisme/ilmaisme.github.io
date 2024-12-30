@@ -6,6 +6,10 @@
 
   &-road {
     @extend .coverBgRoad;
+
+    &-credit {
+      background: #565353;
+    }
   }
 
   &-bg {
@@ -41,6 +45,18 @@
         width: 100vw;
         object-position: left;
       }
+    }
+
+    &-9 {
+      .panel-bg-detail {
+        .panel-bg-detail.panel-bg-detail-wrap {
+          bottom: 6px;
+        }
+      }
+    }
+
+    &-credit {
+      bottom: 20px;
     }
   }
 }
@@ -328,6 +344,16 @@
   }
 
   &-txt-9 {
+    top: 6%;
+
+    @include min-height($w-md) {
+      top: 12%;
+    }
+
+    @media only screen and(max-height: 700px) and(orientation: landscape) {
+      top: 2%;
+    }
+
     &-wrap {
       max-width: 337px;
     }
@@ -335,6 +361,12 @@
     &-anim {
       left: 10vw;
       position: relative;
+
+      svg {
+        max-width: unset;
+        max-height: 55vh;
+        object-fit: contain;
+      }
     }
   }
 
@@ -344,11 +376,52 @@
 
     &-item {
       display: inline-flex;
+      font-size: .8em;
+      margin-bottom: 15px;
+
+      &:nth-child(2) {
+        margin-left: 40px;
+      }
+
+      &:nth-child(3) {
+        margin-left: 80px;
+      }
+
+      &:nth-child(4) {
+        margin-left: 120px;
+      }
+
+      &:nth-child(5) {
+        margin-left: 160px;
+      }
+    }
+
+    &-num {
+      @extend .center-flex;
+      min-width: 32px;
+      height: inherit;
+      background: url(../images/ecosystem-item-bg.png) no-repeat;
+      background-size: contain;
+      background-position: right;
     }
 
     &-title {
+      position: relative;
       background: #FFC000;
       padding: 10px 10px 10px 32px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 15px;
+        height: 15px;
+        background: url(../images/ecosystem-ico.png) no-repeat;
+        background-size: contain;
+      }
     }
   }
 

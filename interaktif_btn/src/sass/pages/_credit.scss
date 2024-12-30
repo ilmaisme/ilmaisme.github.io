@@ -14,7 +14,11 @@
         margin-right: auto;
 
         @include min-responsive($w-md) {
-            padding-top: 10vh;
+            padding-top: 5vh;
+        }
+
+        @include min-height($w-md) {
+            padding-top: 12vh;
         }
 
         @include min-responsive($w-xxl) {
@@ -35,7 +39,7 @@
     &Caption {
         text-transform: uppercase;
         letter-spacing: 3px;
-        @include font-pack($font-caption, 26px, $font-weight-normal, $line-base, #204160);
+        @include font-pack($font_base, 26px, $font-weight-normal, $line-base, false);
 
         @include min-responsive($w-md) {
             @include font-pack($size: 40px)
@@ -47,73 +51,48 @@
     }
 
     &Title {
-        transform: translateX(-100vw);
-        transition: all .4s ease-in;
-        @include font-pack($font-base, false, $font-weight-normal, false, false);
+        @include font-pack($font_caption_sbold, false, $font-weight-sbold, false, false);
 
-        &.active {
-            transform: translateX(0);
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            font-size: .8em;
         }
     }
 
     &Name {
         position: relative;
         margin-top: 10px;
-        transform: translateX(100vw);
-        transition: all .4s ease-in;
+        @include font-pack($font_base, false, $font-weight-normal, false, false);
 
-        &.active {
-            transform: translateX(0);
-        }
-    }
-
-    &Content {
-        margin-top: 20px;
-
-        @include min-responsive($w-md) {
-            margin-top: 40px;
-
-            @include max-height($w-hmd) {
-                margin-top: 20px;
-            }
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            font-size: .8em;
         }
     }
 
     &Col {
         margin-top: 30px;
-        @include font-pack($font-caption, 16px, $font-weight-normal, 1, #2E5272);
+        @include font-pack($font-caption, 16px, $font-weight-normal, 1, #035281);
 
         @include min-responsive($w-md) {
             @include font-pack($size: 20px)
         }
 
-        @media only screen and(max-height: $w-md) and(orientation: landscape) {
-            @include font-pack($size: 18px)
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            margin-top: 20px;
         }
     }
 
     &Bottom {
         position: relative;
         width: 100%;
-        padding-top: 76px;
-        margin-bottom: 20px;
-        
-        @include min-responsive($w-md) {
-            padding-top: 100px;
-            margin-bottom: 60px;
-
-            @include max-height($w-hmd) {
-                padding-top: 40px;
-                margin-bottom: 40px;
-            }
-        }
+        padding-left: 100px;
+        padding-right: 100px;
 
         &__logo {
             img {
                 max-width: 90px;
 
                 @include min-responsive($w-md) {
-                    max-width: 170px;
+                    max-width: 140px;
                 }
             }
         }
@@ -124,7 +103,7 @@
         flex: 1;
         margin-left: 8px;
         margin-right: 0;
-        border-bottom: 2px solid #204160;
+        border-bottom: 2px solid $cl-white;
         border-radius: 2px;
 
         @include min-responsive($w-md) {
@@ -138,12 +117,6 @@
 
         @include min-responsive($w-md) {
             margin-left: 10px;
-        }
-
-        &:hover {
-            -moz-animation: bounce 1.2s infinite;
-            -webkit-animation: bounce 1.2s infinite;
-            animation: bounce 1.2s infinite;
         }
     }
 
