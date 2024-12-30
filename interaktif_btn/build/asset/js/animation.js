@@ -726,11 +726,16 @@ vp.add("(min-width: 700px)", () => {
 		.from(".cover", {
 			autoAlpha: 1,
 		})
+		// .fromTo("#beginHorizonScroll", {
+		// 	autoAlpha: 0,
+		// }, {
+		// 	autoAlpha: 1,
+		// }, "-=2");
 		.fromTo("#beginHorizonScroll", {
 			autoAlpha: 0,
 		}, {
 			autoAlpha: 1,
-		}, "-=2");
+		}, "-=8");
 
 
 
