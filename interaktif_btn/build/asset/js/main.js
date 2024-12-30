@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $('.base-layer').addClass('active');
-    
+    // $('.pin-spacer').css('');
+
     // 1. Animation Intro
     var animation = bodymovin.loadAnimation({
         container: document.getElementById('introAnim'),
@@ -53,6 +54,15 @@ $(document).ready(function () {
         loop: true,
         autoplay: true,
         path: 'asset/json/strategi-0.json',
+        name: 'myAnimation',
+    });
+    // 6a. Animation Strategy 1
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('panel-strat-anim1'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'asset/json/strategi-1.json',
         name: 'myAnimation',
     });
     // 7. Animation Strategy 2
@@ -143,7 +153,7 @@ $('.popup').on("click", function () {
     closePopup()
 })
 
-$('.ecosystemPop__wrap').on('click', function (e) {
+$('.popupWrap').on('click', function (e) {
     e.stopPropagation();
 })
 
@@ -157,12 +167,15 @@ function closePopup() {
 function openPopup(type) {
     let popupnum = type;
     if (mdl.length) {
-        fullpage_api.setAllowScrolling(false);
-        fullpage_api.setKeyboardScrolling(false);
-        $('.ecosystemClick').addClass('opac0')
-
         $('#popup' + popupnum).addClass('active')
         // console.log()
+    }
+}
+
+function addActive(target, disactive) {
+    $(target).addClass('active')
+    if (disactive){
+        $(disactive).removeClass('active')
     }
 }
 

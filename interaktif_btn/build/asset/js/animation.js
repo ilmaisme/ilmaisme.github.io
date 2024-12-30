@@ -126,7 +126,7 @@ vp.add("(max-width: 700px)", () => {
 		y: 40,
 	}, {
 		autoAlpha: 1,
-		y: -10,
+		y: 0,
 		ease: "none",
 		scrollTrigger: {
 			trigger: ".p1-txt",
@@ -143,7 +143,7 @@ vp.add("(max-width: 700px)", () => {
 		y: 40,
 	}, {
 		autoAlpha: 1,
-		y: -10,
+		y: 0,
 		ease: "none",
 		scrollTrigger: {
 			trigger: ".p3-txt",
@@ -162,7 +162,7 @@ vp.add("(max-width: 700px)", () => {
 		y: 40,
 	}, {
 		autoAlpha: 1,
-		y: -10,
+		y: 0,
 		ease: "none",
 		scrollTrigger: {
 			trigger: ".mob-p3-txt",
@@ -181,7 +181,7 @@ vp.add("(max-width: 700px)", () => {
 		y: 40,
 	}, {
 		autoAlpha: 1,
-		y: -10,
+		y: 0,
 		ease: "none",
 		scrollTrigger: {
 			trigger: ".p4-txt",
@@ -282,7 +282,7 @@ vp.add("(min-width: 700px)", () => {
 		y: 40,
 	}, {
 		autoAlpha: 1,
-		y: -10,
+		y: 0,
 		ease: "none",
 		scrollTrigger: {
 			trigger: ".p3-txt",
@@ -301,12 +301,12 @@ vp.add("(min-width: 700px)", () => {
 		y: 40,
 	}, {
 		autoAlpha: 1,
-		y: -10,
+		y: 0,
 		ease: "none",
 		scrollTrigger: {
 			trigger: ".p4-txt",
 			containerAnimation: scrollTween,
-			start: "left 50%",
+			start: "center 50%",
 			end: "center 80%",
 			id: "1",
 
@@ -382,12 +382,12 @@ vp.add("(min-width: 700px)", () => {
 		y: 40,
 	}, {
 		autoAlpha: 1,
-		y: -10,
+		y: 0,
 		ease: "none",
 		scrollTrigger: {
 			trigger: ".panel-strat",
 			containerAnimation: scrollTween,
-			start: "left 50%",
+			start: "center 50%",
 			end: "center 80%",
 			id: "1",
 
@@ -405,6 +405,290 @@ vp.add("(min-width: 700px)", () => {
 			containerAnimation: scrollTween,
 			start: "center 80%",
 			end: "center 20%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".panel-strat-item0", {
+		autoAlpha: 0,
+		y: 40,
+	}, {
+		autoAlpha: 1,
+		y: 0,
+		ease: "none",
+		delay: 0,
+		scrollTrigger: {
+			trigger: ".panel-strat",
+			containerAnimation: scrollTween,
+			start: "center 50%",
+			end: "center 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".panel-strat-item1", {
+		autoAlpha: 0,
+		y: 40,
+	}, {
+		autoAlpha: 1,
+		y: 0,
+		ease: "none",
+		delay: .2,
+		scrollTrigger: {
+			trigger: ".panel-strat",
+			containerAnimation: scrollTween,
+			start: "center 50%",
+			end: "center 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".panel-strat-item2", {
+		autoAlpha: 0,
+		y: 40,
+	}, {
+		autoAlpha: 1,
+		y: 0,
+		ease: "none",
+		delay: .4,
+		scrollTrigger: {
+			trigger: ".panel-strat",
+			containerAnimation: scrollTween,
+			start: "center 50%",
+			end: "center 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".panel-strat-item3", {
+		autoAlpha: 0,
+		y: 40,
+	}, {
+		autoAlpha: 1,
+		y: 0,
+		ease: "none",
+		delay: .6,
+		scrollTrigger: {
+			trigger: ".panel-strat",
+			containerAnimation: scrollTween,
+			start: "center 50%",
+			end: "center 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".panel-strat-item4", {
+		autoAlpha: 0,
+		y: 40,
+	}, {
+		autoAlpha: 1,
+		y: 0,
+		ease: "none",
+		delay: .8,
+		scrollTrigger: {
+			trigger: ".panel-strat",
+			containerAnimation: scrollTween,
+			start: "center 50%",
+			end: "center 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".p6-txt", {
+		autoAlpha: 0,
+		x: 80,
+	}, {
+		autoAlpha: 1,
+		x: 0,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".p6-txt",
+			containerAnimation: scrollTween,
+			start: "left 50%",
+			end: "left 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".p7-txt", {
+		autoAlpha: 0,
+		x: 80,
+	}, {
+		autoAlpha: 1,
+		x: 0,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".p7-txt",
+			containerAnimation: scrollTween,
+			start: "left 50%",
+			end: "left 80%",
+			id: "1",
+
+
+		}
+	});
+
+	gsap.fromTo(".p8-txt", {
+		autoAlpha: 0,
+		y: 40,
+	}, {
+		autoAlpha: 1,
+		y: 0,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".p8-txt",
+			containerAnimation: scrollTween,
+			start: "center 50%",
+			end: "center 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".panel-txt-9-wrap", {
+		autoAlpha: 0,
+		y: 40,
+	}, {
+		autoAlpha: 1,
+		y: 0,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".panel-txt-9-wrap",
+			containerAnimation: scrollTween,
+			start: "center 50%",
+			end: "center 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".panel-eco-item1", {
+		autoAlpha: 0,
+		x: 80,
+	}, {
+		autoAlpha: 1,
+		x: 0,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".panel-eco-item",
+			containerAnimation: scrollTween,
+			start: "left 50%",
+			end: "left 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".panel-eco-item2", {
+		autoAlpha: 0,
+		x: 80,
+	}, {
+		autoAlpha: 1,
+		x: 0,
+		ease: "none",
+		delay: .5,
+		scrollTrigger: {
+			trigger: ".panel-eco-item",
+			containerAnimation: scrollTween,
+			start: "left 50%",
+			end: "left 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".panel-eco-item3", {
+		autoAlpha: 0,
+		x: 80,
+	}, {
+		autoAlpha: 1,
+		x: 0,
+		ease: "none",
+		delay: 1,
+		scrollTrigger: {
+			trigger: ".panel-eco-item",
+			containerAnimation: scrollTween,
+			start: "left 50%",
+			end: "left 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".panel-eco-item4", {
+		autoAlpha: 0,
+		x: 80,
+	}, {
+		autoAlpha: 1,
+		x: 0,
+		ease: "none",
+		delay: 1.5,
+		scrollTrigger: {
+			trigger: ".panel-eco-item",
+			containerAnimation: scrollTween,
+			start: "left 50%",
+			end: "left 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".panel-eco-item5", {
+		autoAlpha: 0,
+		x: 80,
+	}, {
+		autoAlpha: 1,
+		x: 0,
+		ease: "none",
+		delay: 2,
+		scrollTrigger: {
+			trigger: ".panel-eco-item",
+			containerAnimation: scrollTween,
+			start: "left 50%",
+			end: "left 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".creditTitle", {
+		autoAlpha: 0,
+		x: -80,
+	}, {
+		autoAlpha: 1,
+		x: 0,
+		ease: "none",
+		duration: .3,
+		scrollTrigger: {
+			trigger: ".credit",
+			containerAnimation: scrollTween,
+			start: "left 50%",
+			end: "left 80%",
+			id: "1",
+
+
+		}
+	});
+	gsap.fromTo(".creditName", {
+		autoAlpha: 0,
+		x: 80,
+	}, {
+		autoAlpha: 1,
+		x: 0,
+		ease: "none",
+		duration: .3,
+		scrollTrigger: {
+			trigger: ".credit",
+			containerAnimation: scrollTween,
+			start: "left 50%",
+			end: "left 80%",
 			id: "1",
 
 

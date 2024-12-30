@@ -3,6 +3,15 @@
   min-height: 100vh;
   width: 100%;
   position: relative;
+  // display: none;
+
+  &.active {
+    display: block;
+  }
+
+  &-1 {
+    display: block;
+  }
 
   &-road {
     @extend .coverBgRoad;
@@ -190,7 +199,14 @@
     &-btn {
       margin-top: 40px;
       margin-bottom: 73px;
-      margin-left: 200px;
+
+      @include min-responsive($w-xvl) {
+        margin-left: 100px;
+      }
+
+      @include min-responsive($w-xxl) {
+        margin-left: 200px;
+      }
 
       .button {
         position: relative;
@@ -324,6 +340,13 @@
         position: absolute;
         z-index: 1;
       }
+
+      .panel-bar-item {
+        position: absolute;
+        bottom: -33px;
+        left: -65px;
+        z-index: -2;
+      }
     }
 
     .panel-info {
@@ -356,6 +379,7 @@
 
     &-wrap {
       max-width: 337px;
+      margin-right: 100px;
     }
 
     &-anim {
@@ -428,6 +452,27 @@
   &-bar {
     position: relative;
     z-index: 1;
+
+    &-item {
+      opacity: 0;
+      transition: opacity .2s ease-out;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    &-6 {
+      width: 657px;
+      height: 473px;
+
+      .panel-bar-item {
+        position: absolute;
+        width: 657px;
+        height: 473px;
+        bottom: 10px;
+      }
+    }
   }
 
   &-pie {
@@ -489,20 +534,36 @@
   }
 
   &-strat {
-    margin-top: 60px;
     align-items: flex-end;
+    margin-top: 20px;
+
+    @include min-height($w-hlg) {
+      margin-top: 60px;
+    }
 
     &-item {
+      position: relative;
+      padding-left: 15px;
       margin: 20px 15px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      min-height: 325px;
 
-      &:nth-child(2) {
-        bottom: 10px;
-        position: relative;
+      @include min-height($w-md) {
+        min-height: 373px;
       }
+    }
+
+    &-arrow {
+      position: absolute;
+      left: 0;
     }
   }
 
   &-6 {
+
     .panel-bg .panel-bg-detail {
       bottom: 35px;
       left: 14vw;
@@ -510,6 +571,10 @@
       img {
         width: calc(200vw - 14vw);
       }
+    }
+
+    .panel-bg-6 img {
+      max-height: 30vh;
     }
   }
 }

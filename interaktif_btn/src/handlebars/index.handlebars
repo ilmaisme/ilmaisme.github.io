@@ -33,23 +33,19 @@
     </div>
 
     <!--popup-->
-    {{!-- <div class="videoPop popup" id="popup0">
-        <div class="videoPop__wrap">
+    <div class="videoPop popup center-flex" id="popupVideo">
+        <div class="videoPop__wrap popupWrap">
             <button class="button buttonClose" aria-label="Close popup">
                 <span class="icon iconClose"></span>
             </button>
             <div class="videoPop__content text-center">
-                <div class="videoPop__title">e-financing support</div>
-                <div class="videoPop__txt"><strong>SI APIK:</strong> Aplikasi digital bagi UMKM
-                    untuk
-                    membantu pencatatan keuangan dan dapat menghasilkan laporan keuangan sebagai referensi bank
-                    dalam menganalisis kinerja keuangan UMKM, sehingga UMKM berpotensi memperoleh kredit/pembiayaan.
-                </div>
-                <div id="videoAnim" class="videoPop__img">
-                </div>
+                <video controls width="250">
+                    <source src="/media/cc0-videos/flower.webm" type="video/webm" />
+                    <source src="/media/cc0-videos/flower.mp4" type="video/mp4" />
+                </video>
             </div>
         </div>
-    </div> --}}
+    </div>
     <!--popup-->
 
     <!-- content -->
@@ -84,19 +80,19 @@
                 </div>
             </div>
         </div>
-        <div id="beginHorizonScroll">
-            <div class="panel__traffic">
-                <div class="anim1 vehicle">
-                    <div id="animBus"></div>
-                </div>
-                <div class="anim2 vehicle">
-                    <div id="animTaxi"></div>
-                </div>
-                <div class="anim3 vehicle">
-                    <div id="animWhiteCar"></div>
-                </div>
+        <div class="panel__traffic">
+            <div class="anim1 vehicle">
+                <div id="animBus"></div>
             </div>
+            <div class="anim2 vehicle">
+                <div id="animTaxi"></div>
+            </div>
+            <div class="anim3 vehicle">
+                <div id="animWhiteCar"></div>
+            </div>
+        </div>
 
+        <div id="beginHorizonScroll">
             <section class="panel panel-1">
                 <div class="panel-detail">
                     <div class="intro text-center">
@@ -132,7 +128,7 @@
             <section class="panel panel-2">
                 <div class="panel-detail">
                     <div class="panel-bg panel-bg-2">
-                        <div class="panel-video">
+                        <button class="button panel-video" onclick="openPopup('Video')">
                             <picture>
                                 <source srcset="./asset/images/billboard-video-mob.png" media="(max-width: 768px)"
                                     alt="">
@@ -145,7 +141,7 @@
                                 <img srcset="./asset/images/billboard-video-play.png" alt="" class="" width="174"
                                     height="175" loading="lazy">
                             </picture>
-                        </div>
+                        </button>
                         <div class="panel-bg-detail">
                             <picture>
                                 <source srcset="./asset/images/scroll-bg-mob.png" media="(max-width: 768px)" alt="">
@@ -233,13 +229,10 @@
                             </div>
                             <ul class="panel-strat display-flex">
                                 {{#each strategy}}
-                                <li class="panel-strat-item">
+                                <li class="panel-strat-item panel-strat-item{{@index}}">
+                                    {{>arrow}}
                                     <div class="panel-strat-title">{{{title}}}</div>
-                                    {{#if images}}
-                                    <img src="{{images}}" alt="" loading="lazy">
-                                    {{else}}
                                     <div id="panel-strat-anim{{@index}}"></div>
-                                    {{/if}}
                                 </li>
                                 {{/each}}
                             </ul>
@@ -255,11 +248,12 @@
                 <div class="panel-detail">
                     <div class="panel-bg panel-bg-6 display-flex">
                         <div class="panel-txt panel-txt-6">
-                            <div class="panel-txt-6-title">Kinerja <strong>BTN Syariah</strong> juga berada <strong>di
+                            <div class="panel-txt-6-title p6-txt">Kinerja <strong>BTN Syariah</strong> juga berada
+                                <strong>di
                                     atas rata-rata</strong> industri
                                 perbankan syariah nasional.</div>
                             <div class="panel-txt-6-btn center-flex">
-                                <button class="button">
+                                <button class="button" onclick="addActive('.panel-bar-item-1', '.panel-bar-item-2')">
                                     <div class="button-wrap">
                                         <strong>Aset</strong>
                                         <span class="cursor">
@@ -269,7 +263,7 @@
                                         </span>
                                     </div>
                                 </button>
-                                <button class="button">
+                                <button class="button" onclick="addActive('.panel-bar-item-2', '.panel-bar-item-1')">
                                     <div class="button-wrap">
                                         <strong>Laba</strong>
                                         <span class="cursor">
@@ -285,7 +279,7 @@
                                     loading="lazy">
                             </picture>
                         </div>
-                        <div class="panel-bar">
+                        <div class="panel-bar panel-bar-6">
                             <div class="panel-bar-item panel-bar-item-1">
                                 <div id="bar-anim1"></div>
                             </div>
@@ -310,7 +304,8 @@
                     <div class="panel-bg panel-bg-7 display-flex">
                         <div class="panel-txt panel-txt-7">
                             <div class="panel-txt-7-wrap">
-                                <div class="panel-txt-7-title"> <strong>BTN Syariah</strong> tumbuh dengan kinerja di
+                                <div class="panel-txt-7-title p7-txt"> <strong>BTN Syariah</strong> tumbuh dengan
+                                    kinerja di
                                     atas
                                     industri perbankan syariah per September 2024.</div>
                                 <div class="panel-info">
@@ -338,7 +333,7 @@
                                         </span>
                                     </div>
                                     <div class="panel-bar-item panel-bar-item-{{@index}}">
-                                        <div id="bar-chart-anim{{@index}}"></div>
+                                        {{>industry index=@index}}
                                     </div>
                                 </button>
                                 {{/each}}
@@ -347,7 +342,7 @@
                         <div class="panel-bg-detail">
                         </div>
                     </div>
-                    <div class="panel-road panel-road-6">
+                    <div class="panel-road panel-road-7">
                     </div>
                 </div>
             </section>
@@ -386,7 +381,7 @@
                             </div>
                             <ul class="panel-eco">
                                 {{#each ecosystem}}
-                                <li class="panel-eco-item">
+                                <li class="panel-eco-item panel-eco-item{{add @index 1}}">
                                     <div class="panel-eco-num"><strong>{{add @index 1}}</strong></div>
                                     <div class="panel-eco-title"><strong>{{{title}}}</strong></div>
                                 </li>
@@ -452,7 +447,7 @@
                                     </picture>
                                 </a>
                             </div>
-                            <button class="button creditBack" onclick="window.location.reload(false)"
+                            <button class="button creditBack" onclick="window.location.replace(location.href);"
                                 aria-label="Back to Top">
                                 <picture>
                                     <img srcset="./asset/images/social-refresh.png" alt="" width="30" height="29"
