@@ -18,8 +18,12 @@
 
         @media only screen and(max-height: $w-md) and(orientation: landscape) {
             bottom: unset;
-            padding-top: 30px;
         }
+
+        @include min-height($w-md) {
+            bottom: calc(var(--app-height) - 37vh);
+        }
+
     }
 
     &Caption {

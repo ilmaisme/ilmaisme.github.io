@@ -39,9 +39,9 @@
                 <span class="icon iconClose"></span>
             </button>
             <div class="videoPop__content text-center">
-                <video controls width="250">
-                    <source src="/media/cc0-videos/flower.webm" type="video/webm" />
-                    <source src="/media/cc0-videos/flower.mp4" type="video/mp4" />
+                <video controls width="450">
+                    <source src="./asset/images/KPR_PAK HUSNI_MERBOT.webm" type="video/webm" />
+                    <source src="./asset/images/KPR_PAK HUSNI_MERBOT.mp4" type="video/mp4" />
                 </video>
             </div>
         </div>
@@ -324,7 +324,7 @@
                             </div>
                             <div class="panel-txt-7-btn center-flex">
                                 {{#each industry}}
-                                <button class="button">
+                                <button class="button" onclick="addActive('.panel-graph-item-{{@index}}')">
                                     <div class="button-wrap">
                                         <strong>{{title}}</strong>
                                         <span class="cursor">
@@ -332,7 +332,7 @@
                                                 height="58">
                                         </span>
                                     </div>
-                                    <div class="panel-bar-item panel-bar-item-{{@index}}">
+                                    <div class="panel-bar-item panel-graph-item-{{@index}}">
                                         {{>industry index=@index}}
                                     </div>
                                 </button>
