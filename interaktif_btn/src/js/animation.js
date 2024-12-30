@@ -325,7 +325,7 @@ vp.add("(min-width: 700px)", () => {
 			start: "center 80%",
 			end: "center 20%",
 			id: "1",
-
+			onEnter: function() { startplay2020() }
 
 		}
 	});
@@ -341,6 +341,7 @@ vp.add("(min-width: 700px)", () => {
 			start: "center 80%",
 			end: "center 20%",
 			id: "1",
+			onEnter: function() { startplay2021() }
 
 
 		}
@@ -357,6 +358,7 @@ vp.add("(min-width: 700px)", () => {
 			start: "center 80%",
 			end: "center 20%",
 			id: "1",
+			onEnter: function() { startplay2022() }
 
 
 		}
@@ -373,6 +375,7 @@ vp.add("(min-width: 700px)", () => {
 			start: "center 80%",
 			end: "center 20%",
 			id: "1",
+			onEnter: function() { startplay2023() }
 
 
 		}
@@ -385,7 +388,7 @@ vp.add("(min-width: 700px)", () => {
 		y: 0,
 		ease: "none",
 		scrollTrigger: {
-			trigger: ".panel-strat",
+			trigger: ".panel-strat-item0",
 			containerAnimation: scrollTween,
 			start: "center 50%",
 			end: "center 80%",
@@ -401,7 +404,7 @@ vp.add("(min-width: 700px)", () => {
 		delay: 0,
 		ease: 'expo.easeOut',
 		scrollTrigger: {
-			trigger: ".panel-strat",
+			trigger: ".panel-strat-item0",
 			containerAnimation: scrollTween,
 			start: "center 80%",
 			end: "center 20%",
@@ -419,7 +422,7 @@ vp.add("(min-width: 700px)", () => {
 		ease: "none",
 		delay: 0,
 		scrollTrigger: {
-			trigger: ".panel-strat",
+			trigger: ".panel-strat-item0",
 			containerAnimation: scrollTween,
 			start: "center 50%",
 			end: "center 80%",
@@ -437,7 +440,7 @@ vp.add("(min-width: 700px)", () => {
 		ease: "none",
 		delay: .2,
 		scrollTrigger: {
-			trigger: ".panel-strat",
+			trigger: ".panel-strat-item0",
 			containerAnimation: scrollTween,
 			start: "center 50%",
 			end: "center 80%",
@@ -455,7 +458,7 @@ vp.add("(min-width: 700px)", () => {
 		ease: "none",
 		delay: .4,
 		scrollTrigger: {
-			trigger: ".panel-strat",
+			trigger: ".panel-strat-item0",
 			containerAnimation: scrollTween,
 			start: "center 50%",
 			end: "center 80%",
@@ -473,7 +476,7 @@ vp.add("(min-width: 700px)", () => {
 		ease: "none",
 		delay: .6,
 		scrollTrigger: {
-			trigger: ".panel-strat",
+			trigger: ".panel-strat-item0",
 			containerAnimation: scrollTween,
 			start: "center 50%",
 			end: "center 80%",
@@ -491,7 +494,7 @@ vp.add("(min-width: 700px)", () => {
 		ease: "none",
 		delay: .8,
 		scrollTrigger: {
-			trigger: ".panel-strat",
+			trigger: ".panel-strat-item0",
 			containerAnimation: scrollTween,
 			start: "center 50%",
 			end: "center 80%",
@@ -552,6 +555,23 @@ vp.add("(min-width: 700px)", () => {
 
 		}
 	});
+	gsap.fromTo(".p8-img", {
+		x: 50,
+	}, {
+		x: -50,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".p8-img",
+			containerAnimation: scrollTween,
+			start: "center 80%",
+			end: "center 20%",
+			scrub: 1,
+			id: "1",
+
+
+		}
+	});
+
 	gsap.fromTo(".panel-txt-9-wrap", {
 		autoAlpha: 0,
 		y: 40,

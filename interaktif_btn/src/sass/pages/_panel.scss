@@ -50,7 +50,7 @@
     &-8 {
       bottom: 42px;
 
-      .panel-bg-detail img {
+      .panel-bg-detail .panel-bg-detail-pic {
         width: 100vw;
         object-position: left;
       }
@@ -354,6 +354,26 @@
         bottom: -33px;
         left: -65px;
         z-index: -2;
+
+        svg {
+          @media only screen and(max-height: 700px) and(orientation: landscape) {
+            position: relative;
+            top: 0;
+            left: 50%;
+            transform: scale(.8) translate(-50%, 12%);
+          }
+        }
+
+        &.active {
+          .panel-graph {
+            transform: translateY(0);
+          }
+        }
+      }
+
+      .panel-graph {
+        transition: transform .8s ease-in;
+        transform: translateY(100vh);
       }
     }
 
@@ -371,6 +391,12 @@
 
     @include min-height($w-md) {
       top: 15%;
+    }
+
+    &-img{
+      position: absolute;
+      bottom: -25px;
+      left: 40%;
     }
   }
 

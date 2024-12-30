@@ -1,6 +1,63 @@
+//Animation Pie 1
+var param2020 = {
+    container: document.getElementById('panel-anim1'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    path: 'asset/json/kpr-subsidi-2020.json',
+    name: 'myAnimation',
+};
+
+var play2020 = bodymovin.loadAnimation(param2020)
+function startplay2020() {
+    play2020.play()
+}
+//Animation Pie 2
+var param2021 = {
+    container: document.getElementById('panel-anim2'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    path: 'asset/json/kpr-subsidi-2021.json',
+    name: 'myAnimation',
+};
+
+var play2021 = bodymovin.loadAnimation(param2021)
+function startplay2021() {
+    play2021.play()
+}
+//Animation Pie 3
+var param2022 = {
+    container: document.getElementById('panel-anim3'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    path: 'asset/json/kpr-subsidi-2022.json',
+    name: 'myAnimation',
+};
+
+var play2022 = bodymovin.loadAnimation(param2022)
+function startplay2022() {
+    play2022.play()
+}
+//Animation Pie 4
+var param2023 = {
+    container: document.getElementById('panel-anim4'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    path: 'asset/json/kpr-subsidi-2023.json',
+    name: 'myAnimation',
+};
+
+var play2023 = bodymovin.loadAnimation(param2023)
+function startplay2023() {
+    play2023.play()
+}
+
+
 $(document).ready(function () {
     $('.base-layer').addClass('active');
-    // $('.pin-spacer').css('');
 
     // 1. Animation Intro
     var animation = bodymovin.loadAnimation({
@@ -12,41 +69,41 @@ $(document).ready(function () {
         name: 'myAnimation',
     });
     // 2. Animation Pie 1
-    var animation = bodymovin.loadAnimation({
-        container: document.getElementById('panel-anim1'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'asset/json/kpr-subsidi-2020.json',
-        name: 'myAnimation',
-    });
+    // var animation = bodymovin.loadAnimation({
+    //     container: document.getElementById('panel-anim1'),
+    //     renderer: 'svg',
+    //     loop: true,
+    //     autoplay: true,
+    //     path: 'asset/json/kpr-subsidi-2020.json',
+    //     name: 'myAnimation',
+    // });
     // 3. Animation Pie 2
-    var animation = bodymovin.loadAnimation({
-        container: document.getElementById('panel-anim2'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'asset/json/kpr-subsidi-2021.json',
-        name: 'myAnimation',
-    });
+    // var animation = bodymovin.loadAnimation({
+    //     container: document.getElementById('panel-anim2'),
+    //     renderer: 'svg',
+    //     loop: true,
+    //     autoplay: true,
+    //     path: 'asset/json/kpr-subsidi-2021.json',
+    //     name: 'myAnimation',
+    // });
     // 4. Animation Pie 3
-    var animation = bodymovin.loadAnimation({
-        container: document.getElementById('panel-anim3'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'asset/json/kpr-subsidi-2022.json',
-        name: 'myAnimation',
-    });
+    // var animation = bodymovin.loadAnimation({
+    //     container: document.getElementById('panel-anim3'),
+    //     renderer: 'svg',
+    //     loop: true,
+    //     autoplay: true,
+    //     path: 'asset/json/kpr-subsidi-2022.json',
+    //     name: 'myAnimation',
+    // });
     // 5. Animation Pie 4
-    var animation = bodymovin.loadAnimation({
-        container: document.getElementById('panel-anim4'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'asset/json/kpr-subsidi-2023.json',
-        name: 'myAnimation',
-    });
+    // var animation = bodymovin.loadAnimation({
+    //     container: document.getElementById('panel-anim4'),
+    //     renderer: 'svg',
+    //     loop: true,
+    //     autoplay: true,
+    //     path: 'asset/json/kpr-subsidi-2023.json',
+    //     name: 'myAnimation',
+    // });
     // 6. Animation Strategy 0
     var animation = bodymovin.loadAnimation({
         container: document.getElementById('panel-strat-anim0'),
@@ -119,15 +176,6 @@ $(document).ready(function () {
         path: 'asset/json/construction.json',
         name: 'myAnimation',
     });
-    // 12. Animation Bar Chart Industry 0
-    // var animation = bodymovin.loadAnimation({
-    //     container: document.getElementById('bar-chart-anim0'),
-    //     renderer: 'svg',
-    //     loop: true,
-    //     autoplay: true,
-    //     path: 'asset/json/grafik-perkembangan-laba.json',
-    //     name: 'myAnimation',
-    // });
     /*
     // 7. Animation bifast
     var paramBifast = {
@@ -137,14 +185,15 @@ $(document).ready(function () {
         autoplay: false,
         path: 'asset/json/bi-fast.json',
         name: 'myAnimation',
+        var playBifast;
     };
-    var playBifast;
     playBifast = bodymovin.loadAnimation(paramBifast);
     // playBifast.play();*/
 })
 
 //close modal popup 
-let mdl = $('.popup');
+let mdl = $('.popup'),
+    vid = $('#videocov')[0]
 $('.buttonClose').on('click', function (e) {
     closePopup()
 })
@@ -161,6 +210,7 @@ function closePopup() {
     if (mdl.length) {
         mdl.removeClass('active')
     }
+    vid.pause();
 }
 
 //open modal popup
@@ -168,13 +218,13 @@ function openPopup(type) {
     let popupnum = type;
     if (mdl.length) {
         $('#popup' + popupnum).addClass('active')
-        // console.log()
     }
+    vid.play();
 }
 
 function addActive(target, disactive) {
     $(target).addClass('active')
-    if (disactive){
+    if (disactive) {
         $(disactive).removeClass('active')
     }
 }
