@@ -24,7 +24,7 @@
 
     &-2 {
       .panel-bg-detail img {
-        max-width: 300vw;
+        width: 300vw;
       }
     }
 
@@ -32,6 +32,15 @@
     &-6 {
       display: flex;
       align-items: flex-end;
+    }
+
+    &-8 {
+      bottom: 42px;
+
+      .panel-bg-detail img {
+        width: 100vw;
+        object-position: left;
+      }
     }
   }
 }
@@ -71,6 +80,10 @@
 
     @include min-height($w-md) {
       bottom: 100px;
+    }
+
+    @media only screen and(min-height: 768px) and(min-width: 1440px) {
+      bottom: 155px;
     }
 
     &-play {
@@ -211,6 +224,102 @@
     }
   }
 
+  &-txt-7 {
+    width: 100vw;
+    bottom: 27px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+
+    &-wrap {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    &-title {
+      max-width: 260px;
+
+      @include min-height($w-md) {
+        max-width: 337px;
+      }
+    }
+
+    &-btn {
+      .button {
+        position: relative;
+        background: $cl-white;
+        padding: 2px;
+        border-top: 3px solid #997578;
+        border-bottom: 4px solid #997578;
+        font-size: .6em;
+        margin-left: 46px;
+        margin-right: 46px;
+        margin-bottom: 30px;
+
+        &:nth-child(2),
+        &:nth-child(4) {
+          .button-wrap::before {
+            left: 17px;
+          }
+        }
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: -3px;
+          height: calc(100% + 7px);
+        }
+
+        &::before {
+          background: url(../images/billboard-left.png);
+          width: 7px;
+          left: -7px;
+        }
+
+        &::after {
+          background: url(../images/billboard-right.png);
+          width: 4px;
+          right: -4px;
+        }
+
+        &-wrap {
+          position: relative;
+          padding: 12px;
+          border: 2px solid #C7A3B3;
+
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: -34px;
+            background: url(../images/billboard-bottom.png);
+            width: 94px;
+            height: 34px;
+            left: 0;
+            z-index: -1;
+          }
+        }
+      }
+
+      .cursor {
+        position: absolute;
+        z-index: 1;
+      }
+    }
+
+    .panel-info {
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &-txt-8 {
+    max-width: 671px;
+  }
+
   &-bar {
     position: relative;
     z-index: 1;
@@ -291,7 +400,11 @@
   &-6 {
     .panel-bg .panel-bg-detail {
       bottom: 35px;
-      left: 10vw;
+      left: 14vw;
+
+      img {
+        width: calc(200vw - 14vw);
+      }
     }
   }
 }

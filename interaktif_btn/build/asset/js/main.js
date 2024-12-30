@@ -100,6 +100,15 @@ $(document).ready(function () {
         path: 'asset/json/grafik-perkembangan-laba.json',
         name: 'myAnimation',
     });
+    // 12. Animation Bar Chart Industry 0
+    // var animation = bodymovin.loadAnimation({
+    //     container: document.getElementById('bar-chart-anim0'),
+    //     renderer: 'svg',
+    //     loop: true,
+    //     autoplay: true,
+    //     path: 'asset/json/grafik-perkembangan-laba.json',
+    //     name: 'myAnimation',
+    // });
     /*
     // 7. Animation bifast
     var paramBifast = {
