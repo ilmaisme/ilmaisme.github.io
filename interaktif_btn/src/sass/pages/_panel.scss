@@ -152,7 +152,7 @@
     position: relative;
     top: 10%;
 
-    @include min-height($w-md) {
+    @include min-height(790px) {
       top: 15%;
     }
   }
@@ -164,8 +164,11 @@
     top: 6%;
 
     @include min-height($w-md) {
-      top: 15%;
       max-width: 797px;
+    }
+
+    @include min-height(790px) {
+      top: 15%;
     }
 
     @media only screen and(max-height: 700px) and(orientation: landscape) {
@@ -391,7 +394,7 @@
       }
 
       .panel-graph {
-        transition: transform .8s ease-in;
+        transition: transform 1s ease-in;
         transform: translateY(100vh);
       }
     }
@@ -408,7 +411,7 @@
     position: relative;
     top: 10%;
 
-    @include min-height($w-md) {
+    @include min-height(790px) {
       top: 15%;
     }
 
@@ -628,6 +631,101 @@
 
     .panel-bg-6 img {
       max-height: 30vh;
+    }
+  }
+
+  &__traffic {
+    position: fixed;
+    bottom: 0;
+    width: 900vw;
+    height: 10vh;
+    z-index: 1;
+
+    img {
+      width: calc(100% - 5vh);
+
+      @include min-height($w-md) {
+        width: auto;
+      }
+    }
+
+    .vehicle {
+      position: absolute;
+      left: -10%;
+
+      &1,
+      &2,
+      &3 {
+        animation: moveRight 40s linear infinite -1.5s;
+      }
+
+      &4,
+      &5,
+      &6 {
+        animation: moveLeft 40s linear infinite -1.5s;
+      }
+    }
+
+    //to right
+    .vehicle1 {
+      animation-delay: 0s;
+      bottom: 52px;
+      background: url(../images/car-yellow.png) no-repeat;
+      background-size: contain;
+      width: 97px;
+      height: 56px;
+    }
+
+    .vehicle2 {
+      animation-delay: 3000ms;
+      bottom: 33px;
+      background: url(../images/car-police.png) no-repeat;
+      background-size: contain;
+      width: 107px;
+      height: 64px;
+    }
+
+    .vehicle3 {
+      animation-delay: 8000ms;
+      bottom: 42px;
+      background: url(../images/car-retro.png) no-repeat;
+      background-size: contain;
+      width: 109px;
+      height: 62px;
+    }
+
+    //to left
+    .vehicle4 {
+      animation-delay: 0s;
+      bottom: 13px;
+      background: url(../images/car-bus.png) no-repeat;
+      background-size: contain;
+      width: 179px;
+      height: 78px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        border-bottom: 2px solid #50394D;
+      }
+    }
+
+    .vehicle5 {
+      animation-delay: 9000ms;
+      bottom: 4px;
+      background: url(../images/car-green.png) no-repeat;
+      background-size: contain;
+      width: 94px;
+      height: 57px;
+    }
+
+    .vehicle6 {
+      animation-delay: 2400ms;
+      bottom: 2px;
+      background: url(../images/car-blue.png) no-repeat;
+      background-size: contain;
+      width: 95px;
+      height: 56px;
     }
   }
 }
