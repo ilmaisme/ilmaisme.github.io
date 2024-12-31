@@ -230,12 +230,6 @@ vp.add("(min-width: 700px)", () => {
 		ease: 'expo.easeOut'
 	});
 
-	// gsap.from(".coverTitleSub", {
-	// 	scale: 0.5, 
-	// 	duration: 1, 
-	// 	ease: 'expo.easeOut'
-	// })
-
 	gsap
 		.fromTo(".coverTitleSub", {
 			autoAlpha: 0,

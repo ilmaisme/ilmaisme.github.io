@@ -9,6 +9,7 @@ var param2020 = {
 };
 
 var play2020 = bodymovin.loadAnimation(param2020)
+
 function startplay2020() {
     play2020.play()
 }
@@ -23,6 +24,7 @@ var param2021 = {
 };
 
 var play2021 = bodymovin.loadAnimation(param2021)
+
 function startplay2021() {
     play2021.play()
 }
@@ -37,6 +39,7 @@ var param2022 = {
 };
 
 var play2022 = bodymovin.loadAnimation(param2022)
+
 function startplay2022() {
     play2022.play()
 }
@@ -51,6 +54,7 @@ var param2023 = {
 };
 
 var play2023 = bodymovin.loadAnimation(param2023)
+
 function startplay2023() {
     play2023.play()
 }
@@ -66,6 +70,7 @@ var bar1 = {
 };
 
 var playbar1 = bodymovin.loadAnimation(bar1)
+
 function startplaybar1() {
     playbar1.play()
 }
@@ -80,6 +85,7 @@ var bar2 = {
 };
 
 var playbar2 = bodymovin.loadAnimation(bar2)
+
 function startplaybar2() {
     playbar2.play()
 }
@@ -87,6 +93,9 @@ function startplaybar2() {
 
 $(document).ready(function () {
     $('.base-layer').addClass('active');
+    setTimeout(function () {
+        $('.preloader').addClass('disactive')
+    }, 500);
 
     // Animation Intro
     var animation = bodymovin.loadAnimation({
@@ -200,7 +209,7 @@ function addActiveFunction(target, disactive, startplaybar) {
     if (startplaybar == 1) {
         startplaybar1()
         console.log("bar 1")
-    } else if (startplaybar == 2){
+    } else if (startplaybar == 2) {
         startplaybar2()
         console.log("bar 2")
     }
