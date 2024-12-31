@@ -3,13 +3,12 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    padding-top: 5vh;
     margin: auto;
     width: 980px;
-    height: var(--app-height);
     z-index: 1;
     position: absolute;
     right: 50px;
+    bottom: 0;
 
     @media only screen and(max-height: $w-md) and(orientation: landscape) {
         justify-content: flex-start;
@@ -34,8 +33,8 @@
 
     &Content {
         max-width: 562px;
-        padding-bottom: 70px;
-        margin-bottom: 20px;
+        padding-bottom: 60px;
+        margin-bottom: 30px;
         margin-left: auto;
         margin-right: auto;
         position: relative;
@@ -44,11 +43,12 @@
         &::before,
         &::after {
             content: '';
-            width: 113px;
-            height: 84px;
+            width: 105px;
+            height: 77px;
             z-index: 0;
             position: absolute;
-            background: url(../images/quote.png);
+            background: url(../images/quote.png) no-repeat;
+            background-size: contain;
         }
 
         &::before {
@@ -74,15 +74,24 @@
         @include font-pack($font_caption, 30px, $font-weight-medium, $line-base, #185582);
         font-style: italic;
         z-index: 1;
+
+        @media only screen and(max-height: $w-md) and(orientation: landscape) {
+            font-size: 27px;
+        }
     }
 
     &Img {
         position: relative;
-        bottom: -10px;
         right: -3vw;
 
-        @media only screen and(max-height: 700px) and(orientation: landscape) {
-            position: absolute;
+        @include min-height(720px) {
+            margin-top: -14vh;
+            bottom: -16vh;
+        }
+
+        @media only screen and(max-height: 710px) and(orientation: landscape) {
+            margin-top: -50vh;
+            bottom: -20vh;
         }
     }
 
@@ -91,7 +100,7 @@
         right: -120px;
         bottom: -10px;
 
-        @media only screen and(max-height: 700px) and(orientation: landscape) {
+        @media only screen and(max-height: 710px) and(orientation: landscape) {
             display: none;
         }
     }
@@ -102,6 +111,10 @@
         bottom: 24px;
         right: 0;
         @include font-pack($font_caption_sbold, 30px, $font-weight-sbold, $line-base, $cl-primary);
+
+        @media only screen and(max-height: $w-md) and(orientation: landscape) {
+            font-size: 24px;
+        }
     }
 
     &Title {
