@@ -11,7 +11,6 @@ gsap.config({
 	}
 });
 let vp = gsap.matchMedia();
-// let sections2tl1 = gsap.utils.toArray(".panelTL2");
 
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -21,27 +20,7 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 
 vp.add("(max-width: 700px)", () => {
-	// const section1 = gsap.timeline({
-	// 	scrollTrigger: {
-	// 	trigger: "#HorScrollTL1",
-	// 	pin: "#HorScrollTL1",
-	// 	start: "top top",
-	// 	scrub: 1,
-	// 	}
-	// });
-	// section1
-	// .from("#cover", {
-	// 	autoAlpha: 0, 
-	// })
-	// .fromTo("#openPanel", {
-	// 	autoAlpha: 0, 
-	// 	duration:2
-	// }, {
-	// 	autoAlpha: 1, 
-	// },"-=5");
-
-
-	// Section 4 Mobile
+	// Mobile
 	const preloader = gsap.timeline({
 		defaults: {
 			ease: "power1.out"
@@ -55,30 +34,16 @@ vp.add("(max-width: 700px)", () => {
 		.from('#content', {
 			autoAlpha: 0
 		}, '-=1.3');
-
-	// gsap
-	// .fromTo(".cover .section-left .txt1", {
-	// 	autoAlpha: 0,
-	// 	y:50,
-	// }, {
-	// 	autoAlpha: 1,
-	// 	y:0
-	// });
-	// gsap.fromTo(".cover .section-left .txt2", {
-	// 	autoAlpha: 0,
-	// 	y:20
-	// }, {
-	// 	autoAlpha: 1,
-	// 	y:0
-	// })
-	// gsap.fromTo(".cover .section-left .txt3", {
-	// 	autoAlpha: 0,
-	// 	y:10
-	// }, {
-	// 	autoAlpha: 1,
-	// 	y:0
-	// });
-
+	preloader.from('.coverTitleSub', {
+		autoAlpha: 0,
+		y: 50
+	});
+	preloader.from('.coverTitle', {
+		scale: 0,
+		duration: 0.5,
+		autoAlpha: 0,
+		ease: 'expo.easeOut'
+	});
 	const section4 = gsap.timeline({
 		scrollTrigger: {
 			trigger: "#content",
@@ -203,8 +168,7 @@ vp.add("(max-width: 700px)", () => {
 
 vp.add("(min-width: 700px)", () => {
 
-
-	// Section 4 Desktop
+	// Desktop
 	const preloader = gsap.timeline({
 		defaults: {
 			ease: "power1.out"
@@ -230,21 +194,21 @@ vp.add("(min-width: 700px)", () => {
 		ease: 'expo.easeOut'
 	});
 
-	gsap
-		.fromTo(".coverTitleSub", {
-			autoAlpha: 0,
-			y: 50,
-		}, {
-			autoAlpha: 1,
-			y: 0
-		}, '-=30');
-	gsap.fromTo(".coverTitle", {
-		autoAlpha: 0,
-		y: 20
-	}, {
-		autoAlpha: 1,
-		y: 0
-	}, '-=3');
+	// gsap
+	// 	.fromTo(".coverTitleSub", {
+	// 		autoAlpha: 0,
+	// 		y: 50,
+	// 	}, {
+	// 		autoAlpha: 1,
+	// 		y: 0
+	// 	}, '-=30');
+	// gsap.fromTo(".coverTitle", {
+	// 	autoAlpha: 0,
+	// 	y: 20
+	// }, {
+	// 	autoAlpha: 1,
+	// 	y: 0
+	// }, '-=3');
 
 	let sections = gsap.utils.toArray(".panel");
 
@@ -319,7 +283,9 @@ vp.add("(min-width: 700px)", () => {
 			start: "center 80%",
 			end: "center 20%",
 			id: "1",
-			onEnter: function() { startplay2020() }
+			onEnter: function () {
+				startplay2020()
+			}
 
 		}
 	});
@@ -335,7 +301,9 @@ vp.add("(min-width: 700px)", () => {
 			start: "center 80%",
 			end: "center 20%",
 			id: "1",
-			onEnter: function() { startplay2021() }
+			onEnter: function () {
+				startplay2021()
+			}
 
 
 		}
@@ -352,7 +320,9 @@ vp.add("(min-width: 700px)", () => {
 			start: "center 80%",
 			end: "center 20%",
 			id: "1",
-			onEnter: function() { startplay2022() }
+			onEnter: function () {
+				startplay2022()
+			}
 
 
 		}
@@ -369,7 +339,9 @@ vp.add("(min-width: 700px)", () => {
 			start: "center 80%",
 			end: "center 20%",
 			id: "1",
-			onEnter: function() { startplay2023() }
+			onEnter: function () {
+				startplay2023()
+			}
 
 
 		}

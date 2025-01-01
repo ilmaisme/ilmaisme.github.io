@@ -32,23 +32,37 @@
     }
 
     &Content {
-        max-width: 562px;
-        padding-bottom: 60px;
+        max-width: 360px;
+        border-radius: 96px;
+        left: 380px;
+        background: rgba(255, 255, 255, .9);
+        padding: 14px 15px 70px;
         margin-bottom: 30px;
         margin-left: auto;
         margin-right: auto;
         position: relative;
         align-self: flex-start;
 
+        @include min-responsive($w-md) {
+            max-width: 562px;
+            border-radius: 0;
+            left: unset;
+            padding: 0 0 60px;
+            background: transparent;
+        }
+
         &::before,
         &::after {
-            content: '';
             width: 105px;
             height: 77px;
             z-index: 0;
             position: absolute;
             background: url(../images/quote.png) no-repeat;
             background-size: contain;
+
+            @include min-responsive($w-md) {
+                content: '';
+            }
         }
 
         &::before {
@@ -64,16 +78,25 @@
     }
 
     &Anim {
-        width: 22vw;
+        width: 130px;
+
+        @include min-responsive($w-md) {
+            width: 22vw;
+        }
     }
 
     &Txt {
         position: relative;
         max-width: 485px;
-        margin: 45px auto 10px;
-        @include font-pack($font_caption, 30px, $font-weight-medium, $line-base, #185582);
+        margin: 10px auto 10px;
+        @include font-pack($font_caption, 20px, $font-weight-medium, $line-base, #185582);
         font-style: italic;
         z-index: 1;
+
+        @include min-responsive($w-md) {
+            font-size: 30px;
+            margin: 45px auto 10px;
+        }
 
         @media only screen and(max-height: $w-md) and(orientation: landscape) {
             font-size: 27px;
@@ -83,22 +106,43 @@
     &Img {
         position: relative;
         right: -3vw;
+        margin-top: -22vh;
+        bottom: -16vh;
 
         @include min-height(720px) {
             margin-top: -14vh;
             bottom: -16vh;
         }
 
+        @media only screen and(min-height: 720px) and(min-width: 1220px) {
+            margin-top: -22vh;
+            bottom: -22vh;
+        }
+
+        @media only screen and(min-height: 800px) and(min-width: 1220px) {
+            margin-top: -138px;
+            bottom: -16vh;
+        }
+
         @media only screen and(max-height: 710px) and(orientation: landscape) {
-            margin-top: -50vh;
+            margin-top: -37vh;
             bottom: -20vh;
+        }
+
+        @media only screen and(max-height: 610px) and(orientation: landscape) {
+            margin-top: -46vh;
         }
     }
 
     &Arrow {
+        display: none;
         position: absolute;
         right: -120px;
         bottom: -10px;
+
+        @include min-responsive($w-md) {
+            display: block;
+        }
 
         @media only screen and(max-height: 710px) and(orientation: landscape) {
             display: none;
@@ -108,9 +152,15 @@
     &Name {
         position: absolute;
         z-index: 1;
-        bottom: 24px;
-        right: 0;
-        @include font-pack($font_caption_sbold, 30px, $font-weight-sbold, $line-base, $cl-primary);
+        bottom: 40px;
+        right: 60px;
+        @include font-pack($font_caption_sbold, 18px, $font-weight-sbold, $line-base, $cl-primary);
+
+        @include min-responsive($w-md) {
+            bottom: 24px;
+            right: 0;
+            font-size: 30px;
+        }
 
         @media only screen and(max-height: $w-md) and(orientation: landscape) {
             font-size: 24px;
@@ -120,9 +170,31 @@
     &Title {
         position: absolute;
         z-index: 1;
-        bottom: 0;
-        right: 0;
-        @include font-pack($font_base, 16px, $font-weight-normal, $line-base, $cl-primary);
+        bottom: 18px;
+        right: 60px;
+        @include font-pack($font_base, 14px, $font-weight-normal, $line-base, $cl-primary);
+
+        @include min-responsive($w-md) {
+            bottom: 0;
+            right: 0;
+            font-size: 16px;
+        }
+
+        &::after {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            right: 30px;
+            top: auto;
+            bottom: -58px;
+            border: 20px solid;
+            border-color: rgba(255, 255, 255, .9) transparent transparent rgba(255, 255, 255, .9);
+
+            @include min-responsive($w-md) {
+                content: none
+            }
+        }
     }
 
     ~.panel-road {

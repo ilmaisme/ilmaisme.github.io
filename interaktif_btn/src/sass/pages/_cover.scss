@@ -14,7 +14,12 @@
         padding-top: 46px;
         padding-bottom: 46px;
         position: absolute;
-        bottom: calc(var(--app-height) - 45vh);
+        top: 30%;
+
+        @include min-responsive($w-md) {
+            top: unset;
+            bottom: calc(var(--app-height) - 45vh);
+        }
 
         @media only screen and(max-height: $w-md) and(orientation: landscape) {
             bottom: unset;
@@ -32,15 +37,15 @@
 
     &Title {
         position: relative;
-        // top: calc(var(--app-height) - var(--app-height) - 186px);
         z-index: 0;
-        -webkit-text-stroke: 3px;
+        -webkit-text-stroke: .4px;
         -webkit-text-stroke-color: $cl-white;
-        @include font-pack($font_caption_xbold, 22px, $font-weight-xbold, $line-base, #0368AC);
+        @include font-pack($font_caption_xbold, 25px, $font-weight-xbold, $line-base, #0368AC);
 
         @include min-responsive($w-md) {
             font-size: 60px;
-            // top: calc(var(--app-height) - var(--app-height) - 216px);
+            -webkit-text-stroke: 3px;
+            -webkit-text-stroke-color: $cl-white;
         }
 
         @media only screen and(max-height: $w-md) and(orientation: landscape) {
@@ -97,8 +102,12 @@
             width: 101%;
             height: 10vh;
             background: url(../images/cover-road.png);
-            background-size: contain;
+            background-size: cover;
             background-repeat: repeat-x;
+
+            @include min-responsive($w-md) {
+                background-size: contain;
+            }
         }
     }
 
@@ -107,7 +116,7 @@
         width: 100vw;
 
         &Img {
-            width: 50vw;
+            width: 325px;
             position: absolute;
             top: 0;
             height: 184px;
@@ -115,10 +124,26 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
+
+            @include min-responsive($w-md) {
+                width: 50vw;
+            }
+        }
+
+        &--1 {
+            left: -50vw;
+
+            @include min-responsive($w-md) {
+                left: 0;
+            }
         }
 
         &--2 {
-            right: 0;
+            right: -50vw;
+
+            @include min-responsive($w-md) {
+                right: 0;
+            }
         }
 
         &--3 {

@@ -9,6 +9,14 @@
     display: block;
   }
 
+  &-0 {
+    display: block;
+
+    @include min-responsive($w-md) {
+      display: none;
+    }
+  }
+
   &-1 {
     display: block;
     z-index: 1;
@@ -35,8 +43,16 @@
       max-height: 45vh;
       object-fit: contain;
 
-      @include min-height($w-md) {
+      @include min-height($w-hlg) {
         max-height: unset;
+      }
+    }
+
+    &-1 {
+      .panel-bg-detail {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
       }
     }
 
@@ -105,15 +121,23 @@
 
   &-video {
     position: absolute;
-    bottom: 149px;
+    bottom: 18vh;
     left: 400px;
 
-    @include min-height($w-md) {
+    @include min-height($w-hlg) {
       bottom: 100px;
     }
 
     @media only screen and(min-height: 768px) and(min-width: 1440px) {
-      bottom: 155px;
+      bottom: 15vh;
+    }
+
+    @media only screen and(max-height: 720px) and(orientation: landscape) {
+      bottom: 22vh;
+    }
+
+    @media only screen and(max-height: 700px) and(orientation: landscape) {
+      bottom: 26vh;
     }
 
     &-play {
@@ -125,7 +149,7 @@
       display: block;
       cursor: pointer;
 
-      @include min-height($w-md) {
+      @include min-height($w-hlg) {
         max-width: unset;
       }
 
@@ -651,18 +675,30 @@
 
     .vehicle {
       position: absolute;
-      left: -10%;
+      left: -20%;
+
+      @include min-responsive($w-md) {
+        left: -10%;
+      }
 
       &1,
       &2,
       &3 {
-        animation: moveRight 40s linear infinite -1.5s;
+        animation: moveRight 20s linear infinite -1.5s;
+
+        @include min-responsive($w-md) {
+          animation: moveRight 40s linear infinite -1.5s;
+        }
       }
 
       &4,
       &5,
       &6 {
-        animation: moveLeft 40s linear infinite -1.5s;
+        animation: moveLeft 20s linear infinite -1.5s;
+
+        @include min-responsive($w-md) {
+          animation: moveLeft 40s linear infinite -1.5s;
+        }
       }
     }
 
