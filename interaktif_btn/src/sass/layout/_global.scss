@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    @include font-pack($font_base, $font-size-normal, $font-weight-normal, $line-base, $cl-primary);
+    @include font-pack($font_base, 16px, $font-weight-normal, $line-base, $cl-primary);
     background: $cl-white;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -23,11 +23,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeSpeed;
 
+    @include max-responsive($w-xm) {
+        font-size: 14px;
+    }
+
     @include min-responsive($w-md) {
         font-size: 20px;
     }
 
-    @include min-height($w-md) {
+    @media only screen and(min-height: $w-md) and(orientation: landscape) {
         font-size: 24px;
     }
 

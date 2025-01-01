@@ -1,9 +1,12 @@
 .panel {
-  min-width: 100vw;
+  min-width: 600px;
   min-height: 100vh;
   width: 100%;
   position: relative;
-  // display: none;
+
+  @include min-responsive($w-md) {
+    min-width: 100vw;
+  }
 
   &.active {
     display: block;
@@ -11,6 +14,7 @@
 
   &-0 {
     display: block;
+    min-width: 400px;
 
     @include min-responsive($w-md) {
       display: none;
@@ -58,7 +62,9 @@
 
     &-2 {
       .panel-bg-detail img {
-        width: 300vw;
+        @include min-responsive($w-md) {
+          width: 300vw;
+        }
       }
     }
 
@@ -92,10 +98,6 @@
 }
 
 .panel {
-  min-width: 100vw;
-  min-height: 100vh;
-  width: 100%;
-
   // @include max-responsive($w-md) {
   //   min-width: 100vw;
   //   min-height: 100vh;
@@ -115,17 +117,34 @@
     .panel-bg-detail {
       position: absolute;
       bottom: 10px;
-      width: 100vw;
+      width: 100%;
+
+      @include min-responsive($w-md) {
+        width: 100vw;
+      }
     }
   }
 
   &-video {
     position: absolute;
-    bottom: 18vh;
-    left: 400px;
+    left: 50px;
+    bottom: 23vh;
+
+    @include max-responsive($w-xm) {
+      bottom: 29vh;
+    }
+
+    @include min-responsive($w-md) {
+      left: 400px;
+      bottom: 18vh;
+    }
 
     @include min-height($w-hlg) {
       bottom: 100px;
+    }
+
+    @media only screen and(min-height: $w-hlg) and(orientation: portrait) {
+      bottom: 130px;
     }
 
     @media only screen and(min-height: 768px) and(min-width: 1440px) {
@@ -154,7 +173,21 @@
       }
 
       img {
-        max-width: 100%;
+        max-width: 80px;
+
+        @include min-responsive($w-md) {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .videoBill {
+      img {
+        max-width: 500px;
+
+        @include min-responsive($w-md) {
+          max-width: unset;
+        }
       }
     }
 
@@ -171,10 +204,19 @@
   }
 
   &-txt-3 {
-    max-width: 577px;
-    left: 10vw;
+    max-width: calc(100vw - 30px);
+    left: 50px;
     position: relative;
     top: 10%;
+
+    @include max-responsive($w-xm) {
+      max-width: 400px;
+    }
+
+    @include min-responsive($w-md) {
+      max-width: 577px;
+      left: 10vw;
+    }
 
     @include min-height(790px) {
       top: 15%;
@@ -182,12 +224,16 @@
   }
 
   &-txt-4 {
-    max-width: 577px;
+    max-width: 500px;
     left: 0;
     position: relative;
     top: 6%;
 
-    @include min-height($w-md) {
+    @include min-responsive($w-md) {
+      max-width: 577px;
+    }
+
+    @media only screen and(min-height: $w-md) and(orientation: landscape) {
       max-width: 797px;
     }
 
@@ -206,6 +252,12 @@
   }
 
   &-txt-5 {
+    left: -80px;
+
+    @include min-responsive($w-md) {
+      left: unset;
+    }
+
     &-title {
       max-width: 157px;
       margin-right: 11px;
@@ -629,7 +681,11 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
-      min-height: 325px;
+      min-height: 216px;
+
+      @include min-responsive($w-md) {
+        min-height: 325px;
+      }
 
       @include min-height($w-md) {
         min-height: 373px;

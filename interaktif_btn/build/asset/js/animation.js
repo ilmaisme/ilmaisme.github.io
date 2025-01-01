@@ -19,7 +19,7 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 
 
-vp.add("(max-width: 700px)", () => {
+/*vp.add("(max-width: 700px)", () => {
 	// Mobile
 	const preloader = gsap.timeline({
 		defaults: {
@@ -167,7 +167,7 @@ vp.add("(max-width: 700px)", () => {
 
 
 vp.add("(min-width: 700px)", () => {
-
+*/
 	// Desktop
 	const preloader = gsap.timeline({
 		defaults: {
@@ -705,86 +705,7 @@ vp.add("(min-width: 700px)", () => {
 
 
 
-	// Section 5 Desktop
-
-	gsap.from(".section5__timeline1 .eachMenu", {
-		scale: 0.5,
-		duration: 1,
-		ease: 'expo.easeOut'
-	})
-
-	const section5TL1 = gsap.timeline({
-		scrollTrigger: {
-			trigger: ".section5",
-			start: "top top",
-			end: "100px",
-			scrub: 1,
-			pin: true
-		}
-	});
-	section5TL1
-		.fromTo(".section5__timeline1 .next-btn", {
-			autoAlpha: 0
-		}, {
-			autoAlpha: 1
-		})
-
-
-
-
-
-
-
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-// const stickyEls = document.querySelectorAll('.sticky-wrap');
-
-// stickyEls.forEach(el => {
-//   let tl = gsap.timeline({
-//     scrollTrigger: {
-//       trigger: el,
-//       start: 'top top',
-//       end: '100px',
-//       ,
-//       toggleActions: 'play none reverse none',
-//       scrub: 1,
-//     }
-//   });
-//   tl.to(el, {opacity: 0, yPercent: -10})
 // });
 
 
-// const coverCov1 = gsap.timeline({
-//   scrollTrigger: {
-//   trigger: ".cover__cov1",
-//   start: "top top",
-//   end: "bottom bottom",
-//   scrub: 1,
-//   pin:true
-//   }
-// });
 
-// const section1TL1 = gsap.timeline({
-//   scrollTrigger: {
-//   trigger: ".container-content-1",
-//   start: "top top",
-//   pin:true,
-//   scrub:1,
-//   }
-// });
-// section1TL1
-// .from(".container-content-1", {
-//   xPercent:-100
-// })

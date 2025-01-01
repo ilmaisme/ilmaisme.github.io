@@ -1,8 +1,12 @@
 .video {
     &Pop__content {
         video {
-            width: 80%;
+            width: 90%;
             max-height: 80vh;
+
+            @include min-responsive($w-md) {
+                width: 80%;
+            }
         }
     }
 
@@ -18,7 +22,11 @@
             width: calc(100% - 2.4vh);
             top: 1.2vh;
             left: 1.2vh;
-            height: 73.5%;
+            height: 72%;
+
+            @include min-responsive($w-md) {
+                height: 73.5%;
+            }
         }
     }
 }

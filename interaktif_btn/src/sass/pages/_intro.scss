@@ -7,8 +7,12 @@
     width: 980px;
     z-index: 1;
     position: absolute;
-    right: 50px;
+    right: 200px;
     bottom: 10vh;
+
+    @include min-responsive($w-md) {
+        right: 50px;
+    }
 
     @media only screen and(max-height: $w-md) and(orientation: landscape) {
         justify-content: flex-start;
@@ -106,8 +110,12 @@
     &Img {
         position: relative;
         right: -3vw;
-        margin-top: -22vh;
+        margin-top: -12vh;
         bottom: -16vh;
+
+        @include min-responsive($w-md) {
+            margin-top: -22vh;
+        }
 
         @include min-height(720px) {
             margin-top: -14vh;
