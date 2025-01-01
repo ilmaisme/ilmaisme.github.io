@@ -23,11 +23,15 @@
 
   &-1 {
     display: block;
-    z-index: 1;
+    z-index: 4;
 
     .panel-bg {
       z-index: 1;
     }
+  }
+
+  &-7 {
+    z-index: 2;
   }
 
   &-road {
@@ -74,16 +78,53 @@
       align-items: flex-end;
     }
 
+    &-6 {
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+
+      @include min-responsive($w-md) {
+        align-items: flex-end;
+        flex-direction: row;
+      }
+    }
+
     &-8 {
-      bottom: 42px;
+      bottom: 30px;
+      left: 365px;
+
+      @include min-responsive($w-md) {
+        bottom: 42px;
+        left: unset
+      }
 
       .panel-bg-detail .panel-bg-detail-pic {
         width: 100vw;
         object-position: left;
       }
+
+      .panel-bg-detail-pic img {
+        max-height: 200px;
+
+        @include min-responsive($w-md) {
+          max-height: 45vh;
+        }
+
+        @media only screen and(min-height: $w-hlg) and(orientation: landscape) {
+          max-height: unset;
+        }
+      }
     }
 
     &-9 {
+      left: 305px;
+      bottom: -10px;
+
+      @include min-responsive($w-md) {
+        left: unset;
+        bottom: 0;
+      }
+
       .panel-bg-detail {
         .panel-bg-detail.panel-bg-detail-wrap {
           bottom: 6px;
@@ -93,6 +134,14 @@
 
     &-credit {
       bottom: 20px;
+
+      .panel-bg-detail {
+        display: none;
+
+        @include min-responsive($w-md) {
+          display: block;
+        }
+      }
     }
   }
 }
@@ -248,6 +297,10 @@
     p {
       margin-bottom: 0;
       position: relative;
+
+      @include max-responsive($w-xm) {
+        margin-bottom: -20px;
+      }
     }
   }
 
@@ -279,7 +332,13 @@
   }
 
   &-txt-6 {
-    bottom: 10px;
+    left: 26px;
+    bottom: 6px;
+
+    @include min-responsive($w-md) {
+      bottom: 10px;
+      left: unset;
+    }
 
     &-title {
       max-width: 312px;
@@ -287,8 +346,14 @@
     }
 
     &-btn {
+      width: 600px;
       margin-top: 40px;
-      margin-bottom: 73px;
+      margin-bottom: 83px;
+
+      @include min-responsive($w-md) {
+        width: auto;
+        margin-bottom: 84px;
+      }
 
       @include min-responsive($w-xvl) {
         margin-left: 100px;
@@ -306,7 +371,7 @@
         border-right: 3px solid #AE9493;
         margin: 0 60px;
 
-        @include min-height($w-md) {
+        @media only screen and(min-height: $w-md) and(orientation: landscape) {
           margin: 0 100px;
         }
 
@@ -316,7 +381,6 @@
 
         &-wrap {
           &::before {
-            content: '';
             position: absolute;
             background: url(../images/kinerja-btn-bg.png) no-repeat;
             background-size: contain;
@@ -325,7 +389,11 @@
             left: -50px;
             top: -10px;
 
-            @include min-height($w-md) {
+            @include min-responsive($w-md) {
+              content: '';
+            }
+
+            @media only screen and(min-height: $w-md) and(orientation: landscape) {
               top: 0;
             }
           }
@@ -355,18 +423,28 @@
   }
 
   &-txt-7 {
-    width: 100vw;
-    bottom: 27px;
     display: flex;
+    bottom: 10px;
     flex-direction: row;
-    align-items: flex-end;
     justify-content: center;
+    align-items: flex-end;
+
+    @include min-responsive($w-md) {
+      width: 100vw;
+      bottom: 27px;
+    }
 
     &-wrap {
+      position: relative;
       display: flex;
       justify-content: flex-end;
       flex-direction: column;
       align-items: flex-end;
+      margin-right: 20px;
+
+      @include min-responsive($w-md) {
+        margin-right: unset;
+      }
     }
 
     &-title {
@@ -374,6 +452,15 @@
 
       @include min-height($w-md) {
         max-width: 337px;
+      }
+    }
+
+    &-img {
+      position: relative;
+      left: -25px;
+
+      @include min-responsive($w-md) {
+        left: unset;
       }
     }
 
@@ -385,23 +472,45 @@
         border-top: 3px solid #997578;
         border-bottom: 4px solid #997578;
         font-size: .6em;
-        margin-left: 46px;
-        margin-right: 46px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+
+        @include min-responsive($w-md) {
+          margin-bottom: 30px;
+          margin-left: 46px;
+          margin-right: 46px;
+        }
 
         &:nth-child(2),
         &:nth-child(4) {
-          margin-left: 120px;
+          margin-left: 88px;
           margin-right: 56px;
 
+          @include min-responsive($w-md) {
+            margin-left: 120px;
+          }
+
           .button-wrap::before {
-            left: 17px;
+            @include min-responsive($w-md) {
+              left: 17px;
+            }
           }
         }
 
         &:nth-child(2) {
-          margin-left: 106px;
-          margin-right: 68px;
+          @include min-responsive($w-md) {
+            margin-left: 106px;
+            margin-right: 68px;
+          }
+        }
+
+        &:nth-child(4) {
+          .panel-bar-item {
+            left: -20px;
+
+            @include min-responsive($w-md) {
+              left: unset;
+            }
+          }
         }
 
         &::before,
@@ -436,8 +545,12 @@
             background: url(../images/billboard-bottom.png);
             width: 94px;
             height: 34px;
-            left: 0;
+            left: -7px;
             z-index: -1;
+
+            @include min-responsive($w-md) {
+              left: 0;
+            }
           }
         }
       }
@@ -449,9 +562,21 @@
 
       .panel-bar-item {
         position: absolute;
-        bottom: -33px;
+        z-index: -2;
+        height: 278px;
+        bottom: 0;
         left: -65px;
         z-index: -2;
+        transform: translate(28px, 97px) scale(.5);
+        display: flex;
+        align-items: flex-end;
+
+        @include min-responsive($w-md) {
+          bottom: -28px;
+          left: -65px;
+          height: unset;
+          transform: none;
+        }
 
         svg {
           @media only screen and(max-height: 700px) and(orientation: landscape) {
@@ -482,10 +607,15 @@
   }
 
   &-txt-8 {
-    margin: auto;
-    max-width: 671px;
+    max-width: 340px;
     position: relative;
     top: 10%;
+
+    @include min-responsive($w-md) {
+      margin: auto;
+      max-width: 671px;
+      text-align: center;
+    }
 
     @include min-height(790px) {
       top: 15%;
@@ -494,12 +624,21 @@
     &-img {
       position: absolute;
       bottom: -25px;
-      left: 40%;
+      left: 0;
+
+      @include min-responsive($w-md) {
+        left: 40%;
+      }
     }
   }
 
   &-txt-9 {
     top: 6%;
+    left: -124px;
+
+    @include min-responsive($w-md) {
+      left: unset;
+    }
 
     @include min-height($w-md) {
       top: 12%;
@@ -510,13 +649,22 @@
     }
 
     &-wrap {
-      max-width: 337px;
-      margin-right: 100px;
+      max-width: 224px;
+      margin-right: -70px;
+
+      @include min-responsive($w-md) {
+        max-width: 337px;
+        margin-right: 100px;
+      }
     }
 
     &-anim {
-      left: 10vw;
+      left: 147px;
       position: relative;
+
+      @include min-responsive($w-md) {
+        left: 10vw;
+      }
 
       svg {
         max-width: unset;
@@ -562,11 +710,16 @@
     }
 
     &-title {
+      max-width: 160px;
       position: relative;
       background: #FFC000;
       padding: 10px 10px 10px 32px;
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
+
+      @include min-responsive($w-md) {
+        max-width: unset;
+      }
 
       &::before {
         content: '';
@@ -595,14 +748,27 @@
     }
 
     &-6 {
-      width: 657px;
-      height: 473px;
+      width: 400px;
+      height: 291px;
+      left: 30px;
+
+      @include min-responsive($w-md) {
+        left: unset;
+        width: 628px;
+        height: 445px;
+      }
 
       .panel-bar-item {
         position: absolute;
-        width: 657px;
-        height: 473px;
-        bottom: 10px;
+        width: 400px;
+        height: 291px;
+        bottom: 0;
+
+        @include min-responsive($w-md) {
+          width: 628px;
+          height: 445px;
+          bottom: 10px;
+        }
       }
     }
   }
@@ -687,7 +853,7 @@
         min-height: 325px;
       }
 
-      @include min-height($w-md) {
+      @media only screen and(min-height: $w-md) and(orientation: landscape) {
         min-height: 373px;
       }
     }
@@ -699,18 +865,24 @@
   }
 
   &-6 {
-
     .panel-bg .panel-bg-detail {
       bottom: 35px;
       left: 14vw;
 
       img {
-        width: calc(200vw - 14vw);
+        @include min-responsive($w-md) {
+          width: calc(200vw - 14vw);
+        }
       }
     }
 
     .panel-bg-6 img {
-      max-height: 30vh;
+      display: none;
+
+      @include min-responsive($w-md) {
+        display: block;
+        max-height: 30vh;
+      }
     }
   }
 
@@ -740,7 +912,7 @@
       &1,
       &2,
       &3 {
-        animation: moveRight 20s linear infinite -1.5s;
+        animation: moveRightMob 20s linear infinite -1.5s;
 
         @include min-responsive($w-md) {
           animation: moveRight 40s linear infinite -1.5s;
@@ -750,7 +922,7 @@
       &4,
       &5,
       &6 {
-        animation: moveLeft 20s linear infinite -1.5s;
+        animation: moveLeftMob 20s linear infinite -1.5s;
 
         @include min-responsive($w-md) {
           animation: moveLeft 40s linear infinite -1.5s;
