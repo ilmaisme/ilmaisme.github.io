@@ -72,7 +72,11 @@
         &Building {
             position: relative;
             display: block;
-            bottom: 10vh;
+            bottom: calc(var(--app-height) * 10/100 + 66px);
+
+            @include min-responsive($w-md) {
+                bottom: 10vh;
+            }
 
             &::before {
                 content: '';
@@ -97,16 +101,18 @@
         }
 
         &Road {
-            position: absolute;
+            position:absolute;
             bottom: 0;
             width: 101%;
-            height: 10vh;
-            background: url(../images/cover-road.png);
-            background-size: cover;
+            height: calc(var(--app-height) * 10/100 + 66px);
+            background: #565353 url(../images/cover-road.png);
+            background-size: contain;
             background-repeat: repeat-x;
 
             @include min-responsive($w-md) {
                 background-size: contain;
+                bottom: 0;
+                height: 10vh;
             }
         }
     }
@@ -156,5 +162,10 @@
                 display: block
             }
         }
+    }
+
+    .panel__traffic {
+        height: calc(var(--app-height) * 10/100);
+        bottom: 0;
     }
 }

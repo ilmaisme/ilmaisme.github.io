@@ -232,8 +232,15 @@ function addActiveFunction(target, disactive, startplaybar) {
 
 /* s: Get HEIGHT Device */
 const appHeight = () => {
-    const doc = document.documentElement
-    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+    const doc = document.documentElement,
+        cover = document.getElementById("cover"),
+        cov = cover.clientHeight,
+        road = document.getElementById("road"),
+        visibleHeight = document.body.offsetHeight,
+        barHeight = cov - visibleHeight,
+        finalHeight = window.innerHeight - barHeight;
+    doc.style.setProperty('--app-height', `${finalHeight}px`)
+    doc.style.setProperty('--app-road', `${road.offsetHeight}px`)
 }
 window.addEventListener("resize", appHeight)
 appHeight()

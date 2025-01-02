@@ -1,4 +1,4 @@
-console.clear();
+//console.clear();
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
 	force3D: false,
@@ -714,5 +714,11 @@ section4
 		autoAlpha: 0,
 	}, {
 		autoAlpha: 1,
+	}, "-=8")
+	.fromTo(".introImg", {
+		autoAlpha: 0,
+	}, {
+		autoAlpha: 1,
+		delay: .5
 	}, "-=8");
 // });

@@ -36,6 +36,13 @@
 
   &-road {
     @extend .coverBgRoad;
+    height: 10vh;
+    background-size: cover;
+    bottom: 0;
+
+    @include min-responsive($w-md) {
+      background-size: contain;
+    }
 
     &-credit {
       background: #565353;
@@ -197,7 +204,7 @@
     }
 
     @media only screen and(min-height: 768px) and(min-width: 1440px) {
-      bottom: 15vh;
+      bottom: 142px;
     }
 
     @media only screen and(max-height: 720px) and(orientation: landscape) {
@@ -933,11 +940,15 @@
     //to right
     .vehicle1 {
       animation-delay: 0s;
-      bottom: 52px;
+      bottom: 42px;
       background: url(../images/car-yellow.png) no-repeat;
       background-size: contain;
       width: 97px;
       height: 56px;
+
+      @include min-responsive($w-md) {
+        bottom: 52px;
+      }
     }
 
     .vehicle2 {
