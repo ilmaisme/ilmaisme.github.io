@@ -1,8 +1,17 @@
 function startScrolling(el) {
     document.body.classList.add('scroll')
     document.getElementById("scroll-guide").style.opacity = "1";
-    window.scrollTo(0, 50);
+    vp.add("(max-width: 700px)", () => {
+        window.scrollTo(0, 350);
+    })
+    vp.add("(min-width: 700px)", () => {
+        window.scrollTo(0, 50);
+    })
     el.style.visibility = "hidden";
+    document.getElementById("iImg").style.opacity = "1";
+    document.getElementById("iArrow").style.opacity = "1";
+    document.getElementById("iQuote").style.opacity = "1";
+    document.getElementById("iTitle").style.opacity = "1";
 }
 
 if (history.scrollRestoration) {

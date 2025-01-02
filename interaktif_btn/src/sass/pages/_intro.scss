@@ -9,7 +9,7 @@
     position: absolute;
     right: 200px;
     bottom: 10vh;
-    
+
     @include min-responsive($w-md) {
         bottom: 10vh;
         right: 50px;
@@ -34,6 +34,11 @@
         @include min-responsive($w-md) {
             font-size: 18px;
         }
+    }
+
+    &Opac {
+        opacity: 0;
+        transition: opacity .3s ease-in;
     }
 
     &Content {
@@ -91,6 +96,7 @@
     }
 
     &Txt {
+        transition-delay: 1.2s;
         position: relative;
         max-width: 485px;
         margin: 10px auto 10px;
@@ -113,6 +119,7 @@
         right: -3vw;
         margin-top: -12vh;
         bottom: -16vh;
+        transition-delay: .3s;
 
         @include min-responsive($w-md) {
             margin-top: -22vh;
@@ -148,6 +155,7 @@
         position: absolute;
         right: -120px;
         bottom: -10px;
+        transition-delay: .6s;
 
         @include min-responsive($w-md) {
             display: block;
@@ -220,4 +228,8 @@
             z-index: -1;
         }
     }
+}
+
+#iTitle {
+    transition-delay: 1.8s;
 }

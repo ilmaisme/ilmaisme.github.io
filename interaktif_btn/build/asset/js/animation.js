@@ -715,10 +715,4 @@ section4
 	}, {
 		autoAlpha: 1,
 	}, "-=8")
-	.fromTo(".introImg", {
-		autoAlpha: 0,
-	}, {
-		autoAlpha: 1,
-		delay: .5
-	}, "-=8");
 // });
