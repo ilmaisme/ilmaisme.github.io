@@ -195,6 +195,9 @@ preloader.from('.coverTitle', {
 	autoAlpha: 0,
 	ease: 'expo.easeOut'
 });
+preloader.from('.introCta', {
+	autoAlpha: 0,
+});
 
 // gsap
 // 	.fromTo(".coverTitleSub", {
@@ -712,5 +715,4 @@ section4
 	}, {
 		autoAlpha: 1,
 	}, "-=8");
-
 // });

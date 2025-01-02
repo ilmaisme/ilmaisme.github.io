@@ -1,3 +1,18 @@
+function startScrolling(el) {
+    document.body.classList.add('scroll')
+    document.getElementById("scroll-guide").style.opacity = "1";
+    window.scrollTo(0, 50);
+    el.style.visibility = "hidden";
+}
+
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+} else {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+}
+
 //Animation Pie 1
 var param2020 = {
     container: document.getElementById('panel-anim1'),
