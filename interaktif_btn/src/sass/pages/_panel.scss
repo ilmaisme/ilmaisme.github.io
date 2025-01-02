@@ -3,6 +3,8 @@
   min-height: 100vh;
   width: 100%;
   position: relative;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 
   @include min-responsive($w-md) {
     min-width: 100vw;
@@ -137,6 +139,14 @@
           bottom: 6px;
         }
       }
+
+      img {
+        display: none;
+
+        @include min-responsive($w-md) {
+          display: block;
+        }
+      }
     }
 
     &-credit {
@@ -192,7 +202,7 @@
 
     @include min-responsive($w-md) {
       left: 400px;
-      bottom: 18vh;
+      bottom: 22vh;
     }
 
     @include min-height($w-hlg) {
@@ -203,8 +213,8 @@
       bottom: 17vh;
     }
 
-    @media only screen and(min-height: 768px) and(min-width: 1440px) {
-      bottom: 142px;
+    @media only screen and(min-height: 900px) and(min-width: 1440px) {
+      bottom: 160px;
     }
 
     @media only screen and(max-height: 720px) and(orientation: landscape) {
@@ -212,7 +222,7 @@
     }
 
     @media only screen and(max-height: 700px) and(orientation: landscape) {
-      bottom: 26vh;
+      bottom: 28vh;
     }
 
     &-play {
@@ -1015,6 +1025,7 @@
   // position: fixed;
   top: 0;
   z-index: 2;
+  scroll-snap-type: y mandatory;
 }
 
 #content {
