@@ -15,162 +15,6 @@ let vp = gsap.matchMedia();
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-
-
-
-
-/*vp.add("(max-width: 700px)", () => {
-	// Mobile
-	const preloader = gsap.timeline({
-		defaults: {
-			ease: "power1.out"
-		}
-	});
-
-	preloader
-		.to('.preloader', {
-			autoAlpha: 0
-		}, '+=1.3')
-		.from('#content', {
-			autoAlpha: 0
-		}, '-=1.3');
-	preloader.from('.coverTitleSub', {
-		autoAlpha: 0,
-		y: 50
-	});
-	preloader.from('.coverTitle', {
-		scale: 0,
-		duration: 0.5,
-		autoAlpha: 0,
-		ease: 'expo.easeOut'
-	});
-	const section4 = gsap.timeline({
-		scrollTrigger: {
-			trigger: "#content",
-			start: "top top",
-			scrub: 1,
-		}
-	});
-	section4
-		.from(".cover", {
-			autoAlpha: 1,
-		})
-		.fromTo("#beginHorizonScroll", {
-			autoAlpha: 0,
-		}, {
-			autoAlpha: 1,
-		}, "-=2");
-
-	let sectionssecfour = gsap.utils.toArray(".panel");
-
-	let scrollTweenSec4 = gsap.to(sectionssecfour, {
-		xPercent: -100 * (sectionssecfour.length - 1),
-		ease: "none",
-		scrollTrigger: {
-			trigger: "#beginHorizonScroll",
-			pin: true,
-			scrub: 1,
-			end: "5000px"
-		}
-	});
-	// gsap.to(".wheel", {
-	// scrollTrigger: {
-	// 	trigger: "#content",
-	// 	scrub: 1,
-	// 	start: 'center 50%',
-	// 	end: '+=5000',
-	// },
-	// rotation: 360*10,
-	// duration: 1,
-	// ease: "linear",
-	// });
-
-
-	gsap.fromTo(".p1-txt", {
-		autoAlpha: 0,
-		y: 40,
-	}, {
-		autoAlpha: 1,
-		y: 0,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".p1-txt",
-			start: "center 80%",
-			end: "center 20%",
-
-
-		}
-	});
-
-
-	gsap.fromTo(".p3-txt", {
-		autoAlpha: 0,
-		y: 40,
-	}, {
-		autoAlpha: 1,
-		y: 0,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".p3-txt",
-			containerAnimation: scrollTweenSec4,
-			start: "center 80%",
-			end: "center 20%",
-			id: "1",
-
-
-		}
-	});
-
-
-	gsap.fromTo(".mob-p3-txt", {
-		autoAlpha: 0,
-		y: 40,
-	}, {
-		autoAlpha: 1,
-		y: 0,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".mob-p3-txt",
-			containerAnimation: scrollTweenSec4,
-			start: "center 80%",
-			end: "center 20%",
-			id: "2",
-
-
-		}
-	});
-
-
-	gsap.fromTo(".p4-txt", {
-		autoAlpha: 0,
-		y: 40,
-	}, {
-		autoAlpha: 1,
-		y: 0,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".p4-txt",
-			containerAnimation: scrollTweenSec4,
-			start: "center 80%",
-			end: "center 20%",
-			id: "3",
-
-
-		}
-	});
-
-
-
-
-});
-
-
-*/
-vp.add("(min-width: 768px)", () => {
-	// Desktop
-	$(".panel-0").remove();
-});
-
 const preloader = gsap.timeline({
 	defaults: {
 		ease: "power1.out"
@@ -692,6 +536,18 @@ gsap.to(".scroll-guide", {
 		containerAnimation: scrollTween,
 	},
 	opacity: 0
+});
+
+
+vp.add("(min-width: 768px)", () => {
+	// Desktop
+	//$(".panel-0").remove();
+
+	ScrollTrigger.create({
+		start: 0,
+		end: "max",
+		snap: 1 / (sections.length - 1)
+	})
 });
 
 const section4 = gsap.timeline({

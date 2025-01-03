@@ -2,10 +2,10 @@ function startScrolling(el) {
     document.body.classList.add('scroll')
     document.getElementById("scroll-guide").style.opacity = "1";
     vp.add("(max-width: 700px)", () => {
-        window.scrollTo(0, 390);
+        window.scrollTo(0, 460);
     })
-    vp.add("(min-width: 700px)", () => {
-        window.scrollTo(0, 50);
+    vp.add("(min-width: 780px)", () => {
+        window.scrollTo(0, 400);
     })
     el.style.visibility = "hidden";
     document.getElementById("iImg").style.opacity = "1";
