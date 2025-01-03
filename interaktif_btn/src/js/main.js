@@ -2,7 +2,7 @@ function startScrolling(el) {
     document.body.classList.add('scroll')
     document.getElementById("scroll-guide").style.opacity = "1";
     vp.add("(max-width: 700px)", () => {
-        window.scrollTo(0, 350);
+        window.scrollTo(0, 390);
     })
     vp.add("(min-width: 700px)", () => {
         window.scrollTo(0, 50);
