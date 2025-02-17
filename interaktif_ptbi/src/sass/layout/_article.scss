@@ -1,0 +1,48 @@
+.art {
+    &Box {
+        position: relative;
+        margin-left: 217px;
+        left: -25vw;
+        opacity: 0;
+        width: 475px;
+        padding: 20px 50px 20px 77px;
+        border-radius: 20px;
+        text-align: left;
+        background: $cl-white;
+        @include font-pack(false, 20px, 600, $line-base, #2D2D4F);
+
+        .cl-orange {
+            color: #FF4C32
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            margin-left: 70px;
+        }
+    }
+
+    &Txt {
+        position: relative;
+        margin-top: 20px;
+        @include font-pack(false, 18px, 600, $line-base, false);
+
+        @include min-responsive($w-xl) {
+            font-size: 20px
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 24px
+        }
+
+        @media only screen and(max-height: 710px) and(orientation: landscape) {
+            font-size: 20px
+        }
+
+        .cl-red{
+            color: $cl-red
+        }
+    }
+
+    &Caption {
+        @include font-pack(false, 32px, 700, $line-base, false);
+    }
+}

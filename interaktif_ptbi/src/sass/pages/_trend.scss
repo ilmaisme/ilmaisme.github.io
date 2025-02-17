@@ -1,0 +1,50 @@
+.trend {
+    .artBox {
+        margin-top: 5px;
+        padding: 20px 20px 20px 45px;
+        @include font-pack(false, 14px, 400, $line-base, false);
+
+        @include min-responsive($w-xl) {
+            margin-right: -100px;
+            font-size: 16px
+        }
+
+        @include min-responsive($w-xxl) {
+            margin-top: 10px;
+            font-size: 18px
+        }
+
+        @include min-responsive($w-xxxl) {
+            font-size: 20px
+        }
+
+        @media only screen and(max-height: 710px) and(orientation: landscape) {
+            margin-top: 5px;
+            margin-right: -110px;
+            padding: 15px 15px 15px 35px;
+            border-radius: 15px;
+            font-size: 16px
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 15px;
+            height: 21px;
+            border-radius: 4px;
+            background: rgb(48, 210, 255);
+            background: linear-gradient(180deg, rgba(48, 210, 255, 1) 0%, rgba(39, 125, 255, 1) 100%);
+
+            @media only screen and(max-height: 710px) and(orientation: landscape) {
+                left: 10px;
+                top: 10px;
+            }
+        }
+    }
+}

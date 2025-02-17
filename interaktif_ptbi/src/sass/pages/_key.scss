@@ -1,0 +1,37 @@
+.key {
+    &Title {
+        max-width: 441px;
+        @include font-pack(false, 16px, 600, $line-base, $cl-white);
+
+        @include min-responsive($w-xl) {
+            font-size: 18px
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 20px
+        }
+
+        @media only screen and(max-height: 710px) and(orientation: landscape) {
+            font-size: 18px
+        }
+
+        .cl-yellow {
+            color: #FFDE4E;
+        }
+    }
+
+    &Img {
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            max-width: 240px;
+        }
+    }
+
+    &Map {
+        margin-top: -80px;
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            margin-top: -60px;
+            max-width: 750px;
+        }
+    }
+}

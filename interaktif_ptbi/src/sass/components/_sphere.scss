@@ -1,0 +1,87 @@
+.sphere {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+
+    &Anim {
+        width: 200px;
+        height: 100%;
+        transition: transform .7s ease;
+
+        @include min-responsive($w-md) {
+            width: 360px;
+            margin: 0 auto;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            width: 240px;
+        }
+
+        @media only screen and(max-height: 710px) and(orientation: landscape) {
+            transform: translateY(26px);
+        }
+
+        &.scale {
+            transform: scale(1.2) translateX(-237px);
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                transform: scale(1.2) translateX(-237px);
+            }
+        }
+    }
+
+    &Area {
+        position: relative;
+        flex-shrink: 0;
+
+        @include min-responsive($w-md) {
+            width: 360px;
+            height: 367px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            width: 240px;
+            height: 240px;
+        }
+    }
+
+    &Zoom {
+        position: relative;
+        z-index: 2;
+
+        &__wrap {
+            position: relative;
+            width: 432px;
+            height: 432px;
+            left: 35px;
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                width: 288px;
+                height: 288px;
+                left: 106px;
+            }
+        }
+    }
+
+    &Pic,
+    &Pin {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &Event {
+        &1 {
+            left: unset;
+            top: 75px;
+            right: 66px;
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                transform: scale(.8) translate(48%, -49%);
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+.building {
+    &City {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        height: calc(var(--app-height) - 30vh);
+
+        picture{
+            position: relative;
+        }
+    }
+
+    &Bg {
+        width: 100%;
+        height: 100%;
+        background: rgb(215, 234, 254);
+        background: linear-gradient(180deg, rgba(215, 234, 254, 1) 2%, rgba(220, 237, 254, 1) 100%);
+    }
+
+    &Box {
+        position: relative;
+        justify-content: flex-end;
+
+        @include min-responsive($w-xl) {
+            bottom: 25px;
+        }
+
+        @include min-responsive($w-xxl) {
+            bottom: 75px;
+        }
+
+        @media only screen and(max-height: 720px) and(orientation: landscape) {
+            bottom: 0;
+        }
+    }
+
+    &Anim {
+        svg {
+            max-height: calc(var(--app-height) - 20vh);
+        }
+    }
+
+    &Txt {
+        max-width: 671px;
+        min-height: 131px;
+    }
+
+    &Sun {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border-radius: 100%;
+        background-color: #FFDE4E;
+        bottom: 10%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}

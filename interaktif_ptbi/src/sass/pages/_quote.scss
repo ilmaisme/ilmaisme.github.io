@@ -1,0 +1,75 @@
+.quote {
+    margin-top: 35px;
+
+    &Wrap {
+        align-items: flex-start;
+        position: relative;
+        max-width: 418px;
+        @include font-pack($font_caption, 20px, 300, $line-base, $cl-black);
+        z-index: 1;
+
+        @include min-responsive($w-xl) {
+            font-size: 28px;
+            margin-left: -265px;
+            margin-right: -204px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            font-size: 26px;
+            margin-left: -314px;
+            margin-right: -180px;
+        }
+    }
+
+    &Txt {
+        position: relative;
+        font-style: italic;
+        @include font-pack($font_quote, false, 400, false, $cl-blue);
+
+        .cl-orange {
+            color: #E9764A
+        }
+    }
+
+    &Attr {
+        text-align: right;
+    }
+
+    &Title {
+        margin-top: 30px;
+    }
+
+    &Name {
+        font-weight: 700;
+    }
+
+    &Place {
+        font-size: 14px;
+
+        @include min-responsive($w-xl) {
+            font-size: 18px
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            font-size: 16px
+        }
+    }
+
+    &Img {
+        position: relative;
+
+        img {
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                max-width: 85%;
+            }
+        }
+
+        &.-left {
+            top: -130px;
+        }
+
+        &.-right {
+            top: 40px;
+        }
+    }
+}
