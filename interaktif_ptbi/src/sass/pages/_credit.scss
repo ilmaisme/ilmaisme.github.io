@@ -19,13 +19,13 @@
 
     &Caption {
         text-transform: uppercase;
-        color: $cl-white;
+        @include font-pack($font_base, false, 400, false, $cl-white);
     }
 
     &Title {
         transform: translateX(-100vw);
         transition: all .4s ease-in;
-        @include font-pack($font-base, 12px, false, false, $cl-white);
+        @include font-pack($font_caption, 12px, 300, false, #FFDE4E);
 
         @include min-responsive($w-lg) {
             font-size: 16px;
@@ -40,7 +40,7 @@
         position: relative;
         transform: translateX(100vw);
         transition: all .4s ease-in;
-        @include font-pack($font-caption, 14px, false, false, $cl-white);
+        @include font-pack($font_caption, 14px, 700, false, $cl-white);
 
         @include min-responsive($w-lg) {
             font-size: 18px;

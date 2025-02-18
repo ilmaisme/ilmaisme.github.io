@@ -27,7 +27,7 @@
 
     <link rel=icon type=image/png sizes=16x16 href="https://static.bisnis-cdn.com/interaktif/assets/images/favicon.png">
 
-    <link rel="stylesheet" href="./asset/css/style.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style.min.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
@@ -113,7 +113,7 @@
             <div class="bgStatic">
                 <div class="night challenge container center-flex heightFull">
                     <div class="nightWrap display-flex dir-column text-center">
-                        <div class="ribbon opac0">
+                        <div class="ribbon ribbonNight opac0">
                             <span class="challengeRibbon opac0">Tantangan Utama</span>
                             <span class="event1Ribbon opac0">Peristiwa Penting</span>
                             <span class="risk1Ribbon opac0">Risiko Utama</span>
@@ -151,6 +151,11 @@
                         </div>
 
                         <div class="spherePin spherePredict opac0 spherePredictPin" id="animationPredict"></div>
+
+                        <div class="spherePin sphereDay1 opac0 sphereDayFlag" id="animationDayFlag"></div>
+                        <div class="spherePic sphereDay1 opac0 sphereDayPic" id="animationDayPic"></div>
+                        
+                        <div class="spherePin sphereDay2 opac0 sphereDayPin" id="animationDayPin"></div>
                     </div>
                 </div>
             </div>
@@ -248,6 +253,9 @@
                 <div class="night market container center-flex text-center heightFull">
                     <div class="nightWrap align-center">
                         <div class="marketBox artBox">
+                            <div class="dayPic">
+                                <img src="./asset/images/day1-pic.png" alt="" width="252" height="299" loading="lazy">
+                            </div>
                             Meski demikian, sejumlah negara <i>emerging markets</i> seperti Indonesia berpeluang tetap
                             berkinerja baik, didukung oleh permintaan domestik di tengah tantangan fragmentasi pasar
                             internasional.
@@ -267,8 +275,8 @@
             <div class="bgStatic">
                 <div class="building buildingWrap heightFull opac0">
                     <div class="buildingCity container">
-                        <div class="buildingSun opac0"></div>
-                        <picture class="buildingImg opac0">
+                        <div class="buildingSun opac0 top100vh"></div>
+                        <picture class="buildingImg">
                             <source srcset="./asset/images/building-city-m.png" media="(max-width: 767px)" width="678"
                                 height="474">
                             <img srcset="./asset/images/building-city.png" alt="" class="" width="1022" height="461"
@@ -353,14 +361,14 @@
                         </picture>
                     </div>
                     <div class="quoteWrap display-flex dir-column">
-                        <div class="quoteTxt">
+                        <div class="quoteTxt opac0">
                             Ke depan, kita harus lebih waspada. Sekali lagi, dunia terus bergejolak. Akankah Indonesia
                             berdaya tahan seperti selama ini? Kita harus tetap <span
                                 class="cl-orange">optimistis.</span> Mari kita makin perkuat
                             <span class="cl-orange">sinergi.</span>
                             Sinergi melindungi negara, bangsa, dan rakyat dari gejolak global.
                         </div>
-                        <div class="quoteAttr">
+                        <div class="quoteAttr opac0">
                             <div class="quoteTitle">Gubernur Bank Indonesia</div>
                             <div class="quoteName">Perry Warjiyo</div>
                             <div class="quotePlace">Pada Pertemuan Tahunan <br> Bank Indonesia (PTBI) 2024</div>
@@ -378,7 +386,7 @@
             </div>
             <div class="bgStatic">
                 <div class="synergy opac0 container center-flex dir-column text-center heightFull">
-                    <div class="synergyCaption">Sinergi kebijakan transformasi ekonomi nasional semakin diperkuat di
+                    <div class="synergyCaption top100vh">Sinergi kebijakan transformasi ekonomi nasional semakin diperkuat di
                         <span class="cl-orange">5 area</span>
                     </div>
                     <div class="synergyImg">
@@ -525,11 +533,11 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="balance opac0 container center-flex dir-column text-center heightFull">
+                <div class="balance container center-flex dir-column text-center heightFull">
                     <div class="balanceImg">
-                        <div class="balanceAnim animationBalance" id="animationBalance"></div>
+                        <div class="balanceAnim animationBalance opac0" id="animationBalance"></div>
                     </div>
-                    <div class="balanceWrap balanceTxt artTxt">
+                    <div class="balanceWrap balanceTxt artTxt top100vh opac0">
                         Dengan berlanjutnya gejolak global pada 2025, kebijakan moneter akan tetap pada stabilitas
                         dengan terus mencermati ruang untuk mendorong pertumbuhan <span class="cl-orange">(pro-stability
                             and growth).</span> Sementara kebijakan makroprudensial dan lainnya diarahkan untuk
@@ -539,7 +547,7 @@
             </div>
             <div class="bgStatic">
                 <div class="policy opac0 container center-flex dir-column text-center heightFull">
-                    <div class="policyCaption">Diagram kebijakan-kebijakan <span class="cl-yellow">BI 2025</span></div>
+                    <div class="policyCaption top100vh">Diagram kebijakan-kebijakan <span class="cl-yellow">BI 2025</span></div>
                     <div class="policyWrap">
                         <div class="policyImg">
                             <div class="policyPath center-flex">
@@ -701,20 +709,20 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="key opac0 container center-flex heightFull">
+                <div class="key container center-flex heightFull">
                     <div class="keyWrap display-flex dir-column">
-                        <div class="ribbon text-center">
+                        <div class="ribbon ribbonKey opac0 text-center">
                             <span class="keyRibbon">Optimistis & Waspada</span>
                         </div>
                         <div class="keyTitle__wrap center-flex">
-                            <div class="keyTitle">Prospek ekonomi Indonesia 2025 akan menunjukkan stabilitas dan
+                            <div class="keyTitle opac0">Prospek ekonomi Indonesia 2025 akan menunjukkan stabilitas dan
                                 pertumbuhan
                                 yang membaik di tengah gejolak global yang terus berlanjut. Kuncinya terletak pada <span
                                     class="cl-yellow">“Sinergi”</span> Memperkuat Stabilitas dan Transformasi Ekonomi
                                 Nasional.</div>
-                            <div class="keyImg animationKey" id="animationKey"></div>
+                            <div class="keyImg animationKey opac0" id="animationKey"></div>
                         </div>
-                        <div class="keyMap animationIndo" id="animationIndo"></div>
+                        <div class="keyMap animationIndo opac0" id="animationIndo"></div>
                     </div>
                 </div>
             </div>
@@ -788,7 +796,9 @@
             </section>
             <section class="section diagram">
             </section>
-            <section class="section sectionCredit">
+            <section class="section">
+            </section>
+            <section class="section sectionCredit opac0">
                 <div class="creditWrap display-flex">
                     <div class="credit center-flex">
                         <div class="creditCaption text-center titleCaption">Credits</div>
@@ -861,8 +871,8 @@
     <script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/velocity.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/lottie.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/main.js"></script>
-    <script defer type="text/javascript" src="./asset/js/flag.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/flag.min.js"></script>
 </body>
 
 </html>

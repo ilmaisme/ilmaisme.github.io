@@ -1,5 +1,6 @@
 .policy {
     &Caption {
+        position: relative;
         @include font-pack($font_quote, 22px, 400, $line-base, $cl-white);
 
         @include min-responsive($w-xl) {
@@ -11,8 +12,9 @@
             font-size: 48px
         }
 
-        @media only screen and(max-height: 700px) and(orientation: landscape) {
-            font-size: 30px
+        @media only screen and(max-height: 710px) and(orientation: landscape) {
+            font-size: 23px;
+            margin-bottom: 0;
         }
 
         .cl-yellow {
@@ -30,7 +32,7 @@
             }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
-                font-size: 44px
+                font-size: 34px
             }
         }
     }
@@ -157,7 +159,7 @@
         }
 
         @media only screen and(max-height: 710px) and(orientation: landscape) {
-            font-size: 20px
+            font-size: 18px
         }
 
         &.start {
@@ -195,6 +197,14 @@
 
             @include min-responsive($w-xxl) {
                 bottom: -54px;
+            }
+
+            @media only screen and(max-height: 710px) and(orientation: landscape) {
+                bottom: -45px;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                bottom: -35px;
             }
         }
 

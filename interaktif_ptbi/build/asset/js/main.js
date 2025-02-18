@@ -109,9 +109,9 @@ $(document).ready(function () {
     var animationDayPin = bodymovin.loadAnimation({
         container: document.getElementById('animationDayPin'),
         renderer: 'svg',
-        loop: false,
+        loop: true,
         autoplay: false,
-        path: 'asset/json/usa/day-pin.json',
+        path: 'asset/json/asia/day-pin.json',
         name: 'myAnimation',
     });
     var animationDayFlag = bodymovin.loadAnimation({
@@ -119,7 +119,7 @@ $(document).ready(function () {
         renderer: 'svg',
         loop: false,
         autoplay: false,
-        path: 'asset/json/usa/day-flag.json',
+        path: 'asset/json/asia/day-flag.json',
         name: 'myAnimation',
     });
     var animationDayPic = bodymovin.loadAnimation({
@@ -127,7 +127,7 @@ $(document).ready(function () {
         renderer: 'svg',
         loop: true,
         autoplay: false,
-        path: 'asset/json/usa/day-pic.json',
+        path: 'asset/json/asia/day-pic.json',
         name: 'myAnimation',
     });
 
@@ -234,7 +234,7 @@ $(document).ready(function () {
         container: document.getElementById('animationKey'),
         renderer: 'svg',
         loop: true,
-        autoplay: true,
+        autoplay: false,
         path: 'asset/json/key.json',
         name: 'myAnimation',
     });
@@ -243,7 +243,7 @@ $(document).ready(function () {
         container: document.getElementById('animationIndo'),
         renderer: 'svg',
         loop: false,
-        autoplay: true,
+        autoplay: false,
         path: 'asset/json/indo.json',
         name: 'myAnimation',
     });
@@ -278,7 +278,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
-                $(".ribbon").velocity({
+                $(".ribbonNight").velocity({
                     opacity: "1"
                 }, {
                     delay: 300,
@@ -320,7 +320,7 @@ $(document).ready(function () {
                         $(".bgColor__night").addClass("opac0")
                         $(".nightStars").addClass("opac0")
                     },
-                    complete: function () { }
+                    complete: function () {}
                 });
                 $(".coverAnim").velocity({
                     opacity: "1"
@@ -334,7 +334,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 300
                 });
-                $(".ribbon").velocity({
+                $(".ribbonNight").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
@@ -429,7 +429,7 @@ $(document).ready(function () {
                 });
                 $(".eventBox1").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 700
@@ -438,7 +438,7 @@ $(document).ready(function () {
             if (origin.index == 2 && direction == 'down') {
                 $(".eventBox1").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 700,
@@ -456,7 +456,7 @@ $(document).ready(function () {
             if (origin.index == 3 && direction == 'up') {
                 $(".eventBox2").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 700,
@@ -474,7 +474,7 @@ $(document).ready(function () {
             if (origin.index == 3 && direction == 'down') {
                 $(".eventBox2").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 700
@@ -493,7 +493,7 @@ $(document).ready(function () {
                 });
                 $(".riskBox1").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 700,
                     duration: 700
@@ -505,11 +505,11 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         console.log('trumpout')
-                        animationEvent2.playSegments([140, 180], true);
+                        animationEvent2.playSegments([140, 200], true);
+                        console.log(animationEvent2.getDuration(false))
+                        console.log(animationEvent2.totalFrames)
                         animationEvent2.onLoopComplete = function () {
                             animationEvent2.goToAndStop(animationEvent2.totalFrames - 1, true)
-                            console.log(animationEvent2.getDuration(false))
-                            console.log(animationEvent2.totalFrames)
                         }
                     }
                 });
@@ -517,7 +517,7 @@ $(document).ready(function () {
             if (origin.index == 4 && direction == 'up') {
                 $(".riskBox1").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 700
@@ -539,7 +539,7 @@ $(document).ready(function () {
             if (origin.index == 4 && direction == 'down') {
                 $(".riskBox1").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 700
@@ -555,7 +555,7 @@ $(document).ready(function () {
                 });
                 $(".riskBox2").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 700,
                     duration: 700
@@ -588,7 +588,7 @@ $(document).ready(function () {
             if (origin.index == 5 && direction == 'up') {
                 $(".riskBox2").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 700
@@ -601,7 +601,7 @@ $(document).ready(function () {
                 });
                 $(".riskBox1").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 700,
                     duration: 700
@@ -616,12 +616,12 @@ $(document).ready(function () {
             if (origin.index == 5 && direction == 'down') {
                 $(".riskBox2").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 700
                 });
-                $(".ribbon").velocity({
+                $(".ribbonNight").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
@@ -647,35 +647,35 @@ $(document).ready(function () {
                 });
                 $(".trendItem1").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 300,
                     duration: 700
                 });
                 $(".trendItem2").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 600,
                     duration: 700
                 });
                 $(".trendItem3").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 900,
                     duration: 700
                 });
                 $(".trendItem4").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 1200,
                     duration: 700
                 });
                 $(".trendItem5").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 1500,
                     duration: 700
@@ -684,7 +684,7 @@ $(document).ready(function () {
             if (origin.index == 6 && direction == 'up') {
                 $(".trendItem").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 300
@@ -697,7 +697,7 @@ $(document).ready(function () {
                 });
                 $(".riskBox2").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 700,
                     duration: 700
@@ -714,7 +714,7 @@ $(document).ready(function () {
                     delay: 700,
                     duration: 700
                 });
-                $(".ribbon").velocity({
+                $(".ribbonNight").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
@@ -728,7 +728,7 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 6 && direction == 'down') {
-                $(".ribbon").velocity({
+                $(".ribbonNight").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
@@ -751,7 +751,7 @@ $(document).ready(function () {
                 });
                 $(".predictBox").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 700,
                     duration: 700
@@ -764,14 +764,15 @@ $(document).ready(function () {
                 });
                 $(".trendItem").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 300
                 });
+                console.log('6down')
             }
             if (origin.index == 7 && direction == 'up') {
-                $(".ribbon").velocity({
+                $(".ribbonNight").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
@@ -785,7 +786,7 @@ $(document).ready(function () {
                 });
                 $(".predictBox").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 700
@@ -796,7 +797,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
-                
+
                 $(".sphereTrend").velocity({
                     opacity: "1"
                 }, {
@@ -805,42 +806,44 @@ $(document).ready(function () {
                 });
                 $(".trendItem1").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 300,
                     duration: 700
                 });
                 $(".trendItem2").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 600,
                     duration: 700
                 });
                 $(".trendItem3").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 900,
                     duration: 700
                 });
                 $(".trendItem4").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 1200,
                     duration: 700
                 });
                 $(".trendItem5").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 1500,
                     duration: 700
                 });
+
+                console.log('7up')
             }
             if (origin.index == 7 && direction == 'down') {
-                $(".ribbon").velocity({
+                $(".ribbonNight").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
@@ -854,7 +857,7 @@ $(document).ready(function () {
                 });
                 $(".predictBox").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 700
@@ -863,23 +866,18 @@ $(document).ready(function () {
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 700
-                });
-                $(".marketBox").velocity({
-                    opacity: "1",
-                    left: "0vw"
-                }, {
-                    delay: 0,
                     duration: 700,
                     begin: function () {
                         //indo map
-                        changeSlide(20, 100, true)
+                        changeSlide(30, 90, true)
                         $(".bgColor__night").addClass("opac0")
                     }
                 });
+
+                console.log('7down')
             }
             if (origin.index == 8 && direction == 'up') {
-                $(".ribbon").velocity({
+                $(".ribbonNight").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
@@ -893,7 +891,7 @@ $(document).ready(function () {
                 });
                 $(".predictBox").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 700,
                     duration: 700
@@ -909,74 +907,962 @@ $(document).ready(function () {
                 });
                 $(".marketBox").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 700,
                     begin: function () {
-                        changeSlide(100, 20)
+                        changeSlide(90, 30)
                         $(".bgColor__night").removeClass("opac0")
                     }
                 });
+                $(".sphereDay1").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+
+                console.log('8up')
             }
             if (origin.index == 8 && direction == 'down') {
                 $(".marketBox").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 700
                 });
                 $(".howBox").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 0,
                     duration: 700
                 });
+                $(".sphereDayPin").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        animationDayPin.play()
+                    }
+                });
+                $(".sphereDay1").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+
+                console.log(animationEcon.getDuration(false))
+                console.log(animationEcon.totalFrames)
+                console.log('8down')
             }
             if (origin.index == 9 && direction == 'up') {
                 $(".marketBox").velocity({
                     opacity: "1",
-                    left: "0vw"
+                    left: "0"
                 }, {
                     delay: 0,
                     duration: 700
                 });
                 $(".howBox").velocity({
                     opacity: "0",
-                    left: "-25vw"
+                    left: "-320px"
                 }, {
                     delay: 0,
                     duration: 700
                 });
+                $(".sphereDayPin").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".sphereDay1").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+
+                console.log('9up')
             }
             if (origin.index == 9 && direction == 'down') {
                 $(".econ1").velocity({
+                    opacity: "1",
                     top: "0"
                 }, {
-                    delay: 0,
+                    delay: 700,
                     duration: 700,
                     begin: function () {
                         $(".nightStars").addClass("opac0")
                     }
                 });
-                $(".econ1").velocity({
+                $(".building").velocity({
                     opacity: "1"
                 }, {
-                    delay: 300,
-                    duration: 400
+                    delay: 0,
+                    duration: 700
+                });
+                $(".econAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        animationEcon.playSegments([0, 40], true);
+                    }
+                });
+                $(".sphere").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".howBox").velocity({
+                    opacity: "0",
+                    left: "-320px"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".sphereDayPin").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
                 });
             }
             if (origin.index == 10 && direction == 'up') {
                 $(".econ1").velocity({
-                    opacity: "0"
+                    opacity: "0",
+                    top: "100vh"
                 }, {
                     delay: 0,
                     duration: 300,
                     begin: function () {
                         $(".nightStars").removeClass("opac0")
                     }
+                });
+                $(".econAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".sphere").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".sphereDayPin").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".howBox").velocity({
+                    opacity: "1",
+                    left: "0"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".building").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+            }
+            if (origin.index == 10 && direction == 'down') {
+                $(".econ1").velocity({
+                    opacity: "0",
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".econ2").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        animationEcon.onLoopComplete = function () {
+                            animationEcon.playSegments([40, 240], true);
+                        }
+                    }
+                });
+                console.log('10down')
+            }
+            if (origin.index == 11 && direction == 'up') {
+                $(".econ1").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        animationEcon.onLoopComplete = function () {
+                            animationEcon.playSegments([0, 40], true);
+                        }
+                    }
+                });
+                $(".econ2").velocity({
+                    opacity: "0",
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 11 && direction == 'down') {
+                $(".econ2").velocity({
+                    opacity: "0",
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".inflaAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        animationInfla.play()
+                    }
+                });
+                $(".inflaWrap").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".econAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+            }
+            if (origin.index == 12 && direction == 'up') {
+                $(".econAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".inflaWrap").velocity({
+                    opacity: "0",
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".inflaAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".econ2").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 12 && direction == 'down') {
+                $(".inflaWrap").velocity({
+                    opacity: "0",
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".inflaAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".rateAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        animationRate.play()
+                    }
+                });
+                $(".rateWrap").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+            }
+            if (origin.index == 13 && direction == 'up') {
+                $(".inflaAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".inflaWrap").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".rateWrap").velocity({
+                    opacity: "0",
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".rateAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+            }
+            if (origin.index == 13 && direction == 'down') {
+                $(".rateWrap").velocity({
+                    opacity: "0",
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".rateAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".stableAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        animationStable.play()
+                    }
+                });
+                $(".stableWrap").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".buildingSun").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+            }
+            if (origin.index == 14 && direction == 'up') {
+                $(".rateAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".rateWrap").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".stableWrap").velocity({
+                    opacity: "0",
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".stableAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".buildingSun").velocity({
+                    opacity: "0",
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+            }
+            if (origin.index == 14 && direction == 'down') {
+                $(".stableWrap").velocity({
+                    opacity: "0",
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".stableAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".growthAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        animationGrowth.play()
+                    }
+                });
+                $(".growthWrap").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+            }
+            if (origin.index == 15 && direction == 'up') {
+                $(".stableAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".stableWrap").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".growthWrap").velocity({
+                    opacity: "0",
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".growthAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+            }
+            if (origin.index == 15 && direction == 'down') {
+                $(".growthWrap").velocity({
+                    opacity: "0",
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".growthAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".building").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".quote").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.bgColor__grey').removeClass('opac0')
+                    }
+                });
+                $(".quoteImg").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".quoteTxt").velocity({
+                    opacity: "1",
+                    left: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".quoteAttr").velocity({
+                    opacity: "1",
+                    left: "0"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".buildingSun").velocity({
+                    opacity: "0",
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+            }
+            if (origin.index == 16 && direction == 'up') {
+                $(".growthAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $('.bgColor__grey').addClass('opac0')
+                    }
+                });
+                $(".growthWrap").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".quote").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".quoteImg").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 700,
+                    duration: 300
+                });
+                $(".quoteTxt").velocity({
+                    opacity: "0",
+                    left: "100vw"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".quoteAttr").velocity({
+                    opacity: "0",
+                    left: "100vw"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".building").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".buildingSun").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 16 && direction == 'down') {
+                $(".quote").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".quoteImg").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 700,
+                    duration: 300
+                });
+                $(".quoteTxt").velocity({
+                    opacity: "0",
+                    left: "100vw"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".quoteAttr").velocity({
+                    opacity: "0",
+                    left: "100vw"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".synergy").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".synergy").addClass('active')
+                    }
+                });
+                $(".synergyCaption").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 17 && direction == 'up') {
+                $(".quote").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".quoteImg").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".quoteTxt").velocity({
+                    opacity: "1",
+                    left: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".quoteAttr").velocity({
+                    opacity: "1",
+                    left: "0"
+                }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".synergy").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        $(".synergy").removeClass('active')
+                    }
+                });
+                $(".synergyCaption").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+            }
+            if (origin.index == 17 && direction == 'down') {
+                $(".synergy").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        $(".synergy").removeClass('active')
+                    }
+                });
+                $(".synergyCaption").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".balanceAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        animationBalance.play()
+                    }
+                });
+                $(".balanceWrap").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 18 && direction == 'up') {
+                $(".synergy").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".synergy").addClass('active')
+                    }
+                });
+                $(".synergyCaption").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".balanceAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".balanceWrap").velocity({
+                    opacity: "0",
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+            }
+            if (origin.index == 18 && direction == 'down') {
+                $(".balanceAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".balanceWrap").velocity({
+                    opacity: "0",
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".policy").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".policy").addClass('active')
+                        $(".bgColor__dark").removeClass('opac0')
+                    }
+                });
+                $(".policyCaption").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 19 && direction == 'up') {
+                $(".policy").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        $(".policy").removeClass('active')
+                        $(".bgColor__dark").addClass('opac0')
+                    }
+                });
+                $(".policyCaption").velocity({
+                    top: "100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".balanceAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".balanceWrap").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 19 && direction == 'down') {
+                $(".policy").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        $(".policy").removeClass('active')
+                    }
+                });
+                $(".policyCaption").velocity({
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".keyImg").velocity({
+                    opacity: "1",
+                    left: "0"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        animationKey.play()
+                    }
+                });
+                $(".keyTitle").velocity({
+                    opacity: "1",
+                    left: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".ribbonKey").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".keyMap").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 300,
+                    duration: 700,
+                    complete: function () {
+                        animationIndo.play()
+                    }
+                });
+            }
+            if (origin.index == 20 && direction == 'up') {
+                $(".policy").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    begin: function () {
+                        $(".policy").addClass('active')
+                    }
+                });
+                $(".policyCaption").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".keyImg").velocity({
+                    opacity: "0",
+                    left: "100vw"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".keyTitle").velocity({
+                    opacity: "0",
+                    left: "-100vw"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".ribbonKey").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".keyMap").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+            }
+            if (origin.index == 20 && direction == 'down') {
+                $(".keyImg").velocity({
+                    opacity: "0",
+                    left: "100vw"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".keyTitle").velocity({
+                    opacity: "0",
+                    left: "-100vw"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".ribbonKey").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".keyMap").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".sectionCredit").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        $('.creditTitle').addClass('active')
+                        $('.creditName').addClass('active')
+                    }
+                })
+            }
+            if (origin.index == 21 && direction == 'up') {
+                $(".sectionCredit").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        $('.creditTitle').removeClass('active')
+                        $('.creditName').removeClass('active')
+                    }
+                })
+                $(".keyImg").velocity({
+                    opacity: "1",
+                    left: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".keyTitle").velocity({
+                    opacity: "1",
+                    left: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".ribbonKey").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".keyMap").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 300,
+                    duration: 700
                 });
             }
         }
@@ -1035,6 +1921,8 @@ $(document).ready(function () {
                         slide2()
                     } else if ($('body').hasClass('fp-viewing-3')) {
                         slide3()
+                    } else if ($('body').hasClass('fp-viewing-8')) {
+                        slideFlag()
                     }
                 };
             } else {
@@ -1108,7 +1996,7 @@ $(document).ready(function () {
         });
         $(".eventBox1").velocity({
             opacity: "1",
-            left: "0vw"
+            left: "0"
         }, {
             delay: 700,
             duration: 700
@@ -1142,7 +2030,7 @@ $(document).ready(function () {
         });
         $(".eventBox2").velocity({
             opacity: "1",
-            left: "0vw"
+            left: "0"
         }, {
             delay: 700,
             duration: 700
@@ -1155,6 +2043,37 @@ $(document).ready(function () {
             begin: function () {
                 animationEvent2Pic.play()
             }
+        });
+    }
+
+    function slideFlag() {
+        $(".sphereDayFlag").velocity({
+            opacity: "1"
+        }, {
+            delay: 0,
+            duration: 700,
+            begin: function () {
+                //indo map
+            },
+            complete: function () {
+                animationDayFlag.play()
+            }
+        });
+        $(".sphereDayPic").velocity({
+            opacity: "1"
+        }, {
+            delay: 700,
+            duration: 700,
+            begin: function () {
+                animationDayPic.play()
+            }
+        });
+        $(".marketBox").velocity({
+            opacity: "1",
+            left: "0"
+        }, {
+            delay: 700,
+            duration: 700
         });
     }
 
