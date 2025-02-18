@@ -43,7 +43,7 @@ $(document).ready(function () {
         container: document.getElementById('animationEvent1'),
         renderer: 'svg',
         loop: false,
-        autoplay: true,
+        autoplay: false,
         path: 'asset/json/russia/event1-pin.json',
         name: 'myAnimation',
     });
@@ -51,7 +51,7 @@ $(document).ready(function () {
         container: document.getElementById('animationEvent1Bomb'),
         renderer: 'svg',
         loop: false,
-        autoplay: true,
+        autoplay: false,
         path: 'asset/json/russia/event1-bomb.json',
         name: 'myAnimation',
     });
@@ -59,8 +59,75 @@ $(document).ready(function () {
         container: document.getElementById('animationEvent1Tank'),
         renderer: 'svg',
         loop: false,
-        autoplay: true,
+        autoplay: false,
         path: 'asset/json/russia/event1-tank.json',
+        name: 'myAnimation',
+    });
+
+    var animationEvent2 = bodymovin.loadAnimation({
+        container: document.getElementById('animationEvent2'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: 'asset/json/usa/event2-pin.json',
+        name: 'myAnimation',
+    });
+    var animationEvent2Pic = bodymovin.loadAnimation({
+        container: document.getElementById('animationEvent2Pic'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'asset/json/usa/event2-trump.json',
+        name: 'myAnimation',
+    });
+    var animationTele = bodymovin.loadAnimation({
+        container: document.getElementById('animationTele'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: 'asset/json/usa/risk-tele.json',
+        name: 'myAnimation',
+    });
+    var animationArrow = bodymovin.loadAnimation({
+        container: document.getElementById('animationArrow'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'asset/json/usa/risk-arrow.json',
+        name: 'myAnimation',
+    });
+
+    var animationPredict = bodymovin.loadAnimation({
+        container: document.getElementById('animationPredict'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: 'asset/json/usa/predict-pin.json',
+        name: 'myAnimation',
+    });
+
+    var animationDayPin = bodymovin.loadAnimation({
+        container: document.getElementById('animationDayPin'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'asset/json/usa/day-pin.json',
+        name: 'myAnimation',
+    });
+    var animationDayFlag = bodymovin.loadAnimation({
+        container: document.getElementById('animationDayFlag'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'asset/json/usa/day-flag.json',
+        name: 'myAnimation',
+    });
+    var animationDayPic = bodymovin.loadAnimation({
+        container: document.getElementById('animationDayPic'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: 'asset/json/usa/day-pic.json',
         name: 'myAnimation',
     });
 
@@ -253,7 +320,7 @@ $(document).ready(function () {
                         $(".bgColor__night").addClass("opac0")
                         $(".nightStars").addClass("opac0")
                     },
-                    complete: function () {}
+                    complete: function () { }
                 });
                 $(".coverAnim").velocity({
                     opacity: "1"
@@ -323,13 +390,6 @@ $(document).ready(function () {
                         $(".sphereAnim").addClass("scale")
                     }
                 });
-                $(".eventBox1").velocity({
-                    opacity: "1",
-                    left: "0vw"
-                }, {
-                    delay: 400,
-                    duration: 700
-                });
 
             }
             if (origin.index == 2 && direction == 'up') {
@@ -361,6 +421,12 @@ $(document).ready(function () {
                         $(".sphereAnim").removeClass("scale")
                     },
                 });
+                $(".sphereEvent1").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
                 $(".eventBox1").velocity({
                     opacity: "0",
                     left: "-25vw"
@@ -375,17 +441,16 @@ $(document).ready(function () {
                     left: "-25vw"
                 }, {
                     delay: 0,
-                    duration: 700
-                });
-                $(".eventBox2").velocity({
-                    opacity: "1",
-                    left: "0vw"
-                }, {
-                    delay: 0,
                     duration: 700,
                     begin: function () {
                         changeSlide(90, 60)
-                    },
+                    }
+                });
+                $(".sphereEvent1").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
                 });
             }
             if (origin.index == 3 && direction == 'up') {
@@ -394,17 +459,16 @@ $(document).ready(function () {
                     left: "-25vw"
                 }, {
                     delay: 0,
-                    duration: 700
-                });
-                $(".eventBox1").velocity({
-                    opacity: "1",
-                    left: "0vw"
-                }, {
-                    delay: 0,
                     duration: 700,
                     begin: function () {
                         changeSlide(60, 90, true)
                     },
+                });
+                $(".sphereEvent2").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
                 });
             }
             if (origin.index == 3 && direction == 'down') {
@@ -415,6 +479,12 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
+                $(".sphereEvent2Pic").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
                 $(".event1Ribbon").velocity({
                     opacity: "0"
                 }, {
@@ -425,14 +495,23 @@ $(document).ready(function () {
                     opacity: "1",
                     left: "0vw"
                 }, {
-                    delay: 0,
+                    delay: 700,
                     duration: 700
                 });
                 $(".risk1Ribbon").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        console.log('trumpout')
+                        animationEvent2.playSegments([140, 180], true);
+                        animationEvent2.onLoopComplete = function () {
+                            animationEvent2.goToAndStop(animationEvent2.totalFrames - 1, true)
+                            console.log(animationEvent2.getDuration(false))
+                            console.log(animationEvent2.totalFrames)
+                        }
+                    }
                 });
             }
             if (origin.index == 4 && direction == 'up') {
@@ -443,13 +522,6 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
-                $(".eventBox2").velocity({
-                    opacity: "1",
-                    left: "0vw"
-                }, {
-                    delay: 0,
-                    duration: 700
-                });
                 $(".risk1Ribbon").velocity({
                     opacity: "0"
                 }, {
@@ -462,6 +534,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
+                slide3()
             }
             if (origin.index == 4 && direction == 'down') {
                 $(".riskBox1").velocity({
@@ -471,12 +544,45 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
+                $(".sphereEvent2Pin").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        animationTele.play()
+                    }
+                });
                 $(".riskBox2").velocity({
                     opacity: "1",
                     left: "0vw"
                 }, {
-                    delay: 0,
+                    delay: 700,
                     duration: 700
+                });
+                $(".sphereEvent2Pic").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".sphereTele").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        animationTele.play()
+                    }
+                });
+                $(".sphereArrow").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
+                    duration: 700,
+                    complete: function () {
+                        animationArrow.play()
+                    }
                 });
             }
             if (origin.index == 5 && direction == 'up') {
@@ -487,12 +593,24 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
+                $(".sphereEvent2Pin").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
                 $(".riskBox1").velocity({
                     opacity: "1",
                     left: "0vw"
                 }, {
-                    delay: 0,
+                    delay: 700,
                     duration: 700
+                });
+                $(".sphereRisk2").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
                 });
             }
             if (origin.index == 5 && direction == 'down') {
@@ -515,39 +633,51 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 300
                 });
-                $(".trendItem1").velocity({
-                    opacity: "1",
-                    left: "0vw"
+                $(".sphereRisk2").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".sphereTrend").velocity({
+                    opacity: "1"
                 }, {
                     delay: 0,
                     duration: 700
                 });
-                $(".trendItem2").velocity({
+                $(".trendItem1").velocity({
                     opacity: "1",
                     left: "0vw"
                 }, {
                     delay: 300,
                     duration: 700
                 });
-                $(".trendItem3").velocity({
+                $(".trendItem2").velocity({
                     opacity: "1",
                     left: "0vw"
                 }, {
                     delay: 600,
                     duration: 700
                 });
-                $(".trendItem4").velocity({
+                $(".trendItem3").velocity({
                     opacity: "1",
                     left: "0vw"
                 }, {
                     delay: 900,
                     duration: 700
                 });
-                $(".trendItem5").velocity({
+                $(".trendItem4").velocity({
                     opacity: "1",
                     left: "0vw"
                 }, {
                     delay: 1200,
+                    duration: 700
+                });
+                $(".trendItem5").velocity({
+                    opacity: "1",
+                    left: "0vw"
+                }, {
+                    delay: 1500,
                     duration: 700
                 });
             }
@@ -557,13 +687,31 @@ $(document).ready(function () {
                     left: "-25vw"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 300
+                });
+                $(".sphereTrend").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
                 });
                 $(".riskBox2").velocity({
                     opacity: "1",
                     left: "0vw"
                 }, {
+                    delay: 700,
+                    duration: 700
+                });
+                $(".sphereTele").velocity({
+                    opacity: "1"
+                }, {
                     delay: 0,
+                    duration: 700
+                });
+                $(".sphereArrow").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 700,
                     duration: 700
                 });
                 $(".ribbon").velocity({
@@ -592,19 +740,34 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
+                $(".spherePredict").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        animationPredict.play()
+                    }
+                });
                 $(".predictBox").velocity({
                     opacity: "1",
                     left: "0vw"
                 }, {
-                    delay: 0,
+                    delay: 700,
                     duration: 700
+                });
+                $(".sphereTrend").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
                 });
                 $(".trendItem").velocity({
                     opacity: "0",
                     left: "-25vw"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 300
                 });
             }
             if (origin.index == 7 && direction == 'up') {
@@ -627,39 +790,52 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
-                $(".trendItem1").velocity({
-                    opacity: "1",
-                    left: "0vw"
+                $(".spherePredict").velocity({
+                    opacity: "0"
                 }, {
                     delay: 0,
                     duration: 700
                 });
-                $(".trendItem2").velocity({
+                
+                $(".sphereTrend").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".trendItem1").velocity({
                     opacity: "1",
                     left: "0vw"
                 }, {
                     delay: 300,
                     duration: 700
                 });
-                $(".trendItem3").velocity({
+                $(".trendItem2").velocity({
                     opacity: "1",
                     left: "0vw"
                 }, {
                     delay: 600,
                     duration: 700
                 });
-                $(".trendItem4").velocity({
+                $(".trendItem3").velocity({
                     opacity: "1",
                     left: "0vw"
                 }, {
                     delay: 900,
                     duration: 700
                 });
-                $(".trendItem5").velocity({
+                $(".trendItem4").velocity({
                     opacity: "1",
                     left: "0vw"
                 }, {
                     delay: 1200,
+                    duration: 700
+                });
+                $(".trendItem5").velocity({
+                    opacity: "1",
+                    left: "0vw"
+                }, {
+                    delay: 1500,
                     duration: 700
                 });
             }
@@ -683,6 +859,12 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700
                 });
+                $(".spherePredict").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
                 $(".marketBox").velocity({
                     opacity: "1",
                     left: "0vw"
@@ -691,7 +873,7 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         //indo map
-                        changeSlide(20, 90, true)
+                        changeSlide(20, 100, true)
                         $(".bgColor__night").addClass("opac0")
                     }
                 });
@@ -713,8 +895,17 @@ $(document).ready(function () {
                     opacity: "1",
                     left: "0vw"
                 }, {
-                    delay: 0,
+                    delay: 700,
                     duration: 700
+                });
+                $(".spherePredict").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700,
+                    complete: function () {
+                        animationPredict.play()
+                    }
                 });
                 $(".marketBox").velocity({
                     opacity: "0",
@@ -723,7 +914,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700,
                     begin: function () {
-                        changeSlide(90, 20)
+                        changeSlide(100, 20)
                         $(".bgColor__night").removeClass("opac0")
                     }
                 });
@@ -838,6 +1029,13 @@ $(document).ready(function () {
                 waitYouCantScroll()
                 paramSphere.onLoopComplete = function () {
                     youCanScroll()
+
+                    //anim play
+                    if ($('body').hasClass('fp-viewing-2')) {
+                        slide2()
+                    } else if ($('body').hasClass('fp-viewing-3')) {
+                        slide3()
+                    }
                 };
             } else {
                 //slide maju
@@ -845,6 +1043,13 @@ $(document).ready(function () {
                 waitYouCantScroll()
                 paramSphere.onLoopComplete = function () {
                     youCanScroll()
+
+                    //anim play
+                    if ($('body').hasClass('fp-viewing-2')) {
+                        slide2()
+                    } else if ($('body').hasClass('fp-viewing-3')) {
+                        slide3()
+                    }
                 };
             }
         } else {
@@ -856,6 +1061,13 @@ $(document).ready(function () {
             waitYouCantScroll()
             paramSphere.onLoopComplete = function () {
                 youCanScroll()
+
+                //anim play
+                if ($('body').hasClass('fp-viewing-2')) {
+                    slide2()
+                } else if ($('body').hasClass('fp-viewing-3')) {
+                    slide3()
+                }
             };
         }
         paramSphere.addEventListener('loopComplete', pause)
@@ -870,19 +1082,80 @@ $(document).ready(function () {
     }
 
     function playInitial(loop) {
-        // paramSphere.onLoopComplete = function () {
-        // };
         var cur = paramSphere.currentRawFrame
         if (loop == true) {
             paramSphere.playSegments([cur, 120], [0, 120], true)
             paramSphere.playSegments([0, 120], false)
             waitYouCantScroll()
-            paramSphere.onLoopComplete = function () {
+            setTimeout(function () {
                 youCanScroll()
-            };
+                console.log('scroll up')
+            }, 3000);
         } else {
             paramSphere.playSegments([0, 120], true)
         }
+    }
+
+    function slide2() {
+        $(".sphereEvent1Pin").velocity({
+            opacity: "1"
+        }, {
+            delay: 0,
+            duration: 700,
+            begin: function () {
+                animationEvent1.play()
+            }
+        });
+        $(".eventBox1").velocity({
+            opacity: "1",
+            left: "0vw"
+        }, {
+            delay: 700,
+            duration: 700
+        });
+        $(".sphereEvent1Pic").velocity({
+            opacity: "1"
+        }, {
+            delay: 700,
+            duration: 700,
+            begin: function () {
+                animationEvent1Bomb.play()
+                animationEvent1Tank.play()
+            }
+        });
+    }
+
+    function slide3() {
+        $(".sphereEvent2Pin").velocity({
+            opacity: "1"
+        }, {
+            delay: 0,
+            duration: 700,
+            begin: function () {
+                animationEvent2.playSegments([0, 40], true);
+                animationEvent2.onLoopComplete = function () {
+                    animationEvent2.goToAndStop(animationEvent2.totalFrames - 1, true)
+                    console.log(animationEvent2.getDuration(false))
+                    console.log(animationEvent2.totalFrames)
+                }
+            }
+        });
+        $(".eventBox2").velocity({
+            opacity: "1",
+            left: "0vw"
+        }, {
+            delay: 700,
+            duration: 700
+        });
+        $(".sphereEvent2Pic").velocity({
+            opacity: "1"
+        }, {
+            delay: 700,
+            duration: 700,
+            begin: function () {
+                animationEvent2Pic.play()
+            }
+        });
     }
 
     function youCanScroll() {

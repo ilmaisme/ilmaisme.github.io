@@ -1,7 +1,52 @@
 .risk {
+    &1 {
+        &Pic {
+            position: absolute;
+            right: calc(50% - 257px / 2);
+            top: -154px;
+
+            #flag {
+                position: absolute;
+                right: calc(50% - 42px / 2 - 19px);
+                bottom: 134px;
+            }
+        }
+    }
+
     &2 {
+        &Pic {
+            position: absolute;
+            margin-top: 40px;
+            margin-left: 40px;
+        }
+
         .artBox {
             text-align: center;
+        }
+    }
+}
+
+.predict {
+    &Pic {
+        position: absolute;
+        top: -205px;
+        right: 0;
+        max-width: 260px;
+
+        @include min-responsive($w-xl) {
+            right: -50px;
+        }
+
+        @include min-responsive($w-xxl) {
+            right: 0;
+        }
+
+        @media only screen and(max-height: 710px) and(orientation: landscape) {
+            right: -50px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            top: -188px;
         }
     }
 }

@@ -75,13 +75,78 @@
 
     &Event {
         &1 {
-            left: unset;
-            top: 75px;
-            right: 66px;
+            &Pin {
+                left: unset;
+                top: 75px;
+                right: 66px;
 
-            @media only screen and(max-height: 700px) and(orientation: landscape) {
-                transform: scale(.8) translate(48%, -49%);
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    transform: scale(.8) translate(48%, -49%);
+                }
+            }
+
+            &Tank {
+                top: -62px;
+                left: unset;
+                right: -330px;
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    top: -95px;
+                    left: -333px;
+                    right: unset;
+                    max-width: 445px;
+                }
+            }
+
+            &Bomb {
+                top: unset;
+                bottom: -85px;
+                left: -40px;
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    bottom: -168px;
+                    left: -126px;
+                }
             }
         }
+
+        &2 {
+            &Pin {
+                top: 44px;
+                left: -27px;
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    top: -7px;
+                    left: -64px;
+                }
+            }
+
+            &Pic {
+                top: unset;
+                bottom: -63px;
+                left: -88px;
+            }
+        }
+    }
+
+    &Tele, &Trend {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &Arrow {
+        top: -470px;
+        left: unset;
+        right: -25px;
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            transform: scale(.8) translate(80px, 80px);
+        }
+    }
+
+    &Predict{
+        top: 15px;
+        left: 86px;
     }
 }
