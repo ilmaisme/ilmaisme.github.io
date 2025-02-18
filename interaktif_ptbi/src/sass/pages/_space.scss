@@ -2,11 +2,10 @@
 
     &Wrap {
         position: relative;
-        min-height: 600px;
+        justify-content: center;
         z-index: 1;
 
         @include min-responsive($w-xl) {
-            min-height: 720px;
             padding-top: 32px;
             padding-bottom: 32px;
         }
@@ -16,8 +15,8 @@
             padding-bottom: 0;
         }
 
-        @media only screen and(max-height: 710px) and(orientation: landscape) {
-            min-height: 510px;
+        @include min-height($w-hmd) {
+            padding-top: 80px;
         }
     }
 

@@ -134,7 +134,7 @@ $(document).ready(function () {
     var animationEcon = bodymovin.loadAnimation({
         container: document.getElementById('animationEcon'),
         renderer: 'svg',
-        loop: true,
+        loop: false,
         autoplay: false,
         path: 'asset/json/econ.json',
         name: 'myAnimation',
@@ -143,7 +143,7 @@ $(document).ready(function () {
     var animationInfla = bodymovin.loadAnimation({
         container: document.getElementById('animationInfla'),
         renderer: 'svg',
-        loop: true,
+        loop: false,
         autoplay: false,
         path: 'asset/json/infla.json',
         name: 'myAnimation',
@@ -320,7 +320,7 @@ $(document).ready(function () {
                         $(".bgColor__night").addClass("opac0")
                         $(".nightStars").addClass("opac0")
                     },
-                    complete: function () {}
+                    complete: function () { }
                 });
                 $(".coverAnim").velocity({
                     opacity: "1"
@@ -1094,9 +1094,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700,
                     begin: function () {
-                        animationEcon.onLoopComplete = function () {
-                            animationEcon.playSegments([40, 240], true);
-                        }
+                        animationEcon.playSegments([40, 240], true);
                     }
                 });
                 console.log('10down')
@@ -1109,9 +1107,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700,
                     complete: function () {
-                        animationEcon.onLoopComplete = function () {
-                            animationEcon.playSegments([0, 40], true);
-                        }
+                        animationEcon.playSegments([0, 40], true);
                     }
                 });
                 $(".econ2").velocity({
