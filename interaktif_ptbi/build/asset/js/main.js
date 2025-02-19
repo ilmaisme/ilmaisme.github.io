@@ -320,7 +320,7 @@ $(document).ready(function () {
                         $(".bgColor__night").addClass("opac0")
                         $(".nightStars").addClass("opac0")
                     },
-                    complete: function () { }
+                    complete: function () {}
                 });
                 $(".coverAnim").velocity({
                     opacity: "1"
@@ -1014,6 +1014,9 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         animationEcon.playSegments([0, 40], true);
+                    },
+                    complete: function () {
+                        $(".econNum1").removeClass('opac0')
                     }
                 });
                 $(".sphere").velocity({
@@ -1045,6 +1048,7 @@ $(document).ready(function () {
                     duration: 300,
                     begin: function () {
                         $(".nightStars").removeClass("opac0")
+                        $(".econNum").addClass('opac0')
                     }
                 });
                 $(".econAnim").velocity({
@@ -1095,6 +1099,10 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         animationEcon.playSegments([40, 240], true);
+                    },
+                    complete: function () {
+                        $(".econNum1").addClass('opac0')
+                        $(".econNum2").removeClass('opac0')
                     }
                 });
                 console.log('10down')
@@ -1108,6 +1116,8 @@ $(document).ready(function () {
                     duration: 700,
                     complete: function () {
                         animationEcon.playSegments([0, 40], true);
+                        $(".econNum2").addClass('opac0')
+                        $(".econNum1").removeClass('opac0')
                     }
                 });
                 $(".econ2").velocity({
@@ -1124,7 +1134,10 @@ $(document).ready(function () {
                     top: "-100vh"
                 }, {
                     delay: 0,
-                    duration: 300
+                    duration: 300,
+                    begin: function () {
+                        $(".econNum").addClass('opac0')
+                    }
                 });
                 $(".inflaAnim").velocity({
                     opacity: "1"
@@ -1133,6 +1146,7 @@ $(document).ready(function () {
                     duration: 700,
                     complete: function () {
                         animationInfla.play()
+                        $(".inflaNum").removeClass('opac0')
                     }
                 });
                 $(".inflaWrap").velocity({
@@ -1154,7 +1168,11 @@ $(document).ready(function () {
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $(".econNum2").removeClass('opac0')
+                        $(".inflaNum").addClass('opac0')
+                    }
                 });
                 $(".inflaWrap").velocity({
                     opacity: "0",
@@ -1183,7 +1201,10 @@ $(document).ready(function () {
                     top: "-100vh"
                 }, {
                     delay: 0,
-                    duration: 300
+                    duration: 300,
+                    begin: function () {
+                        $(".inflaNum").addClass('opac0')
+                    }
                 });
                 $(".inflaAnim").velocity({
                     opacity: "0"
@@ -1213,7 +1234,10 @@ $(document).ready(function () {
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    complete: function () {
+                        $(".inflaNum").removeClass('opac0')
+                    }
                 });
                 $(".inflaWrap").velocity({
                     opacity: "1",
@@ -1330,6 +1354,7 @@ $(document).ready(function () {
                     duration: 700,
                     complete: function () {
                         animationGrowth.play()
+                        $(".growthNum").removeClass('opac0')
                     }
                 });
                 $(".growthWrap").velocity({
@@ -1359,7 +1384,10 @@ $(document).ready(function () {
                     top: "100vh"
                 }, {
                     delay: 0,
-                    duration: 300
+                    duration: 300,
+                    begin: function () {
+                        $(".growthNum").addClass('opac0')
+                    }
                 });
                 $(".growthAnim").velocity({
                     opacity: "0"
@@ -1395,13 +1423,8 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.bgColor__grey').removeClass('opac0')
+                        $(".growthNum").addClass('opac0')
                     }
-                });
-                $(".quoteImg").velocity({
-                    opacity: "1"
-                }, {
-                    delay: 0,
-                    duration: 700
                 });
                 $(".quoteTxt").velocity({
                     opacity: "1",
@@ -1433,6 +1456,9 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         $('.bgColor__grey').addClass('opac0')
+                    },
+                    complete: function () {
+                        $(".growthNum").removeClass('opac0')
                     }
                 });
                 $(".growthWrap").velocity({
@@ -1446,12 +1472,6 @@ $(document).ready(function () {
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 300
-                });
-                $(".quoteImg").velocity({
-                    opacity: "0"
-                }, {
-                    delay: 700,
                     duration: 300
                 });
                 $(".quoteTxt").velocity({
@@ -1489,12 +1509,6 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 300
                 });
-                $(".quoteImg").velocity({
-                    opacity: "0"
-                }, {
-                    delay: 700,
-                    duration: 300
-                });
                 $(".quoteTxt").velocity({
                     opacity: "0",
                     left: "100vw"
@@ -1527,12 +1541,6 @@ $(document).ready(function () {
             }
             if (origin.index == 17 && direction == 'up') {
                 $(".quote").velocity({
-                    opacity: "1"
-                }, {
-                    delay: 0,
-                    duration: 700
-                });
-                $(".quoteImg").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
@@ -2116,9 +2124,6 @@ $(document).ready(function () {
     $('.policyPop__wrap').on('click', function (e) {
         e.stopPropagation();
     })
-    $('.policyPopup').on('click', function () {
-        closePopup()
-    })
     $('.policyBtn').on('click', function () {
         var num = $(this).attr('num'),
             strnum = new String(num),
@@ -2138,9 +2143,21 @@ $(document).ready(function () {
             animationDiagram4.play()
         }
     })
-
+    $('.sphereRisk2').on('click', function () {
+        $('.riskPopup').addClass("active")
+        waitYouCantScroll()
+    })
+    $('.riskPop__wrap').on('click', function (e) {
+        e.stopPropagation();
+    })
+    $('.riskPop__close').on('click', function () {
+        closePopup()
+    })
+    $('.popup').on('click', function () {
+        closePopup()
+    })
     function closePopup() {
-        $('.policyPopup').removeClass("active")
+        $('.popup').removeClass("active")
         youCanScroll()
     }
 })

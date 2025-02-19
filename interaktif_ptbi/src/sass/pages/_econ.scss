@@ -6,9 +6,38 @@
     &2 {
         position: absolute;
     }
+
+    &Img {
+        position: relative;
+    }
+
+    &Num {
+        &__wrap {
+            top: 55px;
+            right: 110px;
+        }
+
+        &1 {
+            margin-top: 60px;
+        }
+
+        &2 {
+            position: absolute;
+            top: 0;
+        }
+    }
 }
 
 .infla {
+    &Img {
+        position: relative;
+    }
+
+    &Num {
+        top: 45px;
+        left: calc(50% - 183px / 2);
+    }
+
     &Anim {
         position: relative;
         bottom: -40px;
@@ -26,5 +55,34 @@
 .stable {
     &Anim {
         max-width: 360px;
+    }
+}
+
+.growth {
+    &Img {
+        position: relative;
+    }
+
+    &Num {
+        top: 0;
+        left: calc(50% - 158px / 2);
+        top: -75px;
+
+        @include min-height($w-hmd) {
+            top: -75px;
+        }
+
+        @include min-responsive($w-xxl) {
+            left: calc(50% - 168px / 2);
+        }
+
+        @include min-responsive($w-xxxl) {
+            top: -90px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            top: 45px;
+            left: calc(50% - 112px / 2);
+        }
     }
 }

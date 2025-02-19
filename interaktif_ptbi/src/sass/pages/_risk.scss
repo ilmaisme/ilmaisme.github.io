@@ -28,6 +28,54 @@
             text-align: center;
         }
     }
+
+    &Pop {
+        &__title {
+            @include font-pack($font_caption, 22px, 700, $line-base, $cl-white);
+
+            @include min-responsive($w-xl) {
+                font-size: 26px
+            }
+
+            @include min-responsive($w-xxl) {
+                font-size: 32px
+            }
+
+            @media only screen and(max-height: 710px) and(orientation: landscape) {
+                font-size: 24px
+            }
+        }
+
+        &__img {
+            margin-top: 28px;
+            margin-bottom: 28px;
+
+            img {
+                max-height: 55vh;
+            }
+        }
+
+        &__close {
+            @extend .policyPop__close;
+            background: #FFC900 !important;
+            border: 6px solid $cl-white;
+        }
+
+        &__trig{
+            bottom: 10px;
+            left: calc(50% - 144px / 2);
+
+            span {
+                position: absolute;
+                min-width: 24px;
+                left: -12px;
+                top: 3px;
+                border: 2px solid #134061;
+                background: $cl-white;
+                border-radius: 50%;
+            }
+        }
+    }
 }
 
 .predict {
