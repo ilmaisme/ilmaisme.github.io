@@ -75,8 +75,15 @@
             }
         }
 
-        &.active{
-            .sphereRisk2{
+        &.riskactive {
+            .sphereRisk2 {
+                cursor: pointer;
+                pointer-events: all;
+            }
+        }
+
+        &.dayactive {
+            .sphereDayPin {
                 cursor: pointer;
                 pointer-events: all;
             }
@@ -178,6 +185,17 @@
         &Flag {
             left: 62px;
             top: 20px;
+        }
+
+        &Click {
+            min-width: 130px;
+            bottom: -38px;
+
+            span {
+                position: absolute;
+                top: -48px;
+                left: calc(50% - 30px / 2);
+            }
         }
     }
 }

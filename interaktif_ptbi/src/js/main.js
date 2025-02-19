@@ -551,6 +551,7 @@ $(document).ready(function () {
                     duration: 300,
                     begin: function () {
                         animationTele.play()
+                        $(".sphereZoom").addClass("riskactive")
                     }
                 });
                 $(".riskBox2").velocity({
@@ -591,7 +592,10 @@ $(document).ready(function () {
                     left: "-320px"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $(".sphereZoom").removeClasrisks("active")
+                    }
                 });
                 $(".sphereEvent2Pin").velocity({
                     opacity: "1"
@@ -619,7 +623,10 @@ $(document).ready(function () {
                     left: "-320px"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $(".sphereZoom").removeClasrisks("active")
+                    }
                 });
                 $(".ribbonNight").velocity({
                     opacity: "0"
@@ -687,7 +694,10 @@ $(document).ready(function () {
                     left: "-320px"
                 }, {
                     delay: 0,
-                    duration: 300
+                    duration: 300,
+                    begin: function () {
+                        $(".sphereZoom").addClass("riskactive")
+                    }
                 });
                 $(".sphereTrend").velocity({
                     opacity: "0"
@@ -1089,13 +1099,6 @@ $(document).ready(function () {
                     top: "-100vh"
                 }, {
                     delay: 0,
-                    duration: 700
-                });
-                $(".econ2").velocity({
-                    opacity: "1",
-                    top: "0"
-                }, {
-                    delay: 0,
                     duration: 700,
                     begin: function () {
                         animationEcon.playSegments([40, 240], true);
@@ -1120,25 +1123,8 @@ $(document).ready(function () {
                         $(".econNum1").removeClass('opac0')
                     }
                 });
-                $(".econ2").velocity({
-                    opacity: "0",
-                    top: "100vh"
-                }, {
-                    delay: 0,
-                    duration: 700
-                });
             }
             if (origin.index == 11 && direction == 'down') {
-                $(".econ2").velocity({
-                    opacity: "0",
-                    top: "-100vh"
-                }, {
-                    delay: 0,
-                    duration: 300,
-                    begin: function () {
-                        $(".econNum").addClass('opac0')
-                    }
-                });
                 $(".inflaAnim").velocity({
                     opacity: "1"
                 }, {
@@ -1160,7 +1146,10 @@ $(document).ready(function () {
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 300
+                    duration: 300,
+                    begin: function () {
+                        $(".econNum").addClass('opac0')
+                    }
                 });
             }
             if (origin.index == 12 && direction == 'up') {
@@ -1186,13 +1175,6 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 300
-                });
-                $(".econ2").velocity({
-                    opacity: "1",
-                    top: "0"
-                }, {
-                    delay: 0,
-                    duration: 700
                 });
             }
             if (origin.index == 12 && direction == 'down') {
@@ -2147,7 +2129,7 @@ $(document).ready(function () {
         $('.riskPopup').addClass("active")
         waitYouCantScroll()
     })
-    $('.riskPop__wrap').on('click', function (e) {
+    $('.riskPop__img').on('click', function (e) {
         e.stopPropagation();
     })
     $('.riskPop__close').on('click', function () {
@@ -2160,6 +2142,12 @@ $(document).ready(function () {
         $('.popup').removeClass("active")
         youCanScroll()
     }
+
+    //click on indo map
+    $('.sphereDayPin').on('click', function () {
+        fullpage_api.moveTo(10);
+        console.log('move')
+    })
 })
 
 /* s: Get HEIGHT Device */
