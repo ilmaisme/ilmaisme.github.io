@@ -5,7 +5,7 @@
         align-items: flex-end;
         height: calc(var(--app-height) - 30vh);
 
-        picture{
+        picture {
             position: relative;
         }
     }
@@ -20,17 +20,14 @@
     &Box {
         position: relative;
         justify-content: flex-end;
+        bottom: 40px;
 
-        @include min-responsive($w-xl) {
-            bottom: 25px;
+        @media only screen and(min-height: 600px) and(orientation: landscape) {
+            bottom: 40px;
         }
 
-        @include min-responsive($w-xxl) {
+        @media only screen and(min-height: 800px) and(orientation: landscape) {
             bottom: 75px;
-        }
-
-        @media only screen and(max-height: 720px) and(orientation: landscape) {
-            bottom: 0;
         }
     }
 
@@ -42,7 +39,12 @@
 
     &Txt {
         max-width: 680px;
-        min-height: 131px;
+        min-height: 78px;
+
+        @media only screen and(min-height: 600px) and(orientation: landscape) {
+            max-width: 680px;
+            font-size: 20px;
+        }
     }
 
     &Sun {

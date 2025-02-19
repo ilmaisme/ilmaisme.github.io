@@ -12,14 +12,18 @@
     }
 
     &Num {
+        transition: opacity .7s ease-in-out;
+        
         &__wrap {
-            top: 55px;
+            top: 50px;
             right: 110px;
+
+            @include min-responsive($w-xxl) {
+                top: 35px;
+            }
         }
 
-        &1 {
-            margin-top: 60px;
-        }
+        &1 {}
 
         &2 {
             position: absolute;
@@ -34,8 +38,12 @@
     }
 
     &Num {
-        top: 45px;
-        left: calc(50% - 183px / 2);
+        top: 30px;
+        left: calc(50% - 129px / 2);
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            left: calc(50% - 86px / 2);
+        }
     }
 
     &Anim {
@@ -54,7 +62,9 @@
 
 .stable {
     &Anim {
+        top: 35px;
         max-width: 360px;
+        position: relative;
     }
 }
 

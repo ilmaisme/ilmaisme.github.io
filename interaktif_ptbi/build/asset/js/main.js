@@ -1,8 +1,10 @@
 $(window).on('load', function () {
     setTimeout(function () {
-        // $('.preloader').addClass("done");
-        // fullpage_api.setAllowScrolling(true);
-        // fullpage_api.setKeyboardScrolling(true);
+        $('.preloader').addClass("done");
+        fullpage_api.setAllowScrolling(true);
+        fullpage_api.setKeyboardScrolling(true);
+
+        $(".scroll-guide").removeClass('opac0')
     }, 3000);
     console.log('loaded');
 })
@@ -17,6 +19,7 @@ $(document).ready(function () {
         name: 'myAnimation',
     });
     animationLoader.play();
+    animationLoader.setSpeed(0.5);
 
     var paramCover = {
         container: document.getElementById('animationCover'),
@@ -143,7 +146,7 @@ $(document).ready(function () {
     var animationInfla = bodymovin.loadAnimation({
         container: document.getElementById('animationInfla'),
         renderer: 'svg',
-        loop: false,
+        loop: true,
         autoplay: false,
         path: 'asset/json/infla.json',
         name: 'myAnimation',
@@ -320,7 +323,7 @@ $(document).ready(function () {
                         $(".bgColor__night").addClass("opac0")
                         $(".nightStars").addClass("opac0")
                     },
-                    complete: function () {}
+                    complete: function () { }
                 });
                 $(".coverAnim").velocity({
                     opacity: "1"
@@ -419,6 +422,8 @@ $(document).ready(function () {
                     begin: function () {
                         playInitial(true)
                         $(".sphereAnim").removeClass("scale")
+                        $('.sphereEventLine1').removeClass('active')
+                        $('.sphereEventLine2').removeClass('active')
                     },
                 });
                 $(".sphereEvent1").velocity({
@@ -444,6 +449,8 @@ $(document).ready(function () {
                     duration: 700,
                     begin: function () {
                         changeSlide(90, 60)
+                        $('.sphereEventLine1').removeClass('active')
+                        $('.sphereEventLine2').removeClass('active')
                     }
                 });
                 $(".sphereEvent1").velocity({
@@ -594,7 +601,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700,
                     begin: function () {
-                        $(".sphereZoom").removeClasrisks("active")
+                        $(".sphereZoom").removeClass("riskactive")
                     }
                 });
                 $(".sphereEvent2Pin").velocity({
@@ -625,7 +632,7 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 700,
                     begin: function () {
-                        $(".sphereZoom").removeClasrisks("active")
+                        $(".sphereZoom").removeClass("riskactive")
                     }
                 });
                 $(".ribbonNight").velocity({
@@ -955,6 +962,9 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 700,
+                    begin: function () {
+                        $(".sphereZoom").addClass("dayactive")
+                    },
                     complete: function () {
                         animationDayPin.play()
                     }
@@ -983,7 +993,10 @@ $(document).ready(function () {
                     left: "-320px"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $(".sphereZoom").removeClass("dayactive")
+                    }
                 });
                 $(".sphereDayPin").velocity({
                     opacity: "0"
@@ -1040,7 +1053,10 @@ $(document).ready(function () {
                     left: "-320px"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $(".sphereZoom").removeClass("dayactive")
+                    }
                 });
                 $(".sphereDayPin").velocity({
                     opacity: "0"
@@ -1059,6 +1075,7 @@ $(document).ready(function () {
                     begin: function () {
                         $(".nightStars").removeClass("opac0")
                         $(".econNum").addClass('opac0')
+                        $(".sphereZoom").addClass("dayactive")
                     }
                 });
                 $(".econAnim").velocity({
@@ -1094,35 +1111,19 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 10 && direction == 'down') {
-                $(".econ1").velocity({
-                    opacity: "0",
-                    top: "-100vh"
-                }, {
-                    delay: 0,
-                    duration: 700,
-                    begin: function () {
-                        animationEcon.playSegments([40, 240], true);
-                    },
-                    complete: function () {
-                        $(".econNum1").addClass('opac0')
-                        $(".econNum2").removeClass('opac0')
-                    }
-                });
                 console.log('10down')
+                animationEcon.playSegments([40, 240], true);
+                setTimeout(function () {
+                    $(".econNum1").addClass('opac0')
+                    $(".econNum2").removeClass('opac0')
+                }, 700);
             }
             if (origin.index == 11 && direction == 'up') {
-                $(".econ1").velocity({
-                    opacity: "1",
-                    top: "0"
-                }, {
-                    delay: 0,
-                    duration: 700,
-                    complete: function () {
-                        animationEcon.playSegments([0, 40], true);
-                        $(".econNum2").addClass('opac0')
-                        $(".econNum1").removeClass('opac0')
-                    }
-                });
+                setTimeout(function () {
+                    animationEcon.playSegments([0, 40], true);
+                    $(".econNum2").addClass('opac0')
+                    $(".econNum1").removeClass('opac0')
+                }, 700);
             }
             if (origin.index == 11 && direction == 'down') {
                 $(".inflaAnim").velocity({
@@ -1141,6 +1142,13 @@ $(document).ready(function () {
                 }, {
                     delay: 700,
                     duration: 700
+                });
+                $(".econ1").velocity({
+                    opacity: "0",
+                    top: "-100vh"
+                }, {
+                    delay: 0,
+                    duration: 300
                 });
                 $(".econAnim").velocity({
                     opacity: "0"
@@ -1162,6 +1170,13 @@ $(document).ready(function () {
                         $(".econNum2").removeClass('opac0')
                         $(".inflaNum").addClass('opac0')
                     }
+                });
+                $(".econ1").velocity({
+                    opacity: "1",
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
                 });
                 $(".inflaWrap").velocity({
                     opacity: "0",
@@ -1854,8 +1869,7 @@ $(document).ready(function () {
         }
     })
 
-    // fullpage_api.setAllowScrolling(false);
-    // fullpage_api.setKeyboardScrolling(false);
+    waitYouCantScroll()
 
     //stars map
     //https://codepen.io/megan-durham/pen/JjRYdzb
@@ -1978,19 +1992,21 @@ $(document).ready(function () {
             duration: 700,
             begin: function () {
                 animationEvent1.play()
+                $('.sphereEventLine1').addClass('active')
+                $('.sphereEventLine2').addClass('active')
             }
         });
         $(".eventBox1").velocity({
             opacity: "1",
             left: "0"
         }, {
-            delay: 700,
+            delay: 1400,
             duration: 700
         });
         $(".sphereEvent1Pic").velocity({
             opacity: "1"
         }, {
-            delay: 700,
+            delay: 1400,
             duration: 700,
             begin: function () {
                 animationEvent1Bomb.play()
@@ -2145,7 +2161,7 @@ $(document).ready(function () {
 
     //click on indo map
     $('.sphereDayPin').on('click', function () {
-        fullpage_api.moveTo(10);
+        fullpage_api.moveTo(11);
         console.log('move')
     })
 })
