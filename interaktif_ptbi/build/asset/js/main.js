@@ -2076,11 +2076,13 @@ $(document).ready(function () {
     function youCanScroll() {
         fullpage_api.setAllowScrolling(true);
         fullpage_api.setKeyboardScrolling(true);
+        $(".scroll-guide").removeClass('opac0')
     }
 
     function waitYouCantScroll() {
         fullpage_api.setAllowScrolling(false);
         fullpage_api.setKeyboardScrolling(false);
+        $(".scroll-guide").addClass('opac0')
     }
 
     //synergy area

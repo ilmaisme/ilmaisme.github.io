@@ -16,3 +16,52 @@
         }
     }
 }
+
+.scroll-guide {
+    position: absolute;
+    bottom: 3%;
+    right: 25px;
+    z-index: 999;
+    flex-direction: column;
+    color: #58595B;
+    font-size: 16px;
+    @include base_transition(all, .2s);
+
+    .icon-scroll {
+        width: 20px;
+        height: 32px;
+
+        &:before {
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 6px;
+            height: 6px;
+        }
+    }
+}
+
+.icon {
+    &-scroll {
+        position: relative;
+        border-radius: 50px;
+        width: 14px;
+        height: 20px;
+        border: 2px solid #58595B;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 5px;
+            margin-left: -1px;
+            background-color: #58595B;
+            border-radius: 10px;
+            -webkit-animation: scrolldown 2s infinite;
+            animation: scrolldown 2s infinite;
+        }
+    }
+
+}
