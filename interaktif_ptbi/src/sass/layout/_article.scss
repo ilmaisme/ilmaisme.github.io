@@ -1,19 +1,27 @@
 .art {
     &Box {
         position: relative;
-        margin-top: 240px;
+        margin-top: 380px;
         left: -25vw;
         opacity: 0;
-        width: 475px;
-        padding: 20px 50px 20px 77px;
-        border-radius: 20px;
+        width: calc(100vw - 20px);
+        padding: 10px 15px 10px 15px;
+        border-radius: 15px;
         text-align: left;
         background: $cl-white;
         @include font-pack(false, 16px, 600, $line-base, #2D2D4F);
 
+        @media only screen and(max-height: 600px) and(orientation: portrait) {
+            margin-top: 310px;
+            font-size: 14px;
+        }
+
         @include min-responsive($w-md) {
+            width: 475px;
             margin-top: 130px;
             margin-left: 190px;
+            padding: 20px 50px 20px 77px;
+            border-radius: 20px;
             font-size: 20px
         }
 

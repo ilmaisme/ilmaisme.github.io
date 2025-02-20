@@ -1871,89 +1871,103 @@ $(document).ready(function () {
 
     waitYouCantScroll()
 
+    //stars map
+    //https://codepen.io/megan-durham/pen/JjRYdzb
+    var map = document.querySelector('#starmap');
+
+    function makeStar() {
+        var newstar = document.createElement('div');
+        newstar.style.backgroundColor = '#fff';
+        newstar.style.borderRadius = '50%';
+        newstar.style.position = 'absolute';
+        newstar.style.top = Math.random() * 100 + '%';
+        newstar.style.left = Math.random() * 100 + '%';
+        newstar.style.height = Math.random() * 10 + 'px';
+        newstar.style.width = newstar.style.height;
+        newstar.classList.add('star');
+        var glow = Math.random() * 10;
+        newstar.style.boxShadow = '0 0 ' + glow + 'px' + " " + glow / 2 + 'px #fff';
+        newstar.style.animationDuration = Math.random() * 3 + 1 + 's';
+        map.appendChild(newstar);
+
+        var stArr = document.querySelectorAll('.star');
+        if (window.innerHeight > window.innerWidth) {
+            // Portrait mode
+            if (stArr.length >= 15) clearInterval(fadeInt);
+        } else {
+            // Landscape mode
+            if (stArr.length >= 50) clearInterval(fadeInt);
+        }
+    }
+
+    var fadeInt = setInterval(makeStar, 100);
+
     //sphere pause event
     function changeSlide(param, from, loop) {
-        var cur = paramSphere.currentRawFrame,
-            setframe = param,
-            setfrom = from
+        const cur = paramSphere.currentRawFrame;
+        const setframe = param;
+        const setfrom = from;
+    
+        const playSegmentsWithCallback = (segments) => {
+            paramSphere.playSegments(segments, true);
+            waitYouCantScroll();
+            paramSphere.onLoopComplete = function () {
+                youCanScroll();
+                playAnimation();
+            };
+        };
+    
+        const playAnimation = () => {
+            const bodyClass = $('body').attr('class');
+    
+            if (bodyClass.includes('fp-viewing-2')) {
+                slide2();
+            } else if (bodyClass.includes('fp-viewing-3')) {
+                slide3();
+            } else if (bodyClass.includes('fp-viewing-8')) {
+                slideFlag();
+            }
+        };
+    
         if (!!from) {
-            if (loop == true) {
-                //slide mundur
-                paramSphere.playSegments([
-                    [setfrom, 120],
-                    [0, setframe]
-                ], true);
-                waitYouCantScroll()
-                paramSphere.onLoopComplete = function () {
-                    youCanScroll()
-
-                    //anim play
-                    if ($('body').hasClass('fp-viewing-2')) {
-                        slide2()
-                    } else if ($('body').hasClass('fp-viewing-3')) {
-                        slide3()
-                    } else if ($('body').hasClass('fp-viewing-8')) {
-                        slideFlag()
-                    }
-                };
+            if (loop) {
+                // Slide backward
+                playSegmentsWithCallback([[setfrom, 120], [0, setframe]]);
             } else {
-                //slide maju
-                paramSphere.playSegments([setfrom, setframe], true);
-                waitYouCantScroll()
-                paramSphere.onLoopComplete = function () {
-                    youCanScroll()
-
-                    //anim play
-                    if ($('body').hasClass('fp-viewing-2')) {
-                        slide2()
-                    } else if ($('body').hasClass('fp-viewing-3')) {
-                        slide3()
-                    }
-                };
+                // Slide forward
+                playSegmentsWithCallback([setfrom, setframe]);
             }
         } else {
-            //paramSphere.playSegments([cur, setframe], true);
-            paramSphere.playSegments([
-                [cur, 120],
-                [0, setframe]
-            ], true);
-            waitYouCantScroll()
-            paramSphere.onLoopComplete = function () {
-                youCanScroll()
-
-                //anim play
-                if ($('body').hasClass('fp-viewing-2')) {
-                    slide2()
-                } else if ($('body').hasClass('fp-viewing-3')) {
-                    slide3()
-                }
-            };
+            // Default case, play with reset
+            playSegmentsWithCallback([[cur, 120], [0, setframe]]);
         }
-        paramSphere.addEventListener('loopComplete', pause)
-
+    
+        paramSphere.addEventListener('loopComplete', pause);
     }
-
+    
     function pause() {
         paramSphere.removeEventListener('loopComplete', pause);
-        paramSphere.goToAndStop(paramSphere.totalFrames - 1, true) //stop at the last frame of the current segment
-        console.log(paramSphere.getDuration(false))
-        console.log(paramSphere.totalFrames)
+        paramSphere.goToAndStop(paramSphere.totalFrames - 1, true); // Stop at the last frame
+        console.log(paramSphere.getDuration(false));
+        console.log(paramSphere.totalFrames);
     }
-
+    
     function playInitial(loop) {
-        var cur = paramSphere.currentRawFrame
-        if (loop == true) {
-            paramSphere.playSegments([cur, 120], [0, 120], true)
-            paramSphere.playSegments([0, 120], false)
-            waitYouCantScroll()
-            setTimeout(function () {
-                youCanScroll()
-                console.log('scroll up')
+        const cur = paramSphere.currentRawFrame;
+        
+        if (loop) {
+            paramSphere.playSegments([cur, 120], [0, 120], true);
+            paramSphere.playSegments([0, 120], false);
+            waitYouCantScroll();
+            setTimeout(() => {
+                youCanScroll();
+                console.log('scroll up');
             }, 3000);
         } else {
-            paramSphere.playSegments([0, 120], true)
+            paramSphere.playSegments([0, 120], true);
         }
     }
+    
 
     function slide2() {
         $(".sphereEvent1Pin").velocity({
@@ -2093,6 +2107,13 @@ $(document).ready(function () {
     $('.policyPop__wrap').on('click', function (e) {
         e.stopPropagation();
     })
+    const animations = [
+        animationDiagram0,
+        animationDiagram1,
+        animationDiagram2,
+        animationDiagram3,
+        animationDiagram4
+    ];
     $('.policyBtn').on('click', function () {
         var num = $(this).attr('num'),
             strnum = new String(num),
@@ -2100,16 +2121,8 @@ $(document).ready(function () {
         pop.addClass("active")
         waitYouCantScroll()
         //play animation
-        if (strnum == 0) {
-            animationDiagram0.play()
-        } else if (strnum == 1) {
-            animationDiagram1.play()
-        } else if (strnum == 2) {
-            animationDiagram2.play()
-        } else if (strnum == 3) {
-            animationDiagram3.play()
-        } else if (strnum == 4) {
-            animationDiagram4.play()
+        if (strnum >= 0 && strnum <= 4) {
+            animations[strnum].play();
         }
     })
     $('.sphereRisk2').on('click', function () {
@@ -2138,34 +2151,6 @@ $(document).ready(function () {
     })
 })
 
-
-//stars map
-//https://codepen.io/megan-durham/pen/JjRYdzb
-var map = document.querySelector('#starmap');
-
-function makeStar() {
-    var newstar = document.createElement('div');
-    newstar.style.backgroundColor = '#fff';
-    newstar.style.borderRadius = '50%';
-    newstar.style.position = 'absolute';
-    newstar.style.top = Math.random() * 100 + '%';
-    newstar.style.left = Math.random() * 100 + '%';
-    newstar.style.height = Math.random() * 10 + 'px';
-    newstar.style.width = newstar.style.height;
-    newstar.classList.add('star');
-    var glow = Math.random() * 10;
-    newstar.style.boxShadow = '0 0 ' + glow + 'px' + " " + glow / 2 + 'px #fff';
-    newstar.style.animationDuration = Math.random() * 3 + 1 + 's';
-    map.appendChild(newstar);
-
-    var stArr = document.querySelectorAll('.star');
-    if (stArr.length >= 50) {
-        clearInterval(fadeInt);
-    }
-}
-
-var fadeInt = setInterval(makeStar, 100);
-
 /* s: Get HEIGHT Device */
 const appHeight = () => {
     const doc = document.documentElement
@@ -2173,4 +2158,7 @@ const appHeight = () => {
 }
 window.addEventListener("resize", appHeight)
 appHeight()
+
+//const appHeightValue = getComputedStyle(document.documentElement).getPropertyValue('--app-height');
+//console.log(appHeightValue); // Access and use the value
 /* e: Get HEIGHT Device */
