@@ -18,11 +18,17 @@
 
     &Click {
         position: absolute;
-        padding: 4px 18px;
+        padding: 4px 10px;
+        text-align: center;
+        min-width: 144px;
         border: 2px solid #134061;
         background: $cl-white;
         border-radius: 9px;
         @include font-pack($font_quote, 14px, false, false, #134061);
+
+        @include min-responsive($w-md) {
+            padding: 4px 18px;
+        }
     }
 }
 

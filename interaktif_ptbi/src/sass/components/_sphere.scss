@@ -67,13 +67,24 @@
 
     &Zoom {
         position: relative;
+        justify-content: center;
         z-index: 2;
+
+        @include min-responsive($w-md) {
+            justify-content: flex-start;
+        }
 
         &__wrap {
             position: relative;
-            width: 432px;
-            height: 440px;
-            left: 35px;
+            width: 220px;
+            height: 225px;
+            transition: transform .7s ease;
+
+            @include min-responsive($w-md) {
+                width: 432px;
+                height: 440px;
+                left: 35px;
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 width: 288px;
@@ -81,7 +92,7 @@
                 left: 106px;
             }
 
-            @include min-height($w-hmd) {
+            @media only screen and(min-height: $w-hmd) and(orientation: landscape) {
                 top: 40px;
             }
         }
@@ -111,19 +122,38 @@
     &Event {
         &1 {
             &Pin {
+                max-width: 80px;
                 left: unset;
-                top: 64px;
-                right: 70px;
+                top: 26px;
+                right: 16px;
+
+                @include min-responsive($w-md) {
+                    top: 64px;
+                    right: 70px;
+                    max-width: unset;
+                }
 
                 @media only screen and(max-height: 700px) and(orientation: landscape) {
                     transform: scale(0.8) translate(52%, -40%);
                 }
             }
 
+            &Pic {
+                position: relative;
+                z-index: 1;
+            }
+
             &Tank {
-                top: -60px;
-                left: unset;
-                right: -330px;
+                top: -90px;
+                left: -62px;
+                max-width: 165px;
+
+                @include min-responsive($w-md) {
+                    max-width: unset;
+                    left: unset;
+                    top: -60px;
+                    right: -330px;
+                }
 
                 @media only screen and(max-height: 700px) and(orientation: landscape) {
                     top: -124px;
@@ -134,9 +164,16 @@
             }
 
             &Bomb {
+                max-width: 200px;
                 top: unset;
-                bottom: -85px;
-                left: -40px;
+                bottom: -20px;
+                left: -80px;
+
+                @include min-responsive($w-md) {
+                    bottom: -85px;
+                    left: -40px;
+                    max-width: unset;
+                }
 
                 @media only screen and(max-height: 700px) and(orientation: landscape) {
                     bottom: -168px;
@@ -147,8 +184,15 @@
 
         &2 {
             &Pin {
-                top: 30px;
-                left: -66px;
+                max-width: 170px;
+                top: 16px;
+                left: -48px;
+
+                @include min-responsive($w-md) {
+                    max-width: unset;
+                    top: 30px;
+                    left: -66px;
+                }
 
                 @media only screen and(max-height: 700px) and(orientation: landscape) {
                     top: -7px;
@@ -157,9 +201,16 @@
             }
 
             &Pic {
+                max-width: 240px;
                 top: unset;
-                bottom: -60px;
-                left: -85px;
+                bottom: -18px;
+                left: -42px;
+
+                @include min-responsive($w-md) {
+                    bottom: -60px;
+                    left: -85px;
+                    max-width: unset;
+                }
             }
         }
 
@@ -167,8 +218,15 @@
             position: absolute;
 
             &1 {
-                left: 34%;
-                top: -105px;
+                left: 70%;
+                top: -74px;
+                max-width: 65px;
+
+                @include min-responsive($w-md) {
+                    max-width: unset;
+                    left: 34%;
+                    top: -105px;
+                }
 
                 @media only screen and(max-height: 700px) and(orientation: landscape) {
                     left: 40%;
@@ -178,9 +236,17 @@
             }
 
             &2 {
-                left: -130px;
-                top: 16%;
-                max-width: 150px;
+                left: 126px;
+                top: 38%;
+                max-width: 84px;
+                transform: scaleX(-1);
+
+                @include min-responsive($w-md) {
+                    left: -130px;
+                    top: 16%;
+                    max-width: 150px;
+                    transform: none;
+                }
 
                 @media only screen and(max-height: 700px) and(orientation: landscape) {
                     right: -119px;
@@ -200,10 +266,24 @@
         transform: translate(-50%, -50%);
     }
 
+    &Trend {
+        min-width: 165px;
+
+        @media only screen and(max-height: 600px) and(orientation: portrait) {
+            min-width: 148px;
+        }
+    }
+
     &Arrow {
-        top: -470px;
+        max-width: 180px;
+        top: -440px;
         left: unset;
         right: -25px;
+
+        @include min-responsive($w-md) {
+            max-width: unset;
+            top: -470px;
+        }
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             transform: scale(.8) translate(80px, 80px);
@@ -211,8 +291,13 @@
     }
 
     &Predict {
-        top: 15px;
-        left: 86px;
+        top: 0;
+        left: 20px;
+
+        @include min-responsive($w-md) {
+            top: 15px;
+            left: 86px;
+        }
     }
 
     &Day {
@@ -222,8 +307,15 @@
         }
 
         &Flag {
-            left: 62px;
-            top: 20px;
+            left: 32px;
+            top: 16px;
+            max-width: 165px;
+
+            @include min-responsive($w-md) {
+                max-width: unset;
+                left: 62px;
+                top: 20px;
+            }
         }
 
         &Click {

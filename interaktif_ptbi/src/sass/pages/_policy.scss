@@ -264,12 +264,17 @@
         &__close {
             display: block;
             background: #B1B1B1;
-            padding-top: 18px;
-            padding-bottom: 18px;
+            padding-top: 14px;
+            padding-bottom: 14px;
             border-radius: 20px;
             width: 220px;
             margin: 10px auto;
             @include font-pack(false, 14px, 600, $line-base, false);
+
+            @include min-responsive($w-md) {
+                padding-top: 18px;
+                padding-bottom: 18px;
+            }
 
             @include min-responsive($w-xl) {
                 font-size: 16px

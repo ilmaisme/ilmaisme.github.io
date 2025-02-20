@@ -1,9 +1,14 @@
 .risk {
     &1 {
         &Pic {
+            opacity: 0;
             position: absolute;
             right: calc(50% - 257px / 2);
             top: -150px;
+
+            @include min-responsive($w-md) {
+                opacity: 1;
+            }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 right: 0;
@@ -20,8 +25,14 @@
     &2 {
         &Pic {
             position: absolute;
-            margin-top: 40px;
-            margin-left: 40px;
+            margin-top: 20px;
+            max-width: 200px;
+
+            @include min-responsive($w-md) {
+                max-width: unset;
+                margin-top: 40px;
+                margin-left: 40px;
+            }
         }
 
         .artBox {
@@ -31,7 +42,13 @@
 
     &Pop {
         &__title {
-            @include font-pack($font_caption, 22px, 700, $line-base, $cl-white);
+            padding-left: 10px;
+            padding-right: 10px;
+            @include font-pack($font_caption, 16px, 700, $line-base, $cl-white);
+
+            @include min-responsive($w-md) {
+                font-size: 22px;
+            }
 
             @include min-responsive($w-xl) {
                 font-size: 26px
@@ -61,7 +78,7 @@
             border: 6px solid $cl-white;
         }
 
-        &__trig{
+        &__trig {
             bottom: 10px;
             left: calc(50% - 144px / 2);
 
@@ -81,9 +98,14 @@
 .predict {
     &Pic {
         position: absolute;
-        top: -205px;
+        top: -99px;
         right: 0;
-        max-width: 260px;
+        max-width: 120px;
+
+        @include min-responsive($w-md) {
+            top: -205px;
+            max-width: 260px;
+        }
 
         @include min-responsive($w-xl) {
             right: -50px;
@@ -99,6 +121,22 @@
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             top: -188px;
+        }
+    }
+}
+
+.how{
+    &Box{
+        text-align: center;
+    }
+}
+
+.fp-viewing-7, .fp-viewing-8 {
+    .nightWrap {
+        z-index: 2;
+
+        @include min-responsive($w-md) {
+            z-index: 1;
         }
     }
 }
