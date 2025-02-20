@@ -4,9 +4,15 @@
     justify-content: center;
 
     &Content {
-        padding-bottom: 60px;
+        max-width: 330px;
+        padding-bottom: 10px;
+
+        @media only screen and(max-height: 600px) and(orientation: portrait) {
+            padding-bottom: 0;
+        }
 
         @include min-responsive($w-md) {
+            max-width: unset;
             padding-bottom: 367px;
         }
 
@@ -21,9 +27,16 @@
 
     &Anim {
         position: absolute;
-        bottom: 0;
+        width: 90vw;
+        bottom: calc(50% - 140px);
         left: 50%;
-        transform: translate(-50%, -10vh);
+        transform: translate(-50%, 50%);
+
+        @include min-responsive($w-md) {
+            width: auto;
+            bottom: 0;
+            transform: translate(-50%, -10vh);
+        }
 
         @media only screen and(max-height: 710px) and(orientation: landscape) {
             transform: translate(-50%, -4vh);
@@ -33,9 +46,16 @@
     &Txt {
         &--2 {
             position: relative;
-            margin-top: -55px;
-            margin-bottom: -20px;
+            margin-top: -16px;
+            margin-bottom: -10px;
+            max-width: 30px;
             z-index: 1;
+
+            @include min-responsive($w-md) {
+                margin-top: -55px;
+                margin-bottom: -20px;
+                max-width: unset;
+            }
         }
     }
 }

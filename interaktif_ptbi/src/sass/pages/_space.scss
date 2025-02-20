@@ -2,7 +2,14 @@
 
     &Wrap {
         position: relative;
+        height: 550px;
         z-index: 1;
+
+        @include min-responsive($w-md) {
+            padding-left: 0;
+            padding-right: 0;
+            height: auto;
+        }
 
         @include min-responsive($w-xl) {
             padding-top: 32px;
@@ -82,11 +89,23 @@
                 }
             }
         }
+
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background-color: white;
+            // animation: fadeIn 1s ease-in-out infinite;
+            animation-name: fadeIn;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-fill-mode: both;
+            animation-timing-function: linear;
+        }
     }
 }
 
-.day{
-    &Pic{
+.day {
+    &Pic {
         position: absolute;
         top: -180px;
         max-width: 200px;
@@ -94,13 +113,13 @@
     }
 }
 
-.star {
-    animation-name: fade;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-fill-mode: both;
-    animation-timing-function: linear;
-}
+// .star {
+//     animation-name: fade;
+//     animation-iteration-count: infinite;
+//     animation-direction: alternate;
+//     animation-fill-mode: both;
+//     animation-timing-function: linear;
+// }
 
 
 @keyframes fade {
@@ -110,5 +129,15 @@
 
     100% {
         opacity: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

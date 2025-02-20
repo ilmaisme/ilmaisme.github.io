@@ -323,7 +323,7 @@ $(document).ready(function () {
                         $(".bgColor__night").addClass("opac0")
                         $(".nightStars").addClass("opac0")
                     },
-                    complete: function () { }
+                    complete: function () {}
                 });
                 $(".coverAnim").velocity({
                     opacity: "1"
@@ -1871,35 +1871,6 @@ $(document).ready(function () {
 
     waitYouCantScroll()
 
-    //stars map
-    //https://codepen.io/megan-durham/pen/JjRYdzb
-    var rand = Math.random();
-
-    var map = document.querySelector('#starmap');
-
-    function makeStar() {
-        var newstar = document.createElement('div');
-        newstar.style.backgroundColor = '#fff';
-        newstar.style.borderRadius = '50%';
-        newstar.style.position = 'absolute';
-        newstar.style.top = Math.random() * 100 + '%';
-        newstar.style.left = Math.random() * 100 + '%';
-        newstar.style.height = Math.random() * 10 + 'px';
-        newstar.style.width = newstar.style.height;
-        newstar.classList.add('star');
-        var glow = Math.random() * 10;
-        newstar.style.boxShadow = '0 0 ' + glow + 'px' + " " + glow / 2 + 'px #fff';
-        newstar.style.animationDuration = Math.random() * 3 + 1 + 's';
-        map.appendChild(newstar);
-
-        var stArr = document.querySelectorAll('.star');
-        if (stArr.length >= 50) {
-            clearInterval(fadeInt);
-        }
-    }
-
-    var fadeInt = setInterval(makeStar, 100);
-
     //sphere pause event
     function changeSlide(param, from, loop) {
         var cur = paramSphere.currentRawFrame,
@@ -2154,6 +2125,7 @@ $(document).ready(function () {
     $('.popup').on('click', function () {
         closePopup()
     })
+
     function closePopup() {
         $('.popup').removeClass("active")
         youCanScroll()
@@ -2165,6 +2137,34 @@ $(document).ready(function () {
         console.log('move')
     })
 })
+
+
+//stars map
+//https://codepen.io/megan-durham/pen/JjRYdzb
+var map = document.querySelector('#starmap');
+
+function makeStar() {
+    var newstar = document.createElement('div');
+    newstar.style.backgroundColor = '#fff';
+    newstar.style.borderRadius = '50%';
+    newstar.style.position = 'absolute';
+    newstar.style.top = Math.random() * 100 + '%';
+    newstar.style.left = Math.random() * 100 + '%';
+    newstar.style.height = Math.random() * 10 + 'px';
+    newstar.style.width = newstar.style.height;
+    newstar.classList.add('star');
+    var glow = Math.random() * 10;
+    newstar.style.boxShadow = '0 0 ' + glow + 'px' + " " + glow / 2 + 'px #fff';
+    newstar.style.animationDuration = Math.random() * 3 + 1 + 's';
+    map.appendChild(newstar);
+
+    var stArr = document.querySelectorAll('.star');
+    if (stArr.length >= 50) {
+        clearInterval(fadeInt);
+    }
+}
+
+var fadeInt = setInterval(makeStar, 100);
 
 /* s: Get HEIGHT Device */
 const appHeight = () => {

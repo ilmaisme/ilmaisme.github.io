@@ -27,17 +27,15 @@
 
     <link rel=icon type=image/png sizes=16x16 href="https://static.bisnis-cdn.com/interaktif/assets/images/favicon.png">
 
-    <link rel="stylesheet" href="./asset/css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="./asset/css/style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="preload" href="https://fonts.gstatic.com/s/russoone/v16/Z9XUDmZRWg6M1LvRYsHOz8mJ.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
     <style>
 
         /*preloader*/
-        .preloader{top:0;height:100%;width:100%;z-index:1001;position:fixed;display:flex;justify-content:center;overflow:hidden;transition-property:opacity;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.7s;background:linear-gradient(180deg,#e1f8fe -28.34%,#a8e7f8 37.76%,#5bc4e2 103.86%)}.preloader.done{opacity:0;pointer-events:none}.preloaderWrap{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;position:relative}.preloaderAnim{max-width:500px}
-
+        /*.preloader{top:0;height:100%;width:100%;z-index:1001;position:fixed;display:flex;justify-content:center;overflow:hidden;transition-property:opacity;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.7s;background:linear-gradient(180deg,#e1f8fe -28.34%,#a8e7f8 37.76%,#5bc4e2 103.86%)}.preloader.done{opacity:0;pointer-events:none}.preloaderWrap{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;position:relative}.preloaderAnim{max-width:500px}
+*/
     </style>
     
 
@@ -62,11 +60,7 @@
     </header>    <!-- header -->
 
     <!-- preloader -->
-    <div class="preloader" id="preloader">
-    	<div class="preloaderWrap">
-    		<div class="preloaderAnim" id="animationPreload"></div>
-    	</div>
-    </div>    <!-- preloader -->
+    <!-- preloader -->
 
     <!-- main -->
     <main role="main">
@@ -98,12 +92,10 @@
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="night heightFull">
-                    <div class="nightStars opac0" id="starmap">
-                        <span class="stars stars0"></span>
-                        <span class="stars stars1"></span>
-                        <span class="stars stars2"></span>
-                    </div>
+                <div class="nightStars opac0" id="starmap">
+                    <span class="stars stars0"></span>
+                    <span class="stars stars1"></span>
+                    <span class="stars stars2"></span>
                 </div>
             </div>
             <div class="bgStatic">
@@ -137,14 +129,16 @@
                     <div class="sphereZoom__wrap">
                         <div class="spherePin sphereEvent1 opac0 sphereEvent1Pin" id="animationEvent1"></div>
                         <div class="spherePic sphereEvent1Bomb">
-                            <div class="sphereEvent1Pic sphereEvent1 sphereEvent1Pic1 opac0" id="animationEvent1Bomb"></div>
+                            <div class="sphereEvent1Pic sphereEvent1 sphereEvent1Pic1 opac0" id="animationEvent1Bomb">
+                            </div>
 
                             <svg class="sphereEventLine sphereEventLine1 path" xmlns="http://www.w3.org/2000/svg" width="153" height="153" viewBox="0 0 153 153" fill="none">
                             <path d="M153 2H2V153" stroke="white" stroke-width="3"/>
                             </svg>
                         </div>
                         <div class="spherePic sphereEvent1Tank">
-                            <div class="sphereEvent1Pic sphereEvent1 sphereEvent1Pic2 opac0" id="animationEvent1Tank"></div>
+                            <div class="sphereEvent1Pic sphereEvent1 sphereEvent1Pic2 opac0" id="animationEvent1Tank">
+                            </div>
 
                             <svg class="sphereEventLine sphereEventLine2 pathbackwards" xmlns="http://www.w3.org/2000/svg" width="187" height="97" viewBox="0 0 187 97"
                                 fill="none">
@@ -792,20 +786,14 @@
                         <div class="coverContent">
                             <h1 class="coverTxtWrap center-flex dir-column">
                                 <picture class="coverTxt coverTxt--1">
-                                    <source srcset="./asset/images/cover-txt-1-m.png" media="(max-width: 767px)"
-                                        width="678" height="474">
                                     <img srcset="./asset/images/cover-txt-1.png" alt="Sinergi untuk Stabilitas" class=""
                                         width="945" height="112">
                                 </picture>
                                 <picture class="coverTxt coverTxt--2">
-                                    <source srcset="./asset/images/cover-txt-2-m.png" media="(max-width: 767px)"
-                                        width="678" height="474">
                                     <img srcset="./asset/images/cover-txt-2.png" alt="Sinergi untuk Stabilitas" class=""
                                         width="51" height="50">
                                 </picture>
                                 <picture class="coverTxt coverTxt--3">
-                                    <source srcset="./asset/images/cover-txt-3-m.png" media="(max-width: 767px)"
-                                        width="678" height="474">
                                     <img srcset="./asset/images/cover-txt-3.png" alt="Transformasi Ekonomi" class=""
                                         width="707" height="84">
                                 </picture>
@@ -927,7 +915,7 @@
     <script type="text/javascript" src="./asset/js/fullpage.extensions.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/velocity.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/lottie.min.js"></script>
-    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.js"></script>
     <script defer type="text/javascript" src="./asset/js/flag.min.js"></script>
 </body>
 

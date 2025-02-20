@@ -1,8 +1,7 @@
 .art {
     &Box {
         position: relative;
-        margin-top: 130px;
-        margin-left: 190px;
+        margin-top: 240px;
         left: -25vw;
         opacity: 0;
         width: 475px;
@@ -10,7 +9,13 @@
         border-radius: 20px;
         text-align: left;
         background: $cl-white;
-        @include font-pack(false, 20px, 600, $line-base, #2D2D4F);
+        @include font-pack(false, 16px, 600, $line-base, #2D2D4F);
+
+        @include min-responsive($w-md) {
+            margin-top: 130px;
+            margin-left: 190px;
+            font-size: 20px
+        }
 
         .cl-orange {
             color: #FF4C32
@@ -26,6 +31,10 @@
         position: relative;
         margin-top: 20px;
         @include font-pack(false, 18px, 600, $line-base, false);
+
+        @media only screen and(max-height: 600px) and(orientation: portrait) {
+            font-size: 16px;
+        }
 
         @include min-responsive($w-xl) {
             font-size: 20px
