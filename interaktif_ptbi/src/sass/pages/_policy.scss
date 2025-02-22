@@ -22,9 +22,14 @@
 
         .cl-yellow {
             display: block;
-            margin-top: -16px;
-            font-size: 26px;
+            margin-top: -8px;
+            font-size: 36px;
             color: $cl-yellow;
+
+            @include min-responsive($w-md) {
+                margin-top: -16px;
+                font-size: 26px;
+            }
 
             @include min-responsive($w-xl) {
                 font-size: 48px
@@ -41,9 +46,13 @@
     }
 
     &Path {
-        width: 440px;
+        width: 340px;
         height: 440px;
         cursor: pointer;
+
+        @include min-responsive($w-md) {
+            width: 440px;
+        }
     }
 
     &Bi {
@@ -53,7 +62,11 @@
         &__wrap {
             position: relative;
             bottom: 28px;
-            width: 227px;
+            width: 178px;
+
+            @include min-responsive($w-md) {
+                width: 227px;
+            }
         }
 
         &0 {
@@ -89,8 +102,13 @@
 
     &Btn {
         position: absolute;
-        width: 93px;
-        height: 93px;
+        width: 80px;
+        height: 80px;
+
+        @include min-responsive($w-md) {
+            width: 93px;
+            height: 93px;
+        }
 
         &__wrap {
             position: absolute;
@@ -116,8 +134,12 @@
         }
 
         &0 {
-            top: 0;
+            top: 20px;
             right: 56px;
+
+            @include min-responsive($w-md) {
+                top: 0;
+            }
         }
 
         &1 {
@@ -126,8 +148,12 @@
         }
 
         &2 {
-            bottom: 20px;
+            bottom: 60px;
             left: calc(50% - 93px/2);
+
+            @include min-responsive($w-md) {
+                bottom: 20px;
+            }
         }
 
         &3 {
@@ -136,13 +162,21 @@
         }
 
         &4 {
-            top: 0;
+            top: 20px;
             left: 56px;
+
+            @include min-responsive($w-md) {
+                top: 0;
+            }
         }
     }
 
     &Wrap {
         position: relative;
+
+        @include max-responsive($w-xm) {
+            transform: scale(.9);
+        }
     }
 
     &Title {
@@ -152,6 +186,10 @@
         opacity: 0;
         pointer-events: all;
         transition: opacity .4s cubic-bezier(.73, .32, .34, 1.5);
+
+        @include min-responsive($w-md) {
+            font-size: 18px
+        }
 
         @include min-responsive($w-xl) {
             font-size: 20px
@@ -170,6 +208,9 @@
         }
 
         &0 {
+            top: 108px;
+            right: 36px;
+
             @include min-responsive($w-xl) {
                 top: 38px;
                 right: -30px;
@@ -182,6 +223,9 @@
         }
 
         &1 {
+            top: 308px;
+            right: 8px;
+
             @include min-responsive($w-xl) {
                 top: 234px;
                 right: -118px;
@@ -194,6 +238,8 @@
         }
 
         &2 {
+            bottom: 10px;
+
             @include min-responsive($w-xl) {
                 bottom: -45px;
             }
@@ -212,6 +258,9 @@
         }
 
         &3 {
+            top: 308px;
+            left: 8px;
+
             @include min-responsive($w-xl) {
                 top: 220px;
                 left: -135px;
@@ -224,6 +273,9 @@
         }
 
         &4 {
+            top: 108px;
+            left: 22px;
+
             @include min-responsive($w-xl) {
                 top: 8px;
                 left: -48px;
@@ -243,10 +295,15 @@
     &Pop {
 
         &__wrap {
-            max-width: 636px;
-            padding: 35px 30px;
+            max-width: calc(100% - 25px);
+            padding: 15px 10px 5px;
             background: $cl-white;
             border-radius: 20px;
+
+            @include min-responsive($w-md) {
+                max-width: 636px;
+                padding: 35px 30px;
+            }
 
             @include min-responsive($w-xl) {
                 padding: 35px 30px 25px;
@@ -291,12 +348,22 @@
 
         &__title {
             border-radius: 20px;
-            @include font-pack(false, 20px, 600, $line-base, false);
+            @include font-pack(false, 18px, 600, $line-base, false);
+            padding-top: 10px;
+            padding-bottom: 10px;
 
-            @include min-responsive($w-xl) {
+            br {
+                display: none;
+            }
+
+            @include min-responsive($w-md) {
                 padding-top: 20px;
                 padding-bottom: 20px;
-                font-size: 24px
+                font-size: 24px;
+
+                br {
+                    display: inline-block;
+                }
             }
 
             @include min-responsive($w-xxl) {
@@ -318,16 +385,20 @@
 
         &__txt {
             max-width: 521px;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin-top: 15px;
+            margin-bottom: 15px;
             margin-left: auto;
             margin-right: auto;
-            padding-left: 36px;
-            padding-right: 36px;
+            padding-left: 30px;
+            padding-right: 10px;
             list-style-type: disc;
             @include font-pack(false, 14px, 600, $line-base, false);
 
             @include min-responsive($w-xl) {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                padding-left: 36px;
+                padding-right: 36px;
                 font-size: 18px
             }
 
@@ -379,13 +450,18 @@
         text-align: center;
 
         svg {
+            max-width: 50vw;
             width: auto !important;
             height: auto !important;
+
+            @include min-responsive($w-xl) {
+                max-width: unset;
+            }
         }
     }
 
     &.active {
-        .policyPath {
+        .policyBtn {
             pointer-events: all;
         }
     }

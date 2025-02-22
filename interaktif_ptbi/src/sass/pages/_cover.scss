@@ -16,6 +16,10 @@
             padding-bottom: 367px;
         }
 
+        @include range-responsive($w-md, $w-xl) {
+            max-width: 650px;
+        }
+
         @media only screen and(max-height: 700px) and(orientation: landscape) {
             padding-bottom: 290px;
         }
@@ -41,21 +45,38 @@
         @media only screen and(max-height: 710px) and(orientation: landscape) {
             transform: translate(-50%, -4vh);
         }
+
+        @include range-responsive($w-md, $w-xl) {
+            width: 90vw;
+        }
     }
 
     &Txt {
+        &--1 {
+            animation-duration: .7s;
+        }
+
         &--2 {
             position: relative;
             margin-top: -16px;
             margin-bottom: -10px;
             max-width: 30px;
             z-index: 1;
+            animation-duration: 1.7s;
 
             @include min-responsive($w-md) {
                 margin-top: -55px;
                 margin-bottom: -20px;
                 max-width: unset;
             }
+
+            @include range-responsive($w-md, $w-xl) {
+                margin-top: -35px;
+            }
+        }
+
+        &--3 {
+            animation-duration: 1s;
         }
     }
 }

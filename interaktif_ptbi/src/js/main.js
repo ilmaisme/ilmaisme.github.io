@@ -1,6 +1,9 @@
 $(window).on('load', function () {
     setTimeout(function () {
         $('.preloader').addClass("done");
+        $('.coverTxt--1').addClass("animation__sizeOut");
+        $('.coverTxt--2').addClass("animation__sizeRotate");
+        $('.coverTxt--3').addClass("animation__sizeOut");
         fullpage_api.setAllowScrolling(true);
         fullpage_api.setKeyboardScrolling(true);
 
@@ -1480,7 +1483,7 @@ $(document).ready(function () {
                 });
                 $(".quoteAttr").velocity({
                     opacity: "0",
-                    left: "100vw"
+                    left: "-100vw"
                 }, {
                     delay: 0,
                     duration: 300
@@ -1515,7 +1518,7 @@ $(document).ready(function () {
                 });
                 $(".quoteAttr").velocity({
                     opacity: "0",
-                    left: "100vw"
+                    left: "-100vw"
                 }, {
                     delay: 0,
                     duration: 300
@@ -1825,6 +1828,7 @@ $(document).ready(function () {
                     begin: function () {
                         $('.creditTitle').addClass('active')
                         $('.creditName').addClass('active')
+                        $(".scroll-guide").addClass('opac0')
                     }
                 })
             }
@@ -1837,6 +1841,7 @@ $(document).ready(function () {
                     begin: function () {
                         $('.creditTitle').removeClass('active')
                         $('.creditName').removeClass('active')
+                        $(".scroll-guide").removeClass('opac0')
                     }
                 })
                 $(".keyImg").velocity({

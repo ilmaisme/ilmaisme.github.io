@@ -3,7 +3,11 @@
         position: relative;
         display: flex;
         align-items: flex-end;
-        height: calc(var(--app-height) - 30vh);
+        height: calc(var(--app-height) - 224px);
+
+        @include min-responsive($w-md) {
+            height: calc(var(--app-height) - 30vh);
+        }
 
         picture {
             position: relative;
@@ -20,7 +24,15 @@
     &Box {
         position: relative;
         justify-content: flex-end;
-        bottom: 40px;
+        bottom: 60px;
+
+        @media only screen and(max-height: 600px) and(orientation: portrait) {
+            bottom: 70px;
+        }
+
+        @include min-responsive($w-md) {
+            bottom: 40px;
+        }
 
         @media only screen and(min-height: 600px) and(orientation: landscape) {
             bottom: 40px;
@@ -49,14 +61,20 @@
 
     &Sun {
         position: absolute;
-        width: 400px;
-        height: 400px;
+        width: 200px;
+        height: 200px;
         border-radius: 100%;
         background-color: #FFDE4E;
-        bottom: 10%;
         left: 0;
         right: 0;
+        bottom: 0;
         margin: auto;
         z-index: -1;
+
+        @include min-responsive($w-md) {
+            bottom: 10%;
+            width: 400px;
+            height: 400px;
+        }
     }
 }

@@ -13,10 +13,15 @@
 
     &Num {
         transition: opacity .7s ease-in-out;
-        
+
         &__wrap {
-            top: 50px;
-            right: 110px;
+            top: -8px;
+            right: 20px;
+
+            @include min-responsive($w-md) {
+                top: 50px;
+                right: 110px;
+            }
 
             @include min-responsive($w-xxl) {
                 top: 35px;
@@ -74,11 +79,15 @@
     }
 
     &Num {
-        top: 0;
-        left: calc(50% - 158px / 2);
-        top: -75px;
+        top: -160px;
+        left: calc(50% - 135px / 2);
 
-        @include min-height($w-hmd) {
+        @include min-responsive($w-md) {
+            left: calc(50% - 158px / 2);
+            top: -75px;
+        }
+
+        @media only screen and(min-height: $w-hmd) and(orientation: landscape) {
             top: -75px;
         }
 

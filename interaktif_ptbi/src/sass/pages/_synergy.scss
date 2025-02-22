@@ -8,12 +8,18 @@
 
     &Circle {
         position: absolute;
-        width: 277px;
-        height: 277px;
-        top: 55%;
+        width: 155px;
+        height: 155px;
+        top: calc(50% + 75px / 2 + 5px);
         left: 50%;
         transform: translate(-50%, -50%);
-        @include font-pack($font_caption, 18px, 700, false, false);
+        @include font-pack($font_caption, 12px, 700, false, false);
+
+        @include min-responsive($w-md) {
+            top: 55%;
+            width: 277px;
+            height: 277px;
+        }
 
         @include min-responsive($w-xl) {
             font-size: 19px
@@ -30,8 +36,13 @@
 
     &Click {
         bottom: 35px;
-        right: 0;
+        left: 20px;
         padding-right: 28px;
+
+        @include min-responsive($w-md) {
+            left: unset;
+            right: 0;
+        }
 
         span {
             position: absolute;
@@ -44,14 +55,22 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        padding: 30px 40px;
+        padding: 22px 17px;
+
+        @include min-responsive($w-md) {
+            padding: 30px 40px;
+        }
     }
 
     &Caption {
         position: relative;
         max-width: 700px;
         margin-bottom: 10px;
-        @include font-pack($font_caption, 22px, 700, $line-base, false);
+        @include font-pack($font_caption, 20px, 700, $line-base, false);
+
+        @include max-responsive($w-xm) {
+            font-size: 18px;
+        }
 
         @include min-responsive($w-xl) {
             font-size: 26px
@@ -81,9 +100,19 @@
     }
 
     &Path {
-        width: 600px;
-        height: 600px;
+        width: 340px;
+        height: 340px;
         cursor: pointer;
+
+        @include max-responsive($w-xm) {
+            width: 310px;
+            height: 310px;
+        }
+
+        @include min-responsive($w-md) {
+            width: 600px;
+            height: 600px;
+        }
 
         @include min-responsive($w-xl) {
             width: 500px;
@@ -114,7 +143,12 @@
         }
 
         &Circle {
+            max-width: 120px;
             transition: opacity .4s ease-out;
+
+            @include min-responsive($w-md) {
+                max-width: unset;
+            }
         }
     }
 
@@ -147,7 +181,7 @@
     }
 
     &.active {
-        .synergyPath {
+        .synergyArea {
             pointer-events: all;
         }
     }
