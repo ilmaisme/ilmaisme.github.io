@@ -44,6 +44,11 @@
                 transform: scale(1.2) translate(-240px, -10px);
             }
 
+            @include range-responsive($w-md, $w-xl) {
+                margin: unset;
+                transform: scale(1) translate(42px, -87px);
+            }
+
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 transform: scale(1.2) translateX(-237px);
             }
@@ -86,6 +91,10 @@
                 left: 35px;
             }
 
+            @include range-responsive($w-md, $w-xl) {
+                left: 0;
+            }
+
             @media only screen and(max-height: 700px) and(orientation: landscape) {
                 width: 288px;
                 height: 288px;
@@ -94,6 +103,10 @@
 
             @media only screen and(min-height: $w-hmd) and(orientation: landscape) {
                 top: 40px;
+            }
+
+            @media only screen and(min-height: 800px) and(orientation: landscape) {
+                top: 50px;
             }
         }
 

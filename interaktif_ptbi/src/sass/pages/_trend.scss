@@ -97,6 +97,10 @@
             @include min-responsive($w-md) {
                 transform: none;
             }
+
+            @include range-responsive($w-md, $w-xl) {
+                transform: translate(-20%, -90%);
+            }
         }
 
         &Anim.scale {
@@ -109,6 +113,10 @@
 
             @include min-responsive($w-md) {
                 transform: scale(1.2) translate(-240px, -10px);
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                transform: scale(1) translate(-40px, -460px);
             }
 
             @media only screen and(max-height: 700px) and(orientation: landscape) {

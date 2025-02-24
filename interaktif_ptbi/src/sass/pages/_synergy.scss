@@ -16,13 +16,14 @@
         @include font-pack($font_caption, 12px, 700, false, false);
 
         @include min-responsive($w-md) {
-            top: 55%;
+            top: 53%;
             width: 277px;
             height: 277px;
+            font-size: 19px
         }
 
         @include min-responsive($w-xl) {
-            font-size: 19px
+            top: 55%;
         }
 
         @include min-responsive($w-xxl) {
@@ -42,6 +43,11 @@
         @include min-responsive($w-md) {
             left: unset;
             right: 0;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            right: 100px;
+            bottom: 100px;
         }
 
         span {
@@ -70,6 +76,10 @@
 
         @include max-responsive($w-xm) {
             font-size: 18px;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            font-size: 24px;
         }
 
         @include min-responsive($w-xl) {

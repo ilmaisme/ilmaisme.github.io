@@ -8,14 +8,16 @@
         @include font-pack($font_caption, 20px, 300, $line-base, $cl-black);
         z-index: 1;
 
-        @include min-responsive($w-md) {
-            align-items: flex-start;
+        @include range-responsive($w-md, $w-xl) {
+            margin-left: -120px;
+            margin-right: 20px;
         }
 
         @include min-responsive($w-xl) {
             font-size: 28px;
             margin-left: -140px;
             margin-right: -40px;
+            align-items: flex-start;
         }
 
         @media only screen and(max-height: 700px) and(orientation: landscape) {

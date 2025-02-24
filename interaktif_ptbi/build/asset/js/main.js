@@ -1081,6 +1081,12 @@ $(document).ready(function () {
                         $(".sphereZoom").addClass("dayactive")
                     }
                 });
+                $(".econNum2").velocity({
+                    top: "50px"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
                 $(".econAnim").velocity({
                     opacity: "0"
                 }, {
@@ -1117,6 +1123,12 @@ $(document).ready(function () {
                 console.log('10down')
                 animationEcon.playSegments([40, 240], true);
                 setTimeout(function () {
+                    $(".econNum2").velocity({
+                        top: "0"
+                    }, {
+                        delay: 0,
+                        duration: 300
+                    });
                     $(".econNum1").addClass('opac0')
                     $(".econNum2").removeClass('opac0')
                 }, 700);
@@ -1124,6 +1136,12 @@ $(document).ready(function () {
             if (origin.index == 11 && direction == 'up') {
                 setTimeout(function () {
                     animationEcon.playSegments([0, 40], true);
+                    $(".econNum2").velocity({
+                        top: "50px"
+                    }, {
+                        delay: 0,
+                        duration: 300
+                    });
                     $(".econNum2").addClass('opac0')
                     $(".econNum1").removeClass('opac0')
                 }, 700);
@@ -1173,6 +1191,12 @@ $(document).ready(function () {
                         $(".econNum2").removeClass('opac0')
                         $(".inflaNum").addClass('opac0')
                     }
+                });
+                $(".econNum2").velocity({
+                    top: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
                 });
                 $(".econ1").velocity({
                     opacity: "1",
