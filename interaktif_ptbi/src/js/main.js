@@ -1121,7 +1121,7 @@ $(document).ready(function () {
             }
             if (origin.index == 10 && direction == 'down') {
                 console.log('10down')
-                animationEcon.playSegments([40, 240], true);
+                animationEcon.playSegments([100, 240], true);
                 setTimeout(function () {
                     $(".econNum2").velocity({
                         top: "0"
