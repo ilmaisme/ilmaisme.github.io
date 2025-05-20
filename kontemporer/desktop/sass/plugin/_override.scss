@@ -1,0 +1,25 @@
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+    border: 0
+}
+
+.pink {
+    color: $cl_black;
+}
+
+#svideo, #sphoto, #sstories, .js-vid-slider-for, .js-vid-slider-nav {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
+
+    &.slick-initialized {
+        visibility: visible;
+        opacity: 1;
+    }
+}

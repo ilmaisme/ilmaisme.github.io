@@ -1,0 +1,209 @@
+.photo {
+    &Count {
+        position: absolute;
+        bottom: 0;
+        padding: 7px 15px;
+        border-top-right-radius: 15px;
+        background: $cl_white;
+        @include font-pack(false, 12px, 400, false, #5F5F5F);
+    }
+
+    &Row {
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+
+    &Col {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    &List {
+        .highlightItem {
+
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &Big,
+    &Small {
+        &__link {
+            display: block;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                background: rgba(255, 255, 255, .85);
+                width: 100%;
+                height: 100%;
+                top: 0;
+                opacity: 0;
+                @include base_transition(all);
+            }
+
+            &:hover {
+                &:after {
+                    opacity: 1;
+                }
+
+                .photoBox {
+                    opacity: 1;
+                }
+
+                .highlightImg__wrap .photoCount {
+                    opacity: 0;
+                }
+            }
+        }
+
+        .highlightItem {
+            padding: 0;
+        }
+
+        .photoCount {
+            @include base_transition(all);
+        }
+
+        &__box {
+            .photoCount {
+                position: relative;
+                background: transparent;
+                padding-left: 0;
+            }
+        }
+    }
+
+    &Big {
+        &__box {
+            padding: 40px 38px;
+        }
+
+        .highlightImg {
+            width: 100%;
+            height: 500px;
+        }
+    }
+
+    &Small {
+        &__item {
+            &:nth-of-type(2) {
+                margin-top: 26px;
+            }
+        }
+
+        &__box {
+            padding: 20px 28px;
+        }
+
+        .highlightImg {
+            width: 100%;
+            height: 237px;
+        }
+    }
+
+    &Box {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        opacity: 0;
+        z-index: 1;
+        @include base_transition(all);
+    }
+
+    &Link {
+        @include title_overflow(auto, 115px);
+        @include font-pack(false, 22px, 600, false, false);
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+
+    &Sidebar {
+        .highlightItem {
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        .photoSidebar__img {
+            width: 100%;
+            height: 225px;
+        }
+    }
+
+    &Slider {
+        &__img {
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+
+    &Big {
+        height: 436px;
+
+        &__img {
+            width: 740px;
+            height: 436px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .readImg__thumb{
+            opacity: 0;
+        }
+    }
+
+    &Small {
+        &__img {
+            width: 148px;
+            height: 134px;
+        }
+
+        .slick-current {
+            .photoSmall__wrap {
+                &:after {
+                    opacity: 0;
+                }
+            }
+        }
+
+        .slick-list {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .slick-track {
+            height: 134px;
+        }
+
+        &__wrap {
+            cursor: pointer;
+
+            &:hover {
+                &:after {
+                    opacity: 0;
+                }
+            }
+
+            &:after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, .7);
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 1;
+                @include base_transition(all);
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+.prospek {
+    padding-top: 56px;
+    background: #E6FFF2;
+
+    &Bottom {
+        background: #3D8F81;
+        color: $cl_white;
+
+        @include min-responsive($mptablet) {
+            margin-top: -166px;
+        }
+
+        .cl-green{
+            color: #B0F6AA;
+        }
+    }
+
+    .section--zebra {
+        margin-top: 30px;
+    }
+
+    &Txt {
+        margin-top: 32px;
+        margin-bottom: 32px;
+
+        &0 {
+            padding-top: 10px;
+            margin-top: 0;
+
+            @include min-responsive($mntablet) {
+                padding-top: 0;
+            }
+        }
+    }
+
+    &Title {
+        @include min-responsive($mntablet) {
+            width: 460px;
+            left: calc(50% - 460px/2);
+        }
+    }
+
+    &Bg {
+        &--top {
+            display: none;
+            position: absolute;
+            bottom: -20px;
+            z-index: -1;
+
+            @include min-responsive($mntablet) {
+                display: block;
+                width: 457px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &--bottom {
+            margin-top: -70px;
+
+            @include min-responsive($mptablet) {
+                margin-top: -200px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &Table {
+        &1 {
+            padding-top: 22px;
+            padding-bottom: 30px;
+
+            @include min-responsive($mntablet) {
+                padding-top: 40px;
+                padding-bottom: 50px;
+            }
+        }
+    }
+}

@@ -1,0 +1,219 @@
+.button {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    appearance: none;
+    display: inline-block;
+    text-align: center;
+
+    &Secondary {
+        min-width: 63px;
+        min-height: 36px;
+        padding: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        border: 1px solid $cl_black;
+        border-radius: 20px;
+        background: $cl_white;
+        @include font-pack(false, 12px, 500, false, $cl_black);
+
+        &--small {
+            width: auto;
+            padding: 10px 30px;
+        }
+
+        .icon-reg {
+            width: 15px;
+            height: 15px;
+            vertical-align: text-bottom;
+            background-size: 15px;
+            filter: invert(0%) sepia(9%) saturate(5815%) hue-rotate(234deg) brightness(75%) contrast(80%);
+        }
+    }
+
+    &Primary {
+        min-width: 83px;
+        min-height: 36px;
+        padding: 10px 16px;
+        margin-right: 10px;
+        margin-left: 10px;
+        border: 0;
+        border-radius: 20px;
+        @include font-pack(false, 12px, 500, false, $cl_white);
+        background: $cl_black;
+
+        &--small {
+            width: auto;
+            padding: 10px 30px;
+        }
+    }
+
+    &Search {
+        display: flex;
+        align-items: center;
+    }
+
+    &Other {
+        padding: 7px 22px;
+        border: 1px solid $cl_black;
+        border-radius: 15px;
+
+        &--bottom {
+            display: block;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            background: $cl_black;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-bottom: -1px;
+            margin-left: -1px;
+            margin-right: -1px;
+            @include font-pack(false, 12px, 600, 24px, $cl_white);
+
+            &:hover {
+                color: $cl_white;
+            }
+        }
+    }
+
+    &More {
+        padding: 4px;
+        @include font-pack(false, 12px, 600, 22px, $cl_black);
+        @include base_transition(all);
+
+        &:hover {
+            color: $cl_grey;
+        }
+    }
+
+    &Next {
+        @extend .buttonMore;
+        display: flex;
+        gap: 6px;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-end;
+
+        .icon-next {
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(241deg) brightness(103%) contrast(103%);
+        }
+    }
+
+    &--trans {
+        background: transparent;
+        border: 0;
+    }
+
+    &Totop {
+        position: absolute;
+        top: 40px;
+        right: 220px;
+        border: 1px solid $cl_black;
+        border-radius: 10px;
+        background: $cl_white;
+        width: 40px;
+        height: 40px;
+        @include base_transition(all);
+
+        &:hover {
+            -webkit-animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate both;
+            animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate both;
+        }
+
+        .icon-next {
+            vertical-align: middle;
+            @include base_rotate(270deg);
+        }
+    }
+
+    &Google {
+        width: 100%;
+        height: 50px;
+        border-radius: 15px;
+        border: 1px solid #CECECE;
+    }
+
+    &Fb {
+        @extend .buttonGoogle;
+        color: $cl_white;
+        background: $cl_fb;
+        border: 1px solid $cl_fb;
+
+        .icon-fb {
+            width: 20px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+            background-size: cover;
+        }
+
+        &:hover {
+            color: $cl_white;
+        }
+    }
+
+    &Eye {
+        position: absolute;
+        right: 20px;
+        width: 40px;
+        height: 50px;
+        border: 0;
+        background: none;
+
+        .icon {
+            left: 5px;
+
+            &:after {
+                content: none;
+            }
+        }
+
+        &.close {
+            &:after {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 25px;
+                top: 13px;
+                left: 20px;
+                border-left: 2px solid #6F6F6F;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &Expand {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        @include font-pack(false, 13px, 500, 22px, $cl_white);
+        background: rgba(53, 53, 53, .6);
+        padding: 7px 19px;
+        border: 0;
+        border-radius: 10px;
+        @include base_transition(all);
+
+        &:hover {
+            background: rgba(53, 53, 53, 1);
+        }
+
+        .icon-expand {
+            background-size: contain;
+            width: 25px;
+            height: 25px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+    }
+
+    &Close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+
+        .icon-rejected {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}

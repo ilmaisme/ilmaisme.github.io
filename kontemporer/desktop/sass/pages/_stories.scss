@@ -1,0 +1,91 @@
+.stories {
+    &Box {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding-left: 16px;
+        padding-right: 16px;
+        z-index: 1;
+    }
+
+    &Link {
+        display: block;
+        position: relative;
+        color: $cl_white;
+
+        &:hover {
+            color: $cl_white;
+        }
+
+        &:after {
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 15px;
+            background: rgb(0, 0, 0);
+            background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .8) 100%);
+            background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .8) 100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .8) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
+        }
+    }
+
+    &Title {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        @include font-pack(false, 16px, 700, 22px, false);
+    }
+
+    &Subtitle {
+        display: inline-block;
+        background: $cl_black;
+        padding: 4px 10px;
+        text-transform: uppercase;
+        @include font-pack(false, 8px, 500, false, false);
+    }
+
+    &Ver {
+        &1 {
+            &__title {
+                padding: 10px;
+                margin-bottom: 0;
+                @include font-pack(false, 30px, 500, 35px, false);
+            }
+
+            &__box {
+                @include flexbox();
+                height: 100%;
+                align-items: center;
+            }
+
+            &:after {
+                content: none;
+            }
+        }
+    }
+
+    &Item{
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    &Row{
+        margin-top: 169px;
+        margin-right: -20px;
+        margin-left: -20px;
+    }
+
+    &Img{
+        width: 239px;
+        height: 426px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 15px;
+    }
+}

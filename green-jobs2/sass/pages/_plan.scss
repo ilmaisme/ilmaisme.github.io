@@ -1,0 +1,99 @@
+.plan {
+    &Top {
+        position: relative;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        background: #9ED1FF;
+
+        @include min-responsive($mntablet) {
+            padding-top: 78px;
+        }
+    }
+
+    &Bottom {
+        position: relative;
+        padding-top: 10px;
+        padding-bottom: 40px;
+        background: linear-gradient(180deg, #7AC87F 0%, #FFF 100%);
+
+        @include min-responsive($mntablet) {
+            padding-top: 20px;
+            padding-bottom: 144px;
+        }
+
+        .planTxt:first-child {
+            margin-top: 10px;
+
+            @include min-responsive($mntablet) {
+                margin-top: 32px;
+            }
+        }
+    }
+
+    &Bg {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        z-index: 0;
+
+        img {
+            width: 100%;
+        }
+
+        &--center {
+            top: 200px;
+            text-align: center;
+
+            @include min-responsive($mntablet) {
+                top: 100px;
+            }
+
+            img {
+                max-width: 270px;
+
+                @include min-responsive($mhtablet) {
+                    max-width: 600px;
+                }
+
+                @include range-responsive($mdtablet, $mhtablet) {
+                    max-width: 400px;
+                }
+            }
+        }
+    }
+
+    &Box {
+        margin-top: 32px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid #000;
+        background: rgba(241, 249, 241, 0.90);
+
+        @include min-responsive($mntablet) {
+            padding: 1px 22px 23px;
+        }
+
+        &--title {
+            margin-top: 32px;
+            padding: 22px;
+        }
+    }
+
+    &Title {
+        &2 {
+            margin-top: 64px;
+        }
+    }
+
+    &Txt {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    &Table {
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        background: transparent;
+    }
+}

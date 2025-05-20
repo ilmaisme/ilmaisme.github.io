@@ -1,0 +1,32 @@
+<div class="highlight highlight--col3 mt40">
+    <div class="display-flex aitems-center jcontent-between">
+        <div class="highlightCaption">Foto</div>
+        <a href="#" class="highlightMore display-flex aitems-center">Lihat Lainnya <span
+                class="icon icon-next ml10"></span></a>
+    </div>
+    <div class="highlightList row mt10" id="sphoto">
+        {{#eachIndex headline}}
+        {{#gt index compare = '0'}}
+        <div class="highlightItem">
+            <a href="read-photo.html" class="highlightImg__wrap" aria-label="{{item.title}}">
+                <img src="{{item.img}}{{index}}.jpg" class="highlightImg" alt="" width="234" height="164"
+                    loading="lazy">
+                <div class="photoCount display-flex aitems-center"><span class="icon icon-photo mr10"></span>5 foto
+                </div>
+            </a>
+            <div class="highlightBox">
+                <h2 class="highlightTitle mt10"><a href="read-photo.html" class="highlightLink">{{item.title}}</a></h2>
+                <div class="highlightDetail display-flex aitems-center mt10">
+                    <div class="highlightSubtitle">Foto</div>
+                    <div class="highlightTime">Minggu, 18 Mei 2025</div>
+                </div>
+            </div>
+        </div>
+        {{/gt}}
+        {{/eachIndex}}
+    </div>
+    <div class="highlightBottom">
+        <div class="highlightDots" id="dtphoto">
+        </div>
+    </div>
+</div>

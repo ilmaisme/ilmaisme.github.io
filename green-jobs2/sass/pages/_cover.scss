@@ -1,0 +1,99 @@
+.cover {
+    height: var(--app-height);
+    overflow: hidden;
+    background: rgb(106, 208, 244);
+    background: linear-gradient(180deg, rgba(106, 208, 244, 1) 0%, rgba(231, 249, 255, 1) 80%, rgba(231, 249, 255, 1) 100%);
+
+    &Bg {
+
+        &__img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                bottom: -100px;
+            }
+
+            img {
+                position: relative;
+                width: 100%;
+
+                @include min-responsive($mntablet) {
+                    width: calc(100% + 100px);
+                    max-width: unset;
+                    margin-left: -50px;
+                    bottom: -20px;
+                }
+            }
+        }
+    }
+
+    &Workers {
+        &__img {
+            position: absolute;
+            bottom: 0;
+
+            img {
+                @include max-responsive($mstablet) {
+                    width: 90%;
+                }
+
+                @include min-responsive($mntablet) {
+                    width: 70%;
+                }
+
+                @include min-responsive($mztablet) {
+                    width: auto;
+                }
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    width: 54%;
+                }
+            }
+        }
+
+        &__left {
+            left: 0;
+        }
+
+        &__right {
+            right: 0;
+
+            img {
+                float: right;
+            }
+        }
+    }
+
+    &Caption {
+        position: relative;
+        @include display_full;
+        justify-content: center;
+        text-align: center;
+        z-index: 1;
+
+        img {
+            margin-top: 60px;
+            width: 100%;
+
+            @include max-responsive($mstablet) {
+                margin-top: 30px;
+            }
+
+            @include min-responsive($mntablet) {
+                margin-top: 60px;
+                width: 70%;
+            }
+
+            @include min-responsive($mztablet) {
+                width: 90%;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                width: 54%;
+            }
+        }
+    }
+}

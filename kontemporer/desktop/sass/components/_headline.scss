@@ -1,0 +1,72 @@
+.headline {
+    overflow: hidden;
+
+    &Img {
+        img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+    }
+
+    &Item {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+
+    &Box {
+        width: 100%;
+        height: 202px;
+        padding: 20px 30px;
+    }
+
+    &Title {
+        @include font-pack(false, 28px, 600, false, $cl_white);
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow: hidden;
+    }
+
+    &Link {
+        word-wrap: break-word;
+        word-break: break-word;
+
+        &:hover {
+            color: $cl_black;
+        }
+    }
+
+    &Subtitle {
+        text-transform: uppercase;
+        @include font-pack(false, 13px, 400, false, $cl_white);
+    }
+
+    .slick {
+        &-slide {
+            background: $cl_black;
+
+            &:nth-child(odd) {
+                background: $cl_white;
+
+                .headlineTitle, .headlineSubtitle{
+                    color: $cl_black;
+                }
+            }
+        }
+    }
+
+    &Bottom{
+        position: relative;
+
+        .buttonMore{
+            position: absolute;
+            right: 0;
+            bottom: -4px;
+        }
+    }
+}

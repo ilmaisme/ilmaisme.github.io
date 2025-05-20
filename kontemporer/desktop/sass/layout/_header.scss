@@ -1,0 +1,91 @@
+.header {
+    &Fixed {
+        position: fixed;
+        top: 0;
+        min-width: 1203px;
+        min-height: 69px;
+        width: 100%;
+        padding: 16px 58px;
+        border-bottom: 1px solid transparent;
+        background: $cl_white;
+        z-index: 3;
+
+        &__logo {
+            max-width: 200px;
+            opacity: 0;
+            @include base_transition(all);
+        }
+
+        .icon-write {
+            filter: brightness(0) invert(1);
+            background-size: contain;
+        }
+
+        .headerDate {
+            &.hide {
+                opacity: 0;
+            }
+        }
+
+        .button:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    &Search {
+        position: relative;
+        min-width: 240px;
+
+        .searchInput {
+            outline: 0;
+            appearance: none;
+            border: 0;
+            padding: 8px 10px 8px 30px;
+            @include placeholder(12px, 500, false, $cl_grey);
+        }
+
+        .buttonSearch {
+            position: absolute;
+            top: 8px;
+            left: 0;
+        }
+
+        .icon {
+            filter: invert(49%) sepia(0%) saturate(77%) hue-rotate(214deg) brightness(87%) contrast(79%);
+        }
+    }
+
+    &Content {
+        margin-top: 80px;
+    }
+
+    &Stories {
+        justify-content: center;
+    }
+
+    &Date {
+        margin-right: 20px;
+        @include font-pack(false, 14px, 600, false, $cl_secondary_grey);
+    }
+
+    &Logo {
+        img {
+            max-width: 350px;
+        }
+
+        &__caption {
+            font-style: italic;
+            @include font-pack(false, 18px, false, false, $cl_grey);
+        }
+    }
+
+    &Bg {
+        padding-bottom: 40px;
+    }
+
+    .socialIcon {
+        .icon {
+            filter: invert(0%) sepia(9%) saturate(5815%) hue-rotate(234deg) brightness(75%) contrast(80%);
+        }
+    }
+}

@@ -1,0 +1,45 @@
+<div class="highlight highlight--box{{#if slide}} highlight--slide{{/if}} mt40">
+    <div class="container">
+        {{#if title}}
+        <div class="display-flex aitems-center jcontent-between">
+            <div class="highlightCaption">{{title}}</div>
+            {{#if more}}<a href="#" class="buttonMore display-flex aitems-center">+ More</a>{{/if}}
+        </div>
+        {{/if}}
+        {{#if subtitle}}
+        <div class="highlightCaption--sub">{{subtitle}}</div>
+        {{/if}}
+        <ul class="highlightList{{#if col}} row{{/if}}" {{#if slide}} id="{{slide}}" {{/if}}>
+            {{#each headline}}
+            {{#gte @index compare=../index_start}}
+            {{#gte @index compare=../index_end}}
+            {{else}}
+            <li class="highlightItem{{#if ../col}} {{../col}}{{/if}}{{#if ../mt}} mt{{../mt}}{{/if}}">
+                <a href="{{link}}">
+                    <div class="highlightImg__wrap" aria-label="{{title}}">
+                        <img src="{{img}}{{@index}}.jpg" class="highlightImg" alt="" width="226" height="145"
+                            loading="lazy">
+                    </div>
+                    <div class="highlightBox">
+                        <h2 class="highlightTitle">{{title}}</h2>
+                        {{#if ../thumb}}
+                        <div class="highlightThumb"><img src="{{../thumb}}" alt="" loading="lazy"></div>
+                        {{/if}}
+                        <div class="highlightLead">{{lead}}</div>
+                    </div>
+                    {{#if ../next}}<div class="buttonNext">Selanjutnya <span class="icon icon-next"></span></div>{{/if}}
+                </a>
+            </li>
+            {{/gte}}
+            {{else}}
+            {{/gte}}
+            {{/each}}
+        </ul>
+        {{#if slide}}
+        <div class="highlightNav">
+            <button type="button" class="slick-prev {{slide}}-prev"></button>
+            <button type="button" class="slick-next {{slide}}-next"></button>
+        </div>
+        {{/if}}
+    </div>
+</div>

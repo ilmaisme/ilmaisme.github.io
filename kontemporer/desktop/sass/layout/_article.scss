@@ -1,0 +1,68 @@
+.article {
+    &Img {
+        width: 275px;
+        height: 155px;
+        object-fit: cover;
+        object-position: top;
+
+        &__wrap {
+            &:hover {
+                &~.articleBox {
+                    .articleLink {
+                        color: $cl_black;
+                    }
+                }
+            }
+        }
+    }
+
+    &Box {
+        flex: 1;
+        padding-left: 20px;
+    }
+
+    &Link {
+        word-wrap: break-word;
+        word-break: break-word;
+        @include title_overflow(auto, 80px);
+        @include font-pack(false, 20px, 600, 26px, false);
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+
+        &:hover {
+            color: $cl_black;
+        }
+    }
+
+    &Subtitle {
+        text-transform: uppercase;
+        @include font-pack(false, 12px, 400, false, $cl_black);
+    }
+
+    &Detail {
+
+        .articleTime,
+        .userName {
+            @include font-pack(false, 12px, 400, false, $cl_grey);
+        }
+
+        .userName {
+            position: relative;
+            margin-right: 14px;
+        }
+    }
+
+    &Time {
+        position: relative;
+        @include font-pack(false, 12px, 400, false, $cl_secondary_grey);
+    }
+
+    &Load {
+        min-height: 505px;
+    }
+
+    &Pop {
+        animation: popIn .2s;
+    }
+}

@@ -1,0 +1,41 @@
+.trending {
+    &Item {
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+
+            .trendingTitle {
+                border: 0;
+                padding-bottom: 0;
+            }
+
+            .trendingRank {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    &Rank {
+        margin-right: 20px;
+        padding-bottom: 15px;
+        @include font-pack(false, 30px, 400, false, $cl_black);
+    }
+
+    &Title {
+        width: 100%;
+        min-height: 24px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #EBEBEB;
+        @include font-pack(false, 18px, 600, false, false);
+    }
+
+    &Link {
+        &:hover {
+            .trendingTitle {
+                color: $cl_black;
+            }
+        }
+    }
+}

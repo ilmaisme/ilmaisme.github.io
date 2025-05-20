@@ -1,0 +1,62 @@
+.breadcrumb {
+    &Caption {
+        margin-right: 16px;
+        @include font-pack(false, 30px, 600, 22px, $cl_black);
+    }
+
+    &Link {
+        @include font-pack(false, 14px, 400, 22px, $cl_grey);
+
+        &:hover {
+            color: $cl_black;
+        }
+
+        &.active {
+            color: $cl_black;
+        }
+    }
+
+    &Item {
+        position: relative;
+
+        &:after {
+            content: ">";
+            padding-left: 4px;
+            padding-right: 4px;
+            vertical-align: bottom;
+            color: $cl_grey;
+        }
+
+        &:last-child {
+            &:after {
+                content: none;
+            }
+        }
+    }
+
+    &Channel {
+
+        .breadcrumbLink {
+            margin-left: 10px;
+            margin-right: 10px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            @include font-pack(false, 16px, 500, 22px, #7D7D7D);
+
+            &.active {
+                border-bottom: 5px solid $cl_black;
+                color: $cl_black;
+            }
+            
+            &:hover{
+                color: $cl_black;
+            }
+        }
+
+        .breadcrumbItem {
+            &:after {
+                content: none;
+            }
+        }
+    }
+}

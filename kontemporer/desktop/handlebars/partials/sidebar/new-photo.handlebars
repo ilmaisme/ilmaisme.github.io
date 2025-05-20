@@ -1,0 +1,30 @@
+<div class="highlight mt40">
+    <div class="display-flex aitems-center jcontent-between">
+        <div class="highlightCaption">{{#eq title compare="terpopuler"}} Foto Terpopuler{{else}} Foto Terbaru{{/eq}}</div>
+    </div>
+    <!-- s: photo article -->
+    <ul class="highlightList photoSidebar row mt10">
+        {{#eachIndex headline}}
+        {{#lt index compare = '3'}}
+        <li class="highlightItem mt30">
+            <a href="{{item.link}}" aria-label="{{item.title}}">
+                <div class="highlightImg__wrap">
+                    <img src="{{item.img}}{{index}}.jpg" class="highlightImg photoSidebar__img" alt="" width="300" height="225"
+                        loading="lazy">
+                    <div class="photoCount display-flex aitems-center"><span class="icon icon-photo mr10"></span>5 foto
+                    </div>
+                </div>
+                <div class="highlightBox">
+                    <div class="highlightDetail display-flex aitems-center mt10">
+                        <div class="highlightSubtitle">Foto</div>
+                        <div class="highlightTime">Minggu, 18 Mei 2025</div>
+                    </div>
+                    <h3 class="highlightTitle highlightLink mt10">{{item.title}}</h3>
+                </div>
+            </a>
+        </li>
+        {{/lt}}
+        {{/eachIndex}}
+    </ul>
+    <!-- e: photo article -->
+</div>

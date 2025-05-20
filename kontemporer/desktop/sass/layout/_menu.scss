@@ -1,0 +1,118 @@
+.menu {
+    position: absolute;
+    left: 80px;
+    height: 25px;
+
+    &List {
+        position: absolute;
+        width: 336px;
+        height: 100vh;
+        overflow: auto;
+        margin: -73px 0 0 -80px;
+        padding: 45px 0 24px;
+        background: $cl_white;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        @include scroll(2px, #E4E4E4, $cl_white);
+        z-index: 0;
+
+        &:before {
+            content: '';
+            background: $cl_white;
+            width: 336px;
+            height: 56px;
+            position: fixed;
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: 2;
+
+            @media (prefers-color-scheme: dark) {
+                background: $cl_white;
+            }
+        }
+    }
+
+    &Toggle {
+        width: 50px;
+        height: 30px;
+        position: absolute;
+        top: -4px;
+        left: -12px;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 2;
+
+        &:checked {
+            ~.menuList {
+                transform: none;
+            }
+
+            ~.ham {
+                transform: rotate(225deg);
+
+                .top {
+                    stroke-dasharray: 17 82;
+                    stroke-dashoffset: -62px;
+                }
+
+                .middle {
+                    stroke-dashoffset: 23px;
+                    stroke-dasharray: 40 111;
+                }
+
+                .bottom {
+                    stroke-dashoffset: -83px;
+                }
+            }
+        }
+    }
+
+    &Caption {
+        display: block;
+        padding: 14px 30px;
+        border-top: 1px solid #E4E4E4;
+        @include font-pack(false, 16px, 600, false, $cl_primary);
+    }
+
+    &Link {
+        position: relative;
+        @extend .menuCaption;
+        @include font-pack(false, 14px, 600, false, #717171);
+
+        &:hover {
+            color: $cl_black;
+        }
+
+        &.active {
+            color: $cl_black;
+        }
+
+        &:after {
+            position: absolute;
+            display: block;
+            content: '';
+            width: 10px;
+            height: 10px;
+            top: 50%;
+            right: 35px;
+            border-bottom: 1px solid #717171;
+            border-right: 1px solid #717171;
+            transform: rotate(315deg) translateY(-50%);
+            transform-origin: 50% 0;
+        }
+    }
+
+    &Logo {
+        max-width: 228px;
+
+        &__wrap {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    }
+}

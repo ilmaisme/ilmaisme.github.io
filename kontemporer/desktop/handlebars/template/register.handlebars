@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page=""}}
+
+<body>
+
+    <!-- header -->
+    {{> header}}
+    <!-- header -->
+
+    <!-- main -->
+    <main role="main">
+        <section class="container container--small display-flex dir-column mt30">
+            <div class="formCaption__wrap display-flex">
+                <a href="login.html" class="formCaption"><span>Login</span></a>
+                <a href="register.html" class="formCaption"><span class="active">Sign Up</span></a>
+            </div>
+            <form class="mt30" action="">
+                <div class="formStatus formSuccess text-center">
+                    <span><img src="asset/images/icon-success.png" class="mr10" alt="" width="20" height="20"></span>
+                    Selamat akunmu berhasil dibuat!
+                </div>
+                <div class="formText text-center mt20">
+                    Gunakan akun media sosialmu untuk mendaftar TabloidBintang.com
+                </div>
+                <div class="formText mt30">
+                    <a href="#" class="buttonGoogle flex-center">
+                        <span class="icon icon-google mr10">
+                            <img src="asset/images/icon-google.png" alt="" width="30" height="30" loading="lazy">
+                        </span>
+                        Daftar dengan Google
+                    </a>
+                    <a href="#" class="buttonFb flex-center mt20">
+                        <span class="icon icon-fb mr10">
+                        </span>
+                        Daftar dengan Facebook
+                    </a>
+                </div>
+                <div class="formLine text-center mt20">
+                    <span>atau</span>
+                </div>
+                <div class="formText text-center mt20">Daftarkan emailmu untuk memiliki akun TabloidBintang.com</div>
+                <div class="formWrap mt20">
+                    <span class="icon icon-user formIcon">
+                    </span>
+                    <input class="formInput formInput__wicon text-center" id="username" type="text"
+                        placeholder="Username" aria-label="Input Username">
+                </div>
+                <div class="formWrap mt20">
+                    <span class="icon icon-mail formIcon">
+                    </span>
+                    <input class="formInput formInput__wicon text-center" id="email" type="email" placeholder="Email"
+                        aria-label="Input Email">
+                </div>
+                <div class="formWrap mt20">
+                    <span class="icon icon-phone formIcon">
+                    </span>
+                    <div class="formSelect__phone">
+                        <select class="custom-select">
+                            <option value="+62" selected="">+62</option>
+                            <option value="+93">+93</option>
+                            <option value="+355">+355</option>
+                            <option value="+213">+213</option>
+                            <option value="+1-684">+1-684</option>
+                            <option value="+44-1534">+44-1534</option>
+                        </select>
+                    </div>
+                    <input class="formInput formInput__wicon text-center" id="phone" type="text"
+                        placeholder="Nomor Ponsel" aria-label="Input Phone Number" inputmode="tel">
+                </div>
+                <div class="formWrap mt20">
+                    <span class="icon icon-key formIcon">
+                    </span>
+                    <input class="formInput formInput__wicon text-center" id="password" type="text"
+                        placeholder="password" aria-label="Input Password">
+                    <button class="button buttonEye" type="button" aria-label="Show password" toggle="#password"><span
+                            class="icon icon-eye formIcon"></span></button>
+                </div>
+                <div class="formWrap text-center mt40">
+                    <img src="asset/images/sample/captcha.jpg" alt="" width="324" height="85">
+                </div>
+                <div class="formWrap display-flex aitems-center mt30">
+                    <input type="checkbox" id="checkbox" class="formCheck mr10" required="">
+                    <label for="checkbox" class="formText">Saya setuju dengan <a href="#" class="pink">syarat dan ketentuan</a> yang berlaku</label>
+                </div>
+                <button class="button buttonPink buttonPink--full mt20" type="submit" name="submit">
+                    Daftar
+                </button>
+                <div class="formText text-center mt20">Sudah punya akun?<a href="login.html" class="pink"> Login</a>
+                </div>
+            </form>
+        </section>
+    </main>
+    <!-- footer -->
+    {{> footer top=false}}
+
+    {{> js page="faccess"}}
+
+</body>
+
+</html>

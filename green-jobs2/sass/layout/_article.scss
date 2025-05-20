@@ -1,0 +1,52 @@
+.article {
+    &Title {
+        position: relative;
+        text-align: center;
+        @include font-pack($family: $font_title, $size: 22px, $weight: 600, $lh: normal, $colour: $cl_black);
+        z-index: 1;
+
+        @include min-responsive($mntablet) {
+            font-size: 40px;
+        }
+
+        br {
+            display: none;
+
+            @include min-responsive($mntablet) {
+                display: inline-block;
+            }
+        }
+
+        &::after {
+            content: attr(data-txt);
+            -webkit-text-stroke-width: 8px;
+            -webkit-text-stroke-color: #FFF;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        &--small {
+            text-transform: uppercase;
+            @include font-pack($size: 20px, $colour: #2D7D5B);
+
+            @include min-responsive($mntablet) {
+                @include font-pack($size: 32px);
+            }
+
+            &::after {
+                -webkit-text-stroke-width: 3px;
+            }
+        }
+    }
+
+    &Table {
+        text-align: center;
+        border-radius: 8px;
+        border: 1px solid #000;
+        background: rgba(241, 249, 241, 0.90);
+        padding: 20px 10px;
+    }
+}

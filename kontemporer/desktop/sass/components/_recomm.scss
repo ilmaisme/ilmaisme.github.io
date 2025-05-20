@@ -1,0 +1,50 @@
+.recomm {
+    &Item {
+        margin-bottom: 18px;
+
+        &:first-child {
+            padding-bottom: 18px;
+            border-bottom: 1px solid #CECECE;
+
+            .recommImg {
+                width: 300px;
+                height: 205px;
+            }
+
+            .recommTitle {
+                @include font-pack(false, 18px, 600, false, false);
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &Img {
+        width: 99px;
+        height: 99px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 15px;
+    }
+
+    &Title {
+        @include title_overflow(auto, 68px);
+        @include font-pack(false, 18px, 600, 22px, false);
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    &Link {
+        word-wrap: break-word;
+        word-break: break-word;
+
+        &:hover {
+            .recommTitle {
+                color: $cl_black;
+            }
+        }
+    }
+}

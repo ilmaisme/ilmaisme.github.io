@@ -1,0 +1,97 @@
+.event, .yt {
+    &Bg {
+        padding: 28px 42px;
+        border: 1px solid #FA7DCE;
+        border-radius: 15px;
+        background-image: url(../images/event-bg.jpg);
+        background-size: cover;
+    }
+
+    &Content {
+        flex: 1;
+        padding-right: 150px;
+    }
+
+    &Label {
+        display: inline-flex;
+        padding: 7px 13px;
+        border: 1px solid $cl_red;
+        border-radius: 10px;
+        text-transform: uppercase;
+        @include font-pack(false, 12px, 600, false, $cl_red);
+    }
+
+    &Title {
+        @include font-pack(false, 33px, 600, false, false);
+    }
+
+    &Text {
+        text-align: left;
+        @include font-pack(false, 12px, 400, 22px, #5F5F5F);
+    }
+
+    &Vid {
+        position: relative;
+        cursor: pointer;
+
+        .icon-play {
+            pointer-events: none;
+        }
+    }
+
+    &Detail {
+        min-width: 206px;
+        min-height: 76px;
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid #A050A0;
+        border-radius: 15px;
+        @include font-pack(false, 14px, 400, 22px, #A050A0);
+    }
+
+    &Sidebar {
+        border: 1px solid #FA7DCE;
+        border-radius: 15px;
+        background: rgb(255, 253, 254);
+        background: -moz-linear-gradient(140deg, rgba(255, 253, 254, 1) 0%, rgba(255, 245, 250, 1) 100%);
+        background: -webkit-linear-gradient(140deg, rgba(255, 253, 254, 1) 0%, rgba(255, 245, 250, 1) 100%);
+        background: linear-gradient(140deg, rgba(255, 253, 254, 1) 0%, rgba(255, 245, 250, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fffdfe", endColorstr="#fff5fa", GradientType=1);
+
+        &__img {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            margin-top: -1px;
+            width: 300px;
+            height: 185px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        &__cover {
+            width: 300px;
+            margin-left: -1px;
+            margin-right: -1px;
+        }
+
+        &__content {
+            padding: 20px 16px 32px;
+        }
+
+        &__title {
+            @include font-pack(false, 22px, 600, false, false);
+        }
+
+        &__detail {
+            padding: 10px 30px;
+            @include font-pack(false, 12px, 400, 22px, #A050A0);
+        }
+
+        video, iframe{            
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            margin-top: -1px;
+            object-fit: cover;
+        }
+    }
+}

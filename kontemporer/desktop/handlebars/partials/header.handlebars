@@ -1,0 +1,112 @@
+<header class="header">
+    <div class="headerFixed">
+        <div class="container display-flex aitems-center">
+            {{!-- <ul class="social display-flex flex-init">
+                <li class="socialIcon"><a href="https://www.facebook.com/tabloidbintang" class="socialLink display-flex"
+                        target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span
+                            class="icon icon-fb"></span></a></li>
+                <li class="socialIcon"><a href="https://instagram.com/TabloidBintang" class="socialLink display-flex"
+                        target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span
+                            class="icon icon-ig"></span></a></li>
+                <li class="socialIcon"><a href="https://twitter.com/TabloidBintang" class="socialLink display-flex"
+                        target="_blank" rel="noopener noreferrer" aria-label="Twitter"><span
+                            class="icon icon-tw"></span></a></li>
+                <li class="socialIcon"><a href="https://www.youtube.com/c/TabloidBintangOnline"
+                        class="socialLink display-flex" target="_blank" rel="noopener noreferrer"
+                        aria-label="Youtube"><span class="icon icon-yt"></span></a></li>
+                <li class="socialIcon"><a href="#" class="socialLink display-flex" target="_blank"
+                        rel="noopener noreferrer" aria-label="Tiktok"><span class="icon icon-tiktok"></span></a></li>
+                <li class="socialIcon"><a href="#" class="socialLink display-flex" target="_blank"
+                        rel="noopener noreferrer" aria-label="Snack Video"><span class="icon icon-snack"></span></a>
+                </li>
+            </ul> --}}
+            <div class="headerSearch">
+                <form class="search" action="">
+                    <div class="display-flex">
+                        <div class="searchWrap">
+                            <input class="formInput searchInput" id="search" type="text" value=""
+                                placeholder="Search inspiring idea" aria-label="Search">
+                            <button class="button buttonSearch" aria-label="Search" type="submit" name="submit">
+                                <span class="icon icon-search"></span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <a href="index.html" class="text-center flex-init">
+                <img src="asset/images/kontemporer-logo-transparent.png" class="headerFixed__logo" alt="Kontemporer"
+                    width="200" height="38">
+            </a>
+            <div class="display-flex aitems-center jcontent-end">
+                <div class="headerDate -getdate"></div>
+                {{#eq login compare=true}}
+                <button class="button buttonPrimary" onclick="location.href='profile-write.html'"><span
+                        class="icon icon-write mr10"></span>Tulis Artikel</button>
+                <div class="navUser">
+                    <img loading="lazy" src="asset/images/sample/user-big.jpg" width="35" height="35" alt=""
+                        class="userAvatar userAvatar--nav mr10">
+                    <span class="icon icon-arrow icon-arrow-bottom navUser__icon"></span>
+                    <label class="sr-only" for="navUser">User navigation</label>
+                    <input name="check" type="checkbox" id="navUser" class="navUser__check" aria-haspopup="true">
+                    <ul class="navUser__list">
+                        <li class="navItem navUser__item"><a href="profile-detail.html"
+                                class="navLink navUser__link"><span class="navUser__name">Sophie
+                                    Anggita</span></a></li>
+                        <li class="navItem navUser__item"><a href="profile-setting.html"
+                                class="navLink navUser__link">Edit
+                                Profil</a></li>
+                        <li class="navItem navUser__item"><a href="profile.html"
+                                class="navLink navUser__link">Beranda</a>
+                        </li>
+                        <li class="navItem navUser__item"><a href="#" class="navLink navUser__link red"><span
+                                    class="icon icon-logout"></span>Logout</a></li>
+                    </ul>
+                </div>
+                {{else}}
+                <button class="button buttonSecondary button--trans" onclick="location.href='login.html'"><span
+                        class="icon icon-reg mr10"></span>Sign in</button>
+                <button class="button buttonPrimary" onclick="location.href='register.html'">Get Started</button>
+                {{/eq}}
+            </div>
+        </div>
+    </div>
+    <div class="headerContent container">
+        <div class="headerLogo headerBg text-center">
+            <a href="index.html">
+                <img src="asset/images/kontemporer-logo-transparent.png" alt="Kontemporer" width="391" height="74">
+                <div class="headerLogo__caption">Mempertegas Wawasan</div>
+            </a>
+        </div>
+        <nav class="nav">
+            <ul class="navList display-flex jcontent-center">
+                {{#each menu}}
+                <li class="navItem"><a href="{{link}}"
+                        class="navLink{{#eq title compare=../page}} active{{/eq}}">{{title}}</a></li>
+                {{/each}}
+                {{!-- <li class="navItem navMore">
+                    <div class="navLink">
+                        <span class="icon icon-arrow icon-arrow-bottom"></span>
+                        <label class="sr-only" for="navToggle">More navigation</label>
+                        <input name="check" type="checkbox" id="navToggle" class="navCheck" aria-haspopup="true">
+                        <ul class="navMore__list">
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Kategori 1</a>
+                            </li>
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Kategori 2</a>
+                            </li>
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Kategori 3</a>
+                            </li>
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Kategori 4</a>
+                            </li>
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Kategori 5</a>
+                            </li>
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Kategori 6</a>
+                            </li>
+                            <li class="navItem navMore__item"><a href="#" class="navLink navMore__link">Kategori 7</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li> --}}
+            </ul>
+        </nav>
+    </div>
+</header>

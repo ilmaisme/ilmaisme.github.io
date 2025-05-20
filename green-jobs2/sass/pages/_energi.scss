@@ -1,0 +1,80 @@
+.energi {
+    color: $cl_white;
+
+    .cl-green {
+        color: #B0F6AA;
+    }
+
+    &Top {
+        position: relative;
+        padding-top: 35px;
+        background: rgb(29, 21, 39);
+        background: linear-gradient(180deg, rgba(29, 21, 39, 1) 0%, rgba(41, 51, 75, 1) 45%, rgba(71, 119, 157, 1) 86%, rgba(83, 147, 190, 1) 100%);
+
+        &__wrap {
+            position: relative;
+        }
+    }
+
+    &Bottom {
+        padding-top: 32px;
+        background: linear-gradient(180deg, #21273F 0%, #3a3f56 100%);
+    }
+
+    &Bg {
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+
+        &--top {
+            bottom: 600px;
+        }
+
+        &--bottom {
+            bottom: 0;
+        }
+
+        &--top,
+        &--bottom {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &Txt {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    &Box {
+        margin-top: 32px;
+        color: #1C1C1C;
+        padding: 1px 10px;
+        border-radius: 8px;
+        background: rgba(228, 238, 235, 0.80);
+        
+        @include min-responsive($mntablet) {
+            padding: 1px 29px;
+            border-radius: 32px;
+        }
+
+        .cl-green {
+            color: #2D7D5B;
+        }
+    }
+
+    &Table {
+
+        &3, &4 {
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+        }
+    }
+
+    .section--zebra {
+        margin-top: 64px;
+    }
+}

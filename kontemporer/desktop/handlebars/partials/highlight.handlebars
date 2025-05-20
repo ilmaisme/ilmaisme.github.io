@@ -1,0 +1,27 @@
+<div class="highlight mt40">
+    {{#if title}}
+    <div class="display-flex aitems-center jcontent-between">
+        <div class="highlightCaption">{{title}}</div>
+        <a href="#" class="buttonMore display-flex aitems-center">+ More</a>
+    </div>
+    {{/if}}
+    <ul class="highlightList row">
+        {{#eachIndex headline}}
+        {{#gt index compare = '1'}}
+        <li class="highlightItem col-gd12-4 mt20">
+            <a href="{{item.link}}" class="highlightImg__wrap" aria-label="{{item.title}}">
+                <img src="{{item.img}}{{index}}.jpg" class="highlightImg" alt="" width="234" height="164"
+                    loading="lazy">
+            </a>
+            <div class="highlightBox">
+                <div class="highlightDetail display-flex aitems-center mt10">
+                    <div class="highlightSubtitle">{{item.subtitle}}</div>
+                </div>
+                <h2 class="highlightTitle mt10"><a href="{{item.link}}" class="highlightLink">{{item.title}}</a></h2>
+                <div class="highlightLead">{{item.lead}}</div>
+            </div>
+        </li>
+        {{/gt}}
+        {{/eachIndex}}
+    </ul>
+</div>

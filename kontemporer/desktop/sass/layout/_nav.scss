@@ -1,0 +1,163 @@
+.nav {
+    max-width: $grid_nopad;
+    height: 65px;
+
+    &List {
+        max-width: $grid_nopad;
+    }
+
+    &Item {
+        margin-left: 12px;
+        margin-right: 12px;
+        min-width: 30px;
+        height: 63px;
+    }
+
+    &Link {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: block;
+        @include font-pack(false, 15px, 600, 1.4, $cl_grey);
+        text-transform: uppercase;
+
+        &:hover {
+            color: $cl_black;
+        }
+
+        &.active {
+            color: $cl_black;
+            border-bottom: 5px solid $cl_black;
+        }
+    }
+
+    &Check {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        opacity: 0;
+        cursor: pointer;
+        top: 16px;
+        left: -8px;
+        z-index: 1;
+
+        &:checked~.navMore__list {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    &More {
+        min-width: 10px;
+        position: relative;
+
+        &__list {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            width: 263px;
+            top: 50px;
+            right: -20px;
+            z-index: 1;
+            border: 1px solid #CECECE;
+            background: $cl_white;
+            transition: all .4s ease-in-out;
+            transform: translateY(-15px);
+        }
+
+        &__item {
+            min-height: 55px;
+            height: unset;
+            margin: 0;
+
+            &:last-child {
+                .navMore__link {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        &__link {
+            padding: 20px;
+            border-bottom: 1px solid #DEDEDE;
+        }
+    }
+
+    &User {
+        position: relative;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        &__icon {
+            bottom: -6px;
+        }
+
+        &__check {
+            position: absolute;
+            width: 63px;
+            height: 36px;
+            opacity: 0;
+            cursor: pointer;
+            top: -4px;
+            left: -4px;
+            z-index: 1;
+
+            &:checked~.navUser__list {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        &__list {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            width: 167px;
+            top: 50px;
+            right: -10px;
+            z-index: 1;
+            border: 1px solid #DEDEDE;
+            background: $cl_white;
+        }
+
+        &__item {
+            margin: 0;
+            height: 47px;
+
+            &:last-child {
+                .navUser__link {
+                    border-bottom: 0;
+                }
+            }
+
+            &:first-child {
+                .navUser__link {
+                    font-weight: 700;
+                }
+            }
+        }
+
+        &__name {
+            display: block;
+            @include title_overflow(18px, 18px);
+        }
+
+        &__link {
+            padding: 14px 20px;
+            border-bottom: 1px solid #CECECE;
+            @include font-pack(false, 14px, 600, false, #717171);
+
+            &:hover {
+                color: $cl_black;
+            }
+
+            &.red {
+                color: $cl_red;
+
+                &:hover {
+                    color: $cl_red;
+                }
+            }
+        }
+    }
+}
