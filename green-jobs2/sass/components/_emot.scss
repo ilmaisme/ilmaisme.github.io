@@ -1,0 +1,21 @@
+.emot {
+    &List {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+
+        @include min-responsive($mntablet) {
+            flex-direction: row;
+        }
+    }
+
+    &Item {
+        width: 100%;
+
+        @include min-responsive($mntablet) {
+            flex-direction: row;
+            width: 50%;
+        }
+    }
+}

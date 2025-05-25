@@ -1,99 +1,84 @@
 .cover {
+    padding-top: 0;
+    padding-bottom: 0;
     height: var(--app-height);
     overflow: hidden;
     background: rgb(106, 208, 244);
     background: linear-gradient(180deg, rgba(106, 208, 244, 1) 0%, rgba(231, 249, 255, 1) 80%, rgba(231, 249, 255, 1) 100%);
+    z-index: 2;
 
     &Bg {
+        position: absolute;
+        width: 100%;
+        height: var(--app-height);
 
         &__img {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             width: 100%;
+            height: 100%;
 
-            @media only screen and(max-height: 700px) and(orientation: landscape) {
-                bottom: -100px;
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 40vh;
+                background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, #DAF1DD 100%);
             }
 
             img {
                 position: relative;
                 width: 100%;
-
-                @include min-responsive($mntablet) {
-                    width: calc(100% + 100px);
-                    max-width: unset;
-                    margin-left: -50px;
-                    bottom: -20px;
-                }
+                height: 100%;
+                object-fit: cover;
+                object-position: top;
             }
         }
     }
 
-    &Workers {
-        &__img {
-            position: absolute;
-            bottom: 0;
-
-            img {
-                @include max-responsive($mstablet) {
-                    width: 90%;
-                }
-
-                @include min-responsive($mntablet) {
-                    width: 70%;
-                }
-
-                @include min-responsive($mztablet) {
-                    width: auto;
-                }
-
-                @media only screen and(max-height: 700px) and(orientation: landscape) {
-                    width: 54%;
-                }
-            }
-        }
-
-        &__left {
-            left: 0;
-        }
-
-        &__right {
-            right: 0;
-
-            img {
-                float: right;
-            }
-        }
+    &Content {
+        position: relative;
     }
 
     &Caption {
         position: relative;
-        @include display_full;
-        justify-content: center;
-        text-align: center;
-        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: var(--app-height);
+        padding-bottom: 20vh;
 
         img {
-            margin-top: 60px;
-            width: 100%;
+            max-width: 90%;
 
-            @include max-responsive($mstablet) {
-                margin-top: 30px;
+            @include min-responsive($mdtablet) {
+                max-width: 100%
+            }
+        }
+
+        &__title {
+            display: block;
+            margin-bottom: 10px;
+
+            @include min-responsive($mdtablet) {
+                margin-bottom: 0;
             }
 
-            @include min-responsive($mntablet) {
-                margin-top: 60px;
-                width: 70%;
-            }
+            img {
+                max-width: 50%;
 
-            @include min-responsive($mztablet) {
-                width: 90%;
+                @include min-responsive($mdtablet) {
+                    max-width: 100%
+                }
             }
+        }
 
-            @media only screen and(max-height: 700px) and(orientation: landscape) {
-                width: 54%;
-            }
+        &__title, &__txt{
+            visibility: hidden;
         }
     }
 }

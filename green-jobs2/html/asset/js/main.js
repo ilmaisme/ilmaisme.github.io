@@ -16,8 +16,59 @@ function removePreloader() {
     setTimeout(function () {
         $("#preloader").fadeOut(200, function () {
             $(this).remove();
+            setTimeout(function () {
+                sr.reveal('.coverCaption__title', {
+                    origin: 'right',
+                    delay: 400,
+                    reset: true,
+                    beforeReveal: function (el) {
+                        el.style.visibility = 'visible';
+                    }
+                });
+                sr.reveal('.coverCaption__txt', {
+                    origin: 'right',
+                    delay: 600,
+                    reset: true,
+                    beforeReveal: function (el) {
+                        el.style.visibility = 'visible';
+                    }
+                });
+            }, 50);
         })
     }, 1500);
+}
+
+function animateCounter(element, target, duration) {
+    const startTime = performance.now();
+    const isDecimal = target % 1 !== 0;  // true if target has decimal part
+
+    function update(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentRaw = progress * target;
+
+        let currentText;
+        if (isDecimal) {
+            // Show one decimal place if target is decimal
+            // Also remove trailing .0 if decimal is zero
+            if (Math.abs(currentRaw % 1) < 0.01) {
+                currentText = Math.round(currentRaw).toString();
+            } else {
+                currentText = currentRaw.toFixed(1);
+            }
+        } else {
+            // Show integers only if target is integer
+            currentText = Math.round(currentRaw).toString();
+        }
+
+        element.textContent = currentText + '%';
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+    }
+
+    requestAnimationFrame(update);
 }
 
 $(document).ready(function () {
@@ -27,13 +78,34 @@ $(document).ready(function () {
         vFactor: 0.20,
         mobile: true
     });
-    sr.reveal('.articleTable', {
-        origin: 'bottom',
+    sr.reveal('.articleTitle', {
+        origin: 'left',
         delay: 100,
     });
-    sr.reveal('.reveal', {
+    sr.reveal('.articleList__item', {
+        origin: 'right',
+        delay: 400,
+        reset: true,
+    });
+    sr.reveal('.articleImg', {
         origin: 'bottom',
         delay: 100,
+        reset: true,
+    });
+    sr.reveal('.articleImg--img', {
+        origin: 'bottom',
+        delay: 100,
+        reset: true,
+    });
+    sr.reveal('.articleImg--percent', {
+        origin: 'bottom',
+        delay: 400,
+        reset: true,
+    });
+    sr.reveal('.articleImg--thumb', {
+        origin: 'bottom',
+        delay: 300,
+        reset: true,
     });
     sr.reveal('.credit__member', {
         origin: 'right',
@@ -55,24 +127,76 @@ $(document).ready(function () {
         reset: true
     });
 
-    // parallax cover
-    var currentX = '';
-    var currentY = '';
-    var movementConstant = .012;
-    $(document).mousemove(function (e) {
-        if (currentX == '') currentX = e.pageX;
-        var xdiff = e.pageX - currentX;
-        currentX = e.pageX;
-        if (currentY == '') currentY = e.pageY;
-        var ydiff = e.pageY - currentY;
-        currentY = e.pageY;
-        $('.parallax .par').each(function (i, el) {
-            var movement = (i + 1) * (xdiff * movementConstant);
-            var movementy = (i + 1) * (ydiff * movementConstant);
-            var newX = $(el).position().left + movement;
-            var newY = $(el).position().top + movementy;
-            $(el).css('left', newX + 'px');
-            $(el).css('top', newY + 'px');
+    // Observer for percentage counters
+    const percentObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counters = entry.target.querySelectorAll('.counter');
+                counters.forEach(counter => {
+                    counter.textContent = '0.0%';
+                    const target = parseFloat(counter.dataset.target);
+                    if (!isNaN(target)) animateCounter(counter, target, 1000);
+                });
+            }
         });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.articleImg--percent').forEach(el => percentObserver.observe(el));
+
+
+    // Observer for graph bar and number animation
+    const graphObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const graph = entry.target;
+                const chartMax = parseFloat(graph.dataset.max) || 100;
+
+                const items = graph.querySelectorAll('.articleGraph__item');
+
+                items.forEach(item => {
+                    const value = parseFloat(item.dataset.value);
+                    if (isNaN(value)) return;
+
+                    const bar = item.querySelector(".bar");
+                    const span = item.querySelector(".bar__value");
+
+                    // Calculate percentage
+                    const percent = (value / chartMax) * 100;
+
+                    // Reset bar and number
+                    bar.style.transition = 'none';
+                    bar.style.width = '0%';
+                    span.textContent = '0';
+
+                    // Force reflow to restart animation
+                    void bar.offsetWidth;
+
+                    // Animate bar
+                    bar.style.transition = 'width 1s ease';
+                    bar.style.width = percent + '%';
+
+                    // Animate number
+                    const duration = 1000;
+                    const startTime = performance.now();
+
+                    function animateNumber(now) {
+                        const elapsed = now - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const current = Math.floor(progress * value);
+                        span.textContent = current;
+                        if (progress < 1) requestAnimationFrame(animateNumber);
+                        else span.textContent = value;
+                    }
+
+                    requestAnimationFrame(animateNumber);
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Attach observer to all .articleGraph
+    document.querySelectorAll('.articleGraph').forEach(graph => {
+        graphObserver.observe(graph);
     });
+
 });
