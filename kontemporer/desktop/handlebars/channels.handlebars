@@ -5,44 +5,39 @@
 <body>
 
     <!-- header -->
-    {{> header page="Film, TV, Musik" login=true}}
+    {{> header page="Voices" login=true}}
     <!-- header -->
 
     <!-- main -->
     <main role="main">
         <div class="container">
-            <div class="channelCaption mt30">Film, TV, Musik</div>
+            <div class="channelCaption mt30">Voices</div>
+            <div class="channelTxt mt20">Setiap kita juga berhak menginspirasi dan memberi dampak baik.</div>
         </div>
-        {{> ads/skin}}
-        {{> ads/billboard}}
+
         <section class="container">
             <div class="row display-flex mt40">
                 <div class="col-gd-740">
                     {{> headline}}
                     {{> highlight}}
-                    {{> ads/middle}}
+                    {{> ads/middle mt=40 mb=40}}
                     {{> article}}
-                    {{> ads/middle}}
+                    {{> ads/middle mt=40 mb=40}}
                     {{> article}}
-                    {{> ads/parallax}}
                     {{> article}}
-                    <button class="button buttonMore mt40">Selanjutnya</button>
+                    <button class="button buttonNext">Selanjutnya <span class="icon icon-next"></span></button>
                 </div>
                 <div class="col-gd-300">
                     <aside>
-                        {{> ads/right}}
-                        {{> ads/right mt=20}}
                         {{> sidebar/trending}}
-                        {{> ads/halfpage}}
                         {{> sidebar/recomm}}
                         {{> sidebar/hashtag}}
-                        {{> sidebar/highlight}}
                     </aside>
                 </div>
             </div>
         </section>
     </main>
-    {{> ads/sticky}}
+
     <!-- footer -->
     {{> footer}}
 
