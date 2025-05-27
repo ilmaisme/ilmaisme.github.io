@@ -12,17 +12,32 @@
 	<main role="main">
 		{{!> ads/skin}}
 		{{!> ads/billboard}}
+
+		{{> highlight-box slide="sbox" next=true title="Editor Picks" index_start=0 index_end=5}}
+
 		<section class="container mt40">
+			{{> highlight title="Top Stories" col="col-gd10-5" index_start=0 index_end=5}}
+
+			<div class="highlightCaption mt40">News</div>
+			</div>
+			<div class="row">
+				<div class="col-gd10-2">
+					<ul class="articleList">
+						{{> article index_start=0 index_end=1 time=true}}
+					</ul>
+				</div>
+				<div class="col-gd10-2">
+					<ul class="articleList">
+						{{> article index_start=0 index_end=5 time=true}}
+					</ul>
+				</div>
+			</div>
 			{{> headline}}
 		</section>
-
-		{{> highlight-box slide="sbox" next=true title="Focus" thumb="./asset/images/article-thumb.png" index_start=0
-		index_end=5}}
 
 		{{> newsletter}}
 
 		<section class="container">
-			{{> highlight title="People"}}
 
 			{{> ads/middle mt=40 mb=40}}
 
@@ -34,13 +49,19 @@
 				</div>
 				<div class="highlightCaption--sub">Setiap kita juga berhak menginspirasi dan memberi dampak baik.</div>
 
-				{{> article}}
+
+				<ul class="articleList">
+					{{> article index_start=0 index_end=5}}
+				</ul>
 
 			</div>
 			<!-- article -->
 			{{!> highlight-stories}}
 
-			{{> article}}
+
+			<ul class="articleList">
+				{{> article index_start=0 index_end=5}}
+			</ul>
 			{{> highlight-video}}
 
 			{{!> article-more}}

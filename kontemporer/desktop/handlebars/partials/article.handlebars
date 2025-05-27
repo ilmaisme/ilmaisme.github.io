@@ -1,28 +1,36 @@
-<ul class="articleList">
-    {{#eachIndex headline}}
-    {{#gt index compare = '1'}}
-    <li class="articleItem mt20 display-flex">
-        <a href="{{item.link}}" class="articleImg__wrap" aria-label="{{item.title}}">
-            <img src="{{item.img}}{{index}}.jpg" class="articleImg" alt="" width="178" height="155" loading="lazy">
-        </a>
-        <div class="articleBox">
-            <div class="articleSubtitle">{{item.subtitle}}</div>
-            <h3 class="articleTitle mt10">
-                <a href="{{item.link}}" class="articleLink">{{item.title}}
-                    <div class="highlightLead">{{item.lead}}</div>
-                </a>
-            </h3>
-            <div class="articleDetail user display-flex aitems-center mt10">
-                <a href="#" class="display-flex aitems-center">
-                    <img loading="lazy" src="{{item.user}}" width="24" height="24" alt="" class="userAvatar mr10">
-                    <div class="userName">
-                        Salma Farida
-                    </div>
-                </a>
-                {{!-- <div class="articleTime">Minggu, 18 Mei 2025</div> --}}
-            </div>
+{{#each headline}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<li class="articleItem mt20 display-flex">
+    <a href="{{link}}" class="articleImg__wrap" aria-label="{{title}}">
+        <img src="{{img}}{{@index}}.jpg" class="articleImg" alt="" width="178" height="155" loading="lazy">
+    </a>
+    <div class="articleBox">
+        {{#if ../sub}}
+        <div class="articleSubtitle">{{subtitle}}</div>
+        {{/if}}
+        {{#if ../time}}
+        <div class="articleTime">Minggu, 18 Mei 2025</div>
+        {{/if}}
+        <h3 class="articleTitle mt10">
+            <a href="{{link}}" class="articleLink">{{title}}
+                <div class="highlightLead">{{lead}}</div>
+            </a>
+        </h3>
+        {{#if ../user}}
+        <div class="articleDetail user display-flex aitems-center mt10">
+            <a href="#" class="display-flex aitems-center">
+                <img loading="lazy" src="{{user}}" width="24" height="24" alt="" class="userAvatar mr10">
+                <div class="userName">
+                    Salma Farida
+                </div>
+            </a>
         </div>
-    </li>
-    {{/gt}}
-    {{/eachIndex}}
-</ul>
+        {{/if}}
+    </div>
+</li>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}
