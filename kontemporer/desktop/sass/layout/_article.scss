@@ -1,7 +1,62 @@
 .article {
+    &--col {
+        .article {
+            &Item {
+                flex-direction: column;
+            }
+
+            &Img {
+                width: 100%;
+            }
+
+            &Box {
+                padding-left: 0;
+                margin-top: 10px;
+            }
+
+            &Lead {
+                -webkit-line-clamp: 10;
+            }
+
+            &Link {
+                font-size: 24px;
+            }
+        }
+
+        .buttonNext {
+            margin-top: 10px;
+        }
+    }
+
+    &--small {
+        .article {
+            &Img {
+                width: 194px;
+            }
+
+            &Link {
+                height: 70px;
+            }
+        }
+    }
+
+    &--black {
+        background: $cl_black;
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        .articleItem {
+            color: $cl_white;
+        }
+
+        .articleLead {
+            color: #a6a6a6;
+        }
+    }
+
     &Img {
         width: 275px;
-        height: 155px;
+        aspect-ratio: 16 / 9;
         object-fit: cover;
         object-position: top;
 
@@ -24,8 +79,8 @@
     &Link {
         word-wrap: break-word;
         word-break: break-word;
-        @include title_overflow(auto, 80px);
-        @include font-pack(false, 20px, 600, 26px, false);
+        @include title_overflow(auto, 70px);
+        @include font-pack(false, 18px, 600, false, false);
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
@@ -33,6 +88,20 @@
         &:hover {
             color: $cl_black;
         }
+    }
+
+    &Lead {
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 400;
+        color: $cl_primary;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow: hidden;
     }
 
     &Subtitle {
@@ -55,7 +124,7 @@
 
     &Time {
         position: relative;
-        @include font-pack(false, 12px, 400, false, $cl_secondary_grey);
+        @include font-pack(false, 12px, 400, false, #a6a6a6);
     }
 
     &Load {

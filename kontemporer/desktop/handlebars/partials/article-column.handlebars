@@ -3,28 +3,28 @@
 {{#gte @index compare=../index_end}}
 {{else}}
 <li class="articleItem mt20 display-flex">
-    <a href="{{link}}" class="articleImg__wrap" aria-label="{{title}}">
+    {{#if ../tag}}
+    <{{.. /tag}} class="articleTitle">
+        <a href="{{link}}" class="articleLink">
+            {{title}}
+        </a>
+    </{{.. /tag}}>
+    {{else}}
+    <div class="articleTitle">
+        <a href="{{link}}" class="articleLink">
+            {{title}}
+        </a>
+    </div>
+    {{/if}}
+    <a href="{{link}}" class="articleImg__wrap mt10" aria-label="{{title}}">
         <img src="{{img}}{{@index}}.jpg" class="articleImg" alt="" width="178" height="155" loading="lazy">
     </a>
     <div class="articleBox">
         {{#if ../sub}}
         <div class="articleSubtitle">{{subtitle}}</div>
         {{/if}}
-        {{#if ../tag}}
-        <{{../tag}} class="articleTitle">
-            <a href="{{link}}" class="articleLink">
-                {{title}}
-            </a>
-        </{{../tag}}>
-        {{else}}
-        <div class="articleTitle">
-            <a href="{{link}}" class="articleLink">
-                {{title}}
-            </a>
-        </div>
-        {{/if}}
         {{#if ../time}}
-        <div class="articleTime mt10">Minggu, 18 Mei 2025</div>
+        <div class="articleTime">Minggu, 18 Mei 2025</div>
         {{/if}}
         {{#if ../lead}}
         <div class="articleLead">{{lead}}</div>

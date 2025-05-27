@@ -13,27 +13,31 @@
 		{{!> ads/skin}}
 		{{!> ads/billboard}}
 
-		{{> highlight-box slide="sbox" next=true title="Editor Picks" index_start=0 index_end=5}}
-
 		<section class="container mt40">
-			{{> highlight title="Top Stories" col="col-gd10-5" index_start=0 index_end=5}}
+			{{> highlight-box slide="sbox" next=true caption="Editor Picks" index_start=0 index_end=5 tag="h1"}}
 
-			<div class="highlightCaption mt40">News</div>
-			</div>
-			<div class="row">
-				<div class="col-gd10-2">
-					<ul class="articleList">
-						{{> article index_start=0 index_end=1 time=true}}
-					</ul>
-				</div>
-				<div class="col-gd10-2">
-					<ul class="articleList">
-						{{> article index_start=0 index_end=5 time=true}}
-					</ul>
-				</div>
-			</div>
-			{{> headline}}
+			{{> highlight title="Top Stories" col="col-gd10-5" index_start=0 index_end=5 tag="h2"}}
+
 		</section>
+
+		<div class="article--black">
+			<section class="container">
+				<div class="highlightCaption mt40">News</div>
+				<div class="row">
+					<div class="col-gd10-2">
+						<ul class="articleList article--col">
+							{{> article-column index_start=0 index_end=1 time=true lead=true tag="h3" next=true}}
+						</ul>
+					</div>
+					<div class="col-gd10-2">
+						<ul class="articleList article--small">
+							{{> article index_start=0 index_end=5 time=true tag="h3"}}
+						</ul>
+					</div>
+				</div>
+			</section>
+		</div>
+		{{!> headline}}
 
 		{{> newsletter}}
 

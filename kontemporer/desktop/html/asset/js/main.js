@@ -23,7 +23,7 @@ $(document).ready(function () {
         $('#sbox').slick({
             dots: true,
             arrows: true,
-            infinite: true,
+            infinite: false,
             speed: 500,
             fade: true,
             slidesToShow: 1,
