@@ -42,15 +42,25 @@
 
     &--black {
         background: $cl_black;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
 
-        .articleItem {
+        .articleItem,
+        .highlightCaption,
+        .articleLink:hover,
+        .articleImg__wrap:hover~.articleBox .articleLink,
+        .buttonNext {
             color: $cl_white;
         }
 
         .articleLead {
             color: #a6a6a6;
+        }
+
+        .buttonNext {
+            .icon-next {
+                filter: invert(100%) sepia(0%) saturate(7483%) hue-rotate(238deg) brightness(107%) contrast(105%);
+            }
         }
     }
 

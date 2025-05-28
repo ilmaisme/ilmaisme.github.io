@@ -14,34 +14,36 @@
         {{#gte @index compare=../index_end}}
         {{else}}
         <li class="highlightItem{{#if ../col}} {{../col}}{{/if}}{{#if ../mt}} mt{{../mt}}{{/if}}">
-            <a href="{{link}}">
-                <div class="highlightImg__wrap" aria-label="{{title}}">
+            <div class="highlightImg__wrap" aria-label="{{title}}">
+                <a href="{{link}}">
                     <img src="{{img}}{{@index}}.jpg" class="highlightImg" alt="" width="226" height="145"
                         loading="lazy">
+                </a>
+            </div>
+            <div class="highlightBox">
+                {{#if ../caption}}
+                <div class="highlightCaption">{{../caption}}</div>
+                {{/if}}
+                {{#if ../tag}}
+                <{{.. /tag}} class="highlightTitle">
+                    <a href="{{link}}">{{title}}</a>
+                </{{.. /tag}}>
+                {{else}}
+                <div class="highlightTitle">
+                    <a href="{{link}}">{{title}}</a>
                 </div>
-                <div class="highlightBox">
-                    {{#if ../caption}}
-                    <div class="highlightCaption">{{../caption}}</div>
-                    {{/if}}
-                    {{#if ../tag}}
-                    <{{.. /tag}} class="highlightTitle">
-                        {{title}}
-                    </{{.. /tag}}>
-                    {{else}}
-                    <div class="highlightTitle">
-                        {{title}}
-                    </div>
-                    {{/if}}
-                    {{#if ../thumb}}
-                    <div class="highlightThumb"><img src="{{../thumb}}" alt="" loading="lazy"></div>
-                    {{/if}}
-                    <div class="highlightDetail display-flex aitems-center mt10">
-                        <div class="highlightSubtitle">{{subtitle}}</div>
-                        {{>read/share}}
-                    </div>
-                    <div class="highlightLead">{{lead}}</div>
+                {{/if}}
+                {{#if ../thumb}}
+                <div class="highlightThumb"><img src="{{../thumb}}" alt="" loading="lazy"></div>
+                {{/if}}
+                <div class="highlightDetail display-flex aitems-center mt10">
+                    <div class="highlightSubtitle">{{subtitle}}</div>
+                    {{>read/share}}
                 </div>
-                {{#if ../next}}<div class="buttonNext">Selanjutnya <span class="icon icon-next"></span></div>{{/if}}
+                <div class="highlightLead">{{lead}}</div>
+            </div>
+            {{#if ../next}}<a href="{{link}}" class="buttonNext">Selanjutnya <span
+                    class="icon icon-next"></span></a>{{/if}}
             </a>
         </li>
         {{/gte}}
