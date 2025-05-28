@@ -26,7 +26,15 @@
 
         &--thumb {
             bottom: 0;
-            right: 0;
+            right: -15px;
+
+            @include range-responsive($mntablet, $mhtablet) {
+                right: 120px;
+            }
+
+            @include min-responsive($mhtablet) {
+                right: 220px;
+            }
         }
     }
 }
