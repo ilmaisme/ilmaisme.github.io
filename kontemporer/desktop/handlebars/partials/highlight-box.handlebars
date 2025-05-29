@@ -1,9 +1,6 @@
-<div class="highlight highlight--box{{#if slide}} highlight--slide{{/if}} mt40">
+<div class="highlight highlight--box{{#if slide}} highlight--slide{{/if}}">
     {{#if title}}
-    <div class="display-flex aitems-center jcontent-between">
-        <div class="highlightCaption">{{title}}</div>
-        {{#if more}}<a href="#" class="buttonMore display-flex aitems-center">+ More</a>{{/if}}
-    </div>
+    <div class="highlightCaption">{{title}}</div>
     {{/if}}
     {{#if subtitle}}
     <div class="highlightCaption--sub">{{subtitle}}</div>
@@ -22,7 +19,7 @@
             </div>
             <div class="highlightBox">
                 {{#if ../caption}}
-                <div class="highlightCaption">{{../caption}}</div>
+                <div class="highlightCaption mb10">{{../caption}}</div>
                 {{/if}}
                 {{#if ../tag}}
                 <{{.. /tag}} class="highlightTitle">
@@ -34,12 +31,11 @@
                 </div>
                 {{/if}}
                 {{#if ../thumb}}
-                <div class="highlightThumb"><img src="{{../thumb}}" alt="" loading="lazy"></div>
-                {{/if}}
-                <div class="highlightDetail display-flex aitems-center mt10">
+                <div class="highlightDetail display-flex aitems-center mt10 mb10">
                     <div class="highlightSubtitle">{{subtitle}}</div>
-                    {{>read/share}}
+                    {{!>read/share}}
                 </div>
+                {{/if}}
                 <div class="highlightLead">{{lead}}</div>
             </div>
             {{#if ../next}}<a href="{{link}}" class="buttonNext">Selanjutnya <span
@@ -55,6 +51,11 @@
     <div class="highlightNav">
         <button type="button" class="slick-prev {{slide}}-prev"></button>
         <button type="button" class="slick-next {{slide}}-next"></button>
+    </div>
+    {{/if}}
+    {{#if more}}
+    <div class="display-flex aitems-center jcontent-end">
+        <a href="#" class="buttonMore">+ More</a>
     </div>
     {{/if}}
 </div>

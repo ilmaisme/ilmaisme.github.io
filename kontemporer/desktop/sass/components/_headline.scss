@@ -9,23 +9,77 @@
         }
     }
 
+    &List {
+        display: grid;
+        grid-template-columns: 1fr 410px 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        margin-top: 20px;
+    }
+
     &Item {
         position: relative;
         height: 100%;
         width: 100%;
         display: block;
+
+        &:nth-child(1) {
+            grid-area: 1 / 1 / 2 / 2;
+
+            .headlineTitle,
+            .headlineSubtitle {
+                color: $cl_black;
+            }
+        }
+
+        &:nth-child(2) {
+            grid-area: 2 / 1 / 3 / 2;
+            background: $cl_black;
+        }
+
+        &:nth-child(3) {
+            grid-area: 1 / 2 / 3 / 3;
+            background: $cl_black;
+
+            .buttonNext {
+                color: $cl_white;
+            }
+
+            .icon-next {
+                filter: invert(100%) sepia(0%) saturate(7483%) hue-rotate(238deg) brightness(107%) contrast(105%);
+            }
+
+            .headlineBox{
+                height: auto;
+            }
+        }
+
+        &:nth-child(4) {
+            grid-area: 1 / 3 / 2 / 4;
+            background: $cl_black;
+        }
+
+        &:nth-child(5) {
+            grid-area: 2 / 3 / 3 / 4;
+
+            .headlineTitle,
+            .headlineSubtitle {
+                color: $cl_black;
+            }
+        }
     }
 
     &Box {
         width: 100%;
-        height: 202px;
+        height: 151px;
         padding: 20px 30px;
     }
 
     &Title {
-        @include font-pack(false, 28px, 600, false, $cl_white);
+        @include font-pack(false, 24px, 600, false, $cl_white);
         display: -webkit-box;
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         word-wrap: break-word;
         word-break: break-word;
@@ -41,32 +95,15 @@
         }
     }
 
+    &Lead {
+        @extend .articleLead;
+        color: #a6a6a6;
+        -webkit-line-clamp: 12;
+        margin-bottom: 38px;
+    }
+
     &Subtitle {
         text-transform: uppercase;
         @include font-pack(false, 13px, 400, false, $cl_white);
-    }
-
-    .slick {
-        &-slide {
-            background: $cl_black;
-
-            &:nth-child(odd) {
-                background: $cl_white;
-
-                .headlineTitle, .headlineSubtitle{
-                    color: $cl_black;
-                }
-            }
-        }
-    }
-
-    &Bottom{
-        position: relative;
-
-        .buttonMore{
-            position: absolute;
-            right: 0;
-            bottom: -4px;
-        }
     }
 }

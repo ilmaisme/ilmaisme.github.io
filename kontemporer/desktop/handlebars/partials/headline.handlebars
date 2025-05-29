@@ -1,20 +1,19 @@
 <div class="headline">
-    <div class="headlineList" id="sheadline">
+    <div class="headlineList">
         {{#each headline}}
         <a href="{{link}}" class="headlineItem">
-            <div class="headlineBox">
-                <div class="headlineSubtitle">{{subtitle}}</div>
-                <h1 class="headlineTitle">{{title}}</h1>
-            </div>
             <div class="headlineImg">
                 <img src="{{img}}{{@index}}.jpg" alt="" width="740" height="404" loading="lazy">
             </div>
+            <div class="headlineBox">
+                <div class="headlineSubtitle">{{subtitle}}</div>
+                <h1 class="headlineTitle">{{title}}</h1>
+                {{#eq @index compare = 2}}
+                <div class="headlineLead">{{lead}}</div>
+                <div class="buttonNext">Selanjutnya <span class="icon icon-next"></span></div>
+                {{/eq}}
+            </div>
         </a>
         {{/each}}
-    </div>
-    <div class="headlineBottom">
-        <div class="headlineDots" id="dtheadline">
-        </div>
-        <a href="#" class="buttonMore">+ More</a>
     </div>
 </div>

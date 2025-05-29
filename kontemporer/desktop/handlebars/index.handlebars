@@ -14,7 +14,8 @@
 		{{!> ads/billboard}}
 
 		<section class="container mt40">
-			{{> highlight-box slide="sbox" next=true caption="Editor Picks" index_start=0 index_end=5 tag="h1"}}
+			{{> highlight-box slide="sbox" next=true caption="Editor Picks" index_start=0 index_end=5 tag="h1"
+			thumb=true}}
 
 			{{> highlight title="Top Stories" col="col-gd10-5" index_start=0 index_end=5 tag="h2"}}
 
@@ -22,7 +23,7 @@
 
 		<div class="article--black mt40">
 			<section class="container">
-				<div class="highlightCaption mt40">News</div>
+				<div class="highlightCaption">News</div>
 				<div class="row">
 					<div class="col-gd10-2">
 						<ul class="articleList article--col">
@@ -37,44 +38,65 @@
 				</div>
 			</section>
 		</div>
-		{{!> headline}}
 
 		{{> newsletter}}
+
+		<section class="container mt40 mb40">
+			<div class="highlightCaption">Focus</div>
+			{{> headline}}
+
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
+		</section>
 
 		<section class="container">
 
 			{{> ads/middle mt=40 mb=40}}
 
-			<!-- article -->
-			<div class="article mt40">
-				<div class="display-flex aitems-center jcontent-between">
-					<div class="highlightCaption">Voices</div>
-					<a href="#" class="buttonMore display-flex aitems-center">+ More</a>
-				</div>
-				<div class="highlightCaption--sub">Setiap kita juga berhak menginspirasi dan memberi dampak baik.</div>
-
-
-				<ul class="articleList">
-					{{> article index_start=0 index_end=5}}
-				</ul>
-
+			<div class="highlightCaption">People</div>
+			<div class="highlightCaption--sub">Setiap kita juga berhak menginspirasi dan memberi dampak baik.
 			</div>
-			<!-- article -->
-			{{!> highlight-stories}}
-
 
 			<ul class="articleList">
-				{{> article index_start=0 index_end=5}}
+				{{> article index_start=0 index_end=5 lead=true tag="h3" user=true}}
 			</ul>
-			{{> highlight-video}}
 
-			{{!> article-more}}
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
 
 		</section>
 
-		{{> highlight-box col="col-gd12-4" title="Books" subtitle="Memperbanyak referensi, menegaskan wawasan.
-		Memperbanyak referensi, menegaskan
-		wawasan Memperbanyak referensi, menegaskan wawasan" mt="20" more=true index_start=0 index_end=3}}
+		<div class="article--black mt40">
+			<div class="container">
+				<div class="highlightCaption">Voices</div>
+				<div class="highlightCaption--sub">Setiap kita juga berhak menginspirasi dan memberi dampak baik.
+				</div>
+
+				<ul class="articleList">
+					{{> article index_start=0 index_end=5 lead=true tag="h3" user=true}}
+				</ul>
+
+				<div class="display-flex aitems-center jcontent-end">
+					<a href="#" class="buttonMore">+ More</a>
+				</div>
+			</div>
+		</div>
+
+		<section class="container">
+			{{> highlight-video}}
+
+		</section>
+
+		<div class="article--black mt40">
+			<div class="container">
+				{{> highlight-box col="col-gd12-4" tag="h3" title="Books" subtitle="Memperbanyak referensi, menegaskan
+				wawasan.
+				Memperbanyak referensi, menegaskan
+				wawasan Memperbanyak referensi, menegaskan wawasan" mt="20" more=true index_start=0 index_end=3}}
+			</div>
+		</div>
 
 	</main>
 	{{!> ads/sticky}}
