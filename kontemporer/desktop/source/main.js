@@ -4,12 +4,13 @@ $(document).ready(function () {
         $('#sbox').slick({
             dots: true,
             arrows: true,
-            infinite: false,
-            speed: 500,
+            infinite: true,
+            speed: 1000,
+            autoplaySpeed: 4000,
             fade: true,
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: false,
+            autoplay: true,
             prevArrow: $('.sbox-prev'),
             nextArrow: $('.sbox-next')
         });
