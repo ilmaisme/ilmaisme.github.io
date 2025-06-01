@@ -1,33 +1,59 @@
 .highlight {
-    &--slide {
+    &--box {
+        .highlightLink {
+            @include title_overflow(47px, 47px);
+        }
+    }
 
-        .highlightTitle {
-            font-size: 38px;
-            margin-top: 0;
-            margin-bottom: 10px;
+    &--slide {
+        position: relative;
+
+        .highlightWrap {
+            display: flex;
+        }
+
+        .highlightBox {
+            padding-right: 15px;
+        }
+
+        .highlightLink {
+            font-size: 30px;
+            font-weight: 700;
+            @include title_overflow(117px, 117px);
+            -webkit-line-clamp: 3;
         }
 
         .highlightLead {
-            display: contents;
+            -webkit-line-clamp: 5;
         }
 
-        .highlightImg__wrap {
-            float: right;
-            width: 600px;
-            height: 338px;
-            margin-left: 60px;
-            margin-bottom: 40px;
-            overflow: hidden;
-
-            img {
-                width: 100%;
-                height: 100%;
+        .highlightImg {
+            &__wrap {
+                width: 55%;
+                padding-left: 15px;
+                flex-shrink: 0;
+                order: 1
             }
         }
     }
 
-    &Title{
-        margin-top: 10px
+    &--col3 {
+        .highlightLink {
+            @include title_overflow(70px, 70px);
+            -webkit-line-clamp: 3;
+        }
+    }
+
+    &Title {
+        margin-top: 10px;
+    }
+
+    &Link {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        @include font-pack(false, 18px, 600, false, false);
     }
 
     &Caption {
@@ -62,14 +88,6 @@
         &__wrap {
             position: relative;
             display: block;
-
-            &:hover {
-                &~.highlightBox {
-                    .highlightLink {
-                        color: $cl_black;
-                    }
-                }
-            }
         }
     }
 
@@ -85,21 +103,6 @@
 
     &Detail {
         flex-wrap: wrap;
-    }
-
-    &Link {
-        height: 70px;
-        overflow: hidden;
-        @include font-pack(false, 18px, 600, false, false);
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        word-wrap: break-word;
-        word-break: break-word;
-
-        &:hover {
-            color: $cl_black;
-        }
     }
 
     &More {

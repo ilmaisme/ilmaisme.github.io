@@ -11,36 +11,40 @@
         {{#gte @index compare=../index_end}}
         {{else}}
         <li class="highlightItem{{#if ../col}} {{../col}}{{/if}}{{#if ../mt}} mt{{../mt}}{{/if}}">
-            <div class="highlightImg__wrap" aria-label="{{title}}">
-                <a href="{{link}}">
-                    <img src="{{img}}{{@index}}.jpg" class="highlightImg" alt="" width="226" height="145"
-                        loading="lazy">
-                </a>
-            </div>
-            <div class="highlightBox">
-                {{#if ../caption}}
-                <div class="highlightCaption mb10">{{../caption}}</div>
-                {{/if}}
-                {{#if ../tag}}
-                <{{.. /tag}} class="highlightTitle">
-                    <a href="{{link}}">{{title}}</a>
-                </{{.. /tag}}>
-                {{else}}
-                <div class="highlightTitle">
-                    <a href="{{link}}">{{title}}</a>
+            <div class="highlightWrap">
+                <div class="highlightImg__wrap" aria-label="{{title}}">
+                    <a href="{{link}}">
+                        <img src="{{img}}{{@index}}.jpg" class="highlightImg" alt="" width="226" height="145"
+                            loading="lazy">
+                    </a>
                 </div>
-                {{/if}}
-                {{#if ../thumb}}
-                <div class="highlightDetail display-flex aitems-center jcontent-between mt10 mb10">
-                    <div class="highlightSubtitle">{{subtitle}}</div>
-                    {{>read/share}}
+                <div class="highlightBox">
+                    {{#if ../caption}}
+                    <div class="highlightCaption mb10">{{../caption}}</div>
+                    {{/if}}
+                    {{#if ../tag}}
+                    <{{.. /tag}} class="highlightTitle">
+                        <a href="{{link}}" class="highlightLink">{{title}}</a>
+                    </{{.. /tag}}>
+                    {{else}}
+                    <div class="highlightTitle">
+                        <a href="{{link}}" class="highlightLink">{{title}}</a>
+                    </div>
+                    {{/if}}
+                    {{#if ../thumb}}
+                    <div class="highlightDetail display-flex aitems-center jcontent-between mt10 mb10">
+                        <div class="highlightSubtitle">{{subtitle}}</div>
+                        {{>read/share}}
+                    </div>
+                    {{/if}}
+                    {{#if ../time}}
+                    <div class="highlightTime">Minggu, 18 Mei 2025</div>
+                    {{/if}}
+                    <div class="highlightLead">{{lead}}</div>
+                    {{#if ../next}}<a href="{{link}}" class="buttonNext">Selanjutnya <span
+                            class="icon icon-next"></span></a>{{/if}}
                 </div>
-                {{/if}}
-                <div class="highlightLead">{{lead}}</div>
             </div>
-            {{#if ../next}}<a href="{{link}}" class="buttonNext">Selanjutnya <span
-                    class="icon icon-next"></span></a>{{/if}}
-            </a>
         </li>
         {{/gte}}
         {{else}}

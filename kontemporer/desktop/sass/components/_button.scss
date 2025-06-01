@@ -79,7 +79,7 @@
 
     &More {
         padding: 4px;
-        @include font-pack(false, 14px, 600, 22px, $cl_black);
+        @include font-pack(false, 16px, 600, 22px, $cl_black);
         @include base_transition(all);
 
         &:hover {
@@ -88,13 +88,19 @@
     }
 
     &Next {
-        @extend .buttonMore;
+        padding: 4px;
+        @include font-pack(false, 14px, 600, 22px, $cl_black);
         margin-top: 10px;
         display: flex;
         gap: 6px;
         width: 100%;
         align-items: center;
         justify-content: flex-end;
+        @include base_transition(all);
+
+        &:hover {
+            color: $cl_grey;
+        }
 
         .icon-next {
             filter: invert(0%) sepia(8%) saturate(1245%) hue-rotate(327deg) brightness(91%) contrast(80%);
