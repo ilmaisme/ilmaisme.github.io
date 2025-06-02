@@ -1,10 +1,10 @@
 //GET HEIGHT Device
-const appHeight = () => {
-    const doc = document.documentElement
-    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+function setInitialAppHeight() {
+  const appHeight = window.innerHeight;
+  document.documentElement.style.setProperty('--app-height', `${appHeight}px`);
 }
-window.addEventListener("resize", appHeight)
-appHeight()
+
+window.addEventListener('load', setInitialAppHeight);
 
 function refreshPage() {
     window.location.href = window.location.href
