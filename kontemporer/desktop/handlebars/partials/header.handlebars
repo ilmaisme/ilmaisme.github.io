@@ -1,25 +1,6 @@
 <header class="header">
     <div class="headerFixed">
         <div class="container display-flex aitems-center">
-            {{!-- <ul class="social display-flex flex-init">
-                <li class="socialIcon"><a href="https://www.facebook.com/tabloidbintang" class="socialLink display-flex"
-                        target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span
-                            class="icon icon-fb"></span></a></li>
-                <li class="socialIcon"><a href="https://instagram.com/TabloidBintang" class="socialLink display-flex"
-                        target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span
-                            class="icon icon-ig"></span></a></li>
-                <li class="socialIcon"><a href="https://twitter.com/TabloidBintang" class="socialLink display-flex"
-                        target="_blank" rel="noopener noreferrer" aria-label="Twitter"><span
-                            class="icon icon-tw"></span></a></li>
-                <li class="socialIcon"><a href="https://www.youtube.com/c/TabloidBintangOnline"
-                        class="socialLink display-flex" target="_blank" rel="noopener noreferrer"
-                        aria-label="Youtube"><span class="icon icon-yt"></span></a></li>
-                <li class="socialIcon"><a href="#" class="socialLink display-flex" target="_blank"
-                        rel="noopener noreferrer" aria-label="Tiktok"><span class="icon icon-tiktok"></span></a></li>
-                <li class="socialIcon"><a href="#" class="socialLink display-flex" target="_blank"
-                        rel="noopener noreferrer" aria-label="Snack Video"><span class="icon icon-snack"></span></a>
-                </li>
-            </ul> --}}
             <div class="headerSearch">
                 <form class="search" action="">
                     <div class="display-flex">
@@ -33,10 +14,20 @@
                     </div>
                 </form>
             </div>
-            <a href="index.html" class="text-center flex-init">
-                <img src="asset/images/kontemporer-logo-transparent.png" class="headerFixed__logo" alt="Kontemporer"
-                    width="200" height="38">
-            </a>
+            <div class="headerFixed__left display-flex">
+                <a href="index.html">
+                    <img src="asset/images/kontemporer-logo-transparent.png" class="headerFixed__logo" alt="Kontemporer"
+                        width="200" height="38">
+                </a>
+                <nav class="nav fixedNav">
+                    <ul class="navList display-flex jcontent-center">
+                        {{#each menu}}
+                        <li class="navItem"><a href="{{link}}"
+                                class="navLink{{#eq title compare=../page}} active{{/eq}}">{{title}}</a></li>
+                        {{/each}}
+                    </ul>
+                </nav>
+            </div>
             <div class="display-flex aitems-center jcontent-end">
                 <div class="headerDate -getdate"></div>
                 {{#eq login compare=true}}

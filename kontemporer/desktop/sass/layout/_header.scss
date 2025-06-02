@@ -2,10 +2,10 @@
     &Fixed {
         position: fixed;
         top: 0;
-        min-width: 1203px;
-        min-height: 69px;
         width: 100%;
-        padding: 16px 58px;
+        min-height: 69px;
+        padding-top: 16px;
+        padding-bottom: 16px;
         border-bottom: 1px solid transparent;
         background: $cl_white;
         z-index: 3;
@@ -13,7 +13,11 @@
         &__logo {
             max-width: 200px;
             opacity: 0;
-            @include base_transition(all);
+        }
+
+        &__left {
+            flex: 1;
+            text-align: center;
         }
 
         .icon-write {
@@ -26,15 +30,12 @@
                 opacity: 0;
             }
         }
-
-        .button:last-of-type {
-            margin-right: 0;
-        }
     }
 
     &Search {
         position: relative;
         min-width: 240px;
+        transition: visibility .2s ease, opacity .2s ease;
 
         .searchInput {
             outline: 0;
@@ -86,6 +87,54 @@
     .socialIcon {
         .icon {
             filter: invert(0%) sepia(9%) saturate(5815%) hue-rotate(234deg) brightness(75%) contrast(80%);
+        }
+    }
+}
+
+.fixed {
+    &Nav {
+        visibility: hidden;
+        opacity: 0;
+        @include base_transition(all);
+
+        &.nav {
+            height: auto;
+        }
+
+        .navItem {
+            height: auto;
+        }
+
+        .navLink {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+
+    .fixedNav {
+        flex: 1;
+        margin-left: 20px;
+        margin-right: 20px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .headerSearch {
+        visibility: hidden;
+        opacity: 0;
+        width: 0;
+        min-width: 0;
+    }
+
+    .headerFixed {
+        &__logo {      
+            @include base_transition(all);
+            transition-delay: .4s;
+        }
+
+        &__left {
+            text-align: left;
+            transition-delay: 0s;
         }
     }
 }
