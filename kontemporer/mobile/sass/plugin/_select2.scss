@@ -1,0 +1,42 @@
+.select2 {
+    &-container {
+
+        .select2-selection--single {
+            @extend .formInput;
+            height: unset;
+
+            .select2-selection__rendered {
+                @include font-pack(false, 12px, 500, 1.4, $cl_primary);
+                padding-left: 0;
+            }
+
+            .select2-selection__arrow b {
+                position: absolute;
+                display: block;
+                content: '';
+                width: 10px;
+                height: 10px;
+                top: 20px;
+                right: 20px;
+                left: unset;
+                margin-top: 0;
+                border-bottom: 1px solid $cl_primary;
+                border-right: 1px solid $cl_primary;
+                border-top: none;
+                border-left: none;
+                transform: rotate(45deg) translateY(-50%);
+                transition: all .4s ease-in-out;
+                transform-origin: 50% 0;
+            }
+        }
+
+        &--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+            border-color: initial;
+            border-width: 1px;
+        }
+    }
+
+    &-dropdown{
+        @include font-pack(false, 12px, 500, 1.4, $cl_primary);
+    }
+}

@@ -1,0 +1,78 @@
+.readFigure {
+    margin: auto;
+    text-align: center;
+
+    &__link {
+        position: relative;
+        line-height: 1.3;
+    }
+}
+
+.pswp__caption {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.pswp__caption__center {
+    text-align: center;
+    max-width: 100%;
+    padding: 20px;
+    @include font-pack(false, 12px, 400, 15px, #AEAEAE);
+}
+
+.pswp__ui--fit .pswp__caption {
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.pswp__counter {
+    top: 70px;
+    text-align: center;
+    width: 100%;
+    @include font-pack(false, 12px, 400, 15px, #AEAEAE);
+
+    &:after {
+        content: 'foto';
+        position: relative;
+        margin-left: 6px;
+    }
+}
+
+.pswp img {
+    object-fit: cover;
+    object-position: top;
+}
+
+.pswp__button--arrow--left:before,
+.pswp__button--arrow--right:before {
+    content: '';
+    background: $cl_white url("../images/icon-arrow.png") center no-repeat;
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    z-index: 99;
+}
+
+.pswp__button--arrow--left:before {
+    left: 5px;
+    transform: scaleX(-1);
+}
+
+.pswp__top-bar {
+    height: 50px;
+    background-color: $cl_pink;
+
+    &:after {
+        content: '';
+        background: url(../images/logo-tabloid-bintang-white.png);
+        background-size: cover;
+        width: 134px;
+        height: 30px;
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 18px;
+    }
+}

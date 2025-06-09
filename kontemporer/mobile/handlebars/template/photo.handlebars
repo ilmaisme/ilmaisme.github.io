@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page=""}}
+
+<body>
+    <!-- header -->
+    {{> header page="Foto" login=false}}
+    <!-- header -->
+    <!-- main -->
+    <main role="main" class="main">
+        <section class="container">
+            {{> ads/top mt=0}}
+            <ul class="photoList mt30">
+                {{#eachIndex headline}}
+                <li class="photoItem mt20">
+                    <a href="read-photo.html" class="photoImg__wrap" aria-label="{{item.title}}">
+                        <img src="{{item.img}}{{index}}.webp" class="photoImg" alt="" width="324" height="239"
+                            loading="lazy">
+                        <div class="photoCount display-flex aitems-center"><span class="icon icon-photo mr10"></span>5
+                            foto
+                        </div>
+                        <div class="photoContent">
+                            <div class="articleDetail display-flex aitems-center mt10">
+                                <div class="articleSubtitle">Foto</div>
+                                <div class="articleTime">18 Mei 2025</div>
+                            </div>
+                            <h2 class="photoTitle mt5">{{item.title}}</h2>
+                        </div>
+                    </a>
+                </li>
+                {{/eachIndex}}
+            </ul>
+            {{> ads/bottom}}
+            <ul class="photoList mt30">
+                {{#eachIndex headline}}
+                <li class="photoItem mt20">
+                    <a href="read-photo.html" class="photoImg__wrap" aria-label="{{item.title}}">
+                        <img src="{{item.img}}{{index}}.webp" class="photoImg" alt="" width="324" height="239"
+                            loading="lazy">
+                        <div class="photoCount display-flex aitems-center"><span class="icon icon-photo mr10"></span>5
+                            foto
+                        </div>
+                        <div class="photoContent">
+                            <div class="articleDetail display-flex aitems-center mt10">
+                                <div class="articleSubtitle">Foto</div>
+                                <div class="articleTime">18 Mei 2025</div>
+                            </div>
+                            <h2 class="photoTitle mt5">{{item.title}}</h2>
+                        </div>
+                    </a>
+                </li>
+                {{/eachIndex}}
+            </ul>
+            {{> ads/middle}}
+            <ul class="photoList mt30">
+                {{#eachIndex headline}}
+                <li class="photoItem mt20">
+                    <a href="read-photo.html" class="photoImg__wrap" aria-label="{{item.title}}">
+                        <img src="{{item.img}}{{index}}.webp" class="photoImg" alt="" width="324" height="239"
+                            loading="lazy">
+                        <div class="photoCount display-flex aitems-center"><span class="icon icon-photo mr10"></span>5
+                            foto
+                        </div>
+                        <div class="photoContent">
+                            <div class="articleDetail display-flex aitems-center mt10">
+                                <div class="articleSubtitle">Foto</div>
+                                <div class="articleTime">18 Mei 2025</div>
+                            </div>
+                            <h2 class="photoTitle mt5">{{item.title}}</h2>
+                        </div>
+                    </a>
+                </li>
+                {{/eachIndex}}
+            </ul>
+            <button class="button buttonMore mt30">Indeks</button>
+        </section>
+    </main>
+    {{> ads/sticky}}
+
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js}}
+
+</body>
+
+</html>

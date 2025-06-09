@@ -1,0 +1,151 @@
+.button {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+
+    &Primary {
+        min-width: 83px;
+        min-height: 36px;
+        padding: 10px 16px;
+        border: 0;
+        border-radius: 20px;
+        @include font-pack(false, 12px, 500, false, $cl_white);
+        background: $cl_black;
+
+        &--small {
+            width: auto;
+            padding: 10px 30px;
+        }
+
+        .icon-reg {
+            width: 15px;
+            height: 15px;
+            vertical-align: text-bottom;
+            background-size: 15px;
+            filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(162deg) brightness(103%) contrast(104%);
+        }
+    }
+
+    &Search {
+
+        .icon-search {
+            width: 25px;
+            height: 25px;
+            display: block;
+        }
+
+        &__menu {
+            position: absolute;
+            top: 8px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            background: none;
+            border: 0;
+        }
+    }
+
+    &White {
+        background: $cl_white;
+        padding: 10px 38px 10px 15px;
+        border: 1px solid #CECECE;
+        color: $cl_primary;
+    }
+
+    &--trans {
+        background: transparent;
+        border: 0;
+    }
+
+    &More {
+        @include font-pack(false, 14px, 600, 24px, $cl_primary);
+    }
+
+    &Totop {
+        position: absolute;
+        top: -20px;
+        right: 20px;
+        border: 0;
+        border-radius: 10px;
+        background: #575765;
+        background: linear-gradient(180deg, rgba(87, 87, 101, 1) 0%, rgba(25, 25, 25, 1) 100%);
+        width: 40px;
+        height: 40px;
+
+        .icon-next {
+            filter: brightness(0) invert(1);
+            vertical-align: middle;
+            @include base_rotate(270deg);
+        }
+    }
+
+    &Google {
+        width: 100%;
+        height: 50px;
+        border: 1px solid #CECECE;
+    }
+
+    &Fb {
+        @extend .buttonGoogle;
+        color: $cl_white;
+        border: 1px solid $cl_fb;
+        background: $cl_fb;
+
+        .icon-fb {
+            width: 20px;
+            height: 30px;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    &Eye {
+        position: absolute;
+        right: 0;
+        width: 40px;
+        height: 46px;
+        border: 0;
+        background: none;
+
+        .icon {
+            left: 7px;
+
+            &:after {
+                content: none;
+            }
+        }
+
+        &.close {
+            &:after {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 22px;
+                top: 12px;
+                left: 18px;
+                border-left: 2px solid #6F6F6F;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &Expand {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: $cl_primary;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        border: 0;
+        border-radius: 5px;
+        @include base_transition(all);
+
+        .icon-expand {
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+        }
+    }
+}

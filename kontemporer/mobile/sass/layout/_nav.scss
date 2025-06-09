@@ -1,0 +1,39 @@
+.nav {
+    &List {
+        padding-left: 10px;
+        padding-right: 10px;
+        overflow-x: auto;
+        max-width: 100%;
+        flex-wrap: nowrap;
+        background: #F1F1F1;
+        justify-content: center;
+
+        &.is-overflowing {
+            justify-content: flex-start;
+        }
+    }
+
+    &Item {
+        margin-left: 10px;
+        margin-right: 10px;
+        min-width: 41px;
+        height: 38px;
+        flex-shrink: 0;
+        flex-basis: auto;
+    }
+
+    &Link {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: block;
+        @include font-pack(false, 12px, 600, false, $cl_grey);
+
+        &:hover {
+            color: $cl_grey;
+        }
+
+        &.active {
+            color: $cl_pink;
+        }
+    }
+}

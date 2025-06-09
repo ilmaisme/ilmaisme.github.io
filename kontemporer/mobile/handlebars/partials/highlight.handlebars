@@ -1,0 +1,38 @@
+<div
+    class="highlight{{#if col}} highlight--{{col}}{{/if}}{{#if type}} highlight--{{type}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}">
+    <ul class="highlightList row{{#if wrap}} article--wrap{{/if}}">
+        {{#each headline}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <li class="highlightItem{{#if ../cols}} {{../cols}}{{/if}}{{#if ../mb}} mb{{../mb}}{{/if}}">
+            <a href="{{link}}" class="highlightImg__wrap" aria-label="{{title}}">
+                <img src="{{img}}{{@index}}.webp" class="highlightImg" alt="" width="152" height="113" loading="lazy">
+            </a>
+            <div class="highlightContent">
+                {{#if ../sub}}<div class="articleSubtitle mt5">{{subtitle}}</div>{{/if}}
+                {{#if ../tag}}
+                <{{.. /tag}} class="articleTitle articleTitle__box mt5">
+                    <a href="{{link}}" class="highlightLink">{{title}}</a>
+                </{{.. /tag}}>
+                {{else}}
+                <div class="articleTitle articleTitle__box mt5">
+                    <a href="{{link}}" class="highlightLink">{{title}}</a>
+                </div>
+                {{/if}}
+                <div class="articleDetail display-flex aitems-center mt5">
+                    {{#if ../user}}
+                    <a href="#" class="userName display-flex aitems-center">
+                        Salma Farida
+                    </a>
+                    {{/if}}
+                    <div class="articleTime">18 Mei 2025</div>
+                </div>
+            </div>
+        </li>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </ul>
+</div>

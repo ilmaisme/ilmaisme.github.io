@@ -1,0 +1,49 @@
+.header {
+    background: $cl_white;
+
+    &Fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+
+        .buttonSearch .icon-search {
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+
+        &.active {
+            .headerContent {
+                height: 56px;
+            }
+        }
+    }
+
+    &Content {
+        padding: 15px 18px;
+        height: 66px;
+        justify-content: space-between;
+        transition: height 0.25s ease-in;
+    }
+
+    &Logo {
+        width: 100%;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+
+        img {
+            max-width: 190px;
+        }
+
+        &--stories {
+            width: calc(100% - 50px);
+
+            img {
+                max-width: 112px;
+            }
+        }
+
+        &.scale {
+            transform: scale(0.8);
+        }
+    }
+}

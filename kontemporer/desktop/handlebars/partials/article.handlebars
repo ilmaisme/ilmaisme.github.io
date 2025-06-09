@@ -11,11 +11,11 @@
         <div class="articleSubtitle">{{subtitle}}</div>
         {{/if}}
         {{#if ../tag}}
-        <{{../tag}} class="articleTitle">
+        <{{.. /tag}} class="articleTitle">
             <a href="{{link}}" class="articleLink">
                 {{title}}
             </a>
-        </{{../tag}}>
+        </{{.. /tag}}>
         {{else}}
         <div class="articleTitle">
             <a href="{{link}}" class="articleLink">
@@ -30,9 +30,19 @@
         <div class="articleLead">{{lead}}</div>
         {{/if}}
         {{#if ../next}}<div class="buttonNext">Selanjutnya <span class="icon icon-next"></span></div>{{/if}}
-        {{#if ../timebtm}}
-        <div class="articleTime mt10">Minggu, 18 Mei 2025</div>
-        {{/if}}
+        <div class="articleDetail display-flex aitems-center mt10">
+            {{#if ../user}}
+            <a href="#" class="display-flex aitems-center">
+                <img loading="lazy" src="{{user}}" width="24" height="24" alt="" class="userAvatar mr10">
+                <div class="userName">
+                    Salma Farida
+                </div>
+            </a>
+            {{/if}}
+            {{#if ../timebtm}}
+            <div class="articleTime">Minggu, 18 Mei 2025</div>
+            {{/if}}
+        </div>
     </div>
 </li>
 {{/gte}}

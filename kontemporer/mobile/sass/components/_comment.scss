@@ -1,0 +1,126 @@
+.comment {
+    &Count {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 20px;
+        border: 1px solid $cl_pink;
+        @include font-pack(false, 12px, 400, 30px, $cl_pink);
+
+        &__text {
+            @include font-pack(false, 10px, 400, 25px, #4B4B4B);
+        }
+    }
+
+    textarea {
+        width: 100%;
+        border: 1px solid #C4C4C4;
+        resize: vertical;
+        padding: 10px;
+        @include font-pack(false, 12px, 400, 22px, $cl_primary);
+    }
+
+    &Avatar {
+        width: 48px;
+        height: 48px;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+        margin-right: 10px;
+    }
+
+    &User {
+        @include font-pack(false, 15px, 600, 25px, #2C2C2C);
+    }
+
+    &Date {
+        @include font-pack(false, 10px, 300, 25px, #7C7C7C);
+    }
+
+    &Content {
+        @include font-pack(false, 12px, 400, 20px, #4B4B4B);
+    }
+
+    &Action {
+        @include font-pack(false, 10px, 400, 25px, false);
+
+        button {
+            background: transparent;
+            border: 0;
+            padding: 0;
+        }
+    }
+
+    &Report {
+        color: #7C7C7C;
+    }
+
+    &Reply {
+        color: $cl_pink;
+
+        &:before {
+            content: 'Reply';
+            display: block;
+            position: relative;
+        }
+
+        &.active {
+            &:before {
+                content: 'Tutup';
+                display: block;
+                position: relative;
+            }
+        }
+    }
+
+    &Item {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #E3E3E3;
+
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        &>.commentItem {
+            border-top: 1px solid #E3E3E3;
+            padding-top: 20px;
+            padding-bottom: 0;
+            padding-left: 26px;
+            border-bottom: 0;
+        }
+    }
+
+    &Bottom {
+        background: #F5F5F5;
+        padding: 10px;
+        border: 1px solid #A6A6A6;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    &Form {
+        display: none;
+        animation: fadeInFromNone .5s ease;
+
+        &.active {
+            display: block;
+        }
+
+        textarea {
+            border: 1px solid #A6A6A6;
+            margin: 0;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom: 0;
+            vertical-align: top;
+        }
+
+        .buttonPink{
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+    }
+
+    &Caption {
+        @include font-pack(false, 14px, 400, 28px, #5F5F5F);
+    }
+}

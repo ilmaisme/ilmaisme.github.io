@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page="Home"}}
+
+<body>
+	<!-- header -->
+	{{> header page="Film, TV, Musik" login=false}}
+	<!-- header -->
+	{{!-- <ul class="breadcrumb breadcrumbChannel display-flex">
+		<li class="breadcrumbItem"><a href="#" class="breadcrumbLink active">Drama</a></li>
+		<li class="breadcrumbItem"><a href="#" class="breadcrumbLink">K-Pop</a></li>
+		<li class="breadcrumbItem"><a href="#" class="breadcrumbLink">Reality Show</a></li>
+		<li class="breadcrumbItem"><a href="#" class="breadcrumbLink">Gosip</a></li>
+	</ul> --}}
+	{{> ads/pushdown}}
+
+	<!-- main -->
+	<main role="main" class="main">
+		<section class="container">
+			{{> event}}
+			{{> headline}}
+			{{> highlight}}
+			{{> article}}
+			{{> sidebar/trending}}
+			{{> ads/middle}}
+			{{> sidebar/hashtag}}
+			{{> ads/bottom}}
+			{{> article mt=30}}
+			{{> ads/bottom}}
+			{{> article mt=30}}
+			{{> ads/middle}}
+			{{> article mt=30}}
+			{{> ads/parallax}}
+			{{> article mt=30}}
+			<button class="button buttonMore mt30">Indeks</button>
+		</section>
+	</main>
+	{{> ads/sticky}}
+
+	<!-- footer -->
+	{{> footer}}
+
+	{{> js page="Home" slick=true}}
+
+</body>
+
+</html>

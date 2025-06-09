@@ -1,0 +1,93 @@
+.ol_container {
+    top: 0;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    background: #616161;
+    height: 510px;
+    overflow: hidden;
+}
+
+.ol_big {
+    width: 320px;
+    height: 510px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.ol_big_inner {
+    position: fixed;
+    top: 113px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 320px;
+    height: 480px;
+}
+
+.ol_close_ad {
+    right: 5px;
+    z-index: 99;
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    position: absolute;
+    top: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ol_landing {
+    position: absolute;
+    margin: 0 auto;
+    border: none;
+    border: none;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.pushdown.pushdown-close .pushdown-banner {
+    display: none;
+}
+
+/* bintang rewrite */
+.pushdown-banner {
+    position: relative;
+    top: $height_header;
+
+    .adsPlaceholder {
+        &:after {
+            background: transparent;
+        }
+    }
+}
+
+.pushdown-banner~.main {
+    background-color: $cl_white;
+    position: relative;
+    margin-top: $height_header;
+    padding-top: 1px;
+    z-index: 0;
+}
+
+// override 
+.ol_close_ad {
+    padding: 0;
+    color: $cl_white;
+    border: 1px solid $cl_white;
+    line-height: 1;
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pushdown-hide {
+    .pushdown-banner {
+        display: none;
+    }
+}

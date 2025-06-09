@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page="Home"}}
+
+<body>
+	{{> ads/pushdown}}
+	<!-- header -->
+	{{> header page="Home" login=true}}
+	<!-- header -->
+
+	<!-- main -->
+	<main role="main" class="main">
+		<section class="container">
+			{{> ads/top}}
+			{{> headline}}
+			{{> highlight}}
+			{{> article}}
+			{{> highlight-video}}
+			{{> ads/middle}}
+			{{> sidebar/trending}}
+			{{> ads/bottom}}
+			{{> sidebar/hashtag}}
+			{{> article}}
+			{{> ads/bottom}}
+			{{> highlight-stories}}
+			{{> article mt=30}}
+			{{> ads/middle}}
+			{{> highlight-photo}}
+			{{> article mt=30}}
+			{{> ads/parallax}}
+			{{> sidebar/highlight}}
+			{{> article-more}}
+		</section>
+	</main>
+	{{> ads/sticky}}
+
+	<!-- footer -->
+	{{> footer}}
+
+	{{> js page="Home" slick=true json=true}}
+
+</body>
+
+</html>

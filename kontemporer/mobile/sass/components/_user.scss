@@ -1,0 +1,33 @@
+.user {
+    &Name {
+        text-transform: uppercase;
+        @include font-pack(false, 12px, 400, false, $cl_secondary_grey);
+
+        &~.articleTime {
+            margin-left: 14px;
+
+            &:before {
+                content: '';
+                display: inline-block;
+                border-left: 1px solid $cl_secondary_grey;
+                width: 1px;
+                height: 10px;
+                position: absolute;
+                top: 1px;
+                left: -8px;
+            }
+        }
+    }
+
+    &Avatar {
+        aspect-ratio: 1/1;
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+
+        &--big {
+            width: 86px;
+            height: 86px;
+        }
+    }
+}

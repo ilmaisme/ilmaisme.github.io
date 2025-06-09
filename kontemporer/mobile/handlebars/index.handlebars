@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page="Home"}}
+
+<body>
+	{{!> ads/pushdown}}
+	<!-- header -->
+	{{> header page="Home" login=false}}
+	<!-- header -->
+
+	<!-- main -->
+	<main role="main" class="main">
+		<section class="container">
+			{{> ads/top}}
+
+			<div class="articleCaption mt30">Editor Picks</div>
+			{{> headline}}
+
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
+
+			<div class="articleCaption mt30">Top Stories</div>
+			{{> highlight index_start=0 index_end=5 mt="10" tag="h2" col="col2" cols="col-gd10-5" sub=true}}
+
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
+		</section>
+
+		<div class="article--black mt30">
+			<div class="articleCaption">News</div>
+			{{> highlight index_start=0 index_end=1 mt="10" tag="h3" col="col1"}}
+
+			{{> article mt="20" index_start=0 index_end=4}}
+
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
+		</div>
+
+		<section class="container">
+			<div class="articleCaption mt30">Focus</div>
+			<div class="articleCaption--sub">Setiap kita juga berhak menginspirasi dan memberi dampak baik.
+			</div>
+			{{> highlight index_start=0 index_end=4 type="focus" mt="10" tag="h3" col="col2" wrap=true
+			cols="col-gd10-5"}}
+
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
+
+			<div class="articleCaption mt30">People</div>
+			<div class="articleCaption--sub">Setiap kita juga berhak menginspirasi dan memberi dampak baik.
+			</div>
+			{{> article mt="10" index_start=0 index_end=5}}
+
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
+		</section>
+
+		<div class="article--black mt30">
+			<div class="articleCaption">Voices</div>
+			<div class="articleCaption--sub">Setiap kita juga berhak menginspirasi dan memberi dampak baik.
+			</div>
+			{{> article mt="10" index_start=0 index_end=5 user=true}}
+
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
+		</div>
+
+		<section class="container">
+			<div class="articleCaption mt30">+Vibes</div>
+			{{> highlight-video index_start=1 index_end=5 tag="h3" wrap=true cols="col-gd10-5" col="col2" mt="10"}}
+
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
+		</section>
+
+		<div class="article--black mt30">
+			<div class="articleCaption">Books</div>
+			<div class="articleCaption--sub">Memperbanyak referensi, menegaskan
+				wawasan.
+				Memperbanyak referensi, menegaskan
+				wawasan Memperbanyak referensi, menegaskan wawasan</div>
+			{{> highlight mt="10" index_start=0 index_end=3 tag="h3" mb="20" col="col1" wrap=true}}
+
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
+		</div>
+	</main>
+	{{!> ads/sticky}}
+
+	<!-- footer -->
+	{{> footer}}
+
+	{{> js page="Home" slick=true}}
+
+</body>
+
+</html>

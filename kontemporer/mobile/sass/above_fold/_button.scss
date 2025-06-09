@@ -1,0 +1,71 @@
+.button {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+
+    &Search {
+
+        .icon-search {
+            width: 25px;
+            height: 25px;
+            display: block;
+        }
+
+        &__menu {
+            position: absolute;
+            top: 8px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            background: none;
+            border: 0;
+        }
+    }
+
+    &More {
+        min-height: 45px;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: $cl_white;
+        border: 1px solid $cl_pink;
+        text-transform: uppercase;
+        @include font-pack(false, 12px, 400, 22px, $cl_pink);
+    }
+
+    &Totop {
+        position: absolute;
+        top: -20px;
+        right: 20px;
+        border: 0;
+        border-radius: 10px;
+        background: $cl_pink;
+        width: 40px;
+        height: 40px;
+
+        .icon-next {
+            filter: brightness(0) invert(1);
+            vertical-align: middle;
+            @include base_rotate(270deg);
+        }
+    }
+
+    &Expand {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: $cl_primary;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        border: 0;
+        border-radius: 5px;
+        @include base_transition(all);
+
+        .icon-expand {
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+        }
+    }
+}

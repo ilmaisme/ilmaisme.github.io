@@ -1,0 +1,23 @@
+<!-- stories -->
+<div class="highlight highlight--stories mt30">
+    <div class="articleCaption">Stories</div>
+    <div class="highlightList mt10" id="sstories">
+        {{#eachIndex stories}}
+        <div class="highlightItem">
+            <a href="{{item.link}}" class="storiesLink{{#eq index compare= 0}} storiesVer1{{/eq}}">
+                <img src="{{item.img}}{{index}}.png" class="highlightImg" alt="" width="105" height="187"
+                    loading="lazy">
+                <div class="storiesBox{{#eq index compare= 0}} storiesVer1__box{{/eq}}">
+                    {{#eq item.subtitle compare=""}}{{else}}
+                    <div class="storiesSubtitle">{{item.subtitle}}</div>
+                    {{/eq}}
+                    <h4 class="storiesTitle{{#eq index compare= 0}} storiesVer1__title{{/eq}} mt10">
+                        {{item.title}}
+                    </h4>
+                </div>
+            </a>
+        </div>
+        {{/eachIndex}}
+    </div>
+</div>
+<!-- stories -->

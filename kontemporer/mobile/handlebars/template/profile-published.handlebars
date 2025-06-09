@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page="Profile"}}
+
+<body>
+    <!-- header -->
+    {{> header page="Profile" active="Sudah Terbit" login=true}}
+    <!-- header -->
+    <!-- main -->
+    <main role="main" class="main">
+        <section class="profile container">
+            <div class="articleCaption mt30">Sudah Terbit</div>
+            <ul class="articleList mt20">
+                {{#eachIndex headline}}
+                <li class="articleItem profileItem">
+                    <a href="{{item.link}}" class="profileItem__link">
+                        <h2 class="articleTitle">{{item.title}}</h2>
+                        <div class="articleDetail profileDetail display-flex aitems-center mt10">
+                            <div class="articleTime mr10">18 Mei 2025</div>
+                            <div class="articleSeen"><span class="icon icon-eye"></span>1234</div>
+                        </div>
+                    </a>
+                </li>
+                {{/eachIndex}}
+                {{#eachIndex headline}}
+                <li class="articleItem profileItem">
+                    <a href="{{item.link}}" class="profileItem__link">
+                        <h2 class="articleTitle">{{item.title}}</h2>
+                        <div class="articleDetail profileDetail display-flex aitems-center mt10">
+                            <div class="articleTime mr10">18 Mei 2025</div>
+                            <div class="articleSeen"><span class="icon icon-eye"></span>1234</div>
+                        </div>
+                    </a>
+                </li>
+                {{/eachIndex}}
+            </ul>
+            {{> paging active=false mt=30}}
+        </section>
+    </main>
+
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js page="Profile"}}
+
+</body>
+
+</html>

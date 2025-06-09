@@ -1,0 +1,31 @@
+<!-- article -->
+<div class="article{{#if mt}} mt{{mt}}{{/if}}">
+    <ul class="articleList{{#if wrap}} article--wrap{{/if}}">
+        {{#each headline}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <li class="articleItem display-flex{{#if cols}} {{cols}}{{/if}}">
+            <a href="{{link}}" class="articleImg__wrap" aria-label="{{title}}">
+                <img src="{{img}}{{@index}}.webp" class="articleImg" alt="" width="87" height="87" loading="lazy">
+            </a>
+            <div class="articleBox">
+                {{#if ../sub}}<div class="articleSubtitle mt5 mb5">{{subtitle}}</div>{{/if}}
+                <h3 class="articleTitle"><a href="{{link}}">{{title}}</a></h3>
+                <div class="articleDetail user display-flex aitems-center mt5">
+                    {{#if ../user}}
+                    <a href="#" class="userName display-flex aitems-center">
+                        Salma Farida
+                    </a>
+                    {{/if}}
+                    <div class="articleTime">18 Mei 2025</div>
+                </div>
+            </div>
+        </li>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
+    </ul>
+</div>
+<!-- article -->
