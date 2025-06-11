@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page="Home"}}
+
+<body>
+
+	<!-- header -->
+	{{> header page="Home" login=true}}
+	<!-- header -->
+
+	<!-- main -->
+	<main role="main">
+		{{!> ads/skin}}
+		{{> ads/billboard}}
+
+		<section class="container mt40">
+			{{> highlight-box slide="sbox" next=true caption="Editor Picks" index_start=0 index_end=5 tag="h1"
+			thumb=true time=true}}
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
+
+			{{> highlight title="Top Stories" col="col-gd10-5" index_start=0 index_end=5 tag="h2" time=true}}
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
+
+		</section>
+
+		<div class="article--black mt40">
+			<section class="container">
+				<div class="highlightCaption">News</div>
+				<div class="row">
+					<div class="col-gd10-2">
+						<ul class="articleList article--col">
+							{{> article-column index_start=0 index_end=1 time=true lead=true tag="h3" next=true}}
+						</ul>
+					</div>
+					<div class="col-gd10-2">
+						<ul class="articleList article--small">
+							{{> article index_start=0 index_end=4 time=true tag="h3"}}
+						</ul>
+						<div class="display-flex aitems-center jcontent-end">
+							<a href="#" class="buttonMore">+ More</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		{{> newsletter}}
+
+		<section class="container mt40 mb40">
+			<div class="highlightCaption">Focus</div>
+			<div class="highlightCaption--sub">Setiap kita juga berhak menginspirasi dan memberi dampak baik.
+			</div>
+
+			{{> headline}}
+
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
+		</section>
+
+		<section class="container">
+
+			{{> ads/middle mt=40 mb=40}}
+
+			<div class="highlightCaption">People</div>
+			<div class="highlightCaption--sub">Setiap kita juga berhak menginspirasi dan memberi dampak baik.
+			</div>
+
+			<ul class="articleList">
+				{{> article index_start=0 index_end=5 lead=true tag="h3" timebtm=true}}
+			</ul>
+
+			<div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
+
+		</section>
+
+		<div class="article--black mt40">
+			<div class="container">
+				<div class="highlightCaption">Voices</div>
+				<div class="highlightCaption--sub">Setiap kita juga berhak menginspirasi dan memberi dampak baik.
+				</div>
+
+				<ul class="articleList">
+					{{> article index_start=0 index_end=5 lead=true tag="h3" timebtm=true user=true}}
+				</ul>
+
+				<div class="display-flex aitems-center jcontent-end">
+					<a href="#" class="buttonMore">+ More</a>
+				</div>
+			</div>
+		</div>
+
+		<section class="container">
+			{{> highlight-video}}
+
+		</section>
+
+		<div class="article--black mt40">
+			<div class="container">
+				{{> highlight-box col="col-gd12-4" tag="h3" title="Books" subtitle="Memperbanyak referensi, menegaskan
+				wawasan.
+				Memperbanyak referensi, menegaskan
+				wawasan Memperbanyak referensi, menegaskan wawasan" mt="20" more=true index_start=0 index_end=3}}
+			</div>
+		</div>
+
+	</main>
+	{{!> ads/sticky}}
+	<!-- footer -->
+	{{> footer}}
+
+	{{> js page="Home" slick=true}}
+
+</body>
+
+</html>

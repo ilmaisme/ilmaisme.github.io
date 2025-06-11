@@ -6,18 +6,6 @@
                 class="userAvatar mr10">
             <div class="menuProfile__name">Shopie Anggita</div>
         </a>
-        <a href="profile.html" class="menuProfile__item">
-            <span class="icon icon-home menuProfile__icon mr10"></span>
-            Beranda
-        </a>
-        <a href="profile-setting.html" class="menuProfile__item">
-            <span class="icon icon-user icon-user-grey menuProfile__icon mr10"></span>
-            Profil
-        </a>
-        <a href="#" class="menuProfile__item red">
-            <span class="icon icon-logout menuProfile__icon mr10"></span>
-            Keluar
-        </a>
         {{else}}
         <a class="menuProfile__item buttonPrimary" href="login.html"><span class="icon icon-reg mr10"></span>Sign in</a>
         {{/eq}}
@@ -27,5 +15,27 @@
         <li class="menuItem"><a href="{{link}}"
                 class="menuLink{{#eq title compare=../page}} active{{/eq}}">{{title}}</a></li>
         {{/each}}
+        <hr>
+        {{#each footermenu}}
+        <li class="menuItem">
+            <a href="{{link}}" class="menuLink">{{title}}</a>
+        </li>
+        {{/each}}
+        <li class="menuItem">
+            <ul class="footerList display-flex jcontent-center aitems-center">
+                <li class="footerSocial socialIcon mt10"><a href="#" class="socialLink display-flex" target="_blank"
+                        rel="noopener noreferrer" aria-label="Facebook"><span class="icon icon-fb"></span></a></li>
+                <li class="footerSocial socialIcon mt10"><a href="#" class="socialLink display-flex" target="_blank"
+                        rel="noopener noreferrer" aria-label="Instagram"><span class="icon icon-ig"></span></a></li>
+                <li class="footerSocial socialIcon mt10"><a href="#" class="socialLink display-flex" target="_blank"
+                        rel="noopener noreferrer" aria-label="Twitter"><span class="icon icon-tw"></span></a></li>
+                <li class="footerSocial socialIcon mt10"><a href="#" class="socialLink display-flex" target="_blank"
+                        rel="noopener noreferrer" aria-label="Youtube"><span class="icon icon-yt"></span></a></li>
+                <li class="footerSocial socialIcon mt10"><a href="#" class="socialLink display-flex" target="_blank"
+                        rel="noopener noreferrer" aria-label="Tiktok"><span class="icon icon-tiktok"></span></a></li>
+                <li class="footerSocial socialIcon mt10"><a href="#" class="socialLink display-flex" target="_blank"
+                        rel="noopener noreferrer" aria-label="Linkedin"><span class="icon icon-ln"></span></a></li>
+            </ul>
+        </li>
     </ul>
 </div>

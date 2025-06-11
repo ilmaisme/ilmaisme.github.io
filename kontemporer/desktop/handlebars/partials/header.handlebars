@@ -15,8 +15,8 @@
                 </form>
             </div>
             <div class="headerFixed__left display-flex">
-                <a href="index.html">
-                    <img src="asset/images/kontemporer-logo-transparent.png" class="headerFixed__logo" alt="Kontemporer"
+                <a href="index.html" class="headerFixed__logo">
+                    <img src="asset/images/kontemporer-logo-transparent.png" alt="Kontemporer"
                         width="200" height="38">
                 </a>
                 <nav class="nav fixedNav">
@@ -31,7 +31,12 @@
             <div class="display-flex aitems-center jcontent-end">
                 <div class="headerDate -getdate"></div>
                 {{#eq login compare=true}}
-                <button class="button buttonPrimary" onclick="location.href='profile-write.html'">Tulis Artikel</button>
+                <a href="profile-detail.html" class="navLink navLink__user flex-center">
+                    <img src="asset/images/sample/user-big.jpg" width="35" height="35" alt=""
+                        class="userAvatar userAvatar--nav mr10">
+                    <div class="navUser__name">Shopie Anggita</div>
+                </a>
+                {{!-- <button class="button buttonPrimary" onclick="location.href='profile-write.html'">Tulis Artikel</button>
                 <div class="navUser">
                     <img loading="lazy" src="asset/images/sample/user-big.jpg" width="35" height="35" alt=""
                         class="userAvatar userAvatar--nav mr10">
@@ -51,7 +56,7 @@
                         <li class="navItem navUser__item"><a href="#" class="navLink navUser__link red"><span
                                     class="icon icon-logout"></span>Logout</a></li>
                     </ul>
-                </div>
+                </div> --}}
                 {{else}}
                 <button class="button buttonPrimary" onclick="location.href='login.html'"><span
                         class="icon icon-reg mr10"></span>Sign in</button>

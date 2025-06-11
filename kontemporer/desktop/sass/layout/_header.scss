@@ -11,8 +11,10 @@
         z-index: 3;
 
         &__logo {
-            max-width: 200px;
+            max-width: 0;
             opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
         }
 
         &__left {
@@ -127,8 +129,11 @@
     }
 
     .headerFixed {
-        &__logo {      
-            @include base_transition(all);
+        &__logo {
+            max-width: 200px;
+            visibility: visible;
+            pointer-events: all;
+            @include base_transition(opacity);
             transition-delay: .4s;
         }
 
