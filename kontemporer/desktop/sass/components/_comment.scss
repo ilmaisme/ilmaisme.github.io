@@ -1,51 +1,48 @@
 .comment {
-    &Count {
-        padding: 4px 8px;
-        border-radius: 20px;
-        border: 1px solid $cl_black;
-        @include font-pack(false, 14px, 400, 30px, $cl_black);
-
-        &__text {
-            @include font-pack(false, 15px, 400, 25px, #4B4B4B);
-        }
-    }
 
     textarea {
         width: 100%;
-        border-radius: 15px;
-        border: 1px solid #C4C4C4;
-        resize: vertical;
-        padding: 20px 30px;
-        @include font-pack(false, 14px, 400, 25px, $cl_primary);
+        background: #F5F5F5;
+        border: 0;
+        border-radius: 4px;
+        resize: none;
+        padding: 8px 12px;
+        @include font-pack(false, 16px, 400, false, $cl_primary);
+        @include placeholder(14px, 400, false, $cl_tertiery_grey);
     }
 
     &Avatar {
-        width: 76px;
-        height: 76px;
+        width: 36px;
+        height: 36px;
         aspect-ratio: 1/1;
         border-radius: 100%;
         margin-right: 20px;
     }
 
     &User {
-        @include font-pack(false, 18px, 600, 25px, #2C2C2C);
+        @include font-pack(false, 14px, 600, false, false);
     }
 
     &Date {
-        @include font-pack(false, 12px, 300, 32px, #2C2C2C);
+        margin-top: 2px;
+        @include font-pack(false, 12px, false, false, #a6a6a6);
     }
 
     &Content {
-        @include font-pack(false, 15px, 400, 25px, #4B4B4B);
+        @include font-pack(false, 14px, 400, 1.5, #4B4B4B);
     }
 
     &Action {
-        @include font-pack(false, 16px, 400, 25px, false);
+        @include font-pack(false, 14px, 400, 1.5, false);
 
-        button {
+        .button {
             background: transparent;
-            border: 0;
             padding: 0;
+            text-decoration: underline;
+        }
+
+        .commentLike {
+            text-decoration: none;
         }
     }
 
@@ -57,7 +54,7 @@
         color: $cl_black;
 
         &:before {
-            content: 'Reply';
+            content: 'Balas';
             display: block;
             position: relative;
         }
@@ -71,13 +68,16 @@
         }
     }
 
+    &Like {
+        margin-right: 10px;
+        color: $cl_grey;
+        @extend .readCta
+    }
+
     &Row {
         textarea {
-            border: 1px solid #A6A6A6;
+            border: 0;
             margin: 0;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            border-bottom: 0;
             vertical-align: top;
         }
     }
@@ -100,11 +100,7 @@
     }
 
     &Bottom {
-        background: #F5F5F5;
-        padding: 10px 20px;
-        border: 1px solid #A6A6A6;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
+        margin-top: 10px;
     }
 
     &Form {
@@ -116,7 +112,11 @@
         }
     }
 
-    &Caption{
+    &Caption {
         @include font-pack(false, 18px, 400, 30px, #5F5F5F);
+    }
+
+    &[data-target=comment-section] {
+        scroll-margin-top: 124px;
     }
 }

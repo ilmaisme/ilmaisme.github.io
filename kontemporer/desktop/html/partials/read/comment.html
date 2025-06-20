@@ -1,20 +1,30 @@
 <!-- s: komentar -->
-<div class="comment">
+<div class="comment" data-target="comment-section">
     <form class="mt10" action="">
-        <textarea class="formArea" name="comment" id="comment" cols="30" rows="7" placeholder="Tuliskan Komentar"
-            aria-label="Write your comment"></textarea>
-        <button class="button buttonPink buttonPink--full mt30" type="submit" name="submit">
-            Tambah komentar
-        </button>
+        <div class="display-flex aitems-center">
+            <a href="#" class="user">
+                <img loading="lazy" src="asset/images/sample/user.jpg" width="24" height="24" alt=""
+                    class="userAvatar commentAvatar">
+            </a>
+            <textarea class="formArea" name="comment" id="comment" cols="30" rows="1"
+                placeholder="Bagaimana Pendapat Anda" aria-label="Write your comment"></textarea>
+        </div>
+        <div class="commentCta display-flex jcontent-end mt20">
+            <button class="button buttonPrimary button--trans" type="button" name="cancel">
+                Batal
+            </button>
+            <button class="button buttonPrimary" type="submit" name="submit">
+                Kirim
+            </button>
+        </div>
     </form>
-    <div class="readCaption--big mt30">30 Komentar</div>
-    <div class="commentList mt30">
+    <div class="commentList">
         <div class="commentItem display-flex mt20 mb20">
             <div class="commentRow">
-                <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;76;h&#x3D;76;hash&#x3D;8B7BCDC2" alt="" class="commentAvatar" width="76" height="76">
+                <img loading="lazy" src="./asset/images/user.png" alt="" class="commentAvatar" width="76" height="76">
             </div>
             <div class="commentRow flex-init">
-                <div class="display-flex aitems-center jcontent-between">
+                <div class="commentHead">
                     <div class="commentUser">Victor Papanek</div>
                     <div class="commentDate">Rabu, 14 Juli 2021 - 10:36</div>
                 </div>
@@ -24,25 +34,28 @@
                     dictum aliquet egestas. Quis dis dictum odio risus nisl. Facilisi sit suspendisse elit feugiat.
                 </div>
                 <div class="commentAction display-flex jcontent-between mt20">
-                    <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                    <div class="display-flex">
+                        <button class="button commentLike" aria-label="Like this comment"><span
+                                class="icon icon-clap"></span>12</button>
+                        <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                    </div>
                     <button class="button commentReport -bReport">Laporkan</button>
                 </div>
                 <form class="commentForm mt10 -fReply" action="">
-                    <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
+                    <textarea class="formArea commentArea" cols="30" rows="1" placeholder="Tulis Komentarmu"
                         aria-label="Write your comment"></textarea>
-                    <div class="commentBottom display-flex aitems-center jcontent-between">
-                        <div class="commentCount__text">1000 karakter tersisa</div>
-                        <button class="button buttonPink" type="submit" name="submit">
+                    <div class="commentFooter display-flex aitems-center jcontent-end mt10">
+                        <button class="button buttonPrimary" type="submit" name="submit">
                             Kirim
                         </button>
                     </div>
                 </form>                <!-- s: reply -->
                 <div class="commentItem display-flex mt20 mb20">
                     <div class="commentRow">
-                        <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;76;h&#x3D;76;hash&#x3D;8B7BCDC2" alt="" class="commentAvatar" width="76" height="76">
+                        <img loading="lazy" src="./asset/images/user.png" alt="" class="commentAvatar" width="76" height="76">
                     </div>
                     <div class="commentRow flex-init">
-                        <div class="display-flex aitems-center jcontent-between">
+                        <div class="commentHead">
                             <div class="commentUser">Victor Papanek</div>
                             <div class="commentDate">Rabu, 14 Juli 2021 - 10:36</div>
                         </div>
@@ -55,15 +68,18 @@
                             feugiat.
                         </div>
                         <div class="commentAction display-flex jcontent-between mt20">
-                            <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                            <div class="display-flex">
+                                <button class="button commentLike" aria-label="Like this comment"><span
+                                        class="icon icon-clap"></span>3</button>
+                                <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                            </div>
                             <button class="button commentReport -bReport">Laporkan</button>
                         </div>
                         <form class="commentForm mt10 -fReply" action="">
-                            <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
+                            <textarea class="formArea commentArea" cols="30" rows="1" placeholder="Tulis Komentarmu"
                                 aria-label="Write your comment"></textarea>
-                            <div class="commentBottom display-flex aitems-center jcontent-between">
-                                <div class="commentCount__text">1000 karakter tersisa</div>
-                                <button class="button buttonPink" type="submit" name="submit">
+                            <div class="commentFooter display-flex aitems-center jcontent-end mt10">
+                                <button class="button buttonPrimary" type="submit" name="submit">
                                     Kirim
                                 </button>
                             </div>
@@ -71,10 +87,10 @@
                 </div>
                 <div class="commentItem display-flex mt20 mb20">
                     <div class="commentRow">
-                        <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;76;h&#x3D;76;hash&#x3D;500B67FB" alt="" class="commentAvatar" width="76" height="76">
+                        <img loading="lazy" src="./asset/images/sample/user.jpg" alt="" class="commentAvatar" width="76" height="76">
                     </div>
                     <div class="commentRow flex-init">
-                        <div class="display-flex aitems-center jcontent-between">
+                        <div class="commentHead">
                             <div class="commentUser">Derry Aso</div>
                             <div class="commentDate">Rabu, 14 Juli 2021 - 10:36</div>
                         </div>
@@ -87,15 +103,18 @@
                             feugiat.
                         </div>
                         <div class="commentAction display-flex jcontent-between mt20">
-                            <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                            <div class="display-flex">
+                                <button class="button commentLike" aria-label="Like this comment"><span
+                                        class="icon icon-clap"></span>3</button>
+                                <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                            </div>
                             <button class="button commentReport -bReport">Laporkan</button>
                         </div>
                         <form class="commentForm mt10 -fReply" action="">
-                            <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
+                            <textarea class="formArea commentArea" cols="30" rows="1" placeholder="Tulis Komentarmu"
                                 aria-label="Write your comment"></textarea>
-                            <div class="commentBottom display-flex aitems-center jcontent-between">
-                                <div class="commentCount__text">1000 karakter tersisa</div>
-                                <button class="button buttonPink" type="submit" name="submit">
+                            <div class="commentFooter display-flex aitems-center jcontent-end mt10">
+                                <button class="button buttonPrimary" type="submit" name="submit">
                                     Kirim
                                 </button>
                             </div>
@@ -103,10 +122,10 @@
                 </div>
                 <div class="commentItem display-flex mt20 mb20">
                     <div class="commentRow">
-                        <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;76&amp;h&#x3D;76&amp;hash&#x3D;A89D0DE6" alt="" class="commentAvatar" width="76" height="76">
+                        <img loading="lazy" src="./asset/images/user.png" alt="" class="commentAvatar" width="76" height="76">
                     </div>
                     <div class="commentRow flex-init">
-                        <div class="display-flex aitems-center jcontent-between">
+                        <div class="commentHead">
                             <div class="commentUser">Amanda Immanuella</div>
                             <div class="commentDate">Rabu, 14 Juli 2021 - 10:36</div>
                         </div>
@@ -119,15 +138,18 @@
                             feugiat.
                         </div>
                         <div class="commentAction display-flex jcontent-between mt20">
-                            <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                            <div class="display-flex">
+                                <button class="button commentLike" aria-label="Like this comment"><span
+                                        class="icon icon-clap"></span>3</button>
+                                <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                            </div>
                             <button class="button commentReport -bReport">Laporkan</button>
                         </div>
                         <form class="commentForm mt10 -fReply" action="">
-                            <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
+                            <textarea class="formArea commentArea" cols="30" rows="1" placeholder="Tulis Komentarmu"
                                 aria-label="Write your comment"></textarea>
-                            <div class="commentBottom display-flex aitems-center jcontent-between">
-                                <div class="commentCount__text">1000 karakter tersisa</div>
-                                <button class="button buttonPink" type="submit" name="submit">
+                            <div class="commentFooter display-flex aitems-center jcontent-end mt10">
+                                <button class="button buttonPrimary" type="submit" name="submit">
                                     Kirim
                                 </button>
                             </div>
@@ -138,10 +160,10 @@
         </div>
         <div class="commentItem display-flex mt20 mb20">
             <div class="commentRow">
-                <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;76;h&#x3D;76;hash&#x3D;500B67FB" alt="" class="commentAvatar" width="76" height="76">
+                <img loading="lazy" src="./asset/images/sample/user.jpg" alt="" class="commentAvatar" width="76" height="76">
             </div>
             <div class="commentRow flex-init">
-                <div class="display-flex aitems-center jcontent-between">
+                <div class="commentHead">
                     <div class="commentUser">Derry Aso</div>
                     <div class="commentDate">Rabu, 14 Juli 2021 - 10:36</div>
                 </div>
@@ -151,15 +173,18 @@
                     dictum aliquet egestas. Quis dis dictum odio risus nisl. Facilisi sit suspendisse elit feugiat.
                 </div>
                 <div class="commentAction display-flex jcontent-between mt20">
-                    <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                    <div class="display-flex">
+                        <button class="button commentLike" aria-label="Like this comment"><span
+                                class="icon icon-clap"></span>12</button>
+                        <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                    </div>
                     <button class="button commentReport -bReport">Laporkan</button>
                 </div>
                 <form class="commentForm mt10 -fReply" action="">
-                    <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
+                    <textarea class="formArea commentArea" cols="30" rows="1" placeholder="Tulis Komentarmu"
                         aria-label="Write your comment"></textarea>
-                    <div class="commentBottom display-flex aitems-center jcontent-between">
-                        <div class="commentCount__text">1000 karakter tersisa</div>
-                        <button class="button buttonPink" type="submit" name="submit">
+                    <div class="commentFooter display-flex aitems-center jcontent-end mt10">
+                        <button class="button buttonPrimary" type="submit" name="submit">
                             Kirim
                         </button>
                     </div>
@@ -169,10 +194,10 @@
         </div>
         <div class="commentItem display-flex mt20 mb20">
             <div class="commentRow">
-                <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;76&amp;h&#x3D;76&amp;hash&#x3D;A89D0DE6" alt="" class="commentAvatar" width="76" height="76">
+                <img loading="lazy" src="./asset/images/user.png" alt="" class="commentAvatar" width="76" height="76">
             </div>
             <div class="commentRow flex-init">
-                <div class="display-flex aitems-center jcontent-between">
+                <div class="commentHead">
                     <div class="commentUser">Amanda Immanuella</div>
                     <div class="commentDate">Rabu, 14 Juli 2021 - 10:36</div>
                 </div>
@@ -182,15 +207,18 @@
                     dictum aliquet egestas. Quis dis dictum odio risus nisl. Facilisi sit suspendisse elit feugiat.
                 </div>
                 <div class="commentAction display-flex jcontent-between mt20">
-                    <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                    <div class="display-flex">
+                        <button class="button commentLike" aria-label="Like this comment"><span
+                                class="icon icon-clap"></span>12</button>
+                        <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                    </div>
                     <button class="button commentReport -bReport">Laporkan</button>
                 </div>
                 <form class="commentForm mt10 -fReply" action="">
-                    <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
+                    <textarea class="formArea commentArea" cols="30" rows="1" placeholder="Tulis Komentarmu"
                         aria-label="Write your comment"></textarea>
-                    <div class="commentBottom display-flex aitems-center jcontent-between">
-                        <div class="commentCount__text">1000 karakter tersisa</div>
-                        <button class="button buttonPink" type="submit" name="submit">
+                    <div class="commentFooter display-flex aitems-center jcontent-end mt10">
+                        <button class="button buttonPrimary" type="submit" name="submit">
                             Kirim
                         </button>
                     </div>
@@ -200,10 +228,10 @@
         </div>
         <div class="commentItem display-flex mt20 mb20">
             <div class="commentRow">
-                <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;76&amp;h&#x3D;76&amp;hash&#x3D;225E6693" alt="" class="commentAvatar" width="76" height="76">
+                <img loading="lazy" src="./asset/images/user.png" alt="" class="commentAvatar" width="76" height="76">
             </div>
             <div class="commentRow flex-init">
-                <div class="display-flex aitems-center jcontent-between">
+                <div class="commentHead">
                     <div class="commentUser">Pandu Hutapea</div>
                     <div class="commentDate">Rabu, 14 Juli 2021 - 10:36</div>
                 </div>
@@ -213,15 +241,18 @@
                     dictum aliquet egestas. Quis dis dictum odio risus nisl. Facilisi sit suspendisse elit feugiat.
                 </div>
                 <div class="commentAction display-flex jcontent-between mt20">
-                    <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                    <div class="display-flex">
+                        <button class="button commentLike" aria-label="Like this comment"><span
+                                class="icon icon-clap"></span>12</button>
+                        <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                    </div>
                     <button class="button commentReport -bReport">Laporkan</button>
                 </div>
                 <form class="commentForm mt10 -fReply" action="">
-                    <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
+                    <textarea class="formArea commentArea" cols="30" rows="1" placeholder="Tulis Komentarmu"
                         aria-label="Write your comment"></textarea>
-                    <div class="commentBottom display-flex aitems-center jcontent-between">
-                        <div class="commentCount__text">1000 karakter tersisa</div>
-                        <button class="button buttonPink" type="submit" name="submit">
+                    <div class="commentFooter display-flex aitems-center jcontent-end mt10">
+                        <button class="button buttonPrimary" type="submit" name="submit">
                             Kirim
                         </button>
                     </div>
@@ -231,10 +262,10 @@
         </div>
         <div class="commentItem display-flex mt20 mb20">
             <div class="commentRow">
-                <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;76&amp;h&#x3D;76&amp;hash&#x3D;7F5AE56A" alt="" class="commentAvatar" width="76" height="76">
+                <img loading="lazy" src="./asset/images/user.png" alt="" class="commentAvatar" width="76" height="76">
             </div>
             <div class="commentRow flex-init">
-                <div class="display-flex aitems-center jcontent-between">
+                <div class="commentHead">
                     <div class="commentUser">Larinda Dewi</div>
                     <div class="commentDate">Rabu, 14 Juli 2021 - 10:36</div>
                 </div>
@@ -244,15 +275,18 @@
                     dictum aliquet egestas. Quis dis dictum odio risus nisl. Facilisi sit suspendisse elit feugiat.
                 </div>
                 <div class="commentAction display-flex jcontent-between mt20">
-                    <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                    <div class="display-flex">
+                        <button class="button commentLike" aria-label="Like this comment"><span
+                                class="icon icon-clap"></span>12</button>
+                        <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                    </div>
                     <button class="button commentReport -bReport">Laporkan</button>
                 </div>
                 <form class="commentForm mt10 -fReply" action="">
-                    <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
+                    <textarea class="formArea commentArea" cols="30" rows="1" placeholder="Tulis Komentarmu"
                         aria-label="Write your comment"></textarea>
-                    <div class="commentBottom display-flex aitems-center jcontent-between">
-                        <div class="commentCount__text">1000 karakter tersisa</div>
-                        <button class="button buttonPink" type="submit" name="submit">
+                    <div class="commentFooter display-flex aitems-center jcontent-end mt10">
+                        <button class="button buttonPrimary" type="submit" name="submit">
                             Kirim
                         </button>
                     </div>

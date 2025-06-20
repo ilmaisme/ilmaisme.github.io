@@ -1,74 +1,32 @@
-<!-- s: more article -->
+<!-- s: article -->
 <div class="highlight">
     <ul class="highlightList row">
-        {{#eachIndex headline}}
-        {{#gt index compare = '1'}}
-        <li class="highlightItem col-gd12-4 mt30">
-            <a href="{{item.link}}" class="highlightImg__wrap" aria-label="{{item.title}}">
-                <img src="{{item.img}}{{index}}.jpg" class="highlightImg" alt="" width="234" height="164"
-                    loading="lazy">
+        {{#each trending}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
+        <li class="highlightItem mt20{{#if ../col}} {{../col}}{{/if}}">
+            <a href="{{link}}" class="highlightImg__wrap" aria-label="{{title}}">
+                <img src="{{img}}{{@index}}.jpg" class="highlightImg" alt="" width="234" height="164" loading="lazy">
             </a>
             <div class="highlightBox">
+                {{#if ../sub}}
                 <div class="highlightDetail display-flex aitems-center mt10">
-                    <div class="highlightSubtitle">{{item.subtitle}}</div>
+                    <div class="highlightSubtitle">{{subtitle}}</div>
                     <div class="highlightTime">Minggu, 18 Mei 2025</div>
                 </div>
-                <h2 class="highlightTitle mt10"><a href="{{item.link}}" class="highlightLink">{{item.title}}</a></h2>
+                {{/if}}
+                <h2 class="highlightTitle mt10"><a href="{{link}}" class="highlightLink">{{title}}</a></h2>
+                {{#if ../sub}}
+                {{else}}
+                <div class="highlightTime mt10">Minggu, 18 Mei 2025</div>
+                {{/if}}
             </div>
         </li>
-        {{/gt}}
-        {{/eachIndex}}
-        {{#eachIndex headline}}
-        {{#gt index compare = '1'}}
-        <li class="highlightItem col-gd12-4 mt30">
-            <a href="{{item.link}}" class="highlightImg__wrap" aria-label="{{item.title}}">
-                <img src="{{item.img}}{{index}}.jpg" class="highlightImg" alt="" width="234" height="164"
-                    loading="lazy">
-            </a>
-            <div class="highlightBox">
-                <div class="highlightDetail display-flex aitems-center mt10">
-                    <div class="highlightSubtitle">{{item.subtitle}}</div>
-                    <div class="highlightTime">Minggu, 18 Mei 2025</div>
-                </div>
-                <h2 class="highlightTitle mt10"><a href="{{item.link}}" class="highlightLink">{{item.title}}</a></h2>
-            </div>
-        </li>
-        {{/gt}}
-        {{/eachIndex}}
-        {{#eachIndex headline}}
-        {{#gt index compare = '1'}}
-        <li class="highlightItem col-gd12-4 mt30">
-            <a href="{{item.link}}" class="highlightImg__wrap" aria-label="{{item.title}}">
-                <img src="{{item.img}}{{index}}.jpg" class="highlightImg" alt="" width="234" height="164"
-                    loading="lazy">
-            </a>
-            <div class="highlightBox">
-                <div class="highlightDetail display-flex aitems-center mt10">
-                    <div class="highlightSubtitle">{{item.subtitle}}</div>
-                    <div class="highlightTime">Minggu, 18 Mei 2025</div>
-                </div>
-                <h2 class="highlightTitle mt10"><a href="{{item.link}}" class="highlightLink">{{item.title}}</a></h2>
-            </div>
-        </li>
-        {{/gt}}
-        {{/eachIndex}}
-        {{#eachIndex headline}}
-        {{#gt index compare = '1'}}
-        <li class="highlightItem col-gd12-4 mt30">
-            <a href="{{item.link}}" class="highlightImg__wrap" aria-label="{{item.title}}">
-                <img src="{{item.img}}{{index}}.jpg" class="highlightImg" alt="" width="234" height="164"
-                    loading="lazy">
-            </a>
-            <div class="highlightBox">
-                <div class="highlightDetail display-flex aitems-center mt10">
-                    <div class="highlightSubtitle">{{item.subtitle}}</div>
-                    <div class="highlightTime">Minggu, 18 Mei 2025</div>
-                </div>
-                <h2 class="highlightTitle mt10"><a href="{{item.link}}" class="highlightLink">{{item.title}}</a></h2>
-            </div>
-        </li>
-        {{/gt}}
-        {{/eachIndex}}
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
     </ul>
 </div>
-<!-- e: more article -->
+<!-- e: article -->

@@ -2,4 +2,32 @@
     &Caption {
         @include font-pack(false, 30px, 600, 22px, $cl_black);
     }
+
+    &--video {
+        .highlightImg__wrap,
+        .articleImg__wrap {
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                border-radius: 55px;
+                width: 55px;
+                height: 55px;
+                display: block;
+                background-color: $cl_white;
+                @include auto-center();
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                background: url(../images/icon-play.png) center no-repeat;
+                background-size: 28px;
+                @include auto-center();
+            }
+        }
+    }
 }

@@ -7,21 +7,6 @@
     display: inline-block;
     text-align: center;
 
-    &Secondary {
-        min-width: 63px;
-        min-height: 36px;
-        padding: 10px;
-        border: 1px solid $cl_black;
-        border-radius: 20px;
-        background: $cl_white;
-        @include font-pack(false, 12px, 500, false, $cl_black);
-
-        &--small {
-            width: auto;
-            padding: 10px 30px;
-        }
-    }
-
     &Primary {
         min-width: 83px;
         min-height: 36px;
@@ -42,34 +27,6 @@
             vertical-align: text-bottom;
             background-size: 15px;
             filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(162deg) brightness(103%) contrast(104%);
-        }
-    }
-
-    &Search {
-        display: flex;
-        align-items: center;
-    }
-
-    &Other {
-        padding: 7px 22px;
-        border: 1px solid $cl_black;
-        border-radius: 15px;
-
-        &--bottom {
-            display: block;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-            background: $cl_black;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            margin-bottom: -1px;
-            margin-left: -1px;
-            margin-right: -1px;
-            @include font-pack(false, 12px, 600, 24px, $cl_white);
-
-            &:hover {
-                color: $cl_white;
-            }
         }
     }
 
@@ -110,6 +67,7 @@
     &--trans {
         background: transparent;
         border: 0;
+        color: $cl_black;
     }
 
     &Totop {
@@ -193,7 +151,7 @@
         position: absolute;
         top: 15px;
         right: 15px;
-        @include font-pack(false, 13px, 500, 22px, $cl_white);
+        @include font-pack($font_body, 13px, 500, 22px, $cl_white);
         background: rgba(53, 53, 53, .6);
         padding: 7px 19px;
         border: 0;

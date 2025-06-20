@@ -1,19 +1,12 @@
 .trending {
+    padding: 20px 16px;
+    background: $cl_black;
+
     &Item {
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
 
         &:last-child {
             margin-bottom: 0;
-
-            .trendingTitle {
-                border: 0;
-                padding-bottom: 0;
-            }
-
-            .trendingRank {
-                padding-bottom: 0;
-            }
         }
     }
 
@@ -26,16 +19,10 @@
     &Title {
         width: 100%;
         min-height: 24px;
-        padding-bottom: 15px;
-        border-bottom: 1px solid #EBEBEB;
-        @include font-pack(false, 18px, 600, false, false);
+        @include font-pack(false, 18px, 600, false, $cl_white);
     }
 
-    &Link {
-        &:hover {
-            .trendingTitle {
-                color: $cl_black;
-            }
-        }
+    .sidebarCaption, .buttonMore{
+        color: $cl_white;
     }
 }

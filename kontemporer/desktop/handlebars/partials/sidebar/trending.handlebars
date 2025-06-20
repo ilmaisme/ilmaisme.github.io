@@ -1,17 +1,27 @@
-<div class="trending">
-    <div class="sidebarCaption">Trending</div>
-    <ul class="trendingList">
-        {{#eachIndex trending}}
-        {{#gt index compare = '0'}}
+<div class="trending{{#if mt}} mt{{mt}}{{/if}}">
+    <div class="sidebarCaption">Top Stories</div>
+    <ul class="trendingList mt10">
+        {{#each trending}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
         <li class="trendingItem">
             <a href="#" class="trendingLink display-flex aitems-center">
-                <div class="trendingRank">
-                    {{index}}
-                </div>
-                <h3 class="trendingTitle">{{item.title}}</h3>
+                <h3 class="trendingTitle">{{title}}</h3>
+                <div class="display-flex aitems-center mt10">
+                    <img loading="lazy" src="{{user}}" width="24" height="24" alt="" class="userAvatar mr10">
+                    <div class="userName">
+                        Nurulloh
+                    </div>
+            </a>
             </a>
         </li>
-        {{/gt}}
-        {{/eachIndex}}
+        {{/gte}}
+        {{else}}
+        {{/gte}}
+        {{/each}}
     </ul>
+    <div class="display-flex aitems-center jcontent-end">
+        <a href="#" class="buttonMore">+ More</a>
+    </div>
 </div>

@@ -33,12 +33,16 @@
                     {{/if}}
                     {{#if ../thumb}}
                     <div class="highlightDetail display-flex aitems-center jcontent-between mt10 mb10">
+                        {{#if ../time}}
+                        <span class="display-flex aitems-center">
+                            <div class="highlightSubtitle">{{subtitle}}</div>
+                            <div class="highlightTime">Minggu, 18 Mei 2025</div>
+                        </span>
+                        {{else}}
                         <div class="highlightSubtitle">{{subtitle}}</div>
+                        {{/if}}
                         {{>read/share}}
                     </div>
-                    {{/if}}
-                    {{#if ../time}}
-                    <div class="highlightTime">Minggu, 18 Mei 2025</div>
                     {{/if}}
                     <div class="highlightLead">{{lead}}</div>
                     {{#if ../next}}<a href="{{link}}" class="buttonNext">Selanjutnya <span

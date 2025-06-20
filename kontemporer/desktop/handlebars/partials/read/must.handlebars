@@ -1,0 +1,19 @@
+<ul class="highlightList row readSlider__list">
+    {{#each trending}}
+    {{#gte @index compare=../index_start}}
+    {{#gte @index compare=../index_end}}
+    {{else}}
+    <li class="highlightItem{{#if ../col}} {{../col}}{{/if}}">
+        <div class="highlightBox">
+            <h2 class="highlightTitle"><a href="{{link}}" class="highlightLink">{{title}}</a></h2>
+            {{#if ../lead}}<div class="highlightLead">{{lead}}</div>{{/if}}
+            {{#if ../time}}
+            <div class="highlightTime">Minggu, 18 Mei 2025</div>
+            {{/if}}
+        </div>
+    </li>
+    {{/gte}}
+    {{else}}
+    {{/gte}}
+    {{/each}}
+</ul>

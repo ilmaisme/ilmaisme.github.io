@@ -1,9 +1,14 @@
 .read {
     word-wrap: break-word;
     word-break: break-word;
-    
+
     &Title {
         @include font-pack(false, 30px, 700, false, $cl_black);
+
+        &__sub {
+            text-transform: uppercase;
+            @include font-pack(false, 13px, 700, false, false);
+        }
     }
 
     &Writer {
@@ -20,7 +25,7 @@
         }
 
         &--big {
-            @include font-pack(false, 18px, 600, 30px, #5F5F5F);
+            @include font-pack($font_read, 18px, 600, 30px, $cl_tertiery_grey);
         }
 
         &__avatar {
@@ -63,11 +68,24 @@
         }
     }
 
+    &Cta {
+        gap: 10px;
+        @include font-pack(false, 13px, 400, 1.5, false);
+
+        .button {
+            color: #717171
+        }
+
+        .icon {
+            vertical-align: bottom;
+            margin-right: 4px
+        }
+    }
+
     &Img {
-        border-radius: 15px;
 
         &__thumb {
-            @include font-pack(false, 13px, 400, 22px, #707070);
+            @include font-pack($font_read, 13px, 400, 22px, #707070);
         }
 
         &__expand {
@@ -78,38 +96,16 @@
             margin-top: 20px;
             margin-bottom: 20px;
 
-            a{
+            a {
                 display: block;
                 margin: auto;
                 text-align: center;
-                background-color: $cl_tertiery_grey;
-                border-radius: 15px;
-            }
-
-            &--left {
-                position: relative;
-                float: left;
-                max-width: 326px;
-                height: auto;
-                margin-top: 30px;
-                padding-right: 20px;
-                padding-bottom: 30px;
-            }
-
-            &--right {
-                position: relative;
-                float: right;
-                max-width: 326px;
-                height: auto;
-                margin-top: 30px;
-                padding-left: 20px;
-                padding-bottom: 30px;
+                background-color: $cl_primary;
             }
 
             video,
             iframe {
                 max-width: 100%;
-                border-radius: 15px;
                 object-fit: cover;
             }
 
@@ -125,7 +121,7 @@
     }
 
     &Content {
-        @include font-pack(false, 15px, 500, 28px, #5F5F5F);
+        @include font-pack($font_read, 18px, 500, 1.6, $cl_black);
 
         p {
             margin-top: 20px;
@@ -190,26 +186,10 @@
 
         ul {
             list-style-type: disc;
-
-            li::marker {
-                color: #9B9B9B;
-            }
         }
 
         ol {
             list-style-type: decimal;
-
-            li::marker {
-                color: #8E8E8E;
-            }
-        }
-
-        &__vid {
-
-            iframe,
-            video {
-                border-radius: 15px;
-            }
         }
 
         a {
@@ -232,7 +212,7 @@
     }
 
     &Caption {
-        @include font-pack(false, 17px, 700, 30px, $cl_primary);
+        @include font-pack($font_read, 20px, 700, 30px, $cl_primary);
 
         &--big {
             @extend .sidebarCaption;
@@ -247,21 +227,67 @@
         @include font-pack(false, 14px, 400, 30px, #5F5F5F);
 
         &__link {
-            padding: 4px 17px;
+            padding: 12px 16px;
             margin-right: 10px;
             margin-top: 10px;
             display: block;
-            border: 1px solid $cl_black;
-            border-radius: 12px;
-            @include font-pack(false, 14px, 500, false, $cl_primary);
+            background: $cl_black;
+            border-radius: 100px;
+            @include font-pack(false, 14px, 500, 1, $cl_white);
 
             &:hover {
-                color: $cl_black;
+                color: $cl_white;
             }
         }
     }
 
-    &Bottom {
-        padding-bottom: 30px;
+    &Slider {
+        background: $cl_black;
+        padding: 10px 15px 15px;
+        margin-bottom: 20px;
+        position: relative;
+        overflow: hidden;
+
+        &__list {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        &-angle {
+            position: absolute;
+            top: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 100%;
+            background: rgba(255, 255, 255, .8);
+            transition: opacity .2s ease, visibility .2s ease;
+
+            &.-disabled {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            &.-left {
+                left: 10px;
+                transform: rotate(180deg);
+            }
+
+            &.-right {
+                right: 10px;
+            }
+        }
+
+        .readTitle__sub,
+        .highlightTitle {
+            color: $cl_white;
+        }
+
+        .highlightLink {
+            -webkit-line-clamp: 3;
+            font-size: 14px;
+        }
     }
 }

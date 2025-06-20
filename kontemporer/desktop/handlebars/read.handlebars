@@ -10,22 +10,23 @@
 
   <!-- main -->
   <main role="main">
-    {{> ads/skin}}
-    <div class="container">
-      <ul class="breadcrumb display-flex mt40 mb40">
-        <li class="breadcrumbItem"><a href="#" class="breadcrumbLink">Home</a></li>
-        <li class="breadcrumbItem"><a href="#" class="breadcrumbLink active">Zodiak</a></li>
-      </ul>
-    </div>
+    {{> ads/billboard}}
+
     <section class="container">
       <div class="row display-flex mt40">
         <div class="read col-gd-740 images-container">
+          <div class="readSlider" data-slider="true">
+            <div class="readTitle__sub">Must Read</div>
+            {{>read/must col="col-gd12-3" index_start=0 index_end=8}}
+          </div>
+
           <article>
-            <h1 class="readTitle text-center">Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo
+            <div class="readTitle__sub">Focus</div>
+            <h1 class="readTitle">Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo
             </h1>
+            <div class="readWriter">Editor Kontemporer | 11 September 2021</div>
             <div class="flex-center jcontent-between mt20">
-              <div class="readWriter"><b><a href="#">Alphonse Elric</a></b> | 11 September 2021 | 12.23
-                WIB</div>
+              {{> read/cta}}
               {{> read/share}}
             </div>
             <div class="readImg__wrap">
@@ -35,7 +36,7 @@
                 <button class="button buttonExpand"><span class="icon icon-expand"></span>
                   Perbesar</button>
               </div>
-              <div class="readImg__thumb text-center mt10">Lorem ipsum dolor sit amet, consectetur
+              <div class="readImg__thumb mt10">Lorem ipsum dolor sit amet, consectetur
                 adipiscing elit. Sit et
                 amet, parturient sed sodales. Ut est sed quis et adipiscing tristique. Maecenas vitae
                 nulla tellus nisl volutpat. </div> --}}
@@ -44,7 +45,7 @@
                   <img src="asset/images/sample/art-big-0.jpg" class="readImg" itemprop="thumbnail" alt="" width="740"
                     height="436" />
                 </a>
-                <figcaption itemprop="caption description" class="readImg__thumb text-center mt10">
+                <figcaption itemprop="caption description" class="readImg__thumb mt10">
                   Lorem
                   ipsum dolor sit amet</figcaption>
                 <button class="button buttonExpand"><span class="icon icon-expand"></span>
@@ -68,7 +69,7 @@
                 Elementum ac platea condimentum laoreet massa habitasse sagittis. Elit elementum, enim
                 porttitor amet morbi.
               </p>
-              {{> ads/right mt=20}}
+
               <blockquote>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
                 ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit
                 amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae
@@ -101,7 +102,7 @@
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras
                   id eu libero. Sit turpis massa, non suscipit in bibendum.</li>
               </ul>
-              <div class="readImg__wrap--left">
+              <div class="readImg__wrap">
                 {{!-- <div class="readImg__expand">
                   <img src="asset/images/sample/stories-3.png" class="readImg" alt="" width="239" height="426"
                     loading="lazy">
@@ -114,7 +115,7 @@
                     <img src="asset/images/sample/stories-3.png" class="readImg" itemprop="thumbnail" alt="" width="239"
                       height="426" />
                   </a>
-                  <figcaption itemprop="caption description" class="readImg__thumb text-center mt10">
+                  <figcaption itemprop="caption description" class="readImg__thumb mt10">
                   </figcaption>
                   <button class="button buttonExpand"><span class="icon icon-expand"></span>
                     Perbesar</button>
@@ -138,7 +139,7 @@
                 Elementum ac platea condimentum laoreet massa habitasse sagittis. Elit elementum, enim
                 porttitor amet morbi.
               </p>
-              {{> ads/parallax}}
+
               <h2 class="text-center">Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo</h2>
               <div class="readImg__wrap">
                 {{!-- <div class="readImg__expand">
@@ -147,7 +148,7 @@
                   <button class="button buttonExpand"><span class="icon icon-expand"></span>
                     Perbesar</button>
                 </div>
-                <div class="readImg__thumb text-center mt10">Lorem ipsum dolor sit amet, consectetur
+                <div class="readImg__thumb mt10">Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Sit et
                   amet, parturient sed sodales. Ut est sed quis et adipiscing tristique. Maecenas
                   vitae
@@ -158,7 +159,7 @@
                     <img src="asset/images/sample/art-big-3.jpg" class="readImg" itemprop="thumbnail" alt="" width="740"
                       height="436" />
                   </a>
-                  <figcaption itemprop="caption description" class="readImg__thumb text-center mt10">
+                  <figcaption itemprop="caption description" class="readImg__thumb mt10">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et
                     cras id eu libero. Sit turpis massa, non suscipit in bibendum nec volutpat
                     viverra.
@@ -184,7 +185,7 @@
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras
                   id eu libero. Sit turpis massa, non suscipit in bibendum.</li>
               </ol>
-              <div class="readImg__wrap--right">
+              <div class="readImg__wrap">
                 {{!-- <div class="readImg__expand">
                   <img src="asset/images/sample/stories-2.png" class="readImg" alt="" width="239" height="426"
                     loading="lazy">
@@ -197,7 +198,7 @@
                     <img src="asset/images/sample/stories-2.png" class="readImg" itemprop="thumbnail" alt="" width="239"
                       height="426" />
                   </a>
-                  <figcaption itemprop="caption description" class="readImg__thumb text-center mt10">
+                  <figcaption itemprop="caption description" class="readImg__thumb mt10">
                     Lorem ipsum dolor sit amet
                   </figcaption>
                   <button class="button buttonExpand"><span class="icon icon-expand"></span>
@@ -251,27 +252,21 @@
               </ul>
             </div>
           </article>
-          <div class="readBottom display-flex aitems-center jcontent-between mt40">
-            {{> read/share-footer}}
-            <div class="commentCount">
-              30 Komentar
-            </div>
-          </div>
-          <div class="readCaption--big mt30">Apa Reaksimu?</div>
-          {{> read/react}}
-          <div class="readCaption--big mt40">Tambahkan Komentar</div>
+
+          <div class="readCaption--big mt40">Komentar</div>
           {{> read/comment}}
           {{> paging}}
-          <div class="readCaption--big mt40">Baca Juga</div>
-          {{> read/more}}
-          <button class="button buttonMore mt40">Indeks Berita</button>
+          <div class="readCaption--big mt40">Editor Picks</div>
+          {{> read/more col="col-gd12-4" index_start=0 index_end=6 sub=true}}
+
+          <div class="display-flex aitems-center jcontent-end mt10">
+            <a href="#" class="buttonMore">+ More</a>
+          </div>
         </div>
         <div class="col-gd-300">
           <aside>
-            {{> ads/right}}
-            {{> ads/right mt=20}}
-            {{> sidebar/trending}}
             {{> ads/halfpage}}
+            {{> sidebar/trending mt="40" index_start=3 index_end=8}}
             {{> sidebar/recomm}}
             {{> sidebar/hashtag}}
           </aside>
@@ -286,11 +281,10 @@
   {{> read/popup-report}}
   <!-- e: popup report -->
 
-  {{> ads/sticky}}
   <!-- footer -->
   {{> footer}}
 
-  {{> js page="Read" photozoom=true}}
+  {{> js page="Read" photozoom=true artslide=true}}
 
 </body>
 

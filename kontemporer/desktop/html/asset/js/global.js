@@ -1,9 +1,4 @@
 $(document).ready(function () {
-    //close sticky ads
-    $('.-closeads').click(function (e) {
-        e.preventDefault();
-        $(this).parent().remove();
-    });
 
     //header fixed
     let hc = $(".headerContent"),
@@ -14,53 +9,34 @@ $(document).ready(function () {
             b = hc.outerHeight();
         a > b + 69 ? (
             hfl.addClass("fixed")
-            ) :
+        ) :
             (
                 hfl.removeClass("fixed")
             )
     })
+});
 
-    //close popup
-    $('.-btnCl').on("click", function () {
-        $('.popup').removeClass('active');
+
+//textarea autoresize
+document.querySelectorAll('textarea').forEach(textarea => {
+    textarea.style.overflowY = 'hidden';
+    textarea.addEventListener('input', () => {
+        textarea.style.height = 'auto';
+        textarea.style.height = textarea.scrollHeight + 'px';
     });
+});
 
-    //icon play toggle
-    if ($('.videoPlay').is(':visible')) {
-        $('.videoPlay').click(function () {
-            $(this).find($('.icon-play')).toggle();
+//popup dismiss
+var mall = document.querySelector('.popup');
+if (!!mall) {
+    document.querySelectorAll('[data-modal-button="dismiss"]').forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.popup.active').forEach(popup => {
+                popup.classList.remove('active');
+            });
         });
-    }
-});
-
-
-//hide menu
-let navtog = $('#navToggle'),
-    usrtog = $('#navUser');
-if (navtog.is(':visible')) {
-    function checkToggleTrue() {
-        navtog.prop('checked', false);
-    }
-    navtog.click(function (e) {
-        e.stopPropagation();
     });
-};
-if (usrtog.is(':visible')) {
-    function checkUserTrue() {
-        usrtog.prop('checked', false);
-    }
-    usrtog.click(function (e) {
-        e.stopPropagation();
-    });
-};
-$('body').click(function () {
-    if (navtog.is(':visible')) {
-        checkToggleTrue()
-    }
-    if (usrtog.is(':visible')) {
-        checkUserTrue()
-    }
-});
+}
 
 //back to top button
 function backToTop() {
