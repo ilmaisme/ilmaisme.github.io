@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page=""}}
+
+<body>
+
+    <!-- header -->
+    {{> header page="Voices" login=true}}
+    <!-- header -->
+
+    <!-- main -->
+    <main role="main">
+        <section class="container">
+            <h1 class="channelTxt searchResult mt30">Hasil Pencarian: <span>Prabowo Subianto</span></h1>
+
+            <div class="row display-flex">
+                <div class="col-gd-740">
+                    <ul class="searchType display-flex">
+                        <li class="text-center"><a href="#" class="searchType__item buttonPrimary active">Artikel</a></li>
+                        <li class="text-center"><a href="#" class="searchType__item buttonPrimary">Video</a></li>
+                        <li class="text-center"><a href="#" class="searchType__item buttonPrimary">Komentar</a></li>
+                        <li class="text-center"><a href="#" class="searchType__item buttonPrimary">User</a></li>
+                    </ul>
+                    <ul class="articleList">
+                        {{> article index_start=0 index_end=8 lead=true tag="h3" timebtm=true}}
+                    </ul>
+                </div>
+                <div class="col-gd-300">
+                    <aside>
+                        {{> ads/halfpage}}
+                        {{> sidebar/trending index_start=3 index_end=8 mt="30"}}
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js}}
+
+</body>
+
+</html>

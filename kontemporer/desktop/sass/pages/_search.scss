@@ -1,29 +1,29 @@
 .search {
-    &Wrap {
-        position: relative;
-        flex: 1;
-        margin-right: 20px;
-    }
+    &Result {
+        @include font-pack(false, 14px, 600, false, $cl_grey);
 
-    &Input {
-        width: 100%;
-    }
-
-    &Icon {
-        position: absolute;
-        top: 13px;
-        right: 30px;
-        z-index: 1;
-
-        &__cal{
-            position: absolute;
-            top: 12px;
-            right: 30px;
-            pointer-events: none;
+        span {
+            color: $cl_primary;
         }
     }
 
-    &Text{
-        @include font-pack(false, 14px, 600, false, $cl_primary);
+    &Type {
+        margin-top: 10px;
+        margin-left: -4px;
+        margin-right: -4px;
+
+        &__item {
+            display: block;
+            margin-top: 10px;
+
+            &:hover {
+                color: $cl_white;
+            }
+        }
+
+        li {
+            margin-left: 4px;
+            margin-right: 4px;
+        }
     }
 }
