@@ -38,6 +38,19 @@ if (!!mall) {
     });
 }
 
+//trigger active class
+function triggerActive(item) {
+    let target = document.querySelector(item),
+        targetActive = target.classList.contains('active');
+    if (!!target) {
+        if (targetActive == false) {
+            target.classList.add('active');
+        } else {
+            target.classList.remove('active');
+        }
+    }
+}
+
 //back to top button
 function backToTop() {
     // $(window).scrollTop(0);

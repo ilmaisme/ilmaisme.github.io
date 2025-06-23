@@ -28,9 +28,19 @@
             filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(162deg) brightness(103%) contrast(104%);
         }
 
-        &.active{
+        &.active {
             background: $cl_tertiery_grey;
         }
+    }
+
+    &Secondary {
+        min-width: 83px;
+        min-height: 36px;
+        padding: 9px 15px;
+        border-radius: 25px;
+        border: 1px solid $cl_black;
+        @include font-pack(false, 16px, 500, false, $cl_black);
+        background: $cl_white;
     }
 
     &More {
@@ -62,7 +72,7 @@
             filter: invert(8%) sepia(8%) saturate(860%) hue-rotate(145deg) brightness(98%) contrast(86%);
         }
 
-        &:hover .icon-next{
+        &:hover .icon-next {
             filter: invert(47%) sepia(0%) saturate(0%) hue-rotate(183deg) brightness(93%) contrast(85%);
         }
     }
@@ -95,30 +105,19 @@
         }
     }
 
-    &Google {
-        width: 100%;
-        height: 50px;
-        border-radius: 15px;
-        border: 1px solid #CECECE;
-    }
+    &Close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
 
-    &Fb {
-        @extend .buttonGoogle;
-        color: $cl_white;
-        background: $cl_fb;
-        border: 1px solid $cl_fb;
-
-        .icon-fb {
-            width: 20px;
-            height: 30px;
-            filter: brightness(0) invert(1);
-            background-size: cover;
-        }
-
-        &:hover {
-            color: $cl_white;
+        .icon-close {
+            width: 25px;
+            height: 25px;
         }
     }
+}
+
+%button {
 
     &Eye {
         position: absolute;
@@ -171,17 +170,6 @@
             height: 25px;
             vertical-align: middle;
             margin-right: 8px;
-        }
-    }
-
-    &Close {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-
-        .icon-rejected {
-            width: 25px;
-            height: 25px;
         }
     }
 }
