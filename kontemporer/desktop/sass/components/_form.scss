@@ -147,33 +147,11 @@
         @include font-pack(false, 14px, 500, 22px, false);
     }
 
-    &Line {
-        position: relative;
-        @include font-pack(false, 14px, 500, false, #ABABAB);
-
-        span {
-            position: relative;
-            background: $cl_white;
-            padding-left: 10px;
-            padding-right: 10px;
-            z-index: 1;
-        }
-
-        &:after {
-            content: '';
-            border-top: 1px solid #ABABAB;
-            position: absolute;
-            width: 100%;
-            top: 10px;
-            left: 0;
-        }
-    }
-
     &Icon {
         position: absolute;
         width: 30px;
         height: 30px;
-        top: 10px;
+        top: 6px;
         left: 20px;
 
         &:after {
@@ -187,6 +165,7 @@
     }
 
     &Check {
+        position: relative;
         width: 24px;
         height: 24px;
         cursor: pointer;
@@ -194,23 +173,21 @@
         -webkit-appearance: none;
 
         &:checked:before {
-            font-size: 18px;
-            content: '✓';
-            color: $cl_white;
-            padding: 0 5px;
+            content: '';
             position: absolute;
-            background: $cl_black;
-            border-radius: 5px;
             z-index: 1;
-        }
-
-        &:checked:after {
-            border: 0;
+            border-bottom: 2px solid $cl_black;
+            border-right: 2px solid $cl_black;
+            transform: translate3d(0, -16px, 0) rotate(45deg);
+            width: 6px;
+            top: 21px;
+            height: 12px;
+            left: 9px;
         }
 
         &:after {
             content: '';
-            border: 1px solid #CECECE;
+            border: 1px solid $cl_grey;
             border-radius: 5px;
             position: absolute;
             width: 24px;
@@ -308,11 +285,6 @@
         width: 24px;
         height: 24px;
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 4H6C3.7909 4 2 5.7909 2 8v10c0 2.2091 1.7909 4 4 4h12c2.2091 0 4-1.7909 4-4V8c0-2.2091-1.7909-4-4-4ZM8 2v4M16 2v4M2 10h20' stroke='%23343434' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    }
-
-    &-google {
-        width: 30px;
-        height: 30px;
     }
 
     &-user {

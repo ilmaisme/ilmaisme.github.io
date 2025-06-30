@@ -154,67 +154,104 @@
 
     <!-- main -->
     <main role="main">
-        <section class="container container--small display-flex dir-column mt30">
-            <div class="formCaption__wrap display-flex">
-                <a href="login.html" class="formCaption"><span class="active">Login</span></a>
-                <a href="register.html" class="formCaption"><span>Sign Up</span></a>
+        <section class="container">
+            <div class="row display-flex mt30">
+                <div class="col-gd12-5 col-offset-auto text-center">
+                    <h1 class="channelCaption">Sign Up</h1>
+                    <div class="formWrap mt20">
+                        <span class="icon icon-user formIcon">
+                        </span>
+                        <input class="formInput formInput__wicon text-center" id="name" type="text" placeholder="Name"
+                            aria-label="Input Name">
+                    </div>
+                    <div class="formWrap mt20">
+                        <span class="icon icon-mail formIcon">
+                        </span>
+                        <input class="formInput formInput__wicon text-center" id="email" type="email"
+                            placeholder="Email" aria-label="Input Email">
+                    </div>
+                    <div class="formWrap mt20">
+                        <span class="icon icon-phone formIcon">
+                        </span>
+                        <input class="formInput formInput__wicon text-center" id="phone" type="text"
+                            placeholder="Nomor Ponsel" aria-label="Input Phone Number" inputmode="tel">
+                    </div>
+                    <div class="formWrap mt20">
+                        <span class="icon icon-key formIcon">
+                        </span>
+                        <input class="formInput formInput__wicon text-center" id="password" type="password"
+                            placeholder="password" aria-label="Input Password">
+                        <button class="button buttonEye" type="button" aria-label="Show password"
+                            toggle="#password"><span class="icon icon-eye formIcon"></span></button>
+                    </div>
+                    <div class="formWrap text-center mt40">
+                        <img src="asset/images/sample/captcha.jpg" alt="" width="324" height="85">
+                    </div>
+                    <div class="formWrap display-flex aitems-center mt30 mb10">
+                        <input type="checkbox" id="checkbox" class="formCheck mr10" required="">
+                        <label for="checkbox" class="formText">Saya setuju dengan <a href="#" class="underline">syarat
+                                dan
+                                ketentuan</a> yang berlaku</label>
+                    </div>
+                    <div class="formStatus formError text-center">
+                        <span><img src="asset/images/icon-error.png" class="mr10" alt="" width="20" height="20"></span>
+                        Email sudah digunakan
+                    </div>
+                    <div class="formStatus formSuccess text-center">
+                        <span><img src="asset/images/icon-success.png" class="mr10" alt="" width="20"
+                                height="20"></span>
+                        Selamat, akunmu berhasil dibuat!
+                    </div>
+                    <button class="button buttonPrimary mt20" type="submit" name="submit">
+                        Daftar
+                    </button>
+                    <div class="formText mt10">Sudah punya akun?
+                        <button class="button underline" onclick="triggerActive('.-pLogin')">Login</button>
+                    </div>
+                </div>
             </div>
-            <form class="mt30" action="">
-                <div class="formStatus formError text-center">
-                    <span><img src="asset/images/icon-error.png" class="mr10" alt="" width="20" height="20"></span> Username atau password tidak cocok
-                </div>
-                <div class="formText text-center mt20">
-                    Gunakan akun media sosialmu untuk mengakses seluruh fitur TabloidBintang.com
-                </div>
-                <div class="formText mt30">
-                    <a href="#" class="buttonGoogle flex-center">
-                        <span class="icon icon-google mr10">
-                            <img src="asset/images/icon-google.png" alt="" width="30" height="30" loading="lazy">
-                        </span>
-                        Masuk dengan Google
-                    </a>
-                    <a href="#" class="buttonFb flex-center mt20">
-                        <span class="icon icon-fb mr10">
-                        </span>
-                        Masuk dengan Facebook
-                    </a>
-                </div>
-                <div class="formLine text-center mt20">
-                    <span>atau</span>
-                </div>
-                <div class="formText text-center mt20">Masuk dengan akun yang sudah ada</div>
-                <div class="formWrap mt20">
-                    <span class="icon icon-user formIcon">
-                    </span>
-                    <input class="formInput formInput__wicon text-center" id="username" type="text"
-                        value="sophie.anggita@gmail.com" placeholder="Username" aria-label="Input Username">
-                </div>
-                <div class="formWrap mt20">
-                    <span class="icon icon-key formIcon">
-                    </span>
-                    <input class="formInput formInput__wicon text-center" id="password" type="password" value="password"
-                        placeholder="password" aria-label="Input Password">
-                    <button class="button buttonEye close" type="button" aria-label="Show password" toggle="#password"><span
-                            class="icon icon-eye formIcon"></span></button>
-                </div>
-                <div class="formWrap flex-center mt40">
-                    <img src="asset/images/sample/captcha.jpg" alt="" width="324" height="85">
-                </div>
-                <button class="button buttonPink buttonPink--full mt30" type="submit" name="submit">
-                    Masuk
-                </button>
-                <div class="display-flex mt20 jcontent-between">
-                    <div class="formText">Belum punya akun? <a href="register.html" class="pink">Daftar disini</a>
-                    </div>
-                    <div class="formText"><a href="forgot.html" class="pink">Lupa password</a>
-                    </div>
-                </div>
-            </form>
         </section>
     </main>
+
+    <!-- s: popup login -->
+    <div class="popup popup--hidden flex-center -pLogin">
+        <div class="popupWrap accessPopup">
+            <button class="button buttonClose" aria-label="Close popup" data-modal-button="dismiss">
+                <span class="icon icon-close"></span>
+            </button>
+            <div class="popupTitle text-center">
+                Selamat Datang
+            </div>
+            <div class="popupContent mt30">
+                <a href="#" class="buttonSecondary display-flex aitems-center mt10">
+                    <span class="mr10"><img src="./asset/images/icon-google.svg" alt="Google" loading="lazy" width="30"
+                            height="30"></span>
+                    Masuk dengan Google
+                </a>
+                <a href="#" class="buttonSecondary display-flex aitems-center mt10">
+                    <span class="icon icon-fb mr10"></span>
+                    Masuk dengan Facebook
+                </a>
+                <a href="#" class="buttonSecondary display-flex aitems-center mt10">
+                    <span class="icon icon-tw mr10"></span>
+                    Masuk dengan X
+                </a>
+                <a href="#" class="buttonSecondary display-flex aitems-center mt10">
+                    <span class="icon icon-mail mr10"></span>
+                    Masuk dengan Email
+                </a>
+                <p class="text-center">Belum punya akun? Daftar <a href="register.html"><strong>DISINI</strong></a></p>
+                <p class="text-center"><small>Dengan login di Kontemporer.com, Anda setuju untuk data dan informasi akun Anda digunakan untuk
+                        memberikan layanan sesuai <a href="#" class="underline">Kebijakan Data Pribadi Kontemporer ID</a></small></p>
+            </div>
+        </div>
+    </div>    <!-- e: popup login -->
+
     <!-- footer -->
     <footer>
         <div class="footer text-center">
+            <button class="button buttonTotop" aria-label="Back to top" onclick="backToTop()"><span
+                    class="icon icon-next"></span></button>
             <a href="index.html" class="footerLogo">
                 <img src="asset/images/kontemporer-logo-transparent.png" alt="Kontemporer" width="271" height="52" loading="lazy">
             </a>

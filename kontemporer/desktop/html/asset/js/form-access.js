@@ -4,10 +4,10 @@ $(document).ready(function () {
         let input = $($(this).attr("toggle"));
         if (input.attr("type") == "password") {
             input.attr("type", "text");
-            $(this).removeClass("close");
+            $(this).addClass("show");
         } else {
             input.attr("type", "password");
-            $(this).addClass("close");
+            $(this).removeClass("show");
         }
     });
 

@@ -40,9 +40,9 @@ if (!!mall) {
 
 //trigger active class
 function triggerActive(item) {
-    let target = document.querySelector(item),
-        targetActive = target.classList.contains('active');
+    let target = document.querySelector(item);
     if (!!target) {
+        let targetActive = target.classList.contains('active');
         if (targetActive == false) {
             target.classList.add('active');
         } else {
