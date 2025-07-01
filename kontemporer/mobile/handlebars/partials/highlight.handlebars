@@ -1,5 +1,5 @@
 <div
-    class="highlight{{#if col}} highlight--{{col}}{{/if}}{{#if type}} highlight--{{type}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}">
+    class="highlight{{#if col}} highlight--{{col}}{{/if}}{{#if type}} highlight--{{type}}{{/if}}{{#if mt}} mt{{mt}}{{/if}}{{#if style}} {{style}}{{/if}}">
     <ul class="highlightList row{{#if wrap}} article--wrap{{/if}}">
         {{#each headline}}
         {{#gte @index compare=../index_start}}
@@ -7,7 +7,11 @@
         {{else}}
         <li class="highlightItem{{#if ../cols}} {{../cols}}{{/if}}{{#if ../mb}} mb{{../mb}}{{/if}}">
             <a href="{{link}}" class="highlightImg__wrap" aria-label="{{title}}">
+                {{#eq img compare=""}}
+                <img src="./asset/images/default-thumbnail.jpg" class="highlightImg" alt="" width="152" height="113" loading="lazy">
+                {{else}}
                 <img src="{{img}}{{@index}}.webp" class="highlightImg" alt="" width="152" height="113" loading="lazy">
+                {{/eq}}
             </a>
             <div class="highlightContent">
                 {{#if ../sub}}<div class="articleSubtitle mt5">{{subtitle}}</div>{{/if}}
@@ -20,6 +24,16 @@
                     <a href="{{link}}" class="highlightLink">{{title}}</a>
                 </div>
                 {{/if}}
+                {{#eq ../style compare="text-center"}}
+                <div class="articleDetail flex-center mt5">
+                    {{#if ../user}}
+                    <a href="#" class="userName display-flex aitems-center">
+                        Salma Farida
+                    </a>
+                    {{/if}}
+                    <div class="articleTime">18 Mei 2025</div>
+                </div>
+                {{else}}
                 <div class="articleDetail display-flex aitems-center mt5">
                     {{#if ../user}}
                     <a href="#" class="userName display-flex aitems-center">
@@ -28,6 +42,7 @@
                     {{/if}}
                     <div class="articleTime">18 Mei 2025</div>
                 </div>
+                {{/eq}}
             </div>
         </li>
         {{/gte}}

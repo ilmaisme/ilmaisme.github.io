@@ -1,23 +1,25 @@
 <div class="trending mt30">
-    <div class="articleCaption">Trending</div>
+    <div class="articleCaption">Top Stories</div>
     <ul class="trendingList">
         {{#eachIndex trending}}
         {{#gt index compare = '0'}}
         <li class="trendingItem">
-            <a href="#" class="trendingLink display-flex aitems-center">
-                <div class="trendingRank">
-                    {{index}}
-                </div>
+            <a href="#" class="trendingLink">
                 <div class="trendingBox">
-                    <div class="articleDetail display-flex aitems-center">
-                        <div class="articleSubtitle">{{item.subtitle}}</div>
-                        <div class="articleTime">18 Mei 2025</div>
+                    <h3 class="articleTitle trendingTitle">{{item.title}}</h3>
+                    <div class="display-flex aitems-center mt5">
+                        <img loading="lazy" src="{{item.user}}" width="24" height="24" alt="" class="userAvatar mr10">
+                        <div class="userName">
+                            Nurulloh
+                        </div>
                     </div>
-                    <h3 class="articleTitle trendingTitle mt5">{{item.title}}</h3>
                 </div>
             </a>
         </li>
         {{/gt}}
         {{/eachIndex}}
     </ul>
+    <div class="display-flex aitems-center jcontent-end">
+        <a href="#" class="buttonMore">+ More</a>
+    </div>
 </div>

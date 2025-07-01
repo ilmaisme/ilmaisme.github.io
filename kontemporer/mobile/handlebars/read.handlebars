@@ -6,20 +6,21 @@
     <!-- header -->
     {{> header page="" login=true}}
     <!-- header -->
-    <ul class="breadcrumb display-flex">
-        <li class="breadcrumbItem"><a href="#" class="breadcrumbLink">Home</a></li>
-        <li class="breadcrumbItem"><a href="#" class="breadcrumbLink active">Gaya Hidup</a></li>
-    </ul>
+
     <!-- main -->
     <main role="main" class="main">
+        {{> ads/billboard}}
+
         <section class="read container images-container">
             <article>
-                <h1 class="readTitle text-center mt20">Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo
+                <div class="readTitle__sub">Focus</div>
+                <h1 class="readTitle">Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo
                 </h1>
-                <div class="readWriter text-center mt20"><b><a href="#">Alphonse Elric</a></b> | 11 September 2021 |
-                    12.23
-                    WIB</div>
-                {{> read/share}}
+                <div class="readWriter">Editor Kontemporer | 11 September 2021</div>
+                <div class="flex-center jcontent-between mt20">
+                    {{> read/cta}}
+                    {{> read/share}}
+                </div>
                 <div class="readImg__wrap flex-center mt20">
                     {{!-- <div class="readImg__expand">
                         <img src="asset/images/sample/art-big-2.jpg" class="readImg" alt="" width="324" height="239"
@@ -133,7 +134,6 @@
                         Elementum ac platea condimentum laoreet massa habitasse sagittis. Elit elementum, enim
                         porttitor amet morbi.
                     </p>
-                    {{> ads/parallax}}
                     <p>
                         In ullamcorper quis justo, commodo tincidunt.
                         Nunc tellus sed neque lorem donec sem. Gravida ac sit tempor diam. Morbi sapien
@@ -201,10 +201,11 @@
     <!-- s: popup photo element -->
     {{> read/pswp}}
     <!-- e: popup photo element -->
+
     <!-- s: popup report -->
     {{> read/popup-report}}
     <!-- e: popup report -->
-    {{> ads/sticky}}
+
     <!-- footer -->
     {{> footer}}
 
