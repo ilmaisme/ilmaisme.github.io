@@ -1,18 +1,18 @@
 $(document).ready(function () {
-    //toggle popup report comment
-    $(".-bReport").on("click", function () {
-        $('.-pReport').addClass('active');
-    });
-
     //toggle form reply comment
-    let bRep = $('.-bReply'),
-        fRep = $('.-fReply');
-    bRep.click(function (e) {
-        e.preventDefault();
-        var par = $(this).parent().parent().parent();
-        par.siblings(fRep).toggleClass('active');
-        $(this).toggleClass('active');
-    })
+    $('.-bReply').on('click', function () {
+        const $btn = $(this);
+        const $wrapper = $btn.closest('.commentItem');
+        const $form = $wrapper.find('.-fReply');
+
+        // Close others
+        $('.-fReply').not($form).removeClass('active');
+        $('.-bReply').not($btn).removeClass('active');
+
+        // Toggle current
+        $form.toggleClass('active');
+        $btn.toggleClass('active');
+    });
 
     //photo popup
     var initPhotoSwipeFromDOM = function (gallerySelector) {
@@ -137,7 +137,7 @@ $(document).ready(function () {
                 // Separator for "1 of X" counter
                 indexIndicatorSep: ' dari ',
                 history: false,
-                addCaptionHTMLFn: function (item, captionEl /*, isFake */ ) {
+                addCaptionHTMLFn: function (item, captionEl /*, isFake */) {
                     if (!item.title) {
                         captionEl.children[0].innerHTML = '';
                         return false;

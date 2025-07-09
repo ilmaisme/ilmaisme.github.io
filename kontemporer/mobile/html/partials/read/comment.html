@@ -1,18 +1,29 @@
 <!-- s: komentar -->
-<div class="comment">
+<div class="comment" data-target="comment-section">
     <form class="mt10" action="">
-        <textarea class="formArea" name="comment" id="comment" cols="30" rows="5" placeholder="Tuliskan Komentar"
-            aria-label="Write your comment"></textarea>
-        <button class="button buttonPink buttonPink--big mt20" type="submit" name="submit">
-            Tambah komentar
-        </button>
+        <div class="display-flex aitems-center">
+            <a href="#" class="user">
+                <img loading="lazy" src="asset/images/sample/user.jpg" width="24" height="24" alt=""
+                    class="commentAvatar">
+            </a>
+            <textarea class="formArea" name="comment" id="comment" cols="30" rows="1"
+                placeholder="Bagaimana Pendapat Anda" aria-label="Write your comment"></textarea>
+        </div>
+        <div class="commentCta display-flex jcontent-end mt20">
+            <button class="button buttonPrimary button--trans" type="button" name="cancel">
+                Batal
+            </button>
+            <button class="button buttonPrimary" type="submit" name="submit">
+                Kirim
+            </button>
+        </div>
     </form>
     <div class="readCaption--big mt30">30 Komentar</div>
     <div class="commentList">
         <div class="commentItem col-offset-fluid mt20 mb20">
             <div class="display-flex col-onset-fluid">
                 <div class="commentRow">
-                    <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;48;h&#x3D;48;hash&#x3D;8B7BCDC2" alt="" class="commentAvatar" width="48" height="48">
+                    <img loading="lazy" src="./asset/images/user.png" alt="" class="commentAvatar" width="48" height="48">
                 </div>
                 <div class="commentRow flex-init">
                     <div class="commentUser">Victor Papanek</div>
@@ -24,25 +35,29 @@
                         dictum aliquet egestas. Quis dis dictum odio risus nisl. Facilisi sit suspendisse elit feugiat.
                     </div>
                     <div class="commentAction display-flex jcontent-between mt10">
-                        <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
-                        <button class="button commentReport -bReport">Laporkan</button>
+                        <div class="display-flex">
+                            <button class="button commentLike" aria-label="Like this comment"><span
+                                    class="icon icon-clap"></span>12</button>
+                            <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                        </div>
+                        <button class="button commentReport" onclick="triggerActive('.-pReport')">Laporkan</button>
                     </div>
                 </div>
             </div>
             <form class="commentForm  col-onset-fluid mt10 -fReply" action="">
-                <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
+                <textarea class="formArea commentArea" cols="30" rows="1" placeholder="Tulis Komentarmu"
                     aria-label="Write your comment"></textarea>
-                <div class="commentBottom display-flex aitems-center jcontent-between">
-                    <div class="commentCount__text">1000 karakter tersisa</div>
-                    <button class="button buttonPink" type="submit" name="submit">
+                <div class="commentFooter display-flex aitems-center jcontent-end mt10">
+                    <button class="button buttonPrimary" type="submit" name="submit">
                         Kirim
                     </button>
                 </div>
-            </form>            <!-- s: reply -->
+            </form>
+            <!-- s: reply -->
             <div class="commentItem col-onset-fluid mt20 mb20">
                 <div class="display-flex">
                     <div class="commentRow">
-                        <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;48;h&#x3D;48;hash&#x3D;8B7BCDC2" alt="" class="commentAvatar" width="48" height="48">
+                        <img loading="lazy" src="./asset/images/user.png" alt="" class="commentAvatar" width="48" height="48">
                     </div>
                     <div class="commentRow flex-init">
                         <div class="commentUser">Victor Papanek</div>
@@ -56,25 +71,19 @@
                             feugiat.
                         </div>
                         <div class="commentAction display-flex jcontent-between mt10">
-                            <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
-                            <button class="button commentReport -bReport">Laporkan</button>
+                            <div class="display-flex">
+                                <button class="button commentLike" aria-label="Like this comment"><span
+                                        class="icon icon-clap"></span>3</button>
+                            </div>
+                            <button class="button commentReport" onclick="triggerActive('.-pReport')">Laporkan</button>
                         </div>
                     </div>
                 </div>
-                <form class="commentForm  mt10 -fReply" action="">
-                    <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
-                        aria-label="Write your comment"></textarea>
-                    <div class="commentBottom display-flex aitems-center jcontent-between">
-                        <div class="commentCount__text">1000 karakter tersisa</div>
-                        <button class="button buttonPink" type="submit" name="submit">
-                            Kirim
-                        </button>
-                    </div>
-                </form>            </div>
+            </div>
             <div class="commentItem col-onset-fluid mt20 mb20">
                 <div class="display-flex">
                     <div class="commentRow">
-                        <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;48;h&#x3D;48;hash&#x3D;500B67FB" alt="" class="commentAvatar" width="48" height="48">
+                        <img loading="lazy" src="./asset/images/sample/user.jpg" alt="" class="commentAvatar" width="48" height="48">
                     </div>
                     <div class="commentRow flex-init">
                         <div class="commentUser">Derry Aso</div>
@@ -88,25 +97,19 @@
                             feugiat.
                         </div>
                         <div class="commentAction display-flex jcontent-between mt10">
-                            <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
-                            <button class="button commentReport -bReport">Laporkan</button>
+                            <div class="display-flex">
+                                <button class="button commentLike" aria-label="Like this comment"><span
+                                        class="icon icon-clap"></span>3</button>
+                            </div>
+                            <button class="button commentReport" onclick="triggerActive('.-pReport')">Laporkan</button>
                         </div>
                     </div>
                 </div>
-                <form class="commentForm  mt10 -fReply" action="">
-                    <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
-                        aria-label="Write your comment"></textarea>
-                    <div class="commentBottom display-flex aitems-center jcontent-between">
-                        <div class="commentCount__text">1000 karakter tersisa</div>
-                        <button class="button buttonPink" type="submit" name="submit">
-                            Kirim
-                        </button>
-                    </div>
-                </form>            </div>
+            </div>
             <div class="commentItem col-onset-fluid mt20 mb20">
                 <div class="display-flex">
                     <div class="commentRow">
-                        <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;48&amp;h&#x3D;48&amp;hash&#x3D;A89D0DE6" alt="" class="commentAvatar" width="48" height="48">
+                        <img loading="lazy" src="./asset/images/user.png" alt="" class="commentAvatar" width="48" height="48">
                     </div>
                     <div class="commentRow flex-init">
                         <div class="commentUser">Amanda Immanuella</div>
@@ -120,27 +123,22 @@
                             feugiat.
                         </div>
                         <div class="commentAction display-flex jcontent-between mt10">
-                            <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
-                            <button class="button commentReport -bReport">Laporkan</button>
+                            <div class="display-flex">
+                                <button class="button commentLike" aria-label="Like this comment"><span
+                                        class="icon icon-clap"></span>3</button>
+                            </div>
+                            <button class="button commentReport" onclick="triggerActive('.-pReport')">Laporkan</button>
                         </div>
                     </div>
                 </div>
-                <form class="commentForm  mt10 -fReply" action="">
-                    <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
-                        aria-label="Write your comment"></textarea>
-                    <div class="commentBottom display-flex aitems-center jcontent-between">
-                        <div class="commentCount__text">1000 karakter tersisa</div>
-                        <button class="button buttonPink" type="submit" name="submit">
-                            Kirim
-                        </button>
-                    </div>
-                </form>            </div>
+            </div>
+            
             <!-- e: reply -->
         </div>
         <div class="commentItem col-offset-fluid mt20 mb20">
             <div class="display-flex col-onset-fluid">
                 <div class="commentRow">
-                    <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;48;h&#x3D;48;hash&#x3D;500B67FB" alt="" class="commentAvatar" width="48" height="48">
+                    <img loading="lazy" src="./asset/images/sample/user.jpg" alt="" class="commentAvatar" width="48" height="48">
                 </div>
                 <div class="commentRow flex-init">
                     <div class="commentUser">Derry Aso</div>
@@ -152,27 +150,32 @@
                         dictum aliquet egestas. Quis dis dictum odio risus nisl. Facilisi sit suspendisse elit feugiat.
                     </div>
                     <div class="commentAction display-flex jcontent-between mt10">
-                        <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
-                        <button class="button commentReport -bReport">Laporkan</button>
+                        <div class="display-flex">
+                            <button class="button commentLike" aria-label="Like this comment"><span
+                                    class="icon icon-clap"></span>12</button>
+                            <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                        </div>
+                        <button class="button commentReport" onclick="triggerActive('.-pReport')">Laporkan</button>
                     </div>
                 </div>
             </div>
             <form class="commentForm  col-onset-fluid mt10 -fReply" action="">
-                <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
+                <textarea class="formArea commentArea" cols="30" rows="1" placeholder="Tulis Komentarmu"
                     aria-label="Write your comment"></textarea>
-                <div class="commentBottom display-flex aitems-center jcontent-between">
-                    <div class="commentCount__text">1000 karakter tersisa</div>
-                    <button class="button buttonPink" type="submit" name="submit">
+                <div class="commentFooter display-flex aitems-center jcontent-end mt10">
+                    <button class="button buttonPrimary" type="submit" name="submit">
                         Kirim
                     </button>
                 </div>
-            </form>            <!-- s: reply -->
+            </form>
+            <!-- s: reply -->
+            
             <!-- e: reply -->
         </div>
         <div class="commentItem col-offset-fluid mt20 mb20">
             <div class="display-flex col-onset-fluid">
                 <div class="commentRow">
-                    <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;48&amp;h&#x3D;48&amp;hash&#x3D;A89D0DE6" alt="" class="commentAvatar" width="48" height="48">
+                    <img loading="lazy" src="./asset/images/user.png" alt="" class="commentAvatar" width="48" height="48">
                 </div>
                 <div class="commentRow flex-init">
                     <div class="commentUser">Amanda Immanuella</div>
@@ -184,27 +187,32 @@
                         dictum aliquet egestas. Quis dis dictum odio risus nisl. Facilisi sit suspendisse elit feugiat.
                     </div>
                     <div class="commentAction display-flex jcontent-between mt10">
-                        <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
-                        <button class="button commentReport -bReport">Laporkan</button>
+                        <div class="display-flex">
+                            <button class="button commentLike" aria-label="Like this comment"><span
+                                    class="icon icon-clap"></span>12</button>
+                            <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                        </div>
+                        <button class="button commentReport" onclick="triggerActive('.-pReport')">Laporkan</button>
                     </div>
                 </div>
             </div>
             <form class="commentForm  col-onset-fluid mt10 -fReply" action="">
-                <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
+                <textarea class="formArea commentArea" cols="30" rows="1" placeholder="Tulis Komentarmu"
                     aria-label="Write your comment"></textarea>
-                <div class="commentBottom display-flex aitems-center jcontent-between">
-                    <div class="commentCount__text">1000 karakter tersisa</div>
-                    <button class="button buttonPink" type="submit" name="submit">
+                <div class="commentFooter display-flex aitems-center jcontent-end mt10">
+                    <button class="button buttonPrimary" type="submit" name="submit">
                         Kirim
                     </button>
                 </div>
-            </form>            <!-- s: reply -->
+            </form>
+            <!-- s: reply -->
+            
             <!-- e: reply -->
         </div>
         <div class="commentItem col-offset-fluid mt20 mb20">
             <div class="display-flex col-onset-fluid">
                 <div class="commentRow">
-                    <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;48&amp;h&#x3D;48&amp;hash&#x3D;225E6693" alt="" class="commentAvatar" width="48" height="48">
+                    <img loading="lazy" src="./asset/images/user.png" alt="" class="commentAvatar" width="48" height="48">
                 </div>
                 <div class="commentRow flex-init">
                     <div class="commentUser">Pandu Hutapea</div>
@@ -216,27 +224,32 @@
                         dictum aliquet egestas. Quis dis dictum odio risus nisl. Facilisi sit suspendisse elit feugiat.
                     </div>
                     <div class="commentAction display-flex jcontent-between mt10">
-                        <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
-                        <button class="button commentReport -bReport">Laporkan</button>
+                        <div class="display-flex">
+                            <button class="button commentLike" aria-label="Like this comment"><span
+                                    class="icon icon-clap"></span>12</button>
+                            <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                        </div>
+                        <button class="button commentReport" onclick="triggerActive('.-pReport')">Laporkan</button>
                     </div>
                 </div>
             </div>
             <form class="commentForm  col-onset-fluid mt10 -fReply" action="">
-                <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
+                <textarea class="formArea commentArea" cols="30" rows="1" placeholder="Tulis Komentarmu"
                     aria-label="Write your comment"></textarea>
-                <div class="commentBottom display-flex aitems-center jcontent-between">
-                    <div class="commentCount__text">1000 karakter tersisa</div>
-                    <button class="button buttonPink" type="submit" name="submit">
+                <div class="commentFooter display-flex aitems-center jcontent-end mt10">
+                    <button class="button buttonPrimary" type="submit" name="submit">
                         Kirim
                     </button>
                 </div>
-            </form>            <!-- s: reply -->
+            </form>
+            <!-- s: reply -->
+            
             <!-- e: reply -->
         </div>
         <div class="commentItem col-offset-fluid mt20 mb20">
             <div class="display-flex col-onset-fluid">
                 <div class="commentRow">
-                    <img loading="lazy" src="https://api.lorem.space/image/face?w&#x3D;48&amp;h&#x3D;48&amp;hash&#x3D;7F5AE56A" alt="" class="commentAvatar" width="48" height="48">
+                    <img loading="lazy" src="./asset/images/user.png" alt="" class="commentAvatar" width="48" height="48">
                 </div>
                 <div class="commentRow flex-init">
                     <div class="commentUser">Larinda Dewi</div>
@@ -248,21 +261,26 @@
                         dictum aliquet egestas. Quis dis dictum odio risus nisl. Facilisi sit suspendisse elit feugiat.
                     </div>
                     <div class="commentAction display-flex jcontent-between mt10">
-                        <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
-                        <button class="button commentReport -bReport">Laporkan</button>
+                        <div class="display-flex">
+                            <button class="button commentLike" aria-label="Like this comment"><span
+                                    class="icon icon-clap"></span>12</button>
+                            <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                        </div>
+                        <button class="button commentReport" onclick="triggerActive('.-pReport')">Laporkan</button>
                     </div>
                 </div>
             </div>
             <form class="commentForm  col-onset-fluid mt10 -fReply" action="">
-                <textarea class="formArea commentArea" cols="30" rows="4" placeholder="Tulis Komentarmu"
+                <textarea class="formArea commentArea" cols="30" rows="1" placeholder="Tulis Komentarmu"
                     aria-label="Write your comment"></textarea>
-                <div class="commentBottom display-flex aitems-center jcontent-between">
-                    <div class="commentCount__text">1000 karakter tersisa</div>
-                    <button class="button buttonPink" type="submit" name="submit">
+                <div class="commentFooter display-flex aitems-center jcontent-end mt10">
+                    <button class="button buttonPrimary" type="submit" name="submit">
                         Kirim
                     </button>
                 </div>
-            </form>            <!-- s: reply -->
+            </form>
+            <!-- s: reply -->
+            
             <!-- e: reply -->
         </div>
     </div>

@@ -1,13 +1,18 @@
 $(document).ready(function () {
     //toggle form reply comment
-    let bRep = $('.-bReply'),
-        fRep = $('.-fReply');
-    bRep.click(function (e) {
-        e.preventDefault();
-        var par = $(this).parent().parent();
-        par.siblings(fRep).toggleClass('active');
-        $(this).toggleClass('active');
-    })
+    $('.-bReply').on('click', function () {
+        const $btn = $(this);
+        const $wrapper = $btn.closest('.commentItem');
+        const $form = $wrapper.find('.-fReply');
+
+        // Close others
+        $('.-fReply').not($form).removeClass('active');
+        $('.-bReply').not($btn).removeClass('active');
+
+        // Toggle current
+        $form.toggleClass('active');
+        $btn.toggleClass('active');
+    });
 
     //photo popup
     var initPhotoSwipeFromDOM = function (gallerySelector) {

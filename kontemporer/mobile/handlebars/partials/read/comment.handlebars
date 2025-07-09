@@ -1,11 +1,22 @@
 <!-- s: komentar -->
-<div class="comment">
+<div class="comment" data-target="comment-section">
     <form class="mt10" action="">
-        <textarea class="formArea" name="comment" id="comment" cols="30" rows="5" placeholder="Tuliskan Komentar"
-            aria-label="Write your comment"></textarea>
-        <button class="button buttonPink buttonPink--big mt20" type="submit" name="submit">
-            Tambah komentar
-        </button>
+        <div class="display-flex aitems-center">
+            <a href="#" class="user">
+                <img loading="lazy" src="asset/images/sample/user.jpg" width="24" height="24" alt=""
+                    class="commentAvatar">
+            </a>
+            <textarea class="formArea" name="comment" id="comment" cols="30" rows="1"
+                placeholder="Bagaimana Pendapat Anda" aria-label="Write your comment"></textarea>
+        </div>
+        <div class="commentCta display-flex jcontent-end mt20">
+            <button class="button buttonPrimary button--trans" type="button" name="cancel">
+                Batal
+            </button>
+            <button class="button buttonPrimary" type="submit" name="submit">
+                Kirim
+            </button>
+        </div>
     </form>
     <div class="readCaption--big mt30">30 Komentar</div>
     <div class="commentList">
@@ -25,12 +36,17 @@
                         dictum aliquet egestas. Quis dis dictum odio risus nisl. Facilisi sit suspendisse elit feugiat.
                     </div>
                     <div class="commentAction display-flex jcontent-between mt10">
-                        <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
-                        <button class="button commentReport -bReport">Laporkan</button>
+                        <div class="display-flex">
+                            <button class="button commentLike" aria-label="Like this comment"><span
+                                    class="icon icon-clap"></span>12</button>
+                            <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
+                        </div>
+                        <button class="button commentReport" onclick="triggerActive('.-pReport')">Laporkan</button>
                     </div>
                 </div>
             </div>
             {{> read/form-reply}}
+
             <!-- s: reply -->
             {{#eq index compare=0}}
             {{#eachIndex ../comment}}
@@ -52,16 +68,19 @@
                             feugiat.
                         </div>
                         <div class="commentAction display-flex jcontent-between mt10">
-                            <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
-                            <button class="button commentReport -bReport">Laporkan</button>
+                            <div class="display-flex">
+                                <button class="button commentLike" aria-label="Like this comment"><span
+                                        class="icon icon-clap"></span>3</button>
+                            </div>
+                            <button class="button commentReport" onclick="triggerActive('.-pReport')">Laporkan</button>
                         </div>
                     </div>
                 </div>
-                {{> read/form-reply mg=0}}
             </div>
             {{/lt}}
             {{/eachIndex}}
             {{/eq}}
+            
             <!-- e: reply -->
         </div>
         {{/eachIndex}}
