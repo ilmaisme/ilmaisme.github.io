@@ -11,28 +11,22 @@
 
         &:hover,
         &.active {
-            background: $cl_grey;
+            background: $cl_black;
             color: $cl_white;
-
-            .icon {
-                filter: brightness(0) invert(1);
-            }
         }
 
         &.inactive {
             pointer-events: none;
             border: 1px solid #989898;
+
+            .icon {
+                filter: invert(66%) sepia(0%) saturate(201%) hue-rotate(169deg) brightness(93%) contrast(84%);
+            }
         }
 
         &__prev {
             &.pagingLink {
                 @include base_rotate(180deg);
-            }
-
-            &.inactive {
-                .icon {
-                    filter: grayscale(100%);
-                }
             }
         }
     }
