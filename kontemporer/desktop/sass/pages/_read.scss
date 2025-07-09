@@ -12,7 +12,7 @@
     }
 
     &Writer {
-        @include font-pack(false, 13px, 400, 22px, #5F5F5F);
+        @include font-pack(false, 13px, 400, 1.6, #5F5F5F);
 
         &__box {
             padding: 20px 30px;
@@ -21,11 +21,11 @@
         }
 
         &__desc {
-            @include font-pack(false, 14px, 500, 25px, #5F5F5F);
+            @include font-pack(false, 14px, 500, false, #5F5F5F);
         }
 
         &--big {
-            @include font-pack($font_read, 18px, 600, 30px, $cl_tertiery_grey);
+            @include font-pack($font_read, 18px, 600, false, $cl_tertiery_grey);
         }
 
         &__avatar {
@@ -175,7 +175,6 @@
                 margin-left: -60px;
                 margin-top: 20px;
                 @include font-pack(false, 120px, 400, 30px, $cl_black);
-                color: $cl_black;
             }
         }
 
@@ -194,6 +193,11 @@
 
         a {
             color: $cl_black;
+            text-decoration: underline;
+
+            &.readOther__link {
+                text-decoration: none
+            }
         }
     }
 

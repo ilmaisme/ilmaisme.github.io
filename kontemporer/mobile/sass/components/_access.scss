@@ -1,0 +1,47 @@
+.access {
+    &Popup {
+        padding-left: 30px;
+        padding-right: 30px;
+        background: $cl_black;
+
+        .buttonSecondary {
+            max-width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            background-position: center;
+
+            &-fb {
+                filter: invert(40%) sepia(39%) saturate(5757%) hue-rotate(202deg) brightness(96%) contrast(98%);
+            }
+
+            &-tw {
+                border-radius: 50%;
+                background: $cl-tw;
+
+                &::after {
+                    content: '';
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='none'%3E%3Cpath fill='%23000' d='M22.122 18.904 28.08 12h-1.412l-5.172 5.995L17.365 12H12.6l6.247 9.065-6.247 7.24h1.412l5.461-6.33 4.363 6.33H28.6l-6.478-9.4Zm-1.933 2.241-.633-.903-5.036-7.182h2.168l4.064 5.796.633.903 5.283 7.535H24.5l-4.311-6.149Z'/%3E%3C/svg%3E");
+                    background-position: center;
+                    filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(78deg) brightness(102%) contrast(102%);
+                }
+            }
+
+            &-mail {
+                filter: brightness(0) saturate(100%);
+            }
+        }
+
+        p,
+        .popupTitle {
+            color: $cl_white;
+        }
+    }
+}

@@ -32,30 +32,12 @@
         }
     }
 
-    &Search {
-
-        .icon-search {
-            width: 25px;
-            height: 25px;
-            display: block;
-        }
-
-        &__menu {
-            position: absolute;
-            top: 8px;
-            right: 20px;
-            width: 20px;
-            height: 20px;
-            background: none;
-            border: 0;
-        }
-    }
-
-    &White {
+    &Secondary {
         background: $cl_white;
-        padding: 10px 38px 10px 15px;
-        border: 1px solid #CECECE;
-        color: $cl_primary;
+        padding: 9px 16px;
+        border-radius: 25px;
+        border: 1px solid $cl_black;
+        @include font-pack(false, 12px, 500, false, $cl_black);
     }
 
     &--trans {
@@ -85,30 +67,32 @@
         }
     }
 
-    &Google {
-        width: 100%;
-        height: 50px;
-        border: 1px solid #CECECE;
-    }
+    &Close {
+        position: absolute;
+        top: 8px;
+        right: 10px;
 
-    &Fb {
-        @extend .buttonGoogle;
-        color: $cl_white;
-        border: 1px solid $cl_fb;
-        background: $cl_fb;
-
-        .icon-fb {
-            width: 20px;
-            height: 30px;
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0) invert(1);
+        .icon-close {
+            width: 25px;
+            height: 25px;
         }
     }
 
+    &Search {
+
+        .icon-search {
+            width: 25px;
+            height: 25px;
+            display: block;
+        }
+    }
+}
+
+%button {
+
     &Eye {
         position: absolute;
-        right: 0;
+        right: 10px;
         width: 40px;
         height: 46px;
         border: 0;
@@ -118,20 +102,20 @@
             left: 7px;
 
             &:after {
-                content: none;
-            }
-        }
-
-        &.close {
-            &:after {
                 content: '';
                 position: absolute;
                 width: 2px;
                 height: 22px;
-                top: 12px;
-                left: 18px;
+                top: 1px;
+                left: 10px;
                 border-left: 2px solid #6F6F6F;
                 transform: rotate(45deg);
+            }
+        }
+
+        &.show {
+            .icon:after {
+                content: none;
             }
         }
     }
@@ -140,7 +124,7 @@
         position: absolute;
         top: 15px;
         right: 15px;
-        background: $cl_primary;
+        background: rgba(53, 53, 53, 0.6);
         width: 30px;
         height: 30px;
         padding: 5px;

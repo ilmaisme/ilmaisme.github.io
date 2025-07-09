@@ -1,6 +1,9 @@
 <div class="headline mt10">
     <div class="headlineList" id="sheadline">
         {{#each headline}}
+        {{#gte @index compare=../index_start}}
+        {{#gte @index compare=../index_end}}
+        {{else}}
         <div class="headlineItem">
             <a href="{{link}}" class="headlineImg" aria-label="{{title}}">
                 <img src="{{img}}{{@index}}.webp" alt="" width="324" height="239" loading="lazy">
@@ -13,6 +16,9 @@
                 <h1 class="headlineTitle mt10"><a href="{{link}}" class="headlineLink">{{title}}</a></h1>
             </div>
         </div>
+        {{/gte}}
+        {{else}}
+        {{/gte}}
         {{/each}}
     </div>
     <div class="headlineBottom">

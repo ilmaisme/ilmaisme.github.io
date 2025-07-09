@@ -9,11 +9,11 @@
 
     <!-- main -->
     <main role="main" class="main">
-        {{> ads/billboard}}
-
         <section class="read container images-container">
+            {{> ads/top}}
+
             <article>
-                <div class="readTitle__sub">Focus</div>
+                <div class="readTitle__sub mt30">Focus</div>
                 <h1 class="readTitle">Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo
                 </h1>
                 <div class="readWriter">Editor Kontemporer | 11 September 2021</div>
@@ -28,7 +28,7 @@
                         <button class="button buttonExpand"><span class="icon icon-expand"></span>
                         </button>
                     </div>
-                    <div class="readImg__thumb text-center mt10">Lorem ipsum dolor sit amet, consectetur
+                    <div class="readImg__thumb mt10">Lorem ipsum dolor sit amet, consectetur
                         adipiscing elit. Sit et
                         amet, parturient sed sodales. Ut est sed quis et adipiscing tristique. Maecenas vitae
                         nulla tellus nisl volutpat. </div> --}}
@@ -41,7 +41,7 @@
                             <button class="button buttonExpand" aria-label="Zoom Image"><span
                                     class="icon icon-expand"></span></button>
                         </a>
-                        <figcaption itemprop="caption description" class="readImg__thumb text-center mt10">
+                        <figcaption itemprop="caption description" class="readImg__thumb mt10">
                             Lorem
                             ipsum dolor sit amet</figcaption>
                     </figure>
@@ -97,7 +97,7 @@
                         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi mattis id proin et cras
                             id eu libero. Sit turpis massa, non suscipit in bibendum.</li>
                     </ul>
-                    {{> ads/bottom}}
+
                     <h2>Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo</h2>
                     <div class="readImg__wrap flex-center mt20">
                         {{!-- <div class="readImg__expand">
@@ -106,7 +106,7 @@
                             <button class="button buttonExpand"><span class="icon icon-expand"></span>
                             </button>
                         </div>
-                        <div class="readImg__thumb text-center mt10">Lorem ipsum dolor sit amet, consectetur
+                        <div class="readImg__thumb mt10">Lorem ipsum dolor sit amet, consectetur
                             adipiscing elit. Sit et
                             amet, parturient sed sodales. Ut est sed quis et adipiscing tristique. Maecenas vitae
                             nulla tellus nisl volutpat. </div> --}}
@@ -119,7 +119,7 @@
                                 <button class="button buttonExpand" aria-label="Zoom Image"><span
                                         class="icon icon-expand"></span></button>
                             </a>
-                            <figcaption itemprop="caption description" class="readImg__thumb text-center mt10">
+                            <figcaption itemprop="caption description" class="readImg__thumb mt10">
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit. Sit et
                                 amet, parturient sed sodales. Ut est sed quis et.</figcaption>
@@ -172,31 +172,21 @@
                     <li><a href="#" class="readTag__link">#Tips</a></li>
                 </ul>
             </div>
-            <div class="col-offset-fluid">
-                <div class="readWrap">
-                    <div class="col-onset-fluid mt30">
-                        {{> read/share-footer}}
-                        <div class="commentCount mt30">
-                            30 Komentar
-                        </div>
-                    </div>
-                </div>
-                <div class="readWrap">
-                    <div class="col-onset-fluid mt20">
-                        <div class="readCaption--big">Apa Reaksimu?</div>
-                        {{> read/react}}
-                    </div>
-                </div>
-                <div class="col-onset-fluid mt20">
-                    <div class="readCaption--big">Tambahkan Komentar</div>
-                    {{> read/comment}}
-                </div>
-                {{> paging mt=30 active=false}}
-            </div>
-            <div class="readCaption--big mt30">Berita Terkait</div>
-            {{> article}}
-            <button class="button buttonMore mt30">Indeks</button>
+            <div class="readCaption--big mt30">Tambahkan Komentar</div>
+            {{> read/comment}}
+
+            {{> paging mt=30 active=false}}
+
+            <div class="readCaption--big mt30">Editor Picks</div>
+            {{> highlight index_start=1 index_end=5 mt="10" tag="h2" wrap=true cols="col-gd10-5" col="col2"}}
+            
+            <div class="display-flex aitems-center jcontent-end">
+				<a href="#" class="buttonMore">+ More</a>
+			</div>
         </section>
+
+		{{> newsletter mt="30"}}
+
     </main>
     <!-- s: popup photo element -->
     {{> read/pswp}}
