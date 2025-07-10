@@ -1,0 +1,41 @@
+.sidebar {
+    &Menu {
+        @include font-pack(false, 14px, 600, false, $cl_grey);
+
+        &__link {
+            position: relative;
+            display: block;
+            padding-left: 15px;
+            padding-bottom: 5px;
+            transition: padding .2s ease;
+
+            &:first-child::before, &:last-child::before{
+                top: 0;
+                height: 100%;
+            }
+
+            &::before {
+                border-left: 1px solid $cl_secondary_grey;
+                content: "";
+                height: calc(100% + 6px);
+                left: 1px;
+                position: absolute;
+                top: -6px;
+                width: 1px;
+            }
+
+            &.active {
+                color: $cl_black;
+
+                &::before {
+                    border-top: 1px solid $cl_secondary_grey;
+                    border-left: 0;
+                    height: 1px;
+                    left: 0;
+                    top: 10px;
+                    width: 10px;
+                }
+            }
+        }
+    }
+}
