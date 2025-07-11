@@ -36,6 +36,13 @@ if (!!mall) {
             });
         });
     });
+
+    mall.addEventListener('click', function (e) {
+        const inner = mall.querySelector('.popupWrap');
+        if (!inner.contains(e.target)) {
+            mall.classList.remove('active');
+        }
+    });
 }
 
 //trigger active class

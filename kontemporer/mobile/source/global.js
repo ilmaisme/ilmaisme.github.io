@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     // sticky menu
     let hd = $("header");
     let hdl = $(".headerLogo");
@@ -8,7 +8,7 @@ $(document).ready(function () {
         var a = $(window).scrollTop(),
             b = hd.outerHeight();
         a > b + 40 ? (hd.addClass("active"),
-                hdl.addClass("scale")) :
+            hdl.addClass("scale")) :
             (hd.removeClass("active"),
                 hdl.removeClass("scale"))
     })
@@ -44,6 +44,13 @@ if (!!mall) {
             });
         });
     });
+
+    mall.addEventListener('click', function (e) {
+        const inner = mall.querySelector('.popupWrap');
+        if (!inner.contains(e.target)) {
+            mall.classList.remove('active');
+        }
+    });
 }
 
 //trigger active class
@@ -68,19 +75,31 @@ function backToTop() {
 
 //header menu scroll
 function updateNavListAlignment() {
-  const navLists = document.querySelectorAll('.navList');
+    const navLists = document.querySelectorAll('.navList');
 
-  navLists.forEach(navList => {
-    const container = navList.closest('.nav');
-    if (!container) return;
+    navLists.forEach(navList => {
+        const container = navList.closest('.nav');
+        if (!container) return;
 
-    if (navList.scrollWidth > container.clientWidth) {
-      navList.classList.add('is-overflowing');
-    } else {
-      navList.classList.remove('is-overflowing');
-    }
-  });
+        if (navList.scrollWidth > container.clientWidth) {
+            navList.classList.add('is-overflowing');
+        } else {
+            navList.classList.remove('is-overflowing');
+        }
+    });
 }
 
 window.addEventListener('load', updateNavListAlignment);
 window.addEventListener('resize', updateNavListAlignment);
+
+document.addEventListener('click', function (e) {
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.querySelector('.menuList');
+
+    if (!toggle) return;
+
+    // If menu is open and click is outside both the menu and the checkbox label
+    if (toggle.checked && !menu.contains(e.target) && e.target !== toggle && !document.querySelector(`label[for="${toggle.id}"]`)?.contains(e.target)) {
+        toggle.checked = false;
+    }
+});
