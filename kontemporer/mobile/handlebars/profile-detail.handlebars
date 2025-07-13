@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page="Profile"}}
+
+<body>
+    {{!> ads/pushdown}}
+    <!-- header -->
+    {{> header login=true}}
+    <!-- header -->
+
+    <!-- main -->
+    <main role="main" class="main profile">
+        <section class="container">
+            <nav class="profileNav">
+                <div class="profileNav__item">
+                    <button class="button profileNav__link"
+                        onclick="document.querySelector('[data-target=about]').scrollIntoView({behavior: 'smooth'});">About</button>
+                    <button class="button profileNav__link"
+                        onclick="document.querySelector('[data-target=stories]').scrollIntoView({behavior: 'smooth'});">Stories</button>
+                    <button class="button profileNav__link"
+                        onclick="document.querySelector('[data-target=contact]').scrollIntoView({behavior: 'smooth'});">Contact</button>
+                </div>
+            </nav>
+            <div class="profileSection profileDetail mt30" data-target="about">
+                <div class="profileImg">
+                    <img src="./asset/images/sample/team1.png" alt="">
+                </div>
+                <div class="profileDesc mt20">
+                    <h1 class="articleCaption">Nurulloh</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                    <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p> Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.
+                    </p>
+                    <ul class="display-flex aitems-center">
+                        <li class="footerSocial socialIcon mt5"><a href="#" class="socialLink display-flex"
+                                target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span
+                                    class="icon icon-fb"></span></a></li>
+                        <li class="footerSocial socialIcon mt5"><a href="#" class="socialLink display-flex"
+                                target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span
+                                    class="icon icon-ig"></span></a></li>
+                        <li class="footerSocial socialIcon mt5"><a href="#" class="socialLink display-flex"
+                                target="_blank" rel="noopener noreferrer" aria-label="Twitter"><span
+                                    class="icon icon-tw"></span></a></li>
+                        <li class="footerSocial socialIcon mt5"><a href="#" class="socialLink display-flex"
+                                target="_blank" rel="noopener noreferrer" aria-label="Tiktok"><span
+                                    class="icon icon-tiktok"></span></a></li>
+                        <li class="footerSocial socialIcon mt5"><a href="#" class="socialLink display-flex"
+                                target="_blank" rel="noopener noreferrer" aria-label="Linkedin"><span
+                                    class="icon icon-ln"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="profileSection article--black mt30" data-target="stories">
+                <div class="articleCaption">Stories</div>
+                {{> article mt="10" index_start=0 index_end=5 user=true}}
+
+                <div class="flex-center mt10">
+                    <button class="button buttonMore">Load More</a>
+                </div>
+            </div>
+        </section>
+        <section class="container profileSection profileContact" data-target="contact">
+            <div class="articleCaption mt30">Contact</div>
+            <div class="profileContact__item mt5 display-flex aitems-center">
+                <span class="icon icon-home mr10"></span>
+                Malang, Jawa Timur, Indonesia
+            </div>
+            <div class="profileContact__item mt5 display-flex aitems-center">
+                <span class="icon icon-mail mr10"></span>
+                <a href="mailto:kontemporerian@kontemporer.com">kontemporerian@kontemporer.com</a>
+            </div>
+            <div class="profileContact__item mt5 display-flex aitems-center">
+                <span class="icon icon-call mr10"></span>
+                <a href="tel:+6281234562344">+62 812 3456 2344</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js}}
+
+</body>
+
+</html>
