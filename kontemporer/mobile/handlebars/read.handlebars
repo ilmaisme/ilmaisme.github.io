@@ -9,9 +9,15 @@
 
     <!-- main -->
     <main role="main" class="main">
-        <section class="read container images-container">
+        <div class="container">
             {{> ads/top}}
+        </div>
 
+        <div class="readSlider article--black mt30">
+            <div class="articleCaption">Must Read</div>
+            {{>read/must index_start=0 index_end=8 mt="10"}}
+        </div>
+        <section class="read container images-container">
             <article>
                 <div class="readTitle__sub mt30">Focus</div>
                 <h1 class="readTitle">Pasangan Serasi, Cek 6 Kecocokan antara Sagitarius dan Leo
@@ -179,13 +185,15 @@
 
             <div class="readCaption--big mt30">Editor Picks</div>
             {{> highlight index_start=1 index_end=5 mt="10" tag="h2" wrap=true cols="col-gd10-5" col="col2"}}
-            
+
             <div class="display-flex aitems-center jcontent-end">
-				<a href="#" class="buttonMore">+ More</a>
-			</div>
+                <a href="#" class="buttonMore">+ More</a>
+            </div>
         </section>
 
-		{{> newsletter mt="30"}}
+        {{> sidebar/trending}}
+
+        {{> newsletter}}
 
     </main>
     <!-- s: popup photo element -->

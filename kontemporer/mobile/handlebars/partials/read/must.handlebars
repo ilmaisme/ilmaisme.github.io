@@ -1,0 +1,13 @@
+<ul class="highlightList row">
+    {{#each trending}}
+    {{#gte @index compare=../index_start}}
+    {{#gte @index compare=../index_end}}
+    {{else}}
+    <li class="highlightItem{{#if ../col}} {{../col}}{{/if}}{{#if ../mt}} mt{{../mt}}{{/if}}">
+        <h2 class="articleTitle"><a href="{{link}}">{{title}}</a></h2>
+    </li>
+    {{/gte}}
+    {{else}}
+    {{/gte}}
+    {{/each}}
+</ul>
