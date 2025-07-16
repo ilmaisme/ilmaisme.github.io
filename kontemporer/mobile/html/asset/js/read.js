@@ -2,8 +2,7 @@ $(document).ready(function () {
     //toggle form reply comment
     $('.-bReply').on('click', function () {
         const $btn = $(this);
-        const $wrapper = $btn.closest('.commentItem');
-        const $form = $wrapper.find('.-fReply');
+        const $form = $btn.closest('.commentRow').find('> .-fReply');
 
         // Close others
         $('.-fReply').not($form).removeClass('active');

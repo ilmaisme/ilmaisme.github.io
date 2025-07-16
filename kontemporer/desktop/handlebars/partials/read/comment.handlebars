@@ -43,7 +43,7 @@
                     <button class="button commentReport" onclick="triggerActive('.-pReport')">Laporkan</button>
                 </div>
                 {{> read/form-reply}}
-                
+
                 <!-- s: reply -->
                 {{#eq index compare=0}}
                 {{#eachIndex ../comment}}
@@ -69,9 +69,12 @@
                             <div class="display-flex">
                                 <button class="button commentLike" aria-label="Like this comment"><span
                                         class="icon icon-clap"></span>3</button>
+                                <button class="button commentReply -bReply" aria-label="Trigger form reply"></button>
                             </div>
                             <button class="button commentReport -bReport">Laporkan</button>
                         </div>
+                        {{> read/form-reply}}
+
                     </div>
                 </div>
                 {{/lt}}

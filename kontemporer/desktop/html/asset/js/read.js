@@ -2,8 +2,7 @@ $(document).ready(function () {
     //toggle form reply comment
     $('.-bReply').on('click', function () {
         const $btn = $(this);
-        const $wrapper = $btn.closest('.commentItem');
-        const $form = $wrapper.find('.-fReply');
+        const $form = $btn.closest('.commentRow').find('> .-fReply');
 
         // Close others
         $('.-fReply').not($form).removeClass('active');
@@ -136,7 +135,7 @@ $(document).ready(function () {
                 // Separator for "1 of X" counter
                 indexIndicatorSep: ' dari ',
                 history: false,
-                addCaptionHTMLFn: function (item, captionEl /*, isFake */ ) {
+                addCaptionHTMLFn: function (item, captionEl /*, isFake */) {
                     if (!item.title) {
                         captionEl.children[0].innerHTML = '';
                         return false;
