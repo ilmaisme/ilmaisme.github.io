@@ -2,13 +2,21 @@
 
     &Input,
     &Select,
+    &Area,
     &Wrap .bootstrap-tagsinput input {
-        padding: 8px 16px;
+        width: 100%;
+        padding: 10px 16px;
         border: 1px solid #CECECE;
         border-radius: 20px;
         text-overflow: ellipsis;
         white-space: nowrap;
         @include font-pack(false, 16px, 500, 1.4, $cl_primary);
+        @include placeholder($size: 14px);
+    }
+
+    &Area{
+        white-space: normal;
+        resize: none;
     }
 
     &Select {
@@ -72,49 +80,6 @@
 
         &__error {
             border: 1px solid #EA5B70;
-        }
-    }
-
-    &Area {
-        &__wrap textarea {
-            width: 100%;
-            border-radius: 15px;
-            border: 1px solid #CECECE;
-            resize: vertical;
-            padding: 15px 30px;
-            @include font-pack(false, 14px, 500, 1.4, $cl_primary);
-        }
-
-        &__wrap .formArea__error {
-            border: 1px solid #EA5B70;
-        }
-    }
-
-    &Caption {
-        padding: 20px 60px;
-        @include font-pack(false, 20px, 600, false, #717171);
-
-        &:hover {
-            span {
-                color: $cl_black;
-            }
-        }
-
-        span {
-            padding-bottom: 16px;
-
-            &.active {
-                border-bottom: 4px solid $cl_black;
-                color: $cl_black;
-            }
-        }
-
-        &--big {
-            @include font-pack(false, 24px, 700, false, $cl_primary);
-        }
-
-        &__wrap {
-            justify-content: space-evenly;
         }
     }
 
@@ -270,6 +235,7 @@
     }
 
     &Label {
+        font-size: 14px;
         display: block;
     }
 
