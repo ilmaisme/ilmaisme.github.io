@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page=""}}
+
+<body>
+
+    <!-- header -->
+    {{> header login=true}}
+    <!-- header -->
+
+    <!-- main -->
+    <main role="main">
+        {{> ads/billboard}}
+
+        <section class="container">
+            <h1 class="highlightCaption mt30">Top Stories</h1>
+
+            <div class="row display-flex">
+                <div class="col-gd-740">
+                    <ul class="articleList">
+                        {{> article index_start=0 index_end=8 lead=true tag="h3" timebtm=true}}
+                    </ul>
+                    <div class="flex-center mt20">
+                        <button class="button buttonMore" id="btnload">Load More</a>
+                    </div>
+                </div>
+                <div class="col-gd-300">
+                    <aside>
+                        {{> ads/halfpage}}
+                        {{> sidebar/trending index_start=3 index_end=8 mt="30"}}
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js}}
+
+</body>
+
+</html>

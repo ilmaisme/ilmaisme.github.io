@@ -1,57 +1,64 @@
-// fetch more article
+// Fetch more articles
 var currentPage = 1,
+    perPage = 5,
     btn = $('#btnload');
 
-function populate(img, title, link, subtitle, user) {
+function populate(imgPrefix, title, link, lead, index) {
     var grid = document.querySelector('#load');
+
     var item = document.createElement('li');
-    var panel = '<div class="articleItem articlePop mt20 display-flex">';
-    panel += '<a href="' + link + '" class="articleImg__wrap" aria-label="' + title + '">';
-    panel += '<img src="' + img + '.webp" class="articleImg" alt="" width="87" height="87" loading="lazy">';
-    panel += '</a>';
-    panel += '<div class="articleBox">';
-    panel += '<div class="articleSubtitle">' + subtitle + '</div>';
-    panel += '<h3 class="articleTitle mt5"><a href="' + link + '">' + title + '</a></h3>';
-    panel += '<div class="articleDetail user display-flex aitems-center mt5">';
-    panel += '<a href="#" class="userName display-flex aitems-center">';
-    panel += 'Salma Farida';
-    panel += '</a>';
-    panel += '<div class="articleTime">9 menit yang lalu</div>';
-    panel += '</div>';
-    panel += '</div>';
-    panel += '</div>';
-    panel += '</li>';
-    $(item).appendTo(grid);
-    $(item).html(panel);
+    item.classList.add('articleItem', 'articlePop', 'mt20', 'display-flex');
+
+    var panel = `
+        <a href="${link}" class="articleImg__wrap" aria-label="${title}">
+            <img src="${imgPrefix}${index}.webp" class="articleImg" alt="" width="87" height="87" loading="lazy" onerror="this.onerror=null;this.src='asset/images/default-thumbnail.jpg';">
+        </a>
+        <div class="articleBox">
+            <h3 class="articleTitle">
+                <a href="${link}" class="articleLink">${title}</a>
+            </h3>
+            <div class="articleDetail display-flex aitems-center mt5">
+                <div class="articleTime">Minggu, 18 Mei 2025</div>
+            </div>
+        </div>
+    `;
+
+    item.innerHTML = panel;
+    grid.appendChild(item);
 }
 
-function getResults(filter) {
-    // console.log(currentPage);
+function getResults() {
     $.getJSON("asset/json/results.json", function (data) {
-        var perPage = 4;
-        var count = data.posts.length;
+        var posts = data.posts;
+        var count = posts.length;
 
-        if (currentPage * perPage >= count) {
-            //indeks berita
-            var buttonIndeks = '<a href="indeks.html" class="button buttonMore text-center mt30">Indeks Berita</a>';
-            $(buttonIndeks).appendTo('#wrapload');
+        var start = (currentPage - 1) * perPage;
+        var end = Math.min(start + perPage, count);
+
+        // No more pages
+        if (start >= count) {
             btn.remove();
             // console.log("all pages fetched");
-            // return false;
+            return;
         }
-        $(data.posts).each(function (i, post) {
-            if (i >= (currentPage - 1) * perPage && i < currentPage * perPage) {
-                populate(post.img, post.title, post.link, post.subtitle, post.user);
-                i = i + perPage;
-            }
-        });
-        perPage += perPage;
+
+        for (let i = start; i < end; i++) {
+            let post = posts[i];
+            populate(post.img, post.title, post.link, post.lead, i);
+        }
+
+        // Hide button if all data has been loaded
+        if (end >= count) {
+            btn.remove();
+        }
     });
 }
+
+// Initial load
 getResults();
 
 $(function () {
-    btn.click(function (e) {
+    btn.on('click', function () {
         currentPage++;
         getResults();
     });

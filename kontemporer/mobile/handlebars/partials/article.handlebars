@@ -7,7 +7,8 @@
         {{else}}
         <li class="articleItem display-flex{{#if cols}} {{cols}}{{/if}}">
             <a href="{{link}}" class="articleImg__wrap" aria-label="{{title}}">
-                <img src="{{img}}{{@index}}.webp" class="articleImg" alt="" width="87" height="87" loading="lazy">
+                <img src="{{img}}{{@index}}.webp" class="articleImg" alt="" width="87" height="87" loading="lazy"
+                    onerror="this.onerror=null;this.src='asset/images/default-thumbnail.jpg';">
             </a>
             <div class="articleBox">
                 {{#if ../sub}}<div class="articleSubtitle mt5 mb5">{{subtitle}}</div>{{/if}}

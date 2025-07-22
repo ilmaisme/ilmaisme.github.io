@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head page=""}}
+
+<body>
+    {{!> ads/pushdown}}
+    <!-- header -->
+    {{> header login=true}}
+    <!-- header -->
+
+    <!-- main -->
+    <main role="main" class="main">
+        <section class="container">
+            {{> ads/top}}
+
+            <h1 class="articleCaption mt20">Top Stories</h1>
+
+            {{> article mt="20" index_start=0 index_end=8}}
+
+            <div class="flex-center mt10">
+                <button class="button buttonMore">Load More</a>
+            </div>
+        </section>
+
+    </main>
+    {{!> ads/sticky}}
+
+    <!-- footer -->
+    {{> footer}}
+
+    {{> js}}
+
+</body>
+
+</html>

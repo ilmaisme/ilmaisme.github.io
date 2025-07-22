@@ -65,18 +65,10 @@
     }
 
     &Area {
-        &__wrap textarea {
-            width: 100%;
-            border: 1px solid #CECECE;
-            resize: vertical;
-            padding-top: 14px;
-            padding-bottom: 14px;
-            padding-left: 15px;
-            padding-right: 15px;
-            @include font-pack(false, 12px, 500, 1.4, $cl_primary);
-        }
+        white-space: normal;
+        resize: none;
 
-        &__wrap .formArea__error {
+        &__error {
             border: 1px solid #EA5B70;
         }
     }
@@ -102,10 +94,6 @@
         }
     }
 
-    &Caption {
-        @include font-pack(false, 18px, 600, false, false);
-    }
-
     &Status {
         width: 100%;
         padding: 10px;
@@ -129,28 +117,6 @@
 
     &Text {
         @include font-pack(false, 12px, 500, false, false);
-    }
-
-    &Line {
-        position: relative;
-        @include font-pack(false, 12px, 500, false, #ABABAB);
-
-        span {
-            position: relative;
-            background: $cl_white;
-            padding-left: 10px;
-            padding-right: 10px;
-            z-index: 1;
-        }
-
-        &:after {
-            content: '';
-            border-top: 1px solid #ABABAB;
-            position: absolute;
-            width: 100%;
-            top: 8px;
-            left: 0;
-        }
     }
 
     &Icon {
@@ -224,7 +190,7 @@
 
     &Label {
         display: block;
-        @include font-pack(false, 14px, 500, false, false);
+        @include font-pack(false, 12px, 500, false, false);
     }
 
     &Misc {

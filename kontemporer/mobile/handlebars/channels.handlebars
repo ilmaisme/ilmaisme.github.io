@@ -5,7 +5,7 @@
 <body>
     {{!> ads/pushdown}}
     <!-- header -->
-    {{> header login=true}}
+    {{> header page="Voices" login=true}}
     <!-- header -->
 
     <!-- main -->
@@ -26,11 +26,14 @@
 
         {{> newsletter}}
 
-        <section class="container">
-            {{> article mt="30" index_start=0 index_end=5}}
+        <section class="container mt30">
+            
+            <ul class="articleList" id="load">
+                {{!> article mt="30" index_start=0 index_end=5}}
+            </ul>
 
             <div class="flex-center mt10">
-                <button class="button buttonMore">Load More</a>
+                <button class="button buttonMore" id="btnload">Load More</a>
             </div>
         </section>
 
@@ -40,7 +43,7 @@
     <!-- footer -->
     {{> footer}}
 
-    {{> js}}
+    {{> js json=true}}
 
 </body>
 

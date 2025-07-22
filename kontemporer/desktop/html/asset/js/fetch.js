@@ -7,7 +7,7 @@ function populate(imgPrefix, title, link, lead, index) {
     var grid = document.querySelector('#load');
 
     var item = document.createElement('li');
-    item.classList.add('articleItem', 'mt20', 'display-flex');
+    item.classList.add('articleItem', 'articlePop', 'mt20', 'display-flex');
 
     var panel = `
         <a href="${link}" class="articleImg__wrap" aria-label="${title}">
