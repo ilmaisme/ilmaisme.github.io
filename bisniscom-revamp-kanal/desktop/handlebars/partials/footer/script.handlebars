@@ -80,3 +80,23 @@
 {{#if player}}
 <script type="text/javascript" src="https://cdn.bisnis.com/bisnis/assets/jwplayer/jwplayer.js"></script>
 {{/if}}
+{{#if lottie}}
+<!-- s: lottie billboard -->
+<script defer="" type="text/javascript" src="./asset/js/lottie.min.js"></script>
+<script>
+    <!--giias adv-->
+    $(document).ready(function () {
+        var paramGiias = bodymovin.loadAnimation({
+            container: document.getElementById('animationGiias'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: false,
+            path: 'asset/json/giias.json',
+            name: 'myAnimation',
+        });
+
+        paramGiias.playSegments([0, 120], true);
+    });
+</script>
+<!-- e: lottie billboard -->
+{{/if }}

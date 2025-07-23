@@ -499,6 +499,21 @@
                         </div>
                         <!-- e: stream -->
                     </div>
+
+                    <!-- s: lottie billboard -->
+                    <div class="col-10">
+                        <style>
+                            .animationGiias {
+                                position: absolute;
+                                top: 0;
+                                left: -700px;
+                                z-index: 99;
+                            }
+                        </style>
+                        <div class="lottieAnim animationGiias" id="animationGiias"></div>
+                    </div>
+                    <!-- e: lottie billboard -->
+
                     <div class="col-7 col-left">
                         <!-- s: headline -->
                         <div class="hL">
@@ -1930,7 +1945,8 @@
                         <div class="podcast mt30">
                             <a href="https://open.spotify.com/show/6C5e0qIqWQNqVmSAhZ9CsX" target="_blank"
                                 rel="noreferrer">
-                                <img class="podcastImg" src="https://cdn.bisnis.com/bisnis/assets/images/Cover_Podcast_Texture_new.png"
+                                <img class="podcastImg"
+                                    src="https://cdn.bisnis.com/bisnis/assets/images/Cover_Podcast_Texture_new.png"
                                     width="300" height="300" loading="lazy" alt="Broad Cast">
                             </a>
                         </div>
@@ -2929,6 +2945,24 @@
     <script defer type="text/javascript" src="./asset/js/script-main.min.js"></script>
     <script defer type="text/javascript" src="./asset/js/script-home.min.js"></script>
     
+    <!-- s: lottie billboard -->
+    <script defer="" type="text/javascript" src="./asset/js/lottie.min.js"></script>
+    <script>
+        <!--giias adv-->
+        $(document).ready(function () {
+            var paramGiias = bodymovin.loadAnimation({
+                container: document.getElementById('animationGiias'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: false,
+                path: 'asset/json/giias.json',
+                name: 'myAnimation',
+            });
+    
+            paramGiias.playSegments([0, 120], true);
+        });
+    </script>
+    <!-- e: lottie billboard -->
     <script>
         var imgLCP = document.getElementById("imgLCP");
         const preloadImage = src =>
