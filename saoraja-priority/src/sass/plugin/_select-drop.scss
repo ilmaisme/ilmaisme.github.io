@@ -1,0 +1,89 @@
+/*the container must be positioned relative:*/
+.selectDrop {
+    position: relative;
+
+    .formSelect {
+        display: none;
+
+        &:has(option[disabled]) {
+            ~.options li:first-child {
+                cursor: auto;
+                pointer-events: none;
+                color: $cl-text3;
+            }
+        }
+
+        &:has(option[disabled][selected]) {
+
+            ~.styledSelect {
+                color: $cl-text3;
+            }
+        }
+    }
+
+    .styledSelect {
+        padding: 13px 52px 14px 15px;
+
+        &.open {
+            &:after {
+                top: 22px;
+                transform: rotate(225deg);
+            }
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-bottom: 1.5px solid #000000;
+            border-right: 1.5px solid #000000;
+            transform: rotate(45deg);
+            right: 22px;
+            top: 20px;
+            @include base_transition(all, .2s);
+        }
+    }
+
+    .select {
+        position: relative;
+        text-align: left;
+        min-width: calc(100%);
+        min-height: 44px;
+        background: #FFF;
+        border: 1px solid $cl-text3;
+        border-radius: 7px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .options {
+        position: absolute;
+        width: 100%;
+        top: calc(100% + 9px);
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        left: 0;
+        border: 1px solid $cl-accent2;
+        border-radius: 7px;
+        background: #FFF;
+        box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.09);
+        max-height: 280px;
+        overflow-y: auto;
+        z-index: 2;
+        @include scroll(6px, $cl-text3, transparent);
+
+        li {
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            user-select: none;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            &:hover {}
+        }
+    }
+}

@@ -1,0 +1,247 @@
+/* Slider */
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    transition-delay: 10ms;
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+}
+
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+
+    [dir="rtl"] & {
+        float: right;
+    }
+
+    img {
+        display: block;
+    }
+
+    &.slick-loading img {
+        display: none;
+    }
+
+    display: none;
+
+    &.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized & {
+        display: block;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+/* Dot */
+.slick-dots {
+    @extend .center-flex;
+
+    li {
+        margin-left: 5px;
+        margin-right: 5px
+    }
+
+    button {
+        @extend .button !optional;
+        width: 10px;
+        height: 10px;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 0;
+        border-radius: 50px;
+        background: $cl-primary4;
+        transition: 0.5s padding cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.3s background;
+    }
+
+    .slick-active {
+        button {
+            padding-left: 30px;
+            padding-right: 30px;
+            background: $cl-primary2;
+        }
+    }
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    z-index: 1;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+    transition: opacity 1s ease;
+
+    &:hover,
+    &:focus {
+        &:before {
+            opacity: 1;
+        }
+    }
+
+    &.slick-disabled {
+        opacity: 0;
+    }
+
+    &:before {
+        opacity: .8;
+        color: #000000;
+    }
+}
+
+.slick-prev {
+    left: 8px;
+    transform: scaleX(-1);
+    top: 30%;
+
+    @include min-responsive($w-md) {
+        left: 4px;
+    }
+
+    [dir='rtl'] & {
+        right: 0;
+        left: auto;
+    }
+
+    &:before {
+        content: url('data:image/svg+xml;charset=utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 32 32"><path d="M24.963 14.985l-16.013-14.593c-0.525-0.523-1.378-0.523-1.903 0s-0.525 1.371 0 1.894l15.048 13.714-15.046 13.714c-0.525 0.523-0.525 1.371 0 1.894s1.378 0.523 1.903 0l16.013-14.593c0.28-0.279 0.4-0.648 0.381-1.014 0.017-0.367-0.103-0.736-0.383-1.016z"></path></svg>');
+        width: 18px;
+        height: 18px;
+        stroke-width: 0;
+        stroke: currentColor;
+        fill: currentColor;
+        transition: .2s ease-out;
+
+        [dir='rtl'] & {
+            content: url('data:image/svg+xml;charset=utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 32 32"><path d="M24.963 14.985l-16.013-14.593c-0.525-0.523-1.378-0.523-1.903 0s-0.525 1.371 0 1.894l15.048 13.714-15.046 13.714c-0.525 0.523-0.525 1.371 0 1.894s1.378 0.523 1.903 0l16.013-14.593c0.28-0.279 0.4-0.648 0.381-1.014 0.017-0.367-0.103-0.736-0.383-1.016z"></path></svg>');
+            width: 18px;
+            height: 18px;
+            stroke-width: 0;
+            stroke: currentColor;
+            fill: currentColor;
+            transition: .2s ease-out;
+        }
+    }
+}
+
+.slick-next {
+    top: 33%;
+    right: 8px;
+
+    @include min-responsive($w-md) {
+        right: 4px;
+    }
+
+    [dir='rtl'] & {
+        right: auto;
+        left: 0;
+    }
+
+    &:before {
+        content: url('data:image/svg+xml;charset=utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 32 32"><path d="M24.963 14.985l-16.013-14.593c-0.525-0.523-1.378-0.523-1.903 0s-0.525 1.371 0 1.894l15.048 13.714-15.046 13.714c-0.525 0.523-0.525 1.371 0 1.894s1.378 0.523 1.903 0l16.013-14.593c0.28-0.279 0.4-0.648 0.381-1.014 0.017-0.367-0.103-0.736-0.383-1.016z"></path></svg>');
+        width: 18px;
+        height: 18px;
+        stroke-width: 0;
+        stroke: currentColor;
+        fill: currentColor;
+        transition: .2s ease-out;
+
+        [dir='rtl'] & {
+            content: url('data:image/svg+xml;charset=utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 32 32"><path d="M24.963 14.985l-16.013-14.593c-0.525-0.523-1.378-0.523-1.903 0s-0.525 1.371 0 1.894l15.048 13.714-15.046 13.714c-0.525 0.523-0.525 1.371 0 1.894s1.378 0.523 1.903 0l16.013-14.593c0.28-0.279 0.4-0.648 0.381-1.014 0.017-0.367-0.103-0.736-0.383-1.016z"></path></svg>');
+            width: 18px;
+            height: 18px;
+            stroke-width: 0;
+            stroke: currentColor;
+            fill: currentColor;
+            transition: .2s ease-out;
+        }
+    }
+}

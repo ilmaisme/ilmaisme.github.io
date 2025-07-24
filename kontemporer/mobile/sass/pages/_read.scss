@@ -97,9 +97,10 @@
 
             video,
             iframe {
-                max-width: 100%;
+                width: 100%;
                 object-fit: cover;
-                aspect-ratio: 16/9;
+                aspect-ratio: 16 / 9;
+                height: auto;
             }
 
             .videoPlay {
@@ -108,8 +109,42 @@
         }
     }
 
+    &Video {
+        position: fixed;
+        top: 94px;
+        padding-top: 56.55%;
+        width: 100%;
+        box-shadow: 0 2px 27px 0 rgba(19, 115, 227, .13);
+        z-index: 99;
+
+        iframe,
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__holder {
+            position: relative;
+            padding-top: 56.55%;
+        }
+    }
+
     &Content {
         @include font-pack($font_read, 15px, 500, 1.6, $cl_black);
+
+        &__video {
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+
+            &.active {
+                -webkit-line-clamp: unset;
+            }
+        }
     }
 
     &Other {
@@ -133,7 +168,11 @@
         @include font-pack(false, 12px, 400, 1.6, $cl_primary);
 
         &__list {
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-right: -15px;
+            padding-right: 15px;
         }
 
         &__link {
@@ -144,6 +183,14 @@
             border-radius: 20px;
             background: $cl_black;
             @include font-pack(false, 12px, 500, false, $cl_white);
+
+            &:hover {
+                color: $cl_white;
+            }
+        }
+
+        li:last-child .readTag__link {
+            margin-right: 0;
         }
     }
 

@@ -1,0 +1,111 @@
+.pswp {
+    opacity: 0;
+    will-change: opacity;
+    transition: 0.5s opacity cubic-bezier(0.73, 0.32, 0.34, 1.5);
+
+    &__caption {
+        position: unset;
+
+        &__center {
+            width: calc(100% - 30px);
+            margin: 8px auto -25px;
+            padding: 15px;
+            @extend .titleH4;
+            color: $cl-accent1;
+            background-color: rgba(0, 0, 0, .58);
+
+            @include min-responsive($w-lg) {
+                width: 830px;
+            }
+        }
+    }
+
+    &__lead {
+        min-width: 100%;
+        position: absolute;
+        padding: 15px;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        @include font-pack($font-normal, 13px, $font-weight-normal, 1.53, $cl-accent1);
+        background-color: rgba(0, 0, 0, .58);
+
+        @include min-responsive($w-lg) {
+            min-width: 830px;
+        }
+    }
+
+    &__dates {
+        margin-top: 3px;
+        @include font-pack($font-normal, 13px, $font-weight-normal, 1.23, $cl-text3);
+    }
+
+    &__counter {
+        @extend .sr-only
+    }
+
+    &__ui--fit .pswp__caption {
+        background: transparent;
+    }
+
+    &__button {
+        &--close {
+            background: transparent;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+
+            &:hover {
+
+                &:before,
+                &:after {
+                    background: $cl-accent1;
+                }
+            }
+
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                box-sizing: border-box;
+                position: absolute;
+                width: 26px;
+                height: 3px;
+                background: $cl-text2;
+                transform: rotate(45deg);
+                border-radius: 5px;
+                top: 30px;
+                right: 15px;
+                transition: background .3s ease-in-out;
+
+                @include min-responsive($w-md) {
+                    width: 32px;
+                    top: 30px;
+                    right: 30px;
+                }
+            }
+
+            &:after {
+                transform: rotate(-45deg);
+            }
+        }
+
+        &.pswp__button--close {
+
+            @media (-webkit-min-device-pixel-ratio: 1.1),
+            (-webkit-min-device-pixel-ratio: 1.09375),
+            (min-resolution: 1.1dppx),
+            (min-resolution: 105dpi) {
+                background-image: none;
+            }
+        }
+
+        &--arrow--left,
+        &--arrow--right {
+
+            &::before {
+                transform: scale(1.5);
+            }
+        }
+    }
+}
