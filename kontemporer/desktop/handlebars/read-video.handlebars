@@ -16,20 +16,24 @@
             <div class="row display-flex mt40">
                 <div class="read col-gd-740">
                     <div class="readVideo__holder">
-                        <div class="readVideo readImg__wrap">
+                        <div class="readVideo readImg__wrap inline">
+                            <button class="button buttonClose readVideo__close" aria-label="Close video"
+                                data-modal-button="dismiss">
+                                <span class="icon icon-close"></span>
+                            </button>
                             <iframe width="740" height="412" src="https://www.youtube.com/embed/JjAtkmSd46g?controls=0"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen loading="lazy"></iframe>
                         </div>
-                        <div class="readTag mt20">
-                            <ul class="display-flex">
-                                <li><a href="tag.html" class="readTag__link">Relationship</a></li>
-                                <li><a href="tag.html" class="readTag__link">Zodiak</a></li>
-                                <li><a href="tag.html" class="readTag__link">Love</a></li>
-                                <li><a href="tag.html" class="readTag__link">Tips</a></li>
-                            </ul>
-                        </div>
+                    </div>
+                    <div class="readTag">
+                        <ul class="display-flex">
+                            <li><a href="tag.html" class="readTag__link">Relationship</a></li>
+                            <li><a href="tag.html" class="readTag__link">Zodiak</a></li>
+                            <li><a href="tag.html" class="readTag__link">Love</a></li>
+                            <li><a href="tag.html" class="readTag__link">Tips</a></li>
+                        </ul>
                     </div>
                     <div class="readSlider mt20" data-slider="true">
                         <div class="readTitle__sub">Must Read</div>
@@ -190,6 +194,45 @@
     {{> footer}}
 
     {{> js page="Read" artslide=true}}
+    <script>
+        function setStickyVideo() {
+            const readVideo = document.querySelector('.readVideo');
+            const readVideoHolder = document.querySelector('.readVideo__holder');
+            const closeButton = document.querySelector('.readVideo__close');
+
+            if (!readVideo || !readVideoHolder) return;
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // In view
+                        readVideo.classList.remove('sticky');
+                        readVideo.classList.add('inline');
+                    } else {
+                        // Out of view
+                        readVideo.classList.remove('inline');
+                        readVideo.classList.add('sticky');
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0
+            });
+
+            observer.observe(readVideoHolder);
+
+            if (closeButton) {
+                closeButton.addEventListener('click', () => {
+                    readVideo.classList.remove('sticky');
+                    readVideo.classList.add('inline');
+                    closeButton.classList.add('hide');
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', setStickyVideo);
+    </script>
+
 
 </body>
 
