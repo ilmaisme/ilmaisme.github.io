@@ -989,62 +989,7 @@
     </footer>
     <script src="asset/js/jquery-3.5.0.min.js"></script>
     <script defer type="text/javascript" src="asset/js/read.min.js"></script>
-    <script defer type="text/javascript" src="asset/js/global.min.js"></script>    <script>
-        // sticky function
-        function setSticky() {
-            let kgpl = document.getElementsByClassName('readVideo')[0];
-            let kgpl_read = document.getElementsByClassName('readVideo__holder')[0];
-
-            if (!!kgpl) {
-                let kgbtn = kgpl.getElementsByClassName('rVideo-button')[0];
-                if (!!kgbtn) {
-                    kgbtn.addEventListener('click', function (e) {
-                        kgpl.classList.toggle('hide');
-                        if (!!kgpl_read) {
-                            kgpl_read.classList.add('hide');
-                            kgpl_read.classList.remove('sticky');
-                        }
-                    });
-                }
-                window.addEventListener('scroll', function () {
-                    let qa = isVisible(kgpl);
-
-                    if (qa) {
-                        kgpl.classList.remove('hide');
-                        kgpl.classList.add('inline');
-
-                        if (!!kgpl_read) {
-                            kgpl_read.classList.remove('hide');
-                            kgpl_read.classList.remove('sticky');
-                        }
-                    } else {
-                        kgpl.classList.remove('inline');
-
-                        if (!!kgpl_read) {
-                            if (!kgpl_read.classList.contains('hide')) {
-                                kgpl_read.classList.add('sticky');
-                            }
-                        }
-                    }
-                });
-            }
-        }
-
-        function isVisible(el) {
-            let rto = 9 / 16 * 740;
-            let kgtop = rto;
-            let kgbottom = rto - 50;
-            let rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 - kgbottom &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + kgtop &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-        setSticky();
-    </script>
-
+    <script defer type="text/javascript" src="asset/js/global.min.js"></script>
 </body>
 
 </html>
