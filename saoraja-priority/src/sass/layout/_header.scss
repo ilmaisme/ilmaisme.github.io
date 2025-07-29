@@ -1,74 +1,42 @@
 .header {
-    position: relative;
+    position: fixed;
     width: 100%;
     top: 0;
-    transition: 0.5s top cubic-bezier(0.73, 0.32, 0.34, 1.5);
+    background: transparent;
+    transition: 0.3s background cubic-bezier(0.73, 0.32, 0.34, 1.5);
     z-index: 3; //above .footer
 
     &.fixed {
-        position: fixed;
-        width: calc(100% - 30px);
-        left: 15px;
-        top: 15px;
-
-        @include min-responsive($w-xl) {
-            width: 100%;
-            left: unset;
-            top: 25px;
-        }
+        background: #222222;
 
         .headerWrap {
-            background: #FFF;
-            padding-top: 10px;
-            padding-bottom: 15px;
-            padding-right: 8px;
-            box-shadow: 0px 2px 27px 0px rgba(19, 115, 227, 0.13);
-            transition: 0.5s 0.1s height, 0.3s background;
-
-            /*@include media-breakpoint-up(sm) {
-                // max-width: calc(540px + 50px);
-            }
-
-            @include media-breakpoint-up(md) {
-                // max-width: calc(720px + 50px);
-            }
-
-            @include media-breakpoint-up(lg) {
-                // max-width: calc(960px + 50px);
-            }*/
-
-            @include min-responsive($w-xl) {
-                padding-left: 40px;
-                padding-right: 40px;
-            }
-
-            @include range-responsive($w-lg, $w-xl) {
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-
-            @include min-responsive($w-xxl) {
-                max-width: calc(1230px + 50px);
-            }
+            padding-top: 6px;
+            padding-bottom: 6px;
+            min-height: 60px;
+            transition: 0.5s 0.1s min-height cubic-bezier(0.73, 0.32, 0.34, 1.5);
         }
 
-        &~.header-offset {
-            padding-top: 74px;
-
-            @include min-responsive($w-xl) {
-                padding-top: 90px
-            }
+        .headerLogo {
+            max-width: 150px;
+            transition: 0.5s 0.1s max-width cubic-bezier(0.73, 0.32, 0.34, 1.5);
         }
+
+        // &~.header-offset {
+            // padding-top: 74px;
+
+            // @include min-responsive($w-xl) {
+            //     padding-top: 110px
+            // }
+        // }
     }
 
     &Wrap {
         @include display-flex;
         align-items: center;
         justify-content: space-between;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        transition: 0.5s height cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.2s background;
-        border-radius: 19px;
+        min-height: 110px;
+        padding: 10px 5px;
+        transition: 0.5s height cubic-bezier(0.73, 0.32, 0.34, 1.5);
 
         @include min-responsive($w-xl) {
             padding-top: 25px;
@@ -83,43 +51,39 @@
 
     &Dropdown {
         position: absolute;
+        top: 48px;
         width: max-content;
-        background: #fff;
-        border: 1px solid $cl-accent2;
+        background: $cl-primary2;
         border-radius: 7px;
         transition: .5s border, .5s background;
         box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.09);
         z-index: 9;
 
         &Link {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            padding: 5px 0;
-            border-bottom: 1px solid transparent;
-            border-radius: 0;
-            @include font-pack($font-normal, 15px, $font-weight-normal, 1.46, $cl-text1);
+            margin-top: 7px;
+            margin-bottom: 7px;
+            padding: 10px;
 
-            @include range-responsive($w-lg, $w-xl) {
-                font-size: 12px;
+            .active::before,
+            &:hover::before {
+                content: none;
             }
 
-            &:hover {
-                color: inherit;
-                border-bottom: 1px solid $cl-primary2;
-                background: transparent;
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
             }
         }
 
         &Item {
-            padding-left: 20px;
-            padding-right: 20px;
-            height: 53px;
+            padding-left: 10px;
+            padding-right: 10px;
+            height: 44px;
             overflow: hidden;
             transition: 0.5s height cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s padding cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s margin cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s 0.2s color, 0.2s background-color;
-
-            @include range-responsive($w-lg, $w-xl) {
-                height: 48px;
-            }
 
             &:first-child {
                 margin-top: 10px;
@@ -131,40 +95,15 @@
         }
     }
 
-    &Cta {
-        margin-left: 30px;
-
-        @include max-responsive($w-xm) {
-            margin-left: 12px;
-        }
-
-        @include min-responsive($w-xl) {
-            margin-left: 45px;
-        }
-
-        @include range-responsive($w-lg, $w-xl) {
-            margin-left: 12px;
-        }
-
-        .ico {
-            width: 24px;
-            height: 24px;
-            filter: invert(38%) sepia(60%) saturate(4104%) hue-rotate(200deg) brightness(91%) contrast(94%);
-        }
+    &Logo {
+        max-width: 195px;
     }
 
-    &Icon {
-        padding-left: 12px;
-        padding-right: 12px;
-
-        @include max-responsive($w-xm) {
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        @include min-responsive($w-xl) {
-            padding-left: 5px;
-            padding-right: 5px;
+    &Search {
+        .icoSearch {
+            width: 24px;
+            height: 24px;
+            @extend %filter-white
         }
     }
 }

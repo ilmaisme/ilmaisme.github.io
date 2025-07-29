@@ -1,0 +1,22 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="magzItem{{#if ../col}} {{../col}}{{/if}}">
+    <a href="{{link}}" class="magzLink">
+        <div class="magzImg">
+            <img src="{{images}}" alt="" width="260" height="368" loading="lazy">
+        </div>
+        <div class="magzContent">
+            {{#if ../tag}}
+            <{{.. /tag}} class="magzTitle titleH6">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="magzTitle titleH6">{{title}}</div>
+            {{/if}}
+        </div>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

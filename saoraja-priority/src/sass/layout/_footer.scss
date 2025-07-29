@@ -1,31 +1,66 @@
-.footer{
+.footer {
     position: relative;
-    margin-top: 100px;
-    padding-bottom: 30px;
-    background: $cl-accent1;
-    z-index: 2;
+    padding: 50px 50px 0 50px;
+    margin-top: 90px;
+    padding-bottom: 74px;
 
-    &List{
-        padding-bottom: 20px;
+    &Wrap {
         display: flex;
-        justify-content: center;
-        flex-direction: column;
-        
-        @include min-responsive($w-md) {
-            padding-top: 20px;
-            flex-direction: row;
-            align-items: center;
+        align-items: flex-start;
+        justify-content: space-between;
+        max-width: 1340px;
+    }
+
+    &Menu {
+        display: flex;
+        gap: 50px;
+
+        >.footerList {
+            width: 206px;
         }
     }
 
-    &Link{
-        display: block;
-        padding: 15px;
-        @include font-pack($font-bold, 14px, $font-weight-bold, 1.28, $cl-primary1);
+    &List {
+        >.footerItem {
+            margin-top: 2px;
+            margin-bottom: 2px;
+
+            &:first-child {
+                margin-top: 0;
+                margin-bottom: 12px;
+            }
+        }
     }
 
-    &Copy{
-        text-align: center;
-        @include font-pack($font-bold, 14px, $font-weight-bold, 1.28, $cl-text2);
+    &Apps {
+        gap: 15px;
+    }
+
+    &Socmed {
+        margin-top: 15px;
+        gap: 10px;
+        justify-content: flex-start;
+
+        >.footerItem:first-child {
+            margin-right: 5px;
+        }
+    }
+
+    &Icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    &Link {
+        display: block;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        color: #D1D1D1;
+    }
+
+    &Copy {
+        margin-top: 50px;
+        margin-bottom: 20px;
+        @include font-pack(false, 14px, false, normal, #A3A3A3);
     }
 }

@@ -1,0 +1,28 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="privilegeItem{{#if ../col}} {{../col}}{{/if}}">
+    <a href="{{link}}" class="privilegeLink">
+        <div class="privilegeImg borderedImg">
+            <img src="{{images}}" alt="" width="340" height="183" loading="lazy">
+            <div class="privilegeBox">
+                <div class="privilegeTitle titleH7"><strong>{{title}}</strong></div>
+                <div class="privilegeLead titleP3">{{lead}}</div>
+                <div class="titleP3 titleP3Bold">Read More <span class="ico icoArrow"></span></div>
+            </div>
+        </div>
+        <div class="privilegeContent">
+            {{#if ../tag}}
+            <{{.. /tag}} class="privilegeTitle titleH5">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="privilegeTitle titleH5">{{title}}</div>
+            {{/if}}
+            <div class="privilegeChannel titleH7">{{channel}}</div>
+        </div>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}

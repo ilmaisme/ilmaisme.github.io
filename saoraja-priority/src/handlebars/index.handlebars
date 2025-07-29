@@ -5,10 +5,61 @@
 
 <body>
 
-    {{> header/header}}
+    {{> header/header page="Home"}}
 
     <main role="main" class="main">
-        <div class="container">
+        <!-- s: headline -->
+        <div class="headline">
+            <div class="headlineWrap swiper -sHL">
+                <div class="headlineList swiper-wrapper">
+                    {{>headline channel=headline type="swiper-slide" index_start="0" index_end="3" tag="h1"}}
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="headlineBg">
+                <img src="./asset/images/headline/bg.png" alt="" width="1440" height="387">
+            </div>
+        </div>
+        <!-- e: headline -->
+        <div class="container mt30">
+            <!-- s: privilege -->
+            <div class="privilege">
+                <h2 class="titleH2">Keistimewaan</h2>
+                <div class="privilegeList row">
+                    {{>privilege channel=privilege col="col-lg-4" index_start="0" index_end="6" tag="h3"}}
+
+                </div>
+            </div>
+            <!-- e: privilege -->
+        </div>
+        <div class="bg-grey ptb30 mt30">
+            <div class="container">
+                <!-- s: E-magazine -->
+                <div class="magz">
+                    <div class="titleHead">
+                        <h2 class="titleH2">Publikasi</h2>
+                        <a href="publikasi.html" class="titleP3 titleP3Bold">See all <span
+                                class="ico icoArrow"></span></a>
+                    </div>
+                    <div class="magzList row">
+                        {{>magz channel=magz col="col-lg-3" index_start="0" index_end="4" tag="h3"}}
+
+                    </div>
+                </div>
+                <!-- e: E-magazine -->
+            </div>
+        </div>
+        <div class="container mt30">
+            <!-- s: tools -->
+            <div class="tools">
+                <h2 class="titleH2">Tools to Help You</h2>
+                <div class="toolsList row">
+                    {{>tools channel=tools col="col-lg-4" index_start="0" index_end="3" tag="h3"}}
+
+                </div>
+            </div>
+            <!-- e: tools -->
         </div>
     </main>
 

@@ -5,20 +5,15 @@
     cursor: pointer;
 
     &Primary {
-        min-width: 230px;
-        min-height: 48px;
-        border-radius: 7px;
-        border: 2px solid $cl-primary1;
-        padding: 14px 60px;
+        padding: 7px 34px;
         background: $cl-primary1;
         @include flex(center);
         flex-shrink: 0;
-        @include font-pack($font-bold, 15px, $font-weight-bold, 1.06, $cl-accent1);
-        box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.32);
-        transition: box-shadow 0.3s ease-in-out;
+        @include font-pack(false, 16px, $font-weight-bold, 1.5, $cl-neutral0);
+        border-radius: 26px;
+        background: linear-gradient(0deg, #9D7537 -35.14%, #9D7537 2.7%, #F4C943 38.51%, #FFDE83 49.2%, #F4C943 69.21%, #D6B24E 84.2%, #FFECCE 100%);
 
         &:hover {
-            box-shadow: 0px 1px 13px 0px rgba(113, 178, 255, 0.70);
         }
 
         &:active {
@@ -31,55 +26,6 @@
             border: 2px solid $cl-accent2;
             box-shadow: 0 0;
             pointer-events: none;
-        }
-
-        &.submitted {
-            border: 2px solid $cl-primary3;
-            background: $cl-primary3;
-            box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-            pointer-events: none;
-        }
-
-        &--icon {
-            max-width: 230px;
-            padding: 10px;
-
-            .icoArrow {
-                // @extend %icoArrow;
-                margin-left: 10px;
-                filter: invert(100%) sepia(0%) saturate(7435%) hue-rotate(160deg) brightness(114%) contrast(98%);
-            }
-        }
-    }
-
-    &Txt {
-        @include display-flex;
-        align-items: center;
-        padding-top: 7px;
-        padding-bottom: 7px;
-        background: transparent;
-        @include font-pack($font-normal, 15px, $font-weight-normal, normal, $cl-primary1);
-
-        &:hover {
-            color: $cl-text1;
-
-            .icoArrow {
-                filter: invert(19%) sepia(8%) saturate(374%) hue-rotate(191deg) brightness(96%) contrast(94%);
-            }
-        }
-
-        &:active {
-            color: #606060;
-
-            .icoArrow {
-                filter: invert(34%) sepia(0%) saturate(1%) hue-rotate(175deg) brightness(104%) contrast(86%);
-            }
-        }
-
-        .icoArrow {
-            // @extend %icoArrow;
-            margin-left: 10px;
-            filter: invert(38%) sepia(60%) saturate(4104%) hue-rotate(200deg) brightness(91%) contrast(94%);
         }
     }
 }
@@ -100,43 +46,6 @@
 
         .icoClose {
             @extend %icoClose
-        }
-    }
-
-    &Clear {
-        @extend %buttonClose;
-        width: 24px;
-        height: 24px;
-        right: 20px;
-        top: 12px;
-        display: none;
-
-        &:hover {
-            .icoClose {
-
-                &::before,
-                &::after {
-                    background: $cl-notif2;
-                }
-            }
-        }
-
-        &.active {
-            display: block;
-        }
-
-        .icoClose {
-            width: 24px;
-            height: 24px;
-
-            &::before,
-            &::after {
-                width: 16px;
-                height: 2px;
-                background: $cl-text3;
-                top: 10px;
-                left: 4px;
-            }
         }
     }
 }

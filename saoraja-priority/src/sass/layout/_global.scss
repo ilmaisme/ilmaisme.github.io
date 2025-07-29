@@ -13,27 +13,13 @@ html {
 }
 
 body {
-    @include font-pack($font-normal, 15px, $font-weight-normal, 1.46, $cl-text2);
-    background: $cl-accent1 url(../images/bg.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
+    @include font-pack($font-normal, 16px, $font-weight-normal, $line-base, $cl-neutral1);
+    background: #040404;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeSpeed;
-}
-
-body:has(.main.--bg-green) {
-    background: $cl-accent2 url(../images/bg-green.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-body:has(.main.--bg-blue) {
-    background: $cl-accent2 url(../images/bg-blue.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
 }
 
 a {
@@ -171,30 +157,25 @@ button:-moz-focusring,
     margin-right: auto;
 }
 
-.offsetContainer {
-    padding-left: 15px;
-    padding-right: 0;
+.mt30 {
+    margin-top: 30px;
+}
 
-    @include media-breakpoint-up(md) {
-        margin-left: auto;
-        padding-left: 0;
-        max-width: 720px;
-    }
+.ptb30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 
-    @include media-breakpoint-up(lg) {
-        max-width: 960px;
-    }
+%filter-white {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(313deg) brightness(103%) contrast(103%);
+}
 
-    @include min-responsive($w-xl) {
-        max-width: 1230px;
-        padding-left: 15px;
-    }
+%filter-yellow {
+    filter: invert(74%) sepia(89%) saturate(310%) hue-rotate(357deg) brightness(102%) contrast(92%);
+}
 
-    @include min-responsive($w-xxl) {
-        margin-left: 8.33333%;
-        padding-left: 0;
-        max-width: unset;
-    }
+.bg-grey {
+    background: #2E3332;
 }
 
 .hidden {

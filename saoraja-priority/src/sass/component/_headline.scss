@@ -1,0 +1,77 @@
+.headline {
+    position: relative;
+    padding-bottom: 7.5vw;
+
+    --swiper-pagination-bottom: 50%;
+    --swiper-pagination-bullet-size: 14px;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-horizontal: 10px;
+    --swiper-pagination-bullet-inactive-color: transparent;
+    --swiper-pagination-color: linear-gradient(0deg, #9D7537 -35.14%, #9D7537 2.7%, #F4C943 38.51%, #FFDE83 49.2%, #F4C943 69.21%, #D6B24E 84.2%, #FFECCE 100%);
+
+    .swiper {
+        &-pagination {
+            text-align: left;
+            left: 15px;
+
+            @include min-responsive($w-xl) {
+                left: 40px;
+            }
+
+            @include min-responsive($w-xxl) {
+                left: 5vw;
+            }
+
+            &-bullet {
+                display: block;
+                border: 1px solid $cl-primary3;
+            }
+        }
+
+        &-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+        .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 10px 0;
+        }
+    }
+
+    &Bg {
+        position: absolute;
+        bottom: 0;
+        pointer-events: none;
+        z-index: 1;
+        width: 100%;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            object-position: bottom;
+        }
+    }
+
+    &Item {
+        position: relative;
+    }
+
+    &Img {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &Content {
+        position: absolute;
+        bottom: 134px;
+    }
+
+    &Lead {
+        margin-top: 9px;
+        margin-bottom: 9px;
+    }
+
+    &Link {
+        font-style: italic;
+        @include font-pack(false, 18px, false, 1.55, $cl-primary1);
+    }
+}

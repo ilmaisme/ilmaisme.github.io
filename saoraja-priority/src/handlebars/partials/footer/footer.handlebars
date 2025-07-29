@@ -1,27 +1,59 @@
-{{>footer/contact type="fixed"}}
+<footer class="footer bg-grey">
+    <div class="footerWrap mx-auto">
+        <div class="footerLogo">
+            <a href="index.html">
+                <img src="./asset/images/logo-bank-sulselbar-saoraja-priority.svg" alt="{{site.name}}" width="225"
+                    height="69" loading="lazy">
+            </a>
+        </div>
+        <div class="footerMenu">
+            <ul class="footerList">
+                <li class="footerItem titleH6"><strong>Alamat</strong></li>
+                <li class="footerItem">
+                    <div class="footerLink titleH7">
+                        Jl. Dr. Sam Ratulangi No. 16, Makassar 90125
+                    </div>
+                </li>
+                <li class="footerItem">
+                    <div class="footerLink titleH7">Telp: (0411) 854 611</div>
+                </li>
 
-<footer class="footer">
-    <div class="share --footer center-flex">
-        <div class="shareCaption">Share this page</div>
-        <div class="shareList">
+            </ul>
+            <ul class="footerList">
+                <li class="footerItem titleH6"><strong>Tautan Berguna</strong></li>
+                {{#each footerMenu}}
+                <li class="footerItem">
+                    <a href="{{link}}" class="footerLink titleH7">{{title}}</a>
+                </li>
+                {{/each}}
 
-            {{!>share channel=share}}
+            </ul>
+        </div>
+        <div class="footerCta">
+            <ul class="footerApps center-flex">
+                {{#each apps}}
+                <li class="footerItem">
+                    <a href="{{link}}">
+                        <img src="{{images}}" width="173" height="50" loading="lazy" alt="{{title}}">
+                    </a>
+                </li>
+                {{/each}}
 
+            </ul>
+            <ul class="footerSocmed center-flex">
+                <li class="footerItem">Follow us</li>
+                {{#each socmed}}
+                <li class="footerItem">
+                    <a href="{{link}}" aria-label="Follow us on {{title}}">
+                        <span class="footerIcon ico ico{{icon}}"></span>
+                    </a>
+                </li>
+                {{/each}}
+
+            </ul>
         </div>
     </div>
-
+    <div class="footerCopy text-center">&copy; 2025 Bank Sulselbar Saoraja Priority</div>
     {{>footer/contact}}
 
-    <div class="footerMenu">
-        <ul class="footerList">
-
-            {{#each footerMenu}}
-            <li class="footerItem">
-                <a href="{{link}}" class="footerLink">{{title}}</a>
-            </li>
-            {{/each}}
-
-        </ul>
-    </div>
-    <div class="footerCopy">&copy; Gramedia 2024</div>
 </footer>

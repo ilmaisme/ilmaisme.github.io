@@ -3,16 +3,28 @@
         {{#each mainMenu}}
         <div class="navItem">
             {{#if submenu}}
-            <div class="navLink">{{title}}</div>
+            <div class="navLink titleH7">{{title}}</div>
             <ul class="navSub headerDropdown">
                 {{#each submenu}}
                 <li class="navSubItem">
-                    <a href="{{link}}" class="navLink{{#eq title compare=../../page}} active{{/eq}}">{{title}}</a>
+                    <a href="{{link}}"
+                        class="navLink{{#eq title compare=../../page}} active{{/eq}} titleH7">{{{title}}}</a>
+                    {{#if subchild}}
+                    <ul class="navSubChild headerDropdown">
+                        {{#each subchild}}
+                        <li class="navSubItem">
+                            <a href="{{link}}"
+                                class="navLink{{#eq title compare=../../page}} active{{/eq}} titleH7">{{title}}
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
                 </li>
                 {{/each}}
             </ul>
             {{else}}
-            <a href="{{link}}" class="navLink{{#eq title compare=../page}} active{{/eq}}">{{title}}</a>
+            <a href="{{link}}" class="navLink{{#eq title compare=../page}} active{{/eq}} titleH7">{{title}}</a>
             {{/if}}
         </div>
         {{/each}}
