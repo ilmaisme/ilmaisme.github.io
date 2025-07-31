@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loop: true,
         speed: 1000,
         effect: "fade",
-        autoplay: false,
+        autoplay: true,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
