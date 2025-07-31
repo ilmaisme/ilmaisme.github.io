@@ -1,75 +1,96 @@
-let hd = $(".header"),
-    mTg = $('#menuToggle');
+document.addEventListener("DOMContentLoaded", function () {
+    const hd = document.querySelector(".header");
+    const menuWrap = document.querySelector(".menuWrap");
+    const nav = document.querySelector(".nav");
+    const navDesk = document.getElementById("navDesk");
+    const navMobWrap = document.querySelector("#navMob .menuWrap");
+    const menuToggle = document.getElementById("menuToggle");
 
-$(document).ready(function () {
-    // sticky menu
-    $(window).scroll(function () {
-        var a = $(window).scrollTop(),
-            b = hd.outerHeight();
-        a > b + 0 ? (hd.addClass("fixed")) :
-            (hd.removeClass("fixed"))
-    })
+    if (!hd || !menuWrap || !nav || !navDesk || !navMobWrap) return;
 
-    $(document).on("click", function () {
-        //hide video
-        var popupvideo = document.querySelector('.-pVideo');
-        if (!!popupvideo) {
-            popupvideo.classList.remove('active')
-            toggleVideo('#video', 'hide')
+    // Sticky menu
+    window.addEventListener("scroll", function () {
+        const scrollY = window.scrollY;
+        const headerHeight = hd.offsetHeight;
+
+        if (scrollY > headerHeight) {
+            hd.classList.add("fixed");
+        } else {
+            hd.classList.remove("fixed");
         }
     });
-});
 
-//update mobile menu
-updateMenu()
-window.addEventListener('unload', function (event) {
-    document.getElementById('menuToggle').reset();
-}, false);
+    // Reset mobile menu toggle on unload
+    window.addEventListener("unload", function () {
+        if (menuToggle && typeof menuToggle.reset === "function") {
+            menuToggle.reset();
+        }
+    });
 
-$(window).on('resize', function () {
-    updateMenu()
-});
+    // Responsive menu updater
+    function updateMenu() {
+        const isDesktop = window.innerWidth >= 1140;
 
-function updateMenu() {
-    if (viewport().width >= 1140) {
-        // console.log("desktop")
-        $('.menuWrap').removeClass('mobile');
-        hd.removeClass('mobile');
-        /* move nav position in desktop */
-        $('.nav').appendTo('#navDesk');
-        $('.headerBil').appendTo('.headerCta');
-    } else {
-        // console.log("mobile")
-        $('.menuWrap').addClass('mobile');
-        hd.addClass('mobile');
-        /* move nav position in mobile */
-        $('.nav').appendTo('#navMob .menuWrap');
-        $('.headerBil').appendTo('#navMob .menuWrap');
-    }
-}
+        menuWrap.classList.toggle("mobile", !isDesktop);
+        hd.classList.toggle("mobile", !isDesktop);
 
-//trigger active button
-function triggerActive(item) {
-    let target = document.querySelector(item),
-        targetActive = target.classList.contains('active');
-    if (!!target) {
-        if (targetActive == false) {
-            target.classList.add('active');
+        if (isDesktop) {
+            navDesk.appendChild(nav);
         } else {
-            target.classList.remove('active');
+            navMobWrap.appendChild(nav);
         }
     }
-}
 
-//pause video
-function toggleVideo(video, state) {
-    var div = document.querySelector(video);
-    if (!!div) {
-        var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
-        func = state == 'hide' ? 'pauseVideo' : 'playVideo';
-        iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+    // Initial menu setup
+    updateMenu();
+
+    // Handle viewport resize
+    window.addEventListener("resize", updateMenu);
+});
+
+
+//trigger active button
+function triggerActive(selector, btn = null, options = {}) {
+    const target = document.querySelector(selector);
+    if (!target) return;
+
+    // Optional config
+    const deactivateSiblings = options.deactivateSiblings ?? true;
+
+    if (!deactivateSiblings) {
+        target.classList.toggle('active');
+        if (btn) btn.classList.toggle('active');
+        return;
+    }
+
+    // Get target's class name (like widgetItem or widgetCurrContent)
+    const baseClass = [...target.classList].find(cls => cls.startsWith('widget') || cls.startsWith('popup') || cls.startsWith('tab'));
+
+    if (!baseClass) {
+        // If no structural class, fallback to just toggling
+        target.classList.toggle('active');
+        if (btn) btn.classList.toggle('active');
+        return;
+    }
+
+    // Find container: parent that holds multiple items of same type
+    const container = target.closest(`.${baseClass}`).parentElement;
+
+    // Deactivate all siblings of the same base class
+    const siblings = container.querySelectorAll(`.${baseClass}`);
+    siblings.forEach(el => el.classList.remove('active'));
+
+    // Activate target
+    target.classList.add('active');
+
+    // Handle optional button active state
+    if (btn) {
+        const btnGroup = btn.parentElement.querySelectorAll('.button');
+        btnGroup.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
     }
 }
+
 
 //calc width window
 function viewport() {

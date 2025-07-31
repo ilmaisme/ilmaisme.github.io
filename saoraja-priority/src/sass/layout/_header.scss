@@ -2,9 +2,13 @@
     position: fixed;
     width: 100%;
     top: 0;
-    background: transparent;
+    background: #222222;
     transition: 0.3s background cubic-bezier(0.73, 0.32, 0.34, 1.5);
     z-index: 3; //above .footer
+
+    @include min-responsive($w-xl) {
+        background: transparent;
+    }
 
     &.fixed {
         background: #222222;
@@ -22,11 +26,11 @@
         }
 
         // &~.header-offset {
-            // padding-top: 74px;
+        // padding-top: 74px;
 
-            // @include min-responsive($w-xl) {
-            //     padding-top: 110px
-            // }
+        // @include min-responsive($w-xl) {
+        //     padding-top: 110px
+        // }
         // }
     }
 
@@ -34,11 +38,12 @@
         @include display-flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 110px;
+        min-height: 80px;
         padding: 10px 5px;
         transition: 0.5s height cubic-bezier(0.73, 0.32, 0.34, 1.5);
 
         @include min-responsive($w-xl) {
+            min-height: 110px;
             padding-top: 25px;
             padding-bottom: 25px;
         }
@@ -103,7 +108,11 @@
         .icoSearch {
             width: 24px;
             height: 24px;
-            @extend %filter-white
+            @extend %filter-yellow;
+
+            @include min-responsive($w-xl) {
+                filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(313deg) brightness(103%) contrast(103%);
+            }
         }
     }
 }

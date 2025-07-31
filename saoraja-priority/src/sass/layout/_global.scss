@@ -178,11 +178,24 @@ button:-moz-focusring,
     background: #2E3332;
 }
 
+.bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include display-full;
+    pointer-events: none;
+
+    img {
+        @include display-full;
+        object-fit: cover;
+    }
+}
+
 .hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: all .3s ease-out;
+    transition: opacity .3s ease-out;
 }
 
 .visible {
@@ -190,7 +203,7 @@ button:-moz-focusring,
     opacity: 1;
     visibility: visible;
     pointer-events: all;
-    transition: all .5s ease-in;
+    transition: opacity .5s ease-in;
 }
 
 .main {

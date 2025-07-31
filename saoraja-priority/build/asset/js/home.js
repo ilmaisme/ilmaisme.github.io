@@ -1,24 +1,14 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
     //slider widget event
-    var swiper = new Swiper(".-sHL", {
+    var swiper = new Swiper(".swiperHl", {
         grabCursor: true,
         loop: true,
         speed: 1000,
         effect: "fade",
-        autoplay: true,
+        autoplay: false,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
-        },
-        // breakpoints: {
-        //     640: {
-        //         coverflowEffect: {
-        //             rotate: 1,
-        //             modifier: 1,
-        //             stretch: 280,
-        //             depth: 40,
-        //         }
-        //     }
-        // }
+        }
     });
-});
+})

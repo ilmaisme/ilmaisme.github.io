@@ -1,59 +1,7 @@
 .form {
-    --gap-form: 10px;
-    max-width: 688px;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 7px;
-    padding: 10px 10px 30px;
-    background: $cl-accent1;
-
-    @include min-responsive($w-md) {
-        padding: 10px 40px 30px;
-    }
-
-    &Row {
-        margin-top: 20px;
-        margin-left: calc(var(--gap-form) - var(--gap-form)*2);
-        margin-right: calc(var(--gap-form) - var(--gap-form)*2);
-
-        .formCol~.formCol {
-            margin-top: 20px;
-
-            @include min-responsive($w-md) {
-                margin-top: 0;
-            }
-        }
-
-        &>.formRow,
-        &>.formRow .formCol {
-            margin-top: 0;
-        }
-
-        &.formCol {
-            margin-left: 0;
-            margin-right: 0;
-            padding-left: 0;
-            padding-right: 0;
-        }
-    }
-
-    &Col {
-        padding-left: var(--gap-form);
-        padding-right: var(--gap-form);
-    }
-
     &Wrap {
         @include display-flex;
         align-items: center;
-    }
-
-    &Rel {
-        position: relative;
-
-        &:has(.formLink) {
-            margin-top: 5px;
-        }
     }
 
     &Input {
@@ -61,12 +9,12 @@
         max-height: 51px;
         appearance: none;
         border-radius: 7px;
-        padding: 17px 10px;
-        border: 1px solid $cl-text3;
-        @include placeholder($size: 15px, $line: 1.46, $color: $cl-text3);
-        background: $cl-accent1;
+        border: 0;
+        padding: 8px 10px;
+        @include placeholder($size: 16px, $line: 1.46, $color: $cl-text2);
+        background: $cl-neutral1;
         overflow: hidden;
-        color: $cl-text1;
+        color: $cl-neutral0;
         text-overflow: ellipsis;
         white-space: nowrap;
 
@@ -106,7 +54,7 @@
             margin-right: 8px;
             width: 24px;
             height: 24px;
-            border: 1px solid $cl-text3;
+            border: 1px solid $cl-text2;
             border-radius: 5px;
             pointer-events: none;
             flex-shrink: 0;
@@ -148,16 +96,30 @@
     &Info {
         position: relative;
         margin-top: 5px;
-        @include font-pack($lh: 1.23, $color: $cl-text3);
+        @include font-pack($lh: 1.23, $color: $cl-text2);
     }
 
-    &Txt {
-        margin-left: 10px;
+    &Radio {
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        transition: box-shadow .3s, border .3s;
+        background: transparent;
+        cursor: pointer;
+        box-shadow: inset 0 0 0 2px #B0B0B0;
+        appearance: none;
+        -webkit-appearance: none;
 
-        small {
-            position: relative;
-            top: -6px;
-            font-size: x-small;
+        &:checked {
+            box-shadow: inset 0 0 0 5px $cl-primary1;
+            background: $cl-neutral0;
+        }
+
+        &Label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
     }
 
@@ -208,57 +170,72 @@
         resize: vertical;
     }
 
-    &Combo {
-        margin-top: 12px;
-        margin-left: -3px;
-        margin-right: -3px;
-        flex-wrap: wrap;
-        @include font-pack($font-normal, 12px, $font-weight-normal, 1.33, $cl-accent1);
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+    &Select {
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 7px;
+        border: 0;
+        background-color: $cl-neutral1;
 
-        @include min-responsive($w-md) {
-            margin-top: 10px;
-            margin-left: -16px;
-            margin-right: -16px;
-            font-size: 15px;
-        }
+        &Custom {
+            position: relative;
 
-        &Label {
-            margin: 3px;
-            padding: 12px 16px;
-            border-radius: 50px;
-            background: $cl-primary1;
-            cursor: pointer;
-
-            @include min-responsive($w-md) {
-                margin: 5px;
-                padding: 17px 20px;
+            select {
+                appearance: none;
+                /* Remove default arrow */
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4.66675 6.66663L8.00008 9.99996L11.3334 6.66663H4.66675Z' fill='black'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 5px center;
+                background-size: 16px;
+                cursor: pointer;
             }
-
-            &:hover {
-                background: $cl-primary3;
-            }
-
-            &:has(.formComboInput:checked) {
-                background: $cl-text2;
-            }
-        }
-
-        &Input {
-            display: none;
         }
     }
 
-    &Link {
-        padding: 17px 45px 17px 10px
-    }
+    // &Combo {
+    //     margin-top: 12px;
+    //     margin-left: -3px;
+    //     margin-right: -3px;
+    //     flex-wrap: wrap;
+    //     @include font-pack($font-normal, 12px, $font-weight-normal, 1.33, $cl-accent1);
+    //     -webkit-user-select: none;
+    //     -ms-user-select: none;
+    //     user-select: none;
 
-    &Clear {
-        @extend %buttonClear;
-        top: 15px;
-    }
+    //     @include min-responsive($w-md) {
+    //         margin-top: 10px;
+    //         margin-left: -16px;
+    //         margin-right: -16px;
+    //         font-size: 15px;
+    //     }
+
+    //     &Label {
+    //         margin: 3px;
+    //         padding: 12px 16px;
+    //         border-radius: 50px;
+    //         background: $cl-primary1;
+    //         cursor: pointer;
+
+    //         @include min-responsive($w-md) {
+    //             margin: 5px;
+    //             padding: 17px 20px;
+    //         }
+
+    //         &:hover {
+    //             background: $cl-primary3;
+    //         }
+
+    //         &:has(.formComboInput:checked) {
+    //             background: $cl-text2;
+    //         }
+    //     }
+
+    //     &Input {
+    //         display: none;
+    //     }
+    // }
 
     .required,
     .error {
@@ -276,6 +253,6 @@
     }
 }
 
-input[type="search"i]::-webkit-search-cancel-button {
+input[type="search" i]::-webkit-search-cancel-button {
     display: none;
 }

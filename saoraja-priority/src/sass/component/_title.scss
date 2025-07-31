@@ -1,26 +1,46 @@
 .title {
     &D2 {
-        @include font-pack(false, 57px, $font-weight-bold, 1.12, $cl-primary1);
+        @include font-pack(false, 30px, $font-weight-bold, 1.12, $cl-primary1);
+
+        @include range-responsive($w-md, $w-lg) {
+            font-size: 46px
+        }
+
+        @include min-responsive($w-lg) {
+            font-size: 57px
+        }
     }
 
     &H2 {
-        @include font-pack(false, 36px, $font-weight-normal, 1.33, $cl-primary1);
+        @include font-pack(false, 26px, $font-weight-normal, 1.33, $cl-primary1);
+
+        @include range-responsive($w-md, $w-lg) {
+            font-size: 30px
+        }
+
+        @include min-responsive($w-xl) {
+            font-size: 36px
+        }
     }
 
     &H5 {
-        @include font-pack(false, 20px, $font-weight-normal, 1.5, $cl-primary1);
+        @include font-pack(false, 16px, $font-weight-normal, 1.5, $cl-primary1);
+
+        @include min-responsive($w-xl) {
+            font-size: 20px
+        }
     }
 
     &H6 {
-        @include font-pack(false, 18px, $font-weight-normal, 1.5, false);
+        @include font-pack(false, 14px, $font-weight-normal, 1.5, false);
+
+        @include min-responsive($w-xl) {
+            font-size: 18px
+        }
     }
 
     &H7 {
         @include font-pack(false, 16px, $font-weight-normal, 1.5, false);
-    }
-
-    &P1 {
-        @include font-pack(false, 18px, false, 1.55, false);
     }
 
     &P3 {

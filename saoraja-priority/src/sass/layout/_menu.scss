@@ -57,7 +57,7 @@
         padding: 70px 10px 10px;
         top: 0;
         left: 0;
-        background: rgba(255, 255, 255, 1);
+        background: #09090A;
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
         visibility: hidden;
@@ -84,16 +84,26 @@
                 margin-right: 10px;
 
                 &.active,
-                &:hover {
+                &:hover,
+                &:active {
 
                     .navSub {
-                        padding-top: 10px;
+
+                        &Child {
+                            display: none;
+                        }
                     }
                 }
 
                 &>.navLink {
                     display: inline-block;
                 }
+            }
+
+            &Sub {
+                background: transparent;
+                position: relative;
+                top: 0;
             }
         }
     }

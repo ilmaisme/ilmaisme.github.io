@@ -8,6 +8,7 @@
     }
 
     &Wrap {
+        position: relative;
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(<path-to-image>) lightgray -37px -35.691px / 109.886% 109.886% no-repeat;
         max-width: 960px;
         aspect-ratio: 16/9;
@@ -16,19 +17,7 @@
     iframe,
     video {
         width: 100%;
+        height: auto;
         aspect-ratio: 16/9;
-    }
-
-    &Bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        @include display-full;
-        pointer-events: none;
-
-        img {
-            @include display-full;
-            object-fit: cover;
-        }
     }
 }

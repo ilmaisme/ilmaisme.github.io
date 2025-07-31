@@ -1,19 +1,41 @@
 .footer {
     position: relative;
-    padding: 50px 50px 0 50px;
+    padding: 30px 15px 0 15px;
     margin-top: 90px;
     padding-bottom: 74px;
+
+    @include min-responsive($w-md) {
+        padding: 50px 50px 0 50px;
+    }
 
     &Wrap {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         max-width: 1340px;
+        flex-direction: column;
+
+        @include min-responsive($w-xl) {
+            flex-direction: row;
+        }
     }
 
     &Menu {
         display: flex;
         gap: 50px;
+        column-gap: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        flex-direction: column;
+
+        @include min-responsive($w-md) {
+            flex-direction: row;
+        }
+
+        @include min-responsive($w-xl) {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
 
         >.footerList {
             width: 206px;
