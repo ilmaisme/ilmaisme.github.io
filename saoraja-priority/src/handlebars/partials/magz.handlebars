@@ -2,10 +2,10 @@
 {{#gte @index compare=../index_start}}
 {{#gte @index compare=../index_end}}
 {{else}}
-<div class="magzItem{{#if ../col}} {{../col}}{{/if}}">
+<div class="magzItem{{#if ../col}} {{../col}}{{/if}}{{#if ../mt}} mt{{../mt}}{{/if}}">
     <a href="{{link}}" class="magzLink">
         <div class="magzImg">
-            <img src="{{images}}" alt="" width="260" height="368" loading="lazy">
+            <img src="{{images}}" alt="" width="260" height="368"{{#if ../lazy}} loading="lazy"{{/if}}>
         </div>
         <div class="magzContent">
             {{#if ../tag}}

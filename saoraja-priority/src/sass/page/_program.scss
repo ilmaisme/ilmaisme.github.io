@@ -1,0 +1,39 @@
+.program {
+    &Img {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 17 / 22;
+
+        img {
+            @extend %template-img
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include display-full;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s opacity cubic-bezier(0.73, 0.32, 0.34, 1.5);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
+            z-index: 2;
+        }
+    }
+
+    &Link {
+        position: relative;
+
+        &:hover {
+            .programImg::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &Title {
+        margin-top: 15px;
+        color: #FEFBEE;
+    }
+}

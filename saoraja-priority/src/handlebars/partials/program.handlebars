@@ -1,0 +1,22 @@
+{{#each channel}}
+{{#gte @index compare=../index_start}}
+{{#gte @index compare=../index_end}}
+{{else}}
+<div class="programItem{{#if ../col}} {{../col}}{{/if}}{{#if ../mt}} mt{{../mt}}{{/if}}">
+    <a href="{{link}}" class="programLink articleLink">
+        <div class="programImg borderedImg">
+            <img src="{{images}}" alt="" width="340" height="440">
+        </div>
+        <div class="programContent">
+            {{#if ../tag}}
+            <{{.. /tag}} class="programTitle articleTitle titleH6">{{title}}</{{.. /tag}}>
+            {{else}}
+            <div class="programTitle articleTitle titleH6">{{title}}</div>
+            {{/if}}
+        </div>
+    </a>
+</div>
+{{/gte}}
+{{else}}
+{{/gte}}
+{{/each}}
