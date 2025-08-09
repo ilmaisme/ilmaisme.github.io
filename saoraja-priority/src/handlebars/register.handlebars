@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="reg" datepicker=true}}
+
+<body>
+
+    {{> header/header page="" fixed=true}}
+
+    <main role="main" class="main pageSub reg">
+        <!-- s: caption -->
+        {{>caption title="Registrasi Layanan Saoraja Priority"}}
+        <!-- e: caption -->
+        <div class="container regWrap">
+            <div class="col-lg-8 mx-auto">
+                <!-- s: breadcrumb -->
+                <ul class="breadcrumb mt30">
+                    <li class="breadcrumbItem">Home</li>
+                    <li class="breadcrumbItem">Registrasi Layanan Saoraja Priority</li>
+                </ul>
+                <!-- e: breadcrumb -->
+                <div class="titleH1 mt30">Daftarkan Diri Anda </div>
+                <p>Silakan isi formulir dengan data yang valid untuk menikmati layanan Prioritas dari kami. Data Anda
+                    aman
+                    bersama kami dan tidak akan dibagikan tanpa izin.</p>
+                <form class="form regForm mt30">
+                    <label for="reg" class="titleH4">Nama Lengkap<span class="required">*</span></label>
+                    <input class="formInput formInputTrans mt15" type="text" name="reg" id="reg"
+                        placeholder="Masukkan nama lengkap Anda">
+                    <div class="formRow row">
+                        <div class="formCol col-lg-6">
+                            <label class="formLabel titleH4" for="phone">Nomor Telepon<span
+                                    class="required">*</span></label>
+                            <input type="text" class="formInput formInputTrans" name="phone" id="phone"
+                                placeholder="Masukkan nomor telepon" inputmode="numeric" required="">
+                        </div>
+                        <div class="formCol col-lg-6">
+                            <label class="formLabel titleH4" for="mail">Email<span class="required">*</span></label>
+                            <input type="email" class="formInput" name="mail" id="mail"
+                                placeholder="Masukkan alamat email" required="">
+                        </div>
+                    </div>
+                    <div class="formRow row">
+                        <div class="formCol col-lg-6">
+                            <label class="formLabel titleH4" for="birth">Tanggal Lahir<span
+                                    class="required">*</span></label>
+                            <input type="text" class="formInput" name="birth" id="birth" placeholder="dd/mm/yyyy"
+                                required="">
+                        </div>
+                        <div class="formCol col-lg-6">
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js datepicker=true}}
+    <script>
+        const datepicker = new AirDatepicker('#birth', {
+            isMobile: true,
+            autoClose: true,
+            locale: {
+                days: ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
+                daysShort: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
+                daysMin: ['Mg', 'Sn', 'Sl', 'Rb', 'Km', 'Jm', 'Sb'],
+                months: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+                    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+                monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun',
+                    'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+                today: 'Hari ini',
+                clear: 'Bersihkan',
+                dateFormat: 'dd-MM-yyyy',
+                timeFormat: 'hh:mm aa',
+                firstDay: 1
+            }
+        });
+        datepicker.show();
+    </script>
+
+
+</body>
+
+</html>

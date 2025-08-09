@@ -6,8 +6,16 @@
     @extend %text-right;
 }
 
-.nowrap {
-    @extend %nowrap;
+.mt40 {
+    @extend %mt40;
+}
+
+.mt50 {
+    @extend %mt50;
+}
+
+.icoCal {
+    @extend %icoCal;
 }
 
 .article {
@@ -36,6 +44,39 @@
         }
     }
 
+    h1 {
+        @include font-pack(false, 30px, $font-weight-normal, 1.2, $cl-primary1);
+
+        @include range-responsive($w-md, $w-lg) {
+            font-size: 36px
+        }
+
+        @include min-responsive($w-xl) {
+            font-size: 42px
+        }
+    }
+
+    h2 {
+        margin-top: 30px;
+        @extend .titleH1
+    }
+
+    h3 {
+        margin-top: 30px;
+        @extend .titleH3
+    }
+
+    h4 {
+        margin-top: 15px;
+        color: $cl-neutral1;
+        @extend .titleH5
+    }
+
+    h5 {
+        @extend .titleH5;
+        color: #AE973E
+    }
+
     ul,
     ol {
         padding-left: 22px;
@@ -55,25 +96,9 @@
     ol {
         list-style-type: decimal;
 
-        &.customCounter {
-            counter-reset: listCounter;
-            list-style: none;
-            padding-left: 0;
-
-            >li {
-                counter-increment: listCounter;
-                position: relative;
-                padding-left: 22px;
-                margin-top: 15px;
-                margin-bottom: 15px;
-
-                &::before {
-                    content: counter(listCounter) ".";
-                    position: absolute;
-                    left: 0;
-                    @extend .titleH5;
-                }
-            }
+        &.articleCheck {
+            list-style-type: none;
+            padding-left: 32px;
         }
     }
 
@@ -88,6 +113,7 @@
 
     .button {
         text-decoration: none;
+        color: $cl-neutral0;
     }
 
     p {
@@ -95,10 +121,19 @@
         margin-bottom: 15px;
     }
 
-    &Table {
+    table {
         margin-top: 15px;
         @include font-pack(false, 17px, false, 1.5, $cl-neutral0);
         letter-spacing: 0.17px;
+
+        display: block;
+        max-width: calc(100vw - 30px);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        @include min-responsive($w-md) {
+            display: table;
+        }
 
         th {
             padding: 10px 20px;
@@ -142,21 +177,26 @@
             }
         }
 
-        &Responsive {
-            max-width: calc(100vw - 30px);
-            padding-bottom: 10px;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
+        thead {
+            td {
+                @extend th;
+            }
 
-            table {
-                // width: 100%;
-                // border-collapse: collapse;
+            tr:last-child td:last-child {
+                border-bottom-right-radius: 0;
+            }
+
+            tr:first-child td:first-child {
+                border-bottom-left-radius: 0;
             }
         }
     }
 
+    img {
+        @extend .borderedImg;
+    }
+
     &Cta {
-        margin-top: 40px;
         padding: 10px 15px 20px;
         @include display-flex;
         justify-content: space-between;
@@ -177,6 +217,25 @@
         &:hover {
             .articleTitle {
                 color: $cl-primary1;
+            }
+        }
+    }
+
+    &Check {
+
+        li {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: -32px;
+                top: 0.1em;
+                width: 24px;
+                height: 24px;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath stroke='url(%23a)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4 12 14.01l-3-3'/%3E%3Cdefs%3E%3ClinearGradient id='a' x1='14.874' x2='14.874' y1='29.021' y2='1.994' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%239D7537'/%3E%3Cstop offset='.28' stop-color='%239D7537'/%3E%3Cstop offset='.545' stop-color='%23F4C943'/%3E%3Cstop offset='.624' stop-color='%23FFDE83'/%3E%3Cstop offset='.772' stop-color='%23F4C943'/%3E%3Cstop offset='.883' stop-color='%23D6B24E'/%3E%3Cstop offset='1' stop-color='%23FFECCE'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+                background-size: contain;
+                background-repeat: no-repeat;
             }
         }
     }

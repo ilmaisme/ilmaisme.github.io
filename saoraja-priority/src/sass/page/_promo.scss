@@ -1,0 +1,46 @@
+.promo {
+    &Img {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 340 / 183;
+
+        img {
+            @extend %template-img
+        }
+    }
+
+    &Title {
+        margin-top: 15px;
+        color: #FEFBEE;
+    }
+
+    &Content {
+        color: #FEFBEE;
+    }
+
+    &Type,
+    &Periode {
+        @include font-pack(false, 14px, false, false, false);
+
+        @include min-responsive($w-xl) {
+            font-size: 16px
+        }
+    }
+
+    &Type {
+        margin-top: 15px;
+        display: inline-block;
+        padding: 3px 10px;
+        border-radius: 5px;
+        background: #6E5F28;
+    }
+
+    &Periode {
+        margin-top: 7px;
+
+        .icoCal {
+            vertical-align: text-top;
+            margin-right: 8px;
+        }
+    }
+}

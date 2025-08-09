@@ -2,23 +2,30 @@
 {{#gte @index compare=../index_start}}
 {{#gte @index compare=../index_end}}
 {{else}}
-<div class="privilegeItem{{#if ../col}} {{../col}}{{/if}}">
-    <a href="{{link}}" class="privilegeLink">
+<div class="privilegeItem{{#if ../col}} {{../col}}{{/if}}{{#if ../mt}} mt{{../mt}}{{/if}}">
+    <a href="{{link}}" class="privilegeLink{{#if ../subpage}} --subpg{{/if}}">
         <div class="privilegeImg borderedImg">
-            <img src="{{images}}" alt="" width="340" height="183" loading="lazy">
+            <img src="{{images}}" alt="" width="340" height="183"{{#if ../lazy}} loading="lazy"{{/if}}>
+            {{#if ../subpage}}
+            {{else}}
             <div class="privilegeBox">
                 <div class="privilegeTitle titleH7 desktop-only"><strong>{{title}}</strong></div>
-                <div class="privilegeLead titleP3 desktop-only">{{lead}}</div>
-                <div class="titleP3 titleP3Bold">Read More <span class="ico icoArrow"></span></div>
+                <div class="privilegeLead titleP3">{{lead}}</div>
+                <div class="privilegeBoxMore titleP3 titleP3Bold">Read More <span class="ico icoArrow"></span></div>
             </div>
+            {{/if}}
         </div>
         <div class="privilegeContent">
             {{#if ../tag}}
-            <{{.. /tag}} class="privilegeTitle titleH5">{{title}}</{{.. /tag}}>
+            <{{.. /tag}} class="privilegeTitle{{#if ../subpage}} --subpg{{/if}} titleH5">{{title}}</{{.. /tag}}>
             {{else}}
-            <div class="privilegeTitle titleH5">{{title}}</div>
+            <div class="privilegeTitle{{#if ../subpage}} --subpg{{/if}} titleH5">{{title}}</div>
             {{/if}}
+            {{#if ../subpage}}
+            <div class="privilegeLead titleP3">{{lead}}</div>
+            {{else}}
             <div class="privilegeChannel titleH7">{{channel}}</div>
+            {{/if}}
         </div>
     </a>
 </div>

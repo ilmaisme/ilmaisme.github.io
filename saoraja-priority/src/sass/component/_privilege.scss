@@ -7,6 +7,17 @@
         margin-top: 15px;
         font-weight: $font-weight-sbold;
         text-transform: uppercase;
+        @include font-pack($size: 16px);
+
+        @include min-responsive($w-xl) {
+            font-size: 20px
+        }
+
+        &.--subpg {
+            color: #FEFBEE;
+            font-weight: $font-normal;
+            text-transform: none;
+        }
     }
 
     &Link {
@@ -25,6 +36,18 @@
                 opacity: 1;
             }
         }
+
+        &.--subpg {
+            .privilegeImg {
+                &::after {
+                    content: none;
+                }
+
+                img {
+                    filter: blur(0);
+                }
+            }
+        }
     }
 
     &Box {
@@ -37,11 +60,24 @@
         opacity: 0;
         transition: 0.3s opacity cubic-bezier(0.73, 0.32, 0.34, 1.5);
         z-index: 2;
+
+        &More {
+            margin-bottom: 12px;
+        }
+
+        .privilegeLead {
+            display: none;
+
+            @include min-responsive($w-xl) {
+                display: -webkit-box;
+            }
+        }
     }
 
     &Img {
         position: relative;
-        padding-top: 53.82%;
+        width: 100%;
+        aspect-ratio: 340 / 183;
 
         &::after {
             content: '';
@@ -69,7 +105,11 @@
 
     &Lead {
         margin-top: 8px;
-        margin-bottom: 12px;
-        @include title_clamp(3)
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        text-overflow: ellipsis;
+        white-space: pre-line;
+        overflow: hidden;
     }
 }
