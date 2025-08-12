@@ -189,7 +189,7 @@
             </div>
             <h1 class="pageCaptionTitle titleH1 container">Registrasi Layanan Saoraja Priority</h1>
         </div>        <!-- e: caption -->
-        <div class="container regWrap">
+        <div class="container p-lg">
             <div class="col-lg-8 mx-auto">
                 <!-- s: breadcrumb -->
                 <ul class="breadcrumb mt30">
@@ -202,14 +202,16 @@
                     aman
                     bersama kami dan tidak akan dibagikan tanpa izin.</p>
                 <form class="form regForm mt30">
-                    <label for="reg" class="titleH4">Nama Lengkap<span class="required">*</span></label>
-                    <input class="formInput formInputTrans mt15" type="text" name="reg" id="reg"
-                        placeholder="Masukkan nama lengkap Anda">
+                    <div class="formRow">
+                        <label for="reg" class="formLabel titleH4">Nama Lengkap<span class="required">*</span></label>
+                        <input class="formInput mt15" type="text" name="reg" id="reg"
+                            placeholder="Masukkan nama lengkap Anda">
+                    </div>
                     <div class="formRow row">
                         <div class="formCol col-lg-6">
                             <label class="formLabel titleH4" for="phone">Nomor Telepon<span
                                     class="required">*</span></label>
-                            <input type="text" class="formInput formInputTrans" name="phone" id="phone"
+                            <input type="text" class="formInput" name="phone" id="phone"
                                 placeholder="Masukkan nomor telepon" inputmode="numeric" required="">
                         </div>
                         <div class="formCol col-lg-6">
@@ -219,16 +221,45 @@
                         </div>
                     </div>
                     <div class="formRow row">
-                        <div class="formCol col-lg-6">
+                        <div class="formCol formCal col-lg-6">
                             <label class="formLabel titleH4" for="birth">Tanggal Lahir<span
                                     class="required">*</span></label>
                             <input type="text" class="formInput" name="birth" id="birth" placeholder="dd/mm/yyyy"
                                 required="">
+                            <span class="ico icoCal"></span>
                         </div>
                         <div class="formCol col-lg-6">
-
+                            <div class="formLabel titleH4">Jenis Kelamin<span class="required">*</span></div>
+                            <div class="formRadioWrap mt30">
+                                <div class="formRow">
+                                    <label class="formRadioLabel" for="jk1">
+                                        <input type="radio" id="jk1" class="formRadio" name="jk" checked>
+                                        <span>Laki-laki</span></label>
+                                </div>
+                                <div class="formRow">
+                                    <label class="formRadioLabel" for="jk2">
+                                        <input type="radio" id="jk2" class="formRadio" name="jk">
+                                        <span>Perempuan</span></label>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="formRow">
+                        <label for="addr" class="titleH4">Alamat<span class="required">*</span></label>
+                        <textarea class="formArea mt15" name="addr" id="addr" placeholder="Masukkan alamat Anda"
+                            column="3"></textarea>
+                    </div>
+                    <div class="formRow formCheckWrap mt30">
+                        <input type="checkbox" id="agree1" class="formCheck">
+                        <label for="agree1">Saya menyetujui penggunaan data pribadi saya untuk menerima
+                            informasi produk, layanan, dan promosi dari Bank Sulselbar Saoraja Priority.</label>
+                    </div>
+                    <div class="formRow formCheckWrap mt15">
+                        <input type="checkbox" id="agree1" class="formCheck" required="">
+                        <label for="agree1">Saya telah membaca dan menyetujui <a href="#"
+                                class="underline">Syarat & Ketentuan Nasabah Prioritas</a></label>
+                    </div>
+                    <button type="submit" class="button buttonPrimary mt30">Kirim</button>
                 </form>
             </div>
         </div>
@@ -300,33 +331,13 @@
             </div>
         </div>
         <div class="footerCopy text-center">&copy; 2025 Bank Sulselbar Saoraja Priority</div>
-        <div class="contact">
-            <div class="contactBg bg-img">
-                <img src="./asset/images/bg-footer.jpg" alt="" width="1440" height="64">
-            </div>
-            <div class="contactWrap titleP3 center-flex">
-                <div class="contactItem center-flex">
-                    <span class="desktop-only">Ingin menjadi bagian dari Saoraja Priority</span>
-                    <a href="register.html" class="buttonPrimary">Daftar Sekarang</a>
-                </div>
-                <div class="contactItem desktop-only">
-                    Contact Center: <span>1500-855</span>
-                </div>
-                <div class="contactItem">
-                    <a href="#" class="center-flex" target="_blank" rel="noopener noreferrer">
-                        <img src="./asset/images/icon/icon-wa.svg" alt=""  width="32" height="32">
-                        <span class="contactChat desktop-only">Whatsapp</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+    
     </footer>
-    <!--<script src="./asset/js/jquery-3.5.0.min.js"></script>-->
     <script defer type="text/javascript" src="./asset/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.min.js"></script>
     <script>
         const datepicker = new AirDatepicker('#birth', {
-            isMobile: true,
+            isMobile: window.innerWidth <= 768,
             autoClose: true,
             locale: {
                 days: ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
@@ -343,7 +354,6 @@
                 firstDay: 1
             }
         });
-        datepicker.show();
     </script>
 
 

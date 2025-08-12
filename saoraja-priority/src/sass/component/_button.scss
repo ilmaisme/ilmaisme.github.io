@@ -29,6 +29,53 @@
             background: $cl-primary1;
         }
     }
+
+    &Gradient {
+        padding: 7px 34px;
+        @include flex(center);
+        flex-shrink: 0;
+        @include font-pack(false, 16px, $font-weight-bold, 1.5, false);
+        border-radius: 26px;
+        position: relative;
+        background: transparent;
+        overflow: hidden;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            padding: 2px;
+            /* Border thickness */
+            border-radius: 26px;
+            background: linear-gradient(0deg,
+                    #9D7537 -35.14%,
+                    #9D7537 2.7%,
+                    #F4C943 38.51%,
+                    #FFDE83 49.2%,
+                    #F4C943 69.21%,
+                    #D6B24E 84.2%,
+                    #FFECCE 100%);
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        span {
+            background: linear-gradient(90deg,
+                    #FFECCE,
+                    #F4C943,
+                    #FFECCE);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 2;
+        }
+    }
 }
 
 %button {

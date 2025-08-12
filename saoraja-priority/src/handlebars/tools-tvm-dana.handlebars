@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head page="tools"}}
+
+<body>
+
+    {{> header/header page="" fixed=true}}
+
+    <main role="main" class="main pageSub tools">
+        <!-- s: caption -->
+        {{>caption title="Future Value (TVM)"}}
+        <!-- e: caption -->
+        <div class="container">
+            <div class="row sidebarWrap">
+                <sidebar class="col-auto sidebarMenu mt30">
+                    {{>sidebar/tvm page="Dana Investasi"}}
+                </sidebar>
+                <div class="col-auto pageInit mt30">
+                    <!-- s: breadcrumb -->
+                    <ul class="breadcrumb mt30">
+                        <li class="breadcrumbItem">Home</li>
+                        <li class="breadcrumbItem">Future Value (TVM)</li>
+                        <li class="breadcrumbItem">Dana Investasi</li>
+                    </ul>
+                    <!-- e: breadcrumb -->
+                    <div class="toolsResultTitle titleH1 mt30">Hitung Dana Investasi &nbsp;<img src="./asset/images/icon/tools-dana.png" alt=""
+                            width="48" height="48"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur. Augue viverra malesuada urna ridiculus.</p>
+                    <form class="form regForm mt30" id="tools">
+                        <div class="formRow">
+                            <div class="formLabel titleH4">Model Investasi<span class="required">*</span><span
+                                    class="formInfo"></span></div>
+                            <div class="selectDrop">
+                                <select class="formSelect" name="">
+                                    <option value="" selected disabled>Pilih model investasi</option>
+                                    <option value="option1">Investasi Regular Setiap Bulan</option>
+                                    <option value="option2">Investasi satu kali (lump  sum)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="formRow">
+                            <span class="formPlace --left">Rp</span>
+                            <label for="result" class="formLabel titleH4">Target Hasil Investasi<span
+                                    class="required">*</span><span class="formInfo"></span></label>
+                            <input class="formInput mt15" type="text" inputmode="numeric" name="result" id="result"
+                                placeholder="0">
+                        </div>
+                        <div class="formRow">
+                            <span class="formPlace --right">Bulan</span>
+                            <label for="periode" class="formLabel titleH4">Jangka Waktu<span
+                                    class="required">*</span><span class="formInfo"></span></label>
+                            <input class="formInput mt15" type="text" inputmode="numeric" name="periode" id="periode"
+                                placeholder="0">
+                        </div>
+                        <div class="formRow formRange">
+                            <div class="titleHead">
+                                <label for="periode" class="formLabel titleH4">Bunga<span class="required">*</span><span
+                                        class="formInfo"></span></label>
+                                <div class="titleH6"><strong><span id="rangeValue">0%</span></strong></div>
+                            </div>
+                            <div class="formRangeWrap mt15">
+                                <div class="formRangeSlider">
+                                    <div class="formRangeProgress"></div>
+                                </div>
+                                <input type="range" min="0" max="10" value="0" step="0.1" class="formRangeInput">
+                            </div>
+                        </div>
+                        <div class="formRow">
+                            <label for="risk" class="formLabel titleH4">Profil Risiko<span
+                                    class="required">*</span><span class="formInfo"></span></label>
+                            <input class="formInput mt15" type="text" name="risk" id="risk" value="moderat"
+                                placeholder="Konservatif">
+                        </div>
+                        <div class="formRow row mt40">
+                            <div class="col-auto">
+                                <button type="button" class="button buttonGradient"
+                                    onclick="resetSlider()"><span>Reset</span>
+                                </button>
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="button buttonPrimary">Hitung
+                                </button>
+                            </div>
+                        </div>
+                        <div class="toolsResultTitle titleH4 mt40">
+                            <div class="toolsImg">
+                                <img src="./asset/images/icon/tools-tvm.png" alt="" width="80" height="80"
+                                    loading="lazy">
+                            </div>
+                            Dana Investasi
+                        </div>
+                        <div class="toolsResult mt15">
+                            <div class="toolsBg bg-img">
+                                <img src="./asset/images/bg-subpage.jpg" alt="" width="690" height="96" loading="lazy">
+                            </div>
+                            <div class="toolsContent titleH2">Rp<span>0</span></div>
+                        </div>
+                        <div class="toolsResultInfo mt15">
+                            <span class="formInfo"></span>
+                            Dana yang diberikan oleh kalkulator ini hanya bersifat perkiraan dan tidak dapat dianggap
+                            sebagai rekomendasi investasi
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{> footer/footer}}
+
+    {{> js select-drop=true}}
+    <script>
+        //range input
+        const rangeInput = document.querySelector('.formRangeInput');
+        const progressBar = document.querySelector('.formRangeProgress');
+        const rangeValue = document.getElementById('rangeValue');
+
+        function updateSlider() {
+            let value = parseFloat(rangeInput.value);
+            let percent = (value / rangeInput.max) * 100;
+            progressBar.style.width = percent + '%';
+            rangeValue.textContent = (value % 1 === 0 ? value.toFixed(0) : value) + '%';
+        }
+
+        rangeInput.addEventListener('input', updateSlider);
+        updateSlider();
+
+        function resetSlider() {
+            const form = document.getElementById('tools');
+            form.reset();
+
+            const range = form.querySelector('.formRangeInput');
+            range.dispatchEvent(new Event('input'));
+        }
+    </script>
+
+
+</body>
+
+</html>

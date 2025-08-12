@@ -1,73 +1,39 @@
 .form {
 
-    &Check {
-        opacity: 0;
-        width: 24px;
-        height: 24px;
-        position: absolute;
-        left: 0;
-        accent-color: #000;
-        cursor: pointer;
-
-        &:checked {
-            ~.formCheckbox {
-                background: $cl-primary1;
-                border: 1px solid $cl-primary1;
-
-                &::before {
-                    opacity: 1;
-                }
-            }
-        }
-
-        &box {
-            display: block;
-            margin-right: 8px;
-            width: 24px;
-            height: 24px;
-            border: 1px solid $cl-text2;
-            border-radius: 5px;
-            pointer-events: none;
-            flex-shrink: 0;
-            background: transparent;
-
-            &::before {
-                content: "";
-                position: relative;
-                top: 20px;
-                left: 8px;
-                display: block;
-                width: 6px;
-                height: 12px;
-                border-right: 2px solid $cl-accent1;
-                border-bottom: 2px solid $cl-accent1;
-                transform: translate3d(0, -16px, 0) rotate(45deg);
-                opacity: 0;
-            }
-        }
-
-        &Wrap {
-            flex-wrap: wrap;
-            margin-left: calc(var(--gap-form) - var(--gap-form)*2);
-            margin-right: calc(var(--gap-form) - var(--gap-form)*2);
-
-            .formCol~.formCol {
-                margin-top: 0;
-            }
-        }
-
-        &Input {
-            position: relative;
-            margin-top: 15px;
-            line-height: 1.8;
-            @include display-flex;
-        }
+    &Row {
+        position: relative;
+        margin-bottom: 25px;
+        row-gap: 25px;
     }
 
     &Info {
         position: relative;
-        margin-top: 5px;
-        @include font-pack($size: 12px, $lh: 1.23, $color: $cl-text2);
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        filter: invert(68%) sepia(46%) saturate(492%) hue-rotate(10deg) brightness(96%) contrast(91%);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cmask id='a' width='16' height='16' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:luminance'%3E%3Cpath fill='%23fff' d='M16 0H0v16h16V0Z'/%3E%3C/mask%3E%3Cg mask='url(%23a)'%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.6' d='M8 10.666V8m0-2.667h.007M14.667 8A6.667 6.667 0 1 1 1.334 8a6.667 6.667 0 0 1 13.333 0Z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    &Place {
+        position: absolute;
+        bottom: 14px;
+
+        &.--left {
+            left: 24px;
+
+            ~input {
+                padding-left: 54px;
+            }
+        }
+
+        &.--right {
+            right: 24px;
+
+            ~input {
+                padding-right: 80px;
+            }
+        }
     }
 
     &File {
@@ -113,7 +79,144 @@
     }
 
     &Area {
+        white-space: normal;
+        resize: none;
         max-height: unset;
-        resize: vertical;
+    }
+
+    &Cal {
+        .icoCal {
+            position: absolute;
+            top: 60px;
+            right: 35px;
+            pointer-events: none;
+        }
+    }
+
+    &Check {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        flex-shrink: 0;
+
+        &Wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        &:checked {
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                border-bottom: 2px solid #454545;
+                border-right: 2px solid #454545;
+                transform: translate3d(0, -16px, 0) rotate(45deg);
+                width: 6px;
+                height: 12px;
+                top: 19px;
+                left: 7px
+            }
+
+            &::after {
+                background: $cl-primary1;
+                border: 1px solid $cl-primary1;
+            }
+        }
+
+        &:after {
+            content: "";
+            border: 1px solid $cl-text1;
+            border-radius: 5px;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #454545
+        }
+    }
+
+    &Range {
+        margin-bottom: 35px;
+
+        &Wrap {
+            position: relative;
+            width: 100%;
+        }
+
+        &Slider {
+            height: 8px;
+            background: #595959;
+            border-radius: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        &Progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(270deg,
+                    #956A28 -435.48%,
+                    #F5D359 -27.29%,
+                    #DBA02D 414.9%,
+                    #F5D458 823.09%,
+                    #A6772B 1078.2%);
+            border-radius: 32px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        &Input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 8px;
+            background: transparent;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            /* Remove native track */
+            &::-webkit-slider-runnable-track {
+                height: 8px;
+                background: transparent;
+            }
+
+            &::-moz-range-track {
+                height: 8px;
+                background: transparent;
+            }
+
+            /* Custom thumb */
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                background: #FFF;
+                border: 1px solid #dfdfdf;
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+                pointer-events: auto;
+                cursor: pointer;
+                margin-top: -6px;
+                /* center on track */
+            }
+
+            &::-moz-range-thumb {
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                background: #FFF;
+                border: 1px solid #dfdfdf;
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+                pointer-events: auto;
+                cursor: pointer;
+            }
+        }
     }
 }

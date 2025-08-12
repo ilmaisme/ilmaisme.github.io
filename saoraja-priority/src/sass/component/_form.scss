@@ -1,11 +1,11 @@
 .form {
 
-    &Input {
+    &Input,
+    &Area {
         width: 100%;
         appearance: none;
         border: 0;
         margin-top: 15px;
-        margin-bottom: 25px;
         padding: 16px 24px;
         border-radius: 26px;
         border: 1px solid $cl-text1;
@@ -24,13 +24,16 @@
 
     &Label {
         display: block;
-        margin-bottom: 5px;
         line-height: 1.23;
+
+        .formInfo {
+            margin-left: 10px;
+        }
     }
 
     &Radio {
-        width: 17px;
-        height: 17px;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
         transition: box-shadow .3s, border .3s;
         background: transparent;
@@ -49,6 +52,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        &Wrap {
+            display: flex;
+            gap: 15px;
         }
     }
 
@@ -73,6 +81,15 @@
                 background-size: 16px;
                 cursor: pointer;
             }
+        }
+    }
+
+    &Cal {
+        .icoCal {
+            position: absolute;
+            top: 50%;
+            right: 35px;
+            pointer-events: none;
         }
     }
 
