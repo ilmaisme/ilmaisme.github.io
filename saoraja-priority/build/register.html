@@ -32,6 +32,7 @@
     <link rel="preload" href="./asset/images/logo-bank-sulselbar-saoraja-priority.svg" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <style>
         @font-face {
             font-family: 'Nunito Sans';
@@ -201,11 +202,12 @@
                 <p>Silakan isi formulir dengan data yang valid untuk menikmati layanan Prioritas dari kami. Data Anda
                     aman
                     bersama kami dan tidak akan dibagikan tanpa izin.</p>
-                <form class="form regForm mt30">
+                <form class="form regForm mt30" action="success.html">
                     <div class="formRow">
                         <label for="reg" class="formLabel titleH4">Nama Lengkap<span class="required">*</span></label>
                         <input class="formInput mt15" type="text" name="reg" id="reg"
-                            placeholder="Masukkan nama lengkap Anda">
+                            placeholder="Masukkan nama lengkap Anda" required>
+                        <div class="required">*This field is required.</div>
                     </div>
                     <div class="formRow row">
                         <div class="formCol col-lg-6">
@@ -213,11 +215,13 @@
                                     class="required">*</span></label>
                             <input type="text" class="formInput" name="phone" id="phone"
                                 placeholder="Masukkan nomor telepon" inputmode="numeric" required="">
+                            <div class="required">*This field is required.</div>
                         </div>
                         <div class="formCol col-lg-6">
                             <label class="formLabel titleH4" for="mail">Email<span class="required">*</span></label>
                             <input type="email" class="formInput" name="mail" id="mail"
                                 placeholder="Masukkan alamat email" required="">
+                            <div class="required">*This field is required.</div>
                         </div>
                     </div>
                     <div class="formRow row">
@@ -227,27 +231,30 @@
                             <input type="text" class="formInput" name="birth" id="birth" placeholder="dd/mm/yyyy"
                                 required="">
                             <span class="ico icoCal"></span>
+                            <div class="required">*This field is required.</div>
                         </div>
                         <div class="formCol col-lg-6">
                             <div class="formLabel titleH4">Jenis Kelamin<span class="required">*</span></div>
                             <div class="formRadioWrap mt30">
-                                <div class="formRow">
+                                <div>
                                     <label class="formRadioLabel" for="jk1">
                                         <input type="radio" id="jk1" class="formRadio" name="jk" checked>
                                         <span>Laki-laki</span></label>
                                 </div>
-                                <div class="formRow">
+                                <div>
                                     <label class="formRadioLabel" for="jk2">
                                         <input type="radio" id="jk2" class="formRadio" name="jk">
                                         <span>Perempuan</span></label>
                                 </div>
                             </div>
+                            <div class="required">*This field is required.</div>
                         </div>
                     </div>
                     <div class="formRow">
                         <label for="addr" class="titleH4">Alamat<span class="required">*</span></label>
                         <textarea class="formArea mt15" name="addr" id="addr" placeholder="Masukkan alamat Anda"
-                            column="3"></textarea>
+                            column="3" required></textarea>
+                        <div class="required">*This field is required.</div>
                     </div>
                     <div class="formRow formCheckWrap mt30">
                         <input type="checkbox" id="agree1" class="formCheck">
@@ -255,9 +262,9 @@
                             informasi produk, layanan, dan promosi dari Bank Sulselbar Saoraja Priority.</label>
                     </div>
                     <div class="formRow formCheckWrap mt15">
-                        <input type="checkbox" id="agree1" class="formCheck" required="">
-                        <label for="agree1">Saya telah membaca dan menyetujui <a href="#"
-                                class="underline">Syarat & Ketentuan Nasabah Prioritas</a></label>
+                        <input type="checkbox" id="agree2" class="formCheck" required="">
+                        <label for="agree2">Saya telah membaca dan menyetujui <a href="#" class="underline">Syarat &
+                                Ketentuan Nasabah Prioritas</a></label>
                     </div>
                     <button type="submit" class="button buttonPrimary mt30">Kirim</button>
                 </form>
@@ -333,7 +340,7 @@
         <div class="footerCopy text-center">&copy; 2025 Bank Sulselbar Saoraja Priority</div>
     
     </footer>
-    <script defer type="text/javascript" src="./asset/js/main.js"></script>
+    <script defer type="text/javascript" src="./asset/js/main.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.min.js"></script>
     <script>
         const datepicker = new AirDatepicker('#birth', {

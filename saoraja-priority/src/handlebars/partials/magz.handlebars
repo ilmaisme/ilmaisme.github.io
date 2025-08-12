@@ -3,13 +3,13 @@
 {{#gte @index compare=../index_end}}
 {{else}}
 <div class="magzItem{{#if ../col}} {{../col}}{{/if}}{{#if ../mt}} mt{{../mt}}{{/if}}">
-    <a href="{{link}}" class="magzLink">
+    <a href="{{link}}" class="magzLink articleLink">
         <div class="magzImg">
             <img src="{{images}}" alt="" width="260" height="368"{{#if ../lazy}} loading="lazy"{{/if}}>
         </div>
         <div class="magzContent">
             {{#if ../tag}}
-            <{{.. /tag}} class="magzTitle titleH6">{{title}}</{{.. /tag}}>
+            <{{.. /tag}} class="magzTitle articleTitle titleH6">{{title}}</{{.. /tag}}>
             {{else}}
             <div class="magzTitle titleH6">{{title}}</div>
             {{/if}}
