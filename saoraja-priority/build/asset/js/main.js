@@ -8,46 +8,85 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!hd || !menuWrap || !nav || !navDesk || !navMobWrap) return;
 
-    // Sticky menu
+    const isDesktop = () => window.innerWidth >= 1140;
+
+    // Sticky header
     window.addEventListener("scroll", function () {
         const scrollY = window.scrollY;
         const headerHeight = hd.offsetHeight;
-
-        if (scrollY > headerHeight) {
-            hd.classList.add("fixed");
-        } else {
-            hd.classList.remove("fixed");
-        }
+        hd.classList.toggle("fixed", scrollY > headerHeight);
     });
 
-    // Reset mobile menu toggle on unload
+    // Reset menu on unload
     window.addEventListener("unload", function () {
         if (menuToggle && typeof menuToggle.reset === "function") {
             menuToggle.reset();
         }
     });
 
-    // Responsive menu updater
+    // Move nav based on screen size
     function updateMenu() {
-        const isDesktop = window.innerWidth >= 1140;
+        const isDesk = isDesktop();
+        menuWrap.classList.toggle("mobile", !isDesk);
+        hd.classList.toggle("mobile", !isDesk);
 
-        menuWrap.classList.toggle("mobile", !isDesktop);
-        hd.classList.toggle("mobile", !isDesktop);
-
-        if (isDesktop) {
+        if (isDesk) {
             navDesk.appendChild(nav);
         } else {
             navMobWrap.appendChild(nav);
         }
     }
 
-    // Initial menu setup
+    function initMobileMenu() {
+        document.querySelectorAll(".navItem, .navSubItem").forEach(item => {
+            const btn = item.querySelector(":scope > .navLink, :scope > .navSubLink");
+            const subMenu = item.querySelector(":scope > .navSub, :scope > .navSubChild");
+
+            if (!btn) return;
+
+            // Remove old listeners
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+
+            let firstClick = true;
+
+            newBtn.addEventListener("click", function (e) {
+                if (isDesktop()) return; // Only mobile behavior
+
+                const hasSub = !!subMenu;
+                const isOpen = item.classList.contains("open");
+
+                if (hasSub) {
+                    e.preventDefault();
+
+                    // Accordion only at same level
+                    const siblings = Array.from(item.parentElement.children)
+                        .filter(sib => sib !== item && sib.classList.contains(item.classList[0]));
+
+                    siblings.forEach(sib => sib.classList.remove("open"));
+
+                    if (!isOpen) {
+                        item.classList.add("open");
+                        firstClick = false;
+                    } else {
+                        // If already open, close it and all its children
+                        item.classList.remove("open");
+                        item.querySelectorAll(".open").forEach(child => child.classList.remove("open"));
+                        firstClick = true;
+                    }
+                }
+            });
+        });
+    }
+
     updateMenu();
+    initMobileMenu();
 
-    // Handle viewport resize
-    window.addEventListener("resize", updateMenu);
+    window.addEventListener("resize", () => {
+        updateMenu();
+        initMobileMenu();
+    });
 });
-
 
 //trigger active button
 function triggerActive(selector, btn = null, options = {}) {
