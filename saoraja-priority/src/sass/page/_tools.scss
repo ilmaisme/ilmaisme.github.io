@@ -30,3 +30,38 @@
         font-variation-settings: "wght" 600;
     }
 }
+
+.tooltip {
+    position: relative;
+
+    &Txt {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        position: absolute;
+        left: 40px;
+        width: 300px;
+        padding: 10px;
+        border-radius: 7px;
+        background: #595959;
+        text-align: left;
+        @include font-pack(false, 12px, $font-weight-normal, false, $cl-neutral1);
+        z-index: 1;
+
+        @media (max-width: 600px) {
+            bottom: auto;
+            top: 125%;
+            left: 0;
+            transform: none;
+            width: auto;
+            min-width: 200px;
+        }
+    }
+
+    &:hover .tooltipTxt {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
