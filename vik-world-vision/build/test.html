@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScrollTrigger Flexible Horizontal Image</title>
+    <link type="text/css" rel="stylesheet" href="./asset/css/style.css">
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            font-family: sans-serif;
+        }
+
+        .pipa-middle {
+            background: linear-gradient(180deg, #6E8B98 0%, #434E5C 89.43%);
+        }
+
+        .scroll-area {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .wide-image {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: auto;
+            max-height: 90vh;
+            will-change: transform;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="pipa-middle">
+        <div class="scroll-area">
+            <img src="./asset/images/test/1.png" alt="Wide Image" class="wide-image" />
+        </div>
+        <div class="container">
+            <div class="content">
+                <h2>Roadmap</h2>
+                <p>Pemerintah desa dan kabupaten lalu diajak membuat rancangan peta jalan. Dokumen rancangan memuat
+                    kondisi air dan sanitasi di setiap wilayah, perencanaan untuk mencapai targetnya, kebutuhan
+                    pembiayaan total, sumber dana tersedia dari pemerintah, serta gap pendanaan yang harus dicukupi
+                    mandiri. Tahun 2023, 6 kabupaten dampingan akhirnya memiliki peta jalannya masing-masing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const img = document.querySelector(".wide-image");
+
+        img.onload = function () {
+            const viewportWidth = window.innerWidth;
+            const imgWidth = img.scrollWidth; // get natural rendered width
+            const scrollDistance = imgWidth - viewportWidth;
+
+            gsap.to(img, {
+                x: -scrollDistance,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".scroll-area",
+                    start: "top top",
+                    end: "+=" + scrollDistance,
+                    scrub: true,
+                    pin: true,
+                    anticipatePin: 1,
+                    markers: true // remove when done debugging
+                }
+            });
+        };
+    </script>
+
+</body>
+
+</html>

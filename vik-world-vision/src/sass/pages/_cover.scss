@@ -1,0 +1,175 @@
+.cover {
+    background: linear-gradient(180deg, #92BAC1 0%, #396971 100%);
+
+    &Lead {
+        position: relative;
+        margin: auto;
+        width: 100%;
+        max-width: 1600px;
+        margin-top: 20px;
+        @include font-pack(false, 18px, $font-weight-sbold, false, false);
+
+        @include min-responsive($w-md) {
+            margin-top: 40px;
+            width: 83.33vw;
+            height: 20.63vw;
+            font-size: 30px;
+            color: #2B2B2B;
+        }
+
+        @include min-responsive($w-xxxl) {
+            font-size: 40px;
+        }
+
+        &Box {
+            padding: 16px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, #D9D9D9 0%, rgba(194, 224, 223, 0.2) 100%);
+            border-radius: clamp(20px, 3vw, 57px);
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .buttonNext {
+        position: absolute;
+        right: calc((100vw - min(83.33vw, 1600px)) / 2);
+        bottom: 60px;
+        z-index: 1;
+
+        @include max-height($w-md) {
+            @media (orientation: landscape) {
+                bottom: 35px;
+            }
+        }
+    }
+}
+
+//water drop effect//
+.scroll-scene {
+    position: relative;
+    width: 100%;
+    height: 150vh;
+    /* space to scroll */
+    background: linear-gradient(180deg, #B5C5CF 0%, #3E7C74 100%);
+    overflow: hidden;
+
+    @include min-responsive($w-md) {
+        height: 200vh;
+    }
+
+    @include max-height($w-md) {
+        @media (orientation: landscape) {
+            height: calc(200vh + 250px);
+        }
+    }
+}
+
+.leaf-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 76vw;
+    z-index: 3;
+}
+
+.leaf {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.droplet {
+    position: absolute;
+    bottom: -10vw;
+    left: -3vw;
+    max-width: 13vw;
+    height: auto;
+    z-index: 4;
+
+    @include min-responsive($w-md) {
+        bottom: -8vw;
+        max-width: 8vw;
+    }
+}
+
+.splash {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 3;
+    max-width: 60vw;
+    height: auto;
+
+    @include min-responsive($w-md) {
+        max-width: 76vw;
+    }
+}
+
+.ripples {
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: none;
+    width: 60vw;
+    height: 30vw;
+}
+
+.ripple {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid $cl-white;
+    border-radius: 50%;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(1px);
+    will-change: transform, opacity;
+}
+
+.caption {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    opacity: 0;
+    z-index: 4;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    br {
+        display: none;
+
+        @include min-responsive($w-md) {
+            display: block;
+        }
+    }
+}
+
+.background-bottom {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #92BAC1 0%, #396971 100%);
+    z-index: 1;
+    overflow: hidden;
+
+    .ripples {
+        position: absolute;
+        // top: 0;
+        // left: 50%;
+        // transform: translateX(-50%);
+    }
+}

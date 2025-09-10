@@ -1,0 +1,31 @@
+.preloader {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1001;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .7s;
+    background: rgb(18, 94, 250);
+    background: linear-gradient(180deg, rgba(18, 94, 250, 1) 0%, rgba(14, 191, 197, 1) 100%);
+
+    &Wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+    }
+
+    &Img {
+        max-width: 340px;
+
+        @include min-responsive($w-md) {
+            max-width: 568px;
+        }
+    }
+}

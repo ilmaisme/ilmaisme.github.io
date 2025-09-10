@@ -1,0 +1,113 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-top: 5vh;
+    margin: auto;
+    max-width: 980px;
+    position: relative;
+    height: var(--app-height);
+    z-index: 1;
+
+    @media only screen and(max-height: $w-md) and(orientation: landscape) {
+        justify-content: flex-start;
+    }
+
+    &Cta {
+        top: 23vh;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 40px;
+        border-radius: 10px;
+        background: $cl-white;
+        border: 3px solid #6A5062;
+        position: absolute;
+        @include font-pack($font_caption, 16px, $font-weight-medium, $line-base, #6A5062);
+        z-index: 2;
+
+        @include min-responsive($w-md) {
+            font-size: 18px;
+        }
+    }
+
+    &Content {
+        max-width: 562px;
+        padding-bottom: 70px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        align-self: flex-start;
+
+        &::before,
+        &::after {
+            content: '';
+            width: 113px;
+            height: 84px;
+            z-index: 0;
+            position: absolute;
+            background: url(../images/quote.png);
+        }
+
+        &::before {
+            top: 0;
+            left: -20px;
+        }
+
+        &::after {
+            right: -10px;
+            bottom: 10px;
+            transform: rotate(180deg);
+        }
+    }
+
+    &Anim {
+        width: 22vw;
+    }
+
+    &Txt {
+        position: relative;
+        max-width: 485px;
+        margin: 45px auto 10px;
+        @include font-pack($font_caption, 30px, $font-weight-medium, $line-base, #185582);
+        font-style: italic;
+        z-index: 1;
+    }
+
+    &Img {
+        position: relative;
+        bottom: -10px;
+        right: -3vw;
+
+        @media only screen and(max-height: $w-md) and(orientation: landscape) {
+            position: absolute;
+        }
+    }
+
+    &Arrow {
+        position: absolute;
+        right: -120px;
+        bottom: -10px;
+
+        @media only screen and(max-height: $w-md) and(orientation: landscape) {
+            display: none;
+        }
+    }
+
+    &Name {
+        position: absolute;
+        z-index: 1;
+        bottom: 24px;
+        right: 0;
+        @include font-pack($font_caption_sbold, 30px, $font-weight-sbold, $line-base, $cl-primary);
+    }
+
+    &Title {
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        right: 0;
+        @include font-pack($font_base, 16px, $font-weight-normal, $line-base, $cl-primary);
+    }
+}

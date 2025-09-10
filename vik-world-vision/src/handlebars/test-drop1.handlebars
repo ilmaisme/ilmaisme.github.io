@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScrollTrigger Droplet + Ripple</title>
+    <link type="text/css" rel="stylesheet" href="./asset/css/style.css">
+    <style>
+        .scroll-scene {
+            position: relative;
+            width: 100%;
+            height: 200vh;
+            /* space to scroll */
+            background: #f0f8ff;
+            overflow: hidden;
+        }
+
+        /* Container for leaf + droplet */
+        .leaf-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            max-width: 76vw;
+            z-index: 3;
+        }
+
+        .leaf {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .droplet {
+            position: absolute;
+            bottom: -100px;
+            left: -44px;
+            max-width: 8vw;
+            height: auto;
+            z-index: 4;
+        }
+
+        /* Splash centered */
+        .splash {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            z-index: 3;
+            max-width: 76vw;
+            height: auto;
+        }
+
+        /* Ripples */
+        .ripples {
+            position: absolute;
+            top: 54%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            pointer-events: none;
+            width: 60vw;
+            height: 30vw;
+        }
+
+        .ripple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(0, 150, 255, 0.35);
+            border-radius: 50%;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            filter: blur(1px);
+        }
+
+        /* Caption */
+        .caption {
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: clamp(1rem, 2vw, 2rem);
+            line-height: 1.4;
+            color: #003366;
+            opacity: 0;
+            z-index: 4;
+            max-width: 80vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-scene">
+        <div class="leaf-container">
+            <img src="./asset/images/cover/leaf.png" alt="Leaf" class="leaf" />
+            <img src="./asset/images/cover/droplet.png" alt="Droplet" class="droplet" />
+        </div>
+
+        <img src="./asset/images/cover/splash.png" alt="Splash" class="splash" />
+
+        <div class="ripples">
+            <div class="ripple ripple1"></div>
+            <div class="ripple ripple2"></div>
+            <div class="ripple ripple3"></div>
+        </div>
+
+        <div class="caption">
+            <p>
+                Menyambungkan Tirta dan Emiliana:<br />
+                Membangun Tata Kelola Air dan Sanitasi untuk Semua
+            </p>
+        </div>
+    </div>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        let rippleTimeline;
+
+        // Resize ripples to match splash width
+        function resizeRipples() {
+            const splash = document.querySelector(".splash");
+            const ripples = document.querySelectorAll(".ripple");
+            if (splash.complete || splash.naturalWidth) {
+                const splashWidth = splash.getBoundingClientRect().width;
+                ripples.forEach(r => {
+                    r.style.width = splashWidth + "px" + 30 + "px";
+                    r.style.height = splashWidth * 0.5 + "px" + 30 + "px"; // flatter ellipse
+                });
+            }
+        }
+
+        // ✅ Adjust leaf position so droplet aligns horizontally with splash center
+        function adjustLeafPosition() {
+            const leafContainer = document.querySelector(".leaf-container");
+            const droplet = document.querySelector(".droplet");
+            const splash = document.querySelector(".splash");
+
+            // Reset first
+            leafContainer.style.right = "auto";
+
+            const leafRect = leafContainer.getBoundingClientRect();
+            const dropletRect = droplet.getBoundingClientRect();
+            const splashRect = splash.getBoundingClientRect();
+
+            const screenCenterX = window.innerWidth / 2;
+            const dropletOffsetX = dropletRect.left + dropletRect.width / 2 - leafRect.left;
+
+            const newRight = -(leafRect.width - dropletOffsetX - screenCenterX);
+            leafContainer.style.right = newRight + "px";
+        }
+
+        window.addEventListener("load", () => {
+            resizeRipples();
+            adjustLeafPosition();
+            ScrollTrigger.refresh();
+        });
+        window.addEventListener("resize", () => {
+            resizeRipples();
+            adjustLeafPosition();
+            ScrollTrigger.refresh();
+        });
+
+        // Ripple animation loop (pulse/expand)
+        function startRipples() {
+            if (rippleTimeline) return;
+
+            rippleTimeline = gsap.timeline({ repeat: -1 });
+
+            [".ripple1", ".ripple2", ".ripple3"].forEach((cls, i) => {
+                rippleTimeline.fromTo(
+                    cls,
+                    { scaleX: 0.4, scaleY: 0.15, opacity: 0.8 }, // small ellipse
+                    {
+                        scaleX: 1.5,
+                        scaleY: 0.5, // keeps it flatter than circle
+                        opacity: 0,
+                        duration: 3,
+                        ease: "none"
+                    },
+                    i * 1.0 // stagger for overlapping waves
+                );
+            });
+        }
+
+        function stopRipples() {
+            if (rippleTimeline) {
+                rippleTimeline.kill();
+                rippleTimeline = null;
+            }
+            gsap.set(".ripple", { opacity: 0 });
+        }
+
+        // ✅ Calculate Y-offset so droplet always hits splash center
+        function getDropYOffset() {
+            const splash = document.querySelector(".splash").getBoundingClientRect();
+            const droplet = document.querySelector(".droplet").getBoundingClientRect();
+
+            const splashCenterY = splash.top + splash.height / 2 + window.scrollY;
+            const dropletCenterY = droplet.top + droplet.height / 2 + window.scrollY;
+
+            return splashCenterY - dropletCenterY;
+        }
+
+        // Scroll timeline
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".scroll-scene",
+                start: "top top",
+                end: "80% center",
+                scrub: true
+            }
+        });
+
+        // Droplet falls
+        tl.to(".droplet", {
+            y: () => getDropYOffset(),
+            ease: "power1.in"
+        }).add("land");
+
+        // Splash + caption + ripple appear exactly at landing
+        tl.to([".splash", ".caption", ".ripples"], {
+            opacity: 1,
+            duration: 0.6,
+            ease: "power1.out",
+            onStart: startRipples,
+            onReverseComplete: stopRipples
+        }, "land-=0.01");
+    </script>
+</body>
+
+</html>

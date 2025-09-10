@@ -1,0 +1,130 @@
+.section1 {
+    background: linear-gradient(180deg, #FCF3D9 0%, #FFFAEE 100%);
+
+    &Dash {
+        position: absolute;
+        width: 100%;
+        height: 93px;
+        background: url('../images/section-1/dash.png') repeat-x center;
+        bottom: -45px;
+
+        &.--top {
+            bottom: unset;
+            top: -45px;
+        }
+    }
+
+    &Cover {
+        justify-content: flex-end;
+
+        &Image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center top;
+            }
+        }
+    }
+
+    &Content {
+        position: relative;
+        z-index: 1;
+        padding: 60px 20px 100px 20px;
+        width: 39.0625vw;
+
+        @include min-responsive($w-md) {
+            padding: 120px 20px 150px 20px;
+        }
+    }
+
+    &Caption {
+        span {
+            display: flex;
+            justify-content: center;
+        }
+
+        &Icon {
+            width: clamp(60px, 6.25vw, 120px);
+        }
+    }
+
+    &Scroll {
+        display: flex;
+        height: 100%;
+        gap: clamp(40px, 13.5vw, 260px);
+
+        &Box {
+            flex: 0 0 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(20px, 9.375vw, 180px);
+
+            &1 {
+                img {
+                    width: clamp(120px, 19.5vw, 374px);
+                }
+            }
+
+            &2 {
+                align-items: end;
+
+                img {
+                    width: clamp(200px, 23.85vw, 458px);
+                }
+            }
+        }
+
+        &Content {
+            padding: 16px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: clamp(20px, 3vw, 57px);
+
+            @include min-responsive($w-md) {
+                padding: 108px 70px;
+            }
+
+            &1 {
+                border: 4px solid #539EE0;
+                background: #7EDCFF;
+            }
+
+            &2 {
+                margin-bottom: 80px;
+                border: 4px solid #D9C681;
+                background: #FAFFCC;
+            }
+
+            strong,
+            i {
+                display: contents;
+            }
+        }
+    }
+
+    &Diagram {
+        position: relative;
+        padding-top: 80px;
+        background: linear-gradient(180deg, #FFF1CC 0%, #ABF9FF 100%);
+
+        @include min-responsive($w-md) {
+            padding-top: 138px;
+        }
+    }
+}
+
+.scroll-area {
+    position: relative;
+    width: 100%;
+    height: var(--app-height);
+    overflow: hidden;
+}

@@ -1,0 +1,55 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    background: rgba(36, 45, 66, 0.50);
+    box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.29);
+    transition: all 0.3s ease;
+    z-index: 10;
+
+    &--fixed {
+        position: fixed;
+    }
+}
+
+.logo {
+    padding: 16px 13px;
+    position: relative;
+
+    @include min-responsive($w-md) {
+        margin: 0 0 0 10px;
+    }
+}
+
+.logo-title {
+    display: flex;
+    text-decoration: none;
+    @include font-pack($font_vik2, 36px, 300, false, $cl_white);
+    letter-spacing: 2px;
+
+    &:hover{
+        color: $cl_white;
+    }
+
+    .title-break {
+        text-transform: uppercase;
+        display: block;
+        font-size: 8px;
+        line-height: 10px;
+    }
+
+    .block-logo {
+        float: left;
+        border-left: 1px solid $cl_white;
+        padding-left: 10px;
+        padding-top: 3px;
+        margin-left: 10px;
+    }
+
+    .title-text {
+        font-family: $font_vik;
+        line-height: 1;
+    }
+}
