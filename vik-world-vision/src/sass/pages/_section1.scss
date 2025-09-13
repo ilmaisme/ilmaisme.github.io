@@ -1,4 +1,5 @@
 .section1 {
+    position: relative;
     background: linear-gradient(180deg, #FCF3D9 0%, #FFFAEE 100%);
 
     &Dash {
@@ -15,6 +16,7 @@
     }
 
     &Cover {
+        position: relative;
         justify-content: flex-end;
 
         &Image {
@@ -30,16 +32,18 @@
                 object-position: center top;
             }
         }
-    }
 
-    &Content {
-        position: relative;
-        z-index: 1;
-        padding: 60px 20px 100px 20px;
-        width: 39.0625vw;
+        &Content {
+            position: relative;
+            z-index: 1;
+            padding: 60px 20px 100px 20px;
+            width: 39.0625vw;
+            height: 100%;
+            background: rgba(252, 244, 217, .8);
 
-        @include min-responsive($w-md) {
-            padding: 120px 20px 150px 20px;
+            @include min-responsive($w-md) {
+                padding: 120px 20px 150px 20px;
+            }
         }
     }
 
@@ -111,14 +115,79 @@
         }
     }
 
-    &Diagram {
+    &Content {
+        display: block;
         position: relative;
         padding-top: 80px;
+        padding-bottom: 280px;
         background: linear-gradient(180deg, #FFF1CC 0%, #ABF9FF 100%);
 
         @include min-responsive($w-md) {
             padding-top: 138px;
         }
+    }
+
+    &Diagram {
+        display: block;
+
+        &1 {
+            margin-top: 8px;
+
+            @include min-responsive($w-md) {
+                margin-top: 18px;
+            }
+        }
+
+        &3 {
+            position: relative;
+            z-index: 1;
+            margin-top: 22px;
+
+            @include min-responsive($w-md) {
+                margin-top: 32px;
+            }
+        }
+    }
+
+    &Box {
+        position: relative;
+        flex: 1;
+        min-height: 440px;
+        border-radius: clamp(16px, 2.97vw, 57px);
+        background: #C9F8FF;
+        @include font-pack(false, 24px, $font-weight-sbold, $line-base, #2B2B2B);
+
+        @include min-responsive($w-md) {
+            min-width: 856px;
+        }
+
+        &Wrap {
+            gap: 14px;
+
+            @include min-responsive($w-md) {
+                gap: 74px;
+            }
+        }
+
+        &Txt {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            display: none;
+            padding: clamp(20px, 4.69vw, 90px) clamp(30px, 7.24vw, 139px);
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+    .buttonNextWrap {
+        position: relative;
+        z-index: 1;
+        margin-top: 280px;
     }
 }
 
