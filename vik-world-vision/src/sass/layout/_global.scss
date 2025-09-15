@@ -6,6 +6,15 @@
 
 :root {
     --app-height: 100%;
+    --container-width: 100%;
+
+    @include min-responsive($w-xl) {
+        --container-width: 1100px;
+
+        @include max-height($w-hmd) {
+            --container-width: 1024px;
+        }
+    }
 }
 
 body,
@@ -144,6 +153,14 @@ main {
 
         @include min-responsive($w-md) {
             margin-top: 64px;
+        }
+
+        &Double {
+            padding-bottom: 156px;
+
+            @include min-responsive($w-md) {
+                padding-bottom: 228px;
+            }
         }
     }
 }
