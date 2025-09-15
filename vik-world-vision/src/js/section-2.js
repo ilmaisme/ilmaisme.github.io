@@ -58,7 +58,8 @@ ScrollTrigger.create({
     end: "bottom center",
     scrub: true,
     onUpdate: self => {
-        const activeIndex = self.progress < 0.5 ? 0 : 1;
+        const switchPoint = 0.6;
+        const activeIndex = self.progress < switchPoint ? 0 : 1;
 
         digiTexts.forEach((el, i) => {
             if (i === activeIndex && !el.classList.contains("active")) {

@@ -1,3 +1,24 @@
+window.addEventListener("load", removePreloader);
+
+// preloader
+function removePreloader() {
+  setTimeout(function () {
+    const preloader = document.getElementById("preloader");
+
+    if (preloader) {
+      // fadeOut effect
+      preloader.style.transition = "opacity 0.2s ease";
+      preloader.style.opacity = "0";
+
+      // after fadeOut finished
+      setTimeout(function () {
+        preloader.remove();
+      }, 200); 
+    }
+  }, 1500);
+}
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 let rippleTimeline = null;
