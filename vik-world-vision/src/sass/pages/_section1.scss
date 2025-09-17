@@ -62,6 +62,23 @@
         display: flex;
         height: 100%;
         gap: clamp(40px, 13.5vw, 260px);
+        position: relative;
+        width: 100%;
+        margin: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        @include min-responsive($w-xl) {
+            width: $width-container;
+
+            @include max-height($w-hmd) {
+                width: $w-vlg;
+            }
+        }
+
+        @include min-responsive($w-xxl) {
+            width: 1388px;
+        }
 
         &Box {
             flex: 0 0 100%;
@@ -97,6 +114,10 @@
                 padding: 108px 70px;
             }
 
+            @include min-responsive($w-xxxl) {
+                min-width: 856px;
+            }
+
             &1 {
                 border: 4px solid #539EE0;
                 background: #7EDCFF;
@@ -124,6 +145,10 @@
 
         @include min-responsive($w-md) {
             padding-top: 138px;
+        }
+
+        .container {
+            z-index: 1;
         }
     }
 
@@ -176,11 +201,19 @@
             transform: translate(-50%, -50%);
             width: 100%;
             display: none;
-            padding: clamp(20px, 4.69vw, 90px) clamp(30px, 7.24vw, 139px);
+            padding: clamp(30px, 7.24vw, 139px) clamp(20px, 4.69vw, 90px);
 
             &.active {
                 display: block;
             }
+        }
+    }
+
+    &Bg {
+        width: 100%;
+
+        img {
+            width: 100%;
         }
     }
 

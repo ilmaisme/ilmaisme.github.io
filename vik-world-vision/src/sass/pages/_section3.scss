@@ -1,0 +1,286 @@
+.section3 {
+    &Cover {
+        overflow: hidden;
+
+        &Wrap {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        &Bg {
+            width: 100%;
+            height: var(--app-height);
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        &Image {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            img {
+                max-width: clamp(120px, 36.46vw, 700px);
+            }
+        }
+
+        &Caption {
+            width: 100%;
+            padding: 15px 46px;
+            margin-bottom: 73px;
+            background: linear-gradient(180deg, #FFFFFF -25.62%, rgba(217, 246, 245, 0.5) 126.35%);
+            @include font-pack($font_other, false, $font-weight-normal, $line-base, #2B2B2B);
+            font-size: clamp(22px, 6.67vw, 128px);
+            text-transform: uppercase;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+            padding-left: calc(73px + clamp(120px, 36.46vw, 700px));
+        }
+    }
+
+    &Dash {
+        position: absolute;
+        width: 100%;
+        height: 53px;
+        background: url('../images/section-2/pipa-spacing.png') repeat-x center;
+        bottom: -45px;
+        z-index: 1;
+    }
+
+    &Scroll {
+        background: #415474;
+    }
+
+    &Box {
+        background: #F9FFD2;
+        padding: clamp(16px, 4.84vw, 93px) clamp(20px, 5.73vw, 110px);
+        border-radius: clamp(12px, 1.67vw, 32px);
+        @include font-pack(false, false, $font-weight-sbold, $line-base, false);
+        font-size: clamp(16px, 1.875vw, 36px);
+        border: 4px solid #E6B29B;
+        font-style: italic;
+
+        &.--abs {
+            position: absolute;
+            bottom: 63px;
+        }
+
+        &Wrap {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        &Img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            max-width: clamp(100%, 100vw * 1.413, 2713px);
+
+            &.active {
+                opacity: 1;
+            }
+        }
+
+        &Js {
+            display: none;
+        }
+
+        &Emiliana {
+            position: relative;
+            width: 100%;
+            height: var(--app-height);
+        }
+
+        &Grad {
+            position: relative;
+            margin-top: 48px;
+            border-radius: clamp(6px, 1.67vw, 32px);
+            padding: clamp(30px, 0.47vw, 39px) clamp(15px, 3.13vw, 70px);
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(132, 181, 168, 0.7) 100%);
+            z-index: 1;
+        }
+    }
+
+    &Graph {
+        position: relative;
+        padding-top: 284px;
+        padding-bottom: 780px;
+        background: linear-gradient(180deg, #E6F0DE 0%, #82C0C6 100%);
+
+        .container {
+            z-index: 1;
+        }
+    }
+
+    &Letter {
+        position: relative;
+        padding-top: 1px;
+        padding-bottom: 430px;
+        background: linear-gradient(180deg, #0F3B44 0%, #56898D 100%);
+
+        &Item,
+        &Item .center-flex {
+            gap: 46px
+        }
+    }
+
+    &Fin {
+        position: relative;
+        background: linear-gradient(180deg, #E6F0DE 0%, #82C0C6 100%);
+
+        &Happy {
+            flex-direction: column;
+            min-height: var(--app-height);
+        }
+
+        &Img {
+
+            img {
+                width: clamp(200px, 48.5vw, 931px);
+            }
+        }
+
+        .section3Box {
+            margin-top: 28px;
+            margin-bottom: 0;
+
+            @include min-responsive($w-md) {
+                margin-top: 64px;
+            }
+        }
+    }
+
+    &Quote {
+        background: #FAFFCC;
+        padding: 30px 15px;
+
+        @include min-responsive($w-md) {
+            padding: 41px 15px;
+        }
+
+        &Wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+        }
+
+        &Txt {
+            position: relative;
+            background: #EBD092;
+            padding: clamp(16px, 4.84vw, 93px) clamp(20px, 5.73vw, 110px);
+            border-radius: clamp(12px, 1.67vw, 32px);
+            @include font-pack(false, false, $font-weight-sbold, $line-base, false);
+            font-size: clamp(16px, 1.875vw, 36px);
+            font-style: italic;
+
+            &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 0;
+                z-index: 1;
+                border-style: solid;
+                border-color: transparent #EBD092;
+                border-width: 40px 40px 40px 0;
+                top: 0;
+                left: -40px;
+                margin-top: 80px;
+            }
+        }
+
+        &Img {
+            img {
+                max-width: clamp(120px, 22vw, 423px);
+                flex: 1;
+            }
+        }
+    }
+
+    &Change {
+        position: relative;
+        padding-top: 28px;
+        padding-bottom: 210px;
+        background: linear-gradient(180deg, #E6F0DE 0%, #82C0C6 100%);
+
+        @include min-responsive($w-md) {
+            padding-top: 64px;
+        }
+
+        &Wrap {
+            min-height: 80vh;
+        }
+
+        &Before {
+            .graphTitle {
+                transform: rotate(3deg);
+            }
+        }
+
+        &After {
+            .graphTitle {
+                transform: rotate(-7deg);
+            }
+        }
+
+        &After {
+            align-self: flex-end;
+            margin-left: -60px;
+        }
+
+        .graphTitle {
+            font-style: italic;
+        }
+    }
+
+    &Bg {
+
+        &1 {
+            top: 90px;
+            bottom: unset;
+        }
+
+        &2 {
+            width: 100%;
+        }
+
+        &3 {
+            right: -60px;
+            bottom: -400px;
+        }
+
+        &4 {
+            top: 64px;
+            right: 0;
+
+            img {
+                transform: rotate(180deg);
+            }
+        }
+
+        &5 {
+            img {
+                max-width: clamp(200px, 52vw, 1000px);
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .buttonNextWrap {
+        margin-top: 20px;
+    }
+}

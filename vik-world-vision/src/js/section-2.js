@@ -1,4 +1,24 @@
 gsap.registerPlugin(ScrollTrigger);
+const images = document.querySelectorAll("img");
+let loadedCount = 0;
+
+images.forEach(img => {
+  if (img.complete) {
+    loadedCount++;
+  } else {
+    img.addEventListener("load", () => {
+      loadedCount++;
+      if (loadedCount === images.length) {
+        ScrollTrigger.refresh();
+      }
+    });
+  }
+});
+
+// If already all loaded
+if (loadedCount === images.length) {
+  ScrollTrigger.refresh();
+}
 
 // --- Horizontal Scroll ---
 const scrollContainer = document.querySelector(".section2Scroll");

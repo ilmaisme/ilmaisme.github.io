@@ -1,10 +1,3 @@
-$(window).on('load', function () {
-})
-
-$(document).ready(function () {
-    
-})
-
 /* s: Get HEIGHT Device */
 const appHeight = () => {
     const doc = document.documentElement
