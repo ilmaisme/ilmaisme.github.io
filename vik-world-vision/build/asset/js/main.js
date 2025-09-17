@@ -1,8 +1,8 @@
 /* s: Get HEIGHT Device */
-const appHeight = () => {
-    const doc = document.documentElement
-    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+function setAppHeight() {
+  document.documentElement.style.setProperty('--app-height', window.innerHeight + 'px');
 }
-window.addEventListener("resize", appHeight)
-appHeight()
+
+window.addEventListener('resize', setAppHeight);
+setAppHeight();
 /* e: Get HEIGHT Device */
