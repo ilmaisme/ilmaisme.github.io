@@ -179,12 +179,16 @@
             align-items: center;
             justify-content: center;
             gap: 48px;
+
+            @include min-responsive($w-xxxl) {
+                width: 1400px;
+            }
         }
 
         &Txt {
             position: relative;
             background: #EBD092;
-            padding: clamp(16px, 4.84vw, 93px) clamp(20px, 5.73vw, 110px);
+            padding: clamp(16px, 4.84vw, 60px) clamp(20px, 5.73vw, 84px);
             border-radius: clamp(12px, 1.67vw, 32px);
             @include font-pack(false, false, $font-weight-sbold, $line-base, false);
             font-size: clamp(16px, 1.875vw, 36px);
@@ -207,7 +211,7 @@
 
         &Img {
             img {
-                max-width: clamp(120px, 22vw, 423px);
+                max-width: clamp(120px, 22vw, 340px);
                 flex: 1;
             }
         }
