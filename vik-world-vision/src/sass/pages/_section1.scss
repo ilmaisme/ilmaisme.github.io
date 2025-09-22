@@ -5,19 +5,35 @@
     &Dash {
         position: absolute;
         width: 100%;
-        height: 93px;
-        background: url('../images/section-1/dash.png') repeat-x center;
-        bottom: -45px;
+        height: 45px;
+        background: url('../images/section-1/dash-m.png') repeat-x center;
+        bottom: -22px;
+        z-index: 1;
+
+        @include min-responsive($w-md) {
+            height: 93px;
+            background: url('../images/section-1/dash.png') repeat-x center;
+            bottom: -45px;
+        }
 
         &.--top {
             bottom: unset;
-            top: -45px;
+            top: -22px;
+
+            @include min-responsive($w-md) {
+                top: -45px;
+            }
         }
     }
 
     &Cover {
         position: relative;
-        justify-content: flex-end;
+        align-items: flex-end;
+
+        @include min-responsive($w-md) {
+            justify-content: flex-end;
+            align-items: center;
+        }
 
         &Image {
             width: 100%;
@@ -36,12 +52,14 @@
         &Content {
             position: relative;
             z-index: 1;
-            padding: 60px 20px 100px 20px;
-            width: 39.0625vw;
-            height: 100%;
+            padding: 20px 20px 25px 20px;
+            width: 100%;
+            height: auto;
             background: rgba(252, 244, 217, .8);
 
             @include min-responsive($w-md) {
+                width: 39.0625vw;
+                height: 100%;
                 padding: 120px 20px 150px 20px;
             }
         }
@@ -90,7 +108,7 @@
 
             &1 {
                 img {
-                    width: clamp(120px, 19.5vw, 374px);
+                    max-width: clamp(120px, 19.5vw, 374px);
                 }
             }
 
@@ -98,7 +116,7 @@
                 align-items: end;
 
                 img {
-                    width: clamp(200px, 23.85vw, 458px);
+                    max-width: clamp(200px, 23.85vw, 458px);
                 }
             }
         }
@@ -140,10 +158,11 @@
         display: block;
         position: relative;
         padding-top: 80px;
-        padding-bottom: 280px;
+        padding-bottom: 80px;
         background: linear-gradient(180deg, #FFF1CC 0%, #ABF9FF 100%);
 
         @include min-responsive($w-md) {
+            padding-bottom: 280px;
             padding-top: 138px;
         }
 
@@ -177,13 +196,15 @@
     &Box {
         position: relative;
         flex: 1;
-        min-height: 440px;
+        min-height: 262px;
         border-radius: clamp(16px, 2.97vw, 57px);
         background: #C9F8FF;
-        @include font-pack(false, 24px, $font-weight-sbold, $line-base, #2B2B2B);
+        @include font-pack(false, 14px, $font-weight-sbold, $line-base, #2B2B2B);
 
         @include min-responsive($w-md) {
             // min-width: 856px;
+            font-size: 24px;
+            min-height: 440px;
         }
 
         &Wrap {
@@ -220,7 +241,11 @@
     .buttonNextWrap {
         position: relative;
         z-index: 1;
-        margin-top: 280px;
+        margin-top: 80px;
+
+        @include min-responsive($w-md) {
+            margin-top: 280px;
+        }
     }
 }
 

@@ -69,7 +69,7 @@
 
         &.--abs {
             position: absolute;
-            bottom: 63px;
+            bottom: 160px;
         }
 
         &Wrap {
@@ -104,19 +104,28 @@
 
         &Grad {
             position: relative;
-            margin-top: 48px;
+            margin-top: 28px;
             border-radius: clamp(6px, 1.67vw, 32px);
             padding: clamp(30px, 0.47vw, 39px) clamp(15px, 3.13vw, 70px);
             background: linear-gradient(180deg, #FFFFFF 0%, rgba(132, 181, 168, 0.7) 100%);
             z-index: 1;
+
+            @include min-responsive($w-md) {
+                margin-top: 48px;
+            }
         }
     }
 
     &Graph {
         position: relative;
-        padding-top: 284px;
-        padding-bottom: 780px;
+        padding-top: 28px;
+        padding-bottom: 180px;
         background: linear-gradient(180deg, #E6F0DE 0%, #82C0C6 100%);
+
+        @include min-responsive($w-md) {
+            padding-top: 284px;
+            padding-bottom: 780px;
+        }
 
         .container {
             z-index: 1;
@@ -126,12 +135,26 @@
     &Letter {
         position: relative;
         padding-top: 1px;
-        padding-bottom: 430px;
+        padding-bottom: 210px;
         background: linear-gradient(180deg, #0F3B44 0%, #56898D 100%);
+
+        @include min-responsive($w-md) {
+            padding-bottom: 430px;
+        }
 
         &Item,
         &Item .center-flex {
-            gap: 46px
+            flex-direction: column;
+            gap: 28px;
+
+            @include min-responsive($w-md) {
+                gap: 46px;
+                flex-direction: row;
+            }
+
+            img {
+                max-width: 100%;
+            }
         }
     }
 
@@ -265,8 +288,20 @@
         }
 
         &3 {
-            right: -60px;
-            bottom: -400px;
+            bottom: -170px;
+
+            @include min-responsive($w-md) {
+                bottom: -400px;
+                right: -60px;
+            }
+
+            img {
+                max-width: 60%;
+
+                @include min-responsive($w-md) {
+                    max-width: 100%;
+                }
+            }
         }
 
         &4 {

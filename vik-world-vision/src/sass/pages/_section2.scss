@@ -8,6 +8,7 @@
         height: 53px;
         background: url('../images/section-2/pipa-spacing.png') repeat-x center;
         bottom: -45px;
+        z-index: 1;
 
         &.--top {
             bottom: unset;
@@ -42,7 +43,9 @@
                     }
 
                     &.--right {
-                        max-height: 467px;
+                        @include min-responsive($w-md) {
+                            max-height: 467px;
+                        }
 
                         .section2ContentBoxBg {
                             rotate: 180deg;
@@ -50,40 +53,58 @@
 
                         .section2ContentBoxTxt {
                             position: relative;
-                            margin-top: -230px;
+
+                            @include min-responsive($w-md) {
+                                margin-top: -230px;
+                            }
                         }
                     }
                 }
 
                 &Img {
-                    max-height: 329px;
                     overflow: hidden;
+
+                    @include min-responsive($w-md) {
+                        max-height: 329px;
+                    }
                 }
             }
 
             &Txt {
-                gap: 40px;
+                gap: 10px;
                 display: flex;
                 justify-content: center;
                 align-items: stretch;
+                flex-direction: column;
+
+                @include min-responsive($w-md) {
+                    gap: 40px;
+                    flex-direction: row;
+                }
             }
         }
 
         &1 {
-            position: absolute;
-            bottom: 0;
+            @include min-responsive($w-md) {
+                position: absolute;
+                bottom: 0;
+            }
         }
 
         &2 {
             position: relative;
             max-width: 682px;
+            min-height: 160px;
             flex: 1;
-            margin-top: 27px;
-            margin-bottom: 27px;
             text-align: justify;
 
+            @include min-responsive($w-md) {
+                margin-top: 27px;
+                margin-bottom: 27px;
+            }
+
             &:after {
-                content: '';
+                // content: '';
                 position: absolute;
                 display: block;
                 width: 0;
@@ -103,8 +124,13 @@
                 transform: translate(-50%, -50%);
                 width: 100%;
                 display: none;
-                padding-left: 67px;
-                padding-right: 67px;
+                padding-left: 10px;
+                padding-right: 10px;
+
+                @include min-responsive($w-md) {
+                    padding-left: 67px;
+                    padding-right: 67px;
+                }
 
                 &.active {
                     display: block;
@@ -113,7 +139,11 @@
         }
 
         &3 {
-            margin-top: 300px;
+            margin-top: 28px;
+
+            @include min-responsive($w-md) {
+                margin-top: 300px;
+            }
         }
     }
 
@@ -126,14 +156,24 @@
         }
 
         &Wrap {
-            min-height: 452px;
+            min-height: 370px;
             border-radius: clamp(16px, 2.97vw, 24px);
             background: #FCFFD6;
-            padding: 63px 65px 65px 40px;
+            padding: 15px 15px 12px 20px;
             gap: 14px;
 
             @include min-responsive($w-md) {
                 gap: 56px;
+                min-height: 452px;
+                padding: 63px 65px 65px 40px;
+            }
+
+            picture {
+                align-self: flex-end;
+
+                @include min-responsive($w-md) {
+                    align-self: center;
+                }
             }
         }
 
@@ -154,17 +194,25 @@
     &Cover {
         position: relative;
         width: 100%;
-        height: var(--app-height);
+        height: auto;
+
+        @include min-responsive($w-md) {
+            height: var(--app-height);
+        }
 
         &Image {
             img {
-                position: absolute;
+                position: relative;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 object-position: center;
+
+                @include min-responsive($w-md) {
+                    position: absolute;
+                }
             }
         }
     }
@@ -176,9 +224,10 @@
 
         &Box {
             position: absolute;
-            top: calc(50% + 4vh);
+            top: calc(50%);
             transform: translateY(-50%);
             flex: 0 0 100%;
+            width: calc(100vw - 100px);
             height: 100%;
             display: flex;
             align-items: center;
@@ -187,23 +236,51 @@
 
             @include min-responsive($w-md) {
                 width: 729px;
+                top: calc(50% + 4vh);
             }
 
             &1 {
-                left: 100px;
+                left: 50px;
+
+                @include min-responsive($w-md) {
+                    left: 100px;
+                }
             }
 
             &2 {
-                left: 1150px;
+                left: calc(50px + 100vw);
+
+                @include min-responsive($w-md) {
+                    left: 1150px;
+                }
             }
 
             &3 {
-                left: calc(1150px*2 - 140px)
+                padding-right: 15px;
+                left: calc(50px + 200vw);
+
+                @include min-responsive($w-md) {
+                    padding-right: 80px;
+                    left: calc(1150px*2 - 140px);
+                }
             }
         }
 
         &Image {
             display: block;
+            min-width: 300vw;
+
+            @include min-responsive($w-md) {
+                min-width: unset;
+            }
+
+            img {
+                width: 100%;
+
+                @include min-responsive($w-md) {
+                    width: auto;
+                }
+            }
         }
 
         &Content {
@@ -212,7 +289,7 @@
             align-items: center;
             justify-content: center;
             background: #D5E4E6;
-            border-radius: clamp(20px, 3vw, 57px);
+            border-radius: clamp(10px, 3vw, 57px);
 
             @include min-responsive($w-md) {
                 padding: 56px 67px;
@@ -226,23 +303,37 @@
     }
 
     &Road {
-        gap: 80px;
+        gap: 10px;
+
+        @include min-responsive($w-md) {
+            gap: 80px;
+        }
     }
 
     &Graph {
         margin-top: 32px;
-        border-radius: 32px;
-        padding: 29px 82px 32px;
+        border-radius: 10px;
+        padding: 20px 25px 32px;
         background: #697A82;
         align-items: flex-end;
         justify-content: space-around;
+
+        @include min-responsive($w-md) {
+            border-radius: 32px;
+            padding: 29px 82px 32px;
+        }
     }
 
     &Brown {
         position: relative;
-        padding-top: 74px;
-        padding-bottom: calc(128px + 230px);
+        padding-top: 40px;
+        padding-bottom: 80px;
         background: url('../images/section-2/bg-brown.png') repeat center;
+
+        @include min-responsive($w-md) {
+            padding-top: 74px;
+            padding-bottom: calc(128px + 230px);
+        }
 
         &Wrap {
             position: relative;
@@ -256,12 +347,12 @@
             &::before {
                 content: '';
                 position: absolute;
-                top: -74px;
+                top: -72px;
                 left: 50%;
                 transform: translateX(-50%);
                 width: calc(100% - 180px);
-                height: 100%;
-                background: #74878E
+                height: calc(100%);
+                background: #74878E;
             }
         }
     }
@@ -278,10 +369,14 @@
         }
 
         &Num {
-            width: 121px;
+            width: 40px;
             margin-right: 15px;
             @include font-pack($font_caption, false, $font-weight-normal, $line-base, #2B2B2B);
-            font-size: clamp(16px, calc(16px + 46 * ((100vw - 375px) / 1545)), 62px);
+            font-size: clamp(22px, calc(16px + 46 * ((100vw - 375px) / 1545)), 62px);
+
+            @include min-responsive($w-md) {
+                width: 121px;
+            }
         }
 
         &Txt {
@@ -290,7 +385,11 @@
     }
 
     .buttonNextWrap {
-        margin-top: 127px;
+        margin-top: 40px;
+
+        @include min-responsive($w-md) {
+            margin-top: 127px;
+        }
     }
 }
 
