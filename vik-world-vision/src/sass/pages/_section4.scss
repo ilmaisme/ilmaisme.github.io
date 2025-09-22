@@ -54,15 +54,25 @@
             }
         }
 
+        @include range-responsive($w-md, $w-vlg) {
+            bottom: 650px;
+        }
+
         &.--grey {
             background: #D9D9D9;
             border-color: #D9D9D9;
+
+            a {
+                display: block;
+                width: 100%;
+                height: 10%;
+            }
         }
     }
 
     &Img {
         position: absolute;
-        bottom: 175px;
+        bottom: 160px;
 
         @include min-responsive($w-md) {
             position: relative;
@@ -72,6 +82,11 @@
             @include max-height($w-md) {
                 bottom: 240px;
             }
+        }
+
+        @include range-responsive($w-md, $w-vlg) {
+            position: absolute;
+            margin-left: 0;
         }
     }
 }
@@ -111,9 +126,11 @@
 
     &7 {
         .section4Img {
-            bottom: 126px;
+            bottom: 138px;
 
             @include min-responsive($w-md) {
+                bottom: 246px;
+
                 @include max-height(690px) {
                     display: none;
                 }
@@ -121,6 +138,11 @@
                 @include max-height($w-md) {
                     bottom: 235px;
                 }
+            }
+
+            @include range-responsive($w-md, $w-vlg) {
+                bottom: 234px;
+                margin-left: 40px;
             }
         }
     }
