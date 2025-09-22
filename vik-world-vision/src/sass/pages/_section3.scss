@@ -6,12 +6,22 @@
             position: absolute;
             bottom: 0;
             width: 100%;
+            height: 100%;
             z-index: 1;
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            @include min-responsive($w-md) {
+                align-items: flex-end;
+            }
         }
 
         &Bg {
             width: 100%;
             height: var(--app-height);
+            position: absolute;
 
             img {
                 position: absolute;
@@ -28,20 +38,24 @@
             bottom: 0;
 
             img {
-                max-width: clamp(120px, 36.46vw, 700px);
+                max-width: clamp(266px, 36.46vw, 700px);
             }
         }
 
         &Caption {
+            text-align: center;
             width: 100%;
             padding: 15px 46px;
-            margin-bottom: 73px;
             background: linear-gradient(180deg, #FFFFFF -25.62%, rgba(217, 246, 245, 0.5) 126.35%);
             @include font-pack($font_other, false, $font-weight-normal, $line-base, #2B2B2B);
             font-size: clamp(22px, 6.67vw, 128px);
             text-transform: uppercase;
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-            padding-left: calc(73px + clamp(120px, 36.46vw, 700px));
+
+            @include min-responsive($w-md) {
+                margin-bottom: 73px;
+                padding-left: calc(73px + clamp(120px, 30.46vw, 700px));
+            }
         }
     }
 
@@ -69,7 +83,23 @@
 
         &.--abs {
             position: absolute;
-            bottom: 160px;
+            bottom: 10px;
+            width: calc(100% - 30px);
+            margin: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            @include min-responsive($w-md) {
+                bottom: 160px;
+            }
+
+            @include min-responsive($w-xl) {
+                width: $width-container;
+
+                @include max-height($w-hmd) {
+                    width: $w-vlg;
+                }
+            }
         }
 
         &Wrap {
@@ -80,12 +110,18 @@
 
         &Img {
             position: absolute;
-            top: 50%;
+            bottom: 0;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, 0);
             opacity: 0;
             transition: opacity 0.6s ease;
             max-width: clamp(100%, 100vw * 1.413, 2713px);
+
+            @include min-responsive($w-md) {
+                bottom: unset;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
 
             &.active {
                 opacity: 1;
@@ -99,7 +135,11 @@
         &Emiliana {
             position: relative;
             width: 100%;
-            height: var(--app-height);
+            height: 350px;
+
+            @include min-responsive($w-md) {
+                height: var(--app-height);
+            }
         }
 
         &Grad {
@@ -112,6 +152,14 @@
 
             @include min-responsive($w-md) {
                 margin-top: 48px;
+            }
+
+            img {
+                order: 1;
+
+                @include min-responsive($w-md) {
+                    order: unset;
+                }
             }
         }
     }
@@ -159,23 +207,25 @@
     }
 
     &Fin {
-        padding-top: 28px;
         position: relative;
         background: linear-gradient(180deg, #E6F0DE 0%, #82C0C6 100%);
 
-        @include min-responsive($w-md) {
-            padding-top: 64px;
-        }
-
         &Happy {
             flex-direction: column;
-            min-height: var(--app-height);
+            padding-top: 48px;
+            padding-bottom: 48px;
+
+            @include min-responsive($w-md) {
+                padding-top: 50px;
+                padding-bottom: 50px;
+                min-height: var(--app-height);
+            }
         }
 
         &Img {
 
             img {
-                width: clamp(200px, 48.5vw, 931px);
+                width: clamp(80px, 48.5vw, 931px);
             }
         }
 
@@ -201,9 +251,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 48px;
+            gap: 16px;
+            padding-left: 0;
+            padding-right: 0;
 
             @include min-responsive($w-xxxl) {
+                gap: 48px;
                 width: 1400px;
             }
         }
@@ -225,16 +278,21 @@
                 z-index: 1;
                 border-style: solid;
                 border-color: transparent #EBD092;
-                border-width: 40px 40px 40px 0;
+                border-width: 10px 10px 10px 0;
                 top: 0;
-                left: -40px;
+                left: -10px;
                 margin-top: 80px;
+
+                @include min-responsive($w-md) {
+                    left: -40px;
+                    border-width: 40px 40px 40px 0;
+                }
             }
         }
 
         &Img {
             img {
-                max-width: clamp(120px, 22vw, 340px);
+                max-width: clamp(80px, 22vw, 340px);
                 flex: 1;
             }
         }
@@ -243,18 +301,26 @@
     &Change {
         position: relative;
         padding-top: 28px;
-        padding-bottom: 210px;
+        padding-bottom: 120px;
         background: linear-gradient(180deg, #E6F0DE 0%, #82C0C6 100%);
 
         @include min-responsive($w-md) {
             padding-top: 64px;
+            padding-bottom: 210px;
         }
 
         &Wrap {
-            min-height: 80vh;
+            flex-direction: column;
+
+            @include min-responsive($w-md) {
+                min-height: 80vh;
+                flex-direction: row;
+            }
         }
 
         &Before {
+            align-self: flex-start;
+
             .graphTitle {
                 transform: rotate(3deg);
             }
@@ -268,7 +334,10 @@
 
         &After {
             align-self: flex-end;
-            margin-left: -60px;
+
+            @include min-responsive($w-md) {
+                margin-left: -60px;
+            }
         }
 
         .graphTitle {

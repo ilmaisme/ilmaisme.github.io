@@ -3,15 +3,18 @@
     &Caption {
         position: relative;
         width: 100%;
-        padding: 15px 46px;
+        padding: 15px;
         @include font-pack($font_other, false, $font-weight-normal, $line-base, #2B2B2B);
         font-size: clamp(22px, 6.67vw, 128px);
         text-transform: uppercase;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
         text-align: center;
+        bottom: 76vh;
 
         @include min-responsive($w-md) {
             bottom: 500px;
+            padding-left: 46px;
+            padding-right: 46px;
 
             @include max-height(690px) {
                 bottom: 440px;
@@ -29,7 +32,8 @@
 
     &Box {
         position: relative;
-        bottom: 580px;
+        width: 320px;
+        bottom: 460px;
         padding: 15px 30px;
         background: #D7EDCE;
         border: 4px solid #78A782;
@@ -57,11 +61,14 @@
     }
 
     &Img {
-        position: relative;
-        bottom: 300px;
-        margin-left: 40px;
+        position: absolute;
+        bottom: 175px;
 
         @include min-responsive($w-md) {
+            position: relative;
+            margin-left: 40px;
+            bottom: 300px;
+
             @include max-height($w-md) {
                 bottom: 240px;
             }
@@ -86,7 +93,12 @@
     height: 100%;
     width: max-content;
     background: #B3DFFA url('../images/section-4/bg.png') repeat-x;
+    background-size: 24%;
     background-position: bottom left;
+
+    @include min-responsive($w-md) {
+        background-size: auto;
+    }
 }
 
 .panel {
@@ -97,16 +109,18 @@
     justify-content: center;
     // border-right: 2px solid #999;
 
-    &4 {
+    &7 {
         .section4Img {
+            bottom: 126px;
+
             @include min-responsive($w-md) {
                 @include max-height(690px) {
                     display: none;
                 }
-            }
 
-            @include max-height($w-md) {
-                bottom: 235px;
+                @include max-height($w-md) {
+                    bottom: 235px;
+                }
             }
         }
     }
@@ -114,13 +128,16 @@
 
 .ship {
     position: fixed;
-    bottom: 52px;
-    left: 52px;
+    bottom: 14px;
+    left: 14px;
     height: auto;
     z-index: 1000;
     pointer-events: none;
 
     @include min-responsive($w-md) {
+        bottom: 52px;
+        left: 52px;
+
         @include max-height($w-md) {
             left: 25px;
             bottom: 25px;
