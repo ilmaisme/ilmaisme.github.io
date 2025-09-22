@@ -262,7 +262,7 @@
             <div class="readWriter">Editor Kontemporer | 11 September 2021</div>
             <div class="flex-center jcontent-between mt20">
               <div class="readCta display-flex">
-                  <button class="button readLike" aria-label="Like this article"><span class="icon icon-clap"></span>22</button>
+                  <button class="button readLike" onclick="triggerActive('.-pConfirm')" aria-label="Like this article"><span class="icon icon-clap"></span>22</button>
                   <button class="button readComment" aria-label="Comment this article"
                       onclick="document.querySelector('[data-target=comment-section]').scrollIntoView({behavior: 'smooth'});"><span
                           class="icon icon-comment"></span>18</button>
@@ -484,7 +484,7 @@
           <div class="readCaption--big mt40">Komentar</div>
           <!-- s: komentar -->
           <div class="comment" data-target="comment-section">
-              <form class="mt10" action="">
+              <form class="mt10" onsubmit="event.preventDefault();triggerActive('.-pCommentSc')">
                   <div class="display-flex aitems-center">
                       <a href="#" class="user">
                           <img loading="lazy" src="asset/images/sample/user.jpg" width="24" height="24" alt=""
@@ -1142,6 +1142,51 @@
           </div>
       </div>
   </div>  <!-- e: popup report -->
+  <!-- s: popup confirm -->
+  <div class="popup popup--hidden flex-center -pConfirm">
+      <div class="popupWrap">
+          <button class="button buttonClose" aria-label="Close popup" data-modal-button="dismiss">
+              <span class="icon icon-close"></span>
+          </button>
+          <div class="popupTitle">
+              
+          </div>
+          <div class="popupContent">
+              <form action="">
+                  Like this Article?
+                  <div class="display-flex jcontent-end mt40">
+                      <button class="button buttonCancel" data-modal-button="dismiss" type="button">
+                          Cancel
+                      </button>
+                      <button class="button buttonSubmit" type="submit" name="submit">
+                          Like
+                      </button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>  <!-- e: popup confirm -->
+  <!-- s: popup confirm top -->
+  <div class="popup popup--hidden flex-center --top -pCommentSc">
+      <div class="popupWrap">
+          <button class="button buttonClose" aria-label="Close popup" data-modal-button="dismiss">
+              <span class="icon icon-close"></span>
+          </button>
+          <div class="popupTitle">
+              
+          </div>
+          <div class="popupContent">
+              <form action="">
+                  Your comment has been submitted
+                  <div class="display-flex jcontent-end mt40">
+                      <button class="button buttonSubmit" type="submit" name="submit">
+                          Ok
+                      </button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>  <!-- e: popup confirm top-->
 
   <!-- footer -->
   <footer>

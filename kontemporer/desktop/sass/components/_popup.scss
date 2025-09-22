@@ -12,17 +12,24 @@
         @include base_transition(all);
     }
 
+    &.--top {
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding-top: 100px;
+        padding-right: 30px;
+    }
+
     &.active,
     &.-active {
         visibility: visible;
         opacity: 1;
     }
 
-    &Title{
+    &Title {
         @include font-pack(false, 20px, 600, 18px, $cl_primary);
     }
 
-    &Wrap{
+    &Wrap {
         position: relative;
         background: $cl_white;
         padding: 30px;

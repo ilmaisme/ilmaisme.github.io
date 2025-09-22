@@ -136,13 +136,17 @@
         @include font-pack($font_read, 15px, 500, 1.6, $cl_black);
 
         &__video {
-            -webkit-line-clamp: 3;
             display: -webkit-box;
             -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            max-height: 6.5em;
             overflow: hidden;
 
             &.active {
-                -webkit-line-clamp: unset;
+                display: block;
+                overflow: visible;
+                max-height: none;
             }
         }
     }

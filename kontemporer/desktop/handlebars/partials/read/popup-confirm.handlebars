@@ -1,0 +1,25 @@
+<div class="popup popup--hidden flex-center{{#if pos}} --{{pos}}{{/if}}{{#if name}} -{{name}}{{/if}}">
+    <div class="popupWrap">
+        <button class="button buttonClose" aria-label="Close popup" data-modal-button="dismiss">
+            <span class="icon icon-close"></span>
+        </button>
+        <div class="popupTitle">
+            {{title}}
+        </div>
+        <div class="popupContent">
+            <form action="">
+                {{content}}
+                <div class="display-flex jcontent-end mt40">
+                    {{#if cancel}}
+                    <button class="button buttonCancel" data-modal-button="dismiss" type="button">
+                        {{cancel}}
+                    </button>
+                    {{/if}}
+                    <button class="button buttonSubmit" type="submit" name="submit">
+                        {{submit}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -239,7 +239,7 @@
                 <div class="readWriter">Editor Kontemporer | 11 September 2021</div>
                 <div class="flex-center jcontent-between mt20">
                     <div class="readCta display-flex">
-                        <button class="button readLike" aria-label="Like this article"><span class="icon icon-clap"></span>22</button>
+                        <button class="button readLike" onclick="triggerActive('.-pConfirm')" aria-label="Like this article"><span class="icon icon-clap"></span>22</button>
                         <button class="button readComment" aria-label="Comment this article"
                             onclick="document.querySelector('[data-target=comment-section]').scrollIntoView({behavior: 'smooth'});"><span
                                 class="icon icon-comment"></span>18</button>
@@ -385,7 +385,7 @@
             <div class="readCaption--big mt30">Tambahkan Komentar</div>
             <!-- s: komentar -->
             <div class="comment" data-target="comment-section">
-                <form class="mt10" action="">
+                <form class="mt10" onsubmit="event.preventDefault();triggerActive('.-pCommentSc')">
                     <div class="display-flex aitems-center">
                         <a href="#" class="user">
                             <img loading="lazy" src="asset/images/sample/user.jpg" width="24" height="24" alt=""
