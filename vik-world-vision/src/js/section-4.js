@@ -1,53 +1,108 @@
+// --- Register GSAP Plugins ---
 gsap.registerPlugin(ScrollTrigger);
+
+// --- Elements ---
+const scrollTrack = document.querySelector(".scroll-track");
+const ship = document.querySelector(".ship");
+const panels = Array.from(scrollTrack.children);
+
+// --- GSAP scrollTween variable (must be declared before functions) ---
+let scrollTween = null;
+
+// --- Image Preload & ScrollTrigger Refresh ---
 const images = document.querySelectorAll("img");
 let loadedCount = 0;
 
-images.forEach(img => {
-  if (img.complete) {
-    loadedCount++;
-  } else {
-    img.addEventListener("load", () => {
-      loadedCount++;
-      if (loadedCount === images.length) {
-        ScrollTrigger.refresh();
-      }
-    });
+function onImageLoaded() {
+  loadedCount++;
+  if (loadedCount === images.length) {
+    handleViewportChangeImmediate();
   }
-});
+}
 
-// If already all loaded
-if (loadedCount === images.length) {
+if (images.length === 0) {
+  loadedCount = 0;
+} else {
+  images.forEach(img => {
+    if (img.complete) {
+      onImageLoaded();
+    } else {
+      img.addEventListener("load", onImageLoaded);
+      img.addEventListener("error", onImageLoaded);
+    }
+  });
+}
+
+// --- Helpers ---
+function getViewportHeight() {
+  return window.visualViewport ? window.visualViewport.height : window.innerHeight;
+}
+
+// Update scroll-track height dynamically
+function updateScrollTrackHeight() {
+  scrollTrack.style.height = getViewportHeight() + "px";
+}
+
+// Update scroll-track width dynamically
+function updateScrollTrackWidth() {
+  const totalWidth = panels.reduce((sum, el) => sum + el.offsetWidth, 0);
+  scrollTrack.style.width = totalWidth + "px";
+}
+
+// Total horizontal scroll distance
+function getTotalScroll() {
+  return scrollTrack.scrollWidth - window.innerWidth;
+}
+
+// --- GSAP Animations ---
+function initHorizontalScroll() {
+  if (scrollTween) {
+    try { scrollTween.scrollTrigger.kill(); } catch (e) { }
+    try { scrollTween.kill(); } catch (e) { }
+  }
+
+  scrollTween = gsap.to(scrollTrack, {
+    x: () => -getTotalScroll(),
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".scroll-area",
+      start: "top top",
+      end: () => "+=" + getTotalScroll(),
+      scrub: true,
+      pin: true,
+      anticipatePin: 1
+    }
+  });
+}
+
+// --- One-shot & Debounced Viewport Handlers ---
+function handleViewportChangeImmediate() {
+  updateScrollTrackHeight();
+  updateScrollTrackWidth();
+  initHorizontalScroll();
   ScrollTrigger.refresh();
 }
 
-const scrollTrack = document.querySelector(".scroll-track");
-const ship = document.querySelector(".ship");
+function debounce(fn, wait = 120) {
+  let t;
+  return function (...args) {
+    clearTimeout(t);
+    t = setTimeout(() => fn.apply(this, args), wait);
+  };
+}
+const handleViewportChange = debounce(handleViewportChangeImmediate, 120);
 
-// total horizontal scroll = scrollTrack width - viewport width
-const totalScroll = scrollTrack.scrollWidth - window.innerWidth;
+// --- Listeners ---
+window.addEventListener("load", handleViewportChangeImmediate);
+window.addEventListener("resize", handleViewportChange);
+window.addEventListener("orientationchange", handleViewportChange);
 
-// Animate the horizontal panels
-gsap.to(scrollTrack, {
-    x: -totalScroll,
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".scroll-area",
-        start: "top top",
-        end: "+=" + totalScroll,
-        scrub: true,
-        pin: true,
-        anticipatePin: 1
-    }
-});
+if (window.visualViewport) {
+  window.visualViewport.addEventListener("resize", handleViewportChange);
+  window.visualViewport.addEventListener("scroll", updateScrollTrackHeight);
+}
 
-// Animate the ship across the viewport
-gsap.to(ship, {
-    x: () => window.innerWidth - ship.offsetWidth, // full width minus ship width
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".scroll-area",
-        start: "top top",
-        end: "+=" + totalScroll,
-        scrub: true
-    }
-});
+// --- If all images already loaded ---
+if (loadedCount === images.length) {
+  handleViewportChangeImmediate();
+}

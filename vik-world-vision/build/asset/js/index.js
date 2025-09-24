@@ -1,6 +1,8 @@
+/* ===============================
+   Preloader
+================================= */
 window.addEventListener("load", removePreloader);
 
-// preloader
 function removePreloader() {
   setTimeout(function () {
     const preloader = document.getElementById("preloader");
@@ -13,33 +15,61 @@ function removePreloader() {
       // after fadeOut finished
       setTimeout(function () {
         preloader.remove();
-      }, 200); 
+      }, 200);
     }
   }, 1500);
 }
 
-
+/* ===============================
+   GSAP + ScrollTrigger Setup
+================================= */
 gsap.registerPlugin(ScrollTrigger);
 
+// normalize scroll quirks on mobile
+ScrollTrigger.normalizeScroll(true);
+
+// keep updating on viewport changes
+if (window.visualViewport) {
+  window.visualViewport.addEventListener("resize", () => {
+    setAppHeight();
+    adjustLeafPosition();
+    resizeRipplesAndPosition();
+    ScrollTrigger.refresh();
+  });
+  window.visualViewport.addEventListener("scroll", () => {
+    setAppHeight();
+  });
+} else {
+  window.addEventListener("resize", () => {
+    setAppHeight();
+    adjustLeafPosition();
+    resizeRipplesAndPosition();
+    ScrollTrigger.refresh();
+  });
+}
+
+/* ===============================
+   Ripple + Leaf Logic
+================================= */
 let rippleTimeline = null;
 
 // Adjust leaf so droplet aligns horizontally with splash
 function adjustLeafPosition() {
-    const leafContainer = document.querySelector(".leaf-container");
-    const droplet = document.querySelector(".droplet");
-    const splash = document.querySelector(".splash");
+  const leafContainer = document.querySelector(".leaf-container");
+  const droplet = document.querySelector(".droplet");
+  const splash = document.querySelector(".splash");
 
-    if (!leafContainer || !droplet || !splash) return;
+  if (!leafContainer || !droplet || !splash) return;
 
-    leafContainer.style.right = "auto";
-    const leafRect = leafContainer.getBoundingClientRect();
-    const dropletRect = droplet.getBoundingClientRect();
-    const splashRect = splash.getBoundingClientRect();
+  leafContainer.style.right = "auto";
+  const leafRect = leafContainer.getBoundingClientRect();
+  const dropletRect = droplet.getBoundingClientRect();
+  const splashRect = splash.getBoundingClientRect();
 
-    const screenCenterX = window.innerWidth / 2;
-    const dropletOffsetX = dropletRect.left + dropletRect.width / 2 - leafRect.left;
-    const newRight = -(leafRect.width - dropletOffsetX - screenCenterX);
-    leafContainer.style.right = newRight + "px";
+  const screenCenterX = window.innerWidth / 2;
+  const dropletOffsetX = dropletRect.left + dropletRect.width / 2 - leafRect.left;
+  const newRight = -(leafRect.width - dropletOffsetX - screenCenterX);
+  leafContainer.style.right = newRight + "px";
 }
 
 // Resize ripples to 2× splash and align center
@@ -50,10 +80,10 @@ function resizeRipplesAndPosition() {
   const rippleShapes = document.querySelectorAll(".ripple");
   const scene = document.querySelector(".scroll-scene");
 
-  if (!splash || !bg || !ripplesContainer) return;
+  if (!splash || !bg || !ripplesContainer || !scene) return;
 
   const splashRect = splash.getBoundingClientRect();
-  const sceneRect  = scene.getBoundingClientRect();
+  const sceneRect = scene.getBoundingClientRect();
 
   // 1) Background position
   const splashCenterY_relScene = (splashRect.top - sceneRect.top) + (splashRect.height / 2);
@@ -64,7 +94,7 @@ function resizeRipplesAndPosition() {
 
   // 2) Splash center in bg space
   const splashCenterX = splashRect.left + (splashRect.width / 2);
-  const splashCenterY = splashRect.top  + (splashRect.height / 2);
+  const splashCenterY = splashRect.top + (splashRect.height / 2);
 
   const centerX_relBg = splashCenterX - bgRect.left;
   let centerY_relBg = splashCenterY - bgRect.top;
@@ -79,7 +109,7 @@ function resizeRipplesAndPosition() {
 
   // 4) Place ripples
   ripplesContainer.style.left = centerX_relBg + "px";
-  ripplesContainer.style.top  = centerY_relBg + "px";
+  ripplesContainer.style.top = centerY_relBg + "px";
 
   // 5) Ripple sizing
   const rippleW = Math.max(120, splashRect.width * 2);
@@ -89,74 +119,81 @@ function resizeRipplesAndPosition() {
     r.style.width = rippleW + "px";
     r.style.height = rippleH + "px";
     r.style.left = "0px";
-    r.style.top  = "0px";
+    r.style.top = "0px";
     r.style.transform = "translate(-50%, -50%)";
   });
 }
 
 // Ripple animation
 function startRipples() {
-    if (rippleTimeline) return;
+  if (rippleTimeline) return;
 
-    gsap.set(".ripple", { opacity: 0.9, scaleX: 0.4, scaleY: 0.15 });
+  gsap.set(".ripple", { opacity: 0.9, scaleX: 0.4, scaleY: 0.15 });
 
-    rippleTimeline = gsap.timeline({ repeat: -1 });
-    [".ripple1", ".ripple2", ".ripple3"].forEach((cls, i) => {
-        rippleTimeline.fromTo(
-            cls,
-            { scaleX: 0.4, scaleY: 0.15, opacity: 0.9 },
-            { scaleX: 1.5, scaleY: 0.5, opacity: 0, duration: 3, ease: "none" },
-            i * 1.0
-        );
-    });
+  rippleTimeline = gsap.timeline({ repeat: -1 });
+  [".ripple1", ".ripple2", ".ripple3"].forEach((cls, i) => {
+    rippleTimeline.fromTo(
+      cls,
+      { scaleX: 0.4, scaleY: 0.15, opacity: 0.9 },
+      { scaleX: 1.5, scaleY: 0.5, opacity: 0, duration: 3, ease: "none" },
+      i * 1.0
+    );
+  });
 }
 
 function stopRipples() {
-    if (rippleTimeline) {
-        rippleTimeline.kill();
-        rippleTimeline = null;
-    }
-    gsap.set(".ripple", { opacity: 0 });
+  if (rippleTimeline) {
+    rippleTimeline.kill();
+    rippleTimeline = null;
+  }
+  gsap.set(".ripple", { opacity: 0 });
 }
 
 // Droplet Y offset
 function getDropYOffset() {
-    const splash = document.querySelector(".splash").getBoundingClientRect();
-    const droplet = document.querySelector(".droplet").getBoundingClientRect();
-    return (splash.top + splash.height / 2 + window.scrollY) -
-        (droplet.top + droplet.height / 2 + window.scrollY);
+  const splashRect = document.querySelector(".splash").getBoundingClientRect();
+  const dropletRect = document.querySelector(".droplet").getBoundingClientRect();
+
+  // visualViewport values
+  const vvTop = window.visualViewport ? window.visualViewport.offsetTop : 0;
+  const vvScrollY = window.scrollY;
+
+  const splashCenterY = splashRect.top + splashRect.height / 2 + vvScrollY + vvTop;
+  const dropletCenterY = dropletRect.top + dropletRect.height / 2 + vvScrollY + vvTop;
+
+  return splashCenterY - dropletCenterY;
 }
 
+/* ===============================
+   Init on load/resize
+================================= */
 window.addEventListener("load", () => {
-    adjustLeafPosition();
-    resizeRipplesAndPosition();
-    ScrollTrigger.refresh();
-});
-window.addEventListener("resize", () => {
-    adjustLeafPosition();
-    resizeRipplesAndPosition();
-    ScrollTrigger.refresh();
+  adjustLeafPosition();
+  resizeRipplesAndPosition();
+  ScrollTrigger.refresh();
 });
 
-// Scroll timeline
+/* ===============================
+   Scroll Timeline
+================================= */
 let tl = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".scroll-scene",
-        start: "top top",
-        end: "80% center",
-        scrub: true
-    }
+  scrollTrigger: {
+    trigger: ".scroll-scene",
+    start: "top top",
+    end: "80% center",
+    scrub: true
+  }
 });
 
 tl.to(".droplet", {
-    y: () => getDropYOffset(),
-    ease: "power1.in"
+  y: () => getDropYOffset(),
+  ease: "power1.in"
 }).add("land");
 
 tl.to([".splash", ".caption", ".ripples"], {
-    opacity: 1,
-    duration: 0.6,
-    ease: "power1.out",
-    onStart: startRipples,
-    onReverseComplete: stopRipples
+  opacity: 1,
+  duration: 0.6,
+  ease: "power1.out",
+  onStart: startRipples,
+  onReverseComplete: stopRipples
 }, "land-=0.01");

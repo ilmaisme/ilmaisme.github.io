@@ -1,8 +1,17 @@
 /* s: Get HEIGHT Device */
 function setAppHeight() {
-  document.documentElement.style.setProperty('--app-height', window.innerHeight + 'px');
+  const appHeight = window.visualViewport
+    ? window.visualViewport.height
+    : window.innerHeight;
+  document.documentElement.style.setProperty("--app-height", `${appHeight}px`);
 }
 
-window.addEventListener('resize', setAppHeight);
 setAppHeight();
+
+if (window.visualViewport) {
+  window.visualViewport.addEventListener("resize", setAppHeight);
+  window.visualViewport.addEventListener("scroll", setAppHeight);
+} else {
+  window.addEventListener("resize", setAppHeight);
+}
 /* e: Get HEIGHT Device */
