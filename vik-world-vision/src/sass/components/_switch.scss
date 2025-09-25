@@ -1,0 +1,86 @@
+.switch {
+    position: relative;
+    margin-right: 8px;
+    cursor: pointer;
+
+    @include min-responsive($w-md) {
+        margin-right: 20px;
+    }
+
+    input {
+        display: none;
+
+        &:checked~.switchSlider {
+            background: #81C3D9;
+
+            &::after {
+                translate: 2px 0;
+
+                @include min-responsive($w-md) {
+                    translate: 0;
+                }
+            }
+        }
+
+        &:checked~.switchTxt {
+            transform: translateX(26px);
+
+            @include min-responsive($w-md) {
+                transform: translateX(32px);
+            }
+        }
+    }
+
+    &Slider {
+        display: block;
+        width: 56px;
+        height: 27px;
+        padding: 3px;
+        border-radius: 15px;
+        border: 2px solid #ffffff;
+        background: #B2CC72;
+        cursor: pointer;
+        transition: 0.3s;
+
+        @include min-responsive($w-md) {
+            width: 70px;
+            height: 32px;
+            border: 3px solid #ffffff;
+        }
+
+        &::after {
+            content: "";
+            display: inherit;
+            width: 14px;
+            height: 14px;
+            top: 1px;
+            position: relative;
+            border-radius: 12px;
+            background: #D9D9D9;
+            box-shadow: 0px 0.5px 0.5px 0px rgba(0, 0, 0, 0.25);
+            translate: 30px 0;
+            transition: 0.3s;
+            
+            @include min-responsive($w-md) {
+                width: 20px;
+                height: 20px;
+                top: 0;
+                translate: 37px 0;
+            }
+        }
+    }
+
+    &Txt {
+        position: absolute;
+        top: 3px;
+        transform: translateX(12px);
+        @include font-pack($font_caption, 16px, $font-weight-normal, $line-base, $cl-primary);
+        text-shadow: -0.05em -0.05em 0 #fff, 0.05em -0.05em 0 #fff, -0.05em 0.05em 0 #fff, 0.05em 0.05em 0 #fff, 0 -0.05em 0 #fff, 0 0.05em 0 #fff, -0.05em 0 0 #fff, 0.05em 0 0 #fff, 0 0 0.15em #fff, 0 0 0.25em #fff;
+        transition: 0.3s;
+
+        @include min-responsive($w-md) {
+            top: 2px;
+            font-size: 22px;
+        }
+    }
+}
