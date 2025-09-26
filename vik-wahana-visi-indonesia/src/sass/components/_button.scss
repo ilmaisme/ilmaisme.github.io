@@ -1,0 +1,100 @@
+.button {
+    color: inherit;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &Next {
+        display: block;
+        text-transform: uppercase;
+        background: #81C3D9;
+        border: 3px solid $cl-white;
+        border-radius: clamp(16px, 1.67vw, 32px);
+        padding:
+            clamp(10px, 1.04vw, 20px) clamp(22px,
+                calc(22px + (34 - 22) * ((100vw - 428px) / (1980 - 428))),
+                34px);
+        font-size: 16px;
+
+        @include min-responsive($w-md) {
+            font-size: 36px;
+        }
+
+        &:hover {
+            background: #D9C681;
+        }
+
+        &Wrap {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &Prev {
+        @extend .buttonNext;
+        background: #B2CC72;
+    }
+}
+
+// .scroll-guide {
+//     position: absolute;
+//     bottom: 3%;
+//     right: 25px;
+//     z-index: 999;
+//     flex-direction: column;
+//     color: white;
+//     font-size: 16px;
+//     @include base_transition(all, .2s);
+//     animation: up-down-2 1s ease-in-out alternate infinite;
+
+//     .icon-scroll {
+//         width: 20px;
+//         height: 32px;
+
+//         &:before {
+//             left: 0;
+//             right: 0;
+//             margin: 0 auto;
+//             width: 6px;
+//             height: 6px;
+//         }
+//     }
+
+//     &.-black {
+//         color: #58595B;
+
+//         .icon-scroll {
+//             border: 2px solid #58595B;
+
+//             &:before {
+//                 background-color: #58595B;
+//             }
+//         }
+//     }
+// }
+
+// .icon {
+//     &-scroll {
+//         position: relative;
+//         border-radius: 50px;
+//         width: 14px;
+//         height: 20px;
+//         border: 2px solid $cl-white;
+
+//         &:before {
+//             content: "";
+//             position: absolute;
+//             top: 0;
+//             left: 50%;
+//             width: 2px;
+//             height: 5px;
+//             margin-left: -1px;
+//             background-color: $cl-white;
+//             border-radius: 10px;
+//             -webkit-animation: scrolldown 2s infinite;
+//             animation: scrolldown 2s infinite;
+//         }
+//     }
+
+// }

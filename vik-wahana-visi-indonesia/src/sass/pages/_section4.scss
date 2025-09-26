@@ -1,0 +1,222 @@
+.section4 {
+
+    &Caption {
+        position: relative;
+        width: 100%;
+        padding: 15px;
+        @include font-pack($font_other, false, $font-weight-normal, $line-base, #2B2B2B);
+        font-size: clamp(22px, 6.67vw, 128px);
+        text-transform: uppercase;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        bottom: 73vh;
+
+        @include min-responsive($w-md) {
+            bottom: 500px;
+            padding-left: 46px;
+            padding-right: 46px;
+
+            @include max-height(690px) {
+                bottom: 440px;
+            }
+
+            @include min-height($w-md) {
+                bottom: 470px;
+            }
+
+            @include min-height($w-hlg) {
+                bottom: 580px;
+            }
+        }
+    }
+
+    &Box {
+        position: relative;
+        width: 320px;
+        bottom: 460px;
+        padding: 15px 30px;
+        background: #D7EDCE;
+        border: 4px solid #78A782;
+        border-radius: clamp(16px, 1.67vw, 32px);
+        font-weight: $font-weight-bold;
+
+        @include min-responsive($w-md) {
+            width: 570px;
+            min-height: 236px;
+            bottom: 340px;
+
+            @include min-height($w-md) {
+                bottom: 440px;
+            }
+
+            @include min-height($w-hlg) {
+                bottom: 580px;
+            }
+        }
+
+        @include range-responsive($w-md, $w-vlg) {
+            bottom: 650px;
+        }
+
+        &.--grey {
+            background: #D9D9D9;
+            border-color: #D9D9D9;
+
+            a {
+                display: block;
+                width: 100%;
+                height: 10%;
+            }
+        }
+
+        &.--credit {
+            bottom: unset;
+            background: rgba(54, 54, 54, 0.8);
+            border: 0;
+
+            @include min-responsive($w-xl) {
+                bottom: 100px
+            }
+        }
+    }
+
+    &Img {
+        position: absolute;
+        bottom: 180px;
+        z-index: 1;
+
+        picture {
+            display: block;
+        }
+
+        @include min-responsive($w-md) {
+            position: relative;
+            margin-left: 40px;
+            bottom: 300px;
+
+            @include max-height($w-md) {
+                bottom: 240px;
+            }
+        }
+
+        @include range-responsive($w-md, $w-vlg) {
+            position: absolute;
+            margin-left: 0;
+        }
+    }
+}
+
+.scroll-area {
+    position: relative;
+    width: 100%;
+    height: var(--app-height);
+    overflow: hidden;
+}
+
+.scroll-inner {
+    position: relative;
+    height: 100%;
+}
+
+.scroll-track {
+    display: flex;
+    height: var(--app-height);
+    width: max-content;
+    background: #B3DFFA url('../images/section-4/bg.png') repeat-x;
+    background-size: auto 100%;
+    background-position: bottom left;
+
+    @include min-responsive($w-md) {
+        background-size: auto;
+    }
+}
+
+.panel {
+    position: relative;
+    flex: 0 0 100vw;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    // border-right: 2px solid #999;
+    &3 {
+        img {
+            min-width: 271px;
+        }
+    }
+
+    &4 {
+        img {
+            min-width: 395px;
+        }
+    }
+
+    &5 {
+        img {
+            min-width: 131px;
+        }
+    }
+
+    &7 {
+        img {
+            min-width: 213px;
+        }
+
+        .section4Img {
+            bottom: 180px;
+            margin-left: 460px;
+
+            @include min-responsive($w-md) {
+                bottom: 246px;
+                margin-left: 0;
+
+                @include max-height(690px) {
+                    display: none;
+                }
+
+                @include max-height($w-md) {
+                    bottom: 235px;
+                }
+            }
+
+            @include range-responsive($w-md, $w-vlg) {
+                bottom: 234px;
+                margin-left: 40px;
+            }
+        }
+    }
+
+    &8 {
+        .section4Box {
+            bottom: 490px;
+
+            @include min-responsive($w-md) {
+                bottom: 460px;
+            }
+        }
+    }
+
+    &9 {
+        align-items: center;
+    }
+}
+
+.ship {
+    position: fixed;
+    bottom: 14px;
+    left: 14px;
+    height: auto;
+    z-index: 1000;
+    pointer-events: none;
+
+    @include min-responsive($w-md) {
+        bottom: 52px;
+        left: 52px;
+
+        @include max-height($w-md) {
+            left: 25px;
+            bottom: 25px;
+        }
+    }
+}
