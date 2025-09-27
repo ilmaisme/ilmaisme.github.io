@@ -24,7 +24,7 @@ images.forEach(img => {
 
 // --- Text + Image Switch ---
 const boxTexts = document.querySelectorAll(".section3BoxJs");
-const boxImgs  = document.querySelectorAll(".section3BoxImg");
+const boxImgs = document.querySelectorAll(".section3BoxImg");
 
 if (boxTexts.length && boxImgs.length) {
   ScrollTrigger.create({
@@ -74,3 +74,39 @@ if (boxTexts.length && boxImgs.length) {
     img.classList.toggle("active", i === 0);
   });
 }
+
+//--- Image Zoom in ---
+document.querySelectorAll(".section3LetterItem img, .section3ChangeImg").forEach((img) => {
+  gsap.fromTo(
+    img,
+    { scale: 0.8, opacity: 0 },
+    {
+      scale: 1,
+      opacity: 1,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: img,
+        start: "top 80%",
+        end: "top 50%",
+        scrub: true,
+      },
+    }
+  );
+});
+
+//--- Text slide-in from left ---
+gsap.utils.toArray(".section3QuoteTxt, .section3CoverCaption span").forEach((txt) => {
+  gsap.from(txt, {
+    x: -100,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: txt,
+      start: "top 85%",
+      toggleActions: "play none none reverse"
+      // play on enter, reverse on leave
+    }
+  });
+});

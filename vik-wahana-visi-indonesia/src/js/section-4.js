@@ -5,6 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 const scrollTrack = document.querySelector(".scroll-track");
 const ship = document.querySelector(".ship");
 const panels = Array.from(scrollTrack.children);
+const section4Boxes = gsap.utils.toArray(".section4Box");
 
 // --- GSAP scrollTween variable (must be declared before functions) ---
 let scrollTween = null;
@@ -106,3 +107,19 @@ if (window.visualViewport) {
 if (loadedCount === images.length) {
   handleViewportChangeImmediate();
 }
+
+gsap.from(section4Boxes, {
+  x: -150,
+  opacity: 0,
+  ease: "power2.out",
+  stagger: {
+    each: 1, // space out across scroll
+  },
+  scrollTrigger: {
+    trigger: ".scroll-area",
+    start: "top top",
+    end: () => "+=" + getTotalScroll(),
+    scrub: true,
+    markers: true,
+  }
+});

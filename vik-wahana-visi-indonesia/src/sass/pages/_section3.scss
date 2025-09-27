@@ -57,6 +57,10 @@
                 margin-bottom: 73px;
                 padding-left: calc(73px + clamp(120px, 30.46vw, 700px));
             }
+
+            span {
+                display: block;
+            }
         }
     }
 
@@ -75,6 +79,7 @@
     }
 
     &Box {
+        width: 100%;
         background: #F9FFD2;
         padding: clamp(16px, 4.84vw, 93px) clamp(20px, 5.73vw, 110px);
         border-radius: clamp(12px, 1.67vw, 32px);
@@ -96,7 +101,7 @@
 
             @include min-responsive($w-xl) {
                 bottom: 160px;
-                width: $width-container;
+                width: calc(1100px - 30px);
 
                 @include max-height($w-hmd) {
                     width: $w-vlg;
@@ -208,12 +213,15 @@
 
             img {
                 max-width: 100%;
+                transform-origin: center center;
+                will-change: transform, opacity;
             }
         }
     }
 
     &Fin {
         position: relative;
+        overflow: hidden;
         background: linear-gradient(180deg, #E6F0DE 0%, #82C0C6 100%);
 
         &Happy {
@@ -229,9 +237,67 @@
         }
 
         &Img {
+            position: relative;
 
             img {
                 width: clamp(80px, 48.5vw, 931px);
+            }
+        }
+
+        &Star {
+            position: absolute;
+            width: 317px;
+            height: 317px;
+            background: url(../images/section-3/stars.png) center no-repeat;
+            background-size: 18vw;
+            animation: wiggle 2s infinite ease-in-out, blink 3s infinite alternate;
+
+            @include min-responsive($w-md) {
+                background-size: 28vh;
+            }
+
+            &:first-child() {
+                top: -22vh;
+                left: -200px;
+                transform: rotate(32deg);
+                animation-delay: 0s, 0s;
+
+                @include min-responsive($w-md) {
+                    top: -12vh;
+                    left: -25vw;
+                }
+            }
+
+            &:nth-child(2) {
+                top: -6vh;
+                right: -190px;
+                animation-delay: 0.5s, 1s;
+
+                @include min-responsive($w-md) {
+                    right: -25vw;
+                }
+            }
+
+            &:nth-child(3) {
+                bottom: -20vh;
+                left: -200px;
+                animation-delay: 1s, 2s;
+
+                @include min-responsive($w-md) {
+                    left: -22vw;
+                    bottom: -10vh;
+                }
+            }
+
+            &:nth-child(4) {
+                bottom: -8vh;
+                right: -210px;
+                transform: rotate(50deg);
+                animation-delay: 1.5s, 0.5s;
+
+                @include min-responsive($w-md) {
+                    right: -20vw;
+                }
             }
         }
 
@@ -333,17 +399,20 @@
         }
 
         &After {
-            .graphTitle {
-                transform: rotate(-7deg);
-            }
-        }
-
-        &After {
             align-self: flex-end;
 
             @include min-responsive($w-md) {
                 margin-left: -60px;
             }
+
+            .graphTitle {
+                transform: rotate(-7deg);
+            }
+        }
+
+        &Img {
+            transform-origin: center center;
+            will-change: transform, opacity;
         }
 
         .graphTitle {
@@ -401,5 +470,38 @@
 
     .buttonNextWrap {
         margin-top: 20px;
+    }
+}
+
+@keyframes wiggle {
+
+    0%,
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: rotate(-8deg) scale(1.05);
+    }
+
+    50% {
+        transform: rotate(8deg) scale(0.95);
+    }
+
+    75% {
+        transform: rotate(-6deg) scale(1.02);
+    }
+}
+
+/* Blink */
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
     }
 }

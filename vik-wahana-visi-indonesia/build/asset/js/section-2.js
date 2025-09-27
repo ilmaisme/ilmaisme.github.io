@@ -88,3 +88,22 @@ function setupTextSwitch(trigger, selector, switchPoint = 0.5) {
 // Apply text switch
 setupTextSwitch(".section2BoxWrap", ".section2BoxTxt", 0.5);
 setupTextSwitch(".section2Content2", ".section2Digi", 0.6);
+
+document.querySelectorAll(".section2Road img, .section2Graph img, .section2ListNum").forEach((img) => {
+    gsap.fromTo(
+        img,
+        { scale: 0.8, opacity: 0 },
+        {
+            scale: 1,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: img,
+                start: "top 80%",
+                end: "top 50%",
+                scrub: true,
+            },
+        }
+    );
+});
