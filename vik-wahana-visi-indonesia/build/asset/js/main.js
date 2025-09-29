@@ -16,6 +16,8 @@ if (window.visualViewport) {
 }
 /* e: Get HEIGHT Device */
 
+localStorage.removeItem("lang");
+
 //-- Language toggle switch --//
 const toggle = document.getElementById("langToggle");
 const switchTxt = document.querySelector(".switchTxt");
@@ -23,6 +25,7 @@ const switchTxt = document.querySelector(".switchTxt");
 // Detect current path + file
 const pathParts = window.location.pathname.split("/");
 const currentFile = pathParts.pop() || "index.html";
+// const basePath = "/";
 const basePath = "/vik-wahana-visi-indonesia/build/";
 const isEnglishPage = pathParts.includes("en");
 
