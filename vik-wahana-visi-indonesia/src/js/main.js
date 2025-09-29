@@ -24,12 +24,8 @@ const switchTxt = document.querySelector(".switchTxt");
 const pathParts = window.location.pathname.split("/");
 const currentFile = pathParts.pop() || "index.html";
 
-// Dynamically set basePath
-let basePath = "/";
-if (window.location.hostname.includes("github.io")) {
-  basePath = "/vik-wahana-visi-indonesia/build/";
-}
-
+const basePathEN = "https://ilmaisme.github.io/vik-wahana-visi-indonesia/build/en/";
+const basePathID = "https://ilmaisme.github.io/vik-wahana-visi-indonesia/build/";
 const isEnglishPage = pathParts.includes("en");
 
 // --- On load, restore from localStorage ---
@@ -40,9 +36,9 @@ if (savedLang) {
 
   // Redirect if saved language doesn’t match current URL
   if (savedLang === "en" && !isEnglishPage) {
-    window.location.replace(basePath + "en/" + currentFile);
+    window.location.replace(basePathEN + currentFile);
   } else if (savedLang === "id" && isEnglishPage) {
-    window.location.replace(basePath + currentFile);
+    window.location.replace(basePathID + currentFile);
   }
 } else {
   // Initialize text based on current page
@@ -57,26 +53,26 @@ toggle.addEventListener("change", () => {
   switchTxt.textContent = newLang.toUpperCase();
 
   if (newLang === "en" && !isEnglishPage) {
-    window.location.href = basePath + "en/" + currentFile;
+    window.location.href = basePathEN + currentFile;
   } else if (newLang === "id" && isEnglishPage) {
-    window.location.href = basePath + currentFile;
+    window.location.href = basePathID + currentFile;
   }
 });
 
-// --- Fix Next/Prev links based on language ---
+// --- Fix next/prev links based on language ---
 const savedLangForLinks = localStorage.getItem("lang") || (isEnglishPage ? "en" : "id");
 
 document.querySelectorAll(".buttonNextWrap a").forEach(link => {
   let href = link.getAttribute("href"); // e.g. "/section-2.html" or "index.html"
 
   if (href) {
-    // Remove any leading slash for consistency
+    // Remove any leading slash
     href = href.replace(/^\/+/, "");
 
     if (savedLangForLinks === "en") {
-      link.setAttribute("href", basePath + "en/" + href);
+      link.setAttribute("href", basePathEN + href);
     } else {
-      link.setAttribute("href", basePath + href);
+      link.setAttribute("href", basePathID + href);
     }
   }
 });
