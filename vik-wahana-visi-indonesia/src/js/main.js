@@ -16,8 +16,6 @@ if (window.visualViewport) {
 }
 /* e: Get HEIGHT Device */
 
-//localStorage.removeItem("lang");
-
 //-- Language toggle switch --//
 const toggle = document.getElementById("langToggle");
 const switchTxt = document.querySelector(".switchTxt");
@@ -25,8 +23,13 @@ const switchTxt = document.querySelector(".switchTxt");
 // Detect current path + file
 const pathParts = window.location.pathname.split("/");
 const currentFile = pathParts.pop() || "index.html";
-// const basePath = "/";
-const basePath = "/vik-wahana-visi-indonesia/build/";
+
+// Dynamically set basePath
+let basePath = "/";
+if (window.location.hostname.includes("github.io")) {
+  basePath = "/vik-wahana-visi-indonesia/build/";
+}
+
 const isEnglishPage = pathParts.includes("en");
 
 // --- On load, restore from localStorage ---
@@ -57,5 +60,20 @@ toggle.addEventListener("change", () => {
     window.location.href = basePath + "en/" + currentFile;
   } else if (newLang === "id" && isEnglishPage) {
     window.location.href = basePath + currentFile;
+  }
+});
+
+// --- Fix next/prev links based on language ---
+const savedLangForLinks = localStorage.getItem("lang") || (isEnglishPage ? "en" : "id");
+document.querySelectorAll(".buttonNextWrap a").forEach(link => {
+  const href = link.getAttribute("href");
+
+  // only update if it's a relative link
+  if (href && href.includes("section-")) {
+    if (savedLangForLinks === "en" && !href.includes("/en/")) {
+      link.setAttribute("href", basePath + "en/" + href.replace(basePath, ""));
+    } else if (savedLangForLinks === "id" && href.includes("/en/")) {
+      link.setAttribute("href", href.replace("/en/", "/"));
+    }
   }
 });
