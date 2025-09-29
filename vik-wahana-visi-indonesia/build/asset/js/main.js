@@ -20,29 +20,6 @@ if (window.visualViewport) {
 const toggle = document.getElementById("langToggle");
 const switchTxt = document.querySelector(".switchTxt");
 
-// --- Get current path and file ---
-let pathParts = window.location.pathname.split("/");
-let currentFile = pathParts.pop() || "index.html"; // if "" (root), use index.html
-
-// --- Check if we're in /en/ directory ---
-const isEnglishPage = window.location.pathname.startsWith("/en/");
-
-// --- Load saved lang (default = id) ---
-const savedLang = localStorage.getItem("lang") || "id";
-toggle.checked = (savedLang === "en");
-switchTxt.textContent = savedLang.toUpperCase();
-
-// --- Redirect on first load if needed ---
-if (savedLang === "en" && !isEnglishPage) {
-  window.location.href = "/en/" + currentFile;
-} else if (savedLang === "id" && isEnglishPage) {
-  window.location.href = "/" + currentFile;
-}
-
-// --- Handle toggle changes ---
-const toggle = document.getElementById("langToggle");
-const switchTxt = document.querySelector(".switchTxt");
-
 // Detect current path + file
 const pathParts = window.location.pathname.split("/");
 const currentFile = pathParts.pop() || "index.html";
