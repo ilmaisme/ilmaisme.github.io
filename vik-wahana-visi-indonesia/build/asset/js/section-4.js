@@ -120,6 +120,6 @@ gsap.from(section4Boxes, {
     start: "top top",
     end: () => "+=" + getTotalScroll(),
     scrub: true,
-    markers: true,
+    markers: false,
   }
 });
