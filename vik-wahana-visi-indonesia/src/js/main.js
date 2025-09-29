@@ -63,17 +63,20 @@ toggle.addEventListener("change", () => {
   }
 });
 
-// --- Fix next/prev links based on language ---
+// --- Fix Next/Prev links based on language ---
 const savedLangForLinks = localStorage.getItem("lang") || (isEnglishPage ? "en" : "id");
-document.querySelectorAll(".buttonNextWrap a").forEach(link => {
-  const href = link.getAttribute("href");
 
-  // only update if it's a relative link
-  if (href && href.includes("section-")) {
-    if (savedLangForLinks === "en" && !href.includes("/en/")) {
-      link.setAttribute("href", basePath + "en/" + href.replace(basePath, ""));
-    } else if (savedLangForLinks === "id" && href.includes("/en/")) {
-      link.setAttribute("href", href.replace("/en/", "/"));
+document.querySelectorAll(".buttonNextWrap a").forEach(link => {
+  let href = link.getAttribute("href"); // e.g. "/section-2.html" or "index.html"
+
+  if (href) {
+    // Remove any leading slash for consistency
+    href = href.replace(/^\/+/, "");
+
+    if (savedLangForLinks === "en") {
+      link.setAttribute("href", basePath + "en/" + href);
+    } else {
+      link.setAttribute("href", basePath + href);
     }
   }
 });
