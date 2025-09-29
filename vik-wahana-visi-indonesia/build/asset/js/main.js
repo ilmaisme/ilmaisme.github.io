@@ -16,7 +16,7 @@ if (window.visualViewport) {
 }
 /* e: Get HEIGHT Device */
 
-localStorage.removeItem("lang");
+//localStorage.removeItem("lang");
 
 //-- Language toggle switch --//
 const toggle = document.getElementById("langToggle");
