@@ -24,10 +24,10 @@ const switchTxt = document.querySelector(".switchTxt");
 const pathParts = window.location.pathname.split("/");
 const currentFile = pathParts.pop() || "index.html";
 
-const basePathEN = "/en/";
-const basePathID = "/";
-// const basePathEN = "https://ilmaisme.github.io/vik-wahana-visi-indonesia/build/en/";
-// const basePathID = "https://ilmaisme.github.io/vik-wahana-visi-indonesia/build/";
+// const basePathEN = "/en/";
+// const basePathID = "/";
+const basePathEN = "https://ilmaisme.github.io/vik-wahana-visi-indonesia/build/en/";
+const basePathID = "https://ilmaisme.github.io/vik-wahana-visi-indonesia/build/";
 const isEnglishPage = pathParts.includes("en");
 
 // --- On load, restore from localStorage ---
