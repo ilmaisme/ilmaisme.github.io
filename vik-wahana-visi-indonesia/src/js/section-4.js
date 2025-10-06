@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 const scrollTrack = document.querySelector(".scroll-track");
 const ship = document.querySelector(".ship");
 const panels = Array.from(scrollTrack.children);
-const section4Boxes = gsap.utils.toArray(".section4Box");
+const section4Boxes = gsap.utils.toArray(".section4Box:not(.--grey)");
 
 // --- GSAP scrollTween variable (must be declared before functions) ---
 let scrollTween = null;
@@ -65,6 +65,7 @@ function initHorizontalScroll() {
   scrollTween = gsap.to(scrollTrack, {
     x: () => -getTotalScroll(),
     ease: "none",
+    force3D: true,
     scrollTrigger: {
       trigger: ".scroll-area",
       start: "top top",
@@ -95,11 +96,15 @@ const handleViewportChange = debounce(handleViewportChangeImmediate, 120);
 
 // --- Listeners ---
 window.addEventListener("load", handleViewportChangeImmediate);
-window.addEventListener("resize", handleViewportChange);
+// window.addEventListener("resize", function(){
+//   console.log('resize nih')
+//   //window.location.reload();
+// });
+// window.addEventListener("resize", handleViewportChange);
 window.addEventListener("orientationchange", handleViewportChange);
 
 if (window.visualViewport) {
-  window.visualViewport.addEventListener("resize", handleViewportChange);
+  // window.visualViewport.addEventListener("resize", handleViewportChange);
   window.visualViewport.addEventListener("scroll", updateScrollTrackHeight);
 }
 
@@ -112,13 +117,14 @@ gsap.from(section4Boxes, {
   x: -150,
   opacity: 0,
   ease: "power2.out",
+  duration: 1,
   stagger: {
-    each: 1, // space out across scroll
+    each: 1
   },
   scrollTrigger: {
     trigger: ".scroll-area",
     start: "top top",
-    end: () => "+=" + getTotalScroll(),
+    end: "bottom center",
     scrub: true,
     markers: false,
   }

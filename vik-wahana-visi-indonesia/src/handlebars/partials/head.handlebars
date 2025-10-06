@@ -9,22 +9,22 @@
     <meta name="author" content="kompas.com">
     <meta name="publisher" content="kompas.com">
     <meta name="google" content="notranslate">
-    <title>{{site.name}}</title>
-    <meta name="description" content="{{site.description}}">
-    <meta name="keywords" content="{{site.keywords}}">
+    <title>{{#if en}}{{site_en.name}}{{else}}{{site.name}}{{/if}}</title>
+    <meta name="description" content="{{#if en}}{{site_en.description}}{{else}}{{site.description}}{{/if}}">
+    <meta name="keywords" content="{{#if en}}{{site_en.keywords}}{{else}}{{site.keywords}}{{/if}}">
 
-    <meta name="language" content="id" />
+    <meta name="language" content="{{#if en}}en{{else}}id{{/if}}" />
     <meta name="geo.country" content="id" />
-    <meta http-equiv="content-language" content="In-Id" />
+    <meta http-equiv="content-language" content="{{#if en}}en-US{{else}}In-Id{{/if}}" />
     <meta name="geo.placename" content="Indonesia" />
 
     <!-- s: fb meta -->
     <meta property="article:author" content="https://www.facebook.com/KOMPAScom" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="{{site.url}}" />
-    <meta property="og:title" content="{{site.name}}" />
-    <meta property="og:description" content="{{site.description}}" />
-    <meta property="og:image" content="{{site.images}}" />
+    <meta property="og:url" content="{{#if en}}{{site_en.url}}{{else}}{{site.url}}{{/if}}">
+    <meta property="og:title" content="{{#if en}}{{site_en.name}}{{else}}{{site.name}}{{/if}}">
+    <meta property="og:description" content="{{#if en}}{{site_en.description}}{{else}}{{site.description}}{{/if}}">
+    <meta property="og:image" content="{{#if en}}{{site_en.images}}{{else}}{{site.images}}{{/if}}">
     <meta property="og:site_name" content="KOMPAS.com" />
     <meta property="fb:admins" content="1386097730" />
     <meta property="fb:app_id" content="161133340609176" />
@@ -33,23 +33,23 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@kompascom" />
     <meta name="twitter:creator" content="@kompascom">
-    <meta name="twitter:title" content="{{site.title}}" />
-    <meta name="twitter:description" content="{{site.description}}" />
-    <meta name="twitter:image" content="{{site.images}}" />
+    <meta name="twitter:title" content="{{#if en}}{{site_en.title}}{{else}}{{site.title}}{{/if}}">
+    <meta name="twitter:description" content="{{#if en}}{{site_en.description}}{{else}}{{site.description}}{{/if}}">
+    <meta name="twitter:image" content="{{#if en}}{{site_en.images}}{{else}}{{site.images}}{{/if}}">
     <!-- E:tiwtter card -->
 
-    <link rel="image_src" href="{{site.images}}">
-    <meta itemprop="name" content="{{site.name}}">
-    <meta itemprop="description" content="{{site.description}}">
-    <meta itemprop="image" content="{{site.images}}">
-    <meta itemprop="thumbnailUrl" content="{{site.images}}">
+    <link rel="image_src" href="{{#if en}}{{site_en.images}}{{else}}{{site.images}}{{/if}}">
+    <meta itemprop="name" content="{{#if en}}{{site_en.name}}{{else}}{{site.name}}{{/if}}">
+    <meta itemprop="description" content="{{#if en}}{{site_en.description}}{{else}}{{site.description}}{{/if}}">
+    <meta itemprop="image" content="{{#if en}}{{site_en.images}}{{else}}{{site.images}}{{/if}}">
+    <meta itemprop="thumbnailUrl" content="{{#if en}}{{site_en.images}}{{else}}{{site.images}}{{/if}}">
 
     <link rel="shortcut icon" href="https://asset.kompas.com/data/2016/vik/images/favicon.png">
 
     {{#if page}}
-    <link type="text/css" rel="stylesheet" href="./{{#if en}}../{{/if}}asset/css/style-{{page}}.min.css">
+    <link type="text/css" rel="stylesheet" href="./asset/css/style-{{page}}.css?v=5">
     {{else}}
-    <link type="text/css" rel="stylesheet" href="./{{#if en}}../{{/if}}asset/css/style.min.css">
+    <link type="text/css" rel="stylesheet" href="./asset/css/style.css?v=5">
     {{/if}}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

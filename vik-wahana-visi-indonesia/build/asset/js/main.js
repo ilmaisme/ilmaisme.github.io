@@ -16,65 +16,75 @@ setAppHeight();
 // }
 /* e: Get HEIGHT Device */
 
-//-- Language toggle switch --//
-const toggle = document.getElementById("langToggle");
-const switchTxt = document.querySelector(".switchTxt");
+// ✅ Base paths
+const basePathEN = "https://vik.kompas.com/water-sanitation-for-all/";
+const basePathID = "https://vik.kompas.com/membangun-tata-kelola-air-dan-sanitasi/";
 
-// Detect current path + file
-const pathParts = window.location.pathname.split("/");
-const currentFile = pathParts.pop() || "index.html";
-
-// const basePathEN = "/en/";
-// const basePathID = "/";
-const basePathEN = "https://ilmaisme.github.io/vik-wahana-visi-indonesia/build/en/";
-const basePathID = "https://ilmaisme.github.io/vik-wahana-visi-indonesia/build/";
-const isEnglishPage = pathParts.includes("en");
-
-// --- On load, restore from localStorage ---
-const savedLang = localStorage.getItem("lang");
-if (savedLang) {
-  toggle.checked = savedLang === "en";
-  switchTxt.textContent = savedLang.toUpperCase();
-
-  // Redirect if saved language doesn’t match current URL
-  if (savedLang === "en" && !isEnglishPage) {
-    window.location.replace(basePathEN + currentFile);
-  } else if (savedLang === "id" && isEnglishPage) {
-    window.location.replace(basePathID + currentFile);
-  }
-} else {
-  // Initialize text based on current page
-  switchTxt.textContent = isEnglishPage ? "EN" : "ID";
-  toggle.checked = isEnglishPage;
+// ✅ Redirect old EN URL to new EN
+if (window.location.href.startsWith("https://vik.kompas.com/membangun-tata-kelola-air-dan-sanitasi/en/")) {
+  const currentFile = window.location.pathname.split("/").pop() || "index.html";
+  window.location.replace(basePathEN + currentFile);
 }
 
-// --- Handle toggle changes ---
-toggle.addEventListener("change", () => {
-  const newLang = toggle.checked ? "en" : "id";
-  localStorage.setItem("lang", newLang);
-  switchTxt.textContent = newLang.toUpperCase();
+// ✅ Elements
+const langToggle = document.getElementById("langToggle");
+const switchTxt = document.querySelector(".switchTxt");
 
-  if (newLang === "en" && !isEnglishPage) {
-    window.location.href = basePathEN + currentFile;
-  } else if (newLang === "id" && isEnglishPage) {
-    window.location.href = basePathID + currentFile;
+// ✅ Detect current file (fallback = index.html)
+function getCurrentFile() {
+  const parts = window.location.pathname.split("/");
+  return parts.pop() || "index.html";
+}
+
+// ✅ Sync toggle with URL
+function syncToggleWithURL() {
+  if (!langToggle) return;
+
+  if (window.location.href.startsWith(basePathEN)) {
+    langToggle.checked = true;
+    if (switchTxt) switchTxt.textContent = "EN";
+  } else {
+    langToggle.checked = false;
+    if (switchTxt) switchTxt.textContent = "ID";
   }
-});
+}
 
-// --- Fix next/prev links based on language ---
-const savedLangForLinks = localStorage.getItem("lang") || (isEnglishPage ? "en" : "id");
-
-document.querySelectorAll(".buttonNextWrap a").forEach(link => {
-  let href = link.getAttribute("href"); // e.g. "/section-2.html" or "index.html"
-
-  if (href) {
-    // Remove any leading slash
-    href = href.replace(/^\/+/, "");
-
-    if (savedLangForLinks === "en") {
-      link.setAttribute("href", basePathEN + href);
-    } else {
-      link.setAttribute("href", basePathID + href);
+// ✅ Update Next/Prev links
+function updateLinks() {
+  const currentLang = window.location.href.startsWith(basePathEN) ? "en" : "id";
+  document.querySelectorAll(".buttonNextWrap a").forEach(link => {
+    let href = link.getAttribute("href"); // e.g. "section-2.html" or "/index.html"
+    if (href) {
+      href = href.replace(/^\/+/, ""); // remove leading slash
+      if (currentLang === "en") {
+        link.setAttribute("href", basePathEN + href);
+      } else {
+        link.setAttribute("href", basePathID + href);
+      }
     }
-  }
+  });
+}
+
+// ✅ Handle toggle switch
+if (langToggle) {
+  langToggle.addEventListener("change", () => {
+    const currentFile = getCurrentFile();
+    if (langToggle.checked) {
+      // Switch to EN
+      window.location.href = basePathEN + currentFile;
+    } else {
+      // Switch to ID
+      window.location.href = basePathID + currentFile;
+    }
+  });
+}
+
+// ✅ On load
+syncToggleWithURL();
+updateLinks();
+
+// ✅ Handle back/forward navigation
+window.addEventListener("popstate", () => {
+  syncToggleWithURL();
+  updateLinks();
 });
