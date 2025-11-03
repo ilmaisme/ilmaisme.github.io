@@ -86,6 +86,11 @@
     &Img {
 
         &__thumb {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            max-width: 400px;
             @include font-pack($font_read, 13px, 400, 22px, #707070);
         }
 
@@ -120,7 +125,6 @@
                 }
             }
         }
-
     }
 
     &Video {
@@ -294,6 +298,29 @@
             -webkit-line-clamp: 3;
             font-size: 14px;
             font-weight: 400;
+        }
+    }
+
+    &Font {
+        position: relative;
+        z-index: 1;
+        margin-top: -40px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        &Cta {
+            margin-left: 5px;
+            margin-right: 5px;
+            @include font-pack($font_body, 12px, 600, 1.2, #000000);
+            letter-spacing: 0.39px;
+        }
+
+        &Range {
+            max-width: 160px;
+            margin-left: 5px;
+            margin-right: 5px;
+            accent-color: #ABABAB;
         }
     }
 }
