@@ -12,6 +12,11 @@
         {{/eq}}
     </div>
     <ul>
+        {{#eq login compare=true}}
+        <li class="menuItem">
+            <a href="#" class="menuLink menuProfile__logout">Logout</a>
+        </li>
+        {{/eq}}
         {{#each menu}}
         <li class="menuItem"><a href="{{link}}"
                 class="menuLink{{#eq title compare=../page}} active{{/eq}}">{{title}}</a></li>

@@ -88,6 +88,8 @@
     }
 
     &User {
+        position: relative;
+
         &__name {
             font-size: 12px;
             max-width: 135px;
@@ -97,6 +99,53 @@
             word-wrap: break-word;
             word-break: break-word;
             overflow: hidden;
+        }
+
+        &__list {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            top: 55px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            border: 1px solid #CECECE;
+            background: $cl_white;
+            transition: opacity 0.2s ease;
+
+            &.active {
+                pointer-events: auto;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 8px;
+                margin: auto;
+                border-style: solid;
+            }
+
+            &::after {
+                top: -14px;
+                border-width: 0 10px 15px 10px;
+                border-color: transparent transparent #fff transparent;
+                filter: drop-shadow(0 0 2px #aaa);
+                z-index: 1;
+            }
+        }
+
+        &__link {
+            display: block;
+            padding: 4px 15px;
+            font-size: 14px;
+            font-weight: 600;
+
+            &.red {
+                color: $cl_red;
+            }
         }
     }
 }

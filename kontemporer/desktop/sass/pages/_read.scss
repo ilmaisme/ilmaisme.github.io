@@ -181,21 +181,6 @@
 
     &Content {
         @include font-pack($font_read, 18px, 500, 1.6, $cl_black);
-
-        &__video {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
-            overflow: hidden;
-            max-height: 6.5em;
-            overflow: hidden;
-
-            &.active {
-                display: block;
-                overflow: visible;
-                max-height: none;
-            }
-        }
     }
 
     &Other {
@@ -303,24 +288,23 @@
 
     &Font {
         position: relative;
-        z-index: 1;
-        margin-top: -40px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
 
         &Cta {
+            width: 30px;
+            height: 30px;
             margin-left: 5px;
             margin-right: 5px;
-            @include font-pack($font_body, 12px, 600, 1.2, #000000);
-            letter-spacing: 0.39px;
-        }
+            border: 1px solid #484a56;
+            border-radius: 5px;
 
-        &Range {
-            max-width: 160px;
-            margin-left: 5px;
-            margin-right: 5px;
-            accent-color: #ABABAB;
+            .icon {
+                width: 20px;
+                height: 20px;
+                background-size: contain;
+            }
         }
     }
 }

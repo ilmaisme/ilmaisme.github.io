@@ -186,18 +186,27 @@ $(document).ready(function () {
     initPhotoSwipeFromDOM('.images-container figure');
 
     //font read slider range custom
-    $('#sliderFont').on('input', function () {
-        var v = $(this).val();
-        $('.readContent').css('font-size', v + 'em')
+    let $content = $(".readContent");
+    let size = parseInt($content.css("font-size"));
+    let line = parseInt($content.css("line-height"));
+
+    function updateFont() {
+        $content.css({
+            "font-size": size + "px",
+            "line-height": line + "px"
+        });
+    }
+
+    $("#plus").on("click", function () {
+        size = Math.min(size + 2, 26);
+        line = Math.min(line + 5, 51);
+        updateFont();
     });
-    $('.readFontCta.-minus').on("click", function () {
-        var minus = $('#sliderFont').attr('min')
-        $('#sliderFont').val(minus)
-        $('.readContent').css('font-size', minus + 'em')
+
+    $("#minus").on("click", function () {
+        size = Math.max(size - 2, 12);
+        line = Math.max(line - 5, 16);
+        updateFont();
     });
-    $('.readFontCta.-plus').on("click", function () {
-        var plus = $('#sliderFont').attr('max')
-        $('#sliderFont').val(plus)
-        $('.readContent').css('font-size', plus + 'em')
-    });
+
 })
