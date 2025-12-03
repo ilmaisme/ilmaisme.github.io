@@ -1,0 +1,28 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
+.needs {
+    &List {
+        row-gap: 32px;
+        column-gap: 60px;
+        flex-wrap: wrap;
+
+        @include min-responsive($w-md) {
+            column-gap: 120px
+        }
+    }
+
+    &Item {
+        transform-origin: center center;
+        will-change: transform, opacity;
+        flex-basis: calc(50% - 30px);
+
+        @include min-responsive($w-md) {
+            flex-basis: auto
+        }
+
+        img {
+            max-width: calc(75px + (150 - 75) * ((100vw - 375px) / (1920 - 375)));
+        }
+    }
+}

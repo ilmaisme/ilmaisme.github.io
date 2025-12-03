@@ -1,0 +1,42 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
+.article {
+    &Caption {
+        text-shadow:
+            -0.05em -0.05em 0 $cl-primary,
+            0.05em -0.05em 0 $cl-primary,
+            -0.05em 0.05em 0 $cl-primary,
+            0.05em 0.05em 0 $cl-primary,
+            0 -0.05em 0 $cl-primary,
+            0 0.05em 0 $cl-primary,
+            -0.05em 0 0 $cl-primary,
+            0.05em 0 0 $cl-primary,
+
+            0 0 0.15em $cl-primary,
+            0 0 0.25em $cl-primary;
+        @include font-pack($font_caption, false, $font-weight-normal, $line-base, $cl-white);
+        font-size: clamp(24px, calc(4.97vw + 1.39px), 96px);
+    }
+
+    &Title {
+        @include font-pack($font_base, false, $font-weight-normal, $line-base, false);
+        font-size: clamp(20px, calc(1.82vw + 13.17px), 48px);
+
+        &Spacing {
+            margin-bottom: 16px;
+
+            @include min-responsive($w-md) {
+                margin-bottom: 64px;
+            }
+
+            &--small {
+                margin-bottom: 10px;
+
+                @include min-responsive($w-md) {
+                    margin-bottom: 24px;
+                }
+            }
+        }
+    }
+}

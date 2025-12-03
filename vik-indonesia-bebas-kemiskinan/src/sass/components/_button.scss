@@ -1,0 +1,134 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
+.button {
+    color: inherit;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &Next {
+        display: block;
+        background: #D9D9D9;
+        border: 3px solid $cl-white;
+        border-radius: 16px;
+        padding: 10px 12px 10px 18px;
+        @include font-pack($font_caption, 16px, $font-weight-normal, $line-base, #3B3B3B);
+
+        @include min-responsive($w-md) {
+            font-size: 32px;
+        }
+
+        &:hover {
+            background: #D9C681;
+        }
+
+        &Wrap {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &::after {
+            content: '';
+            width: 32px;
+            height: 32px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' viewBox='0 0 32 32'%3E%3Cpath fill='%233b3b3b' d='M5.333 20v-8H16V5.547L26.453 16 16 26.453V20z'/%3E%3C/svg%3E");
+            display: inline-block;
+            margin-left: 4px;
+            vertical-align: middle;
+            animation: left-right 1s ease-in-out alternate infinite;
+
+            @include min-responsive($w-md) {
+                margin-left: 8px;
+            }
+        }
+    }
+
+    &Prev {
+        @extend .buttonNext;
+        background: #B2CC72;
+    }
+
+    &Home {
+        max-width: 40px;
+        margin-top: 20px;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+
+        @include range-responsive($w-md, $w-lg) {
+            margin-top: 40px;
+        }
+
+        @include min-responsive($w-md) {
+            position: absolute;
+            top: 0;
+            right: 15px;
+            max-width: unset;
+        }
+    }
+}
+
+// .scroll-guide {
+//     position: absolute;
+//     bottom: 3%;
+//     right: 25px;
+//     z-index: 999;
+//     flex-direction: column;
+//     color: white;
+//     font-size: 16px;
+//     @include base_transition(all, .2s);
+//     animation: up-down-2 1s ease-in-out alternate infinite;
+
+//     .icon-scroll {
+//         width: 20px;
+//         height: 32px;
+
+//         &:before {
+//             left: 0;
+//             right: 0;
+//             margin: 0 auto;
+//             width: 6px;
+//             height: 6px;
+//         }
+//     }
+
+//     &.-black {
+//         color: #58595B;
+
+//         .icon-scroll {
+//             border: 2px solid #58595B;
+
+//             &:before {
+//                 background-color: #58595B;
+//             }
+//         }
+//     }
+// }
+
+// .icon {
+//     &-scroll {
+//         position: relative;
+//         border-radius: 50px;
+//         width: 14px;
+//         height: 20px;
+//         border: 2px solid $cl-white;
+
+//         &:before {
+//             content: "";
+//             position: absolute;
+//             top: 0;
+//             left: 50%;
+//             width: 2px;
+//             height: 5px;
+//             margin-left: -1px;
+//             background-color: $cl-white;
+//             border-radius: 10px;
+//             -webkit-animation: scrolldown 2s infinite;
+//             animation: scrolldown 2s infinite;
+//         }
+//     }
+
+// }

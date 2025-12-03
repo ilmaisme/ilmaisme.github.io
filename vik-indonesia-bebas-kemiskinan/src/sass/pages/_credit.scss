@@ -1,0 +1,95 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
+.credit {
+	position: relative;
+	@include font-pack($family: $font_vik2, $weight: 400, $lh: 1.5, $colour: $cl_white);
+	letter-spacing: 1.92px;
+	padding-top: 40px;
+	background: #3B6752;
+	z-index: 11;
+
+	@include min-responsive($w-md) {
+		padding-top: 120px;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+
+		@include min-responsive($w-lg) {
+			flex-direction: row;
+		}
+	}
+
+	&__row {
+		position: relative;
+		margin: 5px 0 18px;
+	}
+
+	&__col {
+		width: 100%;
+
+		@include min-responsive($w-md) {
+			width: 33.33333%;
+		}
+	}
+
+	&__team {
+		text-align: center;
+		@include font-pack($family: $font_caption, $weight: 700, $size: 16px);
+		margin: 0;
+		text-transform: uppercase;
+
+		@include min-responsive($w-lg) {
+			text-align: left;
+		}
+	}
+
+	&__member {
+		text-align: center;
+		font-size: 15px;
+		position: relative;
+		display: block;
+
+		@include min-responsive($w-lg) {
+			text-align: left;
+		}
+	}
+
+	&__bottom {
+		position: relative;
+		text-align: center;
+		position: relative;
+		margin-top: 40px;
+		padding-top: 30px;
+		padding-bottom: 40px;
+		background: #1E3E30;
+		
+		@include min-responsive($w-lg) {
+			text-align: left;
+			margin-top: 120px;
+			padding-top: 50px;
+			padding-bottom: 60px;
+		}
+	}
+
+	&__small {
+		font-size: 15px;
+		color: $cl_white;
+	}
+
+	&__logo {
+		position: relative;
+		margin: 0;
+
+		@include max-responsive($w-xl) {
+			text-align: center;
+			padding: 0;
+			margin: 10px 0 0;
+			display: inline-block;
+		}
+
+	}
+}

@@ -1,0 +1,251 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
+.cover {
+    background: #636363;
+
+    &Scroll {
+        position: relative;
+        background: linear-gradient(180deg, #67E0D9 0%, #C0F2CD 48.56%, #F8FBDE 100%);
+
+        &Content {
+            width: 100%;
+            opacity: 0;
+            position: absolute;
+            top: 15%;
+            transform: translateY(-50%);
+            padding-left: 10px;
+            padding-right: 10px;
+            will-change: opacity, transform;
+
+            @include min-responsive($w-md) {
+                top: 50%;
+                max-width: 694px;
+                left: 0;
+                padding-left: 0;
+                padding-right: 40px;
+            }
+
+            &1 {
+                text-align: center;
+
+                @include min-responsive($w-md) {
+                    text-align: left;
+                }
+            }
+        }
+
+        &Stage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100dvh;
+            z-index: 1;
+        }
+
+        &List {
+            position: relative;
+            display: flex;
+            height: 100dvh;
+            flex-direction: row;
+            pointer-events: none;
+
+            @include min-responsive($w-md) {
+                margin-left: clamp(433px, 433px + 17vw, 890px);
+            }
+        }
+
+        &Box {
+            width: 100vw;
+            height: 100dvh;
+            flex-basis: 100vw;
+            flex-shrink: 0;
+            row-gap: 23px;
+            column-gap: 133px;
+        }
+
+        &Box1,
+        &Box2 {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        &Still {
+
+            .home {
+                transform: translateY(32px);
+
+                img {
+                    width: clamp(317px, 317px + 14.17vw, 589px);
+                }
+            }
+
+            .ibu {
+                transform: translateX(-100%);
+
+                img {
+                    max-width: clamp(94px, calc(9.97vw + 56.62px), 248px);
+                }
+            }
+        }
+
+        &Still,
+        &Circle {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+
+            img {
+                height: auto;
+                will-change: transform, opacity;
+            }
+        }
+
+        &Img {
+            align-self: flex-end;
+        }
+
+        &Circle {
+            opacity: 0;
+
+            @include min-responsive($w-md) {
+                margin-left: -140px;
+            }
+
+            @media only screen and (max-height: $w-md) and (orientation: landscape) {
+                margin-left: -280px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 20%;
+                width: clamp(260px, calc(32.17vw + 50px), 757px);
+                height: clamp(260px, calc(32.17vw + 50px), 757px);
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 50%;
+                z-index: -1;
+                background: #CFE591;
+                
+                @include min-responsive($w-md) {
+                    bottom: calc(50% - (clamp(260px, calc(32.17vw + 50px), 757px) / 2));
+                    left: calc(50% - (clamp(260px, calc(32.17vw + 50px), 757px)));
+                    transform: none;
+                }
+            }
+
+            img {
+                max-width: clamp(90px, calc(11.45vw + 47.06px), 267px);
+            }
+
+            .mas-k {
+                margin-left: 50%;
+                transform: translateX(-50%);
+
+                @include min-responsive($w-md) {
+                    transform: none;
+                    margin-left: calc(50% - (clamp(433px, 433px + 17vw, 890px) / 2));
+                }
+
+                @media only screen and (max-height: $w-md) and (orientation: landscape) {
+                    transform: translateY(30%);
+                }
+            }
+        }
+    }
+
+    &Bg {
+        position: relative;
+        overflow: hidden;
+        height: 100dvh;
+
+        &::after {
+            background: linear-gradient(180deg, rgba(29, 29, 29, 0) 25.18%, #232323 85.69%);
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 560px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        picture {
+            display: block;
+        }
+
+        .back {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .center {
+            img {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: auto;
+                max-width: clamp(376px, calc(376px + 595 * ((100vw - 320px)/1600)), 971px);
+
+                @media only screen and (max-height: $w-md) and (orientation: landscape) {
+                    max-width: 600px;
+                }
+            }
+        }
+    }
+
+    &Title {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 90px;
+        color: #FFFFFF;
+        margin-top: 24px;
+        text-align: center;
+        font-size: calc(16px + (40 - 16) * ((100vw - 320px) / (1920 - 320)));
+        line-height: 1;
+        z-index: 1;
+        overflow: hidden;
+
+        @include min-responsive($w-md) {
+            margin-top: 40px;
+        }
+
+        .center img {
+            max-width: calc(323px + (1128 - 323) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        .center img,
+        .coverText {
+            opacity: 0;
+            transform: translateY(18px) scale(1.03);
+            filter: blur(6px);
+        }
+    }
+
+    &Lead {
+        color: $cl-white;
+    }
+}
+
+.scroll-area {
+    position: relative;
+    width: 100%;
+    height: var(--app-height);
+    overflow: hidden;
+}

@@ -1,0 +1,314 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
+.section1 {
+    position: relative;
+    background: #E9E5D9;
+
+    &Cover {
+        position: relative;
+        align-items: flex-end;
+        z-index: 2;
+
+        @include min-responsive($w-md) {
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        &Image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: right bottom;
+            }
+        }
+    }
+
+    &Caption {
+        margin-top: 40%;
+        opacity: 0;
+        transform: translateY(18px) scale(1.03);
+        filter: blur(6px);
+    }
+
+    &Box {
+        &Wrap {
+            background: linear-gradient(180deg, #8FBDB9 0%, #F8FFDF 42.31%, #FAFADE 100%);
+            background-attachment: fixed;
+            margin-top: 0;
+            padding-top: 34px;
+
+            @include min-responsive($w-md) {
+                padding-top: 83px;
+            }
+        }
+    }
+
+    &Scroll {
+        display: flex;
+        height: 100%;
+        gap: 16px;
+        position: relative;
+        width: max-content;
+
+        @include min-responsive($w-md) {
+            gap: 56px;
+        }
+
+        &Container {
+            width: 100%;
+            height: calc(100%);
+            margin: auto;
+            padding-top: 58px;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            @include min-responsive($w-md) {
+                padding-top: 140px;
+            }
+
+            @include min-responsive($w-xl) {
+                width: $width-container;
+
+                @include max-height($w-hmd) {
+                    width: $w-vlg;
+                }
+            }
+
+            @include min-responsive($w-xxl) {
+                width: 1388px;
+            }
+
+            .graphTitle {
+                position: fixed;
+                top: 70px;
+                padding-left: 15px;
+                padding-right: 15px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                z-index: 1;
+                pointer-events: none;
+
+                @include min-responsive($w-md) {
+                    top: 86px;
+                }
+
+                @include min-responsive($w-xl) {
+                    max-width: $width-container;
+
+                    @include max-height($w-hmd) {
+                        max-width: $w-vlg;
+                    }
+                }
+
+                @include min-responsive($w-xxl) {
+                    max-width: 1388px;
+                }
+            }
+        }
+
+        &Box {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+
+            @include min-responsive($w-md) {
+                justify-content: flex-start;
+            }
+
+            img {
+                max-width: calc(137px + (240 - 137) * ((100vw - 375px) / (1920 - 375)));
+            }
+
+            .articleText {
+                min-height: 62px;
+            }
+        }
+
+        &Content {
+            margin-top: 20px;
+
+            strong,
+            i {
+                display: contents;
+            }
+
+            img {
+                opacity: 0;
+                transform: translateY(40px);
+                max-width: calc(246px + (431 - 246) * ((100vw - 375px) / (1920 - 375)));
+            }
+        }
+    }
+
+    &Content {
+        display: block;
+        position: relative;
+        padding-top: 80px;
+        z-index: 1;
+
+        @include min-responsive($w-md) {
+            padding-top: 138px;
+        }
+
+        .container {
+            z-index: 1;
+        }
+
+        img {
+            transform-origin: center center;
+            will-change: transform, opacity;
+        }
+    }
+
+    &Diagram {
+        background: #fff;
+
+        &Pic {
+            display: block;
+            margin-top: 8px;
+
+            @include min-responsive($w-md) {
+                margin-top: 18px;
+            }
+        }
+    }
+
+    &Group {
+        display: flex;
+        row-gap: 36px;
+        align-items: center;
+        flex-direction: column;
+
+        @include min-responsive($w-md) {
+            flex-direction: row;
+            column-gap: 84px;
+        }
+
+        picture {
+            flex-shrink: 0;
+        }
+
+        img {
+            transform-origin: center center;
+            will-change: transform, opacity;
+        }
+    }
+
+    &Pasal {
+        background: #DEE0D0;
+    }
+
+    &Float {
+        margin-top: 56px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: unset;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(260px, 32.17vw + 50px, 757px);
+            height: clamp(260px, 32.17vw + 50px, 757px);
+            border-radius: 50%;
+            z-index: -1;
+            background: #FFF8D8;
+        }
+
+        ul {
+            position: relative;
+            margin: unset;
+
+            @include min-responsive($w-md) {
+                margin: auto;
+                left: unset;
+            }
+
+            img {
+                max-width: 75px;
+
+                @include min-responsive($w-md) {
+                    max-width: 160px;
+                }
+            }
+        }
+    }
+
+    &Edu {
+        background: #BEB5D3;
+
+        &List {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 24px;
+
+            @include min-responsive($w-md) {
+                gap: 34px;
+            }
+        }
+
+        &Item {
+            display: flex;
+            align-items: center;
+            gap: clamp(16px, 2.59vw + 6.30px, 56px);
+            flex-direction: column;
+            text-align: center;
+
+            @include min-responsive($w-md) {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            img {
+                max-width: clamp(250px, 4.53vw + 82.04px, 320px);
+            }
+        }
+
+        .graphTitle {
+            text-align: left;
+
+            @include min-responsive($w-md) {
+                text-align: center;
+            }
+        }
+    }
+
+    &Story {
+        color: $cl-white;
+        background: #574877;
+    }
+
+    &Arah {
+        background: #D8FAFF;
+
+        img {
+            max-width: 100%;
+            transform-origin: center center;
+            will-change: transform, opacity;
+        }
+    }
+
+    &Visi {
+        background: #D2FFDB;
+    }
+}
+
+.scroll-area {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    // overflow: visible;
+}
