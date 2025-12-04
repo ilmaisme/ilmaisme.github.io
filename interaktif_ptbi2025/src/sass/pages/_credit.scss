@@ -1,0 +1,147 @@
+.credit {
+    flex-direction: column;
+
+    &Wrap {
+        padding-top: 30vh;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+
+        @include max-responsive($w-xm) {
+            padding-top: 14vh;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            padding-top: 18vh;
+        }
+    }
+
+    &Caption {
+        text-transform: uppercase;
+        @include font-pack($font_base, false, 400, false, $cl-white);
+    }
+
+    &Title {
+        transform: translateX(-100vw);
+        transition: all .4s ease-in;
+        @include font-pack($font_caption, 12px, 300, false, #FFDE4E);
+
+        @include min-responsive($w-lg) {
+            font-size: 16px;
+        }
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
+
+    &Name {
+        position: relative;
+        transform: translateX(100vw);
+        transition: all .4s ease-in;
+        @include font-pack($font_caption, 14px, 400, false, $cl-white);
+
+        @include min-responsive($w-lg) {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
+
+    &Content {
+        margin-top: 20px;
+
+        @include min-responsive($w-md) {
+            margin-top: 40px;
+
+            @include max-height($w-hmd) {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &Col {
+        margin-top: 20px;
+    }
+
+    &Bottom {
+        position: relative;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 100px;
+        margin-bottom: 20px;
+
+        @include min-responsive($w-md) {
+            padding-left: 60px;
+            padding-right: 60px;
+            margin-bottom: 60px;
+
+            @include max-height($w-hmd) {
+                padding-top: 40px;
+                margin-bottom: 40px;
+            }
+        }
+
+        &__logo {
+            img {
+                max-width: 90px;
+
+                @include min-responsive($w-md) {
+                    max-width: 170px;
+                }
+            }
+        }
+    }
+
+    &Sp {
+        align-self: flex-end;
+        flex: 1;
+        margin-left: 8px;
+        margin-right: 0;
+        border-bottom: 2px solid $cl-white;
+        border-radius: 2px;
+
+        @include min-responsive($w-md) {
+            margin-left: 20px;
+            margin-right: 10px;
+        }
+    }
+
+    &Back {
+        margin-left: 8px;
+
+        @include min-responsive($w-md) {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            -moz-animation: bounce 1.2s infinite;
+            -webkit-animation: bounce 1.2s infinite;
+            animation: bounce 1.2s infinite;
+        }
+    }
+
+    &Soc {
+        &__item {
+            margin-left: 8px;
+            margin-right: 8px;
+            max-width: 28px;
+
+            @include min-responsive($w-md) {
+                max-width: unset;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.sectionCredit {
+    height: 100%;
+    overflow: hidden;
+}

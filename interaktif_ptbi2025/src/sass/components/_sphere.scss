@@ -1,0 +1,345 @@
+.sphere {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+
+    @include min-responsive($w-md) {
+        top: 55%;
+    }
+
+    @media only screen and(max-height: 700px) and(orientation: landscape) {
+        top: 50%;
+    }
+
+    &Anim {
+        width: 200px;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        transform: scale(1);
+        transition: transform .7s ease;
+
+        @include min-responsive($w-md) {
+            width: 360px;
+            margin: 0 auto;
+            transform: scale(.8) translateY(-1vh);
+        }
+
+        @include min-responsive($w-xxl) {
+            transform: scale(.8) translateY(-4vh);
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            width: 240px;
+            transform: scale(.8) translateY(35px)
+        }
+
+        &.scale {
+            transform: scale(1.1);
+
+            @include min-responsive($w-md) {
+                transform: scale(1.2) translate(-240px, -10px);
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                margin: unset;
+                transform: scale(1) translate(42px, -87px);
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                transform: scale(1.2) translateX(-237px);
+            }
+        }
+    }
+
+    &Area {
+        position: relative;
+        flex-shrink: 0;
+
+        @include min-responsive($w-md) {
+            width: 320px;
+            height: 320px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            width: 240px;
+            height: 240px;
+        }
+    }
+
+    &Zoom {
+        position: relative;
+        justify-content: center;
+        z-index: 2;
+
+        @include min-responsive($w-md) {
+            justify-content: flex-start;
+        }
+
+        &__wrap {
+            position: relative;
+            width: 220px;
+            height: 225px;
+            transition: transform .7s ease;
+
+            @include min-responsive($w-md) {
+                width: 432px;
+                height: 440px;
+                left: 35px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                left: 0;
+            }
+
+            @media only screen and(max-height: 700px) and(orientation: landscape) {
+                width: 288px;
+                height: 288px;
+                left: 106px;
+            }
+
+            @media only screen and(min-height: $w-hmd) and(orientation: landscape) {
+                top: 40px;
+            }
+
+            @media only screen and(min-height: 800px) and(orientation: landscape) {
+                top: 50px;
+            }
+        }
+
+        &.riskactive {
+            .sphereRisk2 {
+                cursor: pointer;
+                pointer-events: all;
+            }
+        }
+
+        &.dayactive {
+            .sphereDayPin {
+                cursor: pointer;
+                pointer-events: all;
+            }
+        }
+    }
+
+    &Pic,
+    &Pin {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &Event {
+        &1 {
+            &Pin {
+                max-width: 80px;
+                left: unset;
+                top: 26px;
+                right: 16px;
+
+                @include min-responsive($w-md) {
+                    top: 64px;
+                    right: 70px;
+                    max-width: unset;
+                }
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    transform: scale(0.8) translate(52%, -40%);
+                }
+            }
+
+            &Pic {
+                position: relative;
+                z-index: 1;
+            }
+
+            &Tank {
+                top: -90px;
+                left: -62px;
+                max-width: 165px;
+
+                @include min-responsive($w-md) {
+                    max-width: unset;
+                    left: unset;
+                    top: -60px;
+                    right: -330px;
+                }
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    top: -124px;
+                    left: -248px;
+                    right: unset;
+                    max-width: 445px;
+                }
+            }
+
+            &Bomb {
+                max-width: 200px;
+                top: unset;
+                bottom: -20px;
+                left: -80px;
+
+                @include min-responsive($w-md) {
+                    bottom: -85px;
+                    left: -40px;
+                    max-width: unset;
+                }
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    bottom: -168px;
+                    left: -126px;
+                }
+            }
+        }
+
+        &2 {
+            &Pin {
+                max-width: 170px;
+                top: 16px;
+                left: -48px;
+
+                @include min-responsive($w-md) {
+                    max-width: unset;
+                    top: 30px;
+                    left: -66px;
+                }
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    top: -7px;
+                    left: -98px;
+                }
+            }
+
+            &Pic {
+                max-width: 240px;
+                top: unset;
+                bottom: -18px;
+                left: -42px;
+
+                @include min-responsive($w-md) {
+                    bottom: -60px;
+                    left: -85px;
+                    max-width: unset;
+                }
+            }
+        }
+
+        &Line {
+            position: absolute;
+
+            &1 {
+                left: 70%;
+                top: -74px;
+                max-width: 65px;
+
+                @include min-responsive($w-md) {
+                    max-width: unset;
+                    left: 34%;
+                    top: -105px;
+                }
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    left: 40%;
+                    top: -90px;
+                    max-width: 125px;
+                }
+            }
+
+            &2 {
+                left: 126px;
+                top: 38%;
+                max-width: 84px;
+                transform: scaleX(-1);
+
+                @include min-responsive($w-md) {
+                    left: -130px;
+                    top: 16%;
+                    max-width: 150px;
+                    transform: none;
+                }
+
+                @media only screen and(max-height: 700px) and(orientation: landscape) {
+                    right: -119px;
+                    left: unset;
+                    top: 30%;
+                    transform: scaleX(-1);
+                }
+            }
+        }
+    }
+
+    &Tele,
+    &Trend,
+    &DayPin {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &Trend {
+        min-width: 165px;
+
+        @media only screen and(max-height: 600px) and(orientation: portrait) {
+            min-width: 148px;
+        }
+    }
+
+    &Arrow {
+        max-width: 180px;
+        top: -440px;
+        left: unset;
+        right: -25px;
+
+        @include min-responsive($w-md) {
+            max-width: unset;
+            top: -470px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            transform: scale(.8) translate(80px, 80px);
+        }
+    }
+
+    &Predict {
+        top: 0;
+        left: 20px;
+
+        @include min-responsive($w-md) {
+            top: 15px;
+            left: 86px;
+        }
+    }
+
+    &Day {
+        &Pic {
+            top: -100px;
+            left: 200px;
+        }
+
+        &Flag {
+            left: 32px;
+            top: 16px;
+            max-width: 165px;
+
+            @include min-responsive($w-md) {
+                max-width: unset;
+                left: 62px;
+                top: 20px;
+            }
+        }
+
+        &Click {
+            min-width: 130px;
+            bottom: -38px;
+
+            span {
+                position: absolute;
+                top: -48px;
+                left: calc(50% - 30px / 2);
+            }
+        }
+    }
+}

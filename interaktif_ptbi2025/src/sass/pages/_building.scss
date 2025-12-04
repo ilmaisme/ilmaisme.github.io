@@ -1,0 +1,80 @@
+.building {
+    &City {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        height: calc(var(--app-height) - 224px);
+
+        @include min-responsive($w-md) {
+            height: calc(var(--app-height) - 30vh);
+        }
+
+        picture {
+            position: relative;
+        }
+    }
+
+    &Bg {
+        width: 100%;
+        height: 100%;
+        background: rgb(215, 234, 254);
+        background: linear-gradient(180deg, rgba(215, 234, 254, 1) 2%, rgba(220, 237, 254, 1) 100%);
+    }
+
+    &Box {
+        position: relative;
+        justify-content: flex-end;
+        bottom: 60px;
+
+        @media only screen and(max-height: 600px) and(orientation: portrait) {
+            bottom: 70px;
+        }
+
+        @include min-responsive($w-md) {
+            bottom: 40px;
+        }
+
+        @media only screen and(min-height: 600px) and(orientation: landscape) {
+            bottom: 40px;
+        }
+
+        @media only screen and(min-height: 800px) and(orientation: landscape) {
+            bottom: 75px;
+        }
+    }
+
+    &Anim {
+        svg {
+            max-height: calc(var(--app-height) - 20vh);
+        }
+    }
+
+    &Txt {
+        max-width: 680px;
+        min-height: 78px;
+
+        @media only screen and(min-height: 600px) and(orientation: landscape) {
+            max-width: 680px;
+            font-size: 20px;
+        }
+    }
+
+    &Sun {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        background-color: #FFDE4E;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: -1;
+
+        @include min-responsive($w-md) {
+            bottom: 10%;
+            width: 400px;
+            height: 400px;
+        }
+    }
+}

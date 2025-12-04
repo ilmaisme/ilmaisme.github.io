@@ -1,0 +1,47 @@
+.ribbon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/ribbon.png) center no-repeat;
+    background-size: contain;
+    min-width: 320px;
+    min-height: 64px;
+    @include font-pack($font_caption, 18px, 900, $line-base, $cl-white);
+
+    @include max-responsive($w-xm) {
+        min-width: 295px;
+        font-size: 16px;
+    }
+
+    @include min-responsive($w-md) {
+        min-width: 353px;
+        bottom: 25px;
+        font-size: 20px;
+    }
+
+    @include range-responsive($w-md, $w-xl) {
+        bottom: 100px;
+    }
+
+    span {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include min-responsive($w-md) {
+            top: 85%;
+        }
+    }
+
+    .predictRibbon {
+        font-size: 16px;
+
+        @include min-responsive($w-md) {
+            font-size: 19px;
+        }
+    }
+}

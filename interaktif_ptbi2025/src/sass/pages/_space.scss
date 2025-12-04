@@ -1,0 +1,134 @@
+.night {
+
+    &Wrap {
+        position: relative;
+        height: 550px;
+        z-index: 1;
+
+        @include min-responsive($w-md) {
+            padding-left: 0;
+            padding-right: 0;
+            height: auto;
+        }
+
+        @include min-responsive($w-xl) {
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+
+        @include min-responsive($w-xxl) {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    &Stars {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        .stars {
+            position: absolute;
+
+            &::before,
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: "\2726";
+                font-size: 2rem;
+                animation-name: fadeIn;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-fill-mode: both;
+                animation-timing-function: linear;
+                animation-duration: 4.1222s;
+            }
+
+            &::after {
+                /* The foreground star */
+                background: rgb(153, 255, 255);
+                background: radial-gradient(circle, rgba(153, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            &::before {
+                /* The star shadow */
+                color: transparent;
+                text-shadow: 2px 3px 10px rgba(153, 255, 255, 1);
+            }
+
+            &1 {
+                bottom: 100px;
+                left: 100px;
+
+                &::before,
+                &::after {
+                    animation-duration: 2.3222s;
+                }
+            }
+
+            &2 {
+                top: 100px;
+                right: 100px;
+
+                &::before,
+                &::after {
+                    font-size: 2.5rem;
+                    animation-duration: 3.222s;
+                }
+
+                &::after {
+                    background: #FCEA10;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background-color: white;
+            // animation: fadeIn 1s ease-in-out infinite;
+            animation-name: fadeIn;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-fill-mode: both;
+            animation-timing-function: linear;
+        }
+    }
+}
+
+.day {
+    &Pic {
+        position: absolute;
+        top: -99px;
+        right: 0;
+        max-width: 105px;
+
+        @media only screen and(max-height: 600px) and(orientation: portrait) {
+            top: -100px;
+            max-width: 103px;
+        }
+
+        @include min-responsive($w-md) {
+            top: -180px;
+            max-width: 200px;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

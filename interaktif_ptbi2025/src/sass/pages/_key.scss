@@ -1,0 +1,69 @@
+.key {
+    &Title {
+        position: relative;
+        left: -100vw;
+        @include font-pack(false, 16px, 600, $line-base, $cl-white);
+        margin-top: 20px;
+
+        @include min-responsive($w-md) {
+            max-width: 441px;
+            margin-top: 0;
+            font-size: 18px
+        }
+
+        @include min-responsive($w-xxl) {
+            font-size: 20px
+        }
+
+        @media only screen and(max-height: 710px) and(orientation: landscape) {
+            font-size: 18px
+        }
+
+        .cl-yellow {
+            color: #FFDE4E;
+        }
+
+        &__wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
+            @include min-responsive($w-md) {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+    }
+
+    &Img {
+        position: relative;
+        left: 100vw;
+        max-width: 130px;
+        align-self: flex-end;
+
+        @include min-responsive($w-md) {
+            max-width: unset;
+            align-self: unset;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            max-width: 240px;
+        }
+    }
+
+    &Map {
+        @include min-responsive($w-md) {
+            margin-top: -40px;
+        }
+
+        @include min-responsive($w-xl) {
+            margin-top: -80px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            margin-top: -60px;
+            max-width: 750px;
+        }
+    }
+}

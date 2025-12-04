@@ -1,0 +1,131 @@
+.econ {
+    &Wrap {
+        position: relative;
+    }
+
+    &2 {
+        position: absolute;
+    }
+
+    &Img {
+        position: relative;
+    }
+
+    &Num {
+        top: 14px;
+        padding: 2px 10px 10px;
+        position: relative;
+        transition: all .7s ease-in;
+        background: $cl-white;
+        border-radius: 20px;
+
+        @include range-responsive($w-md, $w-xl) {
+            top: 40px;
+        }
+
+        @include min-responsive($w-xl) {
+            background: transparent;
+            top: 50px;
+            padding: 0;
+        }
+
+        &__wrap {
+            top: -15px;
+            right: 20px;
+
+            @include min-responsive($w-md) {
+                top: 50px;
+                right: 110px;
+            }
+
+            @include range-responsive($w-md, $w-xl) {
+                top: 35px;
+            }
+
+            @include min-responsive($w-xxl) {
+                top: 35px;
+            }
+        }
+
+        &1 {}
+
+        &2 {
+            position: absolute;
+            top: 0;
+        }
+    }
+}
+
+.infla {
+    &Img {
+        position: relative;
+    }
+
+    &Num {
+        top: 30px;
+        left: calc(50% - 129px / 2);
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            left: calc(50% - 86px / 2);
+        }
+    }
+
+    &Anim {
+        position: relative;
+        bottom: -40px;
+    }
+}
+
+.rate {
+    &Anim {
+        position: relative;
+        bottom: -50px;
+        max-width: calc(var(--app-height) - 10vw);
+    }
+}
+
+.stable {
+    &Anim {
+        top: 35px;
+        max-width: 360px;
+        position: relative;
+    }
+}
+
+.growth {
+    &Img {
+        position: relative;
+    }
+
+    &Num {
+        top: -160px;
+        left: calc(50% - 135px / 2);
+
+        @include min-responsive($w-md) {
+            left: calc(50% - 158px / 2);
+            top: -75px;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            left: calc(50% - 45px / 2);
+            top: -145px;
+        }
+
+        @media only screen and(min-height: $w-hmd) and(orientation: landscape) {
+            top: -75px;
+        }
+
+        @include min-responsive($w-xxl) {
+            left: calc(50% - 168px / 2);
+        }
+
+        @include min-responsive($w-xxxl) {
+            top: -90px;
+        }
+
+        @media only screen and(max-height: 700px) and(orientation: landscape) {
+            top: 45px;
+            left: calc(50% - 112px / 2);
+        }
+    }
+}

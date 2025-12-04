@@ -1,0 +1,135 @@
+@-webkit-keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes scrolldown {
+    0% {
+        -webkit-transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    80% {
+        -webkit-transform: translate(0, 10px);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes scrolldown {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    80% {
+        transform: translate(0, 10px);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes sizeOut {
+    0% {
+        transform: scale(2)
+    }
+
+    50% {
+        transform: scale(1.5)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+@keyframes sizeRotate {
+    0% {
+        transform: rotate(26deg)
+    }
+
+    50% {
+        transform: rotate(13deg)
+    }
+
+    100% {
+        transform: rotate(0deg)
+    }
+}
+
+.animation__sizeOut {
+    animation-name: sizeOut;
+    animation-direction: alternate;
+}
+
+.animation__sizeRotate {
+    animation-name: sizeRotate;
+    animation-direction: alternate;
+}
+
+.path {
+    stroke-dasharray: 302;
+    stroke-dashoffset: 302;
+
+    &.active {
+        animation: dash 1.4s linear forwards;
+    }
+}
+
+.pathbackwards {
+    stroke-dasharray: 302;
+    stroke-dashoffset: 302;
+
+    &.active {
+        animation: dashbackwards 1.4s linear forwards;
+    }
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dashbackwards {
+    to {
+        stroke-dashoffset: 600;
+    }
+}
