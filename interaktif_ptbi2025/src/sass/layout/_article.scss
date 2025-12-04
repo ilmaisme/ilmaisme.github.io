@@ -1,111 +1,67 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
 .art {
-    &Box {
-        position: relative;
-        margin-top: 380px;
-        left: -25vw;
-        opacity: 0;
-        width: calc(100vw - 20px);
-        padding: 10px 15px 10px 15px;
-        border-radius: 15px;
-        text-align: left;
-        background: $cl-white;
-        @include font-pack(false, 16px, 600, $line-base, #2D2D4F);
-
-        @media only screen and(max-height: 600px) and(orientation: portrait) {
-            margin-top: 310px;
-            font-size: 14px;
-        }
-
-        @include min-responsive($w-md) {
-            width: 475px;
-            margin-top: 130px;
-            margin-left: 190px;
-            padding: 20px 50px 20px 77px;
-            border-radius: 20px;
-            font-size: 20px
-        }
-
-        @include range-responsive($w-md, $w-xl) {
-            margin-top: 730px;
-            margin-left: 0;
-            padding: 20px 30px 20px 30px;
-        }
-
-        .cl-orange {
-            color: #FF4C32
-        }
-
-        @media only screen and(max-height: 700px) and(orientation: landscape) {
-            margin-top: 30px;
-            margin-left: 45px;
-        }
-    }
 
     &Txt {
         position: relative;
         margin-top: 20px;
-        @include font-pack(false, 16px, 600, $line-base, false);
+        @include font-pack(false, false, 600, $line-base, false);
 
-        @media only screen and(max-height: 600px) and(orientation: portrait) {
+        @media only screen and (max-height: 600px) and (orientation: landscape) {
             font-size: 16px;
-        }
-
-        @include min-responsive($w-xl) {
-            font-size: 20px
-        }
-
-        @include min-responsive($w-xxl) {
-            font-size: 24px
-        }
-
-        @media only screen and(max-height: 710px) and(orientation: landscape) {
-            font-size: 20px
-        }
-
-        .cl-red {
-            color: $cl-red
         }
     }
 
     &Caption {
-        @include font-pack(false, 32px, 700, $line-base, false);
+        text-transform: uppercase;
+        @include font-pack(false, 29px, 600, false, #FCDE58);
+
+        @include min-responsive($w-md) {
+            font-size: 64px;
+        }
+
+        @media only screen and (max-height: 740px) and (orientation: landscape) {
+            font-size: 44px;
+        }
     }
 
-    &Num {
-        position: absolute;
-        transition: opacity .7s ease-in-out;
-        @include font-pack($font_caption, 18px, 700, $line-base, false);
+    &Title {
+        @include font-pack($font_caption, 18px, 400, false, $cl-white);
 
-        @include min-responsive($w-xl) {
-            font-size: 34px
+        @include min-responsive($w-md) {
+            font-size: 32px;
         }
 
-        @include min-responsive($w-xxl) {
-            font-size: 36px
+        @media only screen and (max-height: 740px) and (orientation: landscape) {
+            font-size: 20px;
+        }
+    }
+
+    &Box {
+        position: relative;
+        padding: 22px 20px 20px 60px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, .72);
+        @include font-pack($font_caption, false, false, false, false);
+
+        @include min-responsive($w-md) {
+            max-width: 780px;
         }
 
-        @media only screen and(max-height: 700px) and(orientation: landscape) {
-            font-size: 24px
+        &::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: calc(100% - 40px);
+            background-color: $cl-red;
+            border-radius: 5px;
+            left: 20px;
+            top: 20px;
         }
 
         span {
-            display: block;
-            background: #FF5542;
-            border-radius: 20px;
-            padding: 3px 20px;
-            @include font-pack(false, 16px, false, false, $cl-white);
-
-            @include min-responsive($w-xl) {
-                font-size: 24px
-            }
-
-            @include min-responsive($w-xxl) {
-                font-size: 28px
-            }
-
-            @media only screen and(max-height: 700px) and(orientation: landscape) {
-                font-size: 18px
-            }
+            display: contents;
         }
     }
 }

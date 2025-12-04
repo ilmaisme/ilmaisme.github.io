@@ -1,0 +1,173 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
+.map {
+    &Section {
+        .buttonClick {
+            right: 0;
+            bottom: -20%;
+
+            @include min-responsive($w-md) {
+                bottom: 30%;
+            }
+        }
+    }
+
+    &Wrap {
+        position: relative;
+        margin-top: -20%;
+
+        @include min-responsive($w-md) {
+            margin-top: 0;
+        }
+    }
+
+    &Anim {
+        cursor: pointer;
+
+        @include min-responsive($w-md) {
+            margin-top: -40px;
+        }
+    }
+}
+
+.building {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    &Top {
+        width: 100%;
+        flex: 1;
+
+        .buildingImg {
+            display: block;
+            width: 100%;
+            min-height: 456px;
+        }
+    }
+
+    &Bottom {
+        width: 100%;
+        max-height: 124px;
+
+        .buildingImg {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &Bg {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background: url('../images/map-bg.png') repeat-x center bottom;
+        background-size: contain;
+
+        @include min-responsive($w-md) {
+            background-size: auto;
+        }
+    }
+}
+
+.base {
+
+    &Anim {
+        padding-bottom: 4vh;
+        transform: scale(.9);
+
+        @include min-responsive($w-xxl) {
+            transform: scale(1);
+        }
+
+        @media only screen and (max-height: 740px) and (orientation: landscape) {
+            transform: scale(.8);
+        }
+    }
+
+    &1 {
+        &Anim {
+            margin-top: -20px;
+
+            @include min-responsive($w-md) {
+                margin-top: -80px;
+                margin-bottom: -60px;
+            }
+
+            @media only screen and (max-height: 740px) and (orientation: landscape) {
+                margin-top: -100px;
+                margin-bottom: -140px;
+            }
+        }
+    }
+
+    &2 {
+        &Anim {
+            transform: scale(.85);
+
+            @include min-responsive($w-md) {
+                margin-top: -40px;
+                margin-bottom: -60px;
+            }
+
+            @media only screen and (max-height: 740px) and (orientation: landscape) {
+                margin-top: -60px;
+                margin-bottom: -80px;
+            }
+
+            @media only screen and (max-height: 700px) and (orientation: landscape) {
+                transform: scale(.7);
+                margin-top: -100px;
+                margin-bottom: -120px;
+            }
+        }
+    }
+
+    &3 {
+        &Anim {
+            margin-top: -40px;
+
+            @include min-responsive($w-md) {
+                margin-top: -80px;
+            }
+
+            @media only screen and (max-height: 740px) and (orientation: landscape) {
+                margin-bottom: -60px;
+            }
+        }
+    }
+
+    &4 {
+        &Anim {
+            @media only screen and (max-height: 740px) and (orientation: landscape) {
+                margin-top: -60px;
+                margin-bottom: -60px;
+            }
+        }
+    }
+
+    &5 {
+        &Anim {
+            margin-bottom: 20px;
+
+            @media only screen and (max-height: 740px) and (orientation: landscape) {
+                margin-bottom: -20px;
+            }
+        }
+    }
+
+    &Wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include min-responsive($w-md) {
+            justify-content: flex-end;
+        }
+    }
+}

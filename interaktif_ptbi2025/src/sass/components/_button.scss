@@ -1,3 +1,6 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
 .button {
     color: inherit;
     padding: 0;
@@ -18,16 +21,18 @@
 
     &Click {
         position: absolute;
-        padding: 4px 10px;
+        padding: 5px 25px 5px 15px;
         text-align: center;
         min-width: 144px;
         border: 2px solid #134061;
         background: $cl-white;
         border-radius: 9px;
-        @include font-pack($font_quote, 14px, false, false, #134061);
+        @include font-pack(false, 15px, false, false, #134061);
 
-        @include min-responsive($w-md) {
-            padding: 4px 18px;
+        span {
+            position: absolute;
+            bottom: -30px;
+            right: -15px;
         }
     }
 }

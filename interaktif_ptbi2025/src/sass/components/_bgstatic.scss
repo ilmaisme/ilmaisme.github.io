@@ -1,3 +1,6 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
 .bgStatic {
     width: 100%;
     height: 100%;
@@ -28,7 +31,9 @@
             flex-flow: column;
             justify-content: center;
             padding: 15px;
-            background: linear-gradient(180deg, #E1F8FE -28.34%, #A8E7F8 37.76%, #5BC4E2 103.86%);
+            background: rgb(170, 224, 239);
+            background: radial-gradient(circle, rgba(170, 224, 239, 1) 0%, rgba(0, 148, 237, 1) 100%);
+            transition: opacity .3s ease-in-out;
         }
 
         .articleContent {

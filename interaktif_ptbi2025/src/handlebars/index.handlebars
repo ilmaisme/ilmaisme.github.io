@@ -23,94 +23,74 @@
         <!-- Template Background Color -->
         <div class="bgColor__wrap">
             <div class="bgColor bgColor__blue"></div>
-            <div class="bgColor bgColor__night opac0"></div>
+            <div class="bgColor bgColor__blue--grad opac0">
+                <div class="building opac0">
+                    <div class="buildingTop text-center">
+                        <div class="buildingImg buildingBg">
+                        </div>
+                    </div>
+                    <div class="buildingBottom text-center">
+                        <picture class="buildingImg">
+                            <img srcset="./asset/images/map-bottom.png" alt="" loading="lazy" class="">
+                        </picture>
+                    </div>
+                </div>
+            </div>
             <div class="bgColor bgColor__grey opac0"></div>
-            <div class="bgColor bgColor__dark opac0"></div>
         </div>
         <!-- Template Background Color -->
 
         <!-- Template Image Content -->
         <div class="bgStatic__wrap active">
             <div class="bgStatic">
-                <div class="coverImg">
-                    <div class="coverAnim animationCover" id="animationCover"></div>
-                </div>
                 <div class="scroll-guide center-flex">
                     <span class="icon-scroll"></span>
                     scroll
                 </div>
             </div>
             <div class="bgStatic">
-                <div class="nightStars opac0" id="starmap">
-                    <span class="stars stars0"></span>
-                    <span class="stars stars1"></span>
-                    <span class="stars stars2"></span>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="sphere container heightFull">
-                    <div class="sphereAnim animationSphere" id="animationSphere"></div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="night challenge container center-flex heightFull">
-                    <div class="nightWrap display-flex dir-column text-center">
-                        <div class="ribbon ribbonNight opac0">
-                            <span class="challengeRibbon opac0">Tantangan Utama</span>
-                            <span class="event1Ribbon opac0">Peristiwa Penting</span>
-                            <span class="risk1Ribbon opac0">Risiko Utama</span>
-                            <span class="predictRibbon opac0">Prediksi Bank Indonesia</span>
+                <div class="globe container center-flex dir-column heightFull">
+                    <div class="globeImgWrap">
+                        <picture class="globeImg opac0">
+                            <img srcset="./asset/images/globe.png" alt="" loading="lazy" class="">
+                        </picture>
+                        <div class="globeAnimWrap">
+                            <div class="globeAnim bombAnim animationBomb opac0" id="animationBomb"></div>
+                            <div class="globeAnim stonkAnim animationStonk opac0" id="animationStonk"></div>
+                            <div class="globeAnim debtAnim animationDebt opac0" id="animationDebt"></div>
+                            <div class="globeAnim marketAnim animationMarket opac0" id="animationMarket"></div>
+                            <div class="globeAnim cryptoAnim animationCrypto opac0" id="animationCrypto"></div>
                         </div>
-                        <div class="challengeTitle artTxt opac0"><strong>Dinamika geopolitik cepat dan ketidakpastian
-                                tinggi.</strong></div>
-                        <div class="sphereArea">
+                    </div>
+                    <div class="globeTxtWrap">
+                        <div class="globeTxt bombTxt artBox opac0">Berlanjutnya perang dan polarisasi perdagangan dan
+                            investasi
+                            antarnegara dalam mengatasi <span class="cl-red">ketidakseimbangan perdagangan global</span>
                         </div>
-                        <div class="challengeTxt artTxt opac0">Perekonomian dan pasar keuangan global pada 2024
-                            menghadapi
-                            <span>tantangan perubahan
-                                dinamika geopolitik yang sangat cepat dan ketidakpastian yang tinggi.</span>
+                        <div class="globeTxt stonkTxt artBox opac0">Pertumbuhan ekonomi dunia diperkirakan <span
+                                class="cl-red">
+                                melambat</span> dengan
+                            fragmentasi antarnegara yang melebar
+                        </div>
+                        <div class="globeTxt debtTxt artBox opac0">Membengkaknya <span class="cl-red">utang publik
+                                dunia,</span> baik di negara maju maupun berkembang
+                        </div>
+                        <div class="globeTxt marketTxt artBox opac0">Pasar keuangan global masih <span
+                                class="cl-red">rentan
+                                dan berisiko,</span>
+                            khususnya dari lembaga keuangan nonbank
+                        </div>
+                        <div class="globeTxt cryptoTxt artBox opac0">Risiko pasar keuangan global meningkat seiring
+                            maraknya
+                            penerbitan dan <span class="cl-red">perdagangan aset</span> serta <span class="cl-red">mata
+                                uang digital</span> oleh pihak swasta
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="bgStatic">
+            {{!-- <div class="bgStatic">
                 <div class="sphereZoom container align-center heightFull">
                     <div class="sphereZoom__wrap">
-                        <div class="spherePin sphereEvent1 opac0 sphereEvent1Pin" id="animationEvent1"></div>
-                        <div class="spherePic sphereEvent1Bomb">
-                            <div class="sphereEvent1Pic sphereEvent1 sphereEvent1Pic1 opac0" id="animationEvent1Bomb">
-                            </div>
-
-                            {{>line1}}
-
-                        </div>
-                        <div class="spherePic sphereEvent1Tank">
-                            <div class="sphereEvent1Pic sphereEvent1 sphereEvent1Pic2 opac0" id="animationEvent1Tank">
-                            </div>
-
-                            {{>line2}}
-
-                        </div>
-
-                        <div class="spherePin sphereEvent2 opac0 sphereEvent2Pin" id="animationEvent2"></div>
-                        <div class="spherePic sphereEvent2 opac0 sphereEvent2Pic" id="animationEvent2Pic"></div>
-
-                        <div class="spherePin sphereRisk2 opac0 sphereTele" id="animationTele">
-                            <button class="buttonClick riskPop__trig" aria-label="Trigger popup">
-                                <span>i</span>
-                                <div class="buttonClick__txt">Klik untuk detail</div>
-                            </button>
-                        </div>
-
-                        <div class="spherePic sphereTrend opac0">
-                            <img src="./asset/images/trend-img.png" alt="" width="284" height="233" loading="lazy">
-                        </div>
-
-                        <div class="spherePin spherePredict opac0 spherePredictPin" id="animationPredict"></div>
-
-                        <div class="spherePin sphereDay1 opac0 sphereDayFlag" id="animationDayFlag"></div>
-                        <div class="spherePic sphereDay1 opac0 sphereDayPic" id="animationDayPic"></div>
-
                         <div class="spherePin sphereDay2 opac0 sphereDayPin" id="animationDayPin">
                             <div class="buttonClick sphereDayClick" aria-label="Trigger popup">
                                 <span><img src="./asset/images/cursor.png" alt="" loading="lazy" width="30"
@@ -120,55 +100,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="bgStatic">
-                <div class="night event1 container center-flex text-center heightFull">
-                    <div class="nightWrap align-center">
-                        <div class="eventBox1 artBox">
-                            Ketegangan geopolitik kembali meningkat di paruh pertama 2024. Konflik Rusia-Ukraina mereda
-                            awal 2024; memanas kembali akibat serangan Israel ke Palestina.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="night event2 container center-flex text-center heightFull">
-                    <div class="nightWrap align-center">
-                        <div class="eventBox2 artBox">
-                            Terpilihnya kembali Donald Trump di akhir 2024 membawa potensi perubahan besar melalui
-                            kebijakan <i class="cl-orange">America First.</i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="night risk1 container center-flex text-center heightFull">
-                    <div class="nightWrap align-center">
-                        <div class="riskBox1 artBox">
-                            <div class="risk1Pic">
-                                <canvas id="flag" width="42" height="25" style="width: 42px;"></canvas>
-                                <img src="./asset/images/risk-pic-1.png" alt="" loading="lazy" width="257" height="164">
-                            </div>
-                            Dunia terus bergejolak. Terpilihnya kembali Presiden Trump di AS dengan kebijakan <i>America
-                                First</i> dapat membawa perubahan besar pada lanskap geopolitik dan perekonomian dunia.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="night risk2 container center-flex text-center heightFull">
-                    <div class="nightWrap align-center">
-                        <div class="riskBox2 artBox">
-                            <div class="spherePic sphereRisk2 opac0 sphereArrow" id="animationArrow"></div>
-                            Perlambatan ekonomi dunia
-                            <div class="risk2Pic">
-                                <img src="./asset/images/risk-pic-2.png" alt="" width="299" height="71" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
+            </div> --}}
+            {{!-- <div class="bgStatic">
                 <div class="night trend container center-flex text-center heightFull">
                     <div class="nightWrap align-center">
                         <ul class="trendList">
@@ -181,242 +114,26 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="bgStatic">
-                <div class="night predict container center-flex text-center heightFull">
-                    <div class="nightWrap align-center">
-                        <div class="predictBox artBox">
-                            <div class="predictPic">
-                                <img src="./asset/images/predict-pic.png" alt="" loading="lazy" width="293"
-                                    height="260">
+                <div class="aspectPop">
+                    {{#each aspect}}
+                    <div class="aspectPopup popup aspectPopup{{@index}}">
+                        <div class="aspectPop__wrap">
+                            <div class="aspectPop__content">
+                                <div class="aspectPop__title text-center">{{{title}}}</div>
+                                <ul class="aspectPop__txt">
+                                    {{{list}}}
+                                </ul>
                             </div>
-                            Bank Indonesia memperkirakan <span class="cl-orange">pertumbuhan ekonomi global melambat
-                                dari
-                                3,3% pada 2023 menjadi 3,2% pada 2024. Perlambatan berpotensi berlanjut menjadi 3,1%
-                                pada 2025 dan 3,0% pada 2026.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="night market container center-flex text-center heightFull">
-                    <div class="nightWrap align-center">
-                        <div class="marketBox artBox">
-                            <div class="dayPic">
-                                <img src="./asset/images/day1-pic.png" alt="" width="252" height="299" loading="lazy">
-                            </div>
-                            Meski demikian, sejumlah negara <i>emerging markets</i> seperti Indonesia berpeluang tetap
-                            berkinerja baik, didukung oleh permintaan domestik di tengah tantangan fragmentasi pasar
-                            internasional.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="night how container center-flex text-center heightFull">
-                    <div class="nightWrap align-center">
-                        <div class="howBox artBox">
-                            Bagaimana dengan Indonesia?
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="building buildingWrap heightFull opac0">
-                    <div class="buildingCity container">
-                        <div class="buildingSun opac0 top100vh"></div>
-                        <picture class="buildingImg">
-                            <source srcset="./asset/images/building-city-m.png" media="(max-width: 767px)" width="678"
-                                height="474">
-                            <img srcset="./asset/images/building-city.png" alt="" class="" width="1022" height="461"
-                                loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="buildingBg">
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="building buildingBox econ container align-center dir-column text-center heightFull">
-                    <div class="econImg">
-                        <div class="econAnim buildingAnim animationEcon opac0" id="animationEcon"></div>
-                        <div class="econNum__wrap artNum text-center">
-                            <div class="econNum econNum1 opac0">
-                                <span>2025</span>
-                                4,8%-5,6%
-                            </div>
-                            <div class="econNum econNum2 opac0">
-                                <span>2026</span>
-                                4,9%-5,7%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="econWrap">
-                        <div class="econ1 buildingTxt artTxt opac0 top100vh">
-                            Pertumbuhan ekonomi RI pada 2025 tetap kuat pada kisaran <span
-                                class="cl-red">4,8-5,6%</span>, dan akan terus meningkat menjadi <span
-                                class="cl-red">4,9-5,7%</span> pada 2026 didukung oleh konsumsi pemerintah, konsumsi
-                            swasta, investasi, dan kinerja ekspor.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="building buildingBox infla container align-center dir-column text-center heightFull">
-                    <div class="inflaImg">
-                        <div class="inflaNum artNum text-center opac0">
-                            2,5±1%
-                        </div>
-                        <div class="inflaAnim buildingAnim animationInfla opac0" id="animationInfla"></div>
-                    </div>
-                    <div class="inflaWrap buildingTxt artTxt opac0 top100vh">
-                        Inflasi akan tetap terkendali dalam rentang sasaran 2,5±1% pada 2025 dan 2026 didukung
-                        konsistensi kebijakan moneter, kebijakan fiskal, dan Gerakan Nasional Pengendalian Inflasi
-                        Pangan (GNPIP).
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="building buildingBox rate container align-center dir-column text-center heightFull">
-                    <div class="rateImg">
-                        <div class="rateAnim buildingAnim animationRate opac0" id="animationRate"></div>
-                    </div>
-                    <div class="rateWrap buildingTxt artTxt opac0 top100vh">
-                        Nilai tukar Rupiah tahun 2025 diproyeksikan akan dijaga stabil, sejalan dengan fundamental
-                        ekonomi yang terjaga dan komitmen Bank Indonesia dalam menjaga stabilitas.
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="building buildingBox stable container align-center dir-column text-center heightFull">
-                    <div class="stableImg">
-                        <div class="stableAnim buildingAnim animationStable opac0" id="animationStable"></div>
-                    </div>
-                    <div class="stableWrap buildingTxt artTxt opac0 top100vh">
-                        Stabilitas eksternal terjaga, neraca pembayaran sehat dan cadangan devisa meningkat.
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="building buildingBox growth container align-center dir-column text-center heightFull">
-                    <div class="growthImg">
-                        <div class="growthNum artNum text-center opac0">
-                            11%-13%
-                        </div>
-                        <div class="growthAnim buildingAnim animationGrowth opac0" id="animationGrowth"></div>
-                    </div>
-                    <div class="growthWrap buildingTxt artTxt opac0 top100vh">
-                        Pertumbuhan kredit ke 11%-13% pada 2025 dan 2026.</div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="quote opac0 container center-flex heightFull">
-                    <div class="quoteImg -left">
-                        <picture>
-                            <source srcset="./asset/images/quote-top-m.png" media="(max-width: 767px)" width="495"
-                                height="495">
-                            <img srcset="./asset/images/quote-top.png" alt="" class="" width="495" height="495"
-                                loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="quoteWrap display-flex dir-column">
-                        <div class="quoteTxt opac0">
-                            Ke depan, kita harus lebih waspada. Sekali lagi, dunia terus bergejolak. Akankah Indonesia
-                            berdaya tahan seperti selama ini? Kita harus tetap <span
-                                class="cl-orange">optimistis.</span> Mari kita makin perkuat
-                            <span class="cl-orange">sinergi.</span>
-                            Sinergi melindungi negara, bangsa, dan rakyat dari gejolak global.
-                        </div>
-                        <div class="quoteAttr opac0">
-                            <div class="quoteTitle">Gubernur Bank Indonesia</div>
-                            <div class="quoteName">Perry Warjiyo</div>
-                            <div class="quotePlace">Pada Pertemuan Tahunan <br> Bank Indonesia (PTBI) 2024</div>
-                        </div>
-                    </div>
-                    <div class="quoteImg -right">
-                        <picture>
-                            <source srcset="./asset/images/quote-perry-m.png" media="(max-width: 767px)" width="495"
-                                height="495">
-                            <img srcset="./asset/images/quote-perry.png" alt="" class="" width="495" height="495"
-                                loading="lazy">
-                        </picture>
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="synergy opac0 container center-flex dir-column text-center heightFull">
-                    <div class="synergyCaption top100vh">Sinergi kebijakan transformasi ekonomi nasional semakin
-                        diperkuat di
-                        <span class="cl-orange">5 area</span>
-                    </div>
-                    <div class="synergyImg">
-                        {{> synergy}}
-                    </div>
-                    <div class="synergyCircle">
-                        <div class="synergyIconCircle center-flex">
-                            <img src="./asset/images/synergy-icon.png" alt="" width="207" height="89" loading="lazy">
-                        </div>
-                        <ul class="synergyList center-flex">
-                            {{#each synergy}}
-                            <li class="synergyTitle synergyTitle{{@index}} center-flex opac0">{{title}}</li>
-                            {{/each}}
-                        </ul>
-                    </div>
-                    <div class="buttonClick synergyClick" aria-label="Trigger popup">
-                        <div class="buttonClick__txt">sorot pada icon</div>
-                        <span><img src="./asset/images/cursor.png" alt="" loading="lazy" width="30" height="37"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="balance container center-flex dir-column text-center heightFull">
-                    <div class="balanceImg">
-                        <div class="balanceAnim animationBalance opac0" id="animationBalance"></div>
-                    </div>
-                    <div class="balanceWrap balanceTxt artTxt top100vh opac0">
-                        Dengan berlanjutnya gejolak global pada 2025, kebijakan moneter akan tetap pada stabilitas
-                        dengan terus mencermati ruang untuk mendorong pertumbuhan <span class="cl-orange">(pro-stability
-                            and growth).</span> Sementara kebijakan makroprudensial dan lainnya diarahkan untuk
-                        mendukung pertumbuhan <span class="cl-orange">(pro growth)</span>.
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="policy opac0 container center-flex dir-column text-center heightFull">
-                    <div class="policyCaption top100vh">Diagram kebijakan-kebijakan <span class="cl-yellow">BI
-                            2025</span></div>
-                    <div class="policyWrap">
-                        <div class="policyImg">
-                            {{> diagram}}
-                            {{!-- <object type="image/svg+xml" data="asset/images/diagram-bi.svg">
-                                Diagram Image <!-- fallback image in CSS -->
-                            </object> --}}
-                        </div>
-                        <ul class="policyList center-flex">
-                            {{#each policy}}
-                            <li class="policyTitle policyTitle{{@index}} center-flex">{{{caption}}}</li>
-                            {{/each}}
-                        </ul>
-                    </div>
-                    <div class="buttonClick policyClick" aria-label="Trigger popup">
-                        <div class="buttonClick__txt">sorot dan klik pada icon</div>
-                        <span><img src="./asset/images/cursor.png" alt="" loading="lazy" width="30" height="37"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="bgStatic">
-                <div class="riskPop">
-                    <div class="riskPopup popup center-flex">
-                        <div class="riskPop__wrap text-center">
-                            <div class="riskPop__title">Kinerja dan Prospek Pertumbuhan Ekonomi Global</div>
-                            <div class="riskPop__img">
-                                <img src="./asset/images/risk-pop.png" alt="" loading="lazy" width="989" height="540">
-                            </div>
-                            <button class="button riskPop__close" aria-label="Close popup">
+                            <div class="aspectPop__anim aspectAnim animationDiagram{{@index}}"
+                                id="animationDiagram{{@index}}"></div>
+                            <button class="button aspectPop__close" aria-label="Close popup">
                                 tutup
                             </button>
                         </div>
                     </div>
+                    {{/each}}
                 </div>
                 <div class="policyPop">
                     {{#each policy}}
@@ -438,58 +155,30 @@
                     {{/each}}
                 </div>
             </div>
-            <div class="bgStatic">
-                <div class="key container center-flex heightFull">
-                    <div class="keyWrap display-flex dir-column">
-                        <div class="ribbon ribbonKey opac0 text-center">
-                            <span class="keyRibbon">Optimistis & Waspada</span>
-                        </div>
-                        <div class="keyTitle__wrap">
-                            <div class="keyTitle opac0">Prospek ekonomi Indonesia 2025 akan menunjukkan stabilitas dan
-                                pertumbuhan
-                                yang membaik di tengah gejolak global yang terus berlanjut. Kuncinya terletak pada <span
-                                    class="cl-yellow">“Sinergi”</span> Memperkuat Stabilitas dan Transformasi Ekonomi
-                                Nasional.</div>
-                            <div class="keyImg animationKey opac0" id="animationKey"></div>
-                        </div>
-                        <div class="keyMap animationIndo opac0" id="animationIndo"></div>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- Template Image Content -->
         <!-- Fullpage Content -->
         <div id="fullpage" class="fullpage">
             <section class="section cover">
                 <div class="container">
-                    <div class="coverWrap center-flex text-center heightFull">
+                    <div class="coverWrap center-flex dir-column text-center heightFull">
                         <div class="coverContent">
                             <h1 class="coverTxtWrap center-flex dir-column">
                                 <picture class="coverTxt coverTxt--1">
-                                    <img srcset="./asset/images/cover-txt-1.png" alt="Sinergi untuk Stabilitas" class=""
-                                        width="945" height="112">
+                                    <img srcset="./asset/images/cover-txt-1.png" alt="Tangguh & Mandiri" class="">
                                 </picture>
                                 <picture class="coverTxt coverTxt--2">
-                                    <img srcset="./asset/images/cover-txt-2.png" alt="Sinergi untuk Stabilitas" class=""
-                                        width="51" height="50">
-                                </picture>
-                                <picture class="coverTxt coverTxt--3">
-                                    <img srcset="./asset/images/cover-txt-3.png" alt="Transformasi Ekonomi" class=""
-                                        width="707" height="84">
+                                    <img srcset="./asset/images/cover-txt-2.png" alt="Sinergi Mendorong Pertumbuhan Ekonomi
+Lebih Tinggi dan Berdaya Tahan" class="">
                                 </picture>
                             </h1>
                         </div>
+                        <div class="coverAnim animationCover" id="animationCover"></div>
                     </div>
                 </div>
             </section>
             <section class="section">
             </section>
-            <section class="section event">
-            </section>
-            <section class="section">
-            </section>
-            <section class="section risk">
-            </section>
             <section class="section">
             </section>
             <section class="section">
@@ -498,7 +187,86 @@
             </section>
             <section class="section">
             </section>
-            <section class="section indonesia">
+            <section class="section mapSection text-center">
+                <div class="container">
+                    <div class="mapWrap center-flex dir-column text-center heightFull">
+                        <h2 class="artCaption">Fondasi Indonesia</h2>
+                        <h3 class="artTitle">Ekonomi Indonesia Tetap Stabil</h3>
+                        <div class="mapAnim animationMap" id="animationMap"></div>
+
+                        <div class="buttonClick mapClick opac0" aria-label="Trigger Content">
+                            <span><img src="./asset/images/cursor.svg" alt="" loading="lazy" width="30"
+                                    height="37"></span>
+                            <div class="buttonClick__txt">klik pada map</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container baseContainer heightFull">
+                    <div class="base1Wrap baseWrap dir-column text-center heightFull">
+                        <div class="artTitle">Pertumbuhan ekonomi <br> Indonesia <span class="cl-yellow">stabil >5%*
+                            </span>
+                        </div>
+                        <div class="cl-white">(*kecuali pada masa pandemi 2020-2021)</div>
+                        <div class="base1Anim baseAnim animationBase1" id="animationBase1"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container baseContainer heightFull">
+                    <div class="base2Wrap baseWrap dir-column text-center heightFull">
+                        <div class="artTitle">Inflasi <span class="cl-yellow">terkendali <3% </span>
+                        </div>
+                        <div class="base2Anim baseAnim animationBase2" id="animationBase2"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container baseContainer heightFull">
+                    <div class="base3Wrap baseWrap dir-column text-center heightFull">
+                        <div class="artTitle">Nilai tukar <span class="cl-yellow">terjaga <Rp15.900* </span>
+                        </div>
+                        <div class="cl-white">(2019-2024)</div>
+                        <div class="base3Anim baseAnim animationBase3" id="animationBase3"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container baseContainer heightFull">
+                    <div class="base4Wrap baseWrap dir-column text-center heightFull">
+                        <div class="artTitle">Perbankan<span class="cl-yellow"> kuat (CAR >20%)</span>
+                        </div>
+                        <div class="base4Anim baseAnim animationBase4" id="animationBase4"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container baseContainer heightFull">
+                    <div class="base5Wrap baseWrap dir-column text-center heightFull">
+                        <div class="artTitle">Kredit<span class="cl-yellow"> tumbuh >10%</span>
+                        </div>
+                        <div class="base5Anim baseAnim animationBase5" id="animationBase5"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="section aspectSection text-center">
+                <div class="container heightFull">
+                    <div class="aspectWrap dir-column text-center heightFull">
+                        <h2 class="artCaption">Aspek penting di 2026</h2>
+                        <h3 class="artTitle">Prasayarat untuk Tangguh & Mandiri dengan <br> Pertumbuhan Lebih Tinggi dan Berdaya Tahan</h3>
+                        <div class="aspectAnim animationAspect opac0" id="animationAspect">
+
+                            <div class="buttonClick aspectClick" aria-label="Trigger Content">
+                                <span><img src="./asset/images/cursor.svg" alt="" loading="lazy" width="30"
+                                        height="37"></span>
+                                <div class="buttonClick__txt">klik pada icon</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {{!-- <section class="section policySection">
             </section>
             <section class="section">
             </section>
@@ -509,16 +277,6 @@
             <section class="section">
             </section>
             <section class="section">
-            </section>
-            <section class="section">
-            </section>
-            <section class="section quot">
-            </section>
-            <section class="section">
-            </section>
-            <section class="section">
-            </section>
-            <section class="section diagram">
             </section>
             <section class="section">
             </section>
@@ -528,15 +286,11 @@
                         <div class="creditCaption text-center titleCaption">Credits</div>
                         <div class="creditContent text-center">
                             <div class="creditCol">
-                                <div class="creditTitle">Naskah</div>
-                                <div class="creditName">Wibi Pangestu Pratama</div>
-                            </div>
-                            <div class="creditCol">
-                                <div class="creditTitle">Editor</div>
+                                <div class="creditTitle">Naskah & Editor</div>
                                 <div class="creditName">Gajah Kusumo</div>
                             </div>
                             <div class="creditCol">
-                                <div class="creditTitle">Ilustrasi & Layout</div>
+                                <div class="creditTitle">Ilustrasi & Animasi</div>
                                 <div class="creditName">Muhammad Afandi</div>
                                 <div class="creditName">Zoya Rasyidi Thoriq</div>
                             </div>
@@ -582,7 +336,7 @@
                         </button>
                     </div>
                 </div>
-            </section>
+            </section> --}}
         </div>
         <!-- Fullpage Content -->
     </main>
