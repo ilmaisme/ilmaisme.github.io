@@ -39,10 +39,35 @@
             left: calc(-300px/2 - 100px);
             bottom: 0;
         }
-        
+
         &:nth-child(3) {
             right: calc(-300px/2 - 100px);
             bottom: 0;
+        }
+    }
+}
+
+.direct {
+    &Wrap {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    &Anim {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        transform: scale(.8);
+
+        @include min-responsive($w-xxxl) {
+            margin-top: 30px;
+            transform: scale(1);
+        }
+
+        @media only screen and (max-height: 600px) and (orientation: landscape) {
+            margin-top: -40px;
+            margin-bottom: -40px;
+            transform: scale(0.7);
         }
     }
 }
