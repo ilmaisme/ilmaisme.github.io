@@ -7,3 +7,5 @@ function setAppHeight() {
 }
 
 setAppHeight();
+
+window.addEventListener("resize", setAppHeight);
