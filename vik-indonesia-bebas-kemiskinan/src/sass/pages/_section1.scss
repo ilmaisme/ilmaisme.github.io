@@ -20,12 +20,16 @@
             height: 100%;
             position: absolute;
             z-index: 0;
+            background: url('../images/section-1/cover-m.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: bottom right;
 
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: right bottom;
+            @include min-responsive($w-md) {
+                background: url('../images/section-1/cover.png');
+                background-size: cover;
+                background-attachment: fixed;
+                background-position: bottom right;
             }
         }
     }
@@ -313,6 +317,7 @@
 
         &Img {
             gap: 15px;
+            flex-wrap: nowrap;
 
             @include min-responsive($w-md) {
                 gap: 80px;
