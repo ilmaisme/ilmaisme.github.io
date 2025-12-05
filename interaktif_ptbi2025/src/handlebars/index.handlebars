@@ -254,7 +254,8 @@ Lebih Tinggi dan Berdaya Tahan" class="">
                 <div class="container heightFull">
                     <div class="aspectWrap dir-column text-center heightFull">
                         <h2 class="artCaption">Aspek penting di 2026</h2>
-                        <h3 class="artTitle">Prasayarat untuk Tangguh & Mandiri dengan <br> Pertumbuhan Lebih Tinggi dan Berdaya Tahan</h3>
+                        <h3 class="artTitle">Prasayarat untuk Tangguh & Mandiri dengan <br> Pertumbuhan Lebih Tinggi dan
+                            Berdaya Tahan</h3>
                         <div class="aspectAnim animationAspect opac0" id="animationAspect">
 
                             <div class="buttonClick aspectClick" aria-label="Trigger Content">
@@ -266,19 +267,80 @@ Lebih Tinggi dan Berdaya Tahan" class="">
                     </div>
                 </div>
             </section>
-            {{!-- <section class="section policySection">
+            <section class="section policySection">
+                <div class="container heightFull">
+                    <div class="policyWrap dir-column text-center heightFull">
+                        <h2 class="artCaption">Bauran Kebijakan BI</h2>
+                        <div class="policyAnim opac0">
+                            <div class="policyPath">
+                                {{>policy}}
+                            </div>
+                            <div class="buttonClick policyClick" aria-label="Trigger Content">
+                                <span><img src="./asset/images/cursor.svg" alt="" loading="lazy" width="30"
+                                        height="37"></span>
+                                <div class="buttonClick__txt">klik pada pilar</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="section">
+                <div class="container heightFull">
+                    <div class="synergyWrap dir-column text-center heightFull">
+                        <h2 class="artCaption artTitle cl-black">SINERGI PEMERINTAH–BI</h2>
+                        <h3 class="artCaption artTitle cl-black">Transformasi Ekonomi Nasional</h3>
+                        <div class="synergyAnim opac0">
+                            <img src="./asset/images/synergy.png" alt="" loading="lazy">
+                            <ul>
+                                <li class="synergyItem">Stabilitas makroekonomi <br> dan sistem keuangan</li>
+                                <li class="synergyItem"> Penciptaan <br> lapangan kerja</li>
+                                <li class="synergyItem">Menjaga <br> pertumbuhan ekonomi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="section">
+                <div class="container heightFull">
+                    <div class="directWrap dir-column text-center heightFull">
+                        <h2 class="artCaption cl-black">ARAH 2026</h2>
+                        <h3 class="artTitle cl-black">Menjaga Stabilitas, Mempercepat Pertumbuhan</h3>
+                        <div class="directAnim opac0">
+                            <ul>
+                                {{#each direct}}
+                                <li class="directItem directItem{{add @index 1}}">
+                                    <div class="directCaption">
+                                        <div class="directIcon"><img src="./asset/images/direct-{{add @index 1}}.png" alt=""
+                                                loading="lazy"></div>
+                                        <div class="directTitle"><span>{{title}}</span></div>
+                                    </div>
+                                    <div class="directDesc">{{{desc}}}</div>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </section>
-            <section class="section">
-            </section>
-            <section class="section">
-            </section>
-            <section class="section">
-            </section>
-            <section class="section">
+            <section class="section quoteSection">
+                <div class="container heightFull">
+                    <div class="quoteWrap dir-column heightFull">
+                        <div class="quoteAnim opac0">
+                            <picture class="quoteImg">
+                                <img srcset="./asset/images/perry-warjiyo.png" alt="" loading="lazy" class="">
+                            </picture>
+                            <div class="quoteTxt">
+                                <i>
+                                    "Indonesia menuju ekonomi yang lebih kuat, lebih inklusif, dan lebih berdaya saing
+                                    global."
+                            </div>
+                            <div class="quoteAuthor">
+                                Perry Warjiyo<br>
+                                Gubernur Bank Indonesia
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="section sectionCredit opac0">
                 <div class="creditWrap display-flex">
@@ -336,7 +398,7 @@ Lebih Tinggi dan Berdaya Tahan" class="">
                         </button>
                     </div>
                 </div>
-            </section> --}}
+            </section>
         </div>
         <!-- Fullpage Content -->
     </main>

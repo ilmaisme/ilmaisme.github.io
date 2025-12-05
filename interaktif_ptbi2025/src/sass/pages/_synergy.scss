@@ -1,198 +1,48 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
 .synergy {
-    position: relative;
-    height: var(--app-height) !important;
-
-    @media only screen and (max-height: 700px) and (orientation: landscape) {
-        transform: scale(.85);
-    }
-
-    &Circle {
-        position: absolute;
-        width: 155px;
-        height: 155px;
-        top: calc(50% + 75px / 2 + 5px);
-        left: 50%;
-        transform: translate(-50%, -50%);
-        @include font-pack($font_caption, 12px, 700, false, false);
-
-        @include min-responsive($w-md) {
-            top: 53%;
-            width: 277px;
-            height: 277px;
-            font-size: 19px
-        }
-
-        @include min-responsive($w-xl) {
-            top: 55%;
-        }
-
-        @include min-responsive($w-xxl) {
-            font-size: 21px
-        }
-
-        @media only screen and (max-height: 710px) and (orientation: landscape) {
-            font-size: 19px
-        }
-    }
-
-    &Click {
-        bottom: 35px;
-        left: 20px;
-        padding-right: 28px;
-
-        @include min-responsive($w-md) {
-            left: unset;
-            right: 0;
-        }
-
-        @include range-responsive($w-md, $w-xl) {
-            right: 100px;
-            bottom: 100px;
-        }
-
-        span {
-            position: absolute;
-            right: -8px;
-            bottom: -24px;
-        }
-    }
-
-    &Title {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        padding: 22px 17px;
-
-        @include min-responsive($w-md) {
-            padding: 30px 40px;
-        }
-    }
-
-    &Caption {
+    &Anim {
+        padding-top: 52px;
         position: relative;
-        max-width: 700px;
-        margin-bottom: 10px;
-        @include font-pack($font_caption, 20px, 700, $line-base, false);
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
 
-        @include max-responsive($w-xm) {
-            font-size: 18px;
-        }
-
-        @include range-responsive($w-md, $w-xl) {
-            font-size: 24px;
-        }
-
-        @include min-responsive($w-xl) {
-            font-size: 26px
-        }
-
-        @include min-responsive($w-xxl) {
-            font-size: 32px
-        }
-
-        @media only screen and (max-height: 710px) and (orientation: landscape) {
-            font-size: 24px
-        }
-
-        .cl-orange {
-            color: #E9764A
+        @media only screen and (max-height: 768px) and (orientation: landscape) {
+            width: 400px;
         }
     }
 
-    &List,
-    &IconCircle {
+    &Wrap {
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        h3 {
+            line-height: 1;
+            text-transform: none;
+        }
+    }
+
+    &Item {
         position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+        min-width: 300px;
 
-    &Path {
-        width: 340px;
-        height: 340px;
-        cursor: pointer;
-
-        @include max-responsive($w-xm) {
-            width: 310px;
-            height: 310px;
+        &:first-child {
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
         }
 
-        @include min-responsive($w-md) {
-            width: 600px;
-            height: 600px;
+        &:nth-child(2) {
+            left: calc(-300px/2 - 100px);
+            bottom: 0;
         }
-
-        @include min-responsive($w-xl) {
-            width: 500px;
-            height: 500px;
-        }
-
-        @include min-responsive($w-xxl) {
-            width: 600px;
-            height: 600px;
-        }
-
-        @media only screen and (max-height: 710px) and (orientation: landscape) {
-            width: 500px;
-            height: 500px;
-        }
-    }
-
-    &Icon {
-        pointer-events: none;
-        transition: fill .4s cubic-bezier(.73, .32, .34, 1.5);
-
-        &.start {
-            fill: $cl-white;
-        }
-
-        &.active {
-            fill: #FFDE4E;
-        }
-
-        &Circle {
-            max-width: 120px;
-            transition: opacity .4s ease-out;
-
-            @include min-responsive($w-md) {
-                max-width: unset;
-            }
-        }
-    }
-
-    &Area {
-        transition: fill .4s cubic-bezier(.73, .32, .34, 1.5);
-
-        &.start {
-            &.synergyArea {
-                &0 {
-                    fill: #40D4E2;
-                }
-
-                &1 {
-                    fill: #43D1A1;
-                }
-
-                &2 {
-                    fill: #9ACF41;
-                }
-
-                &3 {
-                    fill: #40A7E1;
-                }
-
-                &4 {
-                    fill: #4481DC;
-                }
-            }
-        }
-    }
-
-    &.active {
-        .synergyArea {
-            pointer-events: all;
+        
+        &:nth-child(3) {
+            right: calc(-300px/2 - 100px);
+            bottom: 0;
         }
     }
 }

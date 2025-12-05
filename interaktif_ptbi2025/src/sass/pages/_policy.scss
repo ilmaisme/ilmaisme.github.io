@@ -1,295 +1,158 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
 .policy {
-    position: relative;
-    height: var(--app-height) !important;
-
-    &Caption {
-        position: relative;
-        @include font-pack(false, 22px, 400, $line-base, $cl-white);
-
-        @include min-responsive($w-md) {
-            font-size: 32px
+    &Section {
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10vh;
+            background: #4D76A2;
         }
 
-        @include min-responsive($w-xxl) {
-            margin-bottom: 20px;
-            font-size: 48px
-        }
-
-        @media only screen and (max-height: 710px) and (orientation: landscape) {
-            font-size: 23px;
-            margin-bottom: 0;
-        }
-
-        .cl-yellow {
-            display: block;
-            margin-top: -8px;
-            font-size: 36px;
-            color: $cl-yellow;
+        .buttonClick {
+            right: 0;
+            bottom: -20%;
+            z-index: 1;
 
             @include min-responsive($w-md) {
-                margin-top: -16px;
-                font-size: 40px;
-            }
-
-            @include min-responsive($w-xl) {
-                font-size: 48px
-            }
-
-            @include min-responsive($w-xxl) {
-                font-size: 64px
-            }
-
-            @media only screen and (max-height: 700px) and (orientation: landscape) {
-                font-size: 34px
+                bottom: 30%;
             }
         }
     }
 
     &Path {
-        width: 340px;
-        height: 440px;
-        cursor: pointer;
-
-        @include min-responsive($w-md) {
-            width: 440px;
+        @media only screen and (max-height: 768px) and (orientation: landscape) {
+            margin-top: -40px;
+            margin-bottom: -40px;
+            transform: scale(.8);
         }
     }
 
-    &Bi {
-        fill: #EFEFF0;
-        transition: fill .4s cubic-bezier(.73, .32, .34, 1.5);
+    // &Bi {
+    //     fill: #EFEFF0;
+    //     transition: fill .4s cubic-bezier(.73, .32, .34, 1.5);
 
-        &__wrap {
-            position: relative;
-            bottom: 28px;
-            width: 178px;
+    //     &__wrap {
+    //         position: relative;
+    //         bottom: 28px;
+    //         width: 178px;
 
-            @include min-responsive($w-md) {
-                width: 227px;
-            }
-        }
+    //         @include min-responsive($w-md) {
+    //             width: 227px;
+    //         }
+    //     }
 
-        &0 {
-            &.start {
-                fill: #40D4E2;
-            }
-        }
+    //     &0 {
+    //         &.start {
+    //             fill: #40D4E2;
+    //         }
+    //     }
 
-        &1 {
-            &.start {
-                fill: #40D4E2;
-            }
-        }
+    //     &1 {
+    //         &.start {
+    //             fill: #40D4E2;
+    //         }
+    //     }
 
-        &2 {
-            &.start {
-                fill: #43D1A1;
-            }
-        }
+    //     &2 {
+    //         &.start {
+    //             fill: #43D1A1;
+    //         }
+    //     }
 
-        &3 {
-            &.start {
-                fill: #40A7E1;
-            }
-        }
+    //     &3 {
+    //         &.start {
+    //             fill: #40A7E1;
+    //         }
+    //     }
 
-        &4 {
-            &.start {
-                fill: #13DC00;
-            }
-        }
-    }
+    //     &4 {
+    //         &.start {
+    //             fill: #13DC00;
+    //         }
+    //     }
+    // }
 
-    &Btn {
-        position: absolute;
-        width: 80px;
-        height: 80px;
+    // &Btn {
+    //     position: absolute;
+    //     width: 80px;
+    //     height: 80px;
 
-        @include min-responsive($w-md) {
-            width: 93px;
-            height: 93px;
-        }
+    //     @include min-responsive($w-md) {
+    //         width: 93px;
+    //         height: 93px;
+    //     }
 
-        &__wrap {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+    //     &__wrap {
+    //         position: absolute;
+    //         width: 100%;
+    //         height: 100%;
+    //         top: 50%;
+    //         left: 50%;
+    //         transform: translate(-50%, -50%);
+    //     }
 
-        .-bw {
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 1;
-            transition: opacity .4s cubic-bezier(.73, .32, .34, 1.5);
-        }
+    //     .-bw {
+    //         position: absolute;
+    //         left: 0;
+    //         top: 0;
+    //         opacity: 1;
+    //         transition: opacity .4s cubic-bezier(.73, .32, .34, 1.5);
+    //     }
 
-        &.start {
-            .-bw {
-                opacity: 0;
-            }
-        }
+    //     &.start {
+    //         .-bw {
+    //             opacity: 0;
+    //         }
+    //     }
 
-        &0 {
-            top: 20px;
-            right: 56px;
+    //     &0 {
+    //         top: 20px;
+    //         right: 56px;
 
-            @include min-responsive($w-md) {
-                top: 0;
-            }
-        }
+    //         @include min-responsive($w-md) {
+    //             top: 0;
+    //         }
+    //     }
 
-        &1 {
-            top: 215px;
-            right: 0;
-        }
+    //     &1 {
+    //         top: 215px;
+    //         right: 0;
+    //     }
 
-        &2 {
-            bottom: 60px;
-            left: calc(50% - 93px/2);
+    //     &2 {
+    //         bottom: 60px;
+    //         left: calc(50% - 93px/2);
 
-            @include min-responsive($w-md) {
-                bottom: 20px;
-            }
-        }
+    //         @include min-responsive($w-md) {
+    //             bottom: 20px;
+    //         }
+    //     }
 
-        &3 {
-            top: 215px;
-            left: 0;
-        }
+    //     &3 {
+    //         top: 215px;
+    //         left: 0;
+    //     }
 
-        &4 {
-            top: 20px;
-            left: 56px;
+    //     &4 {
+    //         top: 20px;
+    //         left: 56px;
 
-            @include min-responsive($w-md) {
-                top: 0;
-            }
-        }
-    }
-
+    //         @include min-responsive($w-md) {
+    //             top: 0;
+    //         }
+    //     }
+    // }
     &Wrap {
+        display: flex;
+        justify-content: flex-end;
         position: relative;
-
-        @include max-responsive($w-xm) {
-            transform: scale(.9);
-        }
-    }
-
-    &Title {
-        position: absolute;
-        @include font-pack(false, 14px, 600, $line-base, #FFDE4E);
         z-index: 1;
-        opacity: 0;
-        pointer-events: all;
-        transition: opacity .4s cubic-bezier(.73, .32, .34, 1.5);
-
-        @include min-responsive($w-md) {
-            font-size: 18px
-        }
-
-        @include min-responsive($w-xl) {
-            font-size: 20px
-        }
-
-        @include min-responsive($w-xxl) {
-            font-size: 24px
-        }
-
-        @media only screen and (max-height: 710px) and (orientation: landscape) {
-            font-size: 18px
-        }
-
-        &.start {
-            opacity: 1;
-        }
-
-        &0 {
-            top: 108px;
-            right: 36px;
-
-            @include min-responsive($w-xl) {
-                top: 38px;
-                right: -30px;
-            }
-
-            @include min-responsive($w-xxl) {
-                top: 38px;
-                right: -45px;
-            }
-        }
-
-        &1 {
-            top: 308px;
-            right: 8px;
-
-            @include min-responsive($w-xl) {
-                top: 234px;
-                right: -118px;
-            }
-
-            @include min-responsive($w-xxl) {
-                top: 234px;
-                right: -138px;
-            }
-        }
-
-        &2 {
-            bottom: 10px;
-
-            @include min-responsive($w-xl) {
-                bottom: -45px;
-            }
-
-            @include min-responsive($w-xxl) {
-                bottom: -54px;
-            }
-
-            @media only screen and (max-height: 710px) and (orientation: landscape) {
-                bottom: -45px;
-            }
-
-            @media only screen and (max-height: 700px) and (orientation: landscape) {
-                bottom: -35px;
-            }
-        }
-
-        &3 {
-            top: 308px;
-            left: 8px;
-
-            @include min-responsive($w-xl) {
-                top: 220px;
-                left: -135px;
-            }
-
-            @include min-responsive($w-xxl) {
-                top: 210px;
-                left: -165px;
-            }
-        }
-
-        &4 {
-            top: 108px;
-            left: 22px;
-
-            @include min-responsive($w-xl) {
-                top: 8px;
-                left: -48px;
-            }
-
-            @include min-responsive($w-xxl) {
-                top: 0;
-                left: -70px;
-            }
-        }
-    }
-
-    &Click {
-        @extend .synergyClick
+        gap: 20px;
     }
 
     &Pop {
@@ -412,7 +275,9 @@
         }
 
         &up {
-            @extend .center-flex;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             &0 {
                 .policyPop__title {

@@ -159,7 +159,7 @@ $(document).ready(function () {
         autoScrolling: true,
         scrollHorizontally: true,
         //navigation: true,
-        //anchors: ['cover', 'start'],
+        anchors: ['cover', 'globe1', 'globe2', 'globe3', 'globe4', 'globe5', 'map', 'base1'],
         lockAnchors: true,
         //scrollOverflow: true,
 
@@ -618,10 +618,22 @@ $(document).ready(function () {
             }
             if (origin.index == 12 && direction == 'up') {
                 $(".aspectAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".policyAnim").velocity({
                     opacity: "0"
                 }, {
                     delay: 0,
                     duration: 300
+                });
+                $(".building").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
                 });
             }
             if (origin.index == 12 && direction == 'down') {
@@ -632,59 +644,154 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 300
                 });
+                $(".policyAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
             }
-            // if (origin.index == 13 && direction == 'up') {
+            if (origin.index == 13 && direction == 'up') {
+                $(".policyAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".aspectAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
 
-            // }
-            // if (origin.index == 13 && direction == 'down') {
-
-            // }
-            // if (origin.index == 14 && direction == 'up') {
-
-            // }
-            // if (origin.index == 14 && direction == 'down') {
-
-            // }
-            // if (origin.index == 15 && direction == 'up') {
-
-            // }
-            // if (origin.index == 15 && direction == 'down') {
-
-            // }
-            // if (origin.index == 16 && direction == 'up') {
-
-            // }
-            // if (origin.index == 16 && direction == 'down') {
-
-            // }
-            /*
-                        if (origin.index == 20 && direction == 'down') {
-                            //CREDIT
-                            $(".sectionCredit").velocity({
-                                opacity: "1"
-                            }, {
-                                delay: 0,
-                                duration: 300,
-                                begin: function () {
-                                    $('.creditTitle').addClass('active')
-                                    $('.creditName').addClass('active')
-                                    $(".scroll-guide").addClass('opac0')
-                                }
-                            })
-                        }
-                        if (origin.index == 21 && direction == 'up') {
-                            $(".sectionCredit").velocity({
-                                opacity: "0"
-                            }, {
-                                delay: 0,
-                                duration: 300,
-                                begin: function () {
-                                    $('.creditTitle').removeClass('active')
-                                    $('.creditName').removeClass('active')
-                                    $(".scroll-guide").removeClass('opac0')
-                                }
-                            })
-                        }*/
+            }
+            if (origin.index == 13 && direction == 'down') {
+                //synergy
+                $(".policyAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".synergyAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 14 && direction == 'up') {
+                $(".synergyAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".policyAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 14 && direction == 'down') {
+                //direct
+                $(".synergyAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".directAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 15 && direction == 'up') {
+                $(".directAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".synergyAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 15 && direction == 'down') {
+                //quote
+                $(".directAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".quoteAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 16 && direction == 'up') {
+                $(".quoteAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".directAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+            }
+            if (origin.index == 16 && direction == 'down') {
+                $(".quoteAnim").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                //CREDIT
+                $(".sectionCredit").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        $('.creditTitle').addClass('active')
+                        $('.creditName').addClass('active')
+                        $(".scroll-guide").addClass('opac0')
+                    }
+                })
+            }
+            if (origin.index == 17 && direction == 'up') {
+                $(".quoteAnim").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".sectionCredit").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        $('.creditTitle').removeClass('active')
+                        $('.creditName').removeClass('active')
+                        $(".scroll-guide").removeClass('opac0')
+                    }
+                })
+            }
         }
     })
 
@@ -760,9 +867,9 @@ $(document).ready(function () {
         youCanScroll()
     }
 
-    //click on indo map
-    $('.sphereDayPin').on('click', function () {
-        fullpage_api.moveTo(11);
+    //click on map
+    $('#animationMap').on('click', function () {
+        fullpage_api.moveTo(8);
         console.log('move')
     })
 })
