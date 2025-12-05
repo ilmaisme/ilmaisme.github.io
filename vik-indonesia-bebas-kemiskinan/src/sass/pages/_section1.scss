@@ -65,13 +65,8 @@
             width: 100%;
             height: calc(100%);
             margin: auto;
-            padding-top: 58px;
             padding-left: 15px;
             padding-right: 15px;
-
-            @include min-responsive($w-md) {
-                padding-top: 140px;
-            }
 
             @include min-responsive($w-xl) {
                 width: $width-container;
@@ -122,22 +117,39 @@
             justify-content: center;
             flex-direction: column;
             gap: 10px;
+            transform: scale(.95);
+            padding-top: 58px;
 
             @include min-responsive($w-md) {
+                padding-top: 140px;
                 justify-content: flex-start;
             }
 
             img {
                 max-width: calc(137px + (240 - 137) * ((100vw - 375px) / (1920 - 375)));
+
+                @media only screen and (max-height: 700px) and (orientation: landscape) {
+                    transform: scale(.8);
+                    margin-top: -30px;
+                    margin-bottom: -25px;
+                }
             }
 
             .articleText {
                 min-height: 62px;
+
+                @media only screen and (max-height: 700px) and (orientation: landscape) {
+                    min-height: unset;
+                }
             }
         }
 
         &Content {
             margin-top: 20px;
+
+            @media only screen and (max-height: $w-md) and (orientation: landscape) {
+                transform: scale(.8) translateY(-10%);
+            }
 
             strong,
             i {
@@ -211,7 +223,7 @@
     }
 
     &Float {
-        margin-top: 56px;
+        margin-top: 86px;
 
         &::before {
             content: "";
@@ -298,6 +310,24 @@
     &Story {
         color: $cl-white;
         background: #574877;
+
+        &Img {
+            gap: 15px;
+
+            @include min-responsive($w-md) {
+                gap: 80px;
+            }
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        li {
+            height: inherit;
+            transform-origin: center center;
+            will-change: transform, opacity;
+        }
     }
 
     &Arah {

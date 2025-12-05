@@ -1,5 +1,9 @@
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.config({
+  ignoreMobileResize: true
+});
+
 function onImagesLoaded(callback) {
     const images = document.querySelectorAll("img");
     let loaded = 0;

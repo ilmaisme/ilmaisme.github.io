@@ -40,14 +40,14 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100dvh;
+            height: var(--app-height);
             z-index: 1;
         }
 
         &List {
             position: relative;
             display: flex;
-            height: 100dvh;
+            height: var(--app-height);
             flex-direction: row;
             pointer-events: none;
 
@@ -58,7 +58,7 @@
 
         &Box {
             width: 100vw;
-            height: 100dvh;
+            height: var(--app-height);
             flex-basis: 100vw;
             flex-shrink: 0;
             row-gap: 23px;
@@ -171,7 +171,7 @@
     &Bg {
         position: relative;
         overflow: hidden;
-        height: 100dvh;
+        height: var(--app-height);
 
         &::after {
             background: linear-gradient(180deg, rgba(29, 29, 29, 0) 25.18%, #232323 85.69%);
@@ -211,6 +211,14 @@
                 height: auto;
                 max-width: clamp(376px, calc(376px + 595 * ((100vw - 320px)/1600)), 971px);
 
+                @include min-responsive($w-md) {
+                    max-width: 760px;
+                }
+
+                @include min-responsive($w-xxxl) {
+                    max-width: clamp(376px, calc(376px + 595 * ((100vw - 320px)/1600)), 971px);
+                }
+
                 @media only screen and (max-height: $w-md) and (orientation: landscape) {
                     max-width: 600px;
                 }
@@ -237,6 +245,18 @@
 
         .center img {
             max-width: calc(323px + (1128 - 323) * ((100vw - 320px) / (1920 - 320)));
+            
+            @include min-responsive($w-md) {
+                max-width: 760px;
+            }
+            
+            @include min-responsive($w-xxxl) {
+                max-width: calc(323px + (1128 - 323) * ((100vw - 320px) / (1920 - 320)));
+            }
+
+            @media only screen and (max-height: $w-md) and (orientation: landscape) {
+                max-width: 600px;
+            }
         }
 
         .center img,

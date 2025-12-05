@@ -285,9 +285,10 @@ function handleViewportChangeImmediate() {
     );
 
   revealSequential(".needsItem");
+  revealSequential(".section1StoryImg li");
   scrubReveal(".credit__member", { origin: "right", distance: 80 });
   scrubReveal(".credit__team", { origin: "left", distance: 80 });
-  scrubReveal(".credit__logo", { origin: "bottom", distance: 60 });
+  // scrubReveal(".credit__logo", { origin: "bottom", distance: 60 });
 
   ScrollTrigger.refresh();
 }
