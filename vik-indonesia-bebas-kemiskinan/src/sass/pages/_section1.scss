@@ -21,15 +21,17 @@
             position: absolute;
             z-index: 0;
             background: url('../images/section-1/cover-m.png');
-            background-size: 100%;
+            background-size: cover;
             background-attachment: fixed;
             background-position: bottom right;
+            background-repeat: no-repeat;
 
             @include min-responsive($w-md) {
                 background: url('../images/section-1/cover.png');
                 background-size: cover;
                 background-attachment: fixed;
                 background-position: bottom right;
+                background-repeat: no-repeat;
             }
         }
     }
@@ -123,6 +125,7 @@
             gap: 10px;
             transform: scale(.95);
             padding-top: 58px;
+            pointer-events: none;
 
             @include min-responsive($w-md) {
                 padding-top: 140px;

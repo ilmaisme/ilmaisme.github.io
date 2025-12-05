@@ -171,6 +171,7 @@
     &Bg {
         position: relative;
         overflow: hidden;
+        width: 100%;
         height: calc(var(--vh) * 100);
 
         &::after {
@@ -194,15 +195,16 @@
             height: 100%;
             z-index: 0;
             background: url('../images/cover/bg-m.jpg');
-            background-size: 100%;
+            background-size: cover;
             background-attachment: fixed;
             background-position: bottom center;
+            background-repeat: no-repeat;
 
             @include min-responsive($w-md) {
                 background: url('../images/cover/bg.jpg');
                 background-size: cover;
                 background-attachment: fixed;
-                background-position: bottom center;
+                background-position: bottom center;background-repeat: no-repeat;
             }
         }
 
