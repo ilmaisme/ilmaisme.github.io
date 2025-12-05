@@ -40,14 +40,14 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: var(--app-height);
+            height: calc(var(--vh) * 100);
             z-index: 1;
         }
 
         &List {
             position: relative;
             display: flex;
-            height: var(--app-height);
+            height: calc(var(--vh) * 100);
             flex-direction: row;
             pointer-events: none;
 
@@ -58,7 +58,7 @@
 
         &Box {
             width: 100vw;
-            height: var(--app-height);
+            height: calc(var(--vh) * 100);
             flex-basis: 100vw;
             flex-shrink: 0;
             row-gap: 23px;
@@ -171,7 +171,7 @@
     &Bg {
         position: relative;
         overflow: hidden;
-        height: var(--app-height);
+        height: calc(var(--vh) * 100);
 
         &::after {
             background: linear-gradient(180deg, rgba(29, 29, 29, 0) 25.18%, #232323 85.69%);
@@ -194,7 +194,7 @@
             height: 100%;
             z-index: 0;
             background: url('../images/cover/bg-m.jpg');
-            background-size: cover;
+            background-size: 100%;
             background-attachment: fixed;
             background-position: bottom center;
 
@@ -280,6 +280,6 @@
 .scroll-area {
     position: relative;
     width: 100%;
-    height: var(--app-height);
+    height: calc(var(--vh) * 100);
     overflow: hidden;
 }
