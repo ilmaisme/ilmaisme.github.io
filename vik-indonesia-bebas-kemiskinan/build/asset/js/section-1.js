@@ -1,25 +1,42 @@
+/* ============================================================
+   Page-2 patched JS — stable vh + guarded rebuilds + fixed horizontal width
+============================================================ */
+
 gsap.registerPlugin(ScrollTrigger);
 
 /* --------------------------------------------------
-   ScrollTrigger global config (must be before creating triggers)
+   ScrollTrigger global config
 -------------------------------------------------- */
 ScrollTrigger.config({
-  ignoreMobileResize: true
+  ignoreMobileResize: true,
+  pinType: "fixed"
 });
 
 /* --------------------------------------------------
-   MOBILE VIEWPORT FIX (prevent layout jump when address bar hides)
-   - sets --vh (1vh unit locked to innerHeight)
-   - sets --app-height for legacy usage in your code
+   MOBILE VIEWPORT VARS
 -------------------------------------------------- */
-function updateViewportVars() {
+let vhLocked = false;
+
+function updateViewportVars(force = false) {
+  if (vhLocked && !force) return;
   const h = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-  // --vh is 1% of the viewport height (safe for mobile)
   document.documentElement.style.setProperty("--vh", `${h * 0.01}px`);
-  // keep your existing --app-height for compatibility (used elsewhere)
   document.documentElement.style.setProperty("--app-height", `${h}px`);
 }
+
 updateViewportVars();
+
+function lockVh() {
+  const computedVh = getComputedStyle(document.documentElement).getPropertyValue("--vh").trim();
+  if (computedVh) {
+    document.documentElement.style.setProperty("--vh", computedVh);
+    vhLocked = true;
+  }
+}
+
+function unlockVh() {
+  vhLocked = false;
+}
 
 /* --------------------------------------------------
    Utilities
@@ -36,9 +53,6 @@ function debounce(fn, wait = 120) {
   };
 }
 
-/* --------------------------------------------------
-   Small helper to detect mobile-ish devices for debounce tuning
--------------------------------------------------- */
 function isMobileDevice() {
   return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 }
@@ -57,7 +71,7 @@ function waitForSectionImages() {
     imgs.forEach(img => {
       try {
         if (img.loading === "lazy") img.loading = "eager";
-      } catch (e) { }
+      } catch (e) {}
     });
 
     let done = 0;
@@ -125,30 +139,31 @@ function matchScrollContentHeight() {
 }
 
 /* --------------------------------------------------
-   Kill GSAP
+   Kill GSAP instances
 -------------------------------------------------- */
 let horizontalTween = null;
+let fixedScrollWidth = null;
 
 function killPreviousGSAP() {
   if (horizontalTween) {
     try {
       horizontalTween.scrollTrigger?.kill();
       horizontalTween.kill();
-    } catch (e) { }
+    } catch (e) {}
     horizontalTween = null;
   }
 
   try {
     ScrollTrigger.getAll().forEach(st => st.kill());
-  } catch (e) { }
+  } catch (e) {}
 
   try {
     gsap.killTweensOf(".section1Scroll");
-  } catch (e) { }
+  } catch (e) {}
 }
 
 /* --------------------------------------------------
-   Horizontal Scroll
+   Horizontal Scroll Setup
 -------------------------------------------------- */
 function initHorizontalScroll() {
   const scrollContainer = document.querySelector(".section1Scroll");
@@ -161,21 +176,22 @@ function initHorizontalScroll() {
   const vw = getViewportWidth();
   const totalScrollWidth = Math.max(0, scrollWidth - vw);
 
+  fixedScrollWidth = totalScrollWidth;
+
   horizontalTween = gsap.to(scrollContainer, {
-    x: () => -totalScrollWidth,
+    x: () => -fixedScrollWidth,
     ease: "none",
     scrollTrigger: {
       trigger: triggerEl,
       start: "top top",
-      // using px-based end is valid for horizontal containerAnimation pinning
-      end: "+=" + totalScrollWidth,
+      end: "+=" + fixedScrollWidth,
       scrub: true,
       pin: true,
       pinSpacing: true,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-      pinType: "transform",
-      markers: false,
+      anticipatePin: 0,
+      invalidateOnRefresh: false,
+      pinType: "fixed",
+      markers: false
     }
   });
 }
@@ -230,9 +246,7 @@ function adjustLastBoxPadding() {
 }
 
 /* --------------------------------------------------
-   Reveal Helpers
-   - revealSequential unchanged except safer start/end formats
-   - scrubReveal now accepts user-provided scrollTrigger overrides
+   Reveal Utilities
 -------------------------------------------------- */
 function revealSequential(selector, parent = null) {
   const items = gsap.utils.toArray(selector);
@@ -257,11 +271,6 @@ function revealSequential(selector, parent = null) {
   });
 }
 
-/*
-  scrubReveal now supports:
-    scrubReveal(selector, { origin, distance, opacity, scrollTrigger: { ... }})
-  any properties passed inside scrollTrigger will override the defaults
-*/
 function scrubReveal(selector, { origin = "bottom", distance = 100, opacity = 0, scrollTrigger: userST = {} } = {}) {
   let offset = { x: 0, y: 0 };
   if (origin === "left") offset.x = -distance;
@@ -271,7 +280,6 @@ function scrubReveal(selector, { origin = "bottom", distance = 100, opacity = 0,
 
   const defaultST = {
     trigger: selector,
-    // viewport-based start/end so they remain reachable at page bottom
     start: "top 90%",
     end: "top 40%",
     scrub: true,
@@ -288,21 +296,21 @@ function scrubReveal(selector, { origin = "bottom", distance = 100, opacity = 0,
       ease: "power2.out",
       scrollTrigger: {
         ...defaultST,
-        ...userST // user overrides win
+        ...userST
       }
     }
   );
 }
 
 /* --------------------------------------------------
-   FULL REBUILD (main init function)
+   FULL REBUILD
 -------------------------------------------------- */
 function handleViewportChangeImmediate() {
   killPreviousGSAP();
   console.log("⚙️ FULL REBUILD…");
 
-  // ensure our viewport vars are freshly set (use visualViewport if available)
-  updateViewportVars();
+  unlockVh();
+  updateViewportVars(true);
 
   matchScrollContentHeight();
   adjustLastBoxPadding();
@@ -310,7 +318,6 @@ function handleViewportChangeImmediate() {
   initHorizontalScroll();
   initScrollContentReveal();
 
-  /* Normal reveals */
   gsap.utils.toArray(".section1Caption").forEach(el =>
     gsap.to(el, {
       opacity: 1,
@@ -338,7 +345,6 @@ function handleViewportChangeImmediate() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: img,
-            // avoid 'bottom' based endpoints — use viewport-based positions
             start: "top 80%",
             end: "top 50%",
             scrub: true
@@ -351,19 +357,23 @@ function handleViewportChangeImmediate() {
   revealSequential(".section1StoryImg li");
   scrubReveal(".credit__member", { origin: "right", distance: 80 });
   scrubReveal(".credit__team", { origin: "left", distance: 80 });
-  // If you need the logo reveal, pass explicit ST to avoid being cut off:
-  // scrubReveal(".credit__logo", { origin: "bottom", distance: 60, scrollTrigger: { start: "top 90%", end: "top 30%" } });
 
-  // Refresh ScrollTrigger to apply everything after build
   ScrollTrigger.refresh();
+
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      lockVh();
+      console.log("🔒 --vh locked for stable layout");
+    }, 60);
+  });
 }
 
 /* --------------------------------------------------
-   Debounced handler (tuned for mobile)
+   Debounced rebuild (300ms on mobile)
 -------------------------------------------------- */
 const handleViewportChange = debounce(
   handleViewportChangeImmediate,
-  isMobileDevice() ? 250 : 120
+  isMobileDevice() ? 300 : 120
 );
 
 /* --------------------------------------------------
@@ -375,33 +385,40 @@ waitForSectionImages().then(() => {
 });
 
 /* --------------------------------------------------
-   RESIZE / VISUAL VIEWPORT LISTENERS
-   - use visualViewport resize (if present) for accurate height
-   - debounce to avoid repeated rebuilds while address bar animates
+   VISUAL VIEWPORT LISTENERS
 -------------------------------------------------- */
 if (window.visualViewport) {
+  let lastStableVVHeight = window.visualViewport.height || window.innerHeight;
+
   window.visualViewport.addEventListener("resize", () => {
-    // update CSS vars immediately (keeps layout stable)
-    updateViewportVars();
-    // but debounce the heavy full rebuild
-    handleViewportChange();
+    const newH = window.visualViewport.height || window.innerHeight;
+
+    updateViewportVars(false);
+
+    if (Math.abs(newH - lastStableVVHeight) > 120) {
+      lastStableVVHeight = newH;
+      handleViewportChange();
+    }
+  });
+
+  window.visualViewport.addEventListener("scroll", () => {
+    updateViewportVars(false);
   });
 } else {
   window.addEventListener("resize", () => {
-    updateViewportVars();
+    updateViewportVars(false);
     handleViewportChange();
   });
 }
 
-// orientation changes should definitely trigger a rebuild, but allow the viewport to settle
 window.addEventListener("orientationchange", () => {
-  updateViewportVars();
+  unlockVh();
+  updateViewportVars(true);
   setTimeout(handleViewportChangeImmediate, 260);
 });
 
 /* --------------------------------------------------
    FINAL BOUNCING FIX
-   (delayed double refresh AFTER page fully stable)
 -------------------------------------------------- */
 window.addEventListener("load", () => {
   console.log("🔥 Window Load → Page stable");
@@ -419,8 +436,7 @@ window.addEventListener("load", () => {
 });
 
 /* --------------------------------------------------
-   DEBUG LISTENERS (optional — kept from original)
-   - they log useful info during development; remove if noisy
+   DEBUG LOGS
 -------------------------------------------------- */
 ScrollTrigger.addEventListener("refresh", () => {
   console.group("🔁 ScrollTrigger REFRESH");

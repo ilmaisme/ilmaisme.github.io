@@ -139,6 +139,11 @@ main {
     position: relative;
 }
 
+.no-anim * {
+    animation: none !important;
+    transition: none !important;
+}
+
 .section {
     &Cover {
         height: calc(var(--vh) * 100);
@@ -203,7 +208,7 @@ main {
             transform: translateX(-50%);
             text-transform: uppercase;
             font-weight: 700;
-            
+
             @include min-responsive($w-md) {
                 bottom: calc(50% - (clamp(260px, calc(32.17vw + 50px), 757px) / 2));
                 // left: calc(50% - (clamp(260px, calc(32.17vw + 50px), 757px)));

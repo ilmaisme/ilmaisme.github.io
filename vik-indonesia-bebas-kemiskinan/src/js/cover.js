@@ -121,6 +121,10 @@ function getHomeTransform() {
    7) MAIN SCROLL ANIMATION
 -------------------------------------------------- */
 onImagesLoaded(() => {
+    // --- FIX LAYOUT JUMP ---
+    const lockedVh = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--vh"));
+    document.documentElement.style.setProperty("--vh", `${lockedVh}px`);
+
     ScrollTrigger.refresh();
 
     const home = document.querySelector(".coverScrollStill picture:first-child img");
