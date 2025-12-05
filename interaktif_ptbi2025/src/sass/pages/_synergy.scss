@@ -55,9 +55,13 @@
     }
 
     &Anim {
-        margin-top: -20px;
+        margin-top: 20px;
         margin-bottom: -20px;
         transform: scale(.8);
+
+        @include min-responsive($w-md) {
+            margin-top: -20px;
+        }
 
         @include min-responsive($w-xxxl) {
             margin-top: 30px;

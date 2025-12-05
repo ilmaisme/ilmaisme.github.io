@@ -14,7 +14,7 @@
         }
 
         .buttonClick {
-            right: 0;
+            right: 120px;
             bottom: -20%;
             z-index: 1;
 
@@ -25,6 +25,7 @@
     }
 
     &Path {
+
         @media only screen and (max-height: 768px) and (orientation: landscape) {
             margin-top: -40px;
             margin-bottom: -40px;
@@ -35,6 +36,17 @@
             margin-top: -80px;
             margin-bottom: -80px;
             transform: scale(0.7);
+        }
+
+        svg {
+            margin-top: -120px;
+            margin-bottom: -100px;
+            max-width: 100%;
+
+            @include min-responsive($w-md) {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -83,76 +95,18 @@
     //     }
     // }
 
-    // &Btn {
-    //     position: absolute;
-    //     width: 80px;
-    //     height: 80px;
+    &Btn {
+        cursor: pointer;
 
-    //     @include min-responsive($w-md) {
-    //         width: 93px;
-    //         height: 93px;
-    //     }
+        &:hover {
+            opacity: 0;
+        }
 
-    //     &__wrap {
-    //         position: absolute;
-    //         width: 100%;
-    //         height: 100%;
-    //         top: 50%;
-    //         left: 50%;
-    //         transform: translate(-50%, -50%);
-    //     }
+        &.start {
+            opacity: 0;
+        }
+    }
 
-    //     .-bw {
-    //         position: absolute;
-    //         left: 0;
-    //         top: 0;
-    //         opacity: 1;
-    //         transition: opacity .4s cubic-bezier(.73, .32, .34, 1.5);
-    //     }
-
-    //     &.start {
-    //         .-bw {
-    //             opacity: 0;
-    //         }
-    //     }
-
-    //     &0 {
-    //         top: 20px;
-    //         right: 56px;
-
-    //         @include min-responsive($w-md) {
-    //             top: 0;
-    //         }
-    //     }
-
-    //     &1 {
-    //         top: 215px;
-    //         right: 0;
-    //     }
-
-    //     &2 {
-    //         bottom: 60px;
-    //         left: calc(50% - 93px/2);
-
-    //         @include min-responsive($w-md) {
-    //             bottom: 20px;
-    //         }
-    //     }
-
-    //     &3 {
-    //         top: 215px;
-    //         left: 0;
-    //     }
-
-    //     &4 {
-    //         top: 20px;
-    //         left: 56px;
-
-    //         @include min-responsive($w-md) {
-    //             top: 0;
-    //         }
-    //     }
-    // }
     &Wrap {
         display: flex;
         justify-content: flex-end;
@@ -164,70 +118,41 @@
     &Pop {
 
         &__wrap {
-            max-width: calc(100% - 25px);
-            padding: 15px 10px 5px;
+            position: relative;
+            max-width: calc(100% - 40px);
+            padding: 15px 10px 25px 60px;
             background: $cl-white;
             border-radius: 20px;
 
             @include min-responsive($w-md) {
                 max-width: 636px;
-                padding: 35px 30px;
-            }
-
-            @include min-responsive($w-xl) {
-                padding: 35px 30px 25px;
-            }
-
-            @include min-responsive($w-xxl) {
-                padding: 35px 30px;
-            }
-
-            @media only screen and (max-height: 710px) and (orientation: landscape) {
-                padding: 25px 30px 20px;
+                padding: 54px 70px;
             }
         }
 
         &__close {
             display: block;
-            background: #B1B1B1;
-            padding-top: 14px;
-            padding-bottom: 14px;
-            border-radius: 20px;
-            width: 220px;
-            margin: 10px auto;
-            @include font-pack(false, 14px, 600, $line-base, false);
+            padding: 0;
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            max-width: 32px;
 
             @include min-responsive($w-md) {
-                padding-top: 18px;
-                padding-bottom: 18px;
-            }
-
-            @include min-responsive($w-xl) {
-                font-size: 16px
-            }
-
-            @include min-responsive($w-xxl) {
-                font-size: 18px
-            }
-
-            @media only screen and (max-height: 710px) and (orientation: landscape) {
-                font-size: 16px
+                right: 15px;
+                top: 15px;
+                max-width: unset;
             }
         }
 
         &__title {
-            border-radius: 20px;
             @include font-pack(false, 18px, 600, $line-base, false);
-            padding-top: 10px;
-            padding-bottom: 10px;
 
             br {
                 display: none;
             }
 
             @include min-responsive($w-md) {
-                padding-top: 20px;
-                padding-bottom: 20px;
                 font-size: 24px;
 
                 br {
@@ -236,14 +161,10 @@
             }
 
             @include min-responsive($w-xxl) {
-                padding-top: 28px;
-                padding-bottom: 28px;
                 font-size: 24px
             }
 
             @media only screen and (max-height: 710px) and (orientation: landscape) {
-                padding-top: 18px;
-                padding-bottom: 18px;
                 font-size: 22px;
 
                 br {
@@ -255,19 +176,14 @@
         &__txt {
             max-width: 521px;
             margin-top: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 0;
             margin-left: auto;
             margin-right: auto;
-            padding-left: 30px;
-            padding-right: 10px;
             list-style-type: disc;
             @include font-pack(false, 14px, 600, $line-base, false);
 
             @include min-responsive($w-xl) {
                 margin-top: 20px;
-                margin-bottom: 20px;
-                padding-left: 36px;
-                padding-right: 36px;
                 font-size: 18px
             }
 
@@ -284,56 +200,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
-            &0 {
-                .policyPop__title {
-                    background: #66D1FF;
-                }
-            }
-
-            &1 {
-                .policyPop__title {
-                    background: #29D091;
-                }
-            }
-
-            &2 {
-                .policyPop__title {
-                    background: #FFC900;
-                }
-            }
-
-            &3 {
-                .policyPop__title {
-                    background: #328DEE;
-                }
-            }
-
-            &4 {
-                .policyPop__title {
-                    background: #5BDA70;
-                }
-            }
         }
     }
 
-    &Anim {
-        text-align: center;
+    &Num {
+        position: absolute;
+        left: -10px;
+        max-width: 50px;
+        top: 50%;
+        transform: translateY(-50%);
 
-        svg {
-            max-width: 50vw;
-            width: auto !important;
-            height: auto !important;
-
-            @include min-responsive($w-xl) {
-                max-width: unset;
-            }
-        }
-    }
-
-    &.active {
-        .policyBtn {
-            pointer-events: all;
+        @include min-responsive($w-xl) {
+            left: -48px;
+            max-width: unset;
         }
     }
 }

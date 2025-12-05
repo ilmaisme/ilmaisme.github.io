@@ -668,6 +668,12 @@ $(document).ready(function () {
             }
             if (origin.index == 13 && direction == 'down') {
                 //synergy
+                $(".bgColor__grey--grad").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
                 $(".policyAnim").velocity({
                     opacity: "0"
                 }, {
@@ -682,6 +688,12 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 14 && direction == 'up') {
+                $(".bgColor__grey--grad").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
                 $(".synergyAnim").velocity({
                     opacity: "0"
                 }, {
@@ -726,6 +738,12 @@ $(document).ready(function () {
             }
             if (origin.index == 15 && direction == 'down') {
                 //quote
+                $(".bgColor__grey").velocity({
+                    opacity: "1"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
                 $(".directAnim").velocity({
                     opacity: "0"
                 }, {
@@ -740,6 +758,12 @@ $(document).ready(function () {
                 });
             }
             if (origin.index == 16 && direction == 'up') {
+                $(".bgColor__grey").velocity({
+                    opacity: "0"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
                 $(".quoteAnim").velocity({
                     opacity: "0"
                 }, {
@@ -809,54 +833,26 @@ $(document).ready(function () {
         $(".scroll-guide").addClass('opac0')
     }
 
-    //synergy area
-    $(".synergyArea").hover(function () {
-        var num = $(this).attr('num'),
-            strnum = new String(num),
-            icon = $("[class*='synergyIcon" + strnum + "']"),
-            title = $("[class*='synergyTitle" + strnum + "']");
-        $(".synergyArea").toggleClass("start")
-        $(this).toggleClass("start")
-        icon.toggleClass("active")
-        title.toggleClass("opac0")
-        $('.synergyIconCircle').toggleClass("opac0")
-        //console.log(title)
-    });
-
     //diagram popup
-    $('.policyBtn').hover(function () {
-        var num = $(this).attr('num'),
-            strnum = new String(num),
-            icon = $("[class*='policyBi" + strnum + "']"),
-            title = $("[class*='policyTitle" + strnum + "']")
-        $(".policyBi:not(icon)").toggleClass("start")
-        $(".policyBtn").not(this).toggleClass("start")
-        icon.toggleClass("start")
-        title.toggleClass("start")
+    $('.policyBtn').click(function () {
+        waitYouCantScroll()
+        var num = $(this).attr('class').match(/policyBtn(\d+)/)[1];
+        var pop = $("[class*='policyPopup" + num + "']");
+
+        // remove class from all
+        $('.policyBtn').removeClass('start');
+        $('.policyPopup').removeClass('active');
+
+        // add start only to clicked items
+        $(this).addClass('start');
+        pop.addClass('active');
     });
     $('.policyPop__close').on('click', function () {
         closePopup()
+        youCanScroll()
     })
     $('.policyPop__wrap').on('click', function (e) {
         e.stopPropagation();
-    })
-    const animations = [
-        animationDiagram0,
-        animationDiagram1,
-        animationDiagram2,
-        animationDiagram3,
-        animationDiagram4
-    ];
-    $('.policyBtn').on('click', function () {
-        var num = $(this).attr('num'),
-            strnum = new String(num),
-            pop = $("[class*='policyPopup" + strnum + "']");
-        pop.addClass("active")
-        waitYouCantScroll()
-        //play animation
-        if (strnum >= 0 && strnum <= 4) {
-            animations[strnum].play();
-        }
     })
     $('.popup').on('click', function () {
         closePopup()
@@ -864,6 +860,7 @@ $(document).ready(function () {
 
     function closePopup() {
         $('.popup').removeClass("active")
+        $('.policyBtn').removeClass('start');
         youCanScroll()
     }
 

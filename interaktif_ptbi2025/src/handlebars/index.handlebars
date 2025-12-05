@@ -36,6 +36,7 @@
                     </div>
                 </div>
             </div>
+            <div class="bgColor bgColor__grey--grad opac0"></div>
             <div class="bgColor bgColor__grey opac0"></div>
         </div>
         <!-- Template Background Color -->
@@ -137,18 +138,19 @@
                 </div>
                 <div class="policyPop">
                     {{#each policy}}
-                    <div class="policyPopup popup policyPopup{{@index}}">
+                    <div class="policyPopup popup policyPopup{{add @index 1}}">
                         <div class="policyPop__wrap">
+                            <img class="policyNum" src="./asset/images/policy-{{add @index 1}}.png" alt="" loading="lazy">
                             <div class="policyPop__content">
-                                <div class="policyPop__title text-center">{{{title}}}</div>
-                                <ul class="policyPop__txt">
-                                    {{{list}}}
-                                </ul>
+                                <div class="policyPop__title">
+                                    {{title}}
+                                </div>
+                                <div class="policyPop__txt">
+                                    {{{desc}}}
+                                </div>
                             </div>
-                            <div class="policyPop__anim policyAnim animationDiagram{{@index}}"
-                                id="animationDiagram{{@index}}"></div>
                             <button class="button policyPop__close" aria-label="Close popup">
-                                tutup
+                                <img src="./asset/images/close.png" alt="">
                             </button>
                         </div>
                     </div>
@@ -368,7 +370,7 @@ Lebih Tinggi dan Berdaya Tahan" class="">
                     <div class="creditBottom center-flex">
                         <a href="https://www.bisnis.com/" target="_self">
                             <picture class="creditBottom__logo">
-                                <img srcset="./asset/images/logo-bisniscom-w.svg" alt="Bisniscom" class="" width="169"
+                                <img srcset="./asset/images/logo-bisniscom.png" alt="Bisniscom" class="" width="169"
                                     height="38" loading="lazy">
                             </picture>
                         </a>

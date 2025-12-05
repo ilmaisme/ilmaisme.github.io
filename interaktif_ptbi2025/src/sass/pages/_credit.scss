@@ -22,13 +22,13 @@
 
     &Caption {
         text-transform: uppercase;
-        @include font-pack($font_base, false, 400, false, $cl-white);
+        @include font-pack($font_base, false, 400, false, $cl-primary);
     }
 
     &Title {
         transform: translateX(-100vw);
         transition: all .4s ease-in;
-        @include font-pack($font_caption, 12px, 300, false, #FFDE4E);
+        @include font-pack($font_base, 12px, 400, false, #0C0C0C);
 
         @include min-responsive($w-lg) {
             font-size: 16px;
@@ -43,7 +43,7 @@
         position: relative;
         transform: translateX(100vw);
         transition: all .4s ease-in;
-        @include font-pack($font_caption, 14px, 400, false, $cl-white);
+        @include font-pack($font_caption, 14px, 400, false, $cl-primary);
 
         @include min-responsive($w-lg) {
             font-size: 18px;
@@ -106,7 +106,7 @@
         flex: 1;
         margin-left: 8px;
         margin-right: 0;
-        border-bottom: 2px solid $cl-white;
+        border-bottom: 2px solid $cl-primary;
         border-radius: 2px;
 
         @include min-responsive($w-md) {
