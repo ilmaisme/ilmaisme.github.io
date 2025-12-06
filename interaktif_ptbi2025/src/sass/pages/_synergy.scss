@@ -3,11 +3,15 @@
 
 .synergy {
     &Anim {
-        padding-top: 52px;
+        padding-top: 40px;
         position: relative;
         margin-top: 30px;
         margin-left: auto;
         margin-right: auto;
+
+        @include min-responsive($w-md) {
+            padding-top: 52px;
+        }
 
         @media only screen and (max-height: 768px) and (orientation: landscape) {
             width: 400px;
@@ -36,13 +40,27 @@
         }
 
         &:nth-child(2) {
-            left: calc(-300px/2 - 100px);
-            bottom: 0;
+            left: 0;
+            text-align: left;
+            bottom: -40px;
+
+            @include min-responsive($w-md) {
+                left: calc(-300px/2 - 100px);
+                bottom: 0;
+                text-align: center;
+            }
         }
 
         &:nth-child(3) {
-            right: calc(-300px/2 - 100px);
-            bottom: 0;
+            right: 0;
+            bottom: -40px;
+            text-align: right;
+
+            @include min-responsive($w-md) {
+                right: calc(-300px/2 - 100px);
+                bottom: 0;
+                text-align: center;
+            }
         }
     }
 }

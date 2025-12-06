@@ -596,7 +596,7 @@ $(document).ready(function () {
                 }, 300);
             }
             if (origin.index == 11 && direction == 'up') {
-
+                $(".aspectSection").removeClass('anim')
             }
             if (origin.index == 11 && direction == 'down') {
                 //ASPECT POPUP
@@ -611,6 +611,9 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 700,
+                    begin: function () {
+                        $(".aspectSection").addClass('anim')
+                    },
                     complete: function () {
                         animationAspect.play()
                     }
@@ -621,7 +624,10 @@ $(document).ready(function () {
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $(".aspectSection").addClass('anim')
+                    }
                 });
                 $(".policyAnim").velocity({
                     opacity: "0"
@@ -642,7 +648,10 @@ $(document).ready(function () {
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 300
+                    duration: 300,
+                    begin: function () {
+                        $(".aspectSection").removeClass('anim')
+                    }
                 });
                 $(".policyAnim").velocity({
                     opacity: "1"
@@ -662,7 +671,10 @@ $(document).ready(function () {
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $(".aspectSection").addClass('anim')
+                    }
                 });
 
             }
@@ -833,6 +845,27 @@ $(document).ready(function () {
         $(".scroll-guide").addClass('opac0')
     }
 
+    //aspect popup
+    $('.aspectBtn').click(function () {
+        waitYouCantScroll()
+        var num = $(this).attr('class').match(/aspectBtn(\d+)/)[1];
+        var pop = $("[class*='aspectPopup" + num + "']");
+
+        // remove class from all
+        $('.aspectBtn').removeClass('start');
+        $('.aspectPopup').removeClass('active');
+
+        // add start only to clicked items
+        $(this).addClass('start');
+        pop.addClass('active');
+    });
+    $('.aspectPop__close').on('click', function () {
+        closePopup()
+    })
+    $('.aspectPop__wrap').on('click', function (e) {
+        e.stopPropagation();
+    })
+
     //diagram popup
     $('.policyBtn').click(function () {
         waitYouCantScroll()
@@ -849,7 +882,6 @@ $(document).ready(function () {
     });
     $('.policyPop__close').on('click', function () {
         closePopup()
-        youCanScroll()
     })
     $('.policyPop__wrap').on('click', function (e) {
         e.stopPropagation();

@@ -2,40 +2,30 @@
 @use '../base/vars' as *;
 
 .aspect {
+    &Section {
+
+        &.anim {
+            .aspectBtn {
+                animation: bounce 1.2s infinite;
+            }
+        }
+    }
+
     &Pop {
         &__wrap {
             max-width: calc(100% - 25px);
-            padding: 15px 10px 5px;
-            background: $cl-white;
-            border-radius: 20px;
-
-            @include min-responsive($w-md) {
-                max-width: 636px;
-                padding: 35px 30px;
-            }
-
-            @include min-responsive($w-xl) {
-                padding: 35px 30px 25px;
-            }
-
-            @include min-responsive($w-xxl) {
-                padding: 35px 30px;
-            }
-
-            @media only screen and (max-height: 710px) and (orientation: landscape) {
-                padding: 25px 30px 20px;
-            }
         }
 
         &__close {
             display: block;
-            background: #B1B1B1;
+            background: #E23172;
+            background: linear-gradient(180deg, rgba(226, 49, 114, 1) 0%, rgba(239, 188, 25, 1) 100%);
             padding-top: 14px;
             padding-bottom: 14px;
-            border-radius: 20px;
+            border-radius: 50px;
             width: 220px;
-            margin: 10px auto;
-            @include font-pack(false, 14px, 600, $line-base, false);
+            margin: 30px auto 0;
+            @include font-pack(false, 16px, 600, $line-base, $cl-white);
 
             @include min-responsive($w-md) {
                 padding-top: 18px;
@@ -43,32 +33,55 @@
             }
 
             @include min-responsive($w-xl) {
-                font-size: 16px
-            }
-
-            @include min-responsive($w-xxl) {
                 font-size: 18px
             }
 
+            @include min-responsive($w-xxl) {
+                font-size: 20px
+            }
+
             @media only screen and (max-height: 710px) and (orientation: landscape) {
-                font-size: 16px
+                font-size: 18px
+            }
+        }
+
+        &__content {
+            margin-top: 20px;
+            padding: 15px 10px;
+            background: $cl-white;
+            border-radius: 20px;
+
+            @include min-responsive($w-md) {
+                max-width: 333px;
+                padding: 35px 30px;
+            }
+
+            @include min-responsive($w-xl) {
+                padding: 35px 30px;
+            }
+
+            @include min-responsive($w-xxl) {
+                padding: 35px 30px;
+            }
+
+            @media only screen and (max-height: 710px) and (orientation: landscape) {
+                padding: 25px 30px;
             }
         }
 
         &__title {
-            border-radius: 20px;
-            @include font-pack(false, 18px, 600, $line-base, false);
-            padding-top: 10px;
-            padding-bottom: 10px;
+            @include font-pack(false, 16px, 400, $line-base, false);
+            margin-top: 10px;
+            margin-bottom: 10px;
 
             br {
                 display: none;
             }
 
             @include min-responsive($w-md) {
-                padding-top: 20px;
-                padding-bottom: 20px;
-                font-size: 24px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                font-size: 18px;
 
                 br {
                     display: inline-block;
@@ -76,15 +89,15 @@
             }
 
             @include min-responsive($w-xxl) {
-                padding-top: 28px;
-                padding-bottom: 28px;
-                font-size: 24px
+                margin-top: 30px;
+                margin-bottom: 30px;
+                font-size: 20px
             }
 
             @media only screen and (max-height: 710px) and (orientation: landscape) {
-                padding-top: 18px;
-                padding-bottom: 18px;
-                font-size: 22px;
+                margin-top: 18px;
+                margin-bottom: 18px;
+                font-size: 16px;
 
                 br {
                     display: none;
@@ -93,14 +106,10 @@
         }
 
         &__txt {
-            max-width: 521px;
             margin-top: 15px;
             margin-bottom: 15px;
             margin-left: auto;
             margin-right: auto;
-            padding-left: 30px;
-            padding-right: 10px;
-            list-style-type: disc;
             @include font-pack(false, 14px, 600, $line-base, false);
 
             @include min-responsive($w-xl) {
@@ -124,36 +133,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
-            &0 {
-                .policyPop__title {
-                    background: #66D1FF;
-                }
-            }
-
-            &1 {
-                .policyPop__title {
-                    background: #29D091;
-                }
-            }
-
-            &2 {
-                .policyPop__title {
-                    background: #FFC900;
-                }
-            }
-
-            &3 {
-                .policyPop__title {
-                    background: #328DEE;
-                }
-            }
-
-            &4 {
-                .policyPop__title {
-                    background: #5BDA70;
-                }
-            }
         }
     }
 
@@ -166,20 +145,75 @@
             width: 100%;
             height: 10vh;
             background: #4D76A2;
+            z-index: -1;
+
+            @include min-responsive($w-md) {
+                z-index: 1;
+            }
         }
 
         .buttonClick {
-            right: 0;
+            right: 120px;
             bottom: -20%;
             z-index: 1;
 
             @include min-responsive($w-md) {
-                bottom: 30%;
+                bottom: 35%;
+            }
+        }
+    }
+
+    &List {
+        position: absolute;
+        bottom: -80px;
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        margin-left: -20px;
+        margin-right: -20px;
+        flex-wrap: wrap;
+
+        @include min-responsive($w-md) {
+            flex-wrap: nowrap;
+            margin-left: 0;
+            margin-right: 0;
+            gap: 40px;
+            bottom: 80px;
+        }
+
+        li {
+            flex-basis: calc(100%/3 - 30px);
+
+            &:nth-child(2) {
+                .aspectBtn {
+                    animation-delay: .5s;
+                }
+            }
+
+            &:nth-child(3) {
+                .aspectBtn {
+                    animation-delay: .2s;
+                }
+            }
+
+            &:nth-child(4) {
+                .aspectBtn {
+                    animation-delay: 1s;
+                }
+            }
+
+            &:nth-child(5) {
+                .aspectBtn {
+                    animation-delay: .7s;
+                }
             }
         }
     }
 
     &Wrap {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: flex-end;

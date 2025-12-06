@@ -119,19 +119,17 @@
             <div class="bgStatic">
                 <div class="aspectPop">
                     {{#each aspect}}
-                    <div class="aspectPopup popup aspectPopup{{@index}}">
-                        <div class="aspectPop__wrap">
+                    <div class="aspectPopup popup aspectPopup{{add @index 1}}">
+                        <div class="aspectPop__wrap text-center">
+                            <div class="aspectPop__anim aspectAnim{{add @index 1}}">
+                                <img src="./asset/images/aspect{{add @index 1}}.png" alt="" loading="lazy">
+                            </div>
                             <div class="aspectPop__content">
                                 <div class="aspectPop__title text-center">{{{title}}}</div>
-                                <ul class="aspectPop__txt">
-                                    {{{list}}}
-                                </ul>
+                                <button class="button aspectPop__close" aria-label="Close popup">
+                                    Tutup
+                                </button>
                             </div>
-                            <div class="aspectPop__anim aspectAnim animationDiagram{{@index}}"
-                                id="animationDiagram{{@index}}"></div>
-                            <button class="button aspectPop__close" aria-label="Close popup">
-                                tutup
-                            </button>
                         </div>
                     </div>
                     {{/each}}
@@ -140,7 +138,8 @@
                     {{#each policy}}
                     <div class="policyPopup popup policyPopup{{add @index 1}}">
                         <div class="policyPop__wrap">
-                            <img class="policyNum" src="./asset/images/policy-{{add @index 1}}.png" alt="" loading="lazy">
+                            <img class="policyNum" src="./asset/images/policy-{{add @index 1}}.png" alt=""
+                                loading="lazy">
                             <div class="policyPop__content">
                                 <div class="policyPop__title">
                                     {{title}}
@@ -259,12 +258,21 @@ Lebih Tinggi dan Berdaya Tahan" class="">
                         <h3 class="artTitle">Prasayarat untuk Tangguh & Mandiri dengan <br> Pertumbuhan Lebih Tinggi dan
                             Berdaya Tahan</h3>
                         <div class="aspectAnim animationAspect opac0" id="animationAspect">
-
-                            <div class="buttonClick aspectClick" aria-label="Trigger Content">
-                                <span><img src="./asset/images/cursor.svg" alt="" loading="lazy" width="30"
-                                        height="37"></span>
-                                <div class="buttonClick__txt">klik pada icon</div>
-                            </div>
+                            <ul class="aspectList">
+                                {{#each aspect}}
+                                <li>
+                                    <button class="button aspectBtn aspectBtn{{add @index 1}}">
+                                        <img src="./asset/images/aspect{{add @index 1}}.png" alt="{{title}}"
+                                            loading="lazy">
+                                    </button>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <div class="buttonClick aspectClick" aria-label="Trigger Content">
+                            <span><img src="./asset/images/cursor.svg" alt="" loading="lazy" width="30"
+                                    height="37"></span>
+                            <div class="buttonClick__txt">klik pada icon</div>
                         </div>
                     </div>
                 </div>
