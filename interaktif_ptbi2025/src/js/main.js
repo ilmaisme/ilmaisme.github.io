@@ -696,7 +696,10 @@ $(document).ready(function () {
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    complete: function () {
+                        $('.synergyItem').addClass('active')
+                    }
                 });
             }
             if (origin.index == 14 && direction == 'up') {
@@ -710,7 +713,10 @@ $(document).ready(function () {
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 300
+                    duration: 300,
+                    complete: function () {
+                        $('.synergyItem').removeClass('active')
+                    }
                 });
                 $(".policyAnim").velocity({
                     opacity: "1"
@@ -725,13 +731,19 @@ $(document).ready(function () {
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 300
+                    duration: 300,
+                    complete: function () {
+                        $('.synergyItem').removeClass('active')
+                    }
                 });
                 $(".directAnim").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $('.directItem').addClass('active')
+                    }
                 });
             }
             if (origin.index == 15 && direction == 'up') {
@@ -739,13 +751,19 @@ $(document).ready(function () {
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 300
+                    duration: 300,
+                    begin: function () {
+                        $('.directItem').removeClass('active')
+                    }
                 });
                 $(".synergyAnim").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    complete: function () {
+                        $('.synergyItem').addClass('active')
+                    }
                 });
             }
             if (origin.index == 15 && direction == 'down') {
@@ -760,13 +778,31 @@ $(document).ready(function () {
                     opacity: "0"
                 }, {
                     delay: 0,
-                    duration: 300
+                    duration: 300,
+                    begin: function () {
+                        $('.directItem').removeClass('active')
+                    }
                 });
                 $(".quoteAnim").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
                     duration: 700
+                });
+                $(".quoteTxt").velocity({
+                    left: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".quoteAuthor").velocity({
+                    left: "0"
+                }, {
+                    delay: 400,
+                    duration: 400,
+                    begin: function () {
+                        $('.quoteAttrWrap').addClass('flipped')
+                    }
                 });
             }
             if (origin.index == 16 && direction == 'up') {
@@ -782,11 +818,29 @@ $(document).ready(function () {
                     delay: 0,
                     duration: 300
                 });
+                $(".quoteTxt").velocity({
+                    left: "100vw"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".quoteAuthor").velocity({
+                    left: "100vw"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        $('.quoteAttrWrap').removeClass('flipped')
+                    }
+                });
                 $(".directAnim").velocity({
                     opacity: "1"
                 }, {
                     delay: 0,
-                    duration: 700
+                    duration: 700,
+                    begin: function () {
+                        $('.directItem').addClass('active')
+                    }
                 });
             }
             if (origin.index == 16 && direction == 'down') {
@@ -795,6 +849,21 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 300
+                });
+                $(".quoteTxt").velocity({
+                    left: "100vw"
+                }, {
+                    delay: 0,
+                    duration: 300
+                });
+                $(".quoteAuthor").velocity({
+                    left: "100vw"
+                }, {
+                    delay: 0,
+                    duration: 300,
+                    begin: function () {
+                        $('.quoteAttrWrap').removeClass('flipped')
+                    }
                 });
                 //CREDIT
                 $(".sectionCredit").velocity({
@@ -815,6 +884,21 @@ $(document).ready(function () {
                 }, {
                     delay: 0,
                     duration: 700
+                });
+                $(".quoteTxt").velocity({
+                    left: "0"
+                }, {
+                    delay: 0,
+                    duration: 700
+                });
+                $(".quoteAuthor").velocity({
+                    left: "0"
+                }, {
+                    delay: 400,
+                    duration: 400,
+                    begin: function () {
+                        $('.quoteAttrWrap').addClass('flipped')
+                    }
                 });
                 $(".sectionCredit").velocity({
                     opacity: "0"
