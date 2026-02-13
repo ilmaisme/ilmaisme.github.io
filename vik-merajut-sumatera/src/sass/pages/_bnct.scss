@@ -1,0 +1,73 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
+@use '../pages/btb' as *;
+
+.bnct {
+    position: relative;
+    color: $cl-white;
+
+    &Impact {
+        &Intro {
+            @extend .btbImpactIntro;
+        }
+
+        &List {
+            @extend .btbImpactList;
+        }
+
+        &Caption {
+            @extend .btbImpactCaption;
+        }
+
+        &Ico {
+            @extend .btbImpactIco;
+        }
+
+        &Item {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 880px;
+            min-height: 292px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 32px;
+            color: #000;
+
+            &:nth-child(4) {
+                display: flex;
+                column-gap: 30px;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                @include min-responsive($w-md) {
+                    flex-direction: row;
+                }
+
+                .btbImpactContent {
+                    text-align: left;
+                    margin: 0;
+                }
+
+                ul {
+                    list-style: disc;
+
+                    li {
+                        padding-left: 20px;
+                        margin-top: .5em;
+                        margin-bottom: .5em;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &Content {
+            @extend .btbImpactContent;
+        }
+    }
+}

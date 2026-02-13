@@ -1,0 +1,174 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
+.credit {
+    flex-direction: column;
+
+    &Wrap {
+        height: 100%;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        padding-top: 20vh;
+        padding-left: 15px;
+        padding-right: 15px;
+        max-width: 1156px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include min-responsive($w-md) {
+            padding-top: 10vh;
+        }
+
+        @include min-responsive($w-xxl) {
+            justify-content: space-around;
+        }
+
+        @include range-responsive($w-md, $w-xl) {
+            padding-top: 16vh;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        @include max-responsive($w-xm) {
+            padding-top: 14vh;
+        }
+    }
+
+    &Caption {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        @include font-pack($font-caption, 26px, $font-weight-normal, $line-base, #204160);
+
+        @include min-responsive($w-md) {
+            @include font-pack($size: 40px)
+        }
+
+        @media only screen and (max-height: $w-md) and (orientation: landscape) {
+            @include font-pack($size: 34px)
+        }
+    }
+
+    &Title {
+        transform: translateX(-100vw);
+        transition: all .4s ease-in;
+        @include font-pack($font-base, false, $font-weight-normal, false, false);
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
+
+    &Name {
+        position: relative;
+        margin-top: 10px;
+        transform: translateX(100vw);
+        transition: all .4s ease-in;
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
+
+    &Content {
+        margin-top: 20px;
+
+        @include min-responsive($w-md) {
+            margin-top: 40px;
+
+            @include max-height($w-hmd) {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &Col {
+        margin-top: 30px;
+        @include font-pack($font-caption, 16px, $font-weight-normal, 1, #2E5272);
+
+        @include min-responsive($w-md) {
+            @include font-pack($size: 20px)
+        }
+
+        @media only screen and (max-height: $w-md) and (orientation: landscape) {
+            @include font-pack($size: 18px)
+        }
+    }
+
+    &Bottom {
+        position: relative;
+        width: 100%;
+        padding-top: 76px;
+        margin-bottom: 20px;
+        
+        @include min-responsive($w-md) {
+            padding-top: 100px;
+            margin-bottom: 60px;
+
+            @include max-height($w-hmd) {
+                padding-top: 40px;
+                margin-bottom: 40px;
+            }
+        }
+
+        &__logo {
+            img {
+                max-width: 90px;
+
+                @include min-responsive($w-md) {
+                    max-width: 170px;
+                }
+            }
+        }
+    }
+
+    &Sp {
+        align-self: flex-end;
+        flex: 1;
+        margin-left: 8px;
+        margin-right: 0;
+        border-bottom: 2px solid #204160;
+        border-radius: 2px;
+
+        @include min-responsive($w-md) {
+            margin-left: 20px;
+            margin-right: 10px;
+        }
+    }
+
+    &Back {
+        margin-left: 8px;
+
+        @include min-responsive($w-md) {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            -moz-animation: bounce 1.2s infinite;
+            -webkit-animation: bounce 1.2s infinite;
+            animation: bounce 1.2s infinite;
+        }
+    }
+
+    &Soc {
+        &__item {
+            margin-left: 8px;
+            margin-right: 8px;
+            max-width: 28px;
+
+            @include min-responsive($w-md) {
+                max-width: unset;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &Section {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: rgb(140, 202, 237);
+        background: linear-gradient(180deg, rgba(140, 202, 237, 1) 0%, rgba(100, 167, 216, 1) 100%);
+    }
+}

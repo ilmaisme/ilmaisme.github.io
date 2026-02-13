@@ -1,0 +1,71 @@
+@use '../base/mixins' as *;
+@use '../base/vars' as *;
+
+.infra {
+    position: relative;
+    overflow: hidden;
+
+    &Bg {
+        &Item {
+            position: absolute;
+            z-index: 0;
+            width: 600px;
+            height: 700px;
+
+            &Pic {
+                background: url(../images/infra-bg.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                max-width: 650px;
+                height: 100%;
+            }
+
+            &.--top {
+                top: 50px;
+                bottom: unset;
+                left: 0;
+            }
+
+            &.--bottom {
+                top: unset;
+                bottom: 0;
+                right: 0;
+
+                .infraBgItemPic {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+    }
+
+    &Wrap {
+        position: relative;
+    }
+
+    &List {
+        margin: 20px auto 0;
+        max-width: 960px;
+        column-gap: 18px;
+        row-gap: 10px;
+        flex-direction: column;
+        
+        @include min-responsive($w-md) {
+            margin: 40px auto 0;
+            flex-direction: row;
+        }
+    }
+
+    &Item {
+        flex-basis: 50%;
+    }
+
+    &Title {
+        background: #356B17;
+        color: white;
+        padding: 8px;
+        border-radius: 8px;
+        width: fit-content;
+        margin: auto;
+    }
+}
