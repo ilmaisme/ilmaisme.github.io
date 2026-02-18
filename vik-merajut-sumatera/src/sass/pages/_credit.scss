@@ -2,173 +2,94 @@
 @use '../base/vars' as *;
 
 .credit {
-    flex-direction: column;
+	position: relative;
+	@include font-pack($family: $font_vik2, $weight: 400, $lh: 1.5, $colour: $cl_white);
+	letter-spacing: 1.92px;
+	padding-top: 40px;
+	background: #3B6752;
+	z-index: 11;
 
-    &Wrap {
-        height: 100%;
-        align-items: center;
-        justify-content: flex-end;
-        flex-direction: column;
-        padding-top: 20vh;
-        padding-left: 15px;
-        padding-right: 15px;
-        max-width: 1156px;
-        margin-left: auto;
-        margin-right: auto;
+	@include min-responsive($w-md) {
+		padding-top: 120px;
+	}
 
-        @include min-responsive($w-md) {
-            padding-top: 10vh;
-        }
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
 
-        @include min-responsive($w-xxl) {
-            justify-content: space-around;
-        }
+		@include min-responsive($w-lg) {
+			flex-direction: row;
+		}
+	}
 
-        @include range-responsive($w-md, $w-xl) {
-            padding-top: 16vh;
-            padding-left: 40px;
-            padding-right: 40px;
-        }
+	&__row {
+		position: relative;
+		margin: 5px 0 18px;
+	}
 
-        @include max-responsive($w-xm) {
-            padding-top: 14vh;
-        }
-    }
+	&__col {
+		width: 100%;
 
-    &Caption {
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        @include font-pack($font-caption, 26px, $font-weight-normal, $line-base, #204160);
+		@include min-responsive($w-md) {
+			width: 33.33333%;
+		}
+	}
 
-        @include min-responsive($w-md) {
-            @include font-pack($size: 40px)
-        }
+	&__team {
+		text-align: center;
+		@include font-pack($family: $font_base, $weight: 700, $size: 16px);
+		margin: 0;
+		text-transform: uppercase;
 
-        @media only screen and (max-height: $w-md) and (orientation: landscape) {
-            @include font-pack($size: 34px)
-        }
-    }
+		@include min-responsive($w-lg) {
+			text-align: left;
+		}
+	}
 
-    &Title {
-        transform: translateX(-100vw);
-        transition: all .4s ease-in;
-        @include font-pack($font-base, false, $font-weight-normal, false, false);
+	&__member {
+		text-align: center;
+		font-size: 15px;
+		position: relative;
+		display: block;
 
-        &.active {
-            transform: translateX(0);
-        }
-    }
+		@include min-responsive($w-lg) {
+			text-align: left;
+		}
+	}
 
-    &Name {
-        position: relative;
-        margin-top: 10px;
-        transform: translateX(100vw);
-        transition: all .4s ease-in;
+	&__bottom {
+		position: relative;
+		text-align: center;
+		position: relative;
+		margin-top: 40px;
+		padding-top: 30px;
+		padding-bottom: 40px;
+		background: #1E3E30;
+		
+		@include min-responsive($w-lg) {
+			text-align: left;
+			margin-top: 120px;
+			padding-top: 50px;
+			padding-bottom: 60px;
+		}
+	}
 
-        &.active {
-            transform: translateX(0);
-        }
-    }
+	&__small {
+		font-size: 15px;
+		color: $cl_white;
+	}
 
-    &Content {
-        margin-top: 20px;
+	&__logo {
+		position: relative;
+		margin: 0;
 
-        @include min-responsive($w-md) {
-            margin-top: 40px;
+		@include max-responsive($w-xl) {
+			text-align: center;
+			padding: 0;
+			margin: 10px 0 0;
+			display: inline-block;
+		}
 
-            @include max-height($w-hmd) {
-                margin-top: 20px;
-            }
-        }
-    }
-
-    &Col {
-        margin-top: 30px;
-        @include font-pack($font-caption, 16px, $font-weight-normal, 1, #2E5272);
-
-        @include min-responsive($w-md) {
-            @include font-pack($size: 20px)
-        }
-
-        @media only screen and (max-height: $w-md) and (orientation: landscape) {
-            @include font-pack($size: 18px)
-        }
-    }
-
-    &Bottom {
-        position: relative;
-        width: 100%;
-        padding-top: 76px;
-        margin-bottom: 20px;
-        
-        @include min-responsive($w-md) {
-            padding-top: 100px;
-            margin-bottom: 60px;
-
-            @include max-height($w-hmd) {
-                padding-top: 40px;
-                margin-bottom: 40px;
-            }
-        }
-
-        &__logo {
-            img {
-                max-width: 90px;
-
-                @include min-responsive($w-md) {
-                    max-width: 170px;
-                }
-            }
-        }
-    }
-
-    &Sp {
-        align-self: flex-end;
-        flex: 1;
-        margin-left: 8px;
-        margin-right: 0;
-        border-bottom: 2px solid #204160;
-        border-radius: 2px;
-
-        @include min-responsive($w-md) {
-            margin-left: 20px;
-            margin-right: 10px;
-        }
-    }
-
-    &Back {
-        margin-left: 8px;
-
-        @include min-responsive($w-md) {
-            margin-left: 10px;
-        }
-
-        &:hover {
-            -moz-animation: bounce 1.2s infinite;
-            -webkit-animation: bounce 1.2s infinite;
-            animation: bounce 1.2s infinite;
-        }
-    }
-
-    &Soc {
-        &__item {
-            margin-left: 8px;
-            margin-right: 8px;
-            max-width: 28px;
-
-            @include min-responsive($w-md) {
-                max-width: unset;
-                margin-left: 10px;
-                margin-right: 10px;
-            }
-        }
-    }
-
-    &Section {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background: rgb(140, 202, 237);
-        background: linear-gradient(180deg, rgba(140, 202, 237, 1) 0%, rgba(100, 167, 216, 1) 100%);
-    }
+	}
 }

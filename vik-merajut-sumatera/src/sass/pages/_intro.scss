@@ -11,7 +11,7 @@
         &::before {
             content: "";
             position: absolute;
-            bottom: -100px;
+            bottom: -30px;
             background: url(../images/intro-bg.png);
             background-size: contain;
             background-repeat: repeat-x;
@@ -19,6 +19,10 @@
             height: 665px;
             z-index: 0;
             background-position: center bottom;
+
+            @include min-responsive($w-md) {
+                bottom: -100px;
+            }
         }
     }
 

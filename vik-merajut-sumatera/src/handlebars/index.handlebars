@@ -3,8 +3,12 @@
 {{> head}}
 
 <body>
+    <!-- Google Tag Manager -->
+    {{> gtm2}}
+    <!-- End Google Tag Manager -->
+
     <!-- header -->
-    {{!> header}}
+    {{> header}}
     <!-- header -->
 
     <!-- preloader -->
@@ -49,6 +53,13 @@
             </div>
             <div class="coverWrap container">
                 <div class="coverContent">
+                    <div class="coverIsland mobile-hide">
+                        <picture>
+                            <source srcset="./asset/images/cover-title.png" media="(min-width: 768px)">
+                            <source srcset="./asset/images/cover-title.png" media="(max-width: 767px)">
+                            <img src="./asset/images/cover-title.png" alt="">
+                        </picture>
+                    </div>
                     <h1 class="coverCaption coverTitle">Merajut Nadi Sumatera:</h1>
                     <h2 class="coverCaption coverTitleSub">Jalan Tol hingga Gerbang Dunia</h2>
                 </div>
@@ -366,27 +377,231 @@
                     merasakan akses yang lebih mudah terhadap bahan baku. Proyek ini juga mendukung sekitar 4.400
                     lapangan kerja per tahun (langsung maupun tidak langsung).</div>
 
-                {{!-- <div class="scroll-area">
-                    <div class="studyRow">
-                        <div class="studyCol">
-                            <div class="studyTitle">Proyeksi Dampak Ekonomi</div>
-                            <p>Manfaat Makroekonomi</p>
-                            <p>BTB diperkirakan akan berkontribusi sebesar ~IDR400 T terhadap PDB selama masa konsesi
-                                dan mendukung ~20.000 lapangan kerja setiap tahun.</p>
-                        </div>
-                        <div class="studyCol">
-                            <div class="studyTitle">BTB Memberdayakan Dunia Usaha</div>
+                <div class="studyRow row">
+                    <div class="studyCol col-50">
+                        <div class="studyTitle articleTitle--small">Proyeksi Dampak Ekonomi</div>
+                        <p>Manfaat Makroekonomi</p>
+                        <p>BTB diperkirakan akan berkontribusi sebesar ~IDR400 T terhadap PDB selama masa konsesi
+                            dan mendukung ~20.000 lapangan kerja setiap tahun.</p>
+                        <div class="studyImg text-center">
+                            <img src="./asset/images/diagram1-1.png" alt="" loading="lazy">
+                            <p class="studyImgCaption">
+                                <span><i>Spillover impact</i> terhadap output ekonomi: </span>
+                                <br><strong>~IDR8 trilliun / tahun</strong>
+                                <br>(Total IDR420 trilliun)
+                            </p>
+                            <p class="studyImgCaption">
+                                <strong>Stimulus dari investasi INA: </strong><br>
+                                ~IDR7 trilliun / tahun <br>
+                                (IDR346 trilliun total)
+                            </p>
                         </div>
                     </div>
-                    <div class="studyRow">
-                        <div class="studyCol">
-                            <div class="studyTitle"></div>
-                        </div>
-                        <div class="studyCol">
-                            <div class="studyTitle"></div>
+                    <div class="studyCol col-50">
+                        <div class="studyTitle">BTB Memberdayakan Dunia Usaha</div>
+                        <p></p>
+                        <p><br></p>
+                        <div class="studyImg text-center">
+                            <img src="./asset/images/diagram1-2.png" alt="" loading="lazy">
                         </div>
                     </div>
-                </div> --}}
+                </div>
+                <div class="studyRow row">
+                    <div class="studyCol col-50">
+                        <div class="studyTitle articleTitle--small">Proyeksi Dampak Ekonomi</div>
+                        <p>Manfaat Makroekonomi</p>
+                        <p>BNCT diperkirakan akan menghasilkan sekitar IDR82 trilliun dalam PDB selama masa konsesi dan
+                            mendukung 4.400 lapangan kerja setiap tahun</p>
+                        <div class="studyImg text-center">
+                            <img src="./asset/images/diagram2-1.png" alt="" loading="lazy">
+                            <p class="studyImgCaption">
+                                <span><i>Spillover impact</i> terhadap output ekonomi: </span>
+                                <br><strong>~IDR1,2 trilliun / tahun</strong>
+                                <br>(Total IDR66 trilliun)
+                            </p>
+                            <p class="studyImgCaption">
+                                <strong>Stimulus dari investasi INA: </strong><br>
+                                ~IDR1,4 T / tahun (IDR81 T)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="studyCol col-50">
+                        <div class="studyTitle">BNCT Memberdayakan Dunia Usaha</div>
+                        <p></p>
+                        <p><br></p>
+                        <div class="studyImg text-center">
+                            <img src="./asset/images/diagram2-2.png" alt="" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="studyBox">Dari sisi lingkungan, penurunan emisi karbon dan PM10 di koridor BTB setara dengan
+                    nilai ekonomi sekitar Rp 2,7 triliun. Sementara itu, efisiensi rute pelayaran di BNCT berkontribusi
+                    pada penghindaran emisi dengan nilai ekonomi lingkungan hingga Rp 1,9 triliun.
+                </div>
+                <div class="studyTitle articleTitle--small --red">Infografik dampak lingkungan BTB</div>
+                <div class="studyInfo">
+                    <div class="studyInfoRow">
+                        <div class="studyIcon text-center">
+                            <img src="./asset/images/ico-emi.png" alt="" loading="lazy">
+                            <div class="studyInfoCaption">
+                                <strong>Emisi CO2
+                                    & Kualitas Udara</strong>
+                            </div>
+                        </div>
+                        <div class="studyInfoContent row">
+                            <div class="studyCol col-50">
+                                <div class="text-center">
+                                    <span class="--red"><strong>Langkah</strong></span>
+                                </div>
+                                <ul>
+                                    <li>Jarak tempuh 11,7% lebih pendek dibandingkan jalan non-tol, menghasilkan
+                                        pengurangan konsumsi bahan bakar dan emisi</li>
+                                    <li>Pemantauan berkelanjutan terhadap PM2.5, PM10, getaran dan tingkat kebisingan
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="studyCol col-50">
+                                <div class="text-center">
+                                    <span class="--red"><strong>Hasil</strong></span>
+                                </div>
+                                <ul>
+                                    <li><span class="icon icon-arrow"></span>1,6 juta ton (~31.000 ton/tahun) emisi CO2
+                                    </li>
+                                    <li><span class="icon icon-arrow"></span>4.600 ton emisi PM10</li>
+                                    <li>Pengurangan emisi CO2 and PM10 setara dengan nilai ekonomi ~IDR2,7 trilliun</li>
+                                    <li>(~IDR0,6 trilliun/tahun)</li>
+                                    <li>Indikator kualitas udara dan tingkat kebisingan</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="studyInfoRow">
+                        <div class="studyIcon text-center">
+                            <img src="./asset/images/ico-road.png" alt="" loading="lazy">
+                            <div class="studyInfoCaption">
+                                <strong>Keselamatan Jalan
+                                    & Tata Kelola</strong>
+                            </div>
+                        </div>
+                        <div class="studyInfoContent row">
+                            <div class="studyCol col-50">
+                                <ul>
+                                    <li>Penerapan teknologi Electronic Traffic Law Enforcement (ETLE)</li>
+                                    <li>Patroli harian dan pemasangan rambu jalan reflektif</li>
+                                    <li>Marka kejut (Rumble strips) dan pembatas kecepatan di 12 titik lokasi prioritas
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="studyCol col-50">
+                                <ul>
+                                    <li><span class="icon icon-arrow"></span>Pelanggaran batas kecepatan turun 40%</li>
+                                    <li>Tingkat kecelakaan berada dalam ambang batas aman</li>
+                                    <li>Rata-rata waktu tanggap darurat sekitar 12 menit</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="studyTitle articleTitle--small --red">Infografik dampak lingkungan BNCT</div>
+                <p>Melalui kemitraan dengan DP World dan dengan memanfaatkan keahlian mereka dalam pengelolaan terminal
+                    internasional, INA berupaya meningkatkan tata kelola, keselamatan, dan efesiensi pelabuhan.</p>
+                <div class="studyInfo">
+                    <div class="studyInfoRow">
+                        <div class="studyIcon text-center">
+                            <img src="./asset/images/ico-emi.png" alt="" loading="lazy">
+                            <div class="studyInfoCaption">
+                                <strong>Emisi CO2
+                                    & Kualitas Udara</strong>
+                            </div>
+                        </div>
+                        <div class="studyInfoContent row">
+                            <div class="studyCol col-50">
+                                <div class="text-center">
+                                    <span class="--red"><strong>Langkah</strong></span>
+                                </div>
+                                <p>
+                                    Penerapan layanan direct call pada 2030 akan memperpendek jarak pelayaran dan
+                                    mengurangi konsumsi bahan bakar, sehingga berkontribusi terhadap penurunan total
+                                    emisi CO2.
+                                </p>
+                            </div>
+                            <div class="studyCol col-50">
+                                <div class="text-center">
+                                    <span class="--red"><strong>Hasil</strong></span>
+                                </div>
+                                <p>
+                                    Proyek ini berkontribusi pada pengurangan emisi sekitar 3,4 juta ton CO2 dengan
+                                    estimasi nilai ekonomi ~IDR1,9 triliun.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="studyInfoRow">
+                        <div class="studyIcon text-center">
+                            <img src="./asset/images/ico-cyber.png" alt="" loading="lazy">
+                            <div class="studyInfoCaption">
+                                <strong>Cybersecurity</strong>
+                            </div>
+                        </div>
+                        <div class="studyInfoContent row">
+                            <div class="studyCol col-50">
+                                <p>Penerapan sistem firewall, akses jarak jauh terbatas, dan mekanisme pemulihan data,
+                                </p>
+                            </div>
+                            <div class="studyCol col-50">
+                                <ul>
+                                    <li>Melindungi operasional pelabuhan dari ancaman keamanan siber</li>
+                                    <li>Mencegah kehilangan data serta gangguan operasional</li>
+                                    <li>Keselamatan Operasional (Operational Safety)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="studyInfoRow">
+                        <div class="studyIcon text-center">
+                            <img src="./asset/images/ico-safety.png" alt="" loading="lazy">
+                            <div class="studyInfoCaption">
+                                <strong>Keselamatan Operasional</strong>
+                            </div>
+                        </div>
+                        <div class="studyInfoContent row">
+                            <div class="studyCol col-50">
+                                <p>Penerapan standar keselamatan kerja yang mencakup zona aman, jalur pejalan kaki, dan
+                                    prosedur lockout-tagout (LOTO).
+                                </p>
+                            </div>
+                            <div class="studyCol col-50">
+                                <p>Integrasi langkah-langkah kesehatan dan keselamatan kerja (K3) sebagai bagian
+                                    dari prosedur operasi bisnis standar Digitalisasi Sistem Terminal
+                                    (Digitalization of Terminal Systems)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="studyInfoRow">
+                        <div class="studyIcon text-center">
+                            <img src="./asset/images/ico-system.png" alt="" loading="lazy">
+                            <div class="studyInfoCaption">
+                                <strong>Digitalisasi Sistem Terminal</strong>
+                            </div>
+                        </div>
+                        <div class="studyInfoContent row">
+                            <div class="studyCol col-50">
+                                <p>Moderinisasi Terminal Operating System (Tos) dan Weight Bridge Integration untuk
+                                    mendukung pemantauan kontainer secara waktu nyata serta meningkatan produktivitas
+                                    siklus bongkar muat.
+                                </p>
+                            </div>
+                            <div class="studyCol col-50">
+                                <p>Sesuai dengan praktik terbaik dalam operasi pelabuhan internasional, yang mendukung
+                                    otomatisasi sistem sebagai standar global
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="articleDash"></div>
         </div>
@@ -406,7 +621,9 @@
                 <p>Proyek dua infrastruktur vital ini membuktikan, pembangunan yang berjalan beriringan dengan
                     pengembangan sumber daya manusia dan pelestarian alam itu mungkin.</p>
 
-                <p>Indonesia kini selangkah lebih dekat menuju <strong>visi Indonesia Emas 2045</strong>. Sumatera bukan lagi raksasa
+                <p>Indonesia kini selangkah lebih dekat menuju <strong>visi Indonesia Emas 2045</strong>. Sumatera
+                    bukan
+                    lagi raksasa
                     yang tertidur. Ia telah bangun, bergerak, dan siap terhubung dengan dunia.
                 </p>
                 <div class="investPic articlePic text-center">
@@ -418,11 +635,13 @@
                 </div>
             </div>
         </div>
-        <!-- content -->
+    </div>
+    <!-- content -->
 
-        <!-- main -->
+    {{> credit}}
+    <!-- main -->
 
-        {{> js}}
+    {{> js}}
 
 </body>
 
