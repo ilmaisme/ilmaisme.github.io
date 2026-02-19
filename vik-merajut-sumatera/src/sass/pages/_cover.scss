@@ -4,6 +4,8 @@
 .cover {
     width: 100%;
     height: var(--app-height);
+    position: relative;
+    z-index: 1;
 
     &Wrap {
         position: relative;
@@ -16,6 +18,14 @@
         padding-bottom: 28px;
         position: absolute;
         bottom: 100px;
+    }
+
+    .coverIsland img,
+    .coverTitle,
+    .coverTitleSub {
+        opacity: 0;
+        transform: translateY(40px) scale(1.05);
+        filter: blur(15px);
     }
 
     &Island {

@@ -86,36 +86,55 @@ window.addEventListener("load", () => {
    5) INTRO TITLE ANIMATION
 -------------------------------------------------- */
 function animateCoverTitle() {
-  const tlTitle = gsap.timeline();
 
+  // ===== INITIAL STATE =====
+  gsap.set(".coverIsland img", {
+    opacity: 0,
+    y: 50,
+    scale: 1.08,
+    filter: "blur(25px)"
+  });
+
+  gsap.set([".coverTitle", ".coverTitleSub"], {
+    opacity: 0,
+    y: 40,
+    scale: 1.05,
+    filter: "blur(15px)"
+  });
+
+  // ===== TIMELINE =====
+  const tlTitle = gsap.timeline({ delay: 0.2 });
+
+  // Island image
   tlTitle.to(".coverIsland img", {
     opacity: 1,
     y: 0,
     scale: 1,
     filter: "blur(0px)",
-    duration: 0.85,
-    ease: "power3.out",
-    delay: 0.15
+    duration: 0.9,
+    ease: "power3.out"
   });
 
+  // Main title
   tlTitle.to(".coverTitle", {
     opacity: 1,
     y: 0,
     scale: 1,
     filter: "blur(0px)",
-    duration: 0.75,
+    duration: 0.8,
     ease: "power3.out"
-  }, "-=0.45");
+  }, "-=0.5");
 
-  tlTitle.to(".coverTitle", {
+  // Subtitle
+  tlTitle.to(".coverTitleSub", {
     opacity: 1,
     y: 0,
     scale: 1,
     filter: "blur(0px)",
-    duration: 0.75,
-    ease: "power3.out",
-    delay: 0.15
-  }, "-=0.45");
+    duration: 0.8,
+    ease: "power3.out"
+  }, "-=0.6");
+
 }
 
 /* --------------------------------------------------
@@ -150,55 +169,75 @@ function getHomeTransform() {
 /* --------------------------------------------------
    7) MAIN SCROLL ANIMATION
 -------------------------------------------------- */
-onImagesLoaded(() => {
+window.addEventListener("load", () => {
 
-    const boxes = gsap.utils.toArray(".introBox");
+  const boxes = gsap.utils.toArray(".introBox");
 
-    gsap.set(boxes, { opacity: 0, y: 80 });
-    gsap.set(".introBox img", {
-        opacity: 0,
-        y: 40,
-        filter: "blur(20px)",
-        scale: 1.05
+  // Hide all except first
+  gsap.set(boxes.slice(1), { opacity: 0, y: 80 });
+
+  gsap.set(".introBox img", {
+    opacity: 0,
+    y: 40,
+    filter: "blur(20px)",
+    scale: 1.05
+  });
+
+  // First image should be visible immediately
+  gsap.set(boxes[0].querySelector("img"), {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    scale: 1
+  });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".introWrap",
+      start: "top top",
+      end: "+=300%",
+      scrub: 1.2,
+      pin: ".scrollStage"
+    }
+  });
+
+  boxes.forEach((box, i) => {
+
+    if (i === 0) return; // Skip first
+
+    const prev = boxes[i - 1];
+    const img = box.querySelector("img");
+
+    tl.to(".introBg", {
+      opacity: 1,
+      duration: 0.5,
+      ease: "power2.out"
+    }, 0);
+
+    // Fade out previous
+    tl.to(prev, {
+      opacity: 0,
+      y: -60,
+      duration: 0.6
     });
 
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".introWrap",
-            start: "top top",
-            end: `+=${(boxes.length - 1) * 100}%`,
-            scrub: 1.2,
-            pin: ".scrollStage"
-        }
-    });
+    // Fade in current
+    tl.to(box, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6
+    }, "<");
 
-    boxes.forEach((box, i) => {
+    // Blur reveal image
+    tl.to(img, {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      scale: 1,
+      duration: 0.8
+    }, "<0.2");
 
-        const image = box.querySelector("img");
+  });
 
-        tl.to(box, {
-            opacity: 1,
-            y: 0,
-            duration: 0.6
-        });
-
-        tl.to(image, {
-            opacity: 1,
-            y: 0,
-            filter: "blur(0px)",
-            scale: 1,
-            duration: 0.8
-        }, "<0.2");
-
-        if (i !== boxes.length - 1) {
-            tl.to(box, {
-                opacity: 0,
-                y: -60,
-                duration: 0.6
-            }, "+=0.3");
-        }
-
-    });
-
-    ScrollTrigger.refresh();
+  ScrollTrigger.refresh();
 });
