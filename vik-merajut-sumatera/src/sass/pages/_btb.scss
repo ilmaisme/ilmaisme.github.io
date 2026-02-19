@@ -35,7 +35,11 @@
     //----------------//
     &Impact {
         position: relative;
-        padding-bottom: 220px;
+        padding-bottom: 80px;
+
+        @include min-responsive($w-md) {
+            padding-bottom: 220px;
+        }
 
         &Title {
             font-size: 1.15em;
@@ -79,7 +83,7 @@
             row-gap: 10px;
             column-gap: 40px;
             flex-direction: column;
-            
+
             @include min-responsive($w-md) {
                 margin-top: 80px;
                 align-items: flex-end;
