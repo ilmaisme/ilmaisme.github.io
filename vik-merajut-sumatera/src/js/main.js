@@ -1,9 +1,16 @@
 /* =========================================
-   1) LAYOUT VARS (UNCHANGED)
+   1) LAYOUT VARS
 ========================================= */
+
+const updateVh = () => {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+};
 
 const appLayout = () => {
   const doc = document.documentElement;
+
+  updateVh(); // 🔥 VH FIX
 
   doc.style.setProperty('--app-height', `${window.innerHeight}px`);
 
@@ -17,6 +24,7 @@ window.addEventListener('resize', appLayout);
 window.addEventListener('load', appLayout);
 appLayout();
 
+
 /* =========================================
    2) GSAP
 ========================================= */
@@ -26,6 +34,7 @@ gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({
   ignoreMobileResize: true
 });
+
 
 /* =========================================
    3) PRELOADER (UNTOUCHED)
@@ -46,6 +55,7 @@ window.addEventListener("load", () => {
     }
   }, 1500);
 });
+
 
 /* =========================================
    4) COVER TITLE (UNTOUCHED)
@@ -97,8 +107,9 @@ function animateCoverTitle() {
   }, "-=0.6");
 }
 
+
 /* =========================================
-   5) INTRO SCROLL (UNTOUCHED except anticipatePin)
+   5) INTRO + BELOW SCROLL
 ========================================= */
 
 window.addEventListener("load", () => {
@@ -128,7 +139,7 @@ window.addEventListener("load", () => {
       end: "+=300%",
       scrub: 1.2,
       pin: ".scrollStage",
-      anticipatePin: 1   // 🔥 STABILITY FIX
+      anticipatePin: 1
     }
   });
 
@@ -167,10 +178,7 @@ window.addEventListener("load", () => {
 
   });
 
-  /* =========================================
-     6) DOORSTOP (FIXED)
-  ========================================= */
-
+  /* DOORSTOP */
   gsap.utils.toArray(".icon-doorstop img").forEach((el) => {
 
     const triggerEl = el.closest(".btbImpactIntro, .bnctImpactIntro");
@@ -186,23 +194,17 @@ window.addEventListener("load", () => {
           start: "top 85%",
           end: "top 40%",
           scrub: true,
-          refreshPriority: -1   // 🔥 CRITICAL FIX
+          refreshPriority: -1
         }
       }
     );
   });
 
-  /* =========================================
-     7) IMPACT ITEMS (FIXED)
-  ========================================= */
-
+  /* IMPACT */
   gsap.utils.toArray(".impactItem").forEach((item) => {
 
     gsap.fromTo(item,
-      {
-        opacity: 0,
-        y: 60
-      },
+      { opacity: 0, y: 60 },
       {
         opacity: 1,
         y: 0,
@@ -212,23 +214,17 @@ window.addEventListener("load", () => {
           start: "top 85%",
           end: "top 60%",
           scrub: true,
-          refreshPriority: -1   // 🔥 CRITICAL FIX
+          refreshPriority: -1
         }
       }
     );
   });
 
-  /* =========================================
-     8) ARTICLE IMAGES (STABLE)
-  ========================================= */
-
+  /* ARTICLE IMAGES */
   gsap.utils.toArray(".articleImg").forEach((img) => {
 
     gsap.fromTo(img,
-      {
-        scale: 0.95,
-        opacity: 0
-      },
+      { scale: 0.95, opacity: 0 },
       {
         scale: 1,
         opacity: 1,
@@ -238,18 +234,29 @@ window.addEventListener("load", () => {
           start: "top 90%",
           end: "top 65%",
           scrub: true,
-          refreshPriority: -1   // 🔥 CRITICAL FIX
+          refreshPriority: -1
         }
       }
     );
   });
 
   /* =========================================
-     FINAL STABLE REFRESH
+     FINAL STABILIZATION
   ========================================= */
 
   requestAnimationFrame(() => {
     ScrollTrigger.refresh();
+
+    // 🔥 FIX LAYOUT JUMP (Kompas style lock)
+    const lockedVh = parseFloat(
+      getComputedStyle(document.documentElement)
+        .getPropertyValue("--vh")
+    );
+
+    if (!isNaN(lockedVh)) {
+      document.documentElement.style.setProperty("--vh", `${lockedVh}px`);
+    }
+
   });
 
 });
