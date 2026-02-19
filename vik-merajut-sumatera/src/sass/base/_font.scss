@@ -73,13 +73,23 @@
 
     &-doorstop {
         position: absolute;
-        left: 230px;
-        bottom: 60px;
+        left: 114px;
+        top: -80px;
         z-index: 0;
+
+        @include min-responsive($w-md) {
+            left: 230px;
+            bottom: 60px;
+        }
 
         img {
             transform-origin: bottom center;
             will-change: transform;
+            width: 6px;
+
+            @include min-responsive($w-md) {
+                width: auto;
+            }
         }
     }
 
