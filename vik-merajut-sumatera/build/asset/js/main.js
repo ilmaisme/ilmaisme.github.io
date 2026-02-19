@@ -239,5 +239,48 @@ window.addEventListener("load", () => {
 
   });
 
+  // DOORSTOP SCROLL ANIMATION 
+  gsap.utils.toArray(".icon-doorstop img").forEach((el) => {
+
+    const triggerEl = el.closest(".btbImpactIntro, .bnctImpactIntro");
+    if (!triggerEl) return;
+
+    gsap.to(el, {
+      rotation: 90,
+      ease: "none",
+      scrollTrigger: {
+        trigger: triggerEl,
+        start: "top 80%",
+        end: "top 30%",
+        scrub: true
+      }
+    });
+
+  });
+
+  // IMPACT ITEM REVEAL ON SCROLL
+
+  gsap.utils.toArray(".impactList").forEach((list) => {
+
+    const items = list.querySelectorAll(".impactItem");
+
+    items.forEach((item) => {
+      const img = item.querySelector(".impactImg");
+      const content = item.querySelector(".impactContent");
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        }
+      });
+
+      tl.to(img, { opacity: 1, y: 0, duration: 0.6 })
+        .to(content, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3");
+    });
+
+  });
+
   ScrollTrigger.refresh();
 });
