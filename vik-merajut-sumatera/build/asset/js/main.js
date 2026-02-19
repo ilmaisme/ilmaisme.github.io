@@ -1,6 +1,7 @@
-/* =========================================================
-   KEEP: HEIGHT + CONTAINER WIDTH (UNCHANGED)
-========================================================= */
+/* ============================================================
+   APP LAYOUT (KEEP THIS)
+============================================================ */
+
 const appLayout = () => {
   const doc = document.documentElement;
 
@@ -20,38 +21,22 @@ window.addEventListener('load', appLayout);
 appLayout();
 
 
-/* =========================================================
+/* ============================================================
    GSAP INIT
-========================================================= */
+============================================================ */
+
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.config({
-  ignoreMobileResize: true
+  ignoreMobileResize: true,
+  pinType: "fixed"
 });
 
 
-/* =========================================================
-   KEEP: MOBILE VH FIX (UNCHANGED)
-========================================================= */
-function setVH() {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-}
-setVH();
+/* ============================================================
+   PRELOADER (UNTOUCHED)
+============================================================ */
 
-window.addEventListener("orientationchange", setVH);
-window.addEventListener("resize", () => {
-  const currentVH =
-    parseFloat(getComputedStyle(document.documentElement)
-      .getPropertyValue("--vh")) * 100;
-
-  if (Math.abs(window.innerHeight - currentVH) > 80) setVH();
-});
-
-
-/* =========================================================
-   KEEP: PRELOADER (UNTOUCHED)
-========================================================= */
 window.addEventListener("load", () => {
   setTimeout(() => {
     const preloader = document.getElementById("preloader");
@@ -69,9 +54,10 @@ window.addEventListener("load", () => {
 });
 
 
-/* =========================================================
-   KEEP: COVER TITLE ANIMATION (UNCHANGED)
-========================================================= */
+/* ============================================================
+   COVER TITLE ANIMATION (UNTOUCHED)
+============================================================ */
+
 function animateCoverTitle() {
 
   gsap.set(".coverIsland img", {
@@ -119,14 +105,15 @@ function animateCoverTitle() {
 }
 
 
-/* =========================================================
-   MAIN INIT (AFTER LOAD)
-========================================================= */
+/* ============================================================
+   MAIN LOAD ANIMATIONS
+============================================================ */
+
 window.addEventListener("load", () => {
 
-  /* ===============================================
-     KEEP: INTRO SCROLL (UNTOUCHED)
-  =============================================== */
+  /* =========================
+     INTRO SCROLL (UNTOUCHED)
+  ========================= */
 
   const boxes = gsap.utils.toArray(".introBox");
 
@@ -163,11 +150,12 @@ window.addEventListener("load", () => {
     const prev = boxes[i - 1];
     const img = box.querySelector("img");
 
+    // KEEP introBg EXACTLY AS YOU SAID
     tl.to(".introBg", {
       opacity: 1,
       duration: 0.5,
       ease: "power2.out"
-    }, 0); // DO NOT TOUCH
+    }, 0);
 
     tl.to(prev, {
       opacity: 0,
@@ -192,60 +180,93 @@ window.addEventListener("load", () => {
   });
 
 
-  /* ===============================================
-     FIX: REFRESH AFTER PIN (CRITICAL)
-  =============================================== */
+  /* ============================================================
+     FIX BELOW SCROLL-AREA ISSUE
+     (THIS IS THE IMPORTANT PART)
+  ============================================================ */
 
-  setTimeout(() => {
-    ScrollTrigger.refresh();
-  }, 100);
-
-
-
-  /* ===============================================
-     DOORSTOP ROTATION (FIXED TRIGGER)
-  =============================================== */
-
-  gsap.utils.toArray(".icon-doorstop img").forEach((el) => {
-
-    gsap.to(el, {
-      rotation: 90,
-      ease: "none",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        end: "top 40%",
-        scrub: true
-      }
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
     });
-
   });
 
 
 
-  /* ===============================================
-     ARTICLE IMAGE ANIMATION (SAFE VERSION)
-  =============================================== */
+  /* ============================================================
+     DOORSTOP
+  ============================================================ */
 
-  gsap.utils.toArray(".articleImg").forEach((img) => {
+  gsap.utils.toArray(".icon-doorstop img").forEach((el) => {
 
-    gsap.fromTo(img,
-      { opacity: 0, y: 80, scale: 0.95 },
+    const triggerEl = el.closest(".btbImpactIntro, .bnctImpactIntro");
+    if (!triggerEl) return;
+
+    gsap.fromTo(el,
+      { rotation: 0 },
       {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 1,
-        ease: "power2.out",
+        rotation: 90,
+        ease: "none",
         scrollTrigger: {
-          trigger: img,
+          trigger: el,
           start: "top 85%",
-          end: "top 55%",
-          scrub: true,
-          invalidateOnRefresh: true
+          end: "top 45%",
+          scrub: true
         }
       }
     );
+
+  });
+
+
+  /* ============================================================
+     IMPACT ITEM (BACK TO BACK LIKE SCROLLBOX)
+  ============================================================ */
+
+  gsap.utils.toArray(".impactItem").forEach((item, i) => {
+
+    gsap.fromTo(item,
+      { opacity: 0, y: 80 },
+      {
+        opacity: 1,
+        y: 0,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: item,
+          start: "top 85%",
+          end: "top 55%",
+          scrub: true
+        }
+      }
+    );
+
+  });
+
+
+  /* ============================================================
+     ARTICLE IMAGE ANIMATION (NO BLINK VERSION)
+  ============================================================ */
+
+  gsap.set(".articleImg", {
+    opacity: 0,
+    y: 40,
+    scale: 0.98
+  });
+
+  gsap.utils.toArray(".articleImg").forEach((img) => {
+
+    gsap.to(img, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: img,
+        start: "top 90%",
+        end: "top 60%",
+        scrub: true
+      }
+    });
 
   });
 
