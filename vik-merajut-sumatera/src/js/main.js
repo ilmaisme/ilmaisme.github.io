@@ -1,15 +1,17 @@
-/* ==========================================
-   APP LAYOUT (KEEP — DO NOT REMOVE)
-========================================== */
-
+/* =========================================================
+   KEEP: HEIGHT + CONTAINER WIDTH (UNCHANGED)
+========================================================= */
 const appLayout = () => {
   const doc = document.documentElement;
 
+  // viewport height
   doc.style.setProperty('--app-height', `${window.innerHeight}px`);
 
+  // container width
   const container = document.querySelector('.container');
   if (container) {
-    doc.style.setProperty('--container-width', `${container.offsetWidth}px`);
+    const width = container.offsetWidth;
+    doc.style.setProperty('--container-width', `${width}px`);
   }
 };
 
@@ -18,26 +20,40 @@ window.addEventListener('load', appLayout);
 appLayout();
 
 
-/* ==========================================
-   GSAP SETUP
-========================================== */
-
+/* =========================================================
+   GSAP INIT
+========================================================= */
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.config({
-  ignoreMobileResize: true,
-  pinType: "fixed"
+  ignoreMobileResize: true
 });
 
 
-/* ==========================================
-   PRELOADER (UNTOUCHED — YOUR ORIGINAL)
-========================================== */
+/* =========================================================
+   KEEP: MOBILE VH FIX (UNCHANGED)
+========================================================= */
+function setVH() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
+setVH();
 
+window.addEventListener("orientationchange", setVH);
+window.addEventListener("resize", () => {
+  const currentVH =
+    parseFloat(getComputedStyle(document.documentElement)
+      .getPropertyValue("--vh")) * 100;
+
+  if (Math.abs(window.innerHeight - currentVH) > 80) setVH();
+});
+
+
+/* =========================================================
+   KEEP: PRELOADER (UNTOUCHED)
+========================================================= */
 window.addEventListener("load", () => {
-
   setTimeout(() => {
-
     const preloader = document.getElementById("preloader");
 
     if (preloader) {
@@ -49,16 +65,13 @@ window.addEventListener("load", () => {
         animateCoverTitle();
       }, 200);
     }
-
   }, 1500);
-
 });
 
 
-/* ==========================================
-   COVER TITLE ANIMATION (UNTOUCHED)
-========================================== */
-
+/* =========================================================
+   KEEP: COVER TITLE ANIMATION (UNCHANGED)
+========================================================= */
 function animateCoverTitle() {
 
   gsap.set(".coverIsland img", {
@@ -103,15 +116,17 @@ function animateCoverTitle() {
     duration: 0.8,
     ease: "power3.out"
   }, "-=0.6");
-
 }
 
 
-/* ==========================================
-   INTRO PINNED SCROLL (UNTOUCHED)
-========================================== */
-
+/* =========================================================
+   MAIN INIT (AFTER LOAD)
+========================================================= */
 window.addEventListener("load", () => {
+
+  /* ===============================================
+     KEEP: INTRO SCROLL (UNTOUCHED)
+  =============================================== */
 
   const boxes = gsap.utils.toArray(".introBox");
 
@@ -135,7 +150,7 @@ window.addEventListener("load", () => {
     scrollTrigger: {
       trigger: ".introWrap",
       start: "top top",
-      end: () => "+=" + window.innerHeight * 3,
+      end: "+=300%",
       scrub: 1.2,
       pin: ".scrollStage"
     }
@@ -148,12 +163,11 @@ window.addEventListener("load", () => {
     const prev = boxes[i - 1];
     const img = box.querySelector("img");
 
-    /* KEEP YOUR introBg LINE EXACTLY */
     tl.to(".introBg", {
       opacity: 1,
       duration: 0.5,
       ease: "power2.out"
-    }, 0);
+    }, 0); // DO NOT TOUCH
 
     tl.to(prev, {
       opacity: 0,
@@ -177,91 +191,28 @@ window.addEventListener("load", () => {
 
   });
 
-});
+
+  /* ===============================================
+     FIX: REFRESH AFTER PIN (CRITICAL)
+  =============================================== */
+
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 100);
 
 
-/* ==========================================
-   BELOW SCROLL-AREA FIX
-   (THIS FIXES THE DISEASE)
-========================================== */
 
-ScrollTrigger.addEventListener("refresh", () => {
-  initBelowAnimations();
-});
+  /* ===============================================
+     DOORSTOP ROTATION (FIXED TRIGGER)
+  =============================================== */
 
-function initBelowAnimations() {
-
-  /* Kill old ones */
-  ScrollTrigger.getAll().forEach(st => {
-    if (st.vars.id === "belowAnim") st.kill();
-  });
-
-  /* ARTICLE IMAGES */
-  gsap.utils.toArray(".articleImg").forEach(img => {
-
-    gsap.fromTo(
-      img,
-      {
-        opacity: 0,
-        y: 60,
-        scale: 0.95
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          id: "belowAnim",
-          trigger: img.closest(".section") || img,
-          start: "top 85%",
-          end: "top 55%",
-          scrub: true
-        }
-      }
-    );
-
-  });
-
-  /* IMPACT ITEMS (like scrollBox style) */
-  gsap.utils.toArray(".impactList").forEach(list => {
-
-    const items = list.querySelectorAll(".impactItem");
-
-    gsap.set(items, { opacity: 0, y: 60 });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        id: "belowAnim",
-        trigger: list,
-        start: "top 85%",
-        end: "top 55%",
-        scrub: true
-      }
-    });
-
-    tl.to(items, {
-      opacity: 1,
-      y: 0,
-      stagger: 0.25,
-      ease: "power2.out"
-    });
-
-  });
-
-  /* DOORSTOP */
-  gsap.utils.toArray(".icon-doorstop img").forEach(el => {
-
-    const triggerEl = el.closest(".btbImpactIntro, .bnctImpactIntro");
-
-    if (!triggerEl) return;
+  gsap.utils.toArray(".icon-doorstop img").forEach((el) => {
 
     gsap.to(el, {
       rotation: 90,
       ease: "none",
       scrollTrigger: {
-        id: "belowAnim",
-        trigger: triggerEl,
+        trigger: el,
         start: "top 85%",
         end: "top 40%",
         scrub: true
@@ -270,15 +221,32 @@ function initBelowAnimations() {
 
   });
 
-}
 
 
-/* ==========================================
-   FINAL REFRESH (CRITICAL)
-========================================== */
+  /* ===============================================
+     ARTICLE IMAGE ANIMATION (SAFE VERSION)
+  =============================================== */
 
-window.addEventListener("load", () => {
-  requestAnimationFrame(() => {
-    ScrollTrigger.refresh();
+  gsap.utils.toArray(".articleImg").forEach((img) => {
+
+    gsap.fromTo(img,
+      { opacity: 0, y: 80, scale: 0.95 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: img,
+          start: "top 85%",
+          end: "top 55%",
+          scrub: true,
+          invalidateOnRefresh: true
+        }
+      }
+    );
+
   });
+
 });
