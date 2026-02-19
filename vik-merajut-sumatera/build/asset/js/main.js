@@ -18,76 +18,77 @@ window.addEventListener('load', appLayout)
 appLayout()
 /* e: Get HEIGHT Device & Container Width */
 
+/* ==================================================
+   0) GSAP SETUP
+================================================== */
+
 gsap.registerPlugin(ScrollTrigger);
 
-/* --------------------------------------------------
-   1) FIX MOBILE LAYOUT SHIFT (address bar collapse)
--------------------------------------------------- */
-function setVH() {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-}
-setVH();
-
-// Update only when real resize happens (not address bar scroll)
-window.addEventListener("orientationchange", setVH);
-window.addEventListener("resize", () => {
-  const currentVH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--vh")) * 100;
-  if (Math.abs(window.innerHeight - currentVH) > 80) setVH();
-});
-
-/* --------------------------------------------------
-   2) ScrollTrigger SETTINGS (must be BEFORE anything)
--------------------------------------------------- */
 ScrollTrigger.config({
   ignoreMobileResize: true
 });
 
-/* --------------------------------------------------
-   3) IMAGE LOADER
--------------------------------------------------- */
-function onImagesLoaded(callback) {
-  const images = document.querySelectorAll("img");
-  let loaded = 0;
 
-  images.forEach(img => {
-    if (img.complete) {
-      loaded++;
-      if (loaded === images.length) callback();
-    } else {
-      img.addEventListener("load", () => {
-        loaded++;
-        if (loaded === images.length) callback();
-      });
-    }
-  });
+/* ==================================================
+   1) VIEWPORT + CONTAINER VARIABLES
+================================================== */
+
+function setVH() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
 
-/* --------------------------------------------------
-   4) PRELOADER + INTRO
--------------------------------------------------- */
-window.addEventListener("load", () => {
+function setContainerWidth() {
+  const container = document.querySelector(".container");
+  if (!container) return;
+
+  document.documentElement.style.setProperty(
+    "--container-width",
+    `${container.offsetWidth}px`
+  );
+}
+
+function updateLayoutVars() {
+  setVH();
+  setContainerWidth();
+}
+
+window.addEventListener("resize", updateLayoutVars);
+window.addEventListener("orientationchange", updateLayoutVars);
+
+
+/* ==================================================
+   2) PRELOADER (FIXED TIME)
+================================================== */
+
+function initPreloader() {
+
+  const preloader = document.getElementById("preloader");
+  if (!preloader) {
+    initCoverAnimation();
+    return;
+  }
+
   setTimeout(() => {
-    const preloader = document.getElementById("preloader");
 
-    if (preloader) {
-      preloader.style.transition = "opacity 0.2s ease";
-      preloader.style.opacity = "0";
+    preloader.style.transition = "opacity 0.3s ease";
+    preloader.style.opacity = "0";
 
-      setTimeout(() => {
-        preloader.remove();
-        animateCoverTitle();
-      }, 200);
-    }
-  }, 1500);
-});
+    setTimeout(() => {
+      preloader.remove();
+      initCoverAnimation();
+    }, 300);
 
-/* --------------------------------------------------
-   5) INTRO TITLE ANIMATION
--------------------------------------------------- */
-function animateCoverTitle() {
+  }, 1200);
+}
 
-  // ===== INITIAL STATE =====
+
+/* ==================================================
+   3) COVER ANIMATION
+================================================== */
+
+function initCoverAnimation() {
+
   gsap.set(".coverIsland img", {
     opacity: 0,
     y: 50,
@@ -102,11 +103,9 @@ function animateCoverTitle() {
     filter: "blur(15px)"
   });
 
-  // ===== TIMELINE =====
-  const tlTitle = gsap.timeline({ delay: 0.2 });
+  const tl = gsap.timeline({ delay: 0.2 });
 
-  // Island image
-  tlTitle.to(".coverIsland img", {
+  tl.to(".coverIsland img", {
     opacity: 1,
     y: 0,
     scale: 1,
@@ -115,8 +114,7 @@ function animateCoverTitle() {
     ease: "power3.out"
   });
 
-  // Main title
-  tlTitle.to(".coverTitle", {
+  tl.to(".coverTitle", {
     opacity: 1,
     y: 0,
     scale: 1,
@@ -125,8 +123,7 @@ function animateCoverTitle() {
     ease: "power3.out"
   }, "-=0.5");
 
-  // Subtitle
-  tlTitle.to(".coverTitleSub", {
+  tl.to(".coverTitleSub", {
     opacity: 1,
     y: 0,
     scale: 1,
@@ -134,46 +131,18 @@ function animateCoverTitle() {
     duration: 0.8,
     ease: "power3.out"
   }, "-=0.6");
-
 }
 
-/* --------------------------------------------------
-   6) RESPONSIVE HOME TRANSFORM
--------------------------------------------------- */
-function getResponsiveHomeScale() {
-  const w = window.innerWidth;
-  const desktopScale = 987 / 589;
-  const mobileScale = 372 / 317;
-  return w <= 600 ? mobileScale : desktopScale;
-}
 
-function getHomeTransform() {
-  const scale = getResponsiveHomeScale();
-  const isMobile = window.innerWidth <= 600;
+/* ==================================================
+   4) INTRO PINNED SCROLL
+================================================== */
 
-  if (isMobile) {
-    return {
-      scale: scale,
-      xPercent: 0,
-      yPercent: -16
-    };
-  }
-
-  return {
-    scale: scale,
-    xPercent: -18,
-    yPercent: -40
-  };
-}
-
-/* --------------------------------------------------
-   7) MAIN SCROLL ANIMATION
--------------------------------------------------- */
-window.addEventListener("load", () => {
+function initIntroScroll() {
 
   const boxes = gsap.utils.toArray(".introBox");
+  if (!boxes.length) return;
 
-  // Hide all except first
   gsap.set(boxes.slice(1), { opacity: 0, y: 80 });
 
   gsap.set(".introBox img", {
@@ -183,7 +152,6 @@ window.addEventListener("load", () => {
     scale: 1.05
   });
 
-  // First image should be visible immediately
   gsap.set(boxes[0].querySelector("img"), {
     opacity: 1,
     y: 0,
@@ -203,32 +171,30 @@ window.addEventListener("load", () => {
 
   boxes.forEach((box, i) => {
 
-    if (i === 0) return; // Skip first
+    if (i === 0) return;
 
     const prev = boxes[i - 1];
     const img = box.querySelector("img");
 
+    // keep your introBg fade
     tl.to(".introBg", {
       opacity: 1,
       duration: 0.5,
       ease: "power2.out"
     }, 0);
 
-    // Fade out previous
     tl.to(prev, {
       opacity: 0,
       y: -60,
       duration: 0.6
     });
 
-    // Fade in current
     tl.to(box, {
       opacity: 1,
       y: 0,
       duration: 0.6
     }, "<");
 
-    // Blur reveal image
     tl.to(img, {
       opacity: 1,
       y: 0,
@@ -238,11 +204,18 @@ window.addEventListener("load", () => {
     }, "<0.2");
 
   });
+}
 
-  // DOORSTOP SCROLL ANIMATION 
+
+/* ==================================================
+   5) DOORSTOP ROTATION (STABLE)
+================================================== */
+
+function initDoorstop() {
+
   gsap.utils.toArray(".icon-doorstop img").forEach((el) => {
 
-    const triggerEl = el.closest(".btbImpactIntro, .bnctImpactIntro");
+    const triggerEl = el.closest(".section");
     if (!triggerEl) return;
 
     gsap.to(el, {
@@ -250,37 +223,71 @@ window.addEventListener("load", () => {
       ease: "none",
       scrollTrigger: {
         trigger: triggerEl,
-        start: "top 80%",
-        end: "top 30%",
+        start: "top 75%",
+        end: "top 45%",
         scrub: true
       }
     });
 
   });
 
-  // IMPACT ITEM REVEAL ON SCROLL
+}
+
+
+/* ==================================================
+   6) IMPACT ITEMS (NO EARLY FIRING)
+================================================== */
+
+function initImpactLists() {
 
   gsap.utils.toArray(".impactList").forEach((list) => {
 
-    const items = list.querySelectorAll(".impactItem");
+    const items = gsap.utils.toArray(list.querySelectorAll(".impactItem"));
 
-    items.forEach((item) => {
-      const img = item.querySelector(".impactImg");
-      const content = item.querySelector(".impactContent");
+    gsap.set(items, {
+      opacity: 0,
+      y: 60
+    });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: item,
-          start: "top 80%",
-          toggleActions: "play none none none"
-        }
-      });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: list,
+        start: "top 75%",
+        end: "bottom 60%",
+        scrub: 1
+      }
+    });
 
-      tl.to(img, { opacity: 1, y: 0, duration: 0.6 })
-        .to(content, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3");
+    tl.to(items, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.4,
+      ease: "power2.out"
     });
 
   });
 
-  ScrollTrigger.refresh();
+}
+
+/* ==================================================
+   7) MASTER INIT
+================================================== */
+
+window.addEventListener("load", () => {
+
+  updateLayoutVars();
+
+  initPreloader();
+
+  // Give layout time to stabilize (lazy images)
+  setTimeout(() => {
+
+    initIntroScroll();
+    initDoorstop();
+    initImpactLists();
+
+    ScrollTrigger.refresh();
+
+  }, 500);
+
 });
