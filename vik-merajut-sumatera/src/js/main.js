@@ -1,18 +1,15 @@
-/* ============================================================
-   APP LAYOUT (KEEP THIS)
-============================================================ */
+/* =========================================
+   1) LAYOUT VARS (UNCHANGED)
+========================================= */
 
 const appLayout = () => {
   const doc = document.documentElement;
 
-  // viewport height
   doc.style.setProperty('--app-height', `${window.innerHeight}px`);
 
-  // container width
   const container = document.querySelector('.container');
   if (container) {
-    const width = container.offsetWidth;
-    doc.style.setProperty('--container-width', `${width}px`);
+    doc.style.setProperty('--container-width', `${container.offsetWidth}px`);
   }
 };
 
@@ -20,22 +17,19 @@ window.addEventListener('resize', appLayout);
 window.addEventListener('load', appLayout);
 appLayout();
 
-
-/* ============================================================
-   GSAP INIT
-============================================================ */
+/* =========================================
+   2) GSAP
+========================================= */
 
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.config({
-  ignoreMobileResize: true,
-  pinType: "fixed"
+  ignoreMobileResize: true
 });
 
-
-/* ============================================================
-   PRELOADER (UNTOUCHED)
-============================================================ */
+/* =========================================
+   3) PRELOADER (UNTOUCHED)
+========================================= */
 
 window.addEventListener("load", () => {
   setTimeout(() => {
@@ -53,10 +47,9 @@ window.addEventListener("load", () => {
   }, 1500);
 });
 
-
-/* ============================================================
-   COVER TITLE ANIMATION (UNTOUCHED)
-============================================================ */
+/* =========================================
+   4) COVER TITLE (UNTOUCHED)
+========================================= */
 
 function animateCoverTitle() {
 
@@ -104,16 +97,11 @@ function animateCoverTitle() {
   }, "-=0.6");
 }
 
-
-/* ============================================================
-   MAIN LOAD ANIMATIONS
-============================================================ */
+/* =========================================
+   5) INTRO SCROLL (UNTOUCHED except anticipatePin)
+========================================= */
 
 window.addEventListener("load", () => {
-
-  /* =========================
-     INTRO SCROLL (UNTOUCHED)
-  ========================= */
 
   const boxes = gsap.utils.toArray(".introBox");
 
@@ -139,7 +127,8 @@ window.addEventListener("load", () => {
       start: "top top",
       end: "+=300%",
       scrub: 1.2,
-      pin: ".scrollStage"
+      pin: ".scrollStage",
+      anticipatePin: 1   // 🔥 STABILITY FIX
     }
   });
 
@@ -150,7 +139,6 @@ window.addEventListener("load", () => {
     const prev = boxes[i - 1];
     const img = box.querySelector("img");
 
-    // KEEP introBg EXACTLY AS YOU SAID
     tl.to(".introBg", {
       opacity: 1,
       duration: 0.5,
@@ -179,23 +167,9 @@ window.addEventListener("load", () => {
 
   });
 
-
-  /* ============================================================
-     FIX BELOW SCROLL-AREA ISSUE
-     (THIS IS THE IMPORTANT PART)
-  ============================================================ */
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      ScrollTrigger.refresh();
-    });
-  });
-
-
-
-  /* ============================================================
-     DOORSTOP
-  ============================================================ */
+  /* =========================================
+     6) DOORSTOP (FIXED)
+  ========================================= */
 
   gsap.utils.toArray(".icon-doorstop img").forEach((el) => {
 
@@ -208,25 +182,27 @@ window.addEventListener("load", () => {
         rotation: 90,
         ease: "none",
         scrollTrigger: {
-          trigger: el,
+          trigger: triggerEl,
           start: "top 85%",
-          end: "top 45%",
-          scrub: true
+          end: "top 40%",
+          scrub: true,
+          refreshPriority: -1   // 🔥 CRITICAL FIX
         }
       }
     );
-
   });
 
+  /* =========================================
+     7) IMPACT ITEMS (FIXED)
+  ========================================= */
 
-  /* ============================================================
-     IMPACT ITEM (BACK TO BACK LIKE SCROLLBOX)
-  ============================================================ */
-
-  gsap.utils.toArray(".impactItem").forEach((item, i) => {
+  gsap.utils.toArray(".impactItem").forEach((item) => {
 
     gsap.fromTo(item,
-      { opacity: 0, y: 80 },
+      {
+        opacity: 0,
+        y: 60
+      },
       {
         opacity: 1,
         y: 0,
@@ -234,40 +210,46 @@ window.addEventListener("load", () => {
         scrollTrigger: {
           trigger: item,
           start: "top 85%",
-          end: "top 55%",
-          scrub: true
+          end: "top 60%",
+          scrub: true,
+          refreshPriority: -1   // 🔥 CRITICAL FIX
         }
       }
     );
-
   });
 
-
-  /* ============================================================
-     ARTICLE IMAGE ANIMATION (NO BLINK VERSION)
-  ============================================================ */
-
-  gsap.set(".articleImg", {
-    opacity: 0,
-    y: 40,
-    scale: 0.98
-  });
+  /* =========================================
+     8) ARTICLE IMAGES (STABLE)
+  ========================================= */
 
   gsap.utils.toArray(".articleImg").forEach((img) => {
 
-    gsap.to(img, {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: img,
-        start: "top 90%",
-        end: "top 60%",
-        scrub: true
+    gsap.fromTo(img,
+      {
+        scale: 0.95,
+        opacity: 0
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: img,
+          start: "top 90%",
+          end: "top 65%",
+          scrub: true,
+          refreshPriority: -1   // 🔥 CRITICAL FIX
+        }
       }
-    });
+    );
+  });
 
+  /* =========================================
+     FINAL STABLE REFRESH
+  ========================================= */
+
+  requestAnimationFrame(() => {
+    ScrollTrigger.refresh();
   });
 
 });
