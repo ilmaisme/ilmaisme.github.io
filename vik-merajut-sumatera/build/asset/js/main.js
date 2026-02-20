@@ -14,7 +14,7 @@ window.addEventListener("resize", setVh);
    1) LAYOUT VARS
 ========================================= */
 
-const appLayout = () => {
+function appLayout() {
   const doc = document.documentElement;
 
   doc.style.setProperty('--app-height', `${window.innerHeight}px`);
@@ -23,7 +23,7 @@ const appLayout = () => {
   if (container) {
     doc.style.setProperty('--container-width', `${container.offsetWidth}px`);
   }
-};
+}
 
 window.addEventListener('resize', appLayout);
 window.addEventListener('load', appLayout);
@@ -42,11 +42,13 @@ ScrollTrigger.config({
 
 
 /* =========================================
-   3) PRELOADER
+   3) PRELOADER + INIT
 ========================================= */
 
 window.addEventListener("load", () => {
+
   setTimeout(() => {
+
     const preloader = document.getElementById("preloader");
 
     if (preloader) {
@@ -56,10 +58,17 @@ window.addEventListener("load", () => {
       setTimeout(() => {
         preloader.remove();
         animateCoverTitle();
+        initAnimations();
         ScrollTrigger.refresh();
       }, 200);
+    } else {
+      animateCoverTitle();
+      initAnimations();
+      ScrollTrigger.refresh();
     }
+
   }, 1500);
+
 });
 
 
@@ -83,9 +92,9 @@ function animateCoverTitle() {
     filter: "blur(15px)"
   });
 
-  const tlTitle = gsap.timeline({ delay: 0.2 });
+  const tl = gsap.timeline({ delay: 0.2 });
 
-  tlTitle.to(".coverIsland img", {
+  tl.to(".coverIsland img", {
     opacity: 1,
     y: 0,
     scale: 1,
@@ -94,7 +103,7 @@ function animateCoverTitle() {
     ease: "power3.out"
   });
 
-  tlTitle.to(".coverTitle", {
+  tl.to(".coverTitle", {
     opacity: 1,
     y: 0,
     scale: 1,
@@ -103,7 +112,7 @@ function animateCoverTitle() {
     ease: "power3.out"
   }, "-=0.5");
 
-  tlTitle.to(".coverTitleSub", {
+  tl.to(".coverTitleSub", {
     opacity: 1,
     y: 0,
     scale: 1,
@@ -118,85 +127,52 @@ function animateCoverTitle() {
    5) MAIN ANIMATIONS
 ========================================= */
 
-window.addEventListener("load", () => {
+function initAnimations() {
 
   /* =========================================
-     INTRO SCROLL
+     INTRO SCROLL (STABLE PIN)
   ========================================= */
 
   const boxes = gsap.utils.toArray(".introBox");
 
-  gsap.set(boxes.slice(1), { opacity: 0, y: 80 });
+  if (boxes.length) {
 
-  gsap.set(".introBox img", {
-    opacity: 0,
-    y: 40,
-    filter: "blur(20px)",
-    scale: 1.05
-  });
+    gsap.set(boxes.slice(1), { opacity: 0, y: 80 });
 
-  if (boxes[0]) {
-    const firstImg = boxes[0].querySelector("img");
-    if (firstImg) {
-      gsap.set(firstImg, {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        scale: 1
-      });
-    }
-  }
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".introWrap",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: 1,
-      pin: ".scrollStage",
-      anticipatePin: 1
-    }
-  });
-
-  boxes.forEach((box, i) => {
-
-    if (i === 0) return;
-
-    const prev = boxes[i - 1];
-    const img = box.querySelector("img");
-
-    tl.to(".introBg", {
-      opacity: 1,
-      duration: 0.5,
-      ease: "power2.out"
-    }, 0);
-
-    tl.to(prev, {
-      opacity: 0,
-      y: -60,
-      duration: 0.6
+    const introTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".intro",
+        start: "top top",
+        end: () => "+=" + (boxes.length * window.innerHeight),
+        scrub: 1,
+        pin: ".scrollStage",
+        anticipatePin: 1
+      }
     });
 
-    tl.to(box, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6
-    }, "<");
+    boxes.forEach((box, i) => {
+      if (i === 0) return;
 
-    if (img) {
-      tl.to(img, {
+      const prev = boxes[i - 1];
+
+      introTl.to(prev, {
+        opacity: 0,
+        y: -60,
+        duration: 1
+      });
+
+      introTl.to(box, {
         opacity: 1,
         y: 0,
-        filter: "blur(0px)",
-        scale: 1,
-        duration: 0.8
-      }, "<0.2");
-    }
-  });
+        duration: 1
+      }, "<");
+    });
+
+  }
 
 
   /* =========================================
-     DOORSTOP (SCRUB ROTATION)
+     DOORSTOP ROTATION (DEGREE TRANSFORM)
   ========================================= */
 
   gsap.utils.toArray(".icon-doorstop img").forEach((el) => {
@@ -259,4 +235,4 @@ window.addEventListener("load", () => {
     });
   });
 
-});
+}
