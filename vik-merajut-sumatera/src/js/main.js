@@ -1,18 +1,17 @@
 /* =========================================
-   0) VH HANDLING (RESTORED)
+   0) VH HANDLING
 ========================================= */
 
 function setVh() {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
-
 setVh();
 window.addEventListener("resize", setVh);
 
 
 /* =========================================
-   1) LAYOUT VARS (UNCHANGED)
+   1) LAYOUT VARS
 ========================================= */
 
 const appLayout = () => {
@@ -32,36 +31,10 @@ appLayout();
 
 
 /* =========================================
-   2) GSAP + SCROLLER PROXY (CRITICAL FIX)
+   2) GSAP SETUP
 ========================================= */
 
 gsap.registerPlugin(ScrollTrigger);
-
-const app = document.querySelector(".appLayout");
-
-/* 🔥 SCROLLER PROXY */
-ScrollTrigger.scrollerProxy(app, {
-  scrollTop(value) {
-    if (arguments.length) {
-      app.scrollTop = value;
-    }
-    return app.scrollTop;
-  },
-  getBoundingClientRect() {
-    return {
-      top: 0,
-      left: 0,
-      width: window.innerWidth,
-      height: window.innerHeight
-    };
-  }
-});
-
-app.addEventListener("scroll", () => ScrollTrigger.update());
-
-ScrollTrigger.defaults({
-  scroller: app
-});
 
 ScrollTrigger.config({
   ignoreMobileResize: true
@@ -69,7 +42,7 @@ ScrollTrigger.config({
 
 
 /* =========================================
-   3) PRELOADER (UNTOUCHED)
+   3) PRELOADER
 ========================================= */
 
 window.addEventListener("load", () => {
@@ -91,7 +64,7 @@ window.addEventListener("load", () => {
 
 
 /* =========================================
-   4) COVER TITLE (UNTOUCHED)
+   4) COVER TITLE
 ========================================= */
 
 function animateCoverTitle() {
@@ -178,8 +151,8 @@ window.addEventListener("load", () => {
     scrollTrigger: {
       trigger: ".introWrap",
       start: "top top",
-      end: "+=300%",
-      scrub: 1.2,
+      end: "bottom bottom",
+      scrub: 1,
       pin: ".scrollStage",
       anticipatePin: 1
     }
@@ -223,7 +196,7 @@ window.addEventListener("load", () => {
 
 
   /* =========================================
-     DOORSTOP
+     DOORSTOP (SCRUB ROTATION)
   ========================================= */
 
   gsap.utils.toArray(".icon-doorstop img").forEach((el) => {
@@ -231,16 +204,19 @@ window.addEventListener("load", () => {
     const triggerEl = el.closest(".btbImpactIntro, .bnctImpactIntro");
     if (!triggerEl) return;
 
-    gsap.from(el, {
-      rotation: -90,
-      duration: 0.6,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: triggerEl,
-        start: "top 80%",
-        toggleActions: "play none none reverse"
+    gsap.fromTo(el,
+      { rotation: 0 },
+      {
+        rotation: 90,
+        ease: "none",
+        scrollTrigger: {
+          trigger: triggerEl,
+          start: "top 85%",
+          end: "top 40%",
+          scrub: true
+        }
       }
-    });
+    );
   });
 
 
@@ -282,14 +258,5 @@ window.addEventListener("load", () => {
       }
     });
   });
-
-
-  /* =========================================
-     FINAL REFRESH
-  ========================================= */
-
-  setTimeout(() => {
-    ScrollTrigger.refresh(true);
-  }, 300);
 
 });
