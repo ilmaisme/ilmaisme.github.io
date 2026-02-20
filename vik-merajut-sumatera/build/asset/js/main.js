@@ -1,58 +1,22 @@
 /* =========================================
-   0) VH HANDLING
-========================================= */
-
-function setVh() {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-}
-setVh();
-window.addEventListener("resize", setVh);
-
-
-/* =========================================
-   1) LAYOUT VARS
-========================================= */
-
-function appLayout() {
-  const doc = document.documentElement;
-
-  doc.style.setProperty('--app-height', `${window.innerHeight}px`);
-
-  const container = document.querySelector('.container');
-  if (container) {
-    doc.style.setProperty('--container-width', `${container.offsetWidth}px`);
-  }
-}
-
-window.addEventListener('resize', appLayout);
-window.addEventListener('load', appLayout);
-appLayout();
-
-
-/* =========================================
-   2) GSAP SETUP
+   1) GSAP SETUP
 ========================================= */
 
 gsap.registerPlugin(ScrollTrigger);
 
-ScrollTrigger.config({
-  ignoreMobileResize: true
-});
-
 
 /* =========================================
-   3) PRELOADER + INIT
+   2) PRELOADER
 ========================================= */
 
 window.addEventListener("load", () => {
 
+  const preloader = document.getElementById("preloader");
+
   setTimeout(() => {
 
-    const preloader = document.getElementById("preloader");
-
     if (preloader) {
-      preloader.style.transition = "opacity 0.2s ease";
+      preloader.style.transition = "opacity 0.3s ease";
       preloader.style.opacity = "0";
 
       setTimeout(() => {
@@ -60,20 +24,20 @@ window.addEventListener("load", () => {
         animateCoverTitle();
         initAnimations();
         ScrollTrigger.refresh();
-      }, 200);
+      }, 300);
     } else {
       animateCoverTitle();
       initAnimations();
       ScrollTrigger.refresh();
     }
 
-  }, 1500);
+  }, 1200);
 
 });
 
 
 /* =========================================
-   4) COVER TITLE
+   3) COVER ANIMATION
 ========================================= */
 
 function animateCoverTitle() {
@@ -81,32 +45,30 @@ function animateCoverTitle() {
   gsap.set(".coverIsland img", {
     opacity: 0,
     y: 50,
-    scale: 1.08,
-    filter: "blur(25px)"
+    scale: 1.05,
+    filter: "blur(15px)"
   });
 
   gsap.set([".coverTitle", ".coverTitleSub"], {
     opacity: 0,
     y: 40,
-    scale: 1.05,
     filter: "blur(15px)"
   });
 
-  const tl = gsap.timeline({ delay: 0.2 });
+  const tl = gsap.timeline();
 
   tl.to(".coverIsland img", {
     opacity: 1,
     y: 0,
     scale: 1,
     filter: "blur(0px)",
-    duration: 0.9,
+    duration: 1,
     ease: "power3.out"
   });
 
   tl.to(".coverTitle", {
     opacity: 1,
     y: 0,
-    scale: 1,
     filter: "blur(0px)",
     duration: 0.8,
     ease: "power3.out"
@@ -115,7 +77,6 @@ function animateCoverTitle() {
   tl.to(".coverTitleSub", {
     opacity: 1,
     y: 0,
-    scale: 1,
     filter: "blur(0px)",
     duration: 0.8,
     ease: "power3.out"
@@ -124,13 +85,13 @@ function animateCoverTitle() {
 
 
 /* =========================================
-   5) MAIN ANIMATIONS
+   4) MAIN ANIMATIONS
 ========================================= */
 
 function initAnimations() {
 
   /* =========================================
-     INTRO SCROLL (STABLE PIN)
+     INTRO SCROLL (Clean Pin System)
   ========================================= */
 
   const boxes = gsap.utils.toArray(".introBox");
@@ -139,7 +100,7 @@ function initAnimations() {
 
     gsap.set(boxes.slice(1), { opacity: 0, y: 80 });
 
-    const introTl = gsap.timeline({
+    const introTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".intro",
         start: "top top",
@@ -151,34 +112,36 @@ function initAnimations() {
     });
 
     boxes.forEach((box, i) => {
+
       if (i === 0) return;
 
       const prev = boxes[i - 1];
 
-      introTl.to(prev, {
+      introTimeline.to(prev, {
         opacity: 0,
         y: -60,
         duration: 1
       });
 
-      introTl.to(box, {
+      introTimeline.to(box, {
         opacity: 1,
         y: 0,
         duration: 1
       }, "<");
+
     });
 
   }
 
 
   /* =========================================
-     DOORSTOP ROTATION (DEGREE TRANSFORM)
+     DOORSTOP ROTATION
   ========================================= */
 
   gsap.utils.toArray(".icon-doorstop img").forEach((el) => {
 
-    const triggerEl = el.closest(".btbImpactIntro, .bnctImpactIntro");
-    if (!triggerEl) return;
+    const parent = el.closest(".btbImpactIntro, .bnctImpactIntro");
+    if (!parent) return;
 
     gsap.fromTo(el,
       { rotation: 0 },
@@ -186,18 +149,19 @@ function initAnimations() {
         rotation: 90,
         ease: "none",
         scrollTrigger: {
-          trigger: triggerEl,
+          trigger: parent,
           start: "top 85%",
           end: "top 40%",
           scrub: true
         }
       }
     );
+
   });
 
 
   /* =========================================
-     IMPACT ITEMS
+     IMPACT ITEMS FADE
   ========================================= */
 
   gsap.utils.toArray(".impactItem").forEach((item) => {
@@ -213,6 +177,7 @@ function initAnimations() {
         toggleActions: "play none none reverse"
       }
     });
+
   });
 
 
@@ -233,6 +198,7 @@ function initAnimations() {
         toggleActions: "play none none reverse"
       }
     });
+
   });
 
 }

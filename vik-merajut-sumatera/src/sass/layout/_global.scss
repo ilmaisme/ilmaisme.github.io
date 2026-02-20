@@ -7,17 +7,26 @@
     box-sizing: border-box;
 }
 
-:root {
-    --app-height: 100%;
-}
+// :root {
+//     --app-height: 100%;
+// }
 
 body,
 html {
     margin: 0;
     padding: 0;
-    overscroll-behavior: none;
+    overscroll-behavior-y: auto;
     min-height: 100%;
     overflow-x: hidden;
+}
+
+
+
+.appLayout {
+    min-height: 100%;
+    overflow: visible;
+    -webkit-overflow-scrolling: touch;
+    // overscroll-behavior: none;
 }
 
 body {
@@ -132,13 +141,6 @@ button:-moz-focusring,
     *zoom: 1;
 }
 
-.appLayout {
-    min-height: 100%;
-    overflow: visible;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: none;
-}
-
 main {
     position: relative;
 }
@@ -147,7 +149,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: var(--app-height);
+    min-height: 100vh;
     padding-top: 60px;
     padding-bottom: 80px;
 
