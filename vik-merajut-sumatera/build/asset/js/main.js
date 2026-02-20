@@ -4,6 +4,7 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.normalizeScroll(true);
 
 /* =========================================
    2) PRELOADER
@@ -96,42 +97,47 @@ function initAnimations() {
 
   const boxes = gsap.utils.toArray(".introBox");
 
-  if (boxes.length) {
+if (boxes.length) {
 
-    gsap.set(boxes.slice(1), { opacity: 0, y: 80 });
+  gsap.set(boxes.slice(1), { 
+    opacity: 0, 
+    y: 60,
+    scale: 0.98
+  });
 
-    const introTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".intro",
-        start: "top top",
-        end: () => "+=" + (boxes.length * window.innerHeight),
-        scrub: 1,
-        pin: ".scrollStage",
-        anticipatePin: 1
-      }
+  const introTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".intro",
+      start: "top top",
+      end: () => "+=" + (boxes.length * window.innerHeight),
+      scrub: 1.5,              // smoother than 1
+      pin: ".scrollStage",
+      anticipatePin: 1,
+      fastScrollEnd: true
+    }
+  });
+
+  boxes.forEach((box, i) => {
+
+    if (i === 0) return;
+
+    const prev = boxes[i - 1];
+
+    introTimeline.to(prev, {
+      opacity: 0,
+      y: -40,
+      scale: 0.98,
+      duration: 1
     });
 
-    boxes.forEach((box, i) => {
-
-      if (i === 0) return;
-
-      const prev = boxes[i - 1];
-
-      introTimeline.to(prev, {
-        opacity: 0,
-        y: -60,
-        duration: 1
-      });
-
-      introTimeline.to(box, {
-        opacity: 1,
-        y: 0,
-        duration: 1
-      }, "<");
-
-    });
-
-  }
+    introTimeline.to(box, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 1
+    }, "<0.2");   // slight overlap
+  });
+}
 
 
   /* =========================================
