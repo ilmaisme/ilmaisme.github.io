@@ -1,16 +1,22 @@
 /* =========================================
-   1) LAYOUT VARS
+   0) VH HANDLING (RESTORED)
 ========================================= */
 
-const updateVh = () => {
+function setVh() {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
-};
+}
+
+setVh();
+window.addEventListener("resize", setVh);
+
+
+/* =========================================
+   1) LAYOUT VARS (UNCHANGED)
+========================================= */
 
 const appLayout = () => {
   const doc = document.documentElement;
-
-  updateVh(); // 🔥 VH FIX
 
   doc.style.setProperty('--app-height', `${window.innerHeight}px`);
 
@@ -26,10 +32,36 @@ appLayout();
 
 
 /* =========================================
-   2) GSAP
+   2) GSAP + SCROLLER PROXY (CRITICAL FIX)
 ========================================= */
 
 gsap.registerPlugin(ScrollTrigger);
+
+const app = document.querySelector(".appLayout");
+
+/* 🔥 SCROLLER PROXY */
+ScrollTrigger.scrollerProxy(app, {
+  scrollTop(value) {
+    if (arguments.length) {
+      app.scrollTop = value;
+    }
+    return app.scrollTop;
+  },
+  getBoundingClientRect() {
+    return {
+      top: 0,
+      left: 0,
+      width: window.innerWidth,
+      height: window.innerHeight
+    };
+  }
+});
+
+app.addEventListener("scroll", () => ScrollTrigger.update());
+
+ScrollTrigger.defaults({
+  scroller: app
+});
 
 ScrollTrigger.config({
   ignoreMobileResize: true
@@ -51,6 +83,7 @@ window.addEventListener("load", () => {
       setTimeout(() => {
         preloader.remove();
         animateCoverTitle();
+        ScrollTrigger.refresh();
       }, 200);
     }
   }, 1500);
@@ -109,10 +142,14 @@ function animateCoverTitle() {
 
 
 /* =========================================
-   5) INTRO + BELOW SCROLL
+   5) MAIN ANIMATIONS
 ========================================= */
 
 window.addEventListener("load", () => {
+
+  /* =========================================
+     INTRO SCROLL
+  ========================================= */
 
   const boxes = gsap.utils.toArray(".introBox");
 
@@ -125,12 +162,17 @@ window.addEventListener("load", () => {
     scale: 1.05
   });
 
-  gsap.set(boxes[0].querySelector("img"), {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    scale: 1
-  });
+  if (boxes[0]) {
+    const firstImg = boxes[0].querySelector("img");
+    if (firstImg) {
+      gsap.set(firstImg, {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        scale: 1
+      });
+    }
+  }
 
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -168,95 +210,86 @@ window.addEventListener("load", () => {
       duration: 0.6
     }, "<");
 
-    tl.to(img, {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      scale: 1,
-      duration: 0.8
-    }, "<0.2");
-
+    if (img) {
+      tl.to(img, {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        scale: 1,
+        duration: 0.8
+      }, "<0.2");
+    }
   });
 
-  /* DOORSTOP */
+
+  /* =========================================
+     DOORSTOP
+  ========================================= */
+
   gsap.utils.toArray(".icon-doorstop img").forEach((el) => {
 
     const triggerEl = el.closest(".btbImpactIntro, .bnctImpactIntro");
     if (!triggerEl) return;
 
-    gsap.fromTo(el,
-      { rotation: 0 },
-      {
-        rotation: 90,
-        ease: "none",
-        scrollTrigger: {
-          trigger: triggerEl,
-          start: "top 85%",
-          end: "top 40%",
-          scrub: true,
-          refreshPriority: -1
-        }
+    gsap.from(el, {
+      rotation: -90,
+      duration: 0.6,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: triggerEl,
+        start: "top 80%",
+        toggleActions: "play none none reverse"
       }
-    );
+    });
   });
 
-  /* IMPACT */
-  gsap.utils.toArray(".impactItem").forEach((item) => {
-
-    gsap.fromTo(item,
-      { opacity: 0, y: 60 },
-      {
-        opacity: 1,
-        y: 0,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: item,
-          start: "top 85%",
-          end: "top 60%",
-          scrub: true,
-          refreshPriority: -1
-        }
-      }
-    );
-  });
-
-  /* ARTICLE IMAGES */
-  gsap.utils.toArray(".articleImg").forEach((img) => {
-
-    gsap.fromTo(img,
-      { scale: 0.95, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: img,
-          start: "top 90%",
-          end: "top 65%",
-          scrub: true,
-          refreshPriority: -1
-        }
-      }
-    );
-  });
 
   /* =========================================
-     FINAL STABILIZATION
+     IMPACT ITEMS
   ========================================= */
 
-  requestAnimationFrame(() => {
-    ScrollTrigger.refresh();
+  gsap.utils.toArray(".impactItem").forEach((item) => {
 
-    // 🔥 FIX LAYOUT JUMP (Kompas style lock)
-    const lockedVh = parseFloat(
-      getComputedStyle(document.documentElement)
-        .getPropertyValue("--vh")
-    );
-
-    if (!isNaN(lockedVh)) {
-      document.documentElement.style.setProperty("--vh", `${lockedVh}px`);
-    }
-
+    gsap.from(item, {
+      opacity: 0,
+      y: 60,
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 85%",
+        toggleActions: "play none none reverse"
+      }
+    });
   });
+
+
+  /* =========================================
+     ARTICLE IMAGES
+  ========================================= */
+
+  gsap.utils.toArray(".articleImg").forEach((img) => {
+
+    gsap.from(img, {
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: img,
+        start: "top 90%",
+        toggleActions: "play none none reverse"
+      }
+    });
+  });
+
+
+  /* =========================================
+     FINAL REFRESH
+  ========================================= */
+
+  setTimeout(() => {
+    ScrollTrigger.refresh(true);
+  }, 300);
 
 });
