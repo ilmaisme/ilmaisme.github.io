@@ -15,11 +15,21 @@
     }
 
     &Content {
-        width: calc(100% - 28px);
+        width: auto;
         padding-top: 28px;
         padding-bottom: 28px;
         position: absolute;
-        bottom: 0;
+        bottom: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 350px;
+
+        @include min-responsive($w-md) {
+            bottom: 0;
+            left: unset;
+            transform: unset;
+            width: 100%;
+        }
     }
 
     .coverIsland img,
@@ -39,8 +49,11 @@
             left: 50%;
             transform: translateX(-50%);
             bottom: -100px;
-            max-width: 460px;
-            height: 415px;
+            min-width: 460px;
+        }
+
+        @include min-responsive($w-xxxl) {
+            bottom: 40px;
         }
 
         img {
@@ -88,7 +101,7 @@
 
         &Sub {
             position: relative;
-            @include font-pack($font_caption, 38px, $font-weight-normal, $line-base, #3A2B2B);
+            @include font-pack($font_caption, 38px, $font-weight-normal, 1, #3A2B2B);
 
             @include min-responsive($w-md) {
                 font-size: 64px;
@@ -128,12 +141,12 @@
         height: 100%;
         background: url(../images/cover-img-1-m.png);
         background-size: cover;
-        background-position: 70% bottom;
+        background-position: 70% center;
 
         @include min-responsive($w-md) {
             background: url(../images/cover-img-1.jpg);
             background-size: cover;
-            background-position: center bottom;
+            background-position: center;
         }
     }
 }
