@@ -144,25 +144,27 @@ Implemented (if applicable):
 
 ## Repo Structure
 
-internal-it-ticket-dashboard/
+```
 
-│
+internal-it-ticket-dashboard/
 
 ├── README.md
 
-├── screenshots/
+└── screenshots/
 
-│   ├── dashboard.png
+    ├── dashboard.png
 
-│   ├── ticket-list.png
+    ├── ticket-list.png
 
-│   ├── create-ticket.png
+    ├── create-ticket.png
 
-│   ├── edit-ticket.png
+    ├── edit-ticket.png
 
-│   ├── mobile-dashboard.png
+    ├── mobile-dashboard.png
 
-│   └── database.png
+    └── database.png
+
+```
 
 ---
 
